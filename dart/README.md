@@ -2,6 +2,14 @@
 
 Versão: 3.4
 
+- [Criando um novo projeto](#criando-um-novo-projeto)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Tipos de dados](#tipos-de-dados)
+- [Declaração de variáveis](#declaração-de-variáveis)
+- [Usando o Null Safety](#usando-o-null-safety)
+- [Estruturas Condicionais](#estruturas-condicionais)
+- [Operadores Lógicos](#operadores-lógicos)
+
 ## Criando um novo projeto
 
 Para se criar um novo projeto Dart básico pelo console deve-se utilizar o comando:
@@ -115,7 +123,7 @@ Map<int, String> produtos = {
 };
 ~~~
 
-## Sets
+### Sets
 
 `Set` é uma coleção de elementos únicos, sem ordem específica.
 
@@ -124,7 +132,7 @@ Set<int> numerosUnicos = {1, 2, 3, 4, 5};
 Set<String> cores = {'vermelho', 'verde', 'azul'};
 ~~~
 
-## Null
+### Null
 
 Dart tem suporte para o tipo `Null`, que é usado para representar a ausência de um valor. Variáveis podem ser declaradas como nulas, a menos que sejam explicitamente marcadas como não nulas.
 
@@ -230,4 +238,182 @@ Se existe certeza de que uma variável nulável não é `null` em um determinado
 ~~~dart
 String? nomeNulavel = 'Dart';
 int tamanho = nomeNulavel!.length; // Se nomeNulavel for null, lançará uma exceção
+~~~
+
+## Estruturas Condicionais
+
+Em Dart, como em muitas outras linguagens de programação, as estruturas condicionais são usadas para controlar o fluxo do programa com base em condições específicas.
+
+### Estrutura `if`
+
+A instrução `if` é usada para executar um bloco de código se uma condição específica for verdadeira.
+
+~~~dart
+void main() {
+  int idade = 18;
+
+  if (idade >= 18) {
+    print('Você é maior de idade.');
+  }
+}
+~~~
+
+### Estrutura `if-else`
+
+A instrução `if-else` permite executar um bloco de código se a condição for verdadeira e outro bloco de código se a condição for falsa.
+
+~~~dart
+void main() {
+  int idade = 16;
+
+  if (idade >= 18) {
+    print('Você é maior de idade.');
+  } else {
+    print('Você é menor de idade.');
+  }
+}
+~~~
+
+### Estrutura `else If`
+
+A instrução `else if` permite testar múltiplas condições. Se a primeira condição for falsa, a próxima condição é testada, e assim por diante.
+
+~~~dart
+void main() {
+  int nota = 85;
+
+  if (nota >= 90) {
+    print('Nota A');
+  } else if (nota >= 80) {
+    print('Nota B');
+  } else if (nota >= 70) {
+    print('Nota C');
+  } else {
+    print('Nota F');
+  }
+}
+~~~
+
+### Operador Ternário
+
+O operador ternário `? :` é uma forma concisa de escrever uma expressão if-else. Ele é usado para retornar um valor com base em uma condição.
+
+~~~dart
+void main() {
+  int idade = 20;
+
+  String mensagem = (idade >= 18) ? 'Você é maior de idade.' : 'Você é menor de idade.';
+  print(mensagem);
+}
+~~~
+
+### Estrutura `switch-case`
+
+O `switch-case` é usado para executar um bloco de código com base no valor de uma expressão. É uma alternativa mais legível ao `else if` quando há muitas condições a serem verificadas.
+
+~~~dart
+void main() {
+  String cor = 'vermelho';
+
+  switch (cor) {
+    case 'vermelho':
+      print('A cor é vermelha.');
+      break;
+    case 'azul':
+      print('A cor é azul.');
+      break;
+    case 'verde':
+      print('A cor é verde.');
+      break;
+    default:
+      print('Cor desconhecida.');
+  }
+}
+~~~
+
+## Operadores Lógicos
+
+Os operadores lógicos em Dart são usados para combinar expressões booleanas e tomar decisões com base em várias condições. Eles são essenciais para o controle de fluxo em programas.
+
+### Operador E Lógico `&&`
+
+O operador E lógico retorna `true` se ambas as expressões forem verdadeiras. Caso contrário, retorna `false`.
+
+~~~dart
+void main() {
+  bool condicao1 = true;
+  bool condicao2 = false;
+
+  bool resultado = condicao1 && condicao2; // resultado será false
+  print('Resultado de condicao1 && condicao2: $resultado'); // Output: false
+}
+~~~
+
+### Operador OU Lógico `||`
+
+O operador OU lógico retorna `true` se pelo menos uma das expressões for verdadeira. Caso contrário, retorna `false`.
+
+~~~dart
+void main() {
+  bool condicao1 = true;
+  bool condicao2 = false;
+
+  bool resultado = condicao1 || condicao2; // resultado será true
+  print('Resultado de condicao1 || condicao2: $resultado'); // Output: true
+}
+~~~
+
+### Operador NÃO Lógico `!`
+
+O operador NÃO lógico inverte o valor de uma expressão booleana. Se a expressão for `true`, o operador retorna `false`, e vice-versa.
+
+~~~dart
+void main() {
+  bool condicao = true;
+
+  bool resultado = !condicao; // resultado será false
+  print('Resultado de !condicao: $resultado'); // Output: false
+}
+~~~
+
+### Combinação de Operadores Lógicos
+
+Pode-se combinar múltiplos operadores lógicos para criar expressões mais complexas.
+
+~~~dart
+void main() {
+  bool condicao1 = true;
+  bool condicao2 = false;
+  bool condicao3 = true;
+
+  // Combinação de operadores lógicos
+  bool resultado = (condicao1 && condicao3) || condicao2; // resultado será true
+  print('Resultado da combinação: $resultado'); // Output: true
+}
+~~~
+
+### Precedência de Operadores Lógicos
+
+Os operadores lógicos têm uma precedência específica que determina a ordem em que são avaliados. Em Dart, a precedência é a seguinte (da mais alta para a mais baixa):
+
+1. `!` (NÃO lógico)
+2. `&&` (E lógico)
+3. `||` (OU lógico)
+
+Pode-se usar parênteses para alterar a ordem de avaliação e tornar a expressão mais clara.
+
+~~~dart
+void main() {
+  bool condicao1 = true;
+  bool condicao2 = false;
+  bool condicao3 = true;
+
+  // Sem parênteses, && tem precedência sobre ||
+  bool resultado1 = condicao1 && condicao2 || condicao3; // resultado1 será true
+
+  // Com parênteses, a avaliação é alterada
+  bool resultado2 = condicao1 && (condicao2 || condicao3); // resultado2 será false
+  print('Resultado sem parênteses: $resultado1'); // Output: true
+  print('Resultado com parênteses: $resultado2'); // Output: false
+}
 ~~~
