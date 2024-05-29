@@ -9,6 +9,8 @@ Versão: 3.4
 - [Usando o Null Safety](#usando-o-null-safety)
 - [Estruturas Condicionais](#estruturas-condicionais)
 - [Operadores Lógicos](#operadores-lógicos)
+- [Listas (Arrays)](#listas-arrays)
+- [Iterar sobre Listas](#iterar-sobre-listas)
 
 ## Criando um novo projeto
 
@@ -417,3 +419,443 @@ void main() {
   print('Resultado com parênteses: $resultado2'); // Output: false
 }
 ~~~
+
+## Listas (Arrays)
+
+Em Dart, listas (arrays) são uma coleção ordenada de elementos que podem ser acessados por meio de índices. Listas são muito utilizadas para armazenar sequências de valores de um mesmo tipo.
+
+### Criar uma Lista
+
+É possível criar uma lista vazia e adicionar elementos posteriormente.
+
+~~~dart
+void main() {
+  List<int> numeros = [];
+  print(numeros); // Output: []
+}
+~~~
+
+Uma lista também pode ser criada com elementos iniciais.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  print(frutas); // Output: [maçã, banana, laranja]
+}
+~~~
+
+Uma lista também pode ser criada sem definir o seu tipo com o operador `var`, o que permite que o tipo seja inferido.
+
+~~~dart
+void main() {
+  var numeros = [1, 2, 3, 4, 5];
+  print(numeros); // Output: [1, 2, 3, 4, 5]
+}
+~~~
+
+### Gerar uma Lista
+
+É possível gerar uma lista de elementos conforme uma instrução específica com o método `List.generate`, preencher uma lista com `List.filled` e criar uma lista nova a partir de outra com os métodos `List.from` e `List.of`.
+
+~~~dart
+void main() {
+  List<int> listaGerada = List.generate(10, (index) => index * 3);
+  print(listaGerada); // Output: [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
+
+  List<String> listaPreenchida = List.filled(5, 'A');
+  print(listaPreenchida); // Output: [A, A, A, A, A]
+
+  List<int> listaOrigem = [4, 5, 6];
+  List<int> listaNova = List.from(listaOrigem);
+  print(listaNova); // Output: [4, 5, 6]
+  List<int> listaNova2 = List.of(listaOrigem);
+  print(listaNova2); // Output: [4, 5, 6]
+}
+~~~
+
+### Acessar Elementos
+
+Os elementos da lista são acessados por meio de índices, começando do índice `0`.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  print(frutas[0]); // Output: maçã
+  print(frutas[1]); // Output: banana
+  print(frutas[2]); // Output: laranja
+}
+~~~
+
+Isso também pode ser feito com o método `elementAt`.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  print(frutas.elementAt(2)); // Output: laranja
+}
+~~~
+
+O primeiro e o último elemento da lista podem ser acessados usando `first` e `last`.
+
+```dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  print(frutas.first); // Output: maçã
+  print(frutas.last); // Output: laranja
+}
+```
+
+Também pode-se acessar partes da lista (uma sublista) com o método `sublist`.
+
+```dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja', 'morango', 'uva'];
+  List<String> sublista = frutas.sublist(1, 4);
+  print(sublista); // Output: [banana, laranja, morango]
+}
+```
+
+Também é possível se obter o índice de um elemento específico com os métodos `indexOf` e `lastIndexOf`, sendo que o primeiro retorna o índice da primeira ocorrência do elemento na lista e o segundo a última.
+
+```dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja', 'banana'];
+  print(frutas.indexOf('banana')); // Output: 1
+  print(frutas.lastIndexOf('banana')); // Output: 3
+}
+```
+
+### Modificar Elementos
+
+Para modificar os elementos da lista basta atribuir novos valores aos índices correspondentes.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  frutas[1] = 'manga';
+  print(frutas); // Output: [maçã, manga, laranja]
+}
+~~~
+
+Também pode-se modificar os elementos com os métodos `setAll` (define todos os elementos a partir da posição especificada com os elementos do iterável), `fillRange` (preenche a faixa de índices especificada com o valor especificado) e `replaceRange` (substitui a faixa de elementos especificada com os elementos do iterável).
+
+```dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja', 'mamão', 'uva'];
+
+  frutas.setAll(1, ['manga', 'melancia']);
+  print(frutas); // Output: [maçã, manga, melancia, mamão, uva]
+
+  frutas.fillRange(2, 4, 'banana');
+  print(frutas); // [maçã, manga, banana, banana, uva]
+
+  frutas.replaceRange(0, 2, ['pêssego', 'goiaba']);
+  print(frutas); // [pêssego, goiaba, banana, banana, uva]
+}
+```
+
+### Adicionar e Inserir Elementos
+
+O método `add` é utilizado para adicionar um único elemento à lista.
+
+~~~dart
+void main() {
+  List<int> numeros = [1, 2, 3];
+  numeros.add(4);
+  print(numeros); // Output: [1, 2, 3, 4]
+}
+~~~
+
+Já o método `addAll` adiciona múltiplos elementos à lista.
+
+~~~dart
+void main() {
+  List<int> numeros = [1, 2, 3];
+  numeros.addAll([4, 5, 6]);
+  print(numeros); // Output: [1, 2, 3, 4, 5, 6]
+}
+~~~
+
+Também é possível inserir novos elementos em uma posição específica com os métodos `insert` (um elemento) e `insertAll` (vários elementos).
+
+~~~dart
+void main() {
+  List<int> numbers = [1, 2, 3];
+
+  numbers.insert(1, 10);
+  print(numbers); // Output: [1, 10, 2, 3]
+
+  numbers.insertAll(2, [20, 30]);
+  print(numbers); // Output: [1, 10, 20, 30, 2, 3]
+}
+~~~
+
+### Remover Elementos
+
+O método `remove` remove um elemento específico da lista.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  frutas.remove('banana');
+  print(frutas); // Output: [maçã, laranja]
+}
+~~~
+
+Para remover um elemento em um índice específico pode-se utilizar o método `removeAt`.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  frutas.removeAt(1);
+  print(frutas); // Output: [maçã, laranja]
+}
+~~~
+
+Para remover o último elemento da lista usa-se o método `removeLast`.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  frutas.removeLast();
+  print(frutas); // Output: [maçã, banana]
+}
+~~~
+
+O método `removeWhere` remove elementos segundo uma condição específica.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja', 'manga'];
+  frutas.removeWhere((fruta) => fruta[0] == 'm');
+  print(frutas); // Output: [banana, laranja]
+}
+~~~
+
+Para remover todos os elementos, ou seja, limpar a lista, usa-se o método `clear`.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  frutas.clear();
+  print(frutas); // Output: []
+}
+~~~
+
+### Ordenar, Reverter e Embaralhar uma Lista
+
+Pode-se usar o método `sort` para ordenar a lista usando a função de comparação especificada (ou a ordem natural, se nenhuma função for fornecida). Para reverter a ordem dos elementos usa-se o método `reversed`. Já o método `shuffle` embaralha os elementos.
+
+```dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja', 'mamão', 'uva'];
+  frutas.sort();
+  print(frutas); // Output: [maçã, manga, melancia, mamão, uva]
+  print(frutas.reversed); // Output: (maçã, manga, banana, banana, uva)
+  print(frutas.reversed.toList()); // Output: [uva, maçã, mamão, laranja, banana]
+  frutas.shuffle();
+  print(frutas); // [pêssego, goiaba, banana, banana, uva]
+}
+```
+
+Pode-se perceber que os métodos `sort` e `shuffle` alteram a lista original, enquanto que o método `reversed` somente retorna a lista invertida.
+
+### Tamanho de uma Lista
+
+Usando a propriedade `length` pode-se obter o número de elementos na lista.
+
+```dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  print(frutas.length); // Output: 3
+}
+```
+
+### Verificar Existência de Elementos
+
+É possível fazer diversas verificações acerca de uma lista. O método `contains` verifica se a lista possui um determinado elemento.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  print(frutas.contains('banana')); // Output: true
+}
+~~~
+
+Os métodos `isEmpty` e `isNotEmpty` verificam se a lista está ou não vazia.
+
+~~~dart
+void main() {
+  List<String> frutas = [];
+  print(frutas.isEmpty); // Output: true
+  print(frutas.isNotEmpty); // Output: false
+  frutas.add('maça');
+  print(frutas.isEmpty); // Output: false
+  print(frutas.isNotEmpty); // Output: true
+}
+~~~
+
+### Criar uma String a partir da Lista
+
+O método `join` combina todos os elementos da lista em uma única string, separando-os por um delimitador especificado.
+
+```dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  print(frutas.join(', ')); // Output: maçã, banana, laranja
+  print(frutas.join(' | ')); // Output: maçã | banana | laranja
+  print(frutas.join(' -> ')); // Output: maçã -> banana -> laranja
+}
+```
+
+## Iterar sobre Listas
+
+Em Dart, pode-se iterar sobre listas de várias maneiras, utilizando diferentes métodos e técnicas de iteração.
+
+### Usando `for`, `for-in` e `forEach`
+
+Os loops `for`, `for-in` e o método `forEach` são usados para iterar sobre listas ou outras coleções, mas têm diferenças importantes em termos de sintaxe, funcionalidades e uso.
+
+~~~dart
+void main() {
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+
+  for (int i = 0; i < frutas.length; i++) {
+    print(frutas[i]);
+  }
+  
+  for (var fruta in frutas) {
+    print(fruta);
+  }
+  
+  frutas.forEach((fruta) {
+    print(fruta);
+  });
+}
+~~~
+
+O loop `for` é muito flexível e permite um controle detalhado sobre o índice da iteração. É útil quando você precisa acessar o índice dos elementos ou manipular o índice durante a iteração. Já o loop Um loop `for-in` é mais simples e mais legível quando você só precisa acessar os elementos sem se preocupar com os índices. E o método `forEach` é uma função de ordem superior que aplica uma função callback a cada elemento da lista.
+
+As principais diferenças entre essas três formas são:
+
+- O loop `for` é o único que permite acesso direto e manipulação dos índices da lista;
+- O método `forEach` não suporta o uso de break e continue, o que pode ser feito nos loops `for` e `for-in`;
+- O método `for` é o único que permite leitura e modificação dos elementos da lista, enquanto que `for-in` e `forEach` não permite modificação;
+
+### Usando `map`
+
+O método `map` aplica uma função a cada elemento e retorna uma nova lista com os resultados.
+
+~~~dart
+void main() {
+  List<int> numeros = [1, 2, 3];
+  List<int> quadrados = numeros.map((numero) => numero * numero).toList();
+  print(quadrados); // Output: [1, 4, 9]
+}
+~~~
+
+### Usando `where`
+
+O método `where` filtra elementos com base em uma condição e retorna uma nova lista com os elementos que satisfazem a condição.
+
+~~~dart
+void main() {
+  List<int> numeros = [1, 2, 3, 4, 5];
+  List<int> pares = numeros.where((numero) => numero % 2 == 0).toList();
+  print(pares); // Output: [2, 4]
+}
+~~~
+
+### Usando `expand`
+
+O método `expand` aplica uma função a cada elemento e retorna uma única lista contendo os resultados concatenados.
+
+~~~dart
+void main() {
+  List<List<int>> listas = [
+    [1, 2, 3],
+    [4, 5],
+    [6, 7, 8]
+  ];
+  List<int> todosOsNumerosAoQuadrado = listas
+      .expand((lista) => lista.map((n) => n * n).toList())
+      .toList();
+  print(todosOsNumeros); // Output: [1, 4, 9, 16, 25, 36, 49, 64]
+}
+~~~
+
+### Usando `reduce` e `fold`
+
+O método `reduce` combina todos os elementos da lista em um único valor, aplicando uma função binária.
+
+~~~dart
+void main() {
+  List<int> numeros = [1, 2, 3, 4, 5];
+  int soma = numeros.reduce((a, b) => a + b);
+  print(soma); // Output: 15
+}
+~~~
+
+O método `fold` é semelhante ao `reduce`, mas permite especificar um valor inicial.
+
+~~~dart
+void main() {
+  List<int> numeros = [1, 2, 3, 4, 5];
+  int soma = numeros.fold(10, (anterior, atual) => anterior + atual);
+  print(soma); // Output: 25
+}
+~~~
+
+### Usando `every` e `any`
+
+O método `every` verifica se todos os elementos satisfazem uma condição, enquanto que `any` verifica se algum dos elementos satisfaz uma condição.
+
+~~~dart
+void main() {
+  List<int> numeros = [2, 4, 6, 8, 9];
+  
+  bool todosPares = numeros.every((numero) => numero % 2 == 0);
+  print(todosPares); // Output: false
+  
+  bool algumPar = numeros.any((numero) => numero % 2 == 0);
+  print(algumPar); // Output: true
+}
+~~~
+
+### Usando `take` e `skip`
+
+O método `take` pega os primeiros n elementos da lista e `skip` pula os primeiros n elementos da lista e retornar o restante.
+
+~~~dart
+void main() {
+  List<int> numeros = [1, 2, 3, 4, 5, 6];
+  
+  var primeirosTres = numeros.take(3).toList();
+  print(primeirosTres); // Output: [1, 2, 3]
+  
+  var depoisDeTres = numeros.skip(3).toList();
+  print(depoisDeTres); // Output: [4, 5, 6]
+}
+~~~
+
+### Usando `takeWhile` e `skipWhile`
+
+O método `takeWhile` pega os elementos enquanto a condição for verdadeira e `skipWhile` pula os elementos enquanto a condição for verdadeira e retornar o restante.
+
+~~~dart
+void main() {
+  List<int> numeros = [1, 2, 3, 4, 5];
+  
+  var menoresQueQuatro = numeros.takeWhile((numero) => numero < 4).toList();
+  print(menoresQueQuatro); // Output: [1, 2, 3]
+  
+  var aPartirDeQuatro = numeros.skipWhile((numero) => numero < 4).toList();
+  print(aPartirDeQuatro); // Output: [4, 5]
+}
+~~~
+
+<!--
+~~~dart
+
+~~~
+-->
