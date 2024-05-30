@@ -1132,8 +1132,7 @@ Usando-se as duas formas de declaração unidas pode-se definir uma lista que po
 ```dart
 void main() {
   List<String?>? frutas1 = [null];  // Compila
-  List<String?>? frutas2 = [null];  // Compila
-  List<String?>? frutas3 = null;    // Compila
+  List<String?>? frutas2 = null;    // Compila
 }
 ```
 
@@ -1300,7 +1299,7 @@ void main() {
 }
 ```
 
-## Consultas
+### Consultas
 
 O método `contains` também existe nos Sets e funciona da mesma forma que nas listas, assim como as propriedades `isEmpty` e `isNotEmpty`. Existe ainda o método `containsAll` que verifica se o `Set` possui um conjunto de elementos.
 
@@ -1339,6 +1338,204 @@ void main() {
   print(numeros1.union(numeros2)); // Output: {1, 2, 3, 4, 5, 6, 7, 8}
   print(numeros1.difference(numeros2)); // Output: {1, 2, 3}
   print(numeros1.lookup(9)); // Output: null
+}
+```
+
+## Iterar sobre Sets
+
+Em Dart, pode-se iterar sobre um `Set` da mesma maneira que em uma lista, atentando-se ao fato de que alguns métodos retornam um iterable, sendo necessário sua conversão de volta para um `Set` com o método `toSet`.
+
+### Usando `for`, `for-in` e `forEach`
+
+Os loops `for`, `for-in` e o método `forEach` funcionam da mesma forma que nas listas.
+
+~~~dart
+void main() {
+  Set<String> frutas = {'maçã', 'banana', 'laranja'};
+
+  for (int i = 0; i < frutas.length; i++) {
+    print(frutas.elementAt(i));
+  }
+  
+  for (var fruta in frutas) {
+    print(fruta);
+  }
+  
+  frutas.forEach((fruta) {
+    print(fruta);
+  });
+}
+~~~
+
+### Usando `map`, `where`, `reduce`, `fold` e `expand`
+
+Os métodos `map`, `where`, `reduce`, `fold` e `expand` funcionam da mesma forma qu e nas listas, ressaltando-se que todos os elementos repetidos são eliminados do `Set` final.
+
+~~~dart
+void main() {
+  Set<int> numeros = {1, 2, 3, 4, 5};
+  
+  Set<int> quadrados = numeros.map((numero) => numero * numero).toSet();
+  print(quadrados); // Output: {1, 4, 9, 16, 25}
+  
+  Set<int> pares = numeros.where((numero) => numero % 2 == 0).toSet();
+  print(pares); // Output: {2, 4}
+  
+  int soma = numeros.reduce((a, b) => a + b);
+  print(soma);// Output: 15
+  
+  soma = numeros.fold(10, (anterior, atual) => anterior + atual);
+  print(soma);// Output: 25
+  
+  Set<int> outrosNumeros = {3, 4, 5, 6, 7};
+  
+  Set<Set<int>> todosOsNumeros = {
+    numeros,
+    outrosNumeros,
+  };
+  
+  Set<int> todosOsNumerosAoQuadrado = todosOsNumeros
+      .expand((lista) => lista.map((n) => n * n).toSet())
+      .toSet();
+  print(todosOsNumerosAoQuadrado); // Output: {1, 4, 9, 16, 25, 36, 49}
+}
+~~~
+
+### Usando `every` e `any`
+
+Ambos os métodos `every` e `any` funcionam da mesma forma que em listas.
+
+~~~dart
+void main() {
+  Set<int> numeros = {2, 4, 6, 8, 9};
+  
+  bool todosPares = numeros.every((numero) => numero % 2 == 0);
+  print(todosPares); // Output: false
+  
+  bool algumPar = numeros.any((numero) => numero % 2 == 0);
+  print(algumPar); // Output: true
+}
+~~~
+
+### Usando `take`, `skip`, `takeWhile` e `skipWhile`
+
+Os métodos `take`, `skip`, `takeWhile` e `skipWhile` também funcionam da mesma forma que nas listas.
+
+~~~dart
+void main() {
+  Set<int> numeros = {1, 2, 3, 4, 5, 6};
+  
+  var primeirosTres = numeros.take(3).toSet();
+  print(primeirosTres); // Output: {1, 2, 3}
+  
+  var depoisDeTres = numeros.skip(3).toSet();
+  print(depoisDeTres); // Output: {4, 5, 6}
+  
+  var menoresQueQuatro = numeros.takeWhile((numero) => numero < 4).toSet();
+  print(menoresQueQuatro); // Output: {1, 2, 3}
+  
+  var aPartirDeQuatro = numeros.skipWhile((numero) => numero < 4).toSet();
+  print(aPartirDeQuatro); // Output: {4, 5, 6}
+}
+~~~
+
+## Usando Null Safety com Sets
+
+O Null Safety tmambm permite que se trabalhe de forma mais assegurada com Sets que podem ser nulos ou conter elementos nulos.
+
+### Sets Nulos e Elementos Nulos
+
+Pode-se declarar um `Set` que pode ser nulo usando o operador `?` após a sua declaração. Isso significa que a variável pode ser uma lista ou `null`, mas os seus elementos não podem ser nulos.
+
+```dart
+void main() {
+  Set<String>  frutas1 = null;   // Não compila
+  Set<String>? frutas2 = null;   // Compila
+  Set<String>? frutas3 = {null}; // Não Compila
+}
+```
+
+Colocando-se o operador `?` após a declaração do tipo do `Set` define que ele pode conter elementos nulos, mas o `Set` em si não pode ser nulo.
+
+```dart
+void main() {
+  Set<String>  frutas1 = {null};   // Não compila
+  Set<String?> frutas2 = {null};   // Compila
+  Set<String?> frutas3 = null;     // Não Compila
+}
+```
+
+Usando-se as duas formas de declaração unidas pode-se definir um `Set` que pode ser nulo e que pode conter elementos nulos.
+
+```dart
+void main() {
+  Set<String?>? frutas1 = {null};  // Compila
+  Set<String?>? frutas2 = null;    // Compila
+}
+```
+
+### Acesso a Elementos Nulos
+
+O operador de acesso seguro `?.` pode ser usado para acessar elementos de um `Set` que podem ser nulos.
+
+```dart
+void main() {
+  Set<String?> frutas = {'maçã', null, 'laranja'};
+  
+  String? primeiraFruta = frutas.elementAt(0);
+  print(primeiraFruta?.toUpperCase()); // Output: MAÇÃ
+  
+  String? segundaFruta = frutas.elementAt(1);
+  print(segundaFruta?.toUpperCase()); // Output: null
+}
+```
+
+### `Set` com Valor Padrão
+
+Um valor padrão pode ser atribuido a um `Set` que pode ser nulo usando o operador `??`.
+
+```dart
+void main() {
+  Set<String>? frutas;
+
+  Set<String> frutasSeguras = frutas ?? {};
+  print(frutasSeguras.length); // Output: 0
+}
+```
+
+O mesmo pode ser feito no caso de adicionar valor padrão a elementos de um `Set` caso estes sejam nulos.
+
+```dart
+void main() {
+  String fruta1 = 'maça';
+  String? fruta2 = null;
+  String fruta3 = 'laranja';
+  
+  Set<String> frutas = {
+    fruta1,
+    fruta2 ?? 'banana',
+    fruta3
+  };
+  
+  print(frutas); // Output: {maça, banana, laranja}
+}
+```
+
+### Iterando com Sets Nulos
+
+É possível utilizar os métodos como `map`, `where` e outros, lidando com elementos nulos de maneira segura.
+
+```dart
+void main() {
+  Set<String?> frutas = {'maçã', null, 'laranja'};
+  
+  // Remove elementos nulos
+  Set<String> frutasSemNulos = frutas
+    .where((fruta) => fruta != null)
+    .map((fruta) => fruta!)
+    .toSet();
+
+  print(frutasSemNulos); // Output: {maçã, laranja}
 }
 ```
 
