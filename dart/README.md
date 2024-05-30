@@ -10,12 +10,16 @@ Versão: 3.4
 - [Criando um novo projeto](#criando-um-novo-projeto)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Tipos de dados](#tipos-de-dados)
+- [Conversão entre Tipos](#conversão-entre-tipos)
 - [Declaração de variáveis](#declaração-de-variáveis)
-- [Usando o Null Safety](#usando-o-null-safety)
-- [Estruturas Condicionais](#estruturas-condicionais)
+- [Usando Null Safety com Variáveis](#usando-null-safety-com-variáveis)
+- [Operadores de Comparação](#operadores-de-comparação)
 - [Operadores Lógicos](#operadores-lógicos)
+- [Estruturas Condicionais](#estruturas-condicionais)
+- [Estruturas de Repetição](#estruturas-de-repetição)
 - [Listas (Arrays)](#listas-arrays)
 - [Iterar sobre Listas](#iterar-sobre-listas)
+- [Usando Null Safety com Listas](#usando-null-safety-com-listas)
 
 ## Criando um novo projeto
 
@@ -148,6 +152,102 @@ String? nomeNulo = null;
 int? numeroNulo = null;
 ~~~
 
+## Conversão entre Tipos
+
+No Dart, é comum precisar converter entre diferentes tipos de dados, como entre inteiros, strings e números de ponto flutuante. Dart oferece várias maneiras de realizar essas conversões de forma segura e eficiente.
+
+### Convertendo `String` para `int` e `double`
+
+Para converter uma `String` em um `int`, pode-se usar o método `int.parse`. Para converter para `double` utiliza-se o método `double.parse`.
+
+```dart
+void main() {
+  String numeroStr = '123';
+  int numeroInt = int.parse(numeroStr);
+  print(numeroInt); // Output: 123
+
+  String numeroStr = '123.45';
+  double numeroDouble = double.parse(numeroStr);
+  print(numeroDouble); // Output: 123.45
+}
+```
+
+Os métodos acima sempre lançam uma exceção caso não seja possível converter a `String`. Para evitar isso existem os métodos `int.tryParse` e `double.tryParse`, ambos retornam o valor `null` caso a conversão não possa ser realizada.
+
+```dart
+void main() {
+  String numeroStr = '123a';
+  int? numeroInt = int.tryParse(numeroStr);
+  print(numeroInt); // Output: null
+
+  String numeroStr = '123.45a';
+  double? numeroDouble = double.tryParse(numeroStr);
+  print(numeroDouble); // Output: null
+}
+```
+
+### Convertendo `int` e `double` para `String`
+
+Para converter um `int` ou um `double` para `String`, basta utilizar o método `toString`.
+
+```dart
+void main() {
+  int numeroInt = 123;
+  String numeroStr = numeroInt.toString();
+  print(numeroStr); // Output: 123
+
+  double numeroDouble = 123.45;
+  String numeroStr = numeroDouble.toString();
+  print(numeroStr); // Output: 123.45
+}
+```
+
+### Convertendo `List` para `Set` e `Map`
+
+Para converter uma lista (`List`) em um `Set` pode-se utilizar o construtor `Set`. Neste caso, qualquer elemento repetido é eliminado.
+
+```dart
+void main() {
+  List<int> lista = [1, 2, 3, 4, 4, 5];
+  Set<int> conjunto = Set.from(lista);
+  print(conjunto); // Output: {1, 2, 3, 4, 5}
+}
+```
+
+Para converter em um `Map` utiliza-se o método `asMap`, que retorna um map onde as chaves são os índices da lista.
+
+```dart
+void main() {
+  List<String> lista = ['a', 'b', 'c'];
+  Map<int, String> mapa = lista.asMap();
+  print(mapa); // Output: {0: a, 1: b, 2: c}
+}
+```
+
+### Convertendo `Set` e `Map` para `List`
+
+Para converter um `Set` em uma `List` pode-se utilizar o método `toList`.
+
+```dart
+void main() {
+  Set<int> conjunto = {1, 2, 3, 4, 5};
+  List<int> lista = conjunto.toList();
+  print(lista); // Output: [1, 2, 3, 4, 5]
+}
+```
+
+O mesmo pode ser feito no caso de um `Map`, mas deve-se fazer a conversão individual das suas chaves e dos seus valores a partir das propriedades `keys` e `values`.
+
+```dart
+void main() {
+  Map<int, String> mapa = {0: 'a', 1: 'b', 2: 'c'};
+  List<int> chaves = mapa.keys.toList();
+  List<String> valores = mapa.values.toList();
+  print(chaves); // Output: [0, 1, 2]
+  print(valores); // Output: [a, b, c]
+}
+```
+
 ## Declaração de variáveis
 
 Em Dart, a declaração de variáveis pode ser feita de várias maneiras, permitindo diferentes níveis de especificidade e flexibilidade. 
@@ -198,7 +298,7 @@ const nomeConst = 'Constante'; // inferido como String
 
 A principal diferença entre as duas formas é que o usando `final` o valor é fixo após a atribuição inicial, mas pode ser determinado em tempo de execução. Já com `const` o valor é fixo e deve ser conhecido em tempo de compilação.
 
-## Usando o Null Safety
+## Usando Null Safety com Variáveis
 
 Null safety é um recurso introduzido no Dart 2.12 para ajudar a evitar erros comuns relacionados ao uso de valores `null`. Com null safety, o sistema de tipos de Dart ajuda a garantir que valores `null` não sejam utilizados inadvertidamente, prevenindo muitos tipos de exceções em tempo de execução.
 
@@ -238,13 +338,141 @@ String? texto;
 int? tamanho = texto?.length; // Se texto for null, tamanho será null
 ~~~
 
-### Operador de Aserção Não Nula `!`
+### Operador de Asserção Não Nula `!`
 
 Se existe certeza de que uma variável nulável não é `null` em um determinado ponto do código, pode-se usar o operador de asserção não nula `!` para forçar o compilador a tratar a variável como não nula. Deve ser usado com cautela, pois se a variável for `null`, ocorrerá uma exceção em tempo de execução.
 
 ~~~dart
 String? nomeNulavel = 'Dart';
 int tamanho = nomeNulavel!.length; // Se nomeNulavel for null, lançará uma exceção
+~~~
+
+## Operadores de Comparação
+
+Os operadores de comparação em Dart são utilizados para comparar valores. Eles retornam um valor booleano (`true` ou `false`) com base na comparação realizada. São eles:
+
+| Símbolo | Significado                |
+|---------|----------------------------|
+| `==`    | Igualdade                  |
+| `!=`    | Desigualdade               |
+| `>`     | Maior que                  |
+| `<`     | Menor que                  |
+| `>=`    | Maior ou igual que         |
+| `<=`    | Menor ou igual que         |
+
+Os operadores funcionam da seguinte maneira:
+
+```dart
+void main() {
+  int a = 5;
+  int b = 5;
+  int c = 10;
+
+  print(a == b); // true
+  print(a == c); // false
+
+  print(a != b); // false
+  print(a != c); // true
+
+  print(c > a); // true
+  print(a > b); // false
+
+  print(b < c); // true
+  print(b < a); // false
+
+  print(b >= a); // true
+  print(a >= c); // false
+
+  print(b <= a); // true
+  print(c <= b); // false
+}
+```
+
+## Operadores Lógicos
+
+Os operadores lógicos em Dart são usados para combinar expressões booleanas e tomar decisões com base em várias condições. Eles são essenciais para o controle de fluxo em programas.
+
+### Operador E Lógico `&&`
+
+O operador E lógico retorna `true` se ambas as expressões forem verdadeiras. Caso contrário, retorna `false`.
+
+~~~dart
+void main() {
+  bool condicao1 = true;
+  bool condicao2 = false;
+
+  bool resultado = condicao1 && condicao2; // resultado será false
+  print('Resultado de condicao1 && condicao2: $resultado'); // Output: false
+}
+~~~
+
+### Operador OU Lógico `||`
+
+O operador OU lógico retorna `true` se pelo menos uma das expressões for verdadeira. Caso contrário, retorna `false`.
+
+~~~dart
+void main() {
+  bool condicao1 = true;
+  bool condicao2 = false;
+
+  bool resultado = condicao1 || condicao2; // resultado será true
+  print('Resultado de condicao1 || condicao2: $resultado'); // Output: true
+}
+~~~
+
+### Operador NÃO Lógico `!`
+
+O operador NÃO lógico inverte o valor de uma expressão booleana. Se a expressão for `true`, o operador retorna `false`, e vice-versa.
+
+~~~dart
+void main() {
+  bool condicao = true;
+
+  bool resultado = !condicao; // resultado será false
+  print('Resultado de !condicao: $resultado'); // Output: false
+}
+~~~
+
+### Combinação de Operadores Lógicos
+
+Pode-se combinar múltiplos operadores lógicos para criar expressões mais complexas.
+
+~~~dart
+void main() {
+  bool condicao1 = true;
+  bool condicao2 = false;
+  bool condicao3 = true;
+
+  // Combinação de operadores lógicos
+  bool resultado = (condicao1 && condicao3) || condicao2; // resultado será true
+  print('Resultado da combinação: $resultado'); // Output: true
+}
+~~~
+
+### Precedência de Operadores Lógicos
+
+Os operadores lógicos têm uma precedência específica que determina a ordem em que são avaliados. Em Dart, a precedência é a seguinte (da mais alta para a mais baixa):
+
+1. `!` (NÃO lógico)
+2. `&&` (E lógico)
+3. `||` (OU lógico)
+
+Pode-se usar parênteses para alterar a ordem de avaliação e tornar a expressão mais clara.
+
+~~~dart
+void main() {
+  bool condicao1 = true;
+  bool condicao2 = false;
+  bool condicao3 = true;
+
+  // Sem parênteses, && tem precedência sobre ||
+  bool resultado1 = condicao1 && condicao2 || condicao3; // resultado1 será true
+
+  // Com parênteses, a avaliação é alterada
+  bool resultado2 = condicao1 && (condicao2 || condicao3); // resultado2 será false
+  print('Resultado sem parênteses: $resultado1'); // Output: true
+  print('Resultado com parênteses: $resultado2'); // Output: false
+}
 ~~~
 
 ## Estruturas Condicionais
@@ -338,92 +566,86 @@ void main() {
 }
 ~~~
 
-## Operadores Lógicos
+## Estruturas de Repetição
 
-Os operadores lógicos em Dart são usados para combinar expressões booleanas e tomar decisões com base em várias condições. Eles são essenciais para o controle de fluxo em programas.
+Em Dart, existem várias estruturas de repetição (ou laços) que permitem iterar sobre blocos de código múltiplas vezes. As principais estruturas de repetição em Dart são `for`, `for-in`, `while`, e `do-while`.
 
-### Operador E Lógico `&&`
+### Loop `for`
 
-O operador E lógico retorna `true` se ambas as expressões forem verdadeiras. Caso contrário, retorna `false`.
+O `for` é usado quando sabe-se de antemão quantas vezes deseja-se executar um bloco de código. Ele consiste em três partes: inicialização, condição e incremento.
 
-~~~dart
+```dart
 void main() {
-  bool condicao1 = true;
-  bool condicao2 = false;
-
-  bool resultado = condicao1 && condicao2; // resultado será false
-  print('Resultado de condicao1 && condicao2: $resultado'); // Output: false
+  for (int i = 0; i < 5; i++) {
+    print('Iteração $i');
+  }
 }
-~~~
+```
 
-### Operador OU Lógico `||`
+### Loop `for-in`
 
-O operador OU lógico retorna `true` se pelo menos uma das expressões for verdadeira. Caso contrário, retorna `false`.
+O `for-in` é usado para iterar sobre elementos de uma coleção (como listas, sets ou maps) de forma mais simples e legível.
 
-~~~dart
+
+```dart
 void main() {
-  bool condicao1 = true;
-  bool condicao2 = false;
-
-  bool resultado = condicao1 || condicao2; // resultado será true
-  print('Resultado de condicao1 || condicao2: $resultado'); // Output: true
+  List<String> frutas = ['maçã', 'banana', 'laranja'];
+  for (var fruta in frutas) {
+    print(fruta);
+  }
 }
-~~~
+```
 
-### Operador NÃO Lógico `!`
+### Loop `while`
 
-O operador NÃO lógico inverte o valor de uma expressão booleana. Se a expressão for `true`, o operador retorna `false`, e vice-versa.
+O `while` é usado quando não se sabe de antemão quantas vezes o bloco de código deve ser executado. Ele continua executando enquanto a condição especificada for verdadeira.
 
-~~~dart
+```dart
 void main() {
-  bool condicao = true;
+  int contador = 0;
 
-  bool resultado = !condicao; // resultado será false
-  print('Resultado de !condicao: $resultado'); // Output: false
+  // Imprimir impares menores que 10
+  while (contador < 10) {
+    if (contador % 2 != 0) {
+      print(contador);
+    }
+    contador++;
+  }
 }
-~~~
+```
 
-### Combinação de Operadores Lógicos
+### Loop `do-while`
 
-Pode-se combinar múltiplos operadores lógicos para criar expressões mais complexas.
+O `do-while` é semelhante ao `while`, mas a condição é avaliada após a execução do bloco de código, garantindo que o bloco seja executado pelo menos uma vez.
 
-~~~dart
+```dart
 void main() {
-  bool condicao1 = true;
-  bool condicao2 = false;
-  bool condicao3 = true;
+  int contador = 5;
 
-  // Combinação de operadores lógicos
-  bool resultado = (condicao1 && condicao3) || condicao2; // resultado será true
-  print('Resultado da combinação: $resultado'); // Output: true
+  do {
+    print(contador);
+    contador++;
+  } while (contador < 5);
 }
-~~~
+```
 
-### Precedência de Operadores Lógicos
+### Comando `break` e `continue`
 
-Os operadores lógicos têm uma precedência específica que determina a ordem em que são avaliados. Em Dart, a precedência é a seguinte (da mais alta para a mais baixa):
+Os comandos `break` e `continue` são utilizados para interromper alguma ação em um loop. O `continue` interrompe a iteração atual e pula para a próxima, enquanto que o `break` interrompe a execução do loop em si.
 
-1. `!` (NÃO lógico)
-2. `&&` (E lógico)
-3. `||` (OU lógico)
-
-Pode-se usar parênteses para alterar a ordem de avaliação e tornar a expressão mais clara.
-
-~~~dart
+```dart
 void main() {
-  bool condicao1 = true;
-  bool condicao2 = false;
-  bool condicao3 = true;
-
-  // Sem parênteses, && tem precedência sobre ||
-  bool resultado1 = condicao1 && condicao2 || condicao3; // resultado1 será true
-
-  // Com parênteses, a avaliação é alterada
-  bool resultado2 = condicao1 && (condicao2 || condicao3); // resultado2 será false
-  print('Resultado sem parênteses: $resultado1'); // Output: true
-  print('Resultado com parênteses: $resultado2'); // Output: false
+  for (int i = 0; i < 5; i++) {
+    if (i == 2) {
+      continue; // Pula a iteração quando i é 2
+    }
+    if (i == 4) {
+      break; // Interrompe o loop quando i é 4
+    }
+    print('Iteração $i');
+  }
 }
-~~~
+```
 
 ## Listas (Arrays)
 
@@ -595,6 +817,24 @@ void main() {
 }
 ~~~
 
+Também é possível adicionar elementos de forma condicional utilizando outras estruturas, como `if-else`.
+
+```dart
+void main() {
+  String fruta1 = 'maça';
+  String? fruta2 = null;
+  String fruta3 = 'laranja';
+  
+  List<String> frutas = [
+    fruta1,
+    if(fruta2 != null) 'banana' else 'mamão',
+    fruta3
+  ];
+  
+  print(frutas); // Output: [maça, mamão, laranja]
+}
+```
+
 ### Remover Elementos
 
 O método `remove` remove um elemento específico da lista.
@@ -715,7 +955,7 @@ void main() {
 
 ## Iterar sobre Listas
 
-Em Dart, pode-se iterar sobre listas de várias maneiras, utilizando diferentes métodos e técnicas de iteração.
+Em Dart, pode-se iterar sobre listas de várias maneiras, utilizando diferentes métodos e técnicas de iteração. Deve ter atenção ao utilizar alguns desses métodos, pois muitos deles retornam um iterable, que é diferente de uma lista, sendo necessário sua conversão de volta para lista com o método `toList`.
 
 ### Usando `for`, `for-in` e `forEach`
 
@@ -849,18 +1089,121 @@ O método `takeWhile` pega os elementos enquanto a condição for verdadeira e `
 
 ~~~dart
 void main() {
-  List<int> numeros = [1, 2, 3, 4, 5];
+  List<int> numeros = [1, 2, 3, 4, 5, 6];
   
   var menoresQueQuatro = numeros.takeWhile((numero) => numero < 4).toList();
   print(menoresQueQuatro); // Output: [1, 2, 3]
   
   var aPartirDeQuatro = numeros.skipWhile((numero) => numero < 4).toList();
-  print(aPartirDeQuatro); // Output: [4, 5]
+  print(aPartirDeQuatro); // Output: [4, 5, 6]
 }
 ~~~
 
-<!--
-~~~dart
+## Usando Null Safety com Listas
 
-~~~
+Quando trabalha-se com listas, o Null Safety permite que se trabalhe de forma mais assegurada com listas que podem ser nulas ou conter elementos nulos.
+
+### Listas Nulas e Elementos Nulos
+
+Pode-se declarar uma lista que pode ser nula usando o operador `?` após a declaração da lista. Isso significa que a variável pode ser uma lista ou `null`, mas os seus elementos não podem ser nulos.
+
+```dart
+void main() {
+  List<String>  frutas1 = null;   // Não compila
+  List<String>? frutas2 = null;   // Compila
+  List<String>? frutas3 = [null]; // Não Compila
+}
+```
+
+Colocando-se o operador `?` após a declaração do tipo da lista define que a lista pode conter elementos nulos, mas elas em si não pode ser nula.
+
+```dart
+void main() {
+  List<String>  frutas1 = [null];   // Não compila
+  List<String?> frutas2 = [null];   // Compila
+  List<String?> frutas3 = null;     // Não Compila
+}
+```
+
+Usando-se as duas formas de declaração unidas pode-se definir uma lista que pode ser nula e que pode conter elementos nulos.
+
+```dart
+void main() {
+  List<String?>? frutas1 = [null];  // Compila
+  List<String?>? frutas2 = [null];  // Compila
+  List<String?>? frutas3 = null;    // Compila
+}
+```
+
+### Acesso a Elementos Nulos
+
+O operador de acesso seguro `?.` pode ser usado para acessar elementos de uma lista que podem ser nulos.
+
+```dart
+void main() {
+  List<String?> frutas = ['maçã', null, 'laranja'];
+  
+  String? primeiraFruta = frutas[0];
+  print(primeiraFruta?.toUpperCase()); // Output: MAÇÃ
+  
+  String? segundaFruta = frutas[1];
+  print(segundaFruta?.toUpperCase()); // Output: null
+}
+```
+
+### Lista com Valor Padrão
+
+Um valor padrão pode ser atribuido para uma lista que pode ser nula usando o operador `??`.
+
+```dart
+void main() {
+  List<String>? frutas;
+
+  List<String> frutasSeguras = frutas ?? [];
+  print(frutasSeguras.length); // Output: 0
+}
+```
+
+O mesmo pode ser feito no caso de adicionar valor padrão a elementos a uma lista caso estes sejam nulos.
+
+```dart
+void main() {
+  String fruta1 = 'maça';
+  String? fruta2 = null;
+  String fruta3 = 'laranja';
+  
+  List<String> frutas = [
+    fruta1,
+    fruta2 ?? 'banana',
+    fruta3
+  ];
+  
+  print(frutas); // Output: [maça, banana, laranja]
+}
+```
+
+### Iterando com Listas Nulas
+
+É possível utilizar os métodos como `map`, `where` e outros, lidando com elementos nulos de maneira segura.
+
+```dart
+void main() {
+  List<String?> frutas = ['maçã', null, 'laranja'];
+  
+  // Remove elementos nulos
+  List<String> frutasSemNulos = frutas
+    .where((fruta) => fruta != null)
+    .map((fruta) => fruta!)
+    .toList();
+
+  print(frutasSemNulos); // Output: [maçã, laranja]
+}
+```
+
+<!--
+```dart
+
+```
 -->
+
+## FIM
