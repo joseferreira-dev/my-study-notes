@@ -21,6 +21,8 @@ Versão: 3.4
 - [Iterar sobre Listas](#iterar-sobre-listas)
 - [Usando Null Safety com Listas](#usando-null-safety-com-listas)
 - [Sets](#sets-1)
+- [Iterar sobre Sets](#iterar-sobre-sets)
+- [Usando Null Safety com Sets](#usando-null-safety-com-sets)
 - [Funções](#funções)
 
 ## Criando um novo projeto
@@ -942,7 +944,7 @@ void main() {
 }
 ~~~
 
-### Criar uma String a partir da Lista
+### Criar uma String a partir de uma Lista
 
 O método `join` combina todos os elementos da lista em uma única string, separando-os por um delimitador especificado.
 
@@ -952,6 +954,37 @@ void main() {
   print(frutas.join(', ')); // Output: maçã, banana, laranja
   print(frutas.join(' | ')); // Output: maçã | banana | laranja
   print(frutas.join(' -> ')); // Output: maçã -> banana -> laranja
+}
+```
+
+### Criar uma Lista a partir de uma String
+
+O método `split` separa todas as palavras de uma `String` para formar uma lista utilizando como base o separador especificado.
+
+```dart
+void main() {
+  String texto = "Olá mundo esta é uma string";
+
+  List<String> palavras = texto.split(' ');
+
+  print(palavras); // Output: [Olá, mundo, esta, é, uma, string]
+}
+```
+
+Também é possível associar este método com o método `trim` e outros para casos em que se tenha delimitadores ou espaços em branco extras.
+
+```dart
+void main() {
+  String texto = " Olá   mundo  esta é  uma string ";
+
+  // Dividir a string por espaços e remover espaços em branco extras
+  List<String> palavras = texto
+      .split(' ')
+      .map((palavra) => palavra.trim())
+      .where((palavra) => palavra.isNotEmpty)
+      .toList();
+
+  print(palavras); // Output: [Olá, mundo, esta, é, uma, string]
 }
 ```
 
