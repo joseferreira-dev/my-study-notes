@@ -7,6 +7,10 @@
 
 - [Introdução](#introdução)
 - [Operadores Artiméticos](#operadores-aritméticos)
+- [Operadores de Atribuição](#operadores-de-atribuição)
+- [Operadores de Incremento e Decremento](#operadores-de-incremento-e-decremento)
+  - [Operador de Incremento](#operador-de-incremento)
+  - [Operador de Decremento](#operador-de-decremento)
 - [Operadores de Comparação](#operadores-de-comparação)
 - [Operadores Lógicos](#operadores-lógicos)
   * [Operador E Lógico `&&`](#operador-e-lógico-)
@@ -83,6 +87,62 @@ void main() {
   print(c); // Output: 3
   c %= b;
   print(c); // Output: 1
+}
+```
+
+## Operadores de Incremento e Decremento
+
+Os operadores de incremento e decremento são operadores unários que aumentam ou diminuem o valor de uma variável numérica em uma unidade. Esses operadores são úteis para simplificar expressões que, de outra forma, exigiriam operações aritméticas mais longas.
+
+### Operador de Incremento
+
+O operador de incremento adiciona 1 ao valor da variável. Existem duas formas de usar o operador de incremento `++`.
+
+No pré-incremento, onde a variável é incrementada em 1 antes de ser usada na expressão.
+
+```dart
+void main() {
+  int a = 5;
+  int b = ++a; // a é incrementado para 6, então b recebe o valor 6
+  print(a); // Output: 6
+  print(b); // Output: 6
+}
+```
+
+E no pós-incremento, a variável é usada na expressão e, em seguida, é incrementada em 1.
+
+```dart
+void main() {
+  int a = 5;
+  int b = a++; // b recebe o valor 5, então a é incrementado para 6
+  print(a); // Output: 6
+  print(b); // Output: 5
+}
+```
+
+### Operador de Decremento
+
+O operador de decremento subtrae 1 do valor da variável. Existem duas formas de usar o operador de decremento `--`.
+
+No pré-decremento, a variável é decrementada em 1 antes de ser usada na expressão.
+
+```dart
+void main() {
+  int a = 5;
+  int b = --a; // a é decrementado para 4, então b recebe o valor 4
+  print(a); // Output: 4
+  print(b); // Output: 4
+}
+```
+
+E no pós-decremento, a variável é usada na expressão e, em seguida, é decrementada em 1.
+
+```dart
+void main() {
+  int a = 5;
+  int b = a--; // b recebe o valor 5, então a é decrementado para 4
+  print(a); // Output: 4
+  print(b); // Output: 5
 }
 ```
 
