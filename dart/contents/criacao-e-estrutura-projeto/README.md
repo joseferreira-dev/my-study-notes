@@ -3,21 +3,24 @@
 </div>
 <br>
 
-# Criando um novo projeto
+# Criação e Estrutura de um Projeto
 
-## Criando o projeto
+- [Criando um novo projeto](#criando-um-novo-projeto)
+- [Estrutura do projeto](#estrutura-do-projeto)
+
+## Criando um novo projeto
 
 Para se criar um novo projeto Dart básico pelo console deve-se utilizar o comando:
 
-~~~shell
+```shell
 dart create project_name
-~~~
+```
 
 É uma convensão da comunidade separar o nome do projeto com `_`. É possível definir um template inicial para o projeto utilizando a flag `-t`.
 
-~~~shell
+```shell
 dart create -t console console_project_name
-~~~
+```
 
 Os possíveis templates são: 
 
@@ -32,7 +35,7 @@ Os possíveis templates são:
 
 Quando você cria um projeto de console em Dart usando o comando `dart create -t console console_project`, uma estrutura de diretórios e arquivos é gerada para ajudar a começar com um aplicativo de console simples. A estrutura típica do projeto é a seguinte:
 
-~~~shell
+```shell
 console_project/
 ├── bin/
 │   └── console_project.dart
@@ -43,7 +46,7 @@ console_project/
 ├── CHANGELOG.md
 ├── pubspec.yaml
 └── README.md
-~~~
+```
 
 - `bin/console_project.dart`: Arquivo principal do aplicativo de console, onde se escreve o código para o seu aplicativo. O nome do arquivo geralmente corresponde ao nome do projeto.
 - `lib/`: Pasta usada para armazenar qualquer biblioteca ou código que será compartilhado entre diferentes partes do aplicativo. É útil para organizar componentes maiores.
