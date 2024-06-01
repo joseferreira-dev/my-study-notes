@@ -412,3 +412,241 @@ No exemplo acima, os setters `largura` e `altura` garantem que os valores atribu
 
 ## Construtores
 
+Em Dart, construtores são métodos especiais que são chamados quando uma nova instância de uma classe é criada. Construtores são usados para inicializar os objetos.
+
+### Construtor Padrão
+
+O construtor padrão é um método que tem o mesmo nome da classe e não tem nenhum tipo de retorno, nem mesmo `void`. Ele é usado para inicializar os atributos da classe.
+
+```dart
+class Pessoa {
+  String nome;
+  int idade;
+
+  Pessoa(this.nome, this.idade);
+
+  void apresentar() {
+    print('Olá, meu nome é $nome e eu tenho $idade anos.');
+  }
+}
+
+void main() {
+  var pessoa = Pessoa('Alice', 25);
+  pessoa.apresentar(); // Output: Olá, meu nome é Alice e eu tenho 25 anos.
+}
+```
+
+### Construtores com Parâmetros Posicionais Opcionais
+
+Parâmetros posicionais opcionais são definidos entre colchetes (`[]`). Se não fornecidos, eles assumem um valor `null` ou um valor padrão definido.
+
+```dart
+class Pessoa {
+  String nome;
+  int? idade; // Idade pode ser null
+
+  // Construtor com parâmetro opcional
+  Pessoa(this.nome, [this.idade]);
+
+  void apresentar() {
+    if (idade != null) {
+      print('Olá, meu nome é $nome e eu tenho $idade anos.');
+    } else {
+      print('Olá, meu nome é $nome.');
+    }
+  }
+}
+
+void main() {
+  var pessoa1 = Pessoa('Alice', 25);
+  var pessoa2 = Pessoa('Bob');
+
+  pessoa1.apresentar(); // Output: Olá, meu nome é Alice e eu tenho 25 anos.
+  pessoa2.apresentar(); // Output: Olá, meu nome é Bob.
+}
+```
+
+### Construtores com Parâmetros Nomeados Opcionais
+
+Parâmetros nomeados opcionais são definidos entre chaves (`{}`). Eles são usados para melhorar a legibilidade do código e permitem definir valores padrão. Eles podem ser marcados como obrigatórios usando `required`.
+
+```dart
+class Pessoa {
+  String nome;
+  int idade;
+  String? cidade;
+
+  // Construtor com parâmetros nomeados opcionais
+  Pessoa(this.nome, this.idade, {this.cidade});
+
+  void apresentar() {
+    if (cidade != null) {
+      print('Olá, meu nome é $nome, tenho $idade anos e moro em $cidade.');
+    } else {
+      print('Olá, meu nome é $nome e eu tenho $idade anos.');
+    }
+  }
+}
+
+void main() {
+  var pessoa1 = Pessoa('Alice', 25, cidade: 'São Paulo');
+  var pessoa2 = Pessoa('Bob', 30);
+
+  pessoa1.apresentar(); // Output: Olá, meu nome é Alice, tenho 25 anos e moro em São Paulo.
+  pessoa2.apresentar(); // Output: Olá, meu nome é Bob e eu tenho 30 anos.
+}
+```
+
+### Construtores com Parâmetros Nomeados com Valores Padrão
+
+Pode-se definir valores padrão para parâmetros nomeados, o que é útil para fornecer um valor de fallback se nenhum valor for fornecido.
+
+```dart
+class Pessoa {
+  String nome;
+  int idade;
+  String cidade;
+
+  // Construtor com parâmetros nomeados e valores padrão
+  Pessoa(this.nome, this.idade, {this.cidade = 'Desconhecida'});
+
+  void apresentar() {
+    print('Olá, meu nome é $nome, tenho $idade anos e moro em $cidade.');
+  }
+}
+
+void main() {
+  var pessoa1 = Pessoa('Alice', 25, cidade: 'São Paulo');
+  var pessoa2 = Pessoa('Bob', 30);
+
+  pessoa1.apresentar(); // Saída: Olá, meu nome é Alice, tenho 25 anos e moro em São Paulo.
+  pessoa2.apresentar(); // Saída: Olá, meu nome é Bob, tenho 30 anos e moro em Desconhecida.
+}
+```
+
+### Construtores com Parâmetros Nomeados Obrigatórios
+
+Pode-se marcar parâmetros nomeados como obrigatórios usando a anotação `required`.
+
+```dart
+class Pessoa {
+  String nome;
+  int idade;
+  String cidade;
+
+  // Construtor com parâmetros nomeados obrigatórios
+  Pessoa({
+    required this.nome,
+    required this.idade,
+    required this.cidade,
+  });
+
+  void apresentar() {
+    print('Olá, meu nome é $nome, tenho $idade anos e moro em $cidade.');
+  }
+}
+
+void main() {
+  var pessoa = Pessoa(nome: 'Alice', idade: 25, cidade: 'São Paulo');
+
+  pessoa.apresentar(); // Saída: Olá, meu nome é Alice, tenho 25 anos e moro em São Paulo.
+  
+  var pessoaInvalida = Pessoa(nome: 'Bob', idade: 30); // Erro de compilação, pois 'cidade' é obrigatório.
+}
+```
+
+### Construtores Nomeados
+
+Construtores nomeados permitem criar múltiplos construtores para uma classe, cada um com um nome diferente. Eles são úteis quando se precisa de diferentes formas de inicializar um objeto.
+
+```dart
+class Pessoa {
+  String nome;
+  int? idade;
+
+  // Construtor padrão
+  Pessoa(this.nome, this.idade);
+
+  // Construtor nomeado
+  Pessoa.comIdade(this.nome) {
+    idade = 0;
+  }
+
+  void apresentar() {
+    print('Olá, meu nome é $nome e eu tenho $idade anos.');
+  }
+}
+
+void main() {
+  var pessoa1 = Pessoa('Carol', 28);
+  var pessoa2 = Pessoa.comIdade('Dave');
+
+  pessoa1.apresentar(); // Output: Olá, meu nome é Carol e eu tenho 28 anos.
+  pessoa2.apresentar(); // Output: Olá, meu nome é Dave e eu tenho 0 anos.
+}
+```
+
+### Construtores Nomeados com Inicialização Diferente
+
+Pode-se usar construtores nomeados para inicializar a classe de maneiras diferentes. Por exemplo, um construtor pode aceitar um mapa de dados.
+
+```dart
+class Pessoa {
+  String? nome;
+  int? idade;
+
+  // Construtor padrão
+  Pessoa(this.nome, this.idade);
+
+  // Construtor nomeado que inicializa a partir de um mapa
+  Pessoa.fromMap(Map<String, dynamic> data) {
+    nome = data['nome'];
+    idade = data['idade'];
+  }
+
+  void apresentar() {
+    print('Olá, meu nome é $nome e eu tenho $idade anos.');
+  }
+}
+
+void main() {
+  var dados = {'nome': 'Carlos', 'idade': 40};
+  var pessoa = Pessoa.fromMap(dados);
+
+  pessoa.apresentar(); // Output: Olá, meu nome é Carlos e eu tenho 40 anos.
+}
+```
+
+### Construtores Nomeados com Parâmetros Opcionais
+
+Construtores nomeados também podem ter parâmetros opcionais, facilitando ainda mais a flexibilidade na criação de instâncias.
+
+```dart
+class Retangulo {
+  double? largura;
+  double? altura;
+
+  // Construtor padrão
+  Retangulo(this.largura, this.altura);
+
+  // Construtor nomeado com valores padrão
+  Retangulo.quadrado(double tamanho) {
+    largura = tamanho;
+    altura = tamanho;
+  }
+
+  double get area => largura! * altura!;
+
+  void mostrarDimensoes() {
+    print('Largura: $largura, Altura: $altura, Área: $area');
+  }
+}
+
+void main() {
+  var retangulo = Retangulo(4, 5);
+  var quadrado = Retangulo.quadrado(4);
+
+  retangulo.mostrarDimensoes(); // Saída: Largura: 4.0, Altura: 5.0, Área: 20.0
+  quadrado.mostrarDimensoes(); // Saída: Largura: 4.0, Altura: 4.0, Área: 16.0
+}
+```
