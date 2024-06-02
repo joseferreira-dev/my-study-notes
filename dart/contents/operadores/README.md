@@ -431,7 +431,86 @@ void main() {
 }
 ```
 
-### Operador Spread com Nulos
+## Operadores de Nulidade
+
+Os operadores de nulidade em Dart ajudam a lidar com valores que podem ser nulos. Eles oferecem maneiras seguras e concisas de acessar e manipular esses valores, evitando exceções de nulidade.
+
+### Operador Ternário para Nulos `??`
+
+O operador de ternário para nulos `??` retorna o operando do lado esquerdo se ele não for `null`; caso contrário, ele retorna o operando do lado direito.
+
+```dart
+void main() {
+  String? nome;
+  var saudacao = nome ?? 'Olá, visitante!';
+  print(saudacao); // Output: Olá, visitante!
+}
+```
+
+### Operador de Atribuição caso Nulo `??=`
+
+O operador de atribuição caso nulo `??=` atribui um valor à variável somente se a variável for `null`.
+
+
+```dart
+void main() {
+  int? numero1;
+  int numero2 = 10;
+  numero1 ??= 5;
+  numero2 ??= 5;
+  print(numero1); // Output: 5
+  print(numero2); // Output: 10
+}
+```
+
+### Operador de Acesso caso Nulo `?.`
+
+O operador de acesso caso nulo `?.` permite chamar um método ou acessar uma propriedade de um objeto somente se o objeto não for `null`.
+
+```dart
+void main() {
+  String? texto;
+  print(texto?.length); // Output: null
+}
+```
+
+### Operador de Indexação caso Nulo `?[]`
+
+O operador de indexação caso nulo `?[]` permite acessar um elemento de uma lista ou map somente se a lista ou o map não forem `null`.
+
+```dart
+void main() {
+  List<int>? numeros;
+  print(numeros?[0]); // Output: null
+}
+```
+
+### Operador Cascade caso Nulo `?..`
+
+O operador cascade caso nulo `?..` é uma combinação do operador de cascade `..` e o operador de acesso caso nulo `?.`. Ele permite encadear chamadas de métodos ou atribuições de propriedades somente se o objeto não for null.
+
+```dart
+class Pessoa {
+  String? nome;
+  int? idade;
+  
+  void saudacao() {
+    print('Olá, meu nome é $nome e tenho $idade anos.');
+  }
+}
+
+void main() {
+  Pessoa? pessoa;
+  pessoa
+    ?..nome = 'João'
+    ..idade = 30
+    ..saudacao(); // Não faz nada, pois pessoa é null
+  
+  print(pessoa); // Output: null
+}
+```
+
+### Operador Spread caso Nulo `...?`
 
 O operador null-aware spread `...?` permite que você expanda elementos de uma coleção que pode ser `null`, evitando exceções.
 
@@ -447,3 +526,55 @@ void main() {
 ```
 
 Neste exemplo, `lista2` é `null`, mas o operador `...?` impede que isso cause uma exceção, resultando em `combinada` contendo apenas os elementos de `lista1`.
+
+### Operador de Asserção Não Nulo `!`
+
+O operador de asserção não nulo `!` é usado para afirmar que um valor não é `null`. Ele lança uma exceção se o valor for `null`. Este operador é útil quando se tem certeza de que um valor não será `null` em um determinado ponto do código.
+
+```dart
+void main() {
+  String? texto;
+  // print(texto!); // Lança uma exceção se texto for null
+  texto = 'Olá';
+  print(texto!); // Output: Olá
+}
+```
+
+## Precedência de Operadores
+
+Os operadores em Dart seguem uma convenção de prioridade na execução que influencia diretamente o resultado das expressões nas quais são utilizados, conforme a tabela a seguir:
+
+| **Precedência** | **Operadores**                                                      | **Associatividade**    |
+|-----------------|---------------------------------------------------------------------|------------------------|
+| 1               | `[]`, `()`, `?.`, `?.[]`, `.`, `?.`, `++`, `--`, `()`, `[]`         | Esquerda para direita  |
+| 2               | `-`, `!`, `~`, `++`, `--`, `await`, `!.`                            | Direita para esquerda  |
+| 3               | `*`, `/`, `~/`, `%`                                                 | Esquerda para direita  |
+| 4               | `+`, `-`                                                            | Esquerda para direita  |
+| 5               | `<<`, `>>`, `>>>`                                                   | Esquerda para direita  |
+| 6               | `&`                                                                 | Esquerda para direita  |
+| 7               | `^`                                                                 | Esquerda para direita  |
+| 8               | `|`                                                                 | Esquerda para direita  |
+| 9               | `==`, `!=`, `===`, `!==`, `>=`, `>`, `<=`, `<`, `is`, `is!`,`as`    | Esquerda para direita  |
+| 10              | `&&`                                                                | Esquerda para direita  |
+| 11              | `||`                                                                | Esquerda para direita  |
+| 12              | `??`                                                                | Esquerda para direita  |
+| 13              | `? :`                                                               | Direita para esquerda  |
+| 14              | `=`, `*=`, `/=`, `+=`, `-=`, `&=`, `^=`, `|=`, `<<=`, `>>=`, `??=`  | Direita para esquerda  |
+| 15              | `...`                                                               | Não associativo        |
+| 16              | `...?, !..`                                                         | Não associativo        |
+
+A ordem de precedência e a associatividade dos operadores determinam como as expressões são avaliadas. Operadores com uma precedência mais alta são avaliados antes de operadores com uma precedência mais baixa. Se os operadores avaliados tiverem o mesmo nível de precedência, elese rerão avaliados segundo a sua associatividade. Onde:
+
+- **Esquerda para direita**: Operadores são avaliados da esquerda para a direita.
+- **Direita para esquerda**: Operadores são avaliados da direita para a esquerda.
+- **Não associativo**: Não há associatividade; operadores de mesmo nível de precedência não podem ser usados adjacentes.
+
+Considerando-se, por exemplo, a seguinte expressão:
+
+```dart
+void main() {
+  print(1 + 6 / 2 * 3 - 6); // Output: 4
+}
+```
+
+Os operadores `/` e `*` são mais prioritários que `+` e `-`, logo devem executar primeiro. Como a associatividade deles é da esquerda para direita, primeiro é executada a divisão: `1 + 3 * 3 - 6`. Depois a multiplicação: `1 + 9 - 6`. E, por fim, a adição e subtração, resultando em `4`.
