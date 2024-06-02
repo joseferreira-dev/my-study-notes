@@ -17,7 +17,24 @@
   * [Operador OU Lógico `||`](#operador-ou-lógico-)
   * [Operador NÃO Lógico `!`](#operador-não-lógico-)
   * [Combinação de Operadores Lógicos](#combinação-de-operadores-lógicos)
-  * [Precedência de Operadores Lógicos](#precedência-de-operadores-lógicos)
+- [Operadores de Validação de Tipo](#operadores-de-validação-de-tipo)
+  * [Operador `is`](#operador-is)
+  * [Operador `is!`](#operador-is)
+  * [Operador `as`](#operador-as)
+- [Operador Cascade `..`](#operador-cascade-)
+- [Operador Spread `...`](#operador-spread-)
+  * [Operador Spread em Listas](#operador-spread-em-listas)
+  * [Operador Spread em Sets](#operador-spread-em-sets)
+  * [Operador Spread em Maps](#operador-spread-em-maps)
+- [Operadores de Nulidade](#operadores-de-nulidade)
+  * [Operador Ternário para Nulos `??`](#operador-ternário-para-nulos-)
+  * [Operador de Atribuição caso Nulo `??=`](#operador-de-atribuição-caso-nulo-)
+  * [Operador de Acesso caso Nulo `?.`](#operador-de-acesso-caso-nulo-)
+  * [Operador de Indexação caso Nulo `?[]`](#operador-de-indexação-caso-nulo-)
+  * [Operador Cascade caso Nulo `?..`](#operador-cascade-caso-nulo-)
+  * [Operador Spread caso Nulo `...?`](#operador-spread-caso-nulo-)
+  * [Operador de Asserção Não Nulo `!`](#operador-de-asserção-não-nulo-)
+- [Precedência de Operadores](#precedência-de-operadores)
 
 ## Introdução
 
@@ -245,32 +262,6 @@ void main() {
   // Combinação de operadores lógicos
   bool resultado = (condicao1 && condicao3) || condicao2; // resultado será true
   print('Resultado da combinação: $resultado'); // Output: true
-}
-~~~
-
-### Precedência de Operadores Lógicos
-
-Os operadores lógicos têm uma precedência específica que determina a ordem em que são avaliados. Em Dart, a precedência é a seguinte (da mais alta para a mais baixa):
-
-1. `!` (NÃO lógico)
-2. `&&` (E lógico)
-3. `||` (OU lógico)
-
-Pode-se usar parênteses para alterar a ordem de avaliação e tornar a expressão mais clara.
-
-~~~dart
-void main() {
-  bool condicao1 = true;
-  bool condicao2 = false;
-  bool condicao3 = true;
-
-  // Sem parênteses, && tem precedência sobre ||
-  bool resultado1 = condicao1 && condicao2 || condicao3; // resultado1 será true
-
-  // Com parênteses, a avaliação é alterada
-  bool resultado2 = condicao1 && (condicao2 || condicao3); // resultado2 será false
-  print('Resultado sem parênteses: $resultado1'); // Output: true
-  print('Resultado com parênteses: $resultado2'); // Output: false
 }
 ~~~
 
@@ -553,15 +544,15 @@ Os operadores em Dart seguem uma convenção de prioridade na execução que inf
 | 5               | `<<`, `>>`, `>>>`                                                   | Esquerda para direita  |
 | 6               | `&`                                                                 | Esquerda para direita  |
 | 7               | `^`                                                                 | Esquerda para direita  |
-| 8               | `|`                                                                 | Esquerda para direita  |
+| 8               | `\|`                                                                | Esquerda para direita  |
 | 9               | `==`, `!=`, `===`, `!==`, `>=`, `>`, `<=`, `<`, `is`, `is!`,`as`    | Esquerda para direita  |
 | 10              | `&&`                                                                | Esquerda para direita  |
-| 11              | `||`                                                                | Esquerda para direita  |
+| 11              | `\|\|`                                                              | Esquerda para direita  |
 | 12              | `??`                                                                | Esquerda para direita  |
 | 13              | `? :`                                                               | Direita para esquerda  |
-| 14              | `=`, `*=`, `/=`, `+=`, `-=`, `&=`, `^=`, `|=`, `<<=`, `>>=`, `??=`  | Direita para esquerda  |
+| 14              | `=`, `*=`, `/=`, `+=`, `-=`, `&=`, `^=`, `\|=`, `<<=`, `>>=`, `??=` | Direita para esquerda  |
 | 15              | `...`                                                               | Não associativo        |
-| 16              | `...?, !..`                                                         | Não associativo        |
+| 16              | `...?`, `!..`                                                       | Não associativo        |
 
 A ordem de precedência e a associatividade dos operadores determinam como as expressões são avaliadas. Operadores com uma precedência mais alta são avaliados antes de operadores com uma precedência mais baixa. Se os operadores avaliados tiverem o mesmo nível de precedência, elese rerão avaliados segundo a sua associatividade. Onde:
 
