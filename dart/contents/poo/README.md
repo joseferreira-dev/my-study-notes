@@ -26,6 +26,8 @@
   * [Construtores Nomeados com Inicialização Diferente](#construtores-nomeados-com-inicialização-diferente)
   * [Construtores Nomeados com Parâmetros Opcionais](#construtores-nomeados-com-parâmetros-opcionais)
   * [Construtor Factory](#construtor-factory)
+  * [Construtor Constante](#construtor-constante)
+  * [Construtor Tear-off](#construtor-tear-off)
 - [Herança](#herança)
   * [Como Implementar Herança](#como-implementar-herança)
   * [Sobrescrita de Métodos](#sobrescrita-de-métodos)
@@ -40,6 +42,26 @@
   * [Definindo e Usando Classes Abstratas](#definindo-e-usando-classes-abstratas)
   * [Métodos e Propriedades Abstratas](#métodos-e-propriedades-abstratas)
   * [Usando Classes Abstratas como Interfaces](#usando-classes-abstratas-como-interfaces)
+- [Associação de Classes (Composição e Agregação)](#associação-de-classes-composição-e-agregação)
+  * [Composição](#composição)
+  * [Agregação](#agregação)
+- [Interfaces](#interfaces)
+  * [Definindo e Implementando Interfaces](#definindo-e-implementando-interfaces)
+  * [Múltiplas Interfaces](#múltiplas-interfaces)
+  * [Interfaces vs. Classes Abstratas](#interfaces-vs-classes-abstratas)
+- [Padronizando Ordenações com a Interface Comparable](#padronizando-ordenações-com-a-interface-comparable)
+  * [Implementando Comparable](#implementando-comparable)
+  * [Ordenação por Múltiplos Critérios](#ordenação-por-múltiplos-critérios)
+- [Mixins](#mixins)
+  * [Definindo e Usando Mixins](#definindo-e-usando-mixins)
+  * [Restringindo Mixins](#restringindo-mixins)
+- [Callable Class (Classe Chamável)](#callable-class-classe-chamável)
+  * [Definindo uma Callable Class](#definindo-uma-callable-class)
+  * [Callable Classes e Funções de Ordem Superior](#callable-classes-e-funções-de-ordem-superior)
+- [Operator Methods (Métodos Operadores)](#operator-methods-métodos-operadores)
+  * [Definindo Operator Methods](#definindo-operator-methods)
+- [Referência de Memória para Objetos](#referência-de-memória-para-objetos)
+  * [Operator Methods Aplicados a `equals` e `hashCode`](#operator-methods-aplicados-a-equals-e-hashcode)
 
 ## Introdução
 
@@ -760,6 +782,109 @@ void main() {
 }
 ```
 
+### Construtor Constante
+
+Em Dart, um construtor constante (ou const constructor) é um construtor que cria uma instância constante de uma classe. Isso significa que a instância é imutável e pode ser criada em tempo de compilação, o que pode melhorar a performance e reduzir o uso de memória.
+
+Para definir um construtor constante, usa-se a palavra-chave `const` na definição do construtor. Todos os campos da classe devem ser `final` (imutáveis) para que a instância possa ser constante.
+
+```dart
+class Ponto {
+  final int x;
+  final int y;
+
+  const Ponto(this.x, this.y);
+}
+
+void main() {
+  const p1 = Ponto(1, 2);
+  const p2 = Ponto(1, 2);
+  const p3 = Ponto(3, 4);
+
+  print(identical(p1, p2)); // true: p1 e p2 são a mesma instância
+  print(identical(p1, p3)); // false: p1 e p3 são instâncias diferentes
+}
+```
+
+Ao criar instâncias de `Ponto` usando `const`, se os valores dos parâmetros forem iguais, o Dart otimiza a criação, reutilizando a mesma instância para `p1` e `p2`.
+
+### Construtor Tear-Off 
+
+Os construtores Tear-Off em Dart são uma funcionalidade que permite que se possa refirir a um construtor de uma classe como um valor. Essencialmente, eles permitem que se passe, armazene ou invoque um construtor da mesma forma que se faria com uma função. Isso pode ser útil em várias situações, como em callbacks, listas de inicialização ou na programação funcional.
+
+Por exemplo, considerando-se uma classe simples `Pessoa` com um construtor nomeado `fromName`:
+
+```dart
+class Pessoa {
+  String? nome;
+
+  Pessoa(this.nome);
+
+  Pessoa.fromName(String nome) {
+    this.nome = nome;
+  }
+
+  @override
+  String toString() => 'Pessoa: $nome';
+}
+```
+
+Normalmente, para criar instâncias de `Pessoa` usando o construtor `fromName`, algo assim seria feito:
+
+```dart
+void main() {
+  var pessoas = ['Alice', 'Bob', 'Charlie']
+    .map((nome) => Pessoa.fromName(nome))
+    .toList();
+ 
+  pessoas.forEach(print);
+  // Output:
+  // Pessoa: Alice,
+  // Pessoa: Bob,
+  // Pessoa: Charlie
+}
+```
+
+Com a funcionalidade de tear-off, pode-se simplificar a criação das instâncias referindo-se diretamente ao construtor `fromName`:
+
+```dart
+void main() {
+  var pessoas = ['Alice', 'Bob', 'Charlie']
+    .map(Pessoa.fromName)
+    .toList();
+  pessoas.forEach(print);
+  // Output:
+  // Pessoa: Alice,
+  // Pessoa: Bob,
+  // Pessoa: Charlie
+}
+```
+
+Neste exemplo, `Pessoa.fromName` é tratado como um valor que pode ser passado para a função `map`, facilitando a criação das instâncias de `Pessoa`. Também seria possível utilizar `Pessoa.new`, que criaria as instâncias a partir do construtor padrão da classe.
+
+Também é possível aplicar esse tipo de construtor ao se trabalhar com subclasses: 
+
+```dart
+class Estudante extends Pessoa {
+  String escola;
+
+  Estudante(String nome, this.escola) : super(nome);
+
+  Estudante.fromNameAndSchool(String nome, String escola)
+      : escola = escola,
+        super.fromName(nome);
+
+  @override
+  String toString() => 'Estudante: $nome, Escola: $escola';
+}
+
+void main() {
+  var criarEstudante = Estudante.fromNameAndSchool;
+  var e = criarEstudante('Charlie', 'XYZ School');
+  print(e); // Output: Estudante: Charlie, Escola: XYZ School
+}
+```
+
 ## Herança
 
 Herança é um dos pilares da programação orientada a objetos (OOP) e permite que uma classe herde propriedades e métodos de outra classe. Herança é utilizada para criar uma hierarquia de classes, permitindo o reuso de código e a criação de relacionamentos entre classes. Os conceitos básicos de herança em Dart são:
@@ -1458,7 +1583,7 @@ void main() {
 }
 ```
 
-### Restrigindo Mixins
+### Restringindo Mixins
 
 Se um mixin precisar usar métodos ou atributos de uma superclasse, deve-se declarar uma superclasse concreta para ele. Deve-se usar a palavra-chave `on` para restringir a aplicação do mixin a subclasses de uma determinada classe.
 
@@ -1491,7 +1616,7 @@ void main() {
 
 No exemplo acima, o mixin `Caminhar` só pode ser aplicado a classes que extendem de `Animal`, como é o caso da classe `Cachorro`. Se existisse uma outra classe que não herdasse de `Animal` e tentasse implementar o mixin, ela geraria um erro de compilação.
 
-## Cllable Class (Classe Chamável)
+## Callable Class (Classe Chamável)
 
 Em Dart, uma "Callable class" é uma classe que define a função `call()`. Isso permite que as instâncias da classe sejam chamadas como se fossem funções. Essa funcionalidade pode ser útil para criar objetos que precisam de uma interface funcional ou para adicionar comportamento específico ao serem chamados diretamente.
 
