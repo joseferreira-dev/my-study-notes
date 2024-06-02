@@ -16,33 +16,73 @@
 
 ## Introdução
 
-Dart é uma linguagem fortemente tipada que oferece uma ampla variedade de tipos de dados. Aqui estão os principais tipos de dados em Dart, junto com exemplos para cada um:
+Dart, assim como a maioria das linguagens de programação, possui suporte a diversos tipos predefinidos, sendo uma linguagem com tipagem estática. Porém, não há um conceito ou definição clara sobre tipos primitivos, como na linguagem Java, por exemplo. Em Dart, todos os tipos são também objetos. Alguns tipos são mais básicos e outros, mais complexos.
 
-## Numbers (Números)
+## Tipos de Dados mais Comuns
 
-Dart possui dois tipos de números: `int` (representa números inteiros) e `double` (representa números decimais).
+Estes tipos de dados são mais básicos e mais utilizados.
 
-```dart
-int idade = 30;
-int ano = 2024;
+### Números
 
-double altura = 1.75;
-double preco = 99.99;
-```
-
-## String
-
-Uma `String` é usado para representar textos.
+O tipo `num` é a superclasse para `int` e `double`, representando números inteiros e de ponto flutuante.
 
 ```dart
-String nome = 'João';
-String saudacao = "Olá, mundo!";
-String textoMultilinha = '''Este é um
-texto de múltiplas
-linhas.''';
+void main() {
+  num numero = 5; // Pode ser int ou double
+  print(numero); // Output: 5
+  numero = 5.5;
+  print(numero); // Output: 5.5
+}
 ```
 
-## Booleans (Booleanos)
+### Números Inteiros
+
+O tipo `int` representa números inteiros.
+
+```dart
+void main() {
+  int idade = 25;
+}
+```
+
+### Números de Ponto Flutuante
+
+O tipo `double` representa números de ponto flutuante (números com casas decimais).
+
+```dart
+void main() {
+  double preco = 19.99;
+  double altura = 1.80;
+}
+```
+
+### String
+
+O tipo `String` representa uma sequência de caracteres Unicode. Strings são delimitadas por aspas simples (`'`) ou aspas duplas (`"`). No caso de textos multilinha, se utiliza três aspas simples.
+
+```dart
+void main() {
+  String nome = 'João';
+  String saudacao = "Olá, mundo!";
+  String textoMultilinha = '''Este é um
+  texto de múltiplas
+  linhas.''';
+}
+```
+
+### Runes
+
+Runes representam o código de ponto Unicode de uma string. Elas permitem que se trabalhe com caracteres Unicode que não podem ser representados com um único caractere UTF-16.
+
+```dart
+void main() {
+  String texto = 'Olá, 🌍';
+  Runes runas = texto.runes;
+  print(runas); // Output: (79, 108, 225, 44, 32, 127757) -> Iterável com os códigos para cada caracter da String
+}
+```
+
+### Booleanos
 
 O tipo `bool` representa valores booleanos: `true` ou `false`.
 
@@ -51,7 +91,20 @@ bool estaChovendo = false;
 bool estaAberto = true;
 ```
 
-## List (Listas)
+### Iterable (Iteráveis)
+
+O tipo `Iterable` representa uma coleção de elementos que podem ser iterados, é a superclasse para os tipos como `List`, `Set`, etc.
+
+```dart
+void main() {
+  Iterable<int> numeros = [1, 2, 3];
+  for (var numero in numeros) {
+    print(numero); // Output: 1 2 3
+  }
+}
+```
+
+### List (Listas)
 
 Uma `List` é uma coleção ordenada de objetos. Pode ser homogênea (todos os elementos do mesmo tipo) ou heterogênea.
 
@@ -61,7 +114,16 @@ List<String> frutas = ['maçã', 'banana', 'laranja'];
 List<dynamic> misturado = [1, 'dois', 3.0, true];
 ```
 
-## Map
+### Set
+
+Um `Set` é uma coleção de elementos únicos, sem ordem específica, muito semelhante a uma lista, exceto que a lista aceita repetição de elementos.
+
+```dart
+Set<int> numerosUnicos = {1, 2, 3, 4, 5};
+Set<String> cores = {'vermelho', 'verde', 'azul'};
+```
+
+### Map
 
 Um `Map` é uma coleção de pares chave-valor. As chaves e os valores podem ser de qualquer tipo.
 
@@ -78,16 +140,18 @@ Map<int, String> produtos = {
 };
 ```
 
-## Set
+### Symbol (Símbolos)
 
-Um `Set` é uma coleção de elementos únicos, sem ordem específica.
+O tipo `Symbol` é usado para representar um símbolo, que é uma string referenciada por seu identificador no tempo de compilação.
 
 ```dart
-Set<int> numerosUnicos = {1, 2, 3, 4, 5};
-Set<String> cores = {'vermelho', 'verde', 'azul'};
+void main() {
+  Symbol simbolo = #minhaVariavel;
+  print(simbolo); // Output: Symbol("minhaVariavel")
+}
 ```
 
-## Null
+### Null
 
 Dart tem suporte para o tipo `null`, que é usado para representar a ausência de um valor. Variáveis não podem ser declaradas como nulas, a menos que sejam explicitamente marcadas como nulas.
 
@@ -95,3 +159,5 @@ Dart tem suporte para o tipo `null`, que é usado para representar a ausência d
 String? nomeNulo = null;
 int? numeroNulo = null;
 ```
+
+## Tipos de Dados mais Complexos
