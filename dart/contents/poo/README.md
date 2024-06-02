@@ -62,6 +62,7 @@
   * [Definindo Operator Methods](#definindo-operator-methods)
 - [Referência de Memória para Objetos](#referência-de-memória-para-objetos)
   * [Operator Methods Aplicados a `equals` e `hashCode`](#operator-methods-aplicados-a-equals-e-hashcode)
+- [Validando Regras de Negócio em Classes com Asserts](#validando-regras-de-negócio-em-classes-com-asserts)
 
 ## Introdução
 
@@ -1791,3 +1792,72 @@ void main() {
 ```
 
 No exemplo acima, o métodod operador `==` verifica se o outro objeto é uma instância de `Pessoa` e se os valores de nome e idade são iguais. Já o método `hashCode` combina os códigos hash de nome e idade usando o operador bit a bit `^`. Dessa forma, ao se comparar os objetos com o operador `==`, ele retornará `true` se os valores de nome e idade forem iguais, caso contrário retorna `false`. Quando `p1` e `p2` são adicionados ao `Set`, eles são considerados iguais, então apenas um deles é armazenado. `p3` é considerado diferente e é adicionado ao conjunto.
+
+## Validando Regras de Negócio em Classes com Asserts
+
+Em Dart, a palavra-chave `assert` é usada para verificar condições durante o desenvolvimento e ajudar a identificar bugs. As asserts são especialmente úteis em construtores de classes para validar regras de negócio e garantir que os objetos sejam criados em um estado válido.
+
+Um `assert` é uma verificação que se pode incluir no código para garantir que uma condição específica seja verdadeira. Se a condição for falsa, o `assert` lança uma exceção (`AssertionError`). No entanto, asserts só são executados em modo de depuração. No modo de produção, os asserts são ignorados, o que significa que eles não afetam o desempenho.
+
+Considerando-se um exemplo onde se tem uma classe `Produto` que precisa garantir que o preço e a quantidade estejam sempre em valores válidos (não negativos):
+
+```dart
+class Produto {
+  String nome;
+  double preco;
+  int quantidade;
+
+  Produto(this.nome, this.preco, this.quantidade)
+      : assert(preco >= 0, 'O preço não pode ser negativo'),
+        assert(quantidade >= 0, 'A quantidade não pode ser negativa');
+
+  @override
+  String toString() => 'Produto: $nome, Preço: $preco, Quantidade: $quantidade';
+}
+
+void main() {
+  var produto1 = Produto('Caneta', 2.5, 10);
+  print(produto1); // Produto: Caneta, Preço: 2.5, Quantidade: 10
+
+  var produto2 = Produto('Lápis', -1.0, 5); // Lança um AssertionError
+}
+```
+
+No exemplo acima, a classe `Produto` tem três atributos: `nome`, `preco` e `quantidade`. O construtor da classe `Produto` aceita três parâmetros e usa asserts para validar que os atributos `preco` e `quantidade` devem ser maiores ou iguais a zero. Se estes forem negativos, um `AssertionError` será lançado com a mensagem especificada.
+
+Para um exemplo mais complexo, considera-se uma classe `ContaBancaria` que deve garantir que o saldo inicial não seja negativo e que o número da conta seja válido:
+
+```dart
+class ContaBancaria {
+  String numeroConta;
+  double saldo;
+
+  ContaBancaria(this.numeroConta, this.saldo)
+      : assert(numeroConta.isNotEmpty, 'O número da conta não pode ser vazio'),
+        assert(saldo >= 0, 'O saldo inicial não pode ser negativo');
+
+  void depositar(double valor) {
+    assert(valor > 0, 'O valor do depósito deve ser positivo');
+    saldo += valor;
+  }
+
+  void sacar(double valor) {
+    assert(valor > 0, 'O valor do saque deve ser positivo');
+    assert(valor <= saldo, 'Saldo insuficiente');
+    saldo -= valor;
+  }
+
+  @override
+  String toString() => 'ContaBancaria: $numeroConta, Saldo: $saldo';
+}
+
+void main() {
+  var conta = ContaBancaria('123456', 100.0);
+  print(conta); // ContaBancaria: 123456, Saldo: 100.0
+
+  conta.depositar(50.0);
+  print(conta); // ContaBancaria: 123456, Saldo: 150.0
+
+  conta.sacar(200.0); // Lança um AssertionError: Saldo insuficiente
+}
+```
