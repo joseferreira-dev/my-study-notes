@@ -6,13 +6,27 @@
 # Tipos de Dados
 
 - [Introdução](#introdução)
-- [Numbers (Números)](#numbers-números)
-- [String](#string)
-- [Booleans (Booleanos)](#booleans-booleanos)
-- [List (Listas)](#list-listas)
-- [Map](#map)
-- [Set](#set)
-- [Null](#null)
+- [Tipos de Dados mais Comuns](#tipos-de-dados-mais-comuns)
+  * [Números](#números)
+  * [Números Inteiros](#números-inteiros)
+  * [Números de Ponto Flutuante](#números-de-ponto-flutuante)
+  * [String](#string)
+  * [Runes](#runes)
+  * [Booleanos](#booleanos)
+  * [Iterable (Iteráveis)](#iterable-iteráveis)
+  * [List (Listas)](#list-listas)
+  * [Set](#set)
+  * [Map](#map)
+  * [Symbol (Símbolos)](#symbol-símbolos)
+  * [Null](#null)
+- [Tipos de Dados Complexos](#tipos-de-dados-complexos)
+  * [Object](#object)
+  * [dynamic](#dynamic)
+  * [Function](#function)
+  * [Future](#future)
+  * [Stream](#stream)
+  * [void](#void)
+  * [Never](#never)
 
 ## Introdução
 
@@ -160,7 +174,7 @@ String? nomeNulo = null;
 int? numeroNulo = null;
 ```
 
-## Tipos de Dados mais Complexos
+## Tipos de Dados Complexos
 
 Dart ambém possui alguns tipos de dados mais complexos, que são empregados em situações mais específicas, como quando se está lidando com programação assíncrona e genérica.
 
