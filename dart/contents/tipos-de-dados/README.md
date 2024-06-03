@@ -161,3 +161,120 @@ int? numeroNulo = null;
 ```
 
 ## Tipos de Dados mais Complexos
+
+Dart ambém possui alguns tipos de dados mais complexos, que são empregados em situações mais específicas, como quando se está lidando com programação assíncrona e genérica.
+
+### Object
+
+O tipo `Object` é a classe raiz de todas as classes em Dart. Todo objeto é uma instância de `Object`, incluindo números, strings, listas, e até mesmo null (se bem que null é uma instância especial).
+
+```dart
+void main() {
+  Object qualquerCoisa = 42;
+  print(qualquerCoisa); // Output: 42
+  qualquerCoisa = 'Texto';
+  print(qualquerCoisa); // Output: Texto
+}
+```
+
+### dynamic
+
+O tipo `dynamic` desativa a verificação de tipo em tempo de compilação, permitindo que qualquer tipo de valor seja atribuído a uma variável. É útil quando o tipo de uma variável não é conhecido até o tempo de execução.
+
+```dart
+void main() {
+  dynamic variavel = 42;
+  print(variavel); // Output: 42
+  variavel = 'Texto';
+  print(variavel); // Output: Texto
+}
+```
+
+### Function
+
+O tipo `Function` é a superclasse de todas as funções em Dart. Pode ser usado para armazenar e passar funções como valores.
+
+```dart
+void executarOperacao(Function operacao, int a, int b) {
+  print(operacao(a, b));
+}
+
+int soma(int a, int b) => a + b;
+int multiplicacao(int a, int b) => a * b;
+
+void main() {
+  executarOperacao(soma, 3, 4); // Output: 7
+  executarOperacao(multiplicacao, 3, 4); // Output: 12
+}
+```
+
+### Future
+
+O tipo `Future` representa um valor ou erro que estará disponível em algum momento no futuro. Futures são frequentemente usados para operações assíncronas, como E/S (entrada/saída) de arquivos ou solicitações de rede.
+
+```dart
+Future<String> obterDados() async {
+  return Future.delayed(Duration(seconds: 2), () => 'Dados recebidos');
+}
+
+void main() async {
+  print('Esperando dados...');
+  String dados = await obterDados();
+  print(dados);
+  // Output:
+  // Esperando dados...
+  // Dados recebidos
+}
+```
+
+### Stream
+
+O tipo `Stream` é uma sequência assíncrona de eventos. Pode ser usada para manipular fluxos de dados contínuos, como eventos de interface do usuário ou dados recebidos de uma conexão de rede.
+
+
+```dart
+Stream<int> contar() async* {
+  for (int i = 1; i <= 5; i++) {
+    await Future.delayed(Duration(seconds: 1));
+    yield i;
+  }
+}
+
+void main() async {
+  await for (int valor in contar()) {
+    print(valor); // Output: 1 2 3 4 5 (um por segundo)
+  }
+}
+```
+
+### void
+
+O tipo `void` indica que uma função não retorna um valor. É usado principalmente para funções que executam ações mas não produzem um resultado que precisa ser utilizado.
+
+```dart
+void mostrarMensagem(String mensagem) {
+  print(mensagem);
+}
+
+void main() {
+  mostrarMensagem('Olá, mundo!'); // Output: Olá, mundo!
+}
+```
+
+### Never
+
+O tipo `Never` indica que uma função nunca retorna, ou seja, ela termina lançando uma exceção ou executando um loop infinito. É útil para funções que sempre resultam em um erro ou comportamento indefinido.
+
+```dart
+Never lancarErro(String mensagem) {
+  throw Exception(mensagem);
+}
+
+void main() {
+  try {
+    lancarErro('Ocorreu um erro!');
+  } catch (e) {
+    print(e); // Output: Exception: Ocorreu um erro!
+  }
+}
+```
