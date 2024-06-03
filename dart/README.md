@@ -34,4 +34,5 @@ Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se consid
 - [Enumeradores (Enums)](./contents/14-enums/README.md)
 - [Exceções (Exceptions)](./contents/15-exceptions/README.md)
 - [Importações (Imports)](./contents/16-imports/README.md)
-- [Programação Orientada a Objetos](./contents/17-poo/README.md)
+- [POO - Parte 1: Classes, Atributos, Métodos, Contrutores, Herança, Classes Abstratas, Callable Class e Associação de Classes](./contents/17-poo/README.md)
+- [POO - Parte 2: Interfaces, Comparable, Mixins, Operator Methods, Extensions, Generics e Annotations](./contents/18-poo/README.md)
