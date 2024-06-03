@@ -34,4 +34,4 @@ Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se consid
 - [Enumeradores (Enums)](./contents/14-enums/README.md)
 - [Exceções (Exceptions)](./contents/15-exceptions/README.md)
 - [Importações (Imports)](./contents/16-imports/README.md)
-- [Programação Orientada a Objetos](./contents/poo/README.md)
+- [Programação Orientada a Objetos](./contents/17-poo/README.md)
