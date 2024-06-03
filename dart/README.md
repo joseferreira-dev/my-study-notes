@@ -39,3 +39,4 @@ Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se consid
 - [Concorrência - Parte 1: Introdução](./contents/19-concorrencia/README.md)
 - [Concorrência - Parte 2: Future (Futuros)](./contents/20-future/README.md)
 - [Concorrência - Parte 3: Completer](./contents/21-completer/README.md)
+- [Concorrência - Parte 4: Async/Await](./contents/22-async-await/README.md)
