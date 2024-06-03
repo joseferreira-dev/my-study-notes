@@ -38,3 +38,4 @@ Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se consid
 - [POO - Parte 2: Interfaces, Comparable, Mixins, Operator Methods, Extensions, Generics e Annotations](./contents/18-poo/README.md)
 - [Concorrência - Parte 1: Introdução](./contents/19-concorrencia/README.md)
 - [Concorrência - Parte 2: Future (Futuros)](./contents/20-future/README.md)
+- [Concorrência - Parte 3: Completer](./contents/21-completer/README.md)

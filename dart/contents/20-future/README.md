@@ -6,6 +6,19 @@
 # Concorrência - Parte 2: Future (Futuros)
 
 - [Introdução](#introdução)
+- [Criando um Future](#criando-um-future)
+  * [Utilizando `then()`](#utilizando-then)
+  * [Utilizando `catchError()`](#utilizando-catcherror)
+  * [Utilizando `whenComplete()`](#utilizando-whencomplete)
+- [Encadeando Futuros](#encadeando-futuros)
+- [Variações de Future](#variações-de-future)
+  * [`Future.sync()`](#futuresync)
+  * [`Future.microtask()`](#futuremicrotask)
+  * [`Future.value()`](#futurevalue)
+  * [`Future.error()`](#futureerror)
+  * [`Future.wait()`](#futurewait)
+  * [`Future.any()`](#futureany)
+- [Registrando Tempo de Execução de um Future](#registrando-tempo-de-execução-de-um-future)
 
 ## Introdução
 
@@ -169,7 +182,7 @@ void main() {
 
 Dart oferece diversas variações da classe `Future` para lidar com diferentes necessidades de operações assíncronas. Aqui está uma explicação detalhada de cada uma dessas variações:
 
-### Future.sync()
+### `Future.sync()`
 
 `Future.sync()` cria um `Future` que é completado sincronicamente, ou seja, ele executa o código imediatamente e retorna um `Future` completado com o valor ou erro resultante. Isso é útil quando se quer garantir que o código dentro do `Future` seja executado sincronicamente e ainda assim fornecer uma interface de `Future`.
 
@@ -188,7 +201,7 @@ void main() {
 }
 ```
 
-### Future.microtask()
+### `Future.microtask()`
 
 `Future.microtask()` cria um `Future` que é completado no próximo ciclo de microtask do Event Loop. Isso é útil para garantir que o código seja executado assíncronamente, mas ainda antes de qualquer evento da fila de eventos.
 
