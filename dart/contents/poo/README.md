@@ -886,6 +886,94 @@ void main() {
 }
 ```
 
+## Criando Objetos a Partir de um Map
+
+Em Dart, pode-se criar objetos a partir de maps utilizando construtores nomeados ou métodos factory. Isso é especialmente útil quando se está lidando com dados JSON ou outras formas de representação de dados estruturados.
+
+Suponha que se tenha um `Map` de alunos, onde cada aluno tem um nome e uma lista de cursos nos quais está matriculado. Primeiro, define-se as classes `Curso` e `Aluno`, e depois cria-se uma função para converter um `Map` em objetos dessas classes.
+
+```dart
+class Curso {
+  String nome;
+
+  Curso(this.nome);
+
+  // Construtor nomeado para criar um objeto Curso a partir de um Map
+  Curso.fromMap(Map<String, dynamic> map) : nome = map['nome'];
+
+  // Método para converter o objeto Curso em um Map
+  Map<String, dynamic> toMap() {
+    return {'nome': nome};
+  }
+}
+
+class Aluno {
+  String nome;
+  List<Curso> cursos;
+
+  Aluno(this.nome, this.cursos);
+
+  // Construtor nomeado para criar um objeto Aluno a partir de um Map
+  Aluno.fromMap(Map<String, dynamic> map) :
+    nome = map['nome'],
+    cursos = List<Curso>.from(map['cursos'].map((cursoMap) => Curso.fromMap(cursoMap)));
+
+  // Método para converter o objeto Aluno em um Map
+  Map<String, dynamic> toMap() {
+    return {
+      'nome': nome,
+      'cursos': cursos.map((curso) => curso.toMap()).toList()
+    };
+  }
+}
+```
+
+Agora cria-se um `Map` de dados dos alunos para convertê-los em objetos `Aluno`.
+
+```dart
+void main() {
+  // Exemplo de dados dos alunos em formato de Map
+  List<Map<String, dynamic>> dadosAlunos = [
+    {
+      'nome': 'Alice',
+      'cursos': [
+        {'nome': 'Matemática'},
+        {'nome': 'Física'}
+      ]
+    },
+    {
+      'nome': 'Bob',
+      'cursos': [
+        {'nome': 'Química'},
+        {'nome': 'Biologia'}
+      ]
+    }
+  ];
+
+  // Converter o List<Map<String, dynamic>> em List<Aluno>
+  List<Aluno> alunos = List<Aluno>.from(dadosAlunos.map((alunoMap) => Aluno.fromMap(alunoMap)));
+
+  // Imprimir os dados dos alunos
+  for (var aluno in alunos) {
+    print('Aluno: ${aluno.nome}');
+    print('Cursos: ${aluno.cursos.map((curso) => curso.nome).join(', ')}');
+    print('');
+  }
+}
+```
+
+Neste exemplo, as classes `Curso` e `Aluno` têm construtores nomeados `fromMap` para criar instâncias a partir de um `Map`. Elas também têm métodos `toMap` para converter uma instância de volta para um `Map`. No `main`, uma lista de maps é criada para representar dados dos alunos. O método `map` é usado para iterar sobre a lista de maps e converter cada map em um objeto `Aluno` usando o construtor nomeado `Aluno.fromMap`. Por fim, itera-se sobre a lista de objetos `Aluno` e a impressão dos dados é feita. O exemplo acima teria como saída:
+
+```shell
+Aluno: Alice
+Cursos: Matemática, Física
+
+Aluno: Bob
+Cursos: Química, Biologia
+```
+
+Essa abordagem permite que se converta facilmente estruturas de dados baseadas em maps (como JSON) em objetos de classes, mantendo a segurança de tipo e a facilidade de uso.
+
 ## Herança
 
 Herança é um dos pilares da programação orientada a objetos (OOP) e permite que uma classe herde propriedades e métodos de outra classe. Herança é utilizada para criar uma hierarquia de classes, permitindo o reuso de código e a criação de relacionamentos entre classes. Os conceitos básicos de herança em Dart são:
@@ -1862,3 +1950,217 @@ void main() {
 }
 ```
 
+## Extensions (Extenções)
+
+Em Dart, as extensões (ou extensions) são uma funcionalidade poderosa que permite adicionar novos métodos e getters a tipos existentes sem a necessidade de modificar a definição original desses tipos. Isso é especialmente útil quando se quer estender a funcionalidade de classes de bibliotecas ou mesmo tipos nativos como `String` ou `List`. Algumas informações importantes sobre as extensões são:
+
+- Extensões não podem adicionar campos (variáveis de instância) a tipos.
+- Métodos de extensão não podem acessar membros privados da classe original.
+- Se houver uma colisão de nome entre métodos de extensão e métodos da classe original, a classe original tem precedência.
+
+### Definindo uma Extensão
+
+Para definir uma extensão, usa-se a palavra-chave `extension` seguida por um nome opcional e o tipo que se deseja estender. Por exemplo, para se adicionar um método `reverse` à classe `String` que retorna a string invertida. Neste caso, a extensão não possui um nome.
+
+```dart
+extension on String {
+  String reverse() {
+    return split('').reversed.join('');
+  }
+}
+
+void main() {
+  String text = "hello";
+  print(text.reverse()); // Output: olleh
+}
+```
+
+No caso de uma lista, poderia-se adicionar um método `sum` para calcular a soma dos elementos de uma lista de inteiros utilizando uma extensão chamada `ListExtensions`.
+
+```dart
+extension ListExtensions on List<int> {
+  int sum() {
+    return reduce((value, element) => value + element);
+  }
+}
+
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5];
+  print(numbers.sum()); // Output: 15
+}
+```
+
+### Extensões com Genéricos
+
+É possível se criar extensões genéricas que funcionam com qualquer tipo.
+
+```dart
+extension ListUtilities<T> on List<T> {
+  void printAll() {
+    forEach((element) {
+      print(element);
+    });
+  }
+}
+
+void main() {
+  List<int> numbers = [1, 2, 3];
+  List<String> words = ["hello", "world"];
+  
+  numbers.printAll();
+  words.printAll();
+}
+```
+
+### Extensões Privadas
+
+Pode-se criar extensões privadas usando o prefixo `_` para evitar conflitos de nome e limitar o escopo.
+
+```dart
+extension _PrivateExtensions on String {
+  String get capitalized => this[0].toUpperCase() + substring(1);
+}
+
+void main() {
+  String text = "hello";
+  print(text.capitalized); // Output: Hello
+}
+```
+
+### Extensões com Métodos de mesmo Nome
+
+Se for preciso usar duas extensões que adicionam métodos com o mesmo nome a um tipo, pode-se utilizar os nomes das extensões para declarar os métodos explicitamente.
+
+```dart
+extension FirstExtension on String {
+  String get first => this[0];
+}
+
+extension SecondExtension on String {
+  String get firstChar => this[0];
+}
+
+void main() {
+  String text = "hello";
+  print(FirstExtension(text).first); // Output: h
+  print(SecondExtension(text).firstChar); // Output: h
+}
+```
+
+## Generics (Genéricos)
+
+Os generics em Dart permitem criar classes, métodos e funções que funcionam com diferentes tipos de dados sem perder a segurança de tipos. Eles são especialmente úteis para estruturas de dados e algoritmos que devem funcionar de maneira consistente com qualquer tipo de dado, como listas, mapas e árvores. Suas principais vantagens são:
+
+- **Reutilização**: Permite criar componentes altamente reutilizáveis.
+- **Segurança de Tipo**: Garante que apenas os tipos esperados sejam usados, reduzindo erros em tempo de execução.
+- **Clareza**: Facilita a leitura e manutenção do código, pois deixa claro quais tipos de dados são esperados.
+
+Aqui está um exemplo básico de uma classe genérica em Dart:
+
+```dart
+class Caixa<T> {
+  T valor;
+
+  Caixa(this.valor);
+
+  void mostrarValor() {
+    print(valor);
+  }
+}
+
+void main() {
+  Caixa<int> caixaInt = Caixa<int>(123);
+  caixaInt.mostrarValor(); // Output: 123
+
+  Caixa<String> caixaString = Caixa<String>('Olá');
+  caixaString.mostrarValor(); // Output: Olá
+}
+```
+
+Neste exemplo, a classe `Caixa` é genérica e pode armazenar um valor de qualquer tipo especificado ao instanciá-la.
+
+### Generics com Métodos
+
+Também pode-se usar generics em métodos. Aqui está um exemplo de uma função genérica:
+
+```dart
+T retornarPrimeiro<T>(List<T> itens) {
+  return itens[0];
+}
+
+void main() {
+  print(retornarPrimeiro<int>([1, 2, 3])); // Output: 1
+  print(retornarPrimeiro<String>(['a', 'b', 'c'])); // Output: a
+}
+```
+
+Neste exemplo, a função `retornarPrimeiro` pode trabalhar com uma lista de qualquer tipo e retorna o primeiro elemento da lista.
+
+### Classes e Métodos Genéricos
+
+É possível combinar generics em classes e métodos para obter maior flexibilidade:
+
+```dart
+class Par<K, V> {
+  K chave;
+  V valor;
+
+  Par(this.chave, this.valor);
+
+  void mostrarPar() {
+    print('Chave: $chave, Valor: $valor');
+  }
+}
+
+void main() {
+  Par<String, int> par = Par<String, int>('um', 1);
+  par.mostrarPar(); // Output: Chave: um, Valor: 1
+}
+```
+
+Neste exemplo, a classe `Par` aceita dois parâmetros de tipo genérico, `K` e `V`, permitindo criar pares de chaves e valores de qualquer tipo.
+
+### Restrições de Tipo em Generics
+
+Pode-se impor restrições aos tipos genéricos usando a palavra-chave `extends`. Isso é útil quando se deseja garantir que o tipo genérico herde de uma classe ou implemente uma interface específica:
+
+```dart
+class CaixaNumerica<T extends num> {
+  T valor;
+
+  CaixaNumerica(this.valor);
+
+  void mostrarValor() {
+    print(valor);
+  }
+}
+
+void main() {
+  CaixaNumerica<int> caixaInt = CaixaNumerica<int>(123);
+  caixaInt.mostrarValor(); // Output: 123
+
+  CaixaNumerica<double> caixaDouble = CaixaNumerica<double>(45.67);
+  caixaDouble.mostrarValor(); // Output: 45.67
+}
+```
+
+Neste exemplo, a classe `CaixaNumerica` só aceita tipos que estendem `num` (ou seja, `int` e `double`).
+
+### Usando Generics com Collections
+
+Os tipos genéricos são frequentemente usados com coleções, como `List`, `Set` e `Map`:
+
+```dart
+void main() {
+  List<int> numeros = [1, 2, 3];
+  Map<String, int> idades = {
+    'Alice': 25,
+    'Bob': 30
+  };
+  Set<double> valores = {1.1, 2.2, 3.3};
+
+  print(numeros); // Output: [1, 2, 3]
+  print(idades); // Output: {Alice: 25, Bob: 30}
+  print(valores); // Output: {1.1, 2.2, 3.3}
+}
+```
