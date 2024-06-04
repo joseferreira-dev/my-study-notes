@@ -3,10 +3,10 @@
 </div>
 <br>
 
-# Acessando Dados de APIs
+# Trabalhando com APIs - Parte 1: Acessando uma API Simples
 
 - [Introdução](#introdução)
-
+- [Acessando Dados de APIs com `http`](#acessando-dados-de-apis-com-http)
 
 ## Introdução
 

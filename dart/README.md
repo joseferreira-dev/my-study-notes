@@ -41,4 +41,5 @@ Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se consid
 - [Concorrência - Parte 3: Completer](./contents/21-completer/README.md)
 - [Concorrência - Parte 4: Async/Await](./contents/22-async-await/-README.md)
 - [Manipulação de Arquivos JSON](./contents/23-manipulando-json/README.md)
-- [Acessando Dados de APIs](./contents/24-acesso-apis/README.md)
+- [Trabalhando com APIs - Parte 1: Acessando uma API Simples](./contents/24-apis-parte-um/README.md)
+- [Trabalhando com APIs - Parte 2: Consumindo uma API](./contents/25-apis-parte-dois/README.md)
