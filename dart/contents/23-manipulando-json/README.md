@@ -6,7 +6,7 @@
 # Manipulação de Arquivos JSON
 
 - [Introdução](#introdução)
-
+- [Leitura e Escrita de Arquivos Locais](#leitura-e-escrita-de-arquivos-locais)
 
 ## Introdução
 
@@ -40,7 +40,7 @@ Para demonstrar como a manipulação de dados locais ocorre, considera-se uma li
 
 Este arquivo está dentro da pasta `lib` do projeto e o código principal está no arquivo `alunos.dart` na pasta `bin`.
 
-Primeiramente, deve-se adicionar as dependências necessárias para a manipulação. Neste exemplo, será utilizado o pacote `path` para gerar o caminho relativo do arquivo `alunos.json`.
+Primeiramente, deve-se adicionar as dependências necessárias para a manipulação. Neste exemplo, será utilizado o pacote `path` (versão `1.9.0`) para gerar o caminho relativo do arquivo `alunos.json`.
 
 ```shell
 dart pub add path
