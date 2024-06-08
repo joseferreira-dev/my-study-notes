@@ -13,3 +13,4 @@ Abaixo segue o índice com diversos conteúdos sobre sistemas operacionais.
 
 - [Introdução](./contents/01-introducao/README.md)
 - [Kernel e seus Tipos de Arquitetura](./contents/02-kernel/README.md)
+- [Gerência de Processos](./contents/03-gerencia-de-processos/README.md)
