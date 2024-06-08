@@ -181,6 +181,11 @@ Para organizar esses processos usam-se **semáforos**, variáveis utilizadas par
 
 A operação down verifica se o valor do semáforo é maior que `0`. Se sim, ele é decrementado e o processo continua. Se é `0`, o processo é bloqueado (entra em sleep). Já a operação up incrementa o valor do semáforo. Se havia processos bloqueados, um deles é despertado. É garantido que iniciada uma operação de semáforo, nenhum outro processo pode acessar o semáforo até que a operação tenha terminado ou sido bloqueada. Isso evita as condições de corrida.
 
-Um exemplo de situação seria de um semáforo inicializado com `0` indicando que a região crítica está ocupada. Três processos tentam entrar na região crítica e são bloqueados. Quando um processo sai, executa a operação up, incrementando o semáforo para `1`, permitindo que um dos processos bloqueados entre na região crítica. Quando tal processo entrar é aplicada a operação down, passando o valor do semáforo para `1`. Ou seja, o valor do semáforo diz quantos processos podem entrar.
+<div align="center">
+  <img src="06-semaforo.png" width="440px">
+</div>
+<br/>
+
+Um exemplo de situação seria de um semáforo inicializado com `0` indicando que a região crítica está ocupada. Quatro processos tentam entrar na região crítica e são bloqueados. Quando um processo sai, executa a operação up, incrementando o semáforo para `1`, permitindo que um dos processos bloqueados entre na região crítica. Quando tal processo entrar é aplicada a operação down, passando o valor do semáforo para `1`. Ou seja, o valor do semáforo diz quantos processos podem entrar.
 
 Uma forma mais simplificada de semáforo é um **mutex (mutual exclusion)**, usado quando apenas dois estados são necessários: **livre** ou **ocupado**. Um mutex é utilizado para garantir que somente um processo acesse a seção crítica por vez. Sempre que um processo precisa entrar na seção crítica ele chama `mutex_lock`. Se o mutex está livre, o processo entra e o mutex é marcado como ocupado. Caso contrário, o processo é bloqueado até que o mutex seja liberado. Após sair da seção crítica, o processo chama `mutex_unlock`, liberando o mutex e permitindo que outro processo entre.
