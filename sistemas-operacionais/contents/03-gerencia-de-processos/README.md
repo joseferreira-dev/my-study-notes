@@ -118,7 +118,7 @@ O tempo que um processo passa em cada estado depende do seu comportamento:
 
 ## Threads
 
-Um processo tradicional possui um espaço de endereçamento e um único fluxo de controle, que representa a execução do código do programa. No entanto, em certas situações, é vantajoso ter mais de um fluxo de controle e execução dentro do mesmo processo, operando quase em paralelo. Esses fluxos de controle são chamados threads (ou processos leves).
+Um processo tradicional possui um espaço de endereçamento e um único fluxo de controle, que representa a execução do código do programa. No entanto, em certas situações, é vantajoso ter mais de um fluxo de controle e execução dentro do mesmo processo, operando quase em paralelo. Esses fluxos de controle são chamados **threads** (ou processos leves).
 
 Threads permitem que diferentes partes de um programa sejam executadas simultaneamente. Dentro de um processo, todas as threads compartilham o mesmo espaço de endereçamento e a mesma seção de código na memória, mas cada thread tem seu próprio contador de programa, registradores e pilha.
 
@@ -133,18 +133,54 @@ Sem threads, essas funcionalidades teriam que ser executadas sequencialmente, o 
 
 Como pode ser visto na figura acima, à esquerda se tem três processos independentes, cada um com uma thread possuindo um fluxo de controle. Já à direita, está representado um único processo que contém várias threads, cada uma executando em paralelo.
 
-As threads podem ser categorizadas em dois tipos principais: threads ao nível do usuário e threads ao nível do kernel (núcleo).
+As threads podem ser categorizadas em dois tipos principais: **threads ao nível do usuário** e **threads ao nível do kernel (núcleo)**.
 
-Em threads ao nível do usuário, o gerenciamento das threads é feito no espaço do usuário, ou seja, a criação, sincronização e escalonamento das threads são tratados por uma biblioteca de threads no espaço do usuário, não pelo kernel. Sua principal vantagem é a menor sobrecarga, pois as operações de thread não envolvem chamadas de sistema ao kernel. Contudo, se uma thread realiza uma operação bloqueante, todo o processo pode ser bloqueado, já que o kernel não sabe sobre as threads individuais. Nessa situação, a tabela de processos é gerida pelo kernel e as tabelas de threads são geridas pelo próprio processo (conforme a figura abaixo).
+Em **threads ao nível do usuário**, o gerenciamento das threads é feito no espaço do usuário, ou seja, a criação, sincronização e escalonamento das threads são tratados por uma biblioteca de threads no espaço do usuário, não pelo kernel. Sua principal vantagem é a menor sobrecarga, pois as operações de thread não envolvem chamadas de sistema ao kernel. Contudo, se uma thread realiza uma operação bloqueante, todo o processo pode ser bloqueado, já que o kernel não sabe sobre as threads individuais. Nessa situação, a tabela de processos é gerida pelo kernel e as tabelas de threads são geridas pelo próprio processo (conforme a figura abaixo).
 
 <div align="center">
   <img src="03-threads-2.png" width="400px">
 </div>
 <br/>
 
-Já nas threads ao nível do kernel, o gerenciamento das threads é feito pelo próprio kernel. O kernel é responsável pela criação, sincronização e escalonamento das threads. Isso resulta em um melhor suporte para multiprocessamento, pois o kernel pode gerenciar e escalonar threads em diferentes CPUs. Contudo, isso gera maior sobrecarga, pois as operações de thread envolvem chamadas ao kernel. Aqui, tanto a tabela de processos quanto a tabela de threads são geridas pelo kernel.
+Já nas **threads ao nível do kernel**, o gerenciamento das threads é feito pelo próprio kernel. O kernel é responsável pela criação, sincronização e escalonamento das threads. Isso resulta em um melhor suporte para multiprocessamento, pois o kernel pode gerenciar e escalonar threads em diferentes CPUs. Contudo, isso gera maior sobrecarga, pois as operações de thread envolvem chamadas ao kernel. Aqui, tanto a tabela de processos quanto a tabela de threads são geridas pelo kernel.
 
 <div align="center">
   <img src="04-threads-3.png" width="300px">
 </div>
 <br/>
+
+## Comunicação entre Processos
+
+A comunicação entre processos (IPC, do inglês Inter-Process Communication) é fundamental para que processos independentes possam coordenar suas ações e compartilhar dados. Vamos explorar como isso funciona, utilizando exemplos e conceitos importantes como pipes, condições de corrida, seções críticas, semáforos e mutexes.
+
+Um dos exemplos mais simples de IPC é o uso de pipes no shell Unix/Linux. Um pipe permite que a saída de um comando seja usada como entrada para outro. Por exemplo:
+
+```shell
+ls | grep x | sort -r | tee arquivo_saida
+```
+
+Aqui, o pipe (`|`) conecta a saída de um comando à entrada do próximo. No exemplo, a saída do comando `ls`, que é a lista de arquivos do diretório, é passada como entrada para `grep x`, onde os dados são filtrados mostrando apenas as linhas que contêm `"x"`, cujo resultado é enviado para `sort -r`, que realiza a sua ordenação em ordem decrescente, e, por fim, `tee arquivo_saida` envia a saída para um arquivo e para o console ao mesmo tempo. Isso permite que vários comandos processem dados em sequência, colaborando para um objetivo comum.
+
+Essa interação entre os processo pode gerar **condições de corrida**, que ocorrem quando dois ou mais processos tentam acessar e modificar dados compartilhados simultaneamente, levando a resultados indeterminados e potenciais erros. Imagine dois processos, A e B, que enviam arquivos para um diretório de spooler de impressão quase ao mesmo tempo. Sem uma coordenação adequada, ambos podem tentar modificar o mesmo espaço de armazenamento, causando corrupção de dados ou outros problemas.
+
+<div align="center">
+  <img src="05-condicoes-de-corrida.png" width="360px">
+</div>
+<br/>
+
+O problema mostrado na figura acima ocorreu porque o processo B começou a utilizar uma das variáveis compartilhadas antes que o processo A tivesse terminado de trabalhar com ela.
+
+Para evitar condições de corrida ou outras situações que envolvem memória compartilhada deve-se encontrar uma maneira de proibir que mais de um processo leia e modifique dados compartilhados ao mesmo tempo. Uma **seção ou região crítica** é uma parte do código onde o recurso compartilhado é acessado. Para garantir a integridade dos dados em regiões críticas, quatro condições devem ser atendidas:
+
+- **Exclusão Mútua**: Dois processos não podem estar simultaneamente dentro da seção crítica.
+- **Progresso**: Nenhuma suposição deve ser feita sobre a velocidade ou número de processadores.
+- **Espera Finita**: Nenhum processo fora da seção crítica deve bloquear outros processos.
+- **Ausência de Inanição**: Nenhum processo deve esperar eternamente para entrar na seção crítica.
+
+Para organizar esses processos usam-se **semáforos**, variáveis utilizadas para gerenciar o acesso a recursos compartilhados. Eles suportam operações atômicas **down** e **up** (ou sleep e wakeup), garantindo que os processos sejam bloqueados ou despertados de maneira segura. É uma variável do tipo inteiro que possui o valor `0` quando não tem nenhum sinal a despertar, ou um valor positivo quando um ou mais sinais para despertar estiverem pendentes.
+
+A operação down verifica se o valor do semáforo é maior que `0`. Se sim, ele é decrementado e o processo continua. Se é `0`, o processo é bloqueado (entra em sleep). Já a operação up incrementa o valor do semáforo. Se havia processos bloqueados, um deles é despertado. É garantido que iniciada uma operação de semáforo, nenhum outro processo pode acessar o semáforo até que a operação tenha terminado ou sido bloqueada. Isso evita as condições de corrida.
+
+Um exemplo de situação seria de um semáforo inicializado com `0` indicando que a região crítica está ocupada. Três processos tentam entrar na região crítica e são bloqueados. Quando um processo sai, executa a operação up, incrementando o semáforo para `1`, permitindo que um dos processos bloqueados entre na região crítica. Quando tal processo entrar é aplicada a operação down, passando o valor do semáforo para `1`. Ou seja, o valor do semáforo diz quantos processos podem entrar.
+
+Uma forma mais simplificada de semáforo é um **mutex (mutual exclusion)**, usado quando apenas dois estados são necessários: **livre** ou **ocupado**. Um mutex é utilizado para garantir que somente um processo acesse a seção crítica por vez. Sempre que um processo precisa entrar na seção crítica ele chama `mutex_lock`. Se o mutex está livre, o processo entra e o mutex é marcado como ocupado. Caso contrário, o processo é bloqueado até que o mutex seja liberado. Após sair da seção crítica, o processo chama `mutex_unlock`, liberando o mutex e permitindo que outro processo entre.
