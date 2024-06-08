@@ -97,21 +97,17 @@ graph LR;
     Pronto      -->|D| Executando;
 ```
 
-<ol style="list-style-type: upper-alpha;">
-  <li><b>Executando >> Bloqueado</b>: Ocorre quando um processo em execução precisa esperar por um evento externo, como a leitura de dados de um disco. Nesse momento, ele deixa de usar a CPU e entra no estado bloqueado.</li>
-  <li><b>Bloqueado >> Pronto</b>: Ocorre quando o evento pelo qual o processo estava esperando é concluído. Por exemplo, após a leitura do arquivo do disco, o processo é notificado que os dados estão disponíveis e ele se move para o estado pronto.</li>
-  <li><b>Executando >> Pronto</b>: Ocorre quando o processo em execução excede seu tempo de uso da CPU (fatia de tempo) ou é preemptado por um processo de maior prioridade. Nesse caso, ele deixa a CPU e volta para a fila de processos prontos.</li>
-  <li><b>Pronto >> Executando</b>: Ocorre quando a CPU se torna disponível e é atribuída a um dos processos prontos, que então passa a executar.</li>
-</ol>
+- **Executando >> Bloqueado (A)**: Ocorre quando um processo em execução precisa esperar por um evento externo, como a leitura de dados de um disco. Nesse momento, ele deixa de usar a CPU e entra no estado bloqueado.
+- **Bloqueado >> Pronto (B)**: Ocorre quando o evento pelo qual o processo estava esperando é concluído. Por exemplo, após a leitura do arquivo do disco, o processo é notificado que os dados estão disponíveis e ele se move para o estado pronto.
+- **Executando >> Pronto (C)**: Ocorre quando o processo em execução excede seu tempo de uso da CPU (fatia de tempo) ou é preemptado por um processo de maior prioridade. Nesse caso, ele deixa a CPU e volta para a fila de processos prontos.
+- **Pronto >> Executando (D)**: Ocorre quando a CPU se torna disponível e é atribuída a um dos processos prontos, que então passa a executar.
 
 Para exemplificar, considere um cenário onde um processo está executando e precisa ler dados de um arquivo:
 
-<ol style="list-style-type: upper-alpha;">
-  <li><b>Executando >> Bloqueado</b>: O processo Word está executando e solicita a leitura de dados do arquivo <code>teste.txt</code> no disco. Ele entra no estado bloqueado enquanto aguarda a conclusão da leitura.</li>
-  <li><b>Bloqueado >> Pronto</b>: Após a leitura do arquivo ser concluída, o processo Word é notificado. Ele então transita para o estado pronto, aguardando a sua vez de utilizar a CPU novamente.</li>
-  <li><b>Executando >> Pronto</b>: Se o Word excede seu tempo de uso da CPU antes de completar suas operações, ele é preemptado e volta ao estado pronto, enquanto a CPU é atribuída a outro processo.</li>
-  <li><b>Pronto >> Executando</b>: Quando a CPU se torna disponível, o processo Word é selecionado da fila de prontos e volta a executar.</li>
-</ol>
+- **Executando >> Bloqueado (A)**: O processo Word está executando e solicita a leitura de dados do arquivo `teste.txt` no disco. Ele entra no estado bloqueado enquanto aguarda a conclusão da leitura.
+- **Bloqueado >> Pronto (B)**: Após a leitura do arquivo ser concluída, o processo Word é notificado. Ele então transita para o estado pronto, aguardando a sua vez de utilizar a CPU novamente.
+- **Executando >> Pronto (C)**: Se o Word excede seu tempo de uso da CPU antes de completar suas operações, ele é preemptado e volta ao estado pronto, enquanto a CPU é atribuída a outro processo.
+- **Pronto >> Executando (D)**: Quando a CPU se torna disponível, o processo Word é selecionado da fila de prontos e volta a executar.
 
 O tempo que um processo passa em cada estado depende do seu comportamento:
 
