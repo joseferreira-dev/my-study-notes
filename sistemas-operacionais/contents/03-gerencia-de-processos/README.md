@@ -48,6 +48,7 @@ Um esquema de um progeto poderia ser:
 <div align="center">
   <img src="01-esquema-processo.png" width="500px">
 </div>
+<br/>
 
 Essas informações são armazenadas em uma estrutura de dados conhecida como Bloco de Controle do Processo (PCB - Process Control Block). O PCB é mantido em uma área protegida da memória e contém detalhes críticos como:
 
@@ -77,3 +78,42 @@ Por exemplo, considere a seguinte hierarquia de processos:
   - `bash` (PID = 102)
 
 Neste cenário, `init` é o processo pai de três instâncias do shell `bash`, e uma dessas instâncias de `bash` é o pai do `programa A`. A hierarquia reflete a relação de criação e controle entre processos no sistema.
+
+## Estados de um Processo
+
+Os processos em um sistema operacional podem estar em diferentes estados, refletindo a sua situação atual em relação ao uso da CPU e a espera por eventos. Os três estados principais de um processo são:
+
+- **Executando**: O processo está atualmente utilizando a CPU para executar suas instruções.
+- **Pronto**: O processo está pronto para executar e aguarda uma oportunidade para usar a CPU. Ele está na fila de processos prontos, esperando sua vez.
+- **Bloqueado (ou em Espera)**: O processo está esperando por algum evento externo para poder continuar a execução, como a conclusão de uma operação de entrada/saída (E/S).
+
+Os processos transitam entre esses estados de acordo com a sua necessidade de recursos e a disponibilidade da CPU. As quatro transições possíveis entre os estados são:
+
+```mermaid
+graph LR;
+    Executando  -->|A| Bloqueado;
+    Executando  -->|C| Pronto;
+    Bloqueado   -->|B| Pronto;
+    Pronto      -->|D| Executando;
+```
+
+<ol style="list-style-type: upper-alpha;">
+  <li><b>Executando >> Bloqueado</b>: Ocorre quando um processo em execução precisa esperar por um evento externo, como a leitura de dados de um disco. Nesse momento, ele deixa de usar a CPU e entra no estado bloqueado.</li>
+  <li><b>Bloqueado >> Pronto</b>: Ocorre quando o evento pelo qual o processo estava esperando é concluído. Por exemplo, após a leitura do arquivo do disco, o processo é notificado que os dados estão disponíveis e ele se move para o estado pronto.</li>
+  <li><b>Executando >> Pronto</b>: Ocorre quando o processo em execução excede seu tempo de uso da CPU (fatia de tempo) ou é preemptado por um processo de maior prioridade. Nesse caso, ele deixa a CPU e volta para a fila de processos prontos.</li>
+  <li><b>Pronto >> Executando</b>: Ocorre quando a CPU se torna disponível e é atribuída a um dos processos prontos, que então passa a executar.</li>
+</ol>
+
+Para exemplificar, considere um cenário onde um processo está executando e precisa ler dados de um arquivo:
+
+<ol style="list-style-type: upper-alpha;">
+  <li><b>Executando >> Bloqueado</b>: O processo Word está executando e solicita a leitura de dados do arquivo <code>teste.txt</code> no disco. Ele entra no estado bloqueado enquanto aguarda a conclusão da leitura.</li>
+  <li><b>Bloqueado >> Pronto</b>: Após a leitura do arquivo ser concluída, o processo Word é notificado. Ele então transita para o estado pronto, aguardando a sua vez de utilizar a CPU novamente.</li>
+  <li><b>Executando >> Pronto</b>: Se o Word excede seu tempo de uso da CPU antes de completar suas operações, ele é preemptado e volta ao estado pronto, enquanto a CPU é atribuída a outro processo.</li>
+  <li><b>Pronto >> Executando</b>: Quando a CPU se torna disponível, o processo Word é selecionado da fila de prontos e volta a executar.</li>
+</ol>
+
+O tempo que um processo passa em cada estado depende do seu comportamento:
+
+- **Processos CPU-bound**: Esses processos realizam operações intensivas de CPU e passam a maior parte do tempo em execução. Um exemplo é a reprodução de um filme, que exige constante processamento de dados de vídeo e áudio. Eles raramente entram no estado bloqueado, apenas retornando ao estado pronto quando a fatia de tempo se esgota.
+- **Processos I/O-bound**: Esses processos realizam muitas operações de E/S e passam grande parte do tempo esperando por eventos externos. Um exemplo é um programa de chat, que frequentemente espera pela entrada do usuário. Eles frequentemente entram no estado bloqueado e, após a conclusão das operações de E/S, movem-se para o estado pronto.
