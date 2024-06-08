@@ -71,11 +71,13 @@ Por fim, os processos em um sistema operacional frequentemente possuem uma hiera
 
 Por exemplo, considere a seguinte hierarquia de processos:
 
-- `init` (PID = 1)
-  - `bash` (PID = 100)
-    - `programa A` (PID = 200)
-  - `bash` (PID = 101)
-  - `bash` (PID = 102)
+```mermaid
+graph TB;
+    A("init (PID = 1)")   --> B("bash (PID = 100)");
+    A("init (PID = 1)")   --> D("bash (PID = 101)");
+    B("bash (PID = 100)") --> E("programa A (PID = 200)");
+    A("init (PID = 1)")   --> C("bash (PID = 102)");
+```
 
 Neste cenário, `init` é o processo pai de três instâncias do shell `bash`, e uma dessas instâncias de `bash` é o pai do `programa A`. A hierarquia reflete a relação de criação e controle entre processos no sistema.
 
@@ -113,3 +115,36 @@ O tempo que um processo passa em cada estado depende do seu comportamento:
 
 - **Processos CPU-bound**: Esses processos realizam operações intensivas de CPU e passam a maior parte do tempo em execução. Um exemplo é a reprodução de um filme, que exige constante processamento de dados de vídeo e áudio. Eles raramente entram no estado bloqueado, apenas retornando ao estado pronto quando a fatia de tempo se esgota.
 - **Processos I/O-bound**: Esses processos realizam muitas operações de E/S e passam grande parte do tempo esperando por eventos externos. Um exemplo é um programa de chat, que frequentemente espera pela entrada do usuário. Eles frequentemente entram no estado bloqueado e, após a conclusão das operações de E/S, movem-se para o estado pronto.
+
+## Threads
+
+Um processo tradicional possui um espaço de endereçamento e um único fluxo de controle, que representa a execução do código do programa. No entanto, em certas situações, é vantajoso ter mais de um fluxo de controle e execução dentro do mesmo processo, operando quase em paralelo. Esses fluxos de controle são chamados threads (ou processos leves).
+
+Threads permitem que diferentes partes de um programa sejam executadas simultaneamente. Dentro de um processo, todas as threads compartilham o mesmo espaço de endereçamento e a mesma seção de código na memória, mas cada thread tem seu próprio contador de programa, registradores e pilha.
+
+Por exemplo, considere um editor de texto com várias funcionalidades: contador de palavras, contador de páginas, correção ortográfica instantânea, entre outras. Cada funcionalidade pode ser implementada em uma thread separada. Assim, a cada digitação, uma thread pode atualizar a contagem de palavras, outra pode verificar a quantidade de páginas, e outra pode corrigir a ortografia.
+
+Sem threads, essas funcionalidades teriam que ser executadas sequencialmente, o que resultaria em um desempenho inferior. Alternativamente, cada funcionalidade poderia ser implementada como um processo separado, mas isso seria mais pesado em termos de recursos, pois cada processo teria seu próprio espaço de endereçamento e recursos associados.
+
+<div align="center">
+  <img src="02-threads-1.png" width="600px">
+</div>
+<br/>
+
+Como pode ser visto na figura acima, à esquerda se tem três processos independentes, cada um com uma thread possuindo um fluxo de controle. Já à direita, está representado um único processo que contém várias threads, cada uma executando em paralelo.
+
+As threads podem ser categorizadas em dois tipos principais: threads ao nível do usuário e threads ao nível do kernel (núcleo).
+
+Em threads ao nível do usuário, o gerenciamento das threads é feito no espaço do usuário, ou seja, a criação, sincronização e escalonamento das threads são tratados por uma biblioteca de threads no espaço do usuário, não pelo kernel. Sua principal vantagem é a menor sobrecarga, pois as operações de thread não envolvem chamadas de sistema ao kernel. Contudo, se uma thread realiza uma operação bloqueante, todo o processo pode ser bloqueado, já que o kernel não sabe sobre as threads individuais. Nessa situação, a tabela de processos é gerida pelo kernel e as tabelas de threads são geridas pelo próprio processo (conforme a figura abaixo).
+
+<div align="center">
+  <img src="03-threads-2.png" width="400px">
+</div>
+<br/>
+
+Já nas threads ao nível do kernel, o gerenciamento das threads é feito pelo próprio kernel. O kernel é responsável pela criação, sincronização e escalonamento das threads. Isso resulta em um melhor suporte para multiprocessamento, pois o kernel pode gerenciar e escalonar threads em diferentes CPUs. Contudo, isso gera maior sobrecarga, pois as operações de thread envolvem chamadas ao kernel. Aqui, tanto a tabela de processos quanto a tabela de threads são geridas pelo kernel.
+
+<div align="center">
+  <img src="04-threads-3.png" width="300px">
+</div>
+<br/>
