@@ -11,4 +11,5 @@ Os Sistemas Operacionais (SOs) são softwares fundamentais que gerenciam o hardw
 
 Abaixo segue o índice com diversos conteúdos sobre sistemas operacionais.
 
-- [Sistemas Operacionais: Introdução](./contents/01-introducao/README.md)
+- [Introdução](./contents/01-introducao/README.md)
+- [Kernel e seus Tipos de Arquitetura](./contents/02-kernel/README.md)
