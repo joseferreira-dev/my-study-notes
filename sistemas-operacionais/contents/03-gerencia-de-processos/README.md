@@ -6,7 +6,20 @@
 # Gerência de Processos
 
 - [Introdução](#introdução)
-
+- [Criação, Término e Hierarquia de Processos](#criação-término-e-hierarquia-de-processos)
+- [Estados de um Processo](#estados-de-um-processo)
+- [Comunicação entre Processos](#comunicação-entre-processos)
+- [Escalonamento de Processos](#escalonamento-de-processos)
+- [Escalonamento em Sistemas de Lote](#escalonamento-em-sistemas-de-lote)
+  - [First-Come, First-Served (FCFS)](#first-come-first-served-fcfs)
+  - [Shortest-Job First (SJF)](#shortest-job-first-sjf)
+  - [Shortest Remaining Time Next (SRT)](#shortest-remaining-time-next-srt)
+- [Escalonamento em Sistemas Interativos](#escalonamento-em-sistemas-interativos)
+  - [Round-robin](#round-robin)
+  - [Escalonamento por Prioridade](#escalonamento-por-prioridade)
+  - [Escalonamento por Múltiplas Filas](#escalonamento-por-múltiplas-filas)
+  - [Escalonamento Garantido](#escalonamento-garantido)
+  - [Escalonamento por Sorteio](#escalonamento-por-sorteio)
 
 ## Introdução
 
@@ -189,3 +202,78 @@ A operação down verifica se o valor do semáforo é maior que `0`. Se sim, ele
 Um exemplo de situação seria de um semáforo inicializado com `0` indicando que a região crítica está ocupada. Quatro processos tentam entrar na região crítica e são bloqueados. Quando um processo sai, executa a operação up, incrementando o semáforo para `1`, permitindo que um dos processos bloqueados entre na região crítica. Quando tal processo entrar é aplicada a operação down, passando o valor do semáforo para `1`. Ou seja, o valor do semáforo diz quantos processos podem entrar.
 
 Uma forma mais simplificada de semáforo é um **mutex (mutual exclusion)**, usado quando apenas dois estados são necessários: **livre** ou **ocupado**. Um mutex é utilizado para garantir que somente um processo acesse a seção crítica por vez. Sempre que um processo precisa entrar na seção crítica ele chama `mutex_lock`. Se o mutex está livre, o processo entra e o mutex é marcado como ocupado. Caso contrário, o processo é bloqueado até que o mutex seja liberado. Após sair da seção crítica, o processo chama `mutex_unlock`, liberando o mutex e permitindo que outro processo entre.
+
+## Escalonamento de Processos
+
+O escalonamento de processos é uma atividade fundamental no gerenciamento da CPU em sistemas operacionais. Ele visa maximizar a eficiência do processamento e garantir que processos prioritários sejam executados de maneira adequada.
+
+O escalonamento pode ocorrer em diversas situação, mas deve ocorrer sempre em duas situações principais:
+
+- **Quando um processo termina**: Após a conclusão de um processo, ele não precisa mais da CPU. A CPU deve ser liberada para outro processo que esteja aguardando.
+- **Quando um processo é bloqueado**: Um processo pode ser bloqueado durante operações de E/S (entrada/saída) ou ao aguardar um semáforo. Neste caso, ele não deve monopolizar a CPU enquanto espera. A CPU deve ser alocada a outro processo que esteja pronto para executar.
+
+Um conceito importante quando se trata desse assunto é a **preempção**, que é o ato do sistema operacional de interromper um processo em execução e alocar a CPU a outro processo. Isso é realizado através de interrupções do relógio, garantindo que nenhum processo monopolize o processador. A preempção é crucial em sistemas interativos para assegurar que todos os processos tenham a oportunidade de executar.
+
+Quando um sistema não é preemptivo, pode ocorrer uma situação chamada **starvation (inanição)**. Nesse cenário, processos de menor prioridade podem nunca chegar a ser executados, pois processos de maior prioridade sempre "furam a fila". Starvation ocorre quando um processo fica indefinidamente esperando para ser escalonado.
+
+Existem vários algoritmos utilizados para realizar escalonamento, cada um com suas próprias características e vantagens. Eles podem ser categorizados de acordo com o tipo de sistema:
+
+- **Lote (Batch)**: Utilizado em computadores de grande porte onde não há necessidade de resposta rápida aos usuários. Algoritmos não-preemptivos ou com longos períodos de tempo para cada processo são aceitáveis. Minimiza trocas de processos, melhorando o desempenho geral.
+- **Interativo**: Em ambientes onde os usuários interagem constantemente com o sistema, a preempção é essencial. Prevê a distribuição justa da CPU entre os processos, impedindo a monopolização. Comum em PCs para jogos, edição de textos, navegação na internet, etc.
+- **Tempo Real (Real-Time)**: Preempção pode ser desnecessária porque os processos são programados para não serem executados por longos períodos. Os processos realizam suas tarefas rapidamente e frequentemente entram em estado de bloqueio. Utilizado em sistemas críticos como radares de velocidade, onde a resposta imediata é essencial.
+
+## Escalonamento em Sistemas de Lote
+
+Nos sistemas de lote, o escalonamento de processos visa maximizar a eficiência do processamento, muitas vezes sem a necessidade de resposta imediata aos usuários. Aqui, os algoritmos são escolhidos para otimizar o uso da CPU e minimizar o tempo de espera total. Alguns dos principais algoritmos utilizados especificamente em sistemas de lote são: FCFS, SJF e SRT.
+
+### First-Come, First-Served (FCFS)
+
+O algoritmo **First-Come, First-Served (FCFS)** (Primeiro a Chegar, Primeiro a ser Atendido) é um dos mais simples e intuitivos. Conforme o nome sugere, os processos são atendidos na ordem em que chegam. Imagine uma fila única onde os processos entram e aguardam sua vez de serem executados. Assim que um processo é selecionado, ele monopoliza a CPU até ser concluído ou até precisar ser bloqueado por alguma operação de E/S. Se um processo bloqueado se torna pronto novamente, ele retorna ao final da fila.
+
+Um ponto importante é que o FCFS é um algoritmo não-preemptivo. Isso significa que, uma vez que um processo começa a ser executado, ele não pode ser interrompido até finalizar ou ser bloqueado. Esse método é simples e justo, mas pode levar a problemas de monopolização da CPU. Por exemplo, se um processo com um tempo de execução longo for o primeiro a ser executado, ele poderá ocupar a CPU por um tempo considerável, causando um aumento significativo no tempo de espera para os processos subsequentes. Esse cenário é conhecido como o "problema do comboio".
+
+### Shortest-Job First (SJF)
+
+O algoritmo **Shortest-Job First (SJF)** busca minimizar o tempo médio de espera ao priorizar os processos com o menor tempo de execução. Nesse algoritmo, presume-se que os tempos de execução dos processos são conhecidos previamente. Assim, quando vários processos estão prontos para serem executados, o SJF seleciona o que possui o menor tempo de execução estimado.
+
+Imagine uma empresa onde as tarefas são conhecidss por sua duração: tarefas do tipo A levam 2 minutos, do tipo B levam 6 minutos e do tipo C levam 4 minutos. Suponha que as tarefas B1, A1, C1, A2 e C2 são agendados para execução. De acordo com o SJF, a ordem de execução seria A1 (2 min), A2 (2 min), C1 (4 min), C2 (4 min) e B1 (6 min). Essa abordagem minimiza o tempo médio de espera porque as tarefas mais curtas são executadas primeiro, liberando rapidamente a CPU para outros processos.
+
+O SJF é um algoritmo não-preemptivo, o que significa que uma vez iniciado, um processo não será interrompido até que seja concluído. No entanto, sua aplicação prática é limitada porque raramente se conhece de antemão o tempo de execução dos processos.
+
+### Shortest Remaining Time Next (SRT)
+
+O **Shortest Remaining Time Next (SRT)** é uma versão preemptiva do SJF. No SRT, o escalonador sempre seleciona o job com o menor tempo de execução restante. Quando um novo processo chega, seu tempo de execução é comparado com o tempo restante do processo atualmente em execução. Se o novo processo tiver um tempo de execução menor, o processo atual é suspenso e o novo processo é iniciado.
+
+Essa abordagem permite uma alta prioridade para jobs curtos recém-chegados, garantindo que não fiquem esperando por longos períodos. Por exemplo, se um processo com um tempo restante de 10 minutos está em execução e um novo processo com um tempo estimado de 2 minutos chega, o processo atual será preemptado e o novo processo será executado imediatamente. Após a conclusão do novo processo, o processo preemptado retoma a execução.
+
+O SRT oferece uma maneira eficiente de garantir que processos curtos sejam concluídos rapidamente, mas introduz a complexidade adicional da preempção e a necessidade de conhecer ou estimar os tempos de execução dos processos.
+
+## Escalonamento em Sistemas Interativos
+
+Nos sistemas interativos, o objetivo principal do escalonamento é garantir que os usuários recebam respostas rápidas e que a utilização do processador seja justa entre os processos. Diferentemente dos sistemas de lote, onde a resposta rápida não é crucial, em sistemas interativos a preempção é fundamental para evitar que um único processo monopolize a CPU. Alguns dos principais algoritmos de escalonamento utilizados em sistemas interativos são: Round-robin, Escalonamento por Prioridade, Escalonamento por Múltiplas Filas, Escalonamento Garantido e Escalonamento por Sorteio.
+
+### Round-robin
+
+O algoritmo **Round-robin** é um dos métodos mais simples e amplamente usados para escalonamento em sistemas interativos. Ele atribui um **quantum** de tempo fixo a cada processo na fila de prontos. Quando um processo começa a ser executado, ele tem até o fim do quantum para usar a CPU. Se o processo não terminar sua execução até o fim do quantum, ele é preemptado e colocado no final da fila, dando lugar ao próximo processo.
+
+Por exemplo, suponha que o quantum seja de 9ms e a troca de contexto demore 1ms. Nesse caso, a cada 10ms, 1ms é gasto em operações administrativas (salvar e carregar registradores, atualizar tabelas, etc.), resultando em uma sobrecarga de 10%. Se um processo termina antes do quantum expirar ou é bloqueado por uma operação de E/S, a CPU é imediatamente atribuída ao próximo processo.
+
+### Escalonamento por Prioridade
+
+No escalonamento por prioridade, cada processo recebe uma prioridade. O processo com a maior prioridade entre os prontos é escolhido para execução. Este método é útil para garantir que processos críticos, como aqueles necessários para videoconferências ao vivo, recebam CPU antes de processos menos urgentes, como um daemon de envio de e-mails.
+
+Para evitar a monopolização da CPU por processos de alta prioridade, o sistema pode diminuir gradualmente a prioridade do processo em execução a cada interrupção de relógio. Quando a prioridade de um processo em execução cai abaixo da prioridade do próximo processo mais prioritário, ocorre uma troca de processo. Outra abordagem é dar um quantum a cada processo; se esse quantum se esgota, a CPU é atribuída ao próximo processo de maior prioridade.
+
+### Escalonamento por Múltiplas Filas
+
+O escalonamento por múltiplas filas agrupa os processos em diferentes classes, cada uma com uma prioridade e um quantum diferente. Os processos começam na fila com a prioridade mais alta (e menor quantum). À medida que um processo utiliza todos os quanta (plural de quantum) destinados a ele em uma fila, ele é movido para a próxima fila, que possui um quantum maior.
+
+Por exemplo, um processo que precisa de 50 quanta pode começar na fila com 1 quantum, depois mover-se para 2 quanta, 4 quanta, 8 quanta, 16 quanta, e finalmente 32 quanta. No total, esse processo teria utilizado 63 quanta, mas na última fila, ele apenas utilizaria 19 antes de terminar sua execução e liberar a CPU.
+
+### Escalonamento Garantido
+
+O escalonamento garantido visa cumprir promessas realistas de desempenho para os usuários. Se houver N usuários, cada um deve receber cerca de 1/N do poder da CPU. Para implementar isso, o sistema monitora o tempo de CPU recebido por cada processo e ajusta as alocações para equilibrar o uso ao longo do tempo. Se um usuário recebeu menos CPU, ele será compensado na próxima rodada, garantindo uma distribuição justa de recursos.
+
+### Escalonamento por Sorteio
+
+O escalonamento por sorteio é uma alternativa mais simples ao escalonamento garantido. Nesse método, cada processo recebe um número de "bilhetes de loteria". Quando a CPU precisa ser atribuída, um bilhete é sorteado, e o processo que possui esse bilhete ganha a CPU. Processos mais importantes podem receber mais bilhetes, aumentando suas chances de ganhar a loteria. Este método é fácil de implementar e garante uma distribuição probabilística justa da CPU.
