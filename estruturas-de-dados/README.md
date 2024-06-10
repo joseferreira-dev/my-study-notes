@@ -25,4 +25,5 @@ Em suma, estruturas de dados são essenciais para a construção de algoritmos e
 
 Abaixo segue o índice com diversos conteúdos acerca das estruturas de dados.
 
-- [Estruturas Lineares](./contents/01-introducao/README.md)
+- [Estruturas Lineares - Parte 1: Vetores e Matrizes](./contents/01-introducao/README.md)
+- [Estruturas Lineares - Parte 2: Listas](./contents/02-lineares-02/README.md)
