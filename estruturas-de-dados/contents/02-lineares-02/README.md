@@ -6,6 +6,10 @@
 # Title
 
 - [Introdução](#introdução)
+- [Listas Encadeadas Simples](#listas-encadeadas-simples)
+- [Listas Duplamente Encadeadas](#listas-duplamente-encadeadas)
+- [Listas Circulares](#listas-circulares)
+- [Listas Circulares Duplamente Encadeadas](#listas-circulares-duplamente-encadeadas)
 
 ## Introdução
 
