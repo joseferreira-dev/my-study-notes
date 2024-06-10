@@ -47,6 +47,8 @@ Uma lista circular (Circular Linked List) é uma variação da lista encadeada, 
   <img src="03-lista-circular.png">
 </div>
 
+Uma lista circular não tem um primeiro ou último nó natural. Sendo necessário, portanto, estabelecer um primeiro e um último nó por convenção. Uma convenção útil é permitir que o ponteiro externo para a lista circular aponte para o último nó, e que o nó seguinte se torne o primeiro nó. Assim podemos incluir ou remover um elemento convenientemente a partir do início ou do final de uma lista.
+
 As operações básicas em uma lista circular, como inserção, remoção e busca, têm complexidade semelhante às listas encadeadas simples, com o custo adicional de ajustar os ponteiros para manter a estrutura circular. O custo é `O(1)` para inserção e remoção se a posição é conhecida, e `O(n)` para busca no pior caso, pois pode ser necessário percorrer todos os nós. A principal diferença é que a lista não possui um ponto final natural, o que pode simplificar algumas operações cíclicas.
 
 ## Listas Circulares Duplamente Encadeadas
