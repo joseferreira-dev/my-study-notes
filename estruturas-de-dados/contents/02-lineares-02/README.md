@@ -3,7 +3,7 @@
 </div>
 <br>
 
-# Title
+# Estruturas Lineares - Parte 2: Listas
 
 - [Introdução](#introdução)
 - [Listas Encadeadas Simples](#listas-encadeadas-simples)
