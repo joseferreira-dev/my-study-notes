@@ -28,3 +28,4 @@ Abaixo segue o índice com diversos conteúdos acerca das estruturas de dados.
 - [Estruturas Lineares - Parte 1: Vetores e Matrizes](./contents/01-introducao/README.md)
 - [Estruturas Lineares - Parte 2: Listas](./contents/02-lineares-02/README.md)
 - [Estruturas Lineares - Parte 3: Pilhas e Filas](./contents/03-lineares-03/README.md)
+- [Estruturas Não-Lineares - Parte 1: Árvores](./contents/04-nao-lineares-01/README.md)
