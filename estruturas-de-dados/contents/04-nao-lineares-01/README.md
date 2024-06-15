@@ -6,7 +6,24 @@
 # Estruturas Não-Lineares - Parte 1: Árvores
 
 - [Introdução](#introdução)
-
+- [Estrutura de uma Árvore e Terminologias](#estrutura-de-uma-árvore-e-terminologias)
+- [Operações Básicas](#operações-básicas)
+- [Percorrendo uma Árvore](#percorrendo-uma-árvore)
+  - [Pré-ordem (pre-order)](#pré-ordem-pre-order)
+  - [Pós-ordem (post-order)](#pós-ordem-post-order)
+  - [Em-ordem (in-order)](#em-ordem-in-order)
+- [Tipos de Árvores](#tipos-de-árvores)
+  - [Árvore Clássica](#árvore-clássica)
+  - [Árvore Binária](#árvore-binária)
+  - [Árvore Binária de Busca](#árvore-binária-de-busca)
+  - [Árvore AVL](#árvore-avl)
+    - [Rotação Simples à Esquerda](#rotação-simples-à-esquerda)
+    - [Rotação Simples à Direita](#rotação-simples-à-direita)
+    - [Rotação Dupla à Esquerda (Esquerda-Direita)](#rotação-dupla-à-esquerda-esquerda-direita)
+    - [Rotação Dupla à Direita (Direita-Esquerda)](#rotação-dupla-à-direita-direita-esquerda)
+  - [Árvore Rubro-Negra (Árvore Vermelho-Preto)](#árvore-rubro-negra-árvore-vermelho-preto)
+  - [Outros Tipos](#outros-tipos)
+  - [Comparação entre os Tipos](#comparação-entre-os-tipos)
 
 ## Introdução
 
@@ -192,7 +209,7 @@ A árvore abaixo está desbalanceada para a esquerda, logo, a rotação deve ser
   <img width="500px" src="12-rotate-02.png">
 </div>
 
-#### Rotação  Dupla à Esquerda (Esquerda-Direita)
+#### Rotação Dupla à Esquerda (Esquerda-Direita)
 
 Essa rotação deve ser realizada quando a árvore estiver desbalanceada para a direita e com um desvio para a esquerda, o que forma um espécie de quina. Essa rotação executa os seguintes passos:
 
