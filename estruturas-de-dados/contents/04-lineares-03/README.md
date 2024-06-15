@@ -9,6 +9,7 @@
 - [Pilha (Stack)](#pilha-stack)
 - [Fila (Queue)](#fila-queue)
 - [Fila Dupla (Deque)](#fila-dupla-deque)
+- [Vetor/Matriz vs. Lista vs. Pilha vs. Fila](#vetormatriz-vs-lista-vs-pilha-vs-fila)
 
 ## Introdução
 
@@ -80,3 +81,22 @@ As operações básicas de um deque são:
 Todas as operações em um deque tem custo de `O(1)`, independentemente de ser no início ou no final. Isso porque cada operação envolve apenas a atualização de ponteiros ou índices, sem a necessidade de deslocar elementos.
 
 Os deques são extremamente úteis em aplicações que requerem flexibilidade na manipulação de dados em ambas as extremidades, como em algoritmos de cache, algoritmos de pesquisa e em várias aplicações de simulação.
+
+## Vetor/Matriz vs. Lista vs. Pilha vs. Fila
+
+Em resumo, as estruturas lineares tem algumas pequenas diferenças:
+
+- Vetores e matrizes são estáticos, ou seja, têm seu tamanho definido em sua criação, e ele não muda. Possuem acesso posicional e são alocados contiguamente na memória.
+- Pilhas, Filas e Listas são dinâmicas, ou seja, têm seu tamanho variável. São alocadas espaçadamente em endereços de memória livres, já que podem usar ponteiros. Elas também podem ter implementações com vetores, mas há uma perda com essa abordagem, devido à falta de dinamismo de que geralmente essas estruturas necessitam.
+
+Embora possuam essas diferenças, uma coisa é comum a todas essas estruturas: a linearidade. Os elementos sempre estão ligados de forma sequencial e, no caso de matrizes, podem ter mais de uma dimensão. A única relação que existe entre os elementos dessas estruturas é que eles são conectados em um sentido: início → fim (esquerda/direita), fim → início (direita/esquerda), cima → baixo ou baixo → cima.
+
+Com isso, pode-se ter dúvidas sobre qual delas utilizar, para isso deve-se pensar primeiro: Qual problema precisamos resolver? A partir disso é que podemos escolher a estrutura de dados linear que se adeque ao problema que se deseja solucionar. Não existe uma melhor que outra. Cada uma tem um porquê de sua existência e um nicho de problemas no qual se encaixa melhor para ajudar a resolvê-los. 
+Entender de forma clara o comportamento de cada uma ajuda a escolher a que mais se adequa ao problema a ser resolvido. Algumas dicas ajudam nessa escolha:
+
+- Se tem a certeza de que a quantidade de elementos é fixa, use um vetor. Assim, o acesso será mais rápido e se consumirá menos memória, pois não precisará de ponteiros. Se precisar de mais de uma dimensão, use uma matriz.
+- Se é necessário manter uma sequência dos elementos em que os últimos elementos devem ser acessados primeiro, use uma pilha.
+- Precisa criar prioridades entre os elementos? Use uma fila.
+- Apenas quer ter uma disposição linear dos elementos e precisa de acesso aleatório a eles? Use a lista.
+
+Podemos ver que cada uma dessas estruturas de dados tem uma regra para seu uso muito bem definida.
