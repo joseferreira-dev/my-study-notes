@@ -31,3 +31,4 @@ Abaixo segue o índice com diversos conteúdos acerca das estruturas de dados.
 - [Estruturas Lineares - Parte 3: Pilhas e Filas](./contents/04-lineares-03/README.md)
 - [Estruturas Não-Lineares - Parte 1: Árvores](./contents/05-nao-lineares-01/README.md)
 - [Estruturas Não-Lineares - Parte 2: Grafos](./contents/06-nao-lineares-02/README.md)
+- [Estruturas Não-Lineares - Parte 3: Set, Tabela Hash e Heap](./contents/07-nao-lineares-03/README.md)
