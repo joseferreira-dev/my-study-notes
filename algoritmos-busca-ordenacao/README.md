@@ -15,4 +15,4 @@ Os algoritmos de ordenação reorganizam os elementos de uma lista ou array de a
 
 Abaixo segue o índice com diversos conteúdos sobre os principais algoritmos de busca e ordenação.
 
-- [Conceitos Básicos](./contents/01-conceitos/README.md)
+- [Introdução aos Algoritmos de Ordenação](./contents/01-introducao-algoritmos-ordenacao/README.md)
