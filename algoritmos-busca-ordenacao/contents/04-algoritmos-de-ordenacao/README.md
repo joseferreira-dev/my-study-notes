@@ -145,5 +145,4 @@ Algumas das principais características do Tim Sort são:
 - **Complexidade de Espaço**: `O(n)`, devido ao uso de espaço adicional para a mesclagem dos runs.
 - **Estabilidade**: É um algoritmo estável, ou seja, mantém a ordem relativa de elementos iguais.
 
-Tim Sort é um algoritmo de ordenação híbrido poderoso e eficiente, projetado para oferecer o melhor desempenho possível em casos do mundo real. Com uma complexidade de tempo `O(n log n)` no pior caso e eficiência adicional em listas parcialmente ordenadas, ele é uma escolha excelente para a ordenação de grandes conjuntos de dados. Sua estabilidade também o torna adequado para muitas aplicações práticas onde a manutenção da ordem relativa dos elementos é importante.
-
+Tim Sort é um algoritmo de ordenação híbrido poderoso e eficiente, projetado para oferecer o melhor desempenho possível em casos do mundo real. Com uma complexidade de tempo `O(n log n)` no pior caso e eficiência adicional em listas parcialmente ordenadas, ele é uma escolha excelente para a ordenação de grandes conjuntos de dados. Sua estabilidade também o torna adequado para muitas aplicações práticas onde a manutenção da ordem relativa dos elementos é importante. Também costuma ter um desempenho equivalente ou superior em comparação aos algoritmos Quick Sort e Merge Sort.
