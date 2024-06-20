@@ -6,7 +6,9 @@
 # Algoritmos de Ordenação - Parte 1: Bubble Sort, Insertion Sort, Selection Sort
 
 - [Introdução](#introdução)
-
+- [Bubble Sort](#bubble-sort)
+- [Insertion Sort](#insertion-sort)
+- [Selection Sort](#selection-sort)
 
 ## Introdução
 
@@ -61,20 +63,6 @@ Algumas das principais características do Bubble Sort são:
 
 O Bubble Sort é mais útil para listas pequenas ou quando a lista está quase ordenada. É um algoritmo muito lento para grandes conjuntos de dados. Além disso, por ser um algoritmo de classificação baseado em comparação, ele requer um operador de comparação para determinar a ordem relativa dos elementos no conjunto de dados de entrada. Isso pode limitar a eficiência do algoritmo em certos casos.
 
-```
-ALGORITMO BUBBLE SORT
-  ENTRADA: Um vetor L com N posições
-  SAÍDA: Um vetor L em ordem crescente
-
-  Para i = 1 até n - 1
-    Para j = 0 até n - 1 - i
-      Se L[j] > L[j + 1]
-        Aux = L[j]
-        L[j] = L[j + 1]
-        L[j + 1] = Aux
-FIM (BUBBLE SORT)
-```
-
 ## Insertion Sort
 
 O algoritmo de ordenação Insertion Sort é um método simples e intuitivo para ordenar uma lista que funciona inserindo iterativamente cada elemento de uma lista não classificada em sua posição correta em uma parte classificada da lista. É um algoritmo de classificação estável, o que significa que elementos com valores iguais mantêm sua ordem relativa na saída classificada. Ele é eficiente para listas pequenas ou quase ordenadas. A ideia básica do Insertion Sort é construir a lista ordenada elemento por elemento, inserindo cada novo elemento na posição correta, como classificar as cartas de baralho em suas mãos. Você divide as cartas em dois grupos: as cartas classificadas e as cartas não classificadas. Em seguida, você escolhe uma carta do grupo não classificado e a coloca no lugar certo no grupo classificado.
@@ -126,22 +114,6 @@ Algumas das principais características do Insertion Sort são:
 - **Estabilidade**: É um algoritmo estável, ou seja, não altera a ordem relativa de elementos iguais.
 
 O Insertion Sort é frequentemente utilizado em situações onde o número de elementos é pequeno ou como parte de algoritmos mais complexos (por exemplo, o algoritmo de ordenação híbrido Timsort usa o Insertion Sort para pequenas partições). É um algoritmo lento para grandes conjuntos de dados e apresenta um desempenho significativamente melhor que o Bubble Sort, em termos absolutos.
-
-```
-ALGORITMO INSERTION SORT
-  ENTRADA: Um vetor L com N posições
-  SAÍDA: Um vetor L em ordem crescente
-
-  Para i = 1 até n - 1
-    Pivo = L[i]
-    j = i - 1
-    Enquanto j >= 0 e L[j] > Pivo
-      Se L[j] > L[j + 1]
-        L[j + 1] = L[j]
-        j = j - 1
-      L[j + 1] = Pivo
-FIM (INSERTION SORT)
-```
 
 ## Selection Sort
 
@@ -197,17 +169,3 @@ Algumas das principais características do Selection Sort são:
 
 O Selection Sort é adequado para listas pequenas ou quando a simplicidade da implementação é mais importante do que a eficiência. Em contextos onde o desempenho é crucial, algoritmos de ordenação mais eficientes como Quick Sort, Merge Sort ou Heap Sort são preferíveis. Seu desempenho costuma ser 
 superior ao Bubble Sort e inferior ao Insertion Sort.
-
-```
-ALGORITMO SELECTION SORT
-  ENTRADA: Um vetor L com N posições
-  SAÍDA: Um vetor L em ordem crescente
-  
-  Para i = 0 até n - 2
-    Min = i
-    Para j = i + 1 até n - 1
-      Se L[j] < L[Min]
-        Min = j
-    Troca(L[i], L[Min])
-FIM (SELECTION SORT)
-```
