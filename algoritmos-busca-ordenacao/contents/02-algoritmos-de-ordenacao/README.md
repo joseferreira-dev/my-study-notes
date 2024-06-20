@@ -3,7 +3,7 @@
 </div>
 <br>
 
-# Algoritmos de Ordenação
+# Algoritmos de Ordenação Estáveis: Bubble Sort, Insertion Sort
 
 - [Introdução](#introdução)
 
