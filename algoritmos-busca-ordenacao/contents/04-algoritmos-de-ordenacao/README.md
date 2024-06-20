@@ -12,7 +12,7 @@
 
 ## Introdução
 
-
+**Shell Sort**, **Comb Sort** e **Tim Sort** são algoritmos de ordenação que introduzem técnicas avançadas para melhorar a eficiência em comparação aos métodos mais básicos. **Shell Sort** é uma generalização do Insertion Sort que compara e troca elementos que estão a uma certa distância (gap) entre si, diminuindo o gap gradualmente até que ele se torne 1. Isso permite que o Shell Sort seja mais eficiente que o Insertion Sort, especialmente em listas maiores. **Comb Sort** é uma melhoria do Bubble Sort, que também usa um gap para comparar e trocar elementos, começando com um gap maior e diminuindo gradualmente até 1. Comb Sort resolve alguns dos problemas de ineficiência do Bubble Sort, lidando melhor com "tartarugas" (valores pequenos perto do final da lista). **Tim Sort** é um algoritmo híbrido que combina Insertion Sort e Merge Sort, projetado para aproveitar runs (sublistas ordenadas) existentes na lista original, garantindo uma complexidade `O(n log n)` no pior caso e excelente desempenho em muitos casos práticos. Tim Sort é usado em implementações de ordenação padrão em linguagens como Python e Java devido à sua eficiência e estabilidade.
 
 ## Shell Sort
 
@@ -21,32 +21,32 @@ O algoritmo de ordenação Shell Sort é uma generalização do Insertion Sort q
 O passo a passo para a sua realização é o seguinte:
 
 1. **Escolha dos Gaps**
-   1. O algoritmo começa escolhendo uma sequência de gaps, que são intervalos entre os elementos a serem comparados e trocados. Uma sequência comum é dividir o tamanho da lista por 2 repetidamente até chegar a 1.
+   - O algoritmo começa escolhendo uma sequência de gaps, que são intervalos entre os elementos a serem comparados e trocados. Uma sequência comum é dividir o tamanho da lista por 2 repetidamente até chegar a 1.
 2. **Ordenação com Insertion Sort**
-   1. Para cada gap, a lista é dividida em sublistas, onde cada sublista é ordenada usando Insertion Sort.
-   2. O processo é repetido com gaps menores até que o gap seja 1. No final, a lista estará quase ordenada, permitindo que uma última passagem de Insertion Sort finalize a ordenação.
+   - Para cada gap, a lista é dividida em sublistas, onde cada sublista é ordenada usando Insertion Sort.
+   - O processo é repetido com gaps menores até que o gap seja 1. No final, a lista estará quase ordenada, permitindo que uma última passagem de Insertion Sort finalize a ordenação.
 
 Vamos realizar um exemplo prático ordenando a lista `[5, 3, 8, 4, 2, 6, 1, 7]` usando o Shell Sort:
 
 1. **Gap 4**:
-   1. Sublistas formadas: `[5, 2]`, `[3, 6]`, `[8, 1]`, `[4, 7]`
-   2. Ordenando as sublistas:
+   - Sublistas formadas: `[5, 2]`, `[3, 6]`, `[8, 1]`, `[4, 7]`
+   - Ordenando as sublistas:
       - `[5, 2]` -> `[2, 5]`
       - `[3, 6]` -> `[3, 6]`
       - `[8, 1]` -> `[8, 1]`
       - `[4, 7]` -> `[4, 7]`
-   3. Lista após gap 4: `[2, 3, 1, 4, 5, 6, 8, 7]`
+   - Lista após gap 4: `[2, 3, 1, 4, 5, 6, 8, 7]`
 2. **Gap 2**:
-   1. Sublistas formadas: `[2, 1, 5, 8]`, `[3, 4, 6, 7]`
-   2. Ordenando as sublistas:
+   - Sublistas formadas: `[2, 1, 5, 8]`, `[3, 4, 6, 7]`
+   - Ordenando as sublistas:
       - `[2, 1, 5, 8]` -> `[1, 2, 5, 8]`
       - `[3, 4, 6, 7]` -> `[3, 4, 6, 7]`
-   3. Lista após gap 2: `[1, 2, 3, 4, 5, 6, 8, 7]`
+   - Lista após gap 2: `[1, 2, 3, 4, 5, 6, 8, 7]`
 3. **Gap 1 (Final Insertion Sort)**:
-   1. Sublista completa: `[1, 2, 3, 4, 5, 6, 8, 7]`
-   2. Ordenando com Insertion Sort:
+   - Sublista completa: `[1, 2, 3, 4, 5, 6, 8, 7]`
+   - Ordenando com Insertion Sort:
       - Troca `8` com `7`: `[1, 2, 3, 4, 5, 6, 7, 8]`
-   3. Lista final ordenada: `[1, 2, 3, 4, 5, 6, 7, 8]`
+   - Lista final ordenada: `[1, 2, 3, 4, 5, 6, 7, 8]`
 
 Algumas das principais características do Shell Sort são:
 
@@ -63,38 +63,38 @@ O algoritmo de ordenação Comb Sort é uma melhoria sobre o Bubble Sort. Ele fo
 O passo a passo para a sua realização é o seguinte:
 
 1. **Definição do Gap Inicial**
-   1. O gap inicial (distância entre os elementos comparados) é normalmente definido como o tamanho da lista. A cada iteração, o gap é reduzido por um fator (geralmente 1.3).
+   - O gap inicial (distância entre os elementos comparados) é normalmente definido como o tamanho da lista. A cada iteração, o gap é reduzido por um fator (geralmente 1.3).
 2. **Comparação e Troca**
-   1. Percorre a lista comparando elementos que estão a uma distância gap entre si e troca-os se estiverem fora de ordem.
+   - Percorre a lista comparando elementos que estão a uma distância gap entre si e troca-os se estiverem fora de ordem.
 3. **Reduzir o Gap**
-   1. Após cada passagem, o gap é reduzido pelo fator mencionado (por exemplo, dividido por 1.3). Quando o gap se torna 1, o algoritmo se comporta como o Bubble Sort.
+   - Após cada passagem, o gap é reduzido pelo fator mencionado (por exemplo, dividido por 1.3). Quando o gap se torna 1, o algoritmo se comporta como o Bubble Sort.
 4. **Iteração até o Final**
-   1. O processo continua até que o gap seja reduzido a 1 e a lista esteja ordenada.
+   - O processo continua até que o gap seja reduzido a 1 e a lista esteja ordenada.
 
 Vamos realizar um exemplo prático ordenando a lista `[9, 7, 5, 3, 1]` usando o Comb Sort:
 
 1. **Definição do Gap Inicial**:
-   1. Tamanho da lista é 5, então o gap inicial é igual 5/1.3 ≈ 3.
+   - Tamanho da lista é 5, então o gap inicial é igual 5/1.3 ≈ 3.
 2. **Comparação e Troca com Gap 3**:
-   1. Comparar elementos com gap 3:
-      1. `[9, 7, 5, 3, 1]` (9 e 3, 7 e 1)
-      2. Troca 9 e 3: `[3, 7, 5, 9, 1]`
-      3. Troca 7 e 1: `[3, 1, 5, 9, 7]`
+   - Comparar elementos com gap 3:
+      - `[9, 7, 5, 3, 1]` (9 e 3, 7 e 1)
+      - Troca 9 e 3: `[3, 7, 5, 9, 1]`
+      - Troca 7 e 1: `[3, 1, 5, 9, 7]`
 3. **Reduzir o Gap**:
-   1. Novo gap = 3 / 1.3 ≈ 2.
+   - Novo gap = 3 / 1.3 ≈ 2.
 4. **Comparação e Troca com Gap 2**:
-   1. Comparar elementos com gap 2:
-      1. `[3, 1, 5, 9, 7]` (3 e 5, 1 e 9, 5 e 7)
-      2. Troca 1 e 5: `[3, 5, 1, 9, 7]`
-      3. Troca 1 e 9: `[3, 5, 9, 1, 7]`
-      4. Troca 9 e 7: `[3, 5, 1, 7, 9]`
+   - Comparar elementos com gap 2:
+      - `[3, 1, 5, 9, 7]` (3 e 5, 1 e 9, 5 e 7)
+      - Troca 1 e 5: `[3, 5, 1, 9, 7]`
+      - Troca 1 e 9: `[3, 5, 9, 1, 7]`
+      - Troca 9 e 7: `[3, 5, 1, 7, 9]`
 5. **Reduzir o Gap**:
-   1. Novo gap = 2 / 1.3 ≈ 1.
+   - Novo gap = 2 / 1.3 ≈ 1.
 6. **Comparação e Troca com Gap 1 (Bubble Sort)**:
-   1. `[3, 5, 1, 7, 9]` (3 e 5, 5 e 1, 1 e 7, 7 e 9)
-   2. Troca 5 e 1: `[3, 1, 5, 7, 9]`
-   3. Troca 3 e 1: `[1, 3, 5, 7, 9]`
-   4. A lista agora está ordenada: `[1, 3, 5, 7, 9]`
+   - `[3, 5, 1, 7, 9]` (3 e 5, 5 e 1, 1 e 7, 7 e 9)
+   - Troca 5 e 1: `[3, 1, 5, 7, 9]`
+   - Troca 3 e 1: `[1, 3, 5, 7, 9]`
+   - A lista agora está ordenada: `[1, 3, 5, 7, 9]`
 
 Algumas das principais características do Comb Sort são:
 
@@ -111,33 +111,33 @@ Tim Sort é um algoritmo de ordenação híbrido derivado do Merge Sort e do Ins
 O passo a passo para a sua realização é o seguinte:
 
 1. **Divisão da Lista em Runs**
-   1. A lista é dividida em pequenas sublistas chamadas "runs". Um run é uma subsequência monotônica (não decrescente ou não crescente). Se a sequência for decrescente, ela é invertida para se tornar crescente. O tamanho mínimo dos runs é geralmente entre 32 e 64. Tim Peters, o criador do Tim Sort, escolheu 32 como um valor padrão para Python, baseado em experimentos empíricos.
+   - A lista é dividida em pequenas sublistas chamadas "runs". Um run é uma subsequência monotônica (não decrescente ou não crescente). Se a sequência for decrescente, ela é invertida para se tornar crescente. O tamanho mínimo dos runs é geralmente entre 32 e 64. Tim Peters, o criador do Tim Sort, escolheu 32 como um valor padrão para Python, baseado em experimentos empíricos.
 2. **Ordenação dos Runs com Insertion Sort**
-   1. Cada run é ordenado usando Insertion Sort. O uso do Insertion Sort é eficiente para pequenas sublistas.
+   - Cada run é ordenado usando Insertion Sort. O uso do Insertion Sort é eficiente para pequenas sublistas.
 3. **Mesclagem dos Runs com Merge Sort**
-   1. Os runs ordenados são então mesclados usando um processo de mesclagem similar ao Merge Sort. A mesclagem é feita de maneira a garantir a eficiência e estabilidade da ordenação.
+   - Os runs ordenados são então mesclados usando um processo de mesclagem similar ao Merge Sort. A mesclagem é feita de maneira a garantir a eficiência e estabilidade da ordenação.
 
 Vamos realizar um exemplo prático ordenando a lista `[5, 21, 7, 23, 19, 1, 4, 18, 2, 11, 10, 3, 13, 20, 17, 6]` usando o Tim Sort:
 
 1. **Divisão em Runs**:
-   1. Supomos um run mínimo de tamanho 4. A lista é dividida em runs:
+   - Supomos um run mínimo de tamanho 4. A lista é dividida em runs:
       - `[5, 21, 7, 23]`
       - `[19, 1, 4, 18]`
       - `[2, 11, 10, 3]`
       - `[13, 20, 17, 6]`
 2. **Ordenação dos Runs com Insertion Sort**:
-   1. Cada run é ordenado usando Insertion Sort:
+   - Cada run é ordenado usando Insertion Sort:
       - `[5, 7, 21, 23]`
       - `[1, 4, 18, 19]`
       - `[2, 3, 10, 11]`
       - `[6, 13, 17, 20]`
 3. **Mesclagem dos Runs com Merge Sort**:
-   1. Os runs ordenados são mesclados:
+   - Os runs ordenados são mesclados:
       - Mesclando `[5, 7, 21, 23]` e `[1, 4, 18, 19]`: `[1, 4, 5, 7, 18, 19, 21, 23]`
       - Mesclando `[2, 3, 10, 11]` e `[6, 13, 17, 20]`: `[2, 3, 6, 10, 11, 13, 17, 20]`
       - Mesclando os dois grandes runs resultantes:
         - `[1, 2, 3, 4, 5, 6, 7, 10, 11, 13, 17, 18, 19, 20, 21, 23]`
-   2. A lista agora está ordenada: `[1, 2, 3, 4, 5, 6, 7, 10, 11, 13, 17, 18, 19, 20, 21, 23]`.
+   - A lista agora está ordenada: `[1, 2, 3, 4, 5, 6, 7, 10, 11, 13, 17, 18, 19, 20, 21, 23]`.
 
 Algumas das principais características do Tim Sort são:
 

@@ -7,12 +7,12 @@
 
 - [Introdução](#introdução)
 - [Counting Sort](#counting-sort)
-- [Counting Sort](#radix-sort)
+- [Radix Sort](#radix-sort)
 - [Bucket Sort](#bucket-sort)
 
 ## Introdução
 
-
+**Counting Sort**, **Radix Sort** e **Bucket Sort** são algoritmos de ordenação não comparativos que oferecem alternativas eficientes aos métodos baseados em comparação, especialmente para certos tipos de dados. **Counting Sort** conta o número de ocorrências de cada valor em uma lista e utiliza essa contagem para posicionar os elementos diretamente na lista ordenada. Ele é eficiente para listas onde os valores estão dentro de um intervalo limitado, com complexidade `O(n + k)`, onde `k` é o valor máximo na lista. **Radix Sort** ordena números inteiros processando cada dígito individualmente, do dígito menos significativo para o mais significativo (ou vice-versa), utilizando um algoritmo de ordenação estável como o Counting Sort para cada dígito. Ele é eficiente para listas grandes de números inteiros, com complexidade `O(d ⋅ (n + k))`, onde `d` é o número de dígitos. **Bucket Sort** distribui os elementos em vários baldes, ordena cada balde individualmente (frequentemente com Insertion Sort), e então concatena os baldes ordenados. É eficiente para listas com elementos distribuídos uniformemente, oferecendo complexidade média `O(n + k)`, onde `k` é o número de baldes.
 
 ## Counting Sort
 
@@ -80,7 +80,7 @@ Vamos realizar um exemplo prático ordenando a lista `[170, 45, 75, 90, 802, 24,
 
 Algumas das principais características do Radix Sort são:
 
-- **Complexidade de Tempo**: `O(d × (n + k))`, `d` é o número de dígitos no maior número, `n` é o número de elementos na lista e `k` é o intervalo de cada dígito (por exemplo, 0-9 para base 10).
+- **Complexidade de Tempo**: `O(d ⋅ (n + k))`, `d` é o número de dígitos no maior número, `n` é o número de elementos na lista e `k` é o intervalo de cada dígito (por exemplo, 0-9 para base 10).
 - **Complexidade de Espaço**: `O(n + k)`, devido ao espaço adicional necessário para a ordenação estável dos dígitos.
 - **Estabilidade**: É estável, pois a ordenação de cada dígito mantém a ordem relativa dos números.
 
@@ -125,7 +125,7 @@ Vamos realizar um exemplo prático ordenando a lista `[0.78, 0.17, 0.39, 0.26, 0
    - Concatenamos os elementos dos baldes na ordem crescente:
       - Lista final ordenada: `[0.12, 0.17, 0.21, 0.23, 0.26, 0.39, 0.68, 0.72, 0.78, 0.94]`
 
-Algumas das principais características do Tim Sort são:
+Algumas das principais características do Bucket Sort são:
 
 - **Complexidade de Tempo**: No melhor caso é `O(n + k)`, onde `n` é o número de elementos na lista e `k` é o número de baldes. Isto assume que os elementos são distribuídos uniformemente e o algoritmo de ordenação utilizado nos baldes é eficiente. A complexidade é a mesma para o caso médio, considerando distribuições uniformes. No pior caso é `O(n²)`, se todos os elementos caírem em um único balde, transformando-se em um Insertion Sort ou outro algoritmo de ordenação utilizado nos baldes.
 - **Complexidade de Espaço**: `O(n + k)`, devido ao espaço necessário para os baldes além da lista original.
