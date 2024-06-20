@@ -18,3 +18,4 @@ Abaixo segue o índice com diversos conteúdos sobre os principais algoritmos de
 - [Introdução aos Algoritmos de Ordenação](./contents/01-introducao-algoritmos-ordenacao/README.md)
 - [Algoritmos de Ordenação - Parte 1: Bubble Sort, Insertion Sort, Selection Sort](./contents/02-algoritmos-de-ordenacao/README.md)
 - [Algoritmos de Ordenação - Parte 2: Merge Sort, Quick Sort, Heap Sort](./contents/03-algoritmos-de-ordenacao/README.md)
+- [Algoritmos de Ordenação - Parte 3: Shell Sort, Comb Sort, Tim Sort](./contents/04-algoritmos-de-ordenacao/README.md)
