@@ -3,25 +3,19 @@
 </div>
 <br>
 
-# Introdução aos Algoritmos de Ordenação
+# Resumo das Complexidades de Algoritmos de Busca e Ordenação
 
 - [Introdução](#introdução)
-- [Tipos de Técnicas de Ordenação](#tipos-de-técnicas-de-ordenação)
-- [Terminologia de Algoritmos de Ordenação](#terminologia-de-algoritmos-de-ordenação)
-- [Características dos Algoritmos de Ordenação](#características-dos-algoritmos-de-ordenação)
-- [Por que os Algoritmos de Ordenação são Importantes?](#por-que-os-algoritmos-de-ordenação-são-importantes)
-- [Vantagens e Desvantagens dos Algoritmos de Ordenação](#vantagens-e-desvantagens-dos-algoritmos-de-ordenação)
-- [Informações Adicionais sobre Algoritmos de Ordenação](#informações-adicionais-sobre-algoritmos-de-ordenação)
+- [Complexidade de Algoritmos de Ordenação](#complexidade-de-algoritmos-de-ordenação)
+- [Complexidade de Algoritmos de Busca](#complexidade-de-algoritmos-de-busca)
 
 ## Introdução
 
-Ordenação refere-se ao rearranjo de um array ou lista de elementos de acordo com um operador de comparação sobre os elementos. O operador de comparação é usado para decidir a nova ordem dos elementos na respectiva estrutura de dados. Ordenar significa reorganizar todos os elementos em ordem crescente ou decrescente.
+É importante se ter uma noção geral da complexidade dos diferentes algoritmos de busca e ordenação, além de suas vantagens e desvantagens, para que se possa optar pelo melhor em cada situação.
 
-Este tipo de operação é útil quando temos uma grande quantidade de dados de forma que pode ser difícil lidar com eles, especialmente quando estão dispostos de forma aleatória. Quando isso acontece, ordenar esses dados torna-se crucial, principalmente para facilitar a realização de buscas.
+## Complexidade de Algoritmos de Ordenação
 
-## Tipos de Técnicas de Ordenação
-
-Aqui está uma tabela em Markdown com o resumo das complexidades de tempo dos algoritmos de ordenação mencionados:
+Segue abaixo uma tabela com o resumo das complexidades de tempo dos principais algoritmos de ordenação:
 
 | **Algoritmo**   | **Melhor Caso**  |  **Caso Médio**  |   **Pior Caso**  |**Espaço Adicional**|**Estável**|
 |-----------------|------------------|------------------|------------------|--------------------|-----------|
@@ -37,3 +31,20 @@ Aqui está uma tabela em Markdown com o resumo das complexidades de tempo dos al
 | Counting Sort   | O(n + k)         | O(n + k)         | O(n + k)         | O(n + k)           | Sim       |
 | Radix Sort      | O(d(n + k))      | O(d(n + k))      | O(d(n + k))      | O(n + k)           | Sim       |
 | Bucket Sort     | O(n + k)         | O(n + k)         | O(n²)            | O(n + k)           | Sim       |
+
+Notas
+- `k` em Counting Sort e Radix Sort refere-se ao intervalo dos valores de entrada ou ao número de dígitos.
+- `d` em Radix Sort refere-se ao número de dígitos dos números de entrada.
+
+## Complexidade de Algoritmos de Busca
+
+Segue abaixo uma tabela com o resumo das complexidades de tempo dos principais algoritmos de busca:
+
+| **Algoritmo**          | **Melhor Caso**       | **Pior Caso**         | Notas Adicionais                               |
+|------------------------|-----------------------|-----------------------|------------------------------------------------|
+| Busca Sequencial       | O(1)                  | O(n)                  | O elemento está na primeira/última posição     |
+| Busca Binária          | O(1)                  | O(log n)              | Requer lista ordenada                          |
+| Busca em Profundidade  | O(1)                  | O(V + E)              | V é o número de vértices e E é o de arestas    |
+| Busca em Largura       | O(1)                  | O(V + E)              | V é o número de vértices e E é o de arestas    |
+| Busca A*               | Depende da heurística | Exponencial           | Pode ser muito eficiente com boa heurística    |
+| Busca em Tabelas Hash  | O(1)                  | O(n)                  | Depende da função hash e tratamento de colisões|

@@ -20,3 +20,5 @@ Abaixo segue o índice com diversos conteúdos sobre os principais algoritmos de
 - [Algoritmos de Ordenação - Parte 2: Merge Sort, Quick Sort, Heap Sort](./contents/03-algoritmos-de-ordenacao/README.md)
 - [Algoritmos de Ordenação - Parte 3: Shell Sort, Comb Sort, Tim Sort](./contents/04-algoritmos-de-ordenacao/README.md)
 - [Algoritmos de Ordenação - Parte 4: Counting Sort, Radix Sort, Bucket Sort](./contents/05-algoritmos-de-ordenacao/README.md)
+- [Algoritmos de Busca](./contents/06-algoritmos-de-busca/README.md)
+- [Resumo das Complexidades de Algoritmos de Busca e Ordenação](./contents/07-resumo/README.md)
