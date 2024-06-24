@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
 
 ## Principais Componentes e Atributos
 
-Os principais componentes e atributos do Text são:
+Os principais componentes e atributos do `Text` são:
 
 - **Texto (data)**: O parâmetro `data` é obrigatório e representa o texto a ser exibido pelo widget Text.
 

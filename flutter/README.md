@@ -25,3 +25,6 @@ Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se consid
 - [Criação e Estrutura de um Projeto Flutter](./contents/01-criacao-e-estrutura-projeto/README.md)
 - [O que são Wdigets?](./contents/02-o-que-sao-widgets/README.md)
 - [Executando Funções Depois da Tela Pronta](./contents/03-executando-funcoes-depois-da-tela-pronta/README.md)
+- [Widgets: Scaffold](./contents/04-widgets-scaffold/README.md)
+- [Widgets: Text](./contents/05-widgets-text/README.md)
+- [Widgets: AppBar](./contents/06-widgets-appbar/README.md)

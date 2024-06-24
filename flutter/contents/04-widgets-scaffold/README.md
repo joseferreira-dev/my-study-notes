@@ -104,7 +104,7 @@ class MyHomePage extends StatelessWidget {
 
 ## Principais Componentes e Atributos
 
-Os principais componentes e atributos do Scaffold são:
+Os principais componentes e atributos do `Scaffold` são:
 
 - **`appBar`**: A `appBar` é uma barra de aplicativos que geralmente aparece na parte superior da tela. Ela é usada para exibir o título da página, ícones de navegação, menus e outras ações contextuais.
 
