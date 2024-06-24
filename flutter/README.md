@@ -28,3 +28,4 @@ Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se consid
 - [Widgets: Scaffold](./contents/04-widgets-scaffold/README.md)
 - [Widgets: Text](./contents/05-widgets-text/README.md)
 - [Widgets: AppBar](./contents/06-widgets-appbar/README.md)
+- [Widgets: Drawer](./contents/07-widgets-drawer/README.md)
