@@ -23,3 +23,5 @@ O Flutter, com seu enfoque na simplicidade, desempenho e flexibilidade, se posic
 Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se considerar esta como uma mini documentação de referência. Vale ressaltar que este material foi elaborado com base na versão 3.4.1 da linguagem.
 
 - [Criação e Estrutura de um Projeto Flutter](./contents/01-criacao-e-estrutura-projeto/README.md)
+- [O que são Wdigets?](./contents/02-o-que-sao-widgets/README.md)
+- [Executando Funções Depois da Tela Pronta](./contents/03-executando-funcoes-depois-da-tela-pronta/README.md)
