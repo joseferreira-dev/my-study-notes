@@ -7,7 +7,7 @@
 
 - [Introdução](#introdução)
 - [Adicionando Imagens Personalizadas](#adicionando-imagens-personalizadas)
-- [](#)
+- [Lidando com o Tamanho das Imagens](#lidando-com-o-tamanho-das-imagens)
 
 ## Introdução
 

@@ -7,7 +7,15 @@
 
 - [Introdução](#introdução)
 - [Estrutura Básica e Funcionamento](#estrutura-básica-e-funcionamento)
-- [Principais Componentes e Atributos](#principais-componentes-e-atributos)
+  - [Utilizando Rotas Nomeadas](#utilizando-rotas-nomeadas)
+  - [Utilizando Rotas Diretas](#utilizando-rotas-diretas)
+- [Principais Métodos do `Navigator`](#principais-métodos-do-navigator)
+- [Passando Parâmetros entre Rotas](#passando-parâmetros-entre-rotas)
+  - [Passando Parâmetros Utilizando `Navigator`](#passando-parâmetros-utilizando-navigator)
+  - [Passando Parâmetros Utilizando Construtores de Rotas](#passando-parâmetros-utilizando-construtores-de-rotas)
+- [Definição Dinâmica de Rotas com `onGenerateRoute`](#definição-dinâmica-de-rotas-com-ongenerateroute)
+- [Monitorando a Navegação com Observers](#monitorando-a-navegação-com-observers)
+- [Utilizando `async`/`await` na Navegação](#utilizando-asyncawait-na-navegação)
 
 ## Introdução
 
@@ -148,7 +156,7 @@ class SecondPage extends StatelessWidget {
 
 Neste exemplo, a navegação é realizada através de `Navigator.push` com `MaterialPageRoute`, criando uma rota direta para `SecondPage`.
 
-## Principais Métodos do Navigator
+## Principais Métodos do `Navigator`
 
 - **`push`**: Adiciona uma nova rota na pilha de navegação.
 
@@ -196,7 +204,7 @@ Navigator.pushNamedAndRemoveUntil(context, '/home', ModalRoute.withName('/'));
 
 Passar parâmetros entre rotas na navegação de um projeto Flutter é uma prática comum e importante para transmitir dados entre diferentes telas ou páginas. Isso possibilita a personalização da interface do usuário com base em informações específicas, como dados de usuário, configurações ou qualquer outro tipo de informação relevante para a aplicação.
 
-### Passando Parâmetros Utilizando Navigator
+### Passando Parâmetros Utilizando `Navigator`
 
 Para passar parâmetros entre rotas utilizando o `Navigator` em Flutter, é necessário utilizar o construtor `Navigator.push` ou `Navigator.pushNamed` junto com o parâmetro arguments.
 
