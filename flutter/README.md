@@ -27,5 +27,7 @@ Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se consid
 - [Executando Funções Depois da Tela Pronta](./contents/03-executando-funcoes-depois-da-tela-pronta/README.md)
 - [Widgets: Scaffold](./contents/04-widgets-scaffold/README.md)
 - [Widgets: Text](./contents/05-widgets-text/README.md)
+- [Adicionando Fonts Personalizadas](./contents/06-fonts-personalizadas/README.md)
+
 - [Widgets: AppBar](./contents/06-widgets-appbar/README.md)
 - [Widgets: Drawer](./contents/07-widgets-drawer/README.md)
