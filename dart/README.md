@@ -7,12 +7,12 @@
 
 Dart é uma linguagem de programação de alto desempenho desenvolvida pela Google. Ela foi projetada para ser uma linguagem moderna, fácil de aprender e altamente produtiva, com um foco especial no desenvolvimento de interfaces de usuário (UI). Dart é usada principalmente para construir aplicações móveis, web e de desktop, sendo a base do framework Flutter, que permite a criação de interfaces de usuário nativas e de alta qualidade para diferentes plataformas a partir de uma única base de código. Suas principais características são:
 
-- **Sintaxe Simples e Familiar**: A sintaxe do Dart é semelhante a outras linguagens de programação populares como JavaScript, Java e C#. Isso facilita a aprendizagem e a adoção por desenvolvedores familiarizados com essas linguagens.
-- **Fortemente Tipada**: Dart é uma linguagem fortemente tipada com suporte a tipos estáticos e dinâmicos. Isso ajuda a detectar erros em tempo de compilação, melhorando a segurança e a robustez do código.
-- **Orientação a Objetos**: Dart é totalmente orientada a objetos, suportando classes, interfaces, mixins e herança, permitindo uma estrutura de código clara e modular.
-- **Compilação para Várias Plataformas**: Dart pode ser compilada tanto para código nativo quanto para JavaScript. Isso permite que aplicações Dart sejam executadas em dispositivos móveis, desktops e navegadores web.
-- **Suporte a Assincronismo**: Dart possui um suporte poderoso para operações assíncronas com async e await, facilitando o manejo de operações que levam tempo, como chamadas de rede e acesso a arquivos.
-- **Bibliotecas e Pacotes**: O ecossistema de Dart inclui uma ampla variedade de bibliotecas e pacotes disponíveis no pub.dev, o gerenciador de pacotes oficial, que facilita a adição de funcionalidades e a integração com outras tecnologias.
+- **Sintaxe simples e familiar**: A sintaxe do Dart é semelhante a outras linguagens de programação populares como JavaScript, Java e C#. Isso facilita a aprendizagem e a adoção por desenvolvedores familiarizados com essas linguagens.
+- **Fortemente tipada**: Dart é uma linguagem fortemente tipada com suporte a tipos estáticos e dinâmicos. Isso ajuda a detectar erros em tempo de compilação, melhorando a segurança e a robustez do código.
+- **Orientação a objetos**: Dart é totalmente orientada a objetos, suportando classes, interfaces, mixins e herança, permitindo uma estrutura de código clara e modular.
+- **Compilação multiplataforma**: Dart pode ser compilada tanto para código nativo quanto para JavaScript. Isso permite que aplicações Dart sejam executadas em dispositivos móveis, desktops e navegadores web.
+- **Assincronismo**: Dart possui um suporte poderoso para operações assíncronas com `async` e `await`, facilitando o manejo de operações que levam tempo, como chamadas de rede e acesso a arquivos.
+- **Bibliotecas e pacotes**: O ecossistema de Dart inclui uma ampla variedade de bibliotecas e pacotes disponíveis no [pub.dev](https://pub.dev/), o gerenciador de pacotes oficial, que facilita a adição de funcionalidades e a integração com outras tecnologias.
 
 ## Índice de Conteúdos
 

@@ -1,14 +1,14 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner-dart.png"></a>
 </div>
 <br>
 
 # Criação e Estrutura de um Projeto
 
-- [Criando um novo projeto](#criando-um-novo-projeto)
-- [Estrutura do projeto](#estrutura-do-projeto)
+- [Criando um Projeto](#criando-um-projeto)
+- [Estrutura do Projeto](#estrutura-do-projeto)
 
-## Criando um novo projeto
+## Criando um Projeto
 
 Para se criar um novo projeto Dart básico pelo console deve-se utilizar o comando:
 
@@ -31,11 +31,11 @@ Os possíveis templates são:
 - `web-simple`: Cria um projeto web simples, que é uma versão mínima de um projeto web.
 - `flutter`: Cria um projeto Flutter, que é uma estrutura para construir aplicativos nativos para iOS, Android, web e desktop com uma única base de código.
 
-## Estrutura do projeto
+## Estrutura do Projeto
 
-Quando você cria um projeto de console em Dart usando o comando `dart create -t console console_project`, uma estrutura de diretórios e arquivos é gerada para ajudar a começar com um aplicativo de console simples. A estrutura típica do projeto é a seguinte:
+Quando criamos um projeto de console em Dart usando o comando `dart create -t console console_project`, uma estrutura de diretórios e arquivos é gerada para ajudar a começar com um aplicativo de console simples, que é semelhante aos demais templates existentes. A estrutura típica do projeto é a seguinte:
 
-```shell
+```
 console_project/
 ├── bin/
 │   └── console_project.dart
@@ -48,11 +48,11 @@ console_project/
 └── README.md
 ```
 
-- `bin/console_project.dart`: Arquivo principal do aplicativo de console, onde se escreve o código para o seu aplicativo. O nome do arquivo geralmente corresponde ao nome do projeto.
+- `bin/console_project.dart`: Arquivo principal do aplicativo de console, onde escrevemos o código para o nosso aplicativo. O nome do arquivo geralmente corresponde ao nome do projeto.
 - `lib/`: Pasta usada para armazenar qualquer biblioteca ou código que será compartilhado entre diferentes partes do aplicativo. É útil para organizar componentes maiores.
 - `test/`: Pasta que contém arquivos de teste para o projeto.
 - `.gitignore`: Arquivo usado para especificar quais arquivos e pastas devem ser ignorados pelo controle de versão Git.
 - `analysis_options.yaml`: Arquivo que permite configurar regras de análise estática para o projeto, como linter e regras de estilo de código.
 - `CHANGELOG.md`: Arquivo de log de alterações onde se pode documentar as mudanças feitas em cada versão do projeto.
-- `pubspec.yaml`: Arquivo de especificação do pacote Dart. Ele define o nome do projeto, a versão, as dependências do projeto, as dependências de desenvolvimento e outras informações de configuração. 
-- `README.md`: Arquivo de documentação onde se pode descrever o propósito do projeto, como configurá-lo e usá-lo, e qualquer outra informação relevante.
+- `pubspec.yaml`: Arquivo de especificação do pacote Dart. Ele define o nome do projeto, a versão, as dependências do projeto, as dependências de desenvolvimento, assets e outras informações de configuração. 
+- `README.md`: Arquivo de documentação onde descrevemos o propósito do projeto, como configurá-lo e usá-lo, e qualquer outra informação relevante.
