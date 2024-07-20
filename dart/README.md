@@ -19,10 +19,10 @@ Dart é uma linguagem de programação de alto desempenho desenvolvida pela Goog
 Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se considerar esta como uma mini documentação de referência. Vale ressaltar que este material foi elaborado com base na versão 3.4.1 da linguagem.
 
 - [Criação e Estrutura de um Projeto](./contents/01-criacao-e-estrutura-projeto/README.md)
-- [Tipos de dados](./contents/02-tipos-de-dados/README.md)
-- [Conversão entre Tipos](./contents/03-conversao-entre-tipos/README.md)
-- [Declaração de variáveis](./contents/04-declaracao-de-variaveis/README.md)
-- [Usando Null Safety com Variáveis](./contents/05-null-safety-variaveis/README.md)
+- [Declaração de variáveis](./contents/02-declaracao-de-variaveis/README.md)
+- [Usando Null Safety com Variáveis](./contents/03-null-safety-variaveis/README.md)
+- [Tipos de dados](./contents/04-tipos-de-dados/README.md)
+- [Conversão entre Tipos](./contents/05-conversao-entre-tipos/README.md)
 - [Operadores](./contents/06-operadores/README.md)
 - [Estruturas de Controle](./contents/07-estruturas-de-controle/README.md)
 - [Listas (Arrays)](./contents/08-listas/README.md)
