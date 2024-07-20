@@ -1,44 +1,22 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner-dart.png"></a>
 </div>
 <br>
 
 # Operadores
 
-- [Introdução](#introdução)
 - [Operadores Artiméticos](#operadores-aritméticos)
 - [Operadores de Atribuição](#operadores-de-atribuição)
 - [Operadores de Incremento e Decremento](#operadores-de-incremento-e-decremento)
-  - [Operador de Incremento](#operador-de-incremento)
-  - [Operador de Decremento](#operador-de-decremento)
 - [Operadores de Comparação](#operadores-de-comparação)
 - [Operadores Lógicos](#operadores-lógicos)
-  * [Operador E Lógico `&&`](#operador-e-lógico-)
-  * [Operador OU Lógico `||`](#operador-ou-lógico-)
-  * [Operador NÃO Lógico `!`](#operador-não-lógico-)
-  * [Combinação de Operadores Lógicos](#combinação-de-operadores-lógicos)
 - [Operadores de Validação de Tipo](#operadores-de-validação-de-tipo)
-  * [Operador `is`](#operador-is)
-  * [Operador `is!`](#operador-is)
-  * [Operador `as`](#operador-as)
 - [Operador Cascade `..`](#operador-cascade-)
 - [Operador Spread `...`](#operador-spread-)
-  * [Operador Spread em Listas](#operador-spread-em-listas)
-  * [Operador Spread em Sets](#operador-spread-em-sets)
-  * [Operador Spread em Maps](#operador-spread-em-maps)
 - [Operadores de Nulidade](#operadores-de-nulidade)
-  * [Operador Ternário para Nulos `??`](#operador-ternário-para-nulos-)
-  * [Operador de Atribuição caso Nulo `??=`](#operador-de-atribuição-caso-nulo-)
-  * [Operador de Acesso caso Nulo `?.`](#operador-de-acesso-caso-nulo-)
-  * [Operador de Indexação caso Nulo `?[]`](#operador-de-indexação-caso-nulo-)
-  * [Operador Cascade caso Nulo `?..`](#operador-cascade-caso-nulo-)
-  * [Operador Spread caso Nulo `...?`](#operador-spread-caso-nulo-)
-  * [Operador de Asserção Não Nulo `!`](#operador-de-asserção-não-nulo-)
 - [Precedência de Operadores](#precedência-de-operadores)
 
-## Introdução
-
-Operadores são símbolos que informam ao compilador ou intérprete para realizar operações específicas em um ou mais operandos (valores ou variáveis). Em Dart, assim como em outras linguagens de programação, existem diversos tipos de operadores, cada um com uma finalidade específica.
+Operadores são símbolos que informam ao compilador ou interpretador para realizar operações específicas em um ou mais operandos (valores ou variáveis). Em Dart, assim como em outras linguagens de programação, existem diversos tipos de operadores, cada um com uma finalidade específica.
 
 ## Operadores Aritméticos
 
@@ -396,7 +374,7 @@ void main() {
 
 ### Operador Spread em Sets
 
-O operador spread também pode ser usado com conjuntos para combinar múltiplos conjuntos em um único conjunto, funcionando de forma muito semelhante às listas, exceto pelo fato de que elementos repetidos são eliminados.
+O operador spread também pode ser usado com conjuntos para combinar múltiplos conjuntos em um único, funcionando de forma muito semelhante às listas, exceto pelo fato de que elementos repetidos são eliminados.
 
 ```dart
 void main() {
@@ -554,7 +532,7 @@ Os operadores em Dart seguem uma convenção de prioridade na execução que inf
 | 15              | `...`                                                               | Não associativo        |
 | 16              | `...?`, `!..`                                                       | Não associativo        |
 
-A ordem de precedência e a associatividade dos operadores determinam como as expressões são avaliadas. Operadores com uma precedência mais alta são avaliados antes de operadores com uma precedência mais baixa. Se os operadores avaliados tiverem o mesmo nível de precedência, elese rerão avaliados segundo a sua associatividade. Onde:
+A ordem de precedência e a associatividade dos operadores determinam como as expressões são avaliadas. Operadores com uma precedência mais alta são avaliados antes de operadores com uma precedência mais baixa. Se os operadores avaliados tiverem o mesmo nível de precedência, eles serão avaliados segundo a sua associatividade. Onde:
 
 - **Esquerda para direita**: Operadores são avaliados da esquerda para a direita.
 - **Direita para esquerda**: Operadores são avaliados da direita para a esquerda.

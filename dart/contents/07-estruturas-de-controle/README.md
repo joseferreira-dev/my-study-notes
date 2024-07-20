@@ -1,11 +1,10 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner-dart.png"></a>
 </div>
 <br>
 
 # Estruturas de Controle
 
-- [Introdução](#introdução)
 - [Estruturas Condicionais](#estruturas-condicionais)
   - [Estrutura `if`](#estrutura-if)
   - [Estrutura `if-else`](#estrutura-if-else)
@@ -19,8 +18,6 @@
   - [Loop `do-while`](#loop-do-while)
   - [Comandos `break` e `continue`](#comandos-break-e-continue)
 
-## Introdução
-
 As estruturas de controle são fundamentais em qualquer linguagem de programação, pois permitem controlar o fluxo de execução do código com base em condições ou repetição de tarefas. Em Dart, existem várias estruturas de controle que podem ser usadas para fazer decisões, repetir ações e interromper o fluxo de execução.
 
 ## Estruturas Condicionais
@@ -31,7 +28,7 @@ Em Dart, como em muitas outras linguagens de programação, as estruturas condic
 
 A instrução `if` é usada para executar um bloco de código se uma condição específica for verdadeira.
 
-~~~dart
+```dart
 void main() {
   int idade = 18;
 
@@ -39,13 +36,13 @@ void main() {
     print('Você é maior de idade.');
   }
 }
-~~~
+```
 
 ### Estrutura `if-else`
 
 A instrução `if-else` permite executar um bloco de código se a condição for verdadeira e outro bloco de código se a condição for falsa.
 
-~~~dart
+```dart
 void main() {
   int idade = 16;
 
@@ -55,13 +52,13 @@ void main() {
     print('Você é menor de idade.');
   }
 }
-~~~
+```
 
 ### Estrutura `else if`
 
 A instrução `else if` permite testar múltiplas condições. Se a primeira condição for falsa, a próxima condição é testada, e assim por diante.
 
-~~~dart
+```dart
 void main() {
   int nota = 85;
 
@@ -75,26 +72,26 @@ void main() {
     print('Nota F');
   }
 }
-~~~
+```
 
 ### Operador Ternário `? :`
 
 O operador ternário `? :` é uma forma concisa de escrever uma expressão if-else. Ele é usado para retornar um valor com base em uma condição.
 
-~~~dart
+```dart
 void main() {
   int idade = 20;
 
   String mensagem = (idade >= 18) ? 'Você é maior de idade.' : 'Você é menor de idade.';
   print(mensagem);
 }
-~~~
+```
 
 ### Estrutura `switch-case`
 
 O `switch-case` é usado para executar um bloco de código com base no valor de uma expressão. É uma alternativa mais legível ao `else if` quando há muitas condições a serem verificadas.
 
-~~~dart
+```dart
 void main() {
   String cor = 'vermelho';
 
@@ -112,7 +109,7 @@ void main() {
       print('Cor desconhecida.');
   }
 }
-~~~
+```
 
 ## Estruturas de Repetição
 
