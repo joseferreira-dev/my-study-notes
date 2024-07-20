@@ -1,20 +1,19 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner-dart.png"></a>
 </div>
 <br>
 
 # Tipos de Dados
 
-- [Introdução](#introdução)
 - [Tipos de Dados mais Comuns](#tipos-de-dados-mais-comuns)
   * [Números](#números)
   * [Números Inteiros](#números-inteiros)
   * [Números de Ponto Flutuante](#números-de-ponto-flutuante)
-  * [String](#string)
+  * [Strings](#strings)
   * [Runes](#runes)
   * [Booleanos](#booleanos)
   * [Iterable (Iteráveis)](#iterable-iteráveis)
-  * [List (Listas)](#list-listas)
+  * [List](#list)
   * [Set](#set)
   * [Map](#map)
   * [Symbol (Símbolos)](#symbol-símbolos)
@@ -28,24 +27,22 @@
   * [void](#void)
   * [Never](#never)
 
-## Introdução
-
 Dart, assim como a maioria das linguagens de programação, possui suporte a diversos tipos predefinidos, sendo uma linguagem com tipagem estática. Porém, não há um conceito ou definição clara sobre tipos primitivos, como na linguagem Java, por exemplo. Em Dart, todos os tipos são também objetos. Alguns tipos são mais básicos e outros, mais complexos.
 
-## Tipos de Dados mais Comuns
+## Tipos de Dados Básicos
 
 Estes tipos de dados são mais básicos e mais utilizados.
 
 ### Números
 
-O tipo `num` é a superclasse para `int` e `double`, representando números inteiros e de ponto flutuante.
+O tipo `num` é a superclasse para `int` e `double`, representando números inteiros e de ponto flutuante. Na maioria dos casos o uso de suas subclasses é mais indicado.
 
 ```dart
 void main() {
   num numero = 5; // Pode ser int ou double
-  print(numero); // Output: 5
+  print(numero);  // Output: 5
   numero = 5.5;
-  print(numero); // Output: 5.5
+  print(numero);  // Output: 5.5
 }
 ```
 
@@ -70,7 +67,7 @@ void main() {
 }
 ```
 
-### String
+### Strings
 
 O tipo `String` representa uma sequência de caracteres Unicode. Strings são delimitadas por aspas simples (`'`) ou aspas duplas (`"`). No caso de textos multilinha, se utiliza três aspas simples.
 
@@ -98,7 +95,7 @@ void main() {
 
 ### Booleanos
 
-O tipo `bool` representa valores booleanos: `true` ou `false`.
+O tipo `bool` representa os valores booleanos, podendo ser `true` ou `false`.
 
 ```dart
 bool estaChovendo = false;
@@ -118,9 +115,9 @@ void main() {
 }
 ```
 
-### List (Listas)
+### List
 
-Uma `List` é uma coleção ordenada de objetos. Pode ser homogênea (todos os elementos do mesmo tipo) ou heterogênea.
+Uma `List`, ou Lista, é uma coleção ordenada de objetos. Pode ser homogênea (todos os elementos do mesmo tipo) ou heterogênea.
 
 ```dart
 List<int> numeros = [1, 2, 3, 4, 5];
@@ -130,7 +127,7 @@ List<dynamic> misturado = [1, 'dois', 3.0, true];
 
 ### Set
 
-Um `Set` é uma coleção de elementos únicos, sem ordem específica, muito semelhante a uma lista, exceto que a lista aceita repetição de elementos.
+Um `Set`, ou Conjunto, é uma coleção de elementos únicos, sem ordem específica, muito semelhante a uma lista, exceto que a lista aceita repetição de elementos.
 
 ```dart
 Set<int> numerosUnicos = {1, 2, 3, 4, 5};
@@ -139,7 +136,7 @@ Set<String> cores = {'vermelho', 'verde', 'azul'};
 
 ### Map
 
-Um `Map` é uma coleção de pares chave-valor. As chaves e os valores podem ser de qualquer tipo.
+Um `Map`, ou Mapa, é uma coleção de pares chave-valor. As chaves e os valores podem ser de qualquer tipo.
 
 ```dart
 Map<String, int> telefones = {
@@ -180,7 +177,7 @@ Dart ambém possui alguns tipos de dados mais complexos, que são empregados em 
 
 ### Object
 
-O tipo `Object` é a classe raiz de todas as classes em Dart. Todo objeto é uma instância de `Object`, incluindo números, strings, listas, e até mesmo null (se bem que null é uma instância especial).
+O tipo `Object` é a classe raiz de todas as classes em Dart. Todo objeto é uma instância de `Object`, incluindo números, strings, listas, e até mesmo null (sendo este último uma instância especial).
 
 ```dart
 void main() {
@@ -224,7 +221,7 @@ void main() {
 
 ### Future
 
-O tipo `Future` representa um valor ou erro que estará disponível em algum momento no futuro. Futures são frequentemente usados para operações assíncronas, como E/S (entrada/saída) de arquivos ou solicitações de rede.
+O tipo `Future` representa um valor ou erro que estará disponível em algum momento no futuro. Futuros são frequentemente usados para operações assíncronas, como entrada e saída de arquivos ou solicitações de rede.
 
 ```dart
 Future<String> obterDados() async {
