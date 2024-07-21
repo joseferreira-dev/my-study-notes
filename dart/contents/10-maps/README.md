@@ -1,11 +1,10 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner-dart.png"></a>
 </div>
 <br>
 
-# Maps
+# Maps (Mapas)
 
-- [Introdução](#introdução)
 - [Criar um Map](#criar-um-map)
 - [Acessar e Modificar Elementos](#acessar-e-modificar-elementos)
 - [Adicionar Elementos](#adicionar-elementos)
@@ -15,9 +14,7 @@
 - [Propriedades `keys`, `values` e `entries`](#propriedades-keys-values-e-entries)
 - [Transformações de Maps](#transformações-de-maps)
 
-## Introdução
-
-Em Dart, um `Map` é uma coleção de pares chave-valor, onde cada chave única é associada a um valor. Os Maps são úteis para armazenar e manipular dados de maneira eficiente, especialmente quando você precisa de acesso rápido a valores com base em chaves específicas.
+Em Dart, um `Map` (mapa) é uma coleção de pares chave-valor, onde cada chave é única e está associada a um valor. Os mapas são úteis para armazenar e manipular dados de maneira eficiente, especialmente quando precisamos aceesar rápidamente valores com base em chaves específicas.
 
 ## Criar um Map
 
@@ -43,7 +40,7 @@ void main() {
 
 ## Acessar e Modificar Elementos
 
-Pode-se acessar e modificar os valores em um `Map` usando suas chaves.
+Podemos acessar e modificar os valores em um `Map` usando suas chaves.
 
 ```dart
 void main() {
@@ -60,7 +57,7 @@ void main() {
 }
 ```
 
-Dois métodos específicos para modificar elementos em um Map são `update` e `updateAll`. O método `updateAll` atualiza todos os valores no mapa usando uma função de atualização fornecida. Essa função é aplicada a cada par chave-valor no mapa.
+Dois métodos específicos para modificar elementos em um mapa são `update` e `updateAll`. O método `updateAll` atualiza todos os valores no mapa usando uma função de atualização fornecida. Essa função é aplicada a cada par chave-valor no mapa.
 
 ```dart
 void main() {
@@ -77,7 +74,7 @@ void main() {
 }
 ```
 
-O método `update` atualiza o valor de uma chave específica no map usando uma função de atualização. Se a chave não existir, pode-se opcionalmente fornecer uma função `ifAbsent` para adicionar a chave com um valor padrão.
+O método `update` atualiza o valor de uma chave específica no mapa usando uma função de atualização. Se a chave não existir, pode-se opcionalmente fornecer uma função `ifAbsent` para adicionar a chave com um valor padrão.
 
 ```dart
 void main() {
@@ -98,7 +95,7 @@ void main() {
 
 ## Adicionar Elementos
 
-Para adicionar novos elementos existe basta adicionar uma nova chave e o seu valor correspondente.
+Para adicionar novos elementos basta adicionar uma nova chave e o seu valor correspondente.
 
 ```dart
 void main() {
@@ -113,7 +110,7 @@ void main() {
 }
 ```
 
-Também existe o método addAll, que adiciona vários elementos de uma vez.
+Também existe o método `addAll`, que adiciona vários elementos de uma vez.
 
 ```dart
 void main() {
@@ -146,7 +143,7 @@ void main() {
 
 ## Remover Elementos
 
-Para um `Map` pode-se usar o método `remove`, que recebe uma chave e remove o elemento correspondente, e o método `clear`, que remove todos os elementos.
+Em um `Map` podemos usar o método `remove` para remover um elemento indicando a sua chave e o método `clear` para remover todos os elementos.
 
 ```dart
 void main() {
@@ -164,7 +161,7 @@ void main() {
 }
 ```
 
-Pode-se também remover vários elementos que satisfazem uma condição específica com o método `removeWhere`.
+Podemos também remover vários elementos que satisfazem uma condição específica com o método `removeWhere`.
 
 ```dart
 void main() {
@@ -197,7 +194,7 @@ void main() {
 
 ## Consultas
 
-Nos Maps pode-se consultar a existência de elementos por meio de duas chaves com `containsKey` e por meio de seus valores com `containsValue`.
+Nos mapa podemos consultar a existência de elementos por meio de suas chaves, com `containsKey`, e por meio de seus valores, com `containsValue`.
 
 ```dart
 void main() {
@@ -212,7 +209,7 @@ void main() {
 }
 ```
 
-Também pode-se verificar se um `Map` contém ou não elementos com as propriedades `isEmpty` e `isNotEmpty`.
+Também podemor verificar se um mapa contém ou não elementos com as propriedades `isEmpty` e `isNotEmpty`.
 
 ```dart
 void main() {
@@ -229,7 +226,7 @@ void main() {
 
 ## Propriedades `keys`, `values` e `entries`
 
-Os Maps possuem três propriedades muito importantes acerca de seus elementos, sendo elas `keys`, `values` e `entries`. A propriedade `keys` retorna um iterável com todas as chaves do `Map`, `values` por sua vez retorna todos os valores, já `entries` retorna um iterável com entradas `MapEntry`, onde cada uma contém uma chave e um valor.
+Os mapas possuem três propriedades muito importantes acerca de seus elementos, sendo elas `keys`, `values` e `entries`. A propriedade `keys` retorna um iterável com todas as chaves do `Map`, `values` por sua vez retorna todos os valores, já `entries` retorna um iterável com todas as entradas do tipo `MapEntry`, onde cada uma contém uma chave e um valor.
 
 ```dart
 void main() {
@@ -252,7 +249,7 @@ void main() {
 
 ## Transformações de Maps
 
-Suponha-se que se quer transformar o mapa de capitais de modo que os valores sejam alterados para incluir uma descrição adicional. Pode-se usar a propriedade `entries` para iterar sobre os pares chave-valor e o método `map` para criar um novo `Map` transformado.
+Suponhamos que queremos transformar o mapa de capitais de modo que os valores sejam alterados para incluir uma descrição adicional. Pode-se usar a propriedade `entries` para iterar sobre os pares chave-valor e o método `map` para criar um novo mapa transformado.
 
 ```dart
 void main() {

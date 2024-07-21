@@ -1,11 +1,10 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner-dart.png"></a>
 </div>
 <br>
 
-# Listas (Arrays)
+# Lists (Listas)
 
-- [Introdução](#introdução)
 - [Criar uma Lista](#criar-uma-lista)
 - [Gerar uma Lista](#gerar-uma-lista)
 - [Acessar Elementos](#acessar-elementos)
@@ -18,44 +17,42 @@
 - [Criar uma String a partir de uma Lista](#criar-uma-string-a-partir-de-uma-lista)
 - [Criar uma Lista a partir de uma String](#criar-uma-lista-a-partir-de-uma-string)
 
-## Introdução
-
-Em Dart, listas (arrays) são uma coleção ordenada de elementos que podem ser acessados por meio de índices. Listas são muito utilizadas para armazenar sequências de valores de um mesmo tipo.
+Em Dart, listas são uma coleção ordenada de elementos que podem ser acessados por meio de índices, semelhante ao tipo array de outras linguagens. Listas são muito utilizadas para armazenar sequências de valores de um mesmo tipo.
 
 ## Criar uma Lista
 
-É possível criar uma lista vazia e adicionar elementos posteriormente.
+Podemos criar uma lista vazia e adicionar elementos posteriormente.
 
-~~~dart
+```dart
 void main() {
   List<int> numeros = [];
   print(numeros); // Output: []
 }
-~~~
+```
 
 Uma lista também pode ser criada com elementos iniciais.
 
-~~~dart
+```dart
 void main() {
   List<String> frutas = ['maçã', 'banana', 'laranja'];
   print(frutas); // Output: [maçã, banana, laranja]
 }
-~~~
+```
 
 Uma lista também pode ser criada sem definir o seu tipo com o operador `var`, o que permite que o tipo seja inferido.
 
-~~~dart
+```dart
 void main() {
   var numeros = [1, 2, 3, 4, 5];
   print(numeros); // Output: [1, 2, 3, 4, 5]
 }
-~~~
+```
 
 ## Gerar uma Lista
 
 É possível gerar uma lista de elementos conforme uma instrução específica com o método `List.generate`, preencher uma lista com `List.filled` e criar uma lista nova a partir de outra com os métodos `List.from` e `List.of`.
 
-~~~dart
+```dart
 void main() {
   List<int> listaGerada = List.generate(10, (index) => index * 3);
   print(listaGerada); // Output: [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
@@ -69,29 +66,29 @@ void main() {
   List<int> listaNova2 = List.of(listaOrigem);
   print(listaNova2); // Output: [4, 5, 6]
 }
-~~~
+```
 
 ## Acessar Elementos
 
 Os elementos da lista são acessados por meio de índices, começando do índice `0`.
 
-~~~dart
+```dart
 void main() {
   List<String> frutas = ['maçã', 'banana', 'laranja'];
   print(frutas[0]); // Output: maçã
   print(frutas[1]); // Output: banana
   print(frutas[2]); // Output: laranja
 }
-~~~
+```
 
 Isso também pode ser feito com o método `elementAt`.
 
-~~~dart
+```dart
 void main() {
   List<String> frutas = ['maçã', 'banana', 'laranja'];
   print(frutas.elementAt(2)); // Output: laranja
 }
-~~~
+```
 
 O primeiro e o último elemento da lista podem ser acessados usando `first` e `last`.
 
@@ -103,7 +100,7 @@ void main() {
 }
 ```
 
-Também pode-se acessar partes da lista (uma sublista) com o método `sublist`.
+Também podemos acessar partes da lista (uma sublista) com o método `sublist`.
 
 ```dart
 void main() {
@@ -127,15 +124,15 @@ void main() {
 
 Para modificar os elementos da lista basta atribuir novos valores aos índices correspondentes.
 
-~~~dart
+```dart
 void main() {
   List<String> frutas = ['maçã', 'banana', 'laranja'];
   frutas[1] = 'manga';
   print(frutas); // Output: [maçã, manga, laranja]
 }
-~~~
+```
 
-Também pode-se modificar os elementos com os métodos `setAll` (define todos os elementos a partir da posição especificada com os elementos do iterável), `fillRange` (preenche a faixa de índices especificada com o valor especificado) e `replaceRange` (substitui a faixa de elementos especificada com os elementos do iterável).
+Também podemos modificar os elementos com os métodos `setAll` (define todos os elementos a partir da posição especificada com os elementos do iterável dado como entrada), `fillRange` (preenche a faixa de índices especificada com o valor dado) e `replaceRange` (substitui a faixa de elementos especificada com os elementos do iterável dado).
 
 ```dart
 void main() {
@@ -156,27 +153,27 @@ void main() {
 
 O método `add` é utilizado para adicionar um único elemento à lista.
 
-~~~dart
+```dart
 void main() {
   List<int> numeros = [1, 2, 3];
   numeros.add(4);
   print(numeros); // Output: [1, 2, 3, 4]
 }
-~~~
+```
 
 Já o método `addAll` adiciona múltiplos elementos à lista.
 
-~~~dart
+```dart
 void main() {
   List<int> numeros = [1, 2, 3];
   numeros.addAll([4, 5, 6]);
   print(numeros); // Output: [1, 2, 3, 4, 5, 6]
 }
-~~~
+```
 
 Também é possível inserir novos elementos em uma posição específica com os métodos `insert` (um elemento) e `insertAll` (vários elementos).
 
-~~~dart
+```dart
 void main() {
   List<int> numbers = [1, 2, 3];
 
@@ -186,7 +183,7 @@ void main() {
   numbers.insertAll(2, [20, 30]);
   print(numbers); // Output: [1, 10, 20, 30, 2, 3]
 }
-~~~
+```
 
 Também é possível adicionar elementos de forma condicional utilizando outras estruturas, como `if-else`.
 
@@ -208,59 +205,59 @@ void main() {
 
 ## Remover Elementos
 
-O método `remove` remove um elemento específico da lista.
+O método `remove` é usado para remover um elemento específico da lista.
 
-~~~dart
+```dart
 void main() {
   List<String> frutas = ['maçã', 'banana', 'laranja'];
   frutas.remove('banana');
   print(frutas); // Output: [maçã, laranja]
 }
-~~~
+```
 
 Para remover um elemento em um índice específico pode-se utilizar o método `removeAt`.
 
-~~~dart
+```dart
 void main() {
   List<String> frutas = ['maçã', 'banana', 'laranja'];
   frutas.removeAt(1);
   print(frutas); // Output: [maçã, laranja]
 }
-~~~
+```
 
 Para remover o último elemento da lista usa-se o método `removeLast`.
 
-~~~dart
+```dart
 void main() {
   List<String> frutas = ['maçã', 'banana', 'laranja'];
   frutas.removeLast();
   print(frutas); // Output: [maçã, banana]
 }
-~~~
+```
 
 O método `removeWhere` remove elementos segundo uma condição específica.
 
-~~~dart
+```dart
 void main() {
   List<String> frutas = ['maçã', 'banana', 'laranja', 'manga'];
   frutas.removeWhere((fruta) => fruta[0] == 'm');
   print(frutas); // Output: [banana, laranja]
 }
-~~~
+```
 
 Para remover todos os elementos, ou seja, limpar a lista, usa-se o método `clear`.
 
-~~~dart
+```dart
 void main() {
   List<String> frutas = ['maçã', 'banana', 'laranja'];
   frutas.clear();
   print(frutas); // Output: []
 }
-~~~
+```
 
 ## Ordenar, Reverter e Embaralhar uma Lista
 
-Pode-se usar o método `sort` para ordenar a lista usando a função de comparação especificada (ou a ordem natural, se nenhuma função for fornecida). Para reverter a ordem dos elementos usa-se o método `reversed`. Já o método `shuffle` embaralha os elementos.
+Podemos ordenar uma lista com o método `sort` usando uma função de comparação especificada (ou a ordem natural, se nenhuma função for fornecida). Para reverter a ordem dos elementos usa-se o método `reversed`. Já o método `shuffle` embaralha os elementos.
 
 ```dart
 void main() {
@@ -278,7 +275,7 @@ Pode-se perceber que os métodos `sort` e `shuffle` alteram a lista original, en
 
 ## Tamanho de uma Lista
 
-Usando a propriedade `length` pode-se obter o número de elementos na lista.
+Usamos a propriedade `length` para obter o número de elementos na lista.
 
 ```dart
 void main() {

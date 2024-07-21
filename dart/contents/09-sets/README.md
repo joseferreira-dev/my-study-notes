@@ -1,11 +1,10 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner-dart.png"></a>
 </div>
 <br>
 
-# Sets
+# Sets (Conjuntos)
 
-- [Introdução](#introdução)
 - [Criar um `Set`](#criar-um-set)
 - [Acessar Elementos](#acessar-elementos)
 - [Modificar Elementos](#modificar-elementos)
@@ -15,9 +14,7 @@
 - [Tamanho de um `Set`](#tamanho-de-um-set)
 - [Operações](#operações)
 
-## Introdução
-
-Em Dart, um `Set` é uma coleção não ordenada de elementos únicos. Diferente de uma `List`, um `Set` não permite elementos duplicados. Essa estrutura de dados é útil quando se precisa garantir que não haverá elementos repetidos.
+Em Dart, um `Set` (conjunto) é uma coleção não ordenada de elementos únicos. Diferente de uma `List`, um `Set` não permite elementos duplicados. Essa estrutura de dados é útil quando se precisa garantir que não haverá elementos repetidos.
 
 ## Criar um `Set`
 
@@ -41,7 +38,7 @@ void main() {
 
 ## Acessar Elementos
 
-Para um `Set` o método `elementAt` e as propriedades `first` e `last` funcionam da mesma forma que em uma lista.
+Nos conjuntos o método `elementAt` e as propriedades `first` e `last` funcionam da mesma forma que em uma lista.
 
 ```dart
 void main() {
@@ -54,7 +51,7 @@ void main() {
 
 ## Modificar Elementos
 
-Modificar elementos em um `Set` diretamente não é possível porque em Dart eles são coleções de elementos únicos e desordenados. No entanto, pode-se realizar modificações de maneira indireta, removendo um elemento existente e adicionando um novo elemento modificado. Por exemplo:
+Não é possível modificar os elementos de um conjunto diretamente, porque em Dart eles são coleções de elementos únicos e desordenados. No entanto, podemos realizar modificações de maneira indireta, removendo um elemento existente e adicionando um novo elemento modificado. Por exemplo:
 
 ```dart
 void main() {
@@ -73,7 +70,7 @@ void main() {
 
 ## Adicionar Elementos
 
-Para adicionar elementos a um `Set` utiliza-se os métodos `add` e `addAll`, que funcionam da mesma maneira que com listas.
+Para adicionar elementos a um conjunto utilizamos os métodos `add` e `addAll`, que funcionam da mesma maneira que com listas.
 
 ```dart
 void main() {
@@ -115,7 +112,7 @@ void main() {
 
 ## Consultas
 
-O método `contains` também existe nos Sets e funciona da mesma forma que nas listas, assim como as propriedades `isEmpty` e `isNotEmpty`. Existe ainda o método `containsAll` que verifica se o `Set` possui um conjunto de elementos.
+O método `contains` também existe nos conjuntos e funciona da mesma forma que nas listas, assim como as propriedades `isEmpty` e `isNotEmpty`. Existe ainda o método `containsAll` que verifica se o `Set` possui um conjunto de elementos.
 
 ```dart
 void main() {
@@ -142,7 +139,7 @@ void main() {
 
 ## Operações
 
-Existem quatro operações principais que se pode realizar com Sets. São elas `intersection` (retorna a intersecção de dois Sets), `union` (retorna a união de dois Sets), `difference` (retorna os elementos que existem no `Set` atual mas não no que é enviado de parâmetro) e `lookup` (retorna um elemento do `Set` que é igual ao fornecido ou `null`, se ele não existir).
+Existem quatro operações principais que podemos realizar com os conjuntos. São elas `intersection` (retorna a intersecção de dois conjuntos), `union` (retorna a união de dois conjuntos), `difference` (retorna os elementos que existem no `Set` atual mas não no que é enviado de parâmetro) e `lookup` (retorna um elemento do `Set` que é igual ao fornecido ou `null`, se ele não existir).
 
 ```dart
 void main() {

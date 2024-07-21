@@ -3,7 +3,7 @@
 </div>
 <br>
 
-# Declaração de variáveis
+# Declaração de Variáveis
 
 - [Declaração Explícita com Tipo](#declaração-explícita-com-tipo)
 - [Declaração com `var`](#declaração-com-var)
