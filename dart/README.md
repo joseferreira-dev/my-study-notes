@@ -21,7 +21,7 @@ Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se consid
 - [Criação e Estrutura de um Projeto](./contents/01-criacao-e-estrutura-projeto/README.md)
 - [Declaração de variáveis](./contents/02-declaracao-de-variaveis/README.md)
 - [Usando Null Safety com Variáveis](./contents/03-null-safety-variaveis/README.md)
-- [Tipos de dados](./contents/04-tipos-de-dados/README.md)
+- [Tipos de Dados](./contents/04-tipos-de-dados/README.md)
 - [Conversão entre Tipos](./contents/05-conversao-entre-tipos/README.md)
 - [Operadores](./contents/06-operadores/README.md)
 - [Estruturas de Controle](./contents/07-estruturas-de-controle/README.md)

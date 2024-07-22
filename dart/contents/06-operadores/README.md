@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner-dart.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner_dart.png"></a>
 </div>
 <br>
 
@@ -22,14 +22,14 @@ Operadores são símbolos que informam ao compilador ou interpretador para reali
 
 Esses operadores são usados para realizar operações matemáticas comuns.
 
-| Símbolo | Significado                |
-|---------|----------------------------|
-| `+`     | Soma                       |
-| `-`     | Subtração                  |
-| `*`     | Multiplicação              |
-| `/`     | Divisão                    |
-| `~/`    | Divisão inteira            |
-| `%`     | Resto da divisão           |
+| Símbolo | Significado      |
+| ------- | ---------------- |
+| `+`     | Soma             |
+| `-`     | Subtração        |
+| `*`     | Multiplicação    |
+| `/`     | Divisão          |
+| `~/`    | Divisão inteira  |
+| `%`     | Resto da divisão |
 
 Eles funcionam da seguinte maneira:
 
@@ -52,7 +52,7 @@ void main() {
 Esses operadores são usados para atribuir valores a variáveis.
 
 | Símbolo | Significado                    |
-|---------|--------------------------------|
+| ------- | ------------------------------ |
 | `=`     | Atribuição                     |
 | `+=`    | Atribuição com adição          |
 | `-=`    | Atribuição com subtração       |
@@ -145,14 +145,14 @@ void main() {
 
 Os operadores de comparação são utilizados para comparar valores. Eles retornam um valor booleano (`true` ou `false`) com base na comparação realizada. São eles:
 
-| Símbolo | Significado                |
-|---------|----------------------------|
-| `==`    | Igualdade                  |
-| `!=`    | Desigualdade               |
-| `>`     | Maior que                  |
-| `<`     | Menor que                  |
-| `>=`    | Maior ou igual que         |
-| `<=`    | Menor ou igual que         |
+| Símbolo | Significado        |
+| ------- | ------------------ |
+| `==`    | Igualdade          |
+| `!=`    | Desigualdade       |
+| `>`     | Maior que          |
+| `<`     | Menor que          |
+| `>=`    | Maior ou igual que |
+| `<=`    | Menor ou igual que |
 
 E funcionam da seguinte maneira:
 
@@ -513,24 +513,24 @@ void main() {
 
 Os operadores em Dart seguem uma convenção de prioridade na execução que influencia diretamente o resultado das expressões nas quais são utilizados, conforme a tabela a seguir:
 
-| **Precedência** | **Operadores**                                                      | **Associatividade**    |
-|-----------------|---------------------------------------------------------------------|------------------------|
-| 1               | `[]`, `()`, `?.`, `?.[]`, `.`, `?.`, `++`, `--`, `()`, `[]`         | Esquerda para direita  |
-| 2               | `-`, `!`, `~`, `++`, `--`, `await`, `!.`                            | Direita para esquerda  |
-| 3               | `*`, `/`, `~/`, `%`                                                 | Esquerda para direita  |
-| 4               | `+`, `-`                                                            | Esquerda para direita  |
-| 5               | `<<`, `>>`, `>>>`                                                   | Esquerda para direita  |
-| 6               | `&`                                                                 | Esquerda para direita  |
-| 7               | `^`                                                                 | Esquerda para direita  |
-| 8               | `\|`                                                                | Esquerda para direita  |
-| 9               | `==`, `!=`, `===`, `!==`, `>=`, `>`, `<=`, `<`, `is`, `is!`,`as`    | Esquerda para direita  |
-| 10              | `&&`                                                                | Esquerda para direita  |
-| 11              | `\|\|`                                                              | Esquerda para direita  |
-| 12              | `??`                                                                | Esquerda para direita  |
-| 13              | `? :`                                                               | Direita para esquerda  |
-| 14              | `=`, `*=`, `/=`, `+=`, `-=`, `&=`, `^=`, `\|=`, `<<=`, `>>=`, `??=` | Direita para esquerda  |
-| 15              | `...`                                                               | Não associativo        |
-| 16              | `...?`, `!..`                                                       | Não associativo        |
+| **Precedência** | **Operadores**                                                      | **Associatividade**   |
+| --------------- | ------------------------------------------------------------------- | --------------------- |
+| 1               | `[]`, `()`, `?.`, `?.[]`, `.`, `?.`, `++`, `--`, `()`, `[]`         | Esquerda para direita |
+| 2               | `-`, `!`, `~`, `++`, `--`, `await`, `!.`                            | Direita para esquerda |
+| 3               | `*`, `/`, `~/`, `%`                                                 | Esquerda para direita |
+| 4               | `+`, `-`                                                            | Esquerda para direita |
+| 5               | `<<`, `>>`, `>>>`                                                   | Esquerda para direita |
+| 6               | `&`                                                                 | Esquerda para direita |
+| 7               | `^`                                                                 | Esquerda para direita |
+| 8               | `\|`                                                                | Esquerda para direita |
+| 9               | `==`, `!=`, `===`, `!==`, `>=`, `>`, `<=`, `<`, `is`, `is!`,`as`    | Esquerda para direita |
+| 10              | `&&`                                                                | Esquerda para direita |
+| 11              | `\|\|`                                                              | Esquerda para direita |
+| 12              | `??`                                                                | Esquerda para direita |
+| 13              | `? :`                                                               | Direita para esquerda |
+| 14              | `=`, `*=`, `/=`, `+=`, `-=`, `&=`, `^=`, `\|=`, `<<=`, `>>=`, `??=` | Direita para esquerda |
+| 15              | `...`                                                               | Não associativo       |
+| 16              | `...?`, `!..`                                                       | Não associativo       |
 
 A ordem de precedência e a associatividade dos operadores determinam como as expressões são avaliadas. Operadores com uma precedência mais alta são avaliados antes de operadores com uma precedência mais baixa. Se os operadores avaliados tiverem o mesmo nível de precedência, eles serão avaliados segundo a sua associatividade. Onde:
 

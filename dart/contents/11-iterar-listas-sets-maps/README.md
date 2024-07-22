@@ -1,11 +1,10 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="../../banner_dart.png"></a>
 </div>
 <br>
 
-# Title
+# Iterar sobre Lists, Sets e Maps
 
-- [Introdução](#introdução)
 - [Iterar sobre Listas](#iterar-sobre-listas)
   * [Usando `for`, `for-in` e `forEach`](#usando-for-for-in-e-foreach)
   * [Usando `map`](#usando-map)
@@ -15,20 +14,18 @@
   * [Usando `every` e `any`](#usando-every-e-any)
   * [Usando `take` e `skip`](#usando-take-e-skip)
   * [Usando `takeWhile` e `skipWhile`](#usando-takewhile-e-skipwhile)
-- [Iterar sobre Sets](#iterar-sobre-sets)
+- [Iterar sobre Conjuntos](#iterar-sobre-conjuntos)
   * [Usando `for`, `for-in` e `forEach`](#usando-for-for-in-e-foreach-1)
   * [Usando `map`, `where`, `reduce`, `fold` e `expand`](#usando-map-where-reduce-fold-e-expand)
   * [Usando `every` e `any`](#usando-every-e-any-1)
   * [Usando `take`, `skip`, `takeWhile` e `skipWhile`](#usando-take-skip-takewhile-e-skipwhile)
 - [Iterar sobre Maps](#iterar-sobre-maps)
 
-## Introdução
-
-Em Dart, a iteração é um conceito essencial para percorrer elementos de coleções como listas, sets e maps. Cada tipo de coleção tem sua própria forma de iteração, mas Dart proporciona uma sintaxe simples e unificada para lidar com essas estruturas de dados.
+Em Dart, a iteração é o ato de percorrer elementos de coleções como listas, conjuntos e mapas. Existem formas comuns de percorrer todas as coleções, além de formas específicas para cada coleção e formas mais indicadas.
 
 ## Iterar sobre Listas
 
-Em Dart, pode-se iterar sobre listas de várias maneiras, utilizando diferentes métodos e técnicas de iteração. Deve ter atenção ao utilizar alguns desses métodos, pois muitos deles retornam um iterable, que é diferente de uma lista, sendo necessário sua conversão de volta para lista com o método `toList`.
+Em Dart, podemos iterar sobre listas de várias maneiras, utilizando diferentes métodos e técnicas de iteração. Devemos ter atenção ao utilizar alguns desses métodos, pois muitos deles retornam um iterable, que é diferente de uma lista, sendo necessário sua conversão de volta para lista com o método `toList`.
 
 ### Usando `for`, `for-in` e `forEach`
 
@@ -52,13 +49,13 @@ void main() {
 }
 ```
 
-O loop `for` é muito flexível e permite um controle detalhado sobre o índice da iteração. É útil quando você precisa acessar o índice dos elementos ou manipular o índice durante a iteração. Já o loop Um loop `for-in` é mais simples e mais legível quando você só precisa acessar os elementos sem se preocupar com os índices. E o método `forEach` é uma função de ordem superior que aplica uma função callback a cada elemento da lista.
+O loop `for` é muito flexível e permite um controle detalhado sobre o índice da iteração. É útil quando você precisa acessar o índice dos elementos ou manipular o índice durante a iteração. Já o loop `for-in` é mais simples e mais legível quando você só precisa acessar os elementos sem se preocupar com os índices. E o método `forEach` é uma função de ordem superior que aplica uma função callback a cada elemento da lista.
 
 As principais diferenças entre essas três formas são:
 
 - O loop `for` é o único que permite acesso direto e manipulação dos índices da lista;
-- O método `forEach` não suporta o uso de break e continue, o que pode ser feito nos loops `for` e `for-in`;
-- O método `for` é o único que permite leitura e modificação dos elementos da lista, enquanto que `for-in` e `forEach` não permite modificação;
+- O método `forEach` não suporta o uso de `break` e `continue`, o que pode ser feito nos loops `for` e `for-in`;
+- O método `for` é o único que permite leitura e modificação dos elementos da lista, enquanto que `for-in` e `forEach` não permitem modificação.
 
 ### Usando `map`
 
@@ -173,9 +170,9 @@ void main() {
 }
 ```
 
-## Iterar sobre Sets
+## Iterar sobre Conjuntos
 
-Em Dart, pode-se iterar sobre um `Set` da mesma maneira que em uma lista, atentando-se ao fato de que alguns métodos retornam um iterable, sendo necessário sua conversão de volta para um `Set` com o método `toSet`.
+Em Dart, podemos iterar sobre um `Set` da mesma maneira que em uma lista, atentando-se ao fato de que alguns métodos retornam um iterable, sendo necessário sua conversão de volta para um `Set` com o método `toSet`.
 
 ### Usando `for`, `for-in` e `forEach`
 
@@ -201,7 +198,7 @@ void main() {
 
 ### Usando `map`, `where`, `reduce`, `fold` e `expand`
 
-Os métodos `map`, `where`, `reduce`, `fold` e `expand` funcionam da mesma forma qu e nas listas, ressaltando-se que todos os elementos repetidos são eliminados do `Set` final.
+Os métodos `map`, `where`, `reduce`, `fold` e `expand` funcionam da mesma forma que e nas listas, ressaltando-se que todos os elementos repetidos são eliminados do `Set` final.
 
 ```dart
 void main() {
@@ -271,6 +268,92 @@ void main() {
 }
 ```
 
-## Iterar sobre Maps
+## Iterar sobre Mapas
 
-Falta este conteúdo
+Em Dart, podemos iterar sobre um `Map` de maneiras muito semelhantes as demais coleções.
+
+### Usando `for`, `for-in` e `forEach`
+
+Os loops `for`, `for-in` e o método `forEach` podem ser usados para iterar sobre os pares chave-valor de um mapa.
+
+```dart
+void main() {
+  Map<String, int> frutas = {'maçã': 1, 'banana': 2, 'laranja': 3};
+
+  for (int i = 0; i < frutas.length; i++) {
+    String chave = frutas.keys.elementAt(i);
+    print('Chave: $chave, Valor: ${frutas[chave]}');
+  }
+  
+  for (var chave in frutas.keys) {
+    print('Chave: $chave, Valor: ${frutas[chave]}');
+  }
+  
+  frutas.forEach((chave, valor) {
+    print('Chave: $chave, Valor: $valor');
+  });
+}
+```
+
+### Usando `map`, `where`, `reduce`, `fold` e `expand`
+
+Os métodos `map`, `where`, `reduce`, `fold` e `expand` também podem ser usados em mapas, porém de forma ligeiramente diferente.
+
+```dart
+void main() {
+  Map<String, int> frutas = {'maçã': 1, 'banana': 2, 'laranja': 3};
+  
+  var frutasDobradas = frutas.map((chave, valor) => MapEntry(chave, valor * 2));
+  print(frutasDobradas); // Output: {maçã: 2, banana: 4, laranja: 6}
+  
+  var frutasFiltradas = Map.fromEntries(frutas.entries.where((entry) => entry.value % 2 == 0));
+  print(frutasFiltradas); // Output: {banana: 2}
+  
+  int soma = frutas.values.reduce((a, b) => a + b);
+  print(soma); // Output: 6
+  
+  int somaComInicial = frutas.values.fold(10, (anterior, atual) => anterior + atual);
+  print(somaComInicial); // Output: 16
+  
+  var chavesDuplicadas = frutas.keys.expand((chave) => [chave, chave]).toList();
+  print(chavesDuplicadas); // Output: [maçã, maçã, banana, banana, laranja, laranja]
+}
+```
+
+### Usando `every` e `any`
+
+Os métodos `every` e `any` verificam condições sobre os elementos de um mapa.
+
+```dart
+void main() {
+  Map<String, int> frutas = {'maçã': 1, 'banana': 2, 'laranja': 3};
+  
+  bool todosPositivos = frutas.values.every((valor) => valor > 0);
+  print(todosPositivos); // Output: true
+  
+  bool algumPar = frutas.values.any((valor) => valor % 2 == 0);
+  print(algumPar); // Output: true
+}
+```
+
+### Usando `take`, `skip`, `takeWhile` e `skipWhile`
+
+Os métodos `take`, `skip`, `takeWhile` e `skipWhile` podem ser usados para selecionar pares chave-valor de um mapa.
+
+```dart
+void main() {
+  Map<String, int> frutas = {'maçã': 1, 'banana': 2, 'laranja': 3};
+  
+  var primeirosDois = Map.fromEntries(frutas.entries.take(2));
+  print(primeirosDois); // Output: {maçã: 1, banana: 2}
+  
+  var depoisDosDois = Map.fromEntries(frutas.entries.skip(2));
+  print(depoisDosDois); // Output: {laranja: 3}
+  
+  var enquantoMenorQueTres = Map.fromEntries(frutas.entries.takeWhile((entry) => entry.value < 3));
+  print(enquantoMenorQueTres); // Output: {maçã: 1, banana: 2}
+  
+  var aPartirDeTres = Map.fromEntries(frutas.entries.skipWhile((entry) => entry.value < 3));
+  print(aPartirDeTres); // Output: {laranja: 3}
+}
+```
