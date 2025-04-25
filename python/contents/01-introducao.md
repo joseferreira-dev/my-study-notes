@@ -76,4 +76,6 @@ Em algumas distribuições Linux ou em instalações personalizadas, o comando p
 
 Esse modo de execução direta é ideal para testar pequenos scripts, programas utilitários ou mesmo para desenvolver projetos completos, dependendo da organização do código.
 
+---
+
 Nos próximos capítulos, exploraremos os principais conceitos da linguagem Python, iniciando pela sintaxe básica, variáveis, tipos de dados e estruturas de controle, de forma detalhada e com exemplos práticos para consolidar o aprendizado.
