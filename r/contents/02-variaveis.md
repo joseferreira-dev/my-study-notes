@@ -24,24 +24,24 @@ Além disso, o R permite a atribuição múltipla, o que significa que podemos a
 a <- b <- c <- 25
 ```
 
-Agora, as variáveis `a`, `b` e `c` possuem o valor `25`. Esse tipo de atribuição pode ser útil quando desejamos inicializar várias variáveis com o mesmo valor de forma concisa.
+Agora, as variáveis `a`, `b` e `c` possuem o valor `25`. Esse tipo de atribuição pode ser útil quando desejamos inicializar várias variáveis com o mesmo valor de forma concisa. Vale ressaltar que as variáveis atribuídas dessa forma são independentes, ou seja, a alteração no valor de uma não interfere nas demais.
 
 ## Nomenclatura de Variáveis
 
-A nomenclatura de variáveis em R segue algumas regras importantes. Em primeiro lugar, o nome de uma variável deve começar com uma letra ou com um ponto (que não seja o primeiro caractere). Depois disso, podem ser utilizados números, letras e o caractere de sublinhado (`_`). Por exemplo, os nomes de variáveis válidos são:
+A nomenclatura de variáveis em R segue algumas regras importantes. Em primeiro lugar, o nome de uma variável deve começar com uma letra. Depois disso, podem ser utilizados números, letras e o caractere de sublinhado (`_`). Por exemplo, os nomes de variáveis válidos são:
 
 ```r
 variavel1
 x
 nome_do_usuario
-_dados
 ```
 
-Por outro lado, nomes de variáveis não podem começar com um número nem conter espaços, como:
+Por outro lado, nomes de variáveis não podem começar com um número, sublinhado (`_`) e nem conter espaços, como:
 
 ```r
-1variavel   # Inválido
+1variavel       # Inválido
 minha variavel  # Inválido
+_dados          # Inválido
 ```
 
 Além disso, há alguns nomes reservados que não podem ser usados como nomes de variáveis, como palavras-chave do R (ex.: `if`, `for`, `function`). Sempre que possível, utilize nomes descritivos para as suas variáveis, o que facilita a legibilidade do código, especialmente em projetos mais complexos. Exemplos:
@@ -54,43 +54,41 @@ dados_clientes
 
 Com uma boa nomenclatura, seu código será muito mais claro e fácil de entender, mesmo depois de algum tempo.
 
-## Tipos de Dados Básicos, Coerção e Conversão de Tipos
+## Tipos de Dados
 
-Em R, as variáveis podem armazenar diferentes tipos de dados, e entender esses tipos é essencial para realizar qualquer tipo de operação corretamente. R possui uma série de tipos de dados básicos que podemos utilizar em nossas variáveis. Vamos explorar os principais:
+Em R, as variáveis podem armazenar diferentes tipos de dados, e entender esses tipos é essencial para realizar qualquer tipo de operação corretamente. R possui uma série de tipos de dados básicos (também conhecidos como atômicos) que podemos utilizar em nossas variáveis.
 
-### Tipos de Dados Básicos:
-
-- **Numérico (numeric)**: Representa números reais (decimais). Este é o tipo padrão quando você define um número no R.
+**Numérico (numeric)**: Representa números reais (decimais). Este é o tipo padrão quando você define um número no R.
   
-  ```r
-  numero <- 3.14
-  ```
+```r
+numero <- 3.14
+```
 
-- **Inteiro (integer)**: Representa números inteiros. Para definir um número inteiro, podemos usar o sufixo `L` após o número.
+**Inteiro (integer)**: Representa números inteiros. Para definir um número inteiro, podemos usar o sufixo `L` após o número.
 
-  ```r
-  inteiro <- 5L
-  ```
+```r
+inteiro <- 5L
+```
 
-- **Caractere (character)**: Representa texto ou sequências de caracteres, que são envoltas por aspas (`"` ou `'`).
-  
-  ```r
-  nome <- "João"
-  ```
+**Caractere (character)**: Representa texto ou sequências de caracteres, que são envoltas por aspas (`"` ou `'`).
 
-- **Lógico (logical)**: Representa valores booleanos, ou seja, `TRUE` (verdadeiro) ou `FALSE` (falso).
-  
-  ```r
-  status <- TRUE
-  ```
+```r
+nome <- "João"
+```
 
-- **Componente complexos (complex)**: Representa números complexos, que podem ser úteis em algumas operações matemáticas avançadas.
+**Lógico (logical)**: Representa valores booleanos, ou seja, `TRUE` (verdadeiro) ou `FALSE` (falso).
 
-  ```r
-  numero_complexo <- 3 + 4i
-  ```
+```r
+status <- TRUE
+```
 
-### Coerção de Tipos (ou conversão automática)
+**Componente complexos (complex)**: Representa números complexos, que podem ser úteis em algumas operações matemáticas avançadas.
+
+```r
+numero_complexo <- 3 + 4i
+```
+
+### Coerção e Conversão de Tipos
 
 Em R, a coerção de tipos pode ocorrer automaticamente, o que significa que o R tenta converter os dados de um tipo para outro, quando necessário, para realizar operações. Isso é feito de acordo com uma ordem de precedência: sempre que for possível, o R tentará manter o tipo mais geral. Por exemplo:
 
@@ -102,40 +100,38 @@ resultado <- numero + inteiro
 
 Aqui, o R converte automaticamente o número inteiro `5L` para um número numérico `5.0` antes de realizar a soma, resultando em `8.14`. Essa coerção automática é conveniente, mas é importante estar ciente de que nem todas as conversões serão feitas sem erros ou sem perda de dados.
 
-### Conversão de Tipos
-
 Embora o R faça coerção automaticamente, em algumas situações, podemos precisar realizar conversões explícitas de tipos. Para isso, o R fornece funções específicas para cada tipo. Vamos ver alguns exemplos:
 
-- **De numérico para inteiro**:
+**De numérico para inteiro**:
 
-  ```r
-  num <- 3.14
-  inteiro <- as.integer(num)
-  ```
+```r
+num <- 3.14
+inteiro <- as.integer(num)
+```
 
-  Aqui, a função `as.integer()` converte o número `3.14` em `3`, descartando a parte decimal.
+Aqui, a função `as.integer()` converte o número `3.14` em `3`, descartando a parte decimal.
 
-- **De inteiro para numérico**:
+**De inteiro para numérico**:
 
-  ```r
-  inteiro <- 5L
-  num <- as.numeric(inteiro)
-  ```
+```r
+inteiro <- 5L
+num <- as.numeric(inteiro)
+```
 
-  A função `as.numeric()` converte um número inteiro em um número numérico.
+A função `as.numeric()` converte um número inteiro em um número numérico.
 
-- **De numérico para caractere**:
+**De numérico para caractere**:
 
-  ```r
-  num <- 3.14
-  texto <- as.character(num)
-  ```
+```r
+num <- 3.14
+texto <- as.character(num)
+```
 
-  Neste exemplo, `as.character()` converte um número numérico em uma string de texto.
+Neste exemplo, `as.character()` converte um número numérico em uma string de texto.
 
 Com essas conversões em mente, você pode manipular tipos de dados no R de maneira mais controlada e específica, o que é essencial em operações mais complexas e em grandes volumes de dados.
 
-## Expressões e Operadores Básicos
+## Operadores Básicos
 
 Agora que compreendemos como trabalhar com variáveis e tipos de dados, é hora de explorar os operadores que nos permitem realizar operações sobre esses dados. Os operadores em R são divididos em várias categorias: aritméticos, lógicos e de comparação.
 
@@ -143,113 +139,77 @@ Agora que compreendemos como trabalhar com variáveis e tipos de dados, é hora 
 
 Os operadores aritméticos são usados para realizar operações matemáticas. Eles incluem:
 
-- **Soma (`+`)**:
+| Operador | Descrição               |
+| -------- | ----------------------- |
+| +        | Soma                    |
+| -        | Subtração               |
+| *        | Multiplicação           |
+| /        | Divisão                 |
+| ^ ou **  | Exponenciação           |
+| %%       | Módulo/Resto da divisão |
+| %/%      | Divisão inteira         |
 
-  ```r
-  a <- 5
-  b <- 3
-  soma <- a + b  # Resultado: 8
-  ```
+A utilização de cada um desses operadores é exemplificada a a seguir:
 
-- **Subtração (`-`)**:
-
-  ```r
-  subtracao <- a - b  # Resultado: 2
-  ```
-
-- **Multiplicação (`*`)**:
-
-  ```r
-  multiplicacao <- a * b  # Resultado: 15
-  ```
-
-- **Divisão (`/`)**:
-
-  ```r
-  divisao <- a / b  # Resultado: 1.666...
-  ```
-
-- **Exponenciação (`^`)**:
-
-  ```r
-  expoente <- a^b  # Resultado: 125
-  ```
-
-- **Módulo (`%%`)**: Retorna o restante de uma divisão.
-
-  ```r
-  modulo <- a %% b  # Resultado: 2
-  ```
-
-- **Divisão inteira (`%/%`)**: Retorna a parte inteira de uma divisão.
-
-  ```r
-  div_inteira <- a %/% b  # Resultado: 1
-  ```
+```r
+a <- 5
+b <- 3
+soma <- a + b           # Resultado: 8
+subtracao <- a - b      # Resultado: 2
+multiplicacao <- a * b  # Resultado: 15
+divisao <- a / b        # Resultado: 1.666...
+expoente1 <- a^b        # Resultado: 125
+expoente2 <- a**b       # Resultado: 125
+modulo <- a %% b        # Resultado: 2
+div_inteira <- a %/% b  # Resultado: 1
+```
 
 Esses operadores são usados no cotidiano da programação para cálculos matemáticos simples e complexos.
 
 ### Operadores de Comparação
 
-Os operadores de comparação são usados para comparar valores. Eles retornam um valor lógico (`TRUE` ou `FALSE`). Exemplos incluem:
+Os operadores de comparação são usados para comparar valores. Eles retornam um valor lógico (`TRUE` ou `FALSE`).
 
-- **Igualdade (`==`)**:
+| Operador | Descrição        |
+| -------- | ---------------- |
+| ==       | Igualdade        |
+| !=       | Desigualdade     |
+| >        | Maior que        |
+| <        | Menor que        |
+| >=       | Maior ou igual a |
+| <=       | Menor ou igual a |
+| %/%      | Divisão inteira  |
 
-  ```r
-  a == b  # Retorna FALSE, pois 5 não é igual a 3
-  ```
+A utilização de cada um desses operadores é exemplificada a a seguir:
 
-- **Desigualdade (`!=`)**:
-
-  ```r
-  a != b  # Retorna TRUE, pois 5 é diferente de 3
-  ```
-
-- **Maior que (`>`)**:
-
-  ```r
-  a > b  # Retorna TRUE, pois 5 é maior que 3
-  ```
-
-- **Menor que (`<`)**:
-
-  ```r
-  a < b  # Retorna FALSE, pois 5 não é menor que 3
-  ```
-
-- **Maior ou igual a (`>=`)**:
-
-  ```r
-  a >= b  # Retorna TRUE, pois 5 é maior ou igual a 3
-  ```
-
-- **Menor ou igual a (`<=`)**:
-
-  ```r
-  a <= b  # Retorna FALSE, pois 5 não é menor ou igual a 3
-  ```
+```r
+a <- 5
+b <- 3
+a == b  # Retorna FALSE, pois 5 não é igual a 3
+a != b  # Retorna TRUE, pois 5 é diferente de 3
+a > b   # Retorna TRUE, pois 5 é maior que 3
+a < b   # Retorna FALSE, pois 5 não é menor que 3
+a >= b  # Retorna TRUE, pois 5 é maior ou igual a 3
+a <= b  # Retorna FALSE, pois 5 não é menor ou igual a 3
+```
 
 ### Operadores Lógicos
 
 Os operadores lógicos são usados para realizar operações lógicas entre valores lógicos. Eles incluem:
 
-- **E lógico (`&`)**:
+| Operador | Descrição |
+| -------- | --------- |
+| &        | E lógico  |
+|          |           | Ou lógico |
+| !        | Negação   |
 
-  ```r
-  TRUE & FALSE  # Retorna FALSE
-  ```
+A utilização de cada um desses operadores é exemplificada a a seguir:
 
-- **Ou lógico (`|`)**:
-
-  ```r
-  TRUE | FALSE  # Retorna TRUE
-  ```
-
-- **Negação (`!`)**:
-
-  ```r
-  !TRUE  # Retorna FALSE
-  ```
+```r
+TRUE & FALSE  # Retorna FALSE
+TRUE | FALSE  # Retorna TRUE
+!TRUE  # Retorna FALSE
+```
 
 Esses operadores são úteis para realizar decisões condicionais em seu código, como filtrar dados com base em condições específicas.
 
