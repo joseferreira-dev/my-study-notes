@@ -256,6 +256,50 @@ a + b   # 4 6 6 8
 a + c   # Erro: o comprimento do objeto maior não é múltiplo do menor
 ```
 
+## Acesso e Indexação de Vetores
+
+Existem diversas formas de se acessar os elementos indexados em um vetor. A primeira delas é o acesso número, feito de forma direta a partir do índice do elemento ou por um intervalo de índices:
+
+```r
+v <- c(100, 200, 300, 400)
+v[1]        # 100
+v[c(1, 3)]  # 100 300
+```
+
+Índices negativos excluem elementos correspondentes:
+
+```r
+v <- c(100, 200, 300, 400)
+v[-2]  # 100 300 400 (Exclui o segundo elemento)
+```
+
+A outra forma de acesso é por meio do acesso lógico, onde se utiliza uma expressão lógica para acessar um conjunto específico de elementos que atendem o que diz a expressão:
+
+```r
+v <- c(100, 200, 300, 400)
+
+v[v > 250]            # 300 400
+v[v > 150 & v < 400]  # 200 300
+v[v < 200 | v > 350]  # 100 400
+```
+
+O operador `%in%` ajuda a criar facilmente vários
+argumentos do tipo `|`. Por exemplo:
+
+```r
+V <- c("a", "t", "a", "b", "z")
+
+V %in% c("a", "b", "c", "d")  # TRUE FALSE TRUE TRUE FALSE
+```
+
+### Uso de `which()`
+
+```r
+which(v > 250)  # Índices dos elementos maiores que 250
+```
+
+---
+
 ## -------------- Estatísticas de um Vetor
 
 ### Valores máximo, mínimo e média
@@ -274,49 +318,6 @@ Essas funções são otimizadas e lidam com grandes volumes de dados rapidamente
 
 
 
-
----
-
-## 4.11 Acesso e Indexação de Vetores
-
-### Acesso numérico
-
-```r
-v <- c(100, 200, 300, 400)
-v[1]    # 100
-v[c(1, 3)]  # 100 300
-```
-
-Índices negativos excluem elementos:
-
-```r
-v[-2]   # Exclui o segundo elemento
-```
-
-### Acesso lógico
-
-```r
-v[v > 250]  # Retorna elementos maiores que 250
-```
-
-Combinações lógicas:
-
-```r
-v[v > 150 & v < 400]
-v[v < 200 | v > 350]
-```
-
-### Uso de `%in%`
-
-```r
-v %in% c(100, 300)  # TRUE FALSE TRUE FALSE
-```
-
-### Uso de `which()`
-
-```r
-which(v > 250)  # Índices dos elementos maiores que 250
-```
 
 ---
 
