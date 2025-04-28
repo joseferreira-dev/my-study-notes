@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/dart"><img src="banner_dart.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/python"><img src="contents/banner_python.webp"></a>
 </div>
 <br>
 
@@ -20,4 +20,5 @@ Python é uma linguagem de programação de alto nível, poderosa e versátil, c
 Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se considerar esta como uma mini documentação de referência. Vale ressaltar que este material foi elaborado com base na versão 3.4.1 da linguagem.
 
 - [Introdução à Linguagem Python](./contents/01-introducao.md)
+- [Variáveis e Tipos de Dados Simples](./contents/02-variaveis.md)
 - 
