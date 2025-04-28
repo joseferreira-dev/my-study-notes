@@ -1,34 +1,33 @@
 # Capítulo 4 — Estruturas de Dados — Parte 1: Vetores
 
-## 4.1 O que são Vetores?
+## O que são Vetores?
 
-Em R, vetores são a forma mais fundamental de armazenar dados. Todo objeto simples em R — números, textos, valores lógicos — é, internamente, um vetor.  
+Em R, vetores são a forma mais fundamental de armazenar dados. Todo objeto simples em R — números, textos, valores lógicos — é, internamente, um vetor.
+
 Um vetor é uma **coleção ordenada de elementos** do **mesmo tipo atômico**: numérico (`numeric`), inteiro (`integer`), caractere (`character`), lógico (`logical`) ou complexo (`complex`).
 
 Essa homogeneidade é obrigatória: **todos os elementos de um vetor devem ser do mesmo tipo**. Caso contrário, o R fará uma **coerção automática**, ou seja, converterá todos os elementos para o tipo mais abrangente.
 
 Os vetores permitem operações **vetorializadas**, ou seja, as operações são aplicadas a todos os seus elementos de forma automática, sem necessidade de loops explícitos. Essa característica torna R altamente eficiente para manipulação de dados e cálculos estatísticos.
 
----
-
-## 4.2 Criação de Vetores
+## Criação de Vetores
 
 A maneira mais direta de criar vetores em R é com a função `c()`, que significa *combine*.
 
 ```r
 # Criando vetores de diferentes tipos
-vetor_numerico <- c(2, 4.5, 6)
-vetor_inteiro <- c(1L, 2L, 3L)
-vetor_logico <- c(TRUE, FALSE, TRUE)
-vetor_caractere <- c("R", "é", "poderoso")
-vetor_complexo <- c(1+2i, 3+4i)
+precos <- c(12.99, 10, 24.50)           # Numéricos
+idades <- c(25L, 30L, 18L)              # Inteiros
+resultados <- c(TRUE, FALSE, TRUE)      # Lógicos
+nomes <- c("Ana", "Carlos", "Beatriz")  # Caracteres
+complexos <- c(1+2i, 3+4i)              # Complexos
 ```
 
-> Importante: O sufixo `L` em `1L`, `2L`, etc., indica que os valores são tratados como inteiros, e não como numéricos de ponto flutuante.
+> Importante: O sufixo `L` em `25L`, `30L`, etc., indica que os valores são tratados como inteiros, e não como numéricos de ponto flutuante.
 
 ### Verificando o tipo de um vetor
 
-Use `typeof()` ou `class()`:
+É possível verificar o tipo de um velor com as funções `typeof()` ou `class()`, que retornam o tipo de dado:
 
 ```r
 typeof(vetor_numerico)   # "double"
@@ -37,22 +36,44 @@ class(vetor_numerico)    # "numeric"
 
 Note que vetores numéricos em R são do tipo `double` (ponto flutuante), mas sua classe é chamada `numeric`.
 
----
+Existem ainda as funções `is.numeric()`, `is.integer`, `is.character`, `is.logical()` e `is.complex()` que fazem a verificação de um vetor é de um tipo específico.
 
-## 4.3 Conversão de Tipos em Vetores
+```r
+idades <- c(25L, 30L, 18L)
+
+is.numeric(idades)    # TRUE
+is.integer(idades)    # TRUE
+is.character(idades)  # FALSE
+is.logical(idades)    # FALSE
+is.complex(idades)    # FALSE
+```
+
+## Conversão de Tipos em Vetores
 
 Quando elementos de tipos diferentes são combinados, o R realiza uma **coerção implícita** seguindo a hierarquia:
 
 ```
-logical → integer → double → character → list
+logical → integer → numeric → complex → character
 ```
 
 Exemplos de coerção automática:
 
 ```r
-c(TRUE, 2)           # Resultado: 1, 2  (TRUE foi convertido para 1)
-c(3.14, "texto")     # Resultado: "3.14", "texto" (número convertido para texto)
-c(FALSE, "TRUE")     # Resultado: "FALSE", "TRUE"
+c(TRUE, 2, FALSE)  # Resultado: 1 2 0  (TRUE foi convertido para 1 e FALSE para 0)
+c(3.14, "texto")   # Resultado: "3.14" "texto" (número convertido para texto)
+c(FALSE, "TRUE")   # Resultado: "FALSE" "TRUE"
+c(10L, 5.0)        # Resultado: 10 5
+c(10L, 5.5)        # Resultado: 10.0 5.5
+c(6.5, 3+4i)       # Resultado: 6.5+0i 3.0+4i
+c(TRUE, 3+4i)      # Resultado: 1+0i 3+4i
+c("texto", 3+4i)   # Resultado: "texto" "3+4i" 
+```
+
+Existem ainda alguns casos especiais de coerção envolvendo os valores `NA` (valor faltante) e `NULL`. Valores `NA` não alteram o tipo do vetor e valores `NULL` são eliminados.
+
+```r
+c(1, 2, NA)    # Permanece numeric
+c(1, 2, NULL)  # Resulta em c(1, 2)
 ```
 
 ### Conversão explícita
@@ -61,15 +82,19 @@ Para controlar o tipo de vetor, podemos converter explicitamente:
 
 ```r
 as.numeric(c(TRUE, FALSE))  # 1 0
+as.integer(c(TRUE, FALSE))  # 1 0
 as.character(c(1, 2, 3))    # "1" "2" "3"
 as.logical(c(1, 0, 1))      # TRUE FALSE TRUE
+as.complex(c(5.4, 6.5))     # 5.4+0i 6.5+0i
 ```
 
-Essas funções garantem que os dados estejam no formato correto antes de realizar operações.
+Essas funções garantem que os dados estejam no formato correto antes de realizar operações. Além disso, sempre é importante fazer verificações de operações com conversão de dados:
 
----
+```r
+sum(is.na(as.numeric(c("1", "a", "3"))))  # Conta falhas na conversão
+```
 
-## 4.4 Concatenando Vetores
+## Concatenando Vetores
 
 Concatenar significa combinar vários elementos em um vetor único. A função `c()` pode ser usada não apenas para criar, mas também para **unir vetores existentes**:
 
@@ -79,31 +104,32 @@ b <- c(4, 5)
 c(a, b)  # Resultado: 1 2 3 4 5
 ```
 
-Exemplos de concatenação:
+As possibilidades de concatenação são várias, uma vez que R trabalha com operações diretamente nos valores de vetores:
 
 ```r
-c(2, 3, 4, 5)
-c(TRUE, FALSE, TRUE, FALSE)
-c("Eu", "AMO", "A", "RURAL")
-c(2:4) * 2  # Vetor multiplicado elemento a elemento: 4 6 8
+v1 <- 1:3          # 1 2 3
+v2 <- 4:6          # 4 5 6
+c(v1, v2)          # 1 2 3 4 5 6
+c(v1, 7)           # 1 2 3 7
+c(v1, "a")         # "1" "2" "3" "a"
+c(v1 * 2, v2 / 2)  # 2.0 4.0 6.0 2.0 2.5 3.0
+c(v1) * 2          # 2 4 6
 ```
 
-> Quando usamos `2:4`, criamos uma sequência de 2 até 4, ou seja, 2, 3, 4.
+> Quando usamos `1:3`, criamos uma sequência de 1 até 3, ou seja, 1, 2, 3.
 
----
+## Repetição de Elementos
 
-## 4.5 Repetição de Elementos
-
-A função `rep()` gera vetores repetindo elementos, vetores ou padrões.
-
-Principais formas:
+A função `rep()` gera vetores repetindo elementos, vetores ou padrões, sendo muito versátil. Por exemplo:
 
 ```r
 v <- c(1, 2, 3)
 
-rep(v, 3)            # Repete todo o vetor 3 vezes: 1 2 3 1 2 3 1 2 3
-rep(c(1, 2, 3), 1:3) # Repete 1 uma vez, 2 duas vezes, 3 três vezes: 1 2 2 3 3 3
+rep(v, 3)                 # Repete todo o vetor 3 vezes: 1 2 3 1 2 3 1 2 3
+rep(v, times = 3)         # Repete todo o vetor 3 vezes: 1 2 3 1 2 3 1 2 3
+rep(c(1, 2, 3), 1:3)      # Repete 1 uma vez, 2 duas vezes, 3 três vezes: 1 2 2 3 3 3
 rep(c(1, 2, 3), each = 3) # Repete cada elemento 3 vezes: 1 1 1 2 2 2 3 3 3
+rep(1:3, length.out = 5)  # Repete o vetor até a quantidade de elementos definida: 1 2 3 1 2
 ```
 
 Parâmetros importantes:
@@ -112,15 +138,7 @@ Parâmetros importantes:
 - `each`: número de vezes que cada elemento é repetido antes de passar ao próximo.
 - `length.out`: força o vetor repetido a ter um comprimento exato.
 
-Exemplo usando `length.out`:
-
-```r
-rep(1:3, length.out = 7) # Resultado: 1 2 3 1 2 3 1
-```
-
----
-
-## 4.6 Criação de Sequências
+## Criação de Sequências
 
 Sequências são muito usadas em loops, criação de índices ou geração de dados.
 
