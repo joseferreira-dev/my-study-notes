@@ -140,37 +140,45 @@ Parâmetros importantes:
 
 ## Criação de Sequências
 
-Sequências são muito usadas em loops, criação de índices ou geração de dados.
-
-Duas formas principais:
-
-**1. Usando o operador `:`**
+Sequências são muito usadas em loops, criação de índices ou geração de dados. Elas podem ser produzidas com duas formas principais: utilizando o operador `:` e a função `seq()`.
 
 ```r
-1:5  # Resultado: 1 2 3 4 5
-5:1  # Resultado: 5 4 3 2 1
+1:5        # 1 2 3 4 5
+5:1        # 5 4 3 2 1
+seq(1, 5)  # 1 2 3 4 5
+seq(5, 1)  # 5 4 3 2 1
 ```
 
-**2. Usando `seq()`**
-
-Permite controlar o passo (`by`) ou definir o número de elementos (`length.out`):
+A função `seq()` permite controlar o passo (ou step) da sequência com o atributo `by` ou definir o número de elementos com `length.out`, onde o step é definido automaticamente:
 
 ```r
-seq(1, 5, by = 0.5)     # 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0
+seq(1, 3, by = 0.5)         # 1.0 1.5 2.0 2.5 3.0
 seq(2, 10, length.out = 5)  # 2 4 6 8 10
 ```
 
-> Dica: `seq_along(x)` cria uma sequência de 1 até o comprimento de `x`, muito útil para percorrer vetores.
+Também é possível se criar um sequência com datas:
 
----
+```r
+seq(as.Date("2023-01-01"), as.Date("2023-01-10"), by = "day")
+```
 
-## 4.7 Arredondamento de Valores
+Por fim, `seq_along(x)` cria uma sequência de 1 até o comprimento de `x`, muito útil para percorrer vetores. Igualmente, a função `seq_len()` serve para lidar com casos onde o comprimento é zero.
 
-Para arredondar valores em vetores:
+```r
+x <- c("a", "b", "c")
+seq_along(x)  # 1 2 3 - útil em loops
+seq_len(5)    # 1 2 3 4 5 - evita problemas com length zero
+```
+
+## Arredondamento de Valores
+
+Para arredondas valores em vetores com um número definido de casas decimais, utiliza-se a função `round()`:
 
 ```r
 x <- c(2.71828, 3.14159)
-round(x, digits = 2)  # Resultado: 2.72, 3.14
+y <- c(123, 298)
+round(x, 2)   # 2.72 3.14
+round(y, -2)  # 100 300 (arredonda para centenas)
 ```
 
 Além de `round()`, existem outras funções:
@@ -179,25 +187,76 @@ Além de `round()`, existem outras funções:
 - `floor(x)`: arredonda para baixo.
 - `trunc(x)`: corta a parte decimal, sem arredondar.
 
-Exemplos:
-
 ```r
-ceiling(2.3)  # Resultado: 3
-floor(2.7)    # Resultado: 2
-trunc(-2.7)   # Resultado: -2
+x <- c(2.3, 2.7, -2.7)
+
+ceiling(x)  # Resultado: 3  3 -2
+floor(x)    # Resultado: 2  2 -3
+trunc(x)    # Resultado: 2  2 -2
 ```
 
----
+## Tamanho de um Vetor
 
-## 4.8 Análise de Vetores: Tamanho e Estatísticas
-
-### Comprimento do vetor
+Pode-se obter o tamanho de um vetor com a função `length()`.
 
 ```r
 length(c(10, 20, 30))  # Resultado: 3
 ```
 
 Saber o comprimento é crucial para laços e validações.
+
+## Ordenando Vetores
+
+Ordenação de vetores é feita utilizando a função `sort()`:
+
+```r
+sort(c(5, 2, 8, 1))                  # 1 2 5 8
+sort(c("banana", "apple", "cherry")) # "apple" "banana" "cherry"
+```
+
+Pode-se ordenar em ordem descrescente com o atributo `decreasing`:
+
+```r
+sort(c(5, 2, 8, 1), decreasing = TRUE)                  # 8 5 2 1
+sort(c("banana", "apple", "cherry"), decreasing = TRUE) # "cherry" "banana" "apple" 
+```
+
+Para obter as posições dos elementos ordenados pode-se utilizar a função `order()`. Já a função `rank()` faz um ranking indicando que posição cada elemento ocuparia em um vetor ordenado:
+
+```r
+order(c(5, 2, 8, 1))  # Índices que ordenariam o vetor: 4 2 1 3
+rank(c(5, 2, 8, 1))   # Faz um ranking de cada um dos elementos: 3 2 4 1
+```
+
+## Operações Aritméticas com Vetores
+
+R aplica as operações elemento a elemento:
+
+```r
+a <- c(1, 2, 3)
+b <- c(4, 5, 6)
+c <- c(4, 9, 16)
+
+a + b   # 5 7 9
+a - b   # -3 -3 -3
+a * b   # 4 10 18
+a / b   # 0.25 0.4 0.5
+exp(a)  # 2.718282  7.389056 20.085537
+sqrt(c) # 2 3 4
+```
+
+Se os vetores forem de tamanhos diferentes, o R **recicla** o vetor menor. Se a reciclagem não for múltipla perfeita, um aviso é emitido.
+
+```r
+a <- c(1, 2)
+b <- c(3, 4, 5, 6)
+c <- c(3, 4, 5)
+
+a + b   # 4 6 6 8
+a + c   # Erro: o comprimento do objeto maior não é múltiplo do menor
+```
+
+## -------------- Estatísticas de um Vetor
 
 ### Valores máximo, mínimo e média
 
@@ -212,38 +271,9 @@ Essas funções são otimizadas e lidam com grandes volumes de dados rapidamente
 
 ---
 
-## 4.9 Ordenando Vetores
 
-Ordenação é feita usando:
 
-```r
-sort(c(5, 2, 8, 1))  # Resultado: 1 2 5 8
-sort(c(5, 2, 8, 1), decreasing = TRUE)  # 8 5 2 1
-```
 
-Para obter as posições dos elementos ordenados:
-
-```r
-order(c(5, 2, 8, 1))  # Índices que ordenariam o vetor: 4 2 1 3
-```
-
----
-
-## 4.10 Operações Aritméticas com Vetores
-
-R aplica as operações elemento a elemento:
-
-```r
-a <- c(1, 2, 3)
-b <- c(4, 5, 6)
-
-a + b  # 5 7 9
-a - b  # -3 -3 -3
-a * b  # 4 10 18
-a / b  # 0.25 0.4 0.5
-```
-
-Se os vetores forem de tamanhos diferentes, o R **recicla** o vetor menor. Se a reciclagem não for múltipla perfeita, um aviso é emitido.
 
 ---
 
