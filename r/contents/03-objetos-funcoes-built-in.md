@@ -1,26 +1,6 @@
 # Capítulo 3 — Objetos e Funções Built-in
 
-## Introdução aos Objetos em R
 
-A linguagem R é fundamentalmente orientada a objetos, o que significa que tudo em R é tratado como um objeto: números, vetores, funções, listas, data frames e até mesmo as funções definidas pelo usuário são, internamente, objetos. Entender a manipulação e o comportamento dos objetos é essencial para quem deseja dominar o R.
-
-No R, ao atribuirmos um valor a um nome utilizando o operador `<-`, criamos um objeto:
-
-```r
-x <- 42
-```
-
-Neste exemplo, `x` é um objeto que contém o valor numérico `42`. Objetos no R podem armazenar não apenas valores simples, mas também estruturas de dados complexas, como vetores, matrizes, listas e data frames, que exploraremos em capítulos futuros.
-
-Os objetos possuem atributos que podem incluir o tipo de dado, o comprimento, nomes, dimensões, entre outros. Por exemplo, podemos verificar o tipo de dado armazenado em um objeto com a função `class()`:
-
-```r
-class(x)  # Resultado: "numeric"
-```
-
-Podemos também explorar as propriedades de um objeto utilizando a função `attributes()`.
-
-Criar e manipular objetos é a base de qualquer script em R. Portanto, é importante adotar boas práticas, como nomes de objetos descritivos e consistentes, e manter o ambiente de trabalho organizado, utilizando funções como `ls()` para listar os objetos existentes e `rm()` para removê-los quando necessário.
 
 ## Funções Built-in
 

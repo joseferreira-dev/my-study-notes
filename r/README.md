@@ -20,6 +20,6 @@ R é uma linguagem de programação e ambiente de software para análise estatí
 
 Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se considerar esta como uma mini documentação de referência. Vale ressaltar que este material foi elaborado com base na versão 4.5.0 da linguagem.
 
-- [Instalação e Introdução ao R](./contents/01-introducao.md)
+- [Capítulo 1 — Instalação e Introdução ao R](./contents/01-introducao.md)
 - [Variáveis, Tipos de Dados e Operadores](./contents/02-variaveis.md)
 - 
