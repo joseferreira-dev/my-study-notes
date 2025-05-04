@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/logica-de-programacao"><img src="./contents/banner-logica.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/logica-de-programacao"><img src="./contents/banner-logica.PNG"></a>
 </div>
 <br>
 
@@ -20,3 +20,6 @@ Abaixo segue o índice com diversos conteúdos sobre Lógica de Programação, c
 - [Capítulo 3 – Estruturas Condicionais: Tomando Decisões com Lógica](contents/03-estruturas-condicionais)
 - [Capítulo 4 – Estruturas de Repetição: Automatizando Tarefas com Laços de Execução](contents/04-estruturas-repeticao)
 - [Capítulo 5 – Estruturas de Dados Homogêneas: Vetores e Matrizes](contents/05-vetores-matrizes)
+- [Capítulo 6 – Modularização com Procedimentos e Funções](contents/06-procedimentos-funcoes)
+- [Capítulo 7 - Recursividade: Uma Estratégia Elegante para Resolver Problemas](contents/07-recursividade)
+- [Capítulo 8 – Estruturas de Dados Heterogêneas: Registros](contents/08-registros)
