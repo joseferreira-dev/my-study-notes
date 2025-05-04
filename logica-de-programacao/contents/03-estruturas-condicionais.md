@@ -144,7 +144,7 @@ Embora as estruturas condicionais sejam extremamente úteis, seu uso exagerado o
 - Garantir clareza nas condições, evitando expressões lógicas muito longas ou pouco intuitivas.
 - Comentar trechos complexos para facilitar o entendimento posterior, especialmente em blocos condicionais aninhados.
 
-## Conclusão
+## Considerações Finais
 
 As **estruturas condicionais** são o primeiro passo rumo à construção de algoritmos dinâmicos, que respondem a diferentes entradas e contextos. Aprendemos neste capítulo como utilizar o `Se-Então`, o `Se-Então-Senão`, estruturas aninhadas e a poderosa `Escolha-Caso`, todas fundamentais para controlar o fluxo de execução de um programa de forma lógica e estruturada.
 
