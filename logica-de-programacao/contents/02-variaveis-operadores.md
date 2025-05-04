@@ -127,7 +127,7 @@ Fim
 
 ### Operadores Relacionais
 
-Usados para comparar valores. O resultado dessas comparações é sempre um valor lógico (verdadeiro ou falso).
+Usados para comparar valores. O resultado dessas comparações é sempre um valor lógico (`verdadeiro` ou `falso`).
 
 - `=` (igual a)
 - `<>` (diferente de)
