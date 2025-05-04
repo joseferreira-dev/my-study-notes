@@ -16,10 +16,10 @@ Nesse contexto, surge o **Portugol**, uma linguagem algorítmica criada com fins
 Abaixo segue o índice com diversos conteúdos sobre Lógica de Programação, com exemplos de algoritmos utilizando o Português Estruturado.
 
 - [Capítulo 1 – Fundamentos da Lógica de Programação](contents/01-conceitos-basicos.md)
-- [Capítulo 2 – Variáveis, Tipos de Dados e Operadores](contents/02-variaveis-operadores)
-- [Capítulo 3 – Estruturas Condicionais: Tomando Decisões com Lógica](contents/03-estruturas-condicionais)
-- [Capítulo 4 – Estruturas de Repetição: Automatizando Tarefas com Laços de Execução](contents/04-estruturas-repeticao)
-- [Capítulo 5 – Estruturas de Dados Homogêneas: Vetores e Matrizes](contents/05-vetores-matrizes)
-- [Capítulo 6 – Modularização com Procedimentos e Funções](contents/06-procedimentos-funcoes)
-- [Capítulo 7 - Recursividade: Uma Estratégia Elegante para Resolver Problemas](contents/07-recursividade)
-- [Capítulo 8 – Estruturas de Dados Heterogêneas: Registros](contents/08-registros)
+- [Capítulo 2 – Variáveis, Tipos de Dados e Operadores](contents/02-variaveis-operadores.md)
+- [Capítulo 3 – Estruturas Condicionais: Tomando Decisões com Lógica](contents/03-estruturas-condicionais.md)
+- [Capítulo 4 – Estruturas de Repetição: Automatizando Tarefas com Laços de Execução](contents/04-estruturas-repeticao.md)
+- [Capítulo 5 – Estruturas de Dados Homogêneas: Vetores e Matrizes](contents/05-vetores-matrizes.md)
+- [Capítulo 6 – Modularização com Procedimentos e Funções](contents/06-procedimentos-funcoes.md)
+- [Capítulo 7 - Recursividade: Uma Estratégia Elegante para Resolver Problemas](contents/07-recursividade.md)
+- [Capítulo 8 – Estruturas de Dados Heterogêneas: Registros](contents/08-registros.md)
