@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/logica-de-programacao"><img src="./contents/banner-lp.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/logica-de-programacao"><img src="./contents/banner-logica.png"></a>
 </div>
 <br>
 
@@ -15,5 +15,8 @@ Nesse contexto, surge o **Portugol**, uma linguagem algorítmica criada com fins
 
 Abaixo segue o índice com diversos conteúdos sobre Lógica de Programação, com exemplos de algoritmos utilizando o Português Estruturado.
 
-- [Conceitos Básicos](01-conceitos-basicos.md)
-- [Variáveis]
+- [Capítulo 1 – Fundamentos da Lógica de Programação](contents/01-conceitos-basicos.md)
+- [Capítulo 2 – Variáveis, Tipos de Dados e Operadores](contents/02-variaveis-operadores)
+- [Capítulo 3 – Estruturas Condicionais: Tomando Decisões com Lógica](contents/03-estruturas-condicionais)
+- [Capítulo 4 – Estruturas de Repetição: Automatizando Tarefas com Laços de Execução](contents/04-estruturas-repeticao)
+- [Capítulo 5 – Estruturas de Dados Homogêneas: Vetores e Matrizes](contents/05-vetores-matrizes)
