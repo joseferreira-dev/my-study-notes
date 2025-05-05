@@ -1,4 +1,4 @@
-# Capítulo 3 – Modelos de Processo Sequenciais: Modelo em Cascata e Modelo em V
+# Capítulo 3 – Modelos Sequenciais – Modelo em Cascata e Modelo em V
 
 Dentro do universo da Engenharia de Software, os modelos de processo representam abordagens sistemáticas para organizar, executar e gerenciar projetos de desenvolvimento. Entre esses modelos, os chamados **modelos sequenciais** são os mais tradicionais. Como o próprio nome sugere, eles adotam uma lógica linear e progressiva, na qual cada fase sucede a anterior de forma rígida, como se os passos fossem degraus de uma escada.
 
