@@ -161,10 +161,40 @@ Além disso, podemos classificar os metadados de forma complementar em:
 
 Metadados são, portanto, indispensáveis à organização, compreensão e administração eficaz dos dados em um banco de dados moderno.
 
+## Personagens do Ecossistema de Bancos de Dados
+
+Quando tratamos de grandes organizações, as atividades relacionadas a banco de dados devem ser compartilhadas entre diferentes pessoas. Dentre os principais papéis nesse ecossistema, destacam-se dois profissionais fundamentais: o **Administrador de Dados (AD)** e o **Administrador de Banco de Dados (DBA)**.
+
+O **Administrador de Dados** é o profissional responsável por tomar decisões estratégicas e definir normas relacionadas aos dados da organização. Também pode ser conhecido como projetista de dados, sendo sua atuação predominante na fase de projeto do banco de dados, ou seja, antes de sua implementação e preenchimento com dados.
+
+Cabe ao AD identificar os dados a serem armazenados, escolher estruturas apropriadas para sua representação e se comunicar com os diversos usuários da organização para compreender suas necessidades. Com base nisso, o AD propõe um modelo que atenda às exigências dos usuários e define visões específicas para cada grupo.
+
+As principais atribuições do Administrador de Dados incluem:
+
+- Padronizar os nomes dos objetos criados no banco de dados;
+- Gerenciar e auxiliar na definição das regras de integridade;
+- Controlar a existência de informações redundantes;
+- Trabalhar de forma corporativa nos modelos de dados da organização.
+
+Vale destacar que algumas grandes empresas, como o Bradesco, chegam a ter dezenas de ADs atuando em suas equipes, dada a complexidade e o volume de dados com os quais lidam.
+
+Já o Administrador de Banco de Dados, ou **DBA (Database Administrator)**, é o profissional responsável por oferecer o suporte técnico necessário para implementar as decisões estratégicas tomadas pelo AD. O DBA atua diretamente na configuração e operação do banco de dados e dos sistemas relacionados.
+
+Ele é responsável pelo controle geral do sistema em nível técnico, tendo como recurso primário o próprio banco de dados, além do SGBD e outros softwares correlatos. Entre suas atribuições mais relevantes, destacam-se:
+
+- Definir o esquema conceitual (também conhecido como esquema lógico), no contexto da arquitetura de três esquemas;
+- Definir o esquema interno (nível físico do banco de dados);
+- Manter contato com os usuários;
+- Estabelecer restrições de segurança e integridade;
+- Monitorar o desempenho do sistema e adaptar sua configuração conforme mudanças;
+- Definir políticas de backup e recuperação, também conhecidas como normas de dumping e recarga.
+
+Em resumo, o **Administrador de Dados** é o responsável pelo contexto estratégico e organizacional dos dados, cuidando de sua padronização, relevância e adequação às necessidades corporativas. Já o **Administrador de Banco de Dados** cuida da implementação técnica, garantindo que os dados estejam devidamente armazenados, seguros, disponíveis e com desempenho adequado para o uso diário.
+
 ## Considerações Finais
 
 Neste capítulo, exploramos a evolução dos sistemas de informação, desde os sistemas de arquivos até os sofisticados sistemas de banco de dados. Compreendemos os problemas iniciais de redundância e inconsistência, e como os SGBDs surgiram como solução robusta para garantir integridade, segurança e desempenho.
 
-Vimos também o conceito de banco de dados sob diferentes perspectivas, destacando suas propriedades fundamentais. Por fim, diferenciamos os elementos que compõem um sistema de banco de dados e destacamos as características que diferenciam a abordagem de banco de dados em relação aos sistemas baseados em arquivos, conforme descrito por autores como Navathe, Date e Silberschatz. Finalizamos com uma análise aprofundada dos metadados, fundamentais para a governança, rastreabilidade, performance e segurança no uso de dados em ambientes corporativos.
+Vimos também o conceito de banco de dados sob diferentes perspectivas, destacando suas propriedades fundamentais. Por fim, diferenciamos os elementos que compõem um sistema de banco de dados e destacamos as características que diferenciam a abordagem de banco de dados em relação aos sistemas baseados em arquivos, conforme descrito por autores como Navathe, Date e Silberschatz. Em seguida, fizemos uma análise aprofundada dos metadados, fundamentais para a governança, rastreabilidade, performance e segurança no uso de dados em ambientes corporativos. Finalizamos com a descrição dos principais papéis profissionais dentro do contexto de administração de Bancos de Dados.
 
 O domínio desses conceitos é essencial para qualquer profissional de tecnologia da informação e será a base para os próximos capítulos.
