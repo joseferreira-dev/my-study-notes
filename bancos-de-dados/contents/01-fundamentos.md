@@ -11,7 +11,7 @@ Ao existir múltiplas cópias da mesma informação, sem qualquer controle centr
 Esse problema é um retrato fiel do que ocorria nos primórdios da tecnologia da informação. Sistemas empresariais realizavam operações de leitura e escrita diretamente sobre arquivos de texto ou planilhas, sem qualquer software intermediário que garantisse controle e integridade. O resultado era o caos. Foi neste contexto que surgiram os **Sistemas de Gerenciamento de Banco de Dados (SGBDs)**, como uma evolução natural para controlar o acesso aos dados e garantir consistência e segurança. O SGBD passou, então, a ser o mediador entre as aplicações e os dados armazenados, como pode ser visto na figura a seguir:
 
 <div align="center">
-  <img width="100%" src="./img/01-sistema-de-arquivos.png">
+  <img width="720px" src="./img/01-sistema-de-arquivos.png">
 </div>
 
 A figura mostra dois sistemas. O primeiro representa a estrutura de um sistema de arquivos onde os dados são acessados diretamente pelos aplicativos. Na segunda temos um sistema de banco de dados no qual o SGBD aparece entre os dados e os aplicativos, assumindo o papel de mediador.
@@ -57,7 +57,7 @@ Para avançarmos na compreensão dos sistemas de informação modernos, precisam
     > **SBD = BD + SGBD + Programas de Aplicação**
 
 <div align="center">
-  <img width="100%" src="./img/01-sdb.png">
+  <img width="760px" src="./img/01-sdb.png">
 </div>
 
 O SGBD oferece um ambiente padronizado para gerenciar os dados. Suas funcionalidades incluem:

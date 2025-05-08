@@ -3,7 +3,7 @@
 A trajetória dos Sistemas de Gerenciamento de Bancos de Dados (SGBDs) acompanha a própria evolução da computação e reflete os desafios enfrentados ao longo das décadas no armazenamento, organização e recuperação eficiente das informações. Conhecer essa evolução é essencial para entender os paradigmas atuais e suas motivações técnicas e comerciais. Desde as primeiras tentativas de armazenamento de dados em estruturas simples até os modernos sistemas distribuídos e escaláveis, cada etapa introduziu conceitos fundamentais que ainda hoje moldam a forma como tratamos a informação.
 
 <div align="center">
-  <img width="100%" src="./img/02-linha-do-tempo.png">
+  <img width="680px" src="./img/02-linha-do-tempo.png">
 </div>
 
 ## As Primeiras Soluções: Modelos Hierárquico e em Rede
