@@ -24,3 +24,4 @@ Em um mundo onde **dados são o novo petróleo**, compreender os fundamentos e a
 Abaixo segue o índice com os conteúdos sobre Bancos de Dados e Sistemas Gerenciadores de Banco de Dados (SGBDs).
 
 - [Capítulo 1 – Fundamentos de Bancos de Dados](contents/01-fundamentos.md)
+- [Capítulo 2 – A Evolução Histórica dos Sistemas de Gerenciamento de Bancos de Dados (SGBDs)](contents/02-evolucao-historica.md)

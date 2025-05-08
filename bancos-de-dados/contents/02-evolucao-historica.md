@@ -3,7 +3,7 @@
 A trajetória dos Sistemas de Gerenciamento de Bancos de Dados (SGBDs) acompanha a própria evolução da computação e reflete os desafios enfrentados ao longo das décadas no armazenamento, organização e recuperação eficiente das informações. Conhecer essa evolução é essencial para entender os paradigmas atuais e suas motivações técnicas e comerciais. Desde as primeiras tentativas de armazenamento de dados em estruturas simples até os modernos sistemas distribuídos e escaláveis, cada etapa introduziu conceitos fundamentais que ainda hoje moldam a forma como tratamos a informação.
 
 <div align="center">
-  <img width="100%" src="02-linha-do-tempo.png">
+  <img width="100%" src="./img/02-linha-do-tempo.png">
 </div>
 
 ## As Primeiras Soluções: Modelos Hierárquico e em Rede
@@ -13,13 +13,13 @@ A preocupação com o armazenamento estruturado de dados teve início nos anos 1
 Um dos marcos pioneiros foi o **Integrated Data Store (IDS)**, criado por Charles Bachmann na Honeywell em 1964. Esse sistema introduziu o modelo de rede, no qual os dados e suas relações são representados como grafos. Nessa abordagem, registros estão conectados por ponteiros que permitem transitar de um dado para outro em qualquer direção, facilitando representações do tipo muitos-para-muitos. Por exemplo, em um sistema de biblioteca, onde um livro pode ter vários autores e cada autor pode ter escrito vários livros, o modelo em rede se mostra eficiente.
 
 <div align="center">
-  <img width="560px" src="02-rede.png">
+  <img width="560px" src="./img/02-rede.png">
 </div>
 
 Pouco depois, a IBM lançou o **Information Management System (IMS)**, baseado no modelo hierárquico. Esse modelo organiza os dados em estruturas em árvore, nas quais os registros são divididos entre proprietários (nós pais) e membros (nós filhos). Um exemplo simples pode ser observado em um sistema acadêmico, onde cada estudante (nó pai) está associado a várias disciplinas (nós filhos). Nessa estrutura, se dez alunos estiverem matriculados na mesma disciplina, ela aparecerá dez vezes no banco, uma para cada aluno, pois a hierarquia exige essa replicação. Vale ressaltar que um registro do tipo raiz (no exemplo, Estudante) não participa como registro filho em qualquer relacionamento.
 
 <div align="center">
-  <img width="560px" src="02-hierarquico.PNG">
+  <img width="560px" src="./img/02-hierarquico.png">
 </div>
 
 Ambos os modelos representavam avanços significativos, mas também apresentavam limitações técnicas importantes:
@@ -37,7 +37,7 @@ Para superar os desafios dos modelos anteriores, Edgar F. Codd, pesquisador da I
 Em uma relação, cada linha é chamada de **tupla** e representa um registro. Cada coluna é um **atributo**, que possui um tipo de dado definido por um **domínio**. A grande inovação de Codd foi a abstração da forma física de armazenamento: os usuários não precisariam mais conhecer os detalhes internos do sistema para manipular dados. Essa separação entre o modelo lógico e o modelo físico é chamada de **independência dos dados**.
 
 <div align="center">
-  <img width="540px" src="02-relacional.png">
+  <img width="540px" src="./img/02-relacional.png">
 </div>
 
 Nesse modelo, podemos fazer consultas usando uma linguagem declarativa, dizendo **o que** queremos obter, e não **como** obter. Essa linguagem,  originalmente conhecida como SEQUEL (Structured English QUEry Language), foi posteriormente chamada de **Structured Query Language (SQL)** ou linguagem de consulta estruturada, e é hoje o padrão mundial para bancos relacionais.
@@ -89,7 +89,7 @@ A fim de processar esses dados em larga escala, surgiram ferramentas como o **Ha
 A evolução dos modelos de dados e dos SGBDs nos revela uma constante tentativa de acompanhar a complexidade crescente das aplicações, a diversidade dos dados e as exigências de escalabilidade. Do modelo hierárquico ao relacional, dos bancos orientados a objetos ao NoSQL, cada solução surgiu para atender a demandas específicas e, em muitos casos, ainda coexistem no cenário atual.
 
 <div align="center">
-  <img width="640px" src="02-grafico.png">
+  <img width="640px" src="./img/02-grafico.png">
 </div>
 
 A figura a acima resume de maneira visual essa trajetória ao longo do tempo. Ao compreendermos essa linha evolutiva, estamos melhor preparados para tomar decisões arquiteturais informadas e adequadas à realidade de cada projeto, reconhecendo que não existe uma solução única para todos os problemas, mas sim a escolha do modelo mais adequado para cada contexto.
