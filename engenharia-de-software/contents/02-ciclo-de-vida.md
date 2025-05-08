@@ -9,13 +9,13 @@ Contudo, é importante reconhecer que não existe consenso entre os estudiosos d
 Uma versão bastante sintética do ciclo de vida de software compreende quatro fases principais (esquerda). Essa representação minimalista é útil para uma compreensão geral, embora não contemple as diversas atividades e nuances envolvidas no desenvolvimento de software. Outra representação mais detalhada propõe as seguintes fases (direita). Esse modelo é mais fiel ao cotidiano dos projetos de software, pois desdobra o desenvolvimento em fases distintas, permitindo maior controle e rastreabilidade.
 
 <div align="center">
-  <img src="./img/02-ciclo-de-vida-1.png"></a>
+  <img width="720px" src="./img/02-ciclo-de-vida-1.png"></a>
 </div>
 
 Autores como Ian Sommerville e Roger Pressman oferecem interpretações distintas sobre essas fases. Para Sommerville, o ciclo é composto por quatro grandes atividades: especificação, desenvolvimento, validação e evolução. Aqui, vale notar que o desenvolvimento engloba as atividades de projeto e implementação. Trata-se de um modelo recorrente na literatura e frequentemente citado em provas. Já Pressman propõe um modelo mais detalhado, que parte da comunicação com os interessados, passa pelo planejamento e modelagem do sistema, e culmina com a construção e implantação.
 
 <div align="center">
-  <img src="./img/02-ciclo-de-vida-2.PNG"></a>
+  <img width="720px" src="./img/02-ciclo-de-vida-2.png"></a>
 </div>
 
 Esses quatro modelos ilustram diferentes formas de enxergar o ciclo de vida de software. Nenhum é melhor ou pior que outro por si só; a escolha de um modelo depende do contexto em que será aplicado. Apesar das variações, todas essas abordagens buscam responder a uma mesma questão fundamental: como construir software de maneira sistemática, previsível e controlada? É nesse ponto que surge um conceito importante: **modelo de ciclo de vida de software**.
@@ -81,7 +81,7 @@ Isso entra em contradição com o que dizem outros autores, isto é, os principa
 - Modelos evolutivos
 
 <div align="center">
-  <img src="./img/02-modelos.PNG"></a>
+  <img src="./img/02-modelos.png"></a>
 </div>
 
 Por fim, o conceito de **Metodologia de Desenvolvimento de Software** (ou processo de desenvolvimento de software) diz respeito a uma caracterização prescritiva ou descritiva do modo como o software deve ser desenvolvido. Ela define o "quê", o "como" e o "quando" das atividades de desenvolvimento, oferecendo diretrizes, técnicas e ferramentas que conduzem à construção de produtos de qualidade. Elas representam estratégias sistemáticas para planejar, executar e controlar as atividades de desenvolvimento.
