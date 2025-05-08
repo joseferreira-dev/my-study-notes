@@ -15,7 +15,7 @@ Embora várias equipes chamem essas etapas por nomes ligeiramente diferentes, o 
 Na prática, equipes mais maduras costumam condensar “Modelagem de Negócio”, “Modelagem de Dados” e “Modelagem de Processo” em uma única etapa de **Modelagem**, e “Geração da Aplicação” com “Teste e Modificação” em **Construção**, permitindo sobreposição de atividades e compartilhamento de equipes multidisciplinares.
 
 <div align="center">
-  <img width="100%" src="05-rad.png">
+  <img width="100%" src="./img/05-rad.png">
 </div>
 
 ### Interação com o Usuário e Ferramentas de Apoio

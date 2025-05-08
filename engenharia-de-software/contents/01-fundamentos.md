@@ -78,7 +78,7 @@ Esses princípios não são apenas ideias abstratas, mas norteadores concretos d
 A Engenharia de Software é muito mais do que escrever código. Ela representa uma abordagem organizada, técnica e gerencial para lidar com a crescente complexidade dos sistemas de informação modernos. Aplicar seus princípios, seguir seus processos e dominar suas práticas é essencial para construir software que realmente atenda às necessidades humanas e organizacionais.
 
 <div align="center">
-  <img width="100%" src="01-engenharia-de-software.PNG">
+  <img width="640px" src="./img/01-engenharia-de-software.PNG">
 </div>
 
 Seguir o processo, passo a passo, tal como definido ao longo do tempo por especialistas e baseado em aprendizados de sucessos e fracassos, é uma das maiores garantias de êxito no desenvolvimento de sistemas. Ao entender que a qualidade do software depende tanto da qualidade do processo quanto da competência técnica da equipe, damos um passo fundamental rumo à maturidade profissional em desenvolvimento de software.
