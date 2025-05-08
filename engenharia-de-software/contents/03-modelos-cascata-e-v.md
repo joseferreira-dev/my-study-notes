@@ -64,7 +64,7 @@ Embora estruturado e bem documentado, o Modelo em Cascata enfrenta sérios desaf
 Além disso, erros só são descobertos somente após o início dos testes e implantação. Podemos notar no gráfico abaixo que, a partir da região vermelha, o progresso do projeto sobe e desce diversas vezes, porque provavelmente o sistema está sendo corrigido devido a requisitos modificados.
 
 <div align="center">
-  <img width="540px" src="./img/03-grafico-progresso-tempo.png">
+  <img width="540px" src="./img/03-grafico-progresso.png">
 </div>
 
 Veja, também, que o projeto não terminou em seu deadline (prazo de conclusão) original. Como a redução de riscos atrasou, todo andamento do projeto também atrasou. Dessa forma, não se cumpriu nem o prazo do projeto e, provavelmente, nem o orçamento e talvez nem seu escopo – tendo em vista que, quanto mais ao fim do projeto um erro é identificado, mais caras se tornam as modificações.
