@@ -17,7 +17,7 @@ Embora possamos conceitualmente distinguir os dois termos, na prática **increme
 Quando falamos hoje em **Modelo Iterativo e Incremental**, entendemos que cada incremento (um subconjunto de funcionalidades) é desenvolvido por meio de várias iterações, até atingir o nível de qualidade e completude desejado. A combinação garante, ao mesmo tempo, entregas frequentes (incrementos) e amadurecimento contínuo (iterações).
 
 <div align="center">
-  <img width="100%" src="./img/04-modelo-iterativo-e-incremental.PNG">
+  <img width="720px" src="./img/04-modelo-iterativo-e-incremental.png">
 </div>
 
 ### Os Modelos Incremental e Iterativo na Prática
@@ -25,7 +25,7 @@ Quando falamos hoje em **Modelo Iterativo e Incremental**, entendemos que cada i
 Imagine um artista que vai pintar a Mona Lisa não como um esboço único, mas como um quebra-cabeças de várias peças. Ele já sabe exatamente como a obra final deve ficar, mas escolhe pintar primeiro o rosto, depois as mãos, depois o fundo, e assim por diante, integrando as partes ao final. Cada peça funciona isoladamente e pode ser mostrada ao cliente, que valida se aquela parte corresponde ao esperado.
 
 <div align="center">
-  <img width="100%" src="./img/04-modelo-incremental.png">
+  <img width="680px" src="./img/04-modelo-incremental.png">
 </div>
 
 No desenvolvimento de software, cada “peça” é um incremento. Por exemplo, num sistema de processamento de texto:
@@ -40,7 +40,7 @@ A cada entrega, o cliente avalia, ensina novos requisitos ou prioriza ajustes �
 Já na abordagem iterativa, o artista começa com um esboço geral da Mona Lisa, com traços simples e sem cores definidas. Em cada nova versão, ele melhora detalhes: primeiro as proporções do rosto, depois o sombreado, em seguida a textura da roupa, e assim por diante. O quadro nunca “parte do zero” a cada ciclo; cada iteração conserva o que já foi aprimorado anteriormente.
 
 <div align="center">
-  <img width="100%" src="./img/04-modelo-iterativo.png">
+  <img width="680px" src="./img/04-modelo-iterativo.png">
 </div>
 
 Em software, isso significa lançar a versão 1.0 com funcionalidades mínimas, depois a 2.0 aprimorada, 3.0 ainda mais rica, até a versão final. A cada iteração, o produto amadurece, e erros de projeto ou entendimento são corrigidos rapidamente, antes que se tornem desastres.
@@ -54,7 +54,7 @@ A combinação iterativo + incremental traz benefícios claros:
 - **Reuso e qualidade**: refinamentos iterativos permitem criar componentes mais robustos que podem ser reaproveitados em incrementos posteriores.
 
 <div align="center">
-  <img width="100%" src="./img/04-modelo-iterativo-e-incremental-monalisa.png">
+  <img width="680px" src="./img/04-modelo-iterativo-e-incremental-monalisa.png">
 </div>
 
 ### O Que Dizem os Autores Consagrados
@@ -68,7 +68,7 @@ A combinação iterativo + incremental traz benefícios claros:
 Um esboço simples do processo de desenvolvimento incremental é apresentado a seguir. As atividades de especificação, desenvolvimento e validação são intercaladas, em vez de separadas, com feedback rápido que permeia as atividades. Desenvolve-se rapidamente uma implementação inicial do software (protótipo) a partir de especificações bastante abstratas e são feitas modificações de acordo com sua avaliação. 
 
 <div align="center">
-  <img width="100%" src="./img/04-modelo-sommerville.PNG">
+  <img width="580px" src="./img/04-modelo-sommerville.png">
 </div>
 
 Cada versão do programa herda as melhores características das versões anteriores. Cada versão é refinada com base no feedback recebido dos clientes para produzir um sistema que satisfaça suas necessidades. Neste ponto, o sistema pode ser entregue ou pode ser reimplementado utilizando uma abordagem mais estruturada para aumentar a robustez e a facilidade de manutenções. As atividades de especificação, desenvolvimento e validação são concorrentes e apresentam um forte feedback entre si, como mostra a imagem apresentada anteriormente.
@@ -76,7 +76,7 @@ Cada versão do programa herda as melhores características das versões anterio
 Já **Roger Pressman** enfatiza que, em muitos projetos, requisitos estão inicialmente bem expressos, mas o escopo geral exige um processo que combine fluxos lineares e paralelos. No seu modelo incremental, cada sequência linear produz incrementos escalonados que podem incorporar protótipos e estilos evolucionários.
 
 <div align="center">
-  <img width="100%" src="./img/04-modelo-pressman.PNG">
+  <img width="680px" src="./img/04-modelo-pressman.png">
 </div>
 
 Na imagem anterior, o modelo incremental aplica sequências lineares, de forma escalonada, à medida que o tempo vai avançando. Cada sequência linear gera “incrementais” (entregáveis/aprovados/liberados) do software de maneira similar aos incrementais gerados por um fluxo de processos evolucionários. Deve-se notar que o fluxo de processos para qualquer incremento pode incorporar o paradigma da prototipação.
