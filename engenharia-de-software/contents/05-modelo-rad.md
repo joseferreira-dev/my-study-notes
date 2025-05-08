@@ -15,7 +15,7 @@ Embora várias equipes chamem essas etapas por nomes ligeiramente diferentes, o 
 Na prática, equipes mais maduras costumam condensar “Modelagem de Negócio”, “Modelagem de Dados” e “Modelagem de Processo” em uma única etapa de **Modelagem**, e “Geração da Aplicação” com “Teste e Modificação” em **Construção**, permitindo sobreposição de atividades e compartilhamento de equipes multidisciplinares.
 
 <div align="center">
-  <img width="100%" src="./img/05-rad.png">
+  <img width="680px" src="./img/05-rad.png">
 </div>
 
 ### Interação com o Usuário e Ferramentas de Apoio
@@ -48,8 +48,6 @@ Por suas características, o RAD não é indicado para:
 - **Ambientes em que mudanças tecnológicas podem ocorrer durante o desenvolvimento**;
 - **Produtos que precisam de padrões rígidos** de segurança, auditoria ou certificação formal;
 - **Situações em que o contrato ou a governança exijam documentação pesada** antes de qualquer codificação.
-
-
 
 ### Vantagens e Desvantagens
 
