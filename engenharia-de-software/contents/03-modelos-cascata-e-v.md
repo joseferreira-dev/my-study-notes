@@ -11,7 +11,7 @@ Dois modelos sequenciais clássicos ganharam notoriedade ao longo das últimas d
 O Modelo em Cascata foi descrito pela primeira vez em 1970 por **Winston W. Royce**, em um artigo que, curiosamente, criticava a rigidez de uma abordagem puramente sequencial. Ainda assim, essa estrutura linear foi popularizada e adotada por muitos profissionais da época, sendo chamada de diversos nomes: **Modelo Clássico, Sequencial, Linear, Tradicional, Rígido, Top-Down, Monolítico**, ou, em sua versão original, **Waterfall Model**.
 
 <div align="center">
-  <img width="100%" src="./img/03-modelo-cascata.png">
+  <img width="720px" src="./img/03-modelo-cascata.png">
 </div>
 
 A origem do termo "cascata" refere-se ao fluxo contínuo de uma fase para outra, como uma queda d’água que passa de um nível ao seguinte sem retornar. Nesse modelo, uma **fase só é iniciada após a completa finalização e aprovação da fase anterior**. A rigidez desse encadeamento tem implicações diretas na gestão de riscos e na flexibilidade do processo, como veremos mais adiante.
@@ -52,7 +52,7 @@ Vamos analisar, em detalhe, a visão de Ian Sommerville, um dos principais estud
 
 <br>
 <div align="center">
-  <img width="100%" src="./img/03-fases-sommerville.PNG">
+  <img width="680px" src="./img/03-fases-sommerville.png">
 </div>
 
 Tomando um exemplo prático, imagine o desenvolvimento de um sistema de controle de estoque para uma empresa. No Modelo em Cascata, as funcionalidades (entrada, saída, relatórios, controle de fornecedores etc.) são todas definidas na fase de requisitos. O cliente só verá o sistema funcionando após a conclusão de todas as fases. Se ele perceber que precisa de uma funcionalidade adicional, como alertas automáticos por e-mail, essa demanda exigirá o retorno a fases anteriores, o que pode implicar alto custo e atraso.
@@ -64,7 +64,7 @@ Embora estruturado e bem documentado, o Modelo em Cascata enfrenta sérios desaf
 Além disso, erros só são descobertos somente após o início dos testes e implantação. Podemos notar no gráfico abaixo que, a partir da região vermelha, o progresso do projeto sobe e desce diversas vezes, porque provavelmente o sistema está sendo corrigido devido a requisitos modificados.
 
 <div align="center">
-  <img width="560px" src="./img/03-grafico-progresso-tempo.PNG">
+  <img width="560px" src="./img/03-grafico-progresso-tempo.png">
 </div>
 
 Veja, também, que o projeto não terminou em seu deadline (prazo de conclusão) original. Como a redução de riscos atrasou, todo andamento do projeto também atrasou. Dessa forma, não se cumpriu nem o prazo do projeto e, provavelmente, nem o orçamento e talvez nem seu escopo – tendo em vista que, quanto mais ao fim do projeto um erro é identificado, mais caras se tornam as modificações.
@@ -108,7 +108,7 @@ Contudo, em ambientes dinâmicos e com grande incerteza, o uso do Modelo em Casc
 O **Modelo em V** é uma evolução direta do Modelo em Cascata, proposto para endereçar uma de suas maiores deficiências: o atraso na detecção de falhas. Ele mantém a abordagem sequencial, mas reforça a ideia de **validação e verificação paralelas às etapas de desenvolvimento**.
 
 <div align="center">
-  <img width="100%" src="./img/03-modelo-v.png">
+  <img width="680px" src="./img/03-modelo-v.png">
 </div>
 
 A letra "V" representa a estrutura gráfica do modelo: no lado esquerdo do "V" estão as fases de **especificação e projeto**, e no lado direito estão as fases de **validação e testes**, que correspondem diretamente às etapas anteriores. O ponto mais baixo do "V" representa a **implementação**.
