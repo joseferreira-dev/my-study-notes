@@ -7,7 +7,7 @@ Desde suas origens, os computadores foram concebidos como máquinas capazes de c
 Para entender essa transformação, é importante distinguir os termos **dado** e **informação**. Embora comumente usados como sinônimos, em contextos técnicos, eles possuem significados distintos. **Dado** é a matéria-prima do processamento: valores brutos, coletados de fontes diversas, como sensores, teclado ou arquivos. Já a **informação** é o produto final do processamento: um dado estruturado, interpretado e contextualizado, pronto para uso em tomada de decisões ou para alimentar novos processos computacionais.
 
 <div align="center">
-  <img width="520px" src="01-entrada-processamento-saida.png">
+  <img width="520px" src="./img/01-entrada-processamento-saida.png">
 </div>
 
 Por exemplo, imagine que um usuário digite o número "42" em um teclado. Esse número, isoladamente, é um dado. Após passar por cálculos no sistema — digamos, ser somado a outro número e formatado como parte de um relatório financeiro — ele se torna uma informação com valor semântico e contextual. A essência do funcionamento de um computador, portanto, está nesse ciclo de entrada, processamento e saída.
@@ -33,7 +33,7 @@ Os computadores modernos são herdeiros diretos de projetos pioneiros do século
 Antes dessa proposta, os computadores eram máquinas limitadas, sem capacidade de armazenar seus próprios programas. Von Neumann revolucionou o campo ao propor uma estrutura com cinco componentes principais: unidade de entrada, unidade de saída, unidade lógica e aritmética (ALU), unidade de controle e memória (principal e secundária). A ideia central era **armazenar dados e também instruções na mesma memória**, permitindo que o computador executasse diferentes tarefas sem precisar ser reconfigurado fisicamente. Vale ressaltar que a memória secundária não costuma aparecer em figuras da Arquitetura de von Neumann (como a figura a seguir), geralmente aparece apenas “Memória” de forma genérica.
 
 <div align="center">
-  <img width="520px" src="01-arquitetura-von-neumann.png">
+  <img width="520px" src="./img/01-arquitetura-von-neumann.png">
 </div>
 
 A **memória única** da Arquitetura de von Neumann é compartilhada entre dados e instruções, o que simplifica o design, mas introduz um gargalo conhecido como **von Neumann bottleneck**. Esse gargalo ocorre porque dados e instruções disputam o mesmo canal de acesso, limitando a velocidade com que o processador pode buscar novas instruções.
@@ -43,7 +43,7 @@ Como alternativa a esse modelo, surgiu a **Arquitetura de Harvard**, inicialment
 A figura a seguir permite ver claramente as diferenças básicas entre as duas arquiteturas:
 
 <div align="center">
-  <img width="640px" src="01-arquitetura-harvard.png">
+  <img width="640px" src="./img/01-arquitetura-harvard.png">
 </div>
 
 Atualmente, mesmo em arquiteturas baseadas no modelo de von Neumann, é comum encontrar variações híbridas — especialmente nas memórias cache — que adotam princípios da Arquitetura de Harvard para melhorar o desempenho.
@@ -58,7 +58,7 @@ Independentemente da arquitetura adotada, todos os computadores compartilham qua
 - **Controle**: coordenado pela unidade de controle da CPU, que interpreta as instruções e aciona os sinais adequados para que as operações ocorram na ordem correta.
 
 <div align="center">
-  <img width="520px" src="01-funcoes-basicas.png">
+  <img width="520px" src="./img/01-funcoes-basicas.png">
 </div>
 
 Essas quatro funções estão presentes em qualquer computador, desde os supercomputadores de centros de pesquisa até os pequenos dispositivos embarcados em eletrodomésticos.
@@ -68,7 +68,7 @@ Essas quatro funções estão presentes em qualquer computador, desde os superco
 Para que o processador interaja com a memória e com os dispositivos periféricos, ele depende de um conjunto de linhas de comunicação conhecidas como **barramentos**. Os barramentos formam o "sistema nervoso" do computador, interligando todos os componentes e permitindo que dados, endereços e sinais de controle circulem de forma coordenada.
 
 <div align="center">
-  <img width="420px" src="01-barramento.png">
+  <img width="420px" src="./img/01-barramento.png">
 </div>
 
 
