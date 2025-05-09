@@ -76,7 +76,7 @@ Além da representação textual por meio de pseudocódigo ou linguagens de prog
 Entre os símbolos mais utilizados estão:
 
 <div align="center">
-  <img width="640px" src="04-fluxograma.png">
+  <img width="640px" src="./img/04-fluxograma.png">
 </div>
 
 Com esses elementos, é possível representar visualmente a lógica de um algoritmo de forma intuitiva. Esse tipo de representação é especialmente útil no ensino da lógica de programação, facilitando a compreensão dos passos executados pelo computador.
@@ -111,10 +111,10 @@ Diferentes linguagens de programação podem ser agrupadas segundo o **paradigma
 
 Os paradigmas imperativos são aqueles que facilitam a computação por meio de mudanças de estado e são divididos em:
 
-• **Paradigma procedural**: os programas são executados através de chamadas sucessivas a procedimentos separados. Exemplos: Fortran e BASIC;
-• **Paradigma de estruturas de blocos**: possui como característica principal os escopos aninhados. Exemplos: Pascal e C;
-• **Paradigma de orientação a objetos**: descreve linguagens que suportam a interação entre objetos. Exemplos: C++, Java e Python;
-• **Paradigma da computação distribuída**: suporta que mais de uma rotina possa ser executada independentemente. Exemplo: Ada.
+- **Paradigma procedural**: os programas são executados através de chamadas sucessivas a procedimentos separados. Exemplos: Fortran e BASIC;
+- **Paradigma de estruturas de blocos**: possui como característica principal os escopos aninhados. Exemplos: Pascal e C;
+- **Paradigma de orientação a objetos**: descreve linguagens que suportam a interação entre objetos. Exemplos: C++, Java e Python;
+- **Paradigma da computação distribuída**: suporta que mais de uma rotina possa ser executada independentemente. Exemplo: Ada.
 
 Os paradigmas declarativos são aqueles nos quais um programa especifica uma relação ou função, ou seja, descrevem o que deve ser feito, não como fazer. Dividem-se em:
 

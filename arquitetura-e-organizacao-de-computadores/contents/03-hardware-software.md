@@ -8,7 +8,7 @@ A interação entre hardware e software é a essência do funcionamento de qualq
 
 Mas como, exatamente, o software consegue "comandar" o hardware? Para responder a essa pergunta, é necessário entender que o software é escrito em **linguagens de programação**, que precisam ser convertidas em uma linguagem que o hardware compreenda: a **linguagem de máquina**. Esse processo é feito por programas especiais chamados **compiladores**, **interpretadores**, **montadores** ou **tradutores**, dependendo do tipo de linguagem utilizada.
 
-Por exemplo, um programa escrito em linguagem Python precisa ser traduzido para uma série de instruções que o processador seja capaz de entender. Essas instruções são compostas por sequências de bits (0s e 1s), que ativam circuitos eletrônicos dentro da Unidade Central de Processamento (UCP) para realizar operações como somar, comparar, mover dados e outras ações fundamentais.
+Por exemplo, um programa escrito em linguagem Python precisa ser traduzido para uma série de instruções que o processador seja capaz de entender. Essas instruções são compostas por sequências de bits (0s e 1s), que ativam circuitos eletrônicos dentro da Unidade Central de Processamento (CPU) para realizar operações como somar, comparar, mover dados e outras ações fundamentais.
 
 ### Máquina Multinível
 

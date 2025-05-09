@@ -11,7 +11,7 @@ Esse processo de tradução pode ocorrer por meio de **compilação** ou **inter
 Esse caminho, que pode parecer complexo, é essencial para garantir que programas de alto nível possam ser executados com desempenho e confiabilidade. A figura a seguir resume esse percurso:
 
 <div align="center">
-  <img width="580px" src="06-codigo-fonte-ate-executavel.png">
+  <img width="580px" src="./img/06-codigo-fonte-ate-executavel.png">
 </div>
 
 Cada uma dessas etapas será discutida em detalhes nas próximas seções.
