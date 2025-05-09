@@ -1,4 +1,4 @@
-# Capítulo 3 — Classificação dos Sistemas de Gerenciamento de Bancos de Dados (SGBDs)
+# Capítulo 3 – Classificação dos Sistemas de Gerenciamento de Bancos de Dados (SGBDs)
 
 Após compreendermos a evolução histórica dos modelos de dados e a importância dos Sistemas de Gerenciamento de Bancos de Dados (SGBDs) no desenvolvimento de aplicações modernas, é essencial estudarmos como esses sistemas podem ser classificados. A classificação dos SGBDs não apenas nos ajuda a entender suas características técnicas, mas também nos orienta na escolha da melhor solução para diferentes contextos e necessidades organizacionais.
 
