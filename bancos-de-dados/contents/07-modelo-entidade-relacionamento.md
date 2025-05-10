@@ -190,6 +190,14 @@ A figura a seguir ilustra a cardinalidade com notações do tipo (mínimo, máxi
 
 Essa notação também permite identificar se o relacionamento é **obrigatório** (cardinalidade ≥1) ou **opcional** (cardinalidade mínima for 0).
 
+A **cardinalidade mínima obrigatória** é representada por uma linha dupla no relacionamento. Isso significa que, quando um relacionamento entre duas entidades possui uma cardinalidade mínima obrigatória, uma linha dupla é utilizada para indicar que a presença da entidade em tal relacionamento é essencial, ou seja, não pode haver incidências onde a entidade não participe do relacionamento.
+
+<div align="center">
+  <img src="./img/07-cardinalidade-minima.png" width="480px">
+</div>
+
+Essa notação ajuda a compreender as regras de negócio que estão sendo modeladas, garantindo que a integridade das informações seja mantida conforme as regras estabelecidas para o sistema em questão. Por exemplo, se temos um relacionamento entre as entidades CLIENTE e PEDIDO, e cada PEDIDO deve estar associado a exatamente um CLIENTE, poderíamos representar essa exigência com uma linha dupla no lado do relacionamento que conecta ao PEDIDO, indicando que cada pedido deve ter obrigatoriamente um cliente associado.
+
 ### Auto-relacionamento e Papéis
 
 O **auto-relacionamento**, também chamado de **relacionamento recursivo**, ocorre quando uma entidade se relaciona consigo mesma. Um exemplo clássico é o relacionamento **CASAMENTO** entre pessoas. Veja a seguir um exemplo com a entidade PESSOA e o relacionamento CASAMENTO:
@@ -216,7 +224,9 @@ Entidades fracas surgem quando os atributos disponíveis não são suficientes p
 
 A figura a seguir ilustra esse conceito:
 
-<div align="center"> <img src="./img/07-entidades-fraca-identificadora.png" width="540px"> </div>
+<div align="center">
+  <img src="./img/07-entidades-fraca-identificadora.png" width="540px">
+</div>
 
 No exemplo, a entidade **EMENTA** depende da existência de uma **DISCIPLINA**. Ou seja, a ementa só existe se estiver associada a uma disciplina específica. Esse relacionamento (POSSUI) é **obrigatório**, e a entidade fraca herda parte da chave primária da entidade forte para formar a sua própria.
 
@@ -230,6 +240,10 @@ Esse tipo de estrutura é comum em situações como:
 
 ## Considerações Finais
 
-Neste capítulo, nos aprofundamos no **Modelo Entidade-Relacionamento (ER)**, a principal ferramenta para modelagem conceitual de dados. Vimos como representar, de maneira abstrata e intuitiva, os objetos do mundo real, suas características e inter-relações por meio de entidades, atributos e relacionamentos.
+Neste capítulo, nos aprofundamos no **Modelo Entidade-Relacionamento (ER)**, a principal ferramenta para modelagem conceitual de dados. Vimos como representar, de maneira abstrata e intuitiva, os objetos do mundo real, suas características e inter-relações por meio de entidades, atributos e relacionamentos. A seguir está um resumo geral das simbologias mais usuais:
+
+<div align="center">
+  <img src="./img/07-modelo-entidade-relacionamento-resumo.png" width="500px">
+</div>
 
 Compreender esse modelo é essencial para qualquer projeto de banco de dados, pois ele estabelece as bases sobre as quais será construída toda a estrutura lógica e física da base de dados. Um modelo bem elaborado garante não apenas fidelidade aos requisitos do negócio, mas também facilita a manutenção, expansão e eficiência do sistema como um todo.
