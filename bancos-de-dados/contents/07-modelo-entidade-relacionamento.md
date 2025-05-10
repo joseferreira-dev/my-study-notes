@@ -47,7 +47,7 @@ As entidades individuais que fazem parte de um conjunto são denominadas **exten
 A seguir, temos um exemplo de diagrama ER com duas entidades — **Cliente** e **Empréstimo** — acompanhadas de seus atributos:
 
 <div align="center">
-  <img width="480px" src="./img/07-diagrama-entidade-relacionamento.png">
+  <img width="700px" src="./img/07-diagrama-entidade-relacionamento.png">
 </div>
 
 ## Atributos: Características das Entidades e Telacionamentos
