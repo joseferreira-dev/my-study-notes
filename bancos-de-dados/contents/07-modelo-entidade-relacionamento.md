@@ -65,7 +65,7 @@ Todo tipo de entidade, via de regra, deve possuir um atributo — ou um conjunto
 Se apenas um atributo for suficiente para a identificação, temos um **identificador simples**. Se for necessário mais de um atributo, temos um **identificador composto**. A figura abaixo ilustra essas duas situações:
 
 <div align="center">
-  <img src="./img/07-identificadores-simples-compostos.png" width="600px">
+  <img src="./img/07-atributos-identificadores.png" width="600px">
 </div>
 
 Note que, em uma estante de livros, por exemplo, a identificação da prateleira pode depender do **posição da prateleira (número do corredor)** e da **identificação da prateleira**. Nesse caso, ambos os atributos formam juntos o identificador composto da entidade PRATELEIRA.
@@ -112,7 +112,7 @@ Em certos casos, o valor de um atributo é **obrigatório** para todas as instâ
 Além disso, atributos podem também ser **multivalorados**, como discutido anteriormente. Veja o exemplo a seguir:
 
 <div align="center">
-  <img src="./img/07-atributos-opcionais-multivalorados.png" width="280px">
+  <img src="./img/07-atributos-opcionais.png" width="280px">
 </div>
 
 A notação `(min, max)` ao lado do atributo expressa essas propriedades. No caso de Telefone(0, n) temos um atributo opcional e multivalorado, já Código(1, 1) é obrigatório e monovalorado. Note que a notação (1, 1) geralmente é omitida nas representações.
