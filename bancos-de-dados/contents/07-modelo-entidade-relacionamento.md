@@ -149,7 +149,7 @@ Essa estrutura indica que uma entidade pode ter múltiplos telefones e um endere
 Um resumo de todos os atributos possíveis pode ser observado a seguir:
 
 <div align="center">
-  <img src="./img/07-atributos-resumo.png" width="520px">
+  <img src="./img/07-atributos-resumo.png" width="540px">
 </div>
 
 ## Relacionamentos: Associações entre Entidades
@@ -159,7 +159,7 @@ Os **relacionamentos** são elementos fundamentais do modelo ER. Eles representa
 Graficamente, os relacionamentos são representados por **losangos**, conectados às entidades participantes por **linhas**. Veja um exemplo:
 
 <div align="center">
-  <img src="./img/07-exemplo-relacionamento.png" width="520px">
+  <img src="./img/07-exemplo-relacionamento.png" width="540px">
 </div>
 
 Cada par (ou tupla) que liga uma instância de uma entidade a outra por meio do relacionamento é chamado de **ocorrência do relacionamento**.
