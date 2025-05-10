@@ -1,4 +1,4 @@
-## Capítulo 5 – Modelo Incremental e Iterativo: Rapid Application Development (RAD)
+## Capítulo 5 –  Modelo Iterativo e Incremental: Rapid Application Development (RAD)
 
 Desde a consolidação dos modelos iterativo e incremental, os profissionais de software buscaram maneiras de acelerar ainda mais o ciclo de entrega, reduzindo custos e capturando cedo o feedback dos usuários. Foi nesse contexto que surgiu o **Rapid Application Development (RAD)**, um modelo adaptado aos anseios dos projetos com prazos curtos (tipicamente de **60 a 90 dias**), em que o grande diferencial é a ênfase no **reuso intensivo de componentes** já testados e na **interação constante com o usuário**.
 
