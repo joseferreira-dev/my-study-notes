@@ -185,7 +185,7 @@ A **cardinalidade** determina quantas ocorrências de uma entidade estão associ
 A figura a seguir ilustra a cardinalidade com notações do tipo (mínimo, máximo):
 
 <div align="center">
-  <img src="./img/07-cardinalidade.png" width="600px">
+  <img src="./img/07-cardinalidade.jpg" width="580px">
 </div>
 
 Essa notação também permite identificar se o relacionamento é **obrigatório** (cardinalidade ≥1) ou **opcional** (cardinalidade mínima for 0).
