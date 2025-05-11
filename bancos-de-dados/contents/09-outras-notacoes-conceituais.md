@@ -465,6 +465,22 @@ A representação de todas essas possibilidade é representada a seguir:
   <img width="540px" src="./img/09-idef1x-heranca.png">
 </div>
 
+## Comparativo
+
+A imagem abaixo faz um resumo comparativos entre as diferentes notações existentes:
+
+<div align="center">
+  <img width="800px" src="./img/09-notacoes-comparacao.jpg">
+</div>
+
+## Outras Representações
+
+Navathe apresenta um resumo de possíveis representações comumente utilizadas em representações conceituais de bancos de dados, conforme a imagem a seguir:
+
+<div align="center">
+  <img width="640px" src="./img/09-navathe-resumo.png">
+</div>
+
 ## Considerações Finais
 
 Neste capítulo, exploramos outras notações conceituais que complementam o modelo ER tradicional, cada uma com suas vantagens, limitações e contextos de aplicação. A **notação de Chen**, embora não seja a mais comum nas ferramentas modernas de modelagem, continua sendo altamente relevante do ponto de vista didático, pois permite representar com precisão conceitos essenciais da modelagem conceitual e oferece uma base sólida para compreender outras notações derivadas. A **notação de Barker** é amplamente usada por seu equilíbrio entre simplicidade e expressividade. A **notação pé-de-galinha** se destaca por sua clareza visual e é suportada por diversas ferramentas modernas. Já a **notação IDEF1X** é mais formal e adequada para contextos que exigem maior rigor na definição de relacionamentos e dependências.
