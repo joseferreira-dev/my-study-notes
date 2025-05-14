@@ -29,7 +29,7 @@ No cenário atual, onde se trabalha com **volumes massivos de dados e sistemas c
 
 Abaixo segue o índice com diversos conteúdos acerca das Estruturas de Dados:
 
-- [Capítulo 1 – Conceitos Básicos](contents/01-conceitos.md)
+- [Capítulo 1 – Conceitos Fundamentais](contents/01-conceitos-fundamentais.md)
 - [Estruturas Lineares - Parte 1: Vetores e Matrizes](02-lineares-01.md)
 - [Estruturas Lineares - Parte 2: Listas](03-lineares-02.md)
 - [Estruturas Lineares - Parte 3: Pilhas e Filas](04-lineares-03.md)
