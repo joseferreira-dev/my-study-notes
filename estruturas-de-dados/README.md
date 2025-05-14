@@ -1,34 +1,38 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/estruturas-de-dados"><img src="banner-ed.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/estruturas-de-dados"><img src="./contents/banner-estruturas-de-dados.png"></a>
 </div>
 <br>
 
 # Estruturas de Dados
 
-**Estruturas de dados** são ferramentas cruciais na computação, pois permitem organizar e armazenar informações de maneira eficiente, facilitando a manipulação e recuperação desses dados. Elas são fundamentais para o desempenho de algoritmos, possibilitando que operações como inserção, remoção, busca e ordenação sejam executadas de maneira eficaz.
+A disciplina de **Estruturas de Dados** está no coração da ciência da computação, fornecendo os **fundamentos teóricos e práticos para organizar, armazenar e manipular informações** de forma eficiente. Ao lidar diretamente com a maneira como os dados são estruturados dentro de um programa, essa área influencia **o desempenho, a escalabilidade e a clareza das soluções computacionais**.
 
-Na maioria das vezes, as estruturas de dados são inspiradas em formas de armazenamento do mundo real, adaptadas para o contexto computacional. Cada tipo de estrutura de dados apresenta vantagens e desvantagens específicas e é otimizado para determinadas áreas de aplicação. Isso significa que a escolha da estrutura adequada depende do problema que se deseja resolver.
+As **estruturas de dados** são formas específicas de organizar dados na memória de um computador para que possam ser utilizados de maneira eficiente por algoritmos. Cada tipo de estrutura possui **características próprias de armazenamento, acesso, inserção e remoção**, e sua escolha adequada pode **transformar um software lento e ineficiente em uma solução rápida e robusta**.
 
-Um conceito fundamental em estruturas de dados é a distinção entre **Dados Homogêneos** e **Heterogêneos**. Dados homogêneos são aqueles compostos por um único tipo básico de dado, como inteiros. Por outro lado, dados heterogêneos são compostos por diferentes tipos básicos de dados, como uma combinação de inteiros e caracteres. Os tipos básicos de dados são também conhecidos como tipos primitivos.
+Compreender e dominar as estruturas de dados é essencial para quem deseja criar sistemas eficientes, compreender algoritmos complexos e lidar com grandes volumes de informações. Além disso, essa disciplina é um **princípio base para o estudo de algoritmos, bancos de dados, inteligência artificial, engenharia de software e tantas outras áreas da computação**.
 
-Estruturas de dados homogêneas incluem vetores, onde todos os elementos são do mesmo tipo. Já estruturas heterogêneas, como listas, podem conter elementos de diferentes tipos. Esta distinção é importante pois influencia a forma como manipulamos e acessamos os dados dentro dessas estruturas.
+Entre os principais tópicos e abordagens da disciplina de Estruturas de Dados, destacam-se:
 
-Outra classificação essencial é entre **Estruturas Lineares** e **Estruturas Não-Lineares**. Estruturas lineares, como listas, pilhas, filas e arranjos, são aquelas onde cada elemento possui um único predecessor e um único sucessor, exceto os elementos nas extremidades. Essas estruturas são particularmente úteis para representar sequências ordenadas de elementos.
+- **Tipos de Dados Abstratos (TDA)**: Conceitos como listas, pilhas, filas e conjuntos que definem comportamentos lógicos e operações possíveis, independentemente da implementação.
+- **Listas Lineares**: Estruturas como listas simplesmente encadeadas, duplamente encadeadas e circulares, que organizam dados em sequência e permitem navegação dinâmica.
+- **Pilhas (Stacks)** e **Filas (Queues)**: Estruturas com regras específicas de inserção e remoção (LIFO e FIFO, respectivamente), essenciais para o controle de execução de programas, análise sintática e processamento de tarefas.
+- **Árvores e Grafos**: Estruturas hierárquicas e relacionais usadas para representar relações complexas entre elementos, como árvores binárias, árvores balanceadas (AVL, B-trees) e grafos direcionados/não-direcionados.
+- **Tabelas de Dispersão (Hash Tables)**: Estruturas que oferecem acesso quase instantâneo a dados por meio de funções de hash, largamente utilizadas em bancos de dados, caches e compiladores.
+- **Algoritmos de Ordenação e Busca**: Métodos fundamentais que operam sobre estruturas de dados, otimizando o acesso e a organização de grandes conjuntos de informação.
+- **Complexidade de Tempo e Espaço**: Estudo da eficiência das estruturas de dados e operações associadas, utilizando notações como Big-O para analisar desempenho em diferentes cenários.
 
-Em contraste, estruturas não-lineares, como árvores, grafos e tabelas de dispersão, permitem que cada elemento tenha múltiplos predecessores e/ou sucessores. Estas estruturas são adequadas para representar hierarquias, redes e outras formas complexas de relacionamento entre dados.
+Estudar Estruturas de Dados permite **analisar criticamente as decisões de projeto em software**, escolher a representação mais adequada para um problema e **implementar soluções eficientes e de fácil manutenção**. Essa disciplina promove o raciocínio lógico e a capacidade de modelar problemas do mundo real de forma computacionalmente eficaz.
 
-Por fim, acerca dos **Tipos Abstratos de Dados (TAD)**, estes são uma concepção matemática que define uma estrutura de dados em termos de seu comportamento, independente de sua implementação. Um TAD é composto por um conjunto de valores e um conjunto de operações que podem ser realizadas sobre esses valores. Por exemplo, uma pilha é um TAD que inclui operações como push (inserir um elemento) e pop (remover um elemento), com comportamentos bem definidos. A definição de TAD permite que se concentre mais na funcionalidade e menos nos detalhes de implementação, promovendo a abstração.
-
-Em suma, estruturas de dados são essenciais para a construção de algoritmos eficientes e desempenham um papel vital na solução de problemas computacionais. Compreender as características e os usos apropriados de diferentes estruturas de dados é fundamental para qualquer desenvolvedor de software ou cientista da computação, pois influencia diretamente a eficiência e a eficácia das soluções implementadas.
+No cenário atual, onde se trabalha com **volumes massivos de dados e sistemas cada vez mais complexos**, o domínio de estruturas de dados é **imprescindível para qualquer programador, engenheiro de software ou cientista de dados**. Ele não apenas aprimora a capacidade de resolver problemas, como também é **essencial para desenvolver aplicações rápidas, responsivas e escaláveis**.
 
 ## Índice de Conteúdos
 
-Abaixo segue o índice com diversos conteúdos acerca das estruturas de dados.
+Abaixo segue o índice com diversos conteúdos acerca das Estruturas de Dados:
 
-- [Conceitos Básicos](./contents/01-conceitos/README.md)
-- [Estruturas Lineares - Parte 1: Vetores e Matrizes](./contents/02-lineares-01/README.md)
-- [Estruturas Lineares - Parte 2: Listas](./contents/03-lineares-02/README.md)
-- [Estruturas Lineares - Parte 3: Pilhas e Filas](./contents/04-lineares-03/README.md)
-- [Estruturas Não-Lineares - Parte 1: Árvores](./contents/05-nao-lineares-01/README.md)
-- [Estruturas Não-Lineares - Parte 2: Grafos](./contents/06-nao-lineares-02/README.md)
-- [Estruturas Não-Lineares - Parte 3: Set, Tabela Hash e Heap](./contents/07-nao-lineares-03/README.md)
+- [Capítulo 1 – Conceitos Básicos](contents/01-conceitos.md)
+- [Estruturas Lineares - Parte 1: Vetores e Matrizes](02-lineares-01.md)
+- [Estruturas Lineares - Parte 2: Listas](03-lineares-02.md)
+- [Estruturas Lineares - Parte 3: Pilhas e Filas](04-lineares-03.md)
+- [Estruturas Não-Lineares - Parte 1: Árvores](05-nao-lineares-01.md)
+- [Estruturas Não-Lineares - Parte 2: Grafos](06-nao-lineares-02.md)
+- [Estruturas Não-Lineares - Parte 3: Set, Tabela Hash e Heap](07-nao-lineares-03.md)

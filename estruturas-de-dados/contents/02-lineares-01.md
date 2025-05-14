@@ -1,15 +1,4 @@
-<div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/estruturas-de-dados"><img src="../../banner-ed.png"></a>
-</div>
-<br>
-
-# Estruturas Lineares - Parte 1: Vetores e Matrizes
-
-- [Introdução](#introdução)
-- [Vetores](#vetores)
-- [Matrizes](#matrizes)
-
-## Introdução
+# Capítulo 2 – Vetores e Matrizes
 
 Vetores e matrizes são duas estruturas de dados fundamentais na programação e na computação em geral, ambas pertencentes à categoria das estruturas lineares. Entender como funcionam essas estruturas é essencial para qualquer desenvolvedor, pois elas formam a base para muitas operações algorítmicas e aplicações práticas. São utilizadas quando a quantidade de dados a ser armazenada for pequena e, principalmente, quando se sabe que essa quantidade é limitada e fixa.
 

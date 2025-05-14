@@ -1,22 +1,4 @@
-<div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/estruturas-de-dados"><img src="../../banner-ed.png"></a>
-</div>
-<br>
-
-# Conceitos Básicos
-
-- [Introdução](#introdução)
-- [O que é Dado?](#o-que-é-dado)
-- [O que é Estrutura?](#o-que-é-estrutura)
-- [O que são Estruturas de Dados?](#o-que-são-estruturas-de-dados)
-- [O que é Informação](#o-que-é-informação)
-- [O que é TD e TAD?](#o-que-é-td-e-tad)
-- [O que é um Ponteiro?](#o-que-é-um-ponteiro)
-- [Memória](#memória)
-- [Heap e Stack](#heap-e-stack)
-- [Resumo das Estruturas](#resumo-das-estruturas)
-
-## Introdução
+# Capítulo 1 – Conceitos Básicos
 
 Para se estudar estruturas de dados é essencial compreender alguns conceitos relevantes para o entendimento e funcionamento das estruturas de dados, tais como: dado, informação e tipo de dado. Veremos também conceitos que auxiliam no entendimento e no uso dessas estruturas, como: memória, tipos de estruturas e ponteiros.
 
