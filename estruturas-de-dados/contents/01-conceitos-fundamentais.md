@@ -130,7 +130,8 @@ Caso essa sequência de chamadas não seja uma dentro da outra, a stack vai colo
 
 A stack funciona com **alocação estática** e é mais rápida, porém limitada em tamanho. O heap, por outro lado, utiliza **alocação dinâmica**, sendo mais flexível, porém mais custoso em termos de desempenho. Para melhor compreensão, observe os seguintes exemplos:
 
-Em C:
+Exemplo em C:
+
 ```c
 #include <stdlib.h>
 #include <string.h>
@@ -143,13 +144,13 @@ int main() {
 }
 ```
 
-Em Python:
+Exemplo em Python:
 ```python
 x = 10             # stack
 pessoa = {"nome": "Carlos"}  # heap (objeto referenciado)
 ```
 
-Em Java:
+Exemplo em Java:
 ```java
 public class PilhaHeapExemplo {
     public static void main(String[] args) {
@@ -166,7 +167,7 @@ class Pessoa {
 }
 ```
 
-Em JavaScript:
+Exemplo em JavaScript:
 ```javascript
 let x = 10; // stack
 let obj = { nome: "Maria" }; // heap
