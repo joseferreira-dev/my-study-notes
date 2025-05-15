@@ -30,9 +30,9 @@ No cenário atual, onde se trabalha com **volumes massivos de dados e sistemas c
 Abaixo segue o índice com diversos conteúdos acerca das Estruturas de Dados:
 
 - [Capítulo 1 – Conceitos Fundamentais](contents/01-conceitos-fundamentais.md)
-- [Estruturas Lineares - Parte 1: Vetores e Matrizes](02-lineares-01.md)
-- [Estruturas Lineares - Parte 2: Listas](03-lineares-02.md)
-- [Estruturas Lineares - Parte 3: Pilhas e Filas](04-lineares-03.md)
-- [Estruturas Não-Lineares - Parte 1: Árvores](05-nao-lineares-01.md)
-- [Estruturas Não-Lineares - Parte 2: Grafos](06-nao-lineares-02.md)
-- [Estruturas Não-Lineares - Parte 3: Set, Tabela Hash e Heap](07-nao-lineares-03.md)
+- [Capítulo 2 – Vetores e Matrizes](contents/02-vetores-e-matrizes.md)
+- [Capítulo 3 – Listas](contents/03-listas.md)
+- [Capítulo 4 – Pilhas e Filas](contents/04-pilhas-e-filas.md)
+- [Capítulo 5 – Árvores](contentes/05-arvores.md)
+- [Capítulo 6 – Grafos](contentes/06-grafos.md)
+- [Capítulo 7 – Set, Tabela Hash e Heap](contents/07-set-hash-e-heap.md)
