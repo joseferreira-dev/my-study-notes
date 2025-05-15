@@ -35,4 +35,4 @@ Abaixo segue o índice com diversos conteúdos acerca das Estruturas de Dados:
 - [Capítulo 4 – Pilhas e Filas](contents/04-pilhas-e-filas.md)
 - [Capítulo 5 – Árvores](contentes/05-arvores.md)
 - [Capítulo 6 – Grafos](contentes/06-grafos.md)
-- [Capítulo 7 – Set, Tabela Hash e Heap](contents/07-set-hash-e-heap.md)
+- [Capítulo 7 – Outras Estruturas](contents/07-outras-estruturas.md)
