@@ -144,7 +144,7 @@ let matriz = [
 console.log("Elemento na posição [0][0]: " + matriz[0][0]); // imprime 1
 ```
 
-### Matrizes multidimensionais
+### Matrizes Multidimensionais
 
 Embora menos comuns, é possível criar matrizes com mais de duas dimensões, como **tridimensionais** (por exemplo, cubos de dados), ou até mesmo estruturas com 4 ou mais dimensões, úteis em domínios como:
 
