@@ -18,6 +18,10 @@ O modelo relacional é baseado em três pilares fundamentais: a **estrutura lóg
 
 O aspecto da **estrutura** dos dados é composto por **relações**, que nada mais são do que **tabelas** com colunas e linhas. Cada **coluna** representa um **atributo** (ou campo), enquanto cada **linha** representa uma **tupla** (ou registro). Em termos formais, cada tabela representa um conjunto de tuplas do mesmo tipo, e cada atributo é associado a um **domínio de valores permitidos**.
 
+<div align="center">
+  <img width="680px" src="./img/10-conceitos.png">
+</div>
+
 O aspecto **de integridade** refere-se às **restrições** que garantem que os dados armazenados sejam consistentes, válidos e coerentes com as regras do negócio. Essas restrições podem ser de domínio (valores válidos para uma coluna), de unicidade (como chaves primárias), de referência (como chaves estrangeiras) e de veracidade lógica.
 
 O aspecto **manipulador** é representado pela **álgebra relacional**, um conjunto de operadores formais que permitem derivar novas tabelas a partir de tabelas existentes. Os operadores mais conhecidos incluem **seleção**, **projeção**, **junção**, **união** e **diferença**. Todos esses operadores seguem a lógica da teoria dos conjuntos, garantindo uma base matemática consistente.
@@ -231,7 +235,13 @@ Diversos SGBDs oferecem ferramentas para **análise de desempenho dos índices**
 
 ## Chaves e Relacionamentos: Garantindo a Integridade
 
-No modelo relacional, os conceitos de **chaves** e **relacionamentos** são fundamentais para garantir a **unicidade, integridade e consistência dos dados**. Vamos entender as principais definições envolvidas.
+No modelo relacional, os conceitos de **chaves** e **relacionamentos** são fundamentais para garantir a **unicidade, integridade e consistência dos dados**. A seguir está um resumo das chaves:
+
+<div align="center">
+  <img width="680px" src="./img/10-chaves.png">
+</div>
+
+Vamos entender as principais definições envolvidas nestas classificações.
 
 ### Superchave, Chave Candidata e Chave Primária
 
