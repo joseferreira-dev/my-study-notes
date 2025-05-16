@@ -1,11 +1,5 @@
 # Capítulo 10 – Modelo Relacional: Conceitos Básicos
 
-<div align="center">
-  <img width="180px" src="./img/09-chen-entidade.png">
-</div>
-
-# Capítulo 10 – Modelo Relacional: Conceitos Básicos
-
 O modelo relacional, como conhecemos hoje, surgiu a partir de uma proposta revolucionária do matemático britânico **Edgar Frank Codd**, em 1970. Trabalhando como pesquisador na IBM, Codd publicou um artigo seminal intitulado **"A Relational Model of Data for Large Shared Data Banks"**, no qual propôs uma forma completamente nova de representar e manipular dados em bancos de dados.
 
 Até então, os principais modelos existentes — como o **modelo hierárquico** e o **modelo em rede** — estruturavam os dados de forma mais próxima da realidade física, baseando-se em caminhos fixos, relações pai-filho e ponteiros explícitos. Esses modelos, apesar de funcionais, apresentavam limitações em termos de flexibilidade, abstração e independência de dados. Foi nesse contexto que a proposta de Codd se destacou: sua ideia era organizar os dados de forma **estritamente lógica**, fundamentada na **teoria dos conjuntos** e na **lógica de predicados de primeira ordem**.
