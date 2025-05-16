@@ -1,4 +1,4 @@
-# Capítulo 6 – Projeto de Banco de Dados e Modelagem Conceitual
+# Capítulo 6 – Projeto de Banco de Dados e Modelo Conceitual
 
 Neste capítulo, vamos nos aprofundar no processo de projeto de um banco de dados, com ênfase na modelagem conceitual — etapa fundamental que precede a implementação de qualquer sistema de gerenciamento de dados.
 
