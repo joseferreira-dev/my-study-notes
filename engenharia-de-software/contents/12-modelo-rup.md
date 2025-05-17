@@ -353,11 +353,21 @@ Essa prática é especialmente eficaz em **arquiteturas baseadas em componentes*
 
 O RUP é um framework de processo de desenvolvimento de software estruturado em **quatro fases sequenciais e bem definidas**: Iniciação, Elaboração, Construção e Transição. Ao contrário do modelo cascata, no qual as fases correspondem diretamente às atividades técnicas do processo, no RUP as fases estão mais relacionadas à **maturidade do negócio** e aos **marcos de projeto** do que a atividades técnicas específicas.
 
+Vale ressaltar que as fases não são idênticas em termos de programação e esforço:
+
+<div align="center">
+  <img width="480px" src="./img/12-fases-esforco-vs-programacao.png">
+</div>
+
 Cada fase é delimitada por **dois marcos principais**, que indicam o início e o fim de um estágio lógico do projeto. Dentro de cada fase, ocorrem **várias iterações**, nas quais o processo é executado de maneira incremental e evolutiva. A seguir, exploramos cada uma das fases do RUP com seus objetivos, atividades básicas e artefatos relevantes.
 
 ### Fase de Iniciação (ou Concepção)
 
 Esta fase tem como principal objetivo **estabelecer um caso de negócio viável para o sistema**. Nela, é realizada uma análise inicial dos objetivos, das partes interessadas e das necessidades que justificam o projeto. Além disso, são identificadas as entidades externas que interagirão com o sistema, bem como suas respectivas interações.
+
+<div align="center">
+  <img width="480px" src="./img/12-esforco-fase-iniciacao.png">
+</div>
 
 Se, ao fim da fase de iniciação, for verificado que o projeto **não apresenta viabilidade comercial, técnica ou estratégica**, é possível que ele seja **cancelado ou reavaliado** antes do avanço para as próximas fases.
 
@@ -380,6 +390,10 @@ Se, ao fim da fase de iniciação, for verificado que o projeto **não apresenta
 
 Na fase de Elaboração, o foco principal é **compreender o domínio do problema e estabelecer uma arquitetura robusta** para o sistema. É a fase em que ocorre uma análise mais profunda dos requisitos e na qual são identificados os principais riscos técnicos e de negócio. Essa fase também visa produzir um plano mais detalhado para o desenvolvimento e definir as bases para a construção do software.
 
+<div align="center">
+  <img width="480px" src="./img/12-esforco-fase-elaboracao.png">
+</div>
+
 **Atividades Básicas da Elaboração**:
 
 - Definir, validar e estabelecer a baseline da arquitetura;
@@ -400,6 +414,10 @@ Na fase de Elaboração, o foco principal é **compreender o domínio do problem
 
 A fase de Construção é dedicada à **implementação completa e integrada das funcionalidades do sistema**, com foco em garantir desempenho, qualidade e robustez. Essa fase envolve atividades intensas de codificação, testes, integração de componentes e desenvolvimento da documentação de suporte. Ao final, o sistema deve estar funcional e pronto para ser entregue aos usuários ou para testes no ambiente real.
 
+<div align="center">
+  <img width="480px" src="./img/12-esforco-fase-contrucao.png">
+</div>
+
 **Atividades Básicas da Construção**:
 
 - Gerenciar recursos e otimizar o controle do processo de desenvolvimento;
@@ -417,6 +435,10 @@ A fase de Construção é dedicada à **implementação completa e integrada das
 ### Fase de Transição
 
 A fase de Transição é voltada à **entrega do sistema aos usuários finais**, colocando-o em operação no ambiente de produção. Trata-se da fase de **implantação**, onde o sistema é validado em campo, treinamentos são ministrados e o feedback dos usuários é recolhido para ajustes finais.
+
+<div align="center">
+  <img width="480px" src="./img/12-esforco-fase-transicao.png">
+</div>
 
 **Atividades Básicas da Transição**:
 
@@ -441,8 +463,6 @@ A fase de Transição é voltada à **entrega do sistema aos usuários finais**,
 Por exemplo, o **manual de treinamento** e o **manual de suporte do usuário** são planejados na Elaboração, mas finalizados apenas na Construção. Ambos pertencem à disciplina de **Implantação**, que pode atravessar diversas fases do ciclo de vida.
 
 Além disso, o RUP é um framework altamente configurável. Existem variações do RUP voltadas para diferentes contextos, como o **RUP for Small Projects**, que adapta o processo para projetos de menor porte, reduzindo a complexidade e o número de artefatos.
-
-
 
 ## Marcos de Projeto
 
