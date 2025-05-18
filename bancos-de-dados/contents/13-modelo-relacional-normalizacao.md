@@ -476,3 +476,323 @@ Vamos fechar o estudo da 3FN com três definições tradicionais:
     (b) A é atributo primário;
 - Uma relação está na Terceira Forma Normal se estiver na Segunda Forma Normal e não possuir dependências transitivas entre atributos não chave.
 - A 3FN visa garantir que os atributos não chave estejam diretamente ligados às chaves candidatas e não indiretamente por meio de outros atributos não chave.
+
+## Forma Normal de Boyce-Codd (FNBC): A Superterceira Forma Normal
+
+Ao chegarmos na **Forma Normal de Boyce-Codd (FNBC)**, estamos lidando com um nível ainda mais rigoroso de normalização, criado justamente para cobrir **casos específicos que a Terceira Forma Normal (3FN) não resolve de maneira satisfatória**. Apesar de a 3FN eliminar dependências transitivas, ainda existem situações — especialmente aquelas envolvendo **múltiplas chaves candidatas compostas** — em que ela não é suficiente para evitar **anomalias de atualização** ou **relações mal estruturadas**.
+
+Foi com esse objetivo que **Raymond F. Boyce** e **E. F. Codd** propuseram, em conjunto, uma forma normal mais estrita, que recebeu o nome de **Forma Normal de Boyce-Codd (ou BCNF, na sigla em inglês)**.
+
+### Definição Formal da FNBC
+
+Embora tenha sido proposta como uma forma normal "mais simples", a FNBC é **conceitualmente mais restritiva** que a 3FN. Isso acontece porque ela exige que **toda dependência funcional não trivial tenha como determinante uma chave candidata**, sem exceções. Na prática, a FNBC **impede completamente que qualquer atributo determine outro sem ser uma chave** — mesmo que o atributo determinado seja primário, como é permitido pela 3FN.
+
+Formalmente a FNBC pode ser definida como:
+
+> Uma **relação R está na Forma Normal de Boyce-Codd** se, **para toda dependência funcional não trivial X → Y**, **X for uma chave candidata** da relação R.
+
+Essa definição nos mostra o quanto a FNBC é exigente: não basta que o atributo do lado direito da dependência seja primário — como aceita a 3FN —, é necessário que **o lado esquerdo (o determinante) seja sempre uma chave candidata inteira**. Caso contrário, a relação precisa ser **decomposta**.
+
+### Exemplo Prático
+
+Para compreender melhor a necessidade da FNBC, vejamos um caso que está de acordo com a 3FN, mas **não cumpre os requisitos da FNBC**.
+
+Suponha a seguinte relação:
+
+|Propriedade_num|Num_lote|Nome_cidade|Area|
+|---|---|---|---|
+|P001|L10|Recife|400|
+|P002|L20|Recife|400|
+|P003|L30|Recife|400|
+|P004|L10|Salvador|600|
+
+Nessa relação, temos duas **chaves candidatas**:
+
+- {Propriedade_num}
+- {Num_lote, Nome_cidade}
+
+Ou seja, **cada propriedade possui um código único**, e **o número do lote junto com o nome da cidade** também identificam de forma única uma propriedade.
+
+Agora veja que temos uma dependência funcional:
+
+- **Area → Nome_cidade**
+
+Neste caso, **Area** não é chave candidata, mas determina o valor de **Nome_cidade**. Como **Nome_cidade** é um atributo primário (pois faz parte da chave {Num_lote, Nome_cidade}), a 3FN **aceita** essa dependência. Porém, isso **viola a FNBC**, pois **Area não é chave candidata** e, portanto, **não pode determinar nada** — nem mesmo atributos primários.
+
+Essa é justamente a **situação clássica** onde a 3FN falha, mas a FNBC intervém para evitar estruturas ambíguas e redundantes.
+
+Para satisfazer a FNBC, precisamos **decompor a relação original** em duas novas relações, de forma que todas as dependências funcionais obedeçam à regra de que o determinante deve ser chave candidata.
+
+Fazemos, então, a seguinte separação:
+
+**Relação CIDADE_AREA:**
+
+|Area|Nome_cidade|
+|---|---|
+|400|Recife|
+|600|Salvador|
+
+**Relação PROPRIEDADE:**
+
+|Propriedade_num|Num_lote|Area|
+|---|---|---|
+|P001|L10|400|
+|P002|L20|400|
+|P003|L30|400|
+|P004|L10|600|
+
+Agora, as dependências funcionais presentes respeitam a exigência da FNBC. **Area** é chave primária na relação **CIDADE_AREA**, portanto pode determinar Nome_cidade. E, na relação **PROPRIEDADE**, temos como chave {Propriedade_num}, e todas as dependências estão centradas nessa chave.
+
+### Considerações Práticas sobre a FNBC
+
+A FNBC é especialmente útil quando estamos diante de:
+
+- Relações com **múltiplas chaves candidatas**;
+- **Chaves compostas** que compartilham **atributos em comum**;
+- Dependências onde **um atributo não chave determina parte de uma chave** ou outro atributo não chave.
+
+Mesmo sendo mais restrita que a 3FN, a FNBC ainda **não trata de todos os tipos de anomalias possíveis**, como aquelas associadas a dependências multivaloradas — que serão tratadas em formas normais posteriores, como a **Quarta Forma Normal (4FN)**.
+
+Por isso, é importante compreender que a FNBC é **essencial quando o modelo de dados apresenta estruturas complexas**, especialmente com **chaves compostas múltiplas**. Ela garante que **nenhuma dependência funcional viole a integridade conceitual do banco de dados**, mesmo quando a 3FN não detecta problemas.
+
+## Quarta e Quinta Formas Normais: Além das Dependências Funcionais
+
+Até aqui, estudamos as formas normais que lidam exclusivamente com **dependências funcionais (DFs)**. A Segunda Forma Normal (2FN), a Terceira Forma Normal (3FN) e a Forma Normal de Boyce-Codd (FNBC) trabalham sobre a premissa de que **alguns atributos determinam outros**, e que isso pode gerar **redundâncias e anomalias** se não for tratado corretamente. Quando todas as relações de um banco de dados estão em uma dessas formas, dizemos que a base está **normalizada sob DFs**.
+
+Contudo, como dissemos ao longo do capítulo, normalização é um processo que vai além da eliminação de dependências funcionais. É preciso garantir que **a decomposição das relações preserve a integridade dos dados**, sem que haja **perdas de informações** durante a junção das tabelas separadas. É nesse ponto que entram as formas normais mais avançadas: a **Quarta Forma Normal (4FN)** e a **Quinta Forma Normal (5FN)**.
+
+Ambas tratam **anomalias mais sutis**, associadas a tipos de dependência **que vão além das funcionais**, como as **dependências multivaloradas** e as **dependências de junção**. São essas dependências que, mesmo quando a relação já está na FNBC, ainda podem provocar **redundâncias, inconsistências e anomalias de atualização**.
+
+### Decomposição sem Perdas: a Base para as Formas Superiores
+
+Antes de entrarmos nos detalhes técnicos dessas formas normais, é essencial compreender um conceito-chave: **a decomposição sem perdas (lossless decomposition)**.
+
+Decompor uma tabela significa quebrá-la em partes menores — ou seja, em duas ou mais tabelas menores — com o objetivo de **organizar melhor os dados, eliminar redundâncias e prevenir inconsistências**. No entanto, essa decomposição só é útil se for possível **recompor a relação original** com precisão total, sem gerar linhas a mais nem a menos. Isso é o que chamamos de **recomposição sem perda de informação**.
+
+Todas as formas normais baseadas em dependência funcional (2FN, 3FN, FNBC) **preservam a propriedade de recomposição sem perdas**. Porém, há outras situações em que **nem mesmo essas formas garantem integridade total**, especialmente quando estamos diante de **atributos multivalorados ou relações complexas entre subconjuntos de atributos**.
+
+### Dependência Multivalorada: o Desafio da 4FN
+
+Para entendermos a Quarta Forma Normal (4FN), precisamos compreender um novo tipo de restrição: a **dependência multivalorada (DMV)**, também chamada de **multi-dependência funcional**. A DMV ocorre quando **um único valor de um atributo está relacionado a um conjunto de valores de outro atributo**, de forma **independente de outros atributos da relação**.
+
+Vamos a um exemplo para tornar isso mais concreto. Imagine a seguinte tabela:
+
+|Funcionário|Projeto|Dependente|
+|---|---|---|
+|Thiago|Proj 01|Vinicius|
+|Thiago|Proj 01|Maria Clara|
+|Thiago|Proj 02|Vinicius|
+|Thiago|Proj 02|Maria Clara|
+
+O funcionário Thiago participa de dois projetos e possui dois dependentes. Embora não possamos dizer que **Projeto determina Dependente**, ou que **Dependente determina Projeto**, sabemos que **o funcionário Thiago está relacionado independentemente com ambos**. Isso caracteriza uma **dependência multivalorada**. Formalmente, podemos dizer que:
+
+- Thiago →→ Projeto  
+- Thiago →→ Dependente
+
+Esse tipo de dependência cria uma **redundância combinatória**: para cada projeto, listamos todos os dependentes, e vice-versa. Quando um terceiro projeto é atribuído a Thiago, teremos que criar duas novas linhas — uma para cada dependente — mesmo que a informação sobre os dependentes não tenha mudado. Esse tipo de anomalia indica que a tabela **não está adequadamente normalizada** — mesmo que esteja na FNBC.
+
+### Anomalias Provocadas por Multivalor
+
+As dependências multivaloradas costumam surgir como **consequência direta da Primeira Forma Normal (1FN)**, que exige que todos os campos tenham **valores atômicos**. Para representar listas (como vários telefones, projetos ou dependentes), acabamos criando **múltiplas linhas** que combinam os mesmos valores de atributos independentes — e isso gera redundância.
+
+Por isso, sempre que tivermos **mais de um atributo multivalorado em uma mesma relação**, e esses atributos forem **independentes entre si**, o modelo estará sujeito a anomalias — e a 4FN será necessária.
+
+### A Lógica da Decomposição em DMV
+
+Em uma relação R com os atributos {A, B, C}, se existir uma dependência multivalorada A →→ B, isso implica também A →→ C. Isso quer dizer que os valores de B e de C estão associados a A **de forma independente**, e a relação correta exige que todas as **combinações possíveis** entre os valores de B e de C apareçam — o que gera redundância.
+
+A solução é simples: **separar a relação original em duas**, uma contendo A e B, e outra contendo A e C. Essa decomposição elimina a redundância, **mantém a consistência** e evita que novas combinações indesejadas sejam necessárias.
+
+### O Próximo Nível: a Quinta Forma Normal (5FN)
+
+A **Quinta Forma Normal (5FN)**, também chamada de **Forma Normal de Projeção de Junção (PJ/NF)**, lida com situações ainda mais sofisticadas, onde **a recomposição sem perdas não pode ser garantida apenas por dependências funcionais ou multivaloradas**.
+
+Ela surge quando temos **relações complexas entre múltiplos subconjuntos de atributos**, que só podem ser resolvidas com uma **análise detalhada das dependências de junção**. São situações raras, mas extremamente importantes em **sistemas grandes e com estruturas de dados inter-relacionadas de forma complexa**.
+
+A 5FN garante que **toda decomposição de uma relação em sub-relações menores** possa ser **recomposta com precisão** usando apenas operações de junção natural — sem gerar dados espúrios nem perder informações.
+
+## Quarta Forma Normal (4FN)
+
+Conforme avançamos no processo de normalização, percebemos que a eliminação de dependências funcionais já não é suficiente para garantir a ausência de anomalias e redundâncias em nossos esquemas relacionais. Mesmo relações que atendem rigorosamente à FNBC ainda podem apresentar **replicações desnecessárias de dados**, especialmente quando lidam com **atributos multivalorados** que não estão funcionalmente relacionados entre si. É exatamente nesse ponto que entra a **Quarta Forma Normal (4FN)**.
+
+### Definição e Propósito da 4FN
+
+De forma informal, podemos dizer que **uma relação está na Quarta Forma Normal se, para qualquer dependência multivalorada X →→ Y, a relação não possui outros atributos além daqueles que fazem parte de X e de Y**. Em outras palavras, a relação só poderá permanecer como está se essa dependência multivalorada for **trivial**.
+
+A 4FN foi desenvolvida para eliminar **anomalias provocadas por dependências multivaloradas não triviais**, que ocorrem quando **dois ou mais atributos multivalorados aparecem de forma independente em uma mesma relação**. Quando isso acontece, surgem combinações redundantes entre os valores desses atributos, que não possuem entre si qualquer relação direta.
+
+### A Visão Formal de Navathe
+
+Segundo a definição formal apresentada por Navathe, temos:
+
+> “Um esquema de relação R está na 4FN com relação a um conjunto de dependências funcionais ou multivaloradas F se, para toda dependência multivalorada não trivial X →→ Y em F⁺, X for uma superchave de R.”
+
+Aqui, **F⁺** representa a **clausura de F**, ou seja, o conjunto de todas as dependências (funcionais ou multivaloradas) que podem ser inferidas a partir de um conjunto inicial F. Em resumo, a cláusula central da definição é simples e poderosa: **se existe uma dependência multivalorada não trivial X →→ Y em uma relação, X deve obrigatoriamente ser uma superchave para que a relação esteja na 4FN.**
+
+### Dependência Multivalorada Trivial e Não Trivial
+
+Assim como as dependências funcionais, as **dependências multivaloradas (DMVs)** também podem ser classificadas como **triviais** ou **não triviais**:
+
+- Uma DMV X →→ Y é **trivial** se:
+    - (a) Y ⊆ X (isto é, Y é subconjunto de X), ou
+    - (b) X ∪ Y = R (isto é, X unido a Y cobre todos os atributos da relação).
+- Qualquer DMV que **não satisfaça** nenhuma das duas condições acima é considerada **não trivial**.
+
+É justamente a presença de **DMVs não triviais** em relações que **não possuem X como superchave** que configura a violação da 4FN. Quando isso acontece, a decomposição da relação é necessária.
+
+### Exemplo Prático
+
+Vamos agora analisar um exemplo clássico que ilustra de forma concreta os efeitos de uma dependência multivalorada não trivial. Observe a seguinte relação:
+
+|Funcionário|Projeto|Dependente|
+|---|---|---|
+|Thiago|Proj 01|Vinicius|
+|Thiago|Proj 01|Maria Clara|
+|Thiago|Proj 01|Gustavo|
+|Thiago|Proj 02|Vinicius|
+|Thiago|Proj 02|Maria Clara|
+|Thiago|Proj 02|Gustavo|
+
+Nessa tabela, o funcionário Thiago participa de dois projetos distintos e possui três dependentes. Esses dois conjuntos — **Projetos** e **Dependentes** — são **independentes entre si**. Ou seja, **o projeto ao qual Thiago está vinculado não tem qualquer relação direta com seus dependentes** e vice-versa.
+
+Isso caracteriza **duas DMVs independentes**:
+
+- Funcionário →→ Projeto
+- Funcionário →→ Dependente
+
+Como ambas ocorrem sobre o mesmo determinante (Funcionário) e são independentes entre si, temos uma **relação sujeita a redundância combinatória**, pois todas as combinações possíveis entre os projetos e os dependentes de Thiago foram listadas. A solução para esse tipo de redundância é a decomposição da tabela em duas partes:
+
+**Tabela Funcionário–Projeto:**
+
+|Funcionário|Projeto|
+|---|---|
+|Thiago|Proj 01|
+|Thiago|Proj 02|
+
+**Tabela Funcionário–Dependente:**
+
+|Funcionário|Dependente|
+|---|---|
+|Thiago|Vinicius|
+|Thiago|Maria Clara|
+|Thiago|Gustavo|
+
+Essas duas relações agora representam **DMVs triviais** (já que não há outros atributos além dos que compõem o determinante e os determinados), e cada uma está **livre de redundâncias**. Além disso, **a junção natural entre as duas tabelas** permite a recomposição exata da relação original — ou seja, a **decomposição foi sem perdas**.
+
+### A 4FN e a Decomposição sem Perda
+
+Como vimos anteriormente, uma das grandes virtudes do processo de normalização é garantir que, mesmo com a fragmentação dos dados em múltiplas relações, **nenhuma informação original seja perdida**. A 4FN preserva essa característica, ao assegurar que qualquer decomposição baseada em dependências multivaloradas seja feita de forma que os dados **possam ser recombinados perfeitamente**.
+
+É importante destacar, porém, que a 4FN **não pode ser aplicada por simples análise de DFs**. O projetista deve ser capaz de **identificar padrões de atributos multivalorados independentes**, o que requer sensibilidade sobre a semântica dos dados e sobre como eles serão utilizados na prática.
+
+## Quinta Forma Normal (5FN)
+
+Chegamos à última etapa do processo de normalização: a **Quinta Forma Normal**, também conhecida como **Forma Normal de Projeção e Junção (PJ/NF)**. Embora raramente aplicada em projetos práticos do dia a dia, a 5FN é fundamental para **garantir a eliminação completa de redundâncias sem comprometer a capacidade de recompor as informações corretamente**.
+
+A 5FN se baseia em um novo tipo de restrição relacional: a **dependência de junção**, ou **DJ**. Vamos entender este conceito com calma.
+
+### A Dependência de Junção (DJ)
+
+Uma **dependência de junção** ocorre quando uma **relação pode ser decomposta em três ou mais relações**, de tal maneira que seja possível recuperar a relação original por meio de uma sequência de **junções naturais** entre essas partes. Essa recomposição deve ser **exata**, sem perda nem geração de tuplas espúrias.
+
+Formalmente, uma dependência de junção sobre um esquema de relação R é denotada por:
+
+**DJ * (R₁, R₂, ..., Rₙ)**
+
+E implica que, para qualquer instância válida de r em R, a seguinte igualdade deve ser verdadeira:
+
+* (π<sub>R<sub>1</sub></sub>(r), π<sub>R<sub>2</sub></sub>(r), ..., π<sub>R<sub>n</sub></sub>(r)) = r (π é uma projeção sobre a relação R)
+
+Ou seja, a instância r pode ser obtida com exatidão pela junção das projeções de r sobre os subconjuntos de atributos R<sub>1</sub>, R<sub>2</sub>, ..., R<sub>n</sub>.
+
+Essa restrição garante que a decomposição de uma tabela em múltiplas partes não acarretará **perda de dados** ou **geração de combinações incorretas** de tuplas ao tentar recompor a tabela original.
+
+### A Motivação da Quinta Forma Normal
+
+A motivação da 5FN surge de casos **não resolvidos pelas formas normais anteriores**, especialmente pela 4FN, que lida apenas com **dependências multivaloradas**. Em situações mais complexas — onde três ou mais atributos estão relacionados de forma **interdependente**, mas **sem que existam dependências funcionais ou multivaloradas diretas** — a 5FN entra como a única solução viável para eliminar redundâncias e garantir integridade sem perdas na recomposição dos dados.
+
+A **5ª FN se aplica exclusivamente a relações que envolvem pelo menos três atributos**, geralmente componentes da chave, e nas quais existe a possibilidade de decomposição com base em dependências de junção.
+
+### Definição Formal
+
+A definição formal da 5FN, segundo Navathe e outros estudiosos do modelo relacional, é:
+
+> Um esquema de relação RR está na **Quinta Forma Normal (5FN)** com relação a um conjunto F de dependências funcionais, multivaloradas e de junção, se **para toda dependência de junção não trivial DJ (R₁, R₂, ..., Rₙ) ∈ F<sub>+</sub>**, **cada R<sub>i</sub> for uma superchave de R**.
+
+Assim, a presença de uma **DJ não trivial** — ou seja, que **não pode ser deduzida apenas com base em dependências funcionais ou multivaloradas** — exige que a decomposição seja feita, desde que isso não comprometa a propriedade de recomposição sem perda.
+
+### Exemplo Prático
+
+Para ilustrar a aplicação da 5FN, vamos analisar um exemplo clássico. Considere a seguinte tabela **FORNECE**, que armazena dados sobre quais fornecedores fornecem quais peças para quais projetos:
+
+|Nome_fornece|Nome_peca|Nome_proj|
+|---|---|---|
+|Silva|Peneira|ProjX|
+|Silva|Porca|ProjY|
+|Adam|Peneira|ProjY|
+|Walter|Porca|ProjZ|
+|Adam|Prego|ProjX|
+|Adam|Peneira|ProjX|
+|Silva|Peneira|ProjY|
+
+Suponha que essa tabela foi construída a partir da seguinte lógica:
+
+- Um fornecedor fornece várias peças.
+- Um fornecedor participa de vários projetos.
+- Cada peça pode estar envolvida em vários projetos.
+
+**Não há dependência funcional direta** entre os atributos. Tampouco existem **dependências multivaloradas suficientes para justificar a decomposição** pela 4FN. No entanto, **as combinações entre os três atributos geram redundâncias**, pois as mesmas combinações aparecem diversas vezes.
+
+Dessa forma, identificamos uma dependência de junção não trivial: a tabela FORNECE pode ser decomposta em **três relações binárias** sem perdas:
+
+**R1: Nome_fornece × Nome_peca**
+
+|Nome_fornece|Nome_peca|
+|---|---|
+|Silva|Peneira|
+|Silva|Porca|
+|Adam|Peneira|
+|Walter|Porca|
+|Adam|Prego|
+
+**R2: Nome_fornece × Nome_proj**
+
+|Nome_fornece|Nome_proj|
+|---|---|
+|Silva|ProjX|
+|Silva|ProjY|
+|Adam|ProjY|
+|Walter|ProjZ|
+|Adam|ProjX|
+
+**R3: Nome_peca × Nome_proj**
+
+|Nome_peca|Nome_proj|
+|---|---|
+|Peneira|ProjX|
+|Porca|ProjY|
+|Peneira|ProjY|
+|Porca|ProjZ|
+|Prego|ProjX|
+
+Essas três relações são suficientes para **recompor a relação original** através de junções naturais — sem perdas e sem gerar tuplas espúrias — o que comprova que a decomposição é válida.
+
+### Considerações sobre a 5FN
+
+A **5ª Forma Normal** é o estágio final da normalização. Ela entra em cena **somente quando detectamos dependências de junção não triviais** em relações com três ou mais atributos interdependentes. Em termos práticos, seu uso é raro e restrito a contextos com **grande complexidade relacional**, como sistemas de engenharia, logística e produção, onde múltiplas entidades se cruzam em relações N:N:N.
+
+Apesar de sua aplicação ser pouco frequente, a 5FN é essencial em termos **teóricos** e para garantir a **máxima eliminação de redundâncias sem comprometimento da recomposição dos dados**. Sua definição clara e rigorosa completa o processo de normalização relacional, assegurando que a estrutura do banco de dados está sólida, otimizada e livre de anomalias.
+
+## Considerações Finais
+
+O processo de **normalização** é essencial para garantir a **consistência**, **eficiência** e **qualidade estrutural** de um banco de dados relacional. Ao longo deste capítulo, vimos como as **formas normais** ajudam a eliminar **redundâncias** e **anomalias de atualização**, por meio da aplicação de **dependências funcionais**, **multivaloradas** e **de junção**.
+
+A compreensão e aplicação correta das **formas normais**, da **1FN até a 5FN**, fornecem as bases para um projeto de banco de dados **robusto, organizado e flexível**. A normalização não apenas melhora a integridade dos dados, como também facilita a manutenção e evolução dos sistemas ao longo do tempo.
+
+A seguinte imagem esquematiza resumidamente as formas normais estudadas:
+
+<div align="center">
+  <img width="680px" src="./img/13-esquema-das-formas-normais.png">
+</div>
+
+Agora que você domina os princípios teóricos e práticos da normalização, está preparado para tomar decisões conscientes sobre **como modelar dados de forma eficiente**, conforme as necessidades de cada projeto.
