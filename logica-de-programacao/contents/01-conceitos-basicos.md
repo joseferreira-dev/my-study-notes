@@ -53,7 +53,7 @@ Esses blocos formam a base da lógica computacional.
 Um **fluxograma** é uma representação gráfica de um algoritmo, onde usamos símbolos padronizados para mostrar o fluxo de execução das instruções. Ele é útil para visualizar a lógica de forma clara antes da codificação. Os principais símbolos incluem:
 
 <div align="center">
-  <img width="100%" max-width="720px" src="01-simbolos.png"></a>
+  <img width="100%" max-width="720px" src="./img/01-simbolos.png"></a>
 </div>
 
 Uma breve explicação de cada símbolo:
@@ -81,7 +81,7 @@ Uma breve explicação de cada símbolo:
 Abaixo está o exemplo de um fluxograma de aprovação de solicitações em uma empresa:
 
 <div align="center">
-  <img width="100%" src="01-fluxograma.png"></a>
+  <img width="100%" src="./img/01-fluxograma.png"></a>
 </div>
 <br>
 
