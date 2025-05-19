@@ -67,7 +67,7 @@ O **bit de modo supervisor/usuário** presente no PSW determina se a instrução
 A execução de um programa segue um ciclo repetitivo conhecido como **ciclo de instrução**, composto por três fases principais:
 
 1. **Busca**: O conteúdo do PC é usado para acessar a memória. A instrução encontrada é carregada no IR.
-2. **Decodificação**: Unidade de Controle interpreta a instrução armazenada no IR, determinando sua natureza e os recursos envolvidos. Se a instrução utilizar uma palavra na memória, determinar onde ela está.Traz a palavra para um registrador da CPU, se necessário.
+2. **Decodificação**: Unidade de Controle interpreta a instrução armazenada no IR, determinando sua natureza e os recursos envolvidos. Se a instrução utilizar uma palavra na memória, determinar onde ela está. Traz a palavra para um registrador da CPU, se necessário.
 3. **Execução**: A instrução é executada. Isso pode envolver a ULA, registradores, a memória ou até periféricos.
 
 Ao final da execução, o PC é incrementado, apontando para a próxima instrução, e o ciclo se repete. Esse processo se repete **milhões ou bilhões de vezes por segundo**, dependendo da frequência do clock do processador.
