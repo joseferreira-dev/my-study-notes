@@ -1,6 +1,6 @@
-## Capítulo 3 – Hardware e Software
+# Capítulo 3 – Hardware e Software
 
-### Relação entre Hardware e Software
+## Relação entre Hardware e Software
 
 Um sistema computacional é composto por duas grandes partes interdependentes: o **hardware** e o **software**. O **hardware** refere-se à parte física do computador: os circuitos, chips, placas, memórias, cabos, conectores, teclado, monitor, impressoras e outros dispositivos que fazem parte da estrutura tangível da máquina. Já o **software** corresponde à parte lógica e intangível, ou seja, aos programas e sistemas que comandam o hardware para que ele execute tarefas úteis.
 
@@ -10,7 +10,7 @@ Mas como, exatamente, o software consegue "comandar" o hardware? Para responder 
 
 Por exemplo, um programa escrito em linguagem Python precisa ser traduzido para uma série de instruções que o processador seja capaz de entender. Essas instruções são compostas por sequências de bits (0s e 1s), que ativam circuitos eletrônicos dentro da Unidade Central de Processamento (CPU) para realizar operações como somar, comparar, mover dados e outras ações fundamentais.
 
-### Máquina Multinível
+## Máquina Multinível
 
 Para facilitar a compreensão do funcionamento de um sistema computacional moderno, costuma-se representá-lo de forma hierárquica, dividindo-o em vários **níveis de abstração**. Cada nível possui uma função específica e fornece uma **interface simplificada** para o nível imediatamente superior. Essa organização é chamada de **modelo de máquina multinível**.
 
@@ -31,21 +31,21 @@ A seguir, podemos ver uma estrutura em níveis de máquinas contemporâneas e na
   <img width="680px" src="./img/03-maquina-contemporanea.png">
 </div>
 
-#### Nível 0 – Nível Lógico Digital
+### Nível 0 – Nível Lógico Digital
 
 Neste nível mais fundamental, encontramos os **circuitos lógicos digitais**, formados por **portas lógicas** (AND, OR, NOT, etc.), flip-flops e outros componentes eletrônicos básicos. Esses circuitos constituem o **hardware físico**, responsável pelo comportamento elétrico que sustenta toda a execução computacional, são essas portas que formam componentes mais complexos, como somadores, multiplexadores, registradores e a própria UCP. As operações realizadas neste nível são puramente elétricas, regidas por sinais binários presentando os valores 0 (desligado) e 1 (ligado).
 
 - **Responsável**: Hardware.
 - **Tecnologia**: Transistores, portas lógicas, flip-flops.
 
-#### Nível 1 – Nível da Microarquitetura
+### Nível 1 – Nível da Microarquitetura
 
 Neste nível, as estruturas eletrônicas construídas no nível digital lógico são organizadas para formar as **unidades funcionais** do processador, responsáveis por executar instruções básicas. A CPU (Unidade Central de Processamento), por exemplo, é composta pela Unidade de Controle, pela Unidade Lógica e Aritmética (ULA), pelos registradores e pelo barramento interno. Neste nível, uma **microprogramação** pode ser utilizada para interpretar as instruções da arquitetura (nível 2), ou, em arquiteturas mais simples, as instruções são executadas diretamente.
 
 - **Responsável**: Microprogramação (interpretação) ou execução direta.
 - **Exemplo**: Execução interna da instrução `ADD` nos registradores.
 
-#### Nível 2 – Nível de Arquitetura do Conjunto de Instruções
+### Nível 2 – Nível de Arquitetura do Conjunto de Instruções
 
 Esse nível define o **conjunto de instruções (ISA – Instruction Set Architecture)** que o processador entende, como `MOV`, `ADD`, `SUB`, etc. É neste nível que o **programador de baixo nível** atua. As instruções aqui definidas são interpretadas ou executadas pela microarquitetura. É o ponto de contato entre o software e o hardware. Essas instruções são codificadas como sequências de bits (por exemplo, `10011011`) e interpretadas pelo hardware graças à estrutura estabelecida nos níveis anteriores.
 
@@ -53,7 +53,7 @@ Esse nível define o **conjunto de instruções (ISA – Instruction Set Archite
 - **Exemplo**: Instruções Assembly.
 - **Observação**: Este nível pode ser parcialmente interpretado pela microarquitetura ou microprogramado.
 
-#### Nível 3 – Nível de Máquina do Sistema Operacional
+### Nível 3 – Nível de Máquina do Sistema Operacional
 
 Neste nível, entra em cena o **sistema operacional**, que implementa instruções mais complexas, chamadas de **instruções de máquina virtual** ou **instruções interpretadas**, como chamadas de sistema (`open`, `read`, `write`, etc.). Essas instruções não fazem parte do ISA do processador, mas são interpretadas pelo sistema operacional para fornecer funcionalidades ao usuário.
 
@@ -61,7 +61,7 @@ Neste nível, entra em cena o **sistema operacional**, que implementa instruçõ
 - **Processo**: Interpretação parcial.
 - **Exemplo**: Chamadas de sistema, manipulação de arquivos.
 
-#### Nível 4 – Nível da Linguagem de Montagem (Assembly)
+### Nível 4 – Nível da Linguagem de Montagem (Assembly)
 
 Embora seja possível programar diretamente em linguagem de máquina, isso é extremamente trabalhoso e propenso a erros. Para facilitar, foi criada a **linguagem de montagem**, ou **Assembly**, que representa cada instrução de máquina com um **mnemônico**, como `ADD` (adição), `SUB` (subtração), `MOV` (movimentação de dados), entre outros.
 
@@ -71,7 +71,7 @@ O Assembly é uma representação textual próxima do código de máquina, permi
 - **Processo**: Tradução.
 - **Exemplo**: `MOV AX, 01h`
 
-#### Nível 5 – Nível das Linguagens Orientadas a Problemas
+### Nível 5 – Nível das Linguagens Orientadas a Problemas
 
 Com o avanço da computação, surgiram linguagens de programação mais próximas da linguagem humana, chamadas de **linguagens de alto nível**. Exemplos incluem Pascal, C, Java, Python e muitas outras. Essas linguagens permitem que o programador se concentre na lógica do problema, sem se preocupar com detalhes da arquitetura do processador ou com instruções de máquina. Os programas escritos em linguagens de alto nível precisam ser convertidos para linguagem de máquina por **compiladores** (que traduzem todo o código de uma vez) ou **interpretadores** (que traduzem e executam o código linha por linha).
 
@@ -82,6 +82,6 @@ Alguns ainda consideram um nível superior, que eleva ainda mais a abstração. 
 
 Nesse nível, o usuário não precisa conhecer algoritmos, lógica de programação ou estruturas de dados, pois a ferramenta ou linguagem já incorpora esses elementos internamente, permitindo uma interação ainda mais direta com o problema a ser resolvido.
 
-### Conclusão
+## Considerações Finais
 
 O modelo de máquina multinível mostra como o funcionamento de um computador é dividido em camadas, desde os circuitos eletrônicos até as linguagens voltadas a usuários finais. Cada nível abstrai a complexidade do nível inferior, tornando possível que diferentes profissionais desenvolvam soluções em diferentes graus de abstração. Ao compreender essa estrutura, ganhamos uma visão mais ampla e fundamentada sobre como os softwares são executados nos sistemas computacionais.
