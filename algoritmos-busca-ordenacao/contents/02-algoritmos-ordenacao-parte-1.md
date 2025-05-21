@@ -1,19 +1,4 @@
-<div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/algoritmos-busca-ordenacao"><img src="../../banner-bo.png"></a>
-</div>
-<br>
-
-# Introdução aos Algoritmos de Ordenação
-
-- [Introdução](#introdução)
-- [Tipos de Técnicas de Ordenação](#tipos-de-técnicas-de-ordenação)
-- [Terminologia de Algoritmos de Ordenação](#terminologia-de-algoritmos-de-ordenação)
-- [Características dos Algoritmos de Ordenação](#características-dos-algoritmos-de-ordenação)
-- [Por que os Algoritmos de Ordenação são Importantes?](#por-que-os-algoritmos-de-ordenação-são-importantes)
-- [Vantagens e Desvantagens dos Algoritmos de Ordenação](#vantagens-e-desvantagens-dos-algoritmos-de-ordenação)
-- [Informações Adicionais sobre Algoritmos de Ordenação](#informações-adicionais-sobre-algoritmos-de-ordenação)
-
-## Introdução
+# Capítulo 1 - Introdução e Complexidade de Algoritmos
 
 Ordenação refere-se ao rearranjo de um array ou lista de elementos de acordo com um operador de comparação sobre os elementos. O operador de comparação é usado para decidir a nova ordem dos elementos na respectiva estrutura de dados. Ordenar significa reorganizar todos os elementos em ordem crescente ou decrescente.
 
