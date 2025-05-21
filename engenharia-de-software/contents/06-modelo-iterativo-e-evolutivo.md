@@ -12,13 +12,13 @@ Antes de qualquer coisa, é essencial esclarecer que **o modelo evolucionário �
 
 Essa afirmação reforça que ambos os modelos compartilham a mesma base conceitual: a repetição cíclica de etapas de desenvolvimento com o objetivo de refinar, expandir e melhorar o sistema ao longo do tempo. A principal diferença está no foco e nos produtos resultantes de cada iteração.
 
-### Iteração: a Nase do Processo
+### Iteração: a Fase do Processo
 
 A **iteração** consiste na repetição controlada de atividades ou fases do processo de desenvolvimento. A cada novo ciclo, o sistema é incrementado, testado, avaliado e potencialmente ajustado, de modo a se aproximar gradativamente da solução ideal.
 
 Essa abordagem permite lidar melhor com os riscos, incertezas e mudanças nos requisitos, pois favorece a adaptação contínua ao contexto real do projeto. Além disso, promove maior envolvimento do cliente, que pode acompanhar a evolução do software, fornecer feedback e participar ativamente do processo.
 
-### 6.1.2 Evolução: Software como Sistema Vivo
+### Evolução: Software como Sistema Vivo
 
 O modelo evolucionário reconhece que **o software, assim como outros sistemas complexos, evolui ao longo do tempo**. Isso significa que, mesmo após sua entrega inicial, ele continua sendo modificado, ampliado e aperfeiçoado, seja para atender a novas demandas de negócio, seja para corrigir deficiências ou adaptar-se a mudanças tecnológicas.
 
