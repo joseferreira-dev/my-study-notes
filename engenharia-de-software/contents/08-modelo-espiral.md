@@ -6,7 +6,7 @@ A representação gráfica deste modelo lembra uma espiral que se expande progre
 
 ## Fundamentos do Modelo em Espiral
 
-A espiral proposta por Boehm é composta por uma série de loops, ou ciclos, onde cada loop representa uma fase do desenvolvimento do software. Diferente de modelos em que cada fase é realizada uma única vez, no Modelo em Espiral essas fases se repetem várias vezes ao longo do projeto. Os loops mais internos podem corresponder, por exemplo, à fase de viabilidade do projeto; os loops seguintes, à definição de requisitos, à modelagem, à implementação, à validação, e assim por diante. O avanço pela espiral representa um grau crescente de sofisticação e refinamento no desenvolvimento do software.
+A espiral proposta por **Boehm** é composta por uma série de loops, ou ciclos, onde cada loop representa uma fase do desenvolvimento do software. Diferente de modelos em que cada fase é realizada uma única vez, no Modelo em Espiral **essas fases se repetem várias vezes ao longo do projeto**. Os loops mais internos podem corresponder, por exemplo, à fase de viabilidade do projeto; os loops seguintes, à definição de requisitos, à modelagem, à implementação, à validação, e assim por diante. O avanço pela espiral representa um grau crescente de sofisticação e refinamento no desenvolvimento do software.
 
 <div align="center">
   <img width="720px" src="./img/08-modelo-espiral-boehm.png">
