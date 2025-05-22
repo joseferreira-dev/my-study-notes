@@ -1,16 +1,4 @@
-<div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/algoritmos-busca-ordenacao"><img src="../../banner-bo.png"></a>
-</div>
-<br>
-
-# Algoritmos de Ordenação - Parte 4: Counting Sort, Radix Sort, Bucket Sort
-
-- [Introdução](#introdução)
-- [Counting Sort](#counting-sort)
-- [Radix Sort](#radix-sort)
-- [Bucket Sort](#bucket-sort)
-
-## Introdução
+# Capítulo 6 – Counting Sort, Radix Sort e Bucket Sort
 
 **Counting Sort**, **Radix Sort** e **Bucket Sort** são algoritmos de ordenação não comparativos que oferecem alternativas eficientes aos métodos baseados em comparação, especialmente para certos tipos de dados. **Counting Sort** conta o número de ocorrências de cada valor em uma lista e utiliza essa contagem para posicionar os elementos diretamente na lista ordenada. Ele é eficiente para listas onde os valores estão dentro de um intervalo limitado, com complexidade `O(n + k)`, onde `k` é o valor máximo na lista. **Radix Sort** ordena números inteiros processando cada dígito individualmente, do dígito menos significativo para o mais significativo (ou vice-versa), utilizando um algoritmo de ordenação estável como o Counting Sort para cada dígito. Ele é eficiente para listas grandes de números inteiros, com complexidade `O(d ⋅ (n + k))`, onde `d` é o número de dígitos. **Bucket Sort** distribui os elementos em vários baldes, ordena cada balde individualmente (frequentemente com Insertion Sort), e então concatena os baldes ordenados. É eficiente para listas com elementos distribuídos uniformemente, oferecendo complexidade média `O(n + k)`, onde `k` é o número de baldes.
 

@@ -1,4 +1,4 @@
-# Capítulo 3 – Bubble Sort, Insertion Sort, Selection Sort
+# Capítulo 3 – Bubble Sort, Insertion Sort e Selection Sort
 
 **Bubble Sort**, **Insertion Sort** e **Selection Sort** são algoritmos de ordenação simples e intuitivos, frequentemente ensinados como introdução aos conceitos de algoritmos de ordenação devido à sua simplicidade. **Bubble Sort** funciona repetidamente trocando elementos adjacentes se estiverem na ordem errada, fazendo com que os maiores elementos "flutuem" para o topo da lista. **Insertion Sort** constrói a lista ordenada um elemento por vez, inserindo cada novo elemento em sua posição correta em relação aos elementos já ordenados. **Selection Sort** percorre a lista repetidamente, selecionando o menor (ou maior) elemento e movendo-o para sua posição final. Embora sejam fáceis de entender e implementar, esses algoritmos são ineficientes para listas grandes, pois possuem complexidade de tempo `O(n²)` no pior caso.
 

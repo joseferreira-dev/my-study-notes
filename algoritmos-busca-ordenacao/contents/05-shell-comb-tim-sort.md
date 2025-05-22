@@ -1,16 +1,4 @@
-<div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/algoritmos-busca-ordenacao"><img src="../../banner-bo.png"></a>
-</div>
-<br>
-
-# Algoritmos de Ordenação - Parte 3: Shell Sort, Comb Sort, Tim Sort
-
-- [Introdução](#introdução)
-- [Shell Sort](#shell-sort)
-- [Comb Sort](#comb-sort)
-- [Tim Sort](#tim-sort)
-
-## Introdução
+# Capítulo 5 – Shell Sort, Comb Sort e Tim Sort
 
 **Shell Sort**, **Comb Sort** e **Tim Sort** são algoritmos de ordenação que introduzem técnicas avançadas para melhorar a eficiência em comparação aos métodos mais básicos. **Shell Sort** é uma generalização do Insertion Sort que compara e troca elementos que estão a uma certa distância (gap) entre si, diminuindo o gap gradualmente até que ele se torne 1. Isso permite que o Shell Sort seja mais eficiente que o Insertion Sort, especialmente em listas maiores. **Comb Sort** é uma melhoria do Bubble Sort, que também usa um gap para comparar e trocar elementos, começando com um gap maior e diminuindo gradualmente até 1. Comb Sort resolve alguns dos problemas de ineficiência do Bubble Sort, lidando melhor com "tartarugas" (valores pequenos perto do final da lista). **Tim Sort** é um algoritmo híbrido que combina Insertion Sort e Merge Sort, projetado para aproveitar runs (sublistas ordenadas) existentes na lista original, garantindo uma complexidade `O(n log n)` no pior caso e excelente desempenho em muitos casos práticos. Tim Sort é usado em implementações de ordenação padrão em linguagens como Python e Java devido à sua eficiência e estabilidade.
 
