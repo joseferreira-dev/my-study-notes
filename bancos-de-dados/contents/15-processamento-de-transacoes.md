@@ -94,3 +94,79 @@ O log também permite que sejam realizadas duas operações fundamentais para a 
 Uma característica importante dessas operações é que ambas são consideradas **idempotentes**, ou seja, podem ser aplicadas várias vezes, e sempre produzirão o mesmo resultado, sem efeitos colaterais adicionais.
 
 Imagine, por exemplo, uma alteração salarial onde o salário de um funcionário é atualizado de R$ 10.000 para R$ 20.000. Se uma falha acontecer após o commit, mas antes da escrita definitiva no banco, a operação de REDO garantirá que o salário seja efetivamente atualizado para R$ 20.000, mesmo que essa operação precise ser aplicada mais de uma vez durante o processo de recuperação.
+
+### Ponto de Efetivação: Garantindo a Confiabilidade das Modificações
+
+Em um ambiente de banco de dados robusto, é fundamental garantir que, ao término de uma transação, as alterações realizadas sobre os dados estejam verdadeiramente consolidadas. Essa consolidação ocorre no chamado **ponto de efetivação** (commit point), um marco lógico e técnico fundamental no ciclo de vida de uma transação.
+
+Dizemos que uma transação T alcançou seu ponto de efetivação quando **todas as suas operações que acessam o banco de dados foram executadas com sucesso** e **os efeitos dessas operações estão completamente registrados no log do sistema**. A partir desse momento, a transação é considerada efetivada, e seu efeito torna-se permanente e irrevogável.
+
+Considere o seguinte cenário: se ocorrer uma falha no sistema e uma transação tiver o registro `[start_transaction, T]` no log, mas não tiver o correspondente `[commit, T]`, essa transação **deve ser revertida** — ou seja, todas as alterações feitas por ela são desfeitas, garantindo a atomicidade. Por outro lado, se o log já contiver o registro de commit, então a transação **deve ser refeita**, se necessário, para garantir que suas modificações estejam refletidas no banco.
+
+Esse controle depende de uma estrutura crítica chamada **checkpoint**.
+
+### Checkpoints: Salvaguardando o Estado do Banco
+
+A operação de checkpoint consiste em um **marco periódico de segurança** no log de transações. Ele representa o momento em que o sistema grava, de maneira forçada, todas as alterações pendentes no disco. Esse mecanismo visa garantir que, mesmo em caso de falhas, a recuperação do banco possa ser feita de maneira eficiente, sem precisar varrer um log interminável desde o seu início.
+
+Durante o processo de checkpoint, o SGBD executa as seguintes ações:
+
+1. **Suspende temporariamente a execução de transações**;
+2. **Grava em disco todas as modificações realizadas por transações efetivadas** (esvaziando os buffers de memória);
+3. **Insere no log um registro `[checkpoint]`**, que pode conter informações adicionais como:
+    - Identificadores das transações ativas;
+    - Endereços do primeiro e do último registro no log para cada transação;
+4. **Força a escrita do log em disco**;
+5. **Retoma a execução normal das transações**.
+
+Esse procedimento assegura que o sistema tenha pontos de restauração consistentes, minimizando o tempo e os recursos exigidos em processos de recuperação.
+
+### Planos de Execução: Definindo a Ordem das Operações
+
+Em sistemas concorrentes, várias transações podem ser executadas simultaneamente. Esse paralelismo traz benefícios em desempenho, mas também desafios. A **ordem de execução** das operações dessas transações precisa ser gerenciada com precisão para garantir que o resultado final seja o mesmo de uma execução sequencial.
+
+Essa ordenação das operações é denominada **plano de execução**, ou **escalonamento**. Um plano de execução S, formado por um conjunto de transações T₁, T₂, ..., Tₙ, deve preservar a **ordem interna** de cada transação, ou seja, a sequência de operações originalmente programadas dentro de cada T<sub>i</sub> deve ser respeitada.
+
+No entanto, operações de transações distintas podem ser **intercaladas**, desde que não haja conflito entre elas. Mas o que caracteriza um conflito?
+
+Duas operações de transações diferentes entram em **conflito** quando:
+
+1. Pertencem a transações distintas;
+2. Acessam o mesmo item de dado X;
+3. Pelo menos uma delas modifica o item (ou seja, é uma operação de escrita).
+
+Por exemplo, se a transação T₁ lê o item X e T₂ deseja escrevê-lo, ou vice-versa, há conflito.
+
+### Planos Completos e as Condições de Validade
+
+Para que um plano de execução seja considerado **completo**, ele deve satisfazer três condições fundamentais:
+
+1. **Encerramento** – Todas as transações no plano devem ser finalizadas com `commit` ou `abort`;
+2. **Ordenação** – A ordem original das operações dentro de cada transação deve ser preservada no plano;
+3. **Conflito** – Toda operação conflitante entre transações deve ter uma ordem de execução claramente definida.
+
+Observe que, se **duas operações não forem conflitantes**, a ordem entre elas no plano pode ser flexível, caracterizando o que chamamos de **ordenação parcial**.
+
+Esse modelo flexível permite que o sistema otimize a execução das transações, mantendo a consistência e respeitando a independência lógica entre elas.
+
+### Planos Restauráveis: Evitando o Caos Pós-Falha
+
+Imagine que duas transações estão sendo executadas em paralelo. A transação T₂ lê um valor escrito por T₁. T₂ realiza mais algumas operações e então confirma sua execução com um `commit`. Logo em seguida, T₁ sofre uma falha.
+
+Nesse cenário, temos um problema: T₂ depende de um valor produzido por T₁, que não foi efetivado. T₂, então, **construiu seu raciocínio em cima de uma informação que será descartada**. Isso compromete a integridade dos dados.
+
+É justamente para evitar esse tipo de erro que os **planos restauráveis** são importantes. Um plano é considerado restaurável se, **sempre que uma transação T<sub>j</sub> depender de um valor escrito por T<sub>i</sub>, o commit de T<sub>i</sub> ocorre antes do commit de T<sub>j</sub>**.
+
+Em outras palavras, **nenhuma transação deve se comprometer (fazer commit) com base em dados não confirmados por outras transações**.
+
+Se essa regra for desrespeitada, o sistema poderá sofrer uma **reversão em cascata**: uma falha em uma transação pode provocar a anulação de várias outras, formando um efeito dominó.
+
+Para tornar um plano livre de reversão em cascata, uma regra simples pode ser aplicada: **uma transação só pode ler dados que já foram gravados por transações que executaram o commit**.
+
+Essa ideia está relacionada ao **nível de isolamento “read committed”**, onde os dados lidos sempre vêm de transações confirmadas. Assim, mesmo que uma transação falhe, não haverá necessidade de desfazer outras transações que apenas consumiram dados já válidos.
+
+A figura a seguir ilustra esse conceito, contrastando um plano restaurável com um não restaurável.
+
+<div align="center">
+  <img width="780px" src="./img/15-planos-restauravel-e-nao-restauravel.png">
+</div>
