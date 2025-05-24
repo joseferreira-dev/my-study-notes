@@ -346,3 +346,204 @@ O mesmo pode ser feito para qualquer combinação de valores.
 ### Conexão direta com os Circuitos Lógicos
 
 Todo este conjunto de regras e operações que a Álgebra Booleana estabelece não é apenas uma abstração matemática, mas sim a essência do funcionamento dos circuitos digitais. As portas lógicas físicas — como AND, OR, NOT, XOR — implementam essas operações diretamente no hardware, utilizando sinais elétricos que representam os valores 0 e 1. Ou seja, compreender a Álgebra Booleana é um passo essencial para compreender os circuitos que executam as instruções em um computador.
+
+## Circuitos Lógicos
+
+Depois de entendermos profundamente os conceitos de proposições, tabelas verdade e álgebra booleana, é hora de transformar toda essa teoria em prática. Os circuitos lógicos são, na essência, a materialização física da lógica booleana. Toda a operação de um computador — desde as instruções mais simples até os cálculos mais sofisticados — ocorre por meio da combinação de milhões ou bilhões desses circuitos básicos.
+
+Quando falamos de uma porta lógica, estamos nos referindo a um circuito eletrônico capaz de executar uma operação booleana específica. Esses circuitos são formados por transistores, que funcionam como interruptores controlados eletricamente. Com eles, é possível construir desde as unidades lógicas e aritméticas (ULAs) dos processadores até as unidades de controle, memórias e dispositivos de entrada e saída.
+
+### Portas Lógicas Básicas
+
+Vamos revisar agora as portas lógicas fundamentais, relacionando cada uma delas com sua respectiva tabela verdade, operação booleana e aplicação prática.
+
+#### Porta AND (E)
+
+A porta AND representa a conjunção lógica, aquela que retorna verdadeiro apenas quando todas as suas entradas forem verdadeiras. É uma das portas mais utilizadas em circuitos digitais, especialmente na construção de somadores, comparadores e unidades de controle.
+
+Seu funcionamento segue exatamente a tabela verdade da conjunção:
+
+|A|B|A ∧ B|
+|---|---|---|
+|V|V|V|
+|V|F|F|
+|F|V|F|
+|F|F|F|
+
+Na prática eletrônica, associamos o valor **V** ao nível lógico **1** e o valor **F** ao nível lógico **0**.
+
+A representação algébrica dessa porta é simples:
+
+$$C = A ∧ B \quad \text{ou} \quad C = A \cdot B$$
+
+<div align="center">
+  <img width="280px" src="./img/11-porta-and.png">
+</div>
+
+Por exemplo, se A = 1 e B = 1, então C = 1. Já se A = 1 e B = 0, C será 0. A lógica é bem intuitiva: a saída só será 1 se **todas** as entradas forem 1.
+
+#### Porta OR (OU)
+
+A porta OR realiza a disjunção lógica, retornando verdadeiro sempre que pelo menos uma das suas entradas for verdadeira. Esta porta é muito empregada quando se deseja verificar se **alguma condição** é satisfeita.
+
+Veja sua tabela verdade:
+
+|A|B|A ∨ B|
+|---|---|---|
+|V|V|V|
+|V|F|V|
+|F|V|V|
+|F|F|F|
+
+Sua representação algébrica é:
+
+$$C = A ∨ B \quad \text{ou} \quad C = A + B$$
+
+<div align="center">
+  <img width="280px" src="./img/11-porta-or.png">
+</div>
+
+Por exemplo, se A = 1 e B = 0, C será 1. Somente se ambas forem 0 é que a saída será 0.
+
+#### Porta NOT (NÃO)
+
+A porta NOT é responsável pela negação lógica. Ela possui apenas uma entrada e inverte o seu valor: se a entrada é 1, a saída é 0; se a entrada é 0, a saída é 1.
+
+Sua tabela verdade é bem simples:
+
+|A|¬A|
+|---|---|
+|V|F|
+|F|V|
+
+A representação algébrica é:
+
+$$¬A \quad \text{ou} \quad \overline{A}$$
+
+<div align="center">
+  <img width="280px" src="./img/11-porta-not.png">
+</div>
+
+Por exemplo, se A = 0, a saída é 1; e se A = 1, a saída é 0.
+
+#### Porta NAND (NOT AND)
+
+A porta NAND é a junção das operações AND e NOT. Primeiro ela calcula a conjunção (AND) e, em seguida, inverte o resultado.
+
+A tabela verdade da porta NAND é a seguinte:
+
+|A|B|¬(A ∧ B)|
+|---|---|---|
+|V|V|F|
+|V|F|V|
+|F|V|V|
+|F|F|V|
+
+Seu funcionamento pode ser descrito pela expressão:
+
+$$D = ¬(A ∧ B) \quad \text{ou} \quad D = \overline{(A \cdot B)}$$
+
+<div align="center">
+  <img width="280px" src="./img/11-porta-nand.png">
+</div>
+
+Por exemplo:
+- Se A = 1 e B = 1, então A ∧ B = 1, e sua negação dá 0.
+- Se A = 1 e B = 0, A ∧ B = 0, e sua negação dá 1.
+
+A importância da porta NAND é tão grande na eletrônica que ela é conhecida como **porta universal**, pois é possível construir qualquer outro tipo de porta lógica (AND, OR, NOT, etc.) utilizando apenas portas NAND.
+
+#### Porta NOR (NOT OR)
+
+A porta NOR realiza primeiro a operação OR e, em seguida, aplica a negação do resultado.
+
+Tabela verdade da NOR:
+
+|A|B|¬(A ∨ B)|
+|---|---|---|
+|V|V|F|
+|V|F|F|
+|F|V|F|
+|F|F|V|
+
+Sua expressão é:
+
+$$D = ¬(A ∨ B) \quad \text{ou} \quad D = \overline{(A + B)}$$
+
+<div align="center">
+  <img width="280px" src="./img/11-porta-nor.png">
+</div>
+
+Exemplificando:
+- Se A = 0 e B = 0, o OR dá 0, e a negação dá 1.
+- Se A = 1 e B = 0, o OR dá 1, e a negação dá 0.
+
+Assim como a NAND, a NOR também é considerada uma **porta universal**, capaz de formar qualquer circuito digital.
+
+#### Porta XOR (OU Exclusivo)
+
+A porta XOR, conhecida como **OU exclusivo**, retorna verdadeiro apenas quando **as entradas são diferentes**.
+
+Veja sua tabela verdade:
+
+|A|B|A ⊕ B|
+|---|---|---|
+|V|V|F|
+|V|F|V|
+|F|V|V|
+|F|F|F|
+
+Sua expressão algébrica é:  
+$$C = A ⊕ B \quad$$
+
+<div align="center">
+  <img width="280px" src="./img/11-porta-xor.png">
+</div>
+
+Funcionamento prático:
+- Se A = 1 e B = 0, a saída é 1.
+- Se A = 1 e B = 1, a saída é 0.
+
+A porta XOR é bastante utilizada em somadores, comparadores e operações de paridade (como em detecção de erros).
+
+### Montagem de Circuitos Combinacionais
+
+Agora que entendemos como funcionam as portas lógicas, vamos ver como elas se combinam para formar circuitos capazes de executar funções mais complexas.
+
+Imagine um circuito formado pelas seguintes conexões:
+
+<div align="center">
+  <img width="440px" src="./img/11-circuito.png">
+</div>
+
+1. Uma porta OR recebe como entrada os sinais A e B.
+2. O sinal C é passado diretamente, sem alterações.
+3. Uma segunda porta OR recebe como entrada os sinais B e D.
+4. Por fim, uma porta AND recebe como entrada:
+    - O resultado da primeira OR,
+    - O sinal C,
+    - E o resultado da segunda OR.
+
+Montando a expressão booleana, temos:
+
+$$\text{Saída} = (A + B) \cdot C \cdot (B + D)$$
+
+<div align="center">
+  <img width="580px" src="./img/11-circuito-com-saida.png">
+</div>
+
+Esse circuito combina três operações lógicas: duas disjunções (OR) e uma conjunção (AND). Cada entrada tem seu papel e qualquer alteração em uma delas impacta diretamente na saída.
+
+### A Relação Entre a Lógica e o Hardware
+
+É fundamental entender que tudo o que ocorre dentro de um processador, desde operações aritméticas até comparações e decisões, é realizado por circuitos como esses. Um simples somador, por exemplo, é construído a partir de portas AND, OR e XOR interconectadas de forma precisa.
+
+E o mais impressionante: enquanto aqui visualizamos um circuito com quatro entradas, um processador moderno possui bilhões de transistores organizados em milhões de portas lógicas, processando informações simultaneamente em velocidades medidas na casa dos gigahertz.
+
+## Considerações Finais
+
+Ao longo deste capítulo, aprofundamos nossa compreensão sobre como os conceitos abstratos da lógica booleana se traduzem em circuitos concretos que compõem os computadores modernos. Desde a análise de proposições e construção de tabelas verdade, até a implementação de portas lógicas, circuitos combinacionais e sequenciais, percebemos que toda a base da arquitetura digital está sustentada pela aplicação rigorosa desses princípios.
+
+Mais do que simplesmente entender como uma porta AND ou OR funciona isoladamente, é fundamental perceber como a interligação dessas portas permite construir sistemas extremamente complexos, capazes de executar bilhões de instruções por segundo.
+
+Por fim, fica evidente que a lógica booleana não é apenas uma abstração matemática, mas a própria linguagem do hardware. Sem ela, não existiria o processamento digital como conhecemos hoje. Este capítulo nos preparou para olhar para dentro de qualquer dispositivo eletrônico — seja um computador, um smartphone ou um sistema embarcado — e entender que, no nível mais básico, tudo se resume a combinações elegantes de zeros e uns, habilmente manipulados por circuitos digitais.
