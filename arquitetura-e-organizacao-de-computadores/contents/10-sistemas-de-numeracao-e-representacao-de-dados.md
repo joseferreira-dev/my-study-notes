@@ -442,6 +442,12 @@ $$\text{Endereço 2000} = 84,\ \text{2001} = F1,\ \text{2002} = D6,\ \text{2003}
 
 $$\text{Endereço 2000} = E4,\ \text{2001} = D6,\ \text{2002} = F1,\ \text{2003} = 84$$
 
+Ilustrativamente:
+
+<div align="center">
+  <img width="720px" src="./img/10-big-endian-little-endian.png">
+</div>
+
 De forma bem resumida, podemos dizer que o **Big Endian** organiza os bytes como estamos acostumados a ler, da esquerda para a direita. Já o **Little Endian** faz o inverso, armazenando da direita para a esquerda. Esse detalhe, embora pareça pequeno, é fundamental quando estamos trabalhando com transferência de dados entre arquiteturas diferentes ou na análise direta de dados em memória — como ocorre em depurações, engenharia reversa, análise forense digital ou desenvolvimento de drivers e sistemas operacionais.
 
 ### Representação de Dados Gráficos
