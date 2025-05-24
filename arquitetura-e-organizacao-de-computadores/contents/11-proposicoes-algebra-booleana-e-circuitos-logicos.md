@@ -182,3 +182,167 @@ Vamos comparar suas tabelas:
 
 Perceba que a coluna de **p → q** e a de **¬p ∨ q** possuem exatamente os mesmos valores. Portanto, são logicamente equivalentes.
 
+## Álgebra Booleana
+
+A Álgebra Booleana é uma das ferramentas matemáticas mais importantes no universo da Arquitetura e Organização de Computadores. Ela é a base teórica que permite projetar, analisar e construir circuitos digitais. Tudo aquilo que, no tópico anterior, estudamos sob a ótica da lógica proposicional — com proposições, conectivos e tabelas verdade —, agora ganha uma aplicação prática, direta, no funcionamento físico dos circuitos eletrônicos que compõem os processadores e demais dispositivos digitais.
+
+Mas afinal, o que é uma Álgebra Booleana? Trata-se de uma estrutura algébrica composta por um conjunto de elementos e operações que seguem regras específicas. Essas operações são, em essência, versões matemáticas da lógica que usamos no dia a dia — como os conceitos de **"e"**, **"ou"** e **"não"**.
+
+Formalmente, uma Álgebra Booleana é definida como uma **6-upla (X, ∨, ∧, ¬, 0, 1)**, ou seja, um conjunto **X** acompanhado de duas operações binárias (**∨ e ∧**), uma operação unária (**¬**) e dois elementos especiais (**0 e 1**). Vamos compreender cada um desses elementos.
+
+### Operações e Elementos Fundamentais da Álgebra Booleana
+
+A Álgebra Booleana possui três operações fundamentais:
+
+- A **disjunção** (ou lógico), representada por **∨**, por **+**, ou pela palavra **OR**.
+- A **conjunção** (e lógico), representada por **∧**, por **.**, por **∗**, ou pela palavra **AND**.
+- A **negação**, representada por **¬**, **~**, ou um traço sobre a variável, equivalente ao **NOT**.
+
+Além das operações, existem dois elementos fundamentais:
+
+- O elemento **0**, que representa o valor lógico **Falso** (ou **False**).
+- O elemento **1**, que representa o valor lógico **Verdadeiro** (ou **True**).
+
+Esses elementos e operações obedecem a um conjunto de propriedades e regras, chamadas de **axiomas da Álgebra Booleana**, que garantem o seu funcionamento lógico e coerente.
+
+### Axiomas da Álgebra Booleana
+
+Vamos explorar os principais axiomas que regem a Álgebra Booleana, sempre acompanhando com exemplos práticos que facilitam a compreensão.
+
+**Propriedades Associativas:** O agrupamento dos elementos não altera o resultado, seja na operação de **ou** (**∨**) ou de **e** (**∧**).
+
+$$(a ∨ b) ∨ c = a ∨ (b ∨ c)$$
+$$(a ∧ b) ∧ c = a ∧ (b ∧ c)$$
+
+Exemplo:  Se a = 1, b = 0 e c = 1, então:
+
+$$(1 ∨ 0) ∨ 1 = 1 ∨ (0 ∨ 1) = 1$$
+
+**Propriedades Comutativas:** A ordem dos operandos não altera o resultado.
+
+$$a ∨ b = b ∨ a$$
+$$a ∧ b = b ∧ a$$
+
+Exemplo:
+
+$$1 ∧ 0 = 0 ∧ 1 = 0$$
+$$1 ∨ 0 = 0 ∨ 1 = 1$$
+
+**Propriedades Absortivas:** Uma operação entre uma variável e ela mesma combinada com outra não altera o valor da variável.
+
+$$a ∧ (a ∨ b) = a$$
+$$a ∨ (a ∧ b) = a$$
+
+Exemplo: Se a = 1 e b = 0:
+
+$$1 ∧ (1 ∨ 0) = 1$$
+$$1 ∨ (1 ∧ 0) = 1$$
+
+**Propriedades Distributivas:** Assim como na matemática convencional, as operações podem ser distribuídas.
+
+$$a ∨ (b ∧ c) = (a ∨ b) ∧ (a ∨ c)$$
+$$a ∧ (b ∨ c) = (a ∧ b) ∨ (a ∧ c)$$
+
+Exemplo:  Se a = 1, b = 0 e c = 1:
+
+$$1 ∧ (0 ∨ 1) = (1 ∧ 0) ∨ (1 ∧ 1) → 1 = 0 ∨ 1 → 1$$
+
+**Elementos Neutros:** Existe um elemento que, quando usado na operação, não altera o resultado.
+
+$$a ∨ 0 = a$$
+$$a ∧ 1 = a$$
+
+Exemplo:
+
+$$1 ∨ 0 = 1$$
+$$0 ∧ 1 = 0$$
+
+**Elementos Complementares:** Todo elemento tem seu oposto (complemento), e aplicando operações com ele gera resultados extremos (Verdadeiro ou Falso).
+
+$$a ∨ ¬a = 1$$
+$$a ∧ ¬a = 0$$
+
+Exemplo:
+
+$$1 ∨ ¬1 = 1 ∨ 0 = 1$$
+$$0 ∧ ¬0 = 0 ∧ 1 = 0$$
+
+### Teoremas Fundamentais da Álgebra Booleana
+
+A partir dos axiomas, podemos derivar teoremas importantes, muito utilizados tanto na simplificação de expressões lógicas quanto na construção de circuitos.
+
+**Idempotência:** Aplicar a mesma operação sobre o mesmo valor não altera o valor.
+
+$$a ∨ a = $$
+$$a ∧ a = a$$
+
+Exemplo:
+
+$$1 ∨ 1 = 1$$
+$$0 ∧ 0 = 0$$
+
+**Dupla Negação:** Negar duas vezes traz o valor original.
+
+$$¬(¬a) = a$$
+
+Exemplo: Se a = 1, então
+
+$$¬(¬1) = ¬0 = 1$$
+
+**Leis de De Morgan:** Importantíssimas tanto na lógica formal quanto na engenharia de computadores. Elas descrevem como a negação de uma conjunção se transforma em uma disjunção das negações, e vice-versa.
+
+$$¬(a ∨ b) = ¬a ∧ ¬b$$
+$$¬(a ∧ b) = ¬a ∨ ¬b$$
+
+Exemplo: Se a = 1 e b = 0:
+
+$$¬(1 ∨ 0) = ¬1 ∧ ¬0 → 0 ∧ 1 = 0$$
+$$¬(1 ∧ 0) = ¬1 ∨ ¬0 → 0 ∨ 1 = 1$$
+
+**Absorção:** Permite reduzir expressões complexas.
+
+$$a ∨ (a ∧ b) = a$$
+$$a ∧ (a ∨ b) = a$$
+
+Exemplo: Se a = 1, b = 0:
+
+$$1 ∨ (1 ∧ 0) = 1 ∨ 0 = 1$$
+$$1 ∧ (1 ∨ 0) = 1 ∧ 1 = 1$$
+
+**Elementos Absorventes:** Algumas combinações anulam ou afirmam diretamente o resultado.
+
+$$a ∨ 1 = 1$$
+$$a ∧ 0 = 0$$
+
+Exemplo:
+
+$$1 ∨ 1 = 1$$
+$$0 ∧ 1 = 0$$
+
+**Negações de Zero e Um:**
+
+$$¬0 = 1$$
+$$¬1 = 0$$
+
+### Definição Formal do XOR na Álgebra Booleana
+
+O operador **XOR** (disjunção exclusiva), que vimos na lógica proposicional, também tem sua definição formal na Álgebra Booleana. Ele pode ser expresso de duas formas equivalentes:
+
+$$a ⊕ b = (a ∨ b) ∧ (¬a ∨ ¬b)$$
+$$a ⊕ b = (a ∧ ¬b) ∨ (¬a ∧ b)$$
+
+Ambas as expressões significam o mesmo: o resultado será verdadeiro quando **a** e **b** forem diferentes.
+
+Exemplo com a = 0, b = 0. Primeira definição:
+
+$$(0 ∨ 0) ∧ (¬0 ∨ ¬0) → 0 ∧ (1 ∨ 1) → 0 ∧ 1 = 0$$
+
+Segunda definição:
+
+$$(0 ∧ ¬0) ∨ (¬0 ∧ 0) → (0 ∧ 1) ∨ (1 ∧ 0) → 0 ∨ 0 = 0$$
+
+O mesmo pode ser feito para qualquer combinação de valores.
+
+### Conexão direta com os Circuitos Lógicos
+
+Todo este conjunto de regras e operações que a Álgebra Booleana estabelece não é apenas uma abstração matemática, mas sim a essência do funcionamento dos circuitos digitais. As portas lógicas físicas — como AND, OR, NOT, XOR — implementam essas operações diretamente no hardware, utilizando sinais elétricos que representam os valores 0 e 1. Ou seja, compreender a Álgebra Booleana é um passo essencial para compreender os circuitos que executam as instruções em um computador.
