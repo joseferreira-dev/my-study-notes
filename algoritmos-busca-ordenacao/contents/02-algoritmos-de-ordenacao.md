@@ -69,7 +69,7 @@ A estabilidade é particularmente importante em aplicações que envolvem múlti
 
 ## Tipos de Ordenação: Por Comparação e Sem Comparação
 
-Os algoritmos de ordenação podem ser classificados em duas grandes categorias, baseadas na forma como realizam o processo de ordenação: **Baseados em Comparação e Não Baseado em Comparação**.
+Os algoritmos de ordenação podem ser classificados em duas grandes categorias, baseadas na forma como realizam o processo de ordenação: **Baseados em Comparação e Não Baseados em Comparação**.
 
 Os Algoritmos Baseados em Comparação são aqueles que determinam a ordem dos elementos por meio de operações de comparação entre eles, utilizando operadores como `<`, `>`, `<=` ou `>=`. 
 
@@ -118,7 +118,7 @@ Os algoritmos de ordenação são avaliados segundo diversos critérios, sendo o
 - **In-Place:** Se necessita ou não de espaço adicional relevante.
 - **Adaptatividade:** Se consegue se beneficiar de dados parcialmente ordenados.
 
-## 2.6 Importância dos Algoritmos de Ordenação
+## Importância dos Algoritmos de Ordenação
 
 A relevância dos algoritmos de ordenação vai muito além de simplesmente organizar dados. Eles são peças-chave em diversas aplicações computacionais, tanto acadêmicas quanto industriais. Algumas aplicações práticas incluem:
 
