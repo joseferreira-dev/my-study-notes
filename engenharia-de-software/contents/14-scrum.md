@@ -422,3 +422,313 @@ A atuação do Scrum Master nos três níveis é:
 Exemplo prático:
 
 Imagine um time que, durante uma Sprint, percebe que depende da liberação de um ambiente de homologação, controlado por outra área da empresa. O Scrum Master atua imediatamente, conversando com os responsáveis, intermediando negociações, buscando soluções para remover esse impedimento, permitindo que o time não perca seu ritmo. Além disso, ele ajuda a organização a entender que criar gargalos externos pode comprometer o fluxo ágil de trabalho.
+
+
+## Artefatos do Scrum
+
+Dentro do framework Scrum, os artefatos são elementos fundamentais que proporcionam transparência, alinhamento e foco no trabalho que está sendo realizado pela equipe. Segundo o **Guia do Scrum**, os artefatos têm como objetivo representar trabalho ou valor, e são projetados para maximizar a transparência das informações essenciais, de forma que todos — tanto membros da equipe quanto stakeholders — compartilhem uma visão comum e inequívoca sobre o estado atual do projeto.
+
+A definição dos artefatos evoluiu ao longo dos anos. Na versão de 2017 do Guia, enfatizava-se que os artefatos eram instrumentos para fornecer transparência e viabilizar a inspeção e a adaptação — dois dos três pilares do empirismo que sustentam o Scrum. Já na versão de 2020, além de manter esse princípio, o Guia reforça a importância dos compromissos associados a cada artefato, tornando-os não apenas repositórios de informações, mas também instrumentos de foco e comprometimento com os objetivos do time.
+
+Os três artefatos oficiais do Scrum são:
+
+- **Product Backlog** (Backlog do Produto);
+- **Sprint Backlog** (Backlog da Sprint);
+- **Product Increment** (Incremento do Produto).
+
+Cada artefato está diretamente ligado a um compromisso que sustenta sua transparência e orienta seu uso:
+
+- O **Product Backlog** está vinculado à **Meta do Produto**.
+- O **Sprint Backlog** está vinculado à **Meta da Sprint**.
+- O **Incremento** está vinculado à **Definição de Pronto** (Definition of Done).
+
+Esses compromissos existem para reforçar o empirismo e os valores do Scrum, ajudando o Scrum Team e seus stakeholders a manterem um alinhamento claro sobre o progresso e os objetivos.
+
+### Product Backlog
+
+O **Product Backlog** é, essencialmente, uma lista ordenada, dinâmica e viva que contém tudo o que é necessário para que o produto atenda às expectativas das partes interessadas. É o artefato que concentra **todos os requisitos conhecidos do produto**, sejam eles funcionais, não funcionais, técnicos, de infraestrutura ou até mesmo relacionados à mitigação de riscos.
+
+Mas, afinal, o que significa o termo **“backlog”**? No contexto geral, backlog pode ser entendido como uma **fila de trabalho**, uma lista de pendências ou um histórico acumulado de demandas a serem executadas. No caso do Scrum, o **Product Backlog** representa exatamente isso: um repositório organizado de tudo aquilo que o time deve considerar para desenvolver, manter e evoluir o produto.
+
+Por definição, o Product Backlog **nunca estará completo**. Ele é um artefato **em constante evolução**, que se modifica sempre que surgem novos requisitos, mudanças nas prioridades, descobertas técnicas ou até alterações nas necessidades do mercado e dos usuários. Enquanto o produto existir, o Product Backlog também existirá.
+
+A responsabilidade pela gestão do Product Backlog é do **Product Owner (PO)**. É ele quem decide:
+
+- Quais itens entram no backlog;
+- Como eles são descritos;
+- A ordem em que aparecem (priorização);
+- E quando eles podem ser removidos.
+
+É importante ressaltar que, embora o PO tenha essa responsabilidade, o refinamento dos itens do backlog é uma atividade que **envolve todo o Scrum Team**, especialmente os Developers, que ajudam a esclarecer dúvidas, decompor funcionalidades e estimar esforços.
+
+#### Representação dos Itens
+
+De modo geral, os itens do Product Backlog são comumente representados por **Histórias de Usuário (User Stories)**, mas isso não é uma regra fixa. Dependendo do contexto e da maturidade da equipe, podem ser utilizados outros formatos, como:
+
+- Descrições textuais de funcionalidades;
+- Cenários de casos de uso;
+- Especificações técnicas;
+- Itens de arquitetura;
+- Demandas de infraestrutura;
+- E até itens relacionados à redução de riscos ou pagamento de dívidas técnicas.
+
+Uma **História de Usuário**, por exemplo, é uma forma simples, centrada no usuário, de descrever um requisito. Normalmente segue o formato:
+
+> "**Como** [tipo de usuário], **eu quero** [ação/desejo] **para que** [objetivo/motivo]."
+
+Por exemplo:
+
+> "Como usuário do Twitter, eu quero poder excluir um tuíte, para que eu possa remover publicações indesejadas."
+
+Itens mais importantes e de maior valor para o negócio são priorizados no topo do backlog. Naturalmente, são também os itens mais bem detalhados, pois estarão mais próximos de serem selecionados para desenvolvimento. Já os itens de menor prioridade ficam mais abaixo, geralmente com menos detalhes, podendo ser refinados no futuro, caso sua prioridade aumente.
+
+#### A Dinâmica do Product Backlog
+
+É perfeitamente comum que, no decorrer do projeto, algumas funcionalidades percam importância e sejam até descartadas, enquanto outras sejam adicionadas. Isso reflete a realidade dinâmica dos ambientes ágeis, onde mudanças são esperadas e bem-vindas, desde que gerem valor.
+
+Por exemplo, imagine que você está desenvolvendo uma rede social chamada **DevConnect**, voltada para desenvolvedores. No início, seu Product Backlog contém itens como:
+
+- Permitir postar conteúdos (alta prioridade);
+- Sistema de curtidas (alta prioridade);
+- Chat entre usuários (média prioridade);
+- Feed personalizado por linguagens (baixa prioridade).
+
+Após algumas sprints, percebe-se que o chat não é tão relevante, pois os usuários estão mais interessados em interações públicas via comentários. Assim, esse item é descartado. Por outro lado, surge uma nova necessidade: permitir integração com repositórios do GitHub, que então entra no topo do backlog.
+
+#### Definition of Ready (DoR)
+
+Para que um item do Product Backlog esteja apto a ser selecionado durante o **Sprint Planning**, ele deve estar suficientemente claro e pequeno a ponto de ser concluído dentro de uma única sprint. Esse estado é conhecido como **Definition of Ready (DoR)**.
+
+A **DoR** não é uma prática oficial do Scrum, mas é amplamente utilizada por muitas equipes ágeis para evitar problemas comuns, como requisitos mal definidos ou divergências de entendimento entre PO e Developers. Trata-se de um **acordo interno do time** que define critérios mínimos para que um item seja considerado pronto para desenvolvimento.
+
+Por exemplo, a DoR pode estabelecer que uma história de usuário deve conter:
+
+- Descrição clara e objetiva;
+- Critérios de aceitação bem definidos;
+- Impactos técnicos ou dependências identificadas;
+- Esforço estimado;
+- Validação de que não existem bloqueios.
+
+Se um item não atende à DoR, ele não deve ser selecionado para a sprint.
+
+Por exemplo, em uma equipe se o Product Owner entregasse histórias de usuário com descrições vagas, como: “Melhorar a performance do sistema”. Isso geraria confusão: o que exatamente significava “melhorar”? Quais métricas? Quais pontos do sistema? Isso resultava em retrabalho e discussões no final das sprints.
+
+A solução foi criar uma DoR onde, para qualquer item relacionado a performance, deveriam ser definidos:
+
+- Métricas atuais e metas desejadas;
+- Quais módulos seriam otimizados;
+- Critérios claros para considerar o trabalho concluído.
+
+A partir disso, as entregas passaram a ser muito mais alinhadas com as expectativas.
+
+#### Refinamento do Product Backlog
+
+O processo de **refinamento** é uma atividade contínua que envolve decompor itens grandes (épicos) em itens menores (histórias de usuário), esclarecer requisitos, discutir soluções e ajustar estimativas.
+
+Embora o Scrum não defina uma cerimônia específica para isso, o Guia recomenda que o refinamento **não consuma mais de 10% da capacidade do time na sprint**.
+
+O refinamento pode ocorrer de forma:
+
+- **Formalizada**, com reuniões específicas de backlog refinement;
+- **Informal**, acontecendo naturalmente durante as interações do time.
+
+#### Monitoramento do Progresso
+
+O Product Owner é responsável por acompanhar o progresso do time em direção à **Meta do Produto**. Isso pode ser feito utilizando métricas visuais, como:
+
+- **Burndown Charts:** mostram a quantidade de trabalho restante na sprint ou no projeto;
+- **Burnup Charts:** evidenciam o progresso acumulado até atingir o total de trabalho planejado;
+- **Fluxos Cumulativos:** ajudam a identificar gargalos e analisar o fluxo de trabalho.
+
+Contudo, vale reforçar que essas ferramentas são apenas **auxiliares**, não substituindo o princípio básico do empirismo no Scrum. Em ambientes complexos, o melhor preditor do futuro é o aprendizado obtido a partir das entregas anteriores.
+
+#### Compromisso: Meta do Produto
+
+A **Meta do Produto** é o compromisso associado ao Product Backlog. Trata-se de um objetivo de longo prazo que dá direção ao Scrum Team. Enquanto a sprint possui uma meta específica de curto prazo (a **Meta da Sprint**), a Meta do Produto guia a evolução do backlog, orientando as escolhas de priorização.
+
+Um produto pode ter como meta, por exemplo:
+
+> “Permitir que usuários criem, compartilhem e colaborem em projetos de código aberto diretamente pela plataforma.”
+
+Enquanto essa meta não for alcançada — ou até que seja abandonada e substituída —, os itens do Product Backlog existirão para apoiar seu cumprimento.
+
+### Sprint Backlog
+
+O Sprint Backlog é um dos principais artefatos dentro do framework Scrum e desempenha um papel essencial no acompanhamento e na organização do trabalho que será executado durante uma Sprint. Sua correta compreensão é indispensável para a prática eficiente do Scrum, tanto em ambientes acadêmicos quanto no mercado profissional.
+
+De forma conceitual, o Sprint Backlog pode ser definido como o conjunto de itens selecionados do Product Backlog para serem desenvolvidos durante uma Sprint, acrescido da meta da Sprint e de um plano de ação que descreve como esses itens serão transformados em um incremento de produto que seja funcional e potencialmente utilizável. Importante ressaltar que o Sprint Backlog é criado e gerenciado exclusivamente pelos desenvolvedores — ou seja, é de responsabilidade total e direta desse grupo.
+
+Para compreender melhor este conceito, é fundamental diferenciar claramente o **Product Backlog** do **Sprint Backlog**, já que essa é uma das confusões mais comuns entre estudantes, profissionais e até candidatos em processos de certificação Scrum.
+
+O **Product Backlog** é uma lista ordenada de tudo aquilo que é necessário no produto. Ele representa os requisitos, funcionalidades, melhorias e correções que descrevem o que o produto deve ter ou fazer. É um artefato de natureza dinâmica e evolutiva, sendo constantemente refinado e priorizado pelo Product Owner à medida que se aprende mais sobre o produto e seu contexto de desenvolvimento.
+
+Por sua vez, o **Sprint Backlog** é um subconjunto do Product Backlog. Trata-se da seleção dos itens que foram priorizados para serem implementados em uma Sprint específica, acompanhados da meta da Sprint e de um plano detalhado que descreve como esses itens serão transformados em funcionalidades prontas. Esse plano é geralmente composto por tarefas técnicas que desmembram cada item selecionado em ações menores, concretas e viáveis de serem realizadas dentro do período da Sprint.
+
+Uma característica essencial do Sprint Backlog é sua **alta visibilidade**. Ele funciona como uma fotografia em tempo real do trabalho que os desenvolvedores planejam concluir durante aquela Sprint. Essa visibilidade não é apenas interna ao time, mas muitas vezes é disponibilizada de forma transparente para toda a organização, especialmente em ambientes que prezam por uma cultura ágil e colaborativa.
+
+Além disso, é fundamental compreender que o Sprint Backlog **pertence exclusivamente aos desenvolvedores**. Somente eles têm autoridade para modificá-lo ao longo da Sprint. Se, durante a execução, surgirem descobertas sobre tarefas adicionais necessárias, essas podem ser prontamente incluídas. Da mesma forma, se determinadas tarefas se mostrarem irrelevantes ou desnecessárias, podem ser removidas sem qualquer prejuízo, desde que essa alteração não comprometa a meta da Sprint.
+
+Outro ponto relevante é que o progresso dentro da Sprint é monitorado de forma constante. A cada **Reunião Diária (Daily Scrum)**, os desenvolvedores avaliam o total do trabalho restante e utilizam essas informações para projetar se estão no caminho certo para alcançar a meta estabelecida. Isso permite ajustes rápidos, promovendo um gerenciamento dinâmico e eficiente do próprio trabalho.
+
+#### Monitorando o Progresso: Um Processo Contínuo e Adaptativo
+
+O acompanhamento do progresso durante a Sprint é uma prática constante e imprescindível no Scrum. A qualquer momento, o time pode somar o total de trabalho remanescente no Sprint Backlog para avaliar o quanto falta ser concluído. Esse monitoramento não é meramente operacional, mas estratégico, permitindo que os desenvolvedores tomem decisões embasadas sobre priorização, replanejamento de tarefas e eventuais renegociações com o Product Owner, caso surjam imprevistos.
+
+Essa prática de inspecionar frequentemente o trabalho restante, somada à transparência proporcionada pelo Sprint Backlog, é o que torna o Scrum altamente adaptativo e responsivo às mudanças, garantindo que os riscos sejam minimizados e que as entregas tenham maior previsibilidade.
+
+#### Evolução do Conceito nas Versões do Guia Scrum
+
+A definição e os detalhes sobre o Sprint Backlog passaram por alguns ajustes importantes ao longo das versões do **Guia Scrum**.
+
+Na versão de **2017**, o Guia Scrum introduziu um reforço explícito sobre a importância da **melhoria contínua**. Passou a ser recomendado que, a cada Sprint, fosse incluído no Sprint Backlog ao menos um item de alta prioridade relacionado à melhoria dos processos internos, identificado na reunião de retrospectiva anterior. Esse movimento destacava que o Scrum não se concentra apenas na entrega de funcionalidades, mas também na evolução constante do próprio time, dos processos e das práticas adotadas.
+
+Contudo, na versão de **2020**, essa recomendação específica foi removida do texto oficial. Isso não significa, porém, que a melhoria contínua deixou de ser um princípio do Scrum; ela continua sendo um valor implícito e fundamental. A diferença é que, na nova abordagem, oferece-se mais liberdade e autonomia para que os times decidam como conduzir essa melhoria, sem uma prescrição direta no artefato Sprint Backlog.
+
+Além dessa alteração, a versão de 2020 trouxe uma descrição mais clara e organizada sobre os componentes do Sprint Backlog. Passou-se a defini-lo explicitamente como composto por três elementos principais:
+
+- **Por que:** A **Meta da Sprint**, que fornece propósito, alinhamento e foco. Ela representa o objetivo que o time busca atingir naquela Sprint, funcionando como um guia norteador.
+- **O que:** O conjunto de **itens selecionados do Product Backlog**, que descrevem o que será entregue no incremento da Sprint.
+- **Como:** O **plano de ação**, que detalha as atividades e tarefas necessárias para transformar os itens selecionados em um incremento funcional.
+
+Essa estrutura permite uma visão muito mais clara, tanto para os membros do time quanto para stakeholders externos, sobre os objetivos, escopo e estratégias daquela Sprint.
+
+#### Compromisso: Meta da Sprint
+
+Com as atualizações mais recentes do Scrum, o Sprint Backlog passou a incorporar formalmente um compromisso: a **Meta da Sprint**.
+
+A Meta da Sprint não é apenas um artefato textual, mas um elemento que exerce papel fundamental no direcionamento do trabalho. Embora ela seja um compromisso assumido coletivamente pelos desenvolvedores, ela também oferece flexibilidade. Isso significa que, embora a Meta deva ser preservada durante a Sprint, o caminho exato para alcançá-la pode ser ajustado. Se, no decorrer da Sprint, os desenvolvedores perceberem que algumas tarefas precisam ser modificadas, substituídas ou até removidas, isso pode ser feito desde que a Meta da Sprint continue sendo viável e relevante.
+
+Essa abordagem promove alinhamento, foco e colaboração, evitando que o time se disperse em atividades paralelas ou sem impacto real para o objetivo daquela iteração.
+
+Para ilustrar de forma concreta como se estrutura um Sprint Backlog, podemos recorrer a um exemplo prático baseado no Guia Scrum de 2017 (Backlog do Produto Twitter):
+
+<div align="center">
+  <img width="880px" src="./img/14-scrum-backlog.png">
+</div>
+
+Imagine que estamos desenvolvendo uma plataforma social e, na **Sprint 2**, a meta é que os usuários possam realizar publicações no Twitter integrado à plataforma.
+
+- No lado esquerdo do quadro, temos itens do **Product Backlog**, como:
+	- Cadastrar novo usuário;
+    - Login de usuários já cadastrados.
+- No lado direito, aparece o **Sprint Backlog**, que detalha as tarefas necessárias para transformar esses itens em funcionalidades completas, tais como:
+    - Ativar login com usuário Gmail;
+    - Estruturar log;
+    - Criar tabelas no banco de dados, etc.
+
+Essas tarefas representam o “**como**” e detalham tecnicamente o que precisa ser feito para entregar as funcionalidades prometidas. A Meta da Sprint, nesse caso, funciona como o grande objetivo motivador: **“Usuários poderão estar no Twitter”**.
+
+À medida que o time avança na Sprint, as tarefas são marcadas como concluídas, ajustadas ou, quando necessário, atualizadas, sempre tendo em mente o progresso em direção à Meta.
+
+### Product Increment
+
+Um dos conceitos mais fundamentais dentro do Scrum, e que representa de forma muito clara a natureza empírica desse framework, é o **Product Increment**, ou Incremento de Produto.
+
+O Incremento de Produto corresponde à **soma de todos os itens do Product Backlog que foram concluídos durante uma Sprint**, somando-se ainda ao valor dos incrementos produzidos nas Sprints anteriores. No entanto, para que um incremento seja efetivamente considerado válido e relevante, ele precisa atender a um critério extremamente importante no Scrum: estar **“Pronto” (Done)**, segundo um conjunto de critérios muito bem estabelecido e compartilhado por toda a equipe.
+
+Ao final de cada Sprint, os desenvolvedores entregam um incremento do produto, que nada mais é do que o resultado prático de todo o trabalho realizado durante aquele ciclo. Esse conceito não apenas reflete o progresso obtido, mas também permite que o Product Owner visualize claramente o retorno sobre o investimento realizado até aquele ponto. Além disso, torna possível avaliar quais são os próximos passos, se surgem novas necessidades, ou se há oportunidade para revisar prioridades.
+
+Do ponto de vista da equipe de desenvolvimento, é essencial compreender que o incremento precisa ser algo **potencialmente entregável** ou **liberável**. E por que utilizamos o termo “potencialmente”? Isso ocorre porque, embora o incremento esteja tecnicamente pronto para ser utilizado, **a decisão de efetivamente liberá-lo ou não cabe ao Product Owner**, que irá avaliar se aquele incremento agrega valor imediato para os stakeholders ou se sua disponibilização deve ser postergada.
+
+Essa exigência de que o incremento seja potencialmente liberável leva a uma reflexão extremamente relevante sobre a qualidade do que é produzido. O Scrum deixa claro que um trabalho só pode ser considerado concluído se ele realmente atender a critérios objetivos de qualidade, completude e aderência às expectativas.
+
+É justamente nesse contexto que surge o conceito de **Definition of Done (DoD)**, ou **Definição de Pronto**, um dos compromissos essenciais dentro do Scrum.
+
+#### A Importância da Definition of Done (DoD)
+
+Quando dizemos, em uma equipe ágil, que uma funcionalidade está “pronta”, isso precisa significar, de forma inequívoca, que ela está completa, testada e com qualidade suficiente para ser entregue, sem a necessidade de complementações posteriores.
+
+O DoD é, portanto, um **acordo formal, objetivo e transparente**, que define quais são os critérios mínimos que devem ser cumpridos para que um item do Product Backlog, ou um incremento, seja considerado concluído. Trata-se, na prática, de um **checklist de critérios de aceite**, que contempla todas as etapas e atividades necessárias — como desenvolvimento, testes unitários, testes de integração, revisão de código, documentação mínima, implantação em ambiente de testes, entre outras etapas que a equipe julgar pertinentes.
+
+Dessa maneira, o DoD funciona como uma espécie de **contrato informal entre os Developers e o Product Owner**, assegurando que todo incremento produzido esteja dentro dos padrões de qualidade esperados e acordados desde o início.
+
+#### Definition of Done versus Definition of Ready
+
+Para que possamos compreender melhor a função do DoD, é interessante compará-lo com outro conceito muito conhecido em ambientes ágeis: o **Definition of Ready (DoR)**.
+
+Enquanto o DoR representa um conjunto de critérios que define quando um item do Product Backlog está suficientemente bem descrito, claro, viável e compreendido para que os desenvolvedores possam iniciá-lo, o DoD atua na outra ponta do processo. Ele define quando o trabalho sobre esse item pode ser considerado efetivamente concluído e pronto para entrega ou validação.
+
+Em outras palavras:
+
+- O **DoR** responde à pergunta: “Quando podemos começar a trabalhar nisso?”
+- O **DoD** responde à pergunta: “Quando isso está realmente pronto?”
+
+Ambos são critérios de aceite, mas se aplicam a momentos diferentes do ciclo de desenvolvimento. Importante ressaltar que, embora o DoR seja uma prática recomendada, ele não é obrigatório no framework Scrum. Já o **Definition of Done é obrigatório**, sendo um dos principais pilares que garantem a qualidade e a transparência no trabalho realizado.
+
+#### Critérios Comuns na Definition of Done
+
+Ainda que o DoD possa variar bastante entre diferentes equipes e organizações, existem critérios que costumam ser recorrentes, tais como:
+
+- Código implementado, testado e funcionando conforme os requisitos;
+- Passagem bem-sucedida por testes unitários e de integração;
+- Validação dos critérios de aceite definidos pelo Product Owner;
+- Código revisado, documentado e versionado corretamente;
+- Implementação de testes automatizados, quando aplicável;
+- Publicação em ambiente de homologação para validação;
+- Aprovação formal por parte do Product Owner.
+
+Naturalmente, esses critérios podem (e devem) ser adaptados às necessidades, características e maturidade da equipe e da organização.
+
+#### O Que Acontece se Algo Não Está Pronto?
+
+No Scrum, se uma funcionalidade não atende aos critérios estabelecidos no DoD ao final da Sprint, ela **não pode ser considerada parte do incremento**. Isso significa que ela não será apresentada na Sprint Review, muito menos liberada para produção ou para os stakeholders.
+
+O destino desse item é simples: ele retorna ao **Product Backlog**, onde poderá ser replanejado, reestimado e priorizado novamente em uma Sprint futura.
+
+Esse comportamento reforça o princípio da **qualidade como um valor inegociável** dentro do Scrum. Afinal, não faz sentido entregar funcionalidades incompletas, mal testadas ou que não atendem às expectativas dos clientes e usuários.
+
+#### Evolução Contínua da Definition of Done
+
+Outro aspecto muito interessante e relevante sobre o DoD é que ele **não é um documento estático**. Assim como o próprio time e o próprio produto evoluem ao longo do tempo, é perfeitamente natural que os critérios do DoD também evoluam.
+
+À medida que a equipe adquire mais maturidade, desenvolve melhores práticas e supera desafios técnicos e operacionais, ela pode — e deve — revisar seu Definition of Done, tornando-o mais robusto, completo e alinhado com as necessidades do negócio.
+
+Por exemplo, uma equipe que inicialmente não tinha capacidade para realizar testes automatizados pode incluir esse critério no DoD após adquirir domínio sobre ferramentas e processos de automação. Da mesma forma, uma organização que passa a adotar padrões corporativos de segurança ou compliance pode exigir que esses requisitos sejam incorporados ao DoD de todos os times.
+
+#### Padrões Organizacionais e DoD Compartilhado
+
+Quando falamos de organizações que possuem múltiplos times Scrum trabalhando sobre um mesmo produto ou plataforma, surge a necessidade de um alinhamento ainda mais rigoroso sobre o que significa “pronto”.
+
+Se a organização já possui **padrões organizacionais de Definition of Done**, todos os times devem segui-los como critério mínimo. Caso contrário, cabe aos times envolvidos estabelecerem, de forma colaborativa, um **Definition of Done compartilhado**, garantindo que todos os incrementos produzidos estejam alinhados e compatíveis entre si.
+
+Essa prática não só evita retrabalho, como também assegura que o produto como um todo mantenha uma consistência em termos de qualidade, arquitetura, testes e entrega de valor.
+
+#### Product Increment no Guia Scrum 2017 e 2020
+
+É interessante observar que o conceito de Product Increment foi evoluindo nas diferentes versões do Guia Scrum.
+
+- **No Guia Scrum 2017**, o incremento era descrito como:
+
+> “A soma de todos os itens do Backlog do Produto completados durante a Sprint e o valor dos incrementos de todas as Sprints anteriores. Ao final da Sprint um novo incremento deve estar ‘Pronto’, o que significa que deve estar na condição de ser utilizado e atender à definição de ‘Pronto’ do Time Scrum.”
+
+- **No Guia Scrum 2020**, a definição foi aprimorada, enfatizando ainda mais a relação entre o incremento e a meta do produto:
+
+> “Um incremento é um trampolim concreto em direção à Meta do Produto. Cada incremento é adicionado a todos os incrementos anteriores e completamente verificado, garantindo que todos os incrementos funcionem juntos. A fim de fornecer valor, o incremento deve ser utilizável. Vários incrementos podem ser criados em uma Sprint. A soma dos incrementos é apresentada na Sprint Review, apoiando assim o empirismo. No entanto, um incremento pode ser entregue aos stakeholders antes do final da Sprint.”
+
+Percebe-se, portanto, uma evolução no entendimento do papel do incremento, não apenas como um artefato isolado da Sprint, mas como um componente essencial no avanço contínuo em direção à **Meta do Produto (Product Goal)**.
+
+#### Compromisso Associado: Definition of Done
+
+No Scrum, cada artefato possui um compromisso que reforça sua transparência e sua entrega de valor. No caso do Product Increment, esse compromisso é exatamente o **Definition of Done (DoD)**.
+
+De acordo com o Guia Scrum 2020:
+
+> “A Definition of Done é uma descrição formal do estado do Incremento quando ele atende às medidas de qualidade exigidas para o produto. No momento em que um item do Product Backlog atende à Definition of Done, um incremento nasce.”
+
+Isso significa que a DoD não apenas define o que é considerado “pronto”, mas também atua como um elemento de transparência dentro do framework, garantindo que todos os membros da equipe e os stakeholders tenham um entendimento comum e inequívoco sobre o que foi efetivamente entregue.
+
+Caso algum item do Product Backlog não atenda aos critérios da DoD, ele não pode ser incluído no incremento, não pode ser apresentado na Sprint Review, nem muito menos ser liberado para produção. Esse item deve, portanto, ser devolvido ao Product Backlog para ser reavaliado, priorizado e tratado no futuro.
+
+### Burndown Chart: Um Artefato Complementar
+
+Embora não seja oficialmente reconhecido como um artefato formal no Guia Scrum, é muito comum — e altamente recomendado — que os times utilizem o **Gráfico Burndown** como uma ferramenta de apoio ao acompanhamento do trabalho durante a Sprint.
+
+O Burndown Chart permite **visualizar, de forma clara e objetiva, o progresso do time em direção ao cumprimento dos itens planejados para a Sprint**, comparando o trabalho planejado com o trabalho efetivamente realizado ao longo dos dias.
+
+Basicamente, o gráfico apresenta uma linha descendente que representa a quantidade estimada de trabalho restante. As unidades normalmente utilizadas são horas de esforço, pontos de história ou qualquer outra métrica acordada pela equipe.
+
+<div align="center">
+  <img width="640px" src="./img/14-scrum-burndown-chart.png">
+</div>
+
+Essa ferramenta é extremamente útil não apenas para o time, mas também para os gestores, que podem acompanhar o andamento da Sprint e identificar eventuais desvios, gargalos ou necessidades de ajuste, tanto em relação ao tempo quanto ao esforço empregado.
