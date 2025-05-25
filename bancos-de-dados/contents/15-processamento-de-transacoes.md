@@ -757,3 +757,177 @@ Vale ressaltar que tanto as operações de **UNDO** quanto de **REDO** são proj
 Por exemplo, se uma operação de UNDO desfaz uma alteração no valor do saldo de uma conta de 500 para 400, aplicá-la repetidamente continuará deixando o saldo em 400. Da mesma forma, uma operação de REDO que ajusta o saldo para 500 pode ser executada quantas vezes forem necessárias sem alterar o valor final além do desejado.
 
 Essa característica é essencial para garantir que, mesmo que o processo de recuperação seja interrompido ou reiniciado, o banco de dados sempre será restaurado corretamente.
+
+### Checkpoint: Um Marco Fundamental no Processo de Recuperação
+
+Imagine um cenário em que uma falha no sistema de banco de dados acontece. Nesse momento, o processo de recuperação precisa, então, consultar os registros presentes no log de transações para determinar exatamente quais transações devem ser **refeitas** (REDO) e quais devem ser **desfeitas** (UNDO).
+
+Se não houvesse nenhum tipo de otimização, essa tarefa implicaria, obrigatoriamente, em analisar **todo o histórico do log**, desde o momento em que o banco foi iniciado, o que poderia ser extremamente custoso, tanto em tempo quanto em recursos computacionais. É exatamente para tornar esse processo mais eficiente que entra em cena um conceito essencial na administração de bancos de dados: o **checkpoint**.
+
+O checkpoint funciona como um **marco de segurança** dentro do log. É um ponto de referência que permite ao sistema identificar, a partir dele, quais transações já tiveram suas atualizações corretamente persistidas no disco e quais ainda precisam de algum tipo de ação durante o processo de recuperação.
+
+#### Entendendo o Processo de Checkpoint
+
+De forma simplificada, podemos dizer que o checkpoint cria um "fotografia" do estado atual do banco de dados em determinado momento. A partir dessa fotografia, o SGBD sabe exatamente que todas as operações realizadas até aquele instante estão garantidas no armazenamento permanente, não sendo mais necessário realizar nem operações de REDO nem de UNDO para transações finalizadas antes desse ponto.
+
+O processo de checkpoint envolve três operações fundamentais:
+
+1. **Forçar a escrita no armazenamento permanente de todos os registros do log que estão na memória principal.**
+2. **Forçar a escrita no disco de todos os blocos de dados em buffer que foram modificados, mas ainda não estavam gravados no armazenamento não volátil.**
+3. **Gravar no próprio log um registro especial de checkpoint, indicando que todas as transações finalizadas até aquele ponto já tiveram suas modificações persistidas no disco.**
+
+Um ponto extremamente relevante é que, enquanto o checkpoint está sendo executado, **não é permitido** que qualquer transação realize ações que alterem dados, como escrita em blocos de buffer ou inserção de novos registros no log. Isso garante que o estado capturado pelo checkpoint seja coerente e consistente.
+
+No entanto, essa pausa temporária na execução das transações, necessária para garantir a integridade do checkpoint, introduz um pequeno atraso no processamento, especialmente em ambientes com alta taxa de transações. Por isso, a operação de checkpoint precisa ser cuidadosamente planejada, tanto em termos de frequência quanto de momento de execução.
+
+#### Passo a Passo de um Checkpoint Convencional
+
+O processo de checkpoint tradicional segue, essencialmente, os seguintes passos:
+
+1. **Suspensão temporária das transações em execução.**  
+    Isso garante que nenhuma nova alteração aconteça durante a construção do checkpoint.
+2. **Forçar a gravação no disco de todos os blocos de dados que estão no buffer da memória principal e que foram modificados.**  
+    Aqui, é garantido que todos os dados alterados estejam definitivamente salvos no armazenamento não volátil.
+3. **Gravar um registro especial de checkpoint no arquivo de log.**  
+    Esse registro normalmente inclui, além do próprio marcador de checkpoint, informações adicionais, como a lista de transações ativas no momento e os ponteiros para as posições relevantes do log.
+4. **Forçar a gravação do próprio log no disco, garantindo que o registro de checkpoint não se perca.**
+5. **Retomar o processamento normal das transações.**
+
+Apesar de eficiente, esse procedimento possui uma desvantagem evidente: o tempo necessário para gravar todos os buffers no disco pode atrasar a execução das transações. E, em sistemas com alta demanda, esse atraso, ainda que breve, pode impactar a performance.
+
+#### Fuzzy Checkpoint: Otimizando o Processo
+
+Como alternativa ao checkpoint tradicional, muitos sistemas implementam o chamado **fuzzy checkpoint**. A principal diferença está no fato de que, no fuzzy checkpoint, o sistema **não precisa suspender a execução das transações**.
+
+Neste modelo, a execução do checkpoint pode começar com as transações ainda ativas, desde que seja garantido que, no momento da gravação do registro de checkpoint no log, todos os dados até aquele ponto tenham sido corretamente persistidos. Isso melhora significativamente o desempenho, eliminando a pausa obrigatória.
+
+#### Checkpoints e os Modelos de Atualização
+
+O comportamento do checkpoint está diretamente relacionado ao modelo de atualização adotado pelo SGBD, ou seja, se ele segue o modelo de **modificação adiada** (deferred update) ou de **modificação imediata** (immediate update).
+
+Para entender como isso se reflete na prática, vejamos as figuras e seus respectivos comportamentos.
+
+**Checkpoint no Modelo de Modificação Adiada (Redo/No-Undo)**:
+
+<div align="center">
+  <img width="580px" src="./img/15-checkpoint-redo-no-undo.png">
+</div>
+
+No modelo de atualização adiada, os dados no banco só são efetivamente gravados no disco após o commit das transações. Como consequência, o processo de recuperação precisa apenas garantir que as transações que tiveram commit registrado sejam refeitas (**REDO**). Não há necessidade de desfazer operações, pois nenhuma alteração parcial chega a ser gravada antes do commit. Portanto, esse modelo é chamado de **Redo/No-Undo**.
+
+**Checkpoint no Modelo de Modificação Imediata (Redo/Undo)**:
+
+<div align="center">
+  <img width="580px" src="./img/15-checkpoint-redo-undo.png">
+</div>
+
+Neste modelo, as alterações são gravadas no disco assim que acontecem, mesmo que a transação ainda não tenha finalizado. Isso exige que, no processo de recuperação, sejam realizados tanto o **REDO**, para garantir que as alterações de transações com commit sejam refletidas, quanto o **UNDO**, para desfazer os efeitos de transações que estavam em andamento e não chegaram ao commit.
+
+O checkpoint, nesse contexto, serve como um limite que indica até onde o SGBD pode confiar que os dados estão corretamente persistidos. A partir desse ponto, o log é consultado para determinar quais transações ainda precisam ser refeitas ou desfeitas.
+
+**Checkpoint no Modelo No-Redo/Undo**:
+
+<div align="center">
+  <img width="580px" src="./img/15-checkpoint-no-redo-undo.png">
+</div>
+
+Existe, ainda, uma situação específica em que o SGBD adota uma política tão rigorosa que garante que todas as alterações feitas pelas transações sejam imediatamente refletidas no banco de dados de forma definitiva. Nesse cenário, não é necessário realizar o REDO durante a recuperação, pois todas as atualizações persistiram corretamente no disco.
+
+Entretanto, caso ocorra uma falha, ainda é necessário executar o **UNDO** para desfazer os efeitos das transações que não foram efetivamente concluídas (ou seja, que não chegaram ao commit). Este modelo é conhecido como **No-Redo/Undo**.
+
+### Paginação Shadow
+
+Dentro do contexto de mecanismos de recuperação, uma técnica alternativa às estratégias baseadas em logs é a **paginação shadow**, também chamada de **paginação sombra**. Este método tem como premissa reduzir, teoricamente, a quantidade de acessos ao disco, visto que não depende de registros contínuos de operações em arquivos de log. No entanto, essa técnica apresenta limitações significativas, especialmente quando aplicada a sistemas com transações concorrentes.
+
+A essência do método está na manutenção de duas estruturas chamadas de **tabelas de páginas**. Estas tabelas contêm referências para as páginas de dados do banco, que são de tamanho fixo. Assim, o banco de dados é logicamente dividido em um conjunto de **n páginas**. Para gerenciar essas páginas, mantém-se:
+
+- Uma **tabela de páginas corrente**, que representa o estado atual e pode receber modificações;
+- Uma **tabela de páginas shadow**, que permanece inalterada durante a execução da transação, refletindo o estado consistente anterior.
+
+O funcionamento é relativamente simples, porém poderoso em termos de consistência. No início de uma transação, as duas tabelas — corrente e shadow — são idênticas. Toda modificação realizada pela transação é aplicada exclusivamente na tabela corrente, deixando a tabela shadow preservada como uma cópia segura do banco antes do início das operações.
+
+Quando a transação é concluída com sucesso e efetiva suas alterações (commit), a tabela corrente se torna a nova tabela shadow. A partir desse ponto, ela passa a representar o novo estado consistente do banco. O processo de transição pode ser melhor visualizado nas figuras a seguir:
+
+- Na **primeira figura**, temos o **estado inicial**, onde ambas as tabelas são idênticas e refletem o mesmo conjunto de páginas do banco.
+
+<div align="center">
+  <img width="540px" src="./img/15-shadow-estado-inicial.png">
+</div>
+
+- Na **segunda figura**, vemos as **modificações**, que são aplicadas exclusivamente na tabela corrente, enquanto a tabela shadow continua intacta e disponível para uma possível recuperação, caso a transação venha a falhar.
+
+<div align="center">
+  <img width="540px" src="./img/15-shadow-modificacoes.png">
+</div>
+
+- Por fim, na **terceira figura**, ocorre a **atualização**, onde, após o commit da transação, a tabela corrente se transforma na nova tabela shadow, representando o estado atualizado e consistente do banco de dados.
+
+<div align="center">
+  <img width="540px" src="./img/15-shadow-atualizacoes.png">
+</div>
+
+Esse modelo de recuperação apresenta uma vantagem clara: a velocidade no processo de recuperação. Em caso de falha, não há necessidade de executar operações de **undo** ou **redo**. Basta simplesmente descartar a tabela corrente e restaurar a tabela shadow, que permanece imutável, garantindo a consistência do banco até o ponto anterior ao início da transação.
+
+Contudo, essa técnica traz consigo um conjunto significativo de desvantagens, especialmente em sistemas que lidam com alto volume de transações concorrentes:
+
+- **Fragmentação de Dados:** Cada página atualizada é alocada em uma nova posição física no disco, o que leva rapidamente à fragmentação dos dados. Isso prejudica o desempenho em leituras sequenciais e dificulta o agrupamento lógico das páginas relacionadas.
+- **Overhead na Efetivação:** Quando a tabela de páginas é grande, o custo computacional para atualizar a tabela shadow durante o commit pode ser expressivo, impactando diretamente a performance.
+- **Custo na Gravação:** O tempo necessário para gravar toda a nova tabela de páginas shadow no disco, especialmente em bancos de grande porte, pode ser substancial.
+- **Coleta de Lixo (Garbage Collection):** Após o commit, as páginas antigas que não são mais referenciadas precisam ser removidas. Esse processo gera overhead adicional, que não existe em técnicas baseadas exclusivamente em logs.
+
+Além disso, a adaptação desse método para ambientes multiusuários e com controle de concorrência torna-se extremamente complexa. Na prática, é comum que, mesmo quando se utiliza a paginação shadow, o sistema também mantenha algum nível de controle via logs, especialmente quando associado a métodos de controle de concorrência como bloqueios ou timestamp.
+
+Diante desses desafios, a paginação shadow é mais adequada para ambientes simples, de poucos usuários ou aplicações embutidas (como bancos locais, em dispositivos móveis ou sistemas isolados). Nos sistemas de missão crítica, de grande porte e altamente concorrentes, os métodos baseados em logs se mostram mais eficientes, robustos e escaláveis.
+
+### Visão Geral do Algoritmo de ARIES
+
+A evolução das técnicas de recuperação culmina no desenvolvimento de algoritmos altamente robustos e eficientes, sendo o **ARIES** (Algorithm for Recovery and Isolation Exploiting Semantics) um dos mais bem-sucedidos e amplamente adotados na indústria. Esse algoritmo é utilizado por diversos SGBDs comerciais, como IBM DB2, Microsoft SQL Server e outros, justamente por seu equilíbrio entre desempenho e segurança na recuperação de dados.
+
+O ARIES foi projetado para operar sob uma abordagem conhecida como **"steal/no-force"**, o que significa que:
+
+- **Steal:** O sistema permite que páginas modificadas sejam escritas no disco antes que a transação correspondente realize o commit. Isso oferece flexibilidade na gestão de buffer, evitando que o buffer fique cheio e bloqueie novas operações.
+- **No-force:** Não é necessário forçar que todas as páginas modificadas sejam gravadas no disco no momento do commit. Com isso, melhora-se significativamente o desempenho do sistema, já que reduz a quantidade de I/O sincronizado no momento crítico do commit.
+
+Para garantir a consistência e integridade dos dados, mesmo nesse cenário flexível, o ARIES se apoia em três princípios fundamentais:
+
+1. **Registro adiantado em log (Write-Ahead Logging - WAL):** Antes de qualquer modificação ser efetivada no disco, ela deve ser registrada no log. Este princípio assegura que qualquer alteração pode ser refeita ou desfeita, mesmo após uma falha catastrófica.
+2. **Repetição de histórico (Redo):** Durante o processo de recuperação, o ARIES refaz todas as ações de todas as transações, inclusive das que não chegaram a realizar commit. Isso reconstrói fielmente o estado do banco no exato momento da falha.
+3. **Desfazer com logging (Undo):** As transações que estavam ativas no momento da falha são revertidas. E, crucialmente, o próprio processo de desfazer é registrado no log, garantindo que, se uma nova falha ocorrer durante o recovery, não haja retrabalho de operações já desfeitas.
+
+O funcionamento do ARIES se desenvolve em três fases bem definidas:
+
+1. **Fase de Análise**: Essa fase tem como objetivo identificar quais transações estavam ativas no momento da falha e quais páginas de dados estavam modificadas na memória (páginas sujas) mas ainda não haviam sido gravadas no disco. Isso é feito analisando os registros no log, especialmente os checkpoints, que armazenam informações sobre o estado do sistema.
+2. **Fase de Refazer (Redo)**: O ARIES reexecuta todas as operações registradas no log desde o último checkpoint até o ponto da falha. Isso assegura que qualquer modificação válida que não havia sido persistida no disco seja devidamente aplicada, garantindo que o banco reflita exatamente o estado que possuía no momento da falha.
+3. **Fase de Desfazer (Undo)**: As transações que estavam ativas no momento da falha, ou seja, que não haviam sido concluídas com um commit, têm todas as suas operações desfeitas. Esse processo assegura a propriedade de atomicidade, garantindo que nenhuma transação incompleta afete o estado final do banco de dados.
+
+Para suportar esse processo, o ARIES utiliza três estruturas fundamentais:
+
+- **Log:** Armazena detalhadamente todas as operações realizadas, além dos checkpoints.
+- **Tabela de Transações:** Mantém o controle das transações, identificando quais estavam ativas, concluídas ou abortadas no momento da falha.
+- **Tabela de Páginas Sujas (Dirty Pages):** Identifica quais páginas estavam modificadas na memória, mas ainda não haviam sido gravadas no disco.
+
+Cada entrada no log é associada a um **Log Sequence Number (LSN)**, que permite rastrear com precisão a sequência dos eventos. A partir dessa sequência, o ARIES executa seu algoritmo de recuperação de forma determinística e segura.
+
+A figura a seguir ilustra o processo de recuperação sob o ARIES:
+
+<div align="center">
+  <img width="720px" src="./img/15-algoritmo-de-aries.png">
+</div>
+
+Na figura, podemos observar:
+
+- **(a)** O estado do log no exato ponto da falha;
+- **(b)** As tabelas de transações e de páginas sujas no momento em que foi realizado o checkpoint anterior à falha;
+- **(c)** O estado atualizado das mesmas tabelas após a fase de análise, que antecede os passos de refazer (redo) e desfazer (undo).
+
+## Considerações Finais
+
+Ao longo deste capítulo, exploramos de forma aprofundada os conceitos, mecanismos e desafios associados ao **processamento de transações**, ao **controle de concorrência** e aos **métodos de recuperação em bancos de dados**. Esses três pilares são fundamentais para garantir que os sistemas de banco de dados operem de maneira confiável, consistente e segura, mesmo diante de ambientes de alta concorrência, falhas inesperadas e grande volume de transações.
+
+Iniciamos este estudo compreendendo que uma **transação** é muito mais do que uma simples sequência de comandos. Ela representa uma unidade lógica de trabalho que deve ser executada de forma **atômica, consistente, isolada e durável**, características que formam o conhecido conjunto de propriedades **ACID**. Essas propriedades são indispensáveis para assegurar a integridade dos dados.
+
+Avançamos então para o entendimento dos desafios impostos pela **execução concorrente de transações**, especialmente em sistemas multiusuário. Discutimos os riscos associados, como **leituras sujas, leituras não repetíveis, atualizações perdidas, deadlocks, livelocks e starvation**, que podem comprometer tanto a consistência dos dados quanto a performance do sistema. Para lidar com esses problemas, exploramos em detalhes os principais protocolos de **controle de concorrência**, incluindo técnicas baseadas em **bloqueio (locks)**, em **timestamping** e em **protocolos de grafos**, além dos cuidados necessários com a detecção e prevenção de impasses.
+
+Por fim, nos debruçamos sobre os mecanismos de **recuperação**, essenciais para garantir que, mesmo após falhas de hardware, software ou transações, o banco de dados seja restaurado a um estado consistente. Estudamos desde abordagens mais simples, como o uso de **checkpoint e paginação shadow**, até técnicas avançadas, como o algoritmo **ARIES**, amplamente utilizado nos SGBDs comerciais modernos devido à sua robustez e eficiência.
+
+Com este conhecimento consolidado, estamos preparados para avançar para os próximos tópicos do estudo de bancos de dados, aprofundando ainda mais nossa compreensão sobre seu funcionamento interno e seu papel indispensável no suporte às mais diversas aplicações no mundo real.
