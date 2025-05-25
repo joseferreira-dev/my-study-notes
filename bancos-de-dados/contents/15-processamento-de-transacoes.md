@@ -607,3 +607,153 @@ Se T<sub>2</sub> faz a leitura antes que T<sub>1</sub> tenha gravado sua atualiz
 
 O grande benefício desse protocolo é que ele **não exige bloqueios**, o que elimina qualquer risco de deadlocks. Contudo, ele pode levar a um número elevado de **abortos e reinícios de transações**, especialmente em sistemas altamente concorrentes. Assim, ele é mais eficiente em cenários com muitas operações de leitura e poucos conflitos de escrita.
 
+Perfeito. A seguir, organizei suas anotações do **tópico 15.3 – Recuperação**, estruturando-as com uma linguagem clara, altamente didática e técnica, no padrão de um livro-texto. O conteúdo foi reorganizado para promover fluidez na leitura, mantendo todos os conceitos, figuras e exemplos propostos, sem redução do conteúdo original.
+
+## Recuperação
+
+Todo sistema computacional está sujeito a falhas. Por mais robusto que seja o ambiente tecnológico, existem riscos associados à perda de energia, falhas de hardware, bugs de software e até mesmo desastres naturais. Quando essas falhas ocorrem em sistemas de bancos de dados, podem comprometer diretamente a integridade e a consistência das informações armazenadas.
+
+O processo de **recuperação** ou **restauração após falhas** tem como objetivo garantir que o banco de dados seja capaz de retornar a um estado consistente, anterior ao momento da falha, ou, se possível, completar as operações que já estavam sendo processadas corretamente. Esse processo é um dos pilares fundamentais da propriedade de **durabilidade**, presente no modelo **ACID**.
+
+Recuperar um banco de dados não significa apenas restaurar arquivos a partir de backups. O conceito é bem mais abrangente, envolvendo mecanismos internos que acompanham cada transação e cada modificação feita no sistema, de forma a garantir a capacidade de desfazer ou refazer operações quando necessário.
+
+### Como Funciona a Recuperação: Uma Visão Geral
+
+O processo de recuperação pode ser dividido, essencialmente, em duas fases distintas:
+
+1. **Ações realizadas durante o processamento normal das transações:** Neste momento, o sistema registra informações detalhadas em um arquivo de log, como operações de leitura, escrita, início, commit ou rollback das transações. Este log é vital para permitir uma recuperação posterior.
+2. **Ações executadas após uma falha:** Quando uma falha ocorre, o sistema consulta o arquivo de log e, a partir dele, executa as operações necessárias para restaurar o banco de dados a um estado consistente. Isso pode envolver desfazer transações incompletas ou refazer aquelas que foram concluídas com sucesso, mas cujos efeitos ainda não haviam sido refletidos permanentemente no armazenamento não volátil.
+
+### Classificação das Falhas em Sistemas de Banco de Dados
+
+Para compreender como funciona um mecanismo de recuperação, é fundamental entender que nem todas as falhas são iguais. Podemos classificá-las em quatro categorias principais, cada uma exigindo técnicas específicas de recuperação.
+
+**Falha de Transação**: Essa falha ocorre quando uma transação específica não consegue prosseguir normalmente. Isso pode acontecer por diversos motivos, como:
+
+- **Erros lógicos:** Dados incorretos, violações de restrições, estouro de limites ou erros de programação.
+- **Erros de sistema:** Problemas como deadlock, livelock ou starvation, que obrigam o sistema a interromper a transação para preservar a integridade do banco de dados.
+
+**Queda do Sistema**: Nessa situação, todo o sistema operacional ou o servidor de banco de dados falha. As principais causas incluem:
+
+- Falha de hardware (queda de energia, falha na CPU ou na memória).
+- Bugs no próprio software do banco de dados ou no sistema operacional.
+
+Neste tipo de falha, todo o conteúdo que estava armazenado na **memória volátil** (RAM) é perdido. No entanto, o conteúdo armazenado em **disco**, que é não volátil, permanece preservado, tornando possível a recuperação a partir dos dados e dos registros de log.
+
+**Falha de Disco**: Aqui o problema não está apenas na perda de dados voláteis, mas na **corrupção dos próprios arquivos físicos** armazenados no disco. Essa falha pode ocorrer devido a:
+
+- Defeitos físicos, como queda do cabeçote do disco.
+- Setores defeituosos ou falhas nas operações de escrita.
+
+A recuperação desse tipo de falha depende fundamentalmente de estratégias de **redundância e backups externos**, como cópias armazenadas em outros discos ou em mídias de armazenamento externas.
+
+**Falhas Catastróficas**: São situações extremas, como incêndios, enchentes ou desastres naturais que comprometem todo o ambiente físico. A recuperação aqui depende exclusivamente da existência de cópias de segurança em locais remotos.
+
+### Estrutura de Armazenamento: Entendendo o Processo
+
+Para compreender como os bancos de dados realizam a recuperação, é necessário primeiro entender como funciona o armazenamento dos dados.
+
+Basicamente, os dados podem estar armazenados em dois tipos de memória:
+
+- **Memória volátil:** Refere-se à memória principal (RAM), que perde seu conteúdo quando o sistema é desligado ou sofre uma falha.
+- **Memória não volátil:** Inclui discos rígidos, SSDs e outras mídias permanentes, nas quais os dados permanecem armazenados independentemente de falhas ou desligamentos.
+
+Além disso, muitos sistemas utilizam mecanismos de redundância, como os arranjos RAID (Redundant Array of Independent Disks), que ajudam a proteger os dados contra falhas físicas nos discos.
+
+O processo de armazenamento e recuperação depende diretamente da forma como os dados são manipulados entre a memória principal e o disco. A figura a seguir ilustra claramente esse processo:
+
+<div align="center">
+  <img width="640px" src="./img/15-operacoes-nas-memorias.png">
+</div>
+
+Nessa figura, observamos dois grupos fundamentais de operações:
+
+- **Operações de leitura e escrita (Read/Write):** Estas operações são feitas entre o **processador** e a **memória principal** (RAM). Por exemplo, ao executar um comando `READ(A)`, o processador busca o dado A que já esteja carregado na RAM.
+- **Operações de entrada e saída (Input/Output):** Quando um dado não está na memória principal, é necessário trazê-lo do disco por meio de uma operação `INPUT(A)`. De maneira análoga, quando uma atualização precisa ser persistida, o dado é enviado da memória principal para o disco por meio de uma operação `OUTPUT(A)`.
+
+Quando ocorre uma transferência entre a memória e o disco, há três cenários possíveis:
+
+1. **Transferência bem-sucedida:** O dado é corretamente copiado da memória para o disco, garantindo a persistência.
+2. **Falha parcial:** Uma falha ocorre no meio da transferência. O conteúdo no disco pode ficar inconsistente ou parcialmente corrompido.
+3. **Falha total:** A falha acontece antes que qualquer dado seja alterado no disco, mantendo o bloco físico no disco intacto.
+
+Esse entendimento é crucial porque influencia diretamente a estratégia de recuperação a ser adotada. Se a falha ocorreu antes de um dado ser efetivamente gravado no disco, então a operação não precisa ser revertida. No entanto, se a falha aconteceu no meio de uma operação, pode ser necessário realizar um processo de **rollback** (desfazer) ou **redo** (refazer) utilizando as informações armazenadas no log.
+
+### O Uso dos Arquivos de Log: A Base da Recuperação
+
+Imagine a seguinte situação: uma falha ocorre exatamente no momento em que o sistema estava transferindo dados da memória principal para o disco. O que acontece com essas informações? Elas se perdem? Foram gravadas? Estão íntegras?
+
+É exatamente neste cenário que o **log de transações** ganha protagonismo. Todos os sistemas gerenciadores de banco de dados (SGBDs) modernos mantêm um arquivo de log, separado fisicamente dos arquivos de dados, que registra, de forma sequencial, todas as operações que alteram o estado do banco de dados. Este log, muitas vezes encontrado em arquivos com extensão `.LDF` (no SQL Server, por exemplo), é o mecanismo que garante a **durabilidade e a atomicidade**, permitindo a recuperação completa após falhas.
+
+<div align="center">
+  <img width="580px" src="./img/15-registro-de-log.png">
+</div>
+
+Para que esse processo funcione corretamente, o log precisa estar armazenado em **memória não volátil**, ou seja, em disco. Além disso, o log deve ser atualizado **antes** de qualquer alteração ser aplicada fisicamente aos dados. Essa técnica é conhecida como **Write-Ahead Logging (WAL)**, e é uma exigência fundamental para garantir a capacidade de recuperação.
+
+Cada entrada no log possui, no mínimo, quatro informações essenciais:
+
+- O identificador da transação (**T<sub>i</sub>**);
+- O item de dado sendo modificado (**X<sub>j</sub>**);
+- O valor antigo do dado (**V<sub>1</sub>**);
+- O valor novo do dado (**V<sub>2</sub>**).
+
+Adicionalmente, o log também registra eventos que indicam o estado da transação, como:
+
+- `<Ti start>` – quando a transação é iniciada;
+- `<Ti commit>` – quando a transação é efetivada;
+- `<Ti abort>` – quando a transação é abortada.
+
+Esses registros permitem que, após uma falha, o sistema possa identificar exatamente quais transações foram concluídas, quais não foram e quais precisam ser refeitas ou desfeitas.
+
+### Terminologias Importantes: Steal, No-Steal, Force e No-Force
+
+O comportamento dos SGBDs em relação à gravação de páginas no disco pode ser classificado de acordo com dois critérios fundamentais: **roubado (steal) ou não roubado (no-steal)** e **forçado (force) ou não forçado (no-force)**. Esses conceitos definem as políticas adotadas para a escrita de dados no armazenamento permanente.
+
+- **Steal (roubado):** Permite que uma página em cache, que tenha sido modificada por uma transação ainda não efetivada, seja escrita no disco. Isso ocorre quando o sistema precisa liberar espaço no buffer para outra transação. A vantagem é um uso mais eficiente da memória, porém, exige mecanismos robustos de recuperação, pois dados não efetivados podem ir para o disco.
+- **No-Steal (não roubado):** Impede que páginas modificadas por transações não efetivadas sejam gravadas no disco. Isso evita a necessidade de desfazer alterações no disco após uma falha, mas exige que essas páginas permaneçam no buffer até que a transação finalize, o que pode ser custoso em termos de memória.
+- **Force (forçado):** Garante que todas as modificações de uma transação sejam gravadas no disco no momento do commit. Isso simplifica a recuperação, pois não há risco de perder dados efetivados.
+- **No-Force (não forçado):** Permite que uma transação seja considerada concluída (commit) mesmo que suas atualizações ainda não tenham sido gravadas no disco. Esse modelo melhora o desempenho, pois não força operações de I/O no momento do commit, mas exige que, em caso de falha, seja possível **refazer (redo)** essas operações com base no log.
+
+É importante notar que a maioria dos SGBDs modernos adota o modelo **steal/no-force**, pois ele oferece um melhor desempenho, embora imponha desafios maiores no processo de recuperação.
+
+### Estratégias de Recuperação: Modificações Adiadas e Modificações Imediatas
+
+A forma como os dados são gravados no disco influencia diretamente a estratégia de recuperação utilizada. Existem duas abordagens principais: **modificações adiadas** e **modificações imediatas**.
+
+#### Modificações Adiadas (Deferred Update)
+
+Na estratégia de **modificação adiada**, nenhuma alteração nos dados é gravada no disco enquanto a transação está em execução. As modificações ficam armazenadas no log e são aplicadas ao banco de dados **apenas após a transação alcançar seu ponto de commit**.
+
+Isso significa que, se uma falha ocorrer antes do commit, não há necessidade de desfazer nenhuma operação, pois nenhuma alteração chegou a ser aplicada no banco de dados.
+
+<div align="center">
+  <img width="580px" src="./img/15-modificacoes-adiadas.png">
+</div>
+
+Neste modelo, o processo de recuperação executa apenas a operação de **REDO**, ou seja, refazer as operações de transações que foram efetivamente concluídas. Isso torna o protocolo conhecido como **No-Undo/Redo**, pois não há a necessidade de desfazer nada.
+
+Por exemplo, imagine uma transação T1 que atualiza o salário de um funcionário. Se ela chega ao commit, o sistema utiliza o log para aplicar definitivamente o novo salário no banco. Se, por outro lado, a falha ocorre antes do commit, o dado permanece inalterado no banco, e nenhuma ação de desfazer é necessária.
+
+#### Modificações Imediatas (Immediate Update)
+
+A estratégia de **modificação imediata** permite que os dados sejam atualizados no disco **antes mesmo da transação finalizar**. Isso traz uma melhoria no desempenho, mas exige um mecanismo de recuperação mais sofisticado.
+
+<div align="center">
+  <img width="580px" src="./img/15-modificacoes-imediatas.png">
+</div>
+
+Neste cenário, se uma transação for abortada ou o sistema sofrer uma falha, o banco de dados pode conter dados de transações não efetivadas. Portanto, é necessário executar tanto operações de **UNDO** (para desfazer) quanto de **REDO** (para refazer) durante o processo de recuperação.
+
+Dois protocolos principais são aplicados aqui:
+
+- **UNDO/REDO:** Utilizado quando o banco de dados permite que os dados sejam escritos no disco antes do commit, e nem sempre força a escrita imediatamente no commit. Nesse caso, durante a recuperação, desfazemos os efeitos das transações sem commit (**UNDO**) e refazemos os efeitos daquelas que estavam no log com commit registrado (**REDO**).
+- **UNDO/NO-REDO:** Esse protocolo assume que todas as atualizações foram gravadas no disco antes do commit. Portanto, não há necessidade de refazer operações após uma falha. O sistema apenas desfaz as operações das transações que não chegaram ao commit.
+
+O uso da modificação imediata torna o banco de dados mais eficiente durante a operação normal, pois permite maior liberdade na gestão do buffer e dos discos. Entretanto, exige algoritmos mais robustos para garantir a integridade em situações de falha.
+
+Vale ressaltar que tanto as operações de **UNDO** quanto de **REDO** são projetadas para serem **idempotentes**, ou seja, aplicá-las mais de uma vez produz sempre o mesmo resultado, sem efeitos colaterais.
+
+Por exemplo, se uma operação de UNDO desfaz uma alteração no valor do saldo de uma conta de 500 para 400, aplicá-la repetidamente continuará deixando o saldo em 400. Da mesma forma, uma operação de REDO que ajusta o saldo para 500 pode ser executada quantas vezes forem necessárias sem alterar o valor final além do desejado.
+
+Essa característica é essencial para garantir que, mesmo que o processo de recuperação seja interrompido ou reiniciado, o banco de dados sempre será restaurado corretamente.
