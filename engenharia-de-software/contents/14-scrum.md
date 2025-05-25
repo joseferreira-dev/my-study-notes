@@ -732,3 +732,383 @@ Basicamente, o gráfico apresenta uma linha descendente que representa a quantid
 </div>
 
 Essa ferramenta é extremamente útil não apenas para o time, mas também para os gestores, que podem acompanhar o andamento da Sprint e identificar eventuais desvios, gargalos ou necessidades de ajuste, tanto em relação ao tempo quanto ao esforço empregado.
+
+## Eventos no Scrum
+
+Dentro do framework Scrum, os **eventos** desempenham um papel central na organização do trabalho, na promoção da transparência e na aplicação dos pilares fundamentais do empirismo: **transparência, inspeção e adaptação**. Esses eventos são, muitas vezes, chamados de **reuniões** ou até mesmo de **cerimônias**, especialmente em contextos acadêmicos, provas de certificações ou na prática das equipes.
+
+A definição e realização adequada dos eventos Scrum não são meramente questões formais ou burocráticas. Pelo contrário, eles são mecanismos fundamentais que garantem que o desenvolvimento do produto ocorra de forma estruturada, eficiente e aderente aos princípios ágeis. Cada evento possui uma finalidade bem definida e uma duração máxima previamente estipulada, conceito conhecido como **time-box**. Isso significa que o evento não pode ultrapassar esse tempo, embora possa ser encerrado antes, desde que seu objetivo tenha sido alcançado.
+
+Falhar em conduzir corretamente qualquer um desses eventos reduz drasticamente a eficácia do Scrum, pois compromete a visibilidade do trabalho, prejudica os momentos de inspeção e, consequentemente, limita as oportunidades de adaptação do processo e do produto.
+
+### Sprint – O Contêiner de Todos os Eventos
+
+Antes de mergulharmos nos eventos específicos, é crucial compreender o papel da **Sprint**, que funciona como um verdadeiro contêiner para todos os outros eventos do Scrum. Ela não é apenas uma etapa, mas sim o ciclo completo no qual todo o trabalho ocorre, incluindo planejamento, execução, acompanhamento e avaliação.
+
+<div align="center">
+  <img width="680px" src="./img/14-scrum-sprint.png">
+</div>
+
+A Sprint possui uma duração fixa, que pode ser de até **um mês**, embora muitas equipes adotem ciclos menores, como duas ou três semanas, dependendo das necessidades do projeto e do ambiente organizacional. Independentemente da duração escolhida, o mais importante é que ela se mantenha **consistente** ao longo do desenvolvimento, promovendo regularidade, previsibilidade e estabilidade no processo.
+
+Mas, afinal, o que exatamente acontece durante uma Sprint? Para ilustrar, imagine que você tenha contratado um marceneiro para construir os armários do apartamento que você acabou de comprar. Existem basicamente duas formas de conduzir esse projeto. Na abordagem tradicional, você explicaria todos os detalhes do que deseja, ele passaria alguns meses construindo os móveis em sua oficina, e só no final traria tudo pronto para ser instalado. Se houvesse qualquer equívoco no entendimento, você só descobriria no fim do processo, o que poderia gerar frustração, retrabalho e desperdícios.
+
+Agora, pense na abordagem ágil, representada pelo Scrum. Nessa abordagem, vocês combinariam ciclos regulares — por exemplo, de quinze em quinze dias. Ao final de cada ciclo, o marceneiro entregaria uma parte funcional dos móveis. Na primeira quinzena, ele entrega os armários do banheiro, já instalados e prontos para uso. Na quinzena seguinte, os armários da área de serviço. Na terceira quinzena, parte dos armários do quarto, como o guarda-roupa. Assim, a cada ciclo, você recebe um **incremento funcional** que já pode ser utilizado, além de ter a oportunidade de sugerir ajustes antes que o restante seja construído.
+
+Essa metáfora é extremamente poderosa para compreender o funcionamento da Sprint. Assim como no exemplo, ao final de cada Sprint no desenvolvimento de software, deve ser entregue um **incremento potencialmente utilizável**, ou seja, uma parte do produto que já possa, em tese, ser colocada em produção e gerar valor para o cliente.
+
+#### As Regras da Sprint
+
+O Scrum estabelece regras claras que regem o funcionamento da Sprint. Uma vez iniciado o ciclo, alguns princípios devem ser rigidamente respeitados:
+
+- **Não são permitidas mudanças que coloquem em risco o objetivo da Sprint.** Por exemplo, se a equipe planejou desenvolver uma funcionalidade de pagamento com cartão utilizando determinado framework, não é aceitável, no meio da Sprint, trocar esse framework, pois isso comprometeria os prazos e a entrega combinada.
+- **As metas de qualidade não podem ser reduzidas.** O compromisso com a qualidade é inegociável no Scrum.
+- **O escopo da Sprint pode ser renegociado, mas nunca de forma arbitrária.** Conforme surgem novos aprendizados durante o desenvolvimento, o Product Owner e os desenvolvedores podem, juntos, ajustar e esclarecer o escopo, desde que isso não comprometa o objetivo central da Sprint.
+
+Essa combinação de rigidez nos objetivos, mas flexibilidade no entendimento do escopo, é um dos grandes diferenciais do Scrum, pois permite um equilíbrio saudável entre planejamento e adaptação.
+
+#### Cancelamento de uma Sprint
+
+Uma Sprint pode, sim, ser cancelada, mas essa é uma decisão extrema e rara. Apenas o **Product Owner** possui autoridade para cancelar uma Sprint, embora essa decisão possa ser tomada com base em recomendações ou influências de outros membros, como o Scrum Master, os desenvolvedores ou stakeholders.
+
+O cancelamento só deve ocorrer se a **Meta da Sprint se tornar obsoleta**, o que pode acontecer, por exemplo, se:
+
+- A organização mudar sua estratégia;
+- O mercado sofrer uma alteração brusca;
+- Surgirem mudanças tecnológicas que inviabilizem o trabalho planejado.
+
+Quando uma Sprint é cancelada:
+
+- Qualquer trabalho concluído e considerado **“Pronto”** é revisado e, se estiver de acordo, pode ser liberado.
+- Os itens do **Product Backlog** que não foram concluídos retornam ao backlog, sendo reavaliados, reestimados e priorizados novamente.
+- Há consumo de tempo e recursos para reorganizar uma nova Sprint, já que é necessário realizar um novo **Sprint Planning**.
+- Além disso, o cancelamento pode ser **emocionalmente desgastante** para a equipe, pois quebra o ritmo de trabalho e gera frustração.
+
+É importante observar que, devido à curta duração das Sprints, o cancelamento é uma prática extremamente incomum e só se justifica em cenários excepcionais.
+
+#### Por que a Sprint é tão importante?
+
+O coração do Scrum pulsa na Sprint. É nela que todo o trabalho acontece. Ela não apenas delimita o tempo disponível para desenvolvimento, mas também estabelece um **ritmo sustentável**, favorecendo ciclos constantes de feedback, aprendizado, entrega de valor e melhoria contínua.
+
+A Sprint permite:
+
+- **Previsibilidade**, uma vez que, ao trabalhar em ciclos curtos e regulares, a equipe pode acompanhar o progresso e ajustar as rotas rapidamente;
+- **Limitação de riscos**, pois qualquer erro ou problema detectado impacta, no máximo, aquele ciclo, e não todo o projeto;
+- **Aumento da produtividade e da qualidade**, já que existe uma cadência constante e foco total nas metas daquele ciclo.
+
+A prática de dividir o desenvolvimento em Sprints também fortalece a **cultura de entregas frequentes**, reduzindo a ansiedade de esperar por grandes lançamentos e permitindo que o cliente perceba valor incremental continuamente.
+
+#### Os Eventos que Acontecem Dentro da Sprint
+
+Além do próprio trabalho de desenvolvimento, a Sprint é composta por quatro eventos fundamentais, cada um com objetivos bem definidos:
+
+1. **Sprint Planning (Planejamento da Sprint)** – Onde se define o que será feito na Sprint e como o trabalho será realizado;
+2. **Daily Scrum (Reunião Diária)** – Encontro diário para sincronizar as atividades e planejar o trabalho das próximas 24 horas;
+3. **Sprint Review (Revisão da Sprint)** – Apresentação do incremento desenvolvido, coletando feedback dos stakeholders;
+4. **Sprint Retrospective (Retrospectiva da Sprint)** – Momento para reflexão da equipe sobre o processo, identificando pontos de melhoria.
+
+Todos esses eventos são **time-boxed**, ou seja, possuem uma duração máxima predeterminada, e devem ocorrer **sempre nos mesmos horários e locais**, quando possível, para reduzir a complexidade logística e manter a regularidade do trabalho.
+
+Cada evento é uma oportunidade formal de aplicar os pilares do Scrum, permitindo a **inspeção dos artefatos**, a avaliação do andamento do trabalho e a **adaptação contínua**. A omissão de qualquer evento reduz diretamente a transparência e enfraquece a eficácia do framework.
+
+### Sprint Planning – Planejamento da Sprint
+
+O **Planejamento da Sprint**, conhecido internacionalmente como **Sprint Planning**, é um evento fundamental no framework Scrum. Trata-se do momento em que o **Scrum Team** (ou **Equipe Scrum**) se reúne para planejar o trabalho que será realizado na Sprint que está prestes a começar.
+
+Esse evento não acontece de forma isolada, nem é uma simples lista de tarefas. Na realidade, é um exercício colaborativo que envolve uma compreensão profunda dos objetivos, alinhamento entre as partes interessadas e planejamento técnico do trabalho a ser executado. É, portanto, um dos pilares que sustentam o sucesso da Sprint e, consequentemente, do projeto.
+
+O principal objetivo desse evento é responder de maneira clara e objetiva às seguintes perguntas:
+
+1. **O que será entregue como resultado da Sprint?**
+2. **Como o trabalho necessário para entregar esse resultado será realizado?**
+
+Em outras palavras, a equipe deve entender tanto **o que precisa ser feito** quanto **como fará para alcançar esse objetivo**.
+
+O Sprint Planning possui um **timebox máximo de oito horas** para uma Sprint de um mês. Caso a Sprint tenha uma duração menor, o tempo desse evento é proporcionalmente reduzido. Por exemplo, para uma Sprint de duas semanas, o planejamento costuma durar cerca de quatro horas.
+
+O **Scrum Master** é responsável por garantir que o evento ocorra, que os participantes compreendam seu propósito e que o planejamento permaneça dentro dos limites de tempo estabelecidos.
+
+#### Estrutura do Planejamento da Sprint
+
+O Sprint Planning se estrutura em três tópicos principais, conforme descrito na versão mais recente do **Guia Scrum (2020)**, embora esses conceitos já estivessem presentes de forma implícita nas versões anteriores.
+
+##### Tópico 1: Por que esta Sprint é valiosa? Definindo a Meta
+
+A reunião se inicia com uma pergunta essencial: **"Por que esta Sprint é valiosa?"**
+
+Aqui, o **Product Owner** desempenha um papel de extrema relevância. Ele propõe como a Sprint pode agregar valor ao produto e, consequentemente, aos stakeholders. A partir dessa proposta, todo o Scrum Team colabora para definir a **Meta da Sprint**.
+
+A **Meta da Sprint** é, portanto, um objetivo claro que direciona o trabalho da equipe durante toda a Sprint. Ela serve como um norte, ajudando os desenvolvedores a tomarem decisões sobre o que priorizar, como se organizar e como adaptar seu trabalho frente às dificuldades que podem surgir ao longo do caminho.
+
+Imagine, por exemplo, que uma equipe trabalha em um aplicativo de e-commerce e, para a Sprint atual, a meta seja **"Permitir que os usuários filtrem produtos por faixa de preço"**. Essa meta orientará todas as ações da equipe, desde a seleção dos itens até a definição das tarefas.
+
+A definição da Meta da Sprint deve ocorrer **antes do final do Sprint Planning**, sendo um compromisso coletivo do Scrum Team.
+
+##### Tópico 2: O que pode ser feito nesta Sprint? – Seleção dos Itens
+
+Após a definição da meta, a equipe responde à segunda pergunta: **"O que pode ser feito nesta Sprint?"**
+
+Aqui, entra o papel crucial do **Product Owner**, que apresenta os itens do **Product Backlog** priorizados, ou seja, aqueles que possuem maior valor de negócio. Essa priorização normalmente é feita atribuindo valores aos itens, representando a importância de cada funcionalidade.
+
+Por exemplo, o Product Owner pode dizer que uma funcionalidade tem um valor de negócio de 1000, enquanto outra, menos urgente, tem valor de 10. Assim, a equipe consegue visualizar claramente quais itens geram mais valor.
+
+No entanto, saber o que tem maior valor não é suficiente. É necessário também estimar o **esforço** necessário para realizar cada item. E, diferente das metodologias tradicionais, onde esse esforço é geralmente medido em horas ou dias, no Scrum é comum utilizar uma unidade de medida relativa chamada de **Story Points**.
+
+**Story Points** representam o esforço relativo necessário para implementar uma determinada funcionalidade. Eles não medem tempo diretamente, mas sim uma combinação de fatores como:
+
+- Complexidade técnica;
+- Quantidade de trabalho;
+- Incertezas;
+- Riscos envolvidos.
+
+Se uma história de usuário requerer aproximadamente o dobro de esforço de outra, ela receberá o dobro de Story Points. Dessa forma, é possível estabelecer uma base de comparação entre diferentes histórias.
+
+Uma das práticas mais populares para estimação dos Story Points — embora não oficializada pelo guia Scrum — é o **Planning Poker**. Trata-se de uma técnica colaborativa e dinâmica que ajuda na obtenção de estimativas mais precisas, reduzindo a influência de membros mais experientes ou mais persuasivos sobre os demais.
+
+Funcionamento do Planning Poker:
+
+1. Cada membro do time recebe um conjunto de cartas numeradas. A sequência mais comum é baseada na **Sequência de Fibonacci**: 0, 1, 2, 3, 5, 8, 13, 20, 40, 100 (embora possam ser utilizadas outras sequências).
+2. O **Product Owner** lê e explica a história de usuário que está sendo estimada, tirando todas as dúvidas dos desenvolvedores.
+3. Cada membro escolhe, em segredo, uma carta que representa sua estimativa para aquela história.
+4. Quando todos estiverem prontos, revelam as cartas simultaneamente.
+5. Se houver divergência significativa, os membros discutem os motivos de suas escolhas. Aqueles que deram as menores e maiores estimativas costumam justificar primeiro.
+6. Após a discussão, repete-se o processo até que se alcance um consenso ou, pelo menos, uma aproximação confortável para o grupo.
+
+Essa técnica é poderosa porque explora a inteligência coletiva, permitindo que membros mais experientes ajudem a esclarecer pontos para os menos experientes, e que diferentes perspectivas sejam consideradas. Além disso, elimina o risco de um único indivíduo influenciar toda a estimativa, tornando-a mais justa e precisa.
+
+Vale ressaltar que escolha da **Sequência de Fibonacci** não é aleatória. Ela cresce de forma não linear, o que reflete bem a incerteza crescente à medida que o tamanho das tarefas aumenta. Enquanto é relativamente fácil diferenciar entre uma tarefa de 1 e uma de 2 pontos, a diferença entre 20 e 40 não é tão precisa — e isso representa adequadamente o grau de incerteza em tarefas muito grandes.
+
+Durante essa fase, é comum que algumas histórias de usuário sejam consideradas muito grandes para serem realizadas dentro de uma única Sprint. Essas histórias são chamadas de **Épicos**. Quando um épico é identificado, ele deve ser decomposto em histórias menores e viáveis para desenvolvimento.
+
+Em alguns casos, projetos maiores podem conter agrupamentos ainda mais amplos, conhecidos como **Sagas**, que por sua vez são compostas por múltiplos épicos.
+
+Por fim, após a estimativa, os desenvolvedores avaliam quantos itens podem ser realizados dentro da Sprint, levando em consideração sua **capacidade histórica** (ou seja, quantos Story Points costumam entregar em Sprints anteriores) e qualquer variável que possa impactar a Sprint atual (como férias, licenças ou eventos externos).
+
+Aqui, é essencial destacar um ponto fundamental do Scrum: **somente os desenvolvedores podem decidir quanto trabalho conseguem assumir.** Nem o Product Owner, nem o Scrum Master, nem qualquer gerente externo deve impor essa decisão.
+
+##### Tópico 3: Como o trabalho será feito? – Criação do Sprint Backlog
+
+Com a meta definida e os itens selecionados, a equipe então responde à última pergunta: **"Como o trabalho necessário para entregar o incremento será realizado?"**
+
+Neste momento, os desenvolvedores transformam os itens selecionados do **Product Backlog** em um conjunto de tarefas técnicas que serão organizadas no **Sprint Backlog**. Este se torna o plano de trabalho da Sprint.
+
+Durante a criação do Sprint Backlog, as histórias de usuário são decompostas em tarefas menores, geralmente com um tamanho que permita sua conclusão em **um dia ou menos**. Esse nível de granularidade ajuda a equipe a manter o controle do progresso e facilita os ajustes diários.
+
+Por exemplo, uma história como **"Implementar filtro de produtos por faixa de preço"** pode ser quebrada em tarefas como:
+
+- Criar interface gráfica do filtro;
+- Implementar backend para receber parâmetros de preço;
+- Adaptar consultas no banco de dados;
+- Testar funcionalidade de filtro;
+- Validar comportamento em dispositivos móveis.
+
+Se, durante esse processo, a equipe perceber que selecionou trabalho demais ou de menos, ela pode negociar com o Product Owner, adicionando ou removendo itens do Sprint Backlog.
+
+Ainda, quando necessário, a equipe pode convidar especialistas externos — como arquitetos de software, designers ou analistas de negócios — para fornecer informações técnicas, esclarecer dúvidas ou ajudar nas estimativas.
+
+#### Conclusão do Sprint Planning
+
+Ao final do evento de planejamento, a equipe deve estar plenamente alinhada sobre:
+- **A Meta da Sprint**, que descreve o objetivo principal do trabalho;
+- **Os itens do Product Backlog** selecionados para serem transformados em incremento;
+- **O Sprint Backlog**, contendo o detalhamento das tarefas necessárias para atingir o objetivo.
+
+Com isso, o time inicia a Sprint sabendo exatamente **o que vai entregar** e **como irá trabalhar**, promovendo alinhamento, foco e comprometimento.
+
+### Daily Scrum – Reunião Diária
+
+A **Reunião Diária**, ou **Daily Scrum**, é um evento crucial e dinâmico dentro do framework Scrum, frequentemente o mais visível no dia a dia da equipe, mas também um dos que mais exige disciplina para ser executado com eficácia. Trata-se de um evento com duração máxima de **15 minutos** (time-boxed), realizado **todos os dias da Sprint**, idealmente no mesmo horário e local para minimizar complexidades e estabelecer um ritmo constante.
+
+O propósito fundamental da Daily Scrum é **inspecionar o progresso em direção à Meta da Sprint e adaptar o Sprint Backlog conforme necessário**, ajustando o plano de trabalho para as próximas 24 horas. Este não é um evento de reporte de status para o Scrum Master ou para qualquer figura gerencial, mas sim um momento de **sincronização, planejamento e colaboração para os Desenvolvedores**, realizado por eles e para eles.
+
+Ao inspecionar o trabalho realizado desde a última Reunião Diária e prever as atividades da Sprint para o dia corrente, os Desenvolvedores otimizam a colaboração e a performance, aumentando significativamente a probabilidade de atingirem a Meta da Sprint. É o momento em que a equipe, de forma auto-organizada, define como irá trabalhar em conjunto para completar o objetivo da Sprint e criar o Incremento previsto.
+
+#### A Condução e Estrutura da Daily Scrum
+
+Conforme o **Guia Scrum de 2020**, "os Developers podem selecionar qualquer estrutura e técnicas que quiserem, desde que seu Daily Scrum se concentre no progresso em direção a Meta da Sprint e produza um plano de ação para o próximo dia de trabalho. Isso cria foco e melhora o autogerenciamento."
+
+Essa flexibilidade é uma evolução em relação a interpretações mais antigas, como a do **Guia Scrum de 2017**, que, embora também afirmasse que "a estrutura da reunião é definida pelo Time de Desenvolvimento", frequentemente via a Daily Scrum ser conduzida através de três perguntas clássicas:
+
+1. O que eu fiz ontem que ajudou o Time de Desenvolvimento a atingir a Meta da Sprint?
+2. O que eu farei hoje para ajudar o Time de Desenvolvimento a atingir a Meta da Sprint?
+3. Eu vejo algum obstáculo que impeça a mim ou o Time de Desenvolvimento no atingimento da Meta da Sprint?
+
+Embora essas perguntas ainda possam ser úteis como um guia, especialmente para equipes novas no Scrum, o foco principal deve ser sempre o **progresso em direção à Meta da Sprint** e a **adaptação do plano de trabalho diário**. A reunião não deve se transformar em uma série de relatos individuais desconectados, mas sim em uma conversa colaborativa focada no objetivo comum.
+
+**Exemplo Prático: Uma Daily Scrum Eficaz vs. Ineficaz**:
+
+- **Daily Scrum Ineficaz (focada em status individual):**
+    - **Desenvolvedor A:** "Ontem trabalhei na funcionalidade de login. Hoje vou continuar nela. Sem impedimentos."
+    - **Desenvolvedor B:** "Ontem corrigi o bug X. Hoje vou testar. Nenhum impedimento."
+    - **Desenvolvedor C:** "Ontem comecei a tarefa Y. Hoje pretendo terminar. Sem bloqueios."
+    - Neste cenário, cada um reporta suas tarefas, mas não há uma conexão clara com a Meta da Sprint, nem um planejamento conjunto para o dia.
+
+- **Daily Scrum Eficaz (focada na Meta da Sprint e colaboração):**
+    - A Meta da Sprint é: "Disponibilizar o carrinho de compras com cálculo de frete básico."
+    - **Desenvolvedor A:** "Ontem finalizei a integração da API de cálculo de frete. Para hoje, meu plano é ajudar a Desenvolvedora B a conectar essa API ao front-end do carrinho, para que possamos ter um fluxo funcional e avançar na meta. B, como está seu progresso com os componentes visuais?"
+    - **Desenvolvedor B:** "Os componentes visuais do carrinho estão quase prontos. Preciso de uma pequena ajuda para alinhar o campo de CEP com o novo design. Após isso, podemos focar na integração com a API de frete. Desenvolvedor C, a validação dos CEPs que você estava implementando ontem já está disponível para eu testar?"
+    - **Desenvolvedor C:** "Sim, a validação de CEP está pronta e os testes unitários passaram. Meu foco hoje é garantir que o cálculo de frete não apresente valores negativos, um risco que identificamos. Isso nos manterá alinhados com a meta e com a qualidade do incremento."
+    - Aqui, a equipe discute o progresso em relação à Meta, identifica dependências, oferece ajuda e planeja o dia de forma colaborativa.
+
+#### Papéis e Participação
+
+A Daily Scrum é um evento **dos Desenvolvedores**. O **Scrum Master** assegura que a Reunião Diária ocorra, mas são os Desenvolvedores os responsáveis por conduzi-la. O Scrum Master também ensina a equipe a manter a reunião dentro do **time-box** de 15 minutos.
+
+Conforme o Guia Scrum 2020: "Se o Product Owner ou o Scrum Master estão trabalhando ativamente nos itens do Sprint Backlog, eles participam como Developers." Caso contrário, sua presença é como observadores, e o Scrum Master deve garantir que eles não perturbem a reunião, pois o foco é a sincronização e o planejamento dos Desenvolvedores.
+
+#### Flexibilidade e Discussões Posteriores
+
+É importante ressaltar que a Daily Scrum não é o único momento em que os Desenvolvedores podem ajustar seu plano. Como o Guia Scrum 2017 aponta, "o Time de Desenvolvimento ou membros da equipe frequentemente se encontram imediatamente após a Reunião Diária para discussões detalhadas, ou para adaptar, ou replanejar, o restante do trabalho da Sprint." O Guia de 2020 reforça essa ideia, afirmando que os Desenvolvedores "costumam se reunir ao longo do dia para discussões mais detalhadas sobre a adaptação ou replanejamento do resto do trabalho da Sprint."
+
+#### Benefícios da Daily Scrum
+
+Quando conduzida corretamente, a Daily Scrum é uma ferramenta poderosa que:
+
+- **Melhora as comunicações:** Facilita a troca rápida de informações relevantes.
+- **Elimina a necessidade de outras reuniões:** Muitas questões de alinhamento são resolvidas diariamente.
+- **Identifica e ajuda a remover impedimentos:** Problemas são expostos rapidamente, permitindo ação imediata.
+- **Destaca e promove rápidas tomadas de decisão:** A equipe se alinha sobre os próximos passos de forma ágil.
+- **Melhora o nível de conhecimento dos Desenvolvedores:** Todos ficam cientes do progresso geral e dos desafios.
+- **Reforça o autogerenciamento e o foco da equipe.**
+
+Em suma, a Daily Scrum é uma reunião chave para a **inspeção** do progresso em direção à Meta da Sprint e para a **adaptação** do plano de trabalho diário, sendo um pilar para a eficácia e a agilidade do Scrum Team.
+
+### Sprint Review – Revisão da Sprint
+
+Ao final de cada Sprint, antes da Retrospectiva, ocorre a **Revisão da Sprint** (Sprint Review). Este é um evento crucial, com _time-box_ proporcional de no máximo **quatro horas** para uma Sprint de um mês (para Sprints menores, o evento é usualmente mais curto). Embora seja frequentemente associada à demonstração das novas funcionalidades desenvolvidas, seu propósito principal é muito mais amplo: **inspecionar o Incremento do Produto** resultante da Sprint e, com base nisso, **adaptar o Product Backlog** se necessário. O foco central é o aprimoramento contínuo do produto através da colaboração e do feedback.
+
+A Sprint Review não é uma reunião de status formal, nem apenas uma apresentação unilateral. Trata-se de uma **sessão de trabalho informal e colaborativa** onde o **Scrum Team** e os **principais stakeholders** (convidados pelo Product Owner) se reúnem para discutir o que foi realizado durante a Sprint. O Scrum Master garante que o evento ocorra, que os participantes entendam seu propósito e que se mantenha dentro do _time-box_ estabelecido.
+
+Durante este evento, o Scrum Team apresenta os resultados de seu trabalho. Conforme o **Guia Scrum 2020**, "o Scrum Team e os stakeholders revisam o que foi realizado na Sprint e o que mudou em seu ambiente. Com base nessas informações, os participantes colaboram sobre o que fazer a seguir. O Product Backlog também pode ser ajustado para atender a novas oportunidades."
+
+É o momento em que o Product Owner tem a oportunidade de validar se a Meta da Sprint, acordada durante o Sprint Planning, foi alcançada. Discutem-se os problemas enfrentados, as soluções encontradas e, após a demonstração do Incremento, respondem-se quaisquer dúvidas dos presentes. O objetivo é motivar, obter feedback valioso e promover a colaboração para otimizar o valor do produto.
+
+#### Elementos Chave da Sprint Review
+
+Conforme o **Guia Scrum 2017**, a Revisão da Sprint tipicamente inclui os seguintes elementos, que continuam relevantes em sua essência:
+
+1. **Participantes:** Inclui o Scrum Team (Product Owner, Scrum Master e Desenvolvedores) e os stakeholders chave convidados pelo Product Owner.
+2. **Apresentação do "Pronto":** O Product Owner esclarece quais itens do Product Backlog foram concluídos ("Prontos", de acordo com a Definição de Pronto) e quais não foram.
+3. **Discussão da Sprint pelos Desenvolvedores:** O Time de Desenvolvimento (ou Desenvolvedores, no Guia 2020) discute o que correu bem durante a Sprint, quais problemas surgiram e como esses problemas foram resolvidos.
+4. **Demonstração do Incremento:** Os Desenvolvedores demonstram o trabalho que está "Pronto" e respondem a perguntas sobre o Incremento. Esta demonstração é focada no produto funcionando.
+5. **Discussão do Product Backlog pelo Product Owner:** O Product Owner discute o Product Backlog como está. Ele pode projetar prováveis alvos e datas de entrega com base no progresso até o momento, se necessário. O progresso em direção à Meta do Produto é discutido.
+6. **Colaboração sobre os Próximos Passos:** Todo o grupo colabora sobre o que fazer a seguir. Esta é uma entrada valiosa para o próximo Sprint Planning. Analisa-se:
+    - Como o mercado ou o uso potencial do produto pode ter mudado.
+    - Qual é a coisa mais importante a se fazer a seguir.
+    - A linha do tempo, orçamento, potenciais capacidades e mercado para a próxima versão esperada do produto.
+
+#### O Resultado da Sprint Review
+
+O principal resultado da Sprint Review é um **Product Backlog revisado**, que define os prováveis itens para a próxima Sprint. O Product Backlog pode ser ajustado para refletir novas oportunidades, mudanças de prioridade ou aprendizados obtidos durante a Sprint e a própria Review.
+
+Este evento é, portanto, um mecanismo fundamental de **inspeção e adaptação** focado no produto, garantindo que ele evolua de forma alinhada com as necessidades dos stakeholders e as condições de mercado, maximizando o valor entregue.
+
+### Sprint Retrospective – Retrospectiva da Sprint
+
+A **Retrospectiva da Sprint** (Sprint Retrospective) é o evento que conclui a Sprint. Trata-se de uma oportunidade formal para o Scrum Team **inspecionar a si próprio** e criar um plano de melhorias concretas a serem implementadas na próxima Sprint. Com um time-box proporcional de no máximo **três horas** para uma Sprint de um mês (e usualmente menor para Sprints mais curtas), este evento ocorre após a Sprint Review e antes do Sprint Planning da próxima Sprint.
+
+O propósito da Retrospectiva da Sprint, conforme o **Guia Scrum 2020**, é "planejar maneiras de aumentar a qualidade e a eficácia". O Scrum Team inspeciona como foi a última Sprint em relação a indivíduos, interações, processos, ferramentas e sua Definição de "Pronto". O **Guia Scrum 2017** complementa, afirmando que se inspeciona "como a última Sprint foi em relação às pessoas, aos relacionamentos, aos processos e às ferramentas".
+
+Durante este evento, o Scrum Team:
+
+- Discute o que deu certo durante a Sprint.
+- Identifica quais problemas encontraram.
+- Analisa como esses problemas foram (ou não) resolvidos.
+- Identifica e ordena os principais itens que foram bem e as potenciais melhorias.
+- Cria um plano para implementar melhorias no modo como o Scrum Team faz seu trabalho.
+
+O **Scrum Master** garante que o evento ocorra, seja positivo e produtivo, ensinando todos a manterem o evento dentro do time-box. O Scrum Master participa da reunião como um membro da equipe, responsável por facilitar e ajudar o time a focar na melhoria contínua, encorajando-o a aprimorar seu processo de desenvolvimento e suas práticas dentro do framework Scrum, tornando-o mais efetivo e agradável.
+
+As suposições que desviaram o time são identificadas e suas origens exploradas. O Scrum Team identifica as mudanças mais úteis para melhorar sua eficácia. As melhorias mais impactantes são endereçadas o mais rápido possível e podem, inclusive, ser adicionadas ao Sprint Backlog para a próxima Sprint.
+
+Durante cada Retrospectiva da Sprint, o Time Scrum planeja formas de aumentar a qualidade do produto, seja melhorando o processo de trabalho ou adaptando a Definição de "Pronto" – se apropriado e sem entrar em conflito com os padrões do produto ou da organização.
+
+Ao final da Retrospectiva da Sprint, o Scrum Team deverá ter identificado melhorias que serão implementadas na próxima Sprint. A implementação destas melhorias é a forma de **adaptação** à inspeção que o Scrum Team faz a si próprio. Embora melhorias possam ser implementadas a qualquer momento, a Retrospectiva da Sprint fornece uma oportunidade formal focada em inspeção e adaptação.
+
+Fechou? Antes de concluirmos a exploração dos eventos formais do Scrum, vamos abordar alguns conceitos e cerimônias que, embora não sejam oficiais do framework, são frequentemente utilizados por equipes ágeis para complementar e enriquecer o processo.
+
+### Eventos e Conceitos Complementares (Não-Oficiais no Scrum)
+
+#### Reunião de Visão do Produto
+
+Um desses momentos importantes, embora não prescrito pelo Guia Scrum, é a **Reunião de Visão do Produto**. O que é isso, professor? Trata-se do momento que visa estabelecer um ponto no processo em que o **Product Owner** deve expor os detalhes do produto a ser construído. A saída dessa reunião deve ser uma **visão sobre o produto**, isto é, representa como os clientes, usuários finais, gerentes, stakeholders, executivos, entre outros, visualizam o resultado final do produto que será criado.
+
+Para tal, pode-se utilizar diversas técnicas como: **Product Vision Box, Product RoadMap ou Elevator Pitch Sentence**. Vamos ver um pouco dessa última técnica!
+
+Geoffrey Moore, em seu livro "Crossing the Chasm", apresenta um modelo interessante para a Visão do Produto, o chamado **“Teste do Elevador”**. A ideia é que seja possível explicar o que é o produto durante a subida de um elevador, ou seja, em um tempo bastante curto. Adaptado por Jim Highsmith, esse modelo tem o formato apresentado na imagem da página seguinte.
+
+Um exemplo de visão sobre um produto de turismo poderia ser:
+
+> “**Para** turistas usuários de smartphone **que desejam** aproveitar melhor seus locais de destino, **o** MyTrip **é um** aplicativo móvel de viagens **que** sugere roteiros diários flexíveis de acordo com seu perfil de viajante. **Ao contrário de** guias de viagens com roteiros predefinidos e burocráticos, **nosso produto** elabora trajetos personalizados e adaptáveis.”
+
+Lembremos que a visão do produto, de forma geral, deve permanecer estável durante todo o projeto. Ela é criada, gerenciada e compartilhada pelo Product Owner, que garante que o Product Backlog esteja sempre alinhado a ela. No entanto, as partes interessadas relevantes podem estar diretamente envolvidas no refinamento dessa visão.
+
+#### Release Planning Meeting (Reunião de Planejamento da Release)
+
+Outra cerimônia não-oficial, apesar de muito comum, é a **Release Planning Meeting**. O que seria isso? Nós vimos que ao final da Sprint, a equipe entrega um Incremento do produto potencialmente funcional, isto é, tem o potencial de entrar em produção. Ora, muitas vezes é desejável esperar algumas Sprints até juntar todas as funcionalidades e entregar uma release (um conjunto de funcionalidades prontas e validadas). Essa cerimônia serve para planejar como será essa release.
+
+Isso é muito importante, porque vocês devem saber a criticidade de colocar algo em produção. É comum ter várias restrições, preocupações e dependências, como datas importantes, itens contratuais, logística, entre outros. Dessa forma, a equipe, juntamente com o Product Owner e stakeholders relevantes, precisa planejar suas entregas várias Sprints à frente.
+
+#### Fases do Ciclo de Vida no Scrum (Uma Perspectiva Ampliada)
+
+Por fim, é salutar enfatizar que, embora o Scrum seja focado no ciclo de Sprints, podemos visualizar seu encaixe em um ciclo de vida de projeto mais amplo, que algumas literaturas dividem em três fases principais:
+
+1. **Pré-Planejamento (Pre-game Phase):** Nesta fase inicial, define-se o sistema a ser desenvolvido. Cria-se o **Product Backlog** inicial, que contém os requisitos atuais e informações sobre o planejamento do projeto. Também se pode criar uma arquitetura de alto nível para guiar o desenvolvimento.
+2. **Desenvolvimento (Game Phase):** O sistema é desenvolvido em **Sprints**, por meio de uma abordagem iterativa e incremental. A cada Sprint, novas funcionalidades são adicionadas seguindo as atividades de análise, projeto, implementação, testes, etc., dentro do ciclo da Sprint.
+3. **Pós-Planejamento (Post-game Phase):** Após um conjunto de Sprints ou ao final do desenvolvimento de uma release significativa, podem ocorrer atividades para analisar o progresso geral do projeto e demonstrar o software consolidado para os clientes. Aqui podem ocorrer etapas de integração final, testes de aceitação mais amplos e preparação da documentação para a entrega.
+
+É importante notar que estas "fases" não são prescrições do Guia Scrum, que se concentra no ciclo da Sprint. Contudo, essa visão mais ampla ajuda a contextualizar como o Scrum pode ser aplicado dentro de um ciclo de vida de produto ou projeto maior.
+
+### Resumindo
+
+Vamos fazer um resumão de tudo agora! O **Product Owner** define o **Product Backlog**, isto é, uma lista com tudo que ele deseja que tenha em seu projeto. Então, os integrantes da **Equipe Scrum** fazem a **Reunião de Planejamento da Sprint** (Sprint Planning) e constroem o **Sprint Backlog**. O trabalho da Sprint segue com **Reuniões Diárias** (Daily Scrum) realizadas pelos Desenvolvedores, que vão atualizando os artefatos e progredindo em direção à Meta da Sprint.
+
+Ao final da Sprint, há uma **Revisão da Sprint** (Sprint Review) – responsável por analisar se o Incremento do produto entregue realmente satisfaz às expectativas dos clientes e stakeholders. Em seguida, realiza-se a última cerimônia, a **Retrospectiva da Sprint** (Sprint Retrospective)! Esse evento é responsável por analisar se o processo foi efetivamente utilizado e se há alguma sugestão de melhoria. Por fim, essas melhorias servem de entrada para a próxima Reunião de Planejamento da Sprint.
+
+A Retrospectiva da Sprint (Proporcional a 3 horas) é uma chance para o Scrum Team inspecionar a si próprio e criar um plano de melhorias para a próxima sprint. Ela inspeciona como foi a última sprint em relação às pessoas, às relações, aos processos e às ferramentas. Pode identificar e ordenar os itens que se tornaram potenciais de melhorias e cria um plano para implementar melhorias no trabalho.
+
+O Scrum Master garante que o evento seja positivo e produtivo. O Scrum Master ensina todos a manter o evento dentro do time-box. O Scrum Master participa da reunião como um membro auxiliar do time devido a sua responsabilidade pelo processo Scrum. O Scrum Master encoraja o Time Scrum a melhorar, dentro do processo do framework do Scrum, seu processo de desenvolvimento e suas práticas para torná-lo mais efetivo e agradável para a próxima Sprint.
+
+Durante cada Retrospectiva da Sprint, o Time Scrum planeja formas de aumentar a qualidade do produto melhorando o processo de trabalho ou adaptando a definição de “Pronto”, se apropriado e sem entrar em conflito com os padrões do produto ou organização. Ao final da Retrospectiva da Sprint, o Time Scrum deverá ter identificado melhorias que serão implementadas na próxima Sprint.
+
+A implementação destas melhorias na próxima Sprint é a forma de adaptação à inspeção que o Time Scrum faz a si próprio. Apesar de que melhorias podem ser implementadas a qualquer momento, a Retrospectiva da Sprint fornece uma oportunidade formal focada em inspeção e adaptação. Fechou? Antes disso, vamos falar de um evento não-oficial, mas que geralmente é realizado: Reunião de Visão! O que é isso, professor?
+
+Trata-se do momento que visa estabelecer um ponto no processo em que o Product Owner deve expor os detalhes do produto a ser construído. A saída dessa reunião deve ser uma visão sobre o produto, isto é, representa como os clientes, usuários finais, gerentes, stakeholders, executivos, entre outros, visualizam o resultado final do produto que será criado. Para tal, podese utilizar diversas técnicas como: Product Vision Box, Product RoadMap ou Elevator Pitch Sentence.
+
+Vamos ver um pouco dessa última técnica! Geoffrey Moore, no seu livro Crossing the Chasm, apresenta um modelo interessante para a Visão do Produto, o chamado “Teste do Elevador”. A ideia é que seja possível explicar o que é o produto durante a subida de um elevador, ou seja, em um tempo bastante curto. Adaptado por Jim Highsmith, esse modelo tem o formato apresentado na imagem da página seguinte. 
+
+Um exemplo de visão sobre um produto de turismo poderia ser: “Para turistas usuários de smartphone que desejam aproveitar melhor seus locais de destino, o MyTrip é um aplicativo móvel de viagens que sugere roteiros diários flexíveis de acordo com seu perfil de viajante. Ao contrário de guias de viagens com roteiros predefinidos e burocráticos, nosso produto elabora trajetos personalizados e adaptáveis”.
+
+Lembremos que a visão do produto, de forma geral, deve permanecer estável durante todo o projeto. Ela é criada, gerenciada e compartilhada pelo Product Owner, que garante que o Product Backlog esteja sempre alinhado a ela. No entanto, as partes interessadas relevantes podem estar diretamente envolvidas no refinamento dessa visão. Há outra cerimônia não-oficial (apesar de muito comum) chamada Release Planning Meeting. O que seria isso?
+
+Nós vimos que ao final da sprint, a equipe entrega um incremento do produto potencialmente funcional, isto é, tem o potencial de entrar em produção. Ora, muitas vezes é desejável esperar algumas sprints até juntas todas as funcionalidades e entregar uma release (conjunto de funcionalidades). Essa cerimônia serve para planejar como será essa release. Isso é muito importante, porque vocês devem saber a criticidade de colocar algo em produção.
+
+É comum ter várias restrições, preocupações e dependências, como datas importantes, itens contratuais, logística, entre outros. Dessa forma, a equipe precisa planejar suas entregar várias sprints à frente. Por fim, é salutar enfatizar que o ciclo de vida do nosso framework é baseado em três fases principais:
+
+1. Pré-Planejamento (Pre-game Phase): Define o sistema sendo desenvolvido. Cria-se o Product Backlog, que contém os requisitos atuais e informações sobre o planejamento do projeto. Cria-se também uma arquitetura de alto nível.
+
+2. Desenvolvimento (Game Phase): O sistema é desenvolvido em sprints, por meio de uma abordagem iterativa. A cada sprint, novas funcionalidades são adicionadas de modo tradicional, i.e., análise, projeto, implementação, etc.
+
+3. Pós-Planejamento (Post-game Phase): Após o desenvolvimento, são feitas reuniões para analisar o progresso do projeto e demonstrar o software para os clientes. Aqui ocorrem as etapas de integração, testes finais e documentação.
+
+[Guia Scrum - Versão 2017]
+A Retrospectiva da Sprint é uma oportunidade para o Time Scrum inspecionar a si próprio e criar um plano para melhorias a serem aplicadas na próxima Sprint. A Retrospectiva da Sprint ocorre depois da Revisão da Sprint e antes do planejamento da próxima Sprint. Esta é uma reunião de no máximo três horas para uma Sprint de um mês. Para Sprint menores, este evento é usualmente menor. O Scrum Master garante que o evento ocorra e que os participantes entendam seu propósito.
+ 
+O Scrum Master garante que o evento seja positivo e produtivo. O Scrum Master ensina todos a manter o evento dentro do time-box. O Scrum Master participa da reunião como um membro auxiliar do time devido a sua responsabilidade pelo processo Scrum. O propósito da Retrospectiva da Sprint é:
+
+• Inspecionar como a última Sprint foi em relação às pessoas, aos relacionamentos, aos processos e às ferramentas;
+• Identificar e ordenar os principais itens que foram bem e as potenciais melhorias; e,
+• Criar um plano para implementar melhorias no modo que o Time Scrum faz seu trabalho;
+
+O Scrum Master encoraja o Time Scrum a melhorar, dentro do processo do framework do Scrum, seu processo de desenvolvimento e suas práticas para torná-lo mais efetivo e agradável para a próxima Sprint. Durante cada Retrospectiva da Sprint, o Time Scrum planeja formas de aumentar a qualidade do produto melhorando o processo de trabalho ou adaptando a definição de “Pronto”, se apropriado e sem entrar em conflito com os padrões do produto ou organização.
+
+Ao final da Retrospectiva da Sprint, o Time Scrum deverá ter identificado melhorias que serão implementadas na próxima Sprint. A implementação destas melhorias na próxima Sprint é a forma de adaptação à inspeção que o Time Scrum faz a si próprio. Apesar de que melhorias podem ser implementadas a qualquer momento, a Retrospectiva da Sprint fornece uma oportunidade formal focada em inspeção e adaptação.
+
+[Guia Scrum - Versão 2020]
+O propósito da Sprint Retrospective é planejar maneiras de aumentar a qualidade e a eficácia. O Scrum Team inspeciona como foi a última Sprint em relação a indivíduos, interações, processos, ferramentas e sua Definição de Pronto. Os elementos inspecionados geralmente variam com o domínio de trabalho. As suposições que os desviaram são identificadas e suas origens exploradas. O Scrum Team discute o que deu certo durante a Sprint, quais problemas encontraram e como esses problemas foram (ou não) resolvidos.
+
+O Scrum Team identifica as mudanças mais úteis para melhorar sua eficácia. As melhorias mais impactantes são endereçadas o mais rápido possível. Essas podem até ser adicionadas ao Sprint Backlog para a próxima Sprint. A Sprint Retrospective conclui a Sprint. É limitada pelo Timebox de no máximo três horas para uma Sprint de um mês. Para Sprints mais curtas, o evento geralmente é mais curto.
+
+Vamos fazer um resumão de tudo agora! Notem na imagem que tudo começa no canto superior esquerdo. O Product Owner define o Product Backlog, isto é, uma lista com tudo que ele deseja que tenha em seu projeto. Então, os integrantes da Equipe Scrum fazem a Reunião de Planejamento e constroem a Sprint Backlog. O trabalho da sprint segue com reuniões diárias realizadas pelos desenvolvedores e atualizando os artefatos.
+
+Ao final do sprint, há uma Revisão da Sprint – responsável por analisar se o incremento do produto entregue realmente satisfaz às expectativas dos clientes. Em seguida, realiza-se a última cerimônia, também conhecida como Retrospectiva da Sprint! Esse evento é responsável por analisar se o processo foi efetivamente utilizado e se há alguma sugestão de melhoria. Por fim, essas melhorias servem de entrada para a próxima reunião de planejamento.
