@@ -1112,3 +1112,127 @@ O Scrum Team identifica as mudanças mais úteis para melhorar sua eficácia. As
 Vamos fazer um resumão de tudo agora! Notem na imagem que tudo começa no canto superior esquerdo. O Product Owner define o Product Backlog, isto é, uma lista com tudo que ele deseja que tenha em seu projeto. Então, os integrantes da Equipe Scrum fazem a Reunião de Planejamento e constroem a Sprint Backlog. O trabalho da sprint segue com reuniões diárias realizadas pelos desenvolvedores e atualizando os artefatos.
 
 Ao final do sprint, há uma Revisão da Sprint – responsável por analisar se o incremento do produto entregue realmente satisfaz às expectativas dos clientes. Em seguida, realiza-se a última cerimônia, também conhecida como Retrospectiva da Sprint! Esse evento é responsável por analisar se o processo foi efetivamente utilizado e se há alguma sugestão de melhoria. Por fim, essas melhorias servem de entrada para a próxima reunião de planejamento.
+
+## Novidades e Evoluções no Framework Scrum
+
+O Scrum, desde sua concepção inicial, tem passado por um processo contínuo de refinamento e aprimoramento, refletindo os aprendizados da comunidade ágil global e buscando sempre maior clareza e eficácia. Essas evoluções são consolidadas nas atualizações do Guia Scrum, o documento oficial que define o framework. Embora as bancas de concurso raramente explicitem qual versão do Guia será cobrada, é fundamental que profissionais e estudantes estejam cientes das mudanças mais significativas, pois elas impactam a forma como o Scrum é compreendido e aplicado.
+
+Nossa abordagem nesta apostila tem sido construída sobre os fundamentos do Scrum estabelecidos na versão de 2013, incorporando as atualizações relevantes das versões de 2017 e, mais notavelmente, da versão de 2020. Esta última trouxe mudanças importantes que visam tornar o Scrum ainda mais leve, menos prescritivo e mais adaptável a diversos contextos, não se limitando apenas ao desenvolvimento de software. A seguir, detalharemos as principais melhorias introduzidas pelo Guia Scrum 2020.
+
+### Guia Scrum 2020: Uma Visão Mais Enxuta e Abrangente
+
+Uma das primeiras percepções ao se analisar o Guia Scrum 2020 é sua **simplificação e concisão**. Os autores, Ken Schwaber e Jeff Sutherland, colocaram uma ênfase considerável na eliminação de informações redundantes, na remoção de complexidades desnecessárias e, crucialmente, na supressão de qualquer linguagem que remetesse exclusivamente ao universo da tecnologia da informação. Termos como "testes", "sistemas", "design" ou "requerimento", que poderiam sugerir uma aplicação restrita ao desenvolvimento de software, foram generalizados ou removidos. Essa alteração tem um propósito claro: reforçar que o Scrum é um framework versátil, aplicável a projetos e produtos em quaisquer áreas do conhecimento. Como resultado, o Guia Scrum tornou-se notavelmente mais curto, com menos de 13 páginas, e sua linguagem foi adaptada para ser mais acessível e compreensível para um público mais amplo.
+
+Essa busca por universalidade reflete-se também na própria **definição de Scrum**. Enquanto a versão de 2017 mencionava que o Scrum ajudava "pessoas" a resolver problemas complexos, a versão de 2020 expande essa visão, afirmando:
+
+> Scrum é um framework leve que ajuda pessoas, **times e organizações** a gerar valor por meio de soluções adaptativas para problemas complexos.
+
+Essa pequena, mas significativa, alteração reconhece o impacto do Scrum em diferentes níveis de uma organização, desde o indivíduo até a estrutura corporativa como um todo.
+
+### Evoluções nos Eventos Scrum: Foco e Autonomia
+
+#### Daily Scrum: Além das Três Perguntas
+
+Uma das mudanças mais comentadas no Guia Scrum 2020 foi a **remoção da sugestão das três perguntas** que frequentemente estruturavam a Reunião Diária (Daily Scrum): "O que eu fiz ontem?", "O que farei hoje?" e "Vejo algum impedimento?". Os autores esclareceram que essas perguntas sempre foram apenas um exemplo de como a reunião poderia ser conduzida, e não uma regra ou uma forte sugestão. No entanto, para muitas equipes, elas se tornaram um roteiro fixo, muitas vezes transformando a Daily Scrum em uma mera reunião de reporte de status individual, desviando-se de seu propósito principal de inspeção do progresso em direção à Meta da Sprint e adaptação do plano para as próximas 24 horas.
+
+Para evitar essa disfunção e reforçar a autonomia dos Desenvolvedores na condução do evento, as perguntas foram completamente removidas. O Guia 2020 agora enfatiza que os Desenvolvedores podem selecionar a estrutura e as técnicas que desejarem, desde que a Daily Scrum se concentre no progresso em direção à Meta da Sprint e produza um plano de ação para o próximo dia de trabalho.
+
+#### Sprint Planning: A Inclusão Estratégica do "Porquê"
+
+O evento de Planejamento da Sprint (Sprint Planning) também recebeu um acréscimo conceitual importante. Além dos tópicos tradicionais que respondem "O quê?" pode ser feito na Sprint e "Como?" o trabalho escolhido será realizado, a versão 2020 introduziu formalmente um terceiro tópico: **"Por quê?"**.
+
+Este novo tópico questiona: **"Por que esta Sprint é valiosa?"**. A intenção é garantir que, antes de mergulhar no planejamento detalhado, o Scrum Team compreenda claramente o propósito e o valor que aquela Sprint específica trará para o produto e para os stakeholders. Muitas vezes, as equipes sabem o que fazer e como fazer, mas perdem de vista o porquê, o que pode levar à criação de funcionalidades com pouco impacto ou desalinhadas com os objetivos estratégicos. A inclusão do "Porquê" visa combater o desperdício – um princípio fundamental do _lean thinking_ – e garantir que cada Sprint contribua significativamente para a Meta do Produto. A resposta a essa pergunta culmina na criação da Meta da Sprint.
+
+### Clareza nos Artefatos: A Introdução dos Compromissos
+
+Talvez uma das evoluções mais estruturais do Guia Scrum 2020 seja a introdução explícita do conceito de **Compromissos (Commitments)** associados a cada um dos três artefatos do Scrum. Essa mudança visa aumentar a transparência e fornecer um foco claro contra o qual o progresso pode ser medido.
+
+O Guia afirma:
+
+> Os artefatos do Scrum representam trabalho ou valor. Eles são projetados para maximizar a transparência das principais informações. Assim, todos os que os inspecionam têm a mesma base para adaptação. Cada artefato contém um compromisso para garantir que ele forneça informações que aumentem a transparência e o foco contra o qual o progresso pode ser medido.
+
+Os compromissos estabelecidos são:
+
+- Para o **Product Backlog**, o compromisso é a **Meta do Produto (Product Goal)**.
+- Para o **Sprint Backlog**, o compromisso é a **Meta da Sprint (Sprint Goal)**.
+- Para o **Incremento**, o compromisso é a **Definição de "Pronto" (Definition of Done - DoD)**.
+
+É importante notar que a Meta da Sprint e a Definição de "Pronto" já existiam no Guia Scrum 2017, mas sua natureza e relação com os artefatos podiam gerar ambiguidades. A versão 2020 solidifica esses conceitos como compromissos formais, reforçando o empirismo e os valores do Scrum.
+
+#### Compromisso: Meta do Produto (Product Goal)
+
+A **Meta do Produto** descreve um estado futuro do produto que serve como um alvo de longo prazo para o Scrum Team planejar. Ela reside no Product Backlog, e o restante do Product Backlog emerge para definir "o que" será necessário para cumprir essa meta.
+
+Um produto, no contexto do Scrum, é um veículo para entregar valor, possuindo um limite claro, stakeholders conhecidos e usuários ou clientes bem definidos. Pode ser um serviço, um produto físico ou algo mais abstrato. A Meta do Produto orienta o Scrum Team em suas decisões de planejamento e priorização. A equipe deve cumprir (ou abandonar conscientemente) uma Meta do Produto antes de assumir a próxima.
+
+**Exemplo Prático**: Para um novo aplicativo de e-commerce, a Meta do Produto inicial poderia ser: "Tornar-se a plataforma de referência para compra de produtos artesanais locais, oferecendo uma experiência de usuário simples e segura, e conectando diretamente artesãos a consumidores em sua região nos próximos 12 meses." Todos os itens do Product Backlog subsequentes seriam criados e priorizados com o intuito de alcançar essa meta.
+
+#### Compromisso: Meta da Sprint (Sprint Goal)
+
+A **Meta da Sprint** é o único objetivo para a Sprint. Embora seja um compromisso dos Desenvolvedores, ela oferece flexibilidade em termos do trabalho exato necessário para alcançá-la. A Meta da Sprint cria coerência e foco, encorajando o Scrum Team a trabalhar em conjunto, em vez de em iniciativas separadas e desconexas.
+
+Ela é criada durante o evento de Sprint Planning e adicionada ao Sprint Backlog. Durante a Sprint, os Desenvolvedores mantêm a Meta da Sprint em mente. Se o trabalho se mostrar diferente do esperado, eles colaboram com o Product Owner para negociar o escopo do Sprint Backlog, desde que isso não afete a Meta da Sprint.
+
+**Exemplo Prático**: Para uma Sprint do aplicativo de e-commerce cuja Meta do Produto é a mencionada acima, uma Meta da Sprint poderia ser: "Permitir que os artesãos cadastrem seus produtos com fotos, descrições e preços, tornando-os visíveis para os consumidores na plataforma."
+
+#### Compromisso: Definição de "Pronto" (Definition of Done - DoD)
+
+A **Definição de "Pronto"** é uma descrição formal do estado do Incremento quando ele atende às medidas de qualidade exigidas para o produto. No momento em que um item do Product Backlog atende à Definição de "Pronto", um Incremento nasce.
+
+A DoD cria transparência ao fornecer a todos um entendimento compartilhado sobre qual trabalho foi concluído como parte do Incremento. Se um item do Product Backlog não atender à Definição de "Pronto", ele não poderá ser liberado ou mesmo apresentado na Sprint Review, retornando ao Product Backlog para consideração futura.
+
+Se a Definição de "Pronto" para um Incremento faz parte dos padrões da organização, todos os Scrum Teams devem segui-la como mínimo. Caso contrário, o Scrum Team deve criar uma Definição de "Pronto" apropriada para o produto. Os Desenvolvedores são responsáveis por aderir à Definição de "Pronto". Se vários Scrum Teams trabalham juntos em um produto, eles devem definir e cumprir mutuamente a mesma Definição de "Pronto" para garantir a integração e a qualidade do produto como um todo.
+
+### Time Scrum: Mais Coeso e Autônomo
+
+A estrutura e a dinâmica do Time Scrum também foram objeto de refinamentos importantes no Guia 2020, buscando maior coesão, clareza de papéis e autonomia.
+
+#### Um Único Time Scrum: A Extinção do "Time de Desenvolvimento"
+
+Uma das mudanças terminológicas mais significativas foi a **remoção do termo "Time de Desenvolvimento" (Development Team)**. Anteriormente, o Guia Scrum descrevia o Scrum Team como sendo composto pelo Product Owner, Scrum Master e o Time de Desenvolvimento. Essa estrutura, embora funcional, poderia inadvertidamente passar a impressão da existência de um "time dentro do time", ou de uma hierarquia sutil onde o Time de Desenvolvimento era um subconjunto separado.
+
+Para eliminar essa ambiguidade e reforçar a ideia de uma unidade coesa, o Guia 2020 passou a definir o Scrum Team como consistindo em um Scrum Master, um Product Owner e os **Desenvolvedores (Developers)**. Não há mais a menção a um "Time de Desenvolvimento" como uma entidade separada. Agora, "Desenvolvedores" refere-se às pessoas no Scrum Team que estão comprometidas em criar qualquer aspecto de um Incremento utilizável a cada Sprint.
+
+Essa mudança não é apenas semântica. Ao deixar claro que todos pertencem a um único Time Scrum, com responsabilidades distintas, mas com o mesmo objetivo (a Meta do Produto), fortalece-se o compromisso coletivo e a colaboração. A unidade fundamental do Scrum é, portanto, um pequeno time de pessoas, o Scrum Team, focado em um objetivo de cada vez. Dentro de um Scrum Team, não há subtimes ou hierarquias.
+
+#### Dimensionamento da Equipe: Menos Prescritivo, Mais Orientado
+
+A orientação sobre o tamanho da equipe também foi sutilmente ajustada. O Guia Scrum 2017 especificava que o Time de Desenvolvimento deveria, idealmente, ser composto por 3 a 9 integrantes. A versão 2020, buscando ser menos prescritiva, removeu essa contagem específica para os Desenvolvedores.
+
+Em vez disso, o Guia agora comenta que o **Scrum Team como um todo (incluindo Scrum Master, Product Owner e Desenvolvedores) normalmente tem 10 ou menos pessoas**. A justificativa permanece a mesma: times menores comunicam-se melhor e são mais produtivos, enquanto times muito grandes podem ter dificuldades de coordenação que comprometem a agilidade.
+
+Se os Scrum Teams se tornarem muito grandes, a recomendação é que eles considerem a reorganização em vários Scrum Teams coesos, cada um focado no mesmo produto. Nesses casos, eles devem compartilhar a mesma Meta do Produto, o mesmo Product Backlog e o mesmo Product Owner.
+
+#### De Auto-Organizável para Auto-Gerenciável: Empoderamento Ampliado
+
+Outra mudança terminológica com implicações conceituais profundas foi a substituição de "times auto-organizáveis" por **"times auto-gerenciáveis"**. Na prática, "auto-organização" já implicava que o time decidia quem faria o trabalho e como o faria. O termo "auto-gerenciável", no entanto, amplia essa autonomia.
+
+Um time auto-gerenciável não apenas decide _como_ executar o trabalho e _quem_ o fará, mas também tem um papel mais ativo em decidir _no que_ trabalhar, alinhado, claro, com as prioridades estabelecidas pelo Product Owner e a Meta da Sprint. Isso significa que o Scrum Team, como unidade, possui as responsabilidades compartilhadas de selecionar, entender e priorizar o trabalho, além de definir como ele será realizado para cumprir seus compromissos. Essa mudança reforça a mensagem de empoderamento e responsabilidade do Time Scrum.
+
+#### O Product Owner em Múltiplos Times
+
+O Guia 2020 também trouxe um esclarecimento importante sobre a atuação do Product Owner quando múltiplos times trabalham no mesmo produto. Ele reitera que, mesmo que uma organização opte por ter vários Scrum Teams focados em um único produto (por exemplo, para escalar o desenvolvimento), esses times devem compartilhar:
+
+- A mesma **Meta do Produto**.
+- O mesmo **Product Backlog**.
+- O mesmo **Product Owner**.
+
+Isso garante o alinhamento estratégico, a consistência na priorização e uma visão unificada do produto, evitando que diferentes times puxem o produto em direções conflitantes. A existência de um único Product Owner para um produto é crucial para manter a integridade e o foco do desenvolvimento.
+
+Essas novidades e refinamentos demonstram o compromisso do Scrum em evoluir como um framework que não apenas responde às necessidades de desenvolvimento de software, mas que se posiciona como uma abordagem robusta para a entrega de valor em qualquer domínio que lide com problemas complexos e adaptativos.
+
+## Considerações Finais
+
+Ao longo deste capítulo, desvendamos o Scrum não como uma metodologia prescritiva e inflexível, mas como **um framework leve, poderoso e adaptável**, projetado para capacitar equipes a navegar pela complexidade e **entregar valor de forma incremental e sustentável**. Sua estrutura, embora simples de entender, revela uma profundidade notável quando seus pilares, valores, papéis, eventos e artefatos são vivenciados em sua plenitude.
+
+Exploramos a essência do Scrum, fundamentada no empirismo – com seus pilares de **Transparência, Inspeção e Adaptação** – e nos valores de **Comprometimento, Coragem, Foco, Abertura e Respeito**. Vimos como o **Time Scrum**, com suas responsabilidades distintas, mas interdependentes, do **Product Owner, Scrum Master e Desenvolvedores**, colabora para transformar ideias em Incrementos de produto valiosos.
+
+Analisamos os artefatos – **Product Backlog, Sprint Backlog e Incremento** – e seus respectivos compromissos – **Meta do Produto, Meta da Sprint e Definição de "Pronto"** – que fornecem foco e transparência ao processo. Detalhamos os **eventos da Sprint** – desde o **Sprint Planning até a Sprint Retrospective** – que estabelecem o ritmo e as oportunidades para inspeção e adaptação.
+
+Finalmente, abordamos **as evoluções mais recentes do Guia Scrum**, que buscam tornar o framework ainda mais enxuto, menos prescritivo e mais aplicável a uma gama diversificada de desafios, reforçando seu papel como uma ferramenta vital para organizações que buscam agilidade, inovação e resultados consistentes em um mundo em constante transformação.
+
+<div align="center">
+  <img width="1080px" src="./img/14-scrum-resumo.png">
+</div>
+
+Dominar o Scrum vai além de memorizar suas regras; requer uma mudança de mentalidade, um compromisso com a melhoria contínua e a coragem de abraçar a incerteza como uma oportunidade para aprender e evoluir. As equipes que verdadeiramente internalizam seus princípios e valores descobrem não apenas uma forma mais eficaz de trabalhar, mas também um caminho mais gratificante e colaborativo para criar produtos que realmente fazem a diferença.
