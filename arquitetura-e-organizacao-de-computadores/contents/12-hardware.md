@@ -343,77 +343,94 @@ O termo **periférico** refere-se a qualquer equipamento ou acessório conectado
 	<img width="680px" src="./img/12-monitor-plasma.png">
 	</div>
 
-    - **OLED (Organic Light-Emitting Diode - Diodo Orgânico Emissor de Luz)**: Uma tecnologia mais recente que utiliza polímeros orgânicos que emitem luz quando uma corrente elétrica é aplicada. Cada pixel em uma tela OLED é uma pequena fonte de luz individual. Isso permite pretos verdadeiros (pois os pixels podem ser completamente desligados), excelente contraste, cores vibrantes e ângulos de visão amplos. As telas OLED podem ser muito finas e até flexíveis. A principal desvantagem inicial era a vida útil dos compostos orgânicos (especialmente o azul), mas essa questão tem sido progressivamente melhorada.
+    - **OLED (Organic Light-Emitting Diode - Diodo Orgânico Emissor de Luz)**: Uma tecnologia mais recente que utiliza polímeros orgânicos que emitem luz quando uma corrente elétrica é aplicada. Cada pixel em uma tela OLED é uma pequena fonte de luz individual. Isso permite pretos verdadeiros (pois os pixels podem ser completamente desligados), excelente contraste, cores vibrantes e ângulos de visão amplos. As telas OLED podem ser muito finas e até flexíveis. A principal desvantagem inicial era a vida útil dos compostos orgânicos (especialmente o azul), mas essa questão tem sido progressivamente melhorada. Vale ressaltar que as telas OLED costumam ser menos brilhantes em comparação com as LCD, mas surgiu mais recentemente a tecnologia QD-OLED que busca solucionar essa questão.
 
+	<br>
 	<div align="center">
-	<img width="680px" src="./img/12-monitor-plasma.png">
+	<img width="680px" src="./img/12-monitor-oled.png">
 	</div>
+	<br>
 
 - **Scanner**: Um dispositivo de entrada que digitaliza documentos físicos (textos, fotos) ou objetos tridimensionais, convertendo-os em dados digitais que podem ser armazenados e manipulados pelo computador. O processo envolve uma varredura do item, capturando reflexos de luz que são convertidos em sinais elétricos. Muitos scanners modernos vêm acompanhados de software com **OCR (Optical Character Recognition - Reconhecimento Óptico de Caracteres)**, capaz de analisar a imagem de um texto digitalizado e convertê-la em texto editável. Isso é extremamente útil para recuperar o conteúdo de documentos impressos. Existem diferentes tipos de scanners:
     
-    - **Digitalizador de Mesa (Flatbed Scanner)**: Similar a uma fotocopiadora, possui uma superfície de vidro onde o documento é colocado com a face para baixo, e um mecanismo de varredura se move sob o vidro. A [Figura - Digitalizador de mesa] ilustra este tipo.
-        
-        [Figura - Digitalizador de mesa]
-        
-    - **Digitalizador de Mão (Handheld Scanner)**: Dispositivos portáteis, menores, que são passados manualmente sobre o documento a ser digitalizado. Alguns modelos requerem que a folha seja passada através de um mecanismo de leitura. A [Figura - Digitalizador de mão] mostra um exemplo.
-        
-        [Figura - Digitalizador de mão]
-        
+    - **Digitalizador de Mesa (Flatbed Scanner)**: Similar a uma fotocopiadora, possui uma superfície de vidro onde o documento é colocado com a face para baixo, e um mecanismo de varredura se move sob o vidro.
+
+	<div align="center">
+	<img width="320px" src="./img/12-scanner-de-mesa.png">
+	</div>
+
+    - **Digitalizador de Mão (Handheld Scanner)**: Dispositivos portáteis, menores, que são passados manualmente sobre o documento a ser digitalizado. Alguns modelos requerem que a folha seja passada através de um mecanismo de leitura.
+
+	<div align="center">
+	<img width="320px" src="./img/12-scanner-de-mao.png">
+	</div>
+
 - **Webcam**: Essencialmente uma pequena câmera de vídeo digital conectada ao computador, geralmente via USB. É um periférico de entrada de dados, capturando imagens e vídeo que podem ser transmitidos pela internet (videoconferências, streaming) ou gravados no computador. A [Figura - Webcam] exibe uma webcam típica.
-    
-    [Figura - Webcam]
-    
+
+<div align="center">
+<img width="320px" src="./img/12-webcam.png">
+</div>
+
 
 ### Portas de Entrada/Saída: Os Pontos de Conexão
 
 Uma **porta** é um ponto de interface, seja físico (hardware) ou lógico (software), através do qual os dados são transferidos entre um dispositivo de entrada/saída e o processador (ou a memória). Focaremos aqui nas portas de hardware, que podem ser classificadas como paralelas ou seriais.
 
-- **Porta Paralela**: Permite o envio de múltiplos bits de dados simultaneamente, através de vários fios paralelos. Um exemplo clássico é a antiga porta de impressora, que utilizava um conector **DB25** (com 25 pinos). A [Figura - Porta paralela] mostra o conector fêmea DB25 na traseira de um computador.
-    
-    [Figura - Porta paralela]
-    
-    No conector DB25 de uma porta paralela padrão (Centronics), os pinos 2 a 9 são tipicamente usados para transmitir os 8 bits de dados, enquanto os demais pinos são dedicados a sinais de controle e status (como Strobe, Busy, Ack). A [Figura - Pinos DB25] detalha a pinagem.
-    
-    [Figura - Pinos DB25]
-    
+- **Porta Paralela**: Permite o envio de múltiplos bits de dados simultaneamente, através de vários fios paralelos. Um exemplo clássico é a antiga porta de impressora, que utilizava um conector **DB25** (com 25 pinos). A figura mostra o conector DB25.
+
+<div align="center">
+<img width="420px" src="./img/12-porta-paralela-db25.png">
+</div>
+
+No conector DB25 de uma porta paralela padrão (Centronics), os pinos 2 a 9 são tipicamente usados para transmitir os 8 bits de dados, enquanto os demais pinos são dedicados a sinais de controle e status (como Strobe, Busy, Ack). Este é um detalhamento da pinagem:
+
+<div align="center">
+<img width="480px" src="./img/12-porta-paralela-db25-pinos.png">
+</div>
+
 - **Porta Serial**: Transmite dados um bit de cada vez, sequencialmente, através de um único par de fios (um para transmissão, outro para recepção). O padrão **RS-232** foi amplamente utilizado para portas seriais em PCs, conectando dispositivos como mouses antigos e modems externos. Utilizava conectores como o **DB9** (9 pinos). A [Figura - Porta serial] à esquerda mostra um cabo com conector DB9 e à direita um mouse antigo com este tipo de conector. Note que, dos 9 pinos, um é para transmissão (TXD), um para recepção (RXD), e os outros para sinais de controle (RTS, CTS, DTR, DSR, DCD, RI) e terra (GND).
-    
-    [Figura - Porta serial]
-    
+
+<div align="center">
+<img width="680px" src="./img/12-porta-serial.png">
+</div>
+
 - **PS/2**: Um conector mini-DIN de 6 pinos que se tornou padrão para conectar teclados e mouses, substituindo os conectores seriais (para mouses) e os conectores DIN de 5 pinos maiores (para teclados). As interfaces PS/2 para teclado e mouse são eletricamente similares e usam o mesmo protocolo de comunicação, mas as portas no computador geralmente não são intercambiáveis devido a conjuntos de comandos diferentes e, por vezes, codificação por cores (verde para mouse, roxo para teclado). A [Figura - PS/2] mostra os conectores PS/2.
-    
-    [Figura - PS/2]
-    
+
+<div align="center">
+<img width="480px" src="./img/12-porta-ps2.png">
+</div>
+
 - **USB (Universal Serial Bus)**: Como o nome sugere, é um barramento serial projetado para ser uma interface "universal", capaz de conectar uma vasta gama de periféricos (teclados, mouses, impressoras, scanners, câmeras, pen drives, HDs externos, smartphones, etc.). Além da transmissão de dados, as portas USB também podem fornecer energia para os dispositivos conectados, permitindo carregar celulares ou alimentar periféricos de baixo consumo. Existem diversos tipos de conectores USB, cada um com formatos e pinagens específicas, que evoluíram ao longo do tempo:
     
     - **USB-A**: O conector retangular clássico, mais comum, encontrado em computadores (host) e em muitos dispositivos como pen drives. Possui quatro contatos principais nas versões 1.x/2.0 (VBUS, D-, D+, GND) e contatos adicionais para SuperSpeed nas versões 3.x.
-        
     - **USB-B**: Conector de formato mais quadrado, frequentemente usado em impressoras, scanners e alguns HDs externos. Similarmente, possui quatro contatos principais e contatos adicionais para USB 3.x. A [Figura - USB-A e USB-B] mostra esses dois tipos.
-        
-        [Figura - USB-A e USB-B]
-        
     - **Mini-USB (Mini-A, Mini-B)**: Versões menores dos conectores USB, populares em câmeras digitais antigas, MP3 players e alguns celulares. O Mini-A tem formato trapezoidal e o Mini-B é mais retangular, ambos com cinco contatos. A [Figura - Mini-A e Mini-B] exibe esses conectores.
-        
-        [Figura - Mini-A e Mini-B]
-        
     - **Micro-USB (Micro-A, Micro-B)**: Ainda menores que os Mini-USB, tornaram-se o padrão para smartphones e tablets por muitos anos antes do USB-C. O Micro-B é o mais comum.
-        
-    - **USB-C (ou USB Type-C)**: O conector mais moderno, caracterizado por seu design simétrico e reversível (pode ser encaixado de qualquer lado). Possui 24 pinos e suporta não apenas os protocolos USB (incluindo USB 3.1, 3.2 e USB4, com velocidades muito altas), mas também outros protocolos como DisplayPort, HDMI (via modo alternativo) e Thunderbolt. É capaz de fornecer potências significativamente maiores (USB Power Delivery). A [Figura - USB-C] ilustra o conector USB-C.
-        
-        [Figura - USB-C]
-        
+    - **USB-C (ou USB Type-C)**: O conector mais moderno, caracterizado por seu design simétrico e reversível (pode ser encaixado de qualquer lado). Possui 24 pinos e suporta não apenas os protocolos USB (incluindo USB 3.1, 3.2 e USB4, com velocidades muito altas), mas também outros protocolos como DisplayPort, HDMI (via modo alternativo) e Thunderbolt. É capaz de fornecer potências significativamente maiores (USB Power Delivery).
+
+<div align="center">
+<img width="540px" src="./img/12-portas-usb-1.png">
+</div>
+<br>
+<div align="center">
+<img width="540px" src="./img/12-portas-usb-2.png">
+</div>
+
 - **Pen Drive**: Um dispositivo de armazenamento portátil que utiliza **memória flash** (tipicamente do tipo EEPROM NAND flash) e se conecta a uma porta USB (geralmente USB-A). Permite a gravação e leitura de dados de forma não volátil. As capacidades dos pen drives variam enormemente, desde alguns megabytes nas primeiras versões até terabytes nos modelos atuais. A velocidade de transferência de dados depende da versão do padrão USB suportada (ex: USB 2.0 com até 480 Mbps teóricos, ou ~60 MB/s práticos; USB 3.0 com até 5 Gbps teóricos, ou ~600 MB/s práticos) e da qualidade da memória flash utilizada. A [Figura - Pen Drive internamente] mostra os componentes internos de um pen drive.
-    
-    [Figura - Pen Drive internamente]
-    
-- **Teclado e Mouse**: São os dispositivos de entrada primários na maioria dos computadores pessoais. Ao longo do tempo, utilizaram diversos tipos de conectores. Os mais antigos incluíam conectores DIN de 5 pinos (para teclados AT), seguidos pelas portas seriais DB9 (para mouses) e, posteriormente, o padrão PS/2 (mini-DIN de 6 pinos) para ambos. Atualmente, a conexão USB é a mais comum tanto para teclados quanto para mouses, oferecendo maior versatilidade e o recurso Plug and Play. A [Figura - DIN x PS/2 x MiniDIN] compara alguns desses conectores mais antigos.
-    
-    [Figura - DIN x PS/2 x MiniDIN]
-    
+
+<div align="center">
+<img width="540px" src="./img/12-pendrive.png">
+</div>
+
+- **Teclado e Mouse**: São os dispositivos de entrada primários na maioria dos computadores pessoais. Ao longo do tempo, utilizaram diversos tipos de conectores. Os mais antigos incluíam conectores DIN de 5 pinos (para teclados AT), seguidos pelas portas seriais DB9 (para mouses) e, posteriormente, o padrão PS/2 (mini-DIN de 6 pinos) para ambos. Atualmente, a conexão USB é a mais comum tanto para teclados quanto para mouses, oferecendo maior versatilidade e o recurso Plug and Play.
+
+<div align="center">
+<img width="540px" src="./img/12-conectores-din-minidin.png">
+</div>
 
 ## O Coração da Máquina: Uma Análise dos Principais Processadores do Mercado
 
-Quando o assunto é o "cérebro" do computador, a Unidade Central de Processamento (CPU), dois gigantes da indústria de semicondutores imediatamente vêm à mente: **Intel** e **AMD**. Essas empresas têm travado uma competição tecnológica acirrada por décadas, impulsionando a inovação e oferecendo ao mercado uma vasta gama de processadores com diferentes níveis de desempenho, recursos e preços. Para quem se prepara para concursos ou busca um entendimento aprofundado do hardware, conhecer as linhas de produtos e as tecnologias dessas fabricantes é fundamental, com um destaque histórico para a Intel em termos de volume de questões em provas.
+Quando o assunto é o "cérebro" do computador, a Unidade Central de Processamento (CPU), dois gigantes da indústria de semicondutores imediatamente vêm à mente: **Intel** e **AMD**. Essas empresas têm travado uma competição tecnológica acirrada por décadas, impulsionando a inovação e oferecendo ao mercado uma vasta gama de processadores com diferentes níveis de desempenho, recursos e preços. Para quem busca um entendimento aprofundado do hardware, conhecer as linhas de produtos e as tecnologias dessas fabricantes é fundamental, com um destaque histórico para a Intel.
 
 ### Intel: Uma Dinastia de Processadores
 
@@ -422,13 +439,9 @@ A Intel Corporation é uma das mais antigas e influentes fabricantes de micropro
 As famílias de processadores mais conhecidas da Intel para o mercado consumidor são **Celeron**, **Pentium** e, principalmente, a linha **Core (i3, i5, i7, i9)**. A linha Core representa o principal segmento da Intel, com uma hierarquia clara de desempenho:
 
 - **Core i3**: Geralmente posicionado como o modelo de entrada da família Core, oferecendo um bom equilíbrio entre custo e desempenho para tarefas cotidianas. Tipicamente, os Core i3 possuem menos núcleos de processamento (dois ou quatro, dependendo da geração) em comparação com seus irmãos maiores.
-    
 - **Core i5**: Considerado o segmento intermediário, o Core i5 oferece um salto de desempenho em relação ao i3, muitas vezes com mais núcleos (quatro a seis, por exemplo) e frequências de clock mais elevadas, sendo adequado para jogos e aplicações mais exigentes.
-    
 - **Core i7**: Voltado para usuários que demandam alta performance, como gamers entusiastas, criadores de conteúdo e profissionais que trabalham com softwares pesados. Os Core i7 costumam apresentar um número ainda maior de núcleos (seis a oito, ou mais), frequências de clock mais altas e tecnologias adicionais como o Hyper-Threading de forma mais consistente.
-    
 - **Core i9**: Representa o topo de linha para o consumidor, oferecendo o máximo em número de núcleos (podendo ultrapassar 18 núcleos em algumas plataformas HEDT - High-End Desktop), frequências de clock extremamente altas e todos os recursos avançados da Intel. São destinados a usuários que necessitam de poder de processamento extremo.
-    
 
 A quantidade de **núcleos de processamento** é um fator determinante: quanto mais núcleos, mais tarefas o processador pode executar simultaneamente ou dividir uma tarefa complexa em múltiplas partes. A **frequência de clock** (velocidade), medida em GHz, também é crucial. Por exemplo, um Core i3 de oitava geração pode operar a 3,6 GHz, enquanto um Core i5 da mesma geração pode atingir 4,3 GHz com Turbo Boost, um Core i7 pode chegar a 4,7 GHz e um Core i9 pode alcançar 4,8 GHz ou mais.
 
@@ -438,106 +451,67 @@ A Intel lança novas gerações de seus processadores Core anualmente ou a cada 
 
 Identificar a geração de um processador Intel Core é relativamente simples observando sua nomenclatura. O número que se segue ao hífen após "i3", "i5", "i7" ou "i9" geralmente indica a geração. Por exemplo:
 
-- `Intel Core i3-**6**XXX`: Pertence à **sexta** geração.
-    
-- `Intel Core i7-**8**XXX`: Pertence à **oitava** geração.
-    
-- `Intel Core i5-**10**XXX`: Pertence à **décima** geração.
-    
-- `Intel Core i9-**13**XXX`: Pertence à **décima terceira** geração.
-    
+- Intel Core i3-**6**XXX: Pertence à **sexta** geração.
+- Intel Core i7-**8**XXX: Pertence à **oitava** geração.
+- Intel Core i5-**10**XXX: Pertence à **décima** geração.
+- Intel Core i9-**13**XXX: Pertence à **décima terceira** geração.
 
-Dentro de uma mesma geração, modelos com numeração subsequente maior geralmente indicam melhor desempenho ou mais recursos. Por exemplo, um `Intel Core i5-13600K` é superior a um `Intel Core i5-13400`.
+Dentro de uma mesma geração, modelos com numeração subsequente maior geralmente indicam melhor desempenho ou mais recursos. Por exemplo, um Intel Core i5-**136**00K é superior a um Intel Core i5-**134**00.
 
 Para adicionar uma camada extra de especificidade (e, por vezes, complexidade), a Intel utiliza **sufixos** (uma ou duas letras) ao final da numeração do modelo. Esses sufixos indicam características particulares do processador:
 
-- **U** (_Ultra Low Power_): Processadores de baixíssimo consumo, comuns em ultrabooks e notebooks finos, priorizando a vida útil da bateria.
-    
-- **Y** (_Extremely Low Power_): Consumo ainda menor que a série U, para dispositivos ultraportáteis. (Ex: Core m3/m5/m7 evoluíram para esta nomenclatura em algumas linhas i5/i7).
-    
-- **T** (_Power Optimized_): Otimizados para um consumo de energia equilibrado em desktops compactos.
-    
-- **Q** (_Quad-core_): Indica que o processador possui quatro núcleos (mais comum em gerações mais antigas de processadores móveis).
-    
-- **H** (_High-Performance Graphics_ para mobile, ou _High Performance_ para algumas linhas): Processadores móveis com gráficos integrados de melhor desempenho ou, em geral, voltados para alta performance em notebooks.
-    
-- **K** (_Unlocked_): Processadores com multiplicador desbloqueado, permitindo overclock (aumento manual da frequência de clock) por parte do usuário. Comum em desktops para entusiastas.
-    
+- **U** (Ultra Low Power): Processadores de baixíssimo consumo, comuns em ultrabooks e notebooks finos, priorizando a vida útil da bateria.
+- **Y** (Extremely Low Power): Consumo ainda menor que a série U, para dispositivos ultraportáteis. (Ex: Core m3/m5/m7 evoluíram para esta nomenclatura em algumas linhas i5/i7).
+- **T** (Power Optimized): Otimizados para um consumo de energia equilibrado em desktops compactos.
+- **Q** (Quad-core): Indica que o processador possui quatro núcleos (mais comum em gerações mais antigas de processadores móveis).
+- **H** (High-Performance Graphics para mobile, ou High Performance para algumas linhas): Processadores móveis com gráficos integrados de melhor desempenho ou, em geral, voltados para alta performance em notebooks.
+- **K** (Unlocked): Processadores com multiplicador desbloqueado, permitindo overclock (aumento manual da frequência de clock) por parte do usuário. Comum em desktops para entusiastas.
 - **F**: Requer gráficos discretos (não possui GPU integrada funcional).
-    
 - **G** (seguido de um número, ex: G1, G4, G7): Indica o nível da placa de vídeo integrada, geralmente em processadores para laptops.
-    
-- **M** (_Mobile_): Designava processadores para laptops em gerações mais antigas.
-    
+- **M** (Mobile): Designava processadores para laptops em gerações mais antigas.
 - **C**: Processadores para desktop com opção de overclock, soquete LGA 1150, com gráficos integrados (geração Broadwell).
-    
 - **R**: Processadores para desktop soldados (BGA), geralmente com gráficos Iris Pro potentes (ex: Broadwell, Haswell).
-    
 - **S**: Edição especial ou com otimização para performance.
-    
-- **X** ou **XE** (_Extreme Edition_): Processadores de altíssimo desempenho para plataformas HEDT.
-    
+- **X** ou **XE** (Extreme Edition): Processadores de altíssimo desempenho para plataformas HEDT.
 - **KF**: Desbloqueado para overclock e requer gráficos discretos.
-    
 - **KS**: Edição especial desbloqueada, geralmente com clocks mais altos de fábrica.
-    
 
-A [Figura - Nomenclatura de processadores Intel] exemplifica como interpretar essa nomenclatura.
+A figura abaixo exemplifica como interpretar essa nomenclatura.
 
-[Figura - Nomenclatura de processadores Intel]
+<div align="center">
+<img width="720px" src="./img/12-intel-nomenclatura.png">
+</div>
 
 Cada geração de processadores Intel também é conhecida por um **codinome** de desenvolvimento. Alguns exemplos notáveis:
 
 - 1ª geração: Nehalem (desktops), Arrandale (móveis), Gulftown (HEDT)
-    
 - 2ª geração: Sandy Bridge
-    
 - 3ª geração: Ivy Bridge
-    
 - 4ª geração: Haswell
-    
 - 5ª geração: Broadwell
-    
 - 6ª geração: Skylake
-    
 - 7ª geração: Kaby Lake
-    
 - 8ª geração: Coffee Lake / Kaby Lake Refresh
-    
 - 9ª geração: Coffee Lake Refresh
-    
 - 10ª geração: Ice Lake (10nm para móveis), Comet Lake (14nm para desktops e móveis)
-    
 - 11ª geração: Tiger Lake (móveis), Rocket Lake (desktops)
-    
 - 12ª geração: Alder Lake
-    
 - 13ª geração: Raptor Lake
-    
 - 14ª geração: Raptor Lake Refresh
-    
 
 A **litografia** é outro termo técnico importante, referindo-se ao processo de fabricação dos transistores no chip, medido em nanômetros (nm). Gerações mais novas tendem a usar litografias menores (ex: 14nm, 10nm, 7nm), o que geralmente permite maior densidade de transistores, melhor eficiência energética e/ou maior desempenho. Exemplos:
 
 - i7-**10**65G7 (10ª gen Ice Lake): 10 nm
-    
 - i5-**9**600T (9ª gen Coffee Lake Refresh): 14 nm
-    
 - i9-**8**950HK (8ª gen Coffee Lake): 14 nm
-    
 - i3-**4**330 (4ª gen Haswell): 22 nm
-    
 
 A Intel também emprega diversas **tecnologias** em seus processadores para otimizar o desempenho:
 
 - **Hyper-Threading (HT)**: Permite que cada núcleo físico do processador execute dois threads (sequências de instruções) simultaneamente, aparecendo para o sistema operacional como o dobro de núcleos lógicos. Isso melhora o desempenho em multitarefa e aplicações otimizadas para paralelismo.
-    
 - **Turbo Boost Technology (atualmente Turbo Boost 2.0 ou Turbo Boost Max 3.0)**: Aumenta dinamicamente a frequência de clock de um ou mais núcleos do processador acima da frequência base, quando as condições de temperatura, energia e corrente permitem. Isso proporciona um "impulso" de desempenho para cargas de trabalho intensas.
-    
 - **Intel Dynamic Tuning**: Um conjunto de tecnologias que gerencia dinamicamente a alocação de energia e os limites térmicos entre a CPU e a GPU integrada (se presente), otimizando o desempenho com base na carga de trabalho e no ambiente operacional.
-    
 - **Intel Virtualization Technology (VT-x)**: Suporte de hardware para virtualização, permitindo que múltiplos sistemas operacionais sejam executados em uma única máquina física com melhor desempenho e isolamento.
-    
 
 Além da família Core, a Intel produz outras linhas de processadores como **Atom** (para dispositivos de baixo consumo e embarcados), **Celeron** e **Pentium** (para o segmento de entrada, abaixo dos Core i3), e **Xeon** (para servidores e estações de trabalho, com foco em confiabilidade, múltiplos núcleos e recursos avançados como memória ECC).
 
@@ -548,15 +522,10 @@ A Advanced Micro Devices (AMD) é a principal concorrente da Intel no mercado de
 Algumas das linhas de processadores da AMD incluem:
 
 - **Ryzen**: A linha de processadores mais recente e competitiva da AMD para desktops e laptops, abrangendo desde modelos de entrada (Ryzen 3) até intermediários (Ryzen 5), alta performance (Ryzen 7) e entusiastas (Ryzen 9 e Ryzen Threadripper para HEDT). Os processadores Ryzen são conhecidos por oferecerem um grande número de núcleos e threads a preços competitivos.
-    
 - **EPYC**: Linha de processadores para servidores, competindo diretamente com os Intel Xeon.
-    
 - **Athlon**: Nome tradicional da AMD, atualmente usado para processadores de entrada.
-    
 - **FX**: Linha mais antiga de processadores para entusiastas, baseada na arquitetura Bulldozer e suas sucessoras.
-    
 - **Sempron**: Linha mais antiga para o segmento de baixo custo. Uma característica notável em algumas versões do Sempron era o controlador de memória DDR integrado, que na época representava uma vantagem arquitetônica ao reduzir a latência de acesso à memória.
-    
 
 A AMD também desenvolveu tecnologias para otimizar o desempenho e a eficiência de seus processadores. Uma delas é a **Cool'n'Quiet**, que ajusta dinamicamente a frequência de clock e a voltagem do processador, reduzindo-as quando o sistema está ocioso. Isso resulta em menor consumo de energia e menor geração de calor, consequentemente diminuindo a carga de trabalho do cooler. Essa tecnologia é análoga ao SpeedStep da Intel e ao PowerNow! da própria AMD (focado em portáteis), visando principalmente aumentar a autonomia de bateria em notebooks.
 
@@ -573,19 +542,20 @@ O elemento chave nessa comunicação é o **driver de dispositivo**. Um driver �
 Nos sistemas operacionais modernos, como o Windows e muitas distribuições Linux, o processo de instalação de drivers para periféricos comuns tornou-se largamente automatizado. Ao conectar um novo dispositivo (especialmente via USB), o sistema operacional tenta identificá-lo e:
 
 1. Utilizar um driver genérico já incluído no sistema.
-    
 2. Buscar e instalar automaticamente o driver adequado a partir de repositórios online (como o Windows Update).
-    
 3. Solicitar ao usuário que forneça o driver, geralmente através de um CD/DVD que acompanha o produto ou um arquivo baixado do site do fabricante.
-    
 
-No Windows, o **Gerenciador de Dispositivos** (acessível através do Painel de Controle ou clicando com o botão direito em "Este Computador" > "Gerenciar") é uma ferramenta essencial para verificar o status de todos os dispositivos de hardware instalados. Ele exibe quais dispositivos estão funcionando corretamente, quais estão com problemas (geralmente marcados com um ícone de exclamação amarelo) ou quais não possuem drivers instalados. A [Figura - Janela de Gerenciador de Dispositivos] mostra a interface do Gerenciador de Dispositivos, indicando dispositivos com possíveis problemas.
+No Windows, o **Gerenciador de Dispositivos** (acessível através do Painel de Controle ou clicando com o botão direito em "Este Computador" > "Gerenciar") é uma ferramenta essencial para verificar o status de todos os dispositivos de hardware instalados. Ele exibe quais dispositivos estão funcionando corretamente, quais estão com problemas (geralmente marcados com um ícone de exclamação amarelo) ou quais não possuem drivers instalados. A imagem abaixo mostra a interface do Gerenciador de Dispositivos, indicando dispositivos com possíveis problemas.
 
-[Figura - Janela de Gerenciador de Dispositivos]
+<div align="center">
+<img width="420px" src="./img/12-gerenciador-de-dispositivos.png">
+</div>
 
-Se um dispositivo não está funcionando corretamente, uma das primeiras ações é tentar atualizar seu driver. O Gerenciador de Dispositivos oferece opções para que o Windows busque o driver automaticamente ou para que o usuário indique manualmente a localização dos arquivos do driver (por exemplo, em uma pasta no computador ou em uma mídia removível), como ilustrado na [Figura - Janela de buscar Driver].
+Se um dispositivo não está funcionando corretamente, uma das primeiras ações é tentar atualizar seu driver. O Gerenciador de Dispositivos oferece opções para que o Windows busque o driver automaticamente ou para que o usuário indique manualmente a localização dos arquivos do driver (por exemplo, em uma pasta no computador ou em uma mídia removível), como mostrado a seguir.
 
-[Figura - Janela de buscar Driver]
+<div align="center">
+<img width="560px" src="./img/12-atualizar-driver.png">
+</div>
 
 Um problema comum que exemplifica a importância dos drivers é quando a tela do computador exibe imagens com baixa resolução, com ícones e textos "muito grandes", e as opções para aumentar a resolução nas configurações de vídeo estão limitadas ou ausentes. A causa mais provável para esse sintoma é a falta de um driver adequado para a placa de vídeo ou a utilização de um driver genérico básico pelo sistema operacional. A instalação do driver correto fornecido pelo fabricante da placa de vídeo (NVIDIA, AMD, Intel) geralmente resolve o problema, habilitando todas as resoluções suportadas e otimizando o desempenho gráfico.
 
@@ -594,19 +564,13 @@ Um problema comum que exemplifica a importância dos drivers é quando a tela do
 A manutenção de computadores e periféricos pode ser dividida em duas categorias principais: preventiva e corretiva. Ambas são importantes para garantir a longevidade e o desempenho ideal do hardware.
 
 - **Manutenção Preventiva**: Como o nome sugere, consiste em um conjunto de ações realizadas proativamente para evitar a ocorrência de falhas ou a degradação do desempenho. Baseia-se na ideia de que é melhor prevenir do que remediar. Exemplos de ações de manutenção preventiva incluem:
-    
     - **Limpeza interna**: Remover o acúmulo de poeira e sujeira das partes internas do computador, especialmente dos coolers (do processador, da placa de vídeo, da fonte) e dos dissipadores de calor. O acúmulo de poeira dificulta a refrigeração, podendo levar ao superaquecimento.
-        
     - **Limpeza de contatos**: Remover a oxidação dos contatos metálicos das placas de memória RAM e de outras placas de expansão utilizando um produto específico para limpeza de contatos eletrônicos ou uma borracha branca macia (com cuidado para não deixar resíduos).
-        
     - **Substituição da pasta térmica**: Com o tempo, a pasta térmica entre o processador e o cooler pode ressecar e perder sua eficiência. Remover a pasta antiga e aplicar uma nova camada pode melhorar significativamente a refrigeração do CPU.
-        
     - **Atualizações de software e firmware**: Instalar os pacotes de atualizações (patches) e as versões mais recentes de drivers fornecidos pelos fabricantes dos componentes e pelo desenvolvedor do sistema operacional. Isso pode corrigir bugs, melhorar a segurança e otimizar o desempenho.
-        
     - **Verificação de disco e desfragmentação (para HDs)**: Executar utilitários para verificar a integridade do sistema de arquivos e, no caso de discos rígidos mecânicos, desfragmentar os dados para otimizar o tempo de acesso. (SSDs não necessitam de desfragmentação).
-        
+
 - **Manutenção Corretiva**: É a intervenção realizada após a ocorrência de uma falha ou problema. É a forma mais reativa de manutenção, resumida pela lógica "quebrou, consertou". Embora inevitável em alguns casos (falhas imprevisíveis), depender exclusivamente da manutenção corretiva pode levar a custos mais altos, maior tempo de inatividade do equipamento e potencial perda de dados. Exemplos incluem a substituição de um disco rígido defeituoso, o reparo de uma placa-mãe danificada ou a reinstalação do sistema operacional após uma falha grave.
-    
 
 O **benchmark** é um termo relevante no contexto de avaliação de desempenho. Consiste na execução de um programa de computador específico, um conjunto de programas ou uma série de operações padronizadas com o objetivo de medir e avaliar o desempenho relativo de um componente de hardware (como CPU, GPU, SSD) ou de um sistema como um todo. Os resultados dos benchmarks são frequentemente usados para comparar diferentes produtos ou para verificar se um sistema está operando conforme o esperado.
 
@@ -615,58 +579,54 @@ O **benchmark** é um termo relevante no contexto de avaliação de desempenho. 
 Ao analisar a configuração de um computador, é comum encontrar os termos "onboard" e "offboard".
 
 - **Componentes Onboard**: São aqueles que vêm integrados diretamente à placa-mãe. Exemplos típicos incluem controladoras de áudio, rede, vídeo (gráficos integrados) e portas USB. As conexões para esses componentes (saídas de áudio, porta de rede RJ-45, saídas de vídeo como VGA/HDMI/DisplayPort) geralmente se localizam no painel traseiro do gabinete, agrupadas com as outras portas da placa-mãe.
-    
-- **Componentes Offboard**: São placas de expansão que são instaladas em slots na placa-mãe (como PCI, PCIe). Exemplos incluem placas de vídeo dedicadas, placas de som de alta fidelidade, placas de rede especializadas ou controladoras de armazenamento adicionais. Essas placas ocupam os slots de expansão e seus conectores ficam acessíveis na parte traseira do gabinete, nas aberturas correspondentes aos slots.
-    
 
-A principal desvantagem dos componentes onboard, especialmente os gráficos integrados, é que eles frequentemente compartilham recursos do sistema, como a memória RAM (memória compartilhada, configurável no SETUP da BIOS/UEFI) e, em certa medida, o poder de processamento da CPU. Isso pode resultar em um desempenho inferior comparado a soluções offboard dedicadas, que possuem seus próprios processadores (GPU no caso de placas de vídeo) e memória (VRAM). Outro ponto é a dificuldade de substituição em caso de defeito; se um componente onboard falha, muitas vezes a única solução é desativá-lo na BIOS/UEFI e instalar uma placa offboard para substituí-lo, ou, em casos mais graves, trocar a placa-mãe inteira. A vantagem dos componentes onboard é o custo reduzido, tornando-os adequados para computadores de escritório ou para usuários com necessidades básicas que não exigem alto desempenho gráfico ou de áudio. Para tarefas exigentes como jogos modernos ou edição de vídeo profissional, uma placa de vídeo offboard (dedicada) é quase sempre indispensável.
+- **Componentes Offboard**: São placas de expansão que são instaladas em slots na placa-mãe (como PCI, PCIe). Exemplos incluem placas de vídeo dedicadas, placas de som de alta fidelidade, placas de rede especializadas ou controladoras de armazenamento adicionais. Essas placas ocupam os slots de expansão e seus conectores ficam acessíveis na parte traseira do gabinete, nas aberturas correspondentes aos slots.
+
+A principal desvantagem dos componentes onboard, especialmente os gráficos integrados, é que eles frequentemente compartilham recursos do sistema, como a memória RAM (memória compartilhada, configurável no SETUP da BIOS/UEFI) e, em certa medida, o poder de processamento da CPU. Isso pode resultar em um desempenho inferior comparado a soluções offboard dedicadas, que possuem seus próprios processadores (GPU no caso de placas de vídeo) e memória (VRAM).
+
+Outro ponto é a dificuldade de substituição em caso de defeito; se um componente onboard falha, muitas vezes a única solução é desativá-lo na BIOS/UEFI e instalar uma placa offboard para substituí-lo, ou, em casos mais graves, trocar a placa-mãe inteira. A vantagem dos componentes onboard é o custo reduzido, tornando-os adequados para computadores de escritório ou para usuários com necessidades básicas que não exigem alto desempenho gráfico ou de áudio. Para tarefas exigentes como jogos modernos ou edição de vídeo profissional, uma placa de vídeo offboard (dedicada) é quase sempre indispensável.
 
 #### Eletricidade Estática: Um Inimigo Invisível
 
 A eletricidade estática (ESD - Electrostatic Discharge) representa um risco significativo para os componentes eletrônicos sensíveis de um computador. O corpo humano pode acumular uma carga estática considerável, especialmente em ambientes secos, e uma descarga dessa energia em um componente pode danificá-lo permanentemente, mesmo que o dano não seja imediatamente aparente. Para evitar problemas com ESD ao manusear componentes internos do computador, é recomendável:
 
 - Tocar em um objeto metálico grande e aterrado (como a parte metálica do gabinete, desde que ele esteja conectado à tomada e a tomada possua aterramento) antes de tocar nos componentes, para descarregar qualquer eletricidade estática acumulada.
-    
-- Utilizar uma **pulseira antiestática** aterrada. Esta pulseira é usada no pulso e possui um cabo com um clipe jacaré que é conectado a um ponto de aterramento, garantindo que o técnico permaneça continuamente descarregado. A [Figura - Pulseira antiestática] mostra este dispositivo.
-    
+- Utilizar uma **pulseira antiestática** aterrada. Esta pulseira é usada no pulso e possui um cabo com um clipe jacaré que é conectado a um ponto de aterramento, garantindo que o técnico permaneça continuamente descarregado.
 
-[Figura - Pulseira antiestática]
+<div align="center">
+<img width="420px" src="./img/12-pulseira-antiestatica.png">
+</div>
 
 #### Diagnóstico de Defeitos e Solução de Problemas
 
 Quando um computador apresenta problemas, algumas etapas de diagnóstico podem ajudar a identificar a causa:
 
 - **Limpeza de Contatos da Memória RAM**: Um dos problemas mais comuns que impede o computador de ligar ou que causa instabilidade é o mau contato nos módulos de memória RAM. Retirar os módulos, limpar seus contatos dourados com uma borracha branca macia e reinseri-los firmemente nos slots pode resolver muitos problemas.
-    
 - **Verificação da Fonte de Alimentação**: Verificar se as tensões fornecidas pela fonte estão corretas, utilizando um multímetro ou um testador de fontes. Tensões incorretas podem causar instabilidade ou impedir que o computador ligue.
-    
 - **Sinais Sonoros (Beep Codes)**: Muitas BIOS/UEFI emitem uma sequência de bipes sonoros durante o POST (Power-On Self-Test) se detectarem um problema de hardware crítico (ex: falha na memória, placa de vídeo ausente ou defeituosa). Consultar o manual da placa-mãe ou do fabricante da BIOS pode ajudar a interpretar esses códigos sonoros.
-    
-- **Placas de Diagnóstico (POST Cards)**: São placas de expansão que se conectam a um slot (ISA ou PCI, ou mesmo via USB em alguns casos) e exibem um código hexadecimal que corresponde ao estado do processo de inicialização (POST). Se o computador trava durante o POST, o último código exibido pode indicar o componente ou a etapa que causou a falha. A documentação da placa-mãe ou da BIOS é necessária para interpretar esses códigos. A [Figura - Placa de leitura de Post Error Codes] ilustra uma dessas placas.
-    
-    [Figura - Placa de leitura de Post Error Codes]
-    
 - **Superaquecimento do Processador**: Se o processador superaquecer devido a uma falha no cooler, pasta térmica inadequada ou ventilação insuficiente, o computador pode apresentar sintomas como reinicializações constantes, desligamentos abruptos ou travamentos. Muitos sistemas possuem mecanismos de proteção que desligam o computador para evitar danos permanentes ao CPU.
-    
+- **Placas de Diagnóstico (POST Cards)**: São placas de expansão que se conectam a um slot (ISA ou PCI, ou mesmo via USB em alguns casos) e exibem um código hexadecimal que corresponde ao estado do processo de inicialização (POST). Se o computador trava durante o POST, o último código exibido pode indicar o componente ou a etapa que causou a falha. A documentação da placa-mãe ou da BIOS é necessária para interpretar esses códigos. Veja a aparência típica de uma dessas placas.
+
+<div align="center">
+<img width="420px" src="./img/12-placa-de-diagnostico.png">
+</div>
 
 #### Falha na Inicialização (Boot Failure)
 
-Uma falha de boot ocorre quando o computador não consegue carregar o sistema operacional. Após o POST, a BIOS/UEFI tenta encontrar um dispositivo de boot válido (HD, SSD, pen drive, DVD) na ordem configurada. Se nenhum dispositivo de boot contendo um sistema operacional funcional for encontrado, mensagens de erro como "No boot device available", "Operating System not found", "Reboot and Select proper Boot device" ou similares são exibidas. A [Figura - Mensagens de Falha de BOOT] mostra exemplos dessas mensagens.
+Uma falha de boot ocorre quando o computador não consegue carregar o sistema operacional. Após o POST, a BIOS/UEFI tenta encontrar um dispositivo de boot válido (HD, SSD, pen drive, DVD) na ordem configurada. Se nenhum dispositivo de boot contendo um sistema operacional funcional for encontrado, mensagens de erro como "No boot device available", "Operating System not found", "Reboot and Select proper Boot device" ou similares são exibidas. Segue alguns exemplos dessas mensagens.
 
-[Figura - Mensagens de Falha de BOOT]
+<div align="center">
+<img width="400px" src="./img/12-falhas-de-boot.png">
+</div>
 
 Algumas possíveis causas e soluções para falhas de boot incluem:
 
 - **Cabos Desconectados ou Defeituosos**: Verificar se os cabos de dados (SATA) e de alimentação do disco rígido ou SSD onde o sistema operacional está instalado estão firmemente conectados tanto no dispositivo quanto na placa-mãe. Tentar trocar os cabos pode ajudar.
-    
 - **Dispositivo de Boot Incorreto na Sequência**: Um pen drive "bootável" (mas talvez com um sistema corrompido ou incompleto) ou um DVD deixado no drive pode estar sendo selecionado como o primeiro dispositivo de boot. Remover esses dispositivos ou alterar a ordem de boot na configuração da BIOS/UEFI para priorizar o HD/SSD principal pode resolver o problema.
-    
 - **Sistema Operacional Corrompido**: Arquivos críticos do sistema operacional podem ter sido corrompidos. Nesses casos, pode ser necessário utilizar as ferramentas de reparo de inicialização do próprio sistema operacional (geralmente acessíveis a partir de uma mídia de instalação ou recuperação) ou, em último caso, reinstalar o sistema.
-    
 - **Disco Rígido/SSD Defeituoso**: O dispositivo de armazenamento onde o sistema operacional reside pode estar falhando. Testes de diagnóstico do disco podem ser necessários.
-    
 
-## Considerações Finais do Capítulo
+## Considerações Finais
 
 Ao longo deste capítulo, navegamos pelo intrincado, porém fascinante, mundo do hardware computacional. Desvendamos os componentes que, juntos, formam a espinha dorsal física de qualquer sistema, desde o gabinete que os protege até o microprocessador que lhes dá inteligência. Exploramos a importância da placa-mãe como centro nevrálgico de conexões, a evolução dos barramentos que permitem a comunicação veloz entre as partes, e a diversidade de periféricos que estendem as capacidades da máquina, tornando-a uma ferramenta versátil para as mais diversas aplicações.
 
