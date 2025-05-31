@@ -167,7 +167,15 @@ Quando o SGBD recebe uma consulta SQL de alto nível (declarativa, ou seja, que 
 
 A próxima etapa envolve a **geração do código de consulta** (ou código executável) a partir do plano de execução selecionado. Esse código de baixo nível é o que o processador de tempo de execução (runtime engine) do SGBD irá efetivamente rodar. O código pode ser executado diretamente (modo interpretado) ou pode ser armazenado em cache para ser reutilizado em execuções futuras da mesma consulta (modo compilado ou preparado). A figura a seguir tenta resumir as etapas típicas envolvidas no processamento de uma consulta SQL.
 
-Geralmente, os SGBDs utilizam técnicas de otimização baseadas em **regras heurísticas** (que aplicam transformações lógicas à consulta para simplificá-la ou reescrevê-la de forma mais eficiente) e/ou otimização baseada em **estimativa de custos** (que compara diversas estratégias alternativas do ponto de vista do custo computacional estimado). Muitos otimizadores modernos combinam as duas técnicas para obter um resultado satisfatório. É importante lembrar que o objetivo do otimizador não é, necessariamente, encontrar o melhor plano de execução _possível_ em termos absolutos (o que seria computacionalmente proibitivo para consultas complexas), mas sim encontrar um plano muito bom em um tempo de otimização aceitável. A figura abaixo apresenta uma visão geral simplificada do processo de otimização de consulta no SGBD Oracle, um dos mais sofisticados do mercado.
+<div align="center">
+  <img width="700px" src="./img/17-processamento-de-consultas-sql.png">
+</div>
+
+Geralmente, os SGBDs utilizam técnicas de otimização baseadas em **regras heurísticas** (que aplicam transformações lógicas à consulta para simplificá-la ou reescrevê-la de forma mais eficiente) e/ou otimização baseada em **estimativa de custos** (que compara diversas estratégias alternativas do ponto de vista do custo computacional estimado). Muitos otimizadores modernos combinam as duas técnicas para obter um resultado satisfatório. É importante lembrar que o objetivo do otimizador não é, necessariamente, encontrar o melhor plano de execução **possível** em termos absolutos (o que seria computacionalmente proibitivo para consultas complexas), mas sim encontrar um plano muito bom em um tempo de otimização aceitável. A figura abaixo apresenta uma visão geral simplificada do processo de otimização de consulta no SGBD Oracle, um dos mais sofisticados do mercado.
+
+<div align="center">
+  <img width="540px" src="./img/17-processamento-de-consultas-no-oracle.png">
+</div>
 
 O ajuste de instruções SQL é, portanto, o processo de construir ou reescrever instruções SQL de forma a alcançar resultados mais eficazes e eficientes em termos de consumo de recursos e tempo de resposta. O ajuste de SQL começa, muitas vezes, com o arranjo básico e a clareza dos elementos em uma consulta. A simples formatação do código SQL, embora não afete diretamente como o SGBD o executa, pode desempenhar um papel relevante na capacidade do desenvolvedor ou DBA de entender, analisar e otimizar o comando.
 
