@@ -1,4 +1,4 @@
-# Capítulo 4 – Apache JMeter: Testando a Performance de Aplicações
+# Capítulo 4 – Apache JMeter
 
 Nos capítulos anteriores, focamos em frameworks e ferramentas voltadas principalmente para testes funcionais e de unidade, como JUnit e Selenium. Agora, vamos direcionar nossa atenção para um aspecto igualmente crítico da qualidade de software: o **desempenho**. Aplicações que são funcionalmente corretas, mas lentas ou incapazes de lidar com a carga de usuários esperada, podem levar a uma péssima experiência do usuário e, consequentemente, ao fracasso. É nesse contexto que ferramentas como o **Apache JMeter™** se tornam indispensáveis.
 

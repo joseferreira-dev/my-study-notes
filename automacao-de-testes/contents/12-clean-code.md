@@ -1,4 +1,4 @@
-## Capítulo 12 – Clean Code: A Arte de Escrever Código Legível e Sustentável
+## Capítulo 12 – Clean Code: Escrevendo Código Legível e Sustentável
 
 Ao longo desta apostila, exploramos um arsenal de ferramentas e metodologias voltadas para a automação e gestão de testes. Desde frameworks robustos como JUnit e Selenium até estratégias como TDD e BDD, o objetivo constante tem sido aprimorar a qualidade do software que entregamos. Neste capítulo, vamos nos aprofundar em um conceito que permeia todas essas práticas e é fundamental para o sucesso a longo prazo de qualquer projeto de software: o **Clean Code** (Código Limpo).
 

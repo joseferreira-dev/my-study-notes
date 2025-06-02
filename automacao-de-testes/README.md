@@ -28,3 +28,14 @@ Dominar automação de testes, portanto, não é apenas uma competência técnic
 Abaixo segue o índice com os conteúdos sobre Automação de Testes.
 
 - [Capítulo 1 – Introdução à Automação de Testes](contents/01-introducao.md)
+- [Capítulo 2 – JUnit](contents/02-junit.md)
+- [Capítulo 3 – Selenium](contents/03-selenium.md)
+- [Capítulo 4 – Apache JMeter](contents/04-jmeter.md)
+- [Capítulo 5 – Jasmine](contents/05-jasmine.md)
+- [Capítulo 6 – Jest](contents/06-jest.md)
+- [Capítulo 7 – Mockito](contents/07-mockito.md)
+- [Capítulo 8 – TestLink](contents/08-testlink.md)
+- [Capítulo 9 – Cucumber](contents/09-cucumber.md)
+- [Capítulo 10 – Karate DSL](contents/10-karate-dsl.md)
+- [Capítulo 11 – TDD, BDD, ATDD e DDD: Desenvolvimento de Software Guiado por Testes](contents/11-tdd-bdd-atdd-ddd.md)
+- [Capítulo 12 – Clean Code: Escrevendo Código Legível e Sustentável](contents/12-clean-code.md)

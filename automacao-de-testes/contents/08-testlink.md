@@ -1,4 +1,4 @@
-# Capítulo 8 – TestLink: Gerenciamento Centralizado de Testes
+# Capítulo 8 – TestLink
 
 Nos capítulos anteriores, exploramos diversas ferramentas e frameworks focados na criação e execução de testes automatizados. No entanto, o processo de teste de software vai além da simples execução de scripts. Ele envolve planejamento, especificação de casos de teste, organização de execuções, acompanhamento de resultados, gerenciamento de defeitos e geração de relatórios. Para orquestrar todas essas atividades de forma eficaz, especialmente em equipes e projetos de maior escala, entram em cena os **Sistemas de Gerenciamento de Testes (Test Management Systems - TMS)**.
 
