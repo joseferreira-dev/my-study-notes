@@ -128,17 +128,13 @@ Cada site local em um SGBDD é tipicamente administrado por um SGBD local (que p
 
 Cada site local também possui seu próprio software de gerenciamento de transações, incluindo seus próprios mecanismos e protocolos para controle de concorrência local (como bloqueio), registro de transações (log) e software de recuperação de falhas local. Embora geograficamente dispersos e com autonomia local, um SGBDD administra e controla todo o banco de dados distribuído como um único conjunto lógico de dados. A localização física dos itens de dados e o grau de autonomia dos sites individuais têm um impacto significativo sobre todos os aspectos do sistema, incluindo a otimização e o processamento de consultas distribuídas, e o controle de concorrência e recuperação de transações que abrangem múltiplos sites.
 
-Em um sistema de banco de dados distribuído (SBDD), os dados e, frequentemente, o processamento de transações são divididos entre um ou more computadores (nós ou sites) conectados por uma rede, com cada computador desempenhando um papel específico no sistema global. Os hosts (computadores) nos sistemas distribuídos se comunicam através de diversos meios de comunicação, como redes de computadores de alta velocidade (LANs, WANs, Internet). Uma característica fundamental é que eles, tipicamente, **não compartilham memória principal ou discos** diretamente (alinhando-se com a arquitetura "nada compartilhado" que vimos anteriormente, embora um site individual possa ser, ele próprio, um cluster de disco compartilhado ou uma máquina de memória compartilhada).
+Em um sistema de banco de dados distribuído (SBDD), os dados e, frequentemente, o processamento de transações são divididos entre um ou mais computadores (nós ou sites) conectados por uma rede, com cada computador desempenhando um papel específico no sistema global. Os hosts (computadores) nos sistemas distribuídos se comunicam através de diversos meios de comunicação, como redes de computadores de alta velocidade (LANs, WANs, Internet). Uma característica fundamental é que eles, tipicamente, **não compartilham memória principal ou discos** diretamente (alinhando-se com a arquitetura "nada compartilhado" que vimos anteriormente, embora um site individual possa ser, ele próprio, um cluster de disco compartilhado ou uma máquina de memória compartilhada).
 
 Um SBDD permite que aplicações acessem dados que podem estar armazenados em bancos de dados locais (no mesmo site da aplicação) ou remotos (em outros sites da rede). Eles geralmente utilizam uma arquitetura cliente/servidor para processar os pedidos de informação ou requisições de transação. Os computadores distribuídos no sistema podem variar em tamanho e função, desde estações de trabalho e servidores departamentais até sistemas de mainframe de grande porte. Os computadores em um SBDD são referidos por um número de nomes diferentes, tais como **sites** ou **nós**. A estrutura geral de um sistema de banco de dados distribuído é mostrada na figura abaixo, ilustrando múltiplos sites interconectados por uma rede de comunicação, cada um com seu SGBD e banco de dados local.
 
-&lt;div align="center">
-
-&lt;img src="https://placehold.co/700x450/EEE/31343C?text=Figura+18.7+-+Configuração+de+um+SBDD" alt="Figura 18.7 - Configuração de um sistema de banco de dados distribuído">
-
-&lt;figcaption>Figura 18.7 - Configuração de um sistema de banco de dados distribuído&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="620px" src="./img/18-configuracao-banco-de-dados-distribuido.png">
+</div>
 
 Lembrem-se, os SBDDs surgiram, em grande parte, da necessidade de oferecer autonomia operacional e de dados a unidades de uma organização localizadas em locais geograficamente distantes. Por exemplo, filiais de bancos multinacionais, redes de varejo com múltiplas lojas, ou grandes empresas com escritórios regionais podem ter suas bases de dados operacionais localizadas em diferentes cidades, estados ou países. O avanço nos sistemas de comunicação e de rede, tornando a interconexão mais rápida e confiável, foi o catalisador para o desenvolvimento e a viabilidade da abordagem de banco de dados distribuído. Tornou-se possível permitir que esses sistemas geograficamente dispersos se comuniquem de forma eficaz, de modo que os dados pudessem ser acessados e compartilhados de forma transparente entre as máquinas em diferentes localizações geográficas.
 
@@ -146,7 +142,7 @@ Os SBDDs frequentemente são utilizados para unir sistemas de informação pré-
 
 De forma mais ampla, os **sistemas de computação distribuídos** podem ser definidos como uma coleção de elementos de processamento (computadores), não necessariamente homogêneos, que são interconectados por uma rede de computadores e que cooperam na realização de certas tarefas atribuídas, apresentando-se ao usuário como um único sistema coeso.
 
-#### **18.3.2 Diferenças Cruciais entre Bancos de Dados Paralelos e Distribuídos**
+### Diferenças Cruciais entre Bancos de Dados Paralelos e Distribuídos
 
 Embora os bancos de dados distribuídos frequentemente utilizem uma arquitetura do tipo "nada compartilhado", que também é uma das possíveis classificações para sistemas de banco de dados paralelos, existem diferenças fundamentais no modo de operação e nos objetivos primários de cada um. As principais distinções entre bancos de dados paralelos e distribuídos são:
 
@@ -154,16 +150,16 @@ Embora os bancos de dados distribuídos frequentemente utilizem uma arquitetura 
 - **Foco no Desempenho vs. Disponibilidade/Autonomia:** O principal objetivo dos bancos de dados paralelos é o ganho de desempenho e escalabilidade através da paralelização de consultas e transações dentro de um sistema mais coeso e geralmente localizado. Já os bancos de dados distribuídos, embora também possam buscar desempenho, têm um foco primordial na distribuição de dados para atender a requisitos de autonomia local, localidade de referência (dados próximos ao usuário), disponibilidade (um site pode falhar sem derrubar todo o sistema) e integração de sistemas heterogêneos.
 - **Diferenciação de Operações Locais e Globais:** Em um sistema de banco de dados distribuído, há uma distinção clara e significativa entre operações que são puramente locais (executadas inteiramente dentro de um único site) e operações globais (que requerem acesso a dados ou coordenação entre múltiplos sites). O custo e a complexidade das operações globais são consideravelmente maiores. Em sistemas paralelos, essa distinção é menos pronunciada, pois todos os processadores e dados estão, geralmente, sob um mesmo domínio administrativo e interconectados por uma rede de altíssima velocidade.
 
-#### **18.3.3 Propriedades Desejáveis de Bancos de Dados Distribuídos**
+### Propriedades Desejáveis de Bancos de Dados Distribuídos
 
 Para que os sistemas de banco de dados distribuídos sejam eficazes e utilizáveis, eles devem se esforçar para tornar o impacto da distribuição dos dados o mais transparente possível para os usuários e aplicações. Idealmente, eles devem possuir as seguintes propriedades fundamentais:
 
-- **Independência de Dados Distribuídos (Transparência de Distribuição):** Esta propriedade, também conhecida como **transparência de localização**, **transparência de fragmentação** e **transparência de replicação** (que veremos em detalhe), permite aos usuários e aplicações solicitar consultas e executar transações sem a necessidade de especificar onde as relações de referência, ou cópias e fragmentos dessas relações, estão fisicamente localizadas. Este princípio é uma extensão natural dos conceitos de independência de dados física e lógica que já estudamos em SGBDs centralizados. Além disso, as consultas que abrangem múltiplos sites devem ser otimizadas de forma sistemática pelo SGBDD, utilizando critérios baseados em custos que levem em consideração não apenas os custos de processamento local em cada site, mas também, e crucialmente, os custos de comunicação para transferir dados entre os sites.
+- **Independência de Dados Distribuídos (Transparência de Distribuição):** Esta propriedade, também conhecida como **transparência de localização**, **transparência de fragmentação** e **transparência de replicação**, permite aos usuários e aplicações solicitar consultas e executar transações sem a necessidade de especificar onde as relações de referência, ou cópias e fragmentos dessas relações, estão fisicamente localizadas. Este princípio é uma extensão natural dos conceitos de independência de dados física e lógica que já estudamos em SGBDs centralizados. Além disso, as consultas que abrangem múltiplos sites devem ser otimizadas de forma sistemática pelo SGBDD, utilizando critérios baseados em custos que levem em consideração não apenas os custos de processamento local em cada site, mas também, e crucialmente, os custos de comunicação para transferir dados entre os sites.
 - **Transação Atômica Distribuída:** Esta propriedade garante que os usuários possam escrever transações que acessem e atualizem dados em múltiplos locais da mesma forma que fariam se todas as operações sobre os dados fossem puramente locais. Em particular, os efeitos de uma transação que abrange diversos sites deverão continuar a ser **atômicos**. Ou seja, ou todas as alterações realizadas pela transação em todos os sites participantes persistem se a transação é efetivada (`COMMIT`), ou nenhuma alteração deve persistir em nenhum dos sites se a transação é abortada (`ROLLBACK`). Isso requer protocolos de commit distribuído complexos, como o Two-Phase Commit (2PC).
 
 Um princípio fundamental e norteador no projeto de sistemas distribuídos, incluindo SGBDDs, é que: **para o usuário, um sistema distribuído deve parecer exatamente como um sistema não distribuído**. Ou seja, a complexidade da distribuição deve ser abstraída e gerenciada internamente pelo sistema.
 
-#### **18.3.4 As Doze Regras de Date para Bancos de Dados Distribuídos**
+### As Doze Regras de Date para Bancos de Dados Distribuídos
 
 Em um texto clássico e influente, "An Introduction to Database Systems", Christopher J. Date, uma das maiores autoridades em bancos de dados relacionais, discute doze regras ou objetivos secundários que servem como um ideal a ser perseguido por sistemas de banco de dados distribuídos. Embora alcançar todas essas regras em sua plenitude seja um desafio considerável, elas fornecem um excelente referencial para entender as capacidades e complexidades de um SGBDD. Vamos dar uma breve olhada nessas regras:
 
@@ -173,58 +169,48 @@ Em um texto clássico e influente, "An Introduction to Database Systems", Christ
 4. **Independência de Localização (Transparência de Localização):** Os usuários e as aplicações não precisam saber onde os dados estão armazenados fisicamente para poderem acessá-los. O sistema deve funcionar como se todos os dados residissem no mesmo local lógico. A natureza distribuída do banco de dados deve ser transparente para os usuários finais.
 5. **Independência de Fragmentação (Transparência de Fragmentação):** O sistema deve suportar a fragmentação de dados, ou seja, deve ser possível particionar uma determinada relação (tabela) em múltiplos fragmentos que são armazenados em diferentes locais da rede. Assim, os dados podem ser armazenados no local onde são utilizados com maior frequência, o que pode reduzir o tráfego de rede e melhorar o desempenho. A fragmentação, assim como a localização, deve ser transparente para os usuários finais. Por exemplo, suponha que uma grande organização tenha registros de empregados em uma relação `EMPREGADO`. Os diferentes departamentos da empresa estão em diferentes localidades. Os registros para os empregados de cada departamento poderiam ser armazenados em servidores locais nesses respectivos departamentos. Isso pode ser facilitado em SGBDs como Oracle ou DB2, dividindo a tabela de empregados por meio de uma fragmentação horizontal baseada na coluna `ID_DEPARTAMENTO`. Esta é uma técnica utilizada por vários SGBDs para facilitar a independência de fragmentação.
 6. **Independência de Replicação (Transparência de Replicação):** Uma relação específica (ou um fragmento de uma relação) pode ser replicada (ou seja, ter cópias) em diferentes sites. A replicação pode melhorar o tempo de acesso (lendo da cópia local ou mais próxima) e aumentar a disponibilidade dos dados (se um site com uma cópia falhar, outras cópias ainda estão acessíveis). A desvantagem, no entanto, é a complexidade da atualização: todas as cópias da relação ou fragmento precisam ser mantidas consistentes quando ocorrem modificações. A existência de réplicas deve ser transparente para os usuários finais.
-7. **Processamento de Consultas Distribuído:** O sistema deve ser capaz de processar consultas que envolvam dados de diferentes sites de forma eficiente. Isso inclui a capacidade de otimizar consultas distribuídas, minimizando a transferência de dados entre sites. Idealmente, os registros devem ser transmitidos em conjuntos (blocos) de uma só vez, em vez de um registro de cada vez, para reduzir a sobrecarga da rede. Exemplo: Suponha que temos uma empresa internacional, como a IBM, onde os dados dos empregados são armazenados na relação `EMPREGADO`, fragmentada por país onde existem escritórios da IBM. A IBM Canadá emite o pedido: "Encontrar todos os trabalhadores do sexo masculino de nacionalidade jamaicana". Então: a. Suponha que existam _n_ registros que satisfazem este pedido na Jamaica. Se o sistema é relacional e otimizado para distribuição, a consulta pode envolver poucas mensagens de coordenação e a transferência do conjunto de resultados. Se o sistema fosse um sistema distribuído ingênuo, operando registro-a-registro, a consulta poderia envolver 2_n_ mensagens (n requisições e n respostas individuais). b. A otimização da consulta distribuída deve ocorrer antes da execução, considerando os custos de comunicação e processamento local. Pedidos registro-a-registro dificilmente podem ser otimizados de forma global. Devido a estes dois pontos, os sistemas de banco de dados distribuídos são geralmente relacionais ou utilizam uma tecnologia que permita a transmissão de dados em conjuntos e a otimização global de consultas.
+7. **Processamento de Consultas Distribuído:** O sistema deve ser capaz de processar consultas que envolvam dados de diferentes sites de forma eficiente. Isso inclui a capacidade de otimizar consultas distribuídas, minimizando a transferência de dados entre sites. Idealmente, os registros devem ser transmitidos em conjuntos (blocos) de uma só vez, em vez de um registro de cada vez, para reduzir a sobrecarga da rede. Exemplo: Suponha que temos uma empresa internacional, como a IBM, onde os dados dos empregados são armazenados na relação `EMPREGADO`, fragmentada por país onde existem escritórios da IBM. A IBM Canadá emite o pedido: "Encontrar todos os trabalhadores do sexo masculino de nacionalidade jamaicana". Então: a. Suponha que existam $n$ registros que satisfazem este pedido na Jamaica. Se o sistema é relacional e otimizado para distribuição, a consulta pode envolver poucas mensagens de coordenação e a transferência do conjunto de resultados. Se o sistema fosse um sistema distribuído ingênuo, operando registro-a-registro, a consulta poderia envolver $2n$ mensagens ($n$ requisições e $n$ respostas individuais). b. A otimização da consulta distribuída deve ocorrer antes da execução, considerando os custos de comunicação e processamento local. Pedidos registro-a-registro dificilmente podem ser otimizados de forma global. Devido a estes dois pontos, os sistemas de banco de dados distribuídos são geralmente relacionais ou utilizam uma tecnologia que permita a transmissão de dados em conjuntos e a otimização global de consultas.
 8. **Gerenciamento de Transações Distribuídas:** O sistema deve garantir as propriedades ACID para transações que podem abranger múltiplos sites. Cada operação dentro de uma transação distribuída deve ser atômica – ou seja, a transação é totalmente efetivada em todos os sites participantes, ou totalmente revertida em todos eles. O controle de concorrência distribuído (geralmente por meio de bloqueios distribuídos ou outros protocolos) deve ser assegurado para manter a consistência.
 9. **Independência de Hardware:** Deve ser possível integrar o sistema em diferentes plataformas de hardware. Por conseguinte, deve ser possível executar as diferentes instâncias do SGBD (ou componentes do SGBDD) em diferentes tipos de máquinas e arquiteturas de hardware.
 10. **Independência de Sistema Operacional:** Similarmente à independência de hardware, deve ser possível integrar o sistema em diferentes plataformas de sistema operacional. Por conseguinte, deve ser possível executar as instâncias do SGBD em diferentes sistemas operacionais (Windows, Linux, UNIX, etc.).
 11. **Independência de Rede:** O sistema deve ser capaz de operar sobre diferentes tipos de redes e protocolos de comunicação, permitindo que sites diferentes, com diferentes infraestruturas de rede, possam participar do sistema distribuído.
 12. **Independência de SGBD:** Em um cenário ideal (especialmente para SGBDDs heterogêneos), as plataformas de SGBD utilizadas nos diferentes sites poderiam ser de diferentes fornecedores. Por exemplo, DB2 e Oracle suportam tanto SQL quanto interfaces padrão como ODBC (Open Database Connectivity) ou JDBC (Java Database Connectivity). Deveria, portanto, ser possível vincular bancos de dados rodando em diferentes plataformas de SGBD. O mesmo argumento pode ser aplicado para outros conjuntos de SGBDs. Isso é, na prática, um dos objetivos mais difíceis de se alcançar plenamente.
 
-A figura abaixo resume esquematicamente estas doze regras ou objetivos para sistemas de banco de dados distribuídos, conforme descritas por C.J. Date. Essas regras nos dão um norte para o estudo do assunto e servem de base para o nosso entendimento e para a avaliação da maturidade de um SGBDD.
+A figura abaixo resume esquematicamente estas doze regras ou objetivos para sistemas de banco de dados distribuídos, conforme descritas por C. J. Date. Essas regras nos dão um norte para o estudo do assunto e servem de base para o nosso entendimento e para a avaliação da maturidade de um SGBDD.
 
-&lt;div align="center">
+<div align="center">
+  <img width="540px" src="./img/18-doze-regras-de-date.png">
+</div>
 
-&lt;img src="https://placehold.co/700x500/EEE/31343C?text=Figura+18.8+-+Doze+Regras+de+Date+para+SBDD" alt="Figura 18.8 - Esquema das regras de Date para SBDD">
-
-&lt;figcaption>Figura 18.8 - Esquema das doze regras de Date para SBDD&lt;/figcaption>
-
-&lt;/div>
-
-#### **18.3.5 Tipos de Bancos de Dados Distribuídos**
+### Tipos de Bancos de Dados Distribuídos
 
 Conforme discutido anteriormente, em um sistema de banco de dados distribuído (SBDD), os dados e o software de gerenciamento estão distribuídos por vários sites que se conectam através de uma rede de comunicação. No entanto, o termo "SBDD" pode descrever vários tipos de sistemas que diferem uns dos outros em muitos aspectos, dependendo de vários fatores, tais como o grau de homogeneidade do software e hardware, o grau de autonomia local de cada site, e assim por diante. Na sequência, falaremos de dois tipos principais de bancos de dados distribuídos que são mais comumente encontrados e discutidos na literatura: o homogêneo e o heterogêneo.
 
-##### **BDD Homogêneo**
+#### BDD Homogêneo
 
 Um **banco de dados distribuído homogêneo** representa a forma conceitualmente mais simples de um sistema de banco de dados distribuído. Nesta arquitetura, existem vários sites, e cada um deles roda seus próprios aplicativos locais sobre instâncias do **mesmo software SGBD**. Todos os sites utilizam SGBDs idênticos (mesmo fornecedor, mesma versão ou versões compatíveis), e todos os usuários (ou clientes) interagem com o sistema utilizando softwares clientes idênticos ou compatíveis. Crucialmente, os sites em um SBDD homogêneo estão cientes uns dos outros e são projetados para cooperar de forma integrada no processamento de solicitações de dados e transações distribuídas. A aplicação cliente geralmente enxerga um esquema de dados global e unificado, e pode executar as mesmas operações como se estivesse acessando um banco de dados centralizado. Ou seja, há um alto grau de **transparência de localização** (e outras transparências, como de fragmentação e replicação) em um SGBD homogêneo. O fornecimento dessas transparências constitui o núcleo do desenvolvimento de sistemas de gerenciamento de banco de dados distribuídos homogêneos. A figura abaixo mostra um exemplo esquemático de um SGBD homogêneo, onde todos os sites utilizam o mesmo SGBD.
 
-&lt;div align="center">
-
-&lt;img src="https://placehold.co/600x350/EEE/31343C?text=Figura+18.9+-+BDD+Homogêneo" alt="Figura 18.9 - Banco de dados distribuído homogêneo">
-
-&lt;figcaption>Figura 18.9 - Banco de dados distribuído homogêneo&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="600px" src="./img/18-bdd-homogeneo.png">
+</div>
 
 Em SGBDs homogêneos, o uso de um único tipo de SGBD em todos os nós evita muitos dos problemas de incompatibilidade de recursos de banco de dados (como tipos de dados, dialetos SQL, protocolos de comunicação, mecanismos de controle de transação) que podem surgir entre nós heterogêneos. Os dados são todos gerenciados dentro de um mesmo _framework_ tecnológico. No entanto, para garantir essa homogeneidade e cooperação, os sites locais em um SGBD homogêneo geralmente precisam entregar uma parte de sua autonomia local, especialmente em termos de seus direitos para alterar o esquema global do banco de dados ou o software SGBD de forma unilateral. Isso é necessário para garantir a consistência e a homogeneidade de todos os nós do sistema distribuído.
 
-##### **BDD Heterogêneo**
+#### BDD Heterogêneo
 
 No **sistema de banco de dados distribuído heterogêneo**, diferentes sites (localidades) funcionam sob o controle de SGBDs diferentes e, essencialmente, operam de forma autônoma. Esses sistemas distintos são, então, interligados de alguma forma para permitir o acesso aos dados entre os vários sites. Diferentes sites podem usar diferentes esquemas lógicos e físicos, e, como mencionado, softwares SGBD de diferentes fornecedores ou tipos (relacional, NoSQL, etc.). Os sites podem não estar plenamente cientes da existência ou das capacidades uns dos outros e podem fornecer apenas recursos limitados para a cooperação no processamento de transações ou consultas distribuídas. Em outras palavras, em um SGBD heterogêneo, cada servidor (ou site local) é, em grande medida, um SGBD centralizado, independente e autônomo, que tem seus próprios usuários locais, transações locais, e seu próprio administrador de banco de dados (DBA) local.
 
-O SBDD heterogêneo também é frequentemente referido como um **sistema de multi banco de dados (Multi-Database System - MDBS)** ou um **sistema de banco de dados federado (Federated Database System - FDBS)**. Sistemas de banco de dados heterogêneos geralmente dependem de padrões de protocolos ou de _middleware_ (como _gateways_) para expor a funcionalidade de cada SGBD local para aplicações externas ou para outros SGBDs na federação. Os protocolos de _gateway_ ajudam a mascarar as diferenças (tais como diferentes dialetos SQL, recursos de transação, formatos de dados, etc.) no acesso aos diversos servidores de banco de dados, e tentam ajustar ou traduzir essas diferenças para permitir uma interação minimamente coesa entre os diferentes servidores em um sistema distribuído. Em um SBDD heterogêneo, um servidor pode ser um SGBD relacional (como Oracle), outro um SGBD em rede (modelo mais antigo), e um terceiro um SGBD orientado a objetos (SGBDOO) ou até mesmo um SGBD NoSQL. Veja a figura abaixo que representa um esquema simplificado de um BDD heterogêneo, onde diferentes SGBDs coexistem e se comunicam através de uma camada de software que provê a interface de federação.
+O SBDD heterogêneo também é frequentemente referido como um **sistema de multi banco de dados (Multi-Database System - MDBS)** ou um **sistema de banco de dados federado (Federated Database System - FDBS)**. Sistemas de banco de dados heterogêneos geralmente dependem de padrões de protocolos ou de middleware (como gateways) para expor a funcionalidade de cada SGBD local para aplicações externas ou para outros SGBDs na federação. 
 
-&lt;div align="center">
+Os protocolos de gateway ajudam a mascarar as diferenças (tais como diferentes dialetos SQL, recursos de transação, formatos de dados, etc.) no acesso aos diversos servidores de banco de dados, e tentam ajustar ou traduzir essas diferenças para permitir uma interação minimamente coesa entre os diferentes servidores em um sistema distribuído. Em um SBDD heterogêneo, um servidor pode ser um SGBD relacional (como Oracle), outro um SGBD em rede (modelo mais antigo), e um terceiro um SGBD orientado a objetos (SGBDOO) ou até mesmo um SGBD NoSQL. Veja a figura abaixo que representa um esquema simplificado de um BDD heterogêneo, onde diferentes SGBDs coexistem e se comunicam através de uma camada de software que provê a interface de federação.
 
-&lt;img src="https://placehold.co/700x400/EEE/31343C?text=Figura+18.10+-+BDD+Heterogêneo" alt="Figura 18.10 - Banco de dados distribuído heterogêneo">
-
-&lt;figcaption>Figura 18.10 - Banco de dados distribuído heterogêneo&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="600px" src="./img/18-bdd-heterogeneo.png">
+</div>
 
 Construir e gerenciar SGBDDs heterogêneos é consideravelmente mais complexo do que SGBDDs homogêneos, devido aos desafios de integração, tradução de consultas e garantia de consistência transacional entre sistemas com semânticas e capacidades fundamentalmente diferentes.
 
-#### **18.3.6 Projetando um Sistema de Banco de Dados Distribuído (SBDD)**
+### Projetando um Sistema de Banco de Dados Distribuído (SBDD)
 
 O projeto de um sistema de banco de dados distribuído é uma tarefa intrinsecamente complexa, que exige uma avaliação cuidadosa das estratégias a serem adotadas e dos objetivos de negócio e técnicos a serem alcançados. Algumas das estratégias e objetivos que são comuns ao design da maioria dos BDDs incluem:
 
@@ -238,19 +224,18 @@ O projeto de um sistema de banco de dados distribuído é uma tarefa intrinsecam
 
 A **Fragmentação de dados** e a **Replicação de dados** são as duas técnicas mais fundamentais e comumente usadas durante o processo de concepção de um SBDD para quebrar o banco de dados global em unidades lógicas menores e para armazenar certos dados em mais de um site. Estas duas técnicas serão discutidas em maior detalhe a seguir.
 
-#### **18.3.7 Fragmentação de Dados em BDDs**
+### Fragmentação de Dados em BDDs
 
 A técnica de dividir logicamente o banco de dados global em unidades menores, chamadas **fragmentos**, que podem então ser atribuídos para armazenamento físico em vários sites da rede, é conhecida como **fragmentação de dados**. Em um contexto relacional, uma relação (tabela) pode ser particionada (ou fragmentada) em vários fragmentos para fins de armazenamento e processamento distribuído. Podem existir várias réplicas (cópias) de cada fragmento, armazenadas em diferentes sites para aumentar a disponibilidade e o desempenho.
 
 Estes fragmentos, sejam eles subconjuntos de linhas, subconjuntos de colunas, ou uma combinação de ambos, devem conter informações suficientes para permitir a reconstrução da relação original completa, se necessário. Idealmente, todos os fragmentos de uma dada relação devem ser disjuntos (no caso de fragmentação horizontal pura) ou devem poder ser recombinados sem perda de informação (no caso de fragmentação vertical, onde a chave primária é repetida). Nenhum dos fragmentos deve ser derivável a partir de outros, nem uma restrição ou projeção em um fragmento deve ser derivável de outros fragmentos de forma trivial.
 
-Para nossos exemplos de fragmentação, vamos considerar a relação `EMPLOYEE` (Empregado) apresentada na figura a seguir:
+Para nossos exemplos de fragmentação, vamos considerar a relação `EMPLOYEE` (Empregado) apresentada a seguir:
 
 **Relação: EMPLOYEE**
 
-|   |   |   |   |
-|---|---|---|---|
 |**EMP-ID**|**EMP-NAME**|**DEPT-ID**|**EMP-SALARY**|
+|---|---|---|---|
 |E-106519|Kumar Abhishek|4|55000|
 |E-112233|Thomas Mathew|5|45000|
 |E-123456|Alka Parasar|2|60000|
@@ -260,9 +245,8 @@ Para nossos exemplos de fragmentação, vamos considerar a relação `EMPLOYEE` 
 
 Agora, vamos supor que esta relação `EMPLOYEE` seja fragmentada horizontalmente com base no departamento (`DEPT-ID`) ao qual cada empregado pertence. Poderíamos ter três fragmentos, cada um alocado a um site diferente que corresponde à localização do departamento:
 
-|   |   |   |
-|---|---|---|
 |**Fragmento**|**Empregados alocados em**|**Restrição (Condição)**|
+|---|---|---|
 |`MUMBAI_EMP`|Site "Mumbai"|`WHERE DEPT-ID=2`|
 |`JAMSHEDPUR_EMP`|Site "Jamshedpur"|`WHERE DEPT-ID=4`|
 |`LONDON_EMP`|Site "London"|`WHERE DEPT-ID=5`|
@@ -275,41 +259,45 @@ Em outras palavras, a independência de fragmentação implica que aos usuários
 
 Podemos fragmentar uma relação de diferentes formas, sendo as mais comuns: fragmentação horizontal, fragmentação vertical ou uma combinação de ambas, conhecida como fragmentação mista ou híbrida.
 
-&lt;div align="center">
+<div align="center">
+  <img width="600px" src="./img/18-fragmentacao-de-dados.png">
+</div>
 
-&lt;img src="https://placehold.co/800x500/EEE/31343C?text=Figura+18.11+-+Resultado+da+Fragmentação+Horizontal" alt="Figura 18.11 - Resultado da fragmentação horizontal da relação EMPLOYEE">
-
-&lt;figcaption>Figura 18.11 - Resultado da fragmentação horizontal da relação EMPLOYEE&lt;/figcaption>
-
-&lt;/div>
-
-##### **Fragmentação Horizontal**
+#### Fragmentação Horizontal
 
 Um **fragmento horizontal** de uma relação R é um subconjunto das tuplas (linhas) de R, onde cada tupla no fragmento contém todos os atributos da relação R. A fragmentação horizontal, portanto, divide a relação "horizontalmente", atribuindo cada tupla individual ou um grupo de tuplas de uma relação a um ou mais fragmentos, geralmente com base em uma condição que tem um certo significado lógico para a aplicação. Estes fragmentos podem então ser atribuídos a diferentes sites no sistema distribuído.
 
-A fragmentação horizontal é produzida pela especificação de um **predicado** (uma condição lógica) que executa uma restrição sobre as tuplas da relação. Ela é formalmente definida usando a operação **SELECT (σ)** da álgebra relacional. Uma fragmentação horizontal de uma relação R em um fragmento R&lt;sub>i&lt;/sub> pode ser definida como:
+<div align="center">
+  <img width="420px" src="./img/18-fragmentacao-horizontal.png">
+</div>
 
-R&lt;sub>i&lt;/sub> = σ&lt;sub>P&lt;sub>i&lt;/sub>&lt;/sub>(R)
+A fragmentação horizontal é produzida pela especificação de um **predicado** (uma condição lógica) que executa uma restrição sobre as tuplas da relação. Ela é formalmente definida usando a operação **SELECT (σ)** da álgebra relacional. Uma fragmentação horizontal de uma relação R em um fragmento R<sub>i</sub> pode ser definida como:
+
+R<sub>i</sub> = σ<sub>P<sub>i</sub></sub>(R)
 
 Onde:
 
 - σ é o operador da álgebra relacional para a seleção.
-- P&lt;sub>i&lt;/sub> é o predicado (condição) baseado em um ou mais atributos da relação R, que define quais tuplas pertencem ao fragmento R&lt;sub>i&lt;/sub>.
+- P<sub>i</sub> é o predicado (condição) baseado em um ou mais atributos da relação R, que define quais tuplas pertencem ao fragmento R<sub>i</sub>.
 - R é a relação original (tabela global).
 
 O exemplo da fragmentação da relação `EMPLOYEE` que apresentamos anteriormente é um caso de fragmentação horizontal. Em termos da álgebra relacional, os fragmentos podem ser definidos como:
 
-- `MUMBAI_EMP` := σ&lt;sub>DEPT-ID=2&lt;/sub>(`EMPLOYEE`)
-- `JAMSHEDPUR_EMP` := σ&lt;sub>DEPT-ID=4&lt;/sub>(`EMPLOYEE`)
-- `LONDON_EMP` := σ&lt;sub>DEPT-ID=5&lt;/sub>(`EMPLOYEE`)
+- MUMBAI_EMP : σ<sub>DEPT-ID=2</sub>(EMPLOYEE)
+- JAMSHEDPUR_EMP : σ<sub>DEPT-ID=4</sub>(EMPLOYEE)
+- LONDON_EMP : σ<sub>DEPT-ID=5</sub>(EMPLOYEE)
 
 A fragmentação horizontal corresponde diretamente à operação relacional de **restrição (seleção)**. Quando temos uma fragmentação horizontal completa e disjunta (ou seja, cada tupla da relação original pertence a exatamente um fragmento), podemos usar a operação **UNION (∪)** da álgebra relacional para reconstruir a relação original R:
 
-R = `MUMBAI_EMP` ∪ `JAMSHEDPUR_EMP` ∪ `LONDON_EMP`
+R = MUMBAI_EMP ∪ JAMSHEDPUR_EMP ∪ LONDON_EMP
 
-##### **Fragmentação Vertical**
+#### Fragmentação Vertical
 
 A **fragmentação vertical** divide uma relação "verticalmente", decompondo-a por colunas (atributos). Um fragmento vertical de uma relação R mantém apenas certos atributos de R, juntamente com a chave primária (ou outra chave candidata) para permitir a reconstrução. Esta abordagem parte do raciocínio de que cada site ou aplicação pode não precisar acessar todos os atributos de uma relação. Assim, a fragmentação vertical agrupa os atributos de uma relação que são frequentemente usados em conjunto pelas operações importantes em um determinado site ou conjunto de aplicações, enquanto outros atributos, menos relevantes para aquele contexto, podem ser armazenados em outro fragmento (possivelmente em outro site).
+
+<div align="center">
+  <img width="420px" src="./img/18-fragmentacao-vertical.png">
+</div>
 
 A fragmentação vertical simples (onde os fragmentos são disjuntos em termos de atributos não-chave) não é muito apropriada se não houver um atributo comum entre os fragmentos que permita a reconstrução das tuplas originais. Se não houver nenhum atributo comum (ou conjunto de atributos) entre dois fragmentos verticais, não podemos recriar as tuplas originais por meio de operações de junção. Portanto, é essencial incluir os atributos da **chave primária** (ou de alguma chave candidata) da relação original em **cada fragmento vertical**. Isso garante que a relação total possa ser reconstruída a partir dos fragmentos usando a operação de junção natural sobre essa chave comum.
 
