@@ -305,59 +305,52 @@ Em algumas implementações de fragmentação vertical, o sistema pode fornecer 
 
 A fragmentação vertical corresponde à operação relacional de **projeção (Π)** e é definida como:
 
-R&lt;sub>i&lt;/sub> = Π&lt;sub>a&lt;sub>i1&lt;/sub>, a&lt;sub>i2&lt;/sub>, ..., a&lt;sub>ik&lt;/sub>, ChavePrimária&lt;/sub>(R)
+R<sub>i</sub> = Π<sub>a<sub>i<sub>1</sub></sub>, a<sub>i<sub>2</sub></sub>, ..., a<sub>i<sub>k</sub></sub>, ChavePrimária</sub>(R)
 
 Onde:
 
 - Π é o operador da álgebra relacional para projeção.
-- a&lt;sub>i1&lt;/sub>, a&lt;sub>i2&lt;/sub>, ..., a&lt;sub>ik&lt;/sub> são os atributos não-chave selecionados para o fragmento R&lt;sub>i&lt;/sub>.
+- a<sub>i<sub>1</sub></sub>, a<sub>i<sub>2</sub></sub>, ..., a<sub>i<sub>k</sub></sub> são os atributos não-chave selecionados para o fragmento R<sub>i</sub>.
 - ChavePrimária representa o(s) atributo(s) da chave primária da relação R (que devem ser incluídos).
 - R é a relação original (tabela global).
 
-A reconstrução da relação original R a partir de seus fragmentos verticais R&lt;sub>1&lt;/sub>, R&lt;sub>2&lt;/sub>, ..., R&lt;sub>m&lt;/sub> é feita usando a operação de **JUNÇÃO NATURAL (⋈)** sobre a chave primária comum:
+A reconstrução da relação original R a partir de seus fragmentos verticais R<sub>1</sub>, R<sub>2</sub>, ..., R<sub>m</sub> é feita usando a operação de **JUNÇÃO NATURAL (⋈)** sobre a chave primária comum:
 
-R = R&lt;sub>1&lt;/sub> ⋈ R&lt;sub>2&lt;/sub> ⋈ ... ⋈ R&lt;sub>m&lt;/sub>
+R = R<sub>1</sub> ⋈ R<sub>2</sub> ⋈ ... ⋈ R<sub>m</sub>
 
-##### **Fragmentação Mista (Híbrida)**
+#### Fragmentação Mista (Híbrida)
 
 Por vezes, a fragmentação puramente horizontal ou puramente vertical de um esquema de banco de dados, por si só, pode ser insuficiente para distribuir adequadamente os dados e atender aos requisitos de desempenho e localidade de algumas aplicações complexas. Nesses casos, podemos utilizar a **fragmentação híbrida** ou **mista**. A fragmentação mista ocorre quando aplicamos sequencialmente os dois tipos de fragmentação. Assim, uma fragmentação horizontal de uma relação, seguida por uma posterior fragmentação vertical de alguns (ou todos) os fragmentos horizontais resultantes, é chamada de fragmentação mista. O inverso também é possível: uma fragmentação vertical seguida por uma fragmentação horizontal dos fragmentos verticais.
 
 A fragmentação mista é definida, em termos da álgebra relacional, por uma combinação das operações de **seleção (σ)** e **projeção (Π)**. A relação original é, então, obtida por uma combinação correspondente das operações de **JUNÇÃO (⋈)** e **UNION (∪)**. Uma fragmentação mista poderia ser representada, por exemplo, como:
 
-Fragmento&lt;sub>ij&lt;/sub> = Π&lt;sub>ListaDeAtributos&lt;sub>j&lt;/sub>&lt;/sub> ( σ&lt;sub>Predicado&lt;sub>i&lt;/sub>&lt;/sub> (R) ) _(Primeiro horizontal, depois vertical)_
+Fragmento<sub>ij</sub> = Π<sub>ListaDeAtributos<sub>j</sub></sub> (σ<sub>Predicado<sub>i</sub></sub> (R)) (Primeiro horizontal, depois vertical)
 
 Ou
 
-Fragmento&lt;sub>ij&lt;/sub> = σ&lt;sub>Predicado&lt;sub>j&lt;/sub>&lt;/sub> ( Π&lt;sub>ListaDeAtributos&lt;sub>i&lt;/sub>&lt;/sub> (R) ) _(Primeiro vertical, depois horizontal)_
+Fragmento<sub>ij</sub> = σ<sub>Predicado<sub>j</sub></sub> (Π<sub>ListaDeAtributos<sub>i</sub></sub> (R)) (Primeiro vertical, depois horizontal)
 
 Com isso, terminamos nossa explanação sobre as principais técnicas de fragmentação de dados em bancos de dados distribuídos. Vamos agora tratar das estratégias de alocação desses fragmentos (e de dados não fragmentados) e da importante técnica de replicação de dados.
 
-#### **18.3.8 Alocação e Replicação de Dados**
+### Alocação e Replicação de Dados
 
 Após definir como os dados serão logicamente divididos (ou não) através da fragmentação, a próxima etapa crucial no projeto de um SBDD é decidir **onde** esses fragmentos (ou relações inteiras) serão fisicamente armazenados. Este processo é conhecido como **alocação de dados**.
 
-##### **Estratégias de Alocação de Dados**
+#### Estratégias de Alocação de Dados
 
 A alocação de dados descreve o processo de decisão sobre a localização ou distribuição dos fragmentos de dados (ou relações completas) entre os vários sites da rede do sistema distribuído. As seguintes são as principais estratégias de posicionamento (alocação) de dados que são comumente usadas ou consideradas em sistemas de banco de dados distribuídos:
 
 - **Centralizada:** Nesta estratégia, todo o banco de dados único e o SGBD (ou a maior parte dele) são armazenados em um único site central. No entanto, os usuários e as aplicações podem estar geograficamente distribuídos e acessam o banco de dados central através da rede. A **localidade de referência** (a proporção de acessos aos dados que podem ser satisfeitos localmente) é, portanto, muito baixa em todos os sites, exceto no site central; todos os demais sites têm que usar a rede para todos os acessos aos dados. Consequentemente, os **custos de comunicação** tendem a ser elevados. Uma vez que todo o banco de dados reside no mesmo local, há um risco de **perda total do sistema de banco de dados** em caso de falha do site central (SPOF). Assim, a **confiabilidade e a disponibilidade** intrínsecas desta estratégia são geralmente baixas.
-    
 - **Particionada (ou Fragmentada):** Com esta estratégia, o banco de dados é dividido em várias partes disjuntas (os fragmentos, como discutido anteriormente) e cada fragmento é armazenado em um ou mais locais (sites) da rede. Se os itens de dados (fragmentos) são armazenados no local onde eles são utilizados com maior frequência, a **localidade de referência** pode ser alta, reduzindo a necessidade de acessos remotos. Como, em uma estratégia puramente particionada sem replicação, cada fragmento existe em apenas um local, os **custos de armazenamento** são relativamente baixos (sem redundância de dados). A falha do sistema em um site particular resultará na indisponibilidade dos dados (fragmentos) armazenados apenas naquele local; os dados em outros sites permanecem acessíveis. Assim, a **confiabilidade e a disponibilidade** são geralmente mais elevadas do que na estratégia centralizada (a falha de um site não derruba todo o sistema), mas a disponibilidade geral ainda pode ser considerada baixa se fragmentos críticos se tornarem inacessíveis. O **custo de comunicação** global pode ser pequeno (se a localidade de referência for alta) e o **desempenho geral** pode ser bom, em comparação com a estratégia puramente centralizada, especialmente se o processamento puder ser paralelizado entre os sites.
-    
 - **Replicada (Total ou Parcialmente):** Na estratégia de replicação, múltiplas cópias (réplicas) de um ou mais fragmentos do banco de dados (ou mesmo de relações inteiras) são armazenadas em vários sites. Com a replicação, a **localidade de referência** pode ser maximizada (pois os dados podem estar disponíveis localmente em muitos sites), e a **confiabilidade, a disponibilidade e o desempenho de leitura** também são geralmente maximizados (se uma cópia falhar, outras estão disponíveis; leituras podem ser direcionadas para a cópia mais próxima ou menos carregada). No entanto, os **custos de comunicação e armazenamento** são significativamente mais elevados devido à necessidade de armazenar múltiplas cópias e de propagar as atualizações para todas as réplicas.
-    
 
-##### **Replicação de Dados Detalhada**
+#### Replicação de Dados Detalhada
 
 A **replicação de dados** é uma técnica fundamental que permite o armazenamento de certos dados (relações, fragmentos) em mais de um local (site) na rede distribuída. O sistema mantém várias réplicas idênticas (cópias) da relação ou fragmento e armazena cada réplica em um local diferente. Tipicamente, a replicação de dados é introduzida em um SBDD com o objetivo principal de **aumentar a disponibilidade** do sistema: quando uma cópia dos dados não está disponível devido a uma falha no site local que a armazena (ou falha na rede para acessar esse site), deve ser possível para as aplicações acessarem outra cópia disponível em um site diferente. A figura abaixo ilustra um exemplo simples de replicação, onde uma relação R é replicada em três sites diferentes.
 
-&lt;div align="center">
-
-&lt;img src="https://placehold.co/600x300/EEE/31343C?text=Figura+18.12+-+Exemplo+de+Replicação+de+Dados" alt="Figura 18.12 - Exemplo de replicação da Relação R em 3 sites">
-
-&lt;figcaption>Figura 18.12 - Exemplo de replicação da Relação R em 3 sites&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="600px" src="./img/18-exemplo-de-replicacao.png">
+</div>
 
 Assim como na fragmentação, um sistema que suporta a replicação de dados também deve, idealmente, suportar a **independência de replicação** (também conhecida como **transparência de replicação**). Isso significa que os usuários e as aplicações devem ser capazes de interagir com os dados como se eles não fossem, de fato, replicados. A existência de múltiplas cópias e a escolha de qual cópia acessar para leitura, bem como o mecanismo de atualização de todas as cópias, devem ser gerenciados pelo SGBDD e serem transparentes para o usuário.
 
@@ -373,21 +366,17 @@ Do lado negativo, a replicação de dados também apresenta algumas **desvantage
 - **Aumento dos Custos Gerais (Overhead) para as Operações de Atualização:** Esta é a principal desvantagem. Quando um determinado objeto de dado replicado é atualizado (inserido, modificado ou excluído), todas as cópias (réplicas) desse objeto devem ser, eventualmente, atualizadas para manter a consistência entre elas. Isso introduz sobrecarga de processamento e comunicação.
 - **Maior Complexidade no Controle de Atualizações Concorrentes:** Garantir a consistência entre múltiplas cópias de dados que podem ser atualizadas (ou lidas enquanto outra cópia está sendo atualizada) por várias transações concorrentes é um problema complexo, conhecido como controle de réplicas ou controle de concorrência para dados replicados.
 
-##### **Controle das Réplicas**
+#### Controle das Réplicas
 
 Quando um item de dados que possui múltiplas réplicas sofre uma atualização, todas as suas cópias físicas precisam ser, eventualmente, atualizadas para refletir essa mudança. Por mais simples que isso possa parecer conceitualmente, essa tarefa, conhecida como **controle de réplicas (replica control)**, não é uma abordagem única ou simples. Existem muitas abordagens possíveis para gerenciar a propagação de atualizações e manter a consistência entre as réplicas, cada uma com suas próprias vantagens, desvantagens e _trade-offs_, dependendo da aplicação específica, dos requisitos de consistência e da configuração do sistema distribuído.
 
 Vamos ilustrar um exemplo baseado na figura a seguir. A figura mostra um conjunto de réplicas (servidores de banco de dados) que mantêm cópias (parciais ou completas) de uma base de dados. Um cliente faz uma requisição, que é direcionada a uma das réplicas.
 
-&lt;div align="center">
+<div align="center">
+  <img width="600px" src="./img/18-controle-de-replicas.png">
+</div>
 
-&lt;img src="https://placehold.co/700x400/EEE/31343C?text=Figura+18.13+-+Controle+de+Réplicas+com+Primária+e+Secundárias" alt="Figura 18.13 - Requisições de clientes e controle de réplicas secundárias">
-
-&lt;figcaption>Figura 18.13 - Requisições de clientes e controle de réplicas secundárias&lt;/figcaption>
-
-&lt;/div>
-
-Quando um pedido de um cliente chega, ele é redirecionado (por um _dispatcher_ ou diretamente pela aplicação) para uma das réplicas, que então controla a sua execução. Dentro da maioria das aplicações, existem dois grandes tipos de solicitação que podem ser feitas às réplicas:
+Quando um pedido de um cliente chega, ele é redirecionado (por um dispatcher ou diretamente pela aplicação) para uma das réplicas, que então controla a sua execução. Dentro da maioria das aplicações, existem dois grandes tipos de solicitação que podem ser feitas às réplicas:
 
 - **Pedidos de Atualização (Update Requests):** Como a operação `purchase()` (compra) na figura, que modifica o estado de pelo menos um item de dados (por exemplo, decrementa o estoque, registra uma venda).
 - **Solicitações de Leitura (Read-Only Requests):** Como a operação `check-status()` (verificar status) na figura, que apenas lê itens de dados sem modificá-los.
@@ -398,15 +387,15 @@ Quando tratamos da **lógica de atualização** (ou seja, qual réplica é a fon
 
 Outra forma de definir o local sobre o qual as atualizações são feitas é a abordagem de **atualização em qualquer lugar (update anywhere)**. Neste caso, não temos o conceito estrito de réplicas primárias e secundárias para fins de escrita. Cada réplica é considerada "igual" e pode aceitar tanto operações de leitura quanto operações de escrita diretamente. Quando uma escrita ocorre em uma réplica, essa réplica é responsável por propagar a atualização para todas as outras. Esta abordagem oferece maior disponibilidade para escritas (uma escrita pode ocorrer mesmo que algumas réplicas estejam temporariamente inacessíveis), mas introduz uma complexidade significativamente maior na manutenção da consistência entre as réplicas, pois podem ocorrer atualizações conflitantes em diferentes réplicas ao mesmo tempo.
 
-Quando falamos do **aspecto temporal** da atualização das réplicas, ou seja, _quando_ as atualizações são propagadas e aplicadas, podemos distinguir entre duas abordagens principais:
+Quando falamos do **aspecto temporal** da atualização das réplicas, ou seja, **quando** as atualizações são propagadas e aplicadas, podemos distinguir entre duas abordagens principais:
 
-- Atualização Imediata (Eager Update) ou Replicação Síncrona: Neste modelo, quando uma atualização é feita na cópia primária (ou em uma réplica no modelo update anywhere), as réplicas secundárias (ou as demais réplicas) aplicam as mudanças em suas cópias dos dados imediatamente (ou o mais rápido possível), assim que recebem a notificação da atualização. Tipicamente, cada réplica secundária envia uma mensagem de confirmação (acknowledgement) de volta para o site primário (ou o site que originou a atualização) avisando que a atualização foi aplicada com sucesso. Apenas quando as mudanças foram efetivadas em todas (ou em um quórum predefinido de) as réplicas secundárias é que o banco primário (ou o SGBD que coordenou a escrita) avisa ao usuário ou aplicação que a alteração foi concluída (commit).
+- **Atualização Imediata (Eager Update) ou Replicação Síncrona**: Neste modelo, quando uma atualização é feita na cópia primária (ou em uma réplica no modelo update anywhere), as réplicas secundárias (ou as demais réplicas) aplicam as mudanças em suas cópias dos dados imediatamente (ou o mais rápido possível), assim que recebem a notificação da atualização. Tipicamente, cada réplica secundária envia uma mensagem de confirmação (acknowledgement) de volta para o site primário (ou o site que originou a atualização) avisando que a atualização foi aplicada com sucesso. Apenas quando as mudanças foram efetivadas em todas (ou em um quórum predefinido de) as réplicas secundárias é que o banco primário (ou o SGBD que coordenou a escrita) avisa ao usuário ou aplicação que a alteração foi concluída (commit).
     
-    A grande vantagem da replicação síncrona é que ela garante um alto grau de consistência entre as réplicas (todas estão sempre, ou quase sempre, idênticas). A desvantagem é que o cliente ou usuário pode ficar esperando a confirmação de uma atualização por um tempo consideravelmente grande, especialmente se a replicação for geograficamente dispersa e a rede tiver alta latência, pois a transação só é confirmada após todas as réplicas envolvidas confirmarem a aplicação da mudança.
+	A grande vantagem da replicação síncrona é que ela garante um alto grau de consistência entre as réplicas (todas estão sempre, ou quase sempre, idênticas). A desvantagem é que o cliente ou usuário pode ficar esperando a confirmação de uma atualização por um tempo consideravelmente grande, especialmente se a replicação for geograficamente dispersa e a rede tiver alta latência, pois a transação só é confirmada após todas as réplicas envolvidas confirmarem a aplicação da mudança.
     
-- Replicação Preguiçosa (Lazy Replication) ou Replicação Assíncrona: Neste caso, quando uma atualização é aplicada na cópia primária (ou na réplica que recebeu a escrita), essa réplica pode confirmar a operação para o cliente (avisar que foi concluída) antes de propagar a modificação para as demais réplicas. A propagação para as outras réplicas ocorre "em segundo plano" ou com um certo atraso.
+- **Replicação Preguiçosa (Lazy Replication) ou Replicação Assíncrona**: Neste caso, quando uma atualização é aplicada na cópia primária (ou na réplica que recebeu a escrita), essa réplica pode confirmar a operação para o cliente (avisar que foi concluída) antes de propagar a modificação para as demais réplicas. A propagação para as outras réplicas ocorre "em segundo plano" ou com um certo atraso.
     
-    A principal vantagem da replicação assíncrona é o melhor desempenho percebido pelo cliente para operações de escrita, pois não há espera pela confirmação de todas as réplicas. No entanto, a grande desvantagem é que existe uma janela de tempo durante a qual as réplicas podem estar inconsistentes entre si (a primária está atualizada, mas as secundárias ainda não). Isso pode levar a problemas se uma leitura for direcionada a uma réplica desatualizada, ou se a primária falhar antes de propagar todas as suas atualizações. Manter a consistência em um modelo assíncrono é, portanto, um pouco mais complicado e geralmente envolve mecanismos para detectar e resolver conflitos ou para garantir consistência eventual.
+	A principal vantagem da replicação assíncrona é o melhor desempenho percebido pelo cliente para operações de escrita, pois não há espera pela confirmação de todas as réplicas. No entanto, a grande desvantagem é que existe uma janela de tempo durante a qual as réplicas podem estar inconsistentes entre si (a primária está atualizada, mas as secundárias ainda não). Isso pode levar a problemas se uma leitura for direcionada a uma réplica desatualizada, ou se a primária falhar antes de propagar todas as suas atualizações. Manter a consistência em um modelo assíncrono é, portanto, um pouco mais complicado e geralmente envolve mecanismos para detectar e resolver conflitos ou para garantir consistência eventual.
     
 
 Resumindo, temos as seguintes combinações possíveis de estratégias de controle de réplicas, considerando a lógica de atualização (onde) e o aspecto temporal (quando):
@@ -418,7 +407,7 @@ Resumindo, temos as seguintes combinações possíveis de estratégias de contro
 
 A escolha da estratégia de controle de réplicas depende fortemente dos requisitos da aplicação, especialmente em termos de consistência (quão atualizados os dados precisam estar em todas as cópias) versus disponibilidade e desempenho de escrita.
 
-#### **18.3.9 Processamento de Consultas Distribuído**
+### Processamento de Consultas Distribuído
 
 Em um SGBDD, uma consulta submetida por um usuário ou aplicação pode exigir o acesso a dados que estão distribuídos em mais de um site da rede. Alguns sistemas de banco de dados suportam relações cujas partes (fragmentos) estão fisicamente separadas e armazenadas em diferentes locais. Mesmo relações não fragmentadas podem residir em sites diferentes, ou múltiplas cópias (réplicas) de uma mesma relação podem estar distribuídas entre vários sites.
 
@@ -426,20 +415,13 @@ A fim de avaliar (executar) uma consulta que é emitida em um determinado site, 
 
 A figura abaixo mostra um fluxo simplificado e padrão que é frequentemente executado durante o processamento de uma consulta em um ambiente distribuído. Os três primeiros estágios são, muitas vezes, executados em um **site de controle central** (que pode ser o site onde a consulta foi submetida, ou um site coordenador dedicado).
 
-&lt;div align="center">
-
-&lt;img src="https://placehold.co/800x400/EEE/31343C?text=Figura+18.14+-+Fluxo+de+Processamento+de+Consulta+Distribuída" alt="Figura 18.14 - Fluxo padrão do processamento de consulta distribuída">
-
-&lt;figcaption>Figura 18.14 - Fluxo padrão do processamento de consulta distribuída&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="460px" src="./img/18-fluxo-de-processamento-de-consulta-distribuida.png">
+</div>
 
 1. **Mapeamento da Consulta (Query Mapping):** Primeiramente, a consulta, que é geralmente expressa em termos do esquema conceitual global (a visão unificada do banco de dados distribuído), precisa ser traduzida. O sistema identifica quais relações globais são referenciadas e, com base no catálogo de dados distribuído (que contém informações sobre a localização, fragmentação e replicação dos dados), determina quais sites contêm os dados relevantes. Esta etapa é conceitualmente similar ao que acontece em bancos de dados centralizados que possuem um esquema conceitual e um esquema interno, mas aqui a descrição do esquema precisa incluir a distribuição dos dados.
-    
 2. **Mapeamento de Localização (Localization):** Nesta segunda etapa, a consulta global mapeada é decomposta em um conjunto de subconsultas separadas, cada uma operando sobre os fragmentos individuais de dados que residem nos sites locais. O objetivo é traduzir a consulta global em um plano que especifique quais operações precisam ser executadas em quais fragmentos, em quais sites.
-    
 3. **Otimização Global da Consulta (Global Query Optimization):** Esta é a etapa mais crítica e complexa no processamento de consultas distribuídas. O otimizador global considera diferentes estratégias para executar o conjunto de subconsultas e para combinar seus resultados parciais. Nesta etapa, os **custos de comunicação** para transferir dados entre os sites são um fator preponderante na avaliação do custo total de cada estratégia candidata, além dos custos de processamento local (CPU, I/O) em cada site. O objetivo é encontrar um plano de execução global que minimize o custo total.
-    
 
 A última etapa do processo, geralmente, envolve a **otimização local da consulta** em cada site participante. Neste momento, cada subconsulta que será executada em um site específico é otimizada pelo SGBD local daquele site, de forma semelhante ao que acontece com a otimização de consultas em um ambiente não distribuído (centralizado). Aplicam-se as técnicas de otimização centralizadas (escolha de índices, métodos de junção local, etc.) para cada subconsulta em cada um dos sites individuais. Veja, mais uma vez, que este estágio de otimização local é realizado de forma independente em cada site, após o plano global ter sido definido.
 
@@ -447,7 +429,7 @@ Um dos problemas clássicos e mais custosos que acontecem em bancos de dados dis
 
 Uma estratégia mais complexa, que às vezes funciona muito melhor do que essas abordagens mais simples de transferência total, utiliza uma operação especializada da álgebra relacional chamada **semi-junção (semi-join)**. É sobre ela que falaremos agora.
 
-##### **A Operação de Semi-Junção (Semi-Join) para Otimização Distribuída**
+#### A Operação de Semi-Junção (Semi-Join) para Otimização Distribuída
 
 Em um ambiente de processamento de consultas distribuído, o custo de transmissão de dados pela rede (custo de comunicação) é frequentemente o fator dominante no custo total de execução de uma consulta. Portanto, técnicas que visam reduzir a quantidade de dados que precisam ser transferidos entre os sites são de grande importância. A operação de **semi-junção (denotada por ⋉)** é uma dessas técnicas, usada especificamente para reduzir o tamanho de uma relação (ou fragmento) que necessita ser transmitida para outro site para participar de uma operação de junção, e, por conseguinte, reduzir os custos de comunicação.
 
@@ -459,7 +441,7 @@ Outra forma, que utiliza o conceito de semi-junção, seria proceder da seguinte
 
 1. No site B (Londres), realizar uma projeção da relação S (PROJECT) sobre o(s) atributo(s) de junção (vamos supor que seja EMP-ID, a chave do empregado que também existe na tabela PROJECT para indicar qual empregado está alocado a qual projeto). O resultado desta projeção, que contém apenas os valores distintos de EMP-ID presentes em S, é transmitido para o site C (Mumbai). Vamos chamar este resultado de X:
     
-    X = Π&lt;sub>EMP-ID&lt;/sub>(S) ou X = Π&lt;sub>EMP-ID&lt;/sub>(PROJECT)
+    X = Π<sub>EMP-ID</sub>(S) ou X = Π<sub>EMP-ID</sub>(PROJECT)
     
     Nota: Apenas os atributos de junção são necessários, mais a chave da relação S se quisermos fazer a junção final em C.
     
@@ -468,7 +450,6 @@ Outra forma, que utiliza o conceito de semi-junção, seria proceder da seguinte
     Y = R ⋈ X ou Y = EMPLOYEE ⋈ X
     
     Esta operação Y = R ⋉ S (lê-se: R semi-junção S) produz um subconjunto das tuplas de R – apenas aquelas tuplas de R que têm uma correspondência de EMP-ID em S.
-    
 
 Toda essa construção, desde a primeira projeção da relação S sobre os atributos de junção e, em seguida, a realização da junção entre R e esses atributos projetados de S, é o que define a operação de semi-junção de R por S (R ⋉ S).
 
@@ -476,25 +457,21 @@ O resultado da operação de semi-junção Y = R ⋉ S é mostrado esquematicame
 
 Resultado Final = Y ⋈ S ou EMPLOYEE ⋈ PROJECT = Y ⋈ PROJECT
 
-&lt;div align="center">
-
-&lt;img src="https://placehold.co/800x450/EEE/31343C?text=Figura+18.15+-+Cálculo+da+Junção+usando+Semi-Junção" alt="Figura 18.15 - Calculando o resultado usando a operação de semi-junção">
-
-&lt;figcaption>Figura 18.15 - Calculando o resultado da junção R ⋈ S usando a operação de semi-junção&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="600px" src="./img/18-calculando-resultado-usando-semi-juncao.png">
+</div>
 
 O operador de semi-junção (⋉) é, portanto, usado como uma tática de otimização para reduzir o custo de comunicação em junções distribuídas. Se Z é o resultado da semi-junção da relação R pela relação S, então a semi-junção pode ser definida como:
 
-Z = R ⋉ S = Π&lt;sub>AtributosDeR&lt;/sub> (R ⋈ S) (Projeção da junção completa sobre os atributos de R)
+Z = R ⋉ S = Π<sub>AtributosDeR</sub> (R ⋈ S) (Projeção da junção completa sobre os atributos de R)
 
 Ou, de forma equivalente e mais intuitiva para a otimização:
 
-Z = R ⋈ (Π&lt;sub>AtributosDeJunção&lt;/sub>(S))
+Z = R ⋈ (Π<sub>AtributosDeJunção</sub>(S))
 
 A relação Z representa o conjunto de tuplas da relação R que efetivamente se juntam com alguma(s) tupla(s) da relação S. Observe que Z não contém tuplas da relação R que não se relacionam com alguma tupla na relação S. Assim, Z representa o conjunto R "reduzido" que pode ser transmitido a um local de S para uma junção final com S. Se a junção de R e S é **altamente seletiva** (ou seja, apenas uma pequena fração das tuplas de R realmente encontra correspondência em S, ou vice-versa), o tamanho de Z (ou da projeção dos atributos de junção de S) será uma pequena proporção do tamanho de R (ou de S). Nestes casos, a estratégia de semi-junção pode ser extremamente útil para reduzir o tráfego de dados pela rede, mesmo que envolva uma etapa adicional de processamento e transmissão.
 
-#### **18.3.10 Gerenciamento de Transações Distribuídas**
+### Gerenciamento de Transações Distribuídas
 
 Em um SGBDD, o gerenciamento de transações assume uma complexidade adicional, pois uma única transação lógica do usuário pode envolver operações em múltiplos sites. Os módulos de software de gerenciamento de transações locais (em cada site) e globais (coordenando entre os sites), juntamente com os gerenciadores de controle de concorrência e de recuperação de cada site, devem trabalhar coletivamente para garantir as propriedades ACID (Atomicidade, Consistência, Isolamento e Durabilidade) das transações, mesmo quando elas são distribuídas.
 
@@ -502,49 +479,41 @@ Para coordenar a execução de uma transação que abrange múltiplos sites (uma
 
 Se desejarmos garantir a atomicidade em um ambiente distribuído, todos os sites envolvidos na execução de uma transação T devem chegar a um acordo unânime sobre o seu término (COMMIT ou ABORT). Para isso, precisamos usar protocolos de comunicação e coordenação que permitam captar essa concordância entre todos os participantes. O protocolo de efetivação em duas fases (2PC) e o protocolo de efetivação em três fases (3PC) são exemplos efetivos desses mecanismos. Vamos falar sobre cada um deles a seguir. A partir de agora, quando mencionarmos S&lt;sub>i&lt;/sub>, estaremos nos referindo a um site participante da transação, e C&lt;sub>1&lt;/sub> (ou C) se referirá ao coordenador da transação.
 
-##### **Protocolo de Commit em Duas Fases (2PC)**
+#### Protocolo de Commit em Duas Fases (2PC)
 
-O protocolo de commit em duas fases, ou _two-phase commit (2PC)_, é um algoritmo de consenso distribuído projetado para garantir que todas as partes de uma transação distribuída (os agentes da transação em cada site participante) concordem sobre se devem efetivar (commit) ou abortar (rollback) a transação. Como o próprio nome sugere, o protocolo é dividido em duas fases principais. Vejamos o que acontece em cada uma delas.
+O protocolo de commit em duas fases, ou two-phase commit (2PC), é um algoritmo de consenso distribuído projetado para garantir que todas as partes de uma transação distribuída (os agentes da transação em cada site participante) concordem sobre se devem efetivar (commit) ou abortar (rollback) a transação. Como o próprio nome sugere, o protocolo é dividido em duas fases principais. Vejamos o que acontece em cada uma delas.
 
 **Fase 1: Fase de Preparação (Voting Phase)**
 
-1. **Coordenador (C&lt;sub>1&lt;/sub>):** O coordenador da transação (geralmente o site onde a transação foi originada ou um nó eleito) inicia o processo de commit. Ele primeiro acrescenta um registro `<prepare T>` (preparar transação T) em seu próprio log de transações e força a escrita deste log em memória estável (disco).
-2. **Coordenador (C&lt;sub>1&lt;/sub>):** Em seguida, o coordenador envia uma mensagem `prepare T` para todos os sites (S&lt;sub>i&lt;/sub>) que participam da execução da transação T.
-3. **Sites Participantes (S&lt;sub>i&lt;/sub>):** Ao receber a mensagem `prepare T` do coordenador, o gerenciador de transações de cada site participante determina se ele está apto a efetivar sua porção da transação T. Isso geralmente envolve verificar se todas as operações locais da transação foram concluídas com sucesso e se o site pode garantir que, se ele votar "sim" (pronto para commitar), ele será capaz de efetivar as mudanças mesmo que ocorram falhas subsequentes (ou seja, ele precisa tornar suas mudanças locais duráveis, geralmente escrevendo-as em seu próprio log local e forçando-o para disco). O que acontece em cada um dos sites participantes e a resposta enviada de volta para o coordenador é descrito abaixo:
-    - **Se o Site Participante (S&lt;sub>i&lt;/sub>) decidir que NÃO PODE efetivar sua parte da transação T** (por exemplo, devido a uma falha local, violação de integridade, ou deadlock): ele adiciona um registro `<no T>` (ou `<abort T>`) em seu log local e envia uma mensagem de `abort T` (ou `vote-no`) de volta para o coordenador C&lt;sub>1&lt;/sub>.
-    - **Se o Site Participante (S&lt;sub>i&lt;/sub>) decidir que PODE efetivar sua parte da transação T:** ele adiciona um registro `<ready T>` (pronto para T) em seu log local, força a escrita de seu log (incluindo todos os registros de T e o `<ready T>`) para memória estável (disco), e então envia uma mensagem de `ready T` (ou `vote-yes`) de volta para o coordenador C&lt;sub>1&lt;/sub>. Ao fazer isso, o site participante entra em um estado "preparado" e não pode mais abortar unilateralmente sua parte da transação; ele deve esperar a decisão final do coordenador.
+1. **Coordenador (C<sub>1</sub>):** O coordenador da transação (geralmente o site onde a transação foi originada ou um nó eleito) inicia o processo de commit. Ele primeiro acrescenta um registro `<prepare T>` (preparar transação T) em seu próprio log de transações e força a escrita deste log em memória estável (disco).
+2. **Coordenador (C<sub>1</sub>):** Em seguida, o coordenador envia uma mensagem `prepare T` para todos os sites (S<sub>i</sub>) que participam da execução da transação T.
+3. **Sites Participantes (S<sub>i</sub>):** Ao receber a mensagem `prepare T` do coordenador, o gerenciador de transações de cada site participante determina se ele está apto a efetivar sua porção da transação T. Isso geralmente envolve verificar se todas as operações locais da transação foram concluídas com sucesso e se o site pode garantir que, se ele votar "sim" (pronto para commitar), ele será capaz de efetivar as mudanças mesmo que ocorram falhas subsequentes (ou seja, ele precisa tornar suas mudanças locais duráveis, geralmente escrevendo-as em seu próprio log local e forçando-o para disco). O que acontece em cada um dos sites participantes e a resposta enviada de volta para o coordenador é descrito abaixo:
+    - **Se o Site Participante (S<sub>i</sub>) decidir que NÃO PODE efetivar sua parte da transação T** (por exemplo, devido a uma falha local, violação de integridade, ou deadlock): ele adiciona um registro `<no T>` (ou `<abort T>`) em seu log local e envia uma mensagem de `abort T` (ou `vote-no`) de volta para o coordenador C<sub>1</sub>.
+    - **Se o Site Participante (S<sub>i</sub>) decidir que PODE efetivar sua parte da transação T:** ele adiciona um registro `<ready T>` (pronto para T) em seu log local, força a escrita de seu log (incluindo todos os registros de T e o `<ready T>`) para memória estável (disco), e então envia uma mensagem de `ready T` (ou `vote-yes`) de volta para o coordenador C<sub>1</sub>. Ao fazer isso, o site participante entra em um estado "preparado" e não pode mais abortar unilateralmente sua parte da transação; ele deve esperar a decisão final do coordenador.
 
 A figura a seguir mostra esquematicamente a primeira fase do protocolo 2PC, considerando as duas opções de resposta (positiva ou negativa) dos sites participantes.
 
-&lt;div align="center">
-
-&lt;img src="https://placehold.co/700x400/EEE/31343C?text=Figura+18.16+-+Fase+1+do+Protocolo+2PC" alt="Figura 18.16 - Primeira Fase do Protocolo 2PC (Votação)">
-
-&lt;figcaption>Figura 18.16 - Primeira Fase do Protocolo 2PC (Votação)&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="600px" src="./img/18-2pc-primeira-fase.png">
+</div>
 
 Vamos agora analisar a segunda fase do protocolo.
 
 **Fase 2: Fase de Decisão (Completion Phase ou Commit/Abort Phase)**
 
-1. **Coordenador (C&lt;sub>1&lt;/sub>):** O coordenador coleta as mensagens de resposta (`ready T` ou `abort T`) de todos os sites participantes. Ele aguarda até receber uma resposta de todos eles ou até que um intervalo de tempo pré-definido (_timeout_) seja completado. Baseado nas respostas recebidas, o coordenador toma a decisão global para a transação T:
-    - **Decisão de Efetivar (COMMIT):** Se o coordenador C&lt;sub>1&lt;/sub> receber uma mensagem `ready T` de **todos** os sites participantes, ele decide efetivar a transação T. Ele então acrescenta um registro `<commit T>` em seu próprio log e força a escrita do log para memória estável.
-    - **Decisão de Abortar (ABORT):** Se o coordenador C&lt;sub>1&lt;/sub> receber pelo menos uma mensagem de `abort T` de qualquer um dos sites participantes, ou se algum site não responder dentro do _timeout_ (o que é geralmente tratado como um voto de aborto), ele decide abortar a transação T. Ele então acrescenta um registro `<abort T>` em seu próprio log e força a escrita do log para memória estável.
-2. **Coordenador (C&lt;sub>1&lt;/sub>):** O coordenador então envia uma mensagem com a decisão final (`commit T` ou `abort T`) para todos os sites participantes.
-3. **Sites Participantes (S&lt;sub>i&lt;/sub>):** Ao receberem a mensagem de decisão do coordenador:
+1. **Coordenador (C<sub>1</sub>):** O coordenador coleta as mensagens de resposta (`ready T` ou `abort T`) de todos os sites participantes. Ele aguarda até receber uma resposta de todos eles ou até que um intervalo de tempo pré-definido (timeout) seja completado. Baseado nas respostas recebidas, o coordenador toma a decisão global para a transação T:
+    - **Decisão de Efetivar (COMMIT):** Se o coordenador C<sub>1</sub> receber uma mensagem `ready T` de **todos** os sites participantes, ele decide efetivar a transação T. Ele então acrescenta um registro `<commit T>` em seu próprio log e força a escrita do log para memória estável.
+    - **Decisão de Abortar (ABORT):** Se o coordenador C<sub>1</sub> receber pelo menos uma mensagem de `abort T` de qualquer um dos sites participantes, ou se algum site não responder dentro do timeout (o que é geralmente tratado como um voto de aborto), ele decide abortar a transação T. Ele então acrescenta um registro `<abort T>` em seu próprio log e força a escrita do log para memória estável.
+2. **Coordenador (C<sub>1</sub>):** O coordenador então envia uma mensagem com a decisão final (`commit T` ou `abort T`) para todos os sites participantes.
+3. **Sites Participantes (S<sub>i</sub>):** Ao receberem a mensagem de decisão do coordenador:
     - Se a mensagem for `commit T`: cada site participante registra `<commit T>` em seu log local, força o log para disco, e então aplica efetivamente as alterações da transação T em seu banco de dados local.
     - Se a mensagem for `abort T`: cada site participante registra `<abort T>` em seu log local, força o log para disco, e então desfaz (rollback) todas as alterações que a transação T possa ter feito em seu banco de dados local.
 
 Vejam a figura abaixo com o detalhamento da segunda fase do protocolo 2PC.
 
-&lt;div align="center">
-
-&lt;img src="https://placehold.co/700x450/EEE/31343C?text=Figura+18.17+-+Fase+2+do+Protocolo+2PC" alt="Figura 18.17 - Segunda Fase do Protocolo 2PC (Decisão e Conclusão)">
-
-&lt;figcaption>Figura 18.17 - Segunda Fase do Protocolo 2PC (Decisão e Conclusão)&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="600px" src="./img/18-2pc-segunda-fase.png">
+</div>
 
 Em algumas implementações do protocolo 2PC, cada site participante, após concluir a efetivação ou o aborto local conforme instruído pelo coordenador, manda uma mensagem de reconhecimento (por exemplo, `acknowledge T` ou `ack T`) de volta para o coordenador. Quando o coordenador recebe uma mensagem `acknowledge T` de todos os sites, ele pode então adicionar um registro `<complete T>` (ou `<end T>`) ao seu log, indicando que a transação distribuída foi totalmente finalizada em todos os locais.
 
@@ -564,19 +533,15 @@ Outra situação possível é a ocorrência de um **particionamento de rede**, o
 
 Lembre-se que no protocolo de 2PC, para que uma transação seja efetivada, todos os sites participantes devem concordar com a execução da transação (votar `ready`) e devem finalizar a transação com sucesso conforme a decisão do coordenador. No entanto, como vimos, a possibilidade de bloqueio em caso de falha do coordenador é um problema significativo. Para tentar resolver esse problema, foi desenvolvido o protocolo 3PC (protocolo de commit em 3 fases), que veremos a seguir.
 
-##### **Protocolo de Commit em Três Fases (3PC)**
+#### Protocolo de Commit em Três Fases (3PC)
 
 A principal desvantagem do protocolo de commit em duas fases (2PC) é que ele é um protocolo que pode levar ao bloqueio (blocking) dos sites participantes se o coordenador falhar em um momento crítico. O **protocolo de commit em três fases (Three-Phase Commit - 3PC)** foi projetado para ser um protocolo de commit distribuído **não-bloqueante**, ou seja, ele permite que os sites participantes cheguem a uma decisão final (commit ou abort) mesmo que o coordenador ou alguns outros participantes falhem, sem ficarem indefinidamente esperando. Para alcançar isso, o 3PC divide a segunda fase do 2PC (a fase de decisão) em duas subfases: uma fase de "preparar para confirmar" (pre-commit) e a fase final de "confirmar" (commit).
 
 Vejam a figura abaixo que ilustra a ideia geral do protocolo de três fases.
 
-&lt;div align="center">
-
-&lt;img src="https://placehold.co/700x450/EEE/31343C?text=Figura+18.18+-+Visão+Geral+do+Protocolo+3PC" alt="Figura 18.18 - Protocolo de Commit em Três Fases (3PC)">
-
-&lt;figcaption>Figura 18.18 - Visão Geral do Protocolo de Commit em Três Fases (3PC)&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="600px" src="./img/18-3pc.png">
+</div>
 
 Para a execução correta do protocolo 3PC e para que ele seja não-bloqueante, algumas premissas geralmente precisam ser respeitadas:
 
@@ -590,55 +555,49 @@ Vamos então analisar a **segunda fase** do protocolo 3PC, que é a fase de **Pr
 
 **Fase 2: Fase de Pre-Commit**
 
-1. **Coordenador (C&lt;sub>1&lt;/sub>):**
-    - Se o coordenador C&lt;sub>1&lt;/sub> não receber respostas de um ou mais sites participantes dentro de um _timeout_, ou se receber pelo menos uma mensagem `abort T` de algum participante, então ele optará por **abortar** a transação T. Ele registrará `<abort T>` em seu log, forçará para disco, e enviará mensagens `abort T` para todos os participantes. (Neste caso, o protocolo termina de forma similar ao 2PC).
-    - Se o coordenador C&lt;sub>1&lt;/sub> receber uma mensagem `ready T` de **todos** os sites participantes, ele toma a decisão de "preparar para commitar". Ele então escreverá em seu log um registro de `<precommit T>` (indicando que a decisão provisória é commitar, mas ainda pode ser revertida se necessário) e enviará uma mensagem `precommit T` para todos os nós participantes. Neste momento, a efetivação ainda pode, teoricamente, ser abortada se não houver confirmação suficiente dos participantes nesta fase.
-2. **Sites Participantes (S&lt;sub>i&lt;/sub>):**
-    - Ao receberem a mensagem `precommit T` do coordenador, cada site participante S&lt;sub>i&lt;/sub> registra `<precommit T>` em seu próprio log local e força a escrita do log para disco. Em seguida, eles devolvem uma mensagem de `acknowledge T` (ou `ack-precommit T`) para o coordenador. Essa mensagem informa ao coordenador que o site recebeu a instrução de pre-commit e está pronto para efetivar a transação na próxima fase.
+1. **Coordenador (C<sub>1</sub>):**
+    - Se o coordenador C<sub>1</sub> não receber respostas de um ou mais sites participantes dentro de um _timeout_, ou se receber pelo menos uma mensagem `abort T` de algum participante, então ele optará por **abortar** a transação T. Ele registrará `<abort T>` em seu log, forçará para disco, e enviará mensagens `abort T` para todos os participantes. (Neste caso, o protocolo termina de forma similar ao 2PC).
+    - Se o coordenador C<sub>1</sub> receber uma mensagem `ready T` de **todos** os sites participantes, ele toma a decisão de "preparar para commitar". Ele então escreverá em seu log um registro de `<precommit T>` (indicando que a decisão provisória é commitar, mas ainda pode ser revertida se necessário) e enviará uma mensagem `precommit T` para todos os nós participantes. Neste momento, a efetivação ainda pode, teoricamente, ser abortada se não houver confirmação suficiente dos participantes nesta fase.
+2. **Sites Participantes (S<sub>i</sub>):**
+    - Ao receberem a mensagem `precommit T` do coordenador, cada site participante S<sub>i</sub> registra `<precommit T>` em seu próprio log local e força a escrita do log para disco. Em seguida, eles devolvem uma mensagem de `acknowledge T` (ou `ack-precommit T`) para o coordenador. Essa mensagem informa ao coordenador que o site recebeu a instrução de pre-commit e está pronto para efetivar a transação na próxima fase.
     - Caso um site participante, por algum motivo excepcional, não possa prosseguir para o estado de pre-commit (embora isso seja raro se ele já votou `ready T` na fase 1), ele deveria, em teoria, tratar isso como uma falha e não enviar o `acknowledge T`, ou, em algumas variantes do protocolo, poderia ter a capacidade de indicar um problema. No entanto, o mais comum é que, se um site votou `ready`, ele também estará apto para o pre-commit.
 
-O processo executado em S&lt;sub>i&lt;/sub> é feito para cada um dos sites participantes. Após o coordenador ter enviado as mensagens `precommit T` e (idealmente) recebido as mensagens `acknowledge T` de um número suficiente de participantes, ele pode partir para a terceira e última fase do protocolo.
+O processo executado em S<sub>i</sub> é feito para cada um dos sites participantes. Após o coordenador ter enviado as mensagens `precommit T` e (idealmente) recebido as mensagens `acknowledge T` de um número suficiente de participantes, ele pode partir para a terceira e última fase do protocolo.
 
 **Fase 3: Fase de Commit (ou Aborto Final)**
 
 Esta fase é executada para finalizar a transação. A decisão tomada aqui depende do que aconteceu na Fase 2.
 
-1. **Coordenador (C&lt;sub>1&lt;/sub>):**
+1. **Coordenador (C<sub>1</sub>):**
     - Se na Fase 2 o coordenador decidiu abortar (porque não recebeu todos os `ready T` na Fase 1, ou porque decidiu abortar por outro motivo antes de entrar no pre-commit), ele já terá enviado mensagens `abort T` para todos, e os participantes estarão abortando.
     - Se na Fase 2 o coordenador enviou mensagens `precommit T`, ele agora aguarda por pelo menos K mensagens `acknowledge T` (ou um quórum definido) dos participantes.
         - Caso receba o número suficiente de `acknowledge T`s (indicando que um número suficiente de sites está no estado de pre-commit), ele toma a decisão final em prol da **efetivação (COMMIT)**. Ele então coloca o registro `<commit T>` em seu log, força para disco, e envia a mensagem `commit T` final para todos os sites participantes.
-        - Se o coordenador não receber `acknowledge T`s suficientes dentro de um _timeout_ (ou se algum participante indicar explicitamente que não pode pre-commitar, o que é menos comum aqui), ele pode ainda ter a opção de decidir por um **aborto** (embora o objetivo do 3PC seja evitar bloqueio e permitir que os participantes decidam se o coordenador falhar). Se ele decidir abortar nesta fase tardia, ele registraria `<abort T>` e enviaria `abort T` para todos.
-2. **Sites Participantes (S&lt;sub>i&lt;/sub>):**
-    - Ao receberem a mensagem final `commit T` do coordenador, cada site S&lt;sub>i&lt;/sub> insere o registro `<commit T>` em seu log local, força para disco, e efetivamente aplica as alterações da transação.
+        - Se o coordenador não receber `acknowledge T`s suficientes dentro de um timeout (ou se algum participante indicar explicitamente que não pode pre-commitar, o que é menos comum aqui), ele pode ainda ter a opção de decidir por um **aborto** (embora o objetivo do 3PC seja evitar bloqueio e permitir que os participantes decidam se o coordenador falhar). Se ele decidir abortar nesta fase tardia, ele registraria `<abort T>` e enviaria `abort T` para todos.
+2. **Sites Participantes (S<sub>i</sub>):**
+    - Ao receberem a mensagem final `commit T` do coordenador, cada site S<sub>i</sub> insere o registro `<commit T>` em seu log local, força para disco, e efetivamente aplica as alterações da transação.
     - Se receberem uma mensagem `abort T` (vinda do coordenador que decidiu abortar na Fase 2 ou no início da Fase 3), eles registram `<abort T>` e desfazem suas operações.
 
 Veja o fluxo completo do protocolo 3PC, incluindo a fase de pre-commit, na figura abaixo:
 
-&lt;div align="center">
-
-&lt;img src="https://placehold.co/800x550/EEE/31343C?text=Figura+18.19+-+Fluxo+Completo+do+Protocolo+3PC" alt="Figura 18.19 - Fluxo completo do protocolo 3PC">
-
-&lt;figcaption>Figura 18.19 - Fluxo completo do protocolo 3PC&lt;/figcaption>
-
-&lt;/div>
+<div align="center">
+  <img width="640px" src="./img/18-3pc-fluxo-completo.png">
+</div>
 
 Em algumas implementações do protocolo 3PC, um site participante manda uma mensagem final de `ack T` (ou um nome diferente para diferenciar do `acknowledge T` da fase 2) para o coordenador após ter recebido e processado a mensagem final de `commit T`. Quando o coordenador recebe uma mensagem `ack T` (final) de todos os sites, ele pode adicionar o registro `<complete T>` em seu log, indicando o término completo da transação distribuída.
 
 Outro ponto importante no 3PC é o tratamento de **timeouts** para evitar esperas intermináveis e permitir que o protocolo seja não-bloqueante. O comportamento em caso de timeout pode variar dependendo da fase e de quem (coordenador ou participante) detecta o timeout:
 
 - **Fase 1 (Votação):**
-    - **Site Participante:** Se um site S&lt;sub>i&lt;/sub> não recebe a mensagem `prepare T` do coordenador dentro de um timeout, ou se ele mesmo, após enviar seu voto, não recebe a próxima instrução (`precommit T` ou `abort T`) do coordenador dentro de um timeout, ele pode unilateralmente decidir **abortar** sua parte da transação T. (Ele sabe que o coordenador não pode ter decidido commitar sem o seu voto `ready`).
+    - **Site Participante:** Se um site S<sub>i</sub> não recebe a mensagem `prepare T` do coordenador dentro de um timeout, ou se ele mesmo, após enviar seu voto, não recebe a próxima instrução (`precommit T` ou `abort T`) do coordenador dentro de um timeout, ele pode unilateralmente decidir **abortar** sua parte da transação T. (Ele sabe que o coordenador não pode ter decidido commitar sem o seu voto `ready`).
 - **Fase 2 (Pre-Commit):**
-    - **Coordenador:** Se o coordenador C&lt;sub>1&lt;/sub>, após enviar `prepare T`, não recebe todos os votos `ready T` dentro de um timeout (ou recebe um `abort T`), ele decide **abortar** a transação. Se ele enviou `precommit T` e não recebe `acknowledge T`s suficientes dos participantes dentro de um timeout, a situação é mais complexa. O objetivo do 3PC é permitir que os participantes cheguem a uma decisão se o coordenador falhar. Se o coordenador ainda está ativo e apenas alguns participantes não responderam ao pre-commit, ele pode ainda decidir abortar, mas isso precisa ser feito de forma a não violar a não-bloqueabilidade.
-    - **Site Participante:** Se um site S&lt;sub>i&lt;/sub> está no estado "preparado para commitar" (ou seja, recebeu `precommit T` e enviou `acknowledge T`) e o coordenador falha ou há um timeout antes de receber a decisão final (`commit T` ou `abort T`), o site S&lt;sub>i&lt;/sub> pode contatar outros sites participantes. Se ele descobre que algum outro site já comitou T (o que só pode acontecer se o coordenador enviou `commit T` para aquele site), então S&lt;sub>i&lt;/sub> também pode commitar T. Se ele descobre que algum outro site abortou T (ou nunca recebeu `precommit T`), ele também pode abortar T. Se todos os outros sites contatados também estão no estado "preparado para commitar", eles podem coletivamente decidir commitar T (assumindo que o coordenador deve ter tentado commitar). Esta capacidade de os participantes decidirem entre si na ausência do coordenador é o que torna o 3PC não-bloqueante. O seu texto original menciona: "Fase 2: Site – Preparado para comitar e ao responder o precommit – timeout provoca commit". Isso reflete a ideia de que, se um site alcançou o estado de pre-commit, ele assume que a intenção global era commitar, a menos que descubra o contrário.
+    - **Coordenador:** Se o coordenador C<sub>1</sub>, após enviar `prepare T`, não recebe todos os votos `ready T` dentro de um timeout (ou recebe um `abort T`), ele decide **abortar** a transação. Se ele enviou `precommit T` e não recebe `acknowledge T`s suficientes dos participantes dentro de um timeout, a situação é mais complexa. O objetivo do 3PC é permitir que os participantes cheguem a uma decisão se o coordenador falhar. Se o coordenador ainda está ativo e apenas alguns participantes não responderam ao pre-commit, ele pode ainda decidir abortar, mas isso precisa ser feito de forma a não violar a não-bloqueabilidade.
+    - **Site Participante:** Se um site S<sub>i</sub> está no estado "preparado para commitar" (ou seja, recebeu `precommit T` e enviou `acknowledge T`) e o coordenador falha ou há um timeout antes de receber a decisão final (`commit T` ou `abort T`), o site S<sub>i</sub> pode contatar outros sites participantes. Se ele descobre que algum outro site já comitou T (o que só pode acontecer se o coordenador enviou `commit T` para aquele site), então S<sub>i</sub> também pode commitar T. Se ele descobre que algum outro site abortou T (ou nunca recebeu `precommit T`), ele também pode abortar T. Se todos os outros sites contatados também estão no estado "preparado para commitar", eles podem coletivamente decidir commitar T (assumindo que o coordenador deve ter tentado commitar). Esta capacidade de os participantes decidirem entre si na ausência do coordenador é o que torna o 3PC não-bloqueante. O seu texto original menciona: "Fase 2: Site – Preparado para comitar e ao responder o precommit – timeout provoca commit". Isso reflete a ideia de que, se um site alcançou o estado de pre-commit, ele assume que a intenção global era commitar, a menos que descubra o contrário.
 - **Fase 3 (Commit):**
-    - **Coordenador:** Seu texto original diz: "Fase 3: Coordenador - Timeout provoca abort se não receber os acknowledge suficientes". Se o coordenador já decidiu commitar (baseado nos acks da fase de pre-commit) e enviou `commit T` para todos, o fato de não receber todos os acks finais (da fase de commit) não deveria levar a um aborto da transação em si (pois ela já foi commitada pelo coordenador e por alguns participantes). Ele pode registrar a falha de comunicação com os sites que não responderam ao ack final, mas a transação já está logicamente commitada. O objetivo aqui é mais para limpeza e para o coordenador saber que todos os sites processaram o commit. Se ele não recebeu acks suficientes na fase de _pre-commit_ para tomar a decisão de commitar, então sim, ele abortaria.
+    - **Coordenador:** Seu texto original diz: "Fase 3: Coordenador - Timeout provoca abort se não receber os acknowledge suficientes". Se o coordenador já decidiu commitar (baseado nos acks da fase de pre-commit) e enviou `commit T` para todos, o fato de não receber todos os acks finais (da fase de commit) não deveria levar a um aborto da transação em si (pois ela já foi commitada pelo coordenador e por alguns participantes). Ele pode registrar a falha de comunicação com os sites que não responderam ao ack final, mas a transação já está logicamente commitada. O objetivo aqui é mais para limpeza e para o coordenador saber que todos os sites processaram o commit. Se ele não recebeu acks suficientes na fase de pre-commit para tomar a decisão de commitar, então sim, ele abortaria.
 
 O protocolo 3PC, embora mais complexo que o 2PC em termos de número de mensagens e estados, oferece a vantagem crucial de ser não-bloqueante sob certas premissas de falha, o que é muito desejável para sistemas distribuídos que exigem alta disponibilidade.
 
----
-
-#### **Considerações Finais**
+## Considerações Finais
 
 Neste capítulo, embarcamos em uma jornada exploratória pelas arquiteturas de bancos de dados que transcendem o modelo centralizado tradicional, investigando os domínios do paralelismo e da distribuição. Iniciamos revisitando os sistemas centralizados e a arquitetura cliente-servidor, que pavimentaram o caminho para abordagens mais sofisticadas. Em seguida, detalhamos as arquiteturas de bancos de dados paralelos – memória compartilhada, disco compartilhado e nada compartilhado – destacando como cada uma busca otimizar o desempenho através da utilização concorrente de múltiplos processadores e recursos de armazenamento.
 
@@ -649,5 +608,3 @@ Aprofundamo-nos nas técnicas cruciais para o projeto e operação de SGBDDs, co
 O processamento de **consultas distribuídas** revelou a importância de otimizar não apenas o acesso local, mas também, e crucialmente, os custos de comunicação entre os sites. A operação de semi-junção foi apresentada como uma técnica poderosa para reduzir o volume de dados transmitidos pela rede. Finalmente, abordamos o desafio do **gerenciamento de transações distribuídas**, explorando os protocolos de commit em duas fases (2PC) e em três fases (3PC), que são essenciais para garantir a atomicidade das transações que abrangem múltiplos sites, mesmo diante de falhas.
 
 Fica claro que a escolha entre uma arquitetura paralela, distribuída, ou uma combinação delas, depende intrinsecamente dos requisitos específicos da aplicação, do volume de dados, dos padrões de acesso, das necessidades de desempenho, disponibilidade e autonomia, e dos custos envolvidos. O estudo dos bancos de dados paralelos e distribuídos nos mostra que, à medida que os sistemas de informação se tornam mais complexos e globalizados, as soluções de gerenciamento de dados precisam evoluir para oferecer não apenas capacidade de armazenamento, mas também inteligência na distribuição, processamento e coordenação, garantindo que os dados certos estejam no lugar certo, no momento certo, de forma consistente e confiável.
-
-&lt;/immersive>
