@@ -111,7 +111,7 @@ Digamos que, a partir do processo `init`, sejam iniciados três shells (interpre
   <img width="420px" src="./img/02-hierarquia-de-processos.png">
 </div>
 
-Nesta figura, init (PID=1) é o pai dos três processos bash. Um dos processos bash (PID=150) é o pai do ProgramaA (PID=345).
+Nesta figura, init (PID=1) é o pai dos três processos bash. Um dos processos bash (PID=44) é o pai do ProgramaA (PID=87).
 
 Essa estrutura hierárquica é útil para tarefas como enviar sinais para grupos de processos relacionados ou para rastrear a origem de um conjunto de atividades no sistema.
 
@@ -430,7 +430,7 @@ Os algoritmos de escalonamento podem ser amplamente categorizados com base no ti
 1. **Sistemas de Lote (Batch Systems):**
     - **Características:** Geralmente processam grandes volumes de dados sem interação direta do usuário (por exemplo, processamento de folhas de pagamento, simulações científicas de longa duração). Os usuários não estão esperando uma resposta rápida.
     - **Objetivos Típicos:** Maximizar o throughput, maximizar a utilização da CPU, minimizar o tempo de turnaround.
-    - **Preempção:** Algoritmos não preemptivos são aceitáveis, ou algoritmos preemptivos com longos períodos de tempo (quanta) para cada processo podem ser usados. Isso reduz a sobrecarga das trocas de contexto, o que pode melhorar o desempenho geral para esse tipo de carga de trabalho.
+    - **Preempção:** Algoritmos não preemptivos são aceitáveis, ou algoritmos preemptivos com longos períodos de tempo para cada processo podem ser usados. Isso reduz a sobrecarga das trocas de contexto, o que pode melhorar o desempenho geral para esse tipo de carga de trabalho.
 2. **Sistemas Interativos:**
     - **Características:** Há interação constante com os usuários, que esperam respostas rápidas do sistema (por exemplo, computadores pessoais usados para jogos, edição de textos, navegação na Internet, desenvolvimento de software).
     - **Objetivos Típicos:** Minimizar o tempo de resposta, fornecer boa interatividade, garantir justiça.
@@ -671,8 +671,7 @@ Existem, basicamente, quatro abordagens gerais para lidar com deadlocks:
         - Exigir que um processo requisite _todos_ os recursos de que necessita de uma só vez, antes de iniciar sua execução. Se todos puderem ser alocados, ele executa; caso contrário, ele espera sem reter nenhum recurso. (Difícil de implementar, pois os processos nem sempre sabem de todos os recursos que precisarão antecipadamente, e pode levar à subutilização de recursos).
         - Permitir que um processo requisite recursos apenas quando não estiver retendo nenhum outro. Se ele precisar de um novo recurso, deve primeiro liberar todos os que possui e depois requisitar todos juntos.
     - **Quebrando a Ausência de Preempção:** Se um processo que está retendo alguns recursos solicita outro recurso que não pode ser imediatamente alocado a ele, todos os recursos atualmente retidos por esse processo são preemptados (liberados). O processo só será reiniciado quando puder obter todos os seus recursos antigos mais os novos que está solicitando. (Aplicável a recursos cujo estado pode ser facilmente salvo e restaurado, como a CPU ou a memória, mas difícil para impressoras, por exemplo).
-    - **Quebrando a Espera Circular:**
-        - Impor uma ordem total de todos os tipos de recursos e exigir que cada processo solicite recursos em uma ordem crescente. Por exemplo, se a ordem é Fita (1), Disco (2), Impressora (3), um processo pode solicitar Fita e depois Disco, mas não pode solicitar Disco e depois Fita. (Pode ser muito restritivo e não natural para a lógica dos processos).
+    - **Quebrando a Espera Circular:** Impor uma ordem total de todos os tipos de recursos e exigir que cada processo solicite recursos em uma ordem crescente. Por exemplo, se a ordem é Fita (1), Disco (2), Impressora (3), um processo pode solicitar Fita e depois Disco, mas não pode solicitar Disco e depois Fita. (Pode ser muito restritivo e não natural para a lógica dos processos).
     A prevenção de deadlocks, embora garanta a ausência deles, geralmente leva a uma baixa utilização de recursos e a uma redução no throughput do sistema devido às restrições impostas.
 4. **Evitação de Deadlocks (Deadlock Avoidance):**
     - Nesta abordagem, o sistema operacional requer **informações adicionais antecipadas** sobre os recursos que um processo **poderá** requisitar durante sua vida.
