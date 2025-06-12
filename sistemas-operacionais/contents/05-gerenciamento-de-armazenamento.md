@@ -147,7 +147,7 @@ A figura abaixo ilustra uma hierarquia de diretórios típica do sistema operaci
 Se um arquivo chamado `abc` for criado dentro do diretório `/home/estrategia`, um outro arquivo com o mesmo nome `abc` só poderá ser criado em outro diretório.
 
 <div align="center">
-  <img width="540px" src="./img/05-hierarquia-de-diretorios-no-linux.png">
+  <img width="420px" src="./img/05-hierarquia-de-diretorios-no-linux.png">
 </div>
 
 **Especificando Caminhos de Arquivo (Pathnames):**
@@ -169,7 +169,7 @@ Para localizar um arquivo dentro dessa hierarquia, utilizamos um **caminho (path
     - **Linux/UNIX:** Usa a barra normal (`/`). Exemplo: `/home/ester/documentos/abc.txt`
 - **Conceito de Raiz e Volumes:**
     - **Linux/UNIX:** Possui um único diretório raiz (`/`) e todos os dispositivos de armazenamento (partições, discos) são "montados" em pontos dentro dessa única árvore de diretórios.
-    - **Windows:** Não possui uma única raiz para todo o sistema. Cada volume ou partição de disco é representado por uma **letra de unidade** seguida de dois pontos (ex: `C:`, `D:`), e cada um desses volumes tem seu próprio diretório raiz (`\`). Portanto, um caminho absoluto no Windows sempre começa com uma letra de unidade. O exemplo do caminho absoluto que vimos seria, de fato, algo como `C:\home\estrategia\abc` (supondo que o diretório `home` esteja no volume `C:`).
+    - **Windows:** Não possui uma única raiz para todo o sistema. Cada volume ou partição de disco é representado por uma **letra de unidade** seguida de dois pontos (ex: `C:`, `D:`), e cada um desses volumes tem seu próprio diretório raiz (`\`). Portanto, um caminho absoluto no Windows sempre começa com uma letra de unidade. O exemplo do caminho absoluto que vimos seria, de fato, algo como `C:\home\ester\abc` (supondo que o diretório `home` esteja no volume `C:`).
 
 Saber essas diferenças é crucial para a correta interpretação e formulação de caminhos em diferentes ambientes operacionais.
 
@@ -189,30 +189,25 @@ O primeiro setor de um disco (Setor 0) é um local especial chamado **MBR (Maste
 A figura a seguir mostra uma representação hexadecimal do conteúdo de um MBR (512 bytes). Observe a assinatura `0x55AA` no final, que é uma marca padrão, e a área anterior a ela, onde a tabela de partições reside. Neste exemplo, podemos inferir a existência de duas partições configuradas, enquanto as outras duas entradas da tabela estão zeradas.
 
 <div align="center">
-  <img width="540px" src="./img/05-hierarquia-de-diretorios-no-linux.png">
+  <img width="540px" src="./img/05-conteudo-hexadecimal-de-um-mbr.png">
 </div>
-**Figura 5.5 – Conteúdo Hexadecimal de um Master Boot Record (MBR)**
 
 Quando o computador é ligado, a BIOS executa o código do MBR. Este código, por sua vez, examina a tabela de partições, localiza a partição marcada como ativa, lê o primeiro bloco dessa partição – chamado **bloco de inicialização (boot block)** – e o executa. O programa contido no bloco de inicialização é o responsável por carregar o Sistema Operacional que reside naquela partição. É esse mecanismo que permite ter múltiplos sistemas operacionais instalados no mesmo disco (dual boot ou multi-boot), cada um em sua própria partição com seu respectivo sistema de arquivos.
 
-A Figura 5.6, adaptada do livro de Tanenbaum, mostra um layout de disco possível, com o MBR e quatro slots de partição. Em destaque, a segunda partição contém um sistema de arquivos Linux, com seu próprio bloco de inicialização.
+A figura abaixa, adaptada do livro de Tanenbaum, mostra um layout de disco possível, com o MBR e quatro slots de partição. Em destaque, a segunda partição contém um sistema de arquivos Linux, com seu próprio bloco de inicialização.
 
-**Figura 5.6 – Layout de um Disco com MBR e Quatro Partições (destaque para partição Linux)**
+<div align="center">
+  <img width="580px" src="./img/05-layout-de-disco-com-mbr-quatro-particoes.png">
+</div>
 
 Cada partição que contém um sistema de arquivos possui sua própria estrutura interna, que geralmente inclui:
 
 - **Bloco de Inicialização (Boot Block):** Contém o código para carregar o S.O. daquela partição.
-    
 - **Superbloco (Superblock):** Contém parâmetros críticos sobre o sistema de arquivos, como o número de blocos, o tamanho do bloco, ponteiros para blocos de gerenciamento de espaço livre, etc.
-    
 - **Gerenciamento de Espaço Livre:** Estruturas de dados (como mapa de bits ou lista de blocos livres) para rastrear quais blocos da partição estão em uso.
-    
 - **I-nodes (ou estrutura equivalente):** Uma área para armazenar os metadados dos arquivos.
-    
 - **Diretório Raiz:** O ponto de partida da hierarquia de diretórios da partição.
-    
 - **Blocos de Dados:** A maior parte da partição, onde o conteúdo real dos arquivos e diretórios é armazenado.
-    
 
 ## Métodos de Alocação de Espaço em Disco
 
@@ -222,72 +217,50 @@ Uma das questões mais importantes na implementação de um sistema de arquivos 
 
 Este é o método mais simples. Cada arquivo é armazenado como um **bloco contíguo de setores no disco**.
 
+<div align="center">
+  <img width="160px" src="./img/05-alocacao-contigua.png">
+</div>
+
 - **Funcionamento:** Para armazenar um arquivo, o sistema de arquivos precisa encontrar uma sequência de blocos livres consecutivos no disco que seja grande o suficiente para conter o arquivo inteiro. Por exemplo, em uma partição formatada com blocos de 4 KB, um arquivo de 40 KB precisaria de 10 blocos consecutivos. A entrada de diretório para o arquivo precisa armazenar apenas duas informações: o endereço do primeiro bloco e o tamanho do arquivo (em número de blocos).
-    
 - **Vantagens:**
-    
     - **Simplicidade:** A implementação é muito simples.
-        
     - **Desempenho de Leitura:** O desempenho para leitura sequencial é excelente. Como todos os blocos do arquivo estão fisicamente próximos, a cabeça de leitura/escrita do disco pode ler o arquivo inteiro em uma única operação, com movimento mínimo (baixo tempo de busca - seek time).
-        
 - **Desvantagens:**
-    
-    - **Fragmentação Externa:** Esta é a principal desvantagem. Com o tempo, à medida que os arquivos são criados, modificados e excluídos, o disco se torna fragmentado. Lacunas (espaços livres) de diferentes tamanhos aparecem entre os arquivos alocados. Pode chegar um ponto em que há espaço livre total suficiente para um novo arquivo, mas nenhum espaço livre _contíguo_ grande o suficiente para alocá-lo.
-        
+    - **Fragmentação Externa:** Esta é a principal desvantagem. Com o tempo, à medida que os arquivos são criados, modificados e excluídos, o disco se torna fragmentado. Lacunas (espaços livres) de diferentes tamanhos aparecem entre os arquivos alocados. Pode chegar um ponto em que há espaço livre total suficiente para um novo arquivo, mas nenhum espaço livre **contíguo** grande o suficiente para alocá-lo.
     - **Crescimento do Arquivo:** É difícil para um arquivo crescer após sua criação, pois o espaço contíguo após ele pode já estar ocupado por outro arquivo.
-        
     - **Solução para Fragmentação:** A única solução é realizar uma **compactação do disco** (desfragmentação), que "empurra" todos os arquivos para uma extremidade do disco para consolidar os espaços livres. No entanto, como já vimos, esta é uma operação extremamente lenta e custosa.
-        
-
-A Figura 5.7 ilustra a alocação contígua, onde os arquivos A, B, C e D ocupam sequências de blocos consecutivos no disco.
-
-**Figura 5.7 – Exemplo de Alocação Contígua de Arquivos no Disco**
 
 ### Alocação Encadeada (Linked Allocation)
 
 Para superar o problema da fragmentação externa da alocação contígua, a alocação encadeada armazena cada arquivo como uma **lista encadeada de blocos de disco**.
 
+<div align="center">
+  <img width="540px" src="./img/05-alocacao-encadeada.png">
+</div>
+
 - **Funcionamento:** Os blocos que compõem um arquivo podem estar espalhados por qualquer lugar no disco. Cada bloco contém, além dos dados do arquivo, um **ponteiro** para o próximo bloco da sequência. A entrada de diretório para o arquivo precisa armazenar apenas o endereço do primeiro bloco. O restante dos blocos é encontrado seguindo a cadeia de ponteiros de bloco em bloco, até que um ponteiro especial de fim de arquivo seja encontrado.
-    
 - **Vantagens:**
-    
     - **Sem Fragmentação Externa:** Qualquer bloco livre no disco pode ser utilizado, eliminando completamente a fragmentação externa.
-        
     - **Crescimento Fácil:** Um arquivo pode crescer facilmente, bastando alocar um novo bloco livre em qualquer lugar do disco e encadeá-lo ao final da lista.
-        
 - **Desvantagens:**
-    
     - **Acesso Aleatório Lento:** O acesso aleatório (ir diretamente para o bloco `N` de um arquivo) é muito ineficiente. Para chegar ao bloco `N`, é preciso percorrer a lista encadeada desde o primeiro bloco, lendo os `N-1` blocos anteriores apenas para encontrar seus ponteiros.
-        
     - **Sobrecarga de Ponteiros:** O ponteiro dentro de cada bloco ocupa espaço que poderia ser usado para dados. Isso faz com que o volume de armazenamento útil em um bloco não seja mais uma potência de 2 (ex: em um bloco de 512 bytes, talvez 4 bytes sejam para o ponteiro, deixando 508 bytes para dados), o que pode complicar o gerenciamento.
-        
     - **Baixa Confiabilidade:** Se um ponteiro em um bloco for corrompido ou perdido, toda a parte restante do arquivo se torna inacessível.
-        
 
-A Figura 5.8 ilustra a alocação encadeada.
-
-**Figura 5.8 – Exemplo de Alocação Encadeada de um Arquivo**
 
 ### Alocação Encadeada com Tabela na Memória (FAT)
 
 Para resolver os principais problemas da alocação encadeada simples (acesso aleatório lento e sobrecarga de ponteiros nos blocos de dados), foi desenvolvida uma variação inteligente: mover a cadeia de ponteiros do disco para uma **tabela na memória**.
 
 - **Funcionamento:** Em vez de cada bloco de dados conter um ponteiro para o próximo, o sistema de arquivos mantém uma tabela na memória principal, chamada **FAT (File Allocation Table – Tabela de Alocação de Arquivos)**. A FAT possui uma entrada para cada bloco de dados na partição. A entrada correspondente a um bloco contém o número do próximo bloco do arquivo. A entrada de diretório ainda aponta para o primeiro bloco, e a entrada na FAT para o último bloco do arquivo contém um marcador especial de fim de arquivo (ex: -1). Os blocos livres também são marcados na tabela.
-    
 - **Vantagens:**
-    
     - Todo o bloco de dados pode ser usado para dados, pois os ponteiros estão na FAT. O tamanho do bloco pode ser uma potência de 2.
-        
     - O acesso aleatório é significativamente melhorado. Para encontrar o bloco `N`, basta percorrer a FAT na memória (que é muito mais rápido do que ler blocos do disco) para encontrar o endereço do bloco `N`.
-        
 - **Desvantagem Principal:**
-    
     - A tabela FAT inteira precisa estar na memória principal enquanto a partição está em uso. Para discos grandes, a FAT pode se tornar enorme.
-        
         - **Exemplo de Cálculo:** Considere um disco de 500 GB com blocos de 1 KB. A tabela precisaria de 500 milhões de entradas (500 GB / 1 KB = 500 * 109 / 103 = 500 * 106). Se cada entrada da tabela (para apontar para o próximo bloco) precisar de 4 bytes para ser armazenada, o tamanho total da FAT seria: 500 milhões * 4 bytes = 2 bilhões de bytes = **2 GB de RAM**, apenas para a tabela FAT. Se o tamanho do bloco fosse de 4 KB, a FAT ainda ocuparia 500 MB.
-            
 
-A tabela a seguir mostra um exemplo de FAT equivalente à alocação da Figura 5.8, supondo que o arquivo comece no bloco 2. As entradas não utilizadas foram deixadas em branco para clareza.
+A tabela a seguir mostra um exemplo de FAT equivalente à alocação da figura anterior, supondo que o arquivo comece no bloco 2. As entradas não utilizadas foram deixadas em branco para clareza.
 
 |Bloco Físico|Aponta para|
 |---|---|
@@ -307,42 +280,39 @@ Os sistemas de arquivos da família FAT (FAT12, FAT16, FAT32), usados pelo MS-DO
 
 A **alocação indexada** é uma abordagem poderosa que resolve os problemas de fragmentação externa da alocação contígua e o acesso aleatório lento da alocação encadeada. Ela é comumente encontrada em sistemas de arquivos modernos, como os da família ext no Linux e, de forma conceitual, no NTFS.
 
+<div align="center">
+  <img width="160px" src="./img/05-alocacao-indexada.png">
+</div>
+
 - **Funcionamento:** A ideia central é coletar todos os ponteiros para os blocos de dados de um arquivo em um único local: um bloco especial chamado **bloco de índice**. A entrada de diretório para o arquivo contém o endereço desse bloco de índice. O bloco de índice, por sua vez, contém uma lista de endereços de todos os blocos de dados que compõem o arquivo.
-    
 - **Vantagens:**
-    
     - Suporta acesso aleatório de forma eficiente. Para encontrar o `N`-ésimo bloco de um arquivo, basta ler o bloco de índice, pegar o `N`-ésimo endereço da lista e ir diretamente para aquele bloco de dados.
-        
     - Não sofre de fragmentação externa.
-        
 - **Desvantagem (Problema do Tamanho do Arquivo):** O que acontece se um arquivo for tão grande que todos os seus ponteiros de bloco de dados não caibam em um único bloco de índice?
-    
 
 **Solução para Arquivos Grandes: I-nodes e Blocos Indiretos**
 
 Sistemas de arquivos baseados em UNIX resolveram esse problema de forma elegante com o conceito de **i-node (nó-índice)**.
 
 - **I-node:** Cada arquivo (e diretório) é associado a uma estrutura de dados chamada i-node, que armazena todos os seus **atributos (metadados)** e os **endereços dos blocos de disco** onde seus dados estão armazenados. A entrada de diretório contém apenas o nome do arquivo e o número do i-node correspondente.
-    
 - **Vantagem Principal:** O i-node de um arquivo só precisa ser carregado para a memória quando o arquivo correspondente é aberto. Isso evita a necessidade de manter uma tabela gigante como a FAT na memória o tempo todo.
-    
 
 Para lidar com arquivos grandes, o i-node não armazena apenas ponteiros diretos para blocos de dados. Ele utiliza um esquema multinível:
 
 - **Ponteiros Diretos:** Os primeiros ponteiros no i-node (ex: os 12 primeiros) apontam diretamente para os primeiros blocos de dados do arquivo. Isso cobre arquivos pequenos de forma muito eficiente.
-    
 - **Ponteiro Indireto Simples:** Se o arquivo for maior, o próximo ponteiro no i-node não aponta para um bloco de dados, mas sim para um **bloco indireto**. Este bloco indireto é, ele mesmo, um bloco de disco que contém uma lista de mais ponteiros para blocos de dados.
-    
 - **Ponteiro Indireto Duplo:** Para arquivos ainda maiores, o i-node pode ter um ponteiro para um bloco indireto duplo. Este bloco aponta para uma lista de blocos indiretos simples, cada um dos quais aponta para blocos de dados.
-    
 - **Ponteiro Indireto Triplo:** Para arquivos gigantescos, pode haver um ponteiro para um bloco indireto triplo, adicionando mais um nível de indireção.
-    
 
-A Figura 5.9 mostra a estrutura de um i-node com ponteiros diretos e indiretos, e a Figura 5.10 ilustra como o esquema multinível se expande para acomodar arquivos grandes.
+A seguir temos a estrutura de um i-node com ponteiros diretos e indiretos e a forma como o esquema multinível se expande para acomodar arquivos grandes.
 
-**Figura 5.9 – Estrutura de um I-node com Atributos e Endereços de Bloco**
+<div align="center">
+  <img width="580px" src="./img/05-alocacao-com-inodes.png">
+</div>
 
-**Figura 5.10 – I-node com Blocos Indiretos Simples, Duplos e Triplos para Arquivos Grandes**
+<div align="center">
+  <img width="640px" src="./img/05-esquema-multinivel-para-arquivos-grandes.png">
+</div>
 
 Este esquema de i-nodes é extremamente flexível, permitindo o gerenciamento eficiente tanto de arquivos muito pequenos (com acesso rápido através dos ponteiros diretos) quanto de arquivos extremamente grandes (com capacidade de endereçamento massiva através das indireções).
 
@@ -355,119 +325,81 @@ Além de organizar e alocar espaço para os dados, um sistema de arquivos modern
 Como vimos brevemente no capítulo sobre gerenciamento de memória, o **journaling** é uma técnica crucial para garantir a integridade e a rápida recuperação de um sistema de arquivos após uma falha inesperada (como uma queda de energia ou um travamento do sistema).
 
 - **Funcionamento:** A ideia é tratar as modificações no sistema de arquivos como **transações**. Antes de realizar uma série de operações complexas que alteram a estrutura do sistema de arquivos (como criar um novo arquivo, que envolve alocar um i-node, atualizar um diretório e alocar blocos de dados), o sistema de arquivos primeiro **registra a intenção** de fazer essas operações em uma área especial do disco chamada **jornal (ou log)**.
-    
     - **Registro (Log):** A transação é escrita no jornal.
-        
     - **Commit:** As mudanças são efetivamente aplicadas na estrutura principal do sistema de arquivos.
-        
     - **Conclusão:** Após a aplicação bem-sucedida, a transação é marcada como concluída no jornal.
-        
 - **Recuperação:** Se o sistema falhar no meio desse processo, ao reiniciar, o S.O. pode ler o jornal para descobrir o que estava acontecendo. Se uma transação foi registrada, mas não concluída, ele pode **reproduzir (replay)** as operações do jornal para garantir que o sistema de arquivos chegue a um estado consistente, ou **desfazer (rollback)** a transação incompleta. Isso evita que o sistema de arquivos fique em um estado corrompido e inconsistente.
-    
 - **Importância:** O journaling não evita a perda de dados de usuário que ainda não foram escritos no disco, mas garante que a _estrutura_ do sistema de arquivos permaneça intacta e rapidamente recuperável, eliminando a necessidade de longas verificações de consistência (como o `fsck`) após uma falha.
-    
 
 É importante saber quais dos sistemas de arquivos mais conhecidos implementam journaling:
 
 - **No Windows:**
-    
     - Família **FAT** (FAT12, FAT16, FAT32, exFAT): **NÃO** possuem journaling.
-        
     - **NTFS:** **Possui** journaling.
-        
     - **ReFS (Resilient File System):** **Possui** journaling e outros mecanismos avançados de integridade. Introduzido no Windows Server 2012, foi projetado para oferecer maior resiliência e detecção/correção automática de erros.
-        
+
 - **No Linux:**
-    
     - **ext2:** **NÃO** possui journaling.
-        
     - **ext3, ext4:** **Possuem** journaling.
-        
     - **ReiserFS, XFS, JFS, Btrfs:** Todos **possuem** journaling.
-        
 
 ### Permissões de Acesso (UGO e rwx)
 
 Aspectos de segurança eram secundários ou inexistentes em sistemas de arquivos mais antigos. Com o advento de sistemas multiusuário, tornou-se essencial controlar quem pode acessar quais arquivos e o que pode fazer com eles.
 
 - **Modelo UGO:** A maioria dos sistemas de arquivos modernos, especialmente os de origem UNIX, utiliza um modelo de permissões baseado em três categorias de usuários:
-    
     - **U (User):** O **usuário dono** do arquivo.
-        
     - **G (Group):** O **grupo** ao qual o arquivo pertence. Todos os usuários membros desse grupo compartilham as permissões de grupo.
-        
     - **O (Others):** **Outros** usuários, ou seja, qualquer um que não seja o dono e não pertença ao grupo.
-        
+
 - **Permissões rwx:** Para cada uma dessas três categorias (U, G, O), são definidas três permissões básicas:
-    
     - **r (read):** Permissão de **leitura**. Permite visualizar o conteúdo de um arquivo ou listar o conteúdo de um diretório.
-        
     - **w (write):** Permissão de **escrita**. Permite modificar o conteúdo de um arquivo ou criar/remover arquivos dentro de um diretório.
-        
     - **x (execute):** Permissão de **execução**. Permite executar o arquivo (se for um programa ou script) ou entrar em um diretório (torná-lo o diretório de trabalho).
-        
+
 - **Suporte nos Sistemas de Arquivos:**
-    
     - A maioria dos sistemas de arquivos usados no **Linux** (ext4, XFS, etc.) suporta nativamente esse modelo de permissões, que é parte fundamental da segurança do S.O.
-        
     - Sistemas da família **FAT** (FAT12, FAT16, FAT32, exFAT), comumente usados em dispositivos removíveis como pen drives, **não possuem suporte nativo para permissões de acesso**. Quando um pen drive FAT é usado em um sistema Linux, por exemplo, o S.O. geralmente atribui permissões uniformes a todos os arquivos e diretórios no momento da montagem, tornando-os acessíveis a qualquer usuário, ou ignora completamente as permissões.
-        
     - No **Windows**, os sistemas de arquivos **NTFS** e **ReFS** suportam um modelo de segurança muito mais granular e complexo, baseado em **Listas de Controle de Acesso (ACLs - Access Control Lists)**, que vai além do simples modelo UGO/rwx.
-        
 
 ### Slack Space (Espaço Ocioso)
 
 O termo **slack space** (ou **file slack**) refere-se ao espaço não utilizado dentro do último **cluster** de dados alocado a um arquivo. Um cluster (ou unidade de alocação) é o menor espaço em disco que um sistema de arquivos pode alocar para um arquivo.
 
 - **Origem:** Ocorre em praticamente qualquer sistema de arquivos que aloca espaço em blocos/clusters de tamanho fixo. Quando a quantidade de dados de um arquivo não é um múltiplo exato do tamanho do cluster, o último cluster alocado não será completamente preenchido.
-    
 - **Exemplo:** Se o tamanho do cluster é de 4 KB (4096 bytes) e um arquivo tem um tamanho de 9 KB, o sistema de arquivos precisará alocar 3 clusters para ele.
-    
     - Os dois primeiros clusters (8 KB) serão totalmente preenchidos.
-        
     - O terceiro cluster conterá o 1 KB restante dos dados do arquivo.
-        
     - Os 3 KB restantes dentro desse terceiro cluster (`4 KB - 1 KB = 3 KB`) constituem o **slack space**.
-        
 - **Implicações Forenses:** Esse espaço ocioso não é "zerado" pelo sistema operacional. Ele pode conter dados residuais de um arquivo que foi excluído anteriormente e que ocupava aquela mesma área do disco. Para a **perícia digital e a computação forense**, o slack space pode ser uma fonte valiosa de informação, potencialmente revelando fragmentos de dados que se acreditava terem sido apagados.
-    
 
 ## Ferramentas de Particionamento de Disco
 
 Para gerenciar as partições em um disco, criar novas, redimensioná-las, formatá-las com diferentes sistemas de arquivos ou realizar outras tarefas de manutenção, os usuários podem recorrer a softwares especializados.
 
 - **GParted (GNOME Partition Editor):**
-    
     - Uma ferramenta de código aberto extremamente poderosa e popular, com uma interface gráfica amigável.
-        
     - Permite criar, excluir, redimensionar, mover, copiar e verificar partições em discos.
-        
     - Suporta uma vasta gama de sistemas de arquivos (ext2/3/4, NTFS, FAT32, XFS, etc.).
-        
     - Muitas distribuições Linux incluem o GParted em seus repositórios oficiais. Também está disponível como uma imagem "Live CD/USB", que permite inicializar o computador diretamente a partir dela para gerenciar as partições do disco sem que o S.O. principal esteja em execução.
-        
-    
-    **Figura 5.11 – Interface Gráfica do Software de Particionamento GParted**
-    
+
+<div align="center">
+  <img width="480px" src="./img/05-gparted.png">
+</div>
+
 - **Partition Magic:**
-    
     - Foi um software comercial muito popular para gerenciamento de partições em sistemas Windows.
-        
     - Permitia aos usuários criar, redimensionar e mesclar partições em discos rígidos sem perder dados, uma capacidade revolucionária na época.
-        
     - No entanto, o software foi **descontinuado** pela Symantec e **não recebe atualizações desde 2003**, não sendo compatível com versões modernas do Windows ou com tecnologias como SSDs e UEFI.
-        
+
 - **MiniTool Partition Wizard:**
-    
     - É um software moderno de gerenciamento de partições para Windows, que pode ser visto como um sucessor espiritual do Partition Magic.
-        
     - Desenvolvido pela MiniTool Solution Ltd., permite aos usuários criar, redimensionar, mover, copiar e mesclar partições.
-        
     - Está disponível em versões gratuita e paga, com a versão paga oferecendo recursos mais avançados.
-        
-    
-    **Figura 5.12 – Interface do MiniTool Partition Wizard com Opções de Partição**
-    
+
+<div align="center">
+  <img width="680px" src="./img/05-minitool.png">
+</div>
 
 Essas ferramentas fornecem aos usuários e administradores de sistema um controle granular sobre a organização física e lógica de seus dispositivos de armazenamento.
 
