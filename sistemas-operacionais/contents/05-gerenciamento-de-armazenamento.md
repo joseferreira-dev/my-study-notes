@@ -144,7 +144,7 @@ Essa hierarquia é essencial para:
 
 A figura abaixo ilustra uma hierarquia de diretórios típica do sistema operacional Linux. O diretório no topo da hierarquia é o **diretório raiz**, representado pelo caractere **`/`**. Abaixo dele, encontramos outros diretórios do sistema (como `/home`, `/bin`, `/etc`). Dentro de `/home`, pode haver um diretório para cada usuário (como `/home/ester`).
 
-Se um arquivo chamado `abc` for criado dentro do diretório `/home/estrategia`, um outro arquivo com o mesmo nome `abc` só poderá ser criado em outro diretório.
+Se um arquivo chamado `abc` for criado dentro do diretório `/home/ester`, um outro arquivo com o mesmo nome `abc` só poderá ser criado em outro diretório.
 
 <div align="center">
   <img width="420px" src="./img/05-hierarquia-de-diretorios-no-linux.png">
@@ -286,7 +286,7 @@ A **alocação indexada** é uma abordagem poderosa que resolve os problemas de 
 
 - **Funcionamento:** A ideia central é coletar todos os ponteiros para os blocos de dados de um arquivo em um único local: um bloco especial chamado **bloco de índice**. A entrada de diretório para o arquivo contém o endereço desse bloco de índice. O bloco de índice, por sua vez, contém uma lista de endereços de todos os blocos de dados que compõem o arquivo.
 - **Vantagens:**
-    - Suporta acesso aleatório de forma eficiente. Para encontrar o `N`-ésimo bloco de um arquivo, basta ler o bloco de índice, pegar o `N`-ésimo endereço da lista e ir diretamente para aquele bloco de dados.
+    - Suporta acesso aleatório de forma eficiente. Para encontrar o N-ésimo bloco de um arquivo, basta ler o bloco de índice, pegar o N-ésimo endereço da lista e ir diretamente para aquele bloco de dados.
     - Não sofre de fragmentação externa.
 - **Desvantagem (Problema do Tamanho do Arquivo):** O que acontece se um arquivo for tão grande que todos os seus ponteiros de bloco de dados não caibam em um único bloco de índice?
 
@@ -329,7 +329,7 @@ Como vimos brevemente no capítulo sobre gerenciamento de memória, o **journali
     - **Commit:** As mudanças são efetivamente aplicadas na estrutura principal do sistema de arquivos.
     - **Conclusão:** Após a aplicação bem-sucedida, a transação é marcada como concluída no jornal.
 - **Recuperação:** Se o sistema falhar no meio desse processo, ao reiniciar, o S.O. pode ler o jornal para descobrir o que estava acontecendo. Se uma transação foi registrada, mas não concluída, ele pode **reproduzir (replay)** as operações do jornal para garantir que o sistema de arquivos chegue a um estado consistente, ou **desfazer (rollback)** a transação incompleta. Isso evita que o sistema de arquivos fique em um estado corrompido e inconsistente.
-- **Importância:** O journaling não evita a perda de dados de usuário que ainda não foram escritos no disco, mas garante que a _estrutura_ do sistema de arquivos permaneça intacta e rapidamente recuperável, eliminando a necessidade de longas verificações de consistência (como o `fsck`) após uma falha.
+- **Importância:** O journaling não evita a perda de dados de usuário que ainda não foram escritos no disco, mas garante que a **estrutura** do sistema de arquivos permaneça intacta e rapidamente recuperável, eliminando a necessidade de longas verificações de consistência (como o `fsck`) após uma falha.
 
 É importante saber quais dos sistemas de arquivos mais conhecidos implementam journaling:
 
