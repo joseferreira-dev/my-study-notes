@@ -11,12 +11,12 @@ O Apache™ Subversion® é um sistema de controle de versão (VCS) de código a
 A arquitetura do Subversion é firmemente baseada no modelo **cliente-servidor**. No centro de tudo está o **repositório**, um banco de dados robusto que armazena a totalidade dos dados versionados. Na outra ponta está o **programa cliente Subversion**, que os desenvolvedores usam para gerenciar uma cópia local de partes desses dados versionados. Entre esses dois extremos, existem várias rotas de comunicação através de uma camada de Acesso ao Repositório (RA), algumas das quais passam por redes de computadores e servidores de rede, enquanto outras podem ignorar a rede completamente e acessar o repositório diretamente no sistema de arquivos local.
 
 <div align="center">
-	<img width="540px" src="./img/04-arquitetura-do-subversion.png">
+	<img width="540px" src="./img/03-arquitetura-do-subversion.png">
 </div>
 
 O Subversion pode operar em redes, o que permite que ele seja usado por pessoas em computadores diferentes. Em algum nível, a capacidade de várias pessoas modificarem e gerenciarem o mesmo conjunto de dados de seus respectivos locais promove a colaboração. O progresso pode ocorrer mais rapidamente sem um único canal através do qual todas as modificações devem ocorrer.
 
-É importante notar que, embora seja amplamente utilizado para gerenciar código-fonte, o Subversion é, por design, um sistema de propósito geral. Alguns sistemas de controle de versão também são sistemas de gerenciamento de configuração de software (SCM). Esses sistemas são adaptados especificamente para gerenciar árvores de código-fonte e possuem muitos recursos específicos para desenvolvimento de software, como compreensão nativa de linguagens de programação ou fornecimento de ferramentas para construção de software. O Subversion, no entanto, não é um desses sistemas. É um sistema geral que pode ser usado para gerenciar qualquer coleção de arquivos. Para você, esses arquivos podem ser código-fonte– para outros, qualquer coisa, desde listas de compras de supermercado até mixagens de vídeo digital e muito mais.
+É importante notar que, embora seja amplamente utilizado para gerenciar código-fonte, o Subversion é, por design, um sistema de propósito geral. Alguns sistemas de controle de versão também são sistemas de gerenciamento de configuração de software (SCM). Esses sistemas são adaptados especificamente para gerenciar árvores de código-fonte e possuem muitos recursos específicos para desenvolvimento de software, como compreensão nativa de linguagens de programação ou fornecimento de ferramentas para construção de software. O Subversion, no entanto, não é um desses sistemas. É um sistema geral que pode ser usado para gerenciar qualquer coleção de arquivos. Para você, esses arquivos podem ser código-fonte – para outros, qualquer coisa, desde listas de compras de supermercado até mixagens de vídeo digital e muito mais.
 
 ### A Posição do SVN no Cenário do Versionamento
 
@@ -34,9 +34,9 @@ Portanto, existem algumas desvantagens em usar um DVCS. Eles podem ser mais comp
 
 Uma das contribuições mais duradouras do Subversion para o mundo do versionamento foi a popularização de uma convenção para estruturar o repositório. Embora não seja uma regra imposta pelo software, a seguinte estrutura de diretórios de alto nível tornou-se o padrão de fato para quase todos os projetos SVN:
 
-- **Repositório (Repository):** É o "coração" de qualquer sistema de controle de versão. É o principal lugar onde os desenvolvedores podem guardar seu trabalho, onde não depositam apenas arquivos1 como também o histórico completo do desenvolvimento.
+- **Repositório (Repository):** É o "coração" de qualquer sistema de controle de versão. É o principal lugar onde os desenvolvedores podem guardar seu trabalho, onde não depositam apenas arquivos como também o histórico completo do desenvolvimento.
 - **Trunk:** A pasta `trunk` contém os projetos que estão em desenvolvimento. É considerada a linha principal de desenvolvimento. Nela será salva, diariamente, as atualizações efetuadas pela equipe.
-- **Branches:** É a pasta que contém "linhas de desenvolvimento" de um determinado projeto. Podem haver poucas diferenças entre elas, porém2 uma independe da outra. Uma `branch` é tipicamente uma cópia do `trunk` feita para se trabalhar em uma nova funcionalidade de grande porte ou para estabilizar uma versão para lançamento, sem interromper o desenvolvimento no `trunk`. No momento que a equipe decide que o projeto está pronto para ser liberado como uma versão, a pasta `trunk` é copiada para a pasta `branches` e um nome de versão é dado. Este branch é então congelado e não sofre mais alterações de funcionalidades, apenas correções de bugs e testes.
+- **Branches:** É a pasta que contém "linhas de desenvolvimento" de um determinado projeto. Podem haver poucas diferenças entre elas, porém uma independe da outra. Uma `branch` é tipicamente uma cópia do `trunk` feita para se trabalhar em uma nova funcionalidade de grande porte ou para estabilizar uma versão para lançamento, sem interromper o desenvolvimento no `trunk`. No momento que a equipe decide que o projeto está pronto para ser liberado como uma versão, a pasta `trunk` é copiada para a pasta `branches` e um nome de versão é dado. Este branch é então congelado e não sofre mais alterações de funcionalidades, apenas correções de bugs e testes.
 - **Tags:** Quando os testes são efetuados em uma `branch` e concluídos, a versão em que se encontra é copiada para a pasta `tags`, formando uma versão liberada, ou `release`. Nesse momento, a `tag` é empacotada e pode ser enviada ao cliente. Qualquer alteração de correção feita na `branch` de lançamento deve ser mesclada para a `tag` após a finalização dos testes. O SVN considera uma `tag` apenas uma variação de uma `branch`; na prática, é isso mesmo, ela é uma cópia exata de uma `branch`, apenas uma ramificação da árvore de versões que, por convenção, não deve ser alterada.
 - **Working copy:** É uma cópia local de uma parte do repositório (seja do `trunk`, de uma `branch` ou de uma `tag`). O repositório é compartilhado por toda a equipe e não pode ser modificado diretamente. A `working copy` é um local de trabalho privado onde os desenvolvedores podem fazer seu trabalho de forma isolada do resto de sua equipe.
 
@@ -106,10 +106,6 @@ Esta é a melhoria mais importante sobre o CVS. No Subversion, cada `commit` é 
 ### Gerenciamento de Arquivos e Diretórios
 
 No CVS, o histórico estava atrelado ao arquivo. Se você renomeasse `a.txt` para `b.txt`, o sistema via isso como a exclusão de `a.txt` e a criação de um novo arquivo, `b.txt`, perdendo toda a linhagem de alterações. O Subversion introduziu operações de renomeação (`svn move`) e cópia (`svn copy`) que são registradas no histórico. Agora, o sistema sabe que `b.txt` é a continuação de `a.txt`, preservando seu histórico completo. O mesmo se aplica aos diretórios, que são tratados como objetos de primeira classe.
-
-### Ramificações e Etiquetas Eficientes
-
-Criar uma `branch` no CVS era uma operação pesada que desencorajava seu uso. O Subversion implementou branches e tags como "cópias baratas". Em vez de duplicar todos os dados, o SVN cria um novo caminho no repositório que aponta para as revisões existentes. Isso torna a criação de uma `branch` ou `tag` uma operação instantânea, independentemente do tamanho do projeto, o que democratizou o uso de fluxos de trabalho mais complexos e seguros.
 
 ### Tudo é Versionado: Arquivos, Diretórios e Metadados
 

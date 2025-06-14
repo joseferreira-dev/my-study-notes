@@ -15,19 +15,19 @@ O método mais básico de controle de versão, que muitas pessoas ainda usam ins
 Para resolver isso, os primeiros VCSs formais foram criados como ferramentas locais. Eles utilizavam um banco de dados simples na máquina do próprio usuário para rastrear as alterações.
 
 <div align="center">
-  <img width="360px" src="./img/03-vcs.png">
+  <img width="360px" src="./img/04-vcs.png">
 </div>
 
 Uma das ferramentas mais populares dessa era foi o **RCS (Revision Control System)**, que ainda hoje pode ser encontrado em muitos sistemas operacionais. O RCS funcionava mantendo "conjuntos de alterações" (as diferenças entre as versões de um arquivo) em um formato especial no disco. Com isso, ele conseguia reconstruir qualquer versão de um arquivo a qualquer momento, somando as diferenças necessárias.
 
 ### A Era da Colaboração: Sistemas Centralizados (CVCS)
 
-O grande problema dos sistemas locais era a dificuldade de colaboração. Para resolver isso, foram desenvolvidos os **Sistemas de Controle de Versão Centralizados (CVCSs)**, como o CVS e o Subversion, que exploramos no capítulo anterior.
+O grande problema dos sistemas locais era a dificuldade de colaboração. Para resolver isso, foram desenvolvidos os **Sistemas de Controle de Versão Centralizados (CVCSs)**, como o Subversion e o CVS, que exploramos no capítulo anterior.
 
 Neste modelo, há um único servidor que contém o repositório central com todos os arquivos versionados. Os desenvolvedores (clientes) se conectam a esse servidor para baixar (`checkout`) os arquivos e enviar (`commit`) suas alterações.
 
 <div align="center">
-  <img width="400px" src="./img/03-cvcs.png">
+  <img width="400px" src="./img/04-cvcs.png">
 </div>
 
 Este modelo oferece vantagens claras: os administradores têm controle refinado sobre quem pode fazer o quê, e todos na equipe têm uma visão do que os outros estão fazendo. No entanto, sua principal fraqueza é o **ponto único de falha**. Se o servidor central ficar offline, ninguém pode colaborar ou salvar novas versões. Pior ainda, se o disco do servidor for corrompido e não houver backups, todo o histórico do projeto pode ser perdido para sempre.
@@ -39,7 +39,7 @@ Este modelo oferece vantagens claras: os administradores têm controle refinado 
 Em um DVCS, os clientes não apenas baixam a última versão dos arquivos; eles **clonam (duplicam) o repositório completo** em suas máquinas locais. Isso significa que cada desenvolvedor tem em seu computador uma cópia integral de todo o histórico do projeto.
 
 <div align="center">
-  <img width="460px" src="./img/03-dvcs.png">
+  <img width="460px" src="./img/04-dvcs.png">
 </div>
 
 Esta arquitetura tem consequências profundas:
@@ -72,13 +72,13 @@ Para usar o Git de forma eficaz, é crucial entender sua filosofia interna, que 
 A principal diferença entre o Git e quase qualquer outro VCS (como Subversion, Perforce, etc.) é a maneira como ele enxerga e armazena seus dados. Conceitualmente, a maioria dos outros sistemas armazena informações como uma **lista de alterações baseadas em arquivos (deltas)**. Eles pensam no histórico como "Arquivo A, versão 1; depois, estas linhas foram alteradas no Arquivo A para criar a versão 2".
 
 <div align="center">
-  <img width="620px" src="./img/03-modelo-baseado-em-diferencas-de-arquivos.png">
+  <img width="620px" src="./img/04-modelo-baseado-em-diferencas-de-arquivos.png">
 </div>
 
 O Git não funciona assim. Em vez disso, o Git trata seus dados mais como um **conjunto de instantâneos (snapshots) de um sistema de arquivos em miniatura**. Toda vez que você faz um `commit` (salva o estado do seu projeto), o Git basicamente tira uma "foto" de como todos os seus arquivos estão naquele momento e armazena uma referência para esse snapshot. Para ser eficiente, se os arquivos não foram alterados de um commit para o outro, o Git não armazena o arquivo novamente; ele apenas cria um link para a versão idêntica anterior que já está armazenada.
 
 <div align="center">
-  <img width="620px" src="./img/03-modelo-baseado-em-snapshots.png">
+  <img width="620px" src="./img/04-modelo-baseado-em-snapshots.png">
 </div>
 
 Essa abordagem de snapshots faz com que o Git se comporte mais como um mini-sistema de arquivos com ferramentas poderosas sobre ele, em vez de apenas um VCS tradicional.
@@ -120,7 +120,7 @@ Estes três estados correspondem a três seções de um projeto Git:
 3. **O Diretório Git (Repositório):** É onde o Git armazena os metadados e o banco de dados de objetos do seu projeto. Esta é a parte mais importante do Git, e é o que é copiado quando você clona um repositório.
 
 <div align="center">
-  <img width="500px" src="./img/03-fluxo-de-trabalho-basico-do-git.png">
+  <img width="500px" src="./img/04-fluxo-de-trabalho-basico-do-git.png">
 </div>
 
 O fluxo de trabalho básico no Git, portanto, é o seguinte:
