@@ -57,13 +57,13 @@ Abaixo, detalhamos os comandos mais importantes e seus usos:
 
 |**Comando**|**Descrição e Exemplo de Uso**|
 |---|---|
-|`cvs checkout`|**Baixa um módulo do repositório para criar uma cópia de trabalho.** É o ponto de partida para qualquer desenvolvedor.&lt;br>`$ cvs checkout nome_do_modulo`|
-|`cvs commit`|**Envia as alterações da sua cópia de trabalho para o repositório.** É recomendado sempre usar a flag `-m` para adicionar uma mensagem descritiva.&lt;br>`$ cvs commit -m "Correção do bug de autenticação"`|
-|`cvs update`|**Atualiza sua cópia de trabalho com as últimas versões do repositório.** Essencial para ser executado antes de iniciar o trabalho e antes de um `commit`.&lt;br>`$ cvs update`|
-|`cvs add`|**Informa ao CVS que um novo arquivo ou diretório deve ser adicionado ao controle de versão.** O arquivo só será efetivamente adicionado ao repositório no próximo `commit`.&lt;br>`$ cvs add novo_arquivo.html`|
-|`cvs remove`|**Informa ao CVS que um arquivo deve ser removido do controle de versão.** A remoção só é efetivada no repositório no próximo `commit`.&lt;br>`$ cvs remove arquivo_antigo.txt`|
-|`cvs diff`|**Mostra as diferenças entre a sua cópia de trabalho e a versão no repositório**, ou entre duas revisões quaisquer.&lt;br>`$ cvs diff -u arquivo.c`|
-|`cvs log`|**Exibe o histórico de logs de um arquivo**, mostrando todas as revisões, autores, datas e mensagens de `commit`.&lt;br>`$ cvs log index.php`|
+|`cvs checkout`|**Baixa um módulo do repositório para criar uma cópia de trabalho.** É o ponto de partida para qualquer desenvolvedor.<br>`$ cvs checkout nome_do_modulo`|
+|`cvs commit`|**Envia as alterações da sua cópia de trabalho para o repositório.** É recomendado sempre usar a flag `-m` para adicionar uma mensagem descritiva.<br>`$ cvs commit -m "Correção do bug de autenticação"`|
+|`cvs update`|**Atualiza sua cópia de trabalho com as últimas versões do repositório.** Essencial para ser executado antes de iniciar o trabalho e antes de um `commit`.<br>`$ cvs update`|
+|`cvs add`|**Informa ao CVS que um novo arquivo ou diretório deve ser adicionado ao controle de versão.** O arquivo só será efetivamente adicionado ao repositório no próximo `commit`.<br>`$ cvs add novo_arquivo.html`|
+|`cvs remove`|**Informa ao CVS que um arquivo deve ser removido do controle de versão.** A remoção só é efetivada no repositório no próximo `commit`.<br>`$ cvs remove arquivo_antigo.txt`|
+|`cvs diff`|**Mostra as diferenças entre a sua cópia de trabalho e a versão no repositório**, ou entre duas revisões quaisquer.<br>`$ cvs diff -u arquivo.c`|
+|`cvs log`|**Exibe o histórico de logs de um arquivo**, mostrando todas as revisões, autores, datas e mensagens de `commit`.<br>`$ cvs log index.php`|
 |`cvs admin`|Usado para tarefas administrativas no repositório.|
 |`cvs annotate`|Mostra, para cada linha de um arquivo, qual revisão (e autor) foi responsável por sua última modificação.|
 |`cvs export`|Exporta uma cópia limpa do módulo, sem os arquivos de metadados do CVS.|
