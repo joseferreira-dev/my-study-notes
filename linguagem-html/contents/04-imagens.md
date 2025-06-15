@@ -96,7 +96,7 @@ Para criar um mapa de imagem, usamos três tags em conjunto:
 </map>
 ```
 
-Neste exemplo, diferentes partes da imagem `workplace.jpg` (o computador, o celular e o café) levam para links diferentes.
+Neste exemplo, diferentes partes da imagem fictícia `workplace.jpg` (o computador, o celular e o café) levam para links diferentes.
 
 ### Imagens Responsivas com `<picture>`
 
