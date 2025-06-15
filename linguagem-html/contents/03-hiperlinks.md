@@ -1,4 +1,4 @@
-# Capítulo 3 – Links: Conectando a Teia da Web
+# Capítulo 3 – Hiperlinks: Conectando a Teia da Web
 
 Se o HTML é o esqueleto da web, os **links** são o seu sistema nervoso. É o "H" de "Hipertexto" no HTML que define a própria natureza da web: uma teia (web) de documentos interconectados que podemos navegar com um simples clique. Sem os links, a internet seria uma coleção de páginas isoladas, sem a fluidez que a torna uma ferramenta tão poderosa para informação e interação. Dominar a criação e o uso de links é, portanto, uma das habilidades mais fundamentais no desenvolvimento web.
 
