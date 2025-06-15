@@ -20,7 +20,7 @@ Os níveis **secundário e terciário** de armazenamento estão associados a mí
 
 É possível, ainda, separar os dispositivos físicos de armazenamento em **voláteis** ou **não voláteis**. Esse conceito se refere ao fato de a informação ser ou não perdida caso falte energia no sistema. A **memória RAM** (Random Access Memory) é o principal exemplo de memória volátil; ela serve para armazenar e executar as aplicações e os dados em uso depois que o computador já está ligado, e todas as suas informações são perdidas após o desligamento da máquina.
 
-Na figura a seguir, você pode observar uma representação esquemática da hierarquia de armazenamento. Os três primeiros níveis da pirâmide (cache, memória principal) tratam de armazenamento tipicamente volátil e de acesso rápido. O quarto nível (armazenamento em flash, disco magnético) mostra os dispositivos de armazenamento permanente mais comuns, e a base da pirâmide (armazenamento óptico, fita magnética) representa o armazenamento de longo prazo e baixo custo.
+Na figura a seguir, você pode observar uma representação esquemática da hierarquia de armazenamento. Os três primeiros níveis da pirâmide (registradores, cache, memória principal) tratam de armazenamento tipicamente volátil e de acesso rápido. A base da pirâmide (armazenamento em flash, disco magnético, armazenamento óptico, fita magnética) mostra os dispositivos de armazenamento de longo prazo mais comuns e com baixo custo.
 
 <div align="center">
   <img width="600px" src="./img/19-hierarquia-de-memoria.png">
@@ -31,7 +31,7 @@ Existem dois tipos principais de memória RAM que devem ser considerados em noss
 - **DRAM (Dynamic Random Access Memory)**, ou Memória de Acesso Randômico Dinâmica, é o tipo mais comum de RAM em computadores pessoais e servidores. Ela armazena cada bit de dados em um capacitor separado dentro de um circuito integrado. Como os capacitores perdem sua carga elétrica gradualmente, a informação precisa ser constantemente atualizada (refrescada) para que permaneça armazenada. Com isso, esse tipo de RAM consome mais energia em operação contínua.
 - **SRAM (Static Random Access Memory)**, ou Memória de Acesso Randômico Estática, consegue manter os bytes armazenados enquanto houver fornecimento de energia, sem a necessidade de atualização contínua. Os dados só são perdidos após a interrupção da fonte de energia. A memória SRAM é, portanto, mais rápida e consome menos energia em estado de espera, mas é mais complexa e cara de se fabricar, razão pela qual é geralmente utilizada em menores quantidades, como na memória cache dos processadores.
 
-Quando passamos a analisar as memórias não voláteis, o primeiro tipo que devemos analisar seria a **ROM (Read-Only Memory)**, que armazena o **BIOS (Basic Input/Output System)** ou o firmware de um computador. A ROM é uma memória somente de leitura (ou de escrita muito rara), e está, principalmente, localizada em um chip responsável pela iniciação do sistema (o _boot_). É lá que as informações básicas para dar partida no computador ficam armazenadas; portanto, elas não são afetadas quando o dispositivo é desligado.
+Quando passamos a analisar as memórias não voláteis, o primeiro tipo que devemos analisar seria a **ROM (Read-Only Memory)**, que armazena o **BIOS (Basic Input/Output System)** ou o firmware de um computador. A ROM é uma memória somente de leitura (ou de escrita muito rara), e está, principalmente, localizada em um chip responsável pela iniciação do sistema (o boot). É lá que as informações básicas para dar partida no computador ficam armazenadas; portanto, elas não são afetadas quando o dispositivo é desligado.
 
 Outros dispositivos de armazenamento permanente incluem os discos removíveis (como HDs externos e pen drives), os dispositivos de armazenamento em rede (que veremos mais adiante) e, claro, os discos rígidos internos. A organização dos dados dentro dos discos é de extrema importância para o desempenho de um SGBD, e dedicaremos as próximas seções para tratar de como os arquivos são organizados no disco.
 
@@ -67,7 +67,7 @@ Um **setor** é o menor espaço físico em um disco formatado que pode ser ender
 
 Um **bloco**, por outro lado, é uma unidade lógica de transferência de dados entre o disco e a memória principal, gerenciada pelo sistema operacional ou pelo SGBD. Um bloco pode ter o tamanho de um ou de vários setores contíguos (por exemplo, um bloco de 8 KB pode ser composto por dois setores de 4 KB). O tamanho do bloco é uma configuração importante, pois influencia a eficiência do I/O. Um fator que influencia a escolha do tamanho do bloco é o tamanho do **buffer de disco**.
 
-E qual a utilidade desse buffer? O buffer (ou cache de disco) é uma parte da memória principal (RAM) que é alocada pelo sistema operacional ou pelo SGBD para armazenar cópias de blocos de disco que foram recentemente lidos ou que serão escritos. O uso de buffers é fundamental para o desempenho. Imagine que o processador está trabalhando na execução de uma determinada tarefa sobre os dados de um bloco que já está no buffer. Ao mesmo tempo, o subsistema de entrada e saída pode, de forma proativa (read-ahead), ler para o buffer os próximos blocos de disco que provavelmente serão necessários em breve. É necessário, portanto, desenvolver uma estratégia eficiente para o gerenciamento desse espaço de buffer (por exemplo, algoritmos como LRU - _Least Recently Used_ - para decidir quais blocos remover do buffer quando ele está cheio). Observe a figura a seguir; ela tenta clarear a sua percepção sobre o uso do buffer.
+E qual a utilidade desse buffer? O buffer (ou cache de disco) é uma parte da memória principal (RAM) que é alocada pelo sistema operacional ou pelo SGBD para armazenar cópias de blocos de disco que foram recentemente lidos ou que serão escritos. O uso de buffers é fundamental para o desempenho. Imagine que o processador está trabalhando na execução de uma determinada tarefa sobre os dados de um bloco que já está no buffer. Ao mesmo tempo, o subsistema de entrada e saída pode, de forma proativa (read-ahead), ler para o buffer os próximos blocos de disco que provavelmente serão necessários em breve. É necessário, portanto, desenvolver uma estratégia eficiente para o gerenciamento desse espaço de buffer (por exemplo, algoritmos como LRU - Least Recently Used - para decidir quais blocos remover do buffer quando ele está cheio). Observe a figura a seguir; ela tenta clarear a sua percepção sobre o uso do buffer.
 
 <div align="center">
   <img width="720px" src="./img/19-uso-de-multiplos-buffers.png">
@@ -87,7 +87,7 @@ Analisaremos a seguir como os arquivos de dados (ou seja, as coleções de infor
 
 Primeiramente, precisamos de uma definição clara de **registro**. Um registro, no contexto de arquivos, é basicamente uma coleção de valores ou itens de dados relacionados, que representam uma única entidade ou ocorrência (por exemplo, os dados de um único funcionário ou de um único produto). Um **arquivo**, por sua vez, é definido como uma sequência de registros do mesmo tipo.
 
-A primeira opção para compor um arquivo seria utilizarmos um conjunto de **registros de tamanho fixo**. Neste caso, cada registro no arquivo ocupa exatamente o mesmo número de bytes. Imagine que tenhamos um arquivo com _x_ registros, cada um com um tamanho fixo _R_. Desta forma, fica fácil definir e alocar espaço em disco para o arquivo, e também calcular a posição de um determinado registro dentro do arquivo.
+A primeira opção para compor um arquivo seria utilizarmos um conjunto de **registros de tamanho fixo**. Neste caso, cada registro no arquivo ocupa exatamente o mesmo número de bytes. Imagine que tenhamos um arquivo com x registros, cada um com um tamanho fixo R. Desta forma, fica fácil definir e alocar espaço em disco para o arquivo, e também calcular a posição de um determinado registro dentro do arquivo.
 
 A segunda opção seria definir arquivos cujos **registros têm tamanho variável**. São várias as possibilidades para que isso aconteça em um banco de dados:
 
@@ -192,7 +192,7 @@ Após nossa rápida metáfora, vamos agora para os termos e conceitos mais forma
 
 A **organização de arquivos** refere-se à organização dos dados de um arquivo em registros e blocos, e à forma como essas estruturas de dados são dispostas. Ela inclui o modo como os registros e os blocos são colocados fisicamente no meio de armazenamento e como eles são interligados (se for o caso). Os **métodos de acesso**, por outro lado, oferecem um conjunto de operações (como as que vimos na seção anterior: `Find`, `Read`, `Insert`, etc.) que podem ser aplicadas a um arquivo para recuperar, modificar, inserir ou excluir registros. É possível aplicar vários métodos de acesso a uma mesma organização de arquivos.
 
-Alguns métodos de acesso, porém, só podem ser aplicados a arquivos que são organizados de certas maneiras específicas. Por exemplo, não podemos aplicar um **método de acesso indexado** a um arquivo que não possui uma estrutura de índice associada a ele. Várias técnicas gerais, como **ordenação**, _**hashing**_ e **indexação**, são usadas para criar organizações de arquivos e métodos de acesso mais eficientes do que a simples busca linear.
+Alguns métodos de acesso, porém, só podem ser aplicados a arquivos que são organizados de certas maneiras específicas. Por exemplo, não podemos aplicar um **método de acesso indexado** a um arquivo que não possui uma estrutura de índice associada a ele. Várias técnicas gerais, como **ordenação**, **hashing** e **indexação**, são usadas para criar organizações de arquivos e métodos de acesso mais eficientes do que a simples busca linear.
 
 As principais formas de organização primária de arquivos (ou seja, como os registros são fisicamente armazenados) podem ser classificadas em:
 
@@ -227,7 +227,11 @@ As vantagens desta forma de organização são notáveis para certos tipos de ac
 - **Leitura Sequencial Eficiente:** Ler todos os registros na ordem do campo de ordenação é extremamente eficiente. Após ler o primeiro bloco, para carregar o próximo registro na sequência, geralmente não é necessário recarregar um bloco de disco diferente, pois os registros sequenciais estarão no mesmo bloco ou em blocos adjacentes.
 - **Busca por Chave de Ordenação Rápida:** É possível usar algoritmos de busca eficientes, como a **busca binária**, sobre os blocos do arquivo para encontrar rapidamente um registro com um valor específico no campo de ordenação. Isso reduz drasticamente o número de acessos a disco em comparação com a busca linear de um arquivo de heap.
 
-Vejamos um exemplo para verificarmos essas características. Observem a relação `EMPLOYEE` (FUNCIONARIO) descrita na figura abaixo. A figura representa blocos de um arquivo de disco contendo informações dos funcionários, e os registros dentro dos blocos (e os blocos em si) estão fisicamente ordenados alfabeticamente pelo nome do funcionário (`Name`). Percebam que, para encontrar um funcionário específico, podemos fazer uso de uma pesquisa binária sobre os blocos do arquivo. Para otimizar ainda mais o desempenho, os blocos de um arquivo ordenado são, idealmente, armazenados em cilindros contíguos no disco para minimizar o tempo de busca entre acessos a blocos sequenciais.
+Vejamos um exemplo para verificarmos essas características. Observem a relação `FUNCIONARIO` descrita na figura abaixo. A figura representa blocos de um arquivo de disco contendo informações dos funcionários, e os registros dentro dos blocos (e os blocos em si) estão fisicamente ordenados alfabeticamente pelo nome do funcionário (`Nome`). Percebam que, para encontrar um funcionário específico, podemos fazer uso de uma pesquisa binária sobre os blocos do arquivo. Para otimizar ainda mais o desempenho, os blocos de um arquivo ordenado são, idealmente, armazenados em cilindros contíguos no disco para minimizar o tempo de busca entre acessos a blocos sequenciais.
+
+<div align="center">
+  <img width="560px" src="./img/19-blocos-de-um-arquivo-ordenado-de-registros.png">
+</div>
 
 Os arquivos de registros ordenados, porém, não oferecem nenhuma vantagem para buscas que utilizam campos diferentes do campo de ordenação. Nesses casos, a busca ainda precisa ser linear. Além disso, as operações de **inserção e exclusão de registros são dispendiosas** e complexas.
 
@@ -237,10 +241,6 @@ Na **inclusão** de um novo registro, para manter a ordem, pode ser necessário 
 - Criar um **arquivo de overflow (ou arquivo de transação)**. Com essa técnica, o arquivo ordenado real é chamado de arquivo principal ou mestre, e um outro arquivo separado é usado para armazenar os novos registros que não cabem em seus devidos locais no arquivo principal (por exemplo, devido a um bloco cheio). Isso aumenta o custo e a complexidade de todas as operações de leitura, pois um arquivo separado do principal (o arquivo de overflow) tem que ser consultado e analisado além do arquivo principal.
 
 Existem também problemas com a **exclusão**, que são considerados um pouco menos graves. A solução mais comum é usar marcadores de exclusão (como nos arquivos de heap) para marcar um registro como inválido, e, periodicamente, fazer a reorganização do arquivo para remover fisicamente os registros marcados. A preocupação com **modificações** em um arquivo ordenado só se torna realmente relevante se a modificação alterar o valor do campo de ordenação do registro, pois isso exigiria, conceitualmente, a exclusão do registro de sua posição antiga e a inserção em sua nova posição correta.
-
-<div align="center">
-  <img width="560px" src="./img/19-blocos-de-um-arquivo-ordenado-de-registros.png">
-</div>
 
 ### Arquivos de Acesso Direto (Arquivos de Hash)
 
@@ -258,7 +258,7 @@ Basicamente, podemos categorizar as técnicas de hashing da seguinte forma:
 - **Hashing Externo:** Aplicado a arquivos em disco, que é o nosso foco aqui.
 - **Técnicas de Hashing Dinâmico:** Métodos que permitem que o arquivo de hash cresça e encolha dinamicamente, como o hashing extensível e o hashing linear.
 
-Na minha concepção, Navathe e outros autores apresentam o hashing interno na teoria para que possamos entender como ele funciona em um nível mais simples antes de passarmos para o hashing externo. Nosso objetivo é fazer com que você entenda o que acontece quando aplicamos a função de hash ao campo de hash. E, o mais importante: após entender que o número de valores possíveis do resultado da função de hash (o número de endereços ou buckets) é, geralmente, muito menor do que o número de todos os valores possíveis do campo de hash (o domínio da chave), as **colisões** (quando dois ou mais valores de chave diferentes produzem o mesmo endereço de hash) tornam-se, portanto, uma realidade inevitável. A questão crucial é: como tratar as colisões? É o que veremos mais adiante.
+De certa forma, Navathe e outros autores apresentam o hashing interno na teoria para que possamos entender como ele funciona em um nível mais simples antes de passarmos para o hashing externo. Nosso objetivo é fazer com que você entenda o que acontece quando aplicamos a função de hash ao campo de hash. E, o mais importante: após entender que o número de valores possíveis do resultado da função de hash (o número de endereços ou buckets) é, geralmente, muito menor do que o número de todos os valores possíveis do campo de hash (o domínio da chave), as **colisões** (quando dois ou mais valores de chave diferentes produzem o mesmo endereço de hash) tornam-se, portanto, uma realidade inevitável. A questão crucial é: como tratar as colisões? É o que veremos mais adiante.
 
 O **hashing interno** pode ser entendido por meio da figura anterior. A aplicação da função de hash a um valor de chave nos leva a uma posição em uma tabela (um array, por exemplo) que armazena um registro (ou um ponteiro para ele). Vejam que existe a possibilidade de a função nos levar para o mesmo endereço de memória para chaves diferentes; é o que chamamos de **colisão**. A pergunta, mais uma vez, é: como tratar as colisões em um hash interno?
 
@@ -306,7 +306,7 @@ O striping de dados pode acontecer em diferentes níveis de granularidade. O **s
 
 Outro ponto fundamental do RAID é a **confiabilidade**, que é uma consequência da introdução de **redundância**. A forma mais simples de redundância é o **espelhamento (mirroring)** ou sombreamento dos dados, que consiste em duplicar a informação em discos separados. Neste caso, você teria os dados idênticos em dois ou mais discos. Isso permite também paralelizar a leitura (pois uma requisição de leitura pode ser atendida por qualquer um dos discos espelhados), mas a principal vantagem é a **resiliência do sistema**: quando um disco falha, o sistema continua operando normalmente, pois as requisições são automaticamente repassadas para o disco espelhado que continua ativo. O que acaba acontecendo nestes casos é uma queda de performance de escrita (pois toda escrita tem que ser feita em ambos os discos) e, em caso de falha de um disco, a perda do paralelismo de leitura. O desempenho pode ser retomado assim que o disco falho for substituído e os dados forem reconstruídos (re-espelhados).
 
-Outra possibilidade para garantir a confiabilidade e a capacidade de recuperação de falhas é a utilização de **informações de paridade**, como o código de Hamming ou bits de paridade simples (XOR). A ideia é armazenar informações de redundância (a paridade) que permitam reconstruir os dados de um disco que falhou a partir das informações contidas nos demais discos do conjunto que continuam ativos. A forma pela qual os dados são distribuídos (_striped_) e os bits de paridade são calculados e armazenados entre os discos é uma das propriedades que definem a classificação do RAID em diferentes **níveis**.
+Outra possibilidade para garantir a confiabilidade e a capacidade de recuperação de falhas é a utilização de **informações de paridade**, como o código de Hamming ou bits de paridade simples (XOR). A ideia é armazenar informações de redundância (a paridade) que permitam reconstruir os dados de um disco que falhou a partir das informações contidas nos demais discos do conjunto que continuam ativos. A forma pela qual os dados são distribuídos (striped) e os bits de paridade são calculados e armazenados entre os discos é uma das propriedades que definem a classificação do RAID em diferentes **níveis**.
 
 ### Níveis de RAID
 
@@ -475,7 +475,7 @@ Como uma técnica para criar estruturas de dados auxiliares, os índices agiliza
 Os arquivos de índices são geralmente muito menores que os arquivos de dados originais, especialmente se a chave de busca for pequena em comparação com o tamanho total do registro. Existem dois tipos principais de índices:
 
 - **Índices Ordenados:** As chaves de busca no arquivo de índice são armazenadas de forma ordenada, o que facilita buscas por faixa e ordenação.
-- **Índices de Hash:** As chaves de busca são distribuídas uniformemente através de “_buckets_” (baldes) usando uma função de _hash_. São eficientes para buscas por igualdade.
+- **Índices de Hash:** As chaves de busca são distribuídas uniformemente através de “buckets” (baldes) usando uma função de hash. São eficientes para buscas por igualdade.
 
 Vamos falar um pouco mais sobre a classificação dos índices ordenados.
 
@@ -553,8 +553,8 @@ Vamos tentar organizar as possibilidades de índices ordenados com as suas respe
 
 | |**Campo de índice usado para ordenação física do arquivo**|**Campo de índice não usado para ordenação física do arquivo**|
 |---|---|---|
-|**Campo de índice é uma chave (valores únicos)**|ÍNDICE PRIMÁRIO (Esparso)|ÍNDICE SECUNDÁRIO (CHAVE) (Denso)|
-|**Campo de índice não é uma chave (valores duplicados)**|ÍNDICE DE AGRUPAMENTO (Esparso)|ÍNDICE SECUNDÁRIO (NÃO CHAVE) (Denso)|
+|**Campo de índice é uma chave (valores únicos)**|Índice Primário (Esparso)|Índice Secundário (Chave) (Denso)|
+|**Campo de índice não é uma chave (valores duplicados)**|Índice de Agrupamento (Esparso)|Índice Secundário (Não Chave) (Denso)|
 
 Para finalizar esta seção, apresentamos abaixo uma lista com as características resumidas de cada um dos tipos de índices ordenados de nível único discutidos até o momento.
 
@@ -606,7 +606,7 @@ O **índice de bitmap** é um tipo especial de índice que pode ser extremamente
 Ao criar um índice de bitmap em uma coluna, o SGBD monta um **mapa de bits** para cada valor distinto possível da coluna. Cada mapa de bits é um vetor com um bit para cada linha da tabela. Para um determinado valor (por exemplo, "Casado" na coluna "Estado Civil"), o SGBD grava um bit `1` na posição correspondente do bitmap se a linha tiver aquele valor, e um bit `0` se não tiver. Veja o exemplo na figura abaixo.
 
 <div align="center">
-  <img width="680px" src="./img/19-indice-de-bitmap.png">
+  <img width="420px" src="./img/19-indice-de-bitmap.png">
 </div>
 
 A grande vantagem dos índices de bitmap é que consultas complexas com múltiplas condições (`AND`, `OR`, `NOT`) em colunas de baixa cardinalidade podem ser resolvidas muito rapidamente, realizando operações lógicas de bits diretamente sobre os bitmaps, antes mesmo de acessar a tabela. Por exemplo, para encontrar "mulheres casadas", o SGBD pode pegar o bitmap para "Gênero = Feminino" e o bitmap para "Estado Civil = Casado" e realizar uma operação `AND` bit a bit entre eles. O bitmap resultante indicará exatamente quais linhas satisfazem ambas as condições. A desvantagem é que eles não são eficientes para colunas de alta cardinalidade e podem ser caros para atualizar em tabelas com alta frequência de transações de escrita.
