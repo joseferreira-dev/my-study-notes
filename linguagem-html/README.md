@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/html"><img src="banner_html.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/linguagem-html"><img src="./contents/banner-html.png"></a>
 </div>
 <br>
 
