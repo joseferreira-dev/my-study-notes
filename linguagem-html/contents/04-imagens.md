@@ -21,13 +21,12 @@ A estrutura básica é simples:
 Dois atributos são absolutamente indispensáveis para qualquer elemento `<img>`:
 
 1. `src` (Source): Este é o atributo mais importante, pois ele especifica o caminho (URL) para o arquivo de imagem que será exibido. Assim como nos links, o caminho pode ser absoluto ou relativo.
-
     - **URL Absoluta**: O endereço completo da imagem na web. É usado para exibir uma imagem que está hospedada em outro site.
 
         ```html
         <img src="https://www.somesite.com/images/logo.png" alt="Logo de outro site.">
         ```
-        
+
     - **URL Relativa**: O caminho para a imagem a partir da localização do arquivo HTML atual. É a prática padrão para imagens que fazem parte do seu próprio site.
 
         ```html
@@ -39,11 +38,6 @@ Dois atributos são absolutamente indispensáveis para qualquer elemento `<img>`
 2. `alt` (Alternative Text): Este atributo é igualmente essencial e nunca deve ser omitido. Ele fornece um texto alternativo para a imagem, que serve a dois propósitos críticos:
     - **Acessibilidade**: Leitores de tela leem o conteúdo do atributo `alt` para usuários com deficiência visual, permitindo que eles compreendam o conteúdo da imagem.
     - **Contingência e SEO**: Se a imagem, por algum motivo, não puder ser carregada (caminho quebrado, conexão lenta), o navegador exibirá o texto alternativo em seu lugar. Além disso, os mecanismos de busca utilizam esse texto para entender e indexar o conteúdo da imagem.
-    
-    Um bom texto alternativo é descritivo e conciso.
-
-    - **Ruim**: `<img src="cao.jpg" alt="cachorro">`
-    - **Bom**: `<img src="cao.jpg" alt="Cachorro da raça golden retriever deitado em um gramado.">`
 
 ## Dimensionando Imagens: `width` e `height`
 
@@ -54,8 +48,6 @@ Os atributos `width` (largura) e `height` (altura) permitem especificar as dimen
 ```
 
 É uma **excelente prática** sempre incluir esses atributos. Quando o navegador os encontra, ele reserva o espaço exato para a imagem na página **antes** mesmo de ela ser totalmente carregada. Isso evita que o layout da página "salte" ou se reajuste abruptamente enquanto as imagens carregam, um problema que degrada a experiência do usuário (conhecido como **Cumulative Layout Shift ou CLS**).
-
-Embora esses atributos definam as dimensões, a abordagem moderna para criar layouts responsivos geralmente envolve o uso de CSS para controlar o tamanho das imagens de forma flexível (ex: `width: 100%; height: auto;`).
 
 ## Formatos de Imagem Comuns na Web
 
@@ -76,9 +68,7 @@ Além da inserção simples, o HTML oferece ferramentas para tornar as imagens m
 
 ### Mapa de Imagem (`<map>` e `<area>`)
 
-Um mapa de imagem permite definir múltiplas **áreas clicáveis (hotspots)** em uma única imagem, onde cada área pode ter um link diferente.
-
-Para criar um mapa de imagem, usamos três tags em conjunto:
+Um mapa de imagem permite definir múltiplas **áreas clicáveis (hotspots)** em uma única imagem, onde cada área pode ter um link diferente. Para criar um mapa de imagem, usamos três tags em conjunto:
 
 - `<img>`: A imagem base, que deve incluir o atributo `usemap`. O valor desse atributo, precedido por `#`, é o nome que daremos ao nosso mapa.
 - `<map>`: O contêiner que define o mapa de imagem. Seu atributo `name` deve corresponder exatamente ao valor especificado em `usemap` (sem o `#`).
@@ -95,8 +85,6 @@ Para criar um mapa de imagem, usamos três tags em conjunto:
   <area shape="circle" coords="337,300,44" alt="Xícara de café" href="cafe.html">
 </map>
 ```
-
-Neste exemplo, diferentes partes da imagem fictícia `workplace.jpg` (o computador, o celular e o café) levam para links diferentes.
 
 ### Imagens Responsivas com `<picture>`
 
