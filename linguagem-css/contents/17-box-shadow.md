@@ -215,4 +215,4 @@ Neste capítulo, adicionamos uma nova dimensão aos nossos designs ao dominar a 
 
 Estabelecemos a distinção fundamental entre `box-shadow`, que age sobre a caixa do elemento, e `filter: drop-shadow()`, que age sobre a forma visível do conteúdo, dando-nos a ferramenta certa para cada cenário. Exploramos também técnicas avançadas para criar sombras mais realistas e direcionadas, elevando o nível de sofisticação de nossas interfaces.
 
-Com este conhecimento, você pode agora manipular a percepção de profundidade, criar hierarquia e adicionar um toque de realismo aos seus componentes. O próximo passo natural é aprender a organizar todos esses elementos estilizados em um layout coeso e funcional. A partir do próximo capítulo, mergulharemos de cabeça nos sistemas de layout do CSS, começando pela propriedade `display`.
+Com este conhecimento, você pode agora manipular a percepção de profundidade, criar hierarquia e adicionar um toque de realismo aos seus componentes.
