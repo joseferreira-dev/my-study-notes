@@ -25,7 +25,7 @@ Define a espessura da borda. Pode ser definida com unidades de medida (`px`, `em
   /* 5px topo, 10px direita, 15px baixo, 20px esquerda */
   border-width: 5px 10px 15px 20px;
 }
-````
+```
 
 ### `border-style`
 
