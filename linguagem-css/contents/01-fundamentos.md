@@ -4,7 +4,30 @@ Nos capítulos anteriores de nossa jornada, dedicamo-nos a construir o esqueleto
 
 É aqui que entra uma nova e poderosa linguagem: o **CSS (Cascading Style Sheets)**, ou Folhas de Estilo em Cascata. O CSS é a linguagem que usamos para descrever a apresentação de um documento escrito em HTML. É a ferramenta do designer e do desenvolvedor front-end para controlar cores, fontes, espaçamentos, layouts, animações e, em última análise, toda a experiência visual de um site. Se o HTML é a estrutura, o CSS é a decoração, o design e a arte.
 
-Neste capítulo fundamental, mergulharemos nos alicerces do CSS. Começaremos entendendo o que significa o termo "Folhas de Estilo em Cascata" e por que a separação entre conteúdo (HTML) e apresentação (CSS) é um dos pilares do desenvolvimento web moderno. Exploraremos as três maneiras de aplicar estilos a um documento — **externa, interna e inline** — e entenderemos qual delas constitui a melhor prática. Investigaremos a sintaxe de uma regra CSS, dissecando seus componentes essenciais, como seletores e declarações. Por fim, aprenderemos como agrupar regras e como documentar nosso código com comentários. Ao final, você estará pronto para dar os primeiros passos na estilização de suas páginas, transformando a estrutura bruta do HTML em um design coeso e agradável.
+Neste capítulo fundamental, mergulharemos nos alicerces do CSS. Começaremos entendendo como o navegador processa o HTML e o CSS para, de fato, desenhar uma página na tela. Investigaremos o que significa o termo "Folhas de Estilo em Cascata" e por que a separação entre conteúdo e apresentação é um dos pilares do desenvolvimento web moderno. Exploraremos as três maneiras de aplicar estilos a um documento — **externa, interna e inline** — e entenderemos qual delas constitui a melhor prática. Por fim, dissecaremos a sintaxe de uma regra CSS e aprenderemos a documentar nosso código. Ao final, você estará pronto para dar os primeiros passos na estilização de suas páginas, transformando a estrutura bruta do HTML em um design coeso e agradável.
+
+## Como o Navegador Renderiza uma Página: DOM, CSSOM e Render Tree
+
+Antes de aplicarmos nosso primeiro estilo, é crucial entender o que acontece nos bastidores quando um navegador carrega uma página web. Esse processo, conhecido como o **Caminho Crítico de Renderização (Critical Rendering Path)**, envolve a criação de duas estruturas de dados essenciais a partir de nossos arquivos HTML e CSS.
+
+1. **O Navegador examina seu HTML e constrói o DOM (Document Object Model).** Quando o navegador recebe o arquivo HTML, ele não o lê como um texto simples. Ele o analisa (parses) e o converte em uma estrutura de árvore de objetos chamada DOM. Cada tag HTML se torna um "nó" nessa árvore, e a hierarquia dos nós reflete a hierarquia das tags no seu código. O DOM é a representação viva e manipulável do seu conteúdo.
+
+<div align="center">
+  <img width="700px" src="./img/01-contrucao-do-dom.png">
+</div>
+
+2. **O Navegador examina seu CSS e constrói o CSSOM (CSS Object Model).** De forma semelhante, o navegador processa o CSS (seja ele externo, interno ou inline). Ele pega todas as suas regras de estilo e as converte em outra estrutura de árvore, o CSSOM. Esta árvore contém todos os seletores e suas respectivas propriedades. É uma representação de todos os estilos da página. Se você adicionar uma nova regra de estilo via CSSOM (por exemplo, com JavaScript), a página será atualizada.
+3. **O Navegador combina o DOM e o CSSOM para criar a Render Tree (Árvore de Renderização).** Esta é a etapa crucial. O navegador percorre a árvore do DOM e, para cada nó visível, encontra as regras correspondentes no CSSOM e as aplica. O resultado é a Render Tree, uma árvore que contém apenas os nós que serão de fato exibidos na tela, junto com todos os seus estilos computados. Nós que não são renderizados (como `<head>`, ou elementos com `display: none;`) não fazem parte da Render Tree.
+
+<div align="center">
+  <img width="700px" src="./img/01-dom-cssom-render-tree.png">
+</div>
+
+4. **O Navegador exibe sua página.** Finalmente, o navegador usa a Render Tree para realizar duas últimas etapas:
+    - **Layout (ou Reflow):** Calcula a geometria de cada nó — onde ele deve ficar na tela e que tamanho deve ter.
+    - **Paint (Pintura):** Desenha os pixels de cada nó na tela, com suas cores, textos, bordas e sombras.
+
+Compreender este processo nos ajuda a entender por que a separação de HTML e CSS não é apenas uma boa prática, mas uma parte fundamental da arquitetura da web.
 
 ## O Que é CSS? O Pilar da Apresentação
 
@@ -32,22 +55,11 @@ O método inline consiste em adicionar estilos diretamente a um elemento HTML es
 <h1 style="background-color: yellow;">Este título terá um fundo amarelo.</h1>
 ```
 
-**Vantagens:**
-
-- **Rápido para testes:** É útil para aplicar rapidamente um estilo e verificar seu efeito.
-- **Alta prioridade:** Estilos inline possuem uma alta especificidade na cascata, o que significa que eles tendem a sobrescrever regras de outras fontes.
-
-**Desvantagens:**
-
-- **Péssima prática de manutenção:** Mistura conteúdo (HTML) com apresentação (CSS), violando o princípio da separação de interesses.
-- **Não reutilizável:** O estilo se aplica apenas àquele único elemento. Se você quiser que dez parágrafos sejam azuis, terá que adicionar o atributo `style` a cada um deles.
-- **Difícil de gerenciar:** Em um projeto grande, encontrar e alterar estilos inline se torna uma tarefa hercúlea.
-
-**Conclusão:** **Evite o uso de CSS inline sempre que possível.** Seu uso é geralmente restrito a situações muito específicas, como em e-mails HTML (onde o suporte a outros métodos é limitado) ou quando estilos são aplicados dinamicamente via JavaScript.
+**Conclusão:** **Evite o uso de CSS inline sempre que possível.** Seu uso é geralmente restrito a situações muito específicas, como em e-mails HTML ou quando estilos são aplicados dinamicamente via JavaScript.
 
 ### CSS Interno (Internal CSS)
 
-O CSS interno (ou incorporado) envolve a colocação das regras de CSS dentro do próprio documento HTML, mas de forma separada dos elementos, utilizando a tag `<style>`.
+O CSS interno envolve a colocação das regras de CSS dentro do próprio documento HTML, mas de forma separada dos elementos, utilizando a tag `<style>`.
 
 **Como funciona:** Você adiciona a tag `<style>` dentro da seção `<head>` do seu documento HTML. Dentro dela, você escreve todas as suas regras CSS.
 
@@ -55,202 +67,82 @@ O CSS interno (ou incorporado) envolve a colocação das regras de CSS dentro do
 
 ```html
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Exemplo de CSS Interno</title>
   <style>
-    body {
-      background-color: #f0f0f0;
-    }
-    h1 {
-      color: navy;
-      text-align: center;
-    }
-    p {
-      font-family: sans-serif;
-      font-size: 16px;
-    }
+    body { background-color: #f0f0f0; }
+    h1 { color: navy; text-align: center; }
   </style>
 </head>
 <body>
   <h1>Um Título Estilizado</h1>
-  <p>Este parágrafo segue as regras definidas no cabeçalho.</p>
 </body>
 </html>
 ```
-
-**Vantagens:**
-
-- **Útil para uma única página:** Se os estilos se aplicam exclusivamente a uma única página, este método os mantém encapsulados no mesmo arquivo.
-- **Não mistura com o conteúdo:** As regras estão separadas da marcação HTML, o que é melhor que o estilo inline.
-
-**Desvantagens:**
-
-- **Não é reutilizável entre páginas:** Se você tem um site com várias páginas que compartilham o mesmo estilo, teria que copiar e colar o bloco `<style>` em cada um dos arquivos HTML.
-- **Aumenta o carregamento da página:** O navegador precisa baixar as regras de estilo toda vez que a página é carregada.
 
 **Conclusão:** O CSS interno é aceitável para projetos de uma única página ou para estilos que são verdadeiramente exclusivos de uma página específica.
 
 ### CSS Externo (External CSS)
 
-Este é o método mais comum e **altamente recomendado** para projetos de qualquer tamanho. Ele consiste em criar um arquivo separado com a extensão `.css` para armazenar todas as suas regras de estilo.
+Este é o método mais comum e **altamente recomendado**. Ele consiste em criar um arquivo separado com a extensão `.css` para armazenar todas as suas regras de estilo.
 
 **Como funciona:**
 
-1. Crie um arquivo de texto simples e salve-o com a extensão `.css` (por exemplo, `estilos.css`).
-2. Escreva todas as suas regras CSS dentro deste arquivo, sem nenhuma tag HTML.
-3. No seu arquivo HTML, dentro da seção `<head>`, utilize a tag `<link>` para "vincular" sua folha de estilos externa.
+1. Crie um arquivo (ex: `estilos.css`).
+2. Escreva suas regras CSS dentro deste arquivo.
+3. No seu arquivo HTML, dentro da seção `<head>`, utilize a tag `<link>` para "vincular" sua folha de estilos.
 
 **Exemplo:**
 
-**Arquivo `estilos.css`:**
+`index.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Bem-vindo ao Meu Site!</h1>
+</body>
+</html>
+```
+
+`estilos.css`:
 
 ```css
-body {
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
-}
-
 h1 {
   color: green;
 }
 ```
 
-**Arquivo `index.html`:**
-
-```html
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Exemplo de CSS Externo</title>
-  <link rel="stylesheet" href="estilos.css">
-</head>
-<body>
-  <h1>Bem-vindo ao Meu Site!</h1>
-  <p>Esta página é estilizada por uma folha de estilos externa.</p>
-</body>
-</html>
-```
-
-**Atributos da tag `<link>`:**
-
-- `rel="stylesheet"`: Informa ao navegador que o arquivo vinculado é uma folha de estilos. É um atributo obrigatório.
-- `href="estilos.css"`: Especifica o caminho (URL) para o arquivo `.css`.
-
-**Vantagens:**
-
-- **Separação total de interesses:** Mantém o HTML e o CSS em arquivos completamente distintos.
-- **Reutilização máxima:** O mesmo arquivo `estilos.css` pode ser vinculado a inúmeras páginas HTML, garantindo um visual consistente em todo o site.
-- **Manutenção simplificada:** Para alterar a cor de todos os títulos `<h1>` do site, você edita apenas uma linha em um único arquivo.
-- **Performance (Cache):** O navegador pode armazenar o arquivo `.css` em cache. Após a primeira visita, ele não precisa baixar o arquivo de estilos novamente para outras páginas do site, tornando o carregamento mais rápido.
-
 **Conclusão:** **Sempre prefira usar folhas de estilo externas.** É a abordagem profissional e escalável para o desenvolvimento web.
 
 ## A Regra `@import`
 
-Existe outra forma de incluir uma folha de estilos em outra: a regra `@import`. Ela pode ser usada no topo de um arquivo CSS ou dentro de um bloco `<style>` para importar o conteúdo de outro arquivo CSS.
+Existe outra forma de incluir uma folha de estilos em outra: a regra `@import`. Ela pode ser usada no topo de um arquivo CSS para importar o conteúdo de outro.
 
-**Sintaxe:**
-
-```css
-/* Dentro de um arquivo .css ou tag <style> */
-@import url('outros-estilos.css');
-```
-
-Embora pareça similar ao `<link>`, há uma diferença crucial de performance:
-
-- A tag `<link>` permite que o navegador baixe várias folhas de estilo em paralelo, otimizando o carregamento.
-- A regra `@import` é processada apenas depois que o arquivo que a contém é baixado e analisado. Isso pode criar uma cascata de downloads (um arquivo espera o outro), bloqueando o carregamento paralelo e tornando o site mais lento.
-
-**Recomendação:** Prefira sempre usar múltiplas tags `<link>` no HTML em vez de `@import` dentro do CSS.
-
-## Lidando com Múltiplas Folhas de Estilo
-
-É perfeitamente normal e comum que uma página utilize mais de uma folha de estilo. Você pode, por exemplo, ter uma folha para estilos gerais (reset, tipografia) e outra para estilos específicos de um componente.
-
-Para isso, basta adicionar múltiplas tags `<link>` no `<head>` do seu HTML.
-
-```html
-<head>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="tipografia.css">
-  <link rel="stylesheet" href="layout.css">
-</head>
-```
-
-A ordem importa. Se duas folhas de estilo definirem a mesma propriedade para o mesmo seletor, **a regra da última folha de estilo vinculada prevalecerá**. Este é um exemplo prático da "cascata" em ação.
+**Recomendação:** Prefira sempre usar múltiplas tags `<link>` no HTML em vez de `@import` dentro do CSS, pois `<link>` permite o download paralelo de arquivos, o que é melhor para a performance.
 
 ## Sintaxe de uma Regra CSS
 
-Toda regra CSS, seja em um arquivo externo ou interno, segue uma sintaxe fundamental. Uma regra é composta por duas partes principais: um **seletor** e um **bloco de declaração**.
+Toda regra CSS é composta por um **seletor** e um **bloco de declaração**.
 
 ```css
-/* Estrutura de uma Regra CSS */
-
+/* Seletor -> h1 */
 h1 {
-  color: navy;
-  font-size: 24px;
+  /* Bloco de Declaração */
+  color: navy; /* <-- Declaração 1 */
+  font-size: 24px; /* <-- Declaração 2 */
 }
 ```
 
-Vamos dissecar essa regra:
-
-- **Seletor (`h1`):** É o "gancho" que aponta para o(s) elemento(s) HTML que você deseja estilizar. No exemplo, estamos selecionando todos os elementos `<h1>`. Existem muitos tipos de seletores (por classe, ID, atributo, etc.), que exploraremos em breve.
-- **Bloco de Declaração (`{ ... }`):** Contém uma ou mais declarações de estilo, envoltas por chaves `{}`.
-- **Declaração (`color: navy;`):** Uma única regra de estilo, composta por uma propriedade e um valor, separados por dois-pontos (`:`). Cada declaração **deve** terminar com um ponto-e-vírgula (`;`), que a separa da próxima declaração.
-    - **Propriedade (`color`):** É o atributo visual que você deseja alterar (cor do texto, cor de fundo, largura, altura, etc.).
-    - **Valor (`navy`):** É a especificação para a propriedade (a cor exata, o tamanho em pixels, etc.).
-
-### Múltiplos Seletores
-
-Para aplicar o mesmo conjunto de estilos a diferentes elementos, você pode agrupar os seletores em uma única regra, separando-os por vírgulas.
-
-**Exemplo:**
-
-```css
-/* Aplica a cor cinza e remove o sublinhado de todos os links,
-   sejam eles normais, visitados ou quando o mouse está sobre eles. */
-a, a:visited, a:hover {
-  color: #333;
-  text-decoration: none;
-}
-```
-
-Isso é muito mais eficiente do que escrever o mesmo bloco de declaração três vezes.
-
-## Comentários em Código CSS
-
-Assim como no HTML, é uma boa prática deixar comentários no seu código CSS para explicar certas regras, organizar o arquivo ou desativar temporariamente um bloco de código para testes.
-
-Comentários em CSS começam com `/*` e terminam com `*/`. Eles podem abranger múltiplas linhas.
-
-**Exemplo:**
-
-```css
-/* ------------------------------------
-   Estilos Gerais do Corpo da Página
-   Autor: Fulano
-   Data: 16 de junho de 2025
-   ------------------------------------ */
-body {
-  font-family: 'Helvetica', sans-serif; /* Uma fonte limpa e legível */
-  line-height: 1.6; /* Melhora a legibilidade dos parágrafos */
-}
-
-/*
-  Desativado temporariamente para teste.
-  h1 {
-    border-bottom: 2px solid #ccc;
-  }
-*/
-```
+- **Seletor (`h1`):** Aponta para o(s) elemento(s) HTML a serem estilizados.
+- **Bloco de Declaração (`{ ... }`):** Contém as regras de estilo.
+- **Declaração (`color: navy;`):** Uma única regra composta por uma **propriedade** (`color`) e um **valor** (`navy`), terminando com um ponto-e-vírgula (`;`).
 
 ## Considerações Finais
 
-Neste capítulo, estabelecemos a fundação do nosso conhecimento em CSS. Compreendemos seu propósito como a linguagem de apresentação da web e a importância de separar o estilo da estrutura. Analisamos em detalhe os três métodos de incorporação de CSS — inline, interno e externo — e cravamos o **uso de folhas de estilo externas** como a prática profissional definitiva, por sua eficiência, organização e escalabilidade.
+Neste capítulo, estabelecemos a fundação do nosso conhecimento em CSS. Vimos como o navegador transforma nossos arquivos em árvores de objetos (DOM e CSSOM) para renderizar a página. Compreendemos o propósito do CSS como a linguagem de apresentação da web e a importância de separar o estilo da estrutura. Analisamos os três métodos de incorporação de CSS e cravamos o uso de folhas de estilo externas como a prática profissional definitiva. Por fim, dissecamos a anatomia de uma regra CSS, identificando seus componentes vitais.
 
-Dissecamos a anatomia de uma regra CSS, identificando seus componentes vitais: o seletor, que mira nos elementos HTML, e o bloco de declaração, que define a aparência através de pares de propriedade e valor. Vimos também como agrupar seletores e como usar comentários para tornar nosso código mais compreensível e fácil de manter.
-
-Com esta base sólida, estamos agora equipados para o próximo passo. Deixaremos de usar seletores simples, como nomes de tags, e mergulharemos no vasto e poderoso mundo dos seletores de CSS, aprendendo a mirar em elementos com uma precisão cirúrgica, usando classes, IDs, atributos e muito mais.
+Com esta base sólida, estamos agora equipados para o próximo passo: mergulhar no vasto e poderoso mundo dos seletores de CSS.
