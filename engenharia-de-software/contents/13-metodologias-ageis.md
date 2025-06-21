@@ -243,7 +243,13 @@ Algumas das principais estratégias para identificar e entregar valor ao cliente
 |**Novas tendências e tecnologias**|Manter-se atento às inovações tecnológicas, metodológicas e comportamentais que podem agregar valor ao cliente e criar diferenciais competitivos.|
 |**Cultura de inovação**|Estimular a criatividade e a experimentação contínua dentro das equipes, promovendo um ambiente onde ideias novas sejam bem-vindas e rapidamente testadas.|
 
-O **profissional ágil** é, antes de tudo, um facilitador da entrega de valor. Seu papel vai além da execução de tarefas — ele atua como um agente de transformação, promovendo uma cultura de colaboração, inovação, foco no cliente e melhoria contínua. 
+O **profissional ágil** é, antes de tudo, um facilitador da entrega de valor. Seu papel vai além da execução de tarefas — ele atua como um agente de transformação, promovendo uma cultura de colaboração, inovação, foco no cliente e melhoria contínua.
+
+## Gestão Ágil de Projetos
+
+A **Gestão Ágil de Projetos (Agile Project Management - APM)** é uma abordagem de gerenciamento que abraça os valores e princípios do Manifesto Ágil para conduzir projetos em ambientes complexos e dinâmicos. Diferente da gestão tradicional, que se baseia em planejamento extensivo e controle rígido, a gestão ágil prioriza a **flexibilidade, a colaboração e a entrega iterativa de valor**.
+
+O foco se desloca do "seguir o plano" para o "responder às mudanças". O gerente de projeto ágil não é um comandante que dita tarefas, mas um **líder servidor** e **facilitador**, cujo principal objetivo é criar um ambiente onde a equipe possa prosperar, removendo impedimentos, promovendo a comunicação e garantindo que o time tenha tudo o que precisa para se auto-organizar e entregar resultados de alta qualidade. Em essência, a gestão ágil gerencia o sistema e as condições de trabalho, não as pessoas.
 
 ## Ferramentas, Artefatos, Métricas e Indicadores
 
@@ -439,19 +445,29 @@ Implementar qualidade em ambientes ágeis exige investimento em práticas como a
 
 Ao longo da evolução das práticas de desenvolvimento de software e gestão de projetos, dois conceitos ganharam enorme relevância: o **Método Lean** e o **Método Ágil**. Embora compartilhem muitos princípios, como foco na entrega de valor, melhoria contínua e redução de desperdícios, eles possuem **origens distintas, abordagens diferentes e aplicações específicas**.
 
-O **Método Lean**, também conhecido como **Método Enxuto**, surgiu na indústria automobilística japonesa, mais especificamente no **Sistema Toyota de Produção**, desenvolvido após a Segunda Guerra Mundial. Seu foco central é **eliminar desperdícios**, ou seja, tudo aquilo que **não agrega valor do ponto de vista do cliente**, buscando ao mesmo tempo maximizar a eficiência e a produtividade. Ao longo do tempo, seus princípios foram adaptados para diferentes setores, incluindo o desenvolvimento de software, dando origem ao conceito de **Lean Software Development**.
+O **Método Lean**, também conhecido como **Método Enxuto**, surgiu na indústria automobilística japonesa, mais especificamente no **Sistema Toyota de Produção**, desenvolvido após a Segunda Guerra Mundial. Seu foco central é **eliminar desperdícios**, ou seja, tudo aquilo que **não agrega valor do ponto de vista do cliente**, buscando ao mesmo tempo maximizar a eficiência e a produtividade. Com o tempo, seus princípios foram adaptados para diferentes setores, incluindo o desenvolvimento de software, dando origem ao conceito de **Lean Software Development**.
+
+O Lean Manufacturing, sua fonte original, possui cinco princípios que formam a base de sua filosofia:
+
+|**Princípio**|**Descrição**|
+|---|---|
+|**Identificação de valor**|O valor é definido do ponto de vista do cliente final. O primeiro princípio do Lean Manufacturing é entender o que realmente agrega valor ao produto ou serviço do ponto de vista do cliente. Tudo o que não agrega valor é considerado desperdício e deve ser eliminado.|
+|**Mapeamento do fluxo de valor**|Mapear o fluxo de valor envolve identificar todos os passos – tanto os que agregam valor quanto os que não agregam – necessários para trazer um produto do conceito ao cliente final. O objetivo é entender o fluxo de materiais e informações e identificar oportunidades de melhoria.|
+|**Criação do fluxo contínuo**|Depois de eliminar os desperdícios identificados, os processos restantes devem ser organizados de maneira que o fluxo de produção seja contínuo e suave. Isso significa garantir que os produtos se movam rapidamente e sem interrupções através do processo de produção, minimizando esperas e gargalos.|
+|**Produção puxada**|A produção puxada significa que a produção é desencadeada pela demanda do cliente, e não por previsões de vendas ou produção em massa. Isso ajuda a evitar excesso de estoque e sobreprodução, produzindo apenas o que é necessário, quando é necessário.|
+|**Perfeição e melhoria contínua**|O objetivo final do Lean Manufacturing é a busca pela perfeição através da melhoria contínua. O processo de melhoria contínua, ou Kaizen, envolve todos os níveis da organização e se concentra em pequenas melhorias incrementais em todos os aspectos do processo de produção.|
 
 No desenvolvimento de software, o Lean se apoia em **sete princípios fundamentais**, que orientam a criação de produtos de forma mais eficiente e com foco no cliente:
 
 |**Princípio**|**Descrição**|
 |---|---|
-|**1. Eliminar Desperdício**|Remover atividades que não agregam valor, como burocracias desnecessárias, documentação excessiva, retrabalho e processos lentos.|
-|**2. Amplificar / Criar Conhecimento**|O conhecimento sobre o produto deve ser construído ao longo do desenvolvimento, por meio de testes constantes, feedbacks e aprendizado contínuo.|
-|**3. Fortalecer o Time / Respeitar as Pessoas**|Criar um ambiente que estimule equipes autogerenciáveis, colaborativas, valorizando as pessoas e evitando microgerenciamento.|
-|**4. Entregas Rápidas**|Realizar entregas frequentes permite obter feedbacks constantes, antecipar problemas e garantir que o produto esteja alinhado com as necessidades atuais do cliente.|
-|**5. Construir / Integrar Qualidade**|A qualidade é inegociável e deve estar presente tanto na percepção do cliente (produto confiável, funcional) quanto na arquitetura do sistema (estrutura limpa, coesa e de fácil manutenção).|
-|**6. Otimizar o Todo**|Focar na visão sistêmica. Não basta melhorar partes isoladas; é necessário garantir que o processo como um todo entregue valor de maneira eficiente.|
-|**7. Adiar Decisões / Compromissos**|Postergar decisões importantes até o último momento responsável, quando se dispõe de mais informações concretas, reduzindo riscos e incertezas.|
+|**Eliminar Desperdício**|Remover atividades que não agregam valor, como burocracias desnecessárias, documentação excessiva, retrabalho e processos lentos.|
+|**Amplificar / Criar Conhecimento**|O conhecimento sobre o produto deve ser construído ao longo do desenvolvimento, por meio de testes constantes, feedbacks e aprendizado contínuo.|
+|**Fortalecer o Time / Respeitar as Pessoas**|Criar um ambiente que estimule equipes autogerenciáveis, colaborativas, valorizando as pessoas e evitando microgerenciamento.|
+|**Entregas Rápidas**|Realizar entregas frequentes permite obter feedbacks constantes, antecipar problemas e garantir que o produto esteja alinhado com as necessidades atuais do cliente.|
+|**Construir / Integrar Qualidade**|A qualidade é inegociável e deve estar presente tanto na percepção do cliente (produto confiável, funcional) quanto na arquitetura do sistema (estrutura limpa, coesa e de fácil manutenção).|
+|**Otimizar o Todo**|Focar na visão sistêmica. Não basta melhorar partes isoladas; é necessário garantir que o processo como um todo entregue valor de maneira eficiente.|
+|**Adiar Decisões / Compromissos**|Postergar decisões importantes até o último momento responsável, quando se dispõe de mais informações concretas, reduzindo riscos e incertezas.|
 
 A aplicação do Lean traz inúmeros **benefícios** para organizações, como:
 
@@ -462,7 +478,7 @@ A aplicação do Lean traz inúmeros **benefícios** para organizações, como:
 - **Redução de desperdícios e retrabalho**: o principal objetivo do Lean é identificar e eliminar desperdícios (atividades que não agregam valor ao produto final). Isso inclui desperdícios de tempo, material, movimento, espaço, e outros recursos.
 - **Melhoria nos tempos de entrega**: processos mais eficientes e um sistema de produção puxada que responde diretamente à demanda do cliente reduz significativamente os tempos de entrega. Isso aumenta a satisfação e permite uma resposta mais rápida às mudanças do mercado.
 - **Maior engajamento e participação dos funcionários**: o Método Lean promove um ambiente de trabalho inclusivo e colaborativo, onde os funcionários são encorajados a participar ativamente do processo de melhoria contínua.
-- **Contribuição para práticas sustentáveis**: ao reduzir desperdícios e otimizar o uso de recursos, o Lean contribui para práticas de negócios mais sustentáveis, com menor impacto ambiental e uso consciente de recursos. 
+- **Contribuição para práticas sustentáveis**: ao reduzir desperdícios e otimizar o uso de recursos, o Lean contribui para práticas de negócios mais sustentáveis, com menor impacto ambiental e uso consciente de recursos.
 
 O Lean, portanto, é uma filosofia ampla, que pode ser aplicada não apenas em desenvolvimento de software, mas em qualquer processo produtivo ou organizacional.
 
