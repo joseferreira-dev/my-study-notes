@@ -54,6 +54,10 @@ Na prática, a programação em pares promove a colaboração intensa, a melhori
 
 A Gestão Ágil de Projetos é regida por um conjunto de princípios básicos que a diferenciam da abordagem tradicional. Esses princípios remetem a uma reflexão sobre onde o foco da gestão deve estar. Enquanto a teoria tradicional enfatiza o valor do plano de projeto e a antecipação de eventos, a gestão ágil questiona como é possível agregar valor, simplificar o processo e criar times adaptáveis quando não se pode prever tudo.
 
+<div align="center" >
+  <img width="520px" src="./img/25-gestao-agil-principios.png">
+</div>
+
 Os princípios ilustrados acima podem ser resumidos em:
 
 - **Foco no Cliente e na Entrega de Valor:** O sucesso é medido pela satisfação do cliente e pelo valor de negócio entregue, não apenas pelo cumprimento de um cronograma.
@@ -80,6 +84,10 @@ As diferenças filosóficas entre a gestão tradicional e a ágil se manifestam 
 ## O Ciclo de Vida da Gestão Ágil de Projetos
 
 Diferente de um processo linear com fases bem definidas e sequenciais, a Gestão Ágil de Projetos opera em um ciclo de vida adaptativo, composto por cinco fases principais. As fases de Especulação, Exploração e Adaptação formam um ciclo contínuo de planejamento, execução e aprendizado.
+
+<div align="center" >
+  <img width="520px" src="./img/25-gestao-agil-fases.png">
+</div>
 
 |**Fases**|**Descrição**|
 |---|---|
