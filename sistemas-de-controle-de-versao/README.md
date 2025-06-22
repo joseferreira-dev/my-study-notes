@@ -27,6 +27,6 @@ Em um mercado em constante transformação, onde agilidade, segurança e colabor
 
 ## Índice de Conteúdos
 
-Abaixo segue o índice com diversos conteúdos sobre sistemas operacionais.
+Abaixo segue o índice com diversos conteúdos sobre Sistemas de Controle de Versão.
 
 - 
