@@ -68,7 +68,7 @@ Requisitos não são estáticos; eles mudam ao longo do tempo. Essa classificaç
 
 De todas as formas de classificar requisitos, a mais tradicional, importante e frequentemente utilizada é, sem sombra de dúvidas, a distinção entre requisitos funcionais e não funcionais.
 
-- **Requisitos Funcionais (RFs):** Descrevem **o que o sistema deve fazer**. São declarações sobre os serviços, as ações e as funcionalidades que o sistema deve fornecer para atingir seus objetivos. Eles definem como o sistema deve reagir a entradas específicas e como deve se comportar em determinadas situações.
+**Requisitos Funcionais (RFs):** Descrevem **o que o sistema deve fazer**. São declarações sobre os serviços, as ações e as funcionalidades que o sistema deve fornecer para atingir seus objetivos. Eles definem como o sistema deve reagir a entradas específicas e como deve se comportar em determinadas situações.
 
 |**Requisitos Funcionais**|
 | --- |
@@ -88,7 +88,7 @@ De todas as formas de classificar requisitos, a mais tradicional, importante e f
 - **YouTube**: "O sistema deverá reagir com a suspensão de vídeos que comprovadamente violem direitos autorais, após notificação."
 - **Google Maps**: "Caso não encontre o endereço exato pesquisado, o sistema deverá procurar e sugerir a rua mais próxima."
 
-- **Requisitos Não-Funcionais (RNFs):** Descrevem **como o sistema deve ser** ou operar. São restrições ou qualidades sobre as quais o sistema deve funcionar. Não estão ligados a uma função específica, mas sim a atributos gerais como desempenho, segurança, usabilidade, confiabilidade, etc. Muitas vezes, os RNFs são mais críticos que os próprios RFs. Um sistema que faz tudo o que deveria, mas é extremamente lento ou inseguro, é um sistema inútil.
+**Requisitos Não-Funcionais (RNFs):** Descrevem **como o sistema deve ser** ou operar. São restrições ou qualidades sobre as quais o sistema deve funcionar. Não estão ligados a uma função específica, mas sim a atributos gerais como desempenho, segurança, usabilidade, confiabilidade, etc. Muitas vezes, os RNFs são mais críticos que os próprios RFs. Um sistema que faz tudo o que deveria, mas é extremamente lento ou inseguro, é um sistema inútil.
 
 |**Requisitos Não Funcionais**|
 | --- |
@@ -105,7 +105,7 @@ De todas as formas de classificar requisitos, a mais tradicional, importante e f
 - **Facebook (Implementação)**: "O sistema deverá ser desenvolvido utilizando a linguagem de programação Java e o framework Spring."
 - **Android (Desempenho)**: "O sistema operacional deverá ser capaz de rodar de forma fluida em dispositivos com apenas 1GB de memória RAM."
 
-- **Requisitos de Domínio:** São requisitos derivados do domínio da aplicação, refletindo regras, leis ou características específicas daquela área de negócio. Eles podem ser tanto funcionais quanto não funcionais. O não cumprimento de um requisito de domínio pode inviabilizar o sistema. Por exemplo, um software de aviação que não atende aos rigorosos requisitos de confiabilidade da agência reguladora simplesmente não será certificado para voo.
+**Requisitos de Domínio:** São requisitos derivados do domínio da aplicação, refletindo regras, leis ou características específicas daquela área de negócio. Eles podem ser tanto funcionais quanto não funcionais. O não cumprimento de um requisito de domínio pode inviabilizar o sistema. Por exemplo, um software de aviação que não atende aos rigorosos requisitos de confiabilidade da agência reguladora simplesmente não será certificado para voo.
 
 **Problemas Comuns:** Especialistas de domínio frequentemente usam jargões técnicos de sua área e podem omitir detalhes que consideram óbvios, dificultando o entendimento pela equipe de desenvolvimento.
 
