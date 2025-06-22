@@ -238,7 +238,7 @@ Idealmente, os requisitos especificados (tanto de usuário quanto de sistema) de
 - **Compreensibilidade:** Deve ser fácil de ler e entender pelos seus respectivos públicos.
 - **Verificabilidade:** Cada requisito deve ser escrito de forma que seja possível criar um teste para verificar se ele foi atendido.
 
-Alcançar todas essas qualidades é um ideal. Na prática, é um desafio imenso. A linguagem natural é inerentemente ambígua, e diferentes stakeholders podem interpretar a mesma frase de maneiras distintas. Por isso, esta fase não é responsável por _verificar_ se todos esses atributos foram alcançados — esse é o papel da fase seguinte, a Validação. A responsabilidade da fase de Especificação é **escrever** o documento com a intenção de atingir essas qualidades, criando a melhor representação possível do sistema a ser construído.
+Alcançar todas essas qualidades é um ideal. Na prática, é um desafio imenso. A linguagem natural é inerentemente ambígua, e diferentes stakeholders podem interpretar a mesma frase de maneiras distintas. Por isso, esta fase não é responsável por **verificar** se todos esses atributos foram alcançados — esse é o papel da fase seguinte, a Validação. A responsabilidade da fase de Especificação é **escrever** o documento com a intenção de atingir essas qualidades, criando a melhor representação possível do sistema a ser construído.
 
 Em resumo, a fase de Especificação de Requisitos gera o artefato central que descreve as funcionalidades e limitações do sistema, detalha suas entradas e saídas e serve como a única fonte da verdade para o que deve ser validado na próxima fase.
 
