@@ -235,7 +235,9 @@ Uma interface é um conceito similar, mas mais restrito, que uma classe abstrata
 |**Herança Múltipla**|Uma classe **pode implementar múltiplas interfaces**, herdando múltiplos contratos de comportamento.|A maioria das linguagens (como Java) **não suporta herança múltipla de classes**. Uma classe só pode estender uma única classe abstrata.|
 |**Implementação**|Não pode conter métodos concretos (em versões mais antigas de linguagens como Java). Todos os seus métodos são, por definição, abstratos e públicos.|Pode conter uma mistura de métodos concretos (com implementação) e abstratos (sem implementação).|
 |**Atributos**|Só pode conter constantes (variáveis `public static final`), não atributos de instância.|Pode conter tanto atributos de instância quanto de classe.|
+|**Encapsulamento**|Métodos e membros devem sempre ser públicos por padrão.|Métodos e membros podem ter qualquer visibilidade.|
 |**Construtores**|Não possui construtores.|Possui construtores, que são chamados pelas subclasses.|
+|**Velocidade**|Em geral, são mais lentas que classes abstratas.|Em geral, são mais rápidas que interfaces.|
 
 Conceitualmente, uma boa forma de pensar é: uma **classe abstrata** define o que um objeto **é** (ex: `Animal` é uma abstração para `Cachorro` e `Gato`). Uma **interface** define o que um objeto **pode fazer** (ex: `Cachorro`, `Gato` e `RoboAspirador` podem implementar a interface `Movivel`).
 
@@ -284,7 +286,14 @@ O encapsulamento é implementado através de **modificadores de acesso** (`publi
 |**Pacote (~)**|Sim|Sim|Não|Não|
 |**Privado (-)**|Sim|Não|Não|Não|
 
-Nota: A visibilidade em Java difere ligeiramente da UML para o modificador `protected`.
+A visibilidade em Java difere ligeiramente da UML para o modificador `protected`.
+
+|Modificador (Java)|Acesso na mesma Classe|Acesso no mesmo Pacote|Acesso em Subclasse|Acesso em Todo Lugar|
+|---|---|---|---|---|
+|**Público (+)**|Sim|Sim|Sim|Sim|
+|**Protegido (#)**|Sim|Sim|Sim|Não|
+|**Pacote (~)**|Sim|Sim|Não|Não|
+|**Privado (-)**|Sim|Não|Não|Não|
 
 ```java
 public class ContaBancaria {
@@ -313,15 +322,31 @@ public class ContaBancaria {
 
 ## Polimorfismo
 
-Polimorfismo (do grego, "muitas formas") é a capacidade de objetos de diferentes classes responderem à mesma mensagem (chamada de método) de maneiras específicas. É como o controle remoto que funciona tanto no videocassete antigo quanto no blu-ray novo: o botão "Play" é a mesma mensagem, mas a ação executada por cada aparelho é diferente.
+Polimorfismo (do grego, "muitas formas") é a capacidade de objetos de diferentes classes responderem à mesma mensagem (chamada de método) de maneiras específicas para cada classe. Ele permite que um único nome de método represente códigos diferentes, selecionados por algum mecanismo automático, fazendo com que o mesmo nome possa ter muitos comportamentos distintos.
 
-Existem dois tipos principais de polimorfismo:
+O conceito pode ser ilustrado com uma analogia: um controle remoto de um antigo videocassete pode, eventualmente, funcionar em um novo aparelho de blu-ray da mesma marca. Dois objetos distintos (o videocassete e o blu-ray) respondem à mesma mensagem (o sinal do botão "Play"), cada um executando a ação de forma apropriada ao seu hardware. No contexto da orientação a objetos, o polimorfismo permite que a mesma mensagem seja enviada a diferentes objetos e que cada um execute a operação que é mais apropriada para a sua classe.
 
-- **Polimorfismo Estático (Sobrecarga / Overloading):** Ocorre quando múltiplos métodos na mesma classe têm o **mesmo nome, mas assinaturas diferentes** (diferente número, tipo ou ordem de parâmetros). A decisão de qual método chamar é tomada em **tempo de compilação**.
-- **Polimorfismo Dinâmico (Sobrescrita / Overriding):** Ocorre quando uma subclasse fornece uma **implementação específica para um método que já é definido em sua superclasse**. A assinatura do método deve ser a mesma. A decisão de qual método chamar (o da superclasse ou o da subclasse) é tomada em **tempo de execução**, com base no tipo real do objeto.
+Existe uma relação estreita com o conceito de abstração, pois um objeto pode enviar a mesma mensagem para objetos semelhantes que implementam uma interface comum de formas diferentes.
+
+### Tipos de Polimorfismo
+
+O polimorfismo é tradicionalmente classificado em dois tipos principais: Estático e Dinâmico. No entanto, uma classificação mais formal divide o polimorfismo em duas grandes categorias: Universal e Ad-hoc.
+
+<div align="center">
+  <img width="320px" src="./img/36-tipos-de-polimorfismo.png">
+</div>
+
+- **Polimorfismo Universal:** Pode trabalhar com um número infinito de tipos.
+- **Polimorfismo Ad-hoc:** Pode trabalhar com um número finito e limitado de tipos. Alguns autores mais rigorosos não o consideram um "polimorfismo verdadeiro", pois sua resolução ocorre em tempo de compilação, e não em tempo de execução.
+
+#### Polimorfismo Dinâmico (Sobrescrita)
+
+Também conhecido como polimorfismo por sobrescrita, inclusão, herança ou subtipo (overriding), está diretamente associado ao conceito de herança. Ocorre quando uma subclasse fornece uma implementação específica para um método que já é definido em sua superclasse. A **assinatura do método** (nome e parâmetros) deve ser a mesma na superclasse e na subclasse. A decisão de qual método chamar (o da superclasse ou o da subclasse) é tomada em **tempo de execução** (Late Binding), com base no tipo real do objeto.
+
+A definição exata de **assinatura de um método** pode variar: dois métodos têm a mesma assinatura se possuem o mesmo nome e os mesmos parâmetros (em quantidade, tipo e ordem). Algumas linguagens, como Java, ignoram o tipo de retorno para esta verificação, enquanto outras, como C++, o consideram.
 
 ```java
-// Exemplo de Polimorfismo (Sobrescrita)
+// Exemplo de Polimorfismo Dinâmico (Sobrescrita)
 public abstract class Animal {
     public abstract void fazerBarulho();
 }
@@ -354,54 +379,149 @@ class TesteAnimais {
 }
 ```
 
+#### Polimorfismo Estático (Sobrecarga)
+
+Também conhecido como polimorfismo por sobrecarga (overloading), ocorre quando múltiplos métodos na mesma classe têm o **mesmo nome, mas assinaturas diferentes**. A diferença pode estar na quantidade, no tipo ou na ordem dos parâmetros. A decisão de qual método chamar é tomada em **tempo de compilação** (Early Binding) com base nos argumentos passados na chamada.
+
+Uma subclasse pode sobrecarregar os métodos herdados da superclasse. Esses métodos sobrecarregados são considerados novos e únicos da subclasse; eles não ocultam nem sobrescrevem os métodos da superclasse.
+
+#### Polimorfismo Paramétrico
+
+Este é um tipo de polimorfismo universal, também chamado de "polimorfismo verdadeiro". Ele permite que um código seja escrito de forma genérica para operar sobre valores de tipos diferentes, que só serão especificados em tempo de execução. Uma única função ou classe pode trabalhar uniformemente em um intervalo de tipos.
+
+Em Java, a partir da versão 1.5, isso é implementado através de **Generics**. Por exemplo, a interface `List<T>` permite criar listas para qualquer tipo de objeto (`String`, `Integer` ou tipos customizados) sem a necessidade de reescrever os métodos da lista (como `add`, `get`, `remove`) para cada tipo.
+
+```java
+// O tipo 'T' é um parâmetro de tipo
+List<String> listaDeString = new ArrayList<>();
+List<Integer> listaDeInteger = new ArrayList<>();
+
+listaDeString.add("Primeiro Texto");
+listaDeInteger.add(4000);
+```
+
+#### Polimorfismo de Coerção
+
+Este é um tipo de polimorfismo ad-hoc que ocorre quando um valor de um tipo é convertido implicitamente para outro tipo (conhecido como casting implícito) para se adequar ao tipo esperado por uma função ou operador. Um exemplo comum é atribuir um valor do tipo `int` a uma variável do tipo `double`. Nesse caso, o valor inteiro é "coagido" ou convertido para o tipo real para que a operação seja válida, evitando um erro de tipo.
+
 ## Herança (Generalização/Especialização)
 
-A herança é o mecanismo que permite que uma classe (a **subclasse** ou classe-filha) herde atributos e métodos de outra classe (a **superclasse** ou classe-pai). É uma relação "é um tipo de". Por exemplo, a classe `Carro` herda da classe `Veiculo`.
+A herança é um mecanismo fundamental da orientação a objetos que permite que uma classe (a **subclasse**) herde atributos e métodos de outra classe (a **superclasse**). É uma forma de abstração que agrupa classes semelhantes em uma hierarquia, representando uma relação "é um tipo de" (por exemplo, `Carro` é um tipo de `Veiculo`).
 
-A herança promove o reúso de código e a criação de hierarquias de classes.
+A herança estabelece uma relação entre classes, não entre objetos, e facilita o compartilhamento de comportamento comum, permitindo o reaproveitamento de código e a especialização de operações e atributos. A classe que herda é também chamada de classe-filha ou derivada, enquanto a classe que é herdada é chamada de classe-pai ou base.
+
+<div align="center">
+  <img width="700px" src="./img/36-tipos-de-heranca.png">
+</div>
+
+Existem dois tipos principais de herança:
 
 - **Herança Simples:** A subclasse herda de apenas uma superclasse.
-- **Herança Múltipla:** A subclasse herda de duas ou mais superclasses.
+- **Herança Múltipla:** A subclasse herda diretamente de duas ou mais superclasses.
 
-Muitas linguagens, como Java e C#, não permitem herança múltipla de classes para evitar problemas de ambiguidade (como o "problema do diamante"), mas permitem que uma classe implemente múltiplas interfaces.
+Uma questão comum é se a herança múltipla é permitida em orientação a objetos. A resposta é sim; o paradigma de orientação a objetos a permite. No entanto, algumas linguagens de programação, como Java e C#, não implementam a herança múltipla de classes para evitar problemas de ambiguidade. Essa ambiguidade pode ocorrer quando superclasses possuem membros com o mesmo nome e a subclasse não os redefine, tornando incerto a qual membro da superclasse uma referência se destina.
 
-É crucial entender a diferença entre **herdar** e **acessar**. Uma subclasse herda _todos_ os membros de sua superclasse, inclusive os privados. No entanto, ela só pode _acessar_ os membros públicos e protegidos. Usando a analogia do cofre: você pode herdar um cofre trancado (com todo o dinheiro dentro), mas se não tiver a chave (o acesso), não pode usar o conteúdo.
+### Herdar vs. Acessar
+
+É crucial entender a diferença entre **herdar** e **acessar**. Uma subclasse **herda todos** os membros de sua superclasse, independentemente de seus modificadores de acesso (público, protegido ou privado). No entanto, a subclasse só pode **acessar** diretamente os membros que não são privados (ou seja, os públicos e protegidos).
+
+Uma boa analogia para visualizar essa diferença é a de herdar um cofre trancado: você é o dono do cofre e de todo o dinheiro dentro dele (herança), mas sem a chave ou a senha (acesso), não consegue usar o conteúdo. Da mesma forma, uma subclasse herda os membros privados de sua superclasse, mas não pode invocá-los ou manipulá-los diretamente.
+
+### Herança vs. Polimorfismo
+
+Embora relacionados, são conceitos distintos. A herança é um mecanismo para reutilização de código e criação de hierarquias, permitindo que uma nova classe seja baseada em uma já existente. Já o polimorfismo permite que um único nome (como um nome de método) represente diferentes comportamentos, selecionados de acordo com o contexto.
 
 ## Análise e Projeto Orientados a Objetos
 
-Com os conceitos do paradigma estabelecidos, podemos aplicá-los nas fases de análise e projeto. A frase a ser memorizada é: **NA ANÁLISE, DESENHA-SE O PROBLEMA. NO PROJETO, DESENHA-SE A SOLUÇÃO.**
+Com os conceitos do paradigma estabelecidos, podemos aplicá-los nas fases de análise e projeto. A distinção fundamental entre essas duas fases pode ser resumida na seguinte frase: **NA ANÁLISE, DESENHA-SE O PROBLEMA. NO PROJETO, DESENHA-SE A SOLUÇÃO.**
 
-- **Análise Orientada a Objetos (AOO):** Foca em entender e modelar o domínio do problema. O objetivo é identificar as classes, seus atributos e relacionamentos que existem no mundo real do negócio, **sem se preocupar com a tecnologia de implementação**. O resultado é um **Modelo de Análise (ou Domínio)**, que é uma visão lógica e conceitual do sistema.
-- **Projeto Orientado a Objetos (POO ou OOD):** Foca em definir a solução de software. Pega o modelo de análise e o refina, adicionando detalhes de implementação, definindo a arquitetura, projetando as interfaces de usuário e decidindo como os objetos irão colaborar para realizar as funcionalidades. O resultado é um **Modelo de Projeto**, uma visão física e concreta, pronta para a implementação.
+- A **Análise Orientada a Objetos (AOO)** consiste nas atividades necessárias para entender o domínio do problema, ou seja, **o que** deve ser feito. É uma atividade de investigação com foco no cliente e no negócio, onde a tecnologia de implementação e os requisitos não funcionais não são a preocupação principal. O foco está em modelar as funções, dados e relacionamentos do sistema como eles existem no mundo real.
+- O **Projeto Orientado a Objetos (POO ou OOD)**, por sua vez, consiste nas atividades para conceber o domínio da solução, isto é, **como** deve ser feito. É uma atividade técnica, com foco no desenvolvedor, que refina os resultados da análise, adicionando detalhes de implementação, definindo a arquitetura e preparando o modelo para a codificação.
 
-O **Modelo de Classes** é o principal artefato e evolui ao longo desses estágios, tornando-se cada vez mais detalhado:
+### A Evolução do Modelo de Classes
 
-1. **Modelo de Classes de Análise:** Representa as classes do domínio do negócio.
-2. **Modelo de Classes de Projeto:** Estende o modelo de análise com detalhes da solução (tipos de dados, visibilidade, etc.).
-3. **Modelo de Classes de Implementação:** Adiciona detalhes específicos da linguagem de programação escolhida.
+O **Modelo de Classes**, frequentemente representado por um Diagrama de Classes da UML, é o principal artefato e evolui ao longo do desenvolvimento, passando por estágios sucessivos de abstração e detalhamento.
 
-### Análise de Robustez (Classes de Fronteira, Controle e Entidade)
+1. **Modelo de Classes de Análise (ou Domínio):** Construído durante a atividade de análise, representa as classes do domínio do negócio. Este modelo é conceitual e não considera restrições de tecnologia. Ele descreve a estrutura do problema.
 
-Proposta por Ivar Jacobson, a Análise de Robustez é uma técnica que ajuda na transição dos casos de uso para o modelo de análise, categorizando as classes em três estereótipos:
+<div align="center">
+  <img width="580px" src="./img/36-modelo-de-analise.png">
+</div>
 
-- **Classe de Fronteira (Boundary):** Modela a interação entre o sistema e seus atores. São as "janelas", as "telas", os protocolos de comunicação, as interfaces com sensores. Elas isolam o sistema de seu ambiente.
-- **Classe de Entidade (Entity):** Representa as informações persistentes e centrais do negócio, como `Cliente`, `Produto`, `Pedido`. Geralmente correspondem a tabelas no banco de dados.
-- **Classe de Controle (Control):** Orquestra a lógica de um caso de uso. Atua como uma "cola", recebendo eventos das classes de fronteira e coordenando as ações das classes de entidade para realizar uma tarefa.
+2. **Modelo de Classes de Especificação (ou Projeto):** Construído durante a atividade de projeto, estende o modelo de análise. Ele contém detalhes específicos da solução de software, como tipos de dados para atributos e visibilidade de métodos, mas ainda pode ser agnóstico a uma linguagem de programação específica.
 
-### Arquitetura de Software
+<div align="center">
+  <img width="580px" src="./img/36-modelo-de-especificacao.png">
+</div>
 
-O Projeto Orientado a Objetos culmina na definição da **Arquitetura de Software**, que é a organização dos componentes significativos do sistema. Uma boa arquitetura deve ser flexível e atender aos requisitos funcionais e não-funcionais. Ela se baseia em dois princípios chave:
+3. **Modelo de Classes de Implementação:** Construído durante a implementação, estende o modelo de projeto e adiciona detalhes específicos da linguagem de programação escolhida (por exemplo, usando tipos de dados de Java como `String` e `ArrayList`).
 
-- **Baixo Acoplamento:** Os módulos devem ter o mínimo de dependência entre si.
-- **Alta Coesão:** Cada módulo deve ter uma única e bem definida responsabilidade.
+```java
+private class Pessoa {
+	public String Nome;
+	public String Telefone;
+	private Empresa empresa[];
 
-Uma forma comum de organizar a arquitetura é em **camadas**. A **arquitetura de três camadas** é um padrão dominante:
+	public String getInfo() {
+		return empresa.getConta();
+	}
+}
 
-1. **Camada de Apresentação (View):** Responsável pela interface com o usuário.
-2. **Camada de Lógica de Negócio (Controller/Model):** Contém as regras de negócio e a lógica da aplicação.
-3. **Camada de Acesso a Dados (Model/Persistence):** Responsável por se comunicar com o banco de dados ou outros sistemas de armazenamento.
+public class Empresa {
+	public Number CNPJ;
+	public String Endereco;
 
-O padrão **Model-View-Controller (MVC)** é a implementação mais famosa desse conceito, separando claramente as responsabilidades de dados (Model), apresentação (View) e lógica de controle (Controller).
+	public getConta() {
+		return 0;
+	}
+}
+```
+
+Essa progressão mostra como o **Modelo de Análise** enfatiza o desenho lógico, uma visão externa, conceitual e "caixa-preta", enquanto o **Modelo de Projeto** enfatiza o desenho físico, uma visão interna, concreta e "caixa-branca". O Modelo de Análise tende a ser mais estável, pois as regras de negócio mudam com menos frequência do que as tecnologias de implementação. Ter um modelo de análise bem-feito facilita a adaptação do sistema a novas tecnologias no futuro.
+
+### Análise Orientada a Objetos (AOO) em Detalhes
+
+A meta da análise é criar um esboço do comportamento e da estrutura do sistema. Este processo geralmente envolve quatro atividades principais:
+
+1. **Identificar classes:** Descobrir as entidades, conceitos ou "coisas" relevantes no domínio do problema.
+2. **Identificar responsabilidades:** Determinar o que cada classe "sabe" (atributos) e o que ela "faz" (métodos).
+3. **Identificar atributos:** Detalhar as propriedades de cada classe, inicialmente sem se preocupar com os tipos de dados.
+4. **Identificar relacionamentos:** Modelar como as classes se conectam (associações, generalizações, etc.).
+
+#### Análise de Robustez: Classes de Fronteira, Controle e Entidade
+
+Proposta por Ivar Jacobson, a Análise de Robustez é uma técnica poderosa para a transição dos casos de uso para o modelo de análise. Ela ajuda a categorizar as classes de acordo com suas responsabilidades em três estereótipos:
+
+<div align="center">
+  <img width="360px" src="./img/36-simbolos-analise-de-robustez.png">
+</div>
+
+- **Classe de Fronteira (Boundary):** Modela a interação entre o sistema e seus atores (usuários ou outros sistemas). Elas são as "janelas", "telas", protocolos de comunicação e interfaces com sensores. Sua função é isolar o núcleo do sistema das mudanças no ambiente externo. Alterar uma interface gráfica, por exemplo, deveria impactar apenas as classes de fronteira.
+- **Classe de Entidade (Entity):** Representa as informações persistentes e centrais do negócio, como `Cliente`, `Produto` ou `Pedido`. Geralmente, correspondem a conceitos-chave do domínio e, posteriormente, a tabelas no banco de dados. Elas são independentes do ambiente e encapsulam os dados e comportamentos mais estáveis do sistema.
+- **Classe de Controle (Control):** Orquestra a lógica de um caso de uso específico. Atua como uma "cola", recebendo eventos das classes de fronteira e coordenando as ações das classes de entidade para realizar uma tarefa. Classes de controle encapsulam a lógica de negócio que não pertence naturalmente a nenhuma classe de entidade, e seu ciclo de vida está frequentemente atrelado à execução de um caso de uso.
+
+Essa categorização garante que cada classe seja especialista em uma tarefa: comunicar-se com atores (Fronteira), manter as informações do sistema (Entidade) ou coordenar a realização de um caso de uso (Controle).
+
+### Projeto Orientado a Objetos (OOD) e Arquitetura de Software
+
+Após a análise definir **o que** fazer, o projeto define **como** fazer. Esta fase culmina na definição da **Arquitetura de Software**, que é a organização dos componentes significativos do sistema e suas interações. Uma boa arquitetura é crucial para a comunicação entre as partes interessadas e para garantir que o sistema atenda aos requisitos funcionais e não-funcionais (como desempenho, segurança e manutenibilidade).
+
+Dois princípios são o mantra de uma boa arquitetura:
+
+- **Baixo Acoplamento:** Trata do nível de dependência entre os módulos (ou classes) de um software. Módulos com baixo acoplamento são mais independentes. Modificar um não causa um efeito cascata em outros, o que facilita a manutenção e promove o reúso.
+- **Alta Coesão:** Trata do quão focada é a responsabilidade de um único módulo. Um módulo com alta coesão tem uma única e bem definida finalidade. Isso torna os módulos mais simples de entender, manter e reutilizar.
+
+Uma forma comum de organizar a arquitetura para alcançar baixo acoplamento e alta coesão é através de **camadas**. Cada camada agrupa funcionalidades relacionadas e fornece serviços para a camada superior, enquanto consome serviços da camada inferior. A **arquitetura de três camadas** é um padrão dominante:
+
+1. **Camada de Apresentação (View):** Responsável pela interface com o usuário (UI). Seu objetivo é exibir informações ao usuário e traduzir as ações do usuário em requisições para a camada de negócio. Contém, por exemplo, as classes de fronteira para atores humanos.
+2. **Camada de Lógica de Negócio (Controller/Model):** Contém as regras de negócio e a lógica da aplicação. Processa as requisições da camada de apresentação, toma decisões e utiliza a camada de acesso a dados para manipular as informações.
+3. **Camada de Acesso a Dados (Model/Persistence):** Responsável por se comunicar com o banco de dados ou outros sistemas de armazenamento. Abstrai os detalhes de como os dados são fisicamente armazenados e recuperados.
+
+O padrão **Model-View-Controller (MVC)** é a implementação mais famosa do conceito de arquitetura em camadas, separando as responsabilidades de forma clara:
+
+- **Modelo (Model):** Responsável por modelar os dados da aplicação e as regras de negócio. Foca no armazenamento, manipulação e geração de dados. Objetos do Modelo são o coração do sistema, representando as classes de entidade.
+- **Visão (View):** Responsável pela apresentação dos dados aos usuários. Recebe os dados do modelo e os renderiza na interface. Não armazena nem manipula dados; sua única função é a exibição.
+- **Controle (Controller):** Atua como o intermediário entre o Modelo e a Visão. Processa e responde a eventos (geralmente ações do usuário vindas da Visão), invoca alterações no Modelo e seleciona a Visão apropriada para a resposta.
 
 ## Considerações Finais
 
