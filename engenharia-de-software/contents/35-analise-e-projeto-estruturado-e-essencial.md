@@ -51,7 +51,7 @@ A grande força do DFD está em sua simplicidade. Ele utiliza apenas quatro sím
 
 1. **Processo (ou Função):** Representado por um círculo ou um retângulo com cantos arredondados. Um processo mostra uma parte do sistema que **transforma dados de entrada em dados de saída**. Ele representa uma ação, um cálculo ou uma decisão. É também conhecido como "Bolha" ou "Transformação".
 2. **Fluxo de Dados:** Representado por uma seta que entra ou sai de um processo. Indica o movimento de informações de uma parte do sistema para outra. A seta deve ser rotulada com o nome do dado que está fluindo.
-3. **Terminador (ou Entidade Externa):** Representado por um retângulo. É utilizado para representar entidades que estão **fora** do sistema, mas que se comunicam com ele, seja fornecendo dados (fontes) ou recebendo dados (sumidouros). Pode representar pessoas, departamentos, outras organizações ou outros sistemas.
+3. **Terminador (ou Entidade Externa):** Representado por um retângulo. É utilizado para representar entidades que estão **fora** do sistema, mas que se comunicam com ele, seja fornecendo dados ou recebendo dados. Pode representar pessoas, departamentos, outras organizações ou outros sistemas.
 4. **Depósito de Dados:** Representado por um retângulo aberto (ou duas linhas paralelas). É utilizado para modelar um "pacote de dados em repouso", ou seja, um local onde os dados são armazenados para uso posterior. Representa arquivos, tabelas de banco de dados, etc.
 
 A figura a seguir mostra o exemplo de um diagrama completo:
