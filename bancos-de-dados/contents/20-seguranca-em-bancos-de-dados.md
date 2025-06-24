@@ -79,7 +79,7 @@ Para proteger os dados e alcançar os objetivos de segurança dentro do ambiente
   <img width="520px" src="./img/20-tipos-de-controle-de-acesso.png">
 </div>
 
-- **Controle de Inferência:** Vamos agora para o outro tipo de controle. Deixe-me contextualizar. É possível e comum o uso de **bancos de dados estatísticos**, cujo objetivo é fornecer dados agregados (somas, médias, contagens) ao público ou a analistas, sem disponibilizar os dados brutos individualmente, para proteger a privacidade. O problema é que, às vezes, é possível **inferir** dados sobre indivíduos específicos a partir de uma série de consultas agregadas habilmente formuladas. É necessário, portanto, controlar esse tipo de inferência sobre os dados. A área de segurança em bancos de dados estatísticos estuda e desenvolve técnicas para executar tal tarefa, e essas ações são chamadas de **controle de inferência**. Elas podem incluir técnicas como perturbação de dados (adicionar "ruído" aos resultados), recusa de consultas que abrangem um número muito pequeno de indivíduos, e generalização de dados.
+- **Controle de Inferência:** É possível e comum o uso de **bancos de dados estatísticos**, cujo objetivo é fornecer dados agregados (somas, médias, contagens) ao público ou a analistas, sem disponibilizar os dados brutos individualmente, para proteger a privacidade. O problema é que, às vezes, é possível **inferir** dados sobre indivíduos específicos a partir de uma série de consultas agregadas habilmente formuladas. É necessário, portanto, controlar esse tipo de inferência sobre os dados. A área de segurança em bancos de dados estatísticos estuda e desenvolve técnicas para executar tal tarefa, e essas ações são chamadas de **controle de inferência**. Elas podem incluir técnicas como perturbação de dados (adicionar "ruído" aos resultados), recusa de consultas que abrangem um número muito pequeno de indivíduos, e generalização de dados.
 - **Controle de Fluxo:** O controle de fluxo visa impedir que as informações "fluam" de uma forma que violem a política de segurança, alcançando usuários não autorizados. É necessário evitar os chamados **canais secretos (covert channels)**, que são percursos ou mecanismos não óbvios pelos quais a informação pode fluir implicitamente, contornando os controles de acesso explícitos. Por exemplo, um processo com alta permissão de segurança poderia tentar vazar informações para um processo de baixa permissão, modulando o uso da CPU ou o tempo de resposta do sistema de uma forma que o processo de baixa permissão pudesse decodificar. O controle de fluxo é um problema complexo, especialmente em ambientes onde o MAC é necessário.
 - **Criptografia de Dados:** A criptografia é amplamente utilizada para proteger dados confidenciais que são transmitidos por um meio de comunicação inseguro (como a internet) e também como uma camada adicional de proteção para partes sensíveis do banco de dados quando estão armazenadas em disco (**data at rest**). Mesmo que um atacante consiga acesso físico aos arquivos do banco de dados, os dados criptografados estarão ilegíveis sem a chave de decriptação correta.
 
@@ -182,7 +182,7 @@ O fato de criar um usuário não significa, por padrão, que ele terá acesso a 
 - **`INSERT`**: Permite inserir novas tuplas (linhas) em uma tabela.
 - **`UPDATE`**: Permite modificar tuplas existentes em uma tabela. Pode ser concedido para a tabela inteira ou para colunas específicas.
 - **`DELETE`**: Permite remover tuplas de uma tabela.
-- **`EXECUTE`**: Permite executar um procedimento armazenado (_stored procedure_) ou uma função.
+- **`EXECUTE`**: Permite executar um procedimento armazenado (stored procedure) ou uma função.
 - **`REFERENCES`**: Permite que um usuário crie uma restrição de chave estrangeira em sua própria tabela que referencia colunas de uma tabela de outro esquema.
 
 O comando SQL para conceder privilégios a um usuário é o **`GRANT`**.
@@ -215,7 +215,7 @@ REVOKE UPDATE ON FUNCIONARIO FROM PEDRO;
 
 #### Papéis (Roles)
 
-Como você pode observar, para cada objeto do esquema, devem ser definidos quais usuários terão direito sobre ele e que tipo de direito terão. Em um ambiente com muitos usuários e muitos objetos, gerenciar privilégios individualmente pode se tornar uma tarefa extremamente complexa e propensa a erros. Para facilitar a administração do sistema, a maioria dos SGBDs oferece o conceito de **papéis (roles)**. Uma role é, essencialmente, uma coleção nomeada de privilégios. Em vez de conceder privilégios diretamente a usuários individuais, podemos concedê-los a uma role e, em seguida, conceder essa role a um ou mais usuários.
+Como podemos observar, para cada objeto do esquema, devem ser definidos quais usuários terão direito sobre ele e que tipo de direito terão. Em um ambiente com muitos usuários e muitos objetos, gerenciar privilégios individualmente pode se tornar uma tarefa extremamente complexa e propensa a erros. Para facilitar a administração do sistema, a maioria dos SGBDs oferece o conceito de **papéis (roles)**. Uma role é, essencialmente, uma coleção nomeada de privilégios. Em vez de conceder privilégios diretamente a usuários individuais, podemos concedê-los a uma role e, em seguida, conceder essa role a um ou mais usuários.
 
 Veja abaixo uma ilustração da relação entre usuários e privilégios, primeiramente sem o uso de papéis.
 
@@ -330,7 +330,7 @@ Sobre as políticas de controle de acesso discricionário, sabemos que elas são
   <img width="680px" src="./img/20-mac-dac-e-rbac.png">
 </div>
 
-Já falamos no bloco anterior da aula sobre o controle de acesso discricionário (DAC). Vamos agora tratar do **controle mandatório ou obrigatório (MAC)** e do **controle baseado em papéis (RBAC)**.
+Já falamos no bloco anterior sobre o controle de acesso discricionário (DAC). Vamos agora tratar do **controle mandatório ou obrigatório (MAC)** e do **controle baseado em papéis (RBAC)**.
 
 #### Controle de Acesso Obrigatório (MAC)
 
@@ -343,7 +343,7 @@ O modelo clássico para implementar MAC em sistemas é o **modelo de Bell-LaPadu
 Este modelo impõe duas restrições (propriedades) fundamentais para controlar o fluxo de informação:
 
 1. **A Propriedade de Segurança Simples (No Read Up):** Esta propriedade diz que um sujeito S **não tem permissão para acesso de leitura a um objeto O**, a menos que a classe de segurança do sujeito seja maior ou igual à classe de segurança do objeto: **`Classe(S) ≥ Classe(O)`**. Essa restrição é óbvia e intuitiva: um usuário só pode ler informações que estão em seu nível de segurança ou em um nível inferior. Um general com credencial **Top Secret** pode ler documentos secretos e confidenciais, mas um soldado com credencial **Confidential** não pode ler um documento **Top Secret**.
-2. **A Propriedade Estrela (* -property ou No Write Down):** Esta propriedade diz que um sujeito S **não tem permissão para escrever em um objeto O**, a menos que a classe de segurança do objeto seja maior ou igual à classe de segurança do sujeito: **`Classe(O) ≥ Classe(S)`**. Basicamente, ela não permite que um sujeito escreva informações em um objeto que tenha uma classificação de segurança inferior à sua própria credencial. O objetivo é evitar que informações de um nível mais alto "vazem" para um nível mais baixo. Isso impede, por exemplo, que um general (sujeito com credencial TS) leia um documento **Top Secret** e, em seguida, copie seu conteúdo para um novo documento com classificação **Unclassified**, que poderia então ser lido por qualquer pessoa.
+2. **A Propriedade Estrela (\*-property ou No Write Down):** Esta propriedade diz que um sujeito S **não tem permissão para escrever em um objeto O**, a menos que a classe de segurança do objeto seja maior ou igual à classe de segurança do sujeito: **`Classe(O) ≥ Classe(S)`**. Basicamente, ela não permite que um sujeito escreva informações em um objeto que tenha uma classificação de segurança inferior à sua própria credencial. O objetivo é evitar que informações de um nível mais alto "vazem" para um nível mais baixo. Isso impede, por exemplo, que um general (sujeito com credencial TS) leia um documento **Top Secret** e, em seguida, copie seu conteúdo para um novo documento com classificação **Unclassified**, que poderia então ser lido por qualquer pessoa.
 
 Outro ponto interessante e complexo que surge dentro do contexto do modelo de acesso obrigatório é a **poli-instanciação**. Este conceito é necessário para lidar com situações em que a existência de uma determinada informação em um nível de segurança mais alto não pode ser revelada a usuários de níveis mais baixos. A ideia é que um mesmo objeto (por exemplo, uma linha de uma tabela identificada pela mesma chave primária) pode ter múltiplas "instâncias" ou versões, cada uma visível em um nível de segurança diferente. A figura a seguir ilustra o que pode acontecer com os dados quando admitimos o uso deste conceito. Um usuário com baixa credencial pode ver uma versão de um registro, enquanto um usuário com alta credencial pode ver uma versão diferente (e mais completa ou verdadeira) do mesmo registro, ou até mesmo ver registros que são completamente invisíveis para o usuário de baixa credencial.
 
@@ -485,7 +485,7 @@ Consulta Resultante:
 SELECT ProductName, ProductDescription FROM Products WHERE ProductID = '123' UNION SELECT Username, Password FROM Users --';
 ```
 
-Esta consulta irá retornar os dados do produto 123 e, em seguida, concatenar a esse resultado todos os nomes de usuário e senhas da tabela `Users`, que o atacante provavelmente não deveria ter acesso.
+Esta consulta irá retornar os dados do produto `123` e, em seguida, concatenar a esse resultado todos os nomes de usuário e senhas da tabela `Users`, que o atacante provavelmente não deveria ter acesso.
 
 O último método a ser discutido aqui baseia-se na **injeção de chamada de função**, que pode ser uma função nativa do banco de dados ou uma chamada a um procedimento que interage com o sistema operacional. Injetando esses comandos, é possível manipular dados de formas complexas ou fazer uma chamada de sistema privilegiada (se o usuário do banco de dados tiver permissão para tal).
 
@@ -497,7 +497,7 @@ Outra técnica é a **filtragem e validação de entrada (input filtering and va
 
 ### Criptografia e Infraestrutura de Chave Pública (PKI)
 
-Nosso objetivo nas próximas páginas é fazer uma introdução aos conceitos de criptografia e certificados digitais, que são a base para a comunicação segura e a proteção de dados em sistemas modernos. Você encontrará aqui os aspectos básicos sobre o assunto, que servirão como uma revisão para aqueles que já estudaram segurança a fundo e como uma base sólida para os que não são familiarizados.
+Vamos agora fazer uma introdução aos conceitos de criptografia e certificados digitais, que são a base para a comunicação segura e a proteção de dados em sistemas modernos.
 
 Vamos começar com um breve resumo do que a criptografia nos oferece. Simplificando, o objetivo da criptografia é preservar a **confidencialidade**, a **integridade** e o **não repúdio** da informação, seja realizando cada um desses princípios individualmente ou em conjunto. Quando aplicada com a habilidade e o conhecimento adequados, a criptografia fornece níveis de proteção que seriam quase impossíveis de se conseguir com outras metodologias de segurança.
 
@@ -505,7 +505,7 @@ A **confidencialidade** é a capacidade de proteger as informações contra divu
 
 #### O Que é Criptografia?
 
-Vamos detalhar um pouco mais o que a criptografia é e o que ela faz por nós. A **criptografia** é a ciência e a prática de salvaguardar as informações através do uso de ferramentas, técnicas e outros métodos especiais para transformar a informação em um formato que apenas as partes autorizadas possam entender. Esta ciência tem evoluído ao longo do tempo, não só para descrever a forma como a informação é alterada, mas também como criar sistemas criptográficos robustos e como analisar e derrotar os já existentes. O campo da criptografia ampliou-se substancialmente por necessidade e tem continuado a aumentar em complexidade, abrangendo desde métodos tradicionais de substituição e transposição de letras até novos métodos e sistemas digitais de alta tecnologia.
+A **criptografia** é a ciência e a prática de salvaguardar as informações através do uso de ferramentas, técnicas e outros métodos especiais para transformar a informação em um formato que apenas as partes autorizadas possam entender. Esta ciência tem evoluído ao longo do tempo, não só para descrever a forma como a informação é alterada, mas também como criar sistemas criptográficos robustos e como analisar e derrotar os já existentes. O campo da criptografia ampliou-se substancialmente por necessidade e tem continuado a aumentar em complexidade, abrangendo desde métodos tradicionais de substituição e transposição de letras até novos métodos e sistemas digitais de alta tecnologia.
 
 **Cifragem (Encryption)** é o termo que recebe mais atenção e o que a maioria das pessoas pensa quando ouve a palavra "criptografia". A cifragem é, de fato, o peso pesado dos processos criptográficos em termos de frequência de uso, mas não é o único. Dentro do campo, inúmeras tecnologias e protocolos trabalham para manter informações secretas, bem como para detectar eventuais alterações aos dados originais.
 
@@ -537,7 +537,7 @@ Um sistema de **Infraestrutura de Chave Pública (PKI - Public Key Infrastructur
 
 A PKI é, de longe, a implementação mais comum de vários dos sistemas criptográficos que discutimos. Como já foi mencionado, a PKI facilita o mecanismo através do qual duas partes que não se conhecem previamente podem estabelecer um canal de comunicação seguro e confiável. Então, como ela faz isso?
 
-Para entender, vamos supor uma situação em que duas partes precisam se comunicar: vamos chamá-las de Thiago e Flavia. O problema é que nenhum destes dois realmente conhece o outro diretamente, nem eles têm qualquer tipo de relacionamento prévio de confiança. Então, como é que estes dois podem estabelecer um canal seguro para a troca de informações? Bem, isso só acontece quando ambas as partes conseguem **confiar em um terceiro**, que neste caso chamaremos de Vini. Porque ambas as partes confiam em Vini, elas podem obter informações quanto à confiabilidade uma da outra através de Vini. Em outras palavras, Thiago pode perguntar a Vini se Flavia é quem ela diz ser (validando sua identidade), e Flavia pode pedir a Vini informações a respeito de Thiago. É através deste uso de uma **terceira parte confiável** que dois participantes sem nenhuma relação prévia podem trabalhar juntos de forma segura.
+Para entender, vamos supor uma situação em que duas partes precisam se comunicar: vamos chamá-las de Beto e Flavia. O problema é que nenhum destes dois realmente conhece o outro diretamente, nem eles têm qualquer tipo de relacionamento prévio de confiança. Então, como é que estes dois podem estabelecer um canal seguro para a troca de informações? Bem, isso só acontece quando ambas as partes conseguem **confiar em um terceiro**, que neste caso chamaremos de Vini. Porque ambas as partes confiam em Vini, elas podem obter informações quanto à confiabilidade uma da outra através de Vini. Em outras palavras, Beto pode perguntar a Vini se Flavia é quem ela diz ser (validando sua identidade), e Flavia pode pedir a Vini informações a respeito de Beto. É através deste uso de uma **terceira parte confiável** que dois participantes sem nenhuma relação prévia podem trabalhar juntos de forma segura.
 
 Se ajudar, pense na terceira parte confiável como a pessoa que seu melhor amigo lhe apresenta. Você pode não conhecer a pessoa, mas porque seu amigo confia nela e você confia em seu amigo, você passa a ter um grau de confiança nessa pessoa também. É uma analogia simples, mas que funciona para nós no nível mais básico.
 
@@ -575,13 +575,13 @@ Uma das características que define o processo de criptografia simétrica é o f
 
 ##### Criptografia Assimétrica
 
-Um dos principais componentes da PKI é o sistema de criptografia assimétrica. Na verdade, como você deve se lembrar, os algoritmos dessa classe são também chamados de sistemas de criptografia de chave pública/privada.
+Um dos principais componentes da PKI é o sistema de criptografia assimétrica. Na verdade, os algoritmos dessa classe são também chamados de sistemas de criptografia de chave pública/privada.
 
 <div align="center">
   <img width="480px" src="./img/20-criptografia-assimetrica.png">
 </div>
 
-Este tipo de sistema utiliza um par de chaves matematicamente relacionadas: uma chave pública, que pode ser distribuída livremente, e uma chave privada, que deve ser mantida em absoluto segredo pelo seu proprietário. A regra fundamental é que tudo o que é cifrado com uma chave do par só pode ser decifrado com a outra chave correspondente do mesmo par. Por exemplo, se Thiago quer enviar uma mensagem secreta para Flavia, ele usa a chave pública de Flavia para cifrar a mensagem. Apenas Flavia, com sua chave privada correspondente, conseguirá decifrar e ler a mensagem.
+Este tipo de sistema utiliza um par de chaves matematicamente relacionadas: uma chave pública, que pode ser distribuída livremente, e uma chave privada, que deve ser mantida em absoluto segredo pelo seu proprietário. A regra fundamental é que tudo o que é cifrado com uma chave do par só pode ser decifrado com a outra chave correspondente do mesmo par. Por exemplo, se Beto quer enviar uma mensagem secreta para Flavia, ele usa a chave pública de Flavia para cifrar a mensagem. Apenas Flavia, com sua chave privada correspondente, conseguirá decifrar e ler a mensagem.
 
 Nós nos preocupamos com a criptografia assimétrica porque ela nos fornece uma resposta elegante para o problema da distribuição de chaves. Ao contrário dos sistemas simétricos, o design exclusivo de sistemas assimétricos não compromete o sigilo da chave privada ao se distribuir a chave pública. Podemos distribuir de forma segura a chave pública para qualquer pessoa, e isso não compromete a segurança. Alguns dos algoritmos assimétricos mais comuns incluem **RSA**, **Diffie-Hellman** e a **Criptografia de Curva Elíptica (ECC)**.
 
@@ -593,7 +593,7 @@ A conversão de texto plano para texto cifrado não é a única função executa
 
 - **Message Digest 2 (MD2)**: A função hash one-way usado no protocolo Privacy Enhanced Mail (PEM), juntamente com MD5.
 - **Message Digest 4 (MD4)**: Fornece um hash de mensagem de entrada de 128 bits.
-- **Message Digest 5 (MD5)**: Uma versão melhorada e redesenhada de MD4 que produz um hash de 128 bits. O MD5 aparece com destaque em certificados digitais, como você verá na próxima sessão. Veja um exemplo do funcionamento do MD5 na figura abaixo:
+- **Message Digest 5 (MD5)**: Uma versão melhorada e redesenhada de MD4 que produz um hash de 128 bits. O MD5 aparece com destaque em certificados digitais. Veja um exemplo do funcionamento do MD5 na figura abaixo:
 
 <div align="center">
   <img width="540px" src="./img/20-hash-md5.png">
@@ -689,7 +689,7 @@ Aqui terminamos nossa rápida passagem pelos exemplos práticos de segurança em
 
 Neste capítulo, exploramos o vasto e crítico domínio da segurança em bancos de dados. Fica evidente que a proteção de dados não é uma tarefa única ou um único produto, mas sim um processo contínuo e multicamadas que envolve políticas, procedimentos e um arsenal de tecnologias. Vimos que a segurança visa garantir não apenas a **confidencialidade** da informação, protegendo-a de olhares não autorizados, mas também sua **integridade**, garantindo que ela não seja corrompida, e sua **disponibilidade**, assegurando que esteja acessível para usuários legítimos quando necessário.
 
-Aprofundamos nosso entendimento sobre os diferentes mecanismos de controle de acesso, desde o flexível **Controle de Acesso Discricionário (DAC)**, implementado na maioria dos SGBDs através dos comandos `GRANT` e `REVOKE`, passando pelo mais gerenciável **Controle de Acesso Baseado em Papéis (RBAC)**, até o rigoroso **Controle de Acesso Obrigatório (MAC)**, essencial para ambientes de alta segurança. Cada modelo oferece um _trade-off_ diferente entre flexibilidade e controle centralizado.
+Aprofundamos nosso entendimento sobre os diferentes mecanismos de controle de acesso, desde o flexível **Controle de Acesso Discricionário (DAC)**, implementado na maioria dos SGBDs através dos comandos `GRANT` e `REVOKE`, passando pelo mais gerenciável **Controle de Acesso Baseado em Papéis (RBAC)**, até o rigoroso **Controle de Acesso Obrigatório (MAC)**, essencial para ambientes de alta segurança. Cada modelo oferece um trade-off diferente entre flexibilidade e controle centralizado.
 
 Discutimos a importância da **auditoria** como uma ferramenta detetive e dissuasiva, permitindo a responsabilização e a investigação de atividades suspeitas, e vimos como os SGBDs modernos fornecem funcionalidades robustas para registrar e analisar trilhas de auditoria.
 
