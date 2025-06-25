@@ -449,114 +449,225 @@ Mesmo assim, em sistemas complexos, orientados a componentes, ou que requerem um
 
 ### Diagrama de Casos de Uso
 
-Casos de Uso são uma técnica para captar os requisitos funcionais de um sistema, descrevendo as interações de usuários com o sistema. Um **cenário** é uma instância de um caso de uso. O diagrama descreve um conjunto de funcionalidades do sistema e interações com elementos externos (**Atores**) e entre si. Um ator pode ser um humano, uma máquina ou outro sistema.
+O **Diagrama de Casos de Uso** é uma poderosa ferramenta para capturar os **requisitos funcionais de um sistema**. Ele permite representar, de maneira gráfica e textual, **como os usuários interagem com o sistema** e quais funcionalidades estão disponíveis. Esses diagramas têm como objetivo principal fornecer uma **visão externa do sistema**, ou seja, o foco está no **comportamento percebido pelos usuários** – não na estrutura interna do software.
 
-[Figura - Diagrama de Caso de Uso]
+<div align="center">
+  <img width="820px" src="./img/37-diagrama-de-casos-de-uso.png">
+</div>
 
-- **Tipos de Casos de Uso:**
-    - **Concreto:** Iniciado por um ator, constitui um fluxo completo de eventos.
-    - **Abstrato:** Jamais é instanciado diretamente, é incluído, estendido ou generalizado por outros (representado com nome em itálico).
-    - **Primário:** Representa os objetivos principais dos atores.
-    - **Secundário:** Necessário para o sistema funcionar, mas não traz benefício direto aos atores.
-- **Relacionamentos:**
-    - Comunicação: Ligação entre ator e caso de uso.
-        [Figura - Representação do Relacionamento de Comunicação]
-    - Inclusão (`<<include>>`): Comportamento obrigatório e repetido. Quando o caso de uso A “inclui” o caso de uso B, significa que sempre que A for executado, B também será. A seta vai do caso de uso que inclui para o incluído.
-        [Figura - Representação do Relacionamento de Inclusão]
-    - Extensão (`<<extend>>`): Comportamento alternativo ou opcional. Quando B estende A, significa que quando A for executado, B poderá ser executado também. A seta vai do caso de uso extensor para o estendido.
-		[Figura - Representação do Relacionamento de Extensão]
-    - Herança: Relacionamento entre atores ou entre casos de uso para reaproveitar comportamentos.
-        [Figura - Representação do Relacionamento de Herança]
+Os elementos centrais desse diagrama são os **casos de uso**, que representam funcionalidades oferecidas pelo sistema, e os **atores**, que são os agentes externos que interagem com ele. Um ator pode ser uma pessoa, uma máquina ou até outro sistema, desde que desempenhe um papel relevante na interação com a aplicação. Um **cenário**, por sua vez, é uma instância específica de um caso de uso – ou seja, um fluxo particular de eventos que representa uma execução concreta da funcionalidade modelada.
+
+Considere, por exemplo, uma loja virtual. O caso de uso “Realizar Compra” pode incluir cenários distintos, como uma compra bem-sucedida ou uma tentativa frustrada por erro no cartão de crédito. Esses diferentes caminhos compõem os possíveis **cenários** de execução do caso de uso.
+
+Os casos de uso podem ser classificados em **concretos**, quando representam fluxos completos iniciados por um ator, e **abstratos**, quando não são executados diretamente, mas reutilizados por outros casos de uso por meio de **inclusão**, **extensão** ou **herança**. A UML recomenda que casos abstratos sejam representados com o nome em itálico. Além disso, é comum categorizar casos de uso como **primários**, quando refletem os objetivos diretos dos atores (ex.: “Efetuar Pagamento”), e **secundários**, quando são necessários para o funcionamento do sistema, mas não produzem benefícios diretos ao usuário (ex.: “Validar Sessão”).
+
+No diagrama, os relacionamentos assumem formas distintas, cada uma com sua finalidade. O **relacionamento de comunicação** (ou associação) conecta um ator a um caso de uso e indica que há troca de mensagens entre eles. Esse é o tipo mais básico e representa simplesmente que o ator pode acionar aquela funcionalidade.
+
+<div align="center">
+  <img width="420px" src="./img/37-diagrama-de-casos-de-uso-comunicacao.png">
+</div>
+
+Já o **relacionamento de inclusão** (`<<include>>`) indica que um comportamento comum e obrigatório está sendo reutilizado. Por exemplo, se ao realizar qualquer operação em um internet banking é preciso se autenticar, o caso de uso “Login” será incluído em diversos outros. Sempre que o caso de uso A **inclui** o caso de uso B, significa que **B será executado sempre que A for acionado**. A seta parte do caso de uso que inclui e aponta para o incluído.
+
+<div align="center">
+  <img width="420px" src="./img/37-diagrama-de-casos-de-uso-inclusao.png">
+</div>
+
+O **relacionamento de extensão** (`<<extend>>`) é utilizado para representar comportamentos **opcionais** ou **alternativos**. Por exemplo, ao cadastrar um usuário, pode haver extensões para definir se ele será um administrador ou moderador. Quando o caso de uso B **estende** o caso de uso A, significa que **B pode (mas não necessariamente será) executado durante A**. Aqui, a seta parte do extensor e aponta para o estendido.
+
+<div align="center">
+  <img width="420px" src="./img/37-diagrama-de-casos-de-uso-extensao.png">
+</div>
+
+O **relacionamento de herança** pode ocorrer tanto entre atores quanto entre casos de uso. No caso dos atores, serve para representar papéis especializados derivados de um papel genérico. Um exemplo clássico seria ter um ator “Pessoa” generalizando “Cliente” e “Vendedor”. Já entre casos de uso, a herança permite reaproveitamento de comportamentos e especializações de funcionalidades, promovendo maior organização e reutilização no modelo.
+
+<div align="center">
+  <img width="80px" src="./img/37-diagrama-de-casos-de-uso-heranca.png">
+</div>
+
+Para visualizar essas possibilidades, a tabela a seguir resume os relacionamentos possíveis:
 
 |Relações|Comunicação|Extensão|Inclusão|Herança|
 |---|---|---|---|---|
-|Entre casos de uso|-|X|X|X|
-|Entre atores|-|-|-|X|
-|Entre casos de uso e atores|X|-|-|-|
+|Entre casos de uso|-|✔|✔|✔|
+|Entre atores|-|-|-|✔|
+|Entre casos de uso e atores|✔|-|-|-|
 
 #### Quando Utilizar o Diagrama de Casos de Uso?
 
-São uma ferramenta valiosa para ajudar no entendimento dos requisitos funcionais. Uma primeira passagem deve ser feita no início do projeto. É importante lembrar que casos de uso representam uma visão externa do sistema. Concentra-se energia mais no texto do que no diagrama; é esse texto que contém todo o valor da técnica.
+O Diagrama de Casos de Uso é indicado principalmente **nas fases iniciais do desenvolvimento de software**, sendo uma excelente ferramenta para **elaboração e validação de requisitos funcionais** com os stakeholders. Ele oferece uma maneira intuitiva de representar o sistema sob a perspectiva do usuário final, sem a necessidade de conhecimento técnico aprofundado.
+
+Sua utilização é recomendada para esclarecer os serviços que o sistema deverá oferecer, especialmente em projetos orientados a requisitos, e permite capturar os **objetivos dos usuários**, facilitando o diálogo com clientes e usuários. Contudo, é importante lembrar que o **valor principal da técnica não está apenas no diagrama gráfico, mas no texto descritivo associado a cada caso de uso**. É esse texto que detalha os fluxos normais e alternativos, os pré-requisitos, as exceções e os resultados esperados.
+
+Apesar da utilidade, há um risco comum: tornar os casos de uso **excessivamente detalhados e complexos**, o que pode comprometer sua clareza e manutenção. Em geral, recomenda-se que cada caso de uso não ultrapasse **duas páginas de descrição textual**. Mais do que isso pode desencorajar a leitura e dificultar a análise. Também é fundamental não esperar que haja correlação direta entre casos de uso e as classes ou componentes internos do sistema – eles representam **o comportamento visível externamente**, e não a implementação.
+
+Por fim, vale destacar que Diagramas de Casos de Uso **não são adequados para descrever o design técnico ou a lógica interna do sistema**, mas sim para capturar **interações funcionais percebidas externamente**. Quando bem utilizados, são uma base sólida para os próximos passos do projeto, como a modelagem de atividades, a definição de testes funcionais e a identificação de componentes do sistema.
 
 ### Diagrama de Atividades
 
-O Diagrama de Atividades descreve lógica de procedimento, processo de negócio e fluxos de trabalho. Ele desempenha um papel semelhante aos fluxogramas, mas suporta comportamentos paralelos. Uma **atividade** é um comportamento parametrizado representado como um fluxo coordenado de ações. O diagrama não se preocupa com interações entre objetos, mas entre processos de negócios de mais alto nível. Os estados mudam quando uma ação é executada.
+O **Diagrama de Atividades** é uma poderosa ferramenta da UML utilizada para **descrever a lógica de procedimentos, processos de negócio e fluxos de trabalho**. De certa forma, ele cumpre um papel similar ao dos fluxogramas tradicionais, mas vai além ao **suportar comportamentos paralelos**, o que o torna extremamente útil na modelagem de processos mais complexos e realistas.
 
-Pode ser representado por meio de **swimlanes** (raias), que agrupam as atividades e as organizam de acordo com suas respectivas responsabilidades.
+Uma **atividade**, nesse contexto, é definida como um **comportamento parametrizado**, que é representado como um **fluxo coordenado de ações**. O foco desse diagrama não está nas interações entre objetos, mas sim na **sequência e no controle dos processos**, geralmente de **nível mais alto**, como rotinas de negócio, tarefas automatizadas ou manuais, e até mesmo sistemas que operam em paralelo.
 
-[Figura - Diagrama de Atividades]
+<div align="center">
+  <img width="720px" src="./img/37-diagrama-de-atividades.png">
+</div>
 
-- **Ramificações:** Especificam caminhos alternativos baseados em expressões booleanas (representadas com um diamante).
-    
-- **Bifurcação (Fork) e União (Join):** A bifurcação é a divisão de um fluxo em dois ou mais fluxos concorrentes. A união é a sincronização desses fluxos. Uma barra de sincronização é usada para especificar ambos.
-    
+Um dos elementos mais marcantes do Diagrama de Atividades são as **swimlanes** (ou raias), que organizam visualmente as ações de acordo com suas **responsabilidades ou papéis**. Cada raia representa um agente (como uma pessoa, sistema ou departamento) responsável por realizar as atividades que ocorrem dentro dela. Essas raias se assemelham a pistas de uma piscina olímpica, delimitando claramente quem faz o quê dentro do fluxo do processo.
+
+Outro recurso importante é a **ramificação**, representada por um **losango (diamante)**, que indica **decisões condicionais** baseadas em expressões booleanas. A partir desse ponto, o fluxo segue por caminhos diferentes, conforme o resultado de uma condição. Por exemplo, após uma validação, o processo pode seguir para “Aprovar Pedido” ou “Rejeitar Pedido”, dependendo do resultado lógico.
+
+Além disso, o diagrama suporta a **bifurcação** e a **união** de fluxos. A bifurcação (**fork**) é utilizada para dividir um fluxo em **vários caminhos paralelos**, ou seja, várias atividades podem ocorrer ao mesmo tempo. Ela é representada por uma **barra horizontal ou vertical**, com uma transição de entrada e múltiplas saídas. Cada fluxo segue paralelamente a partir desse ponto.
+
+<div align="center">
+  <img width="680px" src="./img/37-diagrama-de-atividades-nodes-forks-e-joins.png">
+  </div>
+
+A união (**join**), por sua vez, é usada para **sincronizar** esses fluxos paralelos, fazendo com que o processo só continue após todos os caminhos simultâneos terem sido concluídos. Também é representada por uma barra, com **múltiplas entradas e uma única saída**. A presença dessas construções torna o diagrama de atividades ideal para representar processos com **convergência e divergência de controle**.
 
 #### Quando Utilizar o Diagrama de Atividades?
 
-A maior qualidade dos Diagramas de Atividades está no fato de que eles suportam e estimulam o comportamento paralelo. Isso os torna uma excelente ferramenta para modelagem de fluxos de trabalho e de proc6essos.
+O Diagrama de Atividades é extremamente útil quando se deseja **modelar comportamentos sequenciais e paralelos de um sistema**, especialmente no contexto de **fluxos de trabalho organizacionais, processos de negócio ou lógica de algoritmos complexos**. Sua principal vantagem está justamente na capacidade de representar **comportamento paralelo de maneira natural**, algo que fluxogramas tradicionais não fazem bem.
+
+Na prática, isso o torna ideal para **analisar processos administrativos, validar requisitos com usuários finais, documentar procedimentos operacionais**, e até mesmo para desenhar o fluxo de controle de algoritmos ou métodos.
+
+Com a evolução da UML para a versão 2.x, esse diagrama ganhou ainda mais destaque, especialmente pelo **interesse crescente em modelar processos de negócio e workflow**, áreas em que o comportamento paralelo e os fluxos alternativos são comuns. Em contextos mais avançados, há até mesmo propostas de uso da UML como uma linguagem de programação visual, com **ferramentas capazes de converter Diagramas de Atividades em código executável** — embora essa ideia ainda esteja em estágio experimental.
 
 ### Diagrama de Máquina de Estados
 
-Também conhecido como Diagrama de Transição de Estados, apresenta diversos estados possíveis de um objeto no decorrer da execução de processos de um sistema. Um objeto pode passar de um estado inicial para um estado final, por meio de uma transição, quando ocorre algum evento ou estímulo. Ele mostra o ciclo de vida de objetos e como eles são afetados por eventos.
+O **Diagrama de Máquina de Estados**, também conhecido como **Diagrama de Transição de Estados**, é utilizado para representar os **diferentes estados que um objeto pode assumir ao longo de sua existência** em um sistema, bem como os eventos que causam as **transições** entre esses estados. Ele é particularmente útil para visualizar o **ciclo de vida de um objeto**, desde o estado inicial até seu possível encerramento, mostrando como eventos internos ou externos influenciam esse comportamento.
 
-[Figura - Diagrama de Máquina de Estados]
+<div align="center">
+  <img width="640px" src="./img/37-diagrama-de-maquina-de-estados.png">
+  </div>
 
-É necessário distinguir Diagrama de Atividades e Diagrama de Máquina de Estados. No primeiro, o comportamento está expresso nos nós. No segundo, o comportamento está nos arcos. Apesar de visualmente similares, o que é representado em cada diagrama é o oposto um do outro.
+Um **estado** representa uma situação em que um objeto satisfaz uma condição, realiza uma atividade ou espera por um evento. Por sua vez, uma **transição** é o movimento de um estado para outro, geralmente acionado por um **evento** ou estímulo. E o que é uma **ação**? É uma atividade que ocorre como consequência da transição. Assim, esse diagrama mostra **como o objeto reage a diferentes estímulos** ao longo do tempo, evidenciando **as regras que regem seu comportamento dinâmico**.
+
+Vale destacar que o Diagrama de Máquina de Estados **não mostra a interação entre objetos**, como fazem outros diagramas da UML. Ele foca **no comportamento interno de um único objeto** — como, por exemplo, um pedido de venda, um usuário logado ou uma conexão de rede — e como esse objeto muda de estado ao longo do tempo em resposta a eventos como erros, comandos, mensagens, aprovações, etc.
+
+Embora cada diagrama comece com **um único estado inicial**, ele pode apresentar **vários estados finais**, dependendo das possíveis rotas que o objeto pode seguir. Esse tipo de representação facilita a análise do ciclo de vida de entidades com **comportamento complexo**, permitindo identificar, por exemplo, **condições de espera, estados intermediários e estados de erro**.
+
+#### Diferenças entre Diagrama de Atividades e Diagrama de Máquina de Estados
+
+Apesar de visualmente semelhantes, os Diagramas de Atividades e os Diagramas de Máquina de Estados possuem **diferenças fundamentais de propósito e semântica**.
+
+No **Diagrama de Atividades**, o foco está nos **nós**, que representam ações ou tarefas sendo executadas. Já os arcos indicam o fluxo de controle entre essas atividades. Ele é útil para **modelar fluxos de trabalho ou lógica de processos**, geralmente de forma mais ampla.
+
+Por outro lado, no **Diagrama de Máquina de Estados**, a ênfase está nos **arcos**, que representam os comportamentos (transições) que fazem um objeto sair de um estado e ir para outro. Os **nós aqui representam os próprios estados** do objeto. Assim, pode-se dizer que **os significados dos elementos se invertem** entre os dois diagramas: os **nós do Diagrama de Estados** equivalem aos **arcos do Diagrama de Atividades**, e vice-versa.
 
 #### Quando Utilizar o Diagrama de Máquina de Estados?
 
-Eles são bons para descrever o comportamento de um objeto por intermédio de vários casos de uso ou para descrever um comportamento que envolva vários objetos em colaboração. Recomenda-se não o utilizar para todas as classes, mas apenas para aquelas que exibem comportamento interessante.
+Este tipo de diagrama é mais indicado quando se deseja **entender ou especificar o comportamento de objetos com ciclo de vida bem definido** e sensível a eventos. Isso é particularmente útil para objetos que participam de **vários casos de uso**, ou que passam por diversas fases operacionais com transições condicionadas por **eventos, entradas do usuário, mensagens de outros sistemas ou regras de negócio**.
 
----
+Embora sejam extremamente poderosos para ilustrar comportamentos complexos, **não é necessário criar um diagrama de estados para todas as classes**. Recomenda-se utilizá-lo apenas para aquelas que possuem **comportamentos dinâmicos relevantes**, como componentes críticos, entidades com múltiplas fases operacionais, fluxos de autorização ou controle de sessões.
 
-### Diagramas de Interação
+Além disso, é comum **combinar Diagramas de Máquina de Estados com outras técnicas** da UML. Por exemplo, **Diagramas de Interação** são mais adequados para mostrar **o comportamento de vários objetos colaborando em um mesmo caso de uso**, enquanto os **Diagramas de Atividades** representam **a sequência geral de ações de um processo**. Cada tipo de diagrama possui seu foco e complementa os demais quando usados em conjunto.
+
+Em suma, o Diagrama de Máquina de Estados é uma excelente ferramenta para **descrever com precisão a evolução de um objeto** ao longo do tempo, facilitando o entendimento de comportamentos condicionais e o controle de estados de entidades essenciais do sistema.
+
+## Diagramas de Interação
 
 ### Diagrama de Sequência
 
-O Diagrama de Sequência é um diagrama de interação que captura o comportamento de um único cenário, mostrando vários exemplos de objetos e as mensagens que são trocadas entre eles, com ênfase na ordem temporal. O eixo horizontal representa os objetos e o vertical representa o tempo (linha de vida). Uma **mensagem** é um serviço solicitado de um objeto para outro.
+O **Diagrama de Sequência** é um dos diagramas de interação da UML mais utilizados, sendo ideal para modelar **a dinâmica de um cenário específico** dentro de um sistema. Ele descreve como os objetos interagem entre si por meio de **mensagens trocadas em uma sequência temporal bem definida**. Seu principal objetivo é capturar **o comportamento de um único caso de uso**, evidenciando a troca de mensagens entre objetos, a criação e destruição de instâncias e o fluxo de execução.
 
-[Figura - Diagrama de Sequência]
+<div align="center">
+  <img width="680px" src="./img/37-diagrama-de-sequencia.png">
+</div>
+
+O diagrama é organizado em dois eixos. O **eixo horizontal** representa os **objetos ou participantes** envolvidos no cenário, cada um identificado em uma "lifeline" (linha de vida). Já o **eixo vertical** representa o **tempo**, avançando de cima para baixo, de forma que **quanto mais abaixo no diagrama, mais tarde a ação ocorre**. A linha de vida é representada por uma linha tracejada que parte do objeto e se estende verticalmente.
+
+As **mensagens** trocadas entre os objetos representam **chamadas de métodos, eventos ou sinais**, e são exibidas como setas horizontais. Uma mensagem indica um **serviço solicitado de um objeto a outro** e pode vir acompanhada de parâmetros. A execução de métodos é geralmente representada por **retângulos sobre a linha de vida**, conhecidos como **barras de ativação**, que mostram o período durante o qual um objeto está executando uma ação.
+
+Por exemplo, imagine o caso de uso "Sacar Dinheiro" em um caixa eletrônico. O diagrama de sequência pode ilustrar esse cenário desde o momento em que o cliente insere o cartão, passando pela validação do PIN, escolha do valor, autorização da transação, até a entrega do dinheiro e a atualização do saldo na base de dados. Cada interação entre o cliente, o sistema de interface, o sistema bancário e os mecanismos internos pode ser representada por uma sequência de mensagens trocadas no tempo.
+
+Esse tipo de diagrama é especialmente útil para **visualizar claramente o fluxo de comunicação entre os componentes**, entender **como o sistema responde a determinadas entradas** e identificar possíveis **gargalos, dependências ou problemas de sincronização** entre objetos.
 
 #### Quando Utilizar o Diagrama de Sequência?
 
-Você deve utilizá-lo quando quiser observar o comportamento de vários objetos dentro de um único caso de uso. São bons para mostrar as colaborações entre os objetos, mas não para uma definição precisa do comportamento.
+Você deve utilizar o Diagrama de Sequência quando quiser observar **como vários objetos colaboram entre si dentro de um único caso de uso**. Ele é uma excelente ferramenta para **analisar colaborações entre objetos**, ajudar a validar requisitos funcionais e verificar se a arquitetura do sistema está adequada para atender aos fluxos de execução esperados.
+
+No entanto, vale destacar que os Diagramas de Sequência **não são ideais para definir com precisão o comportamento interno de cada objeto individualmente**. Para isso, recomenda-se utilizar o **Diagrama de Máquina de Estados**, que mostra o ciclo de vida de um único objeto. Já para fluxos mais complexos com múltiplas possibilidades, alternativas e paralelismo, o **Diagrama de Atividades** pode ser mais adequado.
+
+Por fim, durante a fase de projeto, é comum utilizar cartões CRC (Classe-Responsabilidade-Colaboração) para explorar rapidamente as alternativas de interação entre objetos. Uma vez que as colaborações estejam bem definidas, os Diagramas de Sequência podem então ser usados para **documentar essas interações em detalhes**.
 
 ### Diagrama de Comunicação
 
-Também é um diagrama de interação muito semelhante ao de sequência, mas com ênfase na ordem estrutural e, não, temporal. Em versões anteriores da UML, era conhecido como Diagrama de Colaboração. Ele possui números que identificam a sequência das mensagens.
+O **Diagrama de Comunicação** é uma variação dos diagramas de interação da UML, sendo bastante semelhante ao **Diagrama de Sequência**, mas com uma ênfase distinta: **em vez de destacar a ordem temporal das mensagens**, ele se concentra na **estrutura organizacional dos objetos envolvidos** e nas **ligações entre eles**.
 
-[Figura - Diagrama de Comunicação]
+Em versões anteriores da UML, esse diagrama era conhecido como **Diagrama de Colaboração**. No entanto, é importante fazer uma distinção: embora tenha esse nome antigo, o Diagrama de Comunicação **não modela colaborações** no sentido formal — essa função é mais bem representada pelo **Diagrama de Estrutura Composta**. O foco principal do Diagrama de Comunicação está na **disposição dos objetos e nas mensagens trocadas entre eles**, representadas por **setas numeradas** que indicam a sequência das chamadas.
+
+<div align="center">
+  <img width="680px" src="./img/37-diagrama-de-comunicacao.png">
+</div>
+
+Visualmente, ele lembra bastante um **Diagrama de Objetos**, mas com a adição das mensagens e suas respectivas setas e identificadores numéricos. Cada mensagem trocada entre objetos é representada por uma **linha com uma seta**, acompanhada de um número que indica sua **posição relativa na sequência de chamadas** (por exemplo, 1, 2, 3, 3.1, 4...), o que permite compreender o fluxo mesmo sem uma linha de tempo vertical.
+
+A imagem acima mostra um exemplo de Diagrama de Comunicação que corresponde exatamente a um Diagrama de Sequência apresentado anteriormente — a diferença está no enfoque: **aqui, privilegia-se a estrutura e os vínculos entre objetos**, enquanto o Diagrama de Sequência foca a ordem cronológica das mensagens.
+
+Esse tipo de diagrama é útil principalmente em **cenários mais simples**, onde o objetivo é destacar **como os objetos estão conectados** e **quais mensagens são trocadas entre eles**, sem a complexidade de fluxos paralelos ou ramificações detalhadas. Em geral, ele é mais compacto e **mais fácil de modificar rapidamente**, o que o torna adequado para explorar **alternativas de interação** durante a fase de design.
 
 #### Quando Utilizar o Diagrama de Comunicação?
 
-A principal questão é quando usá-los em lugar dos diagramas de sequência. Grande parte da decisão é questão de preferência pessoal. Os diagramas de sequência são melhores quando você quer salientar a sequência de chamadas e os de comunicação são melhores quando se quer salientar os vínculos.
+A principal dúvida é: **quando usá-lo em vez do Diagrama de Sequência?** A resposta depende do **objetivo da modelagem** e, muitas vezes, também da **preferência pessoal** da equipe de desenvolvimento. Os **Diagramas de Sequência** são preferíveis quando se quer enfatizar a **ordem das chamadas**, ou quando os detalhes temporais são cruciais para o entendimento do sistema. Já os **Diagramas de Comunicação** são mais adequados quando se deseja ressaltar **as conexões entre objetos e os caminhos de interação**, permitindo uma visão mais estrutural do cenário.
+
+Além disso, por serem mais compactos e fáceis de editar, os Diagramas de Comunicação são particularmente úteis para **experimentar diferentes alternativas de design**, fazendo pequenas alterações na disposição dos elementos ou na direção das mensagens sem reestruturar todo o diagrama, como frequentemente ocorre nos Diagramas de Sequência.
+
+Em suma, o Diagrama de Comunicação é uma poderosa ferramenta complementar aos outros diagramas de interação da UML. Quando usado de forma estratégica, permite **compreender rapidamente como os objetos estão organizados e se comunicam entre si**, especialmente em **cenários de complexidade moderada**, contribuindo para uma análise clara e eficaz da arquitetura do sistema.
 
 ### Diagrama de Tempo (ou Temporização)
 
-Este diagrama de interação descreve o comportamento dos objetos no decorrer do tempo e a duração na qual eles permanecem em determinados estados. Ele associa características do Diagrama de Sequência com o de Máquina de Estados. O foco está nas restrições de temporização entre mudanças de estado.
+O **Diagrama de Tempo**, também conhecido como **Diagrama de Temporização**, é uma variação dos diagramas de interação da UML. Seu principal objetivo é descrever o **comportamento de objetos ao longo do tempo**, focando na **duração** que cada objeto permanece em determinados **estados** e nas **restrições temporais** entre essas transições.
 
-[Figura - Diagrama de Tempo]
+Esse tipo de diagrama associa características tanto do **Diagrama de Sequência**, ao representar interações entre objetos, quanto do **Diagrama de Máquina de Estados**, ao representar mudanças de estado em resposta a eventos. A diferença é que, aqui, o **tempo é o protagonista** — as variações de estado são exibidas com precisão em uma linha de tempo.
+
+<div align="center">
+  <img width="680px" src="./img/37-diagrama-de-tempo.png">
+</div>
+
+No Diagrama de Tempo, cada linha representa um **objeto** (ou instância de classe) e o seu respectivo **estado ao longo do tempo**. O eixo horizontal indica o avanço temporal, e os segmentos de linha demonstram o **estado ou condição** em que o objeto se encontra em determinado intervalo. Assim, o gráfico permite observar de forma clara **quando uma mudança de estado ocorre** e **quanto tempo cada estado persiste**.
+
+Além disso, o diagrama também permite expressar **restrições temporais** — como "o objeto deve permanecer no estado X por no mínimo 5 segundos antes de transitar para Y", ou "a resposta a um evento deve ocorrer em até 2 milissegundos após sua emissão". Essa precisão é extremamente valiosa em sistemas **reativos**, **embarcados** ou que envolvam **hardware sensível ao tempo**.
+
+Embora menos comum em projetos de software convencionais, os Diagramas de Temporização são **bem conhecidos por engenheiros de hardware**, justamente por serem excelentes para ilustrar **tempos de resposta**, **atrasos**, **sincronizações** e **eventos concorrentes**, como acontece em **circuitos digitais**, **sistemas embarcados** e **interfaces de comunicação**.
+
+É importante destacar que o Diagrama de Tempo foi incorporado à UML apenas a partir da versão **2.0**, o que justifica sua menor difusão e baixa frequência em atividades práticas e provas acadêmicas.
 
 #### Quando Utilizar o Diagrama de Temporização?
 
-Os Diagramas de Temporização são úteis para mostrar restrições de temporização entre mudanças de estado em diferentes objetos. São particularmente conhecidos dos Engenheiros de hardware.
+Os Diagramas de Tempo são úteis **quando se deseja evidenciar restrições de tempo entre mudanças de estado** em objetos distintos ou mesmo em uma única instância. São recomendados especialmente em contextos onde o **tempo de permanência em estados específicos**, a **sincronização entre eventos** ou o **atendimento a requisitos temporais rigorosos** seja um fator crítico de sucesso — como em **sistemas de tempo real**, **comunicações assíncronas**, **protocolos de rede**, **aplicações embarcadas** e **projetos de hardware digital**.
+
+Embora raramente cobrados em avaliações ou utilizados em ambientes de desenvolvimento orientado a software puro, seu conhecimento é relevante para desenvolvedores que trabalham com sistemas híbridos ou que requerem **controle refinado de tempo e resposta**. Em projetos mais simples ou voltados para a lógica de negócio, é comum substituí-los por **Diagramas de Estado** ou **Diagramas de Sequência**, que atendem à maior parte das necessidades de modelagem.
 
 ### Diagrama de Interação Geral
 
-É um diagrama de interação que mistura o Diagrama de Atividades e o de Sequência. Ele fornece uma visão geral do controle de fluxo entre objetos e engloba diversos tipos de diagramas de interação para demonstrar um processo geral. Ele mostra a troca de mensagens entre objetos e o estado de atividades.
+O **Diagrama de Interação Geral** (ou **Visão Geral de Interação**) é um tipo de diagrama de interação introduzido na UML 2.0. Sua principal proposta é **combinar elementos do Diagrama de Atividades com o Diagrama de Sequência**, de modo a oferecer uma **visão ampla e integrada do fluxo de controle** entre objetos, destacando **mensagens trocadas** e o **estado das atividades** envolvidas.
 
-[Figura - Diagrama de Interação Geral]
+<div align="center">
+  <img width="760px" src="./img/37-diagrama-de-interacao-geral.png">
+  </div>
 
-Pode-se considerar os diagramas de interação geral como diagramas de atividades nos quais as atividades são substituídas por pequenos diagramas de sequência.
+Esse tipo de diagrama busca representar **processos mais complexos**, nos quais diversos **cenários de interação** estão interligados. Para isso, ele se estrutura como um **Diagrama de Atividades**, porém substituindo atividades simples por **pequenos Diagramas de Sequência** — ou seja, **cada "atividade" é uma interação em si**, representada com maior detalhamento.
+
+Essa abordagem permite visualizar, de maneira ordenada e hierárquica, como **vários fragmentos de interação** (que poderiam estar em diferentes cenários ou ramificações de um caso de uso) se conectam ao longo de um fluxo geral de execução. Ele pode ser encarado, portanto, como um **Diagrama de Sequência fragmentado**, com uso da **notação de atividades para indicar o controle de fluxo**.
+
+Embora o conceito seja interessante, essa mistura de dois estilos diferentes — **sequencial e de fluxo** — é alvo de críticas. O autor Martin Fowler, referência na área de Engenharia de Software e modelagem com UML, expressa ceticismo quanto à sua utilidade prática. Segundo ele, os Diagramas de Interação Geral podem ser confusos por **combinar estilos visuais e semânticos distintos**, o que dificulta a clareza e a leitura.
 
 #### Quando Utilizar o Diagrama de Interação Geral?
 
-Esses diagramas surgiram a partir da UML 2.0. Martin Fowler expressa que não gosta muito deles, pois acredita que eles misturam dois estilos que não se encaixam muito bem. A recomendação dele é: desenhe um Diagrama de Atividades ou use um Diagrama de Sequência, dependendo do que melhor atender seu propósito.
+O Diagrama de Interação Geral pode ser útil **quando se deseja representar um processo de negócio ou fluxo complexo que envolva múltiplos cenários de interação** entre objetos. Ele é apropriado para situações onde um Diagrama de Atividades **não oferece detalhamento suficiente** e um único Diagrama de Sequência **não é capaz de capturar todas as variações possíveis**.
+
+Entretanto, devido à sua relativa complexidade e menor difusão entre profissionais, **sua aplicação é mais rara** na prática do que os diagramas de sequência ou de atividades isoladamente. Inclusive, Martin Fowler recomenda que, na maioria dos casos, é mais eficaz **optar por um ou outro**, de acordo com o objetivo de modelagem:
+
+- **Se o foco for no controle de fluxo entre atividades**, use um **Diagrama de Atividades**.
+- **Se o foco for na ordem de mensagens trocadas entre objetos**, use um **Diagrama de Sequência**.
+
+Ou seja, o Diagrama de Interação Geral deve ser considerado **com cautela**, sendo útil **em casos muito específicos**, mas **não essencial** para a maioria dos projetos de modelagem orientada a objetos.
 
 ## Considerações Finais
 
-A Unified Modeling Language (UML) emergiu de um cenário fragmentado para se tornar a linguagem padrão universal para a modelagem de sistemas, trazendo clareza e rigor onde antes havia ambiguidade. Seu conjunto de 14 diagramas oferece múltiplas perspectivas para dissecar e entender a complexidade, desde a arquitetura estática fundamental, detalhada no Diagrama de Classes, até os fluxos de comportamento dinâmico, ilustrados nos diagramas de interação e atividade.
+A **Unified Modeling Language (UML)** emergiu de um cenário fragmentado para se tornar a linguagem padrão universal para a modelagem de sistemas, trazendo clareza e rigor onde antes havia ambiguidade. Seu conjunto de **14 diagramas** oferece múltiplas perspectivas para dissecar e entender a complexidade, desde a arquitetura estática fundamental, detalhada no Diagrama de Classes, até os fluxos de comportamento dinâmico, ilustrados nos diagramas de interação e atividade.
 
-É crucial, no entanto, encarar a UML como o que ela é: uma ferramenta de comunicação e planejamento, não um processo rígido ou um fim em si mesmo. O maior perigo reside na supermodelagem ou no foco excessivo na notação em detrimento do diálogo. Um diagrama só tem valor se ele promove o entendimento compartilhado e ajuda a equipe a construir o software certo, da maneira certa.
+É crucial, no entanto, encarar a UML como o que ela é: uma **ferramenta de comunicação e planejamento**, não um processo rígido ou um fim em si mesmo. O **maior perigo reside na supermodelagem** ou no foco excessivo na notação em detrimento do diálogo. Um diagrama só tem valor se ele promove o entendimento compartilhado e ajuda a equipe a construir o software certo, da maneira certa.
 
-Dominar a UML significa, portanto, mais do que memorizar símbolos. Significa entender qual diagrama usar para responder a qual pergunta, como manter os modelos simples e focados no que é essencial, e como usá-los para guiar conversas produtivas entre todos os envolvidos no projeto. Utilizada com pragmatismo e sabedoria, a UML é um ativo inestimável para a engenharia de software moderna.
+**Dominar a UML significa**, portanto, mais do que memorizar símbolos. Significa **entender qual diagrama usar para responder a qual pergunta**, como manter os modelos simples e focados no que é essencial, e como usá-los para guiar conversas produtivas entre todos os envolvidos no projeto. Utilizada com pragmatismo e sabedoria, a UML é um ativo inestimável para a engenharia de software moderna.
