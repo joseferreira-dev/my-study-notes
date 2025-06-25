@@ -192,7 +192,7 @@ Existem duas diferenças sutis: (1) na UML, um elemento protegido não é visív
   <img width="360px" src="./img/37-diagrama-de-classes-classe-com-modificadores.png">
 </div>
 
-### Tipos de Relacionamentos
+#### Tipos de Relacionamentos
 
 Eles representam as conexões entre classes, objetos, pacotes, tabelas, entre outros. Há três tipos de relacionamentos entre classes: Dependência, Generalização e Associação.
 
@@ -220,93 +220,148 @@ Eles representam as conexões entre classes, objetos, pacotes, tabelas, entre ou
 
 - **Relacionamento de Associação:** Relacionamento estrutural entre objetos que especifica os objetos de uma classe que estão ligados a objetos de outra classe.
 
-- Associação Simples: É um tipo de relacionamento mais forte que o de dependência e indica que uma instância de um elemento está ligada à instância de outro elemento. São representados por uma linha sólida com ou sem setas de navegabilidade. Pode haver nomes para a associação e indicação de multiplicidade.
+- **Associação Simples**: É um tipo de relacionamento mais forte que o de dependência e indica que uma instância de um elemento está ligada à instância de outro elemento. São representados por uma linha sólida com ou sem setas de navegabilidade. Pode haver nomes para a associação e indicação de multiplicidade.
 
 <div align="center">
-  <img width="480px" src="./img/37-diagrama-de-classes-relacionamento-de-realizacao.png">
+  <img width="420px" src="./img/37-diagrama-de-classes-relacionamento-de-associacao-simples.png">
 </div>
 
-- Associação Qualificada: É um tipo de relacionamento similar à associação simples, contudo possui um qualificador, que é um atributo do elemento-alvo capaz de identificar uma instância dentre as demais. Ela ocorre em associações um-para-muitos ou muitos-para-muitos em que se deseja encontrar um elemento específico dada uma chave. É representado por uma linha sólida com um retângulo ao lado da classe de cardinalidade 1 contendo o qualificador.
-        
-        [Figura - Relacionamento de Associação Qualificada]
-        
-- Agregação: É um tipo de associação, porém mais forte, em que o todo está relacionado às suas partes de forma independente. Nesse tipo de relacionamento, as partes têm existência própria. É representado por uma linha com um diamante vazio na extremidade referente ao todo.
-        
-        [Figura - Relacionamento de Associação Agregação]
-        
-- Composição: É um tipo de agregação (inclusive, é chamado algumas vezes de Agregação por Composição), porém mais forte, em que o todo está relacionado às partes de forma dependente. Nesse relacionamento, as partes não têm existência própria. É representado por uma linha com um diamante cheio na extremidade referente ao todo.
-        
-        [Figura - Relacionamento de Associação Composição]
-        
+- **Associação Qualificada**: É um tipo de relacionamento similar à associação simples, contudo possui um qualificador, que é um atributo do elemento-alvo capaz de identificar uma instância dentre as demais. Ela ocorre em associações um-para-muitos ou muitos-para-muitos em que se deseja encontrar um elemento específico dada uma chave. É representado por uma linha sólida com um retângulo ao lado da classe de cardinalidade 1 contendo o qualificador.
 
-[Figura - Resumo dos diversos relacionamentos em diagramas de classes]
+<div align="center">
+  <img width="560px" src="./img/37-diagrama-de-classes-relacionamento-de-associacao-qualificada.png">
+</div>
+
+- **Agregação**: É um tipo de associação, porém mais forte, em que o todo está relacionado às suas partes de forma independente. Nesse tipo de relacionamento, as partes têm existência própria. É representado por uma linha com um diamante vazio na extremidade referente ao todo.
+
+<div align="center">
+  <img width="600px" src="./img/37-diagrama-de-classes-relacionamento-de-agregacao.png">
+</div>
+
+- **Composição**: É um tipo de agregação (inclusive, é chamado algumas vezes de Agregação por Composição), porém mais forte, em que o todo está relacionado às partes de forma dependente. Nesse relacionamento, as partes não têm existência própria. É representado por uma linha com um diamante cheio na extremidade referente ao todo.
+
+<div align="center">
+  <img width="480px" src="./img/37-diagrama-de-classes-relacionamento-de-composicao.png">
+</div>
+
+Segue um resumo visual geral dos relacionamentos:
+
+<div align="center">
+  <img width="580px" src="./img/37-diagrama-de-classes-resumo-dos-relacionamentos.png">
+</div>
+
+- **Associação**: mostra que os passageiros e o avião possuem alguma ligação;
+- **Dependência**: mostra que o avião depende de passageiros;
+- **Associação Reflexiva**: mostra que a equipe do avião se relaciona entre si;
+- **Multiplicidade**: mostra que um avião possui zero ou mais passageiros;
+- **Agregação**: mostra que uma biblioteca tem um ou mais livros (independentes). Nesse entendimento, livros continuarão a existir mesmo sem bibliotecas;
+- **Composição**: mostra que uma biblioteca tem livros (necessariamente). Nesse entendimento, livros só podem existir como parte de uma biblioteca;
+- **Herança**: mostra que uma conta bancária é filha de conta fixa;
+- **Realização**: setup da impressora implementa funcionalidades da impressora.
 
 #### Quando Utilizar o Diagrama de Classes?
 
-Os Diagramas de Classe são a espinha dorsal da UML; portanto, você irá utilizá-los o tempo todo. O maior problema é que eles são tão ricos que podem ser complexos demais para usar. Dessa forma, não tente utilizar todas as notações de que você dispõe; o uso de diagramas de classes conceituais é muito útil na exploração da linguagem do negócio. Busque manter o software fora da discussão e manter a notação mais simples; não desenhe modelos para tudo; em vez disso, concentre-se nas áreas principais. É melhor ter poucos diagramas que você utiliza e os mantém atualizados do que ter muitos modelos esquecidos e obsoletos. O maior perigo é que você pode focalizar exclusivamente a estrutura e ignorar o comportamento. Portanto, ao desenhar diagramas de classe para entender o software, sempre os faça em conjunto com alguma forma de técnica comportamental.
+Os Diagramas de Classe são considerados a espinha dorsal da UML e, por isso, são utilizados constantemente. No entanto, seu maior problema reside na riqueza de detalhes, que pode torná-los excessivamente complexos. Por esse motivo, não se recomenda o uso de todas as notações disponíveis. A utilização de diagramas de classes conceituais é especialmente útil para a exploração da linguagem do negócio. É importante manter o foco fora do software durante a discussão e adotar uma notação mais simples. Não é necessário modelar todos os aspectos; o ideal é concentrar-se nas áreas mais relevantes. É preferível dispor de poucos diagramas que sejam efetivamente utilizados e mantidos atualizados do que ter uma grande quantidade de modelos esquecidos e obsoletos. O principal risco está em concentrar-se unicamente na estrutura, negligenciando o comportamento. Por isso, ao elaborar diagramas de classe com o objetivo de compreender o software, é essencial associá-los a alguma técnica comportamental.
 
 ### Diagrama de Objetos
 
-O Diagrama de Objetos (ou Diagrama de Instâncias) é uma variação do Diagrama de Classes que representa uma fotografia estática do sistema em um dado momento de execução. Ele não reflete o sistema genericamente, mas de forma específica – em um determinado instante. Como ele mostra instâncias, em vez de classes, ele é frequentemente chamado de Diagrama de Instâncias.
+O **Diagrama de Objetos** (também conhecido como **Diagrama de Instâncias**) é uma variação do Diagrama de Classes que representa uma **fotografia estática do sistema em um dado momento da execução**. Ao contrário do Diagrama de Classes, que apresenta a estrutura geral do sistema por meio de suas classes, o Diagrama de Objetos mostra **instâncias específicas**, ou seja, objetos reais que estão ativos em determinado instante. Por essa razão, é comum que esse tipo de diagrama seja referido como **Diagrama de Instâncias**.
 
-[Figura - Diagrama de Objetos]
+Enquanto no Diagrama de Classes se modela, por exemplo, a classe `Pessoa`, no Diagrama de Objetos se encontra a instância específica “João”. Em vez de `Carro`, tem-se “Pálio”; em vez de `Cachorro`, tem-se “Totó”. Portanto, este diagrama é uma representação concreta e personalizada dos elementos do sistema em tempo de execução, contendo **valores reais de atributos e os vínculos entre os objetos** naquele momento.
 
-Os elementos de um diagrama de objetos são instâncias caso os nomes estejam sublinhados. Cada nome assume a forma `nome de instância : nome da classe`. Rigorosamente, elementos de um diagrama de objetos são especificações de instâncias, em vez de instâncias verdadeiras. O motivo é que é válido deixar atributos obrigatórios vazios ou mostrar especificações de instâncias de classes abstratas.
+<div align="center">
+  <img width="680px" src="./img/37-diagrama-de-objetos.png">
+</div>
+
+Em termos técnicos, os elementos de um Diagrama de Objetos são chamados de **especificações de instância**, e não instâncias verdadeiras. Isso se deve ao fato de que, nesses diagramas, é aceitável **deixar atributos obrigatórios em branco** ou até mesmo representar **instâncias de classes abstratas** – situações que não ocorreriam durante a execução real do sistema, mas que são úteis para fins de modelagem.
+
+A **sintaxe dos nomes** em um Diagrama de Objetos segue a forma geral:
+
+```
+NomeDeInstância:NomeDaClasse
+```
+
+Ambas as partes são opcionais, mas se for utilizado apenas o nome da classe, os dois-pontos devem ser mantidos. Quando os nomes estão **sublinhados**, significa que o elemento representado é uma instância.
+
+A tabela a seguir apresenta as formas mais comuns de representação de nomes:
 
 |Representação do Nome|Descrição|
 |---|---|
 |`:`|Significa que se trata de uma instância anônima de uma classe anônima.|
 |`:Cliente`|Significa que se trata de uma instância anônima da classe Cliente.|
-|`novoCliente:`|Significa que se trata de uma instância novoCliente de uma classe anônima.|
-|`novoCliente:Cliente`|Significa que se trata de uma instância novoCliente de uma classe Cliente.|
-|`novoCliente:Clientes::Cliente`|Significa que se trata de uma instância novoCliente de uma classe Cliente de um pacote Clientes.|
+|`NovoCliente:`|Significa que se trata de uma instância NovoCliente de uma classe anônima.|
+|`NovoCliente:Cliente`|Significa que se trata de uma instância NovoCliente de uma classe Cliente.|
+|`NovoCliente:Clientes::Cliente`|Significa que se trata de uma instância NovoCliente de uma classe Cliente de um pacote Clientes.|
 
 #### Quando Utilizar o Diagrama de Objetos?
 
-Os Diagramas de Objeto são úteis para mostrar exemplos de objetos interligados. Eventualmente, define-se uma estrutura precisamente com um diagrama de classes, mas a estrutura pode ser ainda difícil de entender. Nesses casos, exemplos de diagrama de objetos podem auxiliar. Eles podem ser vistos como um diagrama de comunicação sem as mensagens.
+O Diagrama de Objetos é especialmente útil quando se deseja **ilustrar exemplos concretos de objetos interligados**, permitindo uma visualização mais clara das relações em tempo de execução. Em muitos casos, mesmo com um Diagrama de Classes bem definido, a estrutura geral do sistema pode parecer abstrata ou difícil de compreender. Nesses contextos, o Diagrama de Objetos pode **facilitar a validação, o entendimento do domínio modelado e a comunicação entre analistas e desenvolvedores**.
+
+Esse tipo de diagrama pode ser comparado a um **Diagrama de Comunicação sem as mensagens**, já que se concentra na disposição e nos relacionamentos entre os objetos, sem representar explicitamente o fluxo de interações entre eles.
+
+Apesar de não ser tão utilizado quanto outros diagramas da UML, sua aplicação é valiosa em situações onde se deseja **esclarecer aspectos específicos de um Diagrama de Classes**, principalmente para ilustrar **relações complexas** entre os objetos do sistema.
 
 ### Diagrama de Componentes
 
 O Diagrama de Componentes representa o sistema sob uma perspectiva funcional, expondo a organização de seus módulos e as relações entre seus componentes por meio de interfaces. Um **componente** é uma unidade independente, que pode ser utilizada ou substituída com/por outros componentes para formar um sistema complexo. Eles representam peças que podem ser adquiridas e atualizadas independentemente, como tabelas, documentos, etc. Sua grande vantagem é a modularidade.
 
-[Figura - Diagrama de Componentes]
+<div align="center">
+  <img width="720px" src="./img/37-diagrama-de-componentes.png">
+</div>
 
 Os componentes são representados como retângulos com o símbolo de componente no canto superior direito.
 
-[Figura - Representação de componentes]
+<div align="center">
+  <img width="480px" src="./img/37-diagrama-de-componentes-representacao-de-componentes.png">
+</div>
 
 Um componente pode apresentar um estereótipo. Os principais são:
 
 - `<<Arquivo>>`: determina que o componente é um arquivo de dados do sistema.
-    
 - `<<Biblioteca>>`: determina que o componente é uma biblioteca de código.
-    
 - `<<Documento>>`: determina que o componente é um documento de sistema.
-    
 - `<<Executável>>`: determina que o componente é um arquivo executável.
-    
 - `<<Tabela>>`: determina que o componente é uma tabela de um banco de dados.
-    
 
-[Figura - Representação de esteriótipos]
+<div align="center">
+  <img width="400px" src="./img/37-diagrama-de-componentes-representacao-de-esteriotipos.png">
+</div>
 
-Temos também a **Interface Fornecida**, que designa uma interface que o próprio componente possui e oferece para outros componentes, e a **Interface Requerida**, que designa uma interface necessária para que o componente se comunique com outros.
+Temos também a **Interface Fornecida** (esquerda), que designa uma interface que o próprio componente possui e oferece para outros componentes, e a **Interface Requerida** (direita), que designa uma interface necessária para que o componente se comunique com outros.
 
-[Figura - Representação de Interface Fornecida]
+<div align="center">
+  <img width="480px" src="./img/37-diagrama-de-componentes-representacao-de-interfaces.png">
+</div>
 
 #### Quando Utilizar o Diagrama de Componentes?
 
-Use Diagramas de Componentes quando você estiver dividindo seu sistema em componentes e quiser representar seus relacionamentos por intermédio de interfaces ou também quando quiser representar a decomposição de componentes em uma estrutura de nível mais baixo.
+Utiliza-se o **Diagrama de Componentes** quando se deseja representar a **organização física do sistema**, ou seja, **como o software é dividido em partes reutilizáveis e independentes** — os chamados **componentes**. Esse tipo de diagrama é ideal para **visualizar, documentar e projetar a arquitetura do sistema** em termos de módulos ou unidades de implementação, especialmente em sistemas grandes e complexos. É útil para:
+
+- **Dividir o sistema em módulos reutilizáveis** e independentes;
+- **Mostrar a comunicação entre componentes** através de interfaces fornecidas e requeridas;
+- **Representar a decomposição interna de um componente**, revelando suas partes e dependências;
+- **Documentar a arquitetura física** do sistema, como bibliotecas, pacotes, arquivos compilados ou serviços externos;
+- **Projetar sistemas baseados em serviços** ou microsserviços, com foco na integração de módulos.
+
+Ideal para fases de **arquitetura, integração e implantação**, esse diagrama facilita a visualização da **estrutura física e das dependências** do software.
 
 ### Diagrama de Pacotes
 
-Ele representa os pacotes e suas dependências. Um **pacote** é um agrupamento lógico que permite reunir elementos da UML em unidades de mais alto nível. Comumente, pacotes agrupam classes, mas pode-se agrupar qualquer coisa. Esses pacotes ilustram a arquitetura de um sistema como um agrupamento de classes em um alto nível de abstração. O diagrama é desenhado como pastas contendo classes ou outras pastas.
+O **Diagrama de Pacotes** é utilizado para representar **pacotes e as dependências existentes entre eles** dentro de um sistema. Mas afinal, o que é um pacote? Na UML, um pacote é um **agrupamento lógico de elementos modelados**, que permite organizar classes, interfaces, componentes e outros artefatos em **unidades de mais alto nível**. Embora os pacotes comumente agrupem classes, eles também podem conter outros pacotes, formando uma **estrutura hierárquica**, em que pacotes de nível superior são subdivididos em **subpacotes**, e assim sucessivamente.
 
-[Figura - Diagrama de Pacotes]
+<div align="center">
+  <img width="540px" src="./img/37-diagrama-de-pacotes.png">
+</div>
+
+Visualmente, os pacotes são representados como **pastas**, podendo conter **classes ou outros pacotes internos**. Esse tipo de diagrama fornece uma **visão macro da organização do sistema**, facilitando o entendimento de sua **arquitetura em camadas ou módulos**. A ideia principal é permitir uma separação clara entre diferentes partes da aplicação, promovendo **melhor modularidade, reutilização de código e manutenção**.
+
+O Diagrama de Pacotes é particularmente útil quando se deseja representar **dependências entre agrupamentos lógicos**, como as relações entre diferentes módulos, subsistemas ou camadas arquiteturais de uma aplicação. Ele é uma ferramenta eficaz para ilustrar como os pacotes se comunicam, **quem depende de quem**, e até mesmo para identificar **possíveis acoplamentos excessivos** ou **ciclos indesejados de dependência**, o que é essencial em projetos de grande escala.
 
 #### Quando Utilizar o Diagrama de Pacotes?
 
-São extremamente úteis em sistemas de grande porte, para obter uma visão das dependências entre os principais elementos de um sistema. A representação de diagramas de pacotes e dependências o ajuda a manter as dependências de uma aplicação sob controle. Os diagramas de pacotes representam um mecanismo de agrupamento em tempo de compilação3.
+Os Diagramas de Pacote devem ser utilizados quando se busca **compreender e gerenciar a estrutura modular de sistemas grandes e complexos**. Eles permitem obter uma **visão clara das dependências entre os principais elementos** da aplicação, o que é fundamental para **manter a arquitetura organizada e coesa**. Além disso, esses diagramas refletem bem as **estruturas típicas de programação**, como diretórios, namespaces ou módulos de código-fonte.
+
+Outro ponto relevante é que os diagramas de pacotes atuam como um mecanismo de agrupamento em **tempo de compilação**, ou seja, ajudam a organizar os artefatos de software ainda durante o desenvolvimento. Caso se deseje representar **a composição dinâmica de objetos em tempo de execução**, recomenda-se, em vez disso, a utilização do **Diagrama de Estrutura Composta**, que é mais apropriado para esse fim.
 
 ### Diagrama de Implantação (ou Instalação)
 
