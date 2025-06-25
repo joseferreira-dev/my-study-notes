@@ -365,42 +365,85 @@ Outro ponto relevante é que os diagramas de pacotes atuam como um mecanismo de 
 
 ### Diagrama de Implantação (ou Instalação)
 
-O Diagrama de Implantação apresenta o layout físico de um sistema, revelando quais partes do software são executadas em quais partes do hardware. Os itens principais do diagrama são **nós** conectados por caminhos de comunicação. Um nó é algo que pode conter algum software.4
+O **Diagrama de Implantação**, também chamado de **Diagrama de Instalação** ou **Diagrama de Distribuição**, tem como principal objetivo representar o **layout físico de um sistema**, indicando **quais partes do software estão instaladas e executadas em quais partes do hardware**. É um dos principais diagramas da UML utilizados durante as fases de **implantação, configuração e manutenção** de sistemas distribuídos ou complexos.
 
-[5Figura - Diagrama de Implantação (Ou Instalação)]
+<div align="center">
+  <img width="640px" src="./img/37-diagrama-de-implantacao.png">
+</div>
 
-- Um **dispositivo** é um hardware (computador ou peça de hardware).
-    
-- Um **ambiente de execução** é um software que contém outro software (Ex: Sistema operacional).
-    
-- Os nós contêm **artefatos**, que são manifestações físicas do software (arquivos executáveis, de dados, de configuração, etc.).
-    
+Nesse tipo de diagrama, os elementos centrais são os **nós**, que representam unidades físicas ou lógicas de execução. Os nós são conectados por **caminhos de comunicação**, que mostram como ocorre a troca de informações entre eles. Um **nó** pode ser um **dispositivo físico**, como um servidor ou computador, ou um **ambiente de execução**, como um sistema operacional, uma máquina virtual, um contêiner ou qualquer outro software capaz de hospedar componentes executáveis.
 
-A listagem de um artefato dentro de um nó mostra que ele está instalado nesse nó. Os caminhos de comunicação entre os nós indicam como as coisas se comunicam, e você pode rotulá-los com informações sobre os protocolos de comunicação utilizados. Os nós e artefatos não são de responsabilidade do programador, mas da equipe de implantação do sistema.
+Os nós contêm **artefatos**, que são as **manifestações físicas do software** – ou seja, arquivos que serão efetivamente implantados no ambiente de execução. Esses artefatos podem incluir arquivos **executáveis** (como `.exe` ou binários), arquivos de **dados**, arquivos de **configuração**, **scripts**, **documentos HTML**, entre outros. A presença de um artefato em um nó indica que ele está **instalado naquele ponto específico da infraestrutura**. Em UML, os artefatos podem ser representados de duas formas: como **caixas nomeadas com a palavra-chave `<<artifact>>`** ou apenas listados dentro do nó.
+
+Os nós e artefatos podem ser **rotulados com informações adicionais**, como o nome do fornecedor, o sistema operacional utilizado, a localização física do servidor ou qualquer outro detalhe relevante para o contexto de implantação. Em cenários em que múltiplos nós físicos realizam a **mesma função lógica**, pode-se representar isso utilizando **várias instâncias de nós** ou indicando a **quantidade** com um valor afixado no diagrama.
+
+Os **caminhos de comunicação** entre os nós indicam **como os componentes trocam dados**, podendo ser rotulados com os **protocolos utilizados**, como HTTP, FTP, TCP/IP, etc. Esses caminhos representam as **interfaces físicas ou lógicas de comunicação**, tais como redes locais, conexões remotas, filas de mensagens ou outras formas de integração.
+
+Um aspecto importante é que **os Diagramas de Implantação não dizem respeito diretamente à codificação do sistema**, sendo mais relevantes para a **equipe de infraestrutura, operações ou DevOps**, que se responsabiliza por definir a **topologia física do sistema, a distribuição dos componentes de software e os requisitos de ambiente**.
 
 #### Quando Utilizar o Diagrama de Implantação?
 
-Eles são úteis para mostrar o que é instalado e onde; portanto, qualquer instalação mais complicada pode fazer bom uso deles (Ex: uma configuração e arquitetura de sistema em que estarão ligados componentes, representados pela arquitetura física de hardware, processadores, entre outros).
+O Diagrama de Implantação é especialmente útil em **sistemas distribuídos, aplicações corporativas complexas ou soluções que exigem múltiplos ambientes**, como servidores de aplicação, bancos de dados, serviços em nuvem, gateways de comunicação, entre outros. Ele permite compreender **o que está instalado, onde está instalado e como os componentes interagem fisicamente entre si**.
+
+Sempre que a implantação envolver **diversos nós físicos ou virtuais**, **arquiteturas baseadas em múltiplos servidores**, **distribuição em ambientes heterogêneos** ou **requisitos específicos de comunicação entre módulos**, esse diagrama se torna essencial para **garantir clareza, rastreabilidade e organização na entrega do sistema**.
 
 ### Diagrama de Perfil
 
-Frequentemente, vale a pena definir uma versão de UML adequada a uma determinada finalidade ou área de domínio. É possível ajustar a UML utilizando **perfis**. Um perfil é uma UML com um conjunto de estereótipos predefinidos, valores atribuídos, restrições e classes de base. Ele seleciona um subconjunto dos tipos de elementos da UML e define uma versão especializada para uma determinada área. Como o perfil é criado sobre elementos comuns, ele não representa uma nova linguagem e pode ser suportado por ferramentas comuns da UML.
+O **Diagrama de Perfil** é utilizado quando se deseja **especializar a UML para uma área de domínio específica** ou para um propósito particular, como geração de código em uma linguagem específica ou modelagem de sistemas não contemplados diretamente pelos elementos padrões da UML. Em vez de criar uma nova linguagem de modelagem, o Diagrama de Perfil permite **estender a própria UML** utilizando elementos definidos sobre sua estrutura original.
 
-[Figura - Diagrama de Perfil]
+<div align="center">
+  <img width="720px" src="./img/37-diagrama-de-perfil.png">
+</div>
 
-O Diagrama de Perfil permite representar esses novos elementos, operando no nível de **metamodelos**. Um modelo tipicamente contém elementos que são instanciados a partir de um metamodelo. Um metamodelo define uma linguagem para expressar modelos. Já uma **metaclasse** é uma classe que pode ser estendida por meio de um ou mais estereótipos; trata-se de uma classe do metamodelo (classe, interface, etc).
+Esses perfis são compostos por um **conjunto de estereótipos predefinidos, valores atribuídos, restrições e metaclasses base**, selecionando um **subconjunto dos elementos da UML** para uso e adaptando-os a contextos específicos. Isso significa que um perfil **não é uma nova linguagem de modelagem**, mas sim uma **customização da UML**, podendo ser interpretado por qualquer ferramenta que suporte a linguagem padrão. Por isso, os perfis são amplamente utilizados por **criadores de frameworks, desenvolvedores de ferramentas e arquitetos de software**, enquanto os modeladores em geral apenas **utilizam** esses perfis prontos, sem a necessidade de criá-los do zero.
+
+Um exemplo comum de uso de perfis é a especialização da UML para **linguagens de programação específicas**, como Java ou C++. Cada linguagem pode demandar estereótipos distintos para orientar a geração de código – por exemplo, um estereótipo `<<DAO>>` pode ser usado para marcar uma classe como um objeto de acesso a dados em Java. Também é possível utilizar perfis para modelar **bancos de dados**, **redes de computadores** (com estereótipos como `<<roteador>>` ou `<<switch>>`), **sistemas embarcados**, **processos de negócio** ou qualquer outro domínio técnico.
+
+A UML já oferece **estereótipos padronizados**, como `<<interface>>`, `<<include>>`, `<<extend>>` e `<<actor>>`. Contudo, o modelador pode criar **seus próprios estereótipos personalizados** para representar relações ou elementos semânticos específicos que não estão contemplados na linguagem padrão. Por exemplo, caso se queira expressar a ação de sacar dinheiro em um relacionamento entre "Pessoa" e "Dinheiro", pode-se criar o estereótipo `<<sacar>>` e usá-lo na modelagem para representar semanticamente esse vínculo.
+
+#### Perfis, Metamodelos e Metaclasses
+
+Para compreender plenamente o Diagrama de Perfil, é necessário entender o **nível de metamodelagem** em que ele opera. A UML é baseada em um metamodelo, ou seja, **uma linguagem que define os elementos que podem compor um modelo**. Em outras palavras, enquanto um **modelo** descreve uma visão específica de um sistema real (por exemplo, um modelo que representa a estrutura de um sistema bancário), o **metamodelo** descreve **os conceitos e regras usados para construir esse modelo** (como classe, associação, atributo, operação, etc.).
+
+Cada elemento de um modelo UML é uma **instância de um elemento do metamodelo**. Assim, quando desenhamos uma classe, estamos instanciando a metaclasse `Class` do metamodelo da UML. Quando aplicamos um estereótipo sobre uma classe, estamos estendendo a semântica dessa metaclasse com um novo significado ou comportamento.
+
+A **metaclasse** é, portanto, uma classe do metamodelo que pode ser **estendida por estereótipos**, adicionando atributos, restrições e propriedades adicionais. Isso permite que os perfis expressem **variações semânticas ou sintáticas** de um elemento UML para contextos específicos, mantendo a conformidade com a linguagem padrão.
+
+#### Quando Utilizar o Diagrama de Perfil?
+
+Utiliza-se o Diagrama de Perfil quando há a necessidade de **personalizar a UML para um domínio de aplicação, ferramenta, linguagem de programação ou contexto técnico específico**, sem romper com a estrutura da linguagem. Ele é particularmente útil:
+
+- Quando se deseja **adicionar semântica adicional** aos elementos da UML usando **estereótipos personalizados**;
+- Quando é necessário **definir regras específicas** de modelagem que não estão contempladas na UML padrão;
+- Para **aumentar a expressividade do modelo**, tornando-o mais próximo da realidade do domínio representado;
+- Em projetos que utilizam **ferramentas de geração automática de código, documentação ou validação**, onde os estereótipos orientam o comportamento das ferramentas;
+- Para **organizar modelos reutilizáveis** em **bibliotecas de modelagem específicas de domínio**, aumentando a produtividade e a padronização em equipes de desenvolvimento.
+
+Em resumo, o Diagrama de Perfil permite que a UML **se adapte aos mais variados contextos sem perder sua base formal**, oferecendo uma forma estruturada e extensível de aplicar a linguagem em qualquer tipo de sistema.
 
 ### Diagrama de Estrutura Composta
 
-O Diagrama de Estrutura Composta é utilizado para modelar colaborações internas de classes, interfaces e componentes para especificar uma funcionalidade. Uma **colaboração** é uma visão de um conjunto de entidades cooperativas interpretadas por instâncias que cooperam entre si para executar uma operação específica. Este diagrama fornece meios de definir a estrutura de um elemento e de focalizá-la no detalhe, na construção e em relacionamentos internos.
+O **Diagrama de Estrutura Composta** é utilizado para **modelar a estrutura interna de elementos de modelagem**, como **classes, interfaces e componentes**, revelando as **colaborações internas** necessárias para realizar uma determinada funcionalidade. A ideia central é representar **como as partes de um sistema colaboram entre si em tempo de execução**, indo além da estrutura externa mostrada em diagramas de classes tradicionais.
 
-[Figura - Diagrama de Estrutura Composta]
+<div align="center">
+  <img width="680px" src="./img/37-diagrama-de-estrutura-composta.png">
+</div>
+
+Um conceito-chave nesse tipo de diagrama é o de **colaboração**, que pode ser entendida como uma **visão de um conjunto de entidades cooperativas**, geralmente instâncias de classes ou componentes, que **trabalham juntas para cumprir um comportamento ou realizar uma operação específica**. Uma colaboração, inclusive, pode ser composta por outras colaborações, reforçando o caráter hierárquico e dinâmico desse tipo de modelagem.
+
+O Diagrama de Estrutura Composta permite detalhar **como um elemento é construído internamente**, destacando suas **partes constituintes**, suas **conexões e interações internas** e as **interfaces pelas quais se comunica com o exterior**. Ele é especialmente útil para especificar **a composição de componentes, a conexão entre objetos internos e os pontos de interação com o meio externo**, tudo isso dentro do escopo de uma única entidade modelada.
+
+Esse diagrama surgiu com a introdução da **UML 2.0** e representou um avanço em relação à modelagem estrutural, fornecendo meios de capturar informações mais ricas sobre **a organização interna de classes e componentes**, o que antes não era possível com os diagramas disponíveis na UML 1.x.
 
 #### Quando Utilizar o Diagrama de Estrutura Composta?
 
-As estruturas compostas entraram na UML 2.0. Uma boa maneira de pensar a respeito da diferença entre pacotes e estruturas compostas é que os pacotes são um agrupamento em tempo de compilação e estruturas compostas mostram agrupamentos em tempo de execução. Dessa forma, elas servem naturalmente para mostrar componentes e como eles são divididos em partes.
+O Diagrama de Estrutura Composta deve ser utilizado quando há a necessidade de **representar a composição interna de um elemento em tempo de execução**, especialmente em contextos onde a **interação entre partes internas** é relevante para o funcionamento do sistema.
 
----
+Uma boa analogia para diferenciá-lo de outros diagramas é compará-lo ao Diagrama de Pacotes: enquanto os **Diagramas de Pacote** representam **agrupamentos lógicos em tempo de compilação**, as **estruturas compostas mostram a composição dinâmica dos elementos em tempo de execução**. Assim, esse diagrama é indicado para modelar **componentes divididos internamente em partes**, **classes que se comunicam com subcomponentes internos** ou **interfaces que conectam blocos funcionais dentro de uma aplicação**.
+
+Apesar de sua proposta rica e detalhada, é importante destacar que o Diagrama de Estrutura Composta **ainda é pouco utilizado na prática**. Muitos modeladores e engenheiros de software consideram sua notação excessivamente complexa ou redundante em comparação com outros diagramas já consolidados, como os de **componentes**, **classes** e **sequência**. Inclusive, há registros de que dentro do próprio comitê organizador da UML houve discussões quanto à real utilidade e aplicação prática desse diagrama.
+
+Mesmo assim, em sistemas complexos, orientados a componentes, ou que requerem uma descrição formal da **composição e conectividade interna**, o Diagrama de Estrutura Composta pode ser uma ferramenta poderosa para enriquecer a documentação e a compreensão do projeto.
 
 ## Diagramas Comportamentais
 
@@ -411,33 +454,19 @@ Casos de Uso são uma técnica para captar os requisitos funcionais de um sistem
 [Figura - Diagrama de Caso de Uso]
 
 - **Tipos de Casos de Uso:**
-    
     - **Concreto:** Iniciado por um ator, constitui um fluxo completo de eventos.
-        
     - **Abstrato:** Jamais é instanciado diretamente, é incluído, estendido ou generalizado por outros (representado com nome em itálico).
-        
     - **Primário:** Representa os objetivos principais dos atores.
-        
     - **Secundário:** Necessário para o sistema funcionar, mas não traz benefício direto aos atores.
-        
 - **Relacionamentos:**
-    
     - Comunicação: Ligação entre ator e caso de uso.
-        
         [Figura - Representação do Relacionamento de Comunicação]
-        
-    - Inclusão (<<include>>): Comportamento obrigatório e repetido. Quando o caso de uso A “inclui” o caso de uso B, significa que sempre que A for executado, B também será. A seta vai do caso de uso que inclui para o incluído.
-        
+    - Inclusão (`<<include>>`): Comportamento obrigatório e repetido. Quando o caso de uso A “inclui” o caso de uso B, significa que sempre que A for executado, B também será. A seta vai do caso de uso que inclui para o incluído.
         [Figura - Representação do Relacionamento de Inclusão]
-        
-    - Extensão (<<extend>>): Comportamento alternativo ou opcional. Quando B estende A, significa que quando A for executado, B poderá ser executado também. A seta vai do caso de uso extensor para o estendido.
-        
-        [Figura - Representação do Relacionamento de Extensão]
-        
+    - Extensão (`<<extend>>`): Comportamento alternativo ou opcional. Quando B estende A, significa que quando A for executado, B poderá ser executado também. A seta vai do caso de uso extensor para o estendido.
+		[Figura - Representação do Relacionamento de Extensão]
     - Herança: Relacionamento entre atores ou entre casos de uso para reaproveitar comportamentos.
-        
         [Figura - Representação do Relacionamento de Herança]
-        
 
 |Relações|Comunicação|Extensão|Inclusão|Herança|
 |---|---|---|---|---|
