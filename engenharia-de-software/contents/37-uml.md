@@ -48,7 +48,7 @@ Hoje em dia, a UML se tornou não somente a notação gráfica mais dominante de
 
 A UML é formalmente definida por um conjunto de quatro especificações interdependentes, mantidas pela OMG.
 
-| Especificações UML |Descrição|
+|**Especificações UML**|**Descrição**|
 |---|---|
 |**Infraestrutura**|Especificação que define a base da linguagem, o **core** da sua arquitetura, e os mecanismos de extensão, como perfis e estereótipos.|
 |**Superestrutura**|Especificação que define os elementos de modelagem do usuário, tanto os estáticos (estruturais) quanto os dinâmicos (comportamentais).|
@@ -67,60 +67,62 @@ Na década de 90, a arquitetura de software padecia de alguns problemas graves. 
 |**Visão Física**|Trata-se da visão da arquitetura sob o ponto de vista do **engenheiro de sistemas**. Apresenta a topologia da infraestrutura de hardware e como os componentes de software são distribuídos (implantados) nos nós físicos da rede. Principais diagramas utilizados: Implantação. (Também chamada de **Visão de Implantação**).|
 |**Visão de Casos de Uso (+1)**|Trata-se da visão central que conecta todas as outras, sob o ponto de vista de **todos os stakeholders**. Descreve os cenários e os requisitos que guiam o projeto arquitetural, apresentando a consistência e a validade do sistema. Principal diagrama utilizado: Casos de Uso. (Também chamada de **Visão de Cenários**).|
 
-[Figura - Visões]
+<div align="center">
+  <img width="580px" src="./img/37-visoes-da-uml.png">
+</div>
 
-### **Mecanismos Gerais da UML**
+## Mecanismos Gerais da UML
 
 A UML contém alguns mecanismos de uso geral muito importantes, que permitem estender e detalhar os modelos para além da notação padrão.
 
-|MECANISMOS UML|DESCRIÇÕES|
+|**Mecanismos UML**|**Descrição**|
 |---|---|
-|**ESTEREÓTIPO**|Mecanismo utilizado para estender o significado de um elemento do modelo, criando um "novo tipo" de elemento com semântica específica para um domínio ou plataforma.|
-|**NOTAS EXPLICATIVAS**|Mecanismo utilizado para adicionar comentários, esclarecimentos ou informações textuais a qualquer parte de um diagrama, sem alterar sua semântica.|
-|**TAGGED VALUES**|Mecanismo que permite definir novas propriedades (metadados) para os elementos, sempre associadas a um estereótipo.|
-|**RESTRIÇÕES**|Mecanismo utilizado para especificar regras ou condições que devem ser verdadeiras para um ou mais elementos de um modelo.|
-|**PACOTES**|Mecanismo utilizado para agrupar elementos semanticamente relacionados, organizando o modelo e controlando sua visibilidade (será detalhado no Diagrama de Pacotes).|
+|**Estereótipo**|Mecanismo utilizado para estender o significado de um elemento do modelo, criando um "novo tipo" de elemento com semântica específica para um domínio ou plataforma.|
+|**Notas Explicativas**|Mecanismo utilizado para adicionar comentários, esclarecimentos ou informações textuais a qualquer parte de um diagrama, sem alterar sua semântica.|
+|**Tagged Values**|Mecanismo que permite definir novas propriedades (metadados) para os elementos, sempre associadas a um estereótipo.|
+|**Restrições**|Mecanismo utilizado para especificar regras ou condições que devem ser verdadeiras para um ou mais elementos de um modelo.|
+|**Pacotes**|Mecanismo utilizado para agrupar elementos semanticamente relacionados, organizando o modelo e controlando sua visibilidade (será detalhado no Diagrama de Pacotes).|
 
-#### **Estereótipos**
+### Estereótipos
 
 Estereótipos permitem adaptar ou personalizar modelos com construções específicas para um domínio, plataforma ou método de desenvolvimento particular. Em outras palavras, é o principal mecanismo de extensão da UML, conferindo-lhe mais poder e flexibilidade. Antes, os modeladores estavam limitados aos elementos padrão; com estereótipos, as possibilidades para representar um sistema se tornam praticamente infinitas.
 
 Existem duas classificações independentes para estereótipos:
 
 1. **Quanto à Origem**:
-    
     - **Predefinidos pela Linguagem**: Já vêm nativamente na UML (Ex: `<<interface>>`, `<<trace>>`, `<<entity>>`).
-        
     - **Definidos pelo Usuário**: A equipe de desenvolvimento pode criar seus próprios estereótipos para representar conceitos específicos do seu projeto (Ex: `<<TelaCadastro>>`, `<<ServidorLegado>>`).
-        
 2. **Quanto à Representação**:
-    
     - **Textual**: Representado por um nome entre aspas angulares duplas (Ex: `<<control>>`).
-        
     - **Gráfica**: Representado por um ícone específico que substitui o símbolo padrão do elemento, lembrando visualmente o conceito associado.
-        
 
-[Figura - estereótipos gráficos]
+<div align="center">
+  <img width="520px" src="./img/37-esteriotipos.png">
+</div>
 
-Na imagem acima, os dois estereótipos à esquerda (`<<interface>>` e `<<control>>` com seus ícones) são predefinidos, enquanto os dois à direita são exemplos de estereótipos que poderiam ser criados pela equipe. Como as classificações são independentes, é possível ter estereótipos gráficos ou textuais, sejam eles predefinidos ou definidos pelo usuário.
+Na imagem acima, os dois estereótipos à esquerda são predefinidos, enquanto os dois à direita são exemplos de estereótipos que poderiam ser criados pela equipe. Como as classificações são independentes, é possível ter estereótipos gráficos ou textuais, sejam eles predefinidos ou definidos pelo usuário.
 
-#### **Notas Explicativas**
+### Notas Explicativas
 
-Notas explicativas são utilizadas para definir informações que comentam ou esclarecem alguma parte de um diagrama. Elas podem conter texto livre ou uma expressão formal utilizando a OCL (_Object Constraint Language_).
+Notas explicativas são utilizadas para definir informações que comentam ou esclarecem alguma parte de um diagrama. Elas podem conter texto livre ou uma expressão formal utilizando a OCL (Object Constraint Language).
 
 Graficamente, as notas são representadas por um retângulo com um canto superior direito dobrado, como uma "orelhinha". O conteúdo da nota é inserido no interior do retângulo, que por sua vez é ligado ao elemento que se quer comentar através de uma linha tracejada. Ao contrário dos estereótipos, as notas não modificam nem estendem o significado do elemento ao qual estão associadas; ou seja, não criam algo novo, apenas explicam ou documentam um elemento existente no modelo sem alterar sua estrutura ou semântica.
 
-[Figura - Representação de uma nota]
+<div align="center">
+  <img width="420px" src="./img/37-nota-explicativa.png">
+</div>
 
-#### **Tagged Values (Etiquetas Valoradas)**
+### Tagged Values (Etiquetas Valoradas)
 
-Elementos UML possuem um conjunto de propriedades predefinidas. As classes, por exemplo, possuem: Nome, Visibilidade, Lista de Atributos e Lista de Operações. As _Tagged Values_ (ou Etiquetas Valoradas) são utilizadas para definir novas propriedades para os elementos de um diagrama. A partir da UML 2.0, as _Tagged Values_ só podem ser utilizadas em conjunto com estereótipos, funcionando como metadados para esses estereótipos. Elas são representadas no formato `{tag = valor}`.
+Elementos UML possuem um conjunto de propriedades predefinidas. As classes, por exemplo, possuem: Nome, Visibilidade, Lista de Atributos e Lista de Operações. As Tagged Values (ou Etiquetas Valoradas) são utilizadas para definir novas propriedades para os elementos de um diagrama. A partir da UML 2.0, as Tagged Values só podem ser utilizadas em conjunto com estereótipos, funcionando como metadados para esses estereótipos. Elas são representadas no formato `{tag = valor}`.
 
-[Figura - Tagged values com esteriótipos]
+<div align="center">
+  <img width="240px" src="./img/37-tagged-values.png">
+</div>
 
-#### **Restrições**
+### Restrições
 
-A todo elemento da UML está associada uma semântica bem definida. As restrições (_constraints_) permitem estender ou alterar a semântica natural de um elemento, especificando condições ou regras que devem ser satisfeitas. Esse mecanismo geral especifica limitações sobre um ou mais valores de um ou mais elementos de um modelo.
+A todo elemento da UML está associada uma semântica bem definida. As restrições (constraints) permitem estender ou alterar a semântica natural de um elemento, especificando condições ou regras que devem ser satisfeitas. Esse mecanismo geral especifica limitações sobre um ou mais valores de um ou mais elementos de um modelo.
 
 As restrições podem ser especificadas formalmente, através da OCL, ou informalmente, com texto livre em linguagem natural. Em ambos os casos, devem vir delimitadas por chaves `{}` e, frequentemente, são colocadas dentro de notas explicativas anexadas aos elementos que restringem.
 
@@ -128,13 +130,15 @@ As restrições podem ser especificadas formalmente, através da OCL, ou informa
 
 A Modelagem Orientada a Objetos ocorre quase sempre por meio da **Unified Modeling Language**. A UML 2.5 descreve 14 tipos de diagramas oficiais, divididos em duas categorias principais, que por sua vez se subdividem.
 
-[Figura - Diagramas da UML]
+<div align="center">
+  <img width="800px" src="./img/37-diagramas-da-uml.png">
+</div>
 
-|TIPOS DE DIAGRAMAS|DESCRIÇÃO|
+|**Tipos de Diagramas**|**Descrição**|
 |---|---|
-|**DIAGRAMAS ESTRUTURAIS**|Representam os aspectos **estáticos** do sistema sob diversas visões. Em outras palavras, esses diagramas apresentam a estrutura do sistema, seus componentes e seus relacionamentos, sem levar em consideração a passagem do tempo. São eles: Diagrama de Classes, de Componentes, de Implantação, de Perfil, de Objetos, de Estrutura Composta e de Pacotes.|
-|**DIAGRAMAS COMPORTAMENTAIS**|Representam os aspectos **dinâmicos** do sistema como um conjunto de mudanças e interações ao longo do tempo. Descrevem como os processos e funcionalidades do programa se relacionam e se comportam. São eles: Diagrama de Máquina de Estados, de Casos de Uso, de Atividade, de Sequência, de Comunicação, de Visão Geral da Interação e de Tempo.|
-|**DIAGRAMAS DE INTERAÇÃO**|Trata-se de um **subconjunto** dos diagramas comportamentais que focam especificamente no relacionamento dinâmico e colaborativo entre os objetos do sistema e suas trocas de mensagens. Eles enfatizam o controle de fluxo e o fluxo de dados entre os elementos. São eles: Diagrama de Sequência, de Comunicação, de Visão Geral da Interação e de Tempo.|
+|**Diagramas Estruturais**|Representam os aspectos **estáticos** do sistema sob diversas visões. Em outras palavras, esses diagramas apresentam a estrutura do sistema, seus componentes e seus relacionamentos, sem levar em consideração a passagem do tempo. São eles: Diagrama de Classes, de Componentes, de Implantação, de Perfil, de Objetos, de Estrutura Composta e de Pacotes.|
+|**Diagramas Comportamentais**|Representam os aspectos **dinâmicos** do sistema como um conjunto de mudanças e interações ao longo do tempo. Descrevem como os processos e funcionalidades do programa se relacionam e se comportam. São eles: Diagrama de Máquina de Estados, de Casos de Uso, de Atividade, de Sequência, de Comunicação, de Visão Geral da Interação e de Tempo.|
+|**Diagramas de Interação**|Trata-se de um **subconjunto** dos diagramas comportamentais que focam especificamente no relacionamento dinâmico e colaborativo entre os objetos do sistema e suas trocas de mensagens. Eles enfatizam o controle de fluxo e o fluxo de dados entre os elementos. São eles: Diagrama de Sequência, de Comunicação, de Visão Geral da Interação e de Tempo.|
 
 ## Diagramas Estruturais
 
@@ -142,33 +146,29 @@ A Modelagem Orientada a Objetos ocorre quase sempre por meio da **Unified Modeli
 
 O diagrama de classes é facilmente o diagrama mais conhecido e importante entre todos os outros. Ele descreve as classes e interfaces presentes no sistema, suas características, restrições e os vários tipos de relacionamentos estáticos entre seus objetos. Representam-se também as propriedades e as operações de uma classe, assim como as restrições que se aplicam à maneira como os objetos estão conectados.
 
-[Figura - Diagrama De Classes]
+<div align="center">
+  <img width="920px" src="./img/37-diagrama-de-classes.png">
+</div>
 
 Uma classe é uma estrutura classificadora que abstrai um conjunto de objetos que compartilham características, restrições e semânticas similares. Ela define, também, o comportamento de seus objetos através de métodos e o estado por meio de atributos.
 
-Representação de Classes:
-
 Pode-se representar uma classe de diversas formas, dependendo do nível de abstração: primeiro, apenas com nome da classe (mais abstrata); segundo, com nome da classe e suas propriedades; e terceiro, com nome da classe, suas propriedades e suas operações (mais concreta).
 
-[Figura - Diferentes formas de se representar Classes]
+<div align="center">
+  <img width="580px" src="./img/37-diagrama-de-classes-representacao-de-classes.png">
+</div>
 
 A classe com borda dupla na imagem é a representação do que chamamos de **Classe Ativa**, que tem por objetivo representar classes cujos objetos têm um ou mais processos (threads). É possível inserir detalhes de implementação da linguagem de programação escolhida no diagrama.
 
 **Representação de Membros:**
 
 - Um atributo estático é representado sublinhando o nome do atributo.
-    
 - Uma operação abstrata é representada com seu nome em itálico.
-    
 - Uma operação estática é representada com seu nome sublinhado.
-    
 
-Visibilidade de Atributos e Operações:
-
-As tabelas abaixo apresentam a diferença de visibilidade entre a Linguagem Java e a UML.
+Com relação a visibilidade dos membros, as tabelas abaixo apresentam a diferença de visibilidade dos modificadores da Linguagem Java e a UML.
 
 - **Tabela de modificadores UML**
-    
 
 |Modificador|Símbolo|Classe|Subclasse|Pacote|Todos|
 |---|---|---|---|---|---|
@@ -178,7 +178,6 @@ As tabelas abaixo apresentam a diferença de visibilidade entre a Linguagem Java
 |Privado|–|X|-|-|-|
 
 - **Tabela de modificadores Java**
-    
 
 |Modificador|Símbolo|Classe|Subclasse|Pacote|Todos|
 |---|---|---|---|---|---|
@@ -187,43 +186,55 @@ As tabelas abaixo apresentam a diferença de visibilidade entre a Linguagem Java
 |Default|~|X|-|X|-|
 |Privado|–|X|-|-|-|
 
-Existem duas diferenças sutis: (1) na UML, um elemento protegido não é visível para elementos dentro do mesmo pacote; e (2) o Nível Pacote da UML é chamado de Nível Default em Java.
+Existem duas diferenças sutis: (1) na UML, um elemento protegido não é visível para elementos dentro do mesmo pacote; e (2) o Nível Pacote da UML é chamado de Nível Default em Java. Segue um exemplo de classe com diferentes modificadores:
 
-[Figura - Representação de classe com modificadores]
+<div align="center">
+  <img width="360px" src="./img/37-diagrama-de-classes-classe-com-modificadores.png">
+</div>
 
-Tipos de Relacionamentos:
+### Tipos de Relacionamentos
 
 Eles representam as conexões entre classes, objetos, pacotes, tabelas, entre outros. Há três tipos de relacionamentos entre classes: Dependência, Generalização e Associação.
 
-[Figura - relacionamentos]
+<div align="center">
+  <img width="320px" src="./img/37-diagrama-de-classes-representacao-dos-relacionamentos.png">
+</div>
 
-1. Relacionamento de Dependência: É um relacionamento direcionado e semântico entre dois ou mais elementos que ocorre se mudanças na definição de um elemento (independente) causarem mudanças ao outro elemento (dependente). Em outras palavras, é quando a classe cliente é dependente de algum serviço da classe fornecedora. O relacionamento de dependência é representado por uma seta tracejada que aponta para classe independente. Os relacionamentos <include> e <extend> também são relacionamentos de dependência.
-    
-    [Figura - Relacionamento de Dependência]
-    
-2. Relacionamento de Generalização/Especialização (Herança): Indica que a subclasse é uma especialização da superclasse ou que a superclasse é uma generalização da subclasse. Qualquer instância da subclasse é também uma instância da superclasse. É conhecido como relacionamento de herança, relacionamento de extensão ou relacionamento “é-um”. É representado por uma linha com um triângulo que aponta para a classe genérica.
-    
-    [Figura - Relacionamento de Generalização/Especialização]
-    
-3. Relacionamento de Realização: Relacionamento entre dois elementos em que um elemento realiza (implementa/executa) o comportamento que o outro elemento especifica. Costuma-se dizer que um dos elementos especifica um contrato e o outro elemento realiza esse contrato. É representado por uma linha tracejada com um triângulo que aponta para a interface.
-    
-    [Figura - Relacionamento de Realização]
-    
-4. **Relacionamento de Associação:** Relacionamento estrutural entre objetos que especifica os objetos de uma classe que estão ligados a objetos de outra classe.
-    
-    - Associação Simples: É um tipo de relacionamento mais forte que o de dependência e indica que uma instância de um elemento está ligada à instância de outro elemento. São representados por uma linha sólida com ou sem setas de navegabilidade. Pode haver nomes para a associação e indicação de multiplicidade.
-        
-        [Figura - Relacionamento de Associação Simples]
-        
-    - Associação Qualificada: É um tipo de relacionamento similar à associação simples, contudo possui um qualificador, que é um atributo do elemento-alvo capaz de identificar uma instância dentre as demais. Ela ocorre em associações um-para-muitos ou muitos-para-muitos em que se deseja encontrar um elemento específico dada uma chave. É representado por uma linha sólida com um retângulo ao lado da classe de cardinalidade 1 contendo o qualificador.
+- **Relacionamento de Dependência**: É um relacionamento direcionado e semântico entre dois ou mais elementos que ocorre se mudanças na definição de um elemento (independente) causarem mudanças ao outro elemento (dependente). Em outras palavras, é quando a classe cliente é dependente de algum serviço da classe fornecedora. O relacionamento de dependência é representado por uma seta tracejada que aponta para classe independente. Os relacionamentos `<<include>>` e `<<extend>>` também são relacionamentos de dependência.
+
+<div align="center">
+  <img width="480px" src="./img/37-diagrama-de-classes-relacionamento-de-dependencia.png">
+</div>
+
+- **Relacionamento de Generalização/Especialização (Herança)**: Indica que a subclasse é uma especialização da superclasse ou que a superclasse é uma generalização da subclasse. Qualquer instância da subclasse é também uma instância da superclasse. É conhecido como relacionamento de herança, relacionamento de extensão ou relacionamento “é-um”. É representado por uma linha com um triângulo que aponta para a classe genérica.
+
+<div align="center">
+  <img width="480px" src="./img/37-diagrama-de-classes-relacionamento-de-heranca.png">
+</div>
+
+- **Relacionamento de Realização**: Relacionamento entre dois elementos em que um elemento realiza (implementa/executa) o comportamento que o outro elemento especifica. Costuma-se dizer que um dos elementos especifica um contrato e o outro elemento realiza esse contrato. É representado por uma linha tracejada com um triângulo que aponta para a interface.
+
+<div align="center">
+  <img width="480px" src="./img/37-diagrama-de-classes-relacionamento-de-realizacao.png">
+</div>
+
+- **Relacionamento de Associação:** Relacionamento estrutural entre objetos que especifica os objetos de uma classe que estão ligados a objetos de outra classe.
+
+- Associação Simples: É um tipo de relacionamento mais forte que o de dependência e indica que uma instância de um elemento está ligada à instância de outro elemento. São representados por uma linha sólida com ou sem setas de navegabilidade. Pode haver nomes para a associação e indicação de multiplicidade.
+
+<div align="center">
+  <img width="480px" src="./img/37-diagrama-de-classes-relacionamento-de-realizacao.png">
+</div>
+
+- Associação Qualificada: É um tipo de relacionamento similar à associação simples, contudo possui um qualificador, que é um atributo do elemento-alvo capaz de identificar uma instância dentre as demais. Ela ocorre em associações um-para-muitos ou muitos-para-muitos em que se deseja encontrar um elemento específico dada uma chave. É representado por uma linha sólida com um retângulo ao lado da classe de cardinalidade 1 contendo o qualificador.
         
         [Figura - Relacionamento de Associação Qualificada]
         
-    - Agregação: É um tipo de associação, porém mais forte, em que o todo está relacionado às suas partes de forma independente. Nesse tipo de relacionamento, as partes têm existência própria. É representado por uma linha com um diamante vazio na extremidade referente ao todo.
+- Agregação: É um tipo de associação, porém mais forte, em que o todo está relacionado às suas partes de forma independente. Nesse tipo de relacionamento, as partes têm existência própria. É representado por uma linha com um diamante vazio na extremidade referente ao todo.
         
         [Figura - Relacionamento de Associação Agregação]
         
-    - Composição: É um tipo de agregação (inclusive, é chamado algumas vezes de Agregação por Composição), porém mais forte, em que o todo está relacionado às partes de forma dependente. Nesse relacionamento, as partes não têm existência própria. É representado por uma linha com um diamante cheio na extremidade referente ao todo.
+- Composição: É um tipo de agregação (inclusive, é chamado algumas vezes de Agregação por Composição), porém mais forte, em que o todo está relacionado às partes de forma dependente. Nesse relacionamento, as partes não têm existência própria. É representado por uma linha com um diamante cheio na extremidade referente ao todo.
         
         [Figura - Relacionamento de Associação Composição]
         
