@@ -116,7 +116,7 @@ A figura mostra como diferentes usuários (A e B) acessam o banco através de vi
 
 A **visão conceitual** representa todo o conteúdo do banco de dados também em um nível de abstração razoável quando comparado ao nível interno. A visão conceitual consiste em várias ocorrências de cada um dos tipos de registros conceituais. Um esquema conceitual é usado para descrever cada um dos registros e para tal usa uma linguagem de definição conhecida como DDL conceitual.
 
-A **visão interna** é uma representação de baixo nível do banco de dados inteiro. Ela é formada por várias ocorrências dos registros interno1. No nível interno deverá haver referência a representações de campos armazenados, sequências de registros armazenados, índices, esquemas de hashing, ponteiros ou outros detalhes de armazenamento e acesso. Para tal, vamos usar um esquema interno usando uma DDL interna.
+A **visão interna** é uma representação de baixo nível do banco de dados inteiro. Ela é formada por várias ocorrências dos registros interno. No nível interno deverá haver referência a representações de campos armazenados, sequências de registros armazenados, índices, esquemas de hashing, ponteiros ou outros detalhes de armazenamento e acesso. Para tal, vamos usar um esquema interno usando uma DDL interna.
 
 A tabela abaixo resume a terminologia utilizada nos três níveis:
 
