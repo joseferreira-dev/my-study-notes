@@ -11,7 +11,7 @@ Embora possuam um nicho de mercado bastante reduzido quando comparados aos onipr
 1. **Sistemas Objeto-Relacionais (SGBDOR):** Que estendem o modelo relacional, adicionando suporte a tipos de dados complexos, herança e outras características de OO.
 2. **Sistemas Orientados a Objetos (SGBDOO):** Que adotam o paradigma de objetos de forma nativa, tratando o objeto como a unidade fundamental de armazenamento e manipulação.
 
-A figura abaixo mostra o ranking de popularidade dos principais SGBDs orientados a objetos em junho de 2025, de acordo com o portal DB-Engines. Como se pode observar, mesmo os líderes desta categoria, como o InterSystems Caché, ocupam posições mais modestas no ranking geral de bancos de dados, o que reflete seu uso em nichos específicos.
+A figura abaixo mostra o ranking de popularidade dos principais SGBDs orientados a objetos em junho de 2025, de acordo com o portal DB-Engines. Como se pode observar, mesmo os líderes desta categoria, como o InterSystems IRIS, ocupam posições mais modestas no ranking geral de bancos de dados, o que reflete seu uso em nichos específicos.
 
 <div align="center">
   <img width="560px" src="./img/21-ranking-dos-principais-sbgdoo.png">
@@ -112,7 +112,7 @@ Um resumo com as principais características da orientação a objetos relevante
 Outra percepção possível, e bastante prática, é que os SGBDOOs permitem uma **integração direta e mais transparente** entre as linguagens de programação orientadas a objetos (como Java, C++, Python) e as funcionalidades clássicas de um SGBD (como persistência, controle de transações, recuperação e consultas). A figura a abaixo apresenta a sistematização desta composição, mostrando como o BDOO atua como uma ponte entre o mundo da aplicação OO e o armazenamento persistente.
 
 <div align="center">
-  <img width="620px" src="./img/21-integracao-poo-e-banco-de-dados.png">
+  <img width="480px" src="./img/21-integracao-poo-e-banco-de-dados.png">
 </div>
 
 Bancos de dados orientados a objetos, portanto, combinam os conceitos da programação orientada a objetos e os recursos de um banco de dados tradicional para fornecer um sistema de desenvolvimento de aplicativos mais integrado e coeso. Além dos conceitos básicos de programação orientada a objetos, tais como encapsulamento, herança, polimorfismo e ligação dinâmica, os bancos de dados orientados a objetos também suportam funcionalidades cruciais de banco de dados, como **persistência** e **controle de versão**.
