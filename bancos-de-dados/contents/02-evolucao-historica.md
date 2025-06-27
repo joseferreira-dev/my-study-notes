@@ -54,10 +54,10 @@ O primeiro SGBDOO comercialmente disponível foi lançado pela Objectivity no in
 
 Entretanto, apesar das vantagens, o modelo orientado a objetos não se popularizou tanto quanto o modelo relacional, principalmente por questões de desempenho, interoperabilidade e familiaridade do mercado com SQL. Como resultado, muitas soluções migraram para um modelo híbrido: o modelo **objeto-relacional**. Contudo esse modelo começou a apresentar outra lista de problemas ou desafios:
 
-- Dados na ordem de dezenas ou centenas de TB (terabytes)– abordagem de cluster é cara.
-- Poder de crescimento elástico horizontal– controle de transação ACID torna inviável com a elasticidade.
-- Fácil distribuição dos dados e/ou processamento– SGBD paralelos são caros.
-- Tipos de dados variados, complexos e/ou semiestruturados– modelo de dados objeto-relacional não resolve todos os requisitos.
+- Dados na ordem de dezenas ou centenas de TB (terabytes) – abordagem de cluster é cara.
+- Poder de crescimento elástico horizontal – controle de transação ACID torna inviável com a elasticidade.
+- Fácil distribuição dos dados e/ou processamento – SGBD paralelos são caros.
+- Tipos de dados variados, complexos e/ou semiestruturados – modelo de dados objeto-relacional não resolve todos os requisitos.
 
 ## As Demandas do Século XXI: Big Data e o Movimento NoSQL
 
