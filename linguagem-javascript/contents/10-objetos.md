@@ -1,4 +1,4 @@
-# Capítulo 9 – Objetos: A Estrutura Fundamental do JavaScript
+# Capítulo 10 – Objetos: A Estrutura Fundamental do JavaScript
 
 Se os tipos primitivos são os tijolos e os arrays são as fileiras ordenadas desses tijolos, os **Objetos** são a própria construção. Eles são a estrutura de dados mais fundamental e versátil do JavaScript, a base sobre a qual quase tudo na linguagem é construído. Enquanto arrays são coleções especializadas e ordenadas por um índice numérico, os objetos são coleções flexíveis e não ordenadas de pares **chave-valor**, conhecidos como **propriedades**. Essa estrutura nos permite modelar entidades do mundo real — um usuário, um produto, um carro — com uma riqueza de detalhes e complexidade inigualável. Um objeto é, em essência, um container para dados e funcionalidades relacionadas.
 
