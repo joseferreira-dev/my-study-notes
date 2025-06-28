@@ -289,12 +289,19 @@ function verificarTipo(valor) {
     return Object.prototype.toString.call(valor);
 }
 
-console.log(verificarTipo("Olá"));        // "[object String]"
-console.log(verificarTipo(123));          // "[object Number]"
-console.log(verificarTipo(null));         // "[object Null]"
-console.log(verificarTipo(undefined));    // "[object Undefined]"
-console.log(verificarTipo([]));           // "[object Array]"
-console.log(verificarTipo({}));           // "[object Object]"
+console.log(verificarTipo("Olá"));                   // "[object String]"
+console.log(verificarTipo(123));                     // "[object Number]"
+console.log(verificarTipo(true));                    // "[object Boolean]"
+console.log(verificarTipo(null));                    // "[object Null]"
+console.log(verificarTipo(undefined));               // "[object Undefined]"
+console.log(verificarTipo(new Date(2015,10,21)));    // "[object Date]"
+console.log(verificarTipo(function(){}));            // "[object Function]"
+console.log(verificarTipo(Error()));                 // "[object Error]"
+console.log(verificarTipo(Object()));                // "[object Object]"
+console.log(verificarTipo({}));                      // "[object Object]"
+console.log(verificarTipo([]));                      // "[object Array]"
+console.log(verificarTipo(new RegExp()));            // "[object RegExp]"
+console.log(verificarTipo(/foo/));                   // "[object RegExp]"
 ```
 
 Embora mais verbosa, essa abordagem é a mais precisa e à prova de falhas para determinar o tipo interno de qualquer valor em JavaScript.
