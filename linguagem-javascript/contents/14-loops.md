@@ -1,4 +1,4 @@
-# Capítulo 13 – Estruturas de Repetição: Laços e Iterações
+# Capítulo 14 – Estruturas de Repetição: Laços e Iterações
 
 Até agora, nossa jornada nos capacitou a escrever programas que executam uma sequência de instruções de cima para baixo, tomando decisões condicionais com `if/else` para alterar seu curso. No entanto, o verdadeiro poder da computação se revela em sua capacidade de executar tarefas repetitivas de forma incansável e precisa. Imagine ter que processar cada um dos mil itens de um carrinho de compras, aplicar um filtro a cada pixel de uma imagem ou simplesmente exibir uma lista de nomes. Escrever uma linha de código para cada item seria impraticável e violaria o princípio mais fundamental da engenharia de software: **Don't Repeat Yourself (DRY)**, ou "Não se Repita".
 
