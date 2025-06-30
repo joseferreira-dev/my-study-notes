@@ -306,7 +306,7 @@ Caso se deseje renomear apenas a relação, sem alterar os nomes dos atributos, 
 
 ρ<sub>x</sub>(E)
 
-### Exemplo 1 – renomeando relação e atributos
+### Exemplo 1 – Renomeando relação e atributos
 
 Vamos supor que temos a seguinte relação original:
 
@@ -318,7 +318,7 @@ Aplicando a operação de renomeação, poderíamos escrever:
 
 O resultado é uma nova relação chamada **estudante**, com os atributos **nome** e **telefone**, respectivamente. Essa nova forma pode ser útil, por exemplo, se quisermos deixar os nomes mais intuitivos ou adaptá-los a um idioma específico em um projeto.
 
-### Exemplo 2 – atribuindo o resultado da renomeação
+### Exemplo 2 – Atribuindo o resultado da renomeação
 
 Suponha que você queira salvar essa nova relação para uso posterior. Neste caso, podemos usar o operador de atribuição (←), e o comando ficaria assim:
 
@@ -326,7 +326,7 @@ temp ← ρ<sub>estudante(nome, telefone)</sub>(STUDENT)
 
 Agora, a variável `temp` representa o resultado da renomeação e pode ser usada em outras operações como, por exemplo, uma seleção, projeção ou junção.
 
-### Exemplo 3 – resolvendo ambiguidade em autojunções
+### Exemplo 3 – Resolvendo ambiguidade em autojunções
 
 Considere a seguinte relação PROFESSOR, já utilizada anteriormente:
 
@@ -632,7 +632,7 @@ Importante notar que:
 A operação de **divisão** da álgebra relacional é, talvez, uma das mais abstratas e menos intuitivas para estudantes iniciantes. No entanto, ela desempenha um papel fundamental em consultas que envolvem a ideia de **"todos os elementos de um conjunto"**, sendo essencial para situações onde se deseja filtrar tuplas que se relacionam com **todos** os elementos de outra relação.
 
 De maneira geral, a divisão é utilizada quando a consulta envolve uma lógica do tipo:  
-**"Quais entidades da tabela A estão relacionadas a _todos_ os elementos da tabela B?"**
+**"Quais entidades da tabela A estão relacionadas a todos os elementos da tabela B?"**
 
 ### Notação Formal
 
