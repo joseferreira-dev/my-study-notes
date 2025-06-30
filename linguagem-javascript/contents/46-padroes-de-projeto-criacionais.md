@@ -35,7 +35,7 @@ if (sistemaOperacional === 'windows') {
 
 Isso é insustentável. Os padrões criacionais resolvem esse problema, introduzindo uma camada de abstração. Em vez de o cliente dizer "me dê um **novo BotaoWindows**", ele diz a uma entidade intermediária (uma fábrica): "me dê um **botão**". A fábrica, então, se encarrega de decidir qual tipo específico de botão criar com base no contexto atual (como o sistema operacional), escondendo essa complexidade do cliente.
 
-## O Padrão Factory (Fábrica)
+## Padrão Factory (Fábrica)
 
 O padrão Factory é um dos padrões criacionais mais comuns e úteis. Sua principal responsabilidade é criar objetos, encapsulando a lógica de qual objeto criar e como criá-lo. Isso desacopla o código cliente das classes concretas.
 
@@ -149,7 +149,7 @@ logistica2.planejarEntrega();
 
 O código cliente (`logistica1.planejarEntrega()`) não sabe qual tipo de transporte está sendo criado; ele apenas confia que a fábrica correta (`LogisticaTerrestre`) produzirá o objeto apropriado. Isso desacopla o cliente das classes `Caminhao` e `Navio`.
 
-## O Padrão Abstract Factory (Fábrica Abstrata)
+## Padrão Abstract Factory (Fábrica Abstrata)
 
 Este padrão é um nível acima do Factory Method. Ele é uma "fábrica de fábricas". Seu propósito é fornecer uma interface para criar **famílias de objetos relacionados ou dependentes** sem especificar suas classes concretas.
 
@@ -214,7 +214,7 @@ if (os === 'windows') {
 renderizarUI(fabrica);
 ```
 
-## O Padrão Builder (Construtor)
+## Padrão Builder (Construtor)
 
 O Builder é usado para separar a construção de um objeto complexo de sua representação, permitindo que o mesmo processo de construção possa criar diferentes representações. É ideal para objetos que exigem muitos parâmetros de configuração no construtor.
 
@@ -296,7 +296,7 @@ console.log(pedidoComplexo.toString());
 
 O Builder torna a criação de objetos complexos muito mais legível, flexível e menos propensa a erros.
 
-## O Padrão Prototype (Protótipo)
+## Padrão Prototype (Protótipo)
 
 O padrão Prototype especifica os tipos de objetos a serem criados usando uma instância prototípica e cria novos objetos copiando este protótipo. É útil quando a criação de um objeto é custosa (ex: requer uma chamada de rede ou um cálculo pesado), então é mais eficiente clonar um objeto pré-construído.
 
@@ -325,7 +325,7 @@ meuCarro.ligar(); // "Motor ligado." (herdado)
 console.log(seuCarro.modelo); // "Camaro"
 ```
 
-## O Padrão Singleton
+## Padrão Singleton
 
 O padrão Singleton garante que uma classe tenha **apenas uma instância** e fornece um ponto de acesso global a essa instância.
 
