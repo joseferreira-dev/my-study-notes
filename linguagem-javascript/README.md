@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/linguagem-javascript"><img src="./contents/banner-js.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/linguagem-javascript"><img src="./contents/banner-javascript.png"></a>
 </div>
 <br>
 
