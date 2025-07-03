@@ -255,3 +255,81 @@ Nessa visão, o objetivo da equipe de engenharia de software é encontrar e corr
 
 É fundamental notar que essa distinção temporal não é o padrão dominante na indústria, mas serve para enfatizar os diferentes impactos que um mesmo problema técnico pode ter dependendo de quando e por quem ele é descoberto.
 
+## A Medição da Qualidade: Métricas de Software
+
+Para que a gestão da qualidade deixe de ser um exercício subjetivo e passe a ser uma disciplina de engenharia, é fundamental medir. A medição de software consiste em derivar um valor numérico (uma métrica) para um atributo de um processo, produto ou projeto de software. Ao comparar esses valores entre si e com padrões ou metas estabelecidas, as equipes podem tomar decisões baseadas em dados, em vez de apenas em intuição.
+
+O objetivo de longo prazo da medição de software é usá-la para fazer julgamentos objetivos sobre a qualidade. Idealmente, um sistema poderia ser avaliado por um conjunto de métricas e, a partir delas, ter sua qualidade inferida. Se o software atingir o limiar de qualidade requerido, ele poderia ser aprovado. Embora esse cenário totalmente automatizado ainda esteja distante, a medição já é uma ferramenta indispensável para identificar áreas problemáticas e guiar esforços de melhoria.
+
+### O Processo de Medição
+
+Um programa de medição eficaz opera como um ciclo de feedback contínuo, onde dados sobre o processo de desenvolvimento e o produto resultante são coletados e usados para influenciar decisões gerenciais que, por sua vez, aprimoram o próprio processo. O fluxo pode ser visualizado da seguinte forma:
+
+<div align="center">
+  <img width="480px" src="./img/38-ciclo-de-feedback-da-medicao-de-software.png">
+</div>
+
+1. O **Processo de Software** (o conjunto de todas as atividades de desenvolvimento) é o ponto de partida. Ele gera dois fluxos principais de informação para medição.
+2. O primeiro fluxo são as **Medições de Métrica de Controle**, que são extraídas diretamente da observação do processo. Elas medem a eficiência e a eficácia das atividades, como o tempo gasto em cada fase ou o número de erros encontrados por hora de revisão.
+3. O segundo fluxo se origina do **Produto de Software**, o artefato gerado pelo processo. Este produto é analisado para obter **Medições de Métrica de Previsão**, que medem atributos internos do software (como complexidade ou tamanho) para prever sua qualidade externa.
+4. Ambos os tipos de medições (de controle e de previsão) alimentam as **Decisões de Gerenciamento**. Com base nesses dados, os gerentes podem, por exemplo, alocar mais recursos para testes em módulos complexos ou identificar gargalos no processo de desenvolvimento.
+5. Finalmente, essas decisões gerenciais criam um **ciclo de feedback**, levando a ajustes e melhorias no **Processo de Software** original, tornando-o mais maduro e eficaz ao longo do tempo.
+
+### Categorias de Métricas de Software
+
+As métricas de software podem ser classificadas de diversas formas. Uma distinção comum é entre métricas de controle e de previsão:
+
+- **Métricas de Controle (ou de Processo):** São usadas para gerenciar e melhorar o processo de desenvolvimento. Elas respondem a perguntas como: "Quão eficiente é nosso processo de correção de bugs?". Exemplos incluem o tempo médio para reparar defeitos e o esforço (em pessoas/dia) gasto em cada fase.
+- **Métricas de Previsão (ou de Produto):** São associadas ao software em si e ajudam a prever características de qualidade. Elas respondem a perguntas como: "Quão complexo é este módulo?". Exemplos incluem a complexidade ciclomática e o tamanho do código.
+
+Outra forma de categorizar, mais abrangente, divide as métricas em três grandes áreas:
+
+- **Métricas de Processo:** Focam na eficácia do processo de desenvolvimento e manutenção. Um exemplo clássico é a **Efetividade de Remoção de Defeitos (DRE - Defect Removal Effectiveness)**, que mede a porcentagem de defeitos encontrados por uma equipe antes da entrega do produto. A fórmula é: $DRE=E/(E+D)$ Onde $E$ é o número de erros encontrados antes da entrega e $D$ é o número de defeitos encontrados após a entrega. Um DRE próximo de 1 (ou 100%) indica um processo de verificação e validação muito eficaz.
+- **Métricas de Projeto:** Descrevem as características e o andamento do projeto. São usadas para monitorar custo, prazo, produtividade e estabilidade. Exemplos incluem o número de desenvolvedores, o custo por ponto de função e a taxa de mudança nos requisitos.
+- **Métricas de Produto:** Medem as características do software em si. O objetivo é usar atributos internos (que são fáceis de medir) para prever atributos de qualidade externos (que são difíceis de medir).
+
+### Atributos Internos vs. Externos
+
+A grande dificuldade na medição da qualidade é que muitos dos atributos que realmente importam para o usuário — como manutenibilidade, usabilidade e confiabilidade — são **atributos externos**. Eles só podem ser observados quando o software está em uso e são influenciados por fatores subjetivos.
+
+Para contornar isso, mede-se **atributos internos** do software (como tamanho, complexidade, acoplamento) e assume-se que existe uma relação entre eles e os atributos externos desejados. Por exemplo, assume-se que um software com alta complexidade interna (atributo interno) terá baixa manutenibilidade (atributo externo).
+
+- **Métricas Estáticas:** São coletadas a partir de representações estáticas do sistema (código-fonte, diagramas, documentação) sem executá-lo. Elas são boas para prever atributos como complexidade, compreensibilidade e manutenibilidade.
+- **Métricas Dinâmicas:** São coletadas durante a execução do programa (em testes ou em produção). Elas são boas para avaliar atributos como eficiência e confiabilidade. Exemplos: tempo de resposta de uma função, consumo de memória, número de falhas por hora de uso.
+
+Embora a relação entre métricas estáticas e qualidade externa não seja sempre direta e universal, algumas métricas de produto se mostraram consistentemente úteis:
+
+|Métrica de Produto (Estática)|Descrição|
+|---|---|
+|**Fan-In/Fan-Out**|**Fan-in:** número de módulos que chamam um determinado módulo X. Um fan-in alto indica que X é muito reutilizado, mas também que mudanças em X podem ter um grande impacto. **Fan-out:** número de módulos que são chamados por X. Um fan-out alto pode indicar alta complexidade em X.|
+|**Comprimento de Código**|Medida do tamanho de um programa (ex: Linhas de Código - LOC). É uma das métricas mais simples e, surpreendentemente, uma das mais eficazes para prever a propensão a erros. Componentes maiores tendem a ser mais complexos e a ter mais defeitos.|
+|**Complexidade Ciclomática**|Mede a complexidade estrutural de um programa, contando o número de caminhos linearmente independentes através do código. Um valor alto (geralmente > 10) indica um código difícil de entender e testar.|
+|**Comprimento de Identificadores**|Mede o tamanho médio dos nomes de variáveis, métodos e classes. Nomes mais longos e descritivos (ex: `calcularImpostoRenda` vs. `calc`) tendem a tornar o código mais compreensível.|
+|**Profundidade de Aninhamento Condicional**|Conta o número máximo de `if`s aninhados. Estruturas profundamente aninhadas são extremamente difíceis de ler e raciocinar sobre, sendo uma fonte comum de erros.|
+|**Índice FOG**|Aplicada à documentação, mede a legibilidade de um texto com base no comprimento médio de palavras e sentenças. Um índice alto indica um texto difícil de entender.|
+
+### Métricas de Robustez e Densidade de Defeitos
+
+Para medir a qualidade do produto sob a perspectiva do cliente, duas métricas são proeminentes:
+
+- **Tempo Médio para Falha (MTTF - Mean Time To Failure):** Mede o tempo médio de operação de um sistema antes que uma falha ocorra. É uma métrica de robustez crucial para sistemas críticos, onde a continuidade da operação é vital. Por exemplo, um sistema de controle de tráfego aéreo pode ter um requisito de MTTF de vários anos.
+- **Tempo Médio Entre Falhas (MTBF - Mean Time Between Failures):** Similar ao MTTF, mas aplicado a sistemas que podem ser reparados. Mede o tempo total de operação dividido pelo número de falhas observadas ($MTBF=MTTF+MTTR$, onde $MTTR$ é o tempo médio para reparar).
+- **Densidade de Defeitos:** Mede o número de defeitos encontrados em um produto em relação ao seu tamanho (geralmente em mil linhas de código - KLOC, ou por Pontos de Função). $\text{Densidade De Defeitos} = \text{Número De Defeitos}/\text{Tamanho do Software}$. Essa métrica permite comparar a qualidade intrínseca de diferentes componentes ou produtos e identificar módulos de alto risco que podem precisar de mais testes ou refatoração.
+
+
+## Métricas Focadas no Código-Fonte
+
+Com a ascensão de metodologias ágeis e do software de código aberto, o código-fonte se consolidou como o artefato central para a avaliação da qualidade. Um código de alta qualidade é a base para um software manutenível, flexível e robusto. A qualidade do código não se refere apenas à ausência de bugs, mas a um conjunto de características que o tornam fácil de ler, entender, testar e modificar.
+
+Um código-fonte será muito mais lido do que escrito ao longo de seu ciclo de vida. Portanto, otimizar para a legibilidade é um dos investimentos mais importantes que uma equipe pode fazer. Os principais critérios para um código-fonte de qualidade são:
+
+|Critério de Qualidade de Código|Descrição|
+|---|---|
+|**Legibilidade**|O código (e seus comentários) deve declarar claramente sua intenção. Se um desenvolvedor não consegue entender o que um trecho de código faz, todos os outros esforços de qualidade (como correção de bugs e refatoração) são comprometidos.|
+|**Testabilidade**|O código deve ser organizado de forma que facilite a criação de testes de unidade isolados. Isso geralmente implica em baixo acoplamento e alta coesão, permitindo que cada parte seja verificada independentemente.|
+|**Flexibilidade**|As dependências em relação a outros códigos devem ser minimizadas e gerenciadas através de abstrações (interfaces). Evitar implementações "hard-coded" (fixas) de valores, estruturas de dados ou classes concretas torna o código mais fácil de adaptar e reutilizar.|
+|**Conformidade**|O código deve cumprir com seus requisitos, tanto funcionais quanto não-funcionais. Ele deve fazer o que foi especificado que ele faria.|
+|**Economicidade**|O código deve fazer uso razoável e eficiente dos recursos do sistema (memória, CPU, rede). Envolve pensar no retorno sobre o investimento e evitar a "superengenharia" ou otimizações prematuras que aumentam a complexidade sem um benefício claro.|
+
+
+
