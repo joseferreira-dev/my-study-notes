@@ -331,5 +331,134 @@ Um código-fonte será muito mais lido do que escrito ao longo de seu ciclo de v
 |**Conformidade**|O código deve cumprir com seus requisitos, tanto funcionais quanto não-funcionais. Ele deve fazer o que foi especificado que ele faria.|
 |**Economicidade**|O código deve fazer uso razoável e eficiente dos recursos do sistema (memória, CPU, rede). Envolve pensar no retorno sobre o investimento e evitar a "superengenharia" ou otimizações prematuras que aumentam a complexidade sem um benefício claro.|
 
+## O Modelo de Qualidade ISO/IEC 9126
 
+A norma NBR ISO/IEC 9126 (e sua sucessora mais moderna, a ISO/IEC 25010) representa um esforço internacional para padronizar a forma como a qualidade de um produto de software é definida, especificada e avaliada. Ela fornece um vocabulário comum e um framework estruturado que pode ser utilizado por todos os envolvidos no ciclo de vida do software, desde clientes e gerentes até desenvolvedores e auditores.
 
+A norma foi originalmente dividida em quatro partes, cada uma abordando um aspecto específico da medição da qualidade:
+
+- **ISO/IEC 9126-1:** Define o **Modelo de Qualidade**, que é o coração da norma.
+- **ISO/IEC 9126-2:** Descreve um conjunto de **Métricas Externas**.
+- **ISO/IEC 9126-3:** Descreve um conjunto de **Métricas Internas**.
+- **ISO/IEC 9126-4:** Descreve um conjunto de **Métricas de Qualidade em Uso**.
+
+### As Três Perspectivas da Qualidade
+
+O pilar conceitual da norma é a decomposição da qualidade em três perspectivas complementares, que representam a visão de diferentes stakeholders em diferentes momentos:
+
+- **Qualidade Interna:** É a visão do **desenvolvedor**. Refere-se à totalidade das características de um produto de software que podem ser avaliadas sem executá-lo. É a qualidade dos artefatos estáticos (código-fonte, arquitetura, documentação). A qualidade interna não garante, mas influencia fortemente a qualidade externa.
+    - **Exemplo:** Um código com baixa complexidade ciclomática, alta coesão, baixo acoplamento e bem documentado possui alta qualidade interna.
+- **Qualidade Externa:** É a visão do **testador**. Refere-se à qualidade do software quando ele é executado. É a totalidade das características observáveis do produto em um ambiente controlado ou simulado.
+    - **Exemplo:** Um software que responde a uma requisição em menos de 2 segundos, não trava durante os testes de estresse e produz resultados corretos para os casos de teste possui alta qualidade externa.
+- **Qualidade em Uso:** É a visão do **usuário final**. É a qualidade do software sob a perspectiva de quem o utiliza para atingir metas específicas em um ambiente operacional real. Ela mede o **efeito** que o software tem no usuário e em seus objetivos, e não as propriedades do software em si. É a medida definitiva de sucesso.
+    - **Exemplo:** Um usuário que consegue completar a tarefa de "emitir uma nota fiscal" de forma rápida, sem erros e se sentindo satisfeito com a experiência, demonstra que o software tem alta qualidade em uso.
+
+A relação entre elas é causal: uma boa **Qualidade Interna** (código limpo) facilita a obtenção de uma boa **Qualidade Externa** (menos falhas nos testes), que por sua vez é um pré-requisito para uma boa **Qualidade em Uso** (usuário satisfeito e produtivo).
+
+### O Modelo de Qualidade Interna e Externa
+
+Esta é a parte mais conhecida da norma. Ela categoriza os atributos de qualidade de software em seis características principais, que são subdivididas em sub-características.
+
+<div align="center">
+  <img width="760px" src="./img/38-caracteristicas-da-qualidade-interna-e-externa.png">
+</div>
+
+A seguir, uma descrição detalhada de cada característica e suas sub-características, com exemplos práticos.
+
+**FUNCIONALIDADE:** A capacidade do produto de software de prover funções que atendam às necessidades explícitas e implícitas, quando utilizado sob condições especificadas.
+
+|Subcaracterística|Descrição|Exemplo Prático|
+|---|---|---|
+|**Adequação**|Capacidade de prover um conjunto apropriado de funções para as tarefas e objetivos do usuário.|Um software de contabilidade que oferece funções para cálculo de impostos, emissão de balanços e controle de fluxo de caixa.|
+|**Acurácia**|Capacidade de prover resultados ou efeitos corretos ou conforme acordados, com o grau de precisão necessário.|Um sistema de GPS que calcula a localização do usuário com uma margem de erro inferior a 5 metros.|
+|**Interoperabilidade**|Capacidade de interagir com um ou mais sistemas especificados.|Um aplicativo de calendário que sincroniza eventos automaticamente com o Google Calendar e o Microsoft Outlook.|
+|**Segurança de Acesso**|Capacidade de proteger informações e dados contra acesso não autorizado, garantindo o acesso aos autorizados.|Um sistema bancário que usa autenticação de dois fatores para impedir que transações sejam feitas por pessoas não autorizadas.|
+|**Conformidade (Funcionalidade)**|Capacidade de estar de acordo com normas, convenções ou regulamentações relacionadas à funcionalidade.|Um software de emissão de nota fiscal eletrônica que segue rigorosamente o layout e as regras definidas pela Receita Federal.|
+
+**CONFIABILIDADE:** A capacidade do produto de software de manter um nível de desempenho especificado, quando usado em condições especificadas.
+
+|Subcaracterística|Descrição|Exemplo Prático|
+|---|---|---|
+|**Maturidade**|Capacidade de evitar falhas decorrentes de defeitos no software.|Um servidor web que opera continuamente por 30 dias sem precisar ser reiniciado devido a falhas de software.|
+|**Tolerância a Falhas**|Capacidade de manter um nível de desempenho especificado mesmo em casos de falhas ou entradas inválidas.|Um formulário de cadastro que, ao receber uma data inválida (ex: 30/02/2025), exibe uma mensagem de erro clara em vez de travar o sistema.|
+|**Recuperabilidade**|Capacidade de restabelecer seu nível de desempenho e recuperar dados após a ocorrência de uma falha.|Um editor de texto que, após uma queda de energia, consegue restaurar o documento não salvo na próxima vez que é aberto.|
+|**Conformidade (Confiabilidade)**|Capacidade de estar de acordo com normas ou regulamentações relacionadas à confiabilidade.|Um software para equipamentos médicos que cumpre as normas da ANVISA para operação segura e contínua.|
+
+**USABILIDADE:** A capacidade do produto de software de ser compreendido, aprendido, operado e atraente ao usuário, quando usado sob condições especificadas.
+
+|Subcaracterística|Descrição|Exemplo Prático|
+|---|---|---|
+|**Inteligibilidade**|Capacidade de possibilitar ao usuário compreender se o software é apropriado e como pode ser usado.|Um usuário, ao abrir um aplicativo de edição de fotos pela primeira vez, entende imediatamente que os ícones de "tesoura" e "pincel" servem para cortar e desenhar.|
+|**Apreensibilidade**|Capacidade de possibilitar ao usuário aprender sua aplicação.|Um novo funcionário aprende a operar o sistema de ponto de venda da loja em menos de 15 minutos de treinamento.|
+|**Operacionalidade**|Capacidade de possibilitar ao usuário operá-lo e controlá-lo com facilidade.|Um site de e-commerce que permite ao usuário filtrar produtos por preço, marca e avaliação com poucos cliques.|
+|**Atratibilidade**|Capacidade de ser atraente ao usuário, através de um design visual agradável e uma experiência de uso positiva.|Um aplicativo de meditação que utiliza cores suaves, animações fluidas e sons relaxantes para criar um ambiente agradável.|
+|**Conformidade (Usabilidade)**|Capacidade de estar de acordo com guias de estilo ou convenções de plataforma (ex: Material Design do Google, Human Interface Guidelines da Apple).|Um aplicativo para iPhone que utiliza os gestos de navegação e os componentes de interface padrão do iOS, tornando-o familiar para os usuários.|
+
+**EFICIÊNCIA:** A capacidade do produto de software de apresentar desempenho apropriado, relativo à quantidade de recursos usados, sob condições especificadas.
+
+|Subcaracterística|Descrição|Exemplo Prático|
+|---|---|---|
+|**Comportamento em Relação ao Tempo**|Capacidade de fornecer tempos de resposta e de processamento apropriados.|Um mecanismo de busca que retorna os resultados de uma pesquisa em menos de 500 milissegundos.|
+|**Utilização de Recursos**|Capacidade de usar quantidades apropriadas de recursos (CPU, memória, rede, bateria).|Um aplicativo de mensagens que consome uma quantidade mínima de bateria quando executado em segundo plano no celular.|
+|**Conformidade (Eficiência)**|Capacidade de estar de acordo com normas ou convenções relacionadas à eficiência.|Um software embarcado que cumpre a norma de não utilizar mais que 80% da capacidade do processador.|
+
+**MANUTENIBILIDADE:** A capacidade do produto de software de ser modificado (correções, melhorias ou adaptações).
+
+|Subcaracterística|Descrição|Exemplo Prático|
+|---|---|---|
+|**Analisabilidade**|Capacidade de permitir o diagnóstico de deficiências ou a identificação de partes a serem modificadas.|Um desenvolvedor, ao receber um relatório de bug, consegue localizar a causa raiz no código em poucos minutos graças a logs detalhados e um código bem estruturado.|
+|**Modificabilidade**|Capacidade de permitir que uma modificação especificada seja implementada com baixo esforço.|Alterar a taxa de juros em um sistema financeiro requer a mudança de um único parâmetro em um arquivo de configuração, sem a necessidade de recompilar o código.|
+|**Estabilidade**|Capacidade de evitar efeitos inesperados (regressões) decorrentes de modificações no software.|Após corrigir um bug no módulo de faturamento, os testes de regressão automatizados confirmam que o módulo de estoque não foi afetado.|
+|**Testabilidade**|Capacidade de permitir que o software, quando modificado, seja validado de forma eficaz.|Cada classe do sistema possui testes de unidade correspondentes, permitindo que os desenvolvedores verifiquem suas modificações rapidamente.|
+|**Conformidade (Manutenibilidade)**|Capacidade de estar de acordo com normas ou convenções de codificação e arquitetura.|O projeto segue rigorosamente os padrões de codificação da empresa, facilitando a entrada de novos desenvolvedores na equipe.|
+
+**PORTABILIDADE:** A capacidade do produto de software de ser transferido de um ambiente (hardware, sistema operacional) para outro.
+
+|Subcaracterística|Descrição|Exemplo Prático|
+|---|---|---|
+|**Adaptabilidade**|Capacidade de ser adaptado para diferentes ambientes sem necessidade de ações além das previstas.|Um aplicativo web que se ajusta automaticamente para ser exibido corretamente em navegadores de desktop, tablets e smartphones (design responsivo).|
+|**Capacidade para ser Instalado**|Capacidade do produto de ser instalado (e desinstalado) em um ambiente especificado.|Um software que oferece um instalador "passo a passo" simples, que guia o usuário por todo o processo de instalação sem dificuldades.|
+|**Coexistência**|Capacidade de coexistir com outros softwares em um ambiente comum, compartilhando recursos sem conflitos.|Um novo antivírus que pode ser instalado e executado em um computador que já possui um firewall de outra empresa, sem que um interfira no outro.|
+|**Capacidade para Substituir**|Capacidade de ser usado em substituição a outro software especificado, para o mesmo propósito.|Um novo navegador web que consegue importar todos os favoritos, senhas e histórico de um navegador concorrente.|
+|**Conformidade (Portabilidade)**|Capacidade de estar de acordo com normas relacionadas à portabilidade (ex: POSIX para sistemas Unix).|Um software escrito em Java padrão que pode ser executado em qualquer sistema operacional que possua uma Máquina Virtual Java (JVM).|
+
+### O Modelo de Qualidade em Uso
+
+Enquanto o modelo anterior foca nas propriedades do software, o modelo de Qualidade em Uso foca no resultado da interação do usuário com o software em um contexto real.
+
+<div align="center">
+  <img width="700px" src="./img/38-caracteristicas-da-qualidade-em-uso.png">
+</div>
+
+|Característica|Descrição|Exemplo Prático|
+|---|---|---|
+|**Eficácia**|Capacidade de permitir que usuários atinjam metas especificadas com acurácia e completude.|95% dos usuários de um site de passagens aéreas conseguem encontrar e comprar um voo para o destino desejado na primeira tentativa.|
+|**Produtividade**|Capacidade de permitir que usuários empreguem quantidade apropriada de recursos (tempo, esforço) em relação à eficácia obtida.|Um contador leva 10 minutos para gerar um relatório complexo usando o novo software, enquanto no sistema antigo a mesma tarefa levava 45 minutos.|
+|**Segurança**|Capacidade de apresentar níveis aceitáveis de riscos de danos a pessoas, negócios, software, propriedades ou ao ambiente.|Um software de controle industrial que possui mecanismos para desligar uma máquina automaticamente se a temperatura exceder um limite seguro, prevenindo acidentes.|
+|**Satisfação**|Capacidade de satisfazer usuários, medida através de suas atitudes e percepções em relação ao uso do produto.|Uma pesquisa de satisfação revela que 8 em cada 10 usuários classificam a experiência de uso de um aplicativo de streaming de música como "muito boa" ou "excelente".|
+
+### O Papel das Métricas na ISO 9126
+
+A norma não apenas define os modelos, mas também guia como medi-los através de suas outras partes:
+
+- **Métricas Externas (Parte 2):** Medem o software em execução. Exemplo: para avaliar o **Comportamento em Relação ao Tempo**, pode-se medir o tempo de resposta de uma transação em segundos.
+- **Métricas Internas (Parte 3):** Medem os artefatos estáticos para prever a qualidade. Exemplo: para avaliar a **Analisabilidade**, pode-se usar a métrica de **Complexidade Ciclomática**.
+- **Métricas de Qualidade em Uso (Parte 4):** Medem a experiência do usuário. Exemplo: para avaliar a **Eficácia**, pode-se medir a porcentagem de tarefas completadas com sucesso.
+
+Em resumo, a ISO/IEC 9126 fornece um framework completo e hierárquico para entender, especificar e avaliar a qualidade de software de forma estruturada, desde o código-fonte até a satisfação do usuário final.
+
+## Considerações Finais
+
+Ao longo deste capítulo, navegamos pelos conceitos fundamentais que sustentam a disciplina de Qualidade de Software. Partimos da compreensão de que a qualidade deixou de ser um mero diferencial técnico para se tornar um imperativo estratégico, com impactos diretos na viabilidade financeira, na reputação e na segurança de empresas e usuários. A era digital amplificou as consequências de falhas, tornando a busca pela qualidade uma responsabilidade central da engenharia de software.
+
+Vimos que a qualidade é um conceito multifacetado, que pode ser decomposto em **Qualidade de Projeto** (fazer a coisa certa) e **Qualidade de Conformidade** (fazer a coisa do jeito certo). Para gerenciar essa complexidade, a indústria desenvolveu uma abordagem dual: a **Garantia da Qualidade (QA)**, focada na prevenção de defeitos através da melhoria contínua dos processos, e o **Controle de Qualidade (QC)**, focado na detecção de defeitos nos produtos através de atividades como testes e inspeções.
+
+Dentro do QC, a distinção entre **Verificação** ("estamos construindo o produto corretamente?") e **Validação** ("estamos construindo o produto certo?") é crucial. Enquanto a verificação garante a conformidade com as especificações, a validação assegura que o produto final realmente atende às necessidades e expectativas do usuário, resolvendo o problema para o qual foi concebido.
+
+A terminologia também se mostrou vital. Compreender a cadeia causal onde um **Erro** humano leva a um **Defeito** no artefato, que, por sua vez, pode causar uma **Falha** visível ao usuário, é fundamental para uma análise de causa raiz eficaz e para uma comunicação precisa entre as equipes.
+
+Contudo, a qualidade não pode ser gerenciada se não for medida. As **métricas de software** — sejam de processo, projeto ou produto — são as ferramentas que transformam a qualidade de um conceito abstrato em um indicador quantificável. Elas nos permitem avaliar a saúde de um código-fonte, a eficiência de um processo e a robustez de um sistema em produção, guiando decisões gerenciais baseadas em evidências.
+
+Finalmente, padrões como a **NBR ISO/IEC 9126** (e sua sucessora, a ISO/IEC 25010) fornecem um framework robusto e um vocabulário comum para toda a indústria. Ao estruturar a qualidade em múltiplas perspectivas (interna, externa e em uso) e em características como funcionalidade, confiabilidade, usabilidade, eficiência, manutenibilidade e portabilidade, a norma oferece um mapa detalhado para especificar, construir e avaliar produtos de software de alta qualidade.
+
+Em suma, a qualidade de software não é um evento único ou uma fase final do desenvolvimento. É uma jornada contínua, uma cultura que deve permear todas as atividades, desde a concepção de um requisito até a manutenção de um sistema em produção. Envolve processos bem definidos, ferramentas adequadas e, acima de tudo, uma mentalidade de excelência e melhoria contínua por parte de todos os envolvidos.
