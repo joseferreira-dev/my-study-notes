@@ -1,4 +1,4 @@
-# Capítulo 38: Fundamentos da Qualidade de Software
+# Capítulo 38 – Qualidade de Software
 
 ## A Importância Crítica da Qualidade na Era Digital
 
@@ -180,7 +180,7 @@ A principal técnica de validação é o **teste de aceitação**, onde os usuá
 **Exemplo Prático:** Imagine um requisito para um botão em um site de e-commerce:
 
 - **Verificação:** A equipe de desenvolvimento verifica se o botão tem a cor `#FF0000` (vermelho), o texto "Comprar Agora" e se, ao ser clicado, ele chama a função `adicionarAoCarrinho()`, conforme especificado no documento de design. Isso é construir o produto **corretamente**.
-- **Validação:** Durante o teste de aceitação, o cliente percebe que um botão vermelho brilhante em um site com um esquema de cores pastel assusta os usuários, que pensam que é um botão de "cancelar" ou "erro". A validação revela que, embora o botão tenha sido construído corretamente conforme a especificação, ele não era o produto _certo_ para atender à necessidade do usuário de se sentir seguro ao comprar.
+- **Validação:** Durante o teste de aceitação, o cliente percebe que um botão vermelho brilhante em um site com um esquema de cores pastel assusta os usuários, que pensam que é um botão de "cancelar" ou "erro". A validação revela que, embora o botão tenha sido construído corretamente conforme a especificação, ele não era o produto **certo** para atender à necessidade do usuário de se sentir seguro ao comprar.
 
 ### Os Limites de V&V e o Conceito de "Suficientemente Confiável"
 
@@ -215,11 +215,11 @@ A visão mais amplamente aceita, especialmente na comunidade de testes, estabele
 - **Defeito (Falta / Fault, Bug, Defect):** É a **manifestação do erro** em um artefato de software. É o resultado tangível da ação humana incorreta. O defeito é uma propriedade estática do software, "adormecido" no código, na documentação ou no design, esperando para ser ativado.
     - **Causa:** Um erro humano.
     - **Exemplos:** A linha de código com o operador `<` incorreto; a seção ambígua no documento de especificação de requisitos; um diagrama de classes com um relacionamento errado.
-- **Falha ( Failure ):** É o **desvio do comportamento observado** do software em relação ao comportamento esperado. A falha ocorre quando um defeito é executado, fazendo com que o sistema produza um resultado incorreto ou se comporte de maneira indesejada. É a consequência dinâmica e visível do defeito.
+- **Falha (Failure):** É o **desvio do comportamento observado** do software em relação ao comportamento esperado. A falha ocorre quando um defeito é executado, fazendo com que o sistema produza um resultado incorreto ou se comporte de maneira indesejada. É a consequência dinâmica e visível do defeito.
     - **Causa:** A execução de um defeito.
     - **Exemplos:** O sistema entra em um laço infinito (causado pelo defeito no operador `<`); um cálculo financeiro produz um resultado errado; o software trava e exibe uma mensagem de erro ("tela azul"); um relatório é gerado com informações faltando.
 
-A cadeia causal é, portanto: **Erro Humano → introduz um → Defeito → que, quando executado, pode causar uma → Falha.**
+A cadeia causal é, portanto: **Erro → introduz um → Defeito → que, quando executado, pode causar uma → Falha.**
 
 Um ponto crucial é que a existência de um defeito não garante a ocorrência de uma falha. Uma falha só se manifesta se três condições forem atendidas:
 
