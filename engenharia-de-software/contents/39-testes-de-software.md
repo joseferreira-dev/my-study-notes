@@ -366,3 +366,63 @@ A tabela a seguir resume algumas definições importantes sobre os Testes de Sis
 | Testes de Sistema avaliam o software com respeito ao seu projeto arquitetural e detecta falhas de especificação, desempenho, robustez e segurança. |
 | Testes de Sistema visam a verificar o sistema, baseado em computador, não se limitando ao software, mas incluindo o processo como um todo, como hardware, pessoal e informação. |
 
+## Técnicas de Teste: Desvendando a Caixa-Branca, a Caixa-Preta e a Caixa-Cinza
+
+Após entendermos os níveis de teste, que respondem à pergunta "quando testar?", precisamos nos aprofundar na dimensão que responde ao "como testar?". As **técnicas de teste** são os métodos e abordagens sistemáticas utilizados para projetar casos de teste eficazes. Elas fornecem ao engenheiro de software um guia para selecionar um conjunto de testes que tenha a maior probabilidade de encontrar defeitos.
+
+As técnicas são tradicionalmente classificadas usando a poderosa metáfora de uma "caixa", que representa o software ou componente sob teste. A cor da caixa simboliza o nível de visibilidade que o testador tem sobre o funcionamento interno do software. Essa classificação se divide em três grandes abordagens: Teste de Caixa-Branca, Teste de Caixa-Preta e Teste de Caixa-Cinza.
+
+### Teste de Caixa-Branca: A Visão Estrutural
+
+O **Teste de Caixa-Branca** (do inglês, White-Box Testing) é uma técnica que se baseia no conhecimento profundo da estrutura interna, da lógica e da implementação do software. O nome é uma alusão a uma **caixa de vidro** ou **caixa-clara**: o testador consegue enxergar perfeitamente o que há dentro, permitindo que ele projete testes que exercitem os mecanismos internos do código.
+
+Por essa razão, a técnica possui diversos outros nomes que refletem sua natureza:
+
+- **Teste Estrutural:** Porque o foco é validar a estrutura do código-fonte.
+- **Teste Procedimental ou Orientado à Lógica:** Porque o objetivo é analisar a lógica dos algoritmos e o fluxo dos procedimentos internos.
+
+Nessa abordagem, o testador (geralmente o próprio desenvolvedor) analisa o código-fonte para garantir que todos os caminhos lógicos sejam executados pelo menos uma vez, que todas as decisões condicionais (`if/else`, `switch`) sejam testadas para seus valores verdadeiros e falsos, que os laços (`for`, `while`) sejam validados em seus limites e que as estruturas de dados internas sejam utilizadas corretamente.
+
+As principais técnicas de teste de caixa-branca incluem:
+
+- **Teste de Caminho Básico (Basic Path Testing):** Uma técnica que utiliza a **Complexidade Ciclomática** — uma métrica quantitativa da complexidade lógica de um programa — para derivar um conjunto mínimo de caminhos de execução independentes que garantem que cada instrução do código seja executada ao menos uma vez.
+- **Teste de Estruturas de Controle:** Um conjunto de técnicas focadas em validar especificamente as construções da linguagem de programação, como as estruturas de condição, os laços e os fluxos de dados.
+
+Voltando à nossa analogia do motor de carro, o teste de caixa-branca seria o trabalho do engenheiro mecânico na bancada de testes. Ele tem acesso total às estruturas internas do motor, podendo desmontá-lo para analisar o virabrequim, a biela ou o pistão. Ele pode medir a folga de um componente, verificar a integridade de uma solda ou analisar o fluxo de óleo nos dutos internos, pois conhece intimamente o projeto e a construção do motor.
+
+### Teste de Caixa-Preta: A Visão Comportamental
+
+Em contraposição direta, o **Teste de Caixa-Preta** (Black-Box Testing) é uma técnica que foca exclusivamente nos requisitos funcionais e no comportamento externo do software, **ignorando completamente sua estrutura interna**. O software é tratado como uma caixa opaca ou escura: não se sabe (e não importa) como ele funciona por dentro. O que importa é que, para um determinado conjunto de entradas, ele produza o conjunto de saídas esperado.
+
+Essa técnica é guiada pela especificação de requisitos e pela perspectiva do usuário. Seus principais nomes alternativos são:
+
+- **Teste Comportamental:** Porque valida o comportamento observável do sistema, não sua implementação.
+- **Teste Funcional:** Porque seu objetivo é verificar se as funções do software operam conforme o esperado.
+- **Teste Orientado a Dados ou a Entradas/Saídas:** Porque a criação dos casos de teste se baseia na manipulação de dados de entrada para verificar se as saídas correspondentes são geradas corretamente.
+
+O teste de caixa-preta busca encontrar erros em categorias como:
+
+- Funções incorretas ou ausentes.
+- Erros de interface (na comunicação com o usuário ou outros sistemas).
+- Erros em estruturas de dados ou acesso a bancos de dados (pela perspectiva externa).
+- Erros de comportamento ou desempenho.
+- Erros de inicialização e finalização.
+
+Como o testador não tem acesso ao código, ele utiliza técnicas formais para selecionar os casos de teste mais eficazes a partir das especificações:
+
+- **Particionamento de Equivalência:** Divide os possíveis dados de entrada em "partições" ou "classes de equivalência", que representam grupos de dados que deveriam ser processados da mesma forma. Testa-se apenas um valor de cada partição, evitando redundância. Por exemplo, ao testar um campo de idade para um sistema que exige maiores de 18 anos, as partições seriam: {menores de 18} (inválida), {18} (válida) e {maiores de 18} (válida).
+- **Análise de Valor Limite (Boundary Value Analysis):** É um complemento ao particionamento de equivalência. Baseia-se na experiência de que a maioria dos erros ocorre nas "fronteiras" dos domínios de entrada. Para o mesmo campo de idade (maior ou igual a 18), os valores limite a serem testados seriam 17 (limite inválido) e 18 (limite válido).
+- **Teste Baseado em Grafos:** Modela os objetos de negócio e seus relacionamentos como um grafo para identificar e testar as transições e os estados do sistema.
+- **Teste de Matriz Ortogonal:** Uma técnica estatística útil para sistemas com um número elevado de parâmetros de entrada, onde testar todas as combinações é inviável. Ela ajuda a selecionar um subconjunto de combinações que oferece a maior cobertura de interações possível.
+
+No nosso exemplo do motor, o teste de caixa-preta seria realizado por um piloto de testes que não tem permissão para abrir o motor. Ele não sabe como os componentes internos funcionam, mas sabe exatamente como o motor deve se comportar. Ele pressiona o acelerador e espera uma resposta de potência específica. Ele aciona a ignição e espera que o motor ligue em um determinado tempo. Para cada entrada (ação do piloto), há uma saída esperada.
+
+O exemplo da calculadora é ainda mais claro: você não sabe qual algoritmo a calculadora usa para multiplicar, mas sabe que, ao inserir `3 x 7`, o resultado **deve** ser `21`. Qualquer outro resultado indica um defeito, independentemente da complexidade interna do cálculo.
+
+### Teste de Caixa-Cinza: A Abordagem Híbrida
+
+Entre os extremos da caixa-branca e da caixa-preta, existe o **Teste de Caixa-Cinza** (Gray-Box Testing). Esta técnica é uma abordagem híbrida na qual o testador possui um **conhecimento parcial** da estrutura interna do software. Ele não tem acesso total ao código-fonte, mas conhece alguns detalhes da implementação, como as estruturas de dados utilizadas, os algoritmos principais ou a arquitetura de comunicação entre componentes.
+
+Esse conhecimento adicional permite que o testador projete casos de teste de caixa-preta mais inteligentes e focados. Por exemplo, sabendo que o sistema utiliza um banco de dados específico, o testador pode criar dados de entrada que forcem o sistema a executar consultas complexas ou a manipular registros específicos na tabela, e então verificar o resultado externamente. A execução do teste ocorre como na caixa-preta (pela interface do usuário ou API), mas seu projeto é informado pelo conhecimento da caixa-branca.
+
+Um dos melhores exemplos de teste de caixa-cinza na prática é o **Teste de Integração**. Durante a integração, o testador sabe quais componentes estão sendo conectados (conhecimento da arquitetura interna), mas testa a interação entre eles através de suas interfaces públicas, sem necessariamente analisar o código de cada um. Ele se concentra na "cola" que une os componentes, tendo um conhecimento estrutural, mas validando o comportamento externamente.
