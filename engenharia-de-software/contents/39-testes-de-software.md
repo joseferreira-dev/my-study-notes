@@ -238,3 +238,131 @@ A seguir, uma introdução a cada um desses quatro níveis, que serão detalhado
 - **Teste de Validação:** Verifica se o software, já totalmente integrado, atende aos requisitos funcionais, de desempenho e de comportamento definidos na fase de análise. A pergunta-chave aqui é: "Estamos construindo o produto certo?".
 - **Teste de Sistema:** Avalia o software como parte de um sistema maior, que pode incluir hardware, outros softwares, pessoas e processos. Ele verifica se todos os elementos se combinam corretamente e se o desempenho global do sistema é alcançado.
 
+### Teste de Unidade
+
+O **Teste de Unidade**, também conhecido como **Teste de Componente** ou **Teste de Módulo**, representa o primeiro e mais fundamental nível de teste. Ele concentra o esforço de verificação na **menor unidade de projeto do software**: o componente. A ideia central é testar cada pedaço do software de forma isolada para garantir que ele se comporte conforme o esperado, antes de combiná-lo com outras partes.
+
+Mas o que exatamente é uma "unidade"? Dependendo do paradigma de programação e da granularidade do projeto, uma unidade pode ser:
+
+- Uma função ou procedimento individual.
+- Um método dentro de uma classe.
+- Uma classe completa, com seus atributos e métodos.
+- Um componente composto que agrupa várias funções ou objetos, mas que possui uma interface bem definida para ser acessado.
+
+O objetivo deste teste é explorar a lógica de processamento interna e as estruturas de dados dentro dos limites de um único componente, procurando por falhas de implementação. Por serem focados em partes pequenas e isoladas, os testes de unidade podem ser executados em paralelo para múltiplos componentes, acelerando o ciclo de feedback para os desenvolvedores. Geralmente, são escritos e executados pelos próprios programadores, pois exigem um conhecimento profundo do código-fonte.
+
+As principais áreas de foco em um teste de unidade são:
+
+- **A Interface do Módulo:** Verificar se os dados fluem corretamente para dentro e para fora da unidade (parâmetros de entrada, valores de retorno).
+- **Estruturas de Dados Locais:** Garantir que os dados mantidos temporariamente dentro da unidade (variáveis locais) são preservados e manipulados corretamente durante a execução.
+- **Caminhos Independentes:** Assegurar que todos os caminhos lógicos da estrutura de controle (como `if`, `else`, `switch` e laços) sejam executados pelo menos uma vez.
+- **Condições de Limite (Boundary Conditions):** Testar o comportamento da unidade em seus limites operacionais (ex: valores máximos e mínimos, entradas nulas, listas vazias), pois é onde os erros frequentemente ocorrem.
+- **Manipulação de Erros:** Verificar se todos os caminhos de tratamento de erro (ex: blocos `try-catch`, validações de entrada) são acionados corretamente quando uma condição de falha é simulada.
+
+Retornando à nossa analogia do motor, o teste de unidade é o equivalente a testar cada peça individualmente. Antes de montar o motor, os engenheiros testam a vela de ignição para garantir que ela produz a faísca correta, o pistão para verificar sua resistência e a biela para conferir sua durabilidade. Cada peça, a menor unidade do motor, precisa funcionar perfeitamente por si só.
+
+Para selecionar os casos de teste de unidade de forma eficaz, duas estratégias são comumente utilizadas:
+
+1. **Teste de Partição (ou Particionamento de Equivalência):** Identifica grupos de entradas que possuem características comuns e que, teoricamente, seriam processadas da mesma maneira pela unidade. Em vez de testar todos os valores possíveis, escolhe-se um representante de cada grupo. Por exemplo, se uma função espera um número de 1 a 100, as partições seriam: números negativos (inválida), zero (inválida), 1 a 100 (válida) e maiores que 100 (inválida).
+2. **Testes Baseados em Diretrizes:** Utiliza a experiência acumulada sobre os tipos de erros que os programadores mais cometem. Por exemplo, diretrizes podem sugerir sempre testar com valores nulos, strings vazias, números zero ou com o maior valor que um tipo de dado pode suportar.
+
+A tabela a seguir resume algumas definições importantes sobre os Testes de Unidade:
+
+| Definições Importantes de Testes de unidade |
+| --- |
+| Testes de Unidade são aqueles realizados sobre as menores estruturas de código-fonte, como métodos e classes. |
+| Testes de Unidade consistem em testar individualmente, componentes ou módulos de software que, posteriormente devem ser testados de maneira integrada. |
+| Testes de Unidade focalizam cada componente de um software de forma individual, garantindo que o componente funciona adequadamente. |
+| Testes de Unidade focalizam o esforço de verificação na menor unidade de projeto de software, isto é, no componente ou no módulo de software. |
+| Testes de Unidade têm por objetivo explorar a menor unidade do projeto, procurando identificar falhas ocasionadas por defeitos de lógica e de implementação em cada módulo separadamente. |
+| Testes de Unidade enfocam a lógica interna de processamento e as estruturas de dados dentro dos limites de um componente. |
+| Testes de Unidade concentram o esforço de verificação na menor unidade de design de software. |
+| Testes de Unidade concentram-se na lógica de processamento interno e nas estruturas de dados dentro dos limites de um componente. |
+| Testes de Unidade têm por objetivo explorar a menor unidade do projeto, procurando provocar falhas ocasionadas por defeitos de lógica e de implementação em cada módulo, separadamente. |
+| Testes de Unidade têm como foco as menores unidades de um programa, que podem ser funções, procedimentos, métodos ou classes. |
+
+### Teste de Integração
+
+Após os testes de unidade garantirem que os componentes individuais funcionam corretamente em isolamento, o próximo desafio é fazê-los trabalhar em conjunto. Um iniciante poderia perguntar: "Se todas as peças funcionam perfeitamente sozinhas, por que elas não funcionariam juntas?". A realidade da engenharia de software mostra que a integração de componentes é uma das fontes mais ricas de defeitos.
+
+O **Teste de Integração** é a técnica sistemática para construir a arquitetura do software, combinando os componentes testados em unidade e, ao mesmo tempo, conduzindo testes para descobrir erros associados às suas **interfaces** e interações. Problemas comuns que surgem nesta fase incluem:
+
+- Dados perdidos ou corrompidos ao passar de um componente para outro.
+- Um componente causando um efeito colateral adverso e inesperado em outro.
+- Subfunções que, quando combinadas, não produzem a função principal desejada.
+- Pequenas imprecisões de cálculo em componentes individuais que se amplificam a níveis inaceitáveis quando combinadas.
+- Conflitos no acesso a estruturas de dados globais.
+
+Uma abordagem ingênua e perigosa para a integração é a chamada **"Big Bang"**, onde todos os componentes são combinados de uma só vez e o programa inteiro é testado. O resultado é, quase sempre, o caos. Um grande número de erros aparece simultaneamente, e isolar a causa de cada um se torna uma tarefa extremamente complexa e demorada.
+
+A alternativa profissional é a **integração incremental**. Nela, o programa é construído e testado em pequenos incrementos, adicionando um componente de cada vez à base já testada. Essa abordagem permite que os erros sejam isolados e corrigidos mais facilmente, que as interfaces sejam testadas de forma mais completa e que uma estratégia sistemática seja aplicada.
+
+Voltando ao nosso motor, o teste de integração seria o momento de juntar o virabrequim, a biela e o pistão. Individualmente, eles passaram nos testes, mas agora é preciso verificar se eles se conectam perfeitamente e se, juntos, conseguem transformar o movimento linear do pistão em movimento de rotação no virabrequim, como esperado. O foco está na interface e na colaboração entre as peças.
+
+A tabela a seguir resume algumas definições importantes sobre os Testes de Integração:
+
+| Definições Importantes de Testes de integração |
+| --- |
+| Testes de Integração são caracterizados por testar as interfaces entre os componentes ou interações de diferentes partes de um sistema. |
+| Testes de Integração visam testar as falhas decorrentes da integração dos módulos do sistema. |
+| Testes de Integração são uma técnica sistemática para construir a arquitetura do software, enquanto, ao mesmo tempo, conduz testes para descobrir erros associados às interfaces. |
+| Testes de Integração têm por objetivo construir uma estrutura de programa determinada pelo projeto a partir de componentes já testados. |
+| Testes de Integração são uma técnica utilizada para descobrir erros associados às interfaces na qual, a partir de componentes testados individualmente, se constrói uma estrutura de programa determinada pelo projeto. |
+| Testes de Integração verificam o funcionamento em conjunto dos componentes do sistema, se são chamados corretamente e se a transferência de dados acontece no tempo correto, por meio de suas interfaces. |
+| Testes de Integração verificam se os componentes do sistema, juntos, trabalham conforme descrito nas especificações do sistema e do projeto do programa. |
+| Testes de Integração são uma técnica sistemática para construir a arquitetura do software enquanto conduz testes para descobrir erros associados às interfaces. |
+
+### Teste de Validação
+
+Quando o teste de integração termina, temos um software completamente montado como um pacote, com seus erros de interface já descobertos e corrigidos. É neste ponto que começa o **Teste de Validação**, também conhecido como **Teste de Aceitação**. Seu foco muda da verificação técnica interna para a validação do produto em relação às expectativas do cliente.
+
+O teste de validação concentra-se exclusivamente em **ações visíveis ao usuário e em saídas do sistema reconhecíveis por ele**. A validação tem sucesso quando o software funciona de uma maneira que pode ser razoavelmente esperada pelo cliente. Mas como definir "expectativas razoáveis"? O árbitro para essa questão é o **documento de requisitos de software**, que deve conter uma seção de **Critérios de Validação**.
+
+A validação é frequentemente realizada por meio de duas práticas principais:
+
+- **Teste Alfa (Alpha Testing):** É conduzido por um grupo de usuários finais ou pela equipe de testes no ambiente de desenvolvimento, mas de forma controlada. O objetivo é simular o uso real e encontrar defeitos antes que o software seja liberado para um público maior.
+- **Teste Beta (Beta Testing):** É conduzido por usuários finais reais, no seu próprio ambiente. O software é liberado para um grupo limitado de clientes que concordam em usá-lo e reportar problemas. O teste beta é uma excelente forma de obter feedback sobre o desempenho e a usabilidade do produto no mundo real.
+
+No exemplo do nosso motor, suponha que ele foi encomendado pela BMW para ser instalado em um carro da Citroën. O Teste Alfa seria a equipe da Citroën indo até a fábrica da BMW para testar o motor em um ambiente controlado. O Teste Beta seria a BMW entregando alguns motores para a Citroën instalá-los em seus carros e testá-los em condições reais de uso.
+
+A tabela a seguir resume algumas definições importantes sobre os Testes de Validação:
+
+| Definições Importantes de Testes de validação |
+| --- |
+| Testes de Validação focalizam ações e saídas, tais como percebidas pelo usuário final. |
+| Testes de Validação são executados logo após montagem do pacote de software, quando os erros de interface já foram descobertos e corrigidos. |
+| Testes de Validação têm como principal característica verificar o sistema em relação aos seus requisitos originais e às necessidades atuais do usuário. |
+| Testes de Validação avaliam o software com respeito aos seus requisitos e detecta falhas nos requisitos e na interface com o usuário. |
+
+#### Verificação vs. Validação: Uma Nuance Importante
+
+É crucial entender a diferença conceitual entre verificação e validação, um tópico frequente em avaliações e discussões teóricas.
+
+- **Verificação:** Responde à pergunta "Estamos construindo o produto **corretamente**?". É um processo interno, focado em checar se o software está em conformidade com sua **especificação técnica** (design, arquitetura). Os testes de unidade e integração são, em sua essência, atividades de verificação.
+- **Validação:** Responde à pergunta "Estamos construindo o produto **certo**?". É um processo externo, focado em checar se o software atende às **necessidades e expectativas do usuário**.
+
+No entanto, há uma nuance. Como as expectativas do cliente são formalizadas nos Critérios de Validação, que fazem parte da especificação de requisitos, algumas fontes, incluindo o autor Roger Pressman, afirmam que a validação demonstra a **conformidade com os requisitos**. Como ele diz: "A validação de software é conseguida por meio de uma série de testes que demonstram conformidade com os requisitos."
+
+Portanto, para um entendimento padrão: a verificação foca na conformidade técnica, enquanto a validação foca na conformidade com as necessidades do usuário. Contudo, ao afirmar que o teste de validação ocorre em relação aos requisitos, sem compará-lo com o teste de verificação, essa afirmação pode ser considerada correta no contexto prático.
+
+### Teste de Sistema
+
+O software, por mais complexo que seja, é geralmente apenas um elemento de um sistema maior, que envolve hardware, redes, bancos de dados, outros softwares e, claro, pessoas. O **Teste de Sistema** é o nível final de teste, onde o software já validado é integrado a todos os outros elementos do sistema para verificar se o conjunto funciona de forma coesa.
+
+A finalidade primária do teste de sistema é exercitar totalmente o sistema de ponta a ponta. Ele avalia o software em relação ao seu projeto arquitetural e detecta falhas de especificação, desempenho, robustez e segurança que só se manifestam quando todos os componentes do ecossistema estão interagindo.
+
+Um problema clássico que surge nesta fase é a “caça ao culpado”. Quando um erro é descoberto, as equipes responsáveis pelos diferentes elementos do sistema (software, banco de dados, infraestrutura) podem começar a acusar umas às outras. Para evitar essa postura improdutiva, a equipe de software deve se antecipar, criando testes que simulem falhas nas interfaces com outros elementos e registrando os resultados como evidência.
+
+Finalizando nossa analogia: após validar que o motor atende aos critérios da Citroën, o teste de sistema consiste em **instalar o motor no carro** e testá-lo integrado a todos os outros sistemas: o sistema de transmissão, o elétrico, o de freios, o de arrefecimento, etc. O objetivo é garantir que o carro, como um todo, funcione harmoniosamente.
+
+O teste de integração verifica as interfaces **entre os componentes do mesmo software**. O teste de sistema verifica as interfaces **entre o software e os outros elementos do sistema maior**.
+
+A tabela a seguir resume algumas definições importantes sobre os Testes de Sistema:
+
+| Definições Importantes de Testes de sistema |
+| --- |
+| Testes de Sistema incluem diversas modalidades de teste, cujo objetivo é testar o sistema computacional como um todo. |
+| Testes de Sistema testam se o sistema cumpre seus requisitos funcionais e não funcionais. |
+| Testes de Sistema avaliam o software com respeito ao seu projeto arquitetural e detecta falhas de especificação, desempenho, robustez e segurança. |
+| Testes de Sistema visam a verificar o sistema, baseado em computador, não se limitando ao software, mas incluindo o processo como um todo, como hardware, pessoal e informação. |
+
