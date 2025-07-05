@@ -182,3 +182,59 @@ Para organizar a vasta disciplina de testes, é útil pensar nela através de tr
 - **Técnicas de Teste (Como testar?):** Esta dimensão descreve os métodos usados para projetar e derivar os casos de teste. Ela é a resposta para a pergunta "Como vamos criar nossos testes?". As técnicas definem a abordagem, como o teste de caixa-preta (sem conhecimento interno) ou caixa-branca (com conhecimento do código).
 
 Nos próximos tópicos, exploraremos cada uma dessas dimensões em profundidade, detalhando os principais níveis, tipos e técnicas que formam o arsenal de um engenheiro de software de qualidade.
+
+## Estratégias e Níveis de Teste: Do Componente ao Sistema Completo
+
+Uma vez que entendemos os princípios fundamentais, uma série de perguntas práticas emerge: Como devemos conduzir os testes de forma organizada? Devemos estabelecer um plano formal? Testamos o programa como um todo de uma só vez ou executamos testes em partes menores? E quando o cliente deve ser envolvido?
+
+Essas e outras questões são respondidas por meio de uma **estratégia de teste de software**. O teste, muitas vezes, requer mais esforço de projeto e planejamento do que a própria codificação. Se for realizado de maneira casual e desorganizada, o resultado é tempo perdido, esforço duplicado e, o pior de tudo, erros críticos que passam sem ser detectados. Portanto, é essencial estabelecer uma abordagem sistemática e formal para a atividade de teste.
+
+De maneira geral, toda estratégia de teste de software eficaz parte do “pequeno” em direção ao “grande”. Ou seja, os testes iniciais focam em um único componente ou em um pequeno grupo de unidades relacionadas, aplicando verificações para descobrir erros nos dados e na lógica de processamento encapsulados por eles. Após os componentes serem validados individualmente, eles são progressivamente integrados até que o sistema completo esteja montado. Nesse ponto, são executados testes de ordem superior para descobrir erros no atendimento aos requisitos do cliente.
+
+Pense na montagem de um motor de carro. Os testes começam nos componentes menores e isolados, como a vela de ignição, a biela ou o pistão. Em seguida, os engenheiros realizam testes de integração para verificar se esses componentes trabalham corretamente em conjunto. Finalmente, o motor completo é testado em um dinamômetro para validar seu desempenho (potência, torque) e, por fim, o carro inteiro é testado na pista. A estratégia de teste de software segue essa mesma lógica incremental e hierárquica.
+
+### Princípios de uma Estratégia de Teste
+
+Embora existam muitas estratégias de teste propostas na literatura, todas elas compartilham um conjunto de características e princípios genéricos:
+
+- **Revisões Técnicas como Ponto de Partida:** Um teste eficaz começa antes mesmo da execução do código. A realização de **revisões técnicas eficazes** sobre os artefatos (requisitos, diagramas de arquitetura, etc.) permite eliminar uma grande quantidade de erros de lógica e interpretação antes que eles se transformem em defeitos no software.
+- **Progressão de Nível:** O teste sempre se inicia no nível do componente individual (a menor parte testável do software) e progride em direção à integração do sistema computacional como um todo.
+- **Técnicas Apropriadas para Cada Contexto:** Diferentes técnicas de teste (que veremos mais adiante) são apropriadas para diferentes abordagens de engenharia e em diferentes pontos do ciclo de vida. Testes de unidade, por exemplo, utilizam técnicas de caixa-branca, enquanto testes de sistema utilizam técnicas de caixa-preta.
+- **Envolvimento de Múltiplos Papéis:** O teste é uma responsabilidade compartilhada. Ele é realizado tanto pelo **desenvolvedor do software**, que tem o conhecimento profundo do código, quanto por um **grupo de teste independente** (em projetos maiores), que traz uma perspectiva imparcial e focada nos requisitos do usuário, evitando o viés de confirmação.
+- **Distinção entre Teste e Depuração:** Testar e depurar (_debugging_) são atividades distintas. **Testar é o processo de encontrar defeitos; depurar é o processo de localizar e corrigir a causa desses defeitos**. Embora diferentes, elas são intrinsecamente ligadas, e a depuração deve ser uma consequência natural de uma boa estratégia de teste.
+
+### Visualizando a Estratégia: O Modelo em Espiral dos Testes
+
+Uma estratégia de teste eficaz precisa acomodar tanto os testes de baixo nível, que verificam pequenos segmentos de código, quanto os de alto nível, que validam as funções do sistema em relação aos requisitos do cliente. Uma das melhores maneiras de visualizar essa dinâmica é através do modelo em espiral.
+
+<div align="center">
+  <img width="640px" src="./img/39-estrategia-de-testes-em-espiral.png">
+</div>
+
+Este modelo pode ser interpretado sob dois pontos de vista complementares: o do processo de desenvolvimento e o do processo de teste.
+
+- **O Fluxo de Desenvolvimento (Sentido Anti-Horário):** Visto pela perspectiva do processo de software, o desenvolvimento se move da parte externa para a interna da espiral, em um sentido **anti-horário**. Começa-se com a **Engenharia de Sistemas** e a **Análise de Requisitos**, que são atividades de alta abstração. Em seguida, avança-se para o **Projeto** da arquitetura e, finalmente, para a **Codificação**, que é a atividade mais concreta. O desenvolvimento, portanto, diminui o nível de abstração a cada volta.
+- **O Fluxo de Testes (Sentido Horário):** Visto pela perspectiva da estratégia de testes, o processo se move do centro da espiral para fora, em um sentido **horário**. Começa-se com o **Teste de Unidade**, focado em cada componente de código recém-implementado. Em seguida, o escopo se expande para o **Teste de Integração**, que verifica o projeto e a arquitetura. Depois, para o **Teste de Validação**, que confere os requisitos, e, finalmente, para o **Teste de Sistema**, que avalia o sistema como um todo. O processo de teste, portanto, aumenta o escopo e o nível de abstração a cada volta.
+
+Essa visualização deixa claro que o teste não é uma fase final, mas sim um conjunto de atividades que espelham e validam cada etapa do processo de desenvolvimento.
+
+### A Hierarquia dos Níveis de Teste
+
+Considerando a estratégia de um ponto de vista procedimental, o teste de software é, na prática, uma série de quatro níveis de teste implementados sequencialmente. Essa progressão garante que o software seja construído sobre uma base sólida, verificando primeiro as partes pequenas e depois suas interações, até validar o todo.
+
+<div align="center">
+  <img width="640px" src="./img/39-hierarquia-dos-testes.png">
+</div>
+
+Essa hierarquia pode ser dividida em duas grandes categorias, que exigem diferentes habilidades e perspectivas:
+
+- **Testes de Baixo Nível (1º Nível):** Composto pelo **Teste de Unidade** e **Teste de Integração**, este nível foca na verificação técnica do software. Exige um profundo conhecimento da estrutura interna do código, da arquitetura e das tecnologias utilizadas. Por essa razão, esses testes são frequentemente realizados pelos próprios desenvolvedores, que possuem todo o contexto necessário para criá-los e executá-los. A abordagem aqui é predominantemente de **caixa-branca**.
+- **Testes de Alto Nível (2º Nível):** Composto pelo **Teste de Validação** e **Teste de Sistema**, este nível foca na validação do software em relação às necessidades do negócio e dos usuários. Não é necessário ter conhecimento da implementação interna; os testes são guiados pelas especificações de requisitos e pelos cenários de uso. Por isso, são geralmente conduzidos por uma equipe de testes dedicada, por analistas de negócio ou até mesmo pelos usuários finais. A abordagem aqui é de **caixa-preta**.
+
+A seguir, uma introdução a cada um desses quatro níveis, que serão detalhados nos próximos tópicos.
+
+- **Teste de Unidade:** Foca em verificar a menor parte testável do software (uma função, um método, uma classe) de forma isolada, garantindo que ela funcione corretamente.
+- **Teste de Integração:** Após as unidades serem testadas, o foco se move para a verificação das interações entre elas. O objetivo é descobrir defeitos nas interfaces e na comunicação entre os componentes integrados.
+- **Teste de Validação:** Verifica se o software, já totalmente integrado, atende aos requisitos funcionais, de desempenho e de comportamento definidos na fase de análise. A pergunta-chave aqui é: "Estamos construindo o produto certo?".
+- **Teste de Sistema:** Avalia o software como parte de um sistema maior, que pode incluir hardware, outros softwares, pessoas e processos. Ele verifica se todos os elementos se combinam corretamente e se o desempenho global do sistema é alcançado.
+
