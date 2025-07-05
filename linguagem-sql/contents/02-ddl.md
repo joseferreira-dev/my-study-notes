@@ -202,121 +202,196 @@ Enquanto os tipos de caracteres são feitos para armazenar texto legível, as st
 
 ### Tipos de Dados Numéricos
 
-Os tipos numéricos em SQL são divididos em duas grandes categorias: números exatos e números aproximados.
+Vamos, agora, tratar dos tipos de dados numéricos. A escolha correta do tipo numérico é vital para garantir a precisão dos cálculos e a eficiência do armazenamento. Eles são divididos em duas grandes categorias: **números exatos (exact numbers)**, para valores que não podem ter nenhuma variação, e **números aproximados (approximate numbers)**, para medições onde um certo grau de imprecisão é aceitável.
 
-#### Números Exatos
+#### Números Exatos (Ponto Fixo e Inteiros)
 
-Estes tipos são usados para armazenar valores onde a precisão absoluta é necessária, como em contagens, identificadores e, principalmente, valores monetários.
+Os números exatos são utilizados quando cada dígito tem importância fundamental. Eles podem ser números inteiros, usados para contagens de itens indivisíveis (lápis, pessoas ou planetas), ou números de ponto fixo, que possuem casas decimais e são ideais para valores monetários (preços, salários), medidas precisas (pesos) ou percentuais.
 
-- **`NUMERIC(p, s)` e `DECIMAL(p, s)`:** São os tipos padrão para números de ponto fixo. O parâmetro **precisão (`p`)** define o número total de dígitos que o número pode ter, e a **escala (`s`)** define quantos desses dígitos vêm após a vírgula decimal. Por exemplo, `NUMERIC(7, 2)` pode armazenar um número como `12345.67`. A diferença entre `NUMERIC` e `DECIMAL` é sutil e depende da implementação do SGBD, mas em geral, `NUMERIC` exige a precisão exata definida, enquanto `DECIMAL` pode permitir uma precisão maior.
-- **`INTEGER` (ou `INT`), `SMALLINT` e `BIGINT`:** Usados para armazenar números inteiros (sem parte fracionária). A diferença entre eles é o espaço de armazenamento e, consequentemente, a faixa de valores que podem representar. `SMALLINT` ocupa menos espaço para números pequenos, `INTEGER` é o tipo mais comum, e `BIGINT` é usado para números inteiros muito grandes.
+Os tipos padrão para números exatos com casas decimais são `NUMERIC` e `DECIMAL`. Ao definir uma coluna com um desses tipos, especificamos sua **precisão** e **escala**:
 
-A tabela a seguir ilustra como o valor `235.89` seria armazenado sob diferentes especificações `NUMERIC`:
+- **Precisão (p):** Determina o número total máximo de dígitos decimais que podem ser armazenados (tanto à esquerda quanto à direita do ponto decimal).
+- **Escala (s):** Especifica o número máximo de casas decimais permitidas (os dígitos à direita do ponto decimal).
 
-|Especificação|Valor Armazenado|
-|---|---|
-|`NUMERIC(5, 2)`|`235.89`|
-|`NUMERIC(5, 1)`|`235.9` (arredondado)|
-|`NUMERIC(5)` ou `NUMERIC(5, 0)`|`236` (arredondado)|
-|`NUMERIC(4, 1)`|`235.9` (arredondado)|
-|`NUMERIC(4, 2)`|Erro (excede a precisão)|
+A sintaxe é `NUMERIC(p, s)` ou `DECIMAL(p, s)`. Por exemplo, `DECIMAL(10, 2)` é uma escolha comum para valores monetários, permitindo até `99.999.999,99`. Se a escala for omitida, ela é considerada zero, transformando o tipo em um inteiro.
 
-#### Números Aproximados
+Vejamos o exemplo do número `235,89` para entender como diferentes especificações afetam o valor armazenado. Note que o SGBD arredonda o valor quando a escala especificada é menor que a do valor inserido.
 
-Estes tipos, também conhecidos como números de ponto flutuante, são usados para dados científicos ou medições onde uma aproximação é aceitável. Eles podem representar uma faixa muito maior de valores (tanto muito grandes quanto muito pequenos) do que os tipos exatos, mas com uma perda potencial de precisão.
-
-- **`FLOAT(p)`:** Define um número de ponto flutuante com uma precisão binária mínima de `p` bits. A precisão determina quantos bits são usados para armazenar o número, o que afeta diretamente sua exatidão. Por exemplo, ao armazenar um número como `116.456,23` em uma coluna `FLOAT(20)`, o SGBD tem 20 bits para representar o número. Se a parte inteira (`116456` em decimal é `11100011011101000` em binário, que usa 17 bits) consumir 17 bits, sobrarão apenas 3 bits para a parte fracionária (`0,23`). Como `0,23` (`.0011101...` em binário) precisa de mais de 3 bits para ser representado com exatidão, o valor será arredondado (ou truncado), e o que será armazenado no banco será uma aproximação, como `116.456,2`.
-- **`REAL`:** Um tipo de ponto flutuante de precisão simples.
-- **`DOUBLE PRECISION`:** Um tipo de ponto flutuante de precisão dupla, oferecendo mais precisão que o `REAL`.
-
-É crucial evitar o uso de tipos de ponto flutuante para valores monetários, pois erros de arredondamento podem se acumular e levar a inconsistências financeiras. Para esses casos, `NUMERIC` ou `DECIMAL` são sempre a escolha correta.
-
-Esses tipos de dados numéricos estão disponíveis em todos os SGBDs relacionais, por exemplo, no SGBD Oracle. É mostra, abaixo, a relação entre os tipos SQL padrão, os do ORACLE e do MYSQL, bem como alguns comentários importantes sobre os aspectos numéricos do Oracle.
-
-|ANSI SQL DATA TYPE|ORACLE DATA TYPE|MYSQL DATA TYPE|
+|Especificação|Valor Armazenado|Explicação|
 |---|---|---|
-|`NUMERIC(p,s)`, `DECIMAL(p,s)`|`NUMBER(p,s)`|`DECIMAL(p,d)`, `DEC(p,d)`|
-|`INTEGER`, `INT`, `SMALLINT`, `BIGINT`|`NUMBER(p,0)`, `NUMBER(p)`|`TINYINT`, `SMALLINT`, `MEDIUMINT`, `INT`, `BIGINT`|
-|`FLOAT`, `REAL`, `DOUBLE PRECISION`|`FLOAT(p)`, `NUMBER`|`FLOAT(p)`, `DOUBLE`|
+|`NUMERIC(5, 2)`|`235.89`|A precisão e a escala são exatas para o valor.|
+|`NUMERIC(5, 1)`|`235.9`|A escala é 1, então o valor é arredondado para uma casa decimal.|
+|`NUMERIC(5)` ou `NUMERIC(5, 0)`|`236`|A escala é 0, então o valor é arredondado para o inteiro mais próximo.|
+|`NUMERIC(4, 1)`|`235.9`|A precisão de 4 dígitos é suficiente para `235.9`.|
+|`NUMERIC(4, 2)`|Erro|O valor `235.89` requer 5 dígitos de precisão, mas apenas 4 foram permitidos.|
+|`NUMERIC(2, 0)`|Erro|O valor `236` (após arredondamento) requer 3 dígitos, excedendo a precisão de 2.|
 
-|Tipo de Dado|Tamanho Típico (Bytes)|Faixa (com sinal)|
+Para números inteiros, o SQL oferece tipos otimizados que consomem diferentes quantidades de espaço de armazenamento, impactando a faixa de valores que podem representar:
+
+- **`SMALLINT`**: Ideal para números pequenos, como a idade de uma pessoa, o número de itens em um pedido ou a quantidade de portas em um carro. Ocupa apenas 2 bytes.
+- **`INTEGER`** ou **`INT`**: O tipo de inteiro de uso geral, adequado para a maioria das necessidades, como identificadores de registros (IDs) em tabelas de médio porte ou contagens de visualizações. Ocupa 4 bytes.
+- **`BIGINT`**: Usado para números inteiros muito grandes, como o ID de uma transação em um sistema financeiro global, o número de milissegundos desde a época Unix, ou o ID de um post em uma rede social com bilhões de usuários. Ocupa 8 bytes.
+
+#### Números Aproximados (Ponto Flutuante)
+
+Os números de pontos flutuantes ou aproximados são usados para representar valores que não podem, ou não precisam, ser representados com precisão absoluta, como medições científicas ou dados estatísticos. Eles são armazenados em um formato binário que pode representar uma gama muito maior de valores (números muito grandes ou muito próximos de zero) do que os tipos exatos, mas ao custo de uma pequena perda de precisão.
+
+O tipo de dado principal é o `FLOAT(p)`, onde `p` indica a **precisão binária** (o número de bits usados para armazenar a mantissa do número). Os tipos `REAL` e `DOUBLE PRECISION` são atalhos para implementações de `FLOAT` com precisão simples e dupla, respectivamente.
+
+Vamos analisar o exemplo do saldo em uma conta, no valor de R$ 116.456,23, em uma coluna `FLOAT(20)`.
+
+1. **Parte Inteira**: O número `116456` em decimal equivale a `11100011011101000` em binário, que utiliza **17 bits**.
+2. **Bits Restantes**: A coluna foi definida com `FLOAT(20)`. Após usar 17 bits para a parte inteira, restam apenas **3 bits** para a parte fracionária.
+3. **Parte Fracionária**: O valor `0,23` em decimal equivale a `0.0011101...` em binário. Para representar `23`, precisaríamos de 5 bits (`10111`).
+4. **Arredondamento**: Como não há espaço para `10111` (5 bits) nos 3 bits restantes, o SGBD arredonda o valor para o que pode ser representado. Ele pode, por exemplo, armazenar o valor `0,2`, que em binário pode ser representado com menos bits. O valor final armazenado seria uma aproximação, como `116.456,2`.
+
+Essa imprecisão, embora pequena, torna os tipos de ponto flutuante inadequados para cálculos financeiros, onde cada centavo conta. Para esses casos, **sempre** use `DECIMAL` ou `NUMERIC`.
+
+#### Comparativo entre SGBDs
+
+Os tipos de dados numéricos estão disponíveis em todos os SGBDs relacionais, mas podem ter nomes diferentes. A tabela abaixo relaciona os tipos padrão do SQL ANSI com as implementações dos populares Oracle e MySQL.
+
+|ANSI SQL DATA TYPE|ORACLE DATA TYPE|MYSQL DATA TYPE|Comentários|
+|---|---|---|---|
+|`NUMERIC(p,s)`<br>`DECIMAL(p,s)`<br>`DECFLOAT`|`NUMBER(p,s)`|`DECIMAL(p,d)`<br>`DEC(p,d)`|`NUMBER` no Oracle é um tipo extremamente versátil, usado para ponto fixo e flutuante.|
+|`INTEGER`<br>`INT`<br>`SMALLINT`<br>`BIGINT`|`NUMBER(p,0)`<br>`NUMBER(p)`|`TINYINT`<br>`SMALLINT`<br>`MEDIUMINT`<br>`INTEGER`<br>`INT`<br>`BIGINT`|MySQL oferece mais granularidade para inteiros, como `TINYINT` e `MEDIUMINT`.|
+|`FLOAT(p)`<br>`REAL`<br>`DOUBLE PRECISION`|`FLOAT(p)`<br>`BINARY_FLOAT`<br>`BINARY_DOUBLE`|`FLOAT(p)`<br>`FLOAT(size,d)`<br>`DOUBLE`|Oracle possui tipos específicos (`BINARY_FLOAT`/`DOUBLE`) que seguem o padrão IEEE 754 para ponto flutuante.|
+
+Para concluir, a tabela abaixo resume o espaço de armazenamento e a faixa de valores para os tipos numéricos mais comuns.
+
+|Tipo de dado|Tamanho em Bytes|Range (Faixa de Valores)|
 |---|---|---|
 |`SMALLINT`|2|-32.768 a 32.767|
-|`INTEGER`|4|-2.147.483.648 a 2.147.483.647|
-|`BIGINT`|8|-9.223.372.036.854.775.808 a 9.223.372.036.854.775.807|
-|`REAL`|4|±1.18E-38 a ±3.40E+38|
-|`DOUBLE PRECISION`|8|±2.23E-308 a ±1.79E+308|
+|`INTEGER`|4|-2.147.483.648 a +2.147.483.647|
+|`BIGINT`|8|-9.223.372.036.854.775.808 a +9.223.372.036.854.775.807|
+|`REAL`|4|-3,40E+38 a -1,18E-38, 0 e 1,18E-38 a 3,40E+38|
+|`FLOAT` / `DOUBLE PRECISION`|8|-1,79E+308 a -2,23E-308, 0 e 2,23E-308 a 1,79E+308|
 
-### Tipos de Dados Temporais (Data e Hora)
+### Tipos de Dados Temporais (DATETIME E INTERVAL)
 
-Armazenar e manipular informações de data e hora é um requisito comum. O SQL oferece tipos específicos para isso.
+As horas e a data são informações cruciais e precisam ser armazenadas com frequência nos bancos de dados. O padrão SQL fornece um conjunto robusto de tipos para lidar com informações temporais.
 
-- **`DATE`:** Armazena uma data, contendo os componentes ano (quatro dígitos), mês (01-12) e dia (01-31). Exemplo: `2025-07-04`.
-    
-- **`TIME`:** Armazena uma hora do dia, contendo os componentes hora (00-23), minuto (00-59) e segundo (00-59), podendo incluir frações de segundo. Exemplo: `23:59:59.999`.
-    
-- **`TIMESTAMP`:** Combina `DATE` e `TIME` em um único tipo, armazenando um ponto exato no tempo, com precisão de frações de segundo. Pode opcionalmente incluir informações de fuso horário com a cláusula `WITH TIME ZONE`, o que é essencial para aplicações globais.
-    
-- **`INTERVAL`:** Representa uma duração de tempo, em vez de um ponto no tempo. É usado para realizar cálculos com datas, como `CURRENT_DATE + INTERVAL '1' MONTH`.
-    
+- **`DATE`**: Armazena uma data, consistindo em três elementos: ano, mês e dia (ex: `2025-12-31`). O ano é um número de quatro dígitos que permite valores de `0001` a `9999`. O mês vai de `01` a `12`, e o dia de `01` a `31`, respeitando as regras do calendário gregoriano.
+- **`TIME`**: Armazena uma hora do dia, consistindo das partes hora (`00` a `23`), minuto (`00` a `59`) e segundo (`00` a `59`). Pode incluir frações de segundo com uma precisão definida (ex: `14:30:55.123`).
+- **`TIMESTAMP`**: É a combinação de `DATE` e `TIME` em um único tipo, representando um ponto exato no tempo. É extremamente útil para registrar quando um evento ocorreu (ex: `2025-12-31 23:59:59.999`).
+    - **`TIMESTAMP WITH TIME ZONE`**: Uma variante essencial para aplicações globais. Além da data e hora, armazena a informação do fuso horário (o deslocamento em relação ao Tempo Universal Coordenado - UTC). Isso garante que o ponto no tempo seja inequívoco, não importa onde o usuário ou o servidor esteja localizado.
+- **`INTERVAL`**: Diferente dos outros, não representa um ponto no tempo, mas sim uma **duração** ou um período. É usado para realizar cálculos com datas e horas. Por exemplo, para encontrar todos os clientes que fizeram uma compra nos últimos 30 dias, poderíamos usar `CURRENT_DATE - INTERVAL '30' DAY`.
 
-```
-CREATE TABLE LOG_EVENTOS (
-    ID_EVENTO INTEGER PRIMARY KEY,
-    DATA_OCORRENCIA DATE,
-    HORA_OCORRENCIA TIME,
-    TIMESTAMP_REGISTRO TIMESTAMP WITH TIME ZONE
+Vejamos um exemplo de criação de uma tabela cujas colunas são dos tipos temporais.
+
+```sql
+CREATE TABLE tempo (
+  id DECIMAL PRIMARY KEY,
+  col1 DATE,                      -- Armazena ano, mês e dia (ex: '2024-07-10')
+  col2 TIME,                      -- Armazena hora, minuto e segundos (ex: '15:45:00')
+  col3 TIMESTAMP(9),              -- Armazena um timestamp com precisão de nanossegundos
+  col4 TIMESTAMP WITH TIME ZONE   -- Exemplo de timestamp com fuso horário (ex: '2024-07-10 12:00:00-03:00')
 );
 ```
 
-### Outros Tipos de Dados Padrão
+### Tipos de Dados BOOLEAN E XML
 
-- **`BOOLEAN`:** Um tipo de dado lógico que pode conter os valores `TRUE`, `FALSE` ou `UNKNOWN` (que é o tratamento do SQL para o valor `NULL` em contextos lógicos).
-    
-- **`XML`:** Introduzido para suportar o armazenamento e a consulta de dados no formato XML diretamente no banco de dados. O SGBD pode validar os documentos XML armazenados contra um `XMLSchema` definido, garantindo a estrutura dos dados. O tipo XML possui uma estrutura de árvore hierárquica, permitindo a representação de dados complexos e semiestruturados.
-    
+O tipo de dados `BOOLEAN` consiste na verdade dos valores distintos, verdadeiro e falso, assim como o valor desconhecido. **XML** é um acrônimo para **eXtensible Markup Language**, que define um conjunto de regras para a adição de marcação aos dados. Em detalhes:
 
-<div align="center"> <img src="[https://placehold.co/700x400/f0f0f0/333333?text=Figura+-+Relações+hierárquicas+entre+os+subtipos+XML](https://www.google.com/search?q=https://placehold.co/700x400/f0f0f0/333333%3Ftext%3DFigura%2B-%2BRela%C3%A7%C3%B5es%2Bhier%C3%A1rquicas%2Bentre%2Bos%2Bsubtipos%2BXML "null")" alt="Diagrama da estrutura de árvore do tipo de dado XML."> <p><em>O tipo de dado XML possui uma estrutura de árvore hierárquica.</em></p> </div>
+- **`BOOLEAN`**: Um tipo de dado lógico que, no padrão SQL, pode ter três valores: `TRUE`, `FALSE` e `UNKNOWN`. O valor `UNKNOWN` é o resultado de qualquer operação lógica envolvendo `NULL`, refletindo a ideia de que "se um valor é desconhecido, o resultado da comparação também é desconhecido".
+- **`XML`**: Um tipo de dados `XML` que permite armazenar documentos ou fragmentos XML diretamente em uma coluna do banco de dados. Isso é poderoso para integrar aplicações que se comunicam via XML ou para armazenar dados semiestruturados que não se encaixam bem no modelo relacional rígido.
+    - O tipo `XML` tem uma estrutura de árvore, com um nó raiz, nós filhos, e assim por diante.
+    - Pode-se associar um **`XMLSchema`** a uma coluna `XML`. Um `XMLSchema` é um arquivo que define a estrutura e as regras de um documento XML válido (quais tags são permitidas, sua ordem, tipos de dados, etc.). Quando um `XMLSchema` é associado, o SGBD valida cada documento XML inserido ou atualizado, garantindo a integridade dos dados.
+    - Os modificadores primários `SEQUENCE`, `CONTENT` e `DOCUMENT` e os secundários `UNTYPED`, `ANY` e `XMLSCHEMA` ajudam a refinar como o conteúdo XML é tratado e validado.
 
-### Tipos de Dados Avançados e Estruturados
+Vejamos exemplos de criação de tabelas com colunas do tipo `XML`:
 
-As revisões mais recentes do padrão SQL, a partir do SQL:1999, introduziram tipos de dados complexos que estendem o modelo relacional, aproximando-o de paradigmas orientados a objetos.
+```sql
+-- Criação simples de uma coluna XML
+CREATE TABLE T1 (
+  Col1 int primary key,
+  Col2 xml
+);
 
-- **`ROW`:** Este tipo permite que uma única coluna contenha uma estrutura de linha inteira, ou seja, um conjunto de campos nomeados. Isso viola a Primeira Forma Normal (1NF) da teoria relacional, que exige que todos os valores de coluna sejam atômicos. A vantagem é a capacidade de agrupar dados relacionados, como um endereço completo (`rua`, `cidade`, `estado`, `cep`), em um único tipo reutilizável. Por exemplo, pode-se criar um tipo `addr_typ` e usá-lo como o tipo da coluna `Endereco` na tabela `CLIENTE`.
-    
-    ```
-    CREATE ROW TYPE addr_typ (
-        Rua CHARACTER VARYING(25),
-        Cidade CHARACTER VARYING(20),
-        Estado CHARACTER(2),
-        CEP CHARACTER VARYING(9)
-    );
-    
-    CREATE TABLE CLIENTE (
-        ClienteID INTEGER PRIMARY KEY,
-        PrimeiroNome CHARACTER VARYING(25),
-        Endereco addr_typ
-    );
-    ```
-    
-- **Tipos de Coleção (`ARRAY`, `MULTISET`):** Esses tipos permitem que uma única coluna armazene uma coleção de valores. `ARRAY` é uma coleção ordenada de elementos, enquanto `MULTISET` é uma coleção não ordenada que permite duplicatas. Assim como o tipo `ROW`, eles também violam a 1NF, mas oferecem flexibilidade para modelar atributos multivalorados diretamente.
-    
-- **Tipos Definidos pelo Usuário (UDT - User-Defined Types):** O UDT é o recurso mais poderoso para estender o sistema de tipos do SQL. Ele permite que os desenvolvedores criem seus próprios tipos de dados complexos, encapsulando atributos e métodos (comportamento), de forma semelhante a uma classe em programação orientada a objetos. O principal benefício é a redução da "diferença de impedância" entre a linguagem da aplicação (como Java ou C#) e o banco de dados, permitindo um mapeamento mais direto entre os objetos da aplicação e os dados armazenados.
-    
-    ```
-    CREATE TYPE livro_udt AS (
-        titulo CHAR(40),
-        precodecompra DECIMAL(9,2),
-        ISBN varchar(40)
-    );
-    ```
-    
+-- Criação com validação por um XMLSCHEMA
+CREATE TABLE XMLEXEMPLO (
+  ID INT NOT NULL,
+  CONTENT XML(XMLSCHEMA ID 'meu_schema' LOCATION 'http://www.example.com/Example.xsd')
+);
+```
 
-<div align="center"> <img src="[https://placehold.co/800x600/f0f0f0/333333?text=Figura+-+Resumo+dos+tipos+de+dados+de+SQL](https://www.google.com/search?q=https://placehold.co/800x600/f0f0f0/333333%3Ftext%3DFigura%2B-%2BResumo%2Bdos%2Btipos%2Bde%2Bdados%2Bde%2BSQL "null")" alt="Diagrama resumindo a hierarquia dos tipos de dados em SQL."> <p><em>Esquema simplificado dos tipos de dados em SQL.</em></p> </div>
+A figura abaixo ilustra a estrutura hierárquica dos subtipos XML, onde uma sequência pode conter vários itens, que podem ser documentos ou valores atômicos.
 
-A escolha correta de um tipo de dado é a primeira linha de defesa para garantir a qualidade e a integridade da informação. É importante notar que o valor especial `NULL` é um membro de todos os domínios de tipo de dados, representando a ausência de um valor. Se um valor nulo não for permitido para uma coluna, a restrição `NOT NULL` deve ser declarada.
+<div align="center">
+  <img width="520px" src="./img/02-tipos-de-dados-xml.png">
+</div>
 
-Agora que compreendemos como definir a estrutura das tabelas e os tipos de dados de suas colunas, o próximo passo é explorar as restrições de integridade, que impõem regras de negócio ainda mais específicas sobre os dados.
+Por fim, é importante lembrar que o valor **`NULL`** é membro de todos os tipos de domínios. Ele representa a ausência de um valor. Se você declarar o domínio de um atributo como `NOT NULL`, o SGBD vai proibir a inserção de valores nulos para essa coluna.
+
+### Tipos de Dados Estruturados
+
+Além dos tipos predefinidos, o padrão SQL moderno (a partir do SQL:1999) introduziu tipos que permitem criar estruturas de dados mais complexas, aproximando o banco de dados dos paradigmas de programação orientada a objetos.
+
+#### Tipos `ROW`
+
+O tipo de dados de linha (`ROW`) permite que uma única coluna de uma tabela contenha uma estrutura de linha inteira, ou seja, um conjunto de campos nomeados. Isso viola a Primeira Forma Normal (1FN) da teoria relacional, que afirma que todos os valores de coluna devem ser atômicos (indivisíveis). No entanto, o tipo `ROW` oferece uma maneira pragmática de agrupar dados fortemente relacionados.
+
+Considere a seguinte instrução SQL, que define um tipo `ROW` para informações sobre o endereço de uma pessoa:
+
+```sql
+CREATE ROW TYPE addr_typ AS (
+  Rua CHARACTER VARYING(25),
+  Cidade CHARACTER VARYING(20),
+  Estado CHARACTER(2),
+  CEP CHARACTER VARYING(9)
+);
+```
+
+Depois que ele é definido, o novo tipo de linha pode ser usado em uma definição de tabela:
+
+```sql
+CREATE TABLE CLIENTE (
+  ClienteID INTEGER PRIMARY KEY,
+  PrimeiroNome CHARACTER VARYING(25),
+  UltimoNome CHARACTER VARYING(20),
+  Endereco addr_typ,
+  Telefone CHARACTER VARYING(15)
+);
+```
+
+A vantagem aqui é a **reutilização**. Se você precisa armazenar informações de endereço para clientes, fornecedores e colaboradores, você define a estrutura `addr_typ` apenas uma vez e a reutiliza em várias tabelas, garantindo consistência.
+
+#### Tipos de Coleção (`ARRAY` e `MULTISET`)
+
+Seguindo a tendência de flexibilizar o modelo relacional, os tipos de coleção permitem que um único campo armazene múltiplos valores.
+
+- **`ARRAY`**: Uma coleção **ordenada** de elementos de um mesmo tipo. Útil para armazenar uma lista de valores onde a ordem importa, como os números de telefone de um cliente em ordem de preferência.
+- **`MULTISET`**: Uma coleção **não ordenada** de elementos que permite duplicatas. Poderia ser usado para armazenar as tags associadas a um post de blog, onde a ordem não é relevante.
+
+Esses tipos também violam a 1FN, mas oferecem flexibilidade para modelar atributos multivalorados sem a necessidade de criar uma tabela de junção separada, o que pode simplificar certas consultas.
+
+#### Tipos Definidos pelo Usuário (UDT – User-Defined Types)
+
+Os Tipos Definidos pelo Usuário (UDTs) representam a maior aproximação do SQL ao mundo da programação orientada a objetos. Com UDTs, você pode definir seus próprios tipos de dados, encapsulando **atributos** (dados) e **métodos** (comportamento).
+
+Um dos benefícios mais importantes dos UDTs é a capacidade de diminuir a **"diferença de impedância" (impedance mismatch)** entre o banco de dados e a linguagem da aplicação (como Java, C#, Python). Frequentemente, os tipos de dados da linguagem de programação (objetos complexos) não correspondem diretamente aos tipos do SQL (tabelas planas). UDTs permitem criar tipos no banco que espelham os objetos da aplicação, facilitando o mapeamento entre os dois mundos.
+
+Um UDT encapsula seus dados. O mundo exterior pode ver as definições dos atributos e os resultados dos métodos, mas a implementação interna fica escondida. O acesso pode ser controlado como `PUBLIC`, `PRIVATE` ou `PROTECTED`.
+
+Vejamos um exemplo de um UDT simples:
+
+```sql
+CREATE TYPE livro_udt AS (
+  titulo CHAR(40),
+  precodecompra DECIMAL(9,2),
+  ISBN VARCHAR(40)
+);
+```
+
+Este UDT `livro_udt` agrupa as informações de um livro e pode agora ser usado como o tipo de uma coluna em uma tabela.
+
+Abaixo está um esquema simplificado que resume a hierarquia dos tipos de dados em SQL.
+
+<div align="center">
+  <img width="660px" src="./img/02-tipos-de-dados-sql.png">
+</div>
+
+Agora que vimos os tipos de dados, vamos passar rapidamente pelas possíveis restrições de integridade que compõem o padrão SQL e vão fazer parte dos comandos de criação de tabelas.
 
 ## Restrições de Integridade: Garantindo a Qualidade dos Dados
 
@@ -325,23 +400,21 @@ Definir a estrutura de uma tabela com suas colunas e tipos de dados é apenas o 
 As restrições de integridade em SQL podem ser agrupadas em três categorias principais, com base em onde e como são definidas:
 
 - **Restrições de Tabela (e de Coluna):** São definidas diretamente dentro do comando `CREATE TABLE` ou adicionadas posteriormente com `ALTER TABLE`. Podem ser aplicadas a uma única coluna (restrição de coluna) ou a um conjunto de colunas (restrição de tabela).
-    
 - **Assertions (Afirmações):** São restrições mais gerais, definidas como objetos de esquema independentes com `CREATE ASSERTION`. Elas podem envolver múltiplas tabelas e impor regras complexas que não se limitam a uma única tabela.
-    
 - **Restrições de Domínio:** São definidas com `CREATE DOMAIN`, criando um tipo de dado personalizado que já embute uma restrição. Qualquer coluna que utilize esse domínio herdará automaticamente a restrição.
-    
 
-<div align="center"> <img src="[https://placehold.co/800x400/f0f0f0/333333?text=Figura](https://www.google.com/search?q=https://placehold.co/800x400/f0f0f0/333333%3Ftext%3DFigura "null")+–+Tipos+de+restrições+de+integridade" alt="Diagrama mostrando os tipos de restrições de integridade e como são aplicadas."> <p><em>Classificação e aplicação das restrições de integridade em SQL.</em></p> </div>
+<div align="center">
+  <img width="700px" src="./img/02-tipos-de-restricoes-de-integridade.png">
+</div>
 
 ### Restrições Fundamentais em Tabelas
 
 Vamos explorar as restrições mais comuns, que são declaradas no nível da tabela.
 
 - **`PRIMARY KEY` (Chave Primária):** Esta é a restrição mais importante. Ela designa uma ou mais colunas cujo valor deve identificar unicamente cada linha da tabela. Uma chave primária impõe duas regras implicitamente: os valores na(s) coluna(s) não podem ser nulos (`NOT NULL`) e não podem ter duplicatas (`UNIQUE`). Uma tabela pode ter apenas uma chave primária.
-    
     - **Chave Primária Simples:** Quando a chave é composta por uma única coluna, a restrição pode ser declarada na própria linha da coluna.
         
-        ```
+        ```sql
         CREATE TABLE DEPARTAMENTO (
             DNumero INT PRIMARY KEY,
             DNome VARCHAR(50) NOT NULL UNIQUE
@@ -350,7 +423,7 @@ Vamos explorar as restrições mais comuns, que são declaradas no nível da tab
         
     - **Chave Primária Composta:** Quando a chave é formada por duas ou mais colunas, ela deve ser declarada no final da definição da tabela.
         
-        ```
+        ```sql
         CREATE TABLE PROJETO_EMPREGADO (
             CPF_Empregado CHAR(11),
             Num_Projeto INT,
@@ -362,15 +435,11 @@ Vamos explorar as restrições mais comuns, que são declaradas no nível da tab
 - **`FOREIGN KEY` (Chave Estrangeira):** Esta restrição cria um vínculo entre duas tabelas, garantindo a **integridade referencial**. Ela especifica que os valores em uma coluna (ou conjunto de colunas) de uma tabela (a tabela "filha") devem corresponder a valores existentes na chave primária de outra tabela (a tabela "pai"). Isso impede a criação de registros "órfãos". Ao definir uma chave estrangeira, é possível especificar **ações referenciais** (`ON DELETE` e `ON UPDATE`) que determinam o que o SGBD deve fazer na tabela filha quando um registro correspondente na tabela pai é excluído ou atualizado.
     
     - `CASCADE`: A mesma ação (exclusão ou atualização) é propagada para os registros filhos.
-        
     - `SET NULL`: As colunas da chave estrangeira nos registros filhos são definidas como `NULL`.
-        
     - `SET DEFAULT`: As colunas da chave estrangeira nos registros filhos são definidas com seu valor padrão (`DEFAULT`).
-        
     - `RESTRICT` / `NO ACTION` (comportamento padrão): A operação na tabela pai é rejeitada se houver registros filhos correspondentes.
-        
     
-    ```
+    ```sql
     CREATE TABLE EMPREGADO (
         SSN CHAR(11) PRIMARY KEY,
         Nome VARCHAR(100),
@@ -388,12 +457,10 @@ Vamos explorar as restrições mais comuns, que são declaradas no nível da tab
     ```
     
 - **`NOT NULL`:** A restrição mais simples. Garante que uma coluna não pode conter valores `NULL`. É essencial para campos obrigatórios.
-    
 - **`UNIQUE`:** Garante que todos os valores em uma coluna (ou conjunto de colunas) sejam únicos. Diferente da `PRIMARY KEY`, uma tabela pode ter múltiplas restrições `UNIQUE`, e elas permitem valores `NULL` (geralmente, apenas um valor nulo é permitido, mas isso pode variar entre SGBDs).
-    
 - **`DEFAULT`:** Especifica um valor padrão para uma coluna. Se uma nova linha for inserida sem um valor para essa coluna, o SGBD usará o valor `DEFAULT` automaticamente.
     
-    ```
+    ```sql
     CREATE TABLE PEDIDO (
         ID_Pedido INT PRIMARY KEY,
         Data_Pedido DATE DEFAULT CURRENT_DATE, -- Usa a data atual como padrão
@@ -402,13 +469,10 @@ Vamos explorar as restrições mais comuns, que são declaradas no nível da tab
     ```
     
 - **`CHECK`:** A restrição mais flexível. Permite definir uma condição de busca (uma expressão booleana) que deve ser verdadeira para qualquer valor inserido ou atualizado na coluna. É usada para impor regras de negócio complexas que não são cobertas pelas outras restrições.
-    
     - **Sintaxe de Coluna:** `nome_coluna tipo_dado CHECK (condição)`
-        
     - **Sintaxe de Tabela:** `CONSTRAINT nome_restricao CHECK (condição)`
-        
     
-    ```
+    ```sql
     CREATE TABLE PRODUTO (
         ID_Produto INT PRIMARY KEY,
         Nome VARCHAR(100),
@@ -418,9 +482,10 @@ Vamos explorar as restrições mais comuns, que são declaradas no nível da tab
         CONSTRAINT chk_estoque_positivo CHECK (Estoque >= 0)
     );
     ```
-    
 
-<div align="center"> <img src="[https://placehold.co/800x600/f0f0f0/333333?text=Figura](https://www.google.com/search?q=https://placehold.co/800x600/f0f0f0/333333%3Ftext%3DFigura "null")+–+Exemplos+de+restrições+de+integridade+em+SQL" alt="Quadro com exemplos de sintaxe para as diversas restrições de integridade."> <p><em>Exemplos de sintaxe para as diversas restrições de integridade em SQL.</em></p> </div>
+<div align="center">
+  <img width="800px" src="./img/02-tipos-de-restricoes-de-integridade-sintaxe.png">
+</div>
 
 ## Considerações Finais
 
