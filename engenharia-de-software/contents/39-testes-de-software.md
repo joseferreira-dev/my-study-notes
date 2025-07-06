@@ -484,7 +484,7 @@ Raramente um software opera em um único ambiente homogêneo. Ele precisa funcio
 
 #### Teste de Recuperação
 
-Sistemas robustos são projetados não apenas para não falhar, mas também para se recuperar graciosamente quando falhas inevitavelmente ocorrem. O **Teste de Recuperação** (_Recovery Testing_) força o software a falhar de diversas maneiras (simulando quedas de energia, perda de conexão com o banco de dados, falhas de hardware) para verificar se os mecanismos de recuperação funcionam como esperado. Ele avalia se o sistema consegue reiniciar, validar a integridade dos dados e retomar a operação de forma automática ou com mínima intervenção humana. Para sistemas que exigem recuperação manual, mede-se o **Tempo Médio para Reparo (MTTR)**, garantindo que ele esteja dentro dos limites aceitáveis para o negócio.
+Sistemas robustos são projetados não apenas para não falhar, mas também para se recuperar graciosamente quando falhas inevitavelmente ocorrem. O **Teste de Recuperação** (Recovery Testing) força o software a falhar de diversas maneiras (simulando quedas de energia, perda de conexão com o banco de dados, falhas de hardware) para verificar se os mecanismos de recuperação funcionam como esperado. Ele avalia se o sistema consegue reiniciar, validar a integridade dos dados e retomar a operação de forma automática ou com mínima intervenção humana. Para sistemas que exigem recuperação manual, mede-se o **Tempo Médio para Reparo (MTTR)**, garantindo que ele esteja dentro dos limites aceitáveis para o negócio.
 
 ### Testes Relacionados a Mudanças no Código
 
@@ -494,7 +494,7 @@ Este grupo de testes é uma reação direta ao ciclo de vida dinâmico do desenv
 
 O software é um organismo vivo; ele evolui a cada nova funcionalidade adicionada e a cada defeito corrigido. No entanto, cada mudança, por menor que seja, carrega o risco de introduzir efeitos colaterais indesejados, quebrando funcionalidades que antes operavam perfeitamente. O **Teste de Regressão** (Regression Testing) é a prática de reexecutar um conjunto de testes existentes para garantir que as alterações recentes não introduziram novos defeitos em partes do sistema que não deveriam ter sido afetadas.
 
-Considere o exemplo do site do Estratégia Concursos. Após o lançamento da versão 1.0, que passou por um conjunto completo de testes, os desenvolvedores implementam uma nova funcionalidade, como um fórum de dúvidas para os alunos. Antes de lançar a versão 1.1, é essencial rodar os testes de regressão, focando nas áreas que poderiam ser impactadas, como o sistema de login, o cadastro de usuários e o acesso aos cursos. Isso garante que a adição do fórum não quebrou, por exemplo, a capacidade de um aluno se matricular em um novo curso. Dado que a suíte de testes de regressão pode se tornar muito grande, a automação é uma aliada indispensável para torná-la viável e eficiente.
+Considere o exemplo de um site de aulas. Após o lançamento da versão 1.0, que passou por um conjunto completo de testes, os desenvolvedores implementam uma nova funcionalidade, como um fórum de dúvidas para os alunos. Antes de lançar a versão 1.1, é essencial rodar os testes de regressão, focando nas áreas que poderiam ser impactadas, como o sistema de login, o cadastro de usuários e o acesso aos cursos. Isso garante que a adição do fórum não quebrou, por exemplo, a capacidade de um aluno se matricular em um novo curso. Dado que a suíte de testes de regressão pode se tornar muito grande, a automação é uma aliada indispensável para torná-la viável e eficiente.
 
 #### Teste de Fumaça (Smoke Test)
 
@@ -518,8 +518,6 @@ Mesmo com a equipe de testes mais competente, é praticamente impossível prever
 O **Teste de Comparação** é uma técnica específica, muito útil em projetos de migração ou quando múltiplas implementações da mesma especificação precisam ser validadas. Ele consiste em executar os mesmos casos de teste, com as mesmas entradas de dados, em **duas ou mais versões diferentes de um sistema** e comparar os resultados. Se uma empresa está substituindo um sistema legado por uma nova versão, o teste de comparação pode ser usado para garantir que a nova implementação produz os mesmos resultados que a antiga, garantindo a continuidade do negócio. É importante não o confundir com o teste de regressão: a regressão verifica **se uma mudança em um mesmo software** não quebrou algo; a comparação verifica a **equivalência entre softwares diferentes (ou versões maiores)**.
 
 Compreendido. Peço desculpas se a abordagem anterior não atingiu o nível de detalhe esperado. Seu feedback é fundamental, e agora reescreverei a seção sobre Testes Automatizados, utilizando a totalidade de suas anotações como base e expandindo cada tópico com a profundidade, os exemplos e a clareza que você deseja para a sua apostila. O objetivo é não deixar brechas para dúvidas, explorando cada conceito em sua plenitude.
-
----
 
 ## Testes Automatizados: Acelerando a Qualidade com Eficiência
 
@@ -547,7 +545,7 @@ Para aprofundar a compreensão desses benefícios:
 
 ### Teste Manual vs. Teste Automatizado: Uma Comparação Detalhada
 
-É um erro comum pensar que a automação substitui completamente o teste manual. Na realidade, eles são complementares, cada um com suas forças. O teste manual se destaca em áreas que exigem subjetividade, criatividade e empatia, como testes de usabilidade e exploratórios. A automação, por sua vez, brilha em tarefas repetitivas, que exigem precisão e escala. A tabela a seguir detalha essa comparação.
+É um erro comum pensar que a automação substitui completamente o teste manual. Na realidade, eles são complementares, cada um com suas forças. O teste manual se destaca em áreas que exigem subjetividade, criatividade e empatia, como testes de usabilidade e exploratórios. A automação, por sua vez, brilha em tarefas repetitivas, que exigem precisão e escala. A tabela a seguir detalha essa comparação:
 
 |Critério|Teste Manual|Teste Automatizado|
 |---|---|---|
