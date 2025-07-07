@@ -182,7 +182,7 @@ A vantagem mais importante do modelo cliente-servidor é que ele é, por naturez
 A arquitetura cliente-servidor em sua forma mais comum é a de **duas camadas**, onde as responsabilidades são divididas entre o cliente e o servidor. No entanto, a forma como essa divisão é feita dá origem a duas abordagens distintas: o modelo Cliente-Magro (Thin-Client) e o Cliente-Gordo (Fat-Client).
 
 <div align="center">
-  <img width="580" src="./img/40-cliente-magro-e-gordo.png">
+  <img width="580px" src="./img/40-cliente-magro-e-gordo.png">
 </div>
 
 - **Modelo Cliente-Magro (Thin-Client):** Neste modelo, quase todo o trabalho pesado — o processamento da lógica de negócio e o gerenciamento dos dados — é realizado no servidor. O cliente é "magro" porque sua responsabilidade é mínima: ele se encarrega apenas de executar o software de apresentação (exibir a interface e capturar a entrada do usuário). Um navegador web moderno é o exemplo perfeito de um cliente-magro.
@@ -294,7 +294,7 @@ Na **arquitetura de três camadas**, a comunicação é estritamente **linear**.
 Já no **padrão MVC**, a comunicação é **triangular**, permitindo uma interação mais flexível entre os componentes.
 
 <div align="center">
-  <img width="420" src="./img/40-mvc-comunicacao-tipica.png">
+  <img width="700px" src="./img/40-mvc-interacoes.png">
 </div>
 
 Analisando a figura, podemos observar o fluxo clássico:
@@ -310,15 +310,150 @@ Um ponto de debate frequente, e muitas vezes polêmico, é se a Visão pode se c
 Imagine o cenário de um carrinho de compras em um site de cursos como a Udemy. Após adicionar três cursos ao carrinho, o usuário clica no ícone do carrinho para ver a lista de itens. Neste caso, a Visão (a página do carrinho) não precisa necessariamente fazer uma requisição ao Controlador apenas para listar os itens. Ela pode consultar diretamente o Modelo (o objeto do carrinho) para obter a lista de cursos e exibi-la. Essa comunicação direta é geralmente para fins de **leitura**. Operações de **escrita** (como remover um item do carrinho) ainda devem passar pelo Controlador.
 
 <div align="center">
-  <img width="720" src="./img/40-mvc-possiveis-interacoes.png">
+  <img width="720px" src="./img/40-mvc-possiveis-interacoes.png">
 </div>
 
-### Além do MVC: Uma Breve Olhada em MVP e MVVM
+## O Padrão MVP (Model-View-Presenter): Refinando a Separação de Responsabilidades
 
-O MVC foi tão influente que deu origem a diversos padrões derivados, cada um tentando resolver ou aprimorar algum aspecto do modelo original. Os dois mais notáveis são o MVP e o MVVM.
+A Arquitetura **Model-View-Presenter (MVP)** é um padrão de design derivado do MVC, amplamente utilizado no desenvolvimento de aplicações que possuem interfaces gráficas (UI). Seu principal objetivo é aprimorar a separação de responsabilidades, buscando um desacoplamento ainda mais rigoroso entre a lógica de apresentação e a interface do usuário, o que resulta em um código mais testável, manutenível e flexível.
 
-- **MVP (Model-View-Presenter):** O MVP é uma evolução do MVC que busca um desacoplamento ainda maior entre a Visão e o resto do sistema. A principal mudança é a introdução do **Presenter** em substituição ao Controlador. A grande diferença é que, no MVP, o Presenter se comunica bidirecionalmente com a Visão e com o Modelo, e a Visão torna-se completamente passiva. A Visão não tem nenhuma referência ao Modelo; ela apenas delega todas as ações do usuário ao Presenter e expõe métodos para que o Presenter possa atualizá-la (ex: `exibirNomeDoUsuario(String nome)`). Isso torna a Visão extremamente simples e facilita os testes de unidade da lógica de apresentação, que agora reside inteiramente no Presenter. Tipicamente, há uma relação de um-para-um entre a Visão e o Presenter.
-- **MVVM (Model-View-ViewModel):** Popularizado por frameworks de interface modernos (como Angular, Vue.js, React), o MVVM introduz o conceito de **ViewModel**. O ViewModel é um "Modelo da Visão", ou seja, é uma classe que representa o estado e o comportamento da Visão, expondo dados e comandos de uma forma que a Visão possa consumir facilmente. A grande mágica do MVVM é o mecanismo de **Data Binding (Vinculação de Dados)**. A Visão é "vinculada" ao ViewModel, e qualquer mudança nas propriedades do ViewModel é automaticamente refletida na Visão, e vice-versa, sem a necessidade de código manual para sincronizá-los. Isso reduz drasticamente a quantidade de código "boilerplate" necessário para manter a interface atualizada. No MVVM, o ViewModel não conhece a Visão (permitindo que múltiplas Visões se conectem a um mesmo ViewModel), mas a Visão conhece o ViewModel.
+O MVP pode ser entendido como uma evolução do padrão MVC, nascido da necessidade de resolver algumas das ambiguidades do modelo original e de fornecer uma estrutura mais clara para o desenvolvimento de interfaces complexas. Ele divide a aplicação nas mesmas três camadas conceituais — Modelo, Visão e Apresentador (Presenter) — mas reinterpreta a dinâmica de comunicação entre elas.
+
+### O Modelo (Model)
+
+Assim como no padrão MVC, o **Modelo** no MVP é responsável por gerenciar a lógica de negócios e os dados da aplicação. Ele encapsula o estado da aplicação, as regras de negócio e a comunicação com as fontes de dados, sejam elas um banco de dados, APIs externas ou arquivos locais. De forma crucial, o Modelo opera de forma completamente independente da interface do usuário; ele não possui nenhum conhecimento direto sobre a Visão ou o Apresentador.
+
+### A Visão (View): A Interface Passiva
+
+A **Visão** é a camada responsável por apresentar a interface do usuário, com todos os seus componentes visuais. A característica que define o padrão MVP é que a Visão é projetada para ser o mais **passiva** possível. Isso significa que ela não contém nenhuma lógica de apresentação ou de negócios. Suas únicas responsabilidades são:
+
+1. Exibir os dados que lhe são fornecidos pelo Apresentador.
+2. Capturar as interações do usuário (como cliques, toques, digitação) e delegá-las imediatamente ao Apresentador para que sejam tratadas.
+
+A Visão, portanto, depende completamente do Apresentador para realizar qualquer ação, incluindo a recuperação de dados para exibição e a atualização de seu próprio estado. Em uma implementação típica, a Visão implementa uma interface (ex: `IClienteView`) que define os métodos que o Apresentador pode chamar para manipulá-la (ex: `exibirCliente(nome)`, `mostrarMensagemDeErro(mensagem)`).
+
+### O Apresentador (Presenter)
+
+O **Apresentador** é o intermediário ativo entre o Modelo e a Visão. Ele assume o papel que, em algumas implementações do MVC, era dividido entre o Controlador e a própria Visão. O Apresentador contém toda a lógica da interface do usuário e orquestra a comunicação entre as outras duas camadas.
+
+Suas funções incluem:
+
+- Receber eventos da Visão (como o clique de um botão).
+- Processar esses eventos, interagindo com o Modelo para buscar ou modificar dados.
+- Obter os dados do Modelo, formatá-los adequadamente para exibição e, em seguida, chamar os métodos da Visão para atualizar a interface com esses dados formatados.
+
+Diferente do Controlador no MVC (que muitas vezes é mais desacoplado), o Apresentador mantém uma referência direta à Visão (geralmente por meio de sua interface), permitindo uma comunicação direta e um controle preciso sobre o que é exibido.
+
+### O Fluxo de Interação no MVP
+
+O fluxo de comunicação no padrão MVP é claro e rigorosamente mediado pelo Apresentador, o que elimina a comunicação direta entre a Visão e o Modelo.
+
+<div align="center">
+  <img width="700px" src="./img/40-mvp-interacoes.png">
+</div>
+
+A sequência de eventos típica é a seguinte:
+
+1. O usuário interage com a **Visão**, acionando um evento (ex: clica no botão "Salvar").
+2. A **Visão**, sendo passiva, não processa o evento. Em vez disso, ela notifica o **Apresentador** sobre a ação ocorrida.
+3. O **Apresentador** processa o evento, aplicando a lógica necessária. Ele pode, por exemplo, buscar os dados dos campos da Visão e solicitar que o **Modelo** os salve.
+4. O **Modelo** executa a operação de negócio (ex: salva os dados no banco) e retorna o resultado ao **Apresentador**.
+5. O **Apresentador**, com base no resultado, manipula os dados e comanda a **Visão** sobre como se atualizar (ex: exibindo uma mensagem de "Dados salvos com sucesso" ou limpando o formulário).
+
+### Principais Vantagens do Padrão MVP
+
+A adoção do MVP traz benefícios significativos, especialmente em aplicações onde a testabilidade e a separação de interesses são críticas.
+
+|Característica|Descrição Detalhada|
+|---|---|
+|**Desacoplamento Rigoroso**|A principal vantagem do MVP é o completo desacoplamento entre a lógica de exibição (Apresentador) e a tecnologia de renderização (Visão). A comunicação entre Visão e Modelo é inexistente, sendo sempre mediada pelo Apresentador. Isso simplifica a manutenção e aumenta a coesão de cada componente.|
+|**Alta Testabilidade**|Como o Apresentador é independente da interface gráfica e não tem referências a bibliotecas de UI (como Android SDK ou Windows Forms), sua lógica pode ser facilmente testada com testes de unidade rápidos e isolados. Pode-se "mockar" (simular) a Visão e o Modelo e verificar todo o comportamento do Apresentador sem a necessidade de renderizar uma única tela.|
+|**Manutenibilidade e Flexibilidade**|A clara divisão de responsabilidades torna a manutenção mais simples. Mudanças no layout da Visão (por exemplo, trocar um conjunto de botões por uma lista suspensa) não afetam a lógica no Apresentador ou no Modelo. Além disso, permite que diferentes Visões sejam criadas para diferentes plataformas (desktop, web, mobile) reutilizando o mesmo Apresentador e Modelo, desde que a nova Visão implemente a interface esperada.|
+|**Escalabilidade da Aplicação**|A separação de interesses facilita a escalabilidade, permitindo que diferentes partes da aplicação sejam desenvolvidas e mantidas por equipes diferentes de forma independente.|
+
+Devido a essas características, o padrão MVP é amplamente utilizado em ambientes que demandam uma separação clara entre a lógica de apresentação e a interface gráfica, como em aplicações desktop (Windows Forms, JavaFX), desenvolvimento para dispositivos móveis (especialmente no Android nativo antes da ascensão de arquiteturas mais modernas) e em alguns frameworks web como o GWT (Google Web Toolkit).
+
+### MVP vs. MVC: As Diferenças Cruciais
+
+Embora sejam parentes próximos, MVP e MVC possuem distinções importantes em seu fluxo de comunicação e na distribuição de responsabilidades.
+
+- **Comunicação View-Model:** No MVC, especialmente em suas implementações mais clássicas, a Visão pode se comunicar diretamente com o Modelo para obter os dados que precisa exibir. No MVP, essa comunicação é estritamente proibida; toda a interação entre a Visão e o Modelo é mediada pelo Apresentador.
+- **Papel do Intermediário:** No MVC, o Controlador geralmente responde a eventos de entrada e delega as tarefas, agindo mais como um dispatcher. A Visão pode ter uma lógica própria para se atualizar (por exemplo, observando o Modelo). No MVP, o Apresentador tem um papel mais ativo e centralizado, controlando totalmente a lógica de apresentação e manipulando diretamente a Visão para que ela se atualize.
+- **Acoplamento com a Visão:** O Apresentador no MVP é, por design, fortemente acoplado a uma Visão específica (geralmente em uma relação um-para-um). O Controlador no MVC pode, em algumas implementações, ser mais genérico e orquestrar múltiplas Visões.
+
+
+## O Padrão MVVM (Model-View-ViewModel): A Potência do Data Binding
+
+A Arquitetura **Model-View-ViewModel (MVVM)** é um padrão de design arquitetural que representa uma refinada evolução dos padrões MVC e MVP. Utilizado principalmente no desenvolvimento de aplicações que envolvem interfaces gráficas (UI), o MVVM tornou-se extremamente popular em frameworks modernos para desenvolvimento desktop, mobile e web, como WPF (Windows Presentation Foundation), Xamarin, Angular e Vue.js.
+
+Seu principal objetivo é promover uma separação de responsabilidades ainda mais limpa entre a lógica de negócios da aplicação, a lógica de apresentação e a própria interface do usuário. Para isso, ele introduz um componente-chave, a **ViewModel**, e se apoia fortemente em um mecanismo poderoso chamado **Data Binding (Vinculação de Dados)**.
+
+### O Modelo (Model)
+
+O papel do **Modelo** no MVVM é idêntico ao que desempenha nos padrões MVC e MVP. Ele é a camada responsável por representar os dados e toda a lógica de negócios da aplicação. Ele lida com o acesso e a manipulação das fontes de dados (sejam bancos de dados, serviços de API ou sistemas de arquivos) e contém as regras de negócio associadas. O Modelo opera de forma totalmente independente da interface, não tendo nenhum conhecimento direto sobre a ViewModel ou a View.
+
+### A Visão (View): A Interface Declarativa
+
+A **Visão** é a camada responsável por exibir a interface do usuário e capturar suas interações. No padrão MVVM, a Visão é projetada para ser o mais "passiva" ou "burra" possível, de forma similar ao que ocorre no padrão MVP. Idealmente, ela não contém nenhuma lógica de apresentação ou de negócios.
+
+A grande diferença é que, no MVVM, a Visão é frequentemente construída de forma **declarativa** (usando linguagens de marcação como XAML no WPF, ou HTML em frameworks web). O código na Visão consiste primariamente em definir a estrutura dos componentes de UI (botões, listas, caixas de texto) e estabelecer "vinculações" (bindings) entre as propriedades desses componentes (como o texto de um botão ou o conteúdo de uma caixa de texto) e as propriedades expostas pela ViewModel.
+
+### A ViewModel: O Modelo para a Visão
+
+A **ViewModel** é a peça central e a grande inovação do padrão MVVM. Ela atua como a camada intermediária entre a Visão (UI) e o Modelo (lógica de negócio), mas seu papel é mais específico que o do Apresentador no MVP. A ViewModel é, literalmente, um **"Modelo para a Visão"**.
+
+Suas responsabilidades são:
+
+- **Expor Dados:** A ViewModel obtém os dados brutos do Modelo e os transforma em um formato que a Visão possa consumir facilmente. Por exemplo, ela pode pegar um objeto `Date` do Modelo e expô-lo como uma string formatada ("06 de julho de 2025") para a Visão.
+- **Expor Comandos:** Ela expõe ações ou comandos que a Visão pode invocar. Por exemplo, em vez de um botão na Visão ter um evento de clique em seu código, ele é "vinculado" a um `SaveCommand` na ViewModel. Toda a lógica para salvar os dados reside no comando dentro da ViewModel.
+- **Manter o Estado da Interface:** A ViewModel mantém o estado da interface do usuário. Por exemplo, ela guarda a informação sobre qual item de uma lista está selecionado, se um botão deve estar habilitado ou desabilitado, ou se uma animação de "carregando" deve ser exibida.
+
+### O Poder do Data Binding Bidirecional
+
+O Data Binding (Vinculação de Dados) é o mecanismo que torna o MVVM tão poderoso e eficiente. Trata-se de um processo que **sincroniza automaticamente os dados entre a Visão e a ViewModel**, eliminando a necessidade de escrever código manual para manter as duas camadas em sintonia.
+
+Existem dois tipos principais de data binding:
+
+- **One-Way Binding (Unidirecional):** Os dados fluem em apenas uma direção, da ViewModel para a Visão. Se uma propriedade na ViewModel muda, o componente de UI vinculado a ela é atualizado automaticamente.
+- **Two-Way Binding (Bidirecional):** Os dados fluem em ambas as direções. Uma mudança na ViewModel atualiza a Visão, e uma interação do usuário na Visão (como digitar em uma caixa de texto) atualiza automaticamente a propriedade correspondente na ViewModel.
+
+Essa sincronização automática reduz drasticamente a quantidade de código "boilerplate" (repetitivo) que os desenvolvedores precisam escrever para manipular a UI, tornando a implementação mais limpa, declarativa e menos propensa a erros.
+
+### O Fluxo de Interação no MVVM
+
+O fluxo de comunicação no MVVM é distinto, sendo orquestrado pelo mecanismo de data binding.
+
+<div align="center">
+  <img width="700px" src="./img/40-mvvm-interacoes.png">
+</div>
+
+1. O usuário interage com a **Visão** (ex: digita seu nome em uma caixa de texto).
+2. O mecanismo de **Data Binding bidirecional** detecta a mudança na UI e atualiza automaticamente a propriedade correspondente na **ViewModel** (ex: a propriedade `NomeUsuario`).
+3. A **ViewModel** pode então executar uma lógica em resposta à mudança de sua propriedade. Se necessário, ela se comunica com o **Modelo** para realizar operações de negócio ou manipular dados.
+4. As mudanças no **Modelo** são refletidas de volta na **ViewModel**.
+5. Qualquer alteração nas propriedades da **ViewModel** é automaticamente refletida na **Visão** por meio do data binding, atualizando a interface do usuário sem a necessidade de código adicional.
+
+### Principais Vantagens do Padrão MVVM
+
+A arquitetura MVVM oferece uma abordagem robusta com várias vantagens claras, especialmente para aplicações com interfaces ricas e interativas.
+
+|Característica|Descrição Detalhada|
+|---|---|
+|**Separação Clara de Responsabilidades**|O MVVM estabelece uma separação rigorosa entre a lógica de negócios (Modelo), a lógica de apresentação e estado (ViewModel) e a interface do usuário puramente visual (View). Isso facilita a manutenção e a evolução do código, já que mudanças em uma camada têm impacto mínimo sobre as outras.|
+|**Alta Testabilidade**|Assim como o Presenter no MVP, a ViewModel é completamente desacoplada da tecnologia de UI. Por não ter dependências diretas da interface gráfica, toda a sua lógica de apresentação, comandos e manipulação de estado pode ser rigorosamente verificada com testes de unidade automatizados, que são rápidos e confiáveis.|
+|**Reusabilidade**|A ViewModel pode ser reutilizada por diferentes Visões. Isso é extremamente útil em cenários onde os mesmos dados e lógica de apresentação precisam ser exibidos de maneiras diferentes (por exemplo, uma Visão para desktop e outra para mobile podem compartilhar a mesma ViewModel).|
+|**Desenvolvimento Paralelo**|A separação clara permite que equipes de desenvolvimento de UI (designers e desenvolvedores front-end) trabalhem na Visão de forma paralela e independente das equipes que desenvolvem a lógica de negócio na ViewModel e no Modelo, agilizando o processo de desenvolvimento.|
+|**Redução de Código "Glue-Code"**|Graças ao data binding, a necessidade de escrever código manual para sincronizar a UI com os dados subjacentes é drasticamente reduzida. Isso resulta em um código mais limpo, mais declarativo e mais fácil de manter.|
+
+Devido a esses benefícios, o padrão MVVM é a escolha ideal para aplicações que demandam interfaces de usuário ricas e dinâmicas, onde o estado da UI precisa estar constantemente sincronizado com a lógica da aplicação.
+
+### MVVM vs. MVC: A Mudança de Paradigma
+
+Embora ambos busquem a separação de interesses, MVVM e MVC operam com filosofias de comunicação diferentes.
+
+- **Mecanismo de Comunicação:** A principal diferença reside em como as camadas se comunicam. No MVC, o Controlador ativamente medeia as interações, e a atualização da Visão muitas vezes requer código explícito. No MVVM, a comunicação entre a Visão e a ViewModel é automatizada e abstraída pelo poderoso mecanismo de **data binding**.
+- **Interação com o Modelo:** No MVC, a Visão pode ter conhecimento do Modelo e até interagir com ele. No MVVM, a Visão é completamente ignorante sobre o Modelo; ela só conhece a ViewModel.
+- **Propósito do Intermediário:** O Controlador no MVC é focado em responder a ações e controlar o fluxo da aplicação. A ViewModel no MVVM tem um propósito mais específico: é um "conversor" ou "adaptador" que prepara e modela os dados para o consumo da Visão.
 
 ## Arquitetura Distribuída: Conectando Sistemas em Rede
 
@@ -333,7 +468,7 @@ Foi nesse novo contexto que surgiu a **arquitetura distribuída**, uma abordagem
 A palavra-chave aqui é **transparência**. Para o usuário final, a complexidade da rede e a existência de múltiplas máquinas são completamente invisíveis. Para ele, a experiência é a de interagir com um único sistema coeso, mesmo que, por baixo dos panos, dezenas de componentes em diferentes localizações geográficas estejam colaborando para atender à sua solicitação. Esses computadores podem estar fisicamente próximos, conectados por uma rede local (LAN), ou geograficamente distantes, conectados por uma rede remota (WAN).
 
 <div align="center">
-  <img width="680" src="./img/40-arquitetura-distribuida-descentralizada.png">
+  <img width="680px" src="./img/40-arquitetura-distribuida-descentralizada.png">
 </div>
 
 A imagem acima ilustra a natureza heterogênea que uma arquitetura distribuída pode ter. O sistema é composto por duas redes locais (LANs) interconectadas. Uma delas consiste em estações de trabalho UNIX de diferentes fabricantes (HP, Sun, IBM), enquanto a outra é composta por PCs executando diversas versões do sistema operacional Windows. Ambas as redes ainda se conectam a um mainframe por meio de um protocolo de rede específico (SNA). Mesmo com toda essa diversidade de hardware, sistemas operacionais e protocolos, a arquitetura distribuída visa fazer com que toda essa rede funcione como um único computador unificado. Os padrões de arquitetura Cliente-Servidor e Peer-to-Peer (P2P) são os exemplos mais famosos de arquiteturas distribuídas.
