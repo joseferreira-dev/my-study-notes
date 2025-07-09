@@ -312,3 +312,131 @@ ORDER BY 3;
 ```
 
 Embora funcional, esta sintaxe não é recomendada em ambientes de produção. Ela torna o código menos legível e mais frágil a mudanças, pois se a ordem das colunas no `SELECT` for alterada, a ordenação produzirá um resultado inesperado sem gerar um erro.
+
+## Subconsultas: Aninhando Consultas para Lógicas Complexas
+
+Em muitas situações, a resposta para uma pergunta de negócio depende da resposta de uma pergunta anterior. Por exemplo, para encontrar "quais empregados ganham mais que a média salarial da empresa?", é preciso primeiro descobrir "qual é a média salarial da empresa?". A linguagem SQL resolve essa necessidade de forma elegante através de um mecanismo poderoso conhecido como **subconsulta** (ou subquery). Uma subconsulta é uma instrução `SELECT` completa, aninhada dentro de outra instrução SQL principal (a consulta externa).
+
+Essas consultas aninhadas permitem construir lógicas de filtragem e comparação extremamente sofisticadas, utilizando o resultado de uma consulta como critério para outra. Elas são mais comumente encontradas na cláusula `WHERE`, mas também podem ser usadas nas cláusulas `FROM`, `HAVING` e até mesmo na lista de colunas da cláusula `SELECT`.
+
+### Tipos de Subconsultas: Escalares, de Múltiplas Linhas e Correlacionadas
+
+Para utilizar subconsultas de forma eficaz, é crucial entender como elas são classificadas com base no resultado que produzem e em sua relação com a consulta externa.
+
+- **Subconsultas Escalares (Single-Row Subqueries):** São subconsultas que retornam exatamente **uma única linha e uma única coluna**. Por retornarem um único valor, podem ser usadas com operadores de comparação padrão de linha única, como `=`, `>`, `<`, `>=` e `<=`. Tentar usar uma subconsulta que retorna múltiplas linhas com um operador escalar resultará em um erro.
+    
+    **Exemplo:** Encontrar todos os empregados cujo salário é maior que o salário do empregado com `ID` 141.
+    
+    ```sql
+    SELECT last_name, salary
+    FROM employees
+    WHERE salary > (SELECT salary
+                    FROM employees
+                    WHERE employee_id = 141);
+    ```
+    
+- **Subconsultas de Múltiplas Linhas (Multi-Row Subqueries):** São subconsultas que retornam **múltiplas linhas** (geralmente de uma única coluna). Como elas retornam um conjunto de valores, não é possível usar operadores escalares. Em vez disso, elas devem ser usadas com operadores específicos para múltiplas linhas, como `IN`, `ANY` e `ALL`.
+    
+    **Exemplo:** Encontrar todos os empregados que não são gerentes.
+    
+    ```sql
+    SELECT last_name
+    FROM employees
+    WHERE employee_id NOT IN (SELECT manager_id
+                              FROM employees
+                              WHERE manager_id IS NOT NULL);
+    ```
+    
+- **Subconsultas Correlacionadas:** Uma subconsulta é dita **correlacionada** quando sua execução depende de um valor da linha que está sendo processada pela consulta externa. Enquanto uma subconsulta não correlacionada é executada uma única vez, uma subconsulta correlacionada é, conceitualmente, executada repetidamente, uma vez para cada linha da consulta externa. Isso as torna muito poderosas, mas também potencialmente mais lentas.
+    
+    **Exemplo:** Encontrar todos os empregados que ganham mais que a média salarial de seu próprio departamento.
+    
+    ```sql
+    SELECT e1.last_name, e1.salary, e1.department_id
+    FROM employees e1
+    WHERE e1.salary > (SELECT AVG(e2.salary)
+                       FROM employees e2
+                       WHERE e2.department_id = e1.department_id); -- A correlação ocorre aqui
+    ```
+    
+    Neste caso, para cada linha `e1` da consulta externa, a subconsulta interna é reavaliada para calcular a média salarial especificamente para o `department_id` daquela linha `e1`.
+
+### Testes de Pertinência a Conjuntos com IN e NOT IN
+
+O operador `IN` é um dos mais comuns para subconsultas de múltiplas linhas. Ele verifica se um valor da consulta externa existe no conjunto de resultados retornado pela subconsulta.
+
+**Exemplo:** Encontrar o nome de todos os clientes que são tanto devedores quanto depositantes.
+
+```sql
+SELECT DISTINCT nome_cliente
+FROM devedor
+WHERE nome_cliente IN (SELECT nome_cliente
+                       FROM depositante);
+```
+
+O operador `NOT IN` faz o oposto, selecionando as linhas cujo valor não está presente no conjunto de resultados da subconsulta.
+
+**Atenção com `NULL` e `NOT IN`:** Um cuidado fundamental deve ser tomado ao usar `NOT IN`. Se o conjunto de resultados da subconsulta contiver qualquer valor `NULL`, a condição `NOT IN` nunca será satisfeita (ela não retornará nem `TRUE` nem `FALSE`, mas `UNKNOWN`), fazendo com que a consulta externa não retorne nenhuma linha.
+
+### Testes de Existência com EXISTS e NOT EXISTS
+
+O operador `EXISTS` é usado para verificar se uma subconsulta retorna qualquer linha. Ele não se importa com os **valores** retornados, apenas com a **existência** de pelo menos uma linha no resultado. Retorna `TRUE` se a subconsulta retornar uma ou mais linhas, e `FALSE` caso contrário. `EXISTS` é quase sempre utilizado em subconsultas correlacionadas.
+
+**Exemplo:** Encontrar todos os departamentos que possuem pelo menos um empregado.
+
+```sql
+SELECT department_name
+FROM departments d
+WHERE EXISTS (SELECT 1 -- '1' é uma convenção, qualquer valor serviria
+              FROM employees e
+              WHERE e.department_id = d.department_id);
+```
+
+O operador `NOT EXISTS`, por sua vez, é ideal para encontrar linhas na tabela externa que **não** têm uma correspondência na subconsulta.
+
+**Exemplo:** Encontrar todos os departamentos que não possuem nenhum empregado.
+
+```sql
+SELECT department_name
+FROM departments d
+WHERE NOT EXISTS (SELECT 1
+                  FROM employees e
+                  WHERE e.department_id = d.department_id);
+```
+
+### Comparações Quantificadas com ALL, ANY e SOME
+
+Os operadores `ANY` e `ALL` são usados para comparar um valor escalar com cada valor em um conjunto retornado por uma subconsulta de múltiplas linhas. A palavra-chave `SOME` é um sinônimo para `ANY` e funciona da mesma forma.
+
+- `operador ANY`: A condição é `TRUE` se a comparação do valor escalar com **qualquer um** dos valores no conjunto for verdadeira.
+    
+    - `> ANY`: Maior que o valor mínimo do conjunto.
+    - `< ANY`: Menor que o valor máximo do conjunto.
+    - `= ANY`: Equivalente a `IN`.
+
+- `operador ALL`: A condição é `TRUE` se a comparação do valor escalar com **todos** os valores no conjunto for verdadeira.
+    
+    - `> ALL`: Maior que o valor máximo do conjunto.
+    - `< ALL`: Menor que o valor mínimo do conjunto.
+
+**Exemplo:** Encontrar os produtos cujo preço de lista (`ListPrice`) é maior ou igual ao preço mais alto de qualquer subcategoria de produto.
+
+```sql
+SELECT Name, ListPrice
+FROM Product
+WHERE ListPrice >= ALL
+      (SELECT MAX(ListPrice)
+       FROM Product
+       GROUP BY ProductSubcategoryID);
+```
+
+Esta consulta primeiro encontra o preço máximo dentro de cada `ProductSubcategoryID` e, em seguida, a consulta externa retorna apenas os produtos cujo preço é maior ou igual a **todos** esses máximos (ou seja, maior ou igual ao maior dos máximos).
+
+### Boas Práticas e Diretrizes
+
+Ao construir consultas com subconsultas, algumas diretrizes ajudam a garantir clareza, correção e manutenibilidade:
+
+- **Sempre coloque subconsultas entre parênteses.** Esta é uma exigência da sintaxe SQL.
+- **Posicione a subconsulta no lado direito da condição de comparação.** Isso melhora a legibilidade, tornando a consulta principal mais fácil de entender.
+- **Utilize operadores apropriados ao tipo de subconsulta.** Use operadores de linha única (`=`, `>`, etc.) com subconsultas escalares e operadores de múltiplas linhas (`IN`, `ALL`, `ANY`) com subconsultas que podem retornar mais de uma linha. O uso de um operador escalar com uma subconsulta de múltiplas linhas resultará em um erro em tempo de execução.
+
