@@ -1,0 +1,314 @@
+# Capítulo 3 – Linguagem de Manipulação de Dados (DML)
+
+Após a dedicação à construção da arquitetura do banco de dados no capítulo anterior, onde exploramos a Linguagem de Definição de Dados (DDL) para criar e gerenciar tabelas e suas estruturas, a jornada nos leva ao próximo passo lógico: a interação com os dados que residem nessas estruturas. De nada adianta ter um esquema bem projetado e robusto se não for possível popular, consultar, modificar e remover as informações armazenadas. Essa é precisamente a esfera de atuação da **Linguagem de Manipulação de Dados (DML)**, o coração funcional de qualquer sistema de banco de dados.
+
+A DML compreende o conjunto de comandos SQL projetados para interagir diretamente com os registros (as linhas) das tabelas. Enquanto a DDL se ocupa com os "contêineres" dos dados, a DML se concentra no "conteúdo". É por meio desses comandos que as aplicações realizam suas operações fundamentais, desde registrar um novo cliente e atualizar o estoque de um produto, até consultar o histórico de vendas de um determinado período. O domínio da DML é, portanto, a habilidade mais frequentemente utilizada por desenvolvedores, analistas de dados e administradores no dia a dia.
+
+Existem quatro comandos que formam o núcleo da DML, e sua implementação é um pilar fundamental em todos os SGBDs relacionais. O comando `SELECT`, devido à sua vasta gama de funcionalidades e complexidade, é frequentemente tratado em uma subcategoria própria, a DQL (Data Query Language), mas sua origem e função o inserem conceitualmente na DML. Os outros três comandos (`INSERT`, `UPDATE` e `DELETE`) são responsáveis pela modificação dos dados.
+
+|COMANDO|DESCRIÇÃO|
+|---|---|
+|**`SELECT`**|Comando utilizado para realizar consultas a dados de uma ou mais tabelas do banco de dados.|
+|**`INSERT`**|Comando utilizado para inserir um ou mais registros em uma tabela do banco de dados.|
+|**`UPDATE`**|Comando utilizado para modificar valores de dados em registros existentes de uma tabela.|
+|**`DELETE`**|Comando utilizado para remover registros (linhas) existentes de uma tabela do banco de dados.|
+
+Este capítulo se dedicará a explorar cada um desses comandos em detalhe, com foco especial na imensa capacidade do comando `SELECT` para extrair inteligência dos dados brutos.
+
+## O Comando SELECT: A Base da Consulta de Dados
+
+A instrução `SELECT` é, sem dúvida, o comando mais poderoso e flexível da linguagem SQL. Ela permite construir consultas que variam de uma simples extração de todos os dados de uma tabela a operações extremamente complexas, envolvendo múltiplas tabelas, filtros, agregações e ordenações para retornar precisamente o conjunto de dados desejado. A sintaxe básica do comando `SELECT` é composta por diversas cláusulas, sendo que apenas `SELECT` e `FROM` são mandatórias.
+
+**Sintaxe Geral:**
+
+```sql
+SELECT [ DISTINCT | ALL ] { * | <lista_de_selecao> }
+FROM <referencia_de_tabela> [{, <referencia_de_tabela>}...]
+[ WHERE <condicao_de_busca> ]
+[ GROUP BY <especificacao_de_agrupamento> ]
+[ HAVING <condicao_de_busca_de_grupo> ]
+[ ORDER BY <condicao_de_ordenacao> ];
+```
+
+É fundamental compreender que o comando `SELECT` possui uma forte correspondência com as operações da **álgebra relacional**, a base teórica para o modelo relacional:
+
+- A lista de colunas especificada na cláusula `SELECT` corresponde à operação de **Projeção (π)**, que seleciona um subconjunto de atributos (colunas) da relação.
+- A condição de busca na cláusula `WHERE` corresponde à operação de **Seleção (σ)**, que filtra as tuplas (linhas) que satisfazem a um determinado predicado.
+- A listagem de múltiplas tabelas na cláusula `FROM` (ex: `FROM TabelaA, TabelaB`) resulta em uma operação de **Produto Cartesiano (×)**, que combina cada linha da primeira tabela com cada linha da segunda.
+
+Uma das primeiras decisões em uma consulta é definir quais colunas retornar. O asterisco (`*`) é um atalho para selecionar **todas as colunas** das tabelas listadas na cláusula `FROM`. Para retornar todas as linhas, basta omitir a cláusula `WHERE`. A combinação de `SELECT *` com a ausência de `WHERE` resulta na extração de todo o conteúdo da tabela.
+
+**Exemplo:** Consultar todas as colunas e todas as linhas da tabela `EMPREGADOS`.
+
+```sql
+SELECT *
+FROM EMPREGADOS;
+```
+
+### Ordem Lógica de Processamento das Cláusulas
+
+Embora as cláusulas sejam escritas em uma ordem específica (`SELECT`, `FROM`, `WHERE`...), o SGBD as processa em uma sequência lógica diferente. Compreender essa ordem é crucial para escrever consultas complexas e evitar erros comuns.
+
+1. **`FROM`**: O primeiro passo do SGBD é identificar as tabelas de origem e processar as junções entre elas. Nesta fase, ele constrói um conjunto de dados intermediário, que pode ser um produto cartesiano se as junções não forem bem especificadas.
+2. **`WHERE`**: Em seguida, o SGBD aplica as condições de filtro da cláusula `WHERE` ao conjunto de dados intermediário. Linhas que não satisfazem à condição são descartadas.
+3. **`GROUP BY`**: Se presente, o SGBD agrupa as linhas restantes com base nos valores das colunas especificadas na cláusula `GROUP BY`. O resultado é um conjunto de grupos de linhas.
+4. **`HAVING`**: Após o agrupamento, a cláusula `HAVING` é aplicada para filtrar os próprios **grupos**. Apenas os grupos que satisfazem à condição do `HAVING` permanecem.
+5. **`SELECT`**: Só então o SGBD processa a lista de seleção, calculando as expressões, funções de agregação (como `SUM`, `COUNT`) e determinando as colunas finais que farão parte do resultado. 
+6. **`ORDER BY`**: Por último, se a cláusula `ORDER BY` for especificada, o conjunto de resultados final é ordenado de acordo com as colunas ou expressões indicadas.
+
+A tabela abaixo resume a função de cada cláusula principal na ordem em que são escritas.
+
+|CLÁUSULA|DESCRIÇÃO|
+|---|---|
+|**`SELECT`**|Especifica as colunas que devem ser retornadas pela consulta.|
+|**`FROM`**|Indica a(s) tabela(s) de onde os dados devem ser recuperados.|
+|**`WHERE`**|Filtra os registros com base em uma condição de busca, atuando sobre as linhas individuais.|
+|**`GROUP BY`**|Agrupa linhas que têm os mesmos valores em colunas especificadas em um conjunto de linhas de resumo.|
+|**`HAVING`**|Filtra os resultados do agrupamento, atuando sobre os grupos criados pelo `GROUP BY`.|
+|**`ORDER BY`**|Ordena o conjunto de resultados final com base em uma ou mais colunas.|
+
+### Extensões Específicas: Variáveis de Substituição no Oracle
+
+Alguns SGBDs, como o Oracle, oferecem extensões à sintaxe padrão para facilitar a criação de scripts interativos. Uma dessas extensões é o uso de **variáveis de substituição**, que permitem criar consultas dinâmicas onde os valores são fornecidos no momento da execução. Elas são prefixadas com `&` (e `&&`).
+
+Quando o SGBD encontra uma variável com um único `&`, ele pausa a execução e solicita ao usuário que digite um valor para aquela variável.
+
+**Exemplo:** Buscar um empregado por um `ID` informado dinamicamente.
+
+```sql
+SELECT employee_id, last_name, salary, department_id
+FROM   employees
+WHERE  employee_id = &employee_num;
+```
+
+Ao executar este script em uma ferramenta como o SQL Developer ou SQL\*Plus, uma janela de diálogo aparecerá solicitando o valor para `employee_num`.
+
+Se o valor a ser substituído for uma string de caracteres ou uma data, ele deve ser envolvido por aspas simples na própria consulta.
+
+```sql
+SELECT last_name, department_id, salary*12
+FROM   employees
+WHERE  job_id = '&job_title';
+```
+
+Para reutilizar o mesmo valor de uma variável várias vezes em um script sem que o SGBD solicite a entrada novamente, utiliza-se o duplo `&` (`&&`). A variável é definida na primeira vez que aparece e seu valor é mantido para todas as ocorrências subsequentes na mesma sessão.
+
+**Exemplo:** Usar o mesmo nome de coluna para seleção e ordenação.
+
+```sql
+SELECT    employee_id, last_name, job_id, &&column_name
+FROM      employees
+ORDER BY  &column_name;
+```
+
+Neste caso, o Oracle pedirá o valor de `column_name` apenas uma vez.
+
+Para auxiliar no desenvolvimento e depuração, o comando `SET VERIFY ON` pode ser utilizado. Ele instrui o ambiente a exibir a linha de código antes e depois da substituição da variável, tornando claro qual valor foi efetivamente utilizado na consulta.
+
+```sql
+SET VERIFY ON
+SELECT employee_id, last_name, salary
+FROM   employees
+WHERE  employee_id = &employee_num;
+```
+
+**Saída de Exemplo com `SET VERIFY ON`:**
+
+```sql
+old   3: WHERE  employee_id = &employee_num
+new   3: WHERE  employee_id = 101
+```
+
+## Refinando Consultas: Alias, Distinct, Operadores e Ordenação
+
+Uma vez compreendida a estrutura fundamental do comando `SELECT`, o passo seguinte é dominar as ferramentas que permitem refinar e customizar o resultado de uma consulta. A linguagem SQL oferece um rico conjunto de palavras-chave e operadores que modificam o comportamento padrão do `SELECT`, permitindo desde a simples renomeação de colunas para maior clareza até a construção de lógicas de filtragem complexas e a ordenação do conjunto de dados final.
+
+### Renomeando Colunas e Tabelas com Alias
+
+Frequentemente, os nomes das colunas ou tabelas no esquema do banco de dados não são ideais para a apresentação em um relatório final, ou as consultas envolvem colunas calculadas que não possuem um nome inerente. Para resolver isso, a SQL fornece um mecanismo para criar um **alias**, um nome temporário e mais descritivo para uma coluna ou tabela no contexto de uma consulta específica. A sintaxe utiliza a palavra-chave `AS`.
+
+**Alias de Coluna:** É usado na lista da cláusula `SELECT` para tornar o resultado mais legível.
+
+**Exemplo:** Consultar o salário anual dos empregados e apresentar a coluna calculada com um nome claro.
+
+```sql
+SELECT
+    last_name,
+    salary AS "Salário Mensal",
+    salary * 12 AS "Salário Anual"
+FROM
+    employees;
+```
+
+Neste caso, o resultado exibirá as colunas com os títulos "Salário Mensal" e "Salário Anual" em vez de `salary` e `salary * 12`. Note que o uso de aspas duplas é necessário quando o alias contém espaços ou caracteres especiais. Em muitos SGBDs, a palavra-chave `AS` é opcional para alias de colunas, mas seu uso é uma boa prática que melhora a clareza do código.
+
+**Alias de Tabela:** É usado na cláusula `FROM` para atribuir um nome curto a uma tabela. Embora seu principal benefício seja revelado em operações de junção complexas (abordadas posteriormente), ele já pode ser usado para simplificar a escrita. No contexto da cláusula `FROM`, esses aliases também são conhecidos como **variáveis de tupla**.
+
+**Exemplo:** Usar um alias para a tabela `employees`.
+
+```sql
+SELECT
+    e.last_name,
+    e.department_id
+FROM
+    employees AS e;
+```
+
+Aqui, `e` se torna um sinônimo para `employees` dentro desta consulta, permitindo prefixar as colunas com `e.` em vez do nome completo da tabela.
+
+### Eliminando Duplicatas com DISTINCT
+
+Por padrão, uma consulta `SELECT` retorna todas as linhas que satisfazem às condições especificadas, incluindo linhas duplicadas. Para obter uma lista de valores únicos, a palavra-chave `DISTINCT` deve ser inserida imediatamente após `SELECT`.
+
+`DISTINCT` atua sobre a combinação de todas as colunas listadas na cláusula `SELECT`. Ele não remove duplicatas de uma única coluna isoladamente, mas sim de linhas inteiras que são idênticas no conjunto de resultados.
+
+**Exemplo:** Obter a lista de todos os departamentos que possuem empregados, sem repetição.
+
+Consulta sem `DISTINCT` (pode retornar o mesmo ID de departamento várias vezes):
+
+```sql
+SELECT department_id FROM employees;
+```
+
+|department_id|
+|---|
+|90|
+|90|
+|60|
+|100|
+|60|
+|...|
+
+Consulta com `DISTINCT`:
+
+```sql
+SELECT DISTINCT department_id FROM employees;
+```
+
+|department_id|
+|---|
+|90|
+|60|
+|100|
+|...|
+
+Se mais de uma coluna for especificada, `DISTINCT` retornará as combinações únicas de valores dessas colunas.
+
+### Utilizando Operadores para Construir Expressões
+
+A verdadeira força do SQL reside na capacidade de construir expressões lógicas e aritméticas, principalmente nas cláusulas `SELECT` e `WHERE`.
+
+#### Operadores Aritméticos
+
+A cláusula `SELECT` não se limita a retornar valores existentes; ela pode realizar cálculos usando operadores aritméticos (`+`, `-`, `*`, `/`).
+
+**Exemplo:** Calcular o salário após um reajuste de 15%.
+
+```sql
+SELECT
+    last_name,
+    salary,
+    salary * 1.15 AS "Salário Reajustado"
+FROM
+    employees;
+```
+
+Esses operadores também podem ser usados na cláusula `WHERE` para filtrar dados com base em um cálculo.
+
+#### Operadores de Comparação e Lógicos
+
+A cláusula `WHERE` utiliza operadores de comparação (`=`, `>`, `<`, `>=`, `<=`, `<>` ou `!=`) e operadores lógicos (`AND`, `OR`, `NOT`) para construir condições de filtro.
+
+- `AND`: Requer que **ambas** as condições sejam verdadeiras.
+- `OR`: Requer que **pelo menos uma** das condições seja verdadeira.
+- `NOT`: Inverte o resultado de uma condição.
+
+**Exemplo:** Encontrar empregados do departamento 60 que ganham mais de 10.000.
+
+```sql
+SELECT last_name, salary, department_id
+FROM employees
+WHERE department_id = 60 AND salary > 10000;
+```
+
+#### Operadores de Padrões de Texto (LIKE)
+
+Para comparar strings de caracteres, o operador `LIKE` é utilizado para buscar padrões, em vez de correspondências exatas. Ele funciona em conjunto com dois caracteres curinga:
+
+- `%` (percentual): Representa qualquer sequência de zero ou mais caracteres.
+- `_` (underscore): Representa exatamente um único caractere.
+
+**Exemplo:** Encontrar todos os clientes cujo endereço contenha a substring ‘Professor’.
+
+```sql
+SELECT nome_cliente, rua_cliente
+FROM cliente
+WHERE rua_cliente LIKE '%Professor%';
+```
+
+Outros exemplos de uso do `LIKE`:
+
+- `WHERE nome LIKE 'A%'`: Encontra nomes que começam com a letra 'A'.
+- `WHERE nome LIKE '%s'`: Encontra nomes que terminam com a letra 's'.
+- `WHERE nome LIKE '_oão'`: Encontra nomes de 4 letras onde a segunda é 'o' e as duas últimas são 'ão' (ex: 'João').
+
+O operador `NOT LIKE` pode ser usado para encontrar strings que **não** correspondem ao padrão.
+
+#### Precedência de Operadores
+
+Quando uma expressão contém múltiplos operadores, o SGBD os avalia em uma ordem de precedência predefinida. É crucial conhecer essa ordem para garantir que as condições sejam avaliadas como o esperado. Parênteses `()` podem ser usados para sobrescrever a ordem padrão e forçar a avaliação de uma parte da expressão primeiro.
+
+|Ordem|Operador|Significado|
+|---|---|---|
+|1|`*`, `/`|Operadores aritméticos (Multiplicação, Divisão)|
+|2|`+`, `-`|Operadores aritméticos (Adição, Subtração)|
+|3|`||
+|4|`<`, `<=`, `>`, `>=`, `=`, `<>`|Operadores de comparação|
+|5|`IS [NOT] NULL`, `LIKE`, `[NOT] IN`, `[NOT] BETWEEN`|Condições especiais|
+|6|`NOT`|Operador lógico NOT|
+|7|`AND`|Operador lógico AND|
+|8|`OR`|Operador lógico OR|
+
+**Exemplo de Precedência:** Considere a consulta para encontrar empregados dos departamentos 50 ou 80 que tenham salário acima de 12.000.
+
+```sql
+-- Consulta INCORRETA para o objetivo proposto
+SELECT last_name, department_id, salary
+FROM employees
+WHERE department_id = 50 OR department_id = 80 AND salary > 12000;
+```
+
+Devido à precedência, o `AND` é avaliado antes do `OR`. A consulta acima retorna: (todos os empregados do departamento 50) **OU** (os empregados do departamento 80 que ganham mais de 12.000). Para obter o resultado correto, os parênteses são necessários:
+
+```sql
+-- Consulta CORRETA com parênteses
+SELECT last_name, department_id, salary
+FROM employees
+WHERE (department_id = 50 OR department_id = 80) AND salary > 12000;
+```
+
+### Ordenando o Resultado com ORDER BY
+
+A cláusula `ORDER BY` é a última a ser processada e é usada para ordenar as linhas do resultado final. A ordenação pode ser **ascendente (`ASC`)**, que é o padrão, ou **descendente (`DESC`)**.
+
+É possível ordenar por múltiplas colunas. A ordenação ocorrerá na sequência em que as colunas são listadas.
+
+**Exemplo:** Ordenar os empregados por departamento (em ordem ascendente) e, dentro de cada departamento, por salário (em ordem descendente).
+
+```sql
+SELECT last_name, department_id, salary
+FROM employees
+ORDER BY department_id ASC, salary DESC;
+```
+
+Alguns SGBDs também permitem a ordenação pela posição numérica da coluna na lista do `SELECT`.
+
+**Exemplo:** Ordenar pela terceira coluna da lista (`department_id`).
+
+```sql
+SELECT    last_name, job_id, department_id, hire_date
+FROM      employees
+ORDER BY 3;
+```
+
+Embora funcional, esta sintaxe não é recomendada em ambientes de produção. Ela torna o código menos legível e mais frágil a mudanças, pois se a ordem das colunas no `SELECT` for alterada, a ordenação produzirá um resultado inesperado sem gerar um erro.
