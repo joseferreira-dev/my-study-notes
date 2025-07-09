@@ -755,3 +755,170 @@ USING  (department_id);
 
 **Importante:** As colunas listadas na cláusula `USING` não devem ser qualificadas com o nome da tabela (ex: `e.department_id`). Tentar fazê-lo resultará em um erro (como o `ORA-25154` no Oracle), pois a sintaxe assume que a coluna existe em ambas as tabelas e pertence à junção em si, não a uma tabela específica.
 
+## Modificando os Dados: INSERT, UPDATE e DELETE
+
+Enquanto o comando `SELECT` é a ferramenta para extrair e analisar informações, o trio de comandos `INSERT`, `UPDATE` e `DELETE` constitui a espinha dorsal da modificação de dados. Eles são responsáveis por gerenciar todo o ciclo de vida dos registros dentro de uma tabela: `INSERT` para criar novas informações, `UPDATE` para corrigir ou alterar dados existentes, e `DELETE` para remover registros que se tornaram obsoletos ou irrelevantes. Dominar esses comandos é essencial para manter a base de dados atualizada, precisa e alinhada com as operações de negócio.
+
+### Inserindo Novos Registros com INSERT
+
+O comando `INSERT INTO` é utilizado para adicionar uma ou mais linhas novas a uma tabela. O padrão SQL oferece duas sintaxes principais para essa operação.
+
+#### Inserção de Linha Única
+
+A forma mais básica de inserção adiciona uma única linha por vez.
+
+**Sintaxe 1: Ordem Implícita das Colunas**
+
+Nesta forma, a lista de colunas é omitida, e os valores devem ser fornecidos na mesma ordem em que as colunas foram definidas no comando `CREATE TABLE`.
+
+```sql
+INSERT INTO NOME_DA_TABELA VALUES (VALOR_1, VALOR_2, VALOR_3, ...);
+```
+
+**Advertência:** Embora concisa, esta sintaxe é frágil e não recomendada para código de produção. Qualquer alteração na estrutura da tabela (como adicionar ou reordenar colunas) pode fazer com que a instrução `INSERT` falhe ou, pior, insira dados nas colunas erradas.
+
+**Sintaxe 2: Ordem Explícita das Colunas (Método Recomendado)**
+
+Nesta forma, as colunas que receberão os dados são listadas explicitamente. Isso torna o comando mais robusto, legível e independente da ordem física das colunas na tabela. Também permite omitir colunas que aceitam `NULL` ou que possuem um valor `DEFAULT` definido.
+
+```sql
+INSERT INTO NOME_DA_TABELA (NOME_COLUNA1, NOME_COLUNA2, ...) VALUES (VALOR_1, VALOR_2, ...);
+```
+
+**Exemplos:** Populando uma tabela `ALUNOS`.
+
+```sql
+-- Usando a sintaxe implícita
+INSERT INTO ALUNOS VALUES ('ALICE', 11111111111, 'ALICE@ALICE.COM', '2001-01-01', 'BRASÍLIA', 200.00);
+INSERT INTO ALUNOS VALUES ('BRUNO', 22222222222, 'BRUNO@BRUNO.COM', '2002-02-02', 'SÃO PAULO', 100.00);
+INSERT INTO ALUNOS VALUES ('CAIO' , 33333333333, 'CAIO@CAIO.COM' , '2003-03-03', 'GOIÂNIA', 150.00);
+INSERT INTO ALUNOS VALUES ('DIEGO', 44444444444, 'DIEGO@DIEGO.COM', '2004-04-04', 'SALVADOR', 250.00);
+INSERT INTO ALUNOS VALUES ('ELIS',  55555555555, 'ELIS@ELIS.COM'  , '2005-05-05', 'BRASÍLIA', 50.00);
+
+-- Usando a sintaxe explícita (preferencial)
+INSERT INTO ALUNOS (NOME, CPF, EMAIL, DATA_NASCIMENTO, CIDADE, VALOR_PAGO) VALUES ('FABIO', 66666666666, 'FABIO@FABIO.COM', '2006-06-06', 'SALVADOR', 125.00);
+INSERT INTO ALUNOS (NOME, CPF, EMAIL, DATA_NASCIMENTO, CIDADE, VALOR_PAGO) VALUES ('GABI',  77777777777, 'GABI@GABI.COM'  , '2007-07-07', 'BRASÍLIA', 225.00);
+INSERT INTO ALUNOS (NOME, CPF, EMAIL, DATA_NASCIMENTO, CIDADE, VALOR_PAGO) VALUES ('HUGO',  88888888888, 'HUGO@HUGO.COM'  , '2008-08-08', 'BRASÍLIA', 50.00);
+INSERT INTO ALUNOS (NOME, CPF, EMAIL, DATA_NASCIMENTO, CIDADE, VALOR_PAGO) VALUES ('IGOR',  99999999999, 'IGOR@IGOR.COM'  , '2009-09-09', 'RECIFE'  , 75.00);
+INSERT INTO ALUNOS (NOME, CPF, EMAIL, DATA_NASCIMENTO, CIDADE, VALOR_PAGO) VALUES ('JOÃO',  10101010101, 'JOAO@JOAO.COM'  , '2010-10-10', 'NATAL'   , 175.00);
+```
+
+Resultado na Tabela ALUNOS:
+
+| NOME | CPF | EMAIL | DATA_NASCIMENTO | CIDADE | VALOR_PAGO |
+|---|---|---|---|---|---|
+| ALICE | 11111111111 | `ALICE@ALICE.COM` | 2001-01-01 | BRASÍLIA | 200.00 |
+| BRUNO | 22222222222 | `BRUNO@BRUNO.COM` | 2002-02-02 | SÃO PAULO | 100.00 |
+| CAIO | 33333333333 | `CAIO@CAIO.COM` | 2003-03-03 | GOIÂNIA | 150.00 |
+| DIEGO | 44444444444 | `DIEGO@DIEGO.COM` | 2004-04-04 | SALVADOR | 250.00 |
+| ELIS | 55555555555 | `ELIS@ELIS.COM` | 2005-05-05 | BRASÍLIA | 50.00 |
+| FABIO | 66666666666 | `FABIO@FABIO.COM` | 2006-06-06 | SALVADOR | 125.00 |
+| GABI | 77777777777 | `GABI@GABI.COM` | 2007-07-07 | BRASÍLIA | 225.00 |
+| HUGO | 88888888888 | `HUGO@HUGO.COM` | 2008-08-08 | BRASÍLIA | 50.00 |
+| IGOR | 99999999999 | `IGOR@IGOR.COM` | 2009-09-09 | RECIFE | 75.00 |
+| JOÃO | 10101010101 | `JOAO@JOAO.COM` | 2010-10-10 | NATAL | 175.00 |
+
+#### Inserindo Dados a Partir de Outra Tabela
+
+É possível popular uma tabela com dados provenientes do resultado de uma consulta `SELECT`. Esta técnica, conhecida como `INSERT ... SELECT`, é extremamente útil para copiar dados, criar backups, arquivar registros antigos ou popular tabelas de resumo. Neste caso, a cláusula `VALUES` não é utilizada.
+
+**Exemplo:** Popular uma tabela `sales_reps` com dados da tabela `employees`.
+
+```sql
+INSERT INTO sales_reps(id, name, salary, commission_pct)
+  SELECT employee_id, last_name, salary, commission_pct
+  FROM   employees
+  WHERE  job_id LIKE '%REP%';
+```
+
+As colunas retornadas pelo `SELECT` devem corresponder em número e tipo de dados às colunas especificadas no `INSERT`.
+
+### Atualizando Registros Existentes com UPDATE
+
+O comando `UPDATE` é usado para modificar os valores de colunas em registros que já existem na tabela.
+
+**Sintaxe:**
+
+```sql
+UPDATE NOME_DA_TABELA
+SET NOME_DA_COLUNA_1 = VALOR_1, NOME_COLUNA_2 = VALOR_2, ...
+WHERE LISTA_DE_CONDICOES;
+```
+
+A cláusula `SET` especifica qual coluna deve ser alterada e para qual novo valor. A cláusula `WHERE` é fundamental, pois ela determina **quais linhas** serão afetadas pela atualização.
+
+**Advertência Crítica:** Se a cláusula `WHERE` for omitida de uma instrução `UPDATE`, **todas as linhas da tabela serão atualizadas**. Esta é uma das operações mais perigosas em SQL e deve ser evitada a todo custo, a menos que seja intencional.
+
+**Exemplo:** Corrigindo os nomes de dois alunos na tabela.
+
+```sql
+UPDATE ALUNOS
+SET NOME = 'DIOGO', EMAIL = 'DIOGO@DIOGO.COM'
+WHERE CPF = 44444444444;
+
+UPDATE ALUNOS
+SET NOME = 'ELIAS', EMAIL = 'ELIAS@ELIAS.COM'
+WHERE CPF = 55555555555;
+```
+
+Resultado Parcial da Tabela ALUNOS Atualizada:
+
+| NOME | CPF | EMAIL | DATA_NASCIMENTO | CIDADE | VALOR_PAGO |
+|---|---|---|---|---|---|
+| ... | ... | ... | ... | ... | ... |
+| DIOGO | 44444444444 | `DIOGO@DIOGO.COM` | 2004-04-04 | SALVADOR | 250.00 |
+| ELIAS | 55555555555 | `ELIAS@ELIAS.COM` | 2005-05-05 | BRASÍLIA | 50.00 |
+| ... | ... | ... | ... | ... | ... |
+
+### Removendo Registros com DELETE
+
+O comando `DELETE FROM` é utilizado para remover linhas inteiras de uma tabela.
+
+**Sintaxe:**
+
+```sql
+DELETE FROM NOME_DA_TABELA WHERE LISTA_DE_CONDICOES;
+```
+
+Assim como no `UPDATE`, a cláusula `WHERE` é de importância vital. Ela especifica o critério para identificar quais linhas devem ser excluídas. Se a cláusula `WHERE` for omitida, **todas as linhas da tabela serão removidas**.
+
+**Exemplo:** Remover os alunos de Recife ou cujo valor pago foi de 175.00.
+
+```sql
+DELETE FROM ALUNOS WHERE VALOR_PAGO = 175.00 OR CIDADE = 'RECIFE';
+```
+
+Após esta operação, as linhas correspondentes a `IGOR` (cidade 'RECIFE') e `JOÃO` (valor pago 175.00) seriam removidas da tabela.
+
+### A Diferença entre DELETE e TRUNCATE
+
+Para remover todas as linhas de uma tabela, existem duas opções: `DELETE FROM tabela` (sem `WHERE`) e `TRUNCATE TABLE tabela`. Embora o resultado final seja uma tabela vazia, a forma como eles operam é fundamentalmente diferente.
+
+- **`DELETE`**: É uma operação **DML**. Ela remove as linhas uma a uma e registra cada exclusão no log de transações do banco de dados. Isso permite que a operação seja desfeita (`ROLLBACK`), mas a torna mais lenta para tabelas grandes. Além disso, `DELETE` aciona gatilhos (`triggers`) de exclusão definidos na tabela.
+- **`TRUNCATE`**: É uma operação **DDL**. Em vez de remover linha por linha, `TRUNCATE` desaloca as páginas de dados da tabela, uma operação muito mais rápida e que gera um registro mínimo no log de transações. Por esse motivo, geralmente não pode ser desfeita. Ela não aciona gatilhos de exclusão e, em muitos SGBDs, reinicia os contadores de colunas de identidade (`IDENTITY`).
+
+**Sintaxe (PostgreSQL):**
+
+```sql
+TRUNCATE TABLE NOME_DA_TABELA
+  [ RESTART IDENTITY | CONTINUE IDENTITY ] [ CASCADE | RESTRICT ];
+```
+
+- `RESTART IDENTITY`: Reinicia as sequências associadas às colunas da tabela.
+- `CASCADE`: Propaga a operação de `TRUNCATE` para todas as tabelas que referenciam a tabela atual através de chaves estrangeiras.
+
+**Exemplo:** Esvaziar completamente a tabela `ALUNOS`.
+
+```sql
+TRUNCATE TABLE ALUNOS;
+```
+
+O uso de `TRUNCATE` é ideal para cenários de reinicialização de dados em ambientes de teste ou para limpar tabelas de "staging" em processos de ETL, onde o desempenho é crucial e a recuperação dos dados não é necessária.
+
+## Considerações Finais
+
+Neste capítulo, mergulhamos no coração da interação com bancos de dados relacionais: a **Linguagem de Manipulação de Dados (DML)**. Partindo da base estrutural que construímos com a DDL, exploramos o conjunto de comandos que nos permite consultar, agregar, inserir, modificar e remover as informações que residem em nossas tabelas. Dominar a DML é a habilidade que transforma um banco de dados estático em um ativo dinâmico e responsivo, capaz de responder a perguntas complexas e evoluir com as necessidades do negócio.
+
+Percorremos a profundidade e a flexibilidade do comando `SELECT`, a pedra angular de toda consulta de dados. Vimos como refinar buscas com operadores na cláusula `WHERE`, como ordenar os resultados com `ORDER BY` e como utilizar aliases para maior clareza. Avançamos para técnicas mais sofisticadas, como o uso de **subconsultas** para aninhar lógicas complexas, as **operações de conjuntos** (`UNION`, `INTERSECT`, `EXCEPT`) para combinar resultados de múltiplas fontes, e a fundamental operação de **junção (`JOIN`)**, que nos permite conectar dados de diferentes tabelas. Além disso, aprendemos a transformar dados brutos em resumos significativos com as **funções de agregação** e as cláusulas `GROUP BY` e `HAVING`.
+
+Finalmente, completamos o ciclo da manipulação de dados ao estudar os comandos de modificação: `INSERT`, para popular as tabelas com novos registros; `UPDATE`, para alterar informações existentes; e `DELETE`, para remover dados obsoletos. Compreendemos a importância crítica da cláusula `WHERE` para garantir a precisão dessas operações e a distinção fundamental entre `DELETE` e `TRUNCATE`. Com o domínio da DML, temos agora o poder não apenas de construir o banco de dados, mas de gerenciá-lo ativamente.
