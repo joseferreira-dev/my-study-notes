@@ -643,3 +643,115 @@ Esta consulta retornará uma lista de `id_produto` que existem na tabela `catalo
 
 O SGBD Oracle utiliza a palavra-chave `MINUS` em vez de `EXCEPT` para realizar a mesma operação, um detalhe importante para a portabilidade de código. A variante `EXCEPT ALL` também considera as duplicatas, subtraindo as ocorrências. Se uma linha aparece **m** vezes no primeiro conjunto e **n** vezes no segundo, ela aparecerá `max(0, m - n)` vezes no resultado.
 
+## A Operação de Junção (JOIN): Conectando Dados de Múltiplas Tabelas
+
+Nos bancos de dados relacionais, a informação é estrategicamente distribuída em múltiplas tabelas para evitar redundância e garantir a integridade, um princípio conhecido como normalização. Consequentemente, para gerar relatórios e respostas úteis, raramente os dados de uma única tabela são suficientes. É aqui que a operação de **junção (JOIN)** se torna a ferramenta mais fundamental e poderosa da DML. A junção é o mecanismo que permite combinar linhas de duas ou mais tabelas com base em uma coluna relacionada entre elas, criando um conjunto de resultados temporário e unificado.
+
+As operações de junção, utilizadas na cláusula `FROM`, são definidas por dois componentes principais:
+
+- **Tipo de Junção:** Define como tratar as linhas de cada tabela, especialmente aquelas que não possuem uma correspondência na outra tabela. Os tipos principais são `INNER` e `OUTER` (que se subdivide em `LEFT`, `RIGHT` e `FULL`).
+- **Condição de Junção:** Especifica a regra lógica para associar as linhas. A condição define quais tuplas das duas relações apresentam correspondência, geralmente comparando o valor da chave primária de uma tabela com a chave estrangeira da outra. As sintaxes para definir essa condição são `ON`, `USING` e `NATURAL`.
+
+### O Problema do Produto Cartesiano
+
+Antes de detalhar os tipos de junção, é crucial entender o que acontece quando se listam tabelas na cláusula `FROM` sem uma condição de junção explícita. Nesse cenário, o SGBD realiza uma operação chamada **Produto Cartesiano**. O resultado é uma tabela que combina **cada linha** da primeira tabela com **cada linha** da segunda. Se a tabela `employees` tem 100 linhas e a tabela `departments` tem 10, o produto cartesiano resultará em 100 x 10 = 1.000 linhas, a maioria das quais representa associações incorretas e sem sentido. A junção é, em essência, a forma correta de filtrar esse produto cartesiano massivo para manter apenas as combinações válidas.
+
+### A Junção Interna (INNER JOIN)
+
+O `INNER JOIN` é o tipo de junção mais comum e intuitivo. Ele retorna exclusivamente as linhas para as quais a condição de junção é verdadeira em **ambas as tabelas**. Se uma linha na tabela A não tem uma correspondência na tabela B (e vice-versa), ela é completamente descartada do resultado final.
+
+A condição de junção é mais frequentemente especificada com a cláusula `ON`, que permite definir um predicado de comparação explícito.
+
+**Exemplo:** Listar o nome de cada empregado junto com o nome de seu respectivo departamento.
+
+```sql
+SELECT
+    e.last_name,
+    d.department_name
+FROM
+    employees e
+INNER JOIN
+    departments d ON e.department_id = d.department_id;
+```
+
+Neste exemplo, apenas os empregados que estão associados a um departamento existente e apenas os departamentos que possuem pelo menos um empregado serão retornados. A palavra-chave `INNER` é opcional na maioria dos SGBDs, sendo `JOIN` por si só interpretado como `INNER JOIN`.
+
+### As Junções Externas (OUTER JOIN)
+
+E se o objetivo for listar **todos** os empregados, mesmo aqueles que ainda não foram alocados a um departamento? Para isso, o `INNER JOIN` não serve. As junções externas (`OUTER JOIN`) foram criadas para essa finalidade: elas permitem incluir no resultado as linhas que não encontraram correspondência na outra tabela.
+
+#### LEFT OUTER JOIN
+
+O `LEFT JOIN` (ou `LEFT OUTER JOIN`) retorna **todas as linhas da tabela à esquerda** (a primeira tabela listada) e as linhas correspondentes da tabela à direita. Se uma linha da tabela esquerda não encontrar uma correspondência na direita, as colunas da tabela direita serão preenchidas com valores `NULL`.
+
+**Exemplo:** Listar todos os empregados e seus departamentos, incluindo um empregado cujo `department_id` seja nulo.
+
+```sql
+SELECT
+    e.last_name,
+    d.department_name
+FROM
+    employees e
+LEFT JOIN
+    departments d ON e.department_id = d.department_id;
+```
+
+#### RIGHT OUTER JOIN
+
+O `RIGHT JOIN` é o espelho do `LEFT JOIN`. Ele retorna **todas as linhas da tabela à direita** e as linhas correspondentes da tabela à esquerda. Se uma linha da tabela direita não encontrar uma correspondência, as colunas da tabela esquerda serão preenchidas com `NULL`.
+
+**Exemplo:** Listar todos os departamentos e seus empregados, incluindo os departamentos que não têm nenhum empregado no momento.
+
+```sql
+SELECT
+    e.last_name,
+    d.department_name
+FROM
+    employees e
+RIGHT JOIN
+    departments d ON e.department_id = d.department_id;
+```
+
+#### FULL OUTER JOIN
+
+O `FULL JOIN` combina o comportamento do `LEFT` e do `RIGHT JOIN`. Ele retorna **todas as linhas de ambas as tabelas**. As linhas são combinadas quando a condição de junção é satisfeita. Para linhas de qualquer uma das tabelas que não tenham correspondência, as colunas da outra tabela são preenchidas com `NULL`.
+
+### Sintaxes Alternativas de Condição de Junção
+
+Além da cláusula `ON`, o padrão SQL oferece duas sintaxes mais concisas para especificar a condição de junção, baseadas nos nomes das colunas.
+
+|Tipos de Junção|Condição de Junção|
+|---|---|
+|`INNER JOIN`|`NATURAL`|
+|`LEFT OUTER JOIN`|`ON <PREDICADO>`|
+|`RIGHT OUTER JOIN`|`USING (A1, A2, ..., AN)`|
+|`FULL OUTER JOIN`|-|
+
+#### A Junção Natural (NATURAL JOIN)
+
+A `NATURAL JOIN` é uma sintaxe que instrui o SGBD a realizar a junção utilizando todas as colunas que possuem nomes idênticos nas duas tabelas. Não é necessário especificar a condição.
+
+**Exemplo:** Juntar as tabelas `departments` e `locations` usando a coluna `location_id`, que tem o mesmo nome em ambas.
+
+```sql
+SELECT department_id, department_name, location_id, city
+FROM   departments
+NATURAL JOIN locations;
+```
+
+**Advertência:** O uso de `NATURAL JOIN` é frequentemente desaconselhado em ambientes de produção. Por ser implícita, a lógica da junção pode ser alterada acidentalmente se uma nova coluna com nome idêntico for adicionada a ambas as tabelas no futuro, gerando resultados inesperados.
+
+#### A Cláusula USING
+
+A cláusula `USING` oferece um meio-termo. Ela permite especificar quais das colunas de mesmo nome devem ser usadas na condição de junção, sendo mais explícita que `NATURAL JOIN`, mas mais concisa que `ON`.
+
+**Exemplo:** Juntar `employees` e `departments` usando apenas a coluna `department_id`.
+
+```sql
+SELECT employee_id, last_name, location_id, department_id
+FROM   employees JOIN departments
+USING  (department_id);
+```
+
+**Importante:** As colunas listadas na cláusula `USING` não devem ser qualificadas com o nome da tabela (ex: `e.department_id`). Tentar fazê-lo resultará em um erro (como o `ORA-25154` no Oracle), pois a sintaxe assume que a coluna existe em ambas as tabelas e pertence à junção em si, não a uma tabela específica.
+
