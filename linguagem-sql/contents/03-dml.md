@@ -565,3 +565,81 @@ HAVING
 ```
 
 Este exemplo ilustra perfeitamente a ordem de processamento lógico: as linhas são filtradas primeiro pela cláusula `WHERE`, os grupos são formados a partir das linhas restantes com `GROUP BY`, e finalmente os grupos são filtrados pela cláusula `HAVING`.
+
+## Combinando Resultados: As Operações de Conjuntos
+
+Além de filtrar e agregar dados de uma ou mais tabelas através de junções, a linguagem SQL oferece um mecanismo poderoso para combinar os conjuntos de resultados de duas ou mais consultas `SELECT` independentes em uma única tabela de resultados. Essas são as **operações de conjuntos**. Enquanto as junções combinam colunas de tabelas diferentes para criar linhas mais largas, os operadores de conjunto combinam linhas de consultas diferentes para criar tabelas de resultados mais longas.
+
+As operações de conjuntos padrão do SQL (`UNION`, `INTERSECT` e `EXCEPT`) correspondem diretamente às operações fundamentais da teoria de conjuntos da matemática: a união (∪), a interseção (∩) e a diferença (-). Elas são uma ferramenta essencial para consolidar ou comparar dados de fontes semelhantes, mas separadas.
+
+<div align="center">
+  <img width="580px" src="./img/03-dml-operacoes-de-conjuntos.png">
+</div>
+
+### Regras Fundamentais para Operações de Conjuntos
+
+Para que duas ou more consultas `SELECT` possam ser combinadas por um operador de conjunto, elas devem seguir regras estritas de compatibilidade, garantindo que os resultados possam ser alinhados verticalmente de forma coerente.
+
+1. **Mesmo Número de Colunas:** Todas as consultas `SELECT` envolvidas na operação devem ter exatamente o mesmo número de colunas em suas listas de seleção.
+2. **Compatibilidade de Tipos de Dados:** Os tipos de dados das colunas correspondentes em cada consulta `SELECT` devem ser compatíveis. Isso não significa que precisam ser idênticos, mas o SGBD deve ser capaz de convertê-los implicitamente para um tipo de dado comum. Por exemplo, é possível unir uma coluna `INTEGER` com uma `NUMERIC(10,0)`, mas não uma `DATE` com uma `VARCHAR`.
+3. **Nomes das Colunas:** O conjunto de resultados final utilizará os nomes (ou aliases) das colunas da **primeira** consulta `SELECT` da sequência.
+4. **Ordenação:** A cláusula `ORDER BY` só pode ser aplicada uma vez, no final de toda a instrução composta, e deve referenciar as colunas pelos nomes (ou aliases) da primeira consulta ou por sua posição numérica.
+
+### A Operação de União com UNION e UNION ALL
+
+A operação `UNION` combina os resultados de duas ou mais consultas em um único conjunto, **eliminando todas as linhas duplicadas** do resultado final.
+
+**Exemplo:** Suponha que uma empresa queira criar uma lista única de todos os seus contatos, incluindo clientes e fornecedores, que estão em tabelas separadas.
+
+```sql
+SELECT nome_contato, telefone FROM clientes
+UNION
+SELECT nome_contato, telefone FROM fornecedores;
+```
+
+Se um contato existir em ambas as tabelas com o mesmo nome e telefone, ele aparecerá apenas uma vez na lista final.
+
+A variante `UNION ALL` realiza a mesma combinação, mas é significativamente mais rápida porque **não verifica nem remove as duplicatas**. Ela simplesmente anexa o resultado da segunda consulta ao final da primeira.
+
+**Exemplo:** Criar uma lista completa de todas as transações de vendas de 2024 e 2025, mantendo todas as ocorrências.
+
+```sql
+SELECT id_produto, quantidade, data_venda FROM vendas_2024
+UNION ALL
+SELECT id_produto, quantidade, data_venda FROM vendas_2025;
+```
+
+`UNION ALL` é a escolha ideal quando se sabe que não há duplicatas entre os conjuntos ou quando as duplicatas são desejadas no resultado, pois evita a sobrecarga de processamento da ordenação e comparação necessárias para eliminá-las.
+
+### A Operação de Interseção com INTERSECT
+
+A operação `INTERSECT` retorna apenas as linhas que estão **presentes em ambos** os conjuntos de resultados das consultas. Assim como `UNION`, `INTERSECT` remove duplicatas do resultado final.
+
+**Exemplo:** Encontrar todos os empregados que também são gerentes de algum projeto.
+
+```sql
+SELECT id_empregado FROM empregados
+INTERSECT
+SELECT id_gerente FROM projetos;
+```
+
+O resultado conterá apenas os `id_empregado` que aparecem nas duas listas.
+
+A variante `INTERSECT ALL` também retorna as linhas comuns, mas leva em conta as repetições. Se uma linha aparece **m** vezes no primeiro conjunto e **n** vezes no segundo, ela aparecerá `min(m, n)` vezes no resultado. Seu uso é menos comum. É importante notar que alguns SGBDs, como o MySQL em versões mais antigas, não suportam o operador `INTERSECT`.
+
+### A Operação de Diferença com EXCEPT (ou MINUS)
+
+A operação `EXCEPT` retorna todas as linhas distintas da **primeira** consulta que **não** estão presentes no resultado da **segunda** consulta. A ordem das consultas é crucial para o resultado.
+
+**Exemplo:** Encontrar todos os produtos em catálogo que nunca foram vendidos.
+
+```sql
+SELECT id_produto FROM catalogo_produtos
+EXCEPT
+SELECT DISTINCT id_produto FROM vendas;
+```
+
+Esta consulta retornará uma lista de `id_produto` que existem na tabela `catalogo_produtos`, mas não aparecem em nenhuma transação na tabela `vendas`.
+
+O SGBD Oracle utiliza a palavra-chave `MINUS` em vez de `EXCEPT` para realizar a mesma operação, um detalhe importante para a portabilidade de código. A variante `EXCEPT ALL` também considera as duplicatas, subtraindo as ocorrências. Se uma linha aparece **m** vezes no primeiro conjunto e **n** vezes no segundo, ela aparecerá `max(0, m - n)` vezes no resultado.
+
