@@ -440,3 +440,128 @@ Ao construir consultas com subconsultas, algumas diretrizes ajudam a garantir cl
 - **Posicione a subconsulta no lado direito da condição de comparação.** Isso melhora a legibilidade, tornando a consulta principal mais fácil de entender.
 - **Utilize operadores apropriados ao tipo de subconsulta.** Use operadores de linha única (`=`, `>`, etc.) com subconsultas escalares e operadores de múltiplas linhas (`IN`, `ALL`, `ANY`) com subconsultas que podem retornar mais de uma linha. O uso de um operador escalar com uma subconsulta de múltiplas linhas resultará em um erro em tempo de execução.
 
+## Agregando Dados: Funções, Agrupamentos e Filtros de Grupo
+
+As consultas SQL não se limitam a retornar dados brutos. Uma de suas capacidades mais importantes é a de realizar cálculos sobre conjuntos de dados para extrair informações resumidas e significativas, como totais, médias, contagens ou valores extremos. Essa funcionalidade é realizada através das **funções de agregação**, que operam sobre um conjunto de valores de uma coluna e retornam um único valor como resultado.
+
+### As Funções de Agregação Essenciais
+
+O padrão SQL define cinco funções de agregação principais que são universalmente implementadas pelos SGBDs.
+
+- **`COUNT()`**: Realiza a contagem de linhas. Sua versatilidade permite diferentes formas de uso:
+    - `COUNT(*)`: Conta o número total de linhas no grupo ou na tabela, incluindo `NULL`s e duplicatas.
+    - `COUNT(nome_da_coluna)`: Conta o número de linhas onde `nome_da_coluna` **não** é `NULL`.
+    - `COUNT(DISTINCT nome_da_coluna)`: Conta o número de valores **únicos e não nulos** em `nome_da_coluna`.
+    
+    **Exemplo:** Contar o total de empregados e o número de departamentos distintos que eles ocupam.
+    
+    ```sql
+    SELECT
+        COUNT(*) AS "Total de Empregados",
+        COUNT(DISTINCT department_id) AS "Total de Departamentos"
+    FROM
+        employees;
+    ```
+    
+- **`SUM()`**: Calcula a soma total dos valores em uma coluna numérica. Valores `NULL` são ignorados no cálculo.
+- **`AVG()`**: Calcula o valor médio dos valores em uma coluna numérica. Valores `NULL` também são ignorados.
+- **`MAX()`**: Retorna o maior valor em um conjunto de valores. Pode ser usada com colunas numéricas, de texto (ordem alfabética) ou de data.
+- **`MIN()`**: Retorna o menor valor em um conjunto de valores, com o mesmo comportamento do `MAX()` para diferentes tipos de dados.
+
+Quando usadas sem uma cláusula de agrupamento, essas funções operam sobre todas as linhas retornadas pela consulta e produzem um único resultado, sendo muito úteis em subconsultas escalares.
+
+**Exemplo:** Encontrar os dados do empregado que possui o menor salário da empresa.
+
+```sql
+SELECT last_name, job_id, salary
+FROM   employees
+WHERE  salary = (SELECT MIN(salary)
+                 FROM employees);
+```
+
+Neste caso, a subconsulta `(SELECT MIN(salary) FROM employees)` é executada primeiro, retorna um único valor (o menor salário), e a consulta externa usa esse valor para filtrar o resultado.
+
+### Agrupando Resultados com a Cláusula GROUP BY
+
+O verdadeiro poder das funções de agregação é liberado quando elas são combinadas com a cláusula `GROUP BY`. Sozinhas, as funções agregam dados da tabela inteira. Com o `GROUP BY`, é possível dividir a tabela em múltiplos grupos de linhas e aplicar a função de agregação a cada grupo independentemente.
+
+Uma regra fundamental do SQL governa essa interação: **qualquer coluna na lista do `SELECT` que não esteja encapsulada em uma função de agregação deve obrigatoriamente aparecer na cláusula `GROUP BY`**. Isso é necessário porque, para cada grupo, as funções de agregação retornam um único valor, e o SGBD precisa garantir que as colunas não agregadas também tenham um valor único e consistente para aquele grupo.
+
+**Exemplo:** Calcular o número de empregados e o salário médio para cada departamento.
+
+```sql
+SELECT
+    department_id,
+    COUNT(*) AS "Numero de Empregados",
+    ROUND(AVG(salary), 2) AS "Salario Medio" -- ROUND é uma função de linha única para arredondar
+FROM
+    employees
+GROUP BY
+    department_id
+ORDER BY
+    department_id;
+```
+
+Nesta consulta, o SGBD primeiro particiona todas as linhas da tabela `employees` em grupos, onde cada grupo contém as linhas de um mesmo `department_id`. Em seguida, as funções `COUNT(*)` e `AVG(salary)` são calculadas para cada um desses grupos, resultando em uma linha de resumo por departamento.
+
+É possível agrupar por múltiplas colunas, criando subgrupos mais granulares.
+
+**Exemplo:** Contar o número de pessoas em cada cargo, dentro de cada departamento.
+
+```sql
+SELECT
+    department_id,
+    job_id,
+    COUNT(*) AS "Total"
+FROM
+    employees
+GROUP BY
+    department_id, job_id
+ORDER BY
+    department_id, job_id;
+```
+
+### Filtrando Grupos com a Cláusula HAVING
+
+Frequentemente, o interesse não está em todos os grupos, mas apenas naqueles que atendem a um determinado critério (por exemplo, "departamentos com mais de 5 empregados"). A cláusula `WHERE` não pode ser usada para isso, pois ela atua sobre as linhas **antes** do agrupamento ocorrer e não tem conhecimento dos resultados das funções de agregação.
+
+Para filtrar os resultados **após** o agrupamento, utiliza-se a cláusula `HAVING`. A cláusula `HAVING` funciona de maneira semelhante à `WHERE`, mas seus predicados são aplicados aos grupos criados pelo `GROUP BY` e podem conter funções de agregação.
+
+**A principal diferença entre `WHERE` e `HAVING`:**
+
+- **`WHERE`**: Filtra **linhas** antes da agregação.
+- **`HAVING`**: Filtra **grupos** depois da agregação.
+
+**Exemplo:** Listar apenas os departamentos cujo maior salário seja superior a 10.000.
+
+```sql
+SELECT
+    department_id,
+    MAX(salary) AS "Maior Salario"
+FROM
+    employees
+GROUP BY
+    department_id
+HAVING
+    MAX(salary) > 10000;
+```
+
+É possível combinar `WHERE`, `GROUP BY` e `HAVING` em uma única consulta para uma lógica de filtragem em múltiplos estágios.
+
+**Exemplo:** Considerando apenas os "Programmers" (`IT_PROG`), listar os departamentos onde o número de programadores é maior que 2.
+
+```sql
+SELECT
+    department_id,
+    COUNT(*) AS "Qtd_Programadores"
+FROM
+    employees
+WHERE
+    job_id = 'IT_PROG'  -- 1. Filtra as linhas para incluir apenas programadores
+GROUP BY
+    department_id       -- 2. Agrupa os programadores restantes por departamento
+HAVING
+    COUNT(*) > 2;       -- 3. Filtra os grupos, mantendo apenas os com mais de 2 membros
+```
+
+Este exemplo ilustra perfeitamente a ordem de processamento lógico: as linhas são filtradas primeiro pela cláusula `WHERE`, os grupos são formados a partir das linhas restantes com `GROUP BY`, e finalmente os grupos são filtrados pela cláusula `HAVING`.
