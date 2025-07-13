@@ -80,7 +80,7 @@ Quando um cluster PostgreSQL é iniciado, ele executa um único processo princip
 Quando uma nova solicitação de conexão de um cliente chega, o postmaster realiza a autenticação inicial e, se for bem-sucedida, ele dá origem a um novo processo no sistema operacional. Este novo processo é denominado **processo de backend** (ou, às vezes, simplesmente postgres), e ele é responsável por servir a uma, e apenas uma, conexão de cliente.
 
 <div align="center">
-  <img width="760px" src="./img/04-postgresql-postmaster.png">
+  <img width="600px" src="./img/04-postgresql-postmaster.png">
 </div>
 
 Isso significa que toda vez que uma nova conexão com o cluster é aberta, o cluster reage lançando um novo processo de backend para atendê-la. Este processo de backend viverá até que a conexão do cliente termine, momento em que o processo é, consequentemente, destruído. Além de criar os processos de backend para as conexões dos clientes, o postmaster geralmente também inicia e supervisiona alguns **processos utilitários** ou de background, que são responsáveis por manter o PostgreSQL funcionando corretamente. Exemplos desses processos incluem o checkpointer (que gerencia os checkpoints no WAL), o walwriter (que escreve os registros do WAL para o disco) e o autovacuum launcher (que gerencia a limpeza automática de tabelas).
