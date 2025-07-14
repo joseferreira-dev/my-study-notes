@@ -188,3 +188,72 @@ A busca por esses objetivos estratégicos traz uma série de vantagens práticas
 |**Segurança**|Ao expor funcionalidades na rede, a "superfície de ataque" do sistema aumenta. É preciso garantir que cada serviço implemente mecanismos robustos de autenticação e autorização, e que os dados trafegados na rede sejam criptografados para evitar interceptação.|
 |**Governança**|A liberdade e a autonomia da SOA podem se tornar um caos sem uma governança forte. É preciso ter um processo claro para gerenciar o ciclo de vida dos serviços, catalogá-los, controlar suas versões e evitar que diferentes equipes criem serviços redundantes que fazem a mesma coisa. Sem governança, a SOA pode acabar recriando a "bola de pelo", só que de forma distribuída.|
 
+##  Modelos de Interação em SOA
+
+Embora a Arquitetura Orientada a Serviços seja um paradigma independente de tecnologia, sua implementação prática depende de modelos arquitetônicos que definam como os diferentes participantes — provedores e consumidores — descobrem uns aos outros e interagem. A evolução desses modelos reflete a busca por uma arquitetura mais dinâmica, flexível e escalável.
+
+### O Modelo Primitivo: Ponto a Ponto (End-to-End)
+
+Nos primórdios das arquiteturas distribuídas, o modelo de interação mais comum era o **ponto a ponto (end-to-end)**. Nesse modelo, a comunicação era direta: os provedores de serviços, de alguma forma, notificavam os solicitantes de serviços sobre os serviços disponíveis, e os solicitantes, de posse dessa informação, invocavam os serviços diretamente.
+
+<div align="center">
+  <img width="680px" src="./img/41-soa-modelo-ponto-a-ponto.png">
+</div>
+
+Embora simples, esse modelo possui uma limitação severa: ele presume que o consumidor de serviço já conhece previamente a localização de rede do provedor e os detalhes de sua interface. Em um ambiente corporativo dinâmico e de grande escala, essa abordagem não é sustentável. Ela dificulta a descoberta de novos serviços e torna o sistema rígido, pois qualquer mudança na localização ou na interface de um provedor exige que todos os seus consumidores sejam atualizados manualmente.
+
+### O Modelo Triangular: Publicar, Encontrar e Vincular
+
+Para resolver as deficiências do modelo ponto a ponto, surgiu o **Modelo Triangular**, que se tornou a estrutura fundamental para a criação, registro, descoberta e composição de serviços distribuídos. Este modelo introduz um terceiro participante, o **Registro de Serviços**, que atua como um intermediário para facilitar a descoberta.
+
+<div align="center">
+  <img width="680px" src="./img/41-soa-modelo-triangular.png">
+</div>
+
+Neste modelo, três papéis com responsabilidades bem definidas são identificados:
+
+- **Provedor de Serviço (Service Provider):** É a entidade (pessoa, organização ou software) que possui o serviço. Ele é o responsável por implementar o serviço, fornecer a infraestrutura para seu acesso e garantir que ele responda às requisições.
+- **Solicitante de Serviço (Service Requester / Consumer):** É a entidade que possui uma necessidade e utiliza o serviço para satisfazê-la. Um consumidor pode ser uma pessoa interagindo com uma aplicação, um componente de software ou outra organização.
+- **Registro de Serviço (Service Registry):** É o componente que atua como um "catálogo" ou uma "lista telefônica" de serviços. Sua função é armazenar e organizar as descrições dos serviços publicados e fornecer uma interface de busca para que os solicitantes possam encontrá-los.
+
+O fluxo de interação nesse modelo ocorre em três etapas principais:
+
+1. **Publicar (Publish):** O Provedor de Serviço publica a descrição de seu serviço no Registro de Serviços. Essa descrição contém todas as informações necessárias para que um consumidor possa utilizar o serviço, como suas operações, os dados de entrada e saída, e seu endereço de rede (endpoint).
+2. **Encontrar (Find):** O Solicitante de Serviço, precisando de uma funcionalidade específica, consulta o Registro de Serviços para encontrar um serviço que atenda às suas necessidades.
+3. **Vincular e Invocar (Bind & Invoke):** Após o Registro de Serviços retornar a descrição e a localização do serviço desejado, o Solicitante de Serviço utiliza essa informação para se conectar diretamente ao Provedor de Serviço e invocar o serviço remotamente.
+
+A grande vantagem desse modelo é a **descoberta dinâmica**. Os consumidores não precisam mais conhecer previamente a localização de todos os serviços. Eles podem descobrir novos serviços ou encontrar implementações alternativas através do registro. No entanto, se um solicitante já estiver ciente de um provedor apropriado, ele pode optar por se conectar diretamente, sem consultar o registro, como no modelo ponto a ponto.
+
+Este padrão triangular é a base para modelos de implementação mais específicos, como o **Publish-Find-Bind** e o **Find-Bind-Execute (também conhecido como Find-Bind-Invoke)**, que são essencialmente variações de nomenclatura para o mesmo fluxo fundamental de publicação, descoberta e invocação.
+
+<div align="center">
+  <img width="680px" src="./img/41-soa-modelos-pfb-e-fbe.png">
+</div>
+
+##  Papéis e Processos no Ciclo de Vida SOA
+
+A implementação de uma Arquitetura Orientada a Serviços não é apenas uma questão de adotar um modelo de interação; ela envolve um ciclo de vida completo, desde a concepção do serviço até seu consumo, com papéis e processos bem definidos.
+
+### Os Papéis Essenciais em uma Solução SOA
+
+Além dos papéis dinâmicos de Provedor e Consumidor, o ciclo de vida de uma solução SOA bem-sucedida envolve outros atores estratégicos:
+
+|Papel|Descrição Detalhada|
+|---|---|
+|**Consultor de Negócios**|É o profissional responsável por entender e mapear os processos de negócio da organização. Sua função é identificar as capacidades de negócio que podem ser abstraídas e expostas como serviços, garantindo que a arquitetura de TI esteja diretamente alinhada com as necessidades e objetivos estratégicos da empresa. Ele é a ponte entre o negócio e a tecnologia.|
+|**Arquiteto SOA**|É o responsável técnico pela concepção e manutenção da arquitetura orientada a serviços. Suas atividades incluem a modelagem dos serviços, a definição de padrões de design e de comunicação, a escolha de tecnologias de suporte e a garantia de que o ecossistema de serviços permaneça coeso, seguro e escalável.|
+|**Provedor de Serviço**|Como já visto, é o papel daquele que constrói, implanta e mantém um serviço específico, garantindo sua disponibilidade e conformidade com o contrato estabelecido.|
+|**Consumidor de Serviço**|É o papel daquele que utiliza um ou mais serviços para construir uma aplicação ou automatizar um processo de negócio.|
+
+### O Processo de Modelagem de Serviços
+
+A primeira etapa na implantação de qualquer solução orientada a serviço está relacionada à **modelagem do serviço**, ou seja, o processo de identificar quais serviços devem ser criados. A modelagem é responsável por identificar os recursos necessários para construir novos serviços, adaptar ou reutilizar serviços existentes e integrar a solução final. Para isso, duas abordagens principais são comumente utilizadas:
+
+- **Modelagem Top-Down (Guiada pelo Negócio):** Esta abordagem começa com uma análise de alto nível dos processos de negócio da organização. O ponto de partida são os objetivos estratégicos e os fluxos de trabalho prioritários. A partir desses processos, eles são decompostos para identificar as capacidades de negócio fundamentais que podem ser encapsuladas como serviços agnósticos e reutilizáveis. Essa abordagem garante um forte alinhamento entre a TI e o negócio, mas pode ser mais demorada.
+- **Modelagem Bottom-Up (Guiada pela Tecnologia Existente):** Esta abordagem parte do cenário oposto. Ela começa com uma análise dos sistemas e aplicações legadas já existentes na organização. O objetivo é identificar funcionalidades úteis que estão "presas" dentro desses sistemas e "envelopá-las" com uma interface de serviço padronizada. Isso permite que funcionalidades antigas sejam expostas de forma moderna e reutilizadas em novas aplicações. Essa abordagem é mais pragmática e rápida para alavancar ativos existentes, mas corre o risco de criar serviços que são excessivamente acoplados à tecnologia legada, limitando sua flexibilidade.
+
+<div align="center">
+  <img width="600px" src="./img/41-soa-modelagem-de-servicos.png">
+</div>
+
+Na prática, as organizações mais bem-sucedidas na adoção de SOA utilizam uma **abordagem híbrida**, combinando a visão estratégica da modelagem top-down com o pragmatismo da modelagem bottom-up, garantindo que a arquitetura atenda tanto aos novos objetivos de negócio quanto à realidade do parque tecnológico existente.
