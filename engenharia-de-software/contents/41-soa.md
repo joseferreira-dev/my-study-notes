@@ -400,3 +400,70 @@ A SCA é baseada na ideia de que as funcionalidades de negócio são providas co
 3. **Política:** Define como tratar requisitos não-funcionais, como segurança (assinatura digital) e transações, de forma padronizada e desacoplada da lógica de negócio.
 
 Em essência, a SCA permite que os desenvolvedores se concentrem na lógica de negócio, enquanto a infraestrutura da SCA cuida dos detalhes de como os componentes se comunicam, seja por meio de Web Services, sistemas de mensagens ou outras tecnologias de invocação remota.
+
+## O Manifesto SOA: Valores e Princípios Orientadores
+
+Assim como o desenvolvimento ágil de software foi formalizado por um conjunto de valores e princípios no Manifesto Ágil, a Arquitetura Orientada a Serviços também possui seu próprio documento norteador. O **Manifesto SOA**, criado em 2009 por um grupo de especialistas da indústria, não é uma especificação técnica, mas sim uma declaração de intenções que busca capturar a essência e as prioridades de uma iniciativa de SOA bem-sucedida.
+
+Ele serve como um guia filosófico para organizações que buscam não apenas implementar uma nova tecnologia, mas cultivar uma verdadeira cultura de orientação a serviços, com foco em agilidade, sustentabilidade e, acima de tudo, na entrega de valor ao negócio.
+
+<div align="center">
+  <img width="760px" src="./img/41-soa-manifesto.png">
+</div>
+
+O manifesto começa com uma declaração de propósito e, em seguida, estabelece um conjunto de valores fundamentais, expressos através de uma série de priorizações:
+
+> Orientação a Serviço é um paradigma que molda o que você faz. SOA é um tipo de arquitetura que resulta da aplicação de orientação a serviço. Nós temos aplicado orientação para ajudar organizações a, de maneira consistente e sustentável, agregar valor ao negócio, com maior agilidade e efetividade de custos, em alinhamento com a dinâmica das necessidades de negócio. Através de nosso trabalho, priorizamos:
+> 
+> **Valor de negócio** MAIS QUE Estratégia técnica
+> **Objetivos estratégicos** MAIS QUE Benefícios específicos de projeto
+> **Interoperabilidade intrínseca** MAIS QUE Integração personalizada
+> **Serviços compartilhados** MAIS QUE Implementações de propósito específico
+> **Flexibilidade** MAIS QUE Otimização
+> **Refinamento evolutivo** MAIS QUE Busca da perfeição inicial
+> 
+> Isso é, mesmo valorizando os itens à direita, valorizamos mais os itens à esquerda.
+
+### Os Valores Fundamentais em Detalhe
+
+A expressão "MAIS QUE" é crucial. Ela não invalida os itens à direita, mas estabelece uma clara ordem de prioridade.
+
+- **Valor de negócio MAIS QUE Estratégia técnica:** A principal motivação para a criação, o financiamento e o gerenciamento de um serviço deve ser uma necessidade de negócio clara e mensurável. A tecnologia é o meio, não o fim. Priorizar a estratégia técnica seria, por exemplo, construir um serviço apenas para poder utilizar uma nova tecnologia da moda, sem que haja um problema de negócio real a ser resolvido.
+- **Objetivos estratégicos MAIS QUE Benefícios específicos de projeto:** A SOA deve ser vista como uma jornada de longo prazo que suporta os objetivos estratégicos da empresa (como aumentar a agilidade ou reduzir o custo total de propriedade da TI). Embora cada projeto individual deva trazer seus próprios benefícios, as decisões devem sempre ser tomadas com o olhar no horizonte estratégico, mesmo que isso signifique um custo ou esforço ligeiramente maior no projeto atual para garantir um benefício maior para a organização como um todo no futuro.
+- **Interoperabilidade intrínseca MAIS QUE Integração personalizada:** Em vez de construir integrações ponto a ponto, customizadas e frágeis para cada par de sistemas que precisa conversar, o foco deve ser em construir serviços que, por design, já são interoperáveis. Isso é alcançado através da adesão rigorosa a padrões de comunicação e de contrato, reduzindo a necessidade de "códigos de cola" e tornando o ecossistema de TI mais coeso.
+- **Serviços compartilhados MAIS QUE Implementações de propósito específico:** Este valor promove uma mudança de mentalidade, de desenvolvedor de projeto para construtor de ativos corporativos. Em vez de criar uma funcionalidade que servirá apenas a uma única aplicação, o objetivo é projetar um serviço compartilhado e agnóstico que possa ser reutilizado por múltiplas aplicações, maximizando o retorno sobre o investimento.
+- **Flexibilidade MAIS QUE Otimização:** É preferível projetar um serviço que seja flexível e capaz de se adaptar a futuras mudanças nas regras de negócio do que um serviço que seja hiperotimizado para um único cenário de uso, mas que se torne rígido e difícil de alterar. A otimização prematura é inimiga da agilidade a longo prazo.
+- **Refinamento evolutivo MAIS QUE Busca da perfeição inicial:** Alinhado com os princípios ágeis, este valor defende que é melhor entregar um serviço útil e funcional rapidamente e, em seguida, evoluí-lo com base no uso real e no feedback dos consumidores, do que passar anos tentando projetar o serviço "perfeito", que corre o risco de se tornar obsoleto antes mesmo de ser lançado.
+
+### Os Princípios Orientadores
+
+Além dos valores, o manifesto estabelece um conjunto de princípios orientadores que servem como um guia prático para a implementação de uma SOA. Para facilitar a compreensão, podemos agrupá-los em temas.
+
+#### Princípios Estratégicos e Organizacionais
+
+- **Respeitar a estrutura social e de poder da organização:** A adoção de SOA não é apenas uma mudança técnica, mas também cultural e organizacional. É preciso entender e navegar pela política e pela estrutura existentes para garantir o sucesso.
+- **Reconhecer que SOA, em última instância, requer mudanças em múltiplos níveis:** Uma SOA bem-sucedida afeta a forma como os projetos são financiados, como as equipes são estruturadas e como o sucesso é medido.
+- **O escopo da adoção de SOA pode variar:** Uma organização pode decidir aplicar os princípios de SOA a um único departamento, a uma linha de negócios ou à empresa inteira. O escopo deve ser definido de forma realista.
+- **Manter os esforços gerenciáveis e dentro de limites significativos:** Em vez de tentar uma transformação "big bang" em toda a empresa, é mais eficaz focar em iniciativas de escopo gerenciável que possam entregar valor visível e servir de exemplo para o resto da organização.
+
+#### Princípios de Governança e Padronização
+
+- **Produtos e padrões, por si só, não proverão uma SOA:** Comprar uma ferramenta de ESB ou adotar o padrão SOAP não garante uma SOA. A arquitetura emerge da aplicação consistente dos princípios de design, não da mera adoção de tecnologia.
+- **SOA pode ser realizada através de uma variedade de tecnologias e padrões:** A SOA é agnóstica à tecnologia. A escolha de qual tecnologia usar deve ser baseada nas necessidades específicas do problema.
+- **Estabelecer um conjunto uniforme de padrões e políticas corporativas:** É essencial definir padrões em toda a empresa para contratos de serviço, segurança e outros aspectos, para garantir a consistência e a interoperabilidade.
+- **Buscar uniformidade no exterior e permitir diversidade no interior:** Este é um princípio crucial. Todos os serviços devem apresentar uma interface externa uniforme e padronizada (o contrato). No entanto, sua implementação interna pode usar tecnologias diversas. Isso permite que as equipes usem a melhor ferramenta para o trabalho, sem comprometer a coesão do ecossistema.
+
+#### Princípios de Design e Ciclo de Vida do Serviço
+
+- **Identificar serviços através da colaboração entre partes interessadas do negócio e da tecnologia:** A definição de quais serviços construir deve ser um esforço conjunto, garantindo que eles atendam tanto às necessidades de negócio quanto aos requisitos técnicos.
+- **Maximizar o uso de serviços considerando o escopo de utilização atual e futuro:** Ao projetar um serviço, deve-se pensar não apenas em como ele será usado hoje, mas em como ele poderá ser reutilizado no futuro.
+- **Verificar que os serviços satisfaçam os requisitos e objetivos de negócio:** Cada serviço deve ter um propósito claro e ser validado para garantir que ele cumpre esse propósito.
+- **Evoluir os serviços e sua organização em resposta ao uso real:** Uma SOA não é estática. Os serviços e a própria arquitetura devem ser continuamente refinados com base no feedback e nas novas demandas que surgem com o uso.
+
+#### Princípios Técnicos e Arquiteturais
+
+- **Separar os diferentes aspectos de um sistema que mudam com diferentes frequências:** Princípio alinhado com a separação de responsabilidades. A interface do usuário, que muda frequentemente, deve ser separada da lógica de negócio, que muda com menos frequência.
+- **Reduzir dependências implícitas e publicar todas as dependências externas:** Para aumentar a robustez, um serviço deve tornar explícitas todas as suas dependências externas em seu contrato, evitando surpresas para seus consumidores.
+- **A cada nível de abstração, organizar cada serviço em torno de uma unidade de funcionalidade coesa e gerenciável:** Reforça o princípio da alta coesão como guia para a granularidade de um serviço.
+
+Este manifesto, juntamente com suas anotações detalhadas publicadas pelos seus autores, serve como um guia filosófico para organizações que buscam não apenas implementar serviços, mas cultivar uma verdadeira cultura de orientação a serviços.
