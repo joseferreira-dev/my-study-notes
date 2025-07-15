@@ -467,3 +467,60 @@ Além dos valores, o manifesto estabelece um conjunto de princípios orientadore
 - **A cada nível de abstração, organizar cada serviço em torno de uma unidade de funcionalidade coesa e gerenciável:** Reforça o princípio da alta coesão como guia para a granularidade de um serviço.
 
 Este manifesto, juntamente com suas anotações detalhadas publicadas pelos seus autores, serve como um guia filosófico para organizações que buscam não apenas implementar serviços, mas cultivar uma verdadeira cultura de orientação a serviços.
+
+## Versionamento de Serviços: Gerenciando a Evolução em SOA
+
+Em um programa de Arquitetura Orientada a Serviços maduro, múltiplos projetos de software são desenvolvidos e implantados em paralelo. À medida que esses projetos amadurecem, um inventário de serviços é disponibilizado para ser consumido por diversas aplicações, seja para satisfazer os requisitos de uma nova solução, seja para expor funcionalidades a parceiros ou clientes. O ciclo de vida de um serviço, portanto, não termina em sua primeira implantação; ele está em constante evolução.
+
+É natural e esperado que um serviço bem-sucedido seja necessário em mais de uma aplicação. Com múltiplos projetos em andamento, um mesmo serviço precisará, com o tempo, suprir as expectativas de vários consumidores distintos. Inevitavelmente, essas novas expectativas acarretarão a necessidade de mudanças nos serviços existentes. A cada vez que um serviço é alterado para acomodar uma nova funcionalidade ou corrigir um comportamento, uma nova versão dele é disponibilizada.
+
+### O Desafio Central do Versionamento
+
+Nos estágios iniciais de uma iniciativa SOA, as mudanças nos serviços para acomodar diferentes expectativas são frequentes e podem ser caóticas se não forem bem gerenciadas. A necessidade de uma estratégia de versionamento eficiente torna-se clara quando se considera o impacto de uma mudança não planejada: os consumidores que já utilizam e dependem de uma versão estável do serviço podem ser "quebrados" por uma atualização feita para atender a um novo consumidor.
+
+Isso cria um dilema: como evoluir um serviço para atender a novas necessidades sem interromper o funcionamento das aplicações que já dependem dele? A resposta está em adotar uma abordagem proativa para o gerenciamento de mudanças. A disciplina de análise e o design cuidadoso de serviços são cruciais para o sucesso de uma iniciativa SOA, e grande parte das boas práticas de versionamento são, na verdade, práticas de design que antecipam a mudança.
+
+### Estratégias para um Versionamento Eficaz
+
+Assim como qualquer projeto de sistemas complexos, a forma como os serviços são projetados e governados determinará sua resiliência à mudança. A seguir, apresentamos as estratégias mais comuns para lidar com o versionamento de serviços de forma controlada e sustentável.
+
+#### Design Orientado à Evolução
+
+A primeira e mais importante linha de defesa contra os problemas de versionamento é um bom design. Projetar um serviço já pensando em sua futura evolução pode minimizar drasticamente o impacto das mudanças. Isso envolve a aplicação rigorosa dos princípios de design da SOA, como:
+
+- **Abstração de Serviços:** O contrato do serviço deve expor apenas o essencial, escondendo todos os detalhes de implementação. Isso permite que a lógica interna seja completamente refatorada sem que os consumidores sejam afetados.
+- **Baixo Acoplamento:** Reduzir as dependências do serviço com outros serviços e com tecnologias específicas o torna mais fácil de modificar de forma isolada.
+
+#### Adoção de um Esquema de Versionamento Semântico
+
+Para comunicar a natureza das mudanças de forma clara, é fundamental adotar um esquema de versionamento padronizado. A abordagem mais comum é o **Versionamento Semântico (SemVer)**, que utiliza um formato de três números: `MAJOR.MINOR.PATCH`.
+
+- **MAJOR (Ex: 2.0.0):** Indica uma mudança incompatível com as versões anteriores (breaking change). A atualização para uma nova versão MAJOR exigirá que os consumidores façam alterações em seu código para se adaptarem ao novo contrato do serviço.
+- **MINOR (Ex: 1.3.0):** Indica a adição de novas funcionalidades de forma retrocompatível. O serviço ganhou novas capacidades, mas os consumidores existentes que utilizam as funcionalidades antigas não serão afetados.
+- **PATCH (Ex: 1.2.5):** Indica correções de bugs que também são retrocompatíveis.
+
+A adoção do Versionamento Semântico fornece um sinal claro para os consumidores sobre o impacto de se atualizar para uma nova versão de um serviço.
+
+#### Governança com Repositórios e Registros
+
+É importante que se trace um conjunto de políticas relacionadas à gestão dos serviços. Boas práticas envolvem ter um repositório único na organização para manter a dependência e rastreabilidade dos artefatos de um serviço numa forma controlada. Em detalhes:
+
+- **Repositório de Ativos de Serviço:** É crucial manter um repositório centralizado na organização para gerenciar todos os artefatos de um serviço de forma controlada. Esse repositório deve conter não apenas o código, mas também os contratos, as políticas, os modelos de dados, as especificações e os casos de teste de cada versão do serviço. Essa prática garante a **rastreabilidade**, permitindo que se identifique facilmente quais aplicações consomem qual versão de um serviço, o que é vital para analisar o impacto de uma futura mudança.
+- **Registro de Serviços Dinâmico:** Uma organização com um portfólio considerável de serviços deve disponibilizar um mecanismo de descoberta eficiente, na forma de um registro de serviços. Esse registro não deve apenas listar os serviços disponíveis, mas também as **versões de cada um**. Isso permite que um consumidor busque e se conecte a uma versão específica de um serviço (ex: "versão 1.2 do ServiçoDePagamento"), garantindo estabilidade e evitando que ele seja forçado a migrar para uma nova versão que ainda não teve tempo de homologar.
+
+#### O Papel do Barramento de Serviço (ESB) no Gerenciamento de Versões
+
+Uma infraestrutura de integração robusta é essencial para acomodar mudanças de forma simples e rápida, sem que questões de protocolos, APIs ou plataformas se tornem grandes obstáculos. Nesse contexto, o uso de um bom **Barramento de Serviço Corporativo (ESB)** é primordial para lidar com o versionamento.
+
+Através de técnicas de **roteamento**, **transformação** e **mediação de mensagens**, um ESB pode permitir que múltiplas versões de um mesmo serviço coexistam de forma transparente para os consumidores.
+
+- **Exemplo Prático:** Imagine que a `versão 1.0` de um `ServiçoDeCliente` retorna os dados em formato XML. Uma nova `versão 2.0` é criada, muito mais eficiente, mas que retorna os dados no formato JSON. Aplicações legadas ainda consomem a `versão 1.0` e esperam XML, enquanto novas aplicações já querem usar a `versão 2.0`. Em vez de manter duas implementações do serviço rodando, o ESB pode ser configurado para:
+    1. Expor um único endpoint para o `ServiçoDeCliente`.
+    2. Receber a requisição de uma aplicação legada.
+    3. **Rotear** essa requisição para a `versão 2.0` do serviço.
+    4. Receber a resposta em JSON da `versão 2.0`.
+    5. **Transformar** a resposta de JSON para o formato XML esperado pela aplicação legada.
+    6. Entregar a resposta em XML para o consumidor.
+
+Nesse cenário, a aplicação legada continua funcionando sem nenhuma alteração, mesmo que a implementação do serviço tenha evoluído completamente. O ESB atua como um "adaptador" inteligente, mediando a comunicação e permitindo uma migração gradual e segura entre as versões.
+
