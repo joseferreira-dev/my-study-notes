@@ -563,3 +563,46 @@ Uma SOA madura liberta a organização da dependência de uma única tecnologia 
 
 Em resumo, os padrões SOA não são uma lista de verificação a ser seguida cegamente. Eles são um conjunto interdependente de diretrizes de design que, quando aplicados de forma holística, guiam a organização na criação de um ecossistema de TI que é mais ágil, resiliente e fundamentalmente alinhado com as necessidades presentes e futuras do negócio.
 
+## Governança SOA: Estabelecendo Ordem e Controle no Ecossistema de Serviços
+
+Em um contexto genérico, o conceito de **governança** se refere ao ato de estabelecer e reforçar como pessoas, processos e soluções trabalham em conjunto para alcançar os objetivos de uma organização. É importante notar que a governança se distingue das atividades rotineiras de gestão; ela não se preocupa com a execução do dia a dia, mas sim em definir as **regras do jogo**, as estruturas de poder e os mecanismos de controle para garantir que as ações e os comportamentos estejam alinhados com a estratégia.
+
+Trazendo para o nosso domínio, a **Governança de Tecnologia da Informação (TI)** pode ser definida como:
+
+> “Conjunto de práticas, padrões e relacionamentos estruturados, assumidos por executivos, gestores, técnicos e usuários de TI de uma organização, com a finalidade de garantir controles efetivos, ampliar os processos de segurança, minimizar os riscos, ampliar o desempenho, aperfeiçoar a aplicação de recursos, reduzirem os custos, suportar as melhores decisões e consequentemente alinhar TI aos negócios”.
+
+Um aspecto particularmente poderoso dessa definição é a visão da governança como um **framework para tomada de decisão**. Ela especifica as responsabilidades, define quem tem a autoridade para tomar quais decisões e estabelece as políticas que guiam essas decisões para incentivar comportamentos desejados.
+
+### A Necessidade da Governança em SOA
+
+A Arquitetura Orientada a Serviços, com sua ênfase em autonomia, distribuição e flexibilidade, traz enormes benefícios. No entanto, essas mesmas características, se não forem devidamente controladas, podem se transformar em fraquezas, levando ao caos. Sem uma governança forte, uma iniciativa SOA corre o risco de recriar a "Arquitetura de Bola de Pelo" que ela visava substituir, só que de forma distribuída.
+
+É a governança que garante que a liberdade e a autonomia dos serviços não resultem em redundância e inconsistência. Com um processo de governança bem estabelecido, a organização se torna apta a:
+
+- **Identificar e catalogar os ativos:** Ter um registro claro de todos os serviços que estão sendo produzidos e disponibilizados na empresa.
+- **Controlar o ciclo de vida dos ativos:** Gerenciar um serviço desde sua concepção, passando pelo desenvolvimento e operação, até sua eventual desativação (retirement).
+- **Identificar o grau de dependência:** Mapear e entender as dependências entre os diferentes serviços, o que é crucial para uma análise de impacto precisa antes de qualquer mudança.
+- **Promover reuso e economia:** Estabelecer processos para que, antes de se construir um novo serviço, verifique-se se uma funcionalidade similar já não existe e pode ser reutilizada, evitando o desperdício de recursos.
+- **Assegurar o cumprimento de políticas:** Garantir que todos os serviços estejam em conformidade com as políticas de segurança, desempenho (SLAs) e design da organização.
+
+### Definindo a Governança SOA
+
+A **Governança SOA** é, portanto, a aplicação dos princípios de governança de TI especificamente ao desafio de gerenciar um ecossistema de serviços. Trata-se do conjunto de atividades relacionadas ao exercício de controle sobre as soluções, os artefatos e os ativos dentro de uma arquitetura orientada a serviços. Seu objetivo é garantir e validar que esses ativos estejam se comportando como o esperado e mantendo um determinado nível de qualidade. A Governança SOA não substitui, mas sim **estende e especializa** a governança de TI já existente na organização.
+
+### O Modelo de Referência de Governança SOA (SGRM)
+
+Para auxiliar as organizações a implementarem um processo de governança de forma estruturada, consórcios como o The Open Group desenvolveram modelos de referência. O **SOA Governance Reference Model (SGRM)** é um modelo genérico que pode ser utilizado como uma linha de base para a aplicação da governança em uma organização. Ele define princípios, processos, artefatos, papéis e tecnologias.
+
+Alguns dos princípios fundamentais definidos pelo SGRM incluem:
+
+- **Alinhamento entre Negócio e TI:** A governança deve garantir que o portfólio de serviços esteja sempre alinhado com as prioridades e os processos de negócio.
+- **Conformidade com a Governança Corporativa:** A Governança SOA deve operar em harmonia e conformidade com as estruturas de governança mais amplas da organização.
+- **Existência de uma Arquitetura de Referência:** A governança deve estabelecer e reforçar uma arquitetura de referência padrão, que sirva como um "blueprint" para o design e a construção de todos os serviços.
+- **Contratos de Provedor e Consumidor:** Deve-se garantir que todo serviço possua um contrato claro e bem definido e que os consumidores o utilizem de acordo com as regras estabelecidas.
+- **Posse de Metadados de Serviços:** A governança é responsável por definir e gerenciar os metadados que descrevem cada serviço, facilitando sua descoberta e compreensão.
+- **Identificação das Partes Interessadas:** É preciso mapear claramente quem são as partes interessadas (proprietários de negócio, arquitetos, desenvolvedores, consumidores) no ciclo de vida de cada serviço.
+- **Automação dos Processos de Governança:** Sempre que possível, os processos de governança devem ser automatizados. Por exemplo, utilizando ferramentas que validam automaticamente se um novo serviço está em conformidade com os padrões da empresa antes de ser publicado no registro.
+- **Implementação de um Modelo de Financiamento:** Um dos aspectos mais práticos e importantes da governança é definir como os serviços compartilhados serão financiados. Quem paga pelo desenvolvimento e pela manutenção de um `ServiçoDeAutenticação` que é utilizado por dez departamentos diferentes? A governança deve estabelecer um modelo claro para esse custeio.
+
+Modelos de referência como o SGRM do The Open Group oferecem um guia detalhado e um conjunto de melhores práticas para organizações que buscam implementar um processo de governança robusto e eficaz para suas iniciativas SOA.
+
