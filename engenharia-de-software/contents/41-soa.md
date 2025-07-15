@@ -270,7 +270,7 @@ O aspecto "padronizado" é crucial: todos os contratos de serviço dentro de um 
 
 Um contrato pode ser composto por múltiplos documentos, incluindo um **Acordo de Nível de Serviço (SLA - Service Level Agreement)**, que especifica métricas de qualidade como tempo de resposta, disponibilidade e capacidade. Como o serviço tende a evoluir, o contrato deve ser um artefato vivo, mantido e versionado em sincronia com as funcionalidades que ele descreve. Um dos maiores riscos em uma SOA é a defasagem entre o contrato e a implementação real do serviço.
 
-#### 41.4.2 Baixo Acoplamento de Serviços (Service Loose Coupling)
+### Baixo Acoplamento de Serviços (Service Loose Coupling)
 
 O baixo acoplamento é um princípio fundamental da engenharia de software que ganha ainda mais importância em uma arquitetura distribuída. Ele se refere ao grau de **independência** de um serviço em relação aos seus consumidores e a outros serviços. Um serviço com baixo acoplamento é aquele que pode realizar sua tarefa com o mínimo de conhecimento ou dependência de outras partes do sistema.
 
@@ -280,23 +280,20 @@ A busca pelo baixo acoplamento está diretamente ligada à promoção da **alta 
 
 Para gerenciar e reduzir o acoplamento em uma SOA, muitas organizações utilizam um padrão de middleware conhecido como **Barramento de Serviço Corporativo (ESB - Enterprise Service Bus)**.
 
-![](https://gemini.google.com/app/img/41-esb.png)  
-Figura: O ESB como um intermediário que desacopla provedores e consumidores.
+<div align="center">
+  <img width="680px" src="./img/41-soa-barramento-esb.png">
+</div>
 
 A analogia com um sistema de transporte público é bastante eficaz. O passageiro (consumidor) não precisa saber o trajeto exato do ônibus (implementação), apenas qual linha pegar (interface) para chegar ao seu destino. O ESB atua como esse sistema de transporte para mensagens. É uma arquitetura de middleware que abstrai a forma como os serviços são conectados, permitindo que eles se comuniquem sem estarem diretamente acoplados. Um ESB geralmente oferece capacidades essenciais como:
 
 - **Roteamento Dinâmico de Mensagens:** Direciona as mensagens para o serviço correto com base em seu conteúdo ou em regras predefinidas.
-    
 - **Transformação de Mensagens:** Converte mensagens de um formato para outro, permitindo que serviços com tecnologias diferentes possam se comunicar.
-    
 - **Resolução de Descrições de Serviços:** Ajuda a localizar e interpretar o contrato do serviço de destino.
-    
 - **Tratamento de Exceções e Monitoramento:** Oferece uma infraestrutura centralizada para lidar com erros e monitorar o fluxo de mensagens.
-    
 
-É crucial entender que **ESB não é sinônimo de SOA**. O ESB é um padrão de implementação que _ajuda_ a alcançar o baixo acoplamento em uma SOA, mas é possível ter uma SOA sem um ESB, e vice-versa.
+É crucial entender que **ESB não é sinônimo de SOA**. O ESB é um padrão de implementação que ajuda a alcançar o baixo acoplamento em uma SOA, mas é possível ter uma SOA sem um ESB, e vice-versa.
 
-#### 41.4.3 Abstração de Serviços (Service Abstraction)
+### Abstração de Serviços (Service Abstraction)
 
 **Os serviços devem esconder do mundo exterior toda a sua lógica e tecnologia de implementação.** Esse princípio dita que a única informação que um consumidor deve ter sobre um serviço é aquela publicada em seu contrato. Todo o resto — a linguagem de programação, a arquitetura interna, o banco de dados utilizado — é um detalhe privado e irrelevante para o consumidor.
 
@@ -304,38 +301,38 @@ O serviço deve ser tratado como uma **caixa-preta**. Se uma organização contr
 
 O objetivo da abstração é criar uma interface de comunicação estável, permitindo que a implementação interna do serviço evolua e seja refatorada livremente, sem quebrar os sistemas que dependem dele.
 
-#### 41.4.4 Reusabilidade de Serviços (Service Reusability)
+### Reusabilidade de Serviços (Service Reusability)
 
 **Os serviços devem ser projetados como ativos corporativos, com lógica genérica o suficiente para ser reutilizada em diferentes contextos e aplicações.** Este princípio é fundamental para que a SOA entregue seu prometido retorno sobre o investimento (ROI).
 
 Construir um serviço genérico, que atenda a diversas demandas e cenários, exige mais esforço, tempo e investimento do que construir uma solução para um problema específico. No entanto, o benefício a médio e longo prazo é imenso. Um serviço reutilizável, que não carrega particularidades de um único processo de negócio, pode ser combinado em novas soluções, acelerando drasticamente o desenvolvimento e aumentando a agilidade da empresa. A reusabilidade é uma consequência direta do baixo acoplamento e do design agnóstico.
 
-#### 41.4.5 Autonomia de Serviços (Service Autonomy)
+### Autonomia de Serviços (Service Autonomy)
 
 **Os serviços devem ter o máximo de controle possível sobre a lógica e os recursos que encapsulam.** Um serviço autônomo é aquele que depende minimamente de elementos externos para executar sua função. Quanto maior a autonomia, maior a confiabilidade e a previsibilidade do serviço, pois ele está menos sujeito a falhas em recursos sobre os quais não tem controle.
 
 Essa autonomia se reflete, por exemplo, na capacidade de um serviço gerenciar seu próprio banco de dados ou sua própria infraestrutura de execução. Essa independência aumenta o controle que o serviço tem sobre seu ambiente em tempo de execução, o que pode levar a um melhor desempenho, pois as execuções se tornam mais diretas e com menos dependências externas.
 
-#### 41.4.6 Independência de Estados de Serviços (Service Statelessness)
+### Independência de Estados de Serviços (Service Statelessness)
 
 **Os serviços devem ser projetados, sempre que possível, para serem _stateless_ (sem estado).** Isso significa que um serviço não deve reter nenhuma informação de estado específica de um cliente entre uma requisição e outra. Cada interação deve ser autossuficiente; a mensagem enviada pelo consumidor deve conter todos os dados necessários para que o serviço processe a requisição.
 
 O protocolo HTTP, que fundamenta a web, é um exemplo clássico de um protocolo sem estado. Essa característica é o que permite a imensa escalabilidade da internet. Em uma SOA, a independência de estado permite que um serviço seja escalado horizontalmente com facilidade. Múltiplas instâncias do mesmo serviço podem ser executadas atrás de um balanceador de carga, e qualquer instância pode atender a qualquer requisição, pois não há um estado de sessão para ser mantido. Isso otimiza a alocação de recursos e aumenta a robustez do sistema.
 
-#### 41.4.7 Visibilidade de Serviços (Service Discoverability)
+### Visibilidade de Serviços (Service Discoverability)
 
 **Os serviços devem ser projetados para serem facilmente descobertos e interpretados por potenciais consumidores.** A reusabilidade, um dos maiores benefícios da SOA, é inútil se ninguém conseguir encontrar os serviços que já existem.
 
 A visibilidade é alcançada ao se enriquecer os contratos de serviço com **meta-informações** que descrevem claramente o propósito, as capacidades e as políticas do serviço de uma forma que seja compreensível tanto para humanos quanto para máquinas. Para evitar o desenvolvimento redundante de soluções, as equipes precisam ter um mecanismo de descoberta (como um registro de serviços) que lhes permita encontrar e avaliar os serviços existentes antes de decidir construir um novo.
 
-#### 41.4.8 Composição de Serviços (Service Composability)
+### Composição de Serviços (Service Composability)
 
 **Os serviços devem ser projetados como blocos de construção eficazes, que podem ser combinados para criar serviços de maior granularidade ou para orquestrar processos de negócio completos.** Este princípio é onde o verdadeiro poder da SOA se manifesta. A composição é, em si, uma forma avançada de reutilização.
 
 - **Exemplo:** Os Correios oferecem um serviço `A` que, dado um CEP, retorna um endereço. Eles também oferecem um serviço `B` que, dado um CEP e as dimensões de um pacote, retorna os tipos de frete e seus valores. Isoladamente, eles resolvem problemas específicos. Quando compostos, eles permitem a criação de uma funcionalidade de negócio muito mais complexa, como a de um site de e-commerce que calcula o frete automaticamente a partir do endereço do cliente.
-    
 
-![](https://gemini.google.com/app/img/41-composicao-de-servicos.png)  
-Figura: Serviços individuais sendo compostos para formar um processo de negócio.
+<div align="center">
+  <img width="720px" src="./img/41-soa-composicao-de-servicos.png">
+</div>
 
 Ao construir um inventário de serviços altamente coesos, pouco acoplados e reutilizáveis, uma organização cria a base para que futuros requisitos de negócio sejam atendidos de forma ágil, através da composição de capacidades existentes. É importante notar que esses oito princípios são interdependentes e se reforçam mutuamente: o baixo acoplamento permite a autonomia; um contrato padronizado é a base para a visibilidade; a independência de estado maximiza a reusabilidade; e a visibilidade promove a composição.
