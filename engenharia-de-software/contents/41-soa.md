@@ -336,3 +336,67 @@ A visibilidade é alcançada ao se enriquecer os contratos de serviço com **met
 </div>
 
 Ao construir um inventário de serviços altamente coesos, pouco acoplados e reutilizáveis, uma organização cria a base para que futuros requisitos de negócio sejam atendidos de forma ágil, através da composição de capacidades existentes. É importante notar que esses oito princípios são interdependentes e se reforçam mutuamente: o baixo acoplamento permite a autonomia; um contrato padronizado é a base para a visibilidade; a independência de estado maximiza a reusabilidade; e a visibilidade promove a composição.
+
+## Composição de Serviços: Criando Valor a Partir de Peças Reutilizáveis
+
+Como vimos no princípio de design da **Composição de Serviços**, uma das características mais potentes da SOA é a capacidade de combinar serviços individuais para criar novos serviços de mais alto nível ou para automatizar processos de negócio complexos. Um serviço de maior granularidade é, essencialmente, composto por outros serviços menores e mais focados, que atuam como blocos de construção.
+
+<div align="center">
+  <img width="320px" src="./img/41-soa-esquema-de-composicao.png">
+</div>
+
+A composição de serviços potencializa os diversos benefícios oferecidos pela arquitetura orientada a serviços. Ela permite, por exemplo, que o serviço de mais alto nível realize interações socrônicas ou assíncronas e, crucialmente, que ele gerencie o estado de um processo de negócio de longa duração.
+
+Neste ponto, pode surgir uma aparente contradição com o princípio da **Independência de Estados (Statelessness)**. Se os serviços individuais devem ser projetados para não manter estado, como um processo composto pode ser stateful? A resposta está na separação de responsabilidades. Os serviços individuais (ex: `ProcessarPagamento`, `VerificarEstoque`) permanecem stateless, tratando cada requisição de forma isolada. No entanto, o processo que os compõe — o **workflow de coordenação** — é responsável por manter o estado da transação de negócio como um todo (ex: o pedido está no estado "Aguardando Pagamento", depois "Pagamento Aprovado", depois "Enviado").
+
+Existem dois padrões de workflow principais para implementar a composição de serviços: a Orquestração e a Coreografia.
+
+### Orquestração de Serviços: A Abordagem Centralizada
+
+A **orquestração de serviços** representa um processo de negócio executável, centralizado e único, no qual um componente, chamado **orquestrador** ou **coordenador**, é responsável por controlar e coordenar as interações entre os diferentes serviços que participam do fluxo. O orquestrador é a peça central que invoca e combina os serviços individuais para formar o serviço composto.
+
+A analogia com uma orquestra sinfônica é perfeita. A orquestra é o serviço composto, os músicos são os serviços individuais, e o **maestro é o orquestrador**. É o maestro quem dita o ritmo, diz quando um instrumento deve começar a tocar e quando deve parar. Ele tem a visão completa da partitura (o processo de negócio) e coordena a interação entre todos os músicos para produzir a sinfonia.
+
+<div align="center">
+  <img width="360px" src="./img/41-soa-orquestracao-de-servicos.png">
+</div>
+
+A orquestração inclui o gerenciamento de transações que podem abranger múltiplos serviços e emprega uma abordagem centralizada. A lógica do processo de negócio pertence inteiramente ao orquestrador, sendo, portanto, uma lógica **privada** e tipicamente **intra-organização** (dentro de uma mesma empresa).
+
+No contexto de Web Services, a linguagem padrão para definir esses fluxos de orquestração é a **WS-BPEL (Web Services Business Process Execution Language)**. O WS-BPEL é uma linguagem executável baseada em XML que permite especificar, de forma programática, as ações de um processo de negócio, incluindo a invocação de serviços, a manipulação de variáveis, o tratamento de exceções e a lógica condicional.
+
+### Coreografia de Serviços: A Abordagem Descentralizada
+
+Em contraste direto com a orquestração, a **coreografia de serviços** não possui um coordenador central. Em vez disso, cada serviço envolvido no processo sabe exatamente quando executar suas operações e com quem deve interagir. A coreografia é um esforço colaborativo, distribuído e descentralizado, focado na troca de mensagens em processos de negócio que são, muitas vezes, **públicos** e **inter-organizações**.
+
+A analogia aqui é a de um grupo de dançarinos executando uma coreografia de balé. Não há um maestro no palco lhes dando ordens. Cada dançarino conhece seus passos, suas deixas e como seus movimentos se sincronizam com os dos outros. Todos os participantes seguem um roteiro pré-acordado para produzir a dança de forma colaborativa.
+
+<div align="center">
+  <img width="360px" src="./img/41-soa-coreografia-de-servicos.png">
+</div>
+
+Na coreografia, todos os participantes precisam estar cientes do processo de negócio, das operações a serem executadas, das mensagens a serem trocadas e do momento exato de cada interação. A lógica do processo não reside em um ponto central, mas está distribuída entre os próprios participantes.
+
+No mundo dos Web Services, a linguagem utilizada para descrever essas interações é a **WS-CDL (Web Services Choreography Description Language)**. Diferente do WS-BPEL, que é uma linguagem **executável**, o WS-CDL é uma linguagem **descritiva**. Ele descreve, de um ponto de vista global e observável, as colaborações ponto a ponto entre os participantes.
+
+A tabela a seguir resume as principais diferenças entre os dois padrões:
+
+|Característica|Orquestração|Coreografia|
+|---|---|---|
+|**Controle**|Centralizado (em um orquestrador).|Distribuído (entre os participantes).|
+|**Lógica do Processo**|Reside inteiramente no orquestrador.|Distribuída entre todos os serviços participantes.|
+|**Visibilidade**|A lógica é privada, representando o ponto de vista de uma parte (a organização).|O protocolo de interação é público e compartilhado, representando um ponto de vista global.|
+|**Escopo Típico**|Processos internos de uma organização (intra-organização).|Processos de negócio entre diferentes organizações (inter-organização).|
+|**Linguagem Padrão**|WS-BPEL (executável).|WS-CDL (descritiva).|
+
+### SCA (Service Component Architecture): Um Modelo para Simplificar a Composição
+
+A **Service Component Architecture (SCA)** é um conjunto de especificações, iniciado por grandes fornecedores de software (como IBM, Oracle, SAP, entre outros), com o objetivo de **simplificar a construção de aplicações e sistemas baseados em SOA**. Trata-se de um modelo de programação simples e poderoso, que abstrai a complexidade das tecnologias de comunicação.
+
+A SCA é baseada na ideia de que as funcionalidades de negócio são providas como uma série de serviços, que são combinados para criar soluções. Essas soluções podem conter tanto serviços novos, criados especificamente para a aplicação, quanto funcionalidades de sistemas legados, que são reutilizadas como parte da composição. A grande vantagem da SCA é que ela busca ser agnóstica à tecnologia. Ela provê um modelo para:
+
+1. **Composição:** Como empacotar componentes de software (escritos em Java, C++, etc.) para que possam ser facilmente reutilizados.
+2. **Montagem:** Define como esses componentes podem ser "conectados" ou "montados" para formar uma aplicação maior, tratando-os como um único serviço.
+3. **Política:** Define como tratar requisitos não-funcionais, como segurança (assinatura digital) e transações, de forma padronizada e desacoplada da lógica de negócio.
+
+Em essência, a SCA permite que os desenvolvedores se concentrem na lógica de negócio, enquanto a infraestrutura da SCA cuida dos detalhes de como os componentes se comunicam, seja por meio de Web Services, sistemas de mensagens ou outras tecnologias de invocação remota.
