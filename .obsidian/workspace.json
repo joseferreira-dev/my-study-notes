@@ -144,7 +144,7 @@
               "state": {
                 "file": "legislacao/contents/01-lei-8112.md",
                 "followCursor": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
@@ -170,17 +170,23 @@
   },
   "active": "e8d2e955ea4043bd",
   "lastOpenFiles": [
+    "iot/contents/x.md",
+    "iot/contents/y.md",
+    "iot/contents/01-introducao-a-domotica.md",
+    "legislacao/contents/01-lei-8112.md",
+    "iot/contents/img/figura-1-1.png",
+    "iot/contents/img",
+    "iot/contents/Nova pasta",
+    "iot/contents",
+    "iot",
     "legislacao/contents/img/lei-8112-beneficios.png",
     "legislacao/contents/img/lei-8112-peticao-recurso.png",
     "legislacao/contents/img/lei-8112-posse-requisitos-para-investidura.png",
-    "legislacao/contents/01-lei-8112.md",
     "legislacao/contents/img/lei-8112-peticao-requerimento.png",
     "legislacao/contents/img/lei-8112-peticao-formas.png",
     "legislacao/contents/img/lei-8112-peticao-e-representacao.png",
     "legislacao/contents/img/lei-8112-pad-revisao.png",
     "legislacao/contents/img/lei-8112-pad-rito-sumario-acumulacao.png",
-    "legislacao/contents/img/lei-8112-pad-rito-sumario-fases.png",
-    "legislacao/contents/img/lei-8112-pad-rito-ordinario-afastamento.png",
-    "legislacao/contents/img/lei-8112-pad-rito-ordinario-esquema.png"
+    "legislacao/contents/img/lei-8112-pad-rito-sumario-fases.png"
   ]
 }
