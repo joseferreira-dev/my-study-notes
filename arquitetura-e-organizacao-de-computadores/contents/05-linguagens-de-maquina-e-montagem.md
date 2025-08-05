@@ -2,8 +2,6 @@
 
 Neste capítulo, vamos explorar dois níveis fundamentais da programação de computadores: a **linguagem de máquina** e a **linguagem de montagem (ou linguagem Assembly)**. Elas representam os níveis mais baixos da hierarquia de linguagens e estão intimamente ligadas à arquitetura do processador. Ao estudar essas linguagens, compreenderemos como os computadores realmente executam instruções, como os programas são traduzidos e como o hardware interpreta comandos.
 
-### Introdução
-
 Enquanto linguagens de alto nível como Python, Java ou C++ priorizam a legibilidade e a abstração, linguagens de máquina e de montagem priorizam o **controle sobre o hardware**. Isso se dá porque essas linguagens trabalham diretamente com os recursos do processador, como registradores e unidades aritméticas.
 
 A linguagem de máquina é composta por **códigos binários** que representam instruções diretamente compreendidas pela Unidade de Controle do processador. Já a linguagem de montagem é uma versão simbólica dessas instruções binárias, utilizando **mnemônicos** e **identificadores de registradores** para facilitar o entendimento humano.
@@ -60,7 +58,7 @@ Operando = VALOR
 
 Esse modo pode ser utilizado para definir e utilizar constantes ou definir valores iniciais das variáveis. A vantagem é que nenhuma referência de memória (além de obter a instrução em si) é necessária para obter o operando. Isso economiza um ciclo de memória ou de cache dentro do ciclo de instrução. A desvantagem é que o tamanho do número é limitado ao tamanho do campo de endereço (geralmente pequeno, se comparado ao tamanho da palavra, que é o tamanho utilizado quando se busca um dado da memória).
 
-Um exemplo que utiliza o modo de endereçamento imediato para mover o valor 20(hexadecimal) para o registrador B: 
+Um exemplo que utiliza o modo de endereçamento imediato para mover o valor 20 (em hexadecimal) para o registrador B: 
 
 ```asm
 MOV B, #20H
@@ -80,7 +78,7 @@ Essa técnica era comum nas primeiras gerações de computadores, requer apenas 
 EA = (A)
 ```
 
-Como definido lá nas notações, os parênteses são interpretados como "conteúdo de". A vantagem principal é que, para um tamanho N de uma palavra, um espaço de endereçamento de 2N ficará disponível. A desvantagem é que a execução da instrução requer duas referências à memória para obter o operando, uma para obter apenas o endereço e a outra para obter o operando (valor) em si.
+Aqui, os parênteses são interpretados como "conteúdo de". A vantagem principal é que, para um tamanho N de uma palavra, um espaço de endereçamento de 2N ficará disponível. A desvantagem é que a execução da instrução requer duas referências à memória para obter o operando, uma para obter apenas o endereço e a outra para obter o operando (valor) em si.
 
 **Endereçamento por registradores**: semelhante ao endereçamento direto, porém o campo de endereço faz referência a um registrador em vez de um endereço de memória:
 
@@ -144,7 +142,7 @@ ADD AX, BX      ; soma AX + BX → AX = 0008h
 
 O código escrito em assembly não pode ser executado diretamente pela CPU. Ele precisa ser traduzido para linguagem de máquina. Esse processo é feito por um programa chamado **montador**, ou **assembler**.
 
-O assembler converte cada instrução simbólica em seu equivalente binário (código de máquina). Por exemplo, A instrução `MOV AL, 02h` será traduzida para `10110000 00000010`. Isso é diferente de compiladores (que traduzem linguagens de alto nível para baixo nível) ou interpretadores (que executam diretamente instruções de alto nível).
+O assembler converte cada instrução simbólica em seu equivalente binário (código de máquina). Por exemplo, a instrução `MOV AL, 02h` será traduzida para `10110000 00000010`. Isso é diferente de compiladores (que traduzem linguagens de alto nível para baixo nível) ou interpretadores (que executam diretamente instruções de alto nível).
 
 Montadores também permitem o uso de **diretivas**, como `ORG`, `END`, `DATA`, entre outras, que ajudam a organizar o código.
 
@@ -154,7 +152,7 @@ Em geral, cada instrução da linguagem de montagem é traduzida em uma instruç
 
 **Comentário (opcional)**: pode ser colocado no lado direito de um comando ou pode ocupar uma linha inteira. Em geral, o caractere especial que especifica que a partir dali trata-se de um comentário é o ponto e vírgula `;`.
 
-**Rótulo (opcional)**: se estiver presente, o montador define o rótulo como equivalente ao endereço no qual o primeiro byte do código objeto gerado para essa instrução será carregado. O programador pode usar o rótulo como um endereço ou como dado no campo de endereço de outra instrução. Os rótulos são utilizados com mais frequência em instruções de desvio. Abaixo podemos ver um exemplo (rótulo foi denominado L1 e os comentários são colocados após o ponto e vírgula).
+**Rótulo (opcional)**: se estiver presente, o montador define o rótulo como equivalente ao endereço no qual o primeiro byte do código objeto gerado para essa instrução será carregado. O programador pode usar o rótulo como um endereço ou como dado no campo de endereço de outra instrução. Os rótulos são utilizados com mais frequência em instruções de desvio. Abaixo podemos ver um exemplo (rótulo foi denominado `L1` e os comentários são colocados após o ponto e vírgula).
 
 ```asm
 L1: SUB EAX, EDX   ; subtrai o conteúdo do reg EDX do conteúdo de EAX
@@ -206,7 +204,7 @@ Alguns exemplos de como podem ser utilizados:
 ```asm
 ADD AL, BL ; AL <- AL + BL (AL e BL são os registradores com valores)
 SUB AL, BL ; AL <- AL - BL
-MOV AL, 1 ; AL = 1 (move 1 para AL)
+MOV AL, 1  ; AL = 1 (move 1 para AL)
 ```
 
 Um programa típico em Assembly possui as seguintes seções:
@@ -265,6 +263,6 @@ Apesar de ser rara em aplicações modernas, a linguagem assembly ainda é utili
 
 ### Considerações Finais
 
-O estudo das linguagens de máquina e de montagem oferece uma compreensão profunda do funcionamento interno dos computadores. Mesmo que hoje a maioria dos desenvolvedores utilize linguagens de alto nível, a capacidade de entender o que acontece “por trás dos panos” é extremamente valiosa para o domínio completo da computação.
+Este capítulo nos levou ao coração da execução computacional, revelando a mecânica por trás de cada operação de software. Ao dissecarmos a **linguagem de máquina**, entendemos como o hardware interpreta comandos em sua forma mais pura: sequências binárias de opcodes e operandos. Vimos que, embora poderosa, essa linguagem é impraticável para o desenvolvimento humano. É nesse ponto que a **linguagem de montagem (Assembly)** demonstra seu valor inestimável, servindo como a camada de abstração mais fina e essencial, que traduz a lógica binária para mnemônicos compreensíveis, nos dando controle absoluto sobre o processador.
 
-Dominar esses conceitos permite não apenas otimizar programas, mas também criar soluções mais seguras, eficientes e adaptadas às necessidades específicas do hardware.
+Embora a maioria dos desenvolvedores modernos opere nas camadas de abstração superiores, o conhecimento adquirido aqui transcende a mera curiosidade acadêmica. Compreender como funcionam os registradores, os modos de endereçamento e o ciclo de instrução é o que diferencia um programador de um verdadeiro cientista da computação. Esse saber permite otimizar códigos de forma crítica, desenvolver software para sistemas embarcados, garantir a segurança em baixo nível e depurar problemas que são invisíveis para as linguagens de alto nível. Em suma, dominamos a base sobre a qual todos os outros softwares são construídos.
