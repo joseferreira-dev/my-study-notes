@@ -1,5 +1,7 @@
 # Capítulo 4 – Algoritmos e Linguagens de Programação de Alto Nível
 
+No capítulo anterior, exploramos o modelo de máquina multinível, uma hierarquia de abstrações que vai do hardware físico até as interfaces com o usuário. Agora, vamos nos aprofundar no topo dessa estrutura: o **Nível 5**, o domínio das linguagens orientadas a problemas. Este capítulo é dedicado a entender como as ideias humanas se transformam em soluções computacionais. Investigaremos o que é um **algoritmo**, a espinha dorsal de qualquer programa, e como as **linguagens de programação de alto nível** servem como ferramentas poderosas para expressar essa lógica de forma clara e produtiva, abstraindo a complexidade dos níveis inferiores da máquina.
+
 ## O Pensamento Algorítmico: da Ideia ao Código
 
 Quando falamos em computadores, tendemos a pensar imediatamente em tecnologia avançada, circuitos, chips e softwares sofisticados. No entanto, por trás de toda essa complexidade está um conceito fundamental, simples e poderoso: o algoritmo. A programação e, por consequência, o funcionamento dos computadores, baseia-se na construção de algoritmos — passos bem definidos para resolver problemas.
@@ -10,13 +12,14 @@ Um exemplo simples ajuda a ilustrar o conceito. Imagine que você deseja prepara
 
 ## O Que é um Algoritmo?
 
-Do ponto de vista matemático, um algoritmo é uma sequência finita de regras ou operações que, aplicadas a um conjunto de dados, resolve um problema ou classe de problemas. Já na computação, definimos algoritmo como um conjunto de regras e procedimentos lógicos perfeitamente definidos, que levam à solução de um problema em um número finito de etapas.
+Formalmente, um algoritmo pode ser definido de duas maneiras complementares:
 
-O aspecto mais importante de um algoritmo é a clareza e a ausência de ambiguidades. Um ser humano pode interpretar uma instrução mal formulada e ainda assim realizar a ação corretamente. Um computador, por outro lado, depende de instruções absolutamente precisas. Um erro ou ambiguidade pode resultar em falhas de execução ou comportamentos inesperados.
+- **Na matemática**, é uma sequência finita de regras ou operações que, aplicada a um número finito de dados, permite solucionar classes semelhantes de problemas.
+- **Na informática**, é um conjunto de regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas.
 
-Além da clareza, é importante compreender que os algoritmos manipulam dados armazenados na memória por meio de variáveis — nomes simbólicos associados a posições de memória. Em nossa analogia da receita de bolo, as variáveis são os ingredientes, e o programa (escrito em alguma linguagem de programação) é o texto da receita.
+O aspecto mais importante de um algoritmo é a **clareza** e a **ausência de ambiguidades**. Um ser humano pode interpretar uma instrução mal formulada e ainda assim realizar a ação corretamente. Um computador, por outro lado, depende de instruções absolutamente precisas. Um erro ou ambiguidade pode resultar em falhas de execução ou comportamentos inesperados.
 
-Portanto, a lógica de um programa é a representação formal de um algoritmo. Essa representação pode ser escrita em pseudocódigo, fluxogramas ou linguagens de programação, como veremos a seguir.
+Para manipular dados, os algoritmos usam **variáveis** — nomes simbólicos associados a posições de memória. Na analogia da receita, as variáveis são os ingredientes, e o programa (a implementação do algoritmo) é o texto da receita. A lógica de um programa é, portanto, a representação formal de um algoritmo, que pode ser expressa em pseudocódigo, fluxogramas ou linguagens de programação.
 
 ## Tipos de Algoritmos: Recursão e Iteração
 
@@ -95,8 +98,8 @@ A principal vantagem das linguagens de alto nível é a **produtividade**. Elas 
 
 Um ponto importante é que o computador não entende diretamente o código escrito em linguagens de alto nível. Esse código (código-fonte) precisa ser traduzido para **linguagem de máquina**. Essa tradução pode ocorrer de duas formas:
 
-- **Compilação**: o código-fonte é totalmente convertido em código de máquina antes da execução. Exemplo: linguagens como C, C++ e Java.
-- **Interpretação**: o código é lido e executado linha por linha por um interpretador. Exemplo: Python, Ruby.
+- **Compilação**: Um programa chamado **compilador** traduz todo o código-fonte para um arquivo de código de máquina (executável) de uma só vez. Linguagens como C, C++, Java e Go são compiladas.
+- **Interpretação**: Um programa chamado **interpretador** lê o código-fonte e o executa linha por linha, traduzindo-o em tempo real. Linguagens como Python, Ruby e JavaScript são tradicionalmente interpretadas.
 
 ## Paradigmas de Programação
 

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/04-linguagens-de-alto-nivel.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03-hardware-software"
+              "title": "04-linguagens-de-alto-nivel"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/04-linguagens-de-alto-nivel.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Links inversos para 03-hardware-software"
+              "title": "Links inversos para 04-linguagens-de-alto-nivel"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/04-linguagens-de-alto-nivel.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 03-hardware-software"
+              "title": "Sumário de 04-linguagens-de-alto-nivel"
             }
           }
         ],
@@ -170,8 +170,8 @@
   },
   "active": "e8d2e955ea4043bd",
   "lastOpenFiles": [
-    "arquitetura-e-organizacao-de-computadores/contents/04-linguagens-de-alto-nivel.md",
     "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
+    "arquitetura-e-organizacao-de-computadores/contents/04-linguagens-de-alto-nivel.md",
     "arquitetura-e-organizacao-de-computadores/contents/02-arquitetura-de-processadores.md",
     "arquitetura-e-organizacao-de-computadores/contents/01-introducao.md",
     "arquitetura-e-organizacao-de-computadores/contents/img/01-barramento.png",
