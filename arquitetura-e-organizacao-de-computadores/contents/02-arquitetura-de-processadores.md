@@ -64,12 +64,12 @@ Cada uma dessas instruções é simples e rápida, permitindo execução em pipe
 
 Para consolidar a compreensão, vejamos a seguir uma comparação entre diferentes processadores quanto às características-chave que ajudam a classificá-los como RISC ou CISC:
 
-|Características|MIPS R4000|RS/6000|VAX11/780|Intel 486|
-|---|---|---|---|---|
-|Quantidade de instruções|94|183|303|235|
-|Modos de endereçamento|1|4|22|11|
-|Largura de instruções (bytes)|4|4|2–57|1–12|
-|Registradores de uso geral|32|32|16|8|
+| Características               | MIPS R4000 | RS/6000 | VAX11/780 | Intel 486 |
+| ----------------------------- | ---------- | ------- | --------- | --------- |
+| Quantidade de instruções      | 94         | 183     | 303       | 235       |
+| Modos de endereçamento        | 1          | 4       | 22        | 11        |
+| Largura de instruções (bytes) | 4          | 4       | 2–57      | 1–12      |
+| Registradores de uso geral    | 32         | 32      | 16        | 8         |
 
 Ao analisar essa tabela, é possível observar que os processadores **MIPS R4000** e **RS/6000** exibem características típicas da arquitetura **RISC**: poucas instruções, largura fixa, poucos modos de endereçamento e muitos registradores. Por outro lado, os processadores **VAX11/780** e **Intel 486** possuem conjuntos de instruções mais amplos, modos variados de endereçamento, instruções de tamanho variável e menos registradores, o que é característico da arquitetura **CISC**.
 
