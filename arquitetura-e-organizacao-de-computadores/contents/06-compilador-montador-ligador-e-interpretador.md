@@ -1,6 +1,8 @@
 # Capítulo 6 – Compiladores, Montadores, Ligadores e Interpretadores
 
-Neste capítulo, aprofundaremos o estudo de quatro elementos essenciais no ciclo de desenvolvimento e execução de programas: **compiladores**, **montadores**, **ligadores** e **interpretadores**. Esses componentes formam a ponte entre o código-fonte escrito em linguagens de alto nível e as instruções compreendidas pelo processador. Entender como funcionam esses mecanismos é crucial para compreender como o software “ganha vida” sobre o hardware.
+Nos capítulos anteriores, viajamos desde as linguagens de alto nível, onde algoritmos são expressos, até as linguagens de baixo nível, o dialeto nativo do processador. Agora, vamos desvendar os mecanismos que tornam essa comunicação possível. Este capítulo é dedicado aos "artesãos" do software: as ferramentas que traduzem, unem e executam nosso código.
+
+Estudaremos o **compilador**, o grande arquiteto que converte a lógica humana em um plano técnico; o **montador**, o especialista que transforma esse plano nos blocos de construção binários; o **ligador**, o mestre de obras que une esses blocos e os conecta a bibliotecas externas; e o **interpretador**, que adota uma abordagem diferente, executando o plano instrução por instrução, em tempo real. Compreender o papel de cada um é fundamental para dominar o ciclo de vida completo de um programa.
 
 ## O Caminho da Linguagem de Alto Nível ao Executável
 
@@ -16,7 +18,7 @@ Esse caminho, que pode parecer complexo, é essencial para garantir que programa
 
 Cada uma dessas etapas será discutida em detalhes nas próximas seções.
 
-## O Compilador: Tradutor de Alto Desempenho
+## Compilador: Tradutor de Alto Desempenho
 
 O **compilador** é o principal responsável por converter o código escrito em uma linguagem de alto nível em um formato que o processador possa entender — geralmente, código de máquina ou código Assembly. Essa tradução ocorre **antes da execução**, e o resultado final é um arquivo executável.
 
@@ -111,7 +113,7 @@ Além do compilador tradicional, há variantes importantes:
 - **Compilador cruzado (Cross Compiler)**: executa em uma plataforma, mas gera código para outra. Por exemplo, um compilador rodando em Linux que gera código para Windows.
 - **Compilação Just-In-Time (JIT)**: utilizada em linguagens como Java. O código é compilado em tempo de execução, convertendo **bytecodes** em **código nativo** no momento da execução para melhorar a performance.
 
-## O Montador: Tradutor de Assembly para Código Objeto
+## Montador: Tradutor de Assembly para Código Objeto
 
 O **montador**, ou **assembler**, é o responsável por traduzir o código Assembly em **código objeto**, ou seja, uma versão binária do programa que já pode ser parcialmente executada pela CPU.
 
@@ -133,7 +135,7 @@ Nos sistemas Unix-like, os arquivos resultantes dessa tradução geralmente têm
 
 Vale ressaltar que muitos compiladores modernos já incluem o montador em seu processo interno, gerando o código objeto diretamente a partir do código-fonte em C, por exemplo. No entanto, para fins didáticos, é essencial conhecer essa separação de responsabilidades.
 
-## O Ligador: Montando o Programa Final
+## Ligador: Montando o Programa Final
 
 O **ligador**, também conhecido como **link-editor** ou **linker**, é o componente que une vários arquivos objeto (gerados por compiladores e montadores) em um único **arquivo executável**. Além de unir os arquivos, ele resolve **referências externas** — por exemplo, chamadas a funções que estão em bibliotecas ou em outros módulos.
 
@@ -144,7 +146,7 @@ Imagine que um programa utiliza a função `printf()` da linguagem C. Essa funç
 - **Bibliotecas estáticas**: são incluídas no executável final em tempo de compilação, o que pode aumentar o tamanho do arquivo final.
 - **Bibliotecas dinâmicas (DLLs ou .so)**: são carregadas em **tempo de execução**, permitindo que o programa use funcionalidades externas sem incorporá-las diretamente ao executável. Isso economiza espaço e facilita atualizações.
 
-## O Interpretador: Execução em Tempo Real
+## Interpretador: Execução em Tempo Real
 
 Ao contrário do compilador, que gera um arquivo executável, o **interpretador** lê o código-fonte e **executa diretamente as instruções, uma a uma**, sem gerar um executável intermediário.
 
@@ -164,13 +166,8 @@ Linguagens como **Java** adotam um modelo híbrido: o código-fonte é **compila
 
 ## Considerações Finais
 
-Compreender os papéis dos compiladores, montadores, ligadores e interpretadores é essencial para dominar o ciclo de vida de um programa — desde a sua concepção em linguagem de alto nível até a execução sobre o hardware.
+Ao longo deste capítulo, desmistificamos o processo que transforma um simples arquivo de texto em um programa funcional. Vimos que o caminho do código-fonte à execução é uma linha de montagem sofisticada, onde cada ferramenta desempenha um papel crucial e insubstituível. 
 
-Cada ferramenta tem uma função específica e atua em diferentes momentos do processo:
+O **compilador** e o **interpretador** representam duas filosofias distintas: a primeira, focada na otimização e no desempenho bruto da execução nativa; a segunda, na flexibilidade e na agilidade do desenvolvimento. O **montador** atua como o tradutor final para a linguagem da máquina, enquanto o **ligador** resolve o quebra-cabeça da modularidade, permitindo que nossos programas reutilizem códigos e se conectem a ecossistemas de bibliotecas.
 
-- O **compilador** traduz e otimiza;
-- O **montador** converte para código objeto;
-- O **ligador** cria o executável final;
-- O **interpretador** executa diretamente o código-fonte.
-
-Na prática, muitas dessas funções estão integradas em ferramentas modernas, mas conhecer sua separação conceitual oferece uma visão privilegiada do funcionamento interno dos sistemas computacionais e nos prepara para situações reais de depuração, otimização e desenvolvimento de software.
+Dominar esses conceitos nos capacita a tomar decisões de arquitetura mais informadas, depurar problemas complexos e entender por que certos programas são mais rápidos ou portáveis que outros. Em última análise, deixamos de ser meros usuários de linguagens para nos tornarmos engenheiros conscientes de todo o processo de construção do software, do conceito à execução no silício.

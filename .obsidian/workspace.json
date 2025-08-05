@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "arquitetura-e-organizacao-de-computadores/contents/05-linguagens-de-maquina-e-montagem.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/06-compilador-montador-ligador-e-interpretador.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-linguagens-de-maquina-e-montagem"
+              "title": "06-compilador-montador-ligador-e-interpretador"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "arquitetura-e-organizacao-de-computadores/contents/05-linguagens-de-maquina-e-montagem.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/06-compilador-montador-ligador-e-interpretador.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Links inversos para 05-linguagens-de-maquina-e-montagem"
+              "title": "Links inversos para 06-compilador-montador-ligador-e-interpretador"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "arquitetura-e-organizacao-de-computadores/contents/05-linguagens-de-maquina-e-montagem.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/06-compilador-montador-ligador-e-interpretador.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 05-linguagens-de-maquina-e-montagem"
+              "title": "Sumário de 06-compilador-montador-ligador-e-interpretador"
             }
           }
         ],
@@ -170,8 +170,8 @@
   },
   "active": "e8d2e955ea4043bd",
   "lastOpenFiles": [
-    "arquitetura-e-organizacao-de-computadores/contents/12-hardware.md",
     "arquitetura-e-organizacao-de-computadores/contents/05-linguagens-de-maquina-e-montagem.md",
+    "arquitetura-e-organizacao-de-computadores/contents/12-hardware.md",
     "arquitetura-e-organizacao-de-computadores/contents/04-linguagens-de-alto-nivel.md",
     "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
     "arquitetura-e-organizacao-de-computadores/contents/02-arquitetura-de-processadores.md",
