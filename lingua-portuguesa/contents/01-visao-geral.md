@@ -500,3 +500,124 @@ Os numerais são classificados de acordo com a ideia que exprimem:
     - _Comi **meio** mamão no café da manhã._ (Fracionário)
     - _Ele teve o **triplo** do trabalho para refazer o relatório._ (Multiplicativo)
 
+#### Advérbio
+
+O advérbio é uma palavra **invariável** cuja principal função é modificar outras palavras, acrescentando-lhes uma circunstância ou intensificando seu sentido. Diferentemente do adjetivo, que se liga ao substantivo, o advérbio é um modificador de verbos, de adjetivos ou até mesmo de outros advérbios.
+
+Sua natureza invariável significa que ele não sofre flexão de gênero (masculino/feminino) ou número (singular/plural).
+
+1. **Modificando um Verbo:** Esta é sua função mais comum. Ao se ligar a um verbo, o advérbio adiciona uma noção circunstancial à ação, indicando como, quando, onde, por que, com que intensidade, entre outras coisas, o processo verbal ocorre.
+	- _Exemplo:_ Os candidatos chegaram **hoje**. (O advérbio "hoje" indica a circunstância de _tempo_ da ação de chegar).
+	- _Exemplo:_ O professor fala **bem**. (O advérbio "bem" indica a circunstância de _modo_ da ação de falar).
+	- _Exemplo:_ **Talvez** o edital seja publicado amanhã. (O advérbio "talvez" indica a circunstância de _dúvida_ sobre a ação de ser publicado).
+
+2. **Modificando um Adjetivo:** Quando modifica um adjetivo, o advérbio geralmente atua como um intensificador, graduando a característica expressa pelo adjetivo.
+	- _Exemplo:_ A prova de português estava **muito** difícil. (O advérbio "muito" intensifica a característica "difícil").
+	- _Exemplo:_ A candidata parecia **bastante** calma. (O advérbio "bastante" intensifica o estado "calma").
+
+3. **Modificando outro Advérbio:** Da mesma forma, um advérbio pode intensificar o sentido de outro advérbio.
+	- _Exemplo:_ O palestrante falou **muito** bem. (O advérbio "muito" intensifica o modo "bem").
+	- _Exemplo:_ O local da prova fica **tão** longe. (O advérbio "tão" intensifica a noção de lugar "longe").
+
+##### O sufixo "-mente": uma pista valiosa
+
+Uma forma muito comum de criar advérbios de modo em português é acrescentar o sufixo **-mente** a um adjetivo na sua forma feminina. Identificar essa terminação é uma maneira rápida e eficaz de reconhecer um advérbio em uma frase.
+
+- calma -> calma**mente**
+- rápida -> rapida**mente**
+- triste -> triste**mente**
+- curiosa -> curiosa**mente**
+
+##### Locuções Adverbiais
+
+Assim como ocorre com os adjetivos, existem também as locuções adverbiais. Trata-se de um conjunto de duas ou mais palavras (geralmente uma preposição + um substantivo ou adjetivo) que, juntas, exercem a função de um advérbio, expressando as mesmas noções circunstanciais.
+
+- _Exemplo:_ Ele estuda **ocasionalmente**. (Advérbio)
+- _Exemplo:_ Ele estuda **às vezes**. (Locução adverbial de tempo)
+- _Exemplo:_ Ele será aprovado **certamente**. (Advérbio)
+- _Exemplo:_ Ele será aprovado **com certeza**. (Locução adverbial de afirmação)
+
+##### Classificação dos Advérbios e Locuções Adverbiais
+
+A classificação dos advérbios é feita com base na circunstância ou ideia que eles expressam. A seguir, uma lista dos principais tipos cobrados em provas:
+
+| Circunstância   | Principais Advérbios e Locuções Adverbiais                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Lugar**       | aqui, antes, dentro, ali, adiante, fora, acolá, atrás, além, lá, detrás, aquém, cá, acima, onde, perto, aí, abaixo, aonde, longe, debaixo, embaixo, externamente, algures (em algum lugar), defronte, nenhures (em lugar algum), adentro, afora, alhures (em outro lugar)<br><br>_Locuções:_ a distância, à distância de, à direita, à esquerda, ao lado, em cima de, de perto, de longe, em volta.                                                                                                                                              |
+| **Tempo**       | hoje, logo, primeiro, ontem, tarde, outrora, amanhã, cedo, antes, depois, ainda, antigamente, antes, doravante, nunca, então, ora, jamais, agora, sempre, já, enfim, afinal, amiúde, breve, constantemente, entrementes, imediatamente, primeiramente, provisoriamente, sucessivamente<br><br>_Locuções:_ às vezes, de repente, à tarde, à noite, de manhã, de vez em quando, de quando em quando, a qualquer momento, de tempos em tempos, em breve, hoje em dia.                                                                               |
+| **Modo**        | bem, mal, assim, depressa, devagar, acinte (de propósito), debalde (inutilmente), adrede (de propósito, premeditadamente), calmamente, tristemente, propositadamente, pacientemente, amorosamente, docemente, escandalosamente, bondosamente, generosamente, e a maioria dos advérbios terminados em "-mente" (calmamente, rapidamente). <br><br>_Locuções:_ às pressas, às claras, às cegas, à toa, à vontade, às escondidas, aos poucos, desse jeito, desse modo, dessa maneira, em geral, frente a frente, lado a lado, a pé, de cor, em vão. |
+| **Intensidade** | muito, pouco, bastante, demais, mais, menos, tão, tanto, quão, quase, assaz, em excesso, demasiado, quanto, que (equivale a quão), tudo, nada, todo, de todo, de muito, por completo, extremamente, intensamente, grandemente, bem (quando aplicado a propriedades graduáveis).<br><br>_Locuções:_ em excesso, de todo, por completo.                                                                                                                                                                                                            |
+| **Afirmação**   | sim, certamente, realmente, efetivamente, decerto, certo, decididamente, deveras, indubitavelmente.<br><br>_Locuções:_ com certeza, sem dúvida, de fato.                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Negação**     | não, nem, nunca, jamais, tampouco.<br><br>_Locuções:_ de modo algum, de forma nenhuma, de jeito nenhum.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Dúvida**      | talvez, quiçá, provavelmente, possivelmente, porventura, casualmente, acaso.<br><br>_Locuções:_ por certo, quem sabe.                                                                                                                                                                                                                                                                                                                                                                                                                            |
+
+##### A Posição do Advérbio na Frase
+
+Uma característica sintática importante do advérbio e das locuções adverbiais é sua mobilidade na oração. Eles não possuem uma posição fixa e podem ser deslocados para diferentes pontos da frase, geralmente para fins de ênfase.
+
+- _Posição padrão:_ Todos os alunos serão aprovados **certamente**.
+- _Deslocado:_ Todos os alunos, **certamente**, serão aprovados.
+- _Deslocado:_ Todos os alunos serão **certamente** aprovados.
+- _Deslocado no início:_ **Certamente**, todos os alunos serão aprovados.
+
+Em termos de pontuação, é importante notar que, quando o advérbio (especialmente se for longo) ou a locução adverbial estão deslocados para o início da frase, é comum que venham separados por vírgula.
+
+
+#### Preposição
+
+A preposição é uma classe de palavra **invariável** que atua como um conectivo, estabelecendo uma ligação entre dois termos de uma frase. Ao fazer essa ponte, a preposição não apenas une as palavras, mas também estabelece uma relação de sentido e, muitas vezes, de dependência entre elas. O primeiro termo (antecedente ou regente) tem seu sentido explicado ou completado pelo segundo termo (consequente ou regido), que é introduzido pela preposição.
+
+A definição de "conectivo" pode gerar confusão com a das conjunções. Para evitar esse problema em provas, uma das estratégias mais eficazes é memorizar a lista das preposições essenciais.
+
+> **Ferramenta Estratégica: As Preposições Essenciais**
+> 
+> Conhecer esta lista é fundamental. Ao identificar uma destas palavras em uma questão, a chance de ser uma preposição é altíssima. As preposições essenciais são:
+> 
+> **a, ante, após, até, com, contra, de, desde, em, entre, para, perante, por, sem, sob, sobre, trás.**
+
+##### As Duas Grandes Funções da Preposição
+
+A preposição atua em duas frentes principais na estrutura da frase: como uma exigência gramatical (regência) e como um elemento portador de significado (valor semântico).
+
+1. **A Exigência Gramatical (Regência):** Muitos verbos, nomes (substantivos, adjetivos) e advérbios, por sua própria natureza, exigem a presença de uma preposição específica para se conectarem a seus complementos. Esse fenômeno é o objeto de estudo da Regência Verbal e Nominal. Nesses casos, a preposição é uma peça gramaticalmente obrigatória.
+	- _Exemplo:_ Quem gosta, gosta **de** algo. → Gosto **de** livros de ficção.
+	- _Exemplo:_ Quem concorda, concorda **com** algo ou alguém. → Concordo **com** seu ponto de vista.
+	- _Exemplo:_ Algo ou alguém que é apto, é apto **a** ou **para** algo. → Estou apto **a** assumir o cargo.
+	- _Exemplo:_ Quem se refere, se refere **a** algo. → O professor se referiu **ao** novo edital.
+
+2. **O Valor Semântico (Circunstância):** Além de sua função estrutural, as preposições são carregadas de sentido. Elas introduzem termos que, mesmo não sendo sintaticamente obrigatórios, acrescentam informações e detalham circunstâncias, como lugar, tempo, modo, causa, finalidade, companhia, matéria, posse, entre outras. As bancas examinadoras frequentemente pedem que se identifique o "valor semântico" ou a "relação de sentido" que a preposição estabelece. Para identificar esse valor, o método mais seguro é analisar o sentido do termo inteiro que a preposição introduz, e não a preposição isoladamente.
+	- _Exemplo:_ _Comprei uma estante **de carvalho**._
+	    - O que a expressão "de carvalho" indica sobre a estante? Indica a **matéria** de que é feita. Portanto, o valor semântico da preposição "de", neste contexto, é de **matéria**.
+	- _Exemplo:_ _Ele viajou **para Recife**._
+	    - O que a expressão "para Recife" indica sobre a viagem? Indica o **destino**. Portanto, o valor semântico da preposição "para" é de **destino**.
+
+A seguir, os principais valores semânticos das preposições mais recorrentes em provas.
+
+| Preposição | Valor Semântico         | Exemplo                                                   |
+| ---------- | ----------------------- | --------------------------------------------------------- |
+| **a**      | **Direção/Destino**     | Fomos **a** Brasília para uma reunião.                    |
+| **a**      | **Tempo**               | A palestra começará **às** 19h.                           |
+| **a**      | **Distância**           | A agência dos Correios fica **a** dois quarteirões daqui. |
+| **a**      | **Modo/Instrumento**    | O texto foi escrito **a** mão.                            |
+| **com**    | **Companhia**           | Fui ao evento **com** meus colegas de trabalho.           |
+| **com**    | **Instrumento/Meio**    | Ele abriu a porta **com** a chave mestra.                 |
+| **com**    | **Modo**                | O servidor atendeu ao público **com** paciência.          |
+| **com**    | **Causa**               | **Com** o frio intenso, as aulas foram suspensas.         |
+| **de**     | **Origem/Procedência**  | O voo veio **de** Lisboa.                                 |
+| **de**     | **Posse**               | O carro **de** Pedro está na oficina.                     |
+| **de**     | **Matéria/Composição**  | Gosto de sapatos **de** couro.                            |
+| **de**     | **Causa**               | O animal morreu **de** fome.                              |
+| **de**     | **Assunto**             | Conversamos muito sobre política. (Equivale a "de")       |
+| **para**   | **Finalidade/Intenção** | Estudo muito **para** ser aprovado.                       |
+| **para**   | **Direção/Destino**     | Vou **para** casa agora.                                  |
+| **para**   | **Opinião**             | **Para** o examinador, a resposta estava incompleta.      |
+| **para**   | **Limite de Tempo**     | Este trabalho precisa estar pronto **para** sexta-feira.  |
+| **por**    | **Causa**               | Ele foi punido **por** indisciplina.                      |
+| **por**    | **Meio**                | A notícia foi enviada **por** e-mail.                     |
+| **por**    | **Lugar (aproximado)**  | Passeamos **pelo** parque durante a tarde.                |
+| **por**    | **Agente da Passiva**   | O romance foi escrito **por** Clarice Lispector.          |
+
+##### Combinações e Contrações
+
+É muito comum que as preposições se unam a outras palavras, principalmente artigos e pronomes. Essa união pode ser uma **combinação** (sem perda de fonema, como em **ao** = a + o) ou uma **contração** (com perda de fonema, como em **do** = de + o; **na** = em + a). É crucial saber reconhecer a preposição dentro dessas uniões para a correta análise da frase.
+
