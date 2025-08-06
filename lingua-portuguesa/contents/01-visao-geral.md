@@ -1367,3 +1367,201 @@ A voz passiva pode se apresentar de duas formas:
 2. **Passiva Sintética (ou Pronominal):** Formada por um verbo transitivo direto na 3ª pessoa + o pronome apassivador "se". Ex.: "_Fez-se_ o bolo".
 
 A conversão da voz ativa para a passiva é um tópico recorrente em provas. O ponto central dessa transformação é que o **objeto direto** da voz ativa se torna o **sujeito paciente** da voz passiva. Reconhecer essas funções sintáticas básicas é, portanto, essencial.
+
+
+## Sintaxe: A Arquitetura das Orações
+
+Após identificarmos as "peças" que compõem a nossa língua no estudo da Morfologia, chegamos à **Sintaxe**. Se a Morfologia é o estudo do que as palavras _são_ (substantivos, verbos, adjetivos, etc.), a Sintaxe é o estudo do que as palavras _fazem_ dentro de uma frase e de como elas se relacionam para construir um sentido lógico. A Sintaxe, portanto, analisa a função de cada termo na engrenagem da oração, revelando a arquitetura do pensamento. O foco da análise sintática não é a palavra isolada, mas sim a oração e o período.
+
+### Os Alicerces da Análise: Frase, Oração e Período
+
+Antes de analisar as funções, é crucial dominar a distinção entre três conceitos básicos que formam a matéria-prima da Sintaxe.
+
+1. **Frase:** Frase é todo e qualquer enunciado que possui sentido completo, sendo capaz de comunicar uma ideia, emoção, ordem ou apelo de forma satisfatória em um determinado contexto. O critério que define a frase é sua suficiência comunicativa. Uma frase pode ou não conter um verbo.
+	- **Frase Nominal (sem verbo):**
+	    - _Que prova difícil!_
+	    - _Fogo!_
+	    - _Cuidado com o cão._
+	    - _Silêncio absoluto na biblioteca._
+	- **Frase Verbal (com verbo):**
+	    - _Os candidatos chegaram cedo._
+	    - _Morra, vilão!_
+	    - _Deus lhe pague._
+
+2. **Oração:** Oração é toda frase verbal, ou seja, todo enunciado que se estrutura obrigatoriamente em torno de um verbo ou de uma locução verbal. A existência de um verbo é a marca registrada da oração. Por essa razão, pode-se afirmar que toda oração é uma frase, mas nem toda frase é uma oração.
+	- _Frase nominal:_ "Cuidado!" (É frase, mas não é oração).
+	- _Oração:_ "Tenha cuidado." (É frase e também é oração, pois contém o verbo "tenha").
+
+3. **Período:** Período é a frase organizada em uma ou mais orações, delimitada por um sinal de pontuação que marca seu fim (ponto final, ponto de exclamação, ponto de interrogação, etc.). A quantidade de verbos ou locuções verbais determinará a classificação do período.
+	- **Período Simples:** Formado por uma **única oração**. Essa oração é chamada de **Oração Absoluta**.
+	    - _Exemplo:_ O novo edital **foi publicado** ontem. (Uma locução verbal = uma oração).
+	- **Período Composto:** Formado por **duas ou mais orações**. As orações dentro de um período composto podem se ligar por **coordenação** (são independentes) ou por **subordinação** (uma depende da outra).
+	    - _Exemplo:_ Eu **estudo** porque **quero** um futuro melhor. (Dois verbos = duas orações).
+
+|Conceito|Definição|Exemplo|
+|---|---|---|
+|**Frase**|Enunciado com sentido completo.|_Que dia lindo!_|
+|**Oração**|Enunciado com verbo.|O dia **está** lindo.|
+|**Período**|Frase com uma ou mais orações.|O dia **está** lindo e **vamos** aproveitar.|
+
+### O Coração da Análise Sintática: A Ordem Direta
+
+A base de toda análise sintática é o **verbo**. É a partir dele que identificamos os demais termos da oração. De modo geral, uma declaração sobre o mundo segue uma organização lógica e intuitiva, que na gramática chamamos de **ordem direta** ou **ordem canônica** da frase. Essa ordem pode ser representada pelo mnemônico **SuVeCA**:
+
+**Sujeito + Verbo + Complemento(s) + Adjunto(s)**
+
+Esta estrutura reflete uma sequência natural de pensamento: _alguém/algo_ (sujeito) _pratica uma ação_ (verbo) _que recai sobre outro elemento_ (complemento), _ocorrendo em determinadas circunstâncias_ (adjuntos).
+
+- _Exemplo 1:_ **Os concurseiros** (Sujeito) **leram** (Verbo) **o edital** (Complemento) **atentamente** (Adjunto de modo).
+- _Exemplo 2:_ **Nós** (Sujeito) **gostamos** (Verbo) **de filmes de terror** (Complemento).
+
+De forma didática, podemos pensar nas funções primárias da seguinte maneira:
+
+- **Sujeito:** É o termo sobre o qual se faz uma declaração; "quem" ou "o que" pratica ou sofre a ação verbal.
+- **Verbo:** É o processo, a ação ou o estado que se declara sobre o sujeito.
+- **Complemento:** É o alvo da ação verbal, o elemento que completa o sentido de um verbo que não é autossuficiente.
+- **Adjuntos:** São os "detalhamentos" da cena. Os **adjuntos adverbiais** detalham as circunstâncias da ação (tempo, lugar, modo, causa, etc.), enquanto os **adjuntos adnominais** e o **aposto** detalham os substantivos.
+
+### Os Termos da Oração: Um Mapa das Funções Sintáticas
+
+Os termos que compõem uma oração são classificados em três grandes grupos, de acordo com sua importância para a estrutura frasal.
+
+- **Termos Essenciais:** São a base da oração, indispensáveis para sua existência.
+    - **Sujeito:** O ser sobre o qual o predicado diz algo.
+    - **Predicado:** Tudo aquilo que se declara sobre o sujeito (contém obrigatoriamente o verbo).
+
+- **Termos Integrantes:** São aqueles que completam o sentido de outros termos (verbos ou nomes) que não possuem significação completa por si sós.
+    - **Complementos Verbais:** Objeto Direto e Objeto Indireto.
+    - **Complemento Nominal.**
+    - **Agente da Passiva.**
+
+- **Termos Acessórios:** São aqueles que podem ser retirados da oração sem comprometer sua estrutura fundamental, mas que servem para adicionar informações, especificar ou detalhar.
+    - **Adjunto Adnominal.**
+    - **Adjunto Adverbial.**
+    - **Aposto.**
+    - **Vocativo** (termo à parte, que não se liga a nenhum outro na oração, servindo apenas para chamar ou interpelar).
+
+### Análise Sintática: As Funções dos Termos na Oração
+
+Após compreendermos a estrutura geral da oração (Sujeito - Verbo - Complementos), podemos agora nos aprofundar na função específica de cada termo. A seguir, apresentamos uma visão geral e essencial de cada função sintática.
+
+#### Sujeito
+
+O sujeito é o termo da oração sobre o qual se faz uma declaração e com o qual o verbo, em regra, concorda em número e pessoa. Para identificá-lo, a pergunta-chave a ser feita ao verbo é "**Quem é que...?**" ou "**O que é que...?**". A resposta a essa pergunta será o sujeito. Este é, de longe, um dos termos mais cobrados em provas.
+
+Antes de classificar o sujeito, é fundamental entender o conceito de **núcleo**.
+
+- **Núcleo de um Termo Sintático:** É a palavra central, de maior importância semântica dentro de uma expressão. No caso do sujeito, o núcleo é geralmente um substantivo ou uma palavra substantivada (como um pronome ou numeral) que não é preposicionado. As demais palavras que o acompanham (artigos, adjetivos, pronomes, numerais) são seus determinantes.
+    - _Exemplo:_ **[As duas propostas mais tentadoras]** foram recusadas.
+        - **Sujeito:** As duas propostas mais tentadoras
+        - **Núcleo do Sujeito:** propostas
+
+Os Tipos de Sujeito são:
+
+- **Sujeito Simples:** Possui apenas **um núcleo**.
+    - _Exemplo:_ **O cachorro do vizinho** latiu a noite toda. (Núcleo: "cachorro")
+
+- **Sujeito Composto:** Possui **dois ou mais núcleos**.
+    - _Exemplo:_ **Pedro e Ana** viajaram juntos. (Núcleos: "Pedro", "Ana")
+
+- **Sujeito Oculto (Elíptico ou Desinencial):** Não está expresso na oração, mas pode ser facilmente identificado pela desinência (terminação) do verbo ou pelo contexto.
+    - _Exemplo:_ **Chegamos** cedo à festa. (Pela terminação "-mos", sabemos que o sujeito oculto é "nós").
+
+- **Sujeito Indeterminado:** Ocorre quando não é possível ou não se deseja identificar o agente da ação verbal. Geralmente, ocorre de duas formas:
+    - Com verbo na 3ª pessoa do plural, sem referente anterior: _**Bateram** na porta._ (Não se sabe quem bateu).
+    - Com verbo na 3ª pessoa do singular + pronome "se" (índice de indeterminação do sujeito): _**Precisa-se** de funcionários._ (Não se determina quem precisa).
+
+- **Sujeito Inexistente (Oração sem Sujeito):** Ocorre com verbos impessoais, que não admitem um sujeito. Os casos principais são:
+    - Verbo **haver** no sentido de "existir", "ocorrer" ou "tempo decorrido": _**Havia** muitos livros na sala._ / _**Houve** um acidente na avenida._
+    - Verbos que indicam **fenômenos da natureza**: _**Choveu** muito em Recife ontem._
+    - Verbo **fazer** indicando tempo ou clima: _**Faz** dois anos que me formei._ / _**Fez** muito frio na serra._
+
+#### Predicado
+
+De forma simples, o predicado é tudo aquilo que se declara sobre o sujeito. Estruturalmente, é a parte da oração que contém o verbo. Ao identificar o sujeito, todo o resto da oração constitui o predicado.
+
+- _Exemplo:_ **[O cachorro do vizinho]** [latiu a noite toda].
+    - **Sujeito:** O cachorro do vizinho
+    - **Predicado:** latiu a noite toda
+
+#### Complemento Verbal (Objeto Direto e Indireto)
+
+Certos verbos não possuem sentido completo por si sós e exigem um termo que complete sua significação. Esse termo obrigatório é o complemento verbal. Chamamos os verbos que exigem complemento de **verbos transitivos**.
+
+- **Verbo Transitivo Direto (VTD):** Exige um complemento sem o auxílio de uma preposição obrigatória.
+- **Verbo Transitivo Indireto (VTI):** Exige um complemento introduzido por uma preposição obrigatória.
+
+O complemento em si é chamado de **Objeto**.
+
+- **Objeto Direto (OD):** Completa o sentido de um VTD (sem preposição). Responde às perguntas "o quê?" ou "quem?".
+    - _Exemplo:_ Ele comprou **um carro novo**. (Comprou o quê? -> um carro novo).
+
+- **Objeto Indireto (OI):** Completa o sentido de um VTI (com preposição). Responde a perguntas como "de quê?", "para quem?", "com quem?".
+    - _Exemplo:_ Ela gosta **de música clássica**. (Gosta de quê? -> de música clássica).
+
+#### Complemento Nominal
+
+Muito parecido com o Objeto Indireto, o complemento nominal também é introduzido por preposição. A diferença crucial é que ele não completa o sentido de um verbo, mas sim de um **nome** (substantivo abstrato, adjetivo ou advérbio).
+
+- _Exemplo:_ Ele tem medo **de escuro**. (Completa o sentido do substantivo abstrato "medo").
+- _Exemplo:_ A professora estava ansiosa **por notícias**. (Completa o sentido do adjetivo "ansiosa").
+- _Exemplo:_ O juiz agiu favoravelmente **aos réus**. (Completa o sentido do advérbio "favoravelmente").
+
+#### Agente da Passiva
+
+Nas frases na **voz passiva**, o sujeito não pratica a ação, mas a sofre. O agente da passiva é o termo que, na voz passiva, pratica a ação verbal. Ele é sempre introduzido por uma preposição (geralmente "por" ou "de").
+
+- _Voz Ativa:_ Machado de Assis (sujeito agente) escreveu o livro.
+- _Voz Passiva:_ O livro foi escrito **por Machado de Assis** (agente da passiva).
+
+#### Predicativo (do Sujeito e do Objeto)
+
+O predicativo é um termo que atribui uma característica, estado ou qualidade ao **sujeito** ou ao **objeto**, por intermédio de um verbo.
+
+- **Predicativo do Sujeito:** Atribui uma característica ao sujeito. Geralmente aparece com verbos de ligação (_ser, estar, parecer, ficar, permanecer..._).
+    - _Exemplo:_ O céu está **nublado**. ("Nublado" é uma característica do sujeito "o céu").
+
+- **Predicativo do Objeto:** Atribui uma característica ao objeto direto.
+    - _Exemplo:_ Eu considero João **inteligente**. ("Inteligente" é uma característica que eu atribuo ao objeto "João").
+
+##### Tipos de Predicado
+
+A presença ou ausência do predicativo define a classificação do predicado:
+
+- **Predicado Verbal:** O núcleo é um verbo de ação (transitivo ou intransitivo). Não possui predicativo.
+    - _Exemplo:_ Os alunos **estudam** para o concurso.
+
+- **Predicado Nominal:** O núcleo é um nome (o predicativo do sujeito), e o verbo é de ligação.
+    - _Exemplo:_ A menina **está feliz**.
+
+- **Predicado Verbo-Nominal:** Possui dois núcleos: um verbo de ação e um nome (predicativo do sujeito ou do objeto).
+    - _Exemplo:_ Os alunos **chegaram cansados**. (Verbo de ação "chegaram" + característica do sujeito "cansados").
+
+#### Adjunto Adnominal
+
+É o termo de valor adjetivo que acompanha um substantivo (o núcleo), servindo para especificá-lo ou caracterizá-lo. As classes de palavras que podem atuar como adjunto adnominal são: artigos, adjetivos, locuções adjetivas, pronomes e numerais.
+
+- _Exemplo:_ **[Aqueles dois lindos sapatos de couro]** foram vendidos.
+    - **Núcleo:** sapatos
+    - **Adjuntos Adnominais:** Aqueles, dois, lindos, de couro.
+
+#### Adjunto Adverbial
+
+É o termo que modifica um verbo, adjetivo ou advérbio, indicando uma circunstância (tempo, lugar, modo, causa, intensidade, etc.). É a função sintática exercida pelos advérbios e locuções adverbiais.
+
+- _Exemplo:_ Ele chegou **ontem**. (Adjunto adverbial de tempo).
+- _Exemplo:_ Ela falou **com muita calma**. (Adjunto adverbial de modo).
+
+#### Aposto
+
+É um termo de valor substantivo que se junta a outro para explicá-lo, especificá-lo, enumerá-lo ou resumi-lo.
+
+- _Exemplo:_ Pedro, **o médico da família**, chegou. (Aposto explicativo).
+- _Exemplo:_ Comprei tudo para a festa: **pão, queijo, refrigerante e bolo**. (Aposto enumerativo).
+
+#### Vocativo
+
+É o termo usado para chamar, invocar ou interpelar um interlocutor. É sintaticamente independente do resto da oração e vem sempre isolado por pontuação (vírgulas, geralmente).
+
+- _Exemplo:_ **Maria**, venha cá, por favor!
+- _Exemplo:_ Atenção, **senhores passageiros**, para o anúncio.
