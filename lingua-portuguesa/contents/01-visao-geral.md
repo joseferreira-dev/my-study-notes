@@ -621,3 +621,268 @@ A seguir, os principais valores semânticos das preposições mais recorrentes e
 
 É muito comum que as preposições se unam a outras palavras, principalmente artigos e pronomes. Essa união pode ser uma **combinação** (sem perda de fonema, como em **ao** = a + o) ou uma **contração** (com perda de fonema, como em **do** = de + o; **na** = em + a). É crucial saber reconhecer a preposição dentro dessas uniões para a correta análise da frase.
 
+#### Interjeição
+
+A interjeição é uma classe de palavra **invariável** que funciona como um veículo direto para a expressão de emoções, sensações, sentimentos súbitos ou reações espontâneas. Diferentemente das outras classes, a interjeição não se encaixa na estrutura sintática da frase; ela representa uma "frase" em si mesma, com sentido completo dentro de um contexto emocional. Por essa característica, é frequentemente chamada de **palavra-frase**.
+
+Quando alguém exclama "Ufa!", por exemplo, essa única palavra comunica uma ideia completa de alívio que poderia ser expressa por uma oração inteira como "Sinto-me aliviado porque esta situação difícil acabou". A interjeição, portanto, é a forma mais concisa e imediata de exteriorizar um estado de espírito.
+
+Sua principal função é dar vazão a sentimentos como alegria, dor, surpresa, medo, raiva, alívio, entre outros, ou ainda ser usada para chamar a atenção de um interlocutor.
+
+##### Locuções Interjetivas
+
+Assim como em outras classes de palavras, quando um conjunto de duas ou mais palavras assume o papel de uma interjeição, temos uma locução interjetiva. Expressões como "Meu Deus!", "Quem me dera!" ou "Ainda bem!" funcionam como um bloco único para expressar uma emoção.
+
+##### Classificação das Interjeições pelo Sentimento Expresso
+
+A classificação das interjeições é feita com base na emoção ou sentimento que elas transmitem. É importante notar que a mesma interjeição pode expressar sentimentos diferentes dependendo do contexto e da entonação com que é dita.
+
+|Sentimento Expresso|Principais Interjeições e Locuções Interjetivas|
+|---|---|
+|**Alegria ou Comemoração**|Oh!, Ah!, Olá!, Viva!, Oba!|
+|**Surpresa ou Espanto**|Nossa!, Uau!, Puxa!, Oh!, Cruz-credo!, Meu Deus!, Caramba!|
+|**Dor ou Sofrimento**|Ai!, Ui!|
+|**Chamada ou Invocação**|Ei!, Olá!, Alô!, Psiu!, Socorro!|
+|**Desapontamento ou Tristeza**|Ah!, Oh!, Poxa vida!|
+|**Alívio**|Ufa!, Ah!, Ainda bem!, Graças a Deus!|
+|**Medo ou Pavor**|Credo!, Cruzes!, Socorro!|
+|**Nojo ou Repulsa**|Eca!, Argh!, Aff!|
+|**Incentivo ou Estímulo**|Vamos!, Força!, Coragem!, Ânimo!, Avante!, Eia!|
+|**Aplauso ou Aprovação**|Bravo!, Bis!, Apoiado!|
+|**Silêncio**|Silêncio!, Psiu!, Shh!|
+
+##### O Uso da Interjeição no Contexto das Provas
+
+As interjeições são um recurso expressivo muito mais frequente na linguagem oral e em textos que buscam simular a oralidade. Por essa razão, seu aparecimento em provas de concurso está frequentemente ligado à interpretação de textos.
+
+Em questões que envolvem diálogos, crônicas, trechos de obras literárias ou, principalmente, **tirinhas e charges**, a correta identificação do sentimento expresso por uma interjeição pode ser a chave para compreender a intenção do autor, o estado de espírito de um personagem ou a ironia de uma situação. Embora não seja uma classe de palavra com complexidade gramatical, sua compreensão é vital para a análise semântica e pragmática dos textos.
+
+#### Pronome
+
+O pronome é uma palavra **variável** cuja função primordial é **acompanhar ou substituir um substantivo**, atuando como uma das mais importantes ferramentas de **coesão textual**. Ao retomar informações e conectar partes do texto, os pronomes evitam a repetição desnecessária de termos, garantindo a fluidez e a clareza da escrita. Além dessa função coesiva, eles também carregam valores semânticos próprios, podendo indicar posse, indefinição, localização, entre outros.
+
+Os pronomes estão intrinsecamente ligados às **pessoas do discurso**:
+
+- **1ª Pessoa:** Quem fala (o emissor): _eu, nós_.
+- **2ª Pessoa:** Com quem se fala (o receptor): _tu, vós_.
+- **3ª Pessoa:** De quem ou do que se fala (o referente): _ele, ela, eles, elas_.
+
+É importante notar que a 3ª pessoa não se refere apenas a seres humanos. Qualquer substantivo pode ser retomado por um pronome de 3ª pessoa. Exemplo: _Comprei um **carro** novo, mas **ele** já apresentou defeitos._ (O pronome "ele" retoma o substantivo "carro").
+
+Observe no exemplo abaixo como os pronomes tecem a coesão do texto:
+
+> **Gil** é corretor. **Ele** compra **casas** e **as** revende. **Seu** foco são **imóveis** **que** ficam na **orla**, **onde** é limitada a construção.
+
+- **Ele** e **Seu** (pronome possessivo) referem-se a "Gil".
+- **as** (pronome oblíquo) refere-se a "casas".
+- **que** (pronome relativo) refere-se a "imóveis".
+- **onde** (pronome relativo) refere-se a "orla".
+
+Os pronomes da Língua Portuguesa são divididos em seis categorias: Pessoais, Possessivos, Demonstrativos, Indefinidos, Relativos e de Tratamento. Neste capítulo, faremos uma apresentação geral dos grupos mais recorrentes.
+
+##### Pronomes Pessoais
+
+Como o nome indica, são aqueles que se referem diretamente às pessoas do discurso. Eles se subdividem de acordo com a função sintática que exercem.
+
+|Pessoa|Pronomes do Caso Reto|Pronomes Oblíquos Átonos|Pronomes Oblíquos Tônicos|
+|---|---|---|---|
+|1ª Sing.|**eu**|**me**|**mim**, comigo|
+|2ª Sing.|**tu**|**te**|**ti**, contigo|
+|3ª Sing.|**ele**, **ela**|**o**, **a**, **lhe**, **se**|**ele**, **ela**, **si**, consigo|
+|1ª Plur.|**nós**|**nos**|**nós**, conosco|
+|2ª Plur.|**vós**|**vos**|**vós**, convosco|
+|3ª Plur.|**eles**, **elas**|**os**, **as**, **lhes**, **se**|**eles**, **elas**, **si**, consigo|
+
+- **Pronomes do Caso Reto:** Atuam exclusivamente como **sujeito** da oração.
+    - _Exemplo:_ **Eu** estudei todo o conteúdo do edital.
+
+- **Pronomes Oblíquos:** Atuam como **complemento** (verbal ou nominal). A principal diferença entre os dois tipos é:
+    - **Tônicos:** São sempre precedidos por uma preposição.
+        - _Exemplo:_ O diretor entregou os documentos para **mim**.
+
+    - **Átonos:** Não são precedidos por preposição e ligam-se diretamente ao verbo.
+        - _Exemplo:_ O diretor entregou-**me** os documentos.
+
+##### Pronomes Relativos
+
+Os pronomes relativos desempenham uma dupla função essencial: retomam um termo anterior (chamado de antecedente) e, ao mesmo tempo, introduzem uma nova oração (chamada de Oração Subordinada Adjetiva). Os principais são: que, quem, qual (e variações), cujo (e variações), onde, aonde, quanto (e variações).
+
+- _Exemplo:_ O **livro que** estou lendo é fascinante. (O "que" retoma "livro").
+- _Exemplo:_ A **pessoa com quem** conversei era o gerente. (O "quem" retoma "pessoa").
+- _Exemplo:_ A **cidade cuja** história estudamos é muito antiga. (O "cuja" retoma "cidade" e estabelece posse com "história").
+
+###### Foco de Prova: Onde vs. Aonde
+
+A distinção entre "onde" e "aonde" é um tópico clássico de concurso, baseado na regência verbal.
+
+- **ONDE (lugar fixo):** Usa-se para se referir a um lugar físico e acompanha verbos que expressam permanência ou estado, os quais pedem a preposição "em". Portanto, onde = em que / no qual / na qual.
+    - _Verbos comuns:_ estar, ficar, morar, residir, situar-se.
+    - _Exemplo:_ A casa **onde** moro é antiga. (Pois moro **em** algum lugar).
+    - _Reescrita:_ A casa **em que** moro é antiga. / A casa **na qual** moro é antiga.
+
+- **AONDE (movimento, destino):** Usa-se para se referir a um lugar e acompanha verbos que expressam movimento ou destino, os quais pedem a preposição "a". Portanto, aonde = a que / ao qual / à qual.
+    - _Verbos comuns:_ ir, chegar, voltar, levar, dirigir-se.
+    - _Exemplo:_ A cidade **aonde** vamos é histórica. (Pois vamos **a** algum lugar).
+    - _Reescrita:_ A cidade **a que** vamos é histórica. / A cidade **à qual** vamos é histórica.
+
+|Situação|Verbo Exemplo|Pronome Correto|Frase de Exemplo|
+|---|---|---|---|
+|**Lugar Fixo**|morar, estar, ficar|**Onde**|O bairro **onde** trabalho é bem localizado.|
+|**Movimento/Destino**|ir, chegar, voltar|**Aonde**|Ninguém sabe **aonde** essa discussão vai chegar.|
+
+##### Pronomes Demonstrativos
+
+Os pronomes demonstrativos são palavras variáveis que têm a função de situar um ser ou objeto no espaço, no tempo ou no próprio discurso, em relação às pessoas gramaticais.
+
+- **Uso Espacial (Localização):** A escolha do pronome demonstrativo no espaço depende da proximidade do elemento em relação aos interlocutores (quem fala e quem ouve). A relação é direta e pode ser memorizada com o auxílio dos advérbios de lugar correspondentes.
+
+|Relação de Proximidade|Pronomes Utilizados|Advérbio Correspondente|Exemplo|
+|---|---|---|---|
+|Perto de quem fala (1ª pessoa)|**este, esta, estes, estas, isto**|**aqui**|**Este** livro **aqui** em minhas mãos é excelente.|
+|Perto de com quem se fala (2ª pessoa)|**esse, essa, esses, essas, isso**|**aí**|**Essa** caneta **aí** perto de você é sua?|
+|Longe de ambos (3ª pessoa)|**aquele, aquela, aqueles, aquelas, aquilo**|**lá, ali, acolá**|**Aquele** prédio **lá** no fim da rua é o mais alto da cidade.|
+
+- **Uso Temporal:** A mesma lógica de proximidade se aplica ao tempo.
+    - **Este, esta, isto:** Referem-se ao tempo **presente** ou a um futuro muito próximo.
+        - _Exemplo:_ **Esta** semana está sendo muito produtiva. (A semana atual).
+        - _Exemplo:_ **Neste** ano, pretendo viajar mais. (O ano corrente).
+
+    - **Esse, essa, isso:** Referem-se a um tempo **passado relativamente próximo** ao momento da fala.
+        - _Exemplo:_ O acidente ocorreu em 2023. **Nesse** ano, a cidade ficou em alerta.
+
+    - **Aquele, aquela, aquilo:** Referem-se a um tempo **passado distante, remoto**.
+        - _Exemplo:_ O Brasil foi descoberto em 1500. **Naquela** época, a vida era muito diferente.
+
+- **Uso no Discurso (Coesão Textual):** Esta é uma função extremamente cobrada em provas de interpretação e reescrita.
+    - **Função Catafórica (apresentação):** Usa-se **este, esta, isto** para se referir a algo que ainda será mencionado no texto.
+        - _Exemplo:_ A verdade é **esta**: ninguém estudou o suficiente.
+
+    - **Função Anafórica (retomada):** Usa-se **esse, essa, isso** para se referir a algo que já foi mencionado no texto.
+        - _Exemplo:_ Ninguém estudou o suficiente; por **isso**, o resultado foi ruim.
+            
+    - **Distinção de Termos Anteriores:** Para se referir a dois ou mais elementos já citados, usa-se **este** para o mais próximo no texto e **aquele** para o mais distante.
+        - _Exemplo:_ Português e Matemática são disciplinas essenciais. **Esta** (Matemática, o termo mais próximo) desenvolve o raciocínio lógico; **aquele** (Português, o termo mais distante) aprimora a comunicação.
+
+#####  Pronomes Possessivos
+
+Indicam uma relação de posse ou pertencimento entre as pessoas do discurso e os seres ou objetos. Concordam em gênero e número com a coisa possuída.
+
+|Pessoa|Pronomes Possessivos|
+|---|---|
+|1ª Sing.|meu(s), minha(s)|
+|2ª Sing.|teu(s), tua(s)|
+|3ª Sing.|seu(s), sua(s)|
+|1ª Plur.|nosso(s), nossa(s)|
+|2ª Plur.|vosso(s), vossa(s)|
+|3ª Plur.|seu(s), sua(s)|
+
+- _Exemplos:_
+    - **Meu** computador precisa de um upgrade.
+    - **Nossa** aprovação está cada vez mais perto.
+
+> **Fique de Olho: A Ambiguidade do "Seu/Sua"**
+> 
+> O pronome "seu" (e suas variações) pode gerar ambiguidade, pois pode se referir tanto à 3ª pessoa (dele/dela) quanto à 2ª pessoa com quem se fala formalmente (do senhor / da senhora).
+> 
+> Exemplo ambíguo: A gerente disse ao cliente que seu carro estava pronto. (O carro da gerente ou o carro do cliente?)
+> 
+> Para evitar a ambiguidade, a gramática normativa recomenda: A gerente disse ao cliente que o carro dele estava pronto.
+
+##### Pronomes Indefinidos e Interrogativos
+
+- **Pronomes Indefinidos:** Referem-se à 3ª pessoa do discurso de forma vaga, imprecisa ou genérica, expressando quantidade ou identidade indeterminada. Podem ser variáveis (ex: _algum, nenhum, todo, muito, pouco, outro_) ou invariáveis (ex: _alguém, ninguém, tudo, nada, cada, algo_).
+    - _Exemplos:_
+        - **Alguém** esqueceu o guarda-chuva.
+        - **Nenhum** candidato chegou atrasado.
+        - **Muitos** foram aprovados no último certame.
+
+- **Pronomes Interrogativos:** São usados para formular perguntas, sejam elas diretas (com ponto de interrogação) ou indiretas (sem ponto de interrogação). São eles: **que, quem, qual (e variações), quanto (e variações)**.
+    - _Exemplo (direta):_ **Quem** é o responsável pelo projeto?
+    - _Exemplo (direta):_ **Quantos** livros você leu este mês?
+    - _Exemplo (indireta):_ Gostaria de saber **qual** é a sua opinião sobre o assunto.
+
+##### Pronomes de Tratamento
+
+São formas de tratamento ou reverência, empregadas para se dirigir a pessoas de acordo com sua idade, cargo ou posição social. Embora se refiram à 2ª pessoa (com quem se fala), a concordância verbal e pronominal deve ser feita sempre na 3ª pessoa.
+
+|Pronome de Tratamento|Abreviação|Emprego|
+|---|---|---|
+|Você|-|Tratamento informal, familiar.|
+|Senhor / Senhora|Sr. / Sr.ª|Tratamento formal, de respeito.|
+|Vossa Senhoria|V. S.ª|Para autoridades em geral, correspondência comercial.|
+|Vossa Excelência|V. Ex.ª|Para altas autoridades (Presidente, Ministros, Juízes, etc.).|
+|Vossa Magnificência|V. M.|Para reitores de universidades.|
+|Vossa Santidade|V. S.|Para o Papa.|
+|Vossa Alteza|V. A.|Para príncipes, princesas, duques.|
+
+> **Fique de Olho: "Vossa" vs. "Sua"**
+> 
+> • Usa-se Vossa (Excelência, Senhoria, etc.) para falar diretamente com a autoridade.
+> 	_Exemplo:_ "Senhor Ministro, espero que Vossa Excelência analise o processo."
+> 
+> • Usa-se Sua (Excelência, Senhoria, etc.) para falar sobre a autoridade.
+> 	_Exemplo:_ "Todos aguardam a decisão de Sua Excelência, o Ministro."
+
+##### Colocação Pronominal: O Lugar Certo do Pronome
+
+A colocação pronominal é o conjunto de regras que determina a posição correta dos pronomes oblíquos átonos — **me, te, se, o, a, lhe, nos, vos, os, as, lhes** — em relação ao verbo. Embora na linguagem coloquial do dia a dia essas regras sejam frequentemente flexibilizadas, na norma padrão, exigida em concursos, elas são estritas.
+
+Existem três posições possíveis para esses pronomes:
+
+|Posição|Nome|Exemplo|
+|---|---|---|
+|**Antes** do verbo|**Próclise**|Ele **se** arrependeu do que fez.|
+|**Depois** do verbo|**Ênclise**|Ele arrependeu-**se** do que fez.|
+|**No meio** do verbo|**Mesóclise**|Ele arrepender-**se**-ia do que fez.|
+
+Para dominar o assunto, a melhor estratégia é aprender primeiro o que é proibido. Se uma construção não for proibida e não houver uma regra que obrigue uma posição específica, ela é, em princípio, permitida.
+
+###### Onde o Pronome NUNCA Pode Estar
+
+Existem duas proibições fundamentais na colocação pronominal da norma padrão:
+
+- **PROIBIÇÃO 1: É vedado iniciar qualquer oração com um pronome oblíquo átono.**
+    - _Inadequado:_ **Me** entregue o relatório.
+    - _Adequado:_ Entregue-**me** o relatório. (Usa-se a ênclise, pois o verbo inicia a frase).
+
+- **PROIBIÇÃO 2: É vedado usar o pronome após um verbo no futuro (do presente ou do pretérito) ou no particípio.**
+    - _Inadequado (Futuro do Presente):_ Darei-**te** um presente amanhã.
+    - _Adequado:_ **Dar-te-ei** um presente amanhã. (Como a ênclise é proibida e não há palavra atrativa, usa-se a mesóclise).
+
+    - _Inadequado (Futuro do Pretérito):_ Convidaria-**se** a turma toda.
+    - _Adequado:_ Convidar-**se**-ia a turma toda. (Mesma lógica: ênclise proibida, mesóclise como solução).
+
+    - _Inadequado (Particípio):_ O diretor havia emprestado-**lhe** o livro.
+    - _Adequado:_ O diretor havia-**lhe** emprestado o livro. / O diretor **lhe** havia emprestado o livro. (Como a ênclise ao particípio ("emprestado") é proibida, o pronome se desloca para perto do verbo auxiliar ("havia")).
+
+###### Casos de Próclise Obrigatória
+
+Este é o segundo ponto mais cobrado em provas. Certas palavras, chamadas de **fatores de próclise** ou **palavras atrativas**, "puxam" o pronome oblíquo átono para antes do verbo, tornando a próclise a única colocação correta. É essencial memorizar os principais grupos de palavras atrativas.
+
+|Fator de Próclise|Exemplos|
+|---|---|
+|**Palavras de sentido negativo**<br>(não, nunca, jamais, ninguém, nada, nenhum, etc.)|**Não se** esqueça dos seus compromissos.<br>**Ninguém me** avisou sobre a mudança.|
+|**Advérbios e locuções adverbiais**<br>(aqui, ali, sempre, já, talvez, hoje, ontem, etc.)|**Sempre se** dedicou aos estudos.<br>**Talvez o** encontremos na biblioteca.|
+|**Conjunções Subordinativas**<br>(que, se, quando, como, porque, embora, conforme, etc.)|É importante **que se** mantenha a calma.<br>**Quando me** chamarem, estarei pronto.|
+|**Pronomes Relativos**<br>(que, o qual, cuja, onde, quem, etc.)|Encontrei o livro **que lhe** pertencia.<br>A cidade **onde se** realizou o evento é linda.|
+|**Pronomes Indefinidos**<br>(alguém, tudo, todos, muitos, poucos, algo, etc.)|**Todos se** levantaram para aplaudir.<br>**Algo me** diz que vai chover.|
+|**Pronomes Interrogativos**<br>(quem, qual, que, quando, como, por que, etc.)|**Quem te** contou essa história?<br>Gostaria de saber **quando se** inicia a prova.|
+|**Frases com "em" + gerúndio**|Em **se** tratando de legislação, ele é um expert.|
+
+###### A Posição Padrão: Ênclise
+
+A ênclise (pronome após o verbo) é considerada a posição padrão do pronome no português formal, sendo utilizada sempre que não houver um fator de próclise. É a colocação de rigor quando o verbo inicia a oração ou quando o verbo está no imperativo afirmativo ou no gerúndio (sem a preposição "em").
+
+- _Exemplos:_
+    - **Matriculou-se** no curso preparatório. (Verbo iniciando a oração).
+    - **Entreguem-nos** os documentos, por favor. (Verbo no imperativo afirmativo).
+    - Saiu da sala, fazendo-**se** de desentendido. (Verbo no gerúndio).
+
+###### O Uso Formal: Mesóclise
+
+A mesóclise (pronome no meio do verbo) ocorre exclusivamente com verbos no **Futuro do Presente** ou no **Futuro do Pretérito**, e somente quando não há palavra atrativa que force a próclise. É uma construção de uso extremamente formal, mais comum na linguagem jurídica, literária ou bíblica.
+
+- _Exemplo (Futuro do Presente):_ **Realizar-se-á** o evento no próximo mês. (Sem palavra atrativa).
+    - _Com palavra atrativa:_ O evento **se realizará** no próximo mês. (A palavra "evento" antes do verbo não atrai, mas se tivéssemos "Amanhã se realizará...", o advérbio "amanhã" forçaria a próclise).
+- _Exemplo (Futuro do Pretérito):_ **Convidar-te-ia** para a festa, se pudesse. (Sem palavra atrativa).
+    - _Com palavra atrativa:_ **Não te convidaria** para a festa, se não pudesse. (A palavra "não" força a próclise).
