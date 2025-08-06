@@ -886,3 +886,484 @@ A mesóclise (pronome no meio do verbo) ocorre exclusivamente com verbos no **Fu
     - _Com palavra atrativa:_ O evento **se realizará** no próximo mês. (A palavra "evento" antes do verbo não atrai, mas se tivéssemos "Amanhã se realizará...", o advérbio "amanhã" forçaria a próclise).
 - _Exemplo (Futuro do Pretérito):_ **Convidar-te-ia** para a festa, se pudesse. (Sem palavra atrativa).
     - _Com palavra atrativa:_ **Não te convidaria** para a festa, se não pudesse. (A palavra "não" força a próclise).
+
+#### Conjunção
+
+A conjunção é uma classe de palavra **invariável** que funciona como um dos mais importantes articuladores lógicos do discurso. Sua função primordial é conectar elementos, seja palavras de mesma função sintática, seja, mais comumente, orações, estabelecendo entre elas uma relação de sentido clara e precisa. Elas são o "cimento" que une as "peças" da frase, permitindo a construção de períodos complexos, argumentos, justificativas e a expressão de nuances de pensamento.
+
+As conjunções se dividem em dois grandes e distintos universos: as **Coordenativas** e as **Subordinativas**.
+
+##### Locuções Conjuntivas
+
+É importante lembrar que a função de uma conjunção pode ser desempenhada por um conjunto de duas ou mais palavras. A este conjunto damos o nome de locução conjuntiva. O valor é o mesmo de uma conjunção simples.
+
+- _Exemplo:_ A situação era grave, **mas** havia esperança. (_mas_ = conjunção)
+- _Exemplo:_ A situação era grave, **no entanto** havia esperança. (_no entanto_ = locução conjuntiva)
+
+> **Fique de Olho: Uma Necessidade Estratégica**
+> 
+> As questões de prova que cobram conjunções avaliam diretamente sua capacidade de interpretação textual e de reconhecimento das estruturas lógicas da língua. Identificar se um conectivo expressa causa, consequência, concessão ou oposição é uma habilidade testada exaustivamente. Portanto, o domínio das listas a seguir é uma condição essencial para o sucesso.
+
+##### Conjunções Coordenativas
+
+As conjunções coordenativas são aquelas que ligam orações sintaticamente independentes. Isso significa que cada oração possui sentido próprio e poderia, gramaticalmente, existir sozinha. A conjunção apenas as une, adicionando uma relação lógica específica.
+
+###### Aditivas
+
+Expressam uma ideia de soma, adição de pensamentos, sequência de ações ou acréscimo.
+
+- **Principais:** e, nem (com sentido de "e não"), não só... mas também, não apenas... como também, tanto... quanto.
+- **Exemplos:**
+    - O candidato estudou a teoria **e** resolveu centenas de exercícios.
+    - Ele não compareceu à reunião **nem** apresentou uma justificativa. (Ele não compareceu E não apresentou).
+    - A nova lei era **não só** complexa, **mas também** controversa.
+    - **Tanto** o professor **quanto** os alunos consideraram a prova difícil.
+
+###### Adversativas
+
+Expressam uma ideia de oposição, contraste, quebra de expectativa ou ressalva em relação à ideia anterior.
+
+- **Principais:** mas, porém, contudo, todavia, entretanto, no entanto, senão.
+- **Exemplos:**
+    - O time jogou muito bem, **mas** não conseguiu a vitória. (A expectativa criada pela primeira oração é quebrada pela segunda).
+    - Ele afirmava ser um especialista no assunto; **contudo**, sua palestra foi superficial.
+    - Gostaria de ter viajado nas férias, **entretanto** precisei usar o dinheiro para uma emergência.
+
+###### Alternativas
+
+Expressam uma ideia de alternância, escolha, opção ou exclusão entre os pensamentos apresentados.
+
+- **Principais:** ou, ou... ou, ora... ora, já... já, quer... quer, seja... seja.
+- **Exemplos:**
+    - Você pode escolher o caminho mais longo **ou** o mais rápido.
+    - **Ora** o bebê chorava de fome, **ora** dormia tranquilamente. (Indica alternância de estados).
+    - **Quer** chova, **quer** faça sol, o evento acontecerá. (Indica que o resultado será o mesmo independentemente das condições).
+
+###### Conclusivas
+
+Expressam uma ideia de conclusão, consequência ou dedução lógica a partir do que foi dito na oração anterior.
+
+- **Principais:** logo, portanto, por isso, por conseguinte, assim, então.
+- **Exemplos:**
+    - As provas foram corrigidas; **logo**, os resultados serão divulgados em breve.
+    - O trânsito estava congestionado, **por isso** cheguei atrasado.
+    - Penso, **logo** existo. (A famosa frase de Descartes usa uma conjunção conclusiva).
+
+###### Explicativas
+
+Expressam uma justificativa ou uma explicação sobre uma ordem, suposição ou afirmação feita anteriormente. Não devem ser confundidas com as causais. A explicativa justifica uma ordem ou uma opinião; a causal aponta a causa de um fato.
+
+- **Principais:** que, porque, pois (geralmente posposto ao verbo), porquanto.
+- **Exemplos:**
+    - Abra a janela, **porque** o ar está muito viciado. (Explicação para uma ordem).
+    - Deve ter chovido durante a noite, **pois** o chão está todo molhado. (Explicação para uma suposição).
+    - Venha para dentro, **que** vai começar a chover.
+
+##### Conjunções Subordinativas
+
+As conjunções subordinativas ligam orações em que uma é sintaticamente dependente da outra. A oração introduzida pela conjunção (subordinada) completa o sentido da outra (principal), funcionando como um termo dela (geralmente, um adjunto adverbial).
+
+###### Causais
+
+Iniciam uma oração que expressa a causa, o motivo ou a razão de um fato ocorrido na oração principal.
+
+- **Principais:** porque, como (usada no início do período), pois, já que, visto que, uma vez que, na medida em que.
+- **Exemplos:**
+    - A sessão foi cancelada **visto que** o palestrante não pôde comparecer.
+    - **Como** o tempo estava instável, decidimos adiar o piquenique.
+    - Ele foi aprovado **porque** estudou com dedicação.
+
+###### Consecutivas
+
+Iniciam uma oração que expressa a consequência ou o resultado de um fato intensificado na oração principal.
+
+- **Principais:** que (precedida de um termo de intensidade como _tão, tal, tanto, tamanho_), de modo que, de sorte que, de forma que.
+- **Exemplos:**
+    - A ventania foi **tão** forte **que** derrubou várias árvores. (A derrubada é consequência da intensidade da ventania).
+    - Ele estava com **tamanha** fome **que** comeu a refeição em segundos.
+    - O professor explicou a matéria com calma, **de modo que** todos entenderam.
+
+###### Concessivas
+
+Iniciam uma oração que expressa uma ideia contrária à da principal, mas que não é suficiente para impedir sua ocorrência. É uma quebra de lógica, um "apesar de".
+
+- **Principais:** embora, ainda que, mesmo que, conquanto, se bem que, apesar de que, posto que.
+- **Exemplos:**
+    - **Embora** estivesse chovendo, fomos ao parque. (A chuva deveria impedir, mas não impediu).
+    - Ele conseguiu um bom resultado na prova, **mesmo que** não tivesse estudado muito.
+    - **Conquanto** seja um especialista, ele não soube responder à pergunta.
+
+###### Condicionais
+
+Iniciam uma oração que expressa uma condição ou hipótese necessária para que o fato da oração principal se realize ou não.
+
+- **Principais:** se, caso, contanto que, desde que (com valor condicional), a menos que, a não ser que.
+- **Exemplos:**
+    - **Se** você precisar de ajuda, pode me ligar a qualquer hora.
+    - Emprestarei o livro, **contanto que** você o devolva na próxima semana.
+    - **Caso** haja algum imprevisto, o plano B será acionado.
+
+###### Comparativas
+
+Iniciam uma oração que estabelece uma comparação com um elemento da oração principal.
+
+- **Principais:** como, assim como, tal qual, (mais/menos/maior/menor) do que, (tão) quanto.
+- **Exemplos:**
+    - Aquele ator é **tão** talentoso **quanto** seu pai era.
+    - Para ele, estudar português é **mais** difícil **do que** estudar matemática.
+    - Ela age **como** uma verdadeira líder.
+
+###### Conformativas
+
+Iniciam uma oração que expressa conformidade ou acordo em relação a um fato expresso na oração principal.
+
+- **Principais:** conforme, como (com sentido de conforme), segundo, consoante.
+- **Exemplos:**
+    - O projeto foi executado **conforme** o planejado.
+    - **Segundo** o edital, as inscrições se encerram na sexta-feira.
+
+###### Finais
+
+Iniciam uma oração que expressa a finalidade, o objetivo ou o propósito da ação principal.
+
+- **Principais:** para que, a fim de que, que.
+- **Exemplos:**
+    - O governo investiu em infraestrutura **a fim de que** pudesse atrair novas empresas.
+    - Sinalizei com a mão **para que** o motorista parasse.
+
+###### Proporcionais
+
+Iniciam uma oração que expressa um fato que ocorre ou se desenvolve de forma simultânea e proporcional ao da oração principal.
+
+- **Principais:** à proporção que, à medida que, ao passo que, quanto mais... mais/menos, quanto menos... mais/menos.
+- **Exemplos:**
+    - **À medida que** o tempo passava, ele ficava mais ansioso.
+    - **Quanto mais** se esforçava, **mais** distante o objetivo parecia.
+
+###### Temporais
+
+Iniciam uma oração que adiciona uma circunstância de tempo ao fato expresso na oração principal.
+
+- **Principais:** quando, enquanto, assim que, logo que, desde que, até que, mal, depois que.
+- **Exemplos:**
+    - **Quando** o alarme soou, todos deixaram o prédio.
+    - Ele ficou em silêncio **enquanto** o chefe falava.
+    - **Mal** chegou em casa, o telefone tocou. (Indica tempo imediato).
+
+#### Verbo
+
+O verbo é a classe de palavra mais complexa e central da língua portuguesa. É uma palavra **variável** que expressa primariamente uma noção de **ação** (_correr_), **processo** (_envelhecer_), **estado** (_ser_, _estar_) ou **fenômeno da natureza** (_chover_, _nevar_), sempre situando essa noção em uma perspectiva de **tempo**. É o verbo que constitui o núcleo do predicado e que, ao ser flexionado, revela informações cruciais sobre número (singular/plural), pessoa (1ª, 2ª, 3ª), modo e tempo.
+
+- _Exemplo de flexão:_ _Eu **estudo** agora._ (1ª pessoa do singular, presente).
+- _Exemplo de flexão:_ _Nós **estudávamos** antigamente._ (1ª pessoa do plural, pretérito).
+
+##### A Estrutura do Verbo
+
+Para entender como os verbos são conjugados, é útil conhecer sua estrutura básica. Um verbo-modelo, como "cantar", é formado por:
+
+- **Radical:** É a parte que carrega o significado principal do verbo. Geralmente, não se altera nos verbos regulares. (Ex: **cant**-).
+- **Vogal Temática:** É a vogal que se une ao radical para formar o tema e indica a qual conjugação o verbo pertence. (Ex: cant-**a**-r).
+- **Desinências:** São as terminações que se juntam ao tema para indicar as flexões de modo, tempo, número e pessoa. (Ex: cant-á-**vamos**).
+
+Os verbos são agrupados em três grandes "famílias", chamadas de conjugações, definidas pela vogal temática:
+
+- **1ª Conjugação:** Verbos terminados em **-ar** (amar, estudar, falar).
+- **2ª Conjugação:** Verbos terminados em **-er** (vender, beber, correr).
+- **3ª Conjugação:** Verbos terminados em **-ir** (partir, dividir, sentir).
+
+A maioria dos verbos da língua é **regular**, o que significa que eles seguem um modelo fixo de conjugação, sem alterar seu radical. Assim, ao aprender a conjugar um verbo-modelo de cada conjugação (como _amar_, _vender_, _partir_), aprendemos a conjugar milhares de outros por analogia.
+
+Existem, no entanto, os verbos **irregulares**, que sofrem alterações em seu radical ou em suas desinências durante a conjugação (ex: _fazer_ -> eu **faç**o, ele **fez**). Estes exigem um estudo individualizado.
+
+##### As Formas Nominais do Verbo
+
+Além de serem conjugados, os verbos possuem três formas que não expressam tempo ou modo diretamente e podem assumir funções de nomes (substantivo, adjetivo) ou de advérbio. São elas:
+
+| Forma Nominal  | Terminação Padrão | Função Principal                               | Exemplo                                          |
+| -------------- | ----------------- | ---------------------------------------------- | ------------------------------------------------ |
+| **Infinitivo** | -ar, -er, -ir     | Atua como um substantivo, nomeando a ação.     | O **saber** não ocupa espaço.                    |
+| **Gerúndio**   | -ndo              | Indica uma ação em andamento, um processo.     | Ele passou a tarde **lendo** na varanda.         |
+| **Particípio** | -ado, -ido        | Indica uma ação concluída. Atua como adjetivo. | O relatório, uma vez **terminado**, foi enviado. |
+
+##### Locuções Verbais e Tempos Compostos
+
+Uma **locução verbal** é a combinação de dois ou mais verbos que exercem a função de um único verbo. A estrutura é sempre: **Verbo Auxiliar + Verbo Principal**.
+
+- O **verbo auxiliar** (geralmente _ter, haver, ser, estar_) é o que se conjuga, concordando com o sujeito.
+- O **verbo principal** aparece em uma das formas nominais (infinitivo, gerúndio ou particípio) e carrega o sentido principal da ação.
+    - _Exemplo:_ Eu **vou estudar** amanhã. (Equivale a "Eu estudarei"). "Vou" é o auxiliar; "estudar" é o principal.
+
+Os **tempos compostos** são um tipo específico de locução verbal, formados pelos auxiliares **ter** ou **haver** + o **particípio** do verbo principal. Eles servem para expressar ações concluídas antes de outras ações.
+
+- _Exemplo:_ Quando cheguei, eles já **tinham saído**.
+
+##### Os Modos Verbais
+
+Os modos verbais indicam a atitude de quem fala em relação ao fato que enuncia.
+
+- **Modo Indicativo:** Expressa a **certeza**, a realidade, um fato concreto. É o modo da afirmação vista como verdadeira.
+    - _Exemplo:_ O sol **nasce** todos os dias. / O Brasil **é** um país tropical.
+
+- **Modo Subjuntivo:** Expressa a **dúvida**, a incerteza, a hipótese, o desejo. É o modo da possibilidade.
+    - _Exemplo:_ **Talvez** ele **venha** à festa. / **Se** eu **pudesse**, viajaria o mundo.
+
+- **Modo Imperativo:** Expressa uma **ordem**, um pedido, um conselho, uma sugestão. É o modo da influência sobre o interlocutor.
+    - _Exemplo:_ **Faça** o seu trabalho com atenção. / **Não desista** dos seus sonhos.
+
+A seguir, vamos explorar os tempos verbais dos modos Indicativo e Subjuntivo, que são fundamentais para a construção de sentidos precisos.
+
+##### Modo Indicativo
+
+O modo indicativo é usado para expressar fatos, certezas e realidades. As ações são apresentadas como eventos concretos, quer tenham ocorrido no passado, ocorram no presente ou venham a ocorrer no futuro.
+
+###### Presente do Indicativo
+
+Este tempo verbal é um dos mais versáteis da língua. Para identificá-lo de forma prática, pode-se usar um marcador temporal como "hoje". Por exemplo: "Hoje eu _corro_", "Hoje a aula _começa_", "Hoje uma nova ideia _nasce_".
+
+|      | Levantar   | Beber   | Cair   |
+| ---- | ---------- | ------- | ------ |
+| Eu   | Levanto    | Bebo    | Caio   |
+| Tu   | Levantas   | Bebes   | Cais   |
+| Ele  | Levanta    | Bebe    | Cai    |
+| Nós  | Levantamos | Bebemos | Caímos |
+| Vós  | Levantais  | Bebeis  | Caís   |
+| Eles | Levantam   | Bebem   | Caem   |
+
+Apesar do nome, o Presente do Indicativo não se limita a descrever algo que ocorre no exato momento da fala. Sua semântica é ampla e abrange diversas situações:
+
+- **Fato permanente ou verdade atemporal:** Descreve verdades científicas, filosóficas ou universalmente aceitas, que não dependem do tempo.
+    - Ex.: A água _ferve_ a 100 graus Celsius.
+    - Ex.: A Terra _gira_ em torno do Sol.
+
+- **Hábito ou rotina:** Expressa ações que se repetem com frequência na vida de alguém.
+    - Ex.: Eu _corro_ e _nado_ toda dia.
+    - Ex.: Ela sempre _visita_ os avós aos domingos.
+
+- **Fato pontual:** Indica uma ação que está ocorrendo ou um estado que se manifesta no momento da fala.
+    - Ex.: Neste instante, o professor _explica_ a matéria.
+    - Ex.: Ele _está_ ranzinza hoje.
+
+- **Futuro próximo:** É muito comum no dia a dia usar o presente para se referir a um futuro já planejado ou considerado certo.
+    - Ex.: _The Game of Thrones_ começa hoje à noite.
+    - Ex.: _Viajo_ para o Rio de Janeiro na semana que vem.
+
+- **Presente histórico (ou narrativo):** Usado para narrar fatos passados, conferindo-lhes um caráter de atualidade e tornando a narrativa mais vívida e imediata para quem ouve ou lê.
+    - Ex.: Em 1908, _nasce_ o mito.
+    - Ex.: No ano de 1500, Pedro Álvares Cabral _chega_ ao Brasil.
+
+###### Pretérito Perfeito do Indicativo
+
+Este tempo denota uma ação que começou e foi concluída em um momento anterior ao da fala. É o tempo da ação finalizada. O marcador temporal "ontem" ajuda a evocá-lo: "Ontem eu _levantei_", "ontem ele _bebeu_", "ontem eles _caíram_".
+
+| |Levantar|Beber|Cair|
+|---|---|---|---|
+|Eu|Levantei|Bebi|Caí|
+|Tu|Levantaste|Bebeste|Caíste|
+|Ele|Levantou|Bebeu|Caiu|
+|Nós|Levantamos|Bebemos|Caímos|
+|Vós|Levantastes|Bebestes|Caístes|
+|Eles|Levantaram|Beberam|Caíram|
+
+Seus usos principais são:
+
+- **Fato com início e fim no passado:** Seja um passado recente ou distante, a ação está perfeitamente acabada.
+    - Ex.: _Li_ duas aulas de constitucional hoje pela manhã.
+    - Ex.: _Morei_ naquela cidade durante a minha infância.
+
+- **Ação que se estende até o presente (Pretérito Perfeito Composto):** A forma composta, construída com o auxiliar _ter_ ou _haver_ no presente do indicativo + particípio do verbo principal, expressa uma ação ou um processo que começou no passado e continua ocorrendo ou tendo efeitos até o momento presente.
+    - Ex.: _Tenho levantado_ cedo todos os dias ultimamente.
+    - Ex.: Eles _têm estudado_ com afinco para o concurso.
+
+###### Pretérito Imperfeito do Indicativo
+
+Este tempo descreve uma ação passada que era contínua, habitual ou que servia de pano de fundo para outro evento. Ele não foca no início ou no fim da ação, mas em sua duração ou repetição no passado. O advérbio "antigamente" é um bom gatilho: "Antigamente eu _bebia_", "antigamente eles _caíam_", "antigamente elas _levantavam_".
+
+| |Levantar|Beber|Cair|
+|---|---|---|---|
+|Eu|levantava|bebia|caía|
+|Tu|levantavas|bebias|caías|
+|Ele|levantava|bebia|caía|
+|Nós|levantávamos|bebíamos|caíamos|
+|Vós|levantáveis|bebíeis|caíeis|
+|Eles|levantavam|bebiam|caíam|
+
+Seus sentidos mais comuns são:
+
+- **Fatos repetidos ou habituais no passado:** Descreve uma rotina ou um costume que não existe mais.
+    - Ex.: Antigamente eu _estudava_ todo dia e ainda _malhava_.
+    - Ex.: Quando eu era pequeno, eu _achava_ a vida chata.
+
+- **Ação contínua interrompida por outra:** Frequentemente usado para criar um cenário (ação durativa) no qual outro evento pontual (no pretérito perfeito) acontece.
+    - Ex.: Eu _dormia_ tranquilamente quando o cachorro _latiu_.
+    - Ex.: Eles _conversavam_ na sala quando a luz _acabou_.
+
+- **Ação planejada que não se realizou:** Pode expressar uma intenção ou plano do passado que acabou sendo frustrado.
+    - Ex.: Eu _pretendia_ começar o curso hoje, porém foi tudo cancelado.
+    - Ex.: Nós _íamos_ viajar para a praia, mas o carro quebrou.
+
+###### Pretérito Mais-que-Perfeito do Indicativo
+
+Embora menos comum na fala cotidiana, este tempo tem uma função muito específica: indicar um evento que ocorreu _antes_ de outro evento já passado. É o "passado do passado". Sua terminação característica é **-RA**.
+
+| |Levantar|Beber|Cair|
+|---|---|---|---|
+|Eu|levantara|bebera|caíra|
+|Tu|levantaras|beberas|caíras|
+|Ele|levantara|bebera|caíra|
+|Nós|levantáramos|bebêramos|caíramos|
+|Vós|levantáreis|bebêreis|caíreis|
+|Eles|levantaram|beberam|caíram|
+
+- **Evento anterior a outro no passado:**
+    - Ex.: Quando cheguei ao ponto, o ônibus já _passara_. (A ação de passar é anterior à de chegar).
+    - Ex.: O paciente já _falecera_ quando a ambulância chegou. (A morte ocorreu antes da chegada da ambulância).
+
+Na linguagem atual, é muito mais frequente o uso da sua forma composta, que tem o mesmo valor semântico. Ela é formada pela locução **Tinha/Havia + Particípio**.
+
+- Ex.: Quando cheguei ao ponto, o ônibus já _tinha passado_.
+- Ex.: Ele me contou que já _havia lido_ o livro.
+
+###### Futuro do Presente do Indicativo
+
+Expressa uma ação que ocorrerá em um momento posterior ao da fala. É o futuro visto a partir de agora. O marcador "amanhã" funciona bem: "Amanhã eu _farei_", "amanhã ele _levantará_", "amanhã eles _cairão_".
+
+| |Levantar|Beber|Cair|
+|---|---|---|---|
+|Eu|levantarei|beberei|cairei|
+|Tu|levantarás|beberás|cairás|
+|Ele|levantará|beberá|cairá|
+|Nós|levantaremos|beberemos|cairemos|
+|Vós|levantareis|bebereis|caireis|
+|Eles|levantarão|beberão|cairão|
+
+Seus usos incluem:
+
+- **Fato futuro em relação ao momento da fala:**
+    - Ex.: _Passarei_ no concurso dos meus sonhos.
+    - Ex.: No próximo ano, _visitaremos_ a Europa.
+
+- **Futuro considerado certo ou um comando enfático:**
+    - Ex.: O táxi _chegará_ às 23h.
+    - Ex.: Os Dez Mandamentos: "_Não matarás_".
+
+- **Incerteza, dúvida ou suposição sobre o presente:**
+    - Ex.: _Será_ que a prova virá fácil?
+    - Ex.: Quantos anos ele _terá_? (Referindo-se a uma dúvida atual).
+
+###### Futuro do Pretérito do Indicativo
+
+Este tempo verbal, com a terminação característica **-RIA**, descreve uma ação futura, mas a partir de um ponto de referência no passado. Ele também é amplamente utilizado para expressar hipóteses ou condições. Um bom gatilho para ele é "se eu pudesse, eu...": "..._levantaria_", "..._beberia_", "..._viajaria_".
+
+| |Levantar|Beber|Cair|
+|---|---|---|---|
+|Eu|levantaria|beberia|cairia|
+|Tu|levantarias|beberias|cairias|
+|Ele|levantaria|beberia|cairia|
+|Nós|levantaríamos|beberíamos|cairíamos|
+|Vós|levantaríeis|beberíeis|cairíeis|
+|Eles|levantariam|beberiam|cairiam|
+
+Seus principais valores são:
+
+- **Futuro em relação a um fato passado (futuro do passado):** A ação é futura, mas o ponto de partida da observação está no passado.
+    - Ex.: Ele disse que _você conseguiria_. (Primeiro ele "disse", a ação de "conseguir" era futura em relação a esse momento).
+    - Ex.: Eu tinha certeza de que a encomenda _chegaria_ a tempo.
+
+- **Incerteza, suposição ou dúvida:**
+    - Ex.: Quem _seria_ capaz de cometer um crime desses?
+    - Ex.: Naquele tempo, ele _teria_ uns vinte anos.
+
+- **Polidez ou atenuação:** É um recurso muito usado para fazer pedidos, dar conselhos ou fazer afirmações de forma mais suave e educada.
+    - Ex.: Você _poderia_ me ajudar, por favor?
+    - Ex.: _Seria_ bom você estudar mais português.
+    - Ex.: Eu _gostaria_ de um copo d'água.
+
+##### Modo Subjuntivo
+
+Diferente do Indicativo, o Modo Subjuntivo não expressa fatos, mas sim possibilidades, desejos, dúvidas, hipóteses ou ordens. A ação não é apresentada como uma realidade, mas como algo que pode ou não acontecer, dependendo de uma condição.
+
+###### Presente do Subjuntivo
+
+Expressa uma possibilidade, um desejo ou uma dúvida no presente ou no futuro. Frequentemente, aparece em orações dependentes, introduzido por conjunções como "que" ou "para que". Um bom truque para conjugá-lo é pensar em "Maria quer que eu...": "..._faça_", "..._fale_", "..._caia_", "..._beba_". Sua terminação é **-E** para verbos de 1ª conjugação (levantar -> levant**e**) e **-A** para verbos de 2ª e 3ª conjugações (beber -> beb**a**; cair -> cai**a**).
+
+| |Levantar|Beber|Cair|
+|---|---|---|---|
+|Eu|que eu levante|que eu beba|que eu caia|
+|Tu|que tu levantes|que tu bebas|que tu caias|
+|Ele|que ele levante|que ele beba|que ele caia|
+|Nós|que nós levantemos|que nós bebamos|que nós caiamos|
+|Vós|que vós levanteis|que vós bebais|que vós caiais|
+|Eles|que eles levantem|que eles bebam|que eles caiam|
+
+- **Exemplos de uso:**
+    - Ex.: Temo que a prova _venha_ difícil. (Expressa um temor, uma possibilidade).
+    - Ex.: Não quero que você _fume_ mais. (Expressa um desejo ou uma ordem indireta).
+    - Ex.: É importante que todos _participem_ da reunião. (Expressa uma necessidade).
+
+###### Pretérito Imperfeito do Subjuntivo
+
+Com sua terminação marcante em **-SSE**, este tempo é usado principalmente para expressar condições ou hipóteses, muitas vezes irreais ou pouco prováveis. Ele está frequentemente associado ao Futuro do Pretérito do Indicativo (-RIA) para formar períodos condicionais. O gatilho "Se eu..." funciona perfeitamente: "Se eu _pudesse_", "Se eu _fizesse_", "Se eu _estudasse_".
+
+| |Levantar|Beber|Cair|
+|---|---|---|---|
+|Eu|se eu levantasse|se eu bebesse|se eu caísse|
+|Tu|se tu levantasses|se tu bebesses|se tu caísses|
+|Ele|se ele levantasse|se ele bebesse|se ele caísse|
+|Nós|se nós levantássemos|se nós bebêssemos|se nós caíssemos|
+|Vós|se vós levantásseis|se vós bebêsseis|se vós caísseis|
+|Eles|se eles levantassem|se eles bebessem|se eles caíssem|
+
+- **Condição ou desejo:**
+    - Ex.: Se ela _estudasse_ todo dia, _passaria_ em qualquer prova. (Hipótese).
+    - Ex.: Eu _gostaria_ que eles se _levantassem_ mais cedo. (Desejo).
+
+- **Ação posterior a uma dúvida ou desejo no passado:**
+    - Ex.: Eu duvidei que minha avó _bebesse_ tanta tequila.
+    - Ex.: Ele esperava que nós _chegássemos_ a tempo.
+
+###### Futuro do Subjuntivo
+
+Este tempo verbal descreve uma ação eventual ou hipotética que pode ocorrer no futuro. É frequentemente introduzido por conjunções como "quando" ou "se". O gatilho "Quando eu..." é o mais eficaz: "Quando eu _fizer_", "Quando eu _quiser_", "Quando eu _puser_". Ele se correlaciona frequentemente com o Futuro do Presente do Indicativo.
+
+| |Levantar|Beber|Cair|
+|---|---|---|---|
+|Eu|quando eu levantar|quando eu beber|quando eu cair|
+|Tu|quando tu levantares|quando tu beberes|quando tu caíres|
+|Ele|quando ele levantar|quando ele beber|quando ele cair|
+|Nós|quando nós levantarmos|quando nós bebermos|quando nós cairmos|
+|Vós|quando vós levantardes|quando vós beberdes|quando vós cairdes|
+|Eles|quando eles levantarem|quando eles beberem|quando eles caírem|
+
+- **Ação eventual ou hipotética no futuro:**
+    - Ex.: Quando você me _pagar_, eu _entregarei_ o produto.
+    - Ex.: Se eu _quiser_ falar com Deus, tenho que ficar a sós.
+    - Ex.: Daremos o prêmio a quem _atingir_ a meta primeiro.
+
+##### As Vozes Verbais: A Relação entre Sujeito e Verbo
+
+As vozes (ou diáteses) verbais são um aspecto da morfossintaxe que indica a relação entre o sujeito da oração e a ação expressa pelo verbo. Basicamente, elas definem se o sujeito _pratica_ ou _recebe_ a ação.
+
+- **Voz Ativa:** O sujeito é o agente, ou seja, é ele quem pratica a ação verbal. Esta é a construção mais direta e comum.
+    - Ex.: **[O policial]** deteve os criminosos. (O policial praticou a ação de deter).
+    - Ex.: **[A cientista]** publicou o artigo. (A cientista praticou a ação de publicar).
+
+- **Voz Passiva:** O sujeito é paciente, ou seja, ele sofre ou recebe os efeitos da ação verbal. O foco da frase muda do agente para o alvo da ação.
+    - Ex.: **[Os criminosos]** foram detidos pelo policial. (Os criminosos sofreram a ação de serem detidos).
+    - Ex.: **[O artigo]** foi publicado pela cientista. (O artigo sofreu a ação de ser publicado).
+
+- **Voz Reflexiva:** O sujeito é, ao mesmo tempo, agente e paciente. Ele pratica uma ação que recai sobre si mesmo.
+    - Ex.: **[O menino]** se feriu com a faca. (O menino feriu a si mesmo).
+    - Ex.: Eles deram-**se**, após a tragédia, uma segunda chance. (Deram a si mesmos. Aqui, o pronome "se" funciona como objeto indireto).
+
+- **Voz Reflexiva Recíproca:** Ocorre com sujeitos múltiplos (plurais ou compostos) que praticam uma ação uns nos outros, de forma mútua.
+    - Ex.: **[Os criminosos]** se abraçaram na prisão. (Um abraçou o outro).
+    - Ex.: **[Os dois líderes]** se cumprimentaram cordialmente. (Um cumprimentou o outro).
+
+É importante notar que há casos em que o sentido pode ser passivo, mas a estrutura sintática permanece ativa. Na frase "Levei um soco", o sujeito "eu" (oculto) é quem sintaticamente pratica a ação de "levar", embora semanticamente seja o paciente que recebeu o soco.
+
+A voz passiva pode se apresentar de duas formas:
+
+1. **Passiva Analítica:** Formada pelo verbo auxiliar _ser_ (ou _estar_) + particípio do verbo principal. Ex.: "O bolo _foi feito_ por mim".
+2. **Passiva Sintética (ou Pronominal):** Formada por um verbo transitivo direto na 3ª pessoa + o pronome apassivador "se". Ex.: "_Fez-se_ o bolo".
+
+A conversão da voz ativa para a passiva é um tópico recorrente em provas. O ponto central dessa transformação é que o **objeto direto** da voz ativa se torna o **sujeito paciente** da voz passiva. Reconhecer essas funções sintáticas básicas é, portanto, essencial.
