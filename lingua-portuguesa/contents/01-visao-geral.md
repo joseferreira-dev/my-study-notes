@@ -1639,3 +1639,192 @@ As aspas são usadas principalmente para:
 3. **Destacar Palavras:** Usadas de forma não convencional, como estrangeirismos, gírias, neologismos ou com sentido irônico.
     - _Exemplo (Ironia):_ Ele se dizia um **"especialista"**, mas não sabia o básico.
     - _Exemplo (Estrangeirismo):_ O **"feedback"** do cliente foi muito positivo.
+
+Com certeza. Recebi as anotações sobre Concordância, um dos pilares da Sintaxe e tema recorrente em qualquer prova de concurso. A analogia inicial é excelente e servirá como base para uma explicação aprofundada. Irei expandir o conteúdo, detalhando os mecanismos da concordância nominal e verbal e dando ênfase especial ao caso do verbo "haver", como solicitado.
+
+Este é mais um tópico para o nosso Capítulo 1.
+
+---
+
+### Concordância: A Harmonia da Frase
+
+Na vida cotidiana, "concordar" significa compartilhar uma mesma ideia ou opinião. Na gramática, o princípio é surpreendentemente semelhante. A **concordância** é o mecanismo pelo qual as palavras se ajustam umas às outras, compartilhando as mesmas "marcas" ou "ideias" gramaticais, como gênero (masculino/feminino), número (singular/plural) e pessoa (1ª, 2ª, 3ª). É o princípio que garante a harmonia lógica e estrutural da frase, fazendo com que os termos relacionados "conversem" entre si.
+
+Existem dois tipos fundamentais de concordância: a Nominal e a Verbal.
+
+#### Concordância Nominal
+
+A regra geral da concordância nominal dita que todas as palavras que se referem a um substantivo (o "nome") devem concordar com ele em gênero e número. Isso se aplica a artigos, adjetivos, pronomes e numerais que atuam como determinantes desse substantivo.
+
+Vamos analisar a estrutura em um exemplo completo:
+
+> **As minhas duas amigas inglesas são incríveis.**
+
+Nesta frase, o substantivo-núcleo é **amigas**, uma palavra feminina e plural. Observe como todos os termos ligados a ele se ajustam para refletir essas características:
+
+- O artigo **"As"** está no feminino plural.
+- O pronome possessivo **"minhas"** está no feminino plural.
+- O numeral **"duas"** está no feminino.
+- O adjetivo **"inglesas"** está no feminino plural.
+- O adjetivo (predicativo) **"incríveis"** está no plural.
+
+Essa harmonia entre os determinantes e o nome determinado é a essência da concordância nominal.
+
+#### Concordância Verbal
+
+A regra fundamental da concordância verbal estabelece que **o verbo deve concordar em número (singular/plural) e pessoa (1ª, 2ª, 3ª) com o seu sujeito**. O verbo se flexiona para se ajustar a quem pratica ou sofre a ação.
+
+Tomando o mesmo exemplo:
+
+> As minhas duas amigas inglesas **gostam** de português, mas não **conseguem** aprendê-lo.
+
+O sujeito da oração é "As minhas duas amigas inglesas". O núcleo desse sujeito, "amigas", equivale ao pronome **elas** (3ª pessoa do plural). Por essa razão, os verbos se flexionam na 3ª pessoa do plural:
+
+- elas **gostam**
+- elas **conseguem**
+
+Essa conexão direta entre o sujeito e a forma do verbo é a concordância verbal.
+
+##### Caso Clássico de Prova: A Impessoalidade do Verbo Haver
+
+Uma das regras de concordância verbal mais cobradas em concursos envolve os **verbos impessoais**, que são aqueles que formam orações sem sujeito (sujeito inexistente). A consequência direta disso é que, **por não terem um sujeito com o qual concordar, os verbos impessoais devem permanecer sempre na 3ª pessoa do singular.**
+
+O campeão de incidência em provas é o verbo **HAVER**. Ele é impessoal e, portanto, invariável (fica sempre no singular) quando possui um dos seguintes sentidos:
+
+1. **Sentido de "Existir":** Quando "haver" pode ser substituído por "existir", ele não vai para o plural, mesmo que o termo seguinte esteja no plural.
+	- _Exemplo:_ **Havia** muitas pessoas doentes na cidade.
+	- _Análise:_ O termo "muitas pessoas doentes" não é o sujeito, mas sim o objeto direto do verbo haver. Por isso, ele não tem força para levar o verbo para o plural.
+	- **Atenção à Pegadinha:** O verbo **existir não é impessoal**. Ele possui sujeito e, portanto, concorda normalmente com ele.
+	    - **Correto:** **Havia** muitos problemas a resolver.
+	    - **Incorreto:** **Haviam** muitos problemas a resolver.
+	    - **Correto:** **Existiam** muitos problemas a resolver.
+
+2. **Sentido de "Ocorrer" ou "Acontecer":** A mesma regra se aplica quando "haver" é sinônimo de "ocorrer".
+	- _Exemplo:_ **Houve** graves acidentes naquele cruzamento.
+	- _Contraste:_ **Ocorreram** graves acidentes naquele cruzamento.
+
+3. **Indicando Tempo Decorrido:** Quando "haver" indica tempo passado, ele também é impessoal e fica no singular.
+	- _Exemplo:_ **Há** dez anos não viajo para o exterior.
+	- _Exemplo:_ Ele se formou **havia** dois meses quando conseguiu o emprego.
+
+Outros verbos que também são impessoais e seguem a mesma regra de permanecer no singular incluem o verbo **FAZER** (indicando tempo ou clima) e os verbos que indicam **fenômenos da natureza**.
+
+- _Exemplo:_ **Faz** cinco anos que moro aqui.
+- _Exemplo:_ **Choveu** muito durante a madrugada.
+
+### Regência: A Relação de Dependência entre as Palavras
+
+O termo "reger", em seu sentido original, remete a "comandar", "governar", "exigir". Em gramática, a **Regência** é precisamente o estudo dessa relação de comando e dependência entre as palavras. Ela analisa como um termo principal (o **termo regente**) "rege" um termo complementar (o **termo regido**), exigindo ou não a presença de uma preposição específica para estabelecer uma conexão lógica e gramaticalmente correta.
+
+Na prática, estudar regência é responder a três perguntas sobre um verbo ou um nome:
+
+1. Ele precisa de um complemento para ter sentido completo?
+2. Se sim, esse complemento é ligado diretamente ou por meio de uma preposição?
+3. Se houver preposição, qual é a preposição correta exigida pela norma padrão?
+
+A regência se divide em dois grandes campos:
+
+- **Regência Verbal:** O termo regente é um verbo.
+    - _Exemplo:_ Ela gosta **de** doces. (O verbo "gostar" rege a preposição "de").
+
+- **Regência Nominal:** O termo regente é um nome (substantivo, adjetivo) ou um advérbio.
+    - _Exemplo:_ Ela é alérgica **a** chocolates. (O adjetivo "alérgica" rege a preposição "a").
+
+Muitas vezes, a regência de termos comuns é intuitiva. No entanto, diversas construções consagradas pelo uso cotidiano divergem da norma padrão, tornando-se alvos frequentes em provas. Por exemplo, na linguagem formal, os verbos de movimento como "ir", "chegar" e "voltar" regem a preposição "a", e não "em".
+
+- _Norma Padrão:_ Chegamos **ao** curso. / Fomos **à** praia.
+- _Uso Coloquial:_ Chegamos no curso. / Fomos na praia.
+
+#### Regência e o Fenômeno da Crase
+
+É impossível dominar o uso da **crase** sem antes dominar a Regência. A crase, marcada na escrita pelo acento grave (\`), representa a fusão de dois "as". O caso mais comum e cobrado é a fusão da **preposição "a"** com o **artigo definido feminino "a" (ou "as")**.
+
+A lógica é a seguinte: para que a crase ocorra, é preciso que duas condições sejam atendidas simultaneamente:
+
+1. O termo regente (um verbo ou nome) deve exigir a preposição **"a"**. (Essa é a Regência).
+2. O termo regido (o complemento) deve ser uma palavra feminina que admita o artigo **"a"** ou **"as"**.
+
+**Fórmula da Crase = [Exigência da Preposição "a"] + [Presença do Artigo "a(s)"]**
+
+- _Exemplo:_ O acesso **a** boas faculdades é fundamental. (Não há crase, pois "boas faculdades" é um termo geral, sem artigo definido).
+- _Exemplo:_ O acesso **às** boas faculdades da região é difícil. (**Acesso a** + **as** boas faculdades = **às**).
+- _Exemplo:_ Refiro-me **à** situação atual do país. (**Referir-se a** + **a** situação = **à**).
+
+#### Regência Verbal: Principais Verbos e Suas Nuanças
+
+Certos verbos da língua portuguesa mudam de regência (e de significado) dependendo do contexto. Conhecer essas variações é crucial.
+
+##### Verbo Assistir
+
+- **Sentido:** "ver", "presenciar", "ser espectador".
+- **Regência:** Verbo Transitivo Indireto (VTI), exige a preposição **a**.
+- **Exemplos:**
+    - Nós assistimos **ao** jogo no estádio. (e não "assistimos o jogo").
+    - Você já assistiu **à** série que eu recomendei?
+
+- **Sentido:** "ajudar", "prestar auxílio".
+- **Regência:** Verbo Transitivo Direto (VTD), não usa preposição.
+- **Exemplos:**
+    - O médico **assistiu o** paciente com dedicação.
+    - A organização **assiste as** famílias desabrigadas.
+
+- **Sentido:** "morar", "residir".
+- **Regência:** Verbo Intransitivo, com adjunto adverbial regido pela preposição **em**.
+- **Exemplo:** O embaixador **assiste em** Brasília.
+
+##### Verbo Aspirar
+
+- **Sentido:** "desejar", "almejar", "ter como objetivo".
+- **Regência:** Verbo Transitivo Indireto (VTI), exige a preposição **a**.
+- **Exemplo:** Todo concurseiro **aspira a** um cargo público estável.
+
+- **Sentido:** "sugar", "respirar", "cheirar".
+- **Regência:** Verbo Transitivo Direto (VTD), não usa preposição.
+- **Exemplo:** A máquina **aspirou o** pó do tapete.
+
+##### Verbo Visar
+
+- **Sentido:** "ter como objetivo", "almejar".
+- **Regência:** Verbo Transitivo Indireto (VTI), exige a preposição **a**.
+- **Exemplo:** As políticas públicas **visam ao** bem-estar da população.
+
+- **Sentido:** "mirar", "apontar uma arma".
+- **Regência:** Verbo Transitivo Direto (VTD), não usa preposição.
+- **Exemplo:** O atirador **visou o** alvo com precisão.
+
+- **Sentido:** "dar visto", "rubricar", "autenticar".
+- **Regência:** Verbo Transitivo Direto (VTD), não usa preposição.
+- **Exemplo:** O gerente **visou o** cheque antes de liberá-lo.
+
+##### Verbo Precisar
+
+- **Sentido:** "necessitar", "ter necessidade".
+- **Regência:** Verbo Transitivo Indireto (VTI), exige a preposição **de**.
+- **Exemplo:** **Precisamos de** mais tempo para concluir o projeto. (e não "precisamos mais tempo").
+
+- **Sentido:** "indicar com exatidão", "especificar".
+- **Regência:** Verbo Transitivo Direto (VTD), não usa preposição.
+- **Exemplo:** O engenheiro **precisou as** medidas da área a ser construída.
+
+##### Verbo Obedecer / Desobedecer
+
+- **Sentido:** "submeter-se a" ou "não se submeter a".
+- **Regência:** Verbo Transitivo Indireto (VTI), exige a preposição **a**.
+- **Exemplos:**
+    - É fundamental **obedecer às** leis de trânsito.
+    - Ele **desobedeceu ao** regulamento interno da empresa.
+
+##### Verbo Implicar
+
+- **Sentido:** "acarretar", "ter como consequência", "resultar em".
+- **Regência:** Verbo Transitivo Direto (VTD), não usa preposição. Este é um erro muito comum.
+- **Exemplos:**
+    - A não entrega do trabalho **implicará** reprovação. (e não "implicará na reprovação").
+    - O estudo constante **implica** sacrifícios pessoais. (e não "implica em sacrifícios").
+
+- **Sentido:** "envolver-se", "comprometer-se".
+- **Regência:** Verbo Transitivo Direto e Indireto (VTDI), exige a preposição **em** para o objeto indireto.
+- **Exemplo:** O político **implicou-se em** escândalos de corrupção.
+
+O estudo da regência é contínuo. A melhor abordagem é focar nos casos que mais causam dúvidas e que são recorrentes em provas, complementando sempre o aprendizado com a resolução de questões e a consulta a bons dicionários de regência.
+
