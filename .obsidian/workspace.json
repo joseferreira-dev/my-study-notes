@@ -170,6 +170,14 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
+    "redes-de-computadores/contents/img/01-topologia-arvore.png",
+    "redes-de-computadores/contents/img/01-topologia-mesh.png",
+    "redes-de-computadores/contents/img/01-topologia-full-mesh.png",
+    "redes-de-computadores/contents/img/01-topologia-estrela.png",
+    "redes-de-computadores/contents/img/01-topologia-anel.png",
+    "redes-de-computadores/contents/img/01-topologia-barramento.png",
+    "redes-de-computadores/contents/img/01-ligacoes-ponto-a-ponto-e-multiponto.png",
+    "redes-de-computadores/contents/img/01-topologia-fisica-e-logica.png",
     "redes-de-computadores/contents/img/01-redes-cliente-servidor.png",
     "redes-de-computadores/contents/img/01-redes-par-a-par.png",
     "redes-de-computadores/contents/img",
@@ -200,21 +208,13 @@
     "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
     "arquitetura-e-organizacao-de-computadores/contents/02-arquitetura-de-processadores.md",
     "arquitetura-e-organizacao-de-computadores/contents/12-hardware.md",
-    "arquitetura-e-organizacao-de-computadores/contents/img/01-barramento.png",
     "arquitetura-e-organizacao-de-computadores/contents/01-.md",
     "arquitetura-e-organizacao-de-computadores/contents/11-proposicoes-algebra-booleana-e-circuitos-logicos.md",
     "arquitetura-e-organizacao-de-computadores/contents/10-sistemas-de-numeracao-e-representacao-de-dados.md",
     "arquitetura-e-organizacao-de-computadores/contents/09-memoria.md",
     "arquitetura-e-organizacao-de-computadores/contents/08-multiprocessamento-e-paralelismo.md",
     "iot/contents/x.md",
-    "iot/contents/img/figura-1-1.png",
     "iot/contents/img",
-    "iot/contents/Nova pasta",
-    "legislacao/contents/img/lei-8112-beneficios.png",
-    "legislacao/contents/img/lei-8112-peticao-recurso.png",
-    "legislacao/contents/img/lei-8112-posse-requisitos-para-investidura.png",
-    "legislacao/contents/img/lei-8112-peticao-requerimento.png",
-    "legislacao/contents/img/lei-8112-peticao-formas.png",
-    "legislacao/contents/img/lei-8112-peticao-e-representacao.png"
+    "iot/contents/Nova pasta"
   ]
 }

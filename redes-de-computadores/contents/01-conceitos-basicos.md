@@ -117,3 +117,121 @@ As redes P2P se popularizaram e evoluíram em diversas aplicações, principalme
 </div>
 
 Como ilustrado na figura acima, a rede P2P forma uma teia de conexões sem um núcleo central. A principal vantagem desse modelo é sua **resiliência** (não há um ponto único de falha) e sua **escalabilidade natural** (a capacidade total da rede aumenta à medida que mais pares se juntam, pois cada novo par também adiciona recursos). As desvantagens, no entanto, residem na dificuldade de gerenciamento, na complexidade de garantir a segurança (pois é difícil verificar a identidade dos pares ou a integridade dos dados) e no desempenho inconstante, que depende da quantidade e da qualidade dos pares conectados em um dado momento.
+
+## Topologia de Redes
+
+Uma vez que entendemos os modelos de interação (cliente-servidor e par-a-par), precisamos analisar como os dispositivos são fisicamente e logicamente arranjados. A **topologia** de uma rede é, essencialmente, o seu mapa. Ela descreve a estrutura, o layout, a forma como os nós (dispositivos como computadores, servidores, switches) e os links (os meios de comunicação) estão interconectados.
+
+A escolha de uma topologia não é uma decisão meramente estética; ela tem implicações profundas no custo de implementação e manutenção, na velocidade e no desempenho da rede, na sua capacidade de expansão (escalabilidade) e, crucialmente, na sua robustez e tolerância a falhas (redundância).
+
+### Topologia Física vs. Topologia Lógica
+
+Antes de explorarmos os desenhos específicos, é fundamental compreender uma distinção conceitual muito importante. A topologia de uma rede existe em duas camadas:
+
+- **Topologia Física:** Refere-se ao layout físico e tangível da rede. É a forma como os cabos são passados, como os equipamentos estão dispostos e conectados. É o "mapa das ruas" da rede, aquilo que se pode ver e tocar.
+- **Topologia Lógica:** Descreve o caminho que os dados efetivamente percorrem entre os nós da rede. É a "rota do ônibus" ou o "fluxo do tráfego", que nem sempre segue o caminho físico mais óbvio. A topologia lógica é definida pelos dispositivos de rede e pelos protocolos que eles utilizam.
+
+A parte mais interessante é que a topologia física e a lógica **não precisam ser iguais**. Uma rede pode ter um arranjo físico, mas os dados podem se comportar como se estivessem em um arranjo completamente diferente.
+
+- **Exemplo 1: Física em Estrela, Lógica em Barramento.** Este era um cenário muito comum com o uso de **Hubs**. Fisicamente, todos os computadores eram conectados a um ponto central (o hub), formando uma estrela. No entanto, como o hub simplesmente retransmite todo sinal que recebe para todas as suas portas, na prática, todos os computadores compartilhavam o mesmo meio de comunicação. Logicamente, a rede se comportava como um único barramento, onde todos "ouviam" a comunicação de todos.
+- **Exemplo 2: Física em Estrela, Lógica em Anel.** As redes que utilizavam o protocolo **Token Ring** são outro exemplo clássico. Fisicamente, os dispositivos também eram ligados a um equipamento central (chamado MAU - _Multistation Access Unit_). Contudo, este equipamento criava internamente um circuito lógico em anel, passando um "bastão" digital (_token_) de uma porta para a outra em sequência. O fluxo de dados seguia uma rota circular lógica, embora o cabeamento físico fosse em estrela.
+
+<div align="center">
+<img width="540px" src="./img/01-topologia-fisica-e-logica.png">
+</div>
+
+### Topologias Físicas
+
+Agora, vamos detalhar os principais desenhos de topologias físicas. Para isso, precisamos primeiro entender que toda a complexidade dos arranjos de rede é construída a partir de dois tipos elementares de ligação, que definem como um link de comunicação é compartilhado.
+
+<div align="center">
+<img width="540px" src="./img/01-ligacoes-ponto-a-ponto-e-multiponto.png">
+</div>
+
+- **Ligação Ponto-a-Ponto (Point-to-Point):** Esta é a forma mais simples e direta de conexão. Uma ligação ponto-a-ponto estabelece um caminho de comunicação **dedicado e exclusivo entre exatamente dois dispositivos**. Imagine uma linha telefônica privada que só pode ser usada para ligar para um único número, ou uma estrada particular construída para conectar apenas a cidade A à cidade B. Toda a capacidade (largura de banda) do meio de comunicação é reservada para a interação entre esses dois pontos. Essa dedicação garante que não haverá conflitos ou "disputas" pelo uso do meio com outros dispositivos. As topologias em **Anel** e em **Malha**, por exemplo, são inteiramente construídas a partir de uma série de conexões ponto-a-ponto. Na topologia em **Estrela**, cada computador individual possui uma conexão ponto-a-ponto com o dispositivo central (o switch ou hub).
+- **Ligação Multiponto (Multipoint):** Também conhecida como uma conexão de **difusão** (_broadcast_), a ligação multiponto ocorre quando **três ou mais dispositivos compartilham um único e mesmo meio de comunicação**. Retornando à nossa analogia, isso seria como uma "party line" telefônica, onde várias pessoas estão na mesma linha e podem ouvir umas às outras, ou um único salão de festas onde, quando alguém fala alto, todos escutam. Qualquer informação enviada por um dispositivo neste tipo de ligação se propaga por todo o meio e é recebida por todos os outros dispositivos conectados. A topologia em **Barramento** é o exemplo clássico de uma ligação multiponto. Embora essa abordagem economize cabeamento e simplifique a instalação inicial, ela introduz dois desafios significativos:
+    1. **Gerenciamento de Acesso:** Como vários dispositivos compartilham o mesmo "palco", é preciso haver regras para decidir quem pode "falar" (transmitir) e quando, para evitar que todos falem ao mesmo tempo (colisões). É aqui que entram os métodos de acesso ao meio, como o CSMA/CD.
+    2. **Privacidade:** Como toda mensagem é ouvida por todos, cada dispositivo precisa de um endereço para poder identificar e processar apenas as mensagens que lhe são destinadas, ignorando as demais.
+
+É a combinação e o arranjo desses dois tipos de ligação que dão origem às diferentes topologias físicas que conhecemos.
+
+#### Topologia em Barramento
+
+Esta é uma das topologias mais simples, baseada em uma conexão **multiponto**. Todos os dispositivos da rede são conectados a um único cabo central, chamado de _backbone_ ou barramento. A comunicação ocorre por **difusão** (_broadcast_): quando um computador envia uma mensagem, o sinal elétrico se propaga por todo o cabo, sendo recebido por todos os outros dispositivos.
+
+Para que o sinal não "bata" no final do cabo e retorne, causando interferência (reflexão de sinal), as extremidades do barramento precisam ser terminadas com um componente chamado **terminador**. Como todos compartilham o mesmo meio, se dois computadores tentarem transmitir ao mesmo tempo, ocorrerá uma **colisão**, e os dados serão corrompidos. Para gerenciar isso, são necessários protocolos de acesso ao meio (que veremos a seguir).
+
+- **Vantagens:** Baixo custo de implementação (usa menos cabo) e simplicidade.
+- **Desvantagens:** Baixa tolerância a falhas (uma falha no cabo principal derruba toda a rede), desempenho degrada com o aumento de dispositivos, e a identificação de problemas é complexa. É uma topologia largamente obsoleta para redes locais modernas.
+
+<div align="center">
+<img width="360px" src="./img/01-topologia-barramento.png">
+</div>
+
+#### Topologia em Anel
+
+Nesta topologia, os dispositivos são conectados em uma cadeia circular fechada, utilizando uma série de conexões **ponto-a-ponto**. Cada dispositivo está ligado diretamente a outros dois: o que vem antes e o que vem depois. A transmissão de dados geralmente ocorre de forma **unidirecional**: a mensagem passa de nó em nó, sendo regenerada em cada um, até chegar ao seu destino.
+
+O grande problema desta topologia é sua baixa tolerância a falhas. Em um anel unidirecional, a falha de um único nó ou de um único cabo interrompe o funcionamento de toda a rede. Para mitigar isso, foram criadas soluções com **anéis duplos**, onde os dados podem trafegar em direções opostas. Se um anel falhar, o outro pode ser usado como rota de contingência. O protocolo **Token Ring**, que evita colisões passando um "bastão" (_token_) que autoriza a transmissão, é a implementação lógica mais famosa associada a esta topologia.
+
+<div align="center">
+<img width="280px" src="./img/01-topologia-anel.png">
+</div>
+
+#### Topologia em Estrela
+
+Esta é a topologia física dominante nas redes locais (LANs) atuais. Todas as conexões são do tipo **ponto-a-ponto**, mas em vez de se conectarem entre si, todos os dispositivos se conectam a um **nó central**, que pode ser um hub, switch ou roteador. Este nó central atua como um comutador, gerenciando o tráfego da rede.
+
+A grande vantagem é a robustez: se um cabo ou um computador falhar, apenas aquele ponto da rede é afetado; os demais continuam operando normalmente. A gerência da rede também é centralizada, facilitando a configuração e o monitoramento. A principal desvantagem é que o nó central se torna um ponto único de falha: se ele parar de funcionar, toda a rede fica inoperante. A escalabilidade da rede é limitada pela capacidade (número de portas e poder de processamento) do dispositivo central.
+
+<div align="center">
+<img width="320px" src="./img/01-topologia-estrela.png">
+</div>
+
+#### Topologia em Malha (Mesh)
+
+A topologia em malha é caracterizada por um alto nível de interconexão, utilizando múltiplas ligações **ponto-a-ponto**. O objetivo é criar redundância e múltiplos caminhos para os dados. Existem duas variações:
+
+- **Malha Totalmente Conectada (Full Mesh):** Cada nó da rede está conectado diretamente a todos os outros nós. Esta é a topologia mais tolerante a falhas possível, pois a falha de um link não impede a comunicação entre dois nós, que podem usar rotas alternativas. O problema é sua inviabilidade prática em redes com muitos nós, devido ao número exponencial de conexões necessárias. A quantidade de conexões (C) para 'n' computadores segue a fórmula:
+
+    $$C = \frac{n \cdot (n-1)}{2}$$Por exemplo, para apenas **10** computadores, seriam necessárias$$C = \frac{10 \cdot 9}{2} = 45$$
+    conexões. Para **100** computadores, o número salta para **4.950**.
+
+<div align="center">
+<img width="280px" src="./img/01-topologia-full-mesh.png">
+</div>
+
+- **Malha Parcialmente Conectada (Mesh/Partial Mesh):** Uma abordagem mais realista, onde apenas os nós mais importantes ou críticos são conectados a múltiplos outros nós, enquanto dispositivos periféricos podem ter apenas uma conexão. É o modelo utilizado na espinha dorsal da Internet, onde grandes roteadores são interligados de forma redundante para garantir a continuidade do serviço.
+
+<div align="center">
+<img width="320px" src="./img/01-topologia-mesh.png">
+</div>
+#### Topologia em Árvore (Tree)
+
+Também conhecida como topologia hierárquica, a topologia em árvore é essencialmente uma **combinação de múltiplas topologias em estrela**. Ela conecta os nós centrais de diferentes redes em estrela, criando uma estrutura hierárquica. É um modelo altamente escalável e organizado, muito utilizado em grandes redes corporativas. Por exemplo, um switch principal (core) pode se conectar a switches de distribuição em diferentes andares de um prédio, e cada switch de distribuição se conecta a switches de acesso que atendem os computadores dos usuários.
+
+<div align="center">
+<img width="360px" src="./img/01-topologia-arvore.png">
+</div>
+
+### Métodos de Acesso ao Meio
+
+Em topologias que utilizam um meio de transmissão compartilhado (como barramento ou estrela com hub), surge um problema: o que acontece se dois ou mais dispositivos tentarem transmitir dados exatamente ao mesmo tempo? A resposta é uma **colisão**, que corrompe os dados. Para gerenciar esse acesso e organizar o tráfego, foram criados protocolos específicos.
+
+#### CSMA/CD (Carrier Sense Multiple Access with Collision Detection)
+
+Este nome complexo descreve um processo bastante intuitivo, análogo a uma conversa educada:
+
+1. **_Carrier Sense_ (Sensoriamento de Portadora):** "Ouça antes de falar". Um nó que deseja transmitir primeiro verifica se o meio está livre (se ninguém está transmitindo).
+2. **_Multiple Access_ (Acesso Múltiplo):** Vários nós compartilham o mesmo meio e têm a chance de usá-lo.
+3. **_Collision Detection_ (Detecção de Colisão):** "Ouça enquanto fala". Enquanto transmite, o nó continua monitorando o meio. Se ele detectar um sinal diferente do que está enviando, ele sabe que uma colisão ocorreu.
+4. **Ação pós-colisão:** Ao detectar uma colisão, o nó para a transmissão e envia um sinal de "congestionamento" (_JAM signal_) para garantir que todos os outros nós saibam da colisão. Em seguida, cada nó envolvido na colisão aguarda um tempo aleatório (_backoff_) antes de tentar transmitir novamente.
+
+O CSMA/CD, portanto, **não evita** colisões, mas as **detecta e gerencia**, garantindo que a informação seja retransmitida. É o método clássico associado ao padrão Ethernet em meios compartilhados.
+
+#### CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)
+
+Este é um método mais proativo, cujo objetivo é **evitar** a colisão antes que ela aconteça. É fundamental em redes sem fio (Wi-Fi), onde a detecção de colisão é impraticável (problema do "nó oculto").
+
+O processo básico do CSMA/CA envolve um passo adicional. Após verificar que o meio está livre, o nó pode enviar um pequeno quadro de aviso, chamado **RTS (_Request to Send_)**, informando sua intenção de transmitir e por quanto tempo. O ponto de acesso responde com um quadro **CTS (_Clear to Send_)**, que é ouvido por todos os outros nós na área. Este quadro CTS funciona como um sinal de "silêncio, por favor", instruindo os outros nós a não transmitirem durante aquele período, evitando assim a colisão. Após o término da transmissão, o receptor envia um quadro de confirmação **ACK (_Acknowledgement_)**. Somente após o ACK (ou a expiração do tempo reservado) é que outros nós tentarão usar o meio.
+
