@@ -81,9 +81,8 @@ Uma breve explicação de cada símbolo:
 Abaixo está o exemplo de um fluxograma de aprovação de solicitações em uma empresa:
 
 <div align="center">
-  <img width="100%" src="./img/01-fluxograma.png"></a>
+  <img width="100%" src="./img/01-fluxograma.png">
 </div>
-<br>
 
 ## Representando Algoritmos com Pseudocódigo
 
