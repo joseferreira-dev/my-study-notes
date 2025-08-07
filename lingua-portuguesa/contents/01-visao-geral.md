@@ -1984,3 +1984,89 @@ A paráfrase é a reescrita de uma frase ou de um trecho com palavras diferentes
     - _Original:_ Embora estivesse exausto, ele continuou o trabalho.
     - _Paráfrase:_ Apesar do cansaço, ele não interrompeu o trabalho.
 
+## Interpretação de Textos
+
+Chegamos ao tópico que representa o objetivo final de todo o estudo da Língua Portuguesa para concursos: a **interpretação de textos**. Esta não é uma matéria isolada, mas sim a competência que sintetiza todo o conhecimento adquirido. O domínio da Morfologia, da Sintaxe, da Semântica, da Concordância e da Pontuação não são fins em si mesmos; são as ferramentas que permitem uma leitura precisa, profunda e crítica. A capacidade de interpretar corretamente um texto é o que, em última análise, define o sucesso na grande maioria das questões de uma prova.
+
+### Os Dois Níveis da Leitura: Compreensão vs. Interpretação
+
+As bancas examinadoras elaboram questões que testam a habilidade do candidato em dois níveis distintos de leitura. É crucial saber diferenciar o que está sendo pedido.
+
+1. **Compreensão (O que o texto DIZ):** Compreender um texto é ser capaz de localizar e decodificar as informações que estão explícitas em sua superfície. As questões de compreensão exigem que o candidato retorne ao texto e encontre o que o autor afirmou diretamente, ainda que com outras palavras (através de uma paráfrase).
+	- **Enunciados Típicos:** "Segundo o texto...", "O autor afirma que...", "De acordo com o texto...".
+	- **Estratégia:** A resposta está contida no texto. A tarefa é de localização e comparação.
+
+2. **Interpretação (O que o texto PERMITE CONCLUIR):** Interpretar um texto é ir além da superfície. É a capacidade de fazer inferências, ou seja, deduções lógicas baseadas nas informações e pistas que o texto fornece. A resposta não está escrita, mas é fortemente sugerida, baseada em pressupostos e informações implícitas.
+	- **Enunciados Típicos:** "Infere-se do texto que...", "Depreende-se das ideias do autor...", "É possível concluir que...".
+	- **Estratégia:** A resposta está "fora" do texto, mas com os "pés" fincados nele. É preciso usar o raciocínio lógico sobre as pistas textuais, com cuidado para não **extrapolar** (ir além do que o texto permite) ou contradizer o que foi dito.
+
+Veja exemplos de informações implícitas que podem ser inferidas (interpretadas):
+
+- **Frase:** Douglas **parou de** fumar.
+    - **Inferência:** Douglas fumava antes.
+
+- **Frase:** **Finalmente** ela concluiu aquele curso.
+    - **Inferência:** O curso demorou para terminar e havia uma expectativa sobre sua conclusão.
+
+- **Frase:** Alunos **que revisam** têm notas mais altas.
+    - **Inferência:** Existem alunos que não revisam e, provavelmente, suas notas são mais baixas.
+
+### Tipologias Textuais
+
+Reconhecer o tipo de texto (gênero textual) é o primeiro passo para uma leitura estratégica, pois permite antecipar a intenção do autor e a organização das ideias.
+
+| Tipo Textual                    | Objetivo Principal e Características                                                                                                    |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Narrativo**                   | **Contar uma história.** Apresenta uma sequência de ações no tempo, com personagens, enredo, narrador e marcadores temporais.           |
+| **Descritivo**                  | **Criar uma imagem mental.** Descreve detalhadamente e de forma estática um lugar, pessoa, objeto ou cena.                              |
+| **Dissertativo-Expositivo**     | **Informar de modo neutro.** Apresenta dados, fatos e conceitos de forma objetiva, sem defender um ponto de vista.                      |
+| **Dissertativo-Argumentativo**  | **Convencer o leitor.** Apresenta uma tese (opinião) e a defende com argumentos (exemplos, dados, citações, etc.).                      |
+| **Injuntivo (ou Instrucional)** | **Instruir ou guiar o leitor.** Apresenta ordens, regras ou um "passo a passo" para realizar uma tarefa. (Ex: manuais, receitas, leis). |
+
+### Roteiro Estratégico para Leitura e Análise
+
+A seguir, um roteiro prático para abordar textos em provas, maximizando a compreensão e a eficiência.
+
+**Passo 1: A Leitura Panorâmica**
+
+Faça uma primeira leitura do texto de forma contínua, sem interrupções, para obter uma visão geral do tema, do tipo de texto e da ideia central que o autor parece defender ou expor.
+
+**Passo 2: O Mapeamento do Texto**
+
+Em uma segunda leitura, mais focada, sublinhe ou destaque os elementos-chave:
+
+- **Palavras-Chave:** Conceitos que se repetem e são centrais para o tema.
+- **Conectivos:** As conjunções e locuções (`mas`, `portanto`, `embora`, `à medida que`) são as "placas de trânsito" do texto. Elas revelam a arquitetura lógica do pensamento do autor (oposição, conclusão, concessão, etc.).
+
+**Passo 3: A Análise das Questões**
+
+Antes de responder, leia com atenção os enunciados das questões. Saber o que está sendo perguntado permite que você retorne ao texto de forma direcionada, buscando informações específicas e otimizando seu tempo.
+
+**Passo 4: A Busca e Confirmação no Texto**
+
+Para cada questão, volte ao trecho específico do texto que a fundamenta. Não confie apenas na memória da primeira leitura. Confirme a informação, comparando a alternativa com o que está escrito.
+
+**Passo 5: A Eliminação de Alternativas (Distratores)**
+
+Em questões de múltipla escolha, as bancas criam "distratores" para induzir ao erro. Aprenda a identificá-los:
+
+- **Extrapolação:** A alternativa vai além do que o texto permite concluir.
+- **Redução:** A alternativa reduz ou limita uma ideia que no texto era mais ampla.
+- **Contradição:** A alternativa afirma o oposto do que foi dito no texto.
+- **Generalização Inadequada:** Tenha cuidado com palavras categóricas como **"sempre", "nunca", "jamais", "todos", "ninguém", "exclusivamente"**. Raramente um texto (especialmente argumentativo) suporta uma afirmação tão absoluta.
+
+**Passo 6: A Análise da Intenção Autoral**
+
+Sempre se pergunte: "Por que o autor escreveu isso? O que ele queria me fazer pensar ou sentir?". Identificar o tom (irônico, crítico, neutro, etc.) e o propósito (informar, convencer, emocionar) é fundamental para resolver as questões mais sutis de interpretação.
+
+**Passo 7: A Prática Leva à Maestria**
+
+A interpretação de textos é uma habilidade que se aprimora com a prática deliberada. Resolva o máximo de provas anteriores que puder. Analise seus erros para entender se eles ocorreram por desatenção, por má compreensão do enunciado ou por uma inferência equivocada. A familiaridade com o estilo das bancas é um grande diferencial competitivo.
+
+## Considerações Finais
+
+Ao longo deste capítulo, construímos a base fundamental para o estudo aprofundado da Língua Portuguesa. Partimos dos conceitos elementares de **comunicação, linguagem e língua**, estabelecendo o terreno sobre o qual toda a gramática se ergue. Em seguida, mergulhamos na **Ortografia** e na **Morfologia**, identificando as dez classes de palavras, que são as "peças" do nosso idioma.
+
+Com as peças em mãos, avançamos para a **Sintaxe**, onde aprendemos como elas se organizam e se relacionam para formar a arquitetura das orações, estudando as funções sintáticas, os princípios de **concordância**, **regência**, **crase** e **pontuação**. Por fim, na **Semântica** e na **Interpretação de Textos**, exploramos o propósito de toda essa estrutura: a construção do sentido e a habilidade de decodificá-lo com precisão.
+
+Cada um desses campos está intrinsecamente conectado. O domínio integrado de todos eles é o que permitirá não apenas resolver questões de gramática normativa, mas também desenvolver a competência mais importante para qualquer concurso: a capacidade de ler, compreender e interpretar textos com profundidade e segurança. Este capítulo foi o primeiro e mais importante passo nessa jornada.
