@@ -211,7 +211,15 @@ A topologia em malha é caracterizada por um alto nível de interconexão, utili
 Também conhecida como topologia hierárquica, a topologia em árvore é essencialmente uma **combinação de múltiplas topologias em estrela**. Ela conecta os nós centrais de diferentes redes em estrela, criando uma estrutura hierárquica. É um modelo altamente escalável e organizado, muito utilizado em grandes redes corporativas. Por exemplo, um switch principal (core) pode se conectar a switches de distribuição em diferentes andares de um prédio, e cada switch de distribuição se conecta a switches de acesso que atendem os computadores dos usuários.
 
 <div align="center">
-<img width="360px" src="./img/01-topologia-arvore.png">
+<img width="320px" src="./img/01-topologia-estrela.png">
+</div>
+
+#### Resumindo
+
+Resumindo as principais características das topologias estudadas:
+
+<div align="center">
+<img width="680px" src="./img/01-resumo-topologias-de-redes-fisicas.png">
 </div>
 
 ### Métodos de Acesso ao Meio
@@ -235,3 +243,72 @@ Este é um método mais proativo, cujo objetivo é **evitar** a colisão antes q
 
 O processo básico do CSMA/CA envolve um passo adicional. Após verificar que o meio está livre, o nó pode enviar um pequeno quadro de aviso, chamado **RTS (_Request to Send_)**, informando sua intenção de transmitir e por quanto tempo. O ponto de acesso responde com um quadro **CTS (_Clear to Send_)**, que é ouvido por todos os outros nós na área. Este quadro CTS funciona como um sinal de "silêncio, por favor", instruindo os outros nós a não transmitirem durante aquele período, evitando assim a colisão. Após o término da transmissão, o receptor envia um quadro de confirmação **ACK (_Acknowledgement_)**. Somente após o ACK (ou a expiração do tempo reservado) é que outros nós tentarão usar o meio.
 
+## Classificação de Redes por Abrangência Geográfica
+
+Após explorarmos os modelos de interação e as topologias, outra forma fundamental de classificar as redes é pela sua **abrangência geográfica** ou, em outras palavras, pela distância que elas cobrem. Essa classificação nos ajuda a entender o escopo, a tecnologia empregada, a propriedade e o propósito de diferentes tipos de rede. As siglas que veremos a seguir — PAN, LAN, MAN e WAN — são onipresentes no vocabulário de tecnologia.
+
+É importante notar que as distâncias associadas a cada categoria são referências didáticas para facilitar o entendimento, e não limites rígidos. Na prática, a classificação depende mais da tecnologia utilizada, da administração da rede e da área de serviço do que de um número exato de quilômetros. A tabela a seguir oferece uma excelente perspectiva dessa escala.
+
+<div align="center">
+<img width="700px" src="./img/01-classificacao-por-abrangencia-tabela.png">
+</div>
+
+### PAN (Personal Area Network) – A Rede de Área Pessoal
+
+A menor e mais próxima de nós é a PAN. Como o próprio nome sugere, ela é uma rede de área **pessoal**, projetada para a comunicação entre dispositivos que estão ao alcance imediato de um indivíduo, geralmente em um raio de poucos metros.
+
+O objetivo de uma PAN não é conectar um escritório inteiro, mas sim o ecossistema de tecnologia de uma única pessoa. O exemplo mais emblemático de uma PAN sem fio (ou **WPAN**, _Wireless Personal Area Network_) é o **Bluetooth**. Quando você conecta seu smartphone a um fone de ouvido sem fio, a um smartwatch, ao sistema multimídia do seu carro ou a um teclado sem fio, você está criando uma PAN. Da mesma forma, uma conexão física via cabo **USB** entre um computador e um HD externo ou uma impressora também pode ser considerada uma forma de PAN com fio.
+
+### LAN (Local Area Network) – A Rede de Área Local
+
+Subindo um degrau na escala, encontramos a **LAN**, ou rede local. Esta é, de longe, a categoria de rede mais comum e com a qual interagimos diariamente. Uma LAN interliga computadores e outros dispositivos dentro de uma área geograficamente limitada, como uma residência, um andar de um prédio de escritórios, um laboratório de informática ou uma pequena empresa.
+
+Uma característica fundamental da LAN é que ela é, em geral, uma **rede privada**. A organização ou o indivíduo que a utiliza também é o proprietário da infraestrutura — os cabos, switches, roteadores e pontos de acesso. Esse controle direto facilita o gerenciamento e a segurança.
+
+As LANs modernas possuem características bem definidas:
+
+- **Alta Taxa de Transmissão:** As velocidades são elevadas, com padrões de 1 Gbps (Gigabit por segundo) sendo comuns e tecnologias de 10 Gbps ou mais se tornando acessíveis.
+- **Baixa Taxa de Erros:** Devido às distâncias curtas e ao uso de meios de comunicação de alta qualidade (como cabos de par trançado e fibra óptica), a ocorrência de erros na transmissão é muito baixa, exigindo poucas retransmissões.
+- **Tecnologia Dominante:** A tecnologia **Ethernet** é o padrão de fato para LANs cabeadas, enquanto o **Wi-Fi** (baseado no padrão IEEE 802.11) domina as redes locais sem fio, conhecidas como **WLAN** (_Wireless Local Area Network_).
+
+É importante esclarecer uma confusão comum: _Wi-Fi_ e _Wireless_ não são sinônimos. Wireless (sem fio) é o gênero, um termo amplo para qualquer comunicação sem um meio físico guiado. O Wi-Fi é uma _espécie_ dentro desse gênero, uma tecnologia específica para criar WLANs. O Bluetooth, por exemplo, também é wireless, mas é usado para WPANs.
+
+### MAN (Metropolitan Area Network) – A Rede de Área Metropolitana
+
+Uma **MAN** cobre uma área geográfica maior que uma LAN, como um bairro, uma cidade inteira ou um grande campus universitário. Frequentemente, uma MAN funciona como uma rede de alta velocidade que interconecta múltiplas LANs de diferentes localidades dentro da mesma cidade.
+
+Enquanto uma LAN é tipicamente privada, uma MAN pode ser propriedade de uma grande organização (como uma prefeitura ou universidade) ou, mais comumente, de uma empresa de telecomunicações que oferece o serviço de conectividade para outras empresas e para o público. A tecnologia mais utilizada para construir essas redes é a fibra óptica, e muitas vezes elas são chamadas de redes **Metro Ethernet**, pois estendem a familiar e eficiente tecnologia Ethernet para uma escala metropolitana, alcançando altas taxas de transmissão.
+
+### WAN (Wide Area Network) – A Rede de Área de Longa Distância
+
+No topo da escala de abrangência estão as **WANs**. Elas cobrem vastas áreas geográficas, como um país, um continente ou até o planeta inteiro. Uma WAN não é uma rede única, mas sim uma **rede de redes**, interligando múltiplas LANs e MANs que podem estar separadas por centenas ou milhares de quilômetros. A **Internet** é o exemplo máximo e mais conhecido de uma WAN global.
+
+Diferentemente das LANs, as WANs raramente são propriedade de uma única organização. Elas são operadas por um conglomerado de empresas de telecomunicações (operadoras) que administram os links de longa distância, como cabos de fibra óptica submarinos, satélites e a infraestrutura terrestre que cruza os países. Uma empresa geralmente contrata um serviço de WAN de uma operadora para conectar seus escritórios em diferentes cidades.
+
+As características de uma WAN contrastam com as de uma LAN:
+
+- **Taxas de Transmissão Variadas:** Devido à complexidade e às enormes distâncias, as velocidades podem variar muito, embora os backbones modernos operem em taxas altíssimas.
+- **Taxa de Erros Mais Elevada:** A probabilidade de ocorrer um erro durante a transmissão é maior devido ao grande número de equipamentos e à distância que o sinal percorre.
+- **Alto Custo:** O custo de implementação e manutenção dos links de longa distância é extremamente elevado.
+
+Um ponto de vista acadêmico, notado pelo autor Forouzan, classifica LANs e MANs como redes "não comutadas" (por não dependerem de roteadores em sua estrutura interna básica) e as WANs como "redes comutadas", pois sua principal função é justamente comutar (rotear) pacotes entre as diversas redes que a compõem. Embora seja uma definição que gera debate, ela destaca o papel central do roteamento na arquitetura das WANs.
+
+A versão sem fio, a **WWAN** (_Wireless Wide Area Network_), é a tecnologia por trás das redes de telefonia celular (como 4G e 5G) que nos fornecem acesso à internet em nossos dispositivos móveis em praticamente qualquer lugar.
+
+A imagem abaixo mostra a infraestrutura da RNP (Rede Nacional de Ensino e Pesquisa), um exemplo real de uma WAN de âmbito nacional no Brasil, que interliga universidades e centros de pesquisa em todo o país. É possível observar a complexidade dos enlaces, as diferentes capacidades de transmissão e a vasta cobertura geográfica, características típicas de uma rede de longa distância.
+
+<div align="center">
+<img width="700px" src="./img/01-infraestrutura-da-rnp.png">
+</div>
+
+## Considerações Finais
+
+Neste capítulo inaugural, navegamos pelos conceitos que formam o alicerce do vasto universo das redes de computadores. Partimos da definição fundamental de que uma rede é um ecossistema de dispositivos interconectados, criado com o propósito de compartilhar informações, serviços e recursos, desde um simples e-mail até a capacidade de processamento de um supercomputador. Vimos que toda rede se sustenta sobre três pilares essenciais: os **dispositivos finais** que originam e consomem os dados, os **meios de comunicação** que servem como o caminho para o tráfego e os **dispositivos intermediários** que gerenciam e direcionam esse fluxo.
+
+Exploramos os dois modelos arquitetônicos que ditam a dinâmica de interação em uma rede: o modelo **cliente-servidor**, com sua estrutura hierárquica e centralizada, e o modelo **par-a-par (P2P)**, fundamentado em uma abordagem descentralizada e igualitária. A escolha entre esses modelos define como os serviços são providos e consumidos.
+
+Aprofundamos na importância da **topologia**, o "mapa" que desenha a estrutura da rede, e fizemos a distinção crucial entre a **topologia física**, o arranjo tangível dos cabos e equipamentos, e a **topologia lógica**, o caminho abstrato que os dados percorrem. Analisamos as principais topologias físicas — **barramento, anel, estrela, malha e árvore** — e entendemos como cada uma delas oferece diferentes vantagens e desvantagens em termos de custo, desempenho e tolerância a falhas. Para gerenciar o acesso em meios compartilhados, apresentamos os protocolos **CSMA/CD** e **CSMA/CA**, que organizam o tráfego e lidam com o problema das colisões.
+
+Finalmente, classificamos as redes de acordo com sua abrangência geográfica, uma escala que nos leva desde o nosso entorno imediato até o outro lado do planeta. Começamos com a **PAN** (Rede de Área Pessoal), que conecta nossos dispositivos pessoais; passamos pela onipresente **LAN** (Rede de Área Local), que encontramos em nossas casas e escritórios; expandimos para a **MAN** (Rede de Área Metropolitana), que pode cobrir uma cidade inteira; e chegamos à **WAN** (Rede de Área de Longa Distância), cuja maior expressão é a própria Internet.
+
+Com esta base conceitual estabelecida, que abrange o "o quê", o "porquê" e o "como" das redes em um nível fundamental, estamos agora preparados para mergulhar, nos próximos capítulos, nas camadas, protocolos e tecnologias específicas que dão vida a essa complexa e indispensável infraestrutura de comunicação global.
