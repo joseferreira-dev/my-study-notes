@@ -1,7 +1,6 @@
 <div align="center">
   <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/linguagem-css"><img src="./contents/banner-css.png"></a>
 </div>
-<br>
 
 # CSS (Cascading Style Sheets)
 
