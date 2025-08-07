@@ -1828,3 +1828,159 @@ Certos verbos da língua portuguesa mudam de regência (e de significado) depend
 
 O estudo da regência é contínuo. A melhor abordagem é focar nos casos que mais causam dúvidas e que são recorrentes em provas, complementando sempre o aprendizado com a resolução de questões e a consulta a bons dicionários de regência.
 
+### Crase: A Fusão que Define a Norma Padrão
+
+A crase é, em sua essência, um fenômeno fonético que consiste na fusão de dois sons vocálicos idênticos (`a + a = à`). Na escrita, essa fusão é marcada pelo acento grave (\`). Embora possa parecer um detalhe, o uso correto da crase é um dos indicadores mais claros de domínio da norma padrão, pois exige um conhecimento apurado de Regência Verbal e Nominal, além da morfologia das palavras.
+
+O erro ou o acerto no uso da crase está diretamente ligado à compreensão de sua lógica fundamental. O caso mais comum e importante é a fusão da **preposição "a"** com o **artigo definido feminino "a" (ou "as")**.
+
+> **A Fórmula Essencial da Crase:**
+> 
+> **[Um termo anterior (verbo ou nome) exige a preposição "a"]**
+> 
+> **+**
+> 
+> **[Um termo posterior (feminino) admite o artigo "a" ou "as"]**
+> 
+> **= CRASE (`à` / `às`)**
+
+Vamos aplicar a fórmula: _Fomos ... praia._
+
+1. O verbo "ir" exige preposição "a"? Sim, quem vai, vai **a** algum lugar. (Temos o primeiro "a").
+2. A palavra "praia" é feminina e admite o artigo "a"? Sim, dizemos "**a** praia". (Temos o segundo "a").
+3. Portanto: Fomos **à** praia.
+
+#### Casos de Crase Obrigatória
+
+1. **Fusão da Preposição "a" com o Artigo Feminino "a(s)":** Este é o caso geral, que abrange a maioria das situações. A preposição "a" pode ser exigida por um verbo (regência verbal) ou por um nome (regência nominal).
+	- _Exemplos (Regência Verbal):_
+	    - Ele se referiu **às** novas regras do edital. (O verbo "referir-se" exige a preposição "a").
+	    - Obedeça **à** sinalização de trânsito. (O verbo "obedecer" exige a preposição "a").
+
+	- _Exemplos (Regência Nominal):_
+	    - O acesso **à** informação é um direito de todos. (O substantivo "acesso" exige a preposição "a").
+	    - Tenho aversão **à** mentira. (O substantivo "aversão" exige a preposição "a").
+
+2. **Fusão da Preposição "a" com Pronomes Demonstrativos e Relativos:** A crase também ocorre quando a preposição "a" se funde com o "a" inicial dos pronomes demonstrativos aquele(s), aquela(s), aquilo, e com os pronomes relativos a qual, as quais. Também ocorre com o pronome demonstrativo "a(s)" quando ele equivale a "aquela(s)".
+	- _Exemplos:_
+	    - Entreguei o relatório **àquele** funcionário. (Entregar algo **a** + **aquele**).
+	    - Não dei importância **àquilo** que ele disse. (Dar importância **a** + **aquilo**).
+	    - A cena **à qual** assistimos foi comovente. (Assistir **a** + **a qual**).
+	    - Sua camisa é semelhante **à** que comprei ontem. (Semelhante **a** + **a** [aquela]).
+
+3. **Em Locuções de Base Feminina:** O uso da crase é obrigatório em diversas locuções adverbiais, prepositivas e conjuntivas que possuem uma palavra feminina como base. Nestes casos, o uso é fixo e consagrado pela tradição da língua.
+	- **Locuções Adverbiais:** à noite, à tarde, às vezes, às pressas, à toa, à vontade, às claras, às escuras.
+	- **Locuções Prepositivas:** à beira de, à espera de, à procura de, à custa de.
+	- **Locuções Conjuntivas:** à medida que, à proporção que.
+	- _Contraste Didático:_ Usa-se crase em "pagamento **à vista**" (locução com base feminina), mas não em "pagamento **a prazo**" (locução com base masculina).
+
+#### Casos de Crase Proibida
+
+A lógica da proibição é simples: se falta um dos dois "as" necessários para a fusão, a crase não pode ocorrer. Portanto, o acento grave é proibido:
+
+- **Antes de palavras masculinas:**
+    - _Exemplo:_ Andamos **a cavalo** pela fazenda.
+
+- **Antes de verbos no infinitivo:**
+    - _Exemplo:_ Ele começou **a estudar** para o concurso.
+
+- **Antes da maioria dos pronomes que não admitem artigo:**
+    - _Pronomes Pessoais:_ Dirijo-me **a ela** com respeito.
+    - _Pronomes de Tratamento:_ Enviei um ofício **a Vossa Excelência**. (Exceção: senhora, senhorita, dona).
+    - _Pronomes Indefinidos:_ Não me refiro **a qualquer** pessoa.
+    - _Pronomes Demonstrativos "este", "esse":_ Cheguei **a esta** conclusão.
+
+- **Entre palavras repetidas:**
+    - _Exemplo:_ Ficamos frente **a frente**.
+
+- **Quando o "a" está no singular e a palavra seguinte está no plural:**
+    - _Exemplo:_ Ele se referiu **a pessoas** que não conhecia. (Aqui só há a preposição, falta o artigo "as").
+
+#### Casos de Crase Facultativa
+
+Existem três situações principais em que a norma padrão permite tanto o uso do acento grave quanto sua ausência, pois a presença do artigo feminino é opcional.
+
+1. **Antes de Nomes Próprios Femininos (sem especificativo):** O uso do artigo antes de nomes de pessoas é facultativo na língua.
+	- _Exemplo:_ Enviei a mensagem **a/à** Mariana. (Ambas as formas estão corretas).
+
+2. **Antes de Pronomes Possessivos Adjetivos Femininos no Singular (minha, tua, sua, nossa, vossa):** Da mesma forma, o artigo é opcional antes desses pronomes.
+	- _Exemplo:_ Fiz uma alusão **a/à** sua proposta. (Ambas as formas estão corretas).
+	- **Atenção:** Se o pronome possessivo estiver no plural, a crase será obrigatória se houver a fusão: _Fiz alusão **às** suas propostas._
+
+3. **Após a preposição "até":**
+	- _Exemplo:_ Fomos caminhando **até a/à** praia. (Ambas as formas estão corretas).
+
+## Semântica: A Construção do Sentido
+
+Após explorarmos a forma das palavras (Morfologia) e a função que elas desempenham na frase (Sintaxe), chegamos à **Semântica**, o ramo da Linguística que se dedica ao estudo do **significado**. A Semântica investiga o sentido das palavras, das expressões e das frases, e como esses sentidos são construídos e interpretados em diferentes contextos. Em provas de concurso, o conhecimento de Semântica é cobrado diretamente em questões de vocabulário (sinônimos, antônimos, parônimos) e, indiretamente, em todas as questões de compreensão e interpretação de textos.
+
+### O Duplo Sentido das Palavras: Denotação e Conotação
+
+Uma mesma palavra pode operar em duas dimensões de significado, a depender da intenção comunicativa.
+
+- **Sentido Denotativo:** É o sentido literal, objetivo e dicionarizado da palavra. Refere-se àquilo que a palavra designa de forma direta, sem margem para interpretações subjetivas. É a linguagem dos textos informativos, científicos e jornalísticos.
+- **Sentido Conotativo:** É o sentido figurado, subjetivo e contextual da palavra. As palavras adquirem novos significados, evocando emoções, valores culturais, metáforas e outras ideias associadas. É a linguagem predominante nos textos literários e publicitários.
+
+|Palavra|Sentido Denotativo (Literal)|Sentido Conotativo (Figurado)|
+|---|---|---|
+|**Coração**|O **coração** é um órgão vital que bombeia sangue.|Ele tem um **coração** de ouro, sempre disposto a ajudar.|
+|**Raiz**|A **raiz** daquela árvore está muito profunda.|O desrespeito é a **raiz** de muitos conflitos sociais.|
+|**Frio**|A água do mar estava muito **fria** hoje de manhã.|Ele me recebeu com um cumprimento **frio** e distante.|
+
+### Relações de Significado entre Palavras
+
+As palavras de uma língua não existem isoladamente; elas estabelecem diversas relações de significado entre si.
+
+1. **Sinonímia (Sinônimos):** A sinonímia é a relação de semelhança ou equivalência de sentido entre duas ou mais palavras. É importante notar que sinônimos perfeitos (totalmente intercambiáveis em todos os contextos) são raros. Geralmente, a sinonímia é uma aproximação de sentido.
+	- _Exemplos:_
+	    - Ele **faleceu** ontem. / Os amigos dizem que ele **morreu** feliz.
+	    - Aquele problema era muito **simples**. / Era uma questão **básica** de matemática.
+	    - É preciso **construir** uma sociedade mais justa. / É preciso **edificar** uma sociedade mais justa.
+
+2. **Antonímia (Antônimos):** A antonímia é a relação de oposição ou contraste de sentido entre duas palavras.
+	- _Exemplos:_
+	    - Prefiro o **silêncio** da noite ao **barulho** da cidade.
+	    - O amor e o **ódio** são duas faces da mesma moeda.
+	    - O candidato foi **bem** na prova de português, mas foi **mal** na de raciocínio lógico.
+
+3. **Paronímia (Parônimos):** Os parônimos são palavras muito parecidas na grafia e na pronúncia, mas com significados completamente diferentes. São uma fonte clássica de "pegadinhas" de vocabulário em provas.
+
+|Parônimos|Significados|
+|---|---|
+|**Ratificar** / **Retificar**|Confirmar, validar / Corrigir, emendar|
+|**Eminente** / **Iminente**|Ilustre, elevado / Prestes a acontecer|
+|**Comprimento** / **Cumprimento**|Extensão, tamanho / Saudação; ato de cumprir|
+|**Flagrante** / **Fragrante**|Evidente, no ato / Perfumado, que tem cheiro|
+|**Absorver** / **Absolver**|Sorver, aspirar / Perdoar, inocentar|
+|**Cavaleiro** / **Cavalheiro**|Homem que anda a cavalo / Homem gentil, educado|
+|**Inflação** / **Infração**|Aumento de preços / Violação de uma regra|
+
+### Os Fenômenos do Sentido no Contexto
+
+1. **Polissemia:** A polissemia (do grego poly = muitos; sema = significado) é a propriedade que uma única palavra tem de apresentar múltiplos significados, a depender do contexto em que é empregada.
+	- _Exemplo com a palavra "ponto":_
+	    - O ônibus para naquele **ponto**. (lugar)
+	    - A costureira deu um **ponto** na barra da calça. (laçada)
+	    - Ele perdeu um **ponto** na carteira de motorista. (unidade de contagem)
+	    - Coloque um **ponto** final na discussão. (sinal gráfico; fim)
+
+2. **Ambiguidade (ou Anfibologia):** Enquanto a polissemia é uma característica de uma palavra, a ambiguidade é um fenômeno de uma frase ou expressão, que permite mais de uma interpretação. Em textos formais, a ambiguidade é considerada um vício de linguagem, um defeito de clareza que deve ser evitado.
+	- _Exemplo:_ Peguei o ônibus correndo.
+	    - _Sentido 1:_ Eu (o sujeito) estava correndo quando peguei o ônibus.
+	    - _Sentido 2:_ O ônibus é que estava correndo.
+	- _Exemplo:_ O advogado viu o cliente entrando no tribunal.
+	    - _Sentido 1:_ O advogado, no momento em que entrava no tribunal, viu seu cliente.
+	    - _Sentido 2:_ O advogado viu a cena do seu cliente entrando no tribunal.
+
+### Paráfrase: Dizer o Mesmo com Outras Palavras
+
+A paráfrase é a reescrita de uma frase ou de um trecho com palavras diferentes, mas mantendo-se o sentido original. A capacidade de reconhecer uma paráfrase correta é uma das habilidades mais testadas em questões de reescritura de frases.
+
+- _Exemplo 1 (Mudança de Voz Verbal):_
+    - _Original:_ O cunhado roubou o carro.
+    - _Paráfrase:_ O carro foi roubado pelo cunhado.
+
+- _Exemplo 2 (Uso de Sinônimos e Mudança de Estrutura):_
+    - _Original:_ Embora estivesse exausto, ele continuou o trabalho.
+    - _Paráfrase:_ Apesar do cansaço, ele não interrompeu o trabalho.
+
