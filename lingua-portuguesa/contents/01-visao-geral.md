@@ -1565,3 +1565,77 @@ A presença ou ausência do predicativo define a classificação do predicado:
 
 - _Exemplo:_ **Maria**, venha cá, por favor!
 - _Exemplo:_ Atenção, **senhores passageiros**, para o anúncio.
+
+
+### Pontuação
+
+A pontuação é muito mais do que um sistema de pausas na escrita. É um conjunto de sinais gráficos que organiza o texto, desfaz ambiguidades e confere ritmo, clareza e ênfase às ideias. Um bom uso da pontuação reflete um profundo entendimento da estrutura sintática da língua, pois a regra fundamental por trás de seu emprego está ligada à organização dos termos na oração.
+
+#### A Ordem Direta e a Ausência de Vírgula
+
+Como vimos, a estrutura básica e natural da oração em Língua Portuguesa segue a **ordem direta**, que pode ser resumida pelo mnemônico **SuVeCA**:
+
+**Sujeito + Verbo + Complemento(s) + Adjunto(s)**
+
+- _Exemplo:_ **[Os candidatos]** (Sujeito) **receberam** (Verbo) **o resultado** (Complemento) **ontem à noite** (Adjunto).
+
+A regra mais importante da pontuação deriva diretamente dessa ordem: **Dentro da ordem direta, não se separa por vírgula os termos que mantêm uma ligação sintática íntima.**
+
+Isso significa que é **proibido** usar uma única vírgula para separar:
+
+- **O Sujeito do Verbo:**
+    - _Incorreto:_ Os alunos daquele curso, fizeram a prova.
+    - _Correto:_ Os alunos daquele curso fizeram a prova.
+
+- **O Verbo do seu Complemento (Objeto Direto ou Indireto):**
+    - _Incorreto:_ O governo anunciou, novas medidas econômicas.
+    - _Incorreto:_ O povo necessita, de mais atenção.
+    - _Correto:_ O governo anunciou novas medidas econômicas.
+    - _Correto:_ O povo necessita de mais atenção.
+
+- **O Nome do seu Complemento Nominal ou Adjunto Adnominal:**
+    - _Incorreto:_ Ele tem necessidade, de ajuda.
+    - _Correto:_ Ele tem necessidade de ajuda.
+
+#### A Vírgula e o Deslocamento
+
+Se a regra principal é não usar a vírgula na ordem direta, a principal função da vírgula é, justamente, marcar tudo aquilo que **quebra essa ordem**. Usamos a vírgula para isolar termos que estão **deslocados** (movidos de sua posição original) ou **intercalados** (inseridos entre os termos da ordem direta).
+
+##### Adjuntos Adverbiais Deslocados
+
+A posição natural de um adjunto adverbial é no final da oração. Quando esse termo é deslocado para o início ou para o meio da frase, a vírgula se torna, em regra, obrigatória, especialmente se o adjunto for longo.
+
+- **Posição Padrão (sem vírgula):** Nós discutimos o assunto **durante a longa reunião de ontem**.
+- **Deslocado para o Início (com vírgula):** **Durante a longa reunião de ontem,** nós discutimos o assunto.
+- **Intercalado (entre vírgulas):** Nós discutimos, **durante a longa reunião de ontem,** o assunto.
+
+O mesmo se aplica a outros termos, como o **aposto explicativo** e as **orações adjetivas explicativas**, que são sempre isolados por vírgulas por terem natureza intercalada.
+
+- _Exemplo (Aposto):_ Jorge Amado, **escritor baiano**, deixou uma vasta obra.
+- _Exemplo (Oração Adjetiva Explicativa):_ O Rio São Francisco, **que nasce em Minas Gerais**, é vital para o Nordeste.
+
+#### Outros Sinais de Pontuação Essenciais
+
+##### Dois-Pontos (:)
+
+Este sinal de pontuação tem duas funções primordiais em textos formais:
+
+1. **Introduzir uma Enumeração, um Esclarecimento ou um Aposto:** Serve para anunciar que o termo seguinte explicará ou detalhará o que foi dito antes.
+    - _Exemplo (Enumeração):_ Para a prova, leve três itens**: caneta, documento e comprovante de inscrição.**
+    - _Exemplo (Esclarecimento):_ Eu só tenho um objetivo na vida**: ser aprovado em um bom concurso.**
+
+2. **Anunciar a fala de alguém (Discurso Direto):**
+    - _Exemplo:_ O réu afirmou ao juiz**: "Sou inocente de todas as acusações."**
+
+##### Aspas (" ")
+
+As aspas são usadas principalmente para:
+
+1. **Delimitar o Discurso Direto:** Marcar a transcrição exata da fala de alguém, geralmente após os dois-pontos.
+    - _Exemplo:_ Como disse Descartes: **"Penso, logo existo."**
+
+2. **Indicar Citações:** Reproduzir um trecho de outro texto ou autor.
+
+3. **Destacar Palavras:** Usadas de forma não convencional, como estrangeirismos, gírias, neologismos ou com sentido irônico.
+    - _Exemplo (Ironia):_ Ele se dizia um **"especialista"**, mas não sabia o básico.
+    - _Exemplo (Estrangeirismo):_ O **"feedback"** do cliente foi muito positivo.
