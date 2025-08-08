@@ -116,3 +116,98 @@ Esta visualização permite contrastar de forma clara as diferentes lógicas que
 A análise comparativa da tabela revela um nítido movimento do pensamento pedagógico. As **teorias não-críticas**, embora diferentes entre si, concentram sua atenção nos elementos internos da escola — ora no professor, ora no aluno, ora no método. As **teorias crítico-reprodutivistas** representam uma virada radical, ao desconsiderarem os agentes internos e focarem sua análise exclusivamente nos determinantes externos, concluindo que a sociedade se impõe de forma absoluta sobre a escola e torna o aluno um "refém".
 
 Por fim, as **teorias críticas**, representadas pela Pedagogia Libertadora e pela Pedagogia Histórico-Crítica, emergem como uma proposta de **síntese dialética**. Elas compreendem a força dos determinantes sociais, mas, ao contrário das reprodutivistas, não veem a escola como um espaço de impotência. Pelo contrário, afirmam que é precisamente na articulação entre a prática social do aluno e o trabalho pedagógico consciente do professor que residem as possibilidades de superação e transformação.
+
+## A Classificação de José Carlos Libâneo: O Posicionamento Sociopolítico da Pedagogia
+
+Contemporâneo a Dermeval Saviani, o educador José Carlos Libâneo também se dedicou, na década de 1980, a organizar o complexo panorama das teorias pedagógicas brasileiras. Embora ambos os autores desenvolvam análises críticas, seus critérios de classificação são distintos. Enquanto Saviani foca sua análise na relação mais filosófica entre as esferas da "educação" e da "sociedade", Libâneo adota um critério que ele denomina de **posicionamento sociopolítico**.
+
+A pergunta central que orienta a classificação de Libâneo é: qual é a finalidade última de cada pedagogia em relação à sociedade em que se insere? Ela serve para manter a estrutura social existente ou para transformá-la? A partir dessa questão, ele agrupa as tendências em duas grandes categorias: a Pedagogia Liberal e a Pedagogia Progressista.
+
+### A Pedagogia Liberal: A Manutenção da Ordem Social
+
+É crucial, de início, esclarecer o sentido do termo "liberal" nesta classificação. Ele não tem relação com o uso coloquial de "mente aberta" ou "progressista". O termo "liberal" aqui se refere à sua raiz histórica, ligada à tradição de pensamento e aos interesses da **classe social burguesa**. Essa tradição, que teve seu auge em eventos como a Revolução Francesa, consolidou uma visão de mundo que valoriza o indivíduo, a propriedade e a adaptação à sociedade de classes.
+
+Portanto, as tendências da Pedagogia Liberal, segundo Libâneo, são aquelas que, intencionalmente ou não, têm como principal interesse a **manutenção do _status quo_**. Elas atuam para que a escola prepare os indivíduos para se adaptarem e desempenharem papéis na sociedade tal como ela está organizada. Embora muitas vezes utilizem um discurso que enfatiza a democratização do ensino e a igualdade de oportunidades, essa democratização é vista, por uma ótica crítica, como meramente retórica, pois não questiona as causas estruturais das desigualdades sociais. O foco está na formação do indivíduo para que ele se ajuste à ordem social vigente.
+
+### A Pedagogia Progressista: O Questionamento e a Transformação
+
+Em oposição direta à vertente liberal, a **Pedagogia Progressista** agrupa as tendências que partem de uma análise crítica das realidades sociais e que estão deliberadamente comprometidas com a **transformação social**. O enfoque destas pedagogias não é a adaptação do indivíduo, mas a mudança das próprias relações sociais, da escola e da sociedade como um todo.
+
+Por essa razão, são propostas educativas fundamentalmente críticas às estruturas da sociedade capitalista e ao papel que a escola tradicionalmente desempenha nela. Elas não buscam apenas que o aluno aprenda conteúdos, mas que, através da educação, ele se torne um agente de mudança. O objetivo é transformar "corações e mentes", como afirmam as notas, para que os estudantes desenvolvam uma consciência crítica e se engajem na construção de uma sociedade mais justa e igualitária.
+
+### As Subdivisões da Pedagogia Liberal
+
+Como vimos, a Pedagogia Liberal agrupa as tendências que, segundo Libâneo, visam à manutenção da sociedade de classes, preparando o indivíduo para se adaptar e se ajustar à ordem social vigente. Embora partam de pressupostos e métodos distintos, o resultado final de sua prática converge para a conservação das estruturas sociais. Libâneo subdivide este grande grupo em quatro tendências principais.
+
+<div align="center">
+<img src="./img/03-libaneo-tendencias-liberais.png" width="700px">
+</div>
+
+#### Tendência Liberal Tradicional
+
+Esta é a vertente mais antiga, correspondente à Pedagogia Tradicional que detalhamos no Capítulo 2. Seu foco está na **preparação intelectual e moral** dos alunos através da transmissão de um vasto repertório de conteúdos e valores universais. A escola, nesta visão, tem uma missão redentora: ela oferece o conhecimento a todos, e o sucesso depende primariamente do esforço individual de cada aluno. A responsabilidade pelo fracasso é, portanto, atribuída ao estudante, e não ao sistema ou às desigualdades sociais, o que na prática a torna um modelo excludente.
+
+#### Tendência Liberal Renovada Progressivista
+
+Esta tendência corresponde à **Escola Nova ou Pedagogia Nova**, também já analisada. O termo "progressivista" aqui é utilizado dentro do referencial liberal, significando uma aposta no progresso da sociedade através do desenvolvimento das capacidades individuais. O foco se desloca do conteúdo para a criança, e o ponto de partida do ensino são os interesses e as necessidades do aluno. A escola busca retratar a vida, e o aluno aprende através da pesquisa, da descoberta e da experiência. Apesar de seu discurso democrático, sua crítica se concentra mais nos métodos da escola tradicional do que nas estruturas da sociedade.
+
+#### Tendência Liberal Renovada Não-diretiva
+
+Com base nas teorias do psicólogo norte-americano **Carl Rogers**, esta tendência valoriza acima de tudo a formação de atitudes e o desenvolvimento pessoal do aluno. A ênfase não está nos conteúdos nem nos métodos, mas na qualidade das relações interpessoais dentro da sala de aula. O papel do professor é o de um facilitador que cria um clima favorável de acolhimento e respeito, para que o aluno possa se auto-realizar e desenvolver sua personalidade de forma autônoma. Os conteúdos curriculares são secundários, e a aprendizagem é vista como um processo interno, que não pode ser direcionado de fora para dentro.
+
+#### Tendência Liberal Tecnicista
+
+Esta vertente corresponde à **Pedagogia Tecnicista**, já abordada anteriormente. Sua base é a busca pela máxima racionalização e produtividade do processo educativo, visando formar mão de obra qualificada para o mercado de trabalho. O foco está nos objetivos específicos, nos resultados mensuráveis e nos materiais instrucionais pré-formatados. Como vimos, nesta abordagem, tanto o professor quanto o aluno são colocados em segundo plano, tornando-se executores e receptores de um método que é o verdadeiro centro do processo.
+
+### As Subdivisões da Pedagogia Progressista
+
+Em oposição ao grupo liberal, a Pedagogia Progressista reúne as tendências que partem de uma análise crítica da sociedade e propõem a educação como uma ferramenta para a sua transformação.
+
+<div align="center">
+<img src="./img/03-libaneo-tendencias-progressistas.png" width="700px">
+</div>
+
+#### Tendência Progressista Libertadora
+
+Esta tendência é a **Pedagogia de Paulo Freire**, também conhecida como Pedagogia Libertadora ou Freiriana, cujos fundamentos foram detalhados no capítulo anterior. Seu método é o diálogo, e seu objetivo é a conscientização dos alunos para que, como sujeitos de sua própria história, atuem para a superação das relações de opressão.
+
+#### Tendência Progressista Libertária
+
+Inspirada no pensamento **Anarquista**, esta corrente valoriza a experiência de grupo e a autogestão. É uma pedagogia radicalmente antiautoritária, que busca transformar a instituição escolar em um espaço de vivência democrática direta, onde as decisões são tomadas coletivamente por alunos e professores. A meta é que, ao vivenciar a autogestão na escola, os alunos se preparem para a participação em estruturas sociais não hierárquicas e não coercitivas.
+
+#### Tendência Progressista Crítico-Social dos Conteúdos
+
+Esta é a tendência proposta pelo próprio **José Carlos Libâneo**, também já analisada. Ela busca uma síntese entre a valorização dos conteúdos historicamente produzidos e a sua utilização como ferramentas para a análise crítica da realidade social. O papel da escola é garantir que as classes populares se apropriem do saber sistematizado como um instrumento para a luta por seus interesses e pela transformação da sociedade.
+
+### Correspondência da Classificação de Libâneo
+
+Para consolidar a classificação de Libâneo e sua correspondência com os nomes mais conhecidos de cada pedagogia, a tabela a seguir oferece um resumo prático.
+
+| Tendência Pedagógica                          | Exemplos                                      |
+| --------------------------------------------- | --------------------------------------------- |
+| **Liberal Tradicional**                       | Pedagogia Tradicional Religiosa e Leiga       |
+| **Liberal Renovada Progressivista**           | Escola Nova ou Pedagogia Nova                 |
+| **Liberal Renovada Não-diretiva**             | Pedagogia Humanista de Carl Rogers            |
+| **Liberal Tecnicista**                        | Pedagogia Tecnicista ou Tecnicismo Pedagógico |
+| **Progressista Libertadora**                  | Pedagogia do Oprimido (Paulo Freire)          |
+| **Progressista Libertária**                   | Pedagogia Anarquista                          |
+| **Progressista Crítico-Social dos Conteúdos** | Pedagogia Crítico-Social dos Conteúdos        |
+
+### Síntese da Classificação de Libâneo
+
+Após a descrição de cada uma das tendências que compõem os grandes grupos da Pedagogia Liberal e da Pedagogia Progressista, a tabela a seguir oferece um resumo comparativo. Este quadro permite visualizar de forma clara e direta as características centrais de cada abordagem, contrastando o tipo de teoria, os papéis atribuídos ao professor e ao aluno, e, de forma mais reveladora, o "projeto histórico" que cada pedagogia busca, implícita ou explicitamente, realizar.
+
+| Teoria                                        | Tipo de teoria | Papel do professor                                   | Papel do aluno                                      | Projeto histórico                                                                                         |
+| --------------------------------------------- | -------------- | ---------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **Liberal Tradicional**                       | Liberal        | Professor é o centro                                 | Passivo                                             | Educação para a elite e manter a sociedade como está                                                      |
+| **Liberal Renovada Progressivista**           | Liberal        | Professor é um coadjuvante                           | Ativo                                               | Democracia apenas na sala de aula sem uma visão profunda do fenômeno educativo enquanto sistema de ensino |
+| **Liberal Renovada Não-diretiva**             | Liberal        | Pouca autoridade                                     | Ativo com pouca autoridade docente                  | Formar-se pessoa                                                                                          |
+| **Liberal Tecnicista**                        | Liberal        | Professor é neutro                                   | Dependente do método                                | Mercado de Trabalho                                                                                       |
+| **Progressista Libertadora**                  | Progressista   | Professor é mediador                                 | Crítico                                             | Conscientização                                                                                           |
+| **Progressista Libertária**                   | Progressista   | Professor auxilia na autogestão dos alunos           | Crítico                                             | Autogestão                                                                                                |
+| **Progressista Crítico-Social dos Conteúdos** | Progressista   | Professor auxilia na compreensão da realidade social | Ancorada na realidade social com ajuda de conteúdos | Superação da sociedade capitalista                                                                        |
+
+A análise da tabela evidencia a lógica da classificação de Libâneo. O conjunto das **Tendências Liberais**, apesar das enormes diferenças em seus métodos e na dinâmica da sala de aula, converge para um "projeto histórico" que não questiona fundamentalmente a estrutura social vigente. Seus objetivos se concentram na adaptação do indivíduo a essa estrutura, seja através da formação de elites (Tradicional), do desenvolvimento de habilidades individuais para a resolução de problemas (Renovada Progressivista), da busca pela autorrealização pessoal (Renovada Não-diretiva) ou da qualificação para o mercado de trabalho (Tecnicista).
+
+Em contrapartida, o conjunto das **Tendências Progressistas** se define justamente por seu posicionamento crítico e por seu "projeto histórico" explicitamente transformador. Todas elas partem de um questionamento da ordem social e veem a educação como uma ferramenta para a mudança coletiva, seja através da conscientização (Libertadora), da vivência da autogestão (Libertária) ou da apropriação crítica dos conteúdos para a superação da sociedade capitalista (Crítico-Social dos Conteúdos). Fica claro, portanto, que o critério de Libâneo busca revelar o compromisso político que subjaz a toda e qualquer prática pedagógica.
+
