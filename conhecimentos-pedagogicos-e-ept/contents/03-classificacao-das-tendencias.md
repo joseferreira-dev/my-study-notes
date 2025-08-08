@@ -211,3 +211,45 @@ A análise da tabela evidencia a lógica da classificação de Libâneo. O conju
 
 Em contrapartida, o conjunto das **Tendências Progressistas** se define justamente por seu posicionamento crítico e por seu "projeto histórico" explicitamente transformador. Todas elas partem de um questionamento da ordem social e veem a educação como uma ferramenta para a mudança coletiva, seja através da conscientização (Libertadora), da vivência da autogestão (Libertária) ou da apropriação crítica dos conteúdos para a superação da sociedade capitalista (Crítico-Social dos Conteúdos). Fica claro, portanto, que o critério de Libâneo busca revelar o compromisso político que subjaz a toda e qualquer prática pedagógica.
 
+## A Classificação de Cipriano Luckesi: Posturas Pedagógicas
+
+Para concluir nossa jornada pelas classificações das tendências pedagógicas, apresentamos a análise de Cipriano Luckesi. Embora talvez menos cobrado em certames que Saviani e Libâneo, seu esquema é extremamente útil por sua clareza e por focar não na teoria em si, mas na **postura** que o educador assume diante do poder e dos limites da educação.
+
+A classificação de Luckesi, em essência, dialoga com as mesmas questões das anteriores, mas utiliza uma nomenclatura diferente e mais direta para descrever as três atitudes fundamentais que um educador pode ter em relação à capacidade da educação de transformar a sociedade. São elas: o otimismo pedagógico, o imobilismo pedagógico e o realismo pedagógico.
+
+#### Otimismo Pedagógico: A Educação como Redenção
+
+Esta postura é caracterizada por uma crença, por vezes ingênua, no poder absoluto da educação. O educador com uma postura de **otimismo pedagógico** acredita que a escola, por si só, tem a força para resolver todos os problemas sociais, como a pobreza, a violência e a desigualdade. É a visão da educação como a "redentora da sociedade". Esta atitude corresponde diretamente ao que Saviani classificou como **teorias não-críticas** (Tradicional, Escola Nova, Tecnicista) e ao que Libâneo agrupou como **Pedagogia Liberal**.
+
+<div align="center">
+<img width="700px" src="./img/03-luckesi-otimismo-pedagogico.png">
+</div>
+
+#### Imobilismo Pedagógico: A Educação como Reprodução
+
+No extremo oposto, encontramos a postura do **imobilismo pedagógico**. O educador imobilista, após compreender a imensa força que as estruturas sociais exercem sobre a escola, chega a uma conclusão pessimista e paralisante: a educação não pode nada. Ele acredita que o meio social é tão determinante que qualquer tentativa de mudança a partir da escola é inútil. Ele se resigna à condição de mero espectador de uma realidade impossível de ser modificada. Esta postura corresponde exatamente às **teorias crítico-reprodutivistas** de Saviani e à sua conclusão de que a escola é um mero aparelho de reprodução.
+
+<div align="center">
+<img width="700px" src="./img/03-luckesi-imobilismo-pedagogico.png">
+</div>
+
+#### Realismo Pedagógico: A Educação como Transformação
+
+Buscando superar os dois extremos, Luckesi propõe o **realismo pedagógico** como a postura crítica e engajada. O educador realista compreende que o trabalho pedagógico pode, sim, transformar a sociedade. No entanto, ele tem plena consciência dos limites e dos condicionantes impostos pelo meio social. Ele não é nem ingênuo para achar que a educação pode tudo, nem pessimista a ponto de acreditar que ela não pode nada. Ele atua nas brechas e contradições do sistema, utilizando a educação como uma ferramenta para a transformação possível. Esta postura corresponde às **teorias críticas** de Saviani e à **Pedagogia Progressista** de Libâneo.
+
+<div align="center">
+<img width="700px" src="./img/03-luckesi-realismo-pedagogico.png">
+</div>
+
+### Síntese da Classificação de Luckesi
+
+Como se pode observar, a classificação de Luckesi utiliza nomes diferentes, mas descreve o mesmo panorama teórico de Saviani e Libâneo. A tabela abaixo consolida essa correspondência, mostrando como as posturas pedagógicas se traduzem em teorias educacionais.
+
+| Relação Educação e Sociedade | Explicação                                                                            | Teoria Educacional Correspondente | Exemplos                                                                      |
+| ---------------------------- | ------------------------------------------------------------------------------------- | --------------------------------- | ----------------------------------------------------------------------------- |
+| **Otimismo Pedagógico**      | A educação como redentora da sociedade. A crença ingênua de que a educação pode tudo. | Educação como **Redenção**        | Pedagogia Tradicional, Escola Nova, Tecnicismo, Didática Magna de Comenius    |
+| **Imobilismo Pedagógico**    | A educação não pode nada. A sociedade é mais forte do que a educação.                 | Educação como **Reprodução**      | Teorias Crítico-Reprodutivistas (Bourdieu, Althusser, etc.)                   |
+| **Realismo Pedagógico**      | A educação transforma a sociedade, consciente dos limites colocados pelo meio social. | Educação como **Transformação**   | Pedagogias Progressistas, Marxistas e Democráticas (Freire, Saviani, Libâneo) |
+
+A grande contribuição de Luckesi é deslocar o foco da análise da teoria para a **práxis do educador**. Sua classificação nos convida a uma reflexão sobre nossa própria postura: diante da complexa realidade social, agimos com um otimismo que ignora os determinantes sociais, com um pessimismo que nos imobiliza, ou com um realismo crítico que nos impulsiona a lutar pela transformação possível? A resposta a essa pergunta define o sentido e o alcance de nosso trabalho pedagógico.
+
