@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/01-educacao-e-sociedade.md",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/02-concepcoes-educacionais-e-teorias-pedagogicas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-educacao-e-sociedade"
+              "title": "02-concepcoes-educacionais-e-teorias-pedagogicas"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/01-educacao-e-sociedade.md",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/02-concepcoes-educacionais-e-teorias-pedagogicas.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 01-educacao-e-sociedade"
+              "title": "Sumário de 02-concepcoes-educacionais-e-teorias-pedagogicas"
             }
           }
         ],
@@ -170,6 +170,9 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
+    "conhecimentos-pedagogicos-e-ept/contents/img/02-escolastica-e-hierarquia.png",
+    "conhecimentos-pedagogicos-e-ept/contents/01-educacao-e-sociedade.md",
+    "conhecimentos-pedagogicos-e-ept/contents/02-concepcoes-educacionais-e-teorias-pedagogicas.md",
     "conhecimentos-pedagogicos-e-ept/contents/img/01-educacao-processo-de-tomada-de-consciencia.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/01-modificacao-homem-natureza.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/01-multiculturalismo-e-curriculo-pos-critico.png",
@@ -180,14 +183,12 @@
     "conhecimentos-pedagogicos-e-ept/contents/img",
     "conhecimentos-pedagogicos-e-ept/contents/Nova pasta",
     "redes-de-computadores/contents/01-conceitos-basicos.md",
-    "conhecimentos-pedagogicos-e-ept/contents/01-educacao-e-sociedade.md",
     "conhecimentos-pedagogicos-e-ept/contents",
     "contents/01-estrutura/README.md",
     "conhecimentos-pedagogicos-e-ept",
     "redes-de-computadores/contents/img/01-infraestrutura-da-rnp.png",
     "redes-de-computadores/contents/img/01-classificacao-por-abrangencia-tabela.png",
     "redes-de-computadores/contents/img/01-resumo-topologias-de-redes-fisicas.png",
-    "redes-de-computadores/contents/img/01-topologia-arvore.png",
     "redes-de-computadores/contents/img",
     "redes-de-computadores/contents/Nova pasta",
     "sistemas-operacionais/contents/01-conceitos-basicos.md",
@@ -214,7 +215,6 @@
     "arquitetura-e-organizacao-de-computadores/contents/01-.md",
     "arquitetura-e-organizacao-de-computadores/contents/11-proposicoes-algebra-booleana-e-circuitos-logicos.md",
     "arquitetura-e-organizacao-de-computadores/contents/10-sistemas-de-numeracao-e-representacao-de-dados.md",
-    "arquitetura-e-organizacao-de-computadores/contents/09-memoria.md",
-    "arquitetura-e-organizacao-de-computadores/contents/08-multiprocessamento-e-paralelismo.md"
+    "arquitetura-e-organizacao-de-computadores/contents/09-memoria.md"
   ]
 }
