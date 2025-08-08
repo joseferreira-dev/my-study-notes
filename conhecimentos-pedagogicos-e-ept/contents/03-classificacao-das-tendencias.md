@@ -213,7 +213,7 @@ Em contrapartida, o conjunto das **Tendências Progressistas** se define justame
 
 ## A Classificação de Cipriano Luckesi: Posturas Pedagógicas
 
-Para concluir nossa jornada pelas classificações das tendências pedagógicas, apresentamos a análise de Cipriano Luckesi. Embora talvez menos cobrado em certames que Saviani e Libâneo, seu esquema é extremamente útil por sua clareza e por focar não na teoria em si, mas na **postura** que o educador assume diante do poder e dos limites da educação.
+Continuando nossa jornada pelas classificações das tendências pedagógicas, apresentamos a análise de Cipriano Luckesi. Embora talvez menos cobrado em certames que Saviani e Libâneo, seu esquema é extremamente útil por sua clareza e por focar não na teoria em si, mas na **postura** que o educador assume diante do poder e dos limites da educação.
 
 A classificação de Luckesi, em essência, dialoga com as mesmas questões das anteriores, mas utiliza uma nomenclatura diferente e mais direta para descrever as três atitudes fundamentais que um educador pode ter em relação à capacidade da educação de transformar a sociedade. São elas: o otimismo pedagógico, o imobilismo pedagógico e o realismo pedagógico.
 
@@ -253,3 +253,71 @@ Como se pode observar, a classificação de Luckesi utiliza nomes diferentes, ma
 
 A grande contribuição de Luckesi é deslocar o foco da análise da teoria para a **práxis do educador**. Sua classificação nos convida a uma reflexão sobre nossa própria postura: diante da complexa realidade social, agimos com um otimismo que ignora os determinantes sociais, com um pessimismo que nos imobiliza, ou com um realismo crítico que nos impulsiona a lutar pela transformação possível? A resposta a essa pergunta define o sentido e o alcance de nosso trabalho pedagógico.
 
+## A Classificação de Maria da Graça Nicoletti Mizukami: As Abordagens do Ensino
+
+Uma influente forma de organizar as tendências pedagógicas é a proposta pela pesquisadora Maria da Graça Nicoletti Mizukami. Sua classificação se diferencia das anteriores por não se basear em um único critério sociopolítico, mas sim em uma **análise multidimensional** de cada corrente de pensamento. Mizukami propõe cinco grandes grupos, que ela denomina "abordagens", e analisa cada um deles a partir de critérios como a visão de sociedade, a concepção de ensino-aprendizagem, a relação professor-aluno e o papel da avaliação.
+
+É notável, em sua classificação, a ausência de uma categoria específica para a Escola Nova. A própria autora justifica essa escolha, argumentando que os princípios do escolanovismo foram, de certa forma, absorvidos e reelaborados por outras abordagens, não constituindo um grupo isolado em sua análise. Mizukami foca, portanto, nos modelos que considera mais representativos e com maior impacto na prática educacional brasileira.
+
+#### Detalhamento das Abordagens
+
+A seguir, detalhamos cada uma das cinco abordagens propostas por Mizukami, utilizando as informações da tabela-síntese de sua obra.
+
+##### Abordagem Tradicional
+
+- **Sociedade:** A escola é vista como a instituição responsável por transmitir os valores e as normas da sociedade às novas gerações, garantindo a sua **manutenção e conservação**.
+- **Ensino-aprendizagem:** O processo é compreendido como a **transmissão de informações** do professor, que detém o saber, para a mente do aluno, que deve absorvê-las.
+- **Professor-aluno:** A relação é vertical. O professor é o condutor e o centro de toda a ação educativa, enquanto o aluno é um receptor passivo.
+- **Avaliação:** O objetivo é verificar a capacidade do aluno de **reproduzir fielmente o conteúdo** que lhe foi transmitido pelo professor.
+
+##### Abordagem Comportamentalista
+
+- **Sociedade:** Parte do pressuposto de que o ser humano é um produto do meio. Portanto, para se construir uma sociedade planejada e eficiente, é preciso **controlar o ambiente** e os estímulos para moldar o comportamento dos indivíduos.
+- **Ensino-aprendizagem:** Aprender é um processo de **condicionamento**, no qual o comportamento desejado é obtido através de reforços positivos.
+- **Professor-aluno:** O professor atua como um **engenheiro comportamental**, que planeja, executa e controla as condições do ensino para garantir que o aluno atinja os objetivos propostos.
+- **Avaliação:** Deve ser objetiva e precisa, espelhando os objetivos instrucionais. O ideal é que o processo de ensino garanta o **mínimo de erros** por parte do aluno.
+
+##### Abordagem Humanista
+
+- **Sociedade:** A ênfase está no desenvolvimento do indivíduo, na sua capacidade de "tornar-se pessoa". A sociedade ideal é aquela que valoriza a **autenticidade** e o crescimento pessoal, sem massificação.
+- **Ensino-aprendizagem:** O processo é **centrado na pessoa** do aluno, em seu desenvolvimento emocional e em sua autorrealização.
+- **Professor-aluno:** A relação é marcada pela **não-diretividade**. O professor é um facilitador que cria um clima de confiança e aceitação, mas não direciona a aprendizagem. O aluno é o responsável por suas próprias experiências e seu desenvolvimento.
+- **Avaliação:** A forma de avaliação mais valorizada é a **autoavaliação**, na qual a própria pessoa julga seu progresso e desenvolvimento.
+
+##### Abordagem Cognitivista
+
+- **Sociedade:** A sociedade ideal é aquela que promove a **autonomia** e o pensamento crítico das pessoas, com abertura para processos democráticos e participativos.
+- **Ensino-aprendizagem:** Aprender é um processo ativo de construção do conhecimento, que ocorre na **interação entre o indivíduo e o meio**.
+- **Professor-aluno:** O professor atua como um **mediador** do conhecimento, que desafia o aluno e o auxilia em seu processo de descoberta. O aluno é um sujeito ativo, que constrói e reconstrói suas estruturas mentais.
+- **Avaliação:** A avaliação deve ser processual e não padronizada. Seu objetivo não é classificar, mas identificar possíveis falhas no processo de construção do conhecimento para poder corrigi-las.
+
+##### Abordagem Sociocultural
+
+- **Sociedade:** A sociedade é vista como uma construção histórica, marcada por contradições, que pode e deve ser transformada através da **ação e reflexão** coletiva.
+- **Ensino-aprendizagem:** A aprendizagem é um processo **problematizador**, no qual os alunos são desafiados a analisar criticamente sua realidade para nela intervir.
+- **Professor-aluno:** A relação é **horizontal e dialógica**. Professor e alunos se posicionam como sujeitos que, juntos, buscam desvendar o mundo.
+- **Avaliação:** A avaliação é um ato contínuo e integrado à prática, que incide sobre o **processo educativo como um todo**, e não apenas sobre o resultado do aluno.
+
+### Síntese e Correspondência das Teorias
+
+Como se pode observar, as abordagens descritas por Mizukami correspondem, em grande medida, às teorias que já estudamos, embora com uma nova organização e nomenclatura. A tabela a seguir ajuda a mapear e a relacionar a classificação da autora com os nomes mais comuns de cada corrente.
+
+| Classificação de Mizukami        | Teorias Correspondentes                                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Abordagem Tradicional**        | Pedagogia Tradicional, Educação Bancária, Método Tradicional                                                                    |
+| **Abordagem Comportamentalista** | Educação como instrução, Pedagogia Tecnicista, Tecnicismo Pedagógico, Psicologia Comportamental de Skinner                      |
+| **Abordagem Humanista**          | Pedagogias não-diretivas, Pedagogia Rogeriana, Carl Rogers, Escola de Summerhill                                                |
+| **Abordagem Cognitivista**       | Educação para o desenvolvimento: Kant, Educação para a democracia e a cidadania, Construtivismo, Jean Piaget, Método Piagetiano |
+| **Abordagem Sociocultural**      | Educação para a transformação social, Pedagogia Libertadora, Paulo Freire, Pedagogia Freiriana                                  |
+
+É importante ressaltar, como a própria Mizukami afirma em sua obra, que a criação de "abordagens" e a inclusão de autores-chave em cada uma delas (como Piaget na Cognitivista e Freire na Sociocultural) são recortes e escolhas teóricas. A realidade educacional é sempre mais complexa e fluida que qualquer esquema de classificação. No entanto, para fins de estudo, compreender a organização proposta pela autora é uma ferramenta valiosa para sistematizar o conhecimento sobre as diferentes formas de pensar e praticar a educação.
+
+## Considerações Finais
+
+Ao longo deste capítulo, navegamos por diferentes "mapas" teóricos propostos para organizar o vasto e complexo território das tendências pedagógicas brasileiras. O objetivo de estudar as classificações de Dermeval Saviani, José Carlos Libâneo, Cipriano Luckesi e Maria da Graça Nicoletti Mizukami não é o de meramente rotular ou encaixotar as teorias em categorias rígidas, mas sim o de nos fornecer lentes de análise para compreender seus pressupostos, suas lógicas internas e, fundamentalmente, seus compromissos políticos e sociais.
+
+Vimos como **Saviani** utiliza a relação entre educação e sociedade como critério para distinguir as teorias entre não-críticas (que creem na redenção da sociedade pela escola), crítico-reprodutivistas (que veem a escola como mero reflexo da sociedade) e críticas (que entendem essa relação de forma dialética e buscam a transformação). **Libâneo**, por sua vez, adota um critério sociopolítico para separar as tendências em dois grandes grupos: as Liberais (que visam à manutenção da ordem social burguesa) e as Progressistas (que buscam a superação dessa mesma ordem). **Luckesi** nos oferece uma perspectiva focada na práxis do educador, traduzindo as complexas teorias em três posturas fundamentais: o Otimismo ingênuo, o Imobilismo pessimista e o Realismo crítico. Por fim, **Mizukami** nos apresenta uma análise multidimensional, criando um perfil detalhado de cada abordagem a partir de múltiplos critérios, como suas visões de sociedade, de aprendizagem e de avaliação.
+
+Apesar das diferentes nomenclaturas e critérios, um ponto em comum emerge de todas as classificações: a constatação de que existe uma divisão fundamental entre as pedagogias que, em última instância, servem à **adaptação** do indivíduo ao mundo como ele está, e aquelas que buscam fornecer os instrumentos para a sua **transformação**. Fica evidente, portanto, que a pergunta central que diferencia as tendências pedagógicas é sempre de natureza política: educar para a conformidade ou educar para a liberdade?
+
+Dominar esses esquemas de classificação é uma ferramenta indispensável para o profissional da educação. Esse conhecimento permite não apenas compreender a história do pensamento pedagógico, mas, principalmente, "ler" a realidade educacional na qual se está inserido — identificando as tendências que influenciam o projeto político-pedagógico de uma escola, a escolha de um material didático ou mesmo a própria prática em sala de aula. Com essa clareza, o educador pode superar o fazer pedagógico meramente intuitivo e passar a tomar decisões conscientes, alinhando suas ações a um projeto de educação e de sociedade com o qual esteja genuinamente comprometido.
