@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/04-teorias-pedagogicas-contemporaneas.md",
+                "file": "legislacao/contents/02-lei-12772.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-teorias-pedagogicas-contemporaneas"
+              "title": "02-lei-12772"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/04-teorias-pedagogicas-contemporaneas.md",
+                "file": "legislacao/contents/02-lei-12772.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 04-teorias-pedagogicas-contemporaneas"
+              "title": "Sumário de 02-lei-12772"
             }
           }
         ],
@@ -170,8 +170,11 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
-    "conhecimentos-pedagogicos-e-ept/contents/03-classificacao-das-tendencias.md",
+    "legislacao/contents/img/lei-12772-magisterio-federal.png",
+    "legislacao/contents/01-lei-8112.md",
+    "legislacao/contents/02-lei-12772.md",
     "conhecimentos-pedagogicos-e-ept/contents/04-teorias-pedagogicas-contemporaneas.md",
+    "conhecimentos-pedagogicos-e-ept/contents/03-classificacao-das-tendencias.md",
     "conhecimentos-pedagogicos-e-ept/contents/img/03-luckesi-imobilismo-pedagogico.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/03-luckesi-otimismo-pedagogico.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/03-luckesi-realismo-pedagogico.png",
@@ -204,7 +207,6 @@
     "redes-de-computadores",
     "logica-de-programacao/contents/02-variaveis-operadores.md",
     "lingua-portuguesa/contents/01-visao-geral.md",
-    "legislacao/contents/01-lei-8112.md",
     "lingua-portuguesa/README.md",
     "legislacao/README.md",
     "arquitetura-e-organizacao-de-computadores/contents/06-compilador-montador-ligador-e-interpretador.md",
@@ -213,8 +215,6 @@
     "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
     "arquitetura-e-organizacao-de-computadores/contents/02-arquitetura-de-processadores.md",
     "arquitetura-e-organizacao-de-computadores/contents/12-hardware.md",
-    "arquitetura-e-organizacao-de-computadores/contents/01-.md",
-    "arquitetura-e-organizacao-de-computadores/contents/11-proposicoes-algebra-booleana-e-circuitos-logicos.md",
-    "arquitetura-e-organizacao-de-computadores/contents/10-sistemas-de-numeracao-e-representacao-de-dados.md"
+    "arquitetura-e-organizacao-de-computadores/contents/01-.md"
   ]
 }
