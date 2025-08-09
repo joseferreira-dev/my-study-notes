@@ -8,14 +8,16 @@ Contudo, é importante reconhecer que não existe consenso entre os estudiosos d
 
 Uma versão bastante sintética do ciclo de vida de software compreende quatro fases principais (esquerda). Essa representação minimalista é útil para uma compreensão geral, embora não contemple as diversas atividades e nuances envolvidas no desenvolvimento de software. Outra representação mais detalhada propõe as seguintes fases (direita). Esse modelo é mais fiel ao cotidiano dos projetos de software, pois desdobra o desenvolvimento em fases distintas, permitindo maior controle e rastreabilidade.
 
-<div align="center">
-  <img width="720px" src="./img/02-ciclo-de-vida-1.png">
+<div align="center" style="display: flex">
+  <img width="360px" src="./img/02-ciclo-de-vida-1.png">
+  <img width="360px" src="./img/02-ciclo-de-vida-2.png">
 </div>
 
 Autores como Ian Sommerville e Roger Pressman oferecem interpretações distintas sobre essas fases. Para Sommerville, o ciclo é composto por quatro grandes atividades: especificação, desenvolvimento, validação e evolução. Aqui, vale notar que o desenvolvimento engloba as atividades de projeto e implementação. Trata-se de um modelo recorrente na literatura e frequentemente citado em provas. Já Pressman propõe um modelo mais detalhado, que parte da comunicação com os interessados, passa pelo planejamento e modelagem do sistema, e culmina com a construção e implantação.
 
-<div align="center">
-  <img width="720px" src="./img/02-ciclo-de-vida-2.png">
+<div align="center" style="display: flex">
+  <img width="360px" src="./img/02-ciclo-de-vida-3.png">
+  <img width="360px" src="./img/02-ciclo-de-vida-4.png">
 </div>
 
 Esses quatro modelos ilustram diferentes formas de enxergar o ciclo de vida de software. Nenhum é melhor ou pior que outro por si só; a escolha de um modelo depende do contexto em que será aplicado. Apesar das variações, todas essas abordagens buscam responder a uma mesma questão fundamental: como construir software de maneira sistemática, previsível e controlada? É nesse ponto que surge um conceito importante: **modelo de ciclo de vida de software**.
@@ -43,17 +45,16 @@ A escolha de um modelo de ciclo de vida (ou modelo de processo) é o ponto de pa
 
 Conforme dito anteriormente, alguns autores afirmam que os modelos de ciclo de vida básicos, de maneira geral, contemplam pelo menos as fases de: Planejamento; Análise e Especificação de Requisitos; Projeto; Implementação; Testes; Entrega e Implantação; Operação; e Manutenção. Abaixo eu trago uma descrição genérica sobre cada uma dessas fases. Para entender melhor, vejamos a descrição genérica das fases de um modelo de ciclo de vida comumente aceito:
 
-
-|Fase|Descrição|
-| --- | --- |
-|Planejamento|O planejamento estabelece o escopo do projeto e define estimativas de recursos, prazos e custos. Um plano de projeto deve ser elaborado e atualizado conforme o projeto progride. Essa fase é essencial para a gestão e o acompanhamento do desenvolvimento.|
-|Análise e Especificação de Requisitos|Aqui, os requisitos do sistema são investigados, documentados e validados. Envolve entrevistas, reuniões e observações com stakeholders. O resultado é um modelo funcional do que o software  tem de fazer (e não como fazê-lo).|
-|Projeto|Essa fase transforma os requisitos em uma solução concreta. Envolve projeto da arquitetura (visão macro do sistema) e projeto detalhado (descrição precisa de cada componente). O objetivo é gerar um guia claro para a implementação.|
-|Implementação|Consiste na codificação do sistema de acordo com o projeto detalhado. Cada módulo é desenvolvido de forma a cumprir os requisitos especificados.|
-|Testes|Engloba os testes de unidade, integração e sistema. Visa detectar e corrigir erros e verificar se o software atende às necessidades dos usuários.|
-|Entrega e Implantação|O sistema é disponibilizado aos usuários. Envolve a instalação no ambiente de produção, treinamento dos usuários e testes de aceitação.|
-|Operação|Corresponde ao uso efetivo do software em ambiente real. Essa fase pode durar anos, com o sistema sendo utilizado rotineiramente pelos usuários.|
-|Manutenção|A manutenção pode ser corretiva, adaptativa ou evolutiva. Envolve modificações necessárias após a entrega para corrigir defeitos, adaptar o sistema a novas condições ou incluir novas funcionalidades.|
+| Fase                                  | Descrição                                                                                                                                                                                                                                                    |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Planejamento                          | O planejamento estabelece o escopo do projeto e define estimativas de recursos, prazos e custos. Um plano de projeto deve ser elaborado e atualizado conforme o projeto progride. Essa fase é essencial para a gestão e o acompanhamento do desenvolvimento. |
+| Análise e Especificação de Requisitos | Aqui, os requisitos do sistema são investigados, documentados e validados. Envolve entrevistas, reuniões e observações com stakeholders. O resultado é um modelo funcional do que o software  tem de fazer (e não como fazê-lo).                             |
+| Projeto                               | Essa fase transforma os requisitos em uma solução concreta. Envolve projeto da arquitetura (visão macro do sistema) e projeto detalhado (descrição precisa de cada componente). O objetivo é gerar um guia claro para a implementação.                       |
+| Implementação                         | Consiste na codificação do sistema de acordo com o projeto detalhado. Cada módulo é desenvolvido de forma a cumprir os requisitos especificados.                                                                                                             |
+| Testes                                | Engloba os testes de unidade, integração e sistema. Visa detectar e corrigir erros e verificar se o software atende às necessidades dos usuários.                                                                                                            |
+| Entrega e Implantação                 | O sistema é disponibilizado aos usuários. Envolve a instalação no ambiente de produção, treinamento dos usuários e testes de aceitação.                                                                                                                      |
+| Operação                              | Corresponde ao uso efetivo do software em ambiente real. Essa fase pode durar anos, com o sistema sendo utilizado rotineiramente pelos usuários.                                                                                                             |
+| Manutenção                            | A manutenção pode ser corretiva, adaptativa ou evolutiva. Envolve modificações necessárias após a entrega para corrigir defeitos, adaptar o sistema a novas condições ou incluir novas funcionalidades.                                                      |
 
 Além dessas fases, modelos mais completos incluem outras atividades como:
 
