@@ -1,4 +1,4 @@
-## Capítulo 4 – Modelo Iterativo e Incremental
+# Capítulo 4 – Modelo Iterativo e Incremental
 
 Conforme vimos no capítulo anterior, o Modelo em Cascata costuma acumular riscos até fases muito avançadas, o que explica por que tantos projetos “fracassavam”: prazos dobravam, orçamentos estouravam, requisitos eram mal atendidos ou sequer entregues. Para superar essa rigidez e minimizar o impacto de mudanças, surgiu o **Modelo Iterativo e Incremental**, que combina duas ideias centrais:
 
@@ -7,7 +7,7 @@ Conforme vimos no capítulo anterior, o Modelo em Cascata costuma acumular risco
 
 Por exemplo, se tivermos cem funcionalidades a implementar, em vez de aguardar a conclusão de todas as cem funcionalidades para só então testar e entregar (como no Cascata), o time passa por várias “mini-cascatas” menores (incrementos) e, dentro de cada uma, refina o que já foi feito (iterações). Essa abordagem proporciona entregas mais rápidas, maior interação com o usuário e feedback contínuo, reduzindo drasticamente o risco de surpresas ao final do projeto.
 
-### Incremental x Iterativo (e por que sempre vêm juntos)
+## Incremental x Iterativo (e por que sempre vêm juntos)
 
 Embora possamos conceitualmente distinguir os dois termos, na prática **incremental** e **iterativo** caminham lado a lado:
 
@@ -20,7 +20,7 @@ Quando falamos hoje em **Modelo Iterativo e Incremental**, entendemos que cada i
   <img width="720px" src="./img/04-modelo-iterativo-e-incremental.png">
 </div>
 
-### Os Modelos Incremental e Iterativo na Prática
+## Os Modelos Incremental e Iterativo na Prática
 
 Imagine um artista que vai pintar a Mona Lisa não como um esboço único, mas como um quebra-cabeças de várias peças. Ele já sabe exatamente como a obra final deve ficar, mas escolhe pintar primeiro o rosto, depois as mãos, depois o fundo, e assim por diante, integrando as partes ao final. Cada peça funciona isoladamente e pode ser mostrada ao cliente, que valida se aquela parte corresponde ao esperado.
 
@@ -57,7 +57,7 @@ A combinação iterativo + incremental traz benefícios claros:
   <img width="680px" src="./img/04-modelo-iterativo-e-incremental-monalisa.png">
 </div>
 
-### O Que Dizem os Autores Consagrados
+## O Que Dizem os Autores Consagrados
 
 **Ian Sommerville** descreve o desenvolvimento incremental como uma sequência de implementações iniciais que, após comentários dos usuários, evoluem por várias versões até atingir o sistema final. Nessa visão, as atividades de especificação, desenvolvimento e validação são intercaladas, nunca completamente separadas. As principais vantagens para ele são:
 
@@ -81,7 +81,7 @@ Já **Roger Pressman** enfatiza que, em muitos projetos, requisitos estão inici
 
 Na imagem anterior, o modelo incremental aplica sequências lineares, de forma escalonada, à medida que o tempo vai avançando. Cada sequência linear gera “incrementais” (entregáveis/aprovados/liberados) do software de maneira similar aos incrementais gerados por um fluxo de processos evolucionários. Deve-se notar que o fluxo de processos para qualquer incremento pode incorporar o paradigma da prototipação.
 
-### Limitações e Cuidados Necessários
+## Limitações e Cuidados Necessários
 
 Apesar de mais eficaz que o Cascata, o desenvolvimento incremental e iterativo não é uma perfeito. Dois problemas principais merecem atenção:
 
@@ -90,7 +90,7 @@ Apesar de mais eficaz que o Cascata, o desenvolvimento incremental e iterativo n
 
 Em projetos de larga escala, com várias equipes trabalhando em módulos distintos, é fundamental estabelecer um framework arquitetural estável desde o início e definir responsabilidades claras, sob risco de gerar um “monstro” difícil de orquestrar.
 
-### Fluxo Detalhado do Processo Incremental
+## Fluxo Detalhado do Processo Incremental
 
 No fluxo incremental, cada **incremento** é planejado, desenvolvido e validado de forma autônoma, mas guardando compatibilidade com o produto como um todo:
 
@@ -110,7 +110,7 @@ Suponha que uma startup precise de um Sistema de Gerenciamento Financeiro para l
 
 Em cada incremento, antes de partir para o próximo, a equipe reúne feedback dos primeiros usuários, corrige bugs, ajusta fluxos de navegação e refina a arquitetura — garantindo que as bases suportem funcionalidades cada vez mais complexas.
 
-### Considerações Finais
+## Considerações Finais
 
 O **Modelo Iterativo e Incremental** representa um ponto de virada na Engenharia de Software, permitindo a entrega contínua de valor, o alinhamento constante com o cliente e a gestão ativa de riscos. Ele equilibra disciplina (ao exigir planejamento de incrementos) e adaptabilidade (ao permitir iterações e novas priorizações).
 
