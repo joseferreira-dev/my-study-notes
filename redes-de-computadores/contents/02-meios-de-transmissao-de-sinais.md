@@ -6,7 +6,7 @@ Para que a comunicação ocorra, os dados precisam ser convertidos em uma forma 
 
 Este capítulo explorará os dois tipos fundamentais de sinais, a forma como são representados por ondas e, posteriormente, os meios pelos quais eles viajam.
 
-## A Natureza da Informação: Sinais Analógicos e Digitais
+## Transmissão de Sinais Analógicos e Digitais
 
 Toda informação a ser transmitida precisa ser representada por um sinal. Um **sinal** é a representação física e quantificável da informação, variando ao longo do tempo para carregar os dados. A forma como essa variação ocorre define as duas categorias primordiais de sinais.
 
@@ -218,3 +218,202 @@ A **multiplexação** é a técnica que permite a transmissão de múltiplos sin
 - **CDMA (Code-Division Multiple Access - Acesso Múltiplo por Divisão de Código):** Uma técnica mais complexa onde todos os usuários transmitem simultaneamente na mesma faixa de frequência. A separação dos sinais é feita através da atribuição de um código matemático único para cada usuário, permitindo que o receptor "filtre" e reconheça apenas o sinal destinado a ele.
 - **WDM (Wavelength-Division Multiplexing - Multiplexação por Divisão de Comprimento de Onda):** É a versão da FDM para o mundo da fibra óptica. Diferentes sinais são transmitidos através da mesma fibra usando diferentes comprimentos de onda (ou "cores") de luz.
     - **DWDM (Dense WDM):** Uma forma otimizada que consegue "empacotar" os comprimentos de onda de forma muito mais próxima, permitindo a criação de uma quantidade massiva de canais (centenas) em uma única fibra, o que possibilita as altíssimas taxas de transmissão da internet moderna.
+
+## Meios de Transmissão Guiados e Não Guiados
+
+A transmissão de um sinal requer um caminho, uma "estrada" que o leve do ponto A ao ponto B. Esse caminho é o que chamamos de **meio de transmissão** ou, como utiliza o autor Tanenbaum, meio de comunicação. Ele representa o canal físico pelo qual o fluxo de bits, já convertido em um sinal, efetivamente trafega.
+
+A escolha de um meio de transmissão para uma rede é uma das decisões de engenharia mais importantes, pois cada um possui características distintas que afetam diretamente o desempenho e o custo do projeto. Fatores como o alcance máximo do sinal, a faixa de frequência que suporta (largura de banda), o atraso na propagação (retardo), o custo por metro e a facilidade de instalação e manutenção devem ser cuidadosamente ponderados.
+
+Os meios de transmissão são categorizados em dois grandes grupos:
+
+- **Meios Guiados:** Nestes, o sinal é confinado e guiado ao longo de um caminho físico sólido. A energia do sinal (seja elétrica ou luminosa) é direcionada por este conduto. Exemplos incluem os cabos metálicos, como o cabo coaxial e o cabo par trançado, e a fibra óptica.
+- **Meios Não Guiados:** Aqui, não existe um caminho físico para confinar o sinal. Ele se propaga livremente pelo espaço. As ondas de rádio e outras formas de radiação eletromagnética que viajam pelo ar ou pelo vácuo são os exemplos clássicos de meios não guiados.
+
+A seguir, vamos explorar em detalhe os principais tipos de meios, começando pelos guiados.
+
+### Meios de Transmissão Guiados
+
+Os meios de transmissão são os caminhos físicos através dos quais os sinais de dados viajam de um ponto a outro em uma rede. Eles podem ser divididos em duas grandes famílias: meios guiados e meios não guiados. Os meios guiados, como o nome sugere, utilizam um cabo físico para confinar e guiar a energia eletromagnética do sinal. Nesta seção, abordaremos os principais tipos de cabos utilizados em redes de computadores.
+
+#### Cabo Coaxial
+
+O cabo coaxial é um meio guiado metálico que, por muitos anos, foi a espinha dorsal de diversas redes, incluindo as primeiras implementações da Ethernet. Embora seu uso em redes locais modernas tenha diminuído, ele ainda é fundamental na infraestrutura de serviços como TV a cabo e internet banda larga fornecida por essas operadoras, e seu conhecimento é importante para entender a evolução das redes.
+
+<div align="center">
+<img width="360px" src="./img/02-cabo-coaxial.png">
+</div>
+
+Sua estrutura física é a chave para seu desempenho. Um cabo coaxial é composto por quatro camadas concêntricas:
+
+1. **Núcleo Condutor:** Um fio sólido ou trançado de cobre que transporta o sinal principal.
+2. **Isolante Dielétrico:** Uma camada de plástico espessa que envolve o núcleo, mantendo-o eletricamente isolado da camada seguinte.
+3. **Malha Condutora (Blindagem):** Uma malha de cobre ou alumínio trançada que envolve o isolante. Ela atua como o segundo condutor do circuito e, crucialmente, como uma blindagem que protege o sinal do núcleo contra interferências eletromagnéticas externas (EMI).
+4. **Capa Externa:** Uma cobertura de plástico (geralmente PVC) que protege o cabo contra danos físicos e ambientais.
+
+<div align="center">
+<img width="420px" src="./img/02-cabo-coaxial-camadas.png">
+</div>
+
+Essa construção coaxial faz com que o campo eletromagnético fique confinado no espaço entre o núcleo e a malha, o que torna o cabo bastante robusto contra ruídos externos e também impede que o próprio sinal irradie e cause interferência em cabos próximos.
+
+##### Características e Aplicações
+
+Em comparação com o cabo de par trançado, o cabo coaxial geralmente permite transmissões por **distâncias superiores** sem a necessidade de um repetidor. No entanto, ele é **mais caro e significativamente menos flexível**, tornando sua instalação em dutos e paredes mais trabalhosa.
+
+O cabo coaxial suporta uma **largura de banda maior** que os cabos de par trançado mais simples, o que o torna ideal para aplicações de banda passante (broadband), como a transmissão simultânea de centenas de canais de TV. Contudo, o sinal sofre com a **atenuação** em distâncias longas, especialmente em altas frequências.
+
+##### Tipos de Cabo Coaxial em Redes
+
+No contexto de redes Ethernet, dois padrões históricos são importantes:
+
+<div align="center">
+<img width="420px" src="./img/02-tipos-de-cabo-coaxial.png">
+</div>
+
+- **10BASE5 (Thicknet):** Também conhecido como "cabo coaxial grosso", foi o padrão original da Ethernet. Era um cabo rígido e caro que permitia uma taxa de 10 Mbps em segmentos de até 500 metros.
+- **10BASE2 (Thinnet):** Uma alternativa mais barata e flexível, o "cabo coaxial fino" também suportava 10 Mbps, mas com uma distância máxima por segmento de 185 metros.
+
+Os conectores mais comuns associados ao cabo coaxial são o **conector BNC** (usado em redes Thinnet) e o **conector do tipo F**, que é o conector rosqueável padrão para instalações de TV a cabo e internet.
+
+#### Cabo de Par Trançado (Twisted Pair)
+
+O cabo de par trançado é, sem dúvida, o meio guiado mais utilizado nas redes locais (LANs) em todo o mundo. Sua popularidade massiva se deve a um excelente **custo-benefício**, à **facilidade de instalação** devido à sua alta maleabilidade e à sua capacidade de suportar taxas de transmissão muito elevadas, superando em muitas vezes as dos padrões de cabo coaxial para redes.
+
+Como o nome indica, o cabo é constituído por múltiplos pares de fios de cobre, geralmente quatro pares, que são trançados entre si ao longo de toda a extensão do cabo.
+
+<div align="center">
+<img width="580px" src="./img/02-cabo-par-trancado.png">
+</div>
+
+##### O Segredo da Torção
+
+A característica mais engenhosa deste cabo é justamente a torção dos pares. Quando uma corrente elétrica passa por um fio, ela gera um campo eletromagnético ao seu redor. Em um ambiente com vários cabos próximos, esses campos podem induzir sinais indesejados (ruído) nos fios vizinhos, um fenômeno conhecido como interferência ou diafonia (_crosstalk_).
+
+Ao trançar os dois fios de um mesmo par, os campos eletromagnéticos gerados por eles tendem a se cancelar mutuamente. Da mesma forma, qualquer interferência externa que atinja o par de fios tende a afetar ambos os fios de maneira quase idêntica. O receptor, ao medir a _diferença_ de sinal entre os dois fios do par (transmissão diferencial), consegue anular grande parte desse ruído comum, recuperando o sinal original com muito mais clareza. Portanto, a torção é um método simples, mas extremamente eficaz, para reduzir o ruído e a interferência externa.
+
+##### Categorias de Desempenho
+
+Nem todos os cabos de par trançado são iguais. Para padronizar o desempenho e garantir a interoperabilidade, organizações como a TIA/EIA (Telecommunications Industry Association/Electronic Industries Alliance) definem diferentes **categorias** (abreviadas como "CAT").
+
+Cada categoria especifica a frequência máxima (medida em Megahertz, MHz) que o cabo suporta com integridade, o que se traduz diretamente na taxa de transmissão de dados (medida em Megabits ou Gigabits por segundo, Mbps ou Gbps) que ele pode alcançar. De modo geral, para todas as categorias destinadas a redes de dados Ethernet, aplica-se uma distância máxima de 100 metros por segmento de cabo para garantir a qualidade do sinal.
+
+A evolução das categorias reflete a crescente demanda por velocidade nas redes:
+
+<div align="center">
+<img width="700px" src="./img/02-cabo-par-trancado-categorias.png">
+</div>
+
+A tabela abaixo apresenta uma comparação entre as principais categorias, suas capacidades e aplicações típicas.
+
+|Categoria|Taxa Máxima de Transmissão|Frequência Máxima|Aplicação Típica|
+|---|---|---|---|
+|**CAT 1**|Até 1 Mbps|1 MHz|Voz analógica (telefonia antiga).|
+|**CAT 2**|4 Mbps||Redes IBM Token Ring.|
+|**CAT 3**|10/16 Mbps|16 MHz|Padrão para redes Ethernet 10BASE-T.|
+|**CAT 4**|16/20 Mbps|20 MHz|Redes Token Ring de 16 Mbps.|
+|**CAT 5**|100 Mbps (1 Gbps com 4 pares)|Até 100 MHz|Largamente substituído pelo CAT 5e; usado em Fast Ethernet (100BASE-TX) e no início do Gigabit Ethernet (1000BASE-T).|
+|**CAT 5e**|1 Gbps (suporta até 10 Gbps em protótipos)|Até 125 MHz|Padrão dominante por muitos anos para Gigabit Ethernet (1000BASE-T).|
+|**CAT 6**|10 Gbps (até 55 metros)|Até 250 MHz|Padrão comum para novas instalações, suporta 10 Gigabit Ethernet em distâncias menores (10GBASE-T).|
+|**CAT 6A**|10 Gbps (até 100 metros)|Até 500 MHz|Padrão recomendado para novas instalações que exigem 10 Gigabit Ethernet (10GBASE-T) na distância máxima.|
+|**CAT 7**|10 Gbps (e superior)|600-700 MHz|Utilizado para 10 Gigabit Ethernet e futuras aplicações, como vídeo de alta definição. Requer blindagem individual dos pares.|
+|**CAT 8**|25 a 40 Gbps|Até 2 GHz|Uso específico em datacenters para interconexões de alta velocidade entre servidores e switches, com distância limitada a 30 metros.|
+
+##### Tipos de Blindagem
+
+Além da categoria de desempenho, os cabos de par trançado são classificados quanto à presença e ao tipo de blindagem utilizada para proteção adicional contra interferências.
+
+O tipo mais comum e de menor custo é o **UTP, ou U/UTP, (Unshielded Twisted Pair)**, ou Par Trançado Sem Blindagem. Ele não possui nenhuma camada de proteção extra além da capa plástica externa, confiando unicamente no efeito de cancelamento do trançamento dos pares. É o cabo utilizado na grande maioria das instalações de escritório e residenciais.
+
+Para ambientes com maior nível de interferência eletromagnética, como chão de fábrica, hospitais (próximo a equipamentos de imagem) ou locais com muitos cabos de energia passando em paralelo, são utilizados os cabos blindados. Existem diferentes níveis de blindagem:
+
+- **FTP (Foiled Twisted Pair):** Este cabo possui uma blindagem mais simples, composta por uma única folha de alumínio ou aço que envolve todos os quatro pares de uma vez. O objetivo dessa folha é proteger o cabo como um todo contra a interferência eletromagnética externa (EMI). No entanto, ela não oferece proteção contra a interferência gerada entre os próprios pares de fios dentro do cabo, um fenômeno conhecido como _Crosstalk_ ou diafonia.
+- **STP (Shielded Twisted Pair):** Este termo é frequentemente usado para descrever cabos onde cada par de fios é individualmente blindado com uma malha ou folha metálica. Essa blindagem individual é extremamente eficaz em reduzir o "Crosstalk" entre os pares, melhorando a integridade do sinal. Isso permite que o cabo opere com maior confiabilidade em distâncias próximas ao limite de 100 metros ou em ambientes com alta interferência. Uma de suas principais aplicações é em datacenters, para interligações de curto alcance entre servidores e switches. Um exemplo é o padrão 1000BASE-CX, que utiliza cabo STP para conexões de 1 Gbps em distâncias de até 25 metros.
+- **SSTP ou SFTP (Screened Shielded/Foiled Twisted Pair):** Considerado o tipo mais robusto, ele combina as duas abordagens: possui uma blindagem individual para cada par e uma blindagem global (geralmente uma malha) que envolve todo o conjunto. Oferece a máxima proteção tanto contra interferências externas quanto contra o _crosstalk_, sendo indicado para os ambientes mais hostis eletromagneticamente.
+
+<div align="center">
+<img width="700px" src="./img/02-cabo-par-trancado-tipos-blidagem.png">
+</div>
+
+É possível notar pela imagem acima que existe uma nomenclatura mais específica para cada tipo de cabo, que é mais precisa do que os termos genéricos como FTP e STP. Essa nomenclatura segue o formato **X/YTP**, que ajuda a descrever exatamente como o cabo é construído.
+
+A lógica é a seguinte:
+
+- **X**: Descreve a blindagem **geral** ou externa do cabo.
+- **Y**: Descreve a blindagem **individual** dos pares de fios.
+- **TP**: Significa Twisted Pair (Par Trançado).
+
+As letras utilizadas para **X** e **Y** são:
+
+- **U** = Unshielded (Sem blindagem)
+- **F** = Foil (Blindagem com folha ou lâmina de alumínio)
+- **S** = Screened (Blindagem com malha de fios metálicos, geralmente cobre ou alumínio)
+- **SF** = Screened + Foil (Possui tanto a blindagem de malha quanto a de folha)
+
+Descrevendo cada tipo da imagem conforme a tabela:
+
+| Tipo                                             | Estrutura                                                                                                                                               | Descrição                                                                                                                                                                                                                                       |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| U/UTP (Unshielded/Unshielded Twisted Pair)       | Não possui nenhuma blindagem, nem uma geral envolvendo todos os pares (primeiro U), nem individual em cada par (segundo UTP).                           | Este é o cabo de par trançado comum, o mais flexível e de menor custo. Sua proteção contra interferência depende exclusivamente do trançamento dos fios.                                                                                        |
+| F/UTP (Foiled/Unshielded Twisted Pair)           | Possui uma blindagem geral feita com uma folha de alumínio (**F**) que envolve os pares, mas os pares em si não possuem blindagem individual (**UTP**). | Este é o cabo comumente chamado de **FTP**. Ele oferece boa proteção contra interferências eletromagnéticas externas (EMI), mas não melhora a proteção contra a diafonia (crosstalk) entre os pares internos.                                   |
+| S/UTP (Screened/Unshielded Twisted Pair)         | Possui uma blindagem geral feita com uma malha metálica (**S**) envolvendo os pares, que por sua vez não são blindados individualmente (**UTP**).       | A malha oferece uma proteção mais robusta que a folha, especialmente contra interferências de baixa frequência, além de maior resistência mecânica.                                                                                             |
+| SF/UTP (Screened+Foiled/Unshielded Twisted Pair) | Possui uma dupla blindagem geral, com uma malha e uma folha de alumínio (**SF**) envolvendo os pares, que não são blindados individualmente (**UTP**).  | Oferece excelente proteção contra interferência externa em uma vasta gama de frequências, combinando os benefícios da blindagem de malha e de folha.                                                                                            |
+| U/FTP (Unshielded/Foiled Twisted Pair)           | Não possui uma blindagem geral (U), mas cada par de fios é individualmente envolto em sua própria folha de alumínio (**FTP**).                          | Este projeto é extremamente eficaz na prevenção de crosstalk entre os pares, melhorando significativamente a qualidade do sinal. É tecnicamente um tipo de **STP** (Shielded Twisted Pair), focado na proteção interna.                         |
+| F/FTP (Foiled/Foiled Twisted Pair)               | Cada par é blindado individualmente com uma folha de alumínio (**FTP**), e o conjunto todo ainda é envolvido por uma blindagem geral de folha (**F**).  | Oferece proteção tanto contra a interferência externa (blindagem geral) quanto contra o crosstalk interno (blindagem individual).                                                                                                               |
+| S/FTP (Screened/Foiled Twisted Pair)             | Cada par é blindado individualmente com folha de alumínio (**FTP**), e o conjunto é envolto por uma blindagem geral de malha (**S**).                   | Este é o cabo frequentemente chamado de **SSTP** ou **SFTP** na documentação anterior. É um dos cabos mais robustos, oferecendo excelente proteção contra todos os tipos de ruído e alta durabilidade mecânica.                                 |
+| SF/FTP (Screened+Foiled/Foiled Twisted Pair)     | A proteção máxima. Cada par é blindado com folha (**FTP**), e o cabo todo possui uma dupla blindagem externa de malha e folha (**SF**).                 | Este é o cabo com o maior nível de blindagem disponível, projetado para os ambientes mais hostis em termos de interferência eletromagnética, garantindo a máxima integridade do sinal para aplicações de altíssima velocidade e missão crítica. |
+
+#### Cabo de Fibra Óptica
+
+A fibra óptica representa um salto tecnológico em relação aos meios baseados em cobre. Em vez de transmitir dados como sinais elétricos, ela os transmite como **pulsos de luz** através de finíssimos filamentos de vidro ou plástico de altíssima pureza. Esta abordagem confere à fibra óptica suas características mais marcantes: uma capacidade de transmissão (largura de banda) imensa, a capacidade de alcançar distâncias muito longas com baixa atenuação e, por utilizar luz, uma **imunidade completa a interferências eletromagnéticas (EMI)** e radiofrequências (RFI), tornando-a o meio de transmissão mais seguro e confiável disponível.
+
+Sua composição, baseada em sílica (vidro) e plástico, também a torna altamente durável e resistente à corrosão, um fator importante para cabos instalados no subsolo ou em ambientes hostis.
+
+Um cabo de fibra óptica é composto, em sua essência, por três camadas:
+
+1. **Núcleo (Core):** É o centro da fibra, o filamento de vidro por onde a luz efetivamente viaja.
+2. **Cobertura/Casca (Cladding):** Uma camada de vidro ou plástico que envolve o núcleo. A casca possui um índice de refração ligeiramente inferior ao do núcleo.
+3. **Revestimento (Coating/Jacket):** Uma ou mais camadas de plástico que protegem a fibra contra umidade, choques e danos físicos.
+
+<div align="center">
+<img width="480px" src="./img/02-cabo-fibra-otica.png">
+</div>
+
+O funcionamento da fibra se baseia em um fenômeno da física chamado **Reflexão Interna Total**. Devido à diferença no índice de refração entre o núcleo e a casca, quando um pulso de luz é injetado no núcleo em um determinado ângulo, ele atinge a fronteira entre o núcleo e a casca e é completamente refletido de volta para o interior do núcleo, como se estivesse ricocheteando em um espelho perfeito. Esse processo se repete milhões de vezes, aprisionando a luz e guiando-a por toda a extensão da fibra com perdas mínimas.
+
+##### Fontes de Luz: LED vs. Laser
+
+Para gerar os pulsos de luz, dois tipos de fontes são comumente utilizados:
+
+- **LED (Light Emitting Diode):** São fontes de luz mais baratas, com maior vida útil e mais resistentes a variações de temperatura. No entanto, a luz que produzem é menos focada e mais dispersa, o que limita sua eficiência, a taxa de transmissão e a distância alcançável. São utilizados exclusivamente em fibras do tipo multimodo.
+- **Laser (Light Amplification by Stimulated Emission of Radiation):** Lasers semicondutores geram um feixe de luz coerente, monocromático e altamente focado. São muito mais eficientes, permitindo taxas de transmissão altíssimas e a cobertura de longas distâncias. Contudo, são mais caros e sensíveis a variações de temperatura. Com o advento das redes de alta velocidade, os lasers se tornaram a fonte de luz padrão, podendo ser usados tanto em fibras multimodo quanto monomodo.
+
+##### Tipos de Fibra: Multimodo vs. Monomodo
+
+A principal distinção entre os tipos de fibra óptica reside no diâmetro de seus núcleos, o que determina como os raios de luz se propagam internamente.
+
+###### Fibra Multimodo (Multimode Fiber - MMF)
+
+A fibra multimodo possui um núcleo relativamente grande (tipicamente de 50 a 62,5 mícrons de diâmetro). Esse diâmetro maior permite que os pulsos de luz viajem através do núcleo em múltiplos caminhos ou "modos" simultaneamente, como ilustrado na figura abaixo.
+
+<div align="center">
+<img width="280px" src="./img/02-cabo-fibra-otica-propagacao-multimodo.png">
+</div>
+
+Essa propagação em múltiplos modos causa um problema chamado **dispersão modal**. Como cada modo percorre uma distância ligeiramente diferente para chegar ao final da fibra, os raios de um mesmo pulso de luz chegam em momentos ligeiramente diferentes. Esse "espalhamento" do sinal limita a taxa de transmissão e a distância máxima que a fibra pode alcançar. Para combater esse efeito, existem dois perfis de índice de refração para fibras multimodo:
+
+- **Índice em Degrau (Step-Index):** O tipo mais simples, onde o núcleo tem um índice de refração uniforme. Sofre bastante com a dispersão modal.
+- **Índice Gradual (Graded-Index):** O índice de refração do núcleo diminui gradualmente do centro para as bordas. Isso faz com que os raios que percorrem caminhos mais longos (pelas bordas) viajem mais rápido, e os que percorrem o caminho mais curto (pelo centro) viajem mais devagar. O efeito é que todos os modos tendem a chegar ao destino quase ao mesmo tempo, reduzindo drasticamente a dispersão e permitindo maior largura de banda.
+
+As fibras multimodo são mais baratas e fáceis de instalar, sendo ideais para redes locais (LANs) e interconexões de curta distância, como em datacenters. Geralmente, alcançam até 550 metros para Gigabit Ethernet e 300 metros para 10 Gigabit Ethernet.
+
+###### Fibra Monomodo (Singlemode Fiber - SMF)
+
+A fibra monomodo, como seu nome indica, possui um núcleo extremamente fino (tipicamente de 8 a 10 mícrons). Ele é tão estreito que só permite a passagem de um único modo de luz, forçando o feixe a se propagar em uma trajetória praticamente reta, sem reflexões laterais.
+
+<div align="center">
+<img width="280px" src="./img/02-cabo-fibra-otica-propagacao-monomodo.png">
+</div>
+
+Ao eliminar a dispersão modal, a fibra monomodo permite que o sinal mantenha sua integridade por distâncias muito maiores e em taxas de transmissão vastamente superiores. É o tipo de fibra utilizado nos backbones da internet, em cabos submarinos e em todas as aplicações de telecomunicações de longa distância. Embora seja mais cara e exija mais precisão na instalação e no manuseio, sua performance é incomparável, podendo atingir distâncias de até 80 km em 10 Gigabit Ethernet e até 40 km em 100 Gigabit Ethernet, ou muito mais com o uso de amplificadores ópticos.
+
