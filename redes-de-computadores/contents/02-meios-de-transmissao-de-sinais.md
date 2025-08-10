@@ -118,3 +118,103 @@ Analisando o gráfico, percebe-se que a atenuação não é constante. Existem "
 - A **3ª janela**, em torno de 1,55 µm (ou 1550 nm).
 
 Nota-se que a terceira janela é a que apresenta o menor nível de atenuação de todas, tornando-a a faixa preferencial para sistemas de comunicação óptica de longa distância, pois permite que o sinal viaje por muito mais quilômetros antes de precisar de um repetidor.
+
+## Da Voz ao Bit, do Bit à Onda: Digitalização e Codificação de Linha
+
+Já estabelecemos que os computadores operam em um mundo digital, baseado em bits (0s e 1s), enquanto muitos fenômenos do mundo real, como a voz humana, são analógicos. Para que um sinal analógico possa ser processado, armazenado e transmitido com a robustez de um sistema digital, ele precisa primeiro ser convertido em uma sequência de bits. Esse processo é chamado de **digitalização**.
+
+Contudo, ter uma sequência de bits é apenas metade da batalha. Para transmitir essa sequência por um cabo, precisamos de um método para representar esses 0s e 1s como sinais elétricos ou luminosos. Essa segunda etapa é a **codificação de linha**. Vamos explorar os dois processos.
+
+### Digitalização de Sinais Analógicos
+
+Converter a infinita variação de um sinal analógico em uma representação digital finita é um processo de aproximação realizado em três etapas fundamentais.
+
+#### Amostragem (Sampling)
+
+O primeiro passo é a **amostragem**. Nela, o sinal analógico contínuo é medido em intervalos de tempo regulares e discretos, como se estivéssemos tirando "fotografias" do sinal em instantes específicos. O resultado é uma série de "amostras", cada uma com um valor de amplitude correspondente à intensidade do sinal naquele exato momento.
+
+Para que a digitalização seja fiel ao original, a frequência com que essas amostras são coletadas (a **taxa de amostragem**) é crucial. O **Teorema de Nyquist-Shannon**, um princípio fundamental da teoria da informação, estabelece que a taxa de amostragem deve ser, no mínimo, o dobro da maior frequência contida no sinal analógico original. É por isso que, para digitalizar a voz humana (cujas frequências mais importantes vão até cerca de 4.000 Hz), o padrão da telefonia utiliza uma taxa de amostragem de 8.000 amostras por segundo.
+
+#### Quantização (Quantization)
+
+Após a amostragem, temos uma coleção de amostras com valores de amplitude que ainda podem ser infinitos (ex: 2,1756 V, 3,4891 V, etc.). A **quantização** é o processo de "arredondar" esses valores para um número finito de níveis predefinidos. O sinal é sobreposto a uma régua com um número limitado de degraus, e cada amostra é forçada a assumir o valor do degrau mais próximo.
+
+O número de degraus disponíveis determina a precisão da representação. Se usarmos mais degraus (mais níveis), a aproximação será mais fiel ao sinal original, resultando em maior qualidade. A diferença entre o valor real da amostra e o valor quantizado é chamada de **erro de quantização**.
+
+#### Codificação (Coding)
+
+A etapa final é a **codificação**. Nela, um código binário único é atribuído a cada um dos níveis de quantização. Por exemplo, se tivermos 8 níveis de quantização, precisaremos de 3 bits para representar todos eles (pois 2<sup>3</sup>=8). O nível 0 poderia ser codificado como "000", o nível 1 como "001", e assim por diante, até o nível 7 como "111".
+
+O resultado final deste processo de três passos é uma sequência de bits — um fluxo de dados digitais que representa, de forma aproximada, o sinal analógico original.
+
+### Codificação de Linha: Representando Bits no Meio Físico
+
+Com o fluxo de bits em mãos, o desafio agora é transmiti-lo fisicamente. A **codificação de linha** (ou _line coding_) é o conjunto de regras usado para converter essa sequência de 0s e 1s em um sinal elétrico real que viajará pelo cabo. A escolha do esquema de codificação é importante para resolver vários desafios práticos, como a sincronização entre transmissor e receptor e a eficiência no uso do meio.
+
+A seguir, alguns esquemas de codificação importantes.
+
+|Tipo de Codificação|Identificação do bit 0|Identificação do bit 1|
+|---|---|---|
+|**NRZI (Non-Return-to-Zero Inverted)**|Sem transição de voltagem no início do intervalo do bit.|Ocorre uma transição de voltagem (de alto para baixo ou de baixo para alto) no início do intervalo do bit.|
+|**Manchester**|Transição do nível alto para o baixo no _meio_ do intervalo do bit.|Transição do nível baixo para o alto no _meio_ do intervalo do bit.|
+|**Manchester Diferencial**|Ocorre uma transição de voltagem no _início_ do intervalo do bit.|Sem transição de voltagem no _início_ do intervalo do bit. (Ambos ainda possuem uma transição no meio para sincronismo).|
+
+Vamos detalhar os mais relevantes:
+
+- **NRZI (Non-Return-to-Zero Inverted):** Neste esquema, a informação não está no nível de voltagem em si, mas na _mudança_ ou _transição_ de nível. Um bit '1' é sinalizado por uma transição de voltagem no início do seu tempo de duração, enquanto um bit '0' é sinalizado pela ausência de transição. O problema do NRZI é que uma longa sequência de 0s não geraria transições, o que poderia fazer com que o receptor perdesse o sincronismo de seu relógio.
+- **Manchester:** Este esquema resolve o problema da sincronização de forma engenhosa. Cada bit, seja 0 ou 1, possui uma transição de voltagem exatamente no meio de seu intervalo de tempo. Para um bit '0', a transição é de um nível de voltagem alto para um baixo; para um bit '1', a transição é de baixo para alto. Essa transição constante no meio de cada bit permite que o receptor ajuste continuamente seu relógio, garantindo um sincronismo perfeito. A desvantagem é a baixa eficiência, pois exige o dobro da largura de banda de esquemas mais simples para transmitir a mesma quantidade de dados. É um esquema de codificação clássico e de grande importância histórica, tendo sido utilizado no padrão original da Ethernet.
+- **Manchester Diferencial:** Uma variação do Manchester que combina a transição no meio do bit (para sincronismo) com a codificação na transição do início do bit (típica de esquemas diferenciais). Um '0' é representado pela presença de uma transição no início do intervalo, enquanto um '1' é representado pela ausência dessa transição inicial. Todos os bits continuam tendo a transição no meio do caminho para manter o relógio sincronizado.
+
+## O Espectro da Comunicação: Banda, Capacidade e Multiplexação
+
+Todo meio de transmissão, seja ele um cabo ou o ar, possui características físicas que limitam a quantidade de informação que pode ser transportada. Assim como um cano possui um diâmetro que restringe o fluxo de água, um meio de comunicação possui uma "largura" que limita o fluxo de dados. Nesta seção, vamos explorar o que é essa largura (a banda), como calcular a capacidade máxima de um canal e como as redes utilizam técnicas inteligentes para "alargar a estrada" e permitir que múltiplos sinais viajem simultaneamente.
+
+### Banda Base vs. Banda Passante: A Forma Original e a Adaptada
+
+A forma como um sinal ocupa o espectro de frequências de um meio dá origem a duas modalidades de transmissão:
+
+- **Transmissão em Banda Base (Baseband):** Refere-se à transmissão de um sinal em sua faixa de frequência original, sem alterá-la. Em sistemas digitais, isso geralmente significa que o sinal ocupa todo o espectro de frequência do meio, começando perto de 0 Hz. É como um trem que usa toda a linha férrea para si durante sua passagem; nenhum outro trem pode usar a linha naquele momento. A maioria das redes locais cabeadas, como as baseadas em Ethernet, opera em banda base.
+- **Transmissão em Banda Passante (Passband ou Broadband):** Esta abordagem utiliza uma técnica chamada **modulação**. O sinal original (em banda base) é usado para modificar as características de uma onda de frequência mais alta, chamada de onda portadora. Esse processo "transporta" o sinal original para uma faixa de frequência específica e mais elevada dentro do meio. O grande benefício é que podemos fazer isso com vários sinais diferentes, colocando cada um em sua própria "faixa" de frequência, permitindo que todos trafeguem simultaneamente pelo mesmo meio. É como uma rodovia com múltiplas pistas, onde cada pista (faixa de frequência) pode ser usada por um carro (sinal) diferente ao mesmo tempo. O equipamento que realiza esse processo de modulação (na transmissão) e demodulação (na recepção) é o **MODEM** (MOdulador-DEModulador). Exemplos clássicos de transmissão em banda passante são o rádio, a TV a cabo e os serviços de internet ADSL.
+
+### Largura de Banda e a Capacidade do Canal
+
+O conceito de **largura de banda** (_bandwidth_) é fundamental para entender o potencial de um meio. Formalmente, é a diferença entre a maior e a menor frequência que um canal de comunicação pode transportar, medida em Hertz (Hz). Essa limitação pode ser uma característica intrínseca do meio físico ou pode ser definida artificialmente por filtros.
+
+É comum haver uma confusão entre largura de banda e taxa de transmissão, mas são conceitos distintos:
+
+- **Largura de Banda:** É o potencial teórico do meio, a "largura da estrada" (em Hz).
+- **Taxa de Transmissão (ou Vazão):** É a quantidade real de bits que são transmitidos com sucesso por segundo (em bps, Mbps, Gbps), a "quantidade de carros que passam pela estrada".
+
+Embora distintos, os conceitos estão diretamente relacionados: uma maior largura de banda geralmente permite uma maior taxa de transmissão. A capacidade máxima de um canal, ou seja, sua taxa de transmissão teórica mais alta, depende não apenas da largura de banda, mas também do nível de ruído e da complexidade da codificação do sinal.
+
+Dois teoremas importantes nos ajudam a calcular essa capacidade:
+
+**Teorema de Nyquist (para um canal sem ruído):** Harry Nyquist estabeleceu que a capacidade máxima de um canal ideal (sem ruído) é diretamente proporcional à sua largura de banda e ao número de níveis de sinal utilizados. Para um sinal binário (dois níveis), a fórmula é simplificada para:
+
+$C=2⋅B$
+
+Onde C é a capacidade em bits por segundo (bps) e B é a largura de banda em Hertz (Hz). Isso mostra que, em um canal perfeito, a cada 1 Hz de largura de banda, podemos transmitir no máximo 2 bps.
+
+**Teorema de Shannon (para um canal com ruído):** Claude Shannon desenvolveu uma fórmula mais realista, que leva em conta o ruído, um fator sempre presente. A **Capacidade de Shannon** estabelece um limite superior absoluto e intransponível para a taxa de dados em um canal ruidoso:
+
+$C=B⋅log_2​(1+\frac{S}{N})$
+
+Onde C é a capacidade do canal (bps), B é a largura de banda (Hz), e S/N é a **relação sinal-ruído** (_Signal-to-Noise Ratio_ - SNR), que compara a potência do sinal (S) com a potência do ruído (N) no canal. Este teorema nos diz que, não importa quão sofisticada seja a tecnologia, a presença de ruído impõe um limite de velocidade fundamental a qualquer canal de comunicação.
+
+### Modos de Propagação de Ondas Sem Fio
+
+A frequência de operação de um sinal de rádio também determina a forma como ele se propaga através do espaço, o que é crucial para o projeto de sistemas de comunicação sem fio:
+
+- **Ondas de Superfície (Ground Waves):** Aplicam-se a sinais de baixa frequência (geralmente abaixo de 2 MHz). Essas ondas tendem a seguir a curvatura da Terra, propagando-se rente à superfície e podendo alcançar longas distâncias. São utilizadas, por exemplo, em transmissões de rádio AM.
+- **Ondas Celestes ou Ionosféricas (Sky Waves):** Na faixa de 2 a 30 MHz, as ondas de rádio podem ser refletidas pela ionosfera (uma camada eletricamente carregada na alta atmosfera) de volta para a Terra. Esse fenômeno de "ricochete" permite a comunicação de rádio de ondas curtas entre pontos muito distantes no globo, superando o horizonte.
+- **Ondas Diretas (Line-of-Sight Waves):** Para frequências acima de 30 MHz, as ondas se comportam de forma muito parecida com a luz, viajando em linhas retas. Para que a comunicação ocorra, as antenas do transmissor e do receptor precisam ter visibilidade direta uma da outra, sem grandes obstáculos no caminho. Enlaces de micro-ondas, rádio FM, TV e comunicação via satélite são exemplos que utilizam a propagação por linha de visada.
+
+### Multiplexação: Otimizando o Meio de Transmissão
+
+A **multiplexação** é a técnica que permite a transmissão de múltiplos sinais de diferentes fontes por um único meio de comunicação, de forma simultânea e sem interferência. Ela otimiza o uso do meio, aumentando drasticamente a sua eficiência. As principais formas de multiplexação são:
+
+- **FDM (Frequency-Division Multiplexing - Multiplexação por Divisão de Frequência):** Neste método, a largura de banda total do meio é dividida em várias faixas de frequência menores (canais), e cada sinal a ser transmitido é alocado em um desses canais exclusivos. É a técnica usada na radiodifusão (cada estação de rádio tem sua própria frequência) e nos sistemas de TV a cabo.
+- **TDM (Time-Division Multiplexing - Multiplexação por Divisão no Tempo):** Aqui, os usuários compartilham o meio revezando-se no tempo. A cada usuário é atribuído um pequeno intervalo de tempo (_time slot_), e eles transmitem seus dados em sequência, um após o outro. O TDM e o FDM podem ser usados em conjunto.
+- **CDMA (Code-Division Multiple Access - Acesso Múltiplo por Divisão de Código):** Uma técnica mais complexa onde todos os usuários transmitem simultaneamente na mesma faixa de frequência. A separação dos sinais é feita através da atribuição de um código matemático único para cada usuário, permitindo que o receptor "filtre" e reconheça apenas o sinal destinado a ele.
+- **WDM (Wavelength-Division Multiplexing - Multiplexação por Divisão de Comprimento de Onda):** É a versão da FDM para o mundo da fibra óptica. Diferentes sinais são transmitidos através da mesma fibra usando diferentes comprimentos de onda (ou "cores") de luz.
+    - **DWDM (Dense WDM):** Uma forma otimizada que consegue "empacotar" os comprimentos de onda de forma muito mais próxima, permitindo a criação de uma quantidade massiva de canais (centenas) em uma única fibra, o que possibilita as altíssimas taxas de transmissão da internet moderna.
