@@ -1,10 +1,14 @@
-## Capítulo 5 –  Modelo Iterativo e Incremental: Rapid Application Development (RAD)
+# Capítulo 5 –  Modelo Iterativo e Incremental: Rapid Application Development (RAD)
 
 Desde a consolidação dos modelos iterativo e incremental, os profissionais de software buscaram maneiras de acelerar ainda mais o ciclo de entrega, reduzindo custos e capturando cedo o feedback dos usuários. Foi nesse contexto que surgiu o **Rapid Application Development (RAD)**, um modelo adaptado aos anseios dos projetos com prazos curtos (tipicamente de **60 a 90 dias**), em que o grande diferencial é a ênfase no **reuso intensivo de componentes** já testados e na **interação constante com o usuário**.
 
-### Fases Fundamentais do RAD
+## Fases Fundamentais do RAD
 
 Embora várias equipes chamem essas etapas por nomes ligeiramente diferentes, o RAD tradicionalmente se estrutura em cinco fases principais, que podem ser agrupadas em dois grandes blocos — “Modelagem” e “Construção” — de acordo com a realidade de cada projeto:
+
+<div align="center">
+  <img width="480px" src="./img/05-rad-fases.png">
+</div>
 
 1. **Modelagem de Negócio**: Nesta etapa, o foco recai sobre o entendimento do fluxo de informações que dá suporte às funções de negócio. Perguntamo-nos: quem gera cada dado, como ele transita pelas áreas da organização, onde é armazenado e quem o consome? O objetivo é criar um **mapa vivo** dos processos, mostrando sucintamente cada ator, cada documento e cada movimento de informação. **Exemplo prático**: ao desenvolver um sistema de pedidos para um restaurante, modelamos como o garçom registra o pedido, como o terminal da cozinha recebe essa informação, como é feito o controle de estoque de ingredientes e como o caixa processa o pagamento.
 2. **Modelagem de Dados**: Tendo em mãos o fluxo de informação, refinamos cada elemento em **objetos de dados** — tabelas, entidades ou estruturas de informação que suportarão as operações. Identificamos atributos (por exemplo, “nome do cliente”, “quantidade”, “data do pedido”) e definimos relacionamentos (“um cliente pode ter vários pedidos”, “cada pedido possui vários itens”).
@@ -18,7 +22,7 @@ Na prática, equipes mais maduras costumam condensar “Modelagem de Negócio”
   <img width="680px" src="./img/05-rad.png">
 </div>
 
-### Interação com o Usuário e Ferramentas de Apoio
+## Interação com o Usuário e Ferramentas de Apoio
 
 Um dos pilares do RAD é a **proximidade direta** com os usuários finais. Workshops, protótipos de tela e pequenas demonstrações diárias garantem que o software evolua em sintonia com o que o cliente realmente precisa. Para viabilizar ciclos de 60–90 dias, a equipe utiliza:
 
@@ -29,7 +33,7 @@ Um dos pilares do RAD é a **proximidade direta** com os usuários finais. Works
 
 Esse conjunto de ferramentas reduz o esforço manual, permitindo que o time se concentre no que realmente agrega valor: a **lógica de negócio** e a **experiência do usuário**.
 
-### Cenários Recomendados e Quando Evitar
+## Cenários Recomendados e Quando Evitar
 
 O RAD não serve a todo tipo de projeto. Ele brilha em cenários específicos, em que:
 
@@ -49,7 +53,7 @@ Por suas características, o RAD não é indicado para:
 - **Produtos que precisam de padrões rígidos** de segurança, auditoria ou certificação formal;
 - **Situações em que o contrato ou a governança exijam documentação pesada** antes de qualquer codificação.
 
-### Vantagens e Desvantagens
+## Vantagens e Desvantagens
 
 Graças ao reúso extremo e ao ciclo encurtado, o RAD oferece:
 
@@ -74,7 +78,7 @@ Por outro lado, o RAD impõe demandas e riscos:
 - **Possível construção de funcionalidades desnecessárias**, se o usuário não souber priorizar bem.
 - **Conflitos entre desenvolvedores e clientes**, caso expectativas não sejam alinhadas claramente desde o início.
 
-### Considerações Finais
+## Considerações Finais
 
 O **Rapid Application Development** representa uma evolução natural dos modelos iterativo e incremental, focada na **agilidade**, no **reúso** e no **feedback contínuo**. Quando aplicado com disciplina e nas situações corretas, o RAD encurta drasticamente o time-to-market e melhora o alinhamento entre equipe e cliente. Entretanto, requer profissionais experientes, ferramentas robustas e um controle equilibrado entre velocidade e qualidade.
 
