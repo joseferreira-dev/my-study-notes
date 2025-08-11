@@ -494,7 +494,7 @@ Até agora, exploramos os diversos meios de transmissão de uma forma geral. Por
 
 É importante destacar que os conceitos associados aos padrões de cabeamento estruturado são universais e visam suportar tráfegos de voz e de dados de forma padronizada, não sendo restritos a especificações de fabricantes específicos. O que se tem é um conjunto de melhores práticas e normas para a implantação de uma infraestrutura de rede robusta e flexível, que pode ser implementada com produtos de qualquer fabricante que siga esses padrões.
 
-### Uma Análise Detalhada das Categorias de Cabos UTP
+### Análise Detalhada das Categorias de Cabos UTP
 
 Como vimos brevemente na seção anterior, os cabos UTP são classificados em categorias que determinam seu desempenho. Vamos agora analisar a evolução e as características das categorias mais significativas.
 
@@ -536,3 +536,127 @@ Para consolidar as especificações de frequência, a tabela a seguir resume as 
 | **CAT6a** | 500MHz              |
 | **CAT7**  | 600MHz              |
 | **CAT7a** | 1000MHz             |
+
+### Conector RJ-45 e os Padrões de Montagem (Pinagem)
+
+A conexão física de um cabo de par trançado a um dispositivo de rede, como um computador ou switch, é feita através de um conector padronizado conhecido como **RJ-45 (Registered Jack 45)**. Este conector de plástico transparente possui oito posições para acomodar os oito condutores (os quatro pares trançados) do cabo.
+
+A forma como esses oito fios coloridos são organizados dentro do conector não é aleatória; ela segue padrões rigorosos definidos pela norma TIA/EIA para garantir o funcionamento correto e a interoperabilidade. Existem dois padrões de pinagem (sequência de fios) principais: o **T568A** e o **T568B**.
+
+<div align="center">
+<img width="540px" src="./img/02-conector-rj-45-padroes.png">
+</div>
+
+Como a imagem ilustra, a única diferença entre os dois padrões é a inversão das posições dos pares laranja e verde.
+
+- **Padrão T568A:** A sequência de cores, do pino 1 ao 8, é: Verde/Branco, Verde, Laranja/Branco, Azul, Azul/Branco, Laranja, Marrom/Branco, Marrom.
+- **Padrão T568B:** A sequência de cores, do pino 1 ao 8, é: Laranja/Branco, Laranja, Verde/Branco, Azul, Azul/Branco, Verde, Marrom/Branco, Marrom.
+
+Embora ambos os padrões sejam tecnicamente válidos, o T568B é o mais comumente utilizado em instalações comerciais e residenciais em muitas partes do mundo, incluindo o Brasil. A escolha de qual padrão usar deve ser mantida de forma consistente em toda a infraestrutura de uma rede. A norma que rege o projeto dita que, em novas instalações, o padrão T568A deve ser o preferencial, mas permite o uso do T568B caso ele já seja o padrão existente no local.
+
+#### Tipos de Cabos: Direto vs. Crossover
+
+A combinação desses padrões de pinagem nas duas extremidades de um cabo define seu tipo e sua finalidade.
+
+- **Cabo Direto (Straight-Through):** É um cabo cujas duas pontas são montadas (crimpadas) com o **mesmo padrão**. Por exemplo, ambas as pontas usam o T568B. Este é o tipo de cabo mais comum, utilizado para conectar um dispositivo final a um dispositivo de rede, como **ligar um computador a um switch ou hub**. Isso funciona porque o computador (um equipamento DTE) transmite dados nos pinos 1 e 2 e recebe nos pinos 3 e 6, enquanto o switch (um equipamento DCE) faz o oposto: recebe nos pinos 1 e 2 e transmite nos pinos 3 e 6. O cabo direto conecta os pinos de transmissão de um lado aos de recepção do outro.
+- **Cabo Cruzado (Crossover):** É um cabo que possui **uma ponta em um padrão e a outra ponta no outro padrão** (uma ponta T568A e a outra T568B). Ele é utilizado para conectar equipamentos do mesmo tipo diretamente, como **ligar um computador a outro computador** ou um switch a outro switch. Como ambos os equipamentos transmitem e recebem nos mesmos pinos, o cabo "cruza" os pares para que os pinos de transmissão de um lado se conectem aos de recepção do outro.
+
+> **Nota sobre a Prática Moderna (Auto MDI/MDI-X)**
+> 
+> Vale ressaltar que, atualmente, a necessidade de se preocupar com cabos crossover foi praticamente eliminada. A grande maioria dos equipamentos de rede modernos possui uma funcionalidade chamada Auto MDI/MDI-X, que detecta automaticamente o tipo de cabo conectado e ajusta eletronicamente sua pinagem interna para estabelecer a comunicação. Por essa razão, hoje em dia, pode-se usar um cabo direto para quase todas as conexões.
+
+#### Qualidade dos Conectores
+
+Assim como os cabos, os conectores RJ-45 também possuem categorias de desempenho. Utilizar um conector de baixa qualidade (ex: CAT5) em um cabo de alta performance (ex: CAT6a) pode comprometer toda a conexão, criando um gargalo e impedindo que a rede atinja sua velocidade máxima. Conectores de categorias superiores são fabricados com materiais melhores e possuem um design interno que ajuda a manter a separação dos fios e o alinhamento, minimizando a perda de sinal e o ruído no ponto mais crítico da conexão: a terminação do cabo.
+
+### Cabeamento Estruturado
+
+Após compreendermos os detalhes técnicos dos cabos, precisamos entender como eles são organizados de forma lógica e padronizada em uma edificação. O **Cabeamento Estruturado** é a disciplina que estuda e define a disposição de cabos, conectores, e outros elementos de infraestrutura de rede de uma forma padronizada e modular. Em vez de uma instalação caótica e improvisada, o cabeamento estruturado propõe um sistema planejado, que pode ser comparado ao sistema elétrico ou hidráulico de um prédio: organizado, embutido, com pontos de conexão bem definidos e projetado para suportar futuras tecnologias.
+
+O objetivo é criar uma infraestrutura de cabeamento única que suporte diversas aplicações, como tráfego de dados, voz (telefonia), sistemas de segurança e automação predial. Essa padronização, regida por normas como a brasileira **NBR 14565/2019** e as internacionais TIA/EIA, é independente de fornecedores, garantindo que a infraestrutura seja flexível e interoperável.
+
+#### Subsistemas de Cabeamento
+
+Um sistema de cabeamento estruturado é dividido em subsistemas funcionais, cada um com um papel específico. Vamos conhecer os sete principais. 
+
+A figura a seguir ilustra de forma integrada como os principais subsistemas se relacionam dentro de um edifício.
+
+<div align="center">
+<img width="540px" src="./img/02-cabeamento-estruturado-subsistemas.png">
+</div>
+
+##### Cabeamento Horizontal (Horizontal Cabling)
+
+Este é o subsistema responsável por levar a conectividade da rede até perto do usuário final. Ele abrange todo o cabeamento que se estende desde a Sala de Telecomunicações (TR) de um andar até as tomadas de rede (pontos de telecomunicações) localizadas nas áreas de trabalho daquele mesmo andar. O nome "horizontal" vem do fato de que, tipicamente, essa fiação corre horizontalmente pelo piso, forro ou canaletas de um mesmo pavimento.
+
+Os componentes do cabeamento horizontal incluem os cabos UTP ou de fibra que passam pela infraestrutura do prédio, os painéis de conexão (_Patch Panels_) na Sala de Telecomunicações onde esses cabos são terminados, e as tomadas de rede nas paredes das salas. A norma estabelece uma regra de distância crucial para o cabeamento horizontal: o **link permanente** (o cabo que fica fixo na infraestrutura) não deve exceder **90 metros**. Os 10 metros restantes, para completar o limite total de 100 metros de um canal, são uma reserva para os cabos de manobra (_patch cords_) em ambas as extremidades.
+
+##### Cabeamento de Backbone (Backbone Cabling)
+
+Também chamado de **cabeamento vertical**, o backbone é a "espinha dorsal" da rede do edifício. Sua função é interligar as diversas Salas de Telecomunicações (geralmente uma por andar) à Sala de Equipamentos principal. Ele também conecta a Entrada do Prédio à Sala de Equipamentos. Como o backbone precisa agregar o tráfego de múltiplos andares, ele é projetado para altíssima velocidade, utilizando geralmente cabos de fibra óptica ou cabos de par trançado de categoria superior (CAT6a ou superior).
+
+##### Sala de Equipamentos (Equipment Room - ER)
+
+Esta é a sala que abriga os principais "cérebros" da rede. É um ambiente centralizado, seguro e com controle de temperatura, onde ficam os equipamentos ativos mais importantes que servem todo o edifício, como:
+
+- Servidores de aplicação, arquivos e e-mail.
+- Switches centrais (core switches) e roteadores principais.
+- Sistemas de armazenamento de dados (Storage).
+- Centrais telefônicas (PABX).
+
+##### Sala de Telecomunicações (Telecommunications Room - TR)
+
+Também conhecida como Armário de Telecomunicações, a TR é um ponto de distribuição intermediário. Geralmente, existe pelo menos uma por andar. É nesta sala que o cabeamento horizontal de um determinado andar converge e é terminado. É o ponto de transição onde o cabeamento horizontal se conecta ao cabeamento de backbone. Dentro da TR, encontramos os _Patch Panels_ que organizam os cabos vindos das áreas de trabalho e os switches de acesso que fornecem a conexão para esses pontos.
+
+##### Área de Trabalho (Work Area - WA)
+
+A Área de Trabalho é o espaço final onde os usuários interagem com a rede. Ela compreende os equipamentos dos usuários (computadores, telefones IP, impressoras) e os componentes de conexão, como as tomadas de telecomunicações na parede e os cabos (_patch cords_) que ligam os equipamentos a essas tomadas.
+
+##### Entrada do Prédio (Building Entrance - EF)
+
+Este é o ponto de interface entre a infraestrutura de cabeamento interna do edifício e o mundo exterior. É aqui que os cabos das operadoras de telecomunicações e provedores de internet chegam ao prédio. Neste local, os cabos externos são conectados a equipamentos de proteção (contra surtos elétricos, por exemplo) e terminados, antes de serem interligados ao backbone do edifício. Este ponto também é conhecido como ponto de demarcação.
+
+##### Interligação Externa (Campus Backbone)
+
+Este subsistema, é responsável por interligar edifícios distintos dentro de um mesmo campus ou complexo. Ele conecta a Entrada do Prédio de uma edificação à Sala de Equipamentos de outra, por exemplo. Devido às distâncias e à necessidade de alta velocidade, a interligação externa é quase sempre implementada com cabos de fibra óptica de alta capacidade, geralmente passados por dutos subterrâneos.
+
+Com certeza. Este é um excelente ponto para aprofundar, pois a hierarquia dos distribuidores é o que dá a lógica organizacional ao sistema de cabeamento estruturado. Vamos detalhar essa estrutura.
+
+#### Distribuidores e Interligações
+
+Para que o sistema de cabeamento estruturado seja organizado e gerenciável, ele é montado sobre uma **arquitetura hierárquica** de pontos de conexão. Esses pontos são chamados de **distribuidores**. Um distribuidor é uma área física, geralmente um rack ou gabinete, onde os cabos de uma determinada seção da rede são terminados, organizados e interconectados (geralmente através de patch panels e switches).
+
+Essa hierarquia permite que a complexidade da rede seja dividida em blocos gerenciáveis, facilitando a administração, a manutenção e a expansão do sistema. O modelo padrão define três níveis principais de distribuidores.
+
+##### Distribuidor de Piso (Floor Distributor - FD)
+
+O Distribuidor de Piso é o primeiro nível de agregação da rede. Ele está fisicamente localizado na **Sala de Telecomunicações (TR)** de um determinado andar e tem como principal função servir como o ponto central de conexão para todo o **Cabeamento Horizontal** daquele pavimento.
+
+- **Função:** Centralizar as conexões de todas as tomadas de rede das Áreas de Trabalho de um andar.
+- **Conexões:**
+    - **Conexão "para baixo" (downstream):** Conecta-se diretamente aos pontos de telecomunicações (tomadas RJ-45) nas mesas dos usuários através do Cabeamento Horizontal.
+    - **Conexão "para cima" (upstream):** Conecta-se ao próximo nível da hierarquia, o Distribuidor do Edifício, através do Cabeamento de Backbone.
+- **Componentes Típicos:** Racks contendo **Patch Panels**, onde os cabos horizontais são terminados, e **Switches de Acesso**, que fornecem a conectividade lógica para os dispositivos dos usuários.
+
+##### Distribuidor do Edifício (Building Distributor - BD)
+
+O Distribuidor do Edifício é o ponto de distribuição principal para um edifício inteiro. Ele está localizado na **Sala de Equipamentos (ER)** principal e serve como o ponto de convergência para todos os Distribuidores de Piso do prédio.
+
+- **Função:** Atuar como o núcleo da rede do edifício, interligando todos os andares e conectando o prédio ao mundo exterior.
+- **Conexões:**
+    - **Conexão "para baixo" (downstream):** Conecta-se a todos os Distribuidores de Piso (FDs) através do Cabeamento de Backbone vertical.
+    - **Conexão "para cima" (upstream):** Conecta-se à **Entrada do Prédio** para interagir com os serviços das operadoras (internet, telefonia) e, em um ambiente de campus, conecta-se ao Distribuidor de Campus.
+- **Componentes Típicos:** Equipamentos de maior capacidade, como **Switches Core** (ou de distribuição), **roteadores**, **firewalls** e os principais **servidores** do edifício.
+
+##### Distribuidor de Campus (Campus Distributor - CD)
+
+O Distribuidor de Campus é o nível mais alto da hierarquia e só existe em ambientes que compreendem múltiplos edifícios, como uma universidade, um complexo industrial ou um grande centro empresarial. Ele geralmente está localizado no data center principal do campus.
+
+- **Função:** Servir como o ponto central de interconexão para todos os edifícios do campus.
+- **Conexões:**
+    - **Conexão "para baixo" (downstream):** Conecta-se ao Distribuidor de Edifício (BD) de cada prédio através do subsistema de **Interligação Externa** (geralmente com fibra óptica).
+    - **Conexão "para cima" (upstream):** É o ponto final de conexão com as redes externas, como múltiplos provedores de internet, garantindo redundância e alta disponibilidade para todo o campus.
+- **Componentes Típicos:** Os equipamentos mais potentes e de maior capacidade de toda a rede, como roteadores de borda de alta performance e switches de backbone de altíssima capacidade.
+
+Essa estrutura hierárquica pode ser visualizada como uma árvore: as tomadas nas mesas são as folhas, o cabeamento horizontal são os pequenos galhos, os Distribuidores de Piso são os galhos maiores, o Distribuidor do Edifício é o tronco principal da árvore, e o Distribuidor de Campus (quando existe) representa as raízes que conectam a árvore à "terra" da internet.
+
