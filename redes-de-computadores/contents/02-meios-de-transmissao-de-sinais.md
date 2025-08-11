@@ -417,3 +417,122 @@ A fibra monomodo, como seu nome indica, possui um núcleo extremamente fino (tip
 
 Ao eliminar a dispersão modal, a fibra monomodo permite que o sinal mantenha sua integridade por distâncias muito maiores e em taxas de transmissão vastamente superiores. É o tipo de fibra utilizado nos backbones da internet, em cabos submarinos e em todas as aplicações de telecomunicações de longa distância. Embora seja mais cara e exija mais precisão na instalação e no manuseio, sua performance é incomparável, podendo atingir distâncias de até 80 km em 10 Gigabit Ethernet e até 40 km em 100 Gigabit Ethernet, ou muito mais com o uso de amplificadores ópticos.
 
+<div align="center">
+<img width="540px" src="./img/02-cabo-fibra-otica-comparativo.png">
+</div>
+
+##### Causas de Atenuação e Dispersão em Fibras Ópticas
+
+Como vimos, a atenuação é a perda de força do sinal. Na fibra óptica, este fenômeno é extremamente baixo, mas ele ocorre e é causado por fatores específicos do meio. Além da atenuação, a dispersão é o principal fator que limita o desempenho da fibra.
+
+1. **Absorção:** É a dissipação da energia da luz na forma de calor pelo material da fibra. Isso ocorre por fatores intrínsecos (propriedades naturais do vidro de sílica, que absorve luz em certas faixas do ultravioleta e infravermelho) e extrínsecos (impurezas no material, como íons metálicos ou moléculas de água, que absorvem a luz em comprimentos de onda específicos). As "janelas de transmissão" que discutimos anteriormente são justamente as faixas de comprimento de onda que ficam _entre_ esses picos de absorção.
+2. **Espalhamento (Scattering):** É a principal causa de atenuação nas fibras modernas. Ocorre quando a luz colide com imperfeições microscópicas na densidade do vidro, fazendo com que ela se espalhe em múltiplas direções. A maior parte da luz continua em frente, mas uma pequena fração é perdida. Esse fenômeno (chamado de Espalhamento Rayleigh) é mais intenso em comprimentos de onda mais curtos, o que explica cientificamente por que a 3ª janela (1550 nm) tem a menor atenuação.
+3. **Deformações Mecânicas:** Perdas de sinal podem ser causadas por deformações físicas na fibra. As **microcurvaturas** são pequenas imperfeições ao longo do cabo, enquanto as **macrocurvaturas** são dobras com raio muito pequeno, geralmente causadas durante a instalação. Se a fibra for dobrada de forma muito acentuada, a luz atinge a borda do núcleo em um ângulo que não permite a reflexão interna total, vazando para a casca e sendo perdida.
+4. **Dispersão:** Diferente da atenuação (perda de força), a dispersão é o **alargamento do pulso de luz** à medida que ele viaja. Se os pulsos se alargarem demais, eles começam a se sobrepor, e o receptor não consegue mais distinguir onde um bit termina e o outro começa. Isso limita a taxa de transmissão máxima (a largura de banda efetiva) da fibra. Os principais tipos são a **dispersão modal** (já discutida, que afeta apenas fibras multimodo) e a **dispersão cromática** (que afeta ambos os tipos, causada por diferentes "cores" de luz viajando em velocidades ligeiramente diferentes).
+
+##### Padrões Ethernet para Fibra Óptica
+
+Para garantir a interoperabilidade entre equipamentos de rede de diferentes fabricantes, a IEEE define padrões específicos para a transmissão de dados via fibra óptica. A nomenclatura do padrão geralmente informa a velocidade, o tipo de transmissão e a tecnologia óptica. Por exemplo, em "1000BASE-LX", "1000" indica 1000 Mbps, "BASE" indica transmissão em banda base e "LX" indica um tipo de laser para longo alcance.
+
+A tabela abaixo resume alguns dos padrões mais comuns:
+
+|Padrão|Comprimento de Onda|Distância Máxima|Tipo de Fibra|
+|---|---|---|---|
+|**100BASE-SX**|850 nm|550 m|Multimodo|
+|**100BASE-FX**|1310 nm|400 m ou 2 km|Multimodo|
+|**1000BASE-SX**|850 nm|550 m|Multimodo|
+|**1000BASE-LX**|1310 nm|5 km|Monomodo|
+|**1000BASE-LX10**|1310 nm|10 km|Monomodo|
+|**1000BASE-BX**|1310 e 1550 nm|10 km|Monomodo|
+|**1000BASE-EX**|1310 nm|40 km|Monomodo|
+|**1000BASE-ZX**|1550 nm|70 km|Monomodo|
+
+##### Conectores de Fibra Óptica
+
+A conexão física das fibras é feita por meio de conectores de alta precisão, projetados para alinhar perfeitamente os núcleos das fibras e minimizar a perda de sinal na junção. Alguns dos tipos mais conhecidos são:
+
+- **ST (Straight Tip):** Um conector mais antigo, com um característico encaixe de baioneta (gira-e-trava), semelhante ao conector BNC. Foi muito popular em redes multimodo, mas hoje é menos comum.
+- **SC (Subscriber/Standard Connector):** Um conector de perfil quadrado que utiliza um mecanismo simples de encaixe (push-pull). Foi um padrão de mercado por muitos anos para redes Gigabit, tanto multimodo quanto monomodo, devido à sua simplicidade e bom desempenho.
+- **LC (Lucent Connector):** Atualmente um dos conectores mais populares, especialmente para fibras monomodo e aplicações de alta velocidade. É um conector miniaturizado, com um formato que lembra o SC, mas com a metade do tamanho. Seu pequeno porte permite uma maior densidade de portas em equipamentos como switches e transceivers.
+- **MT-RJ (Mechanical Transfer Registered Jack):** Um conector projetado para combinar duas fibras (transmissão e recepção) em um único conector, com um formato pouco maior que um conector de telefone (RJ-11). Ganhou popularidade para aplicações em fibra multimodo pela conveniência.
+
+<div align="center">
+<img width="680px" src="./img/02-cabo-fibra-otica-conectores.png">
+</div>
+
+### Meios de Transmissão Não Guiados
+
+Em contraste com os meios guiados que confinam o sinal em um conduto físico, os **meios não guiados** transmitem dados através do espaço livre, utilizando o ar (ou o vácuo) como meio. Nesse modelo, antenas são usadas para converter os sinais elétricos em **ondas eletromagnéticas** (como ondas de rádio ou micro-ondas) que são irradiadas. Uma antena receptora, por sua vez, captura essas ondas e as converte de volta em sinais elétricos.
+
+#### Redes Sem Fio (Wireless Networks)
+
+A aplicação mais comum e familiar dos meios não guiados hoje são as redes sem fio, tecnicamente conhecidas pela terminologia **WLAN (Wireless Local Area Network)** quando aplicadas a um ambiente local. Elas se tornaram onipresentes em residências, escritórios, aeroportos e espaços públicos, oferecendo uma série de vantagens que impulsionaram sua adoção em massa.
+
+- **Praticidade na Instalação e Flexibilidade:** A vantagem mais óbvia é a dispensa de cabos. Isso elimina a necessidade de obras de infraestrutura complexas, como a passagem de dutos em paredes ou forros, tornando a instalação mais rápida e limpa. É uma solução ideal para edifícios históricos, espaços alugados ou ambientes que mudam de layout com frequência.
+- **Mobilidade:** As redes sem fio oferecem a liberdade de locomoção. Os usuários podem se deslocar dentro da área de cobertura com seus laptops, tablets e smartphones sem perder a conexão com a rede, uma característica essencial para o modo de trabalho e de vida moderno.
+- **Escalabilidade:** Expandir a cobertura de uma rede sem fio é relativamente simples. A adição de novos pontos de acesso ou repetidores de sinal pode aumentar a área de alcance de forma prática, sem a necessidade de reestruturar todo um cabeamento físico.
+
+No entanto, para uma visão completa, é importante também considerar os desafios inerentes à comunicação sem fio:
+
+- **Segurança:** Como o sinal é irradiado pelo ar, ele pode ser interceptado por qualquer pessoa dentro do raio de alcance. Isso torna a segurança uma preocupação primordial, exigindo o uso de protocolos de criptografia robustos (como WPA3) para proteger a confidencialidade dos dados.
+- **Interferência:** Sinais sem fio são suscetíveis à interferência de uma vasta gama de fontes, como outras redes Wi-Fi vizinhas, fornos de micro-ondas, telefones sem fio e dispositivos Bluetooth, que podem operar na mesma faixa de frequência.
+- **Desempenho e Estabilidade:** A qualidade do sinal sem fio degrada com a distância e é obstruída por barreiras físicas como paredes, lajes e grandes objetos. Isso pode levar a uma variação no desempenho e a uma estabilidade menor em comparação com uma conexão cabeada.
+
+##### Integração com a Rede Cabeada
+
+É importante notar que, na maioria dos ambientes corporativos e até mesmo em residências maiores, a rede sem fio não substitui completamente a rede cabeada, mas sim a complementa. O modelo mais tradicional e eficiente é uma arquitetura híbrida.
+
+Nesse modelo, uma infraestrutura de **cabeamento estruturado** de alta velocidade (usando cabos de par trançado) forma o backbone da rede, conectando servidores, switches e outros pontos críticos. Os **Pontos de Acesso** (_Access Points_ - APs), que são os dispositivos que geram o sinal Wi-Fi, são então conectados a essa rede cabeada em pontos estratégicos, geralmente seguindo uma topologia física em estrela. O AP atua como uma ponte, permitindo que os dispositivos sem fio (clientes) se comuniquem com a rede cabeada e, através dela, com a internet ou outros recursos.
+
+<div align="center">
+<img width="420px" src="./img/02-redes-sem-fio-topologia.png">
+</div>
+
+## Cabos UTP e Cabeamento Estruturado
+
+Até agora, exploramos os diversos meios de transmissão de uma forma geral. Por ser um tópico de extrema importância prática e o alicerce da grande maioria das redes locais, vamos dedicar esta seção a um estudo mais aprofundado dos cabos de par trançado do tipo **UTP (Unshielded Twisted Pair)**, detalhando a evolução de suas categorias. Posteriormente, abordaremos como esses cabos são organizados em um sistema coeso através das práticas de **cabeamento estruturado**.
+
+É importante destacar que os conceitos associados aos padrões de cabeamento estruturado são universais e visam suportar tráfegos de voz e de dados de forma padronizada, não sendo restritos a especificações de fabricantes específicos. O que se tem é um conjunto de melhores práticas e normas para a implantação de uma infraestrutura de rede robusta e flexível, que pode ser implementada com produtos de qualquer fabricante que siga esses padrões.
+
+### Uma Análise Detalhada das Categorias de Cabos UTP
+
+Como vimos brevemente na seção anterior, os cabos UTP são classificados em categorias que determinam seu desempenho. Vamos agora analisar a evolução e as características das categorias mais significativas.
+
+#### Cabo UTP CAT3
+
+Desenvolvido para as primeiras redes Ethernet que utilizavam cabos de par trançado, o padrão **10BASE-T**, o cabo CAT3 foi projetado para suportar taxas de transmissão de até 10 Mbps em faixas de frequência de até 16 MHz. A principal inovação em relação aos cabos mais antigos (CAT1 e CAT2, usados para telefonia) foi a padronização do número de torções por metro nos pares de fios. Esse entrelaçamento controlado foi o que permitiu uma maior resistência a interferências, viabilizando a transmissão de dados de forma confiável.
+
+#### Cabo UTP CAT5
+
+Com a chegada do padrão Fast Ethernet (100 Mbps), foi necessário um cabo com desempenho superior. O CAT5 foi desenvolvido para essa finalidade, suportando frequências de operação de até 100 MHz, um salto significativo em relação aos 16 MHz do CAT3. Isso foi possível através do uso de cobre de maior pureza e um número maior e mais consistente de torções por par.
+
+O cabo CAT5 também foi o primeiro a ser utilizado para o padrão Gigabit Ethernet (1000 Mbps ou 1 Gbps), embora isso o levasse ao seu limite técnico e exigisse o uso de todos os quatro pares de fios. Por essa razão, ele foi rapidamente sucedido por uma versão melhorada. É crucial notar que o CAT5 foi o primeiro cabo de par trançado capaz de suportar taxas na ordem de 1 Gbps.
+
+#### Cabo UTP CAT5e (“e” de _enhanced_ ou melhorado)
+
+O CAT5e se tornou o padrão de fato para redes Gigabit Ethernet devido ao seu excelente custo-benefício. A melhoria ("enhanced") não foi apenas um ligeiro aumento na frequência máxima suportada (até 125 MHz), mas sim a implementação de especificações muito mais rigorosas para o controle de ruído, especialmente o _crosstalk_ (diafonia) entre os pares. Essa robustez aprimorada permitiu que as redes Gigabit operassem de forma confiável na distância máxima padrão de 100 metros.
+
+#### Cabo UTP CAT6
+
+Desenvolvido com o padrão Gigabit Ethernet em mente e projetado para o futuro, o cabo CAT6 opera em frequências de até 250 MHz. Ele introduziu uma inovação física importante: um separador interno de plástico (conhecido como "spline" ou "cross-filler") que mantém os quatro pares fisicamente afastados ao longo do cabo. Isso diminui drasticamente o _crosstalk_ e garante um desempenho mais estável em altas frequências. O CAT6 foi o primeiro padrão de cabo UTP a suportar de forma viável taxas de 10 Gbps, embora com uma limitação de distância de até 55 metros.
+
+#### Cabo UTP CAT6a (“a” de _augmented_ ou ampliado)
+
+Para resolver a limitação de distância do CAT6 em redes de 10 Gbps, foi desenvolvido o CAT6a. Este cabo é projetado para operar em frequências de até 500 MHz e possui uma construção mais robusta, geralmente com mais isolamento e torções mais justas para combater não apenas o _crosstalk_ interno, mas também o "crosstalk exógeno" (_alien crosstalk_), que é a interferência vinda de cabos adjacentes. Com essas melhorias, o CAT6a suporta transmissões de 10 Gbps na distância padrão completa de 100 metros.
+
+#### Cabo UTP Cat. 7/7a
+
+As categorias 7 e 7a representam um avanço significativo, criadas para aplicações de altíssima velocidade em ambientes que exigem proteção máxima contra interferência. Uma característica fundamental é que os cabos CAT7/7a **exigem blindagem**, sendo tipicamente do tipo S/FTP (cada par é blindado com fita metálica, e há uma blindagem de malha geral em torno de todos os pares).
+
+O cabo CAT7 opera em frequências de até 600 MHz, enquanto o CAT7a atinge 1000 MHz (1 GHz). Eles são projetados para suportar taxas de 10 Gbps, 40 Gbps e até 100 Gbps em distâncias curtas. Devido às altas frequências e aos requisitos de blindagem, estes cabos não utilizam o conector padrão RJ-45, mas sim conectores especializados como o TERA ou o GG45.
+
+Para consolidar as especificações de frequência, a tabela a seguir resume as capacidades das categorias mais modernas e é de fundamental importância para o entendimento prático.
+
+| Cabo      | Faixa de Frequência |
+| --------- | ------------------- |
+| **CAT5**  | 100MHz              |
+| **CAT5e** | 125MHz              |
+| **CAT6**  | 250MHz              |
+| **CAT6a** | 500MHz              |
+| **CAT7**  | 600MHz              |
+| **CAT7a** | 1000MHz             |
