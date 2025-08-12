@@ -473,3 +473,113 @@ A seguir, apresentamos os principais termos definidos pela norma, agrupados tema
 
 - **Capacitismo:** Discriminação originada a partir da condição da deficiência, que subestima a capacidade e as habilidades de pessoas por viverem com deficiência.
     - Exemplos incluem dirigir-se ao acompanhante de uma pessoa com deficiência em vez de diretamente a ela, ou parabenizar uma pessoa com deficiência por realizar tarefas cotidianas, tratando sua autonomia como um ato de "superação".
+
+## Protocolo de Acolhimento em Situações de Assédio ou Discriminação (Anexo II)
+
+O Anexo II da Portaria detalha o **Protocolo de Acolhimento**, que serve como um manual de procedimentos para a Rede de Acolhimento. Seu objetivo é padronizar e qualificar o atendimento prestado às pessoas em situação de assédio ou discriminação, garantindo que a abordagem seja sempre centrada na dignidade, no respeito e na proteção da pessoa afetada.
+
+### Disposições Gerais: As Orientações para um Atendimento Humanizado
+
+A pedra angular do protocolo é a diretriz de que todo acolhimento deve ser realizado mediante um **atendimento humanizado**. Para isso, a norma estabelece um conjunto de orientações que devem ser rigorosamente observadas:
+
+- **Tratamento Individualizado:** O atendimento deve ir além de um roteiro padrão, buscando compreender as necessidades e as particularidades de cada pessoa e de cada caso. Isso exige da equipe de acolhimento sensibilidade e conhecimento sobre as diversas formas de opressão, como o **racismo estrutural**, a **misoginia** e as questões que afetam a comunidade **LGBTQIA+**, sendo vedada a reprodução de falas ou pensamentos que promovam qualquer tipo de discriminação.
+- **Prática de Escuta Ativa e Comunicação Clara:** A escuta ativa significa ouvir para compreender, com empatia e sem interrupções ou prejulgamentos. As informações e orientações prestadas devem ser transmitidas em linguagem clara e apropriada, evitando jargões técnicos ou burocráticos que possam confundir a pessoa afetada ou seus acompanhantes.
+- **Prioridade e Redução do Tempo de Espera:** O atendimento deve ser ágil, com redução do tempo de espera e garantia de prioridade para pessoas idosas e pessoas сom deficiência.
+- **Uso de Linguagem Inclusiva e Respeito à Identidade:** A equipe de acolhimento deve utilizar uma linguagem não burocrática e, fundamentalmente, perguntar à pessoa como ela gostaria de ser tratada e chamada, utilizando o **nome social** informado, caso seja solicitado.
+- **Adaptação a Situações de Vulnerabilidade:** O atendimento deve ser flexível e adaptado a necessidades específicas, como as de pessoas lactantes, com filhos pequenos, pessoas sob ameaça ou em qualquer outra situação de vulnerabilidade, ajustando-se a duração dos atos, o vocabulário e garantindo a privacidade.
+- **Observância ao Sigilo:** O sigilo dos dados da pessoa afetada e o sigilo profissional são inegociáveis, sendo a base para a construção de uma relação de confiança.
+- **Permissão de Presença de Acompanhantes:** A pessoa atendida tem o direito de ser acompanhada por alguém de sua confiança durante o acolhimento, seja um familiar, um amigo ou um representante de sua entidade sindical.
+
+#### Direitos e Instrumentos Adicionais no Acolhimento
+
+Para fortalecer a autonomia e a segurança da pessoa atendida, o protocolo prevê ainda que:
+
+- A pessoa afetada poderá **escolher a pessoa servidora**, dentre os integrantes da Rede de Acolhimento, para realizar o seu atendimento, caso não se sinta confortável com o primeiro contato.
+- Será apresentado um **formulário de avaliação de risco**, cujo preenchimento é **voluntário**. Este instrumento visa a auxiliar a Rede e a unidade de gestão de pessoas a dimensionarem a gravidade da situação e a necessidade de medidas acautelatórias.
+
+### O Registro e o Encaminhamento do Relato
+
+Após a escuta inicial e o acolhimento, caso a pessoa afetada decida prosseguir com a formalização de seu relato para que a Administração tome as providências de gestão cabíveis, o protocolo estabelece prazos recomendados para garantir a celeridade do processo, especialmente quando há riscos identificados.
+
+A norma estabelece duas recomendações temporais importantes:
+
+- Caso a pessoa afetada por assédio ou discriminação opte por prosseguir com o registro do relato e, a partir da avaliação de risco, for identificado um **risco psicossocial** relevante, recomenda-se que o prazo entre o recebimento da notícia e seu encaminhamento para a deliberação da unidade de gestão de pessoas **não seja superior a 30 (trinta) dias**.
+- Para a apreciação da necessidade de **ações imediatas** de proteção, recomenda-se um prazo de **48 (quarenta e oito) horas**.
+
+Esses prazos não são de natureza correcional, mas sim de gestão. Eles visam assegurar que a análise da situação e a adoção de medidas de proteção ocorram de forma ágil, minimizando a exposição da pessoa afetada aos fatores de risco e ao sofrimento no ambiente de trabalho.
+
+### As Ações Imediatas de Proteção
+
+O protocolo reforça a possibilidade de adoção de **ações imediatas**, que se alinham ao conceito de **medidas acautelatórias** já estudado. A finalidade dessas ações é exclusivamente a de preservar a saúde e a integridade física e moral da pessoa afetada, devendo ser prescritas pela Rede de Acolhimento e encaminhadas à unidade de gestão de pessoas responsável pela sua implementação.
+
+É fundamental reiterar que a adoção de qualquer uma dessas medidas está, obrigatoriamente, condicionada à **autorização prévia e expressa da pessoa afetada** pelo assédio ou pela discriminação. A proteção não pode ser imposta, devendo sempre respeitar a vontade e a autonomia da pessoa que buscou o acolhimento.
+
+### Colheita de Declarações da Pessoa Noticiante, Escuta Qualificada
+
+A etapa de colheita de declarações é o momento central do acolhimento. O item D do Anexo II da Portaria estabelece um conjunto de orientações detalhadas para que este procedimento seja conduzido de forma humanizada, respeitosa e eficaz, transformando uma simples entrevista em uma **escuta qualificada**.
+
+#### A) Os Pilares da Escuta Ativa
+
+A base de um bom acolhimento é a prática da **escuta ativa**. A norma orienta que, durante a conversa, todos os sentidos deverão ser utilizados para buscar compreender o que está sendo comunicado, com atenção total a quem está se manifestando. Isso se traduz em posturas concretas:
+
+- **Atenção Plena:** Durante a conversa com a pessoa, é vedado realizar outras atividades, como consultar o computador ou o celular. Este ato demonstra respeito e valida a importância do relato.
+- **Empatia e Não Julgamento:** A escuta deve ser empática, buscando compreender os sentimentos e as experiências da outra pessoa sem fazer julgamentos ou críticas.
+- **Confirmação da Compreensão:** É importante fazer perguntas claras para compreender inteiramente o que está sendo comunicado e, periodicamente, repetir o que se entendeu com as próprias palavras. Essa técnica demonstra à pessoa que sua mensagem foi recebida e compreendida integralmente.
+
+#### B) A Abordagem ao Relato de Eventos Traumáticos
+
+O protocolo reconhece que a memória da pessoa afetada por assédio ou discriminação pode estar comprometida, como uma medida de autodefesa do psiquismo para superar o trauma sofrido. Diante desse cenário, a abordagem para a colheita de declarações deve ser sensível e cuidadosa:
+
+- **Tranquilização Inicial:** O início da conversa deve ser apto a tranquilizar a pessoa, esclarecendo que o objetivo do ato não é um interrogatório, mas sim reconstituir os fatos na medida do possível, reconhecendo que podem existir lembranças claras e também lapsos na memória.
+- **Respeito à Narrativa:** A pessoa afetada deverá se sentir livre para contar sua história da maneira que melhor lhe convier, seja em um formato narrativo livre, seja por meio de perguntas e respostas. Deve-se tomar o cuidado para não interromper o fluxo da narrativa, aguardando um ponto apropriado para intervir com perguntas.
+
+> **Ponto de Atenção: A Valoração do Testemunho**
+> 
+> A norma estabelece uma diretriz fundamental: a dificuldade de recontar o trauma sofrido **não poderá ser interpretada em desfavor** da pessoa afetada, de modo a rotular o seu relato como não convincente. A falta de precisão em datas ou a hesitação em fornecer detalhes não podem servir para desacreditar o depoimento, pois são reações comuns e esperadas em vítimas de violência.
+
+#### C) Técnicas de Questionamento
+
+As perguntas formuladas durante o acolhimento devem ter como único objetivo auxiliar a pessoa a tornar seu relato mais preciso, sem induzir respostas. Para isso:
+
+- **As perguntas devem ser abertas e não tendenciosas**, ou seja, isentas de suposições ou conclusões.
+    - **Exemplo de pergunta a ser evitada (tendenciosa):** "Então ele gritou com você na frente de todos para te humilhar, foi isso?"
+    - **Exemplo de pergunta adequada (aberta):** "Você poderia me descrever como essa conversa aconteceu e quem estava presente?"
+- **Devem ser evitadas perguntas de resposta múltipla**, pois elas podem obrigar a pessoa a dar respostas pouco precisas caso o que lhe tenha acontecido não corresponda exatamente a nenhuma das opções.
+
+### A Fase de Informação e Orientação
+
+Após a conclusão da etapa de escuta qualificada, o Protocolo de Acolhimento avança para a fase de **informação e orientação**. O objetivo aqui é empoderar a pessoa afetada, fornecendo-lhe, de forma clara e objetiva, o conhecimento sobre os caminhos possíveis e as estratégias de autoproteção, para que ela possa tomar uma decisão informada sobre os próximos passos.
+
+A diretriz central desta fase é o **respeito à autonomia e aos limites** da pessoa noticiante. A Rede de Acolhimento atua como uma orientadora, mas a decisão de formalizar ou não uma denúncia, ou de seguir qualquer outro caminho, pertence exclusivamente à pessoa que sofreu a violência. É seu direito, inclusive, optar por apenas relatar o ocorrido à Rede de Acolhimento, sem registrar uma denúncia formal.
+
+Para garantir a eficácia deste processo, as possíveis respostas aos questionamentos da pessoa afetada deverão estar imediatamente disponíveis.
+
+#### A) Orientações Práticas para a Pessoa Afetada
+
+A norma estabelece um conjunto de orientações que podem ser transmitidas à pessoa noticiante para auxiliá-la a lidar com a situação e a se proteger:
+
+- **Comunicar ou Denunciar:** Orientar sobre as vias existentes, como a comunicação do fato aos superiores hierárquicos ou o registro de uma denúncia formal por meio dos canais oficiais do órgão, como a Ouvidoria e a plataforma **Fala.BR**.
+- **Autoproteção:** Recomendar que a pessoa, na medida do possível, **evite permanecer sozinha no mesmo local que a pessoa assediadora**, como forma de prevenir novas ocorrências.
+- **Registro Detalhado dos Fatos:** Orientar a pessoa a **anotar, com o máximo de detalhes, todas as condutas abusivas sofridas**. Este registro deve conter data, hora, local, nome da pessoa noticiada, nome de colegas que testemunharam os fatos, o conteúdo de conversas, e-mails, mensagens, e qualquer outra informação relevante. Este "diário" é um instrumento valioso para a memória e pode se tornar uma prova fundamental em um futuro processo.
+- **Rompimento do Isolamento:** Incentivar a pessoa a **dar visibilidade** ao episódio, procurando a ajuda de colegas de confiança, especialmente daqueles que testemunharam o fato ou que também são ou foram vítimas. Romper o silêncio é um passo importante para combater o isolamento que o agressor frequentemente impõe.
+- **Coleta de Provas:** Orientar sobre a importância de **reunir provas** materiais que possam corroborar o relato, como bilhetes, e-mails, mensagens em redes sociais, presentes indesejados, registros de chamadas ou, se possível, imagens de câmeras de segurança.
+
+#### B) A Alternativa da Autocomposição de Conflitos
+
+Encerrando as orientações, o protocolo prevê uma via não punitiva para a resolução de conflitos. Caso o fato noticiado aparente ser passível de resolução por meio do diálogo, será facultado o encaminhamento do caso para a **autocomposição de conflitos**, incluindo as abordagens de **práticas restaurativas**.
+
+Esta alternativa, que também depende do consentimento dos envolvidos, busca solucionar o conflito por meio da mediação e da negociação, focando na reparação das relações e na restauração de um ambiente de trabalho saudável, sem a necessidade de instauração de um processo disciplinar formal.
+
+## Considerações Finais
+
+Ao longo deste capítulo, analisamos a Portaria MGI nº 6.719, de 13 de setembro de 2024, uma norma que representa um divisor de águas na forma como a Administração Pública Federal lida com as violências no ambiente de trabalho. A instituição do **Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação (PFPEAD)** sinaliza uma mudança de paradigma: a transição de um modelo puramente reativo e punitivo para uma abordagem integrada, proativa e centrada na dignidade humana.
+
+Vimos que o plano se sustenta sobre eixos de atuação complementares. O eixo da **Prevenção** é, sem dúvida, o mais estratégico, ao focar na raiz do problema por meio de três ferramentas poderosas: a **formação e capacitação** contínua, as **ações de sensibilização** e a **promoção da saúde**. A obrigatoriedade de incluir o tema desde o **concurso público** e o **ato de posse** demonstra a intenção de solidificar, desde o início, uma cultura de tolerância zero ao assédio.
+
+Estudamos o eixo do **Acolhimento**, que materializa o lado humano da política. A criação de uma **Rede de Acolhimento** e a instituição de um **Protocolo** detalhado para a escuta qualificada visam a oferecer um porto seguro para as vítimas, garantindo um atendimento empático, sigiloso e não revitimizador. As **medidas acautelatórias** surgem como um importante instrumento de gestão para a proteção imediata da pessoa afetada.
+
+Analisamos também o eixo da **Apuração e Responsabilização**, que, embora se utilize dos instrumentos já previstos na Lei nº 8.112/1990, como a Sindicância e o PAD, inova ao incorporar salvaguardas essenciais. A orientação para uma análise com **perspectiva de gênero**, a valorização da **palavra da vítima**, a busca por **comissões com diversidade** e, principalmente, a punição severa para a **retaliação** são avanços que buscam tornar os processos correcionais mais justos e eficazes.
+
+Por fim, destacamos a **universalidade** e a **abrangência** do plano, que estende sua proteção a todas as categorias de trabalhadores, incluindo estagiários e terceirizados, e estabelece a corresponsabilidade das empresas contratadas, reconhecendo que o dever de garantir um ambiente de trabalho seguro pertence a todos que o compõem.
+
+O domínio desta Portaria é, portanto, essencial para o futuro servidor público. Ela não apenas define um conjunto de regras, mas estabelece os novos padrões de conduta, respeito e gestão que se espera de todos os agentes públicos. É o arcabouço normativo que pavimenta o caminho para uma Administração Pública Federal não apenas mais eficiente, mas fundamentalmente mais ética, inclusiva e psicologicamente segura para todas e todos.
