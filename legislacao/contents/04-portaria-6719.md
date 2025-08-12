@@ -48,7 +48,7 @@ A portaria estabelece um prazo e uma estrutura de governança para a implementa�
 
 O Anexo I da Portaria MGI nº 6.719/2024 detalha o conteúdo e o alcance do Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação (PFPEAD). Ele representa o núcleo da política, estabelecendo sua filosofia, seus conceitos e suas linhas de ação.
 
-### Finalidade e Princípios Basilares
+### Finalidades e Princípios Basilares
 
 A finalidade do Plano Federal é a busca por ambientes de trabalho seguros e saudáveis, nos quais os direitos humanos e a dignidade de todas as pessoas sejam integralmente respeitados. Para tanto, o plano propõe-se a **erradicar todas as formas de violência** oriundas das relações de trabalho, com especial atenção a três condutas centrais: o assédio moral, o assédio sexual e a discriminação.
 
@@ -74,7 +74,7 @@ A abordagem do plano não é meramente reativa. As medidas propostas são centra
 > 
 > Ao fazer esta menção expressa, a norma adota um enfoque de **equidade**, reconhecendo que um tratamento formalmente igual para todos pode ser insuficiente para proteger aqueles que são alvos mais frequentes de violência e discriminação. A política, portanto, deve ser sensível a essas vulnerabilidades específicas.
 
-### As Definições Fundamentais do Plano
+### As Definições Fundamentais
 
 Para a correta e uniforme aplicação da política de prevenção e enfrentamento, a Portaria estabelece um conjunto de definições-chave. A adoção de um vocabulário comum é essencial para que todos os agentes públicos, gestores e membros de comissões possam identificar, classificar e tratar as ocorrências de assédio e discriminação com segurança jurídica e precisão técnica.
 
@@ -117,7 +117,7 @@ Não se trata de um único órgão, mas de uma **rede de unidades** que devem at
 - **Organização do Trabalho**: conjunto de normas, instruções, práticas e processos que modulam as relações hierárquicas e as competências das pessoas envolvidas, os mecanismos de deliberação, a divisão do trabalho, o conteúdo das tarefas, os modos operatórios, os critérios de qualidade e de desempenho.
 - **Saúde no trabalho**: dinâmica de construção contínua, em que estejam assegurados os meios e condições para a construção de uma trajetória em direção ao bem-estar físico, mental e social, considerada em sua relação específica e relevante com o trabalho.
 
-### As Diretrizes Gerais do Plano
+### As Diretrizes Gerais
 
 Para que os objetivos do Plano Federal sejam alcançados de forma coesa e eficaz, a Portaria estabelece, em seu art. 3º, um conjunto de diretrizes. Estes são os princípios basilares que devem orientar e informar todas as políticas, estratégias e ações de prevenção e enfrentamento do assédio e da discriminação no serviço público.
 
@@ -155,11 +155,7 @@ A garantia do sigilo é essencial para encorajar as denúncias. As pessoas preci
 
 Esta diretriz reconhece que o assédio e a discriminação raramente são apenas um problema de conduta individual ("maçãs podres"). Muitas vezes, são sintomas de falhas mais profundas na cultura organizacional, nas práticas de gestão ou na forma como o trabalho é estruturado. A abordagem, portanto, deve ser transversal, analisando e corrigindo também essas causas estruturais.
 
-## Os Eixos de Atuação do Plano
-
-O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação (PFPEAD) se desenvolve a partir de eixos de atuação integrados, que vão desde a prevenção das ocorrências até a apuração e responsabilização dos infratores. O primeiro e mais estratégico desses eixos é o da **Prevenção**.
-
-### O Eixo da Prevenção: Construindo uma Cultura de Respeito
+### Prevenção: Construindo uma Cultura de Respeito
 
 De acordo com o item 4 do Anexo I da Portaria, as ações de prevenção do assédio e da discriminação são elementos essenciais para consolidar uma cultura organizacional que valorize o respeito às diferenças, à equidade e à diversidade, e que internalize a compreensão dos conceitos e das práticas aceitáveis nos ambientes de trabalho.
 
@@ -244,7 +240,7 @@ As três ferramentas de prevenção – formação, sensibilização e promoçã
 
 - **Exemplo Prático:** Uma **Pesquisa de Clima Organizacional** (ação de saúde) revela que, em determinado setor, há uma alta percepção de práticas de machismo e misoginia. Este dado subsidia as outras ferramentas: a área de comunicação pode lançar uma **campanha de sensibilização** (ferramenta 2) focada no combate ao sexismo no ambiente de trabalho, enquanto a área de gestão de pessoas pode desenvolver uma **ação de formação** (ferramenta 1) obrigatória para as lideranças daquele setor sobre equidade de gênero. As ações, portanto, se tornam mais focadas e eficazes.
 
-### O Eixo do Acolhimento: Suporte e Orientação
+### Acolhimento: Suporte e Orientação
 
 O **acolhimento** é o eixo do plano que se destina a criar um ambiente seguro e de confiança para as pessoas que vivenciaram ou testemunharam situações de assédio e discriminação. Seu objetivo não é a apuração ou a punição, mas sim a escuta qualificada, o suporte humanizado e a orientação sobre os caminhos disponíveis para a resolução do conflito e a reparação do dano.
 
@@ -327,7 +323,7 @@ A unidade de gestão de pessoas, com base nesta avaliação e novamente com a an
 - A alteração do turno de trabalho;
 - O remanejamento do suposto agressor para outra equipe, como um ato de gestão para preservar o clima organizacional.
 
-### O Eixo da Apuração: A Formalização da Denúncia
+### Denúncia
 
 Após o acolhimento inicial, o plano estabelece os canais e procedimentos formais para o registro da **denúncia**, ato que pode dar início aos procedimentos de apuração e responsabilização.
 
@@ -358,7 +354,7 @@ A portaria estabelece que deverá ser assegurada à pessoa denunciante e às tes
 > 
 > A prática de ações ou omissões de retaliação contra denunciantes é considerada uma **falta disciplinar de natureza grave**. A Lei nº 13.608/2018, em seu art. 4º-C, sujeita o agente público que pratica a retaliação à penalidade de **demissão a bem do serviço público**, uma das sanções mais severas do regime disciplinar, que pode implicar em inelegibilidade para novos cargos públicos.
 
-### O Eixo da Apuração e Responsabilização: O Processo Disciplinar
+### Infrações, Procedimentos Disciplinares e Penalidades
 
 Uma vez formalizada a denúncia junto à Ouvidoria, e havendo indícios de infração disciplinar, o caso avança para o eixo de **apuração e responsabilização**. Esta é a fase em que a **unidade correcional** do órgão ou entidade (a Corregedoria, por exemplo) assume a condução do processo, por meio dos instrumentos formais da Sindicância ou do Processo Administrativo Disciplinar (PAD), para apurar os fatos e, se for o caso, aplicar as penalidades cabíveis.
 
@@ -371,7 +367,7 @@ A Portaria MGI nº 6.719/2024 estabelece um conjunto de princípios e salvaguard
 - **A Relevância da Palavra da Vítima:** Em casos de assédio, especialmente o sexual, as condutas muitas vezes ocorrem de forma velada, sem testemunhas. Reconhecendo essa dificuldade probatória, a norma estabelece que as declarações da vítima serão qualificadas como **meio de prova de alta relevância**. Isso não significa que a palavra da vítima, por si só, seja suficiente para a condenação, mas que ela deve receber um peso especial na análise do conjunto de provas.
 - **O Princípio da Não Revitimização:** Todo o procedimento de apuração deve ser pautado pela proteção à pessoa denunciante, evitando que o próprio processo se torne uma nova fonte de sofrimento. A norma dá atenção especial aos momentos de oitiva (depoimentos), que deverão ocorrer **sem a presença da suposta pessoa agressora**. A realização de uma acareação ou de uma oitiva conjunta é uma medida excepcionalíssima, que só pode ocorrer se for absolutamente indispensável e devidamente justificada pela comissão.
 
-##### B) Aplicação da Penalidade e Comunicação
+#### B) Aplicação da Penalidade e Comunicação
 
 A definição da penalidade para os casos de assédio e discriminação deverá seguir os critérios gerais do art. 128 da Lei nº 8.112/1990: a natureza e a gravidade da infração, os danos, as circunstâncias agravantes ou atenuantes e os antecedentes funcionais. A depender da gravidade, a conduta pode ser enquadrada em infrações puníveis com **demissão**, como a "incontinência de conduta" ou o "valimento do cargo para lograr proveito pessoal".
 
@@ -379,7 +375,7 @@ Caso, ao final da apuração, a denúncia seja arquivada por falta de provas ou 
 
 Por fim, todo o fluxo de tratamento da denúncia deverá ter como referência, no que couber, o **Guia Lilás: Orientações para prevenção e tratamento ao assédio moral e sexual e à discriminação no Governo Federal**, um manual detalhado publicado pela Controladoria-Geral da União (CGU).
 
-#### A Estrutura de Governança e Instâncias Executoras do Plano
+### Instâncias Executoras
 
 Para garantir a efetiva implementação do Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação (PFPEAD), a Portaria MGI nº 6.719/2024 estabelece um arranjo organizacional em rede. Este modelo busca equilibrar a necessidade de uma política unificada com a autonomia e as particularidades de cada órgão, seguindo uma lógica de **centralização das diretrizes** e **descentralização da execução e do acompanhamento**.
 
@@ -397,14 +393,14 @@ A portaria determina que as ações de prevenção e enfrentamento deverão, obr
 
 É importante destacar que a participação nas atividades desenvolvidas pelos integrantes dos comitês do Programa será considerada **prestação de serviço público relevante, não remunerada**, devendo respeitar a jornada de trabalho do cargo público do participante.
 
-### O Papel dos Órgãos e Entidades na Execução
+#### O Papel dos Órgãos e Entidades na Execução
 
 Os órgãos e entidades são as estruturas fundamentais da Rede Federal de Prevenção e Enfrentamento do Assédio e da Discriminação (RFPEAD). A eles cabem duas responsabilidades centrais:
 
 - Disseminar as diretrizes do Plano Federal em seus ambientes de trabalho.
 - Elaborar, publicar e executar seus **planos específicos** de prevenção, acolhimento e enfrentamento do assédio e da discriminação, conforme o prazo e as diretrizes estabelecidas na portaria.
 
-#### A Integração com os Planos de Integridade
+##### A Integração com os Planos de Integridade
 
 Para garantir maior robustez e eficiência, a norma exige que os planos específicos de enfrentamento ao assédio e os **Planos de Integridade** de cada órgão estejam **adequadamente conectados**.
 
@@ -412,4 +408,68 @@ Essa conexão deve se dar por meio de **mútuas remissões** (um plano citando o
 
 Por fim, a portaria frisa que a **atuação em rede** visa à cooperação e ao compartilhamento de experiências, à disseminação de boas práticas e à colaboração mútua, para a construção de ambientes de trabalho livres de assédio, discriminação e de todo tipo de violência.
 
+### Disposições Gerais e Aplicação Transversal do Plano
 
+O item 9 do Anexo I da Portaria estabelece as disposições gerais, que reforçam as responsabilidades de implementação e, de forma muito importante, estendem o alcance do plano para além dos servidores já em exercício, abrangendo os novos ingressantes e os trabalhadores de empresas terceirizadas.
+
+A norma reitera que a implementação do PFPEAD é uma responsabilidade compartilhada entre o **Comitê Gestor**, os **Comitês Estaduais de Acompanhamento** e todos os **órgãos e entidades** da Administração Pública Federal, que juntos formam a Rede Federal de Prevenção e Enfrentamento do Assédio e da Discriminação.
+
+É reafirmado, ainda, o dever de cada órgão e entidade aprovar e publicar, ou revisar, seus **planos específicos** de prevenção e enfrentamento no prazo máximo de **120 (cento e vinte) dias** da vigência do Plano Federal.
+
+#### A Aplicação do Plano no Ingresso ao Serviço Público
+
+A portaria estabelece que a construção de uma cultura de respeito deve começar pela "porta de entrada" do serviço público, ou seja, nos concursos e no ato de posse.
+
+- **Nos Concursos Públicos:** Os conteúdos programáticos dos concursos públicos para a Administração Pública Federal deverão observar as temáticas do assédio e da discriminação. O objetivo é garantir que todos os novos agentes públicos ingressem no serviço federal com um conhecimento basilar sobre o tema, compreendendo-o como um valor essencial de um Estado democrático e inclusivo.
+- **No Ato de Posse:** No momento da posse, a servidora ou o servidor deverá ser formalmente cientificado da existência e do conteúdo do Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação. Este ato reforça o compromisso da instituição e informa o novo servidor sobre seus direitos e deveres em relação ao tema desde o primeiro dia de seu vínculo.
+
+#### A Extensão das Diretrizes aos Contratos de Terceirização
+
+Reconhecendo que o ambiente de trabalho é compartilhado por diferentes categorias de trabalhadores, a norma estende a aplicação de suas diretrizes às empresas prestadoras de serviço, em uma demonstração de corresponsabilidade.
+
+As empresas de prestação de serviços com regime de **dedicação exclusiva de mão de obra** (terceirização) contratadas pela Administração Pública Federal deverão observar as diretrizes do Plano Federal e promover práticas de gestão respeitosas e humanizadas.
+
+Para garantir a efetividade desta medida, a portaria determina que os **editais de licitação e os contratos** deverão prever cláusulas que obriguem as empresas a assumir o compromisso com o desenvolvimento de suas próprias políticas de enfrentamento do assédio e da discriminação, bem como a realizar ações de formação para suas empregadas e seus empregados que atuam nas dependências dos órgãos públicos.
+
+### Glossário de Termos Fundamentais
+
+O último item do Anexo I da Portaria apresenta um glossário com definições essenciais para a correta interpretação e aplicação do Plano. A padronização desses conceitos é fundamental para criar um vocabulário comum em toda a Administração Pública Federal, garantindo que os debates, as políticas e os procedimentos sobre assédio e discriminação partam de uma mesma base de entendimento.
+
+A seguir, apresentamos os principais termos definidos pela norma, agrupados tematicamente para facilitar a compreensão.
+
+#### A) Conceitos de Gestão e Processo
+
+- **Gestão humanizada:** Forma de gestão que valoriza as pessoas, reconhece suas potencialidades, respeita suas diferenças, estimula seu desenvolvimento, promove sua saúde e bem-estar, incentiva sua participação, colaboração e corresponsabilidade, e busca alcançar resultados de forma ética, eficiente e efetiva.
+	- Esta definição contrasta com modelos de gestão puramente focados em resultados, que podem negligenciar o bem-estar dos trabalhadores. Uma gestão humanizada se manifesta em práticas como a oferta de feedback construtivo, a distribuição equitativa de tarefas, a criação de canais de diálogo abertos e o reconhecimento do esforço da equipe.
+
+- **Autocomposição de conflitos:** Método de resolução de conflitos a partir da negociação direta entre as partes interessadas que buscam atingir o consentimento entre ambas.
+	- Refere-se a abordagens como a mediação e a conciliação, nas quais um terceiro neutro facilita o diálogo para que as próprias partes encontrem uma solução para o conflito. É uma alternativa ao processo disciplinar formal, especialmente indicada para casos de menor gravidade, pois pode ser mais célere e menos desgastante para os envolvidos.
+
+- **Fator de Risco:** Toda condição ou situação de trabalho que tem o potencial de comprometer o equilíbrio físico, psicológico e social das pessoas, causar acidente, doença do trabalho ou profissional.
+    - O plano reconhece que o assédio e a discriminação são fatores de risco psicossocial. Outros exemplos incluem metas abusivas, sobrecarga de trabalho, falta de autonomia e comunicação deficiente.
+    
+- **Revitimização:** Adoção de procedimentos que obriga a vítima a reviver repetidamente a violência que sofreu ou a expõe a novas formas de violência devido a atendimentos inadequados.
+    - Ocorre quando a própria instituição, ao tentar lidar com a denúncia, causa um novo trauma à vítima. Exemplos incluem forçar a pessoa a recontar sua história para múltiplos setores desnecessariamente, tratá-la com desconfiança, questionar suas roupas ou seu comportamento, ou conduzir uma acareação em um ambiente hostil.
+    
+- **Gestora - Gestor:** Aquela ou aquele que exerce atividades com poder de decisão, que lidera equipes e processos de trabalho.
+
+#### B) Conceitos Socioculturais e de Direitos Humanos
+
+- **Diversidade:** Variedade de características, identidades, experiências, saberes, culturas, crenças, valores, opiniões, perspectivas e formas de expressão que compõem as pessoas e os grupos sociais.
+- **Inclusão:** Ação de reconhecer, valorizar, respeitar e promover a diversidade, garantindo a participação, a representação, a acessibilidade, a equidade, a justiça e os direitos de todas as pessoas e grupos sociais.
+- **Letramento em gênero e raça:** Conjunto de práticas pedagógicas que têm por objetivo conscientizar a pessoa da estrutura e do funcionamento do racismo, do machismo e da misoginia na sociedade e torná-la apta a reconhecer, criticar e combater atitudes racistas e misóginas em seu cotidiano.
+- **Interseccionalidade:** Condição na qual dois ou mais marcadores sociais se sobrepõem, podendo resultar em opressões e discriminações específicas que se explicam por essa sobreposição.
+    - Este conceito é crucial para entender a complexidade da discriminação. Ele reconhece que uma pessoa não pertence a uma única categoria. Por exemplo, uma mulher negra e com deficiência não sofre o machismo, o racismo e o capacitismo de forma isolada; ela vivencia uma forma única de opressão que nasce da **interseção** desses múltiplos marcadores sociais.
+
+#### C) Formas de Preconceito e Discriminação
+
+- **Racismo:** Fenômeno social marcado por dinâmicas de poder pautadas em diferenciações étnico-raciais hierárquicas e excludentes, que promovem desigualdades baseadas na raça, cor, origem nacional ou étnica de uma pessoa ou grupo.
+- **Misoginia:** Expressa comportamentos e ações que geram sofrimento, constrangimentos, violências e imposição de opressão em relação às mulheres. Essa opressão se manifesta de diferentes maneiras, como a exclusão social, a agressão física, a violência doméstica, entre outras formas de machismo.
+- **Etarismo (idadismo):** Preconceito atribuído à idade, o qual consiste nos estereótipos, preconceito e discriminação dirigidos a outras pessoas ou a nós com base na idade.
+    - Exemplos no ambiente de trabalho incluem presumir que um servidor mais velho é resistente a novas tecnologias ou que uma servidora mais jovem não tem maturidade para assumir um cargo de liderança.
+
+- **LGBTfobia:** Prática discriminatória que atenta contra os direitos fundamentais das pessoas lésbicas, gays, bissexuais, travestis, transexuais, queers, intersexos, assexuais, não binárias e outras, em razão de sua identidade de gênero, orientação sexual ou características sexuais.
+    - Manifesta-se, por exemplo, por meio de piadas ofensivas, recusa em usar o nome social de uma pessoa trans ou exclusão de eventos sociais da equipe.
+
+- **Capacitismo:** Discriminação originada a partir da condição da deficiência, que subestima a capacidade e as habilidades de pessoas por viverem com deficiência.
+    - Exemplos incluem dirigir-se ao acompanhante de uma pessoa com deficiência em vez de diretamente a ela, ou parabenizar uma pessoa com deficiência por realizar tarefas cotidianas, tratando sua autonomia como um ato de "superação".
