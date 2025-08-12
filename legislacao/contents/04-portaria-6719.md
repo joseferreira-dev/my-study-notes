@@ -270,3 +270,146 @@ A Rede de Acolhimento terá por **finalidade**:
 
 Para fortalecer essa estrutura, cada órgão ou entidade poderá instituir uma **Comissão de Apoio ao Acolhimento**, com representação direta de servidoras e servidores e composição baseada no princípio da diversidade. A participação nesta comissão será considerada **prestação de serviço público relevante, não remunerada**, e suas diretrizes de funcionamento serão definidas pelo Comitê Gestor do Programa.
 
+#### B) Os Canais e o Protocolo de Acolhimento
+
+Para que a Rede de Acolhimento seja efetiva, é fundamental que existam canais de acesso claros, seguros e permanentemente disponíveis para todas as pessoas que necessitem de apoio.
+
+Os órgãos e entidades do SIPEC têm o dever de manter e de dar ampla divulgação a esses canais, garantindo que todas as pessoas nos ambientes de trabalho saibam onde e como buscar ajuda. As Comissões de Apoio ao Acolhimento, onde forem constituídas, também deverão ser de amplo e fácil acesso.
+
+##### O Ambiente de Atendimento: Criando um Espaço Seguro
+
+O atendimento à pessoa que relata uma situação de assédio ou discriminação é um momento delicado, que exige a criação de um ambiente de segurança e confiança. A portaria estabelece requisitos específicos para este atendimento:
+
+- **Ambiente Adequado e Acessível:** O atendimento deve ocorrer em um espaço, seja ele presencial ou virtual, que garanta a privacidade e a confidencialidade da conversa. Além disso, deve ser plenamente acessível a pessoas com deficiência.
+- **Direito de Escolha do Local:** Em uma importante medida de proteção, a norma assegura à pessoa o direito de ser atendida em um órgão ou entidade de sua escolha, e não necessariamente em seu próprio local de trabalho, onde poderia se sentir intimidada ou constrangida.
+- **Composição da Equipe de Atendimento:** Para promover a empatia e o conforto da pessoa acolhida, a equipe de atendimento deverá ter, **preferencialmente**, a presença de uma pessoa do mesmo gênero e/ou raça da vítima.
+
+##### A Natureza do Atendimento e o Protocolo
+
+As ações de acolhimento e escuta devem ser pautadas na **lógica do cuidado**, com foco na pessoa exposta aos riscos psicossociais, e não em uma lógica investigativa ou de julgamento. Para isso, a utilização de **linguagem não violenta** é obrigatória.
+
+O atendimento deve ser apoiado, preferencialmente, por **profissionais da área da saúde** (como psicólogos e assistentes sociais), e todos os atendimentos realizados pela Rede de Acolhimento deverão, obrigatoriamente, seguir as diretrizes do **Protocolo de Acolhimento**, constante do Anexo II da Portaria.
+
+##### A Articulação com a Esfera Penal
+
+O plano reconhece que algumas condutas de assédio ou discriminação podem, também, configurar crimes. A portaria estabelece uma clara divisão de responsabilidades ao lidar com esses casos:
+
+1. **Atuação da Rede de Acolhimento:** Caso o relato recebido no acolhimento apresente indícios de crime (como assédio sexual, injúria racial, etc.), a Rede de Acolhimento tem o dever de **esclarecer à pessoa denunciante** sobre a possibilidade de ela registrar a ocorrência na autoridade policial competente (como a Delegacia Especial de Atendimento à Mulher - DEAM ou a Delegacia de Crimes Raciais e Delitos de Intolerância - Decradi). A decisão de registrar a queixa na polícia, contudo, é da vítima.
+2. **Atuação da Unidade de Correição:** Se os indícios de crime surgirem no curso de uma apuração correcional formal (Sindicância ou PAD), a unidade de correição tem o **dever de ofício** de encaminhar cópia dos autos ao **Ministério Público**, para que este tome as providências cabíveis na esfera criminal.
+
+##### O Apoio de Parceiros Externos
+
+Reconhecendo a complexidade do tema, a portaria autoriza que os órgãos e entidades do SIPEC celebrem **termos de cooperação técnica com universidades** ou **contratem serviços especializados** de acolhimento, sempre resguardado o sigilo das informações. O objetivo é apoiar e qualificar a Rede de Acolhimento, garantindo um atendimento realizado por equipes multiprofissionais, interdisciplinares e diversas.
+
+#### C) As Medidas Acautelatórias
+
+As **medidas acautelatórias**, conforme dispostas no item 5.3 do Anexo I, são um dos instrumentos mais importantes e inovadores do Plano Federal. Elas configuram **atos de gestão**, de caráter imediato, destinados a **preservar a integridade física e mental** da pessoa afetada pelo assédio ou pela discriminação.
+
+É fundamental compreender as três características que definem a natureza destas medidas:
+
+1. **São independentes da atividade correcional:** Elas podem e devem ser adotadas assim que o risco à saúde e ao bem-estar da pessoa for identificado, mesmo que uma apuração formal (Sindicância ou PAD) ainda não tenha sido iniciada, ou que jamais venha a ser. O foco é a proteção imediata.
+2. **Não constituem penalidade:** As medidas acautelatórias não têm caráter punitivo. Seu objetivo é reorganizar a situação de trabalho para cessar ou mitigar a violência, e não sancionar o suposto agressor.
+3. **Dependem da anuência da pessoa afetada:** Nenhuma medida acautelatória pode ser imposta à pessoa que sofreu a violência. Sua concordância é requisito indispensável, respeitando sua autonomia e evitando que a solução se torne um novo problema (a chamada revitimização).
+
+> **Não Confunda: Medida Acautelatória vs. Afastamento Preventivo**
+> 
+> Embora ambos sejam instrumentos cautelares, suas finalidades e seus alvos são opostos:
+> 
+> - **Medida Acautelatória (Portaria MGI nº 6.719/2024):** É uma medida de proteção **em favor da pessoa vitimada**, para resguardar sua saúde e bem-estar.
+> - **Afastamento Preventivo (Lei nº 8.112/1990):** É uma medida **contra o servidor acusado**, para impedi-lo de interferir na apuração de uma infração em um PAD.
+
+O fluxo para a adoção de uma medida acautelatória se inicia na **Rede de Acolhimento**. Seus integrantes, ao realizarem a escuta, podem identificar a necessidade de uma intervenção imediata. Com a concordância da pessoa afetada, a Rede preencherá um formulário de avaliação de risco e o encaminhará à **unidade de gestão de pessoas** do órgão.
+
+A unidade de gestão de pessoas, com base nesta avaliação e novamente com a anuência da pessoa afetada, poderá adotar ações como:
+
+- A alteração da unidade de lotação da pessoa afetada, caso seja de seu interesse;
+- O deferimento de teletrabalho em regime provisório;
+- A alteração do turno de trabalho;
+- O remanejamento do suposto agressor para outra equipe, como um ato de gestão para preservar o clima organizacional.
+
+### O Eixo da Apuração: A Formalização da Denúncia
+
+Após o acolhimento inicial, o plano estabelece os canais e procedimentos formais para o registro da **denúncia**, ato que pode dar início aos procedimentos de apuração e responsabilização.
+
+#### A) A Formalização da Denúncia
+
+- **Legitimidade para Denunciar:** A legitimidade para apresentar uma denúncia é ampla. Ela pode ser feita por:
+    1. Qualquer pessoa, **identificada ou não**, que se perceba alvo de assédio ou discriminação no trabalho.
+    2. Qualquer pessoa, **identificada ou não**, que tenha conhecimento de fatos que possam caracterizar assédio ou discriminação (testemunhas, colegas, etc.).
+
+- **O Canal Oficial: Ouvidoria e Plataforma Fala.BR:** O canal prioritário e oficial para o registro de denúncias é a **Ouvidoria** do órgão ou entidade, seja de forma presencial ou, preferencialmente, por meio da **Plataforma Integrada de Ouvidoria e Acesso à Informação (Fala.BR)**. Esta plataforma centralizada garante a padronização, o sigilo e a rastreabilidade das denúncias em todo o Poder Executivo Federal. Todas as denúncias recebidas por outros meios ou agentes públicos devem ser, obrigatoriamente, encaminhadas à Ouvidoria.
+- **Articulação com a Rede de Acolhimento:** A Rede de Acolhimento deve orientar a pessoa sobre a possibilidade de registrar a denúncia na Plataforma Fala.BR. Caso a pessoa afetada não se sinta em condições de fazê-lo, a Rede poderá acionar a Ouvidoria para que a equipe desta realize o registro, desde que com o consentimento expresso da pessoa afetada.
+
+#### B) A Proteção Contra a Retaliação
+
+A retaliação é a "segunda violência" sofrida pela pessoa que denuncia. Consiste em qualquer ato prejudicial praticado contra a denunciante ou testemunha como forma de vingança ou intimidação. Por minar a confiança nos canais institucionais e perpetuar a cultura do silêncio, a retaliação é tratada pela legislação com extrema severidade.
+
+A portaria estabelece que deverá ser assegurada à pessoa denunciante e às testemunhas **proteção contra ações ou omissões praticadas em retaliação**.
+
+- **Registro e Apuração:** A ocorrência de um ato de retaliação deve ser registrada como uma nova denúncia na Plataforma Fala.BR, fazendo menção à denúncia original, e será encaminhada à **Controladoria-Geral da União (CGU)** para o devido processamento.
+- **Exemplos de Atos de Retaliação:** A norma traz uma lista exemplificativa de condutas que podem configurar retaliação:
+    - A demissão arbitrária;
+    - A alteração injustificada de funções, atribuições ou local de trabalho (a chamada "geladeira");
+    - A instauração de procedimentos correcionais infundados ou a imposição de sanções injustas;
+    - A imposição de prejuízos remuneratórios ou materiais de qualquer espécie (como a negativa de uma promoção ou de diárias); e
+    - A retirada de benefícios, diretos ou indiretos (como a exclusão de projetos ou de oportunidades de capacitação).
+
+> **Ponto de Atenção: A Punição para a Retaliação**
+> 
+> A prática de ações ou omissões de retaliação contra denunciantes é considerada uma **falta disciplinar de natureza grave**. A Lei nº 13.608/2018, em seu art. 4º-C, sujeita o agente público que pratica a retaliação à penalidade de **demissão a bem do serviço público**, uma das sanções mais severas do regime disciplinar, que pode implicar em inelegibilidade para novos cargos públicos.
+
+### O Eixo da Apuração e Responsabilização: O Processo Disciplinar
+
+Uma vez formalizada a denúncia junto à Ouvidoria, e havendo indícios de infração disciplinar, o caso avança para o eixo de **apuração e responsabilização**. Esta é a fase em que a **unidade correcional** do órgão ou entidade (a Corregedoria, por exemplo) assume a condução do processo, por meio dos instrumentos formais da Sindicância ou do Processo Administrativo Disciplinar (PAD), para apurar os fatos e, se for o caso, aplicar as penalidades cabíveis.
+
+A Portaria MGI nº 6.719/2024 estabelece um conjunto de princípios e salvaguardas que devem ser, obrigatoriamente, observados nestes procedimentos, adequando o rito geral da Lei nº 8.112/1990 às especificidades dos casos de assédio e discriminação.
+
+#### A) Princípios e Salvaguardas no Procedimento Disciplinar
+
+- **Análise das Raízes Estruturais e a Perspectiva de Gênero:** A comissão processante não deve se limitar a analisar o fato isolado. Ela deve observar as **raízes discriminatórias e estruturais** que podem estar por trás da conduta. Para isso, a norma orienta a aplicação, no que couber, do **Protocolo para Julgamento com Perspectiva de Gênero**, do Conselho Nacional de Justiça (CNJ), que auxilia os julgadores a identificarem e superarem estereótipos e assimetrias de poder.
+- **Composição Diversa da Comissão:** Para a apuração de irregularidades relacionadas à **discriminação**, a composição da comissão de PAD deverá observar, **sempre que possível**, a preponderância da participação de mulheres, pessoas negras, indígenas, idosas, pessoas LGBTQIA+ ou com deficiência. O objetivo é garantir um colegiado com maior sensibilidade e pluralidade de vivências para julgar o caso.
+- **A Relevância da Palavra da Vítima:** Em casos de assédio, especialmente o sexual, as condutas muitas vezes ocorrem de forma velada, sem testemunhas. Reconhecendo essa dificuldade probatória, a norma estabelece que as declarações da vítima serão qualificadas como **meio de prova de alta relevância**. Isso não significa que a palavra da vítima, por si só, seja suficiente para a condenação, mas que ela deve receber um peso especial na análise do conjunto de provas.
+- **O Princípio da Não Revitimização:** Todo o procedimento de apuração deve ser pautado pela proteção à pessoa denunciante, evitando que o próprio processo se torne uma nova fonte de sofrimento. A norma dá atenção especial aos momentos de oitiva (depoimentos), que deverão ocorrer **sem a presença da suposta pessoa agressora**. A realização de uma acareação ou de uma oitiva conjunta é uma medida excepcionalíssima, que só pode ocorrer se for absolutamente indispensável e devidamente justificada pela comissão.
+
+##### B) Aplicação da Penalidade e Comunicação
+
+A definição da penalidade para os casos de assédio e discriminação deverá seguir os critérios gerais do art. 128 da Lei nº 8.112/1990: a natureza e a gravidade da infração, os danos, as circunstâncias agravantes ou atenuantes e os antecedentes funcionais. A depender da gravidade, a conduta pode ser enquadrada em infrações puníveis com **demissão**, como a "incontinência de conduta" ou o "valimento do cargo para lograr proveito pessoal".
+
+Caso, ao final da apuração, a denúncia seja arquivada por falta de provas ou por não configurar ilícito, a pessoa denunciante deverá ser formalmente **informada** da decisão, por meio de linguagem simples e respeitosa.
+
+Por fim, todo o fluxo de tratamento da denúncia deverá ter como referência, no que couber, o **Guia Lilás: Orientações para prevenção e tratamento ao assédio moral e sexual e à discriminação no Governo Federal**, um manual detalhado publicado pela Controladoria-Geral da União (CGU).
+
+#### A Estrutura de Governança e Instâncias Executoras do Plano
+
+Para garantir a efetiva implementação do Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação (PFPEAD), a Portaria MGI nº 6.719/2024 estabelece um arranjo organizacional em rede. Este modelo busca equilibrar a necessidade de uma política unificada com a autonomia e as particularidades de cada órgão, seguindo uma lógica de **centralização das diretrizes** e **descentralização da execução e do acompanhamento**.
+
+<div align="center">
+<img width="420px" src="./img/portaria-6719-instancias-executoras.png">
+</div>
+
+As instâncias executoras do plano, conforme o art. 5º da Portaria, são:
+
+1. **O Comitê Gestor do Plano Federal (Nível Nacional):** Atua como a instância central, responsável por coordenar, monitorar e estabelecer as diretrizes gerais do plano para toda a Administração Pública Federal.
+2. **Os Comitês Estaduais de Acompanhamento (Nível Regional):** Atuam como braços do Comitê Gestor nos estados, apoiando a implementação e o monitoramento do plano nas unidades descentralizadas.
+3. **Os Órgãos e Entidades (Nível Local):** São a linha de frente da execução, responsáveis por internalizar as diretrizes e implementar as ações no cotidiano do ambiente de trabalho.
+
+A portaria determina que as ações de prevenção e enfrentamento deverão, obrigatoriamente, considerar a **diversidade regional e cultural** do país, que se reflete no funcionamento das unidades descentralizadas dos órgãos federais.
+
+É importante destacar que a participação nas atividades desenvolvidas pelos integrantes dos comitês do Programa será considerada **prestação de serviço público relevante, não remunerada**, devendo respeitar a jornada de trabalho do cargo público do participante.
+
+### O Papel dos Órgãos e Entidades na Execução
+
+Os órgãos e entidades são as estruturas fundamentais da Rede Federal de Prevenção e Enfrentamento do Assédio e da Discriminação (RFPEAD). A eles cabem duas responsabilidades centrais:
+
+- Disseminar as diretrizes do Plano Federal em seus ambientes de trabalho.
+- Elaborar, publicar e executar seus **planos específicos** de prevenção, acolhimento e enfrentamento do assédio e da discriminação, conforme o prazo e as diretrizes estabelecidas na portaria.
+
+#### A Integração com os Planos de Integridade
+
+Para garantir maior robustez e eficiência, a norma exige que os planos específicos de enfrentamento ao assédio e os **Planos de Integridade** de cada órgão estejam **adequadamente conectados**.
+
+Essa conexão deve se dar por meio de **mútuas remissões** (um plano citando o outro), **convergência de ações** e **sincronicidade no monitoramento**. Na prática, isso significa que a gestão de riscos de integridade (corrupção, fraudes, etc.) deve, a partir de agora, incluir a análise dos riscos de assédio e discriminação como uma de suas variáveis. Caso ações sobre o tema já existam nos planos de integridade, elas deverão ser revisitadas e adequadas às novas diretrizes do PFPEAD.
+
+Por fim, a portaria frisa que a **atuação em rede** visa à cooperação e ao compartilhamento de experiências, à disseminação de boas práticas e à colaboração mútua, para a construção de ambientes de trabalho livres de assédio, discriminação e de todo tipo de violência.
+
+
