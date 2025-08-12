@@ -208,3 +208,65 @@ A formação e a capacitação contínua de todos os agentes públicos são cons
 
 - **Prioridade na Capacitação:** Os membros da **Rede de Acolhimento** e da **Rede Federal de Prevenção e Enfrentamento do Assédio e da Discriminação** terão **prioridade** no processo de formação e deverão, obrigatoriamente, participar de capacitação específica com temáticas voltadas para a escuta ativa, riscos psicossociais do trabalho, métodos de prevenção e resolução de conflitos, saúde no trabalho, entre outros temas afins.
 
+#### B) Ações de Sensibilização
+
+Enquanto as ações de formação e capacitação se aprofundam no conhecimento técnico e no desenvolvimento de competências específicas, as **ações de sensibilização** têm como objetivo alcançar um público mais amplo, visando transformar a percepção coletiva, disseminar informações essenciais e promover uma reflexão sobre a importância de um ambiente de trabalho respeitoso.
+
+A sensibilização deverá ser realizada por meio de uma diversidade de canais e formatos, como **campanhas, materiais informativos, eventos, ações culturais, artísticas ou lúdicas**, e outras formas de comunicação que possam engajar o maior número possível de pessoas que exercem atividade pública, de forma acessível e impactante.
+
+- **Exemplos Práticos:** Ações de sensibilização podem incluir a fixação de cartazes informativos nos espaços comuns, a realização de palestras com especialistas durante a Semana de Prevenção ao Assédio, a exibição de filmes ou peças teatrais sobre o tema, ou a criação de _quizzes_ e jogos interativos na intranet do órgão.
+
+Para garantir a continuidade e a seriedade dessas ações, a norma determina que os **Planos de Comunicação** dos órgãos e entidades do SIPEC deverão prever, em seu planejamento anual, ações periódicas de disseminação e compreensão da temática.
+
+As ações de sensibilização deverão ter como objetivo a promoção de:
+
+- **Equidade e combate a todas as formas de discriminação e de assédio**, reforçando o compromisso institucional com a tolerância zero a essas práticas.
+- **Campanhas educativas e conteúdos informativos com linguagem não violenta, inclusiva e acessível**, garantindo que a mensagem seja compreendida por todas as pessoas, independentemente de seu nível de letramento sobre o tema.
+- **Ações voltadas à qualidade de vida no trabalho**, pois um ambiente com bem-estar e saúde mental é, por natureza, um ambiente mais resistente ao surgimento de condutas de assédio.
+- **Informação e conhecimento acerca das práticas de assédio e discriminação** com recortes específicos de gênero, raça e de outros grupos vulnerabilizados, bem como a divulgação das políticas e dos canais para o seu enfrentamento.
+
+Por fim, o plano estabelece a necessidade de **avaliar o resultado** das ações de sensibilização e de formação. Isso deve ser feito por meio da análise de **dados quantitativos** (como o número de participantes em um evento) e, principalmente, de seus **impactos**, que podem ser medidos por meio de pesquisas de clima organizacional ou da análise da evolução do número e da natureza das denúncias recebidas, por exemplo.
+
+#### C) Ações de Promoção da Saúde e Prevenção de Riscos e Agravos
+
+Esta terceira ferramenta de prevenção parte de um princípio fundamental: o assédio e a discriminação não são apenas desvios de conduta, mas também graves **fatores de risco psicossocial** que afetam diretamente a saúde física e mental dos agentes públicos. Ambientes de trabalho tóxicos são causa direta de adoecimento, gerando estresse crônico, ansiedade, depressão e outros agravos que resultam em absenteísmo (faltas ao trabalho) e na queda da qualidade do serviço prestado.
+
+Diante disso, o plano estabelece que a promoção da saúde no trabalho é uma estratégia de prevenção essencial.
+
+- **O Papel do Órgão Central e do SIASS:** O órgão central do SIPEC, por meio das unidades do **Subsistema Integrado de Atenção à Saúde do Servidor (SIASS)**, tem a responsabilidade de estruturar políticas e protocolos para **identificar e monitorar** de forma sistêmica as situações de adoecimento que possam ser decorrentes de práticas de assédio e discriminação. O objetivo é dar ao SIASS um papel proativo, que vá além da concessão de licenças médicas, atuando também na identificação das causas organizacionais do sofrimento no trabalho.
+- **As Responsabilidades dos Órgãos e Entidades:** Cada órgão e entidade do SIPEC deverá adotar medidas concretas com vista à promoção da saúde, destacando-se duas ações principais:
+    1. **Realizar levantamento e monitoramento periódicos do clima organizacional** e da qualidade de vida no trabalho. Isso se materializa, por exemplo, na aplicação de **Pesquisas de Clima Organizacional** anônimas, capazes de medir a percepção dos servidores sobre a gestão, o respeito nas relações interpessoais e a ocorrência de práticas de assédio. Os resultados dessas pesquisas funcionam como um diagnóstico, permitindo identificar os setores mais vulneráveis e redirecionar as ações de prevenção.
+    2. **Estruturar programas de promoção da saúde e prevenção de agravos e riscos no ambiente de trabalho.** Isso inclui o desenvolvimento de projetos, estratégias e práticas que promovam ambientes e relações de trabalho mais inclusivos, seguros e saudáveis, como programas de apoio à saúde mental, oficinas sobre gestão de estresse e a criação de protocolos claros para lidar com os riscos psicossociais identificados.
+
+#### O Ciclo Virtuoso da Prevenção
+
+As três ferramentas de prevenção – formação, sensibilização e promoção da saúde – não são ações isoladas. A portaria prevê que elas devem se **retroalimentar**, estabelecendo um ciclo virtuoso de melhoria contínua.
+
+- **Exemplo Prático:** Uma **Pesquisa de Clima Organizacional** (ação de saúde) revela que, em determinado setor, há uma alta percepção de práticas de machismo e misoginia. Este dado subsidia as outras ferramentas: a área de comunicação pode lançar uma **campanha de sensibilização** (ferramenta 2) focada no combate ao sexismo no ambiente de trabalho, enquanto a área de gestão de pessoas pode desenvolver uma **ação de formação** (ferramenta 1) obrigatória para as lideranças daquele setor sobre equidade de gênero. As ações, portanto, se tornam mais focadas e eficazes.
+
+### O Eixo do Acolhimento: Suporte e Orientação
+
+O **acolhimento** é o eixo do plano que se destina a criar um ambiente seguro e de confiança para as pessoas que vivenciaram ou testemunharam situações de assédio e discriminação. Seu objetivo não é a apuração ou a punição, mas sim a escuta qualificada, o suporte humanizado e a orientação sobre os caminhos disponíveis para a resolução do conflito e a reparação do dano.
+
+#### A) A Rede de Acolhimento
+
+Para que o acolhimento seja eficaz, a portaria prevê que ele não será responsabilidade de um único setor, mas de uma **Rede de Acolhimento** integrada por diversas instâncias já existentes na estrutura dos órgãos e entidades. A ideia é que diferentes portas de entrada estejam abertas para a vítima, que poderá buscar o canal com o qual se sentir mais confortável.
+
+Nos termos do item 5.1 do Anexo I, constituirão potencialmente a Rede de Acolhimento:
+
+- **Unidades de gestão de pessoas:** Responsáveis por orientar sobre direitos, deveres e procedimentos administrativos, como a solicitação de remoção por motivo de saúde.
+- **Ouvidorias:** O canal formal para o registro de denúncias que podem dar início a procedimentos correcionais.
+- **Comissões de Ética:** Responsáveis pela análise da conduta sob a ótica da ética pública, podendo aplicar as sanções previstas no Código de Ética.
+- **Assessorias de Participação Social e de Diversidade:** Unidades especializadas na promoção de políticas de inclusão e na análise de questões que envolvem grupos vulnerabilizados.
+- **Gestoras e Gestores:** A primeira linha de contato. As lideranças devem ser capacitadas para realizar uma escuta inicial e encaminhar a pessoa aos canais adequados da Rede.
+- **Unidades do SIASS:** O braço de saúde da Rede, responsável por oferecer o suporte médico e psicológico necessário à pessoa em sofrimento.
+
+A Rede de Acolhimento terá por **finalidade**:
+
+- **Prestar esclarecimentos e informações** sobre o que caracteriza o assédio e a discriminação, e sobre os fluxos e procedimentos do plano.
+- **Acolher as pessoas afetadas**, praticando a escuta ativa e empática, sem prejulgamentos.
+- **Buscar soluções sistêmicas**, analisando os casos para identificar padrões que possam indicar a necessidade de mudanças na gestão ou na organização do trabalho.
+- **Orientar a pessoa para atendimento especializado**, quando for o caso, como o encaminhamento para serviços de saúde ou assistência jurídica.
+
+Para fortalecer essa estrutura, cada órgão ou entidade poderá instituir uma **Comissão de Apoio ao Acolhimento**, com representação direta de servidoras e servidores e composição baseada no princípio da diversidade. A participação nesta comissão será considerada **prestação de serviço público relevante, não remunerada**, e suas diretrizes de funcionamento serão definidas pelo Comitê Gestor do Programa.
+
