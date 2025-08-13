@@ -139,7 +139,7 @@ Assim como Libâneo, Vera Maria Candau é uma das pioneiras na renovação do pe
 
 O ponto-chave de sua teoria está na distinção entre duas dimensões da didática: a **Instrumental** e a **Fundamental**. Para compreender sua proposta, é preciso primeiro analisar a dimensão instrumental, que é o objeto de sua crítica.
 
-#### a) A Dimensão Instrumental da Didática
+#### Didática Instrumental
 
 A **Didática Instrumental** é a concepção que reduz a didática à sua dimensão puramente técnica, ao "como fazer" em sala de aula. Ela é compreendida como um conjunto de métodos, técnicas e procedimentos de ensino que, se aplicados corretamente pelo professor, garantiriam a aprendizagem do aluno. Essa abordagem é frequentemente comparada a uma **"receita de bolo"**: basta seguir todas as instruções passo a passo para que, ao final, o resultado seja sempre o mesmo, independentemente dos ingredientes (os alunos) ou do contexto (a realidade social).
 
@@ -151,5 +151,65 @@ A razão fundamental deste fracasso, segundo a análise crítica, é a **desvinc
 
 <div align="center">
 <img width="700px" src="./img/05-candau-didatica-instrumental.png">
+</div>
+
+#### Didática Fundamental
+
+Em contraposição à visão reducionista da Didática Instrumental, Vera Candau propõe uma reconstrução do campo, que ela denomina **Didática Fundamental**. Esta nova abordagem não nega a importância da técnica, mas a resgata de seu isolamento, inserindo-a em um quadro de análise mais amplo e complexo. A premissa central da Didática Fundamental é a de que o processo de ensino-aprendizagem é, por natureza, **multidimensional**.
+
+Ignorar essa multidimensionalidade é a falha primária do modelo puramente técnico. A Didática Fundamental, portanto, busca superar as "receitas prontas" ao propor uma reflexão constante sobre as diferentes dimensões que constituem o ato de ensinar. Nas palavras da própria autora:
+
+> A perspectiva fundamental da Didática assume a multidimensionalidade do processo de ensino-aprendizagem e coloca a articulação das três dimensões, técnica, humana e política, no centro de sua temática.
+
+Dessa forma, a proposta de reconstrução da didática se assenta sobre a articulação consciente destes três pilares indispensáveis. A técnica deixa de ser um fim em si mesma para se tornar um dos elementos de uma práxis pedagógica complexa e integrada.
+
+Tratando de cada uma das três dimensões em detalhes:
+
+1. **A Dimensão Técnica:** Esta dimensão se refere ao "como fazer" pedagógico, à competência instrumental do professor. Ela engloba a **organização e a sistematização** do processo de ensino, incluindo o planejamento, a seleção de conteúdos, a definição clara dos objetivos de aprendizagem, a escolha de métodos e recursos, e a construção de instrumentos avaliativos. Um plano de ensino para o bimestre ou o roteiro de uma aula são exemplos de materializações da dimensão técnica. Na Didática Fundamental, a técnica não é descartada, mas vista como um conjunto de ferramentas que o professor precisa dominar para poder fazer escolhas conscientes e fundamentadas.
+2. **A Dimensão Humana:** Esta dimensão foca no "quem com quem" do processo educativo, ou seja, nas relações interpessoais que constituem o ato de ensinar e aprender. Ela leva em consideração os **aspectos afetivos, emocionais e relacionais**, tanto individuais quanto do grupo. O crescimento pessoal dos envolvidos, a criação de um clima de confiança e acolhimento, a mediação de conflitos e a construção de um vínculo positivo entre professor e alunos e dos alunos entre si são o cerne desta dimensão. Um exemplo prático é a preocupação do professor em criar dinâmicas para acolher alunos novos, garantindo sua integração e bem-estar no grupo.
+3. **A Dimensão Política:** Esta dimensão se refere ao "para quê" do ato educativo. Ela reconhece que toda prática pedagógica está situada em um **contexto social, político e cultural** específico e que, portanto, não existe educação neutra. A dimensão política envolve a intencionalidade da ação docente, a consciência de seu compromisso com um determinado projeto de sociedade e a articulação entre o trabalho em sala de aula e os objetivos educacionais mais amplos da escola e da comunidade. Diferentemente da Didática Instrumental, que busca uma técnica universal, a Didática Fundamental reitera que os procedimentos de ensino devem sempre ser escolhidos e orientados em função de um propósito e de um contexto.
+
+É fundamental observar que, na proposta da Didática Fundamental, estas três dimensões não são separadas ou sequenciais. Elas formam uma unidade articulada e indissociável. Toda ação didática em sala de aula pressupõe, ao mesmo tempo, uma escolha técnica, uma interação humana e um posicionamento político. Ignorar qualquer uma delas é empobrecer e mutilar o ato pedagógico.
+
+<div align="center">
+<img width="700px" src="./img/05-candau-didatica-fundamental.png">
+</div>
+
+#### A Superação da Didática Instrumental pela Didática Fundamental
+
+A análise crítica da Didática Instrumental nos leva à conclusão de que uma visão de ensino reduzida a um conjunto de técnicas é insustentável e inadequada para os desafios do mundo atual. A proposta de Vera Candau é, portanto, a de **superar** essa visão fragmentada, assumindo a **Didática Fundamental** como o paradigma para a prática pedagógica. Isso significa reconhecer que toda ação educativa em sala de aula deve ser, de forma consciente e intencional, contextualizada nas esferas técnica, humana e política.
+
+Nesta abordagem integrada, nenhuma dimensão pode ser privilegiada em detrimento das outras, pois todas constituem uma única e indissociável totalidade. Privilegiar apenas a **dimensão técnica** é recair no erro do tecnicismo, reduzindo a prática a uma "receita de bolo" desprovida de sentido. Por outro lado, privilegiar apenas a **dimensão humana** pode levar a um psicologismo, transformando a sala de aula em um espaço de bem-estar afetivo, mas com pouco avanço na apropriação do conhecimento sistematizado. Da mesma forma, privilegiar exclusivamente a **dimensão política** pode descambar para a doutrinação, onde o debate e a construção crítica do saber são substituídos pela imposição de uma única visão de mundo.
+
+A força da Didática Fundamental está, portanto, no equilíbrio e na articulação permanente dessas três esferas. Ela é constituída pelo diálogo com as inúmeras ciências (Psicologia, Sociologia, etc.) que nos ajudam a compreender o complexo ato de ensinar e aprender, sempre conectando:
+
+- O **saber fazer** (a competência da dimensão técnica);
+- O **porquê fazer** (a intencionalidade da dimensão política);
+- O **com quem se faz** (a sensibilidade da dimensão humana).
+
+Em síntese, a multidimensionalidade da Didática Fundamental se materializa em uma prática docente que compreende que, para o bom andamento da sala de aula, é preciso articular um sólido domínio das técnicas de ensino, a construção de boas relações afetivas e cognitivas com os alunos, e um vínculo permanente com a comunidade local e com um projeto de sociedade mais justo.
+
+### A Perspectiva de Cipriano Luckesi
+
+Cipriano Luckesi, embora não se defina como um autor da Didática Geral, mas sim como um especialista em áreas como avaliação e planejamento, contribui para o campo com uma análise profunda sobre o papel da Didática na **formação do educador**. Sua perspectiva nos convida a pensar sobre o compromisso ético e político que sustenta a prática docente.
+
+#### O Educador como Sujeito da História
+
+A reflexão de Luckesi parte de uma premissa fundamental: o educador, como todo ser humano, pode se posicionar na história de duas formas distintas. Ele pode ser **objeto da história**, sofrendo passivamente a ação dos acontecimentos e das forças sociais, tornando-se um mero reprodutor das práticas e ideologias vigentes. Ou ele pode se constituir como **sujeito da história**, agindo de forma consciente e intencional para intervir na realidade e construir um futuro diferente.
+
+Essa segunda possibilidade é a que interessa a uma educação transformadora. O educador que se assume como sujeito da história é aquele que compreende sua prática como uma oportunidade de construir pontes entre o passado e o futuro, engajando-se em um **projeto histórico**.
+
+Para Luckesi, um "projeto histórico" pode ser definido como o desenvolvimento de um povo em direção a melhores condições de vida. Não é um conceito abstrato, mas um plano concreto para a melhoria das condições de moradia, de trabalho e, principalmente, de educação das futuras gerações. Inúmeros profissionais, como médicos e agricultores, estão engajados neste projeto, mas os professores possuem um papel especial, pois sua função é justamente a de formar os cidadãos do futuro, transmitindo os saberes e valores que possibilitarão a construção de uma nação mais justa.
+
+#### A Didática e a Formação Sólida do Educador
+
+Para que o educador possa atuar como sujeito e contribuir para esse projeto histórico, não basta que ele domine técnicas de ensino ou o conteúdo de sua disciplina. É indispensável, segundo Luckesi, que ele possua uma **formação sólida**, que articule conhecimento profissional, competência técnica e valores éticos.
+
+Essa formação sólida não é algo que se adquire apenas na universidade, mas que se constrói no dia a dia da prática docente, especialmente no ato de **planejar as aulas**. O planejamento, nesta visão, não é um mero preenchimento de formulários, mas o momento privilegiado da práxis do professor. É ao planejar que o educador estuda, reflete sobre a melhor maneira de ensinar determinado assunto a seus alunos específicos, toma decisões, antecipa desafios e, assim, exerce sua autonomia intelectual. É um ato diário de estudo e de comprometimento que consolida sua formação profissional.
+
+A Didática, portanto, transcende a dimensão instrumental. Ela é a expressão do compromisso do educador. Uma prática didática bem fundamentada, que nasce de uma formação sólida e de um planejamento reflexivo, é o que possibilita que os estudantes tenham a melhor aprendizagem possível. O resultado é a formação de cidadãos mais conscientes e a contribuição efetiva do educador para um futuro mais digno para as novas gerações, consolidando seu papel como sujeito da história.
+
+<div align="center">
+<img width="440px" src="./img/05-luckesi-didatica-formacao-do-educador.png">
 </div>
 
