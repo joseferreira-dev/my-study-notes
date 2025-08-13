@@ -75,3 +75,60 @@ A aprendizagem significativa acontece quando um novo conhecimento se conecta de 
 <img width="700px" src="./img/05-didatica-esquema.png">
 </div>
 
+## Conceitos Específicos da Didática
+
+Embora exista um consenso sobre a Didática como o campo que estuda o processo de ensino-aprendizagem, diferentes autores trazem olhares e ênfases particulares que enriquecem nossa compreensão. Iniciaremos esta análise com a contribuição de José Carlos Libâneo, um dos pioneiros na sistematização do pensamento pedagógico contemporâneo no Brasil.
+
+### A Perspectiva de José Carlos Libâneo
+
+Libâneo define a Didática de maneira ampla, buscando sempre conectá-la a um contexto teórico, político e social mais vasto. Para ele, não é possível compreender a Didática (o específico) sem antes entender seu lugar dentro da Pedagogia (o geral) e da Educação (o fenômeno mais amplo).
+
+Essa relação de aninhamento pode ser compreendida como uma pirâmide invertida, onde as decisões mais amplas, de nível social e político, vão se afunilando e condicionando as práticas mais específicas que ocorrem na sala de aula, como a instrução e o ensino.
+
+<div align="center">
+<img width="540px" src="./img/05-libaneo-didatica-piramide.png">
+</div>
+
+#### A Distinção entre Pedagogia e Didática
+
+A chave para entender a proposta de Libâneo está na clara distinção que ele estabelece entre os papéis da Pedagogia e da Didática.
+
+A **Pedagogia**, para o autor, é o campo mais amplo, que se ocupa das finalidades da educação. É a ciência que elabora um conjunto de propostas educativas e de organização escolar, orientadas por objetivos sociais e políticos. A pedagogia de uma escola se materializa em seu **Projeto Político Pedagógico (PPP)**, o documento que define sua missão, seus valores e suas linhas gerais de trabalho.
+
+A **Didática**, por sua vez, é a disciplina que opera dentro desse quadro geral. Ela é o desdobramento da visão pedagógica em ações concretas na sala de aula. Isso explica a "autonomia relativa" do professor: ele tem liberdade para escolher seus métodos e recursos didáticos, mas espera-se que suas escolhas sejam coerentes com a linha pedagógica geral da instituição.
+
+Um exemplo prático pode ser encontrado na alfabetização. A **pedagogia** de uma escola pode definir que a alfabetização deve ocorrer a partir do trabalho com textos significativos, e não apenas com a memorização de letras e sílabas. Essa é a diretriz geral. A **didática** entra em cena quando o professor, em sua sala de aula, decide _quais_ textos irá utilizar (uma parlenda, uma notícia de jornal, uma receita), _como_ irá explorá-los com os alunos e _que_ atividades específicas irá propor. O professor não poderia, neste caso, abandonar o trabalho com textos e focar apenas na repetição mecânica de sílabas, pois isso iria contra a proposta pedagógica mais ampla da escola.
+
+#### As Definições Formais de Libâneo
+
+O próprio autor formaliza essa distinção. Para ele, a **Pedagogia** é a ciência que busca intervir no processo de assimilação dos saberes humanos, "orientando-o para finalidades sociais e políticas e criando um conjunto de condições metodológicas e organizativas para viabilizá-lo no âmbito da escola".
+
+Já a **Didática** é definida como:
+
+> (...) uma das disciplinas da Pedagogia que estuda o processo de ensino por meio dos seus componentes — os conteúdos escolares, o ensino e a aprendizagem. (...) É, ao mesmo tempo, uma matéria de estudo fundamental na formação profissional dos professores e um meio de trabalho do qual os professores se servem para dirigir a atividade de ensino, cujo resultado é a aprendizagem dos conteúdos escolares pelos alunos.
+
+Em síntese, a distinção se dá no nível de abrangência. A Pedagogia trabalha com os **objetivos educativos** da escola como um todo, estabelecendo seus princípios e finalidades. A Didática, por sua vez, trabalha com os **objetivos de ensino** dentro da sala de aula, traduzindo os princípios pedagógicos em ações e procedimentos concretos para garantir a aprendizagem dos alunos.
+
+#### A Didática em Ação: Ensino e Instrução
+
+Ainda dentro da concepção de José Carlos Libâneo, a Didática se desdobra em dois conceitos fundamentais que, embora distintos, são inseparáveis na prática pedagógica: o **ensino** e a **instrução**. Compreender a diferença e a relação entre eles é essencial para uma análise mais precisa do ato didático.
+
+O **ensino** refere-se ao conjunto de ações deliberadas do professor para organizar e dirigir o processo de aprendizagem dos alunos. É a dimensão do trabalho docente. O foco está na atividade do professor e nas condições que ele cria para que a aprendizagem ocorra.
+
+A **instrução**, por sua vez, refere-se ao processo e ao resultado da assimilação dos conteúdos por parte do aluno. É a dimensão da aprendizagem do estudante. O foco está no processo de construção e apropriação do saber pelo aluno.
+
+<div align="center">
+<img width="700px" src="./img/05-libaneo-instrucao-ensino.png">
+</div>
+
+Embora sejam conceitualmente diferentes, ensino e instrução são faces da mesma moeda. Não existe ensino que não tenha como objetivo final a instrução, e a instrução, no contexto escolar, é o resultado esperado do processo de ensino. Um leva ao outro e ambos estão contidos no campo mais amplo da Didática.
+
+Libâneo define o processo de ensino como um "recorte" da Didática, ou seja, seu objeto de estudo central. Este processo, por sua vez, engloba tanto a ação de ensinar quanto o processo de aprender (a instrução).
+
+<div align="center">
+<img width="480px" src="./img/05-libaneo-didatica-ensino-instrucao.png">
+</div>
+
+Para tornar essa relação mais concreta, podemos pensar em uma aula expositiva. O ato do professor de planejar a aula, organizar os tópicos em uma sequência lógica, preparar os exemplos e apresentar o conteúdo de forma clara é a dimensão do **ensino**. O processo que ocorre no aluno de ouvir, relacionar as novas informações com seus conhecimentos prévios, tirar dúvidas e, finalmente, assimilar e compreender o conteúdo, é a dimensão da **instrução**. Ambos acontecem de forma articulada dentro de um único ato didático.
+
+Portanto, quando falamos em **planejamento de aulas**, **definição de objetivos**, **seleção de métodos** e **avaliação**, estamos nos referindo primariamente à dimensão do **ensino**. Quando falamos na **capacidade do estudante de aprender**, na **assimilação de conteúdos** e nos **resultados da aprendizagem**, estamos nos referindo à dimensão da **instrução**. A Didática, como campo de estudo, se ocupa de investigar como a primeira dimensão (ensino) pode ser otimizada para garantir a efetividade da segunda (instrução), tendo sempre como objetivo final a aprendizagem do estudante.
