@@ -132,3 +132,24 @@ Libâneo define o processo de ensino como um "recorte" da Didática, ou seja, se
 Para tornar essa relação mais concreta, podemos pensar em uma aula expositiva. O ato do professor de planejar a aula, organizar os tópicos em uma sequência lógica, preparar os exemplos e apresentar o conteúdo de forma clara é a dimensão do **ensino**. O processo que ocorre no aluno de ouvir, relacionar as novas informações com seus conhecimentos prévios, tirar dúvidas e, finalmente, assimilar e compreender o conteúdo, é a dimensão da **instrução**. Ambos acontecem de forma articulada dentro de um único ato didático.
 
 Portanto, quando falamos em **planejamento de aulas**, **definição de objetivos**, **seleção de métodos** e **avaliação**, estamos nos referindo primariamente à dimensão do **ensino**. Quando falamos na **capacidade do estudante de aprender**, na **assimilação de conteúdos** e nos **resultados da aprendizagem**, estamos nos referindo à dimensão da **instrução**. A Didática, como campo de estudo, se ocupa de investigar como a primeira dimensão (ensino) pode ser otimizada para garantir a efetividade da segunda (instrução), tendo sempre como objetivo final a aprendizagem do estudante.
+
+### A Perspectiva de Vera Maria Candau
+
+Assim como Libâneo, Vera Maria Candau é uma das pioneiras na renovação do pensamento didático no Brasil. Sua obra surge da necessidade de superar uma visão antiga e empobrecida da didática, que a reduzia a um mero conjunto de técnicas e "receitas prontas" sobre o que fazer em sala de aula. Candau propõe uma revisão crítica do campo, buscando resgatar sua complexidade e sua importância fundamental para uma prática pedagógica transformadora.
+
+O ponto-chave de sua teoria está na distinção entre duas dimensões da didática: a **Instrumental** e a **Fundamental**. Para compreender sua proposta, é preciso primeiro analisar a dimensão instrumental, que é o objeto de sua crítica.
+
+#### a) A Dimensão Instrumental da Didática
+
+A **Didática Instrumental** é a concepção que reduz a didática à sua dimensão puramente técnica, ao "como fazer" em sala de aula. Ela é compreendida como um conjunto de métodos, técnicas e procedimentos de ensino que, se aplicados corretamente pelo professor, garantiriam a aprendizagem do aluno. Essa abordagem é frequentemente comparada a uma **"receita de bolo"**: basta seguir todas as instruções passo a passo para que, ao final, o resultado seja sempre o mesmo, independentemente dos ingredientes (os alunos) ou do contexto (a realidade social).
+
+Essa forma de pensar a Didática, que esteve muito associada à Pedagogia Tecnicista, gerou profundos problemas na educação brasileira. A crença em uma "receita infalível" ignorava que os diferentes contextos sociais, culturais e individuais dos alunos impossibilitavam a obtenção de resultados uniformes.
+
+A principal consequência dessa abordagem é a **desvinculação entre a prática em sala de aula e o meio social**. O método é visto como um instrumento universal, que não precisa de qualquer vínculo com a realidade da comunidade local ou com as experiências de vida dos estudantes. A experiência pedagógica, no entanto, demonstrou o fracasso dessa premissa. A aplicação de métodos padronizados e descontextualizados resultou em altos índices de fracasso escolar, especialmente entre as crianças das classes populares, que não se viam representadas ou motivadas por aquele ensino. Além disso, gerou uma profunda frustração nos professores, que se sentiam "amarrados" a um roteiro, sem a possibilidade de criar, de adaptar sua prática e de exercer sua autonomia intelectual.
+
+A razão fundamental deste fracasso, segundo a análise crítica, é a **desvinculação dos objetivos educacionais com o fazer pedagógico**. A Didática Instrumental, focada na receita, retira a importância das finalidades, dos "porquês" da educação. Ela destaca apenas os meios, o "como fazer", e se esquece do sentido e do propósito educacional das ações. O resultado é um amontoado de técnicas e passo a passos sem alma, sem direção e sem conexão com o projeto maior de formação humana.
+
+<div align="center">
+<img width="700px" src="./img/05-candau-didatica-instrumental.png">
+</div>
+
