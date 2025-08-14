@@ -596,3 +596,327 @@ A tabela abaixo serve como um resumo rápido para referência:
 |Acesso concorrente seguro|**`ConcurrentHashMap`**|Sincronização granular, alta performance para threads.|
 |Código legado|**`Hashtable`**|Sincronizado, mas obsoleto; use `ConcurrentHashMap` em vez dele.|
 
+## Conjuntos (Sets)
+
+Após explorarmos as listas, que se baseiam em ordem e posição, e os mapas, que se baseiam em associações de chave-valor, chegamos a outra estrutura fundamental do Java Collections Framework: o **Conjunto**, ou `Set`.
+
+Um `Set` é uma coleção que modela o conceito de um conjunto matemático: ele armazena um grupo de elementos **sem permitir duplicatas**. Sua principal finalidade não é manter uma ordem ou associar dados, mas sim garantir a unicidade de cada item que ele contém.
+
+### Interface `Set<E>`: A Coleção de Elementos Únicos
+
+O contrato para todas as implementações de conjuntos em Java é definido pela interface `java.util.Set<E>`. Ela herda diretamente da interface `Collection`, o que significa que possui métodos familiares como `add`, `remove`, `contains`, `size` e `isEmpty`.
+
+As propriedades que definem um `Set` são:
+
+- **Não permite elementos duplicados**: Esta é sua característica mais importante. Qualquer tentativa de adicionar um elemento que já existe no conjunto (segundo um critério de igualdade) será simplesmente ignorada.
+- **Sem acesso por índice**: Diferentemente das listas, os conjuntos não possuem a noção de uma posição ou índice numérico. Não é possível pedir "o terceiro elemento" de um `Set`. A única pergunta que se pode fazer é se um determinado elemento "está contido" no conjunto.
+- **Ordem não garantida (geralmente)**: A maioria das implementações de `Set` não mantém a ordem de inserção dos elementos. Existem, no entanto, implementações específicas que garantem a ordem.
+
+#### Como a Unicidade é Determinada?
+
+A unicidade de um objeto dentro de um `Set` (especialmente em implementações baseadas em hash, como `HashSet`) é determinada pela combinação de dois métodos herdados da classe `Object`: `hashCode()` e `equals()`.
+
+1. Quando se tenta adicionar um elemento, o `Set` primeiro calcula o `hashCode()` do objeto para determinar rapidamente onde ele deveria ser armazenado.
+2. Em seguida, ele usa o método `equals()` para comparar o novo elemento com qualquer outro que já esteja naquele mesmo local de armazenamento.
+3. Se nenhum elemento igual for encontrado, o novo elemento é inserido. O método `add()` retorna `true`.
+4. Se um elemento igual já existir, a inserção é ignorada. O método `add()` retorna `false`.
+
+### As Principais Implementações de `Set`
+
+Assim como `List` e `Map`, a interface `Set` possui diversas implementações concretas, cada uma com diferentes características de performance e ordenação. A estrutura interna dessas implementações é, na verdade, baseada nas implementações de `Map` que já vimos.
+
+| Tipo de Set               | Estrutura Interna                                            | Permite `null`        | Ordenação                                                      | Melhor Cenário de Uso                                                                   |
+| ------------------------- | ------------------------------------------------------------ | --------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| **`HashSet`**             | Tabela de Hash (usa um `HashMap` por baixo)                  | Sim (um único `null`) | Não garante nenhuma ordem.                                     | Uso geral, quando a ordem não importa e a performance de inserção/busca é crucial.      |
+| **`LinkedHashSet`**       | Tabela de Hash + Lista Ligada (usa um `LinkedHashMap`)       | Sim (um único `null`) | Mantém a ordem de inserção.                                    | Quando é necessário garantir unicidade e, ao mesmo tempo, preservar a ordem de chegada. |
+| **`TreeSet`**             | Árvore Binária Balanceada (usa um `TreeMap`)                 | Não                   | Mantém os elementos ordenados (ordem natural ou `Comparator`). | Quando é necessário manter os elementos únicos e sempre em ordem crescente.             |
+| **`EnumSet`**             | Bit Vector                                                   | Não                   | Mantém a ordem natural do `enum`.                              | Quando os elementos do conjunto são de um tipo `enum`.                                  |
+| **`CopyOnWriteArraySet`** | Array com "cópia na escrita" (usa um `CopyOnWriteArrayList`) | Não                   | Mantém a ordem de inserção.                                    | Ambientes concorrentes com leitura massiva e escrita muito rara.                        |
+
+#### `HashSet<E>`: O Padrão para Unicidade e Performance
+
+O `HashSet` é a implementação de `Set` mais comum e de propósito geral. Internamente, ele é implementado utilizando um `HashMap`, onde os elementos do `Set` são armazenados como as chaves do mapa. Essa estrutura lhe confere uma performance excelente, com operações de `add`, `remove` e `contains` executadas, em média, em tempo constante **O(1)**. O preço dessa velocidade é que a ordem de iteração dos elementos não é garantida.
+
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class ExemploHashSet {
+    public static void main(String[] args) {
+        Set<String> nomes = new HashSet<>();
+
+        // O método add() retorna um booleano
+        boolean addAna = nomes.add("Ana");      // true, "Ana" foi adicionada
+        boolean addCarlos = nomes.add("Carlos");  // true, "Carlos" foi adicionado
+        boolean addAnaDeNovo = nomes.add("Ana"); // false, "Ana" já existe e foi ignorada
+
+        System.out.println("Nomes no conjunto: " + nomes); // A ordem de exibição não é garantida
+        System.out.println("Adicionou Ana a primeira vez? " + addAna);
+        System.out.println("Adicionou Ana a segunda vez? " + addAnaDeNovo);
+    }
+}
+```
+
+#### `LinkedHashSet<E>`: Unicidade com Ordem de Inserção
+
+O `LinkedHashSet` herda de `HashSet`, mas com um diferencial importante: ele mantém a **ordem de inserção** dos elementos. Internamente, ele utiliza um `LinkedHashMap`, que, como vimos, mantém uma lista duplamente encadeada conectando os elementos na ordem em que foram adicionados.
+
+É a escolha perfeita quando se precisa remover duplicatas de uma coleção, mas é essencial que a ordem original dos elementos restantes seja preservada.
+
+```java
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class ExemploLinkedHashSet {
+    public static void main(String[] args) {
+        Set<Integer> sequencia = new LinkedHashSet<>();
+        sequencia.add(10);
+        sequencia.add(5);
+        sequencia.add(10); // Ignorado
+        sequencia.add(1);
+
+        // A iteração sempre seguirá a ordem de inserção: 10, 5, 1
+        System.out.println("Sequência: " + sequencia);
+    }
+}
+```
+
+#### `TreeSet<E>`: Unicidade com Ordenação Natural
+
+O `TreeSet` armazena seus elementos de forma **ordenada**. Internamente, ele é implementado com um `TreeMap`, que utiliza uma estrutura de árvore binária balanceada. Isso garante que, ao iterar sobre o `TreeSet`, os elementos sempre aparecerão em sua ordem natural (numérica, alfabética, etc.) ou em uma ordem customizada, definida por um `Comparator`.
+
+Para que os elementos possam ser ordenados, eles devem implementar a interface `Comparable`, ou um `Comparator` deve ser fornecido ao construtor do `TreeSet`. Por essa razão, `TreeSet` **não permite** elementos `null`.
+
+```java
+import java.util.TreeSet;
+import java.util.Set;
+
+public class ExemploTreeSet {
+    public static void main(String[] args) {
+        Set<String> nomesOrdenados = new TreeSet<>();
+        nomesOrdenados.add("Carlos");
+        nomesOrdenados.add("Ana");
+        nomesOrdenados.add("Beatriz");
+        nomesOrdenados.add("Carlos"); // Ignorado
+
+        // A iteração sempre será em ordem alfabética: Ana, Beatriz, Carlos
+        System.out.println("Nomes ordenados: " + nomesOrdenados);
+    }
+}
+```
+
+### `EnumSet<E>`: Performance Máxima com Tipos `enum`
+
+O `EnumSet` é uma implementação de `Set` de altíssima performance, projetada para trabalhar exclusivamente com chaves de um tipo `enum`. Sua eficiência notável deriva de sua estrutura interna: em vez de usar uma tabela de hash, ele é implementado como um **vetor de bits** (_bit vector_), geralmente utilizando um único `long` (64 bits).
+
+Nessa estrutura, cada bit representa uma das constantes do `enum`. Se o bit está "ligado" (valor 1), significa que a constante correspondente está no conjunto; se está "desligado" (valor 0), ela não está. Essa abordagem torna as operações como `add`, `contains` e `remove` extremamente rápidas e o consumo de memória, mínimo.
+
+É a escolha definitiva sempre que precisar armazenar um conjunto de constantes de um mesmo `enum`. É perfeito para representar um conjunto de opções, permissões ou estados.
+
+```java
+import java.util.EnumSet;
+import java.util.Set;
+
+// 1. Definição de um enum para representar dias da semana.
+enum DiaDaSemana {
+    SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADO, DOMINGO
+}
+
+public class ExemploEnumSet {
+    public static void main(String[] args) {
+        // Cria um EnumSet contendo apenas os dias úteis.
+        // É criado usando métodos de fábrica, não o construtor 'new'.
+        Set<DiaDaSemana> diasUteis = EnumSet.of(
+            DiaDaSemana.SEGUNDA, 
+            DiaDaSemana.TERCA, 
+            DiaDaSemana.QUARTA, 
+            DiaDaSemana.QUINTA, 
+            DiaDaSemana.SEXTA
+        );
+
+        System.out.println("Dias úteis: " + diasUteis);
+
+        boolean temSabado = diasUteis.contains(DiaDaSemana.SABADO);
+        System.out.println("Contém Sábado? " + temSabado); // false
+
+        // A iteração sempre seguirá a ordem natural de declaração do enum.
+        for (DiaDaSemana dia : diasUteis) {
+            System.out.println(dia);
+        }
+    }
+}
+```
+
+### `CopyOnWriteArraySet<E>`: Unicidade e Segurança Concorrente
+
+Esta é a contraparte do `CopyOnWriteArrayList` para a interface `Set`. É uma implementação de conjunto segura para ambientes concorrentes (_thread-safe_), ideal para cenários onde as leituras são muito mais frequentes que as escritas.
+
+Internamente, ele utiliza um `CopyOnWriteArrayList` para armazenar os elementos. Isso significa que ele herda todas as suas características de performance:
+
+- **Leituras**: São muito rápidas e não exigem bloqueio, pois operam em um _snapshot_ imutável da coleção.
+- **Escritas**: São muito caras. A cada `add` ou `remove`, uma cópia completa do array interno é criada para garantir a imutabilidade do _snapshot_ anterior.
+
+A unicidade dos elementos é garantida através de uma verificação antes da inserção.
+
+Recomendado em aplicações concorrentes onde um conjunto de elementos únicos precisa ser iterado com muita frequência por múltiplas threads, mas é modificado muito raramente (por exemplo, um conjunto de "observadores" ou "listeners" de eventos).
+
+```java
+import java.util.Set;
+import java.util.concurrent.CopyOnWriteArraySet;
+
+public class ExemploCopyOnWriteArraySet {
+    public static void main(String[] args) {
+        Set<String> listeners = new CopyOnWriteArraySet<>();
+
+        // Operações de escrita (caras)
+        listeners.add("Listener-A");
+        listeners.add("Listener-B");
+        listeners.add("Listener-A"); // Duplicado, será ignorado
+
+        System.out.println("Listeners registrados: " + listeners);
+
+        // A iteração é a operação principal e muito eficiente.
+        // É seguro iterar aqui enquanto outra thread tenta adicionar/remover um listener.
+        for (String listener : listeners) {
+            System.out.println("Notificando " + listener);
+        }
+    }
+}
+```
+
+### Guia de Escolha: Qual Set Usar?
+
+A escolha da implementação de `Set` correta depende diretamente dos requisitos de ordenação, performance e concorrência da sua aplicação. Para decidir, responda às seguintes perguntas:
+
+1. **A prioridade máxima é a velocidade de inserção/busca e a ordem dos elementos não importa?** **`HashSet`** é a sua escolha padrão. Para a maioria dos casos que exigem apenas a garantia de unicidade sem se preocupar com a ordem, sua performance O(1) é a melhor opção.
+2. **É necessário garantir a unicidade, mas também preservar a ordem em que os elementos foram inseridos?** Use **`LinkedHashSet`**. Ele combina a performance do `HashSet` com a previsibilidade de ordem de uma lista ligada.
+3. **Os elementos precisam ser únicos e estar sempre em uma ordem natural (alfabética, numérica) ou customizada?** **`TreeSet`** é a solução. Ele mantém o conjunto constantemente ordenado, o que é ideal para quando a iteração ordenada é um requisito funcional.
+4. **Os elementos do seu conjunto são constantes de um mesmo tipo `enum`?** Utilize **`EnumSet`** sem hesitar. Ele oferece uma performance e um uso de memória imbatíveis para este cenário específico.
+5. **O conjunto será acessado com extrema frequência por múltiplas threads e modificado muito raramente?** Este é o caso de uso exato para **`CopyOnWriteArraySet`**, que otimiza as leituras em ambientes concorrentes ao custo de escritas caras.
+
+A tabela abaixo serve como um resumo rápido para referência:
+
+|Se a prioridade é...|Use...|Porque...|
+|---|---|---|
+|Velocidade máxima, uso geral|**`HashSet`**|Usa tabela de hash, acesso e inserção O(1).|
+|Manter a ordem de inserção|**`LinkedHashSet`**|`HashSet` + lista ligada para manter a ordem.|
+|Manter os elementos ordenados|**`TreeSet`**|Usa árvore binária, garante ordem natural dos elementos.|
+|Elementos baseados em `enum`|**`EnumSet`**|Usa um bit vector interno, extremamente rápido e leve.|
+|Leitura concorrente massiva|**`CopyOnWriteArraySet`**|Leituras sem bloqueio, escritas criam cópias.|
+
+## `Iterator`: Um Passeio Padronizado pelas Coleções
+
+Até agora, vimos diversas implementações de coleções (`ArrayList`, `LinkedList`, `HashSet`, `TreeSet`, etc.), cada uma com sua própria estrutura interna. Uma pergunta natural que surge é: existe uma forma padronizada de percorrer os elementos de qualquer uma dessas coleções, sem precisar conhecer seus detalhes internos?
+
+A resposta é sim, e a solução é a interface `Iterator`. O **`Iterator`** é um padrão de projeto fundamental e uma interface do pacote `java.util` que fornece um mecanismo unificado para percorrer sequencialmente os elementos de uma coleção. Ele funciona como um "cursor" ou um "ponteiro" que sabe como navegar pela coleção, um elemento por vez, abstraindo completamente a complexidade de sua estrutura subjacente.
+
+### Funcionamento Básico do `Iterator`
+
+A interface `Iterator<E>` define três métodos principais:
+
+- **`boolean hasNext()`**: Verifica se ainda existem elementos a serem percorridos na coleção. Retorna `true` se houver um próximo elemento, e `false` caso contrário.
+- **`E next()`**: Retorna o próximo elemento da coleção e avança o cursor para a próxima posição.
+- **`void remove()`**: Remove da coleção o último elemento que foi retornado pelo método `next()`.
+
+O padrão de uso mais comum envolve obter um objeto `Iterator` a partir de uma coleção (usando o método `iterator()`) e, em seguida, usar um laço `while` para percorrer os elementos.
+
+```java
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class ExemploIterator {
+    public static void main(String[] args) {
+        List<String> nomes = new ArrayList<>();
+        nomes.add("Ana");
+        nomes.add("Carlos");
+        nomes.add("Beatriz");
+
+        // 1. Obtém o Iterator a partir da coleção.
+        Iterator<String> it = nomes.iterator();
+
+        // 2. Usa hasNext() como condição do laço.
+        while (it.hasNext()) {
+            // 3. Usa next() para obter o elemento e avançar o cursor.
+            String nome = it.next();
+            System.out.println(nome);
+        }
+    }
+}
+```
+
+Essa abordagem é universal. O mesmo código de laço `while` funcionaria perfeitamente se a variável `nomes` fosse um `LinkedList` ou um `HashSet`, pois o `Iterator` se encarrega de lidar com a lógica de travessia específica de cada estrutura.
+
+### O Poder do `Iterator`: Remoção Segura Durante a Iteração
+
+A principal e mais importante razão para se usar um `Iterator` explicitamente é a necessidade de **remover elementos de uma coleção enquanto se está iterando sobre ela**.
+
+Tentar modificar uma coleção (adicionar ou remover elementos) usando os métodos da própria coleção dentro de um laço `for-each` resultará em uma exceção `ConcurrentModificationException`. Isso ocorre porque a modificação direta da coleção invalida o estado interno do iterador que o `for-each` utiliza por baixo dos panos.
+
+**Exemplo do que NÃO fazer:**
+
+```java
+List<String> frutas = new ArrayList<>();
+frutas.add("Maçã");
+frutas.add("Banana");
+frutas.add("Uva");
+
+try {
+    for (String fruta : frutas) {
+        if (fruta.equals("Banana")) {
+            frutas.remove(fruta); // ERRO! Lança ConcurrentModificationException
+        }
+    }
+} catch (java.util.ConcurrentModificationException e) {
+    System.err.println("Erro: Não é seguro modificar a lista diretamente dentro de um for-each.");
+}
+```
+
+A única forma segura de realizar essa operação é utilizando o método `remove()` do próprio `Iterator`. Este método notifica a coleção e o iterador sobre a remoção, mantendo o estado de ambos consistente.
+
+**A forma correta e segura:**
+
+```java
+List<Integer> numeros = new ArrayList<>();
+numeros.add(10);
+numeros.add(5);
+numeros.add(20);
+numeros.add(3);
+
+Iterator<Integer> it = numeros.iterator();
+while (it.hasNext()) {
+    Integer numero = it.next();
+    if (numero < 10) {
+        // Usa o método remove() do Iterator, não da lista.
+        it.remove();
+    }
+}
+
+System.out.println("Lista após a remoção dos menores que 10: " + numeros);
+// Saída: Lista após a remoção dos menores que 10: [10, 20]
+```
+
+### Por Trás dos Panos: O Laço `for-each`
+
+É útil saber que o laço `for-each`, que temos utilizado para percorrer coleções, é, na verdade, "açúcar sintático" sobre a interface `Iterator`. Quando o compilador Java encontra um laço `for-each`, ele o traduz para um código que utiliza um `Iterator` nos bastidores.
+
+O código:
+
+```java
+for (String nome : nomes) {
+    System.out.println(nome);
+}
+```
+
+É, em essência, compilado para algo muito similar a:
+
+```java
+Iterator<String> it = nomes.iterator();
+while (it.hasNext()) {
+    String nome = it.next();
+    System.out.println(nome);
+}
+```
+
+Essa compreensão nos ajuda a entender por que o `for-each` é tão conveniente para leituras, mas por que precisamos recorrer ao `Iterator` explícito quando a remoção de elementos se faz necessária.
+
