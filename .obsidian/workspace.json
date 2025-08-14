@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
+                "file": "linguagem-java/contents/03-operadores.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-tipos-de-dados-e-variaveis"
+              "title": "03-operadores"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
+                "file": "linguagem-java/contents/03-operadores.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 02-tipos-de-dados-e-variaveis"
+              "title": "Sumário de 03-operadores"
             }
           }
         ],
@@ -170,8 +170,9 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
-    "linguagem-java/contents/01-conceitos-gerais-de-java.md",
     "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
+    "linguagem-java/contents/03-operadores.md",
+    "linguagem-java/contents/01-conceitos-gerais-de-java.md",
     "linguagem-java/README.md",
     "arquitetura-e-organizacao-de-computadores/contents/12-hardware.md",
     "linguagem-java/contents/banner-java.png",
@@ -208,7 +209,6 @@
     "bancos-de-dados/contents/09-outras-notacoes-conceituais.md",
     "bancos-de-dados/contents/08-modelo-entidade-relacionamento-estendido.md",
     "bancos-de-dados/contents/07-modelo-entidade-relacionamento.md",
-    "bancos-de-dados/contents/06-modelo-conceitual-e-projeto-de-bancos.md",
     "conhecimentos-pedagogicos-e-ept/contents/img",
     "conhecimentos-pedagogicos-e-ept/contents/Nova pasta",
     "conhecimentos-pedagogicos-e-ept/contents",
