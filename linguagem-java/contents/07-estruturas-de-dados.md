@@ -6,7 +6,7 @@ Para gerenciar esses conjuntos de forma eficaz, precisamos das **estruturas de d
 
 Em Java, o universo das estruturas de dados é vasto. Ele se inicia com a estrutura mais fundamental e nativa da linguagem, o **array**, e se expande para um rico e poderoso ecossistema de classes fornecido pela **API Java Collections Framework**, que inclui implementações de Listas, Conjuntos, Filas e Mapas. Neste capítulo, iniciaremos nossa jornada com o pilar de todas as outras estruturas: o array.
 
-## Array: A Estrutura de Dados Fundamental
+## Arrays
 
 O **array** é a estrutura de dados mais básica em Java. Conceitualmente, um array é um contêiner de tamanho fixo que armazena uma sequência de elementos do **mesmo tipo**. Esses elementos são mantidos em um bloco contíguo de memória e são acessados através de um **índice** numérico, que representa a posição de cada elemento na sequência.
 
@@ -112,7 +112,7 @@ int elemento = matriz[0][2]; // elemento será 3
 
 O conceito pode ser estendido para três ou mais dimensões, embora seu uso seja menos frequente em aplicações do dia a dia.
 
-## Interface `List`: A Flexibilidade das Coleções
+## Listas
 
 Embora os arrays sejam eficientes e fundamentais, sua principal limitação — o tamanho fixo — torna-os inadequados para muitos cenários do mundo real, onde a quantidade de dados pode crescer ou diminuir dinamicamente. Para resolver essa e outras complexidades, o Java oferece o **Java Collections Framework (JCF)**, um conjunto sofisticado e poderoso de classes e interfaces para representar e manipular coleções de objetos.
 
@@ -334,4 +334,265 @@ A tabela abaixo serve como um resumo rápido para referência:
 |Leitura concorrente massiva|**`CopyOnWriteArrayList`**|Leituras sem bloqueio, escritas criam cópias.|
 |Imutabilidade e segurança|**`List.of()`**|Cria uma lista que não pode ser modificada, garantindo constância.|
     
+
+## Mapas
+
+Diferentemente das listas, que são coleções lineares de elementos individuais acessados por um índice numérico, os **Mapas** (ou _Maps_) são estruturas de dados projetadas para armazenar associações, ou mapeamentos, entre um par de objetos: uma **chave** (_key_) e um **valor** (_value_).
+
+A melhor analogia para um mapa é um dicionário: a chave é a "palavra" que se deseja procurar, e o valor é a "definição" associada a essa palavra. Cada chave dentro de um mapa deve ser única, garantindo um caminho direto e inequívoco para se recuperar o valor correspondente.
+
+### A Interface `Map<K, V>`: O Dicionário de Dados do Java
+
+O comportamento dos mapas em Java é definido pela interface `java.util.Map<K, V>`. Note os dois parâmetros genéricos:
+
+- **`K`**: Representa o tipo de dado da **Chave** (_Key_).
+- **`V`**: Representa o tipo de dado do **Valor** (_Value_).
+
+É importante destacar que, embora seja uma parte central do Java Collections Framework, a interface `Map` **não herda** da interface `Collection`. Isso ocorre porque `Collection` representa uma coleção de elementos individuais, enquanto `Map` representa uma coleção de pares de chave-valor.
+
+As principais propriedades de um `Map` são:
+
+- **Chaves Únicas**: Um mapa não pode conter chaves duplicadas. Se você tentar inserir um par com uma chave que já existe, o valor antigo associado a essa chave será substituído pelo novo.
+- **Acesso pela Chave**: A recuperação de um valor é feita exclusivamente através de sua chave, não por um índice posicional.
+- **Valores Duplicados Permitidos**: Diferentes chaves podem ser associadas a valores iguais.
+
+A interface `Map` define um conjunto rico de métodos para manipulação, incluindo:
+
+| Método                        | Descrição                                                                             |
+| ----------------------------- | ------------------------------------------------------------------------------------- |
+| `put(K chave, V valor)`       | Associa a chave ao valor. Retorna o valor antigo, se a chave já existia, ou `null`.   |
+| `get(Object chave)`           | Retorna o valor associado à chave, ou `null` se a chave não for encontrada.           |
+| `containsKey(Object chave)`   | Retorna `true` se o mapa contém a chave especificada.                                 |
+| `containsValue(Object valor)` | Retorna `true` se o mapa contém pelo menos uma chave associada ao valor especificado. |
+| `remove(Object chave)`        | Remove o par chave-valor associado à chave.                                           |
+| `keySet()`                    | Retorna um `Set` com todas as chaves do mapa.                                         |
+| `values()`                    | Retorna uma `Collection` com todos os valores do mapa.                                |
+| `entrySet()`                  | Retorna um `Set` de `Map.Entry<K, V>`, que representa cada par chave-valor.           |
+| `size()`                      | Retorna o número de pares chave-valor armazenados.                                    |
+| `clear()`                     | Remove todos os mapeamentos do mapa.                                                  |
+
+Assim como nas listas, a boa prática é "programar para a interface":
+
+```java
+Map<Integer, String> usuarios = new HashMap<>();
+```
+
+### As Principais Implementações de `Map`
+
+A escolha da implementação de `Map` correta depende crucialmente dos requisitos de ordenação, performance e segurança em ambientes concorrentes.
+
+| Tipo de Mapa            | Estrutura Interna                        | Ordenação                                              | Permite Chave/Valor `null`                      | Melhor Cenário de Uso                                                            |
+| ----------------------- | ---------------------------------------- | ------------------------------------------------------ | ----------------------------------------------- | -------------------------------------------------------------------------------- |
+| **`HashMap`**           | Tabela de Hash                           | Não garante nenhuma ordem.                             | Sim (1 chave `null`, múltiplos valores `null`). | Mapa de propósito geral, quando a velocidade de inserção e busca é a prioridade. |
+| **`LinkedHashMap`**     | Tabela de Hash + Lista Duplamente Ligada | Mantém a ordem de inserção.                            | Sim.                                            | Quando a ordem de inserção dos elementos é importante.                           |
+| **`TreeMap`**           | Árvore Binária Balanceada                | Ordenado pelas chaves (ordem natural ou `Comparator`). | Não permite chave `null`.                       | Quando é necessário iterar sobre as chaves de forma ordenada.                    |
+| **`Hashtable`**         | Tabela de Hash (Legado)                  | Não garante nenhuma ordem.                             | Não (nem chave, nem valor).                     | Apenas para código legado. **Evitar em novos projetos.**                         |
+| **`ConcurrentHashMap`** | Tabela de Hash Segmentada                | Não garante nenhuma ordem.                             | Não (nem chave, nem valor).                     | Alternativa moderna e performática ao `Hashtable` para ambientes concorrentes.   |
+| **`EnumMap`**           | Array                                    | Ordenado pela ordem natural do `enum`.                 | Chave não pode ser `null`.                      | Quando as chaves são de um tipo `enum`. Extremamente rápido.                     |
+
+#### `HashMap<K, V>`: O Padrão para Performance
+
+O `HashMap` é a implementação de mapa mais utilizada. Ele armazena seus dados em uma **tabela de hash**, o que permite operações de inserção (`put`), busca (`get`) e remoção (`remove`) com uma performance média de tempo constante, **O(1)**. Isso o torna extremamente rápido. O preço dessa velocidade é que ele **não garante nenhuma ordem** ao iterar sobre seus elementos.
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class ExemploHashMap {
+    public static void main(String[] args) {
+        // Mapa de matrículas para nomes de alunos
+        Map<Integer, String> alunos = new HashMap<>();
+
+        alunos.put(101, "Ana");
+        alunos.put(102, "Carlos");
+        alunos.put(103, "Beatriz");
+        alunos.put(101, "Ana Silva"); // Substitui o valor da chave 101
+
+        // Acesso rápido pelo get
+        System.out.println("Aluno com matrícula 102: " + alunos.get(102));
+
+        // Iterando sobre as chaves
+        for (Integer matricula : alunos.keySet()) {
+            System.out.println("Matrícula: " + matricula);
+        }
+
+        // Iterando sobre os pares chave-valor (forma mais eficiente)
+        for (Map.Entry<Integer, String> entry : alunos.entrySet()) {
+            System.out.println("Chave: " + entry.getKey() + ", Valor: " + entry.getValue());
+        }
+    }
+}
+```
+
+#### `LinkedHashMap<K, V>`: Mantendo a Ordem de Inserção
+
+O `LinkedHashMap` herda de `HashMap`, mantendo sua alta performance, mas com um diferencial: ele também mantém uma **lista duplamente encadeada** interna que conecta todos os seus elementos. Essa lista adicional garante que, ao iterar sobre o mapa, os elementos aparecerão na **exata ordem em que foram inseridos**.
+
+É a escolha perfeita quando a ordem de inserção é um requisito funcional, como em um cache que precisa saber qual item foi inserido por último.
+
+```java
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class ExemploLinkedHashMap {
+    public static void main(String[] args) {
+        Map<String, String> capitais = new LinkedHashMap<>();
+        capitais.put("Brasil", "Brasília");
+        capitais.put("Argentina", "Buenos Aires");
+        capitais.put("Chile", "Santiago");
+
+        // A iteração SEMPRE seguirá a ordem de inserção
+        for (String pais : capitais.keySet()) {
+            System.out.println(pais); // Imprime Brasil, depois Argentina, depois Chile
+        }
+    }
+}
+```
+
+#### `TreeMap<K, V>`: Ordenação pelas Chaves
+
+O `TreeMap` implementa a interface `Map` utilizando uma estrutura de **árvore binária balanceada (Red-Black Tree)**. Sua principal característica é que ele armazena os pares chave-valor de forma **ordenada com base nas chaves**.
+
+Para que isso seja possível, as chaves devem ser naturalmente ordenáveis (implementar a interface `Comparable`, como `Integer` e `String`) ou um `Comparator` customizado deve ser fornecido no momento da criação do mapa. As operações de `put`, `get` e `remove` são um pouco mais lentas que no `HashMap` (O(log n)), mas ainda muito eficientes.
+
+É a escolha ideal quando a necessidade de manter as chaves em ordem é mais importante que a velocidade máxima de inserção.
+
+```java
+import java.util.TreeMap;
+import java.util.Map;
+
+public class ExemploTreeMap {
+    public static void main(String[] args) {
+        // TreeMap ordena as chaves automaticamente
+        Map<String, Integer> pontuacoes = new TreeMap<>();
+        pontuacoes.put("Carlos", 90);
+        pontuacoes.put("Ana", 95);
+        pontuacoes.put("Beatriz", 88);
+
+        // A iteração será em ordem alfabética das chaves
+        for (String nome : pontuacoes.keySet()) {
+            System.out.println(nome); // Imprime Ana, depois Beatriz, depois Carlos
+        }
+    }
+}
+```
+
+### `Hashtable<K, V>`: A Implementação Legada e Sincronizada
+
+O `Hashtable` é uma das estruturas de dados originais do Java, presente desde a versão 1.0. Ele é, em funcionalidade, muito similar ao `HashMap`, pois também utiliza uma tabela de hash interna para armazenar pares de chave-valor. No entanto, possui duas diferenças cruciais:
+
+1. **Sincronização (Thread Safety)**: Todos os métodos públicos do `Hashtable` (como `put`, `get`, `remove`) são `synchronized`. Isso significa que a estrutura é segura para ser usada em ambientes com múltiplas threads, pois apenas uma thread pode executar um método do mapa por vez, prevenindo inconsistências de dados. Essa segurança, no entanto, gera um gargalo de performance, tornando-o mais lento que o `HashMap` em ambientes de thread única.
+2. **Proibição de `null`**: Diferentemente do `HashMap`, o `Hashtable` **não permite** chaves ou valores nulos. Tentar inserir um `null` resultará em uma `NullPointerException`.
+
+O `Hashtable` é considerado uma classe legada. Seu uso deve ser evitado em novos projetos, sendo mantido principalmente para garantir a retrocompatibilidade com sistemas antigos. Para novos desenvolvimentos que exigem segurança em concorrência, a alternativa moderna e de maior performance é o `ConcurrentHashMap`.
+
+```java
+import java.util.Hashtable;
+import java.util.Map;
+
+public class ExemploHashtable {
+    public static void main(String[] args) {
+        // A declaração usa Hashtable, mas a boa prática seria programar para a interface Map.
+        Map<String, Integer> inventario = new Hashtable<>();
+
+        inventario.put("Maçãs", 100);
+        inventario.put("Bananas", 150);
+
+        System.out.println("Quantidade de maçãs: " + inventario.get("Maçãs"));
+
+        try {
+            // A linha abaixo lançará uma NullPointerException.
+            inventario.put("Peras", null);
+        } catch (NullPointerException e) {
+            System.err.println("Erro: Hashtable não permite valores nulos.");
+        }
+    }
+}
+```
+
+### `ConcurrentHashMap<K, V>`: Performance e Segurança Concorrente
+
+O `ConcurrentHashMap` é a implementação padrão para mapas que precisam ser acessados e modificados por múltiplas threads simultaneamente. Ele foi projetado para ser uma substituição de alta performance para o `Hashtable`.
+
+Sua grande vantagem reside em sua estratégia de sincronização. Em vez de bloquear o mapa inteiro para cada operação (como faz o `Hashtable`), o `ConcurrentHashMap` utiliza uma técnica mais sofisticada de bloqueio por segmentos ou nós. Isso significa que múltiplas threads podem escrever em diferentes partes do mapa ao mesmo tempo, sem interferir umas com as outras, resultando em um desempenho muito superior em aplicações de alta concorrência. Assim como o `Hashtable`, ele **não permite** chaves ou valores `null`.
+
+Seu uso é ideal sempre que um mapa precisar ser compartilhado de forma segura entre múltiplas threads. É a escolha ideal para caches compartilhados, contadores concorrentes, e gerenciamento de sessões de usuários em aplicações web.
+
+```java
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.Map;
+
+public class ExemploConcurrentHashMap {
+    public static void main(String[] args) {
+        // Mapa para armazenar o status de processamento de tarefas em um sistema concorrente.
+        Map<String, String> statusTarefas = new ConcurrentHashMap<>();
+
+        // Múltiplas threads poderiam adicionar e atualizar status aqui de forma segura.
+        statusTarefas.put("Tarefa-001", "Em processamento");
+        statusTarefas.put("Tarefa-002", "Aguardando");
+        
+        // Uma thread pode atualizar o status...
+        statusTarefas.put("Tarefa-001", "Concluída");
+
+        System.out.println("Status da Tarefa-001: " + statusTarefas.get("Tarefa-001"));
+    }
+}
+```
+
+### `EnumMap<K, V>`: Otimização Extrema para Chaves `enum`
+
+O `EnumMap` é uma implementação de `Map` altamente especializada e otimizada, projetada para ser usada exclusivamente com chaves de um tipo `enum` (enumeração).
+
+Sua performance excepcional vem de sua estrutura interna: ele **não utiliza uma tabela de hash**. Em vez disso, ele usa um **array simples** para armazenar os valores. A posição de cada valor no array é determinada diretamente pelo `ordinal()` da constante `enum` (sua posição na declaração, começando em zero). Esse acesso direto ao array torna o `EnumMap` extremamente rápido e com um consumo de memória muito baixo.
+
+**Quando usar**: Sempre que as chaves de um mapa forem constantes de um mesmo `enum`. É perfeito para associar dados ou comportamentos a cada estado de um `enum`, como os dias da semana, os naipes de um baralho ou os status de um pedido.
+
+```java
+import java.util.EnumMap;
+import java.util.Map;
+
+// 1. Primeiro, definimos um enum.
+enum Prioridade {
+    BAIXA, MEDIA, ALTA, URGENTE
+}
+
+public class ExemploEnumMap {
+    public static void main(String[] args) {
+        // O construtor exige a classe do enum como argumento.
+        Map<Prioridade, String> tarefas = new EnumMap<>(Prioridade.class);
+
+        tarefas.put(Prioridade.URGENTE, "Corrigir bug crítico em produção");
+        tarefas.put(Prioridade.MEDIA, "Desenvolver nova funcionalidade");
+        tarefas.put(Prioridade.BAIXA, "Refatorar documentação");
+
+        System.out.println("Tarefa de prioridade URGENTE: " + tarefas.get(Prioridade.URGENTE));
+        
+        // A iteração sempre seguirá a ordem natural do enum (BAIXA, MEDIA, ALTA, URGENTE)
+        for(Prioridade p : tarefas.keySet()){
+            System.out.println(p);
+        }
+    }
+}
+```
+
+### Guia de Escolha: Qual Mapa Usar?
+
+A escolha da implementação correta do `Map` é uma decisão de design crucial que afeta a performance, a funcionalidade e a segurança do seu código. Para tomar a decisão correta, faça as seguintes perguntas sobre os seus requisitos:
+
+1. **A prioridade máxima é a velocidade de inserção e busca, e a ordem dos elementos não importa?** **`HashMap`** é a sua escolha padrão. Para a vasta maioria dos casos de uso de propósito geral, sua performance O(1) é imbatível.
+2. **É crucial que, ao iterar, os elementos apareçam na mesma ordem em que foram inseridos?** Use **`LinkedHashMap`**. Ele oferece a mesma performance do `HashMap` com o bônus de manter a ordem de inserção, ideal para caches e dados históricos.
+3. **É necessário que as chaves estejam sempre ordenadas (alfabeticamente, numericamente, etc.)?** **`TreeMap`** é a solução. Ele mantém o mapa constantemente ordenado com base nas chaves, ao custo de uma performance ligeiramente inferior (O(log n)) em comparação com o `HashMap`.
+4. **As chaves do seu mapa são constantes de um tipo `enum`?** Não hesite em usar **`EnumMap`**. Ele fornecerá a melhor performance e o menor consumo de memória para este cenário específico.
+5. **O mapa será compartilhado e modificado por múltiplas threads simultaneamente?** **`ConcurrentHashMap`** é a escolha moderna e correta. Ele foi projetado para alta performance em ambientes concorrentes. Evite o uso do `Hashtable` em novos projetos.
+
+A tabela abaixo serve como um resumo rápido para referência:
+
+|Se a prioridade é...|Use...|Porque...|
+|---|---|---|
+|Velocidade máxima, uso geral|**`HashMap`**|Usa tabela de hash, acesso e inserção O(1).|
+|Manter a ordem de inserção|**`LinkedHashMap`**|`HashMap` + lista ligada para manter a ordem.|
+|Manter as chaves ordenadas|**`TreeMap`**|Usa árvore binária, garante ordem natural das chaves.|
+|Chaves baseadas em `enum`|**`EnumMap`**|Usa um array interno, extremamente rápido e leve.|
+|Acesso concorrente seguro|**`ConcurrentHashMap`**|Sincronização granular, alta performance para threads.|
+|Código legado|**`Hashtable`**|Sincronizado, mas obsoleto; use `ConcurrentHashMap` em vez dele.|
 
