@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-java/contents/08-excecoes.md",
+                "file": "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08-excecoes"
+              "title": "09-programacao-orientada-a-objetos"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-java/contents/08-excecoes.md",
+                "file": "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 08-excecoes"
+              "title": "Sumário de 09-programacao-orientada-a-objetos"
             }
           }
         ],
@@ -170,8 +170,10 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
-    "linguagem-java/contents/07-estruturas-de-dados.md",
+    "linguagem-java/contents/img/09-programacao-tradicional-vs-poo.png",
     "linguagem-java/contents/08-excecoes.md",
+    "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
+    "linguagem-java/contents/07-estruturas-de-dados.md",
     "linguagem-java/contents/06-estruturas-de-repeticao.md",
     "linguagem-java/contents/05-estruturas-condicionais.md",
     "linguagem-java/contents/04-strings.md",
@@ -207,8 +209,6 @@
     "bancos-de-dados/contents/19-organizacao-de-arquivos-tecnicas-de-armazenamento-e-metodos-de-acesso.md",
     "bancos-de-dados/contents/18-bancos-de-dados-paralelos-e-distribuidos.md",
     "bancos-de-dados/contents/17-deteccao-de-problemas-e-otimizacao.md",
-    "bancos-de-dados/contents/16-alta-disponibilidade-replicacao-e-balanceamento-de-carga.md",
-    "bancos-de-dados/contents/15-processamento-de-transacoes.md",
     "conhecimentos-pedagogicos-e-ept/contents/img",
     "conhecimentos-pedagogicos-e-ept/contents/Nova pasta",
     "conhecimentos-pedagogicos-e-ept/contents",
