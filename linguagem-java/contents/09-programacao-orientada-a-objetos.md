@@ -159,7 +159,7 @@ Analisando o código:
 
 Com essas classes definidas, estamos prontos para o próximo passo: criar e utilizar os objetos.
 
-## Objetos:
+## Objetos
 
 Com o conceito de `Classe` estabelecido como o nosso projeto ou molde, podemos agora passar para a parte central da Programação Orientada a Objetos: a criação e o uso de **Objetos**.
 
@@ -275,4 +275,224 @@ public class Garagem {
 ```
 
 Essa separação torna o código mais limpo, mais organizado e mais fácil de manter à medida que o sistema cresce.
+
+## Atributos
+
+Agora que compreendemos que uma classe é o projeto e um objeto é a instância concreta, vamos focar em como um objeto armazena suas informações individuais. Isso é feito através dos **atributos**.
+
+Atributos, também conhecidos em Java como **campos** (_fields_) ou **variáveis de instância** (_instance variables_), são as variáveis declaradas diretamente dentro de uma classe, fora de qualquer método ou construtor. Eles representam as características, as propriedades ou os dados que definem o **estado** de um objeto.
+
+Pense novamente na classe como um formulário em branco. Os atributos são os campos a serem preenchidos nesse formulário. Por exemplo, a classe `Carro` tem os campos:
+
+- Marca
+- Modelo
+- Ano
+- Cor
+
+Um objeto é o formulário preenchido. Cada objeto `Carro` que criamos possui seu próprio conjunto de valores para esses atributos, e a combinação desses valores em um determinado momento representa o **estado** daquele objeto.
+
+No nosso exemplo anterior, `carro1` está no estado {marca="Toyota", modelo="Corolla", ano=2022, cor="Prata"}, enquanto `carro2` está em um estado completamente diferente.
+
+### Declaração e Acesso a Atributos
+
+Os atributos são declarados no corpo da classe, especificando seu tipo e nome, geralmente com um modificador de acesso.
+
+```java
+abstract class Veiculo {
+    // Declaração dos atributos que todo Veiculo terá.
+    protected String marca;
+    protected String modelo;
+    protected int ano;
+    protected String cor;
+
+    // ... construtor e métodos ...
+}
+```
+
+Quando um objeto é instanciado, a JVM aloca um espaço na memória para cada um desses atributos, exclusivo para aquele objeto.
+
+Para acessar ou modificar o valor de um atributo de um objeto, utilizamos a **notação de ponto (`.`)** a partir da variável de referência do objeto.
+
+```java
+public class Garagem {
+    public static void main(String[] args) {
+        Carro carro = new Carro("Honda", "Civic", 2023, "Preto");
+
+        // Acessando os atributos para leitura
+        System.out.println("A marca do carro é: " + carro.marca);
+        System.out.println("O ano do carro é: " + carro.ano);
+
+        // Modificando o estado do objeto através de seus atributos
+        System.out.println("Pintando o carro...");
+        carro.cor = "Branco";
+
+        System.out.println("A nova cor do carro é: " + carro.cor);
+    }
+}
+```
+
+### Atributos vs. Variáveis Locais
+
+É importante distinguir claramente os atributos (variáveis de instância) das variáveis locais, que são declaradas dentro de métodos.
+
+|Característica|Atributo (Variável de Instância)|Variável Local|
+|---|---|---|
+|**Escopo**|Pertence ao objeto. Acessível por todos os métodos (não estáticos) da classe.|Pertence ao método ou bloco `{}`. Só é acessível dentro daquele bloco.|
+|**Tempo de Vida**|Existe enquanto o objeto existir na memória.|É criada quando o método/bloco é executado e destruída quando a execução termina.|
+|**Valor Padrão**|**Sim**. Se não for inicializado, recebe um valor padrão (`0`, `false`, `null`, etc.).|**Não**. Deve ser obrigatoriamente inicializada antes do primeiro uso, caso contrário, ocorre um erro de compilação.|
+
+### A Importância do Encapsulamento
+
+O acesso direto aos atributos, como fizemos em `carro.cor = "Branco"`, é funcional para exemplos simples, mas é considerado uma má prática em projetos de software robustos. A Programação Orientada a Objetos preza por um princípio chamado **encapsulamento**, que veremos em detalhes mais à frente.
+
+A ideia central é que os dados (atributos) de um objeto devem ser protegidos do acesso direto e indiscriminado. Para isso, a convenção é declarar os atributos como `private` e fornecer métodos públicos especiais, chamados **getters** (para ler o valor) e **setters** (para modificar o valor), para mediar esse acesso.
+
+**Forma não encapsulada (acesso direto):**
+
+```java
+public class Conta {
+    public double saldo; // Acessível e modificável por qualquer um
+}
+```
+
+**Forma encapsulada (boa prática):**
+
+```java
+public class Conta {
+    private double saldo; // Só pode ser acessado de dentro da classe Conta
+
+    // Getter: método público para ler o saldo
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    // Setter: método público para modificar o saldo com validação
+    public void setSaldo(double novoSaldo) {
+        if (novoSaldo >= 0) { // A classe controla como seu estado é modificado
+            this.saldo = novoSaldo;
+        }
+    }
+}
+```
+
+Essa abordagem dá à classe total controle sobre seu próprio estado, permitindo a adição de lógicas de validação e garantindo que os dados permaneçam sempre em um estado consistente.
+
+## Métodos
+
+Enquanto os atributos definem _o que um objeto é_ (seu estado), os **métodos** definem _o que um objeto faz_ (seu comportamento). Um método é um bloco de código nomeado e reutilizável, definido dentro de uma classe, que encapsula uma tarefa ou uma operação específica que um objeto daquela classe pode realizar.
+
+No contexto da Programação Orientada a Objetos, um método é o equivalente a uma função ou procedimento em outros paradigmas. Se os atributos de um carro são os substantivos (cor, marca), os métodos são os verbos: `acelerar()`, `frear()`, `ligarFarol()`. Eles são a forma como interagimos com os objetos e como os objetos interagem entre si.
+
+### A Anatomia de um Método
+
+Todo método em Java possui uma estrutura bem definida, conhecida como **assinatura do método**, que informa ao compilador tudo o que ele precisa saber sobre como o método funciona.
+
+A estrutura básica é:
+
+```
+modificadores tipoRetorno nomeDoMetodo(listaDeParametros) { // corpo do método }
+```
+
+Vamos dissecar cada um desses componentes:
+
+- **`modificadores`**: Palavras-chave que definem a visibilidade (quem pode chamar o método) e outras características de seu comportamento (`static`, `final`, etc.).
+- **`tipoRetorno`**: O tipo de dado que o método "devolve" como resultado após sua execução. Se o método não retorna nada, usa-se a palavra-chave `void`.
+- **`nomeDoMetodo`**: O nome que identifica o método. Por convenção, segue o padrão `lowerCamelCase` (ex: `calcularMedia`, `getNome`).
+- **`listaDeParametros`**: Uma lista (opcional) de variáveis de entrada que o método recebe para poder realizar sua tarefa. Cada parâmetro é definido por seu tipo e nome.
+- **`corpo`**: O bloco de código entre chaves `{ }` que contém as instruções que serão executadas quando o método for chamado.
+
+```java
+public class Calculadora {
+    // Exemplo de um método completo
+    public double somar(double a, double b) {
+        double resultado = a + b;
+        return resultado;
+    }
+}
+```
+
+### Modificadores: Controlando Acesso e Comportamento
+
+Os modificadores são essenciais para a aplicação dos princípios da POO. Eles se dividem em duas categorias principais.
+
+#### Modificadores de Acesso
+
+Controlam de onde o método pode ser chamado.
+
+- **`public`**: Acesso irrestrito. O método pode ser chamado de qualquer outra classe, em qualquer pacote. É o nível mais permissivo.
+- **`protected`**: Acesso restrito. O método pode ser chamado por classes que estão no mesmo pacote ou por subclasses (mesmo que em pacotes diferentes).
+- **(padrão/package-private)**: Se nenhum modificador for especificado, o método só pode ser chamado por classes que pertencem ao mesmo pacote.
+- **`private`**: Acesso máximo. O método só pode ser chamado de dentro da própria classe em que foi declarado. É a base para o encapsulamento, usado para esconder a lógica interna de um objeto.
+
+#### Modificadores de Comportamento (Não-Acesso)
+
+Definem características especiais do método.
+
+- **`static`**: Indica que o método pertence à **classe**, e não a uma instância (objeto) específica. Isso significa que ele pode ser chamado diretamente a partir do nome da classe, sem a necessidade de criar um objeto. Um exemplo comum é `Math.random()`. Métodos estáticos não podem acessar atributos de instância (não-estáticos) da classe.
+- **`final`**: Impede que o método seja **sobrescrito** (_overridden_) por uma subclasse. Isso é usado para garantir que o comportamento de um método essencial não seja alterado em uma hierarquia de herança.
+- **`abstract`**: Declara um método sem corpo (sem `{ }`). Métodos abstratos só podem existir dentro de classes abstratas e servem como um contrato que obriga as subclasses concretas a fornecerem uma implementação para eles.
+
+### Tipos de Retorno
+
+O tipo de retorno define o que o método "entrega de volta" para o código que o chamou. Pode ser qualquer tipo de dado válido em Java: um primitivo (`int`, `double`), um objeto (`String`, `Carro`) ou, de forma especial, `void`.
+
+- **Retornando um Valor**: Se um método declara um tipo de retorno (diferente de `void`), ele **deve** usar a palavra-chave `return` para devolver um valor daquele tipo. A execução do método termina imediatamente após o `return`.
+    
+    ```java
+    public String getSaudacao(String nome) {
+        if (nome == null || nome.isEmpty()) {
+            return "Olá, estranho!"; // Primeiro ponto de retorno
+        }
+        return "Olá, " + nome + "!"; // Segundo ponto de retorno
+    }
+    ```
+    
+- **O Tipo `void`**: Indica que o método realiza uma ação, mas **não retorna nenhum valor**. Ele "faz algo", mas não "calcula algo".
+    
+    ```java
+    public void imprimirRelatorio(String relatorio) {
+        System.out.println("--- INÍCIO DO RELATÓRIO ---");
+        System.out.println(relatorio);
+        System.out.println("--- FIM DO RELATÓRIO ---");
+        // Nenhum 'return' com valor é necessário.
+    }
+    ```
+    
+    Embora não possa retornar um valor, um método `void` pode usar `return;` sem nada na frente para encerrar sua execução prematuramente.
+
+### O Método `main` e seus Argumentos
+
+Como já vimos, o método `main` é o ponto de entrada de toda aplicação Java. Sua assinatura é rígida e merece uma análise detalhada: `public static void main(String[] args)`.
+
+- **`public`**: Precisa ser público para que a JVM, que é um agente externo, possa chamá-lo para iniciar o programa.
+- **`static`**: Precisa ser estático para que a JVM possa chamá-lo diretamente na classe, sem precisar primeiro criar um objeto dela.
+- **`void`**: Indica que o método não retorna um valor para a JVM.
+- **`String[] args`**: Este é o parâmetro que permite que a aplicação receba argumentos externos, passados através da **linha de comando**. `String[]` define que o parâmetro é um array de Strings, e `args` é o nome convencional para essa variável.
+
+Esses argumentos são úteis para parametrizar a execução de um programa sem precisar alterar o código.
+
+```java
+// Arquivo: Cumprimentador.java
+public class Cumprimentador {
+    public static void main(String[] args) {
+        // args é um array com os argumentos da linha de comando.
+        if (args.length > 0) {
+            // Se um argumento foi passado, usa o primeiro como nome.
+            System.out.println("Olá, " + args[0] + "!");
+        } else {
+            // Se nenhum argumento foi passado, usa uma saudação padrão.
+            System.out.println("Olá, Mundo!");
+        }
+    }
+}
+```
+
+Se executarmos este programa no terminal, podemos ver o parâmetro `args` em ação:
+
+- Execução: `java Cumprimentador`
+    - Saída: `Olá, Mundo!`
+- Execução: `java Cumprimentador Ana`
+    - Saída: `Olá, Ana!`
+- Execução: `java Cumprimentador "Carlos Silva"`
+    - Saída: `Olá, Carlos Silva!`
 
