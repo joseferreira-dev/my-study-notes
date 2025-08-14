@@ -565,3 +565,162 @@ public class ImpressoraSimples implements Ligavel, Impressora {
 
 Com esse design, o código cliente se torna mais seguro e explícito. Se um método precisa da capacidade de digitalizar, ele pode exigir um parâmetro do tipo `Digitalizadora`, e o compilador garantirá que apenas objetos que realmente podem digitalizar sejam passados para ele. O Princípio da Segregação de Interfaces nos leva a um design mais granular, modular e robusto.
 
+## D: Dependency Inversion Principle (Princípio da Inversão de Dependência)
+
+O Princípio da Inversão de Dependência (DIP) é o último pilar do SOLID e talvez o mais focado na arquitetura geral de um sistema. Ele nos orienta sobre como as classes de alto e baixo nível devem se relacionar, visando criar um software com baixo acoplamento e alta flexibilidade.
+
+A sua definição formal é dividida em duas partes:
+
+> A. Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.
+> 
+> B. Abstrações не devem depender de detalhes. Detalhes devem depender de abstrações.
+
+Vamos desmembrar o que isso significa:
+
+- **Módulos de Alto Nível**: São as classes que contêm as regras de negócio centrais e a lógica mais importante do seu sistema (ex: uma classe `ProcessadorDePagamentos`).
+- **Módulos de Baixo Nível**: São as classes que lidam com os detalhes de implementação, como a comunicação com um banco de dados, o envio de um e-mail ou a escrita em um arquivo (ex: `ConexaoMySql`, `ServicoDeEmail`).
+- **Abstrações**: São as interfaces ou classes abstratas que definem os contratos.
+- **Detalhes**: São as classes concretas que implementam essas abstrações.
+
+O fluxo de dependência tradicional e problemático é quando uma classe de alto nível depende diretamente de uma classe de baixo nível (`ProcessadorDePagamentos` -> `ServicoDeEmail`). O DIP nos instrui a **inverter** essa dependência: a classe de alto nível deve depender de uma abstração (`ProcessadorDePagamentos` -> `InterfaceNotificador`), e a classe de baixo nível também deve depender (implementando) dessa mesma abstração (`ServicoDeEmail` -> `InterfaceNotificador`).
+
+Pense em uma tomada elétrica na parede. A fiação da casa (módulo de alto nível) não depende diretamente de um abajur específico (módulo de baixo nível). Ambos dependem de uma **abstração** em comum: o padrão da tomada. Graças a essa inversão de dependência, você pode trocar o abajur por uma televisão ou um carregador de celular (diferentes implementações) sem precisar mexer na fiação da casa.
+
+### Exemplo Prático: A Violação do DIP
+
+Vamos imaginar uma classe `GeradorDeNotaFiscal` que, após gerar uma nota, precisa enviá-la por e-mail.
+
+**Código que Viola o DIP:**
+
+```java
+// Módulo de Baixo Nível (detalhe)
+public class EnviadorDeEmail {
+    public void enviar(String email, String mensagem) {
+        System.out.println("Enviando e-mail para " + email + ": " + mensagem);
+    }
+}
+
+// Módulo de Alto Nível (regra de negócio)
+public class GeradorDeNotaFiscal {
+    // A classe de alto nível depende DIRETAMENTE da classe de baixo nível.
+    // Isso é um acoplamento forte!
+    private EnviadorDeEmail enviadorDeEmail;
+
+    public GeradorDeNotaFiscal() {
+        // A própria classe cria sua dependência.
+        this.enviadorDeEmail = new EnviadorDeEmail();
+    }
+
+    public void gerar(double valor) {
+        System.out.println("Gerando nota fiscal no valor de R$ " + valor);
+        
+        // A chamada está amarrada à implementação específica.
+        this.enviadorDeEmail.enviar("cliente@email.com", "Sua nota fiscal foi gerada!");
+    }
+}
+```
+
+Este design é rígido. O que acontece se, no futuro, o requisito mudar e, além de enviar por e-mail, precisarmos também salvar a nota no banco de dados ou enviá-la por SMS? Seremos forçados a modificar a classe `GeradorDeNotaFiscal`, que contém a nossa regra de negócio principal.
+
+### Aplicando o DIP: Injetando as Dependências
+
+A solução é fazer com que `GeradorDeNotaFiscal` não dependa mais de `EnviadorDeEmail`, mas sim de uma abstração que represente qualquer "ação pós-geração".
+
+**A Abstração (O Contrato)**
+
+Criamos uma interface que define o contrato para qualquer ação a ser executada após a geração de uma nota fiscal.
+
+```java
+public interface AcaoAposGerarNota {
+    void executar(NotaFiscal nf);
+}
+```
+
+**Os Módulos de Baixo Nível (Os Detalhes)**
+
+Agora, criamos múltiplas implementações concretas para essa interface.
+
+```java
+public class EnviadorDeEmail implements AcaoAposGerarNota {
+    @Override
+    public void executar(NotaFiscal nf) {
+        System.out.println("Enviando nota fiscal por e-mail...");
+    }
+}
+
+public class NotaFiscalDao implements AcaoAposGerarNota {
+    @Override
+    public void executar(NotaFiscal nf) {
+        System.out.println("Salvando nota fiscal no banco de dados...");
+    }
+}
+
+public class EnviadorDeSms implements AcaoAposGerarNota {
+    @Override
+    public void executar(NotaFiscal nf) {
+        System.out.println("Enviando nota fiscal por SMS...");
+    }
+}
+```
+
+**O Módulo de Alto Nível (Flexível e Desacoplado)**
+
+A classe `GeradorDeNotaFiscal` agora depende da abstração e recebe suas dependências de fora, geralmente através do construtor. Essa técnica é chamada de Injeção de Dependência.
+
+```java
+import java.util.List;
+
+public class GeradorDeNotaFiscal {
+    // A classe de alto nível agora depende da ABSTRAÇÃO.
+    private List<AcaoAposGerarNota> acoes;
+
+    // A dependência é "injetada" de fora, via construtor.
+    public GeradorDeNotaFiscal(List<AcaoAposGerarNota> acoes) {
+        this.acoes = acoes;
+    }
+
+    public void gerar(NotaFiscal nf) {
+        System.out.println("Gerando nota fiscal...");
+
+        // Executa todas as ações que foram injetadas.
+        for (AcaoAposGerarNota acao : acoes) {
+            acao.executar(nf);
+        }
+    }
+}
+```
+
+Agora, o código que "monta" o sistema decide quais ações serão executadas:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Definimos quais ações queremos
+        List<AcaoAposGerarNota> acoes = List.of(new EnviadorDeEmail(), new NotaFiscalDao());
+
+        // Injetamos as ações no gerador
+        GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal(acoes);
+        gerador.gerar(new NotaFiscal());
+    }
+}
+```
+
+Com este novo design, a classe `GeradorDeNotaFiscal` se tornou completamente desacoplada dos detalhes de implementação. Se amanhã precisarmos enviar a nota por SMS, basta criar a classe `EnviadorDeSms` e adicioná-la à lista de ações, **sem tocar em uma única linha** da classe `GeradorDeNotaFiscal`.
+
+Este princípio é a base para o uso de frameworks de Injeção de Dependência, como o Spring, que automatizam o processo de "montagem" do sistema.
+
+## Considerações Finais
+
+Neste capítulo, transcendemos a mecânica da Programação Orientada a Objetos para explorar a sua filosofia. Os cinco princípios S.O.L.I.D. não são regras rígidas ou algoritmos a serem implementados, mas sim um conjunto de diretrizes de design que formam a base para a construção de software que seja, ao mesmo tempo, robusto, flexível e fácil de manter. Eles representam a sabedoria acumulada sobre como aplicar os pilares da POO para evitar as armadilhas de um código frágil e "engessado".
+
+Fizemos uma jornada através de cada um dos princípios:
+
+- O **Princípio da Responsabilidade Única (SRP)** nos ensinou a criar classes coesas e focadas, garantindo que cada uma tenha apenas um eixo de mudança, o que simplifica a manutenção.
+- O **Princípio Aberto/Fechado (OCP)** nos mostrou como projetar sistemas que podem ser estendidos com novas funcionalidades sem a necessidade de alterar o código existente e já testado, utilizando o poder da abstração e do polimorfismo.
+- O **Princípio da Substituição de Liskov (LSP)** nos forneceu um critério rigoroso para a herança, garantindo que nossas hierarquias de classes sejam comportamentalmente corretas e que as subclasses possam ser substituídas por suas superclasses de forma segura.
+- O **Princípio da Segregação de Interfaces (ISP)** nos orientou a criar interfaces pequenas e específicas para cada papel, evitando que as classes sejam forçadas a implementar métodos que não utilizam.
+- Finalmente, o **Princípio da Inversão de Dependência (DIP)** revolucionou a forma como conectamos nossos módulos, instruindo-nos a depender de abstrações em vez de detalhes concretos, o que resulta em um sistema desacoplado, flexível e altamente testável.
+
+Embora apresentados individualmente, os princípios S.O.L.I.D. funcionam em harmonia. OCP e DIP dependem de boas abstrações, que são guiadas pelo LSP e pelo ISP, enquanto o SRP garante que as peças que estamos conectando sejam bem definidas e coesas.
+
+Dominar esses princípios é um processo contínuo que se aprimora com a prática e a reflexão. Com esta base, a capacidade de desenvolver software muda de patamar: de simplesmente escrever código que funciona para arquitetar soluções elegantes que resistem ao teste do tempo. O próximo passo em nossa jornada será explorar os **Padrões de Projeto (Design Patterns)**, que são soluções consagradas e reutilizáveis para problemas comuns de design de software, muitas das quais são a materialização direta dos princípios S.O.L.I.D. que acabamos de estudar.
