@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-java/contents/01-conceitos-gerais-de-java.md",
+                "file": "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-conceitos-gerais-de-java"
+              "title": "02-tipos-de-dados-e-variaveis"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-java/contents/01-conceitos-gerais-de-java.md",
+                "file": "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 01-conceitos-gerais-de-java"
+              "title": "Sumário de 02-tipos-de-dados-e-variaveis"
             }
           }
         ],
@@ -170,8 +170,9 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
-    "linguagem-java/README.md",
     "linguagem-java/contents/01-conceitos-gerais-de-java.md",
+    "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
+    "linguagem-java/README.md",
     "arquitetura-e-organizacao-de-computadores/contents/12-hardware.md",
     "linguagem-java/contents/banner-java.png",
     "linguagem-java/contents",
@@ -208,7 +209,6 @@
     "bancos-de-dados/contents/08-modelo-entidade-relacionamento-estendido.md",
     "bancos-de-dados/contents/07-modelo-entidade-relacionamento.md",
     "bancos-de-dados/contents/06-modelo-conceitual-e-projeto-de-bancos.md",
-    "bancos-de-dados/contents/05-estrutura-interna-e-ambiente-do-sgbd.md",
     "conhecimentos-pedagogicos-e-ept/contents/img",
     "conhecimentos-pedagogicos-e-ept/contents/Nova pasta",
     "conhecimentos-pedagogicos-e-ept/contents",
