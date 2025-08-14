@@ -664,3 +664,336 @@ A aplicação do encapsulamento traz benefícios que vão além da simples prote
 - **Ocultação de Complexidade (Flexibilidade)**: O encapsulamento permite que a implementação interna de uma classe seja alterada sem impactar o código que a utiliza. Poderíamos, por exemplo, mudar o tipo do atributo `saldo` de `double` para `BigDecimal` (um tipo mais preciso para valores monetários) internamente. Desde que os métodos `getSaldo()`, `depositar()` e `sacar()` continuem funcionando como antes, nenhuma outra parte do sistema precisaria ser alterada.
 - **Modularidade e Reutilização**: Uma classe encapsulada se torna um "componente de caixa-preta" confiável, com uma interface pública bem definida. Isso facilita sua reutilização em diferentes partes de um sistema ou em diferentes projetos.
 
+### Herança: Criando Hierarquias de Classes
+
+A **herança** é um dos pilares mais poderosos da Programação Orientada a Objetos. É o mecanismo que permite que uma classe, chamada de **subclasse** (ou classe filha), adquira os atributos e métodos de outra classe, chamada de **superclasse** (ou classe pai).
+
+Esse pilar está focado em criar relacionamentos e hierarquias entre as classes, permitindo o reuso de código e a modelagem de conceitos do mundo real de forma intuitiva. A ideia central da herança é a relação **"é um"** (_is-a_). Uma classe `Carro` só deve herdar de `Veiculo` porque um carro **é um** tipo de veículo. Um `Gerente` só deve herdar de `Funcionario` porque um gerente **é um** tipo de funcionário.
+
+A herança nos permite trabalhar com dois processos complementares de design: a generalização e a especialização.
+
+#### Generalização e Especialização
+
+1. **Generalização**: É o processo de identificar características comuns entre várias classes e abstraí-las para uma superclasse mais genérica. Se temos as classes `Carro`, `Moto` e `Caminhao`, podemos observar que todas possuem `marca`, `modelo` e `ano`, e todas podem `ligar()` e `desligar()`. A criação da classe `Veiculo` para conter esses membros comuns é um ato de **generalização**.
+2. **Especialização**: É o processo inverso. Partimos de uma classe genérica e criamos subclasses mais específicas que, além de herdarem tudo da superclasse, adicionam seus próprios atributos e comportamentos exclusivos. Por exemplo, a partir de uma classe `Animal`, podemos criar as especializações `Cachorro` (que adiciona o método `latir()`) e `Gato` (que adiciona o método `miar()`).
+
+#### A Herança na Prática em Java
+
+Em Java, a herança é implementada com a palavra-chave `extends`. Vamos continuar com nosso exemplo do `Veiculo`, especializando-o não apenas em `Carro`, mas também em `Moto`.
+
+**A Superclasse (Generalização):**
+
+```java
+abstract class Veiculo {
+    protected String marca;
+    protected String modelo;
+    protected int ano;
+
+    public Veiculo(String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    public void exibirDados() {
+        System.out.println("Marca: " + this.marca + ", Modelo: " + this.modelo + ", Ano: " + this.ano);
+    }
+
+    public abstract void ligar();
+}
+```
+
+**As Subclasses (Especialização):**
+
+A classe `Carro` é uma especialização de `Veiculo` que adiciona o atributo `numeroDePortas`.
+
+```java
+class Carro extends Veiculo {
+    private int numeroDePortas; // Atributo específico do Carro
+
+    public Carro(String marca, String modelo, int ano, int numeroDePortas) {
+        // 'super()' chama o construtor da superclasse (Veiculo)
+        // para inicializar os atributos comuns.
+        super(marca, modelo, ano);
+        this.numeroDePortas = numeroDePortas; // Inicializa o atributo específico
+    }
+
+    @Override
+    public void ligar() {
+        System.out.println("O carro " + modelo + " está ligado.");
+    }
+}
+```
+
+A classe `Moto` é outra especialização, que adiciona o atributo `cilindradas`.
+
+```java
+class Moto extends Veiculo {
+    private int cilindradas; // Atributo específico da Moto
+
+    public Moto(String marca, String modelo, int ano, int cilindradas) {
+        super(marca, modelo, ano);
+        this.cilindradas = cilindradas;
+    }
+
+    @Override
+    public void ligar() {
+        System.out.println("A moto " + modelo + " está ligada.");
+    }
+}
+```
+
+#### A Palavra-Chave `super`
+
+A palavra-chave `super` é usada dentro de uma subclasse para se referir a membros da sua superclasse direta. Ela tem dois usos principais:
+
+1. **`super(...)`**: Para chamar o construtor da superclasse. Esta chamada, se utilizada, deve ser **obrigatoriamente a primeira instrução** dentro do construtor da subclasse.
+2. **`super.membro`**: Para acessar um atributo ou chamar um método da superclasse, especialmente útil quando a subclasse sobrescreveu um método e ainda precisa executar a lógica da versão original.
+
+#### A Classe `Object`: A Raiz de Tudo
+
+Em Java, toda a hierarquia de classes tem uma única raiz: a classe `java.lang.Object`. Se uma classe não usa a palavra-chave `extends` para herdar de outra, o compilador Java faz com que ela, implicitamente, herde de `Object`.
+
+Isso significa que **toda e qualquer classe em Java é, em última instância, uma descendente de `Object`**. É por essa razão que todo objeto, não importa de qual classe ele seja, possui métodos como `toString()`, `equals()` e `hashCode()`, pois eles são herdados da classe `Object`.
+
+#### Herança Simples vs. Múltipla
+
+Uma regra importante em Java é que a linguagem suporta apenas **herança simples**. Isso significa que uma classe pode herdar de **apenas uma única superclasse**.
+
+Java não permite a **herança múltipla** (uma classe herdando de duas ou mais superclasses) para evitar problemas de ambiguidade, como o "Problema do Diamante". Embora uma classe não possa _herdar_ de múltiplas classes, ela pode _implementar_ múltiplas interfaces, que é a forma como o Java obtém os benefícios da herança múltipla sem suas complexidades.
+
+#### Benefícios da Herança
+
+A utilização correta da herança traz benefícios diretos para a arquitetura do software:
+
+- **Reutilização de Código**: Atributos e métodos comuns são definidos uma única vez na superclasse e reutilizados por todas as subclasses.
+- **Organização e Legibilidade**: A criação de hierarquias de classes torna a estrutura do sistema mais clara e mais alinhada com os conceitos do domínio do problema.
+- **Manutenibilidade**: Uma alteração em um comportamento comum, feita na superclasse, é automaticamente propagada para todas as subclasses.
+- **Polimorfismo**: A herança é a base para o polimorfismo, um dos pilares mais poderosos da POO, que exploraremos a seguir.
+
+### Polimorfismo: Muitas Formas, Uma Única Interface
+
+A **herança** nos permite criar hierarquias de classes, mas o benefício mais poderoso que surge dessa hierarquia é o **polimorfismo**. A palavra vem do grego e significa "muitas formas" (_poly_ = muitas, _morphos_ = forma). Na Programação Orientada a Objetos, o polimorfismo é a capacidade de um objeto ser referenciado de múltiplas maneiras, permitindo que objetos de classes diferentes respondam à mesma mensagem (chamada de método) de formas específicas.
+
+Em termos práticos, o polimorfismo nos permite tratar um objeto de uma subclasse como se fosse um objeto de sua superclasse. Isso nos capacita a escrever um código mais genérico, flexível e extensível, que pode operar sobre uma família de classes sem precisar conhecer os detalhes específicos de cada uma.
+
+Pense em um controle remoto universal. Ele possui botões padrão como `ligar()`, `desligar()` e `trocarCanal()`. Este controle (a **interface** ou **superclasse**) pode interagir com uma `Televisao`, um `AparelhoDeSom` ou um `DecodificadorDeTV` (as **subclasses**). Ao pressionar o botão `ligar()`, o controle envia a mesma mensagem, mas o comportamento real — o "como" ligar — é executado de forma diferente por cada aparelho. O controle não precisa saber os detalhes internos de uma TV ou de um aparelho de som; ele apenas confia que ambos "sabem" como responder à mensagem `ligar()`.
+
+Em Java, o polimorfismo se manifesta principalmente de duas formas: o polimorfismo de sobrescrita (dinâmico) e o de sobrecarga (estático).
+
+#### Polimorfismo de Sobrescrita (Dinâmico)
+
+Este é o tipo mais poderoso e comumente associado ao termo "polimorfismo" na POO. Ele está diretamente ligado à **herança** e à **sobrescrita de métodos** (`@Override`).
+
+Ocorre quando uma subclasse fornece uma implementação específica para um método que já é definido em sua superclasse. A "mágica" acontece quando chamamos o método a partir de uma variável de referência da superclasse: a JVM, em **tempo de execução**, determina qual é o tipo real do objeto e executa a versão correta (a da subclasse) do método.
+
+Vamos aplicar isso ao nosso exemplo `Veiculo`, `Carro` e `Moto`.
+
+```java
+public class Garagem {
+    public static void main(String[] args) {
+        // Criamos objetos de classes concretas...
+        Carro meuCarro = new Carro("Toyota", "Corolla", 2022, 4);
+        Moto minhaMoto = new Moto("Honda", "CB 500", 2023, 500);
+
+        // ...e os armazenamos em referências da superclasse Veiculo.
+        // Isso é polimorfismo em ação!
+        Veiculo veiculo1 = meuCarro;
+        Veiculo veiculo2 = minhaMoto;
+
+        // Chamamos o mesmo método 'ligar()' em ambas as referências.
+        veiculo1.ligar(); // JVM identifica que o objeto real é um Carro e executa o ligar() do Carro.
+        veiculo2.ligar(); // JVM identifica que o objeto real é uma Moto e executa o ligar() da Moto.
+
+        System.out.println("--- Usando um método polimórfico ---");
+        acionarVeiculo(meuCarro);
+        acionarVeiculo(minhaMoto);
+    }
+
+    // Este método é polimórfico. Ele aceita qualquer objeto que "é um" Veiculo.
+    public static void acionarVeiculo(Veiculo veiculo) {
+        System.out.println("Enviando comando genérico para ligar o veículo...");
+        veiculo.ligar(); // A mágica acontece aqui!
+    }
+}
+```
+
+A saída seria:
+
+```
+O carro Corolla está ligado.
+A moto CB 500 está ligada.
+--- Usando um método polimórfico ---
+Enviando comando genérico para ligar o veículo...
+O carro Corolla está ligado.
+Enviando comando genérico para ligar o veículo...
+A moto CB 500 está ligada.
+```
+
+O método `acionarVeiculo` é extremamente flexível. Ele não precisa saber se está lidando com um `Carro`, uma `Moto` ou qualquer outro tipo de `Veiculo` que possamos criar no futuro (como `Caminhao`). Ele simplesmente opera sobre a abstração `Veiculo`, e o polimorfismo garante que o comportamento correto seja executado para cada objeto específico.
+
+#### Polimorfismo de Sobrecarga (Estático)
+
+Este tipo de polimorfismo, também conhecido como **sobrecarga de métodos** (_method overloading_), ocorre quando múltiplos métodos **dentro da mesma classe** compartilham o **mesmo nome**, mas possuem **listas de parâmetros diferentes**. A diferença pode estar no número de parâmetros, no tipo dos parâmetros, ou em ambos.
+
+É chamado de "estático" porque a decisão sobre qual versão do método será executada é tomada pelo compilador em **tempo de compilação**, com base nos argumentos fornecidos na chamada do método.
+
+```java
+public class Calculadora {
+
+    // Versão do método somar que aceita dois inteiros
+    public int somar(int a, int b) {
+        System.out.println("Executando a soma de dois inteiros...");
+        return a + b;
+    }
+
+    // Sobrecarga: mesmo nome, mas com três inteiros
+    public int somar(int a, int b, int c) {
+        System.out.println("Executando a soma de três inteiros...");
+        return a + b + c;
+    }
+
+    // Sobrecarga: mesmo nome, mas com dois doubles
+    public double somar(double a, double b) {
+        System.out.println("Executando a soma de dois doubles...");
+        return a + b;
+    }
+}
+
+// Em outra classe...
+Calculadora calc = new Calculadora();
+calc.somar(5, 10);          // Chama a primeira versão (int, int)
+calc.somar(5, 10, 15);      // Chama a segunda versão (int, int, int)
+calc.somar(3.5, 2.2);       // Chama a terceira versão (double, double)
+```
+
+A sobrecarga permite criar métodos com o mesmo nome para realizar operações conceitualmente similares em diferentes tipos ou quantidades de dados, tornando a API da classe mais intuitiva e fácil de usar.
+
+#### Benefícios do Polimorfismo
+
+O uso correto do polimorfismo traz diversos benefícios:
+
+- **Flexibilidade e Extensibilidade**: Permite que novos tipos de objetos sejam adicionados a um sistema com o mínimo de impacto no código existente. Se criarmos uma classe `Caminhao` que herda de `Veiculo`, nosso método `acionarVeiculo` funcionará com ela instantaneamente, sem nenhuma alteração.
+- **Código Desacoplado**: Permite escrever código que depende de abstrações (superclasses ou interfaces) em vez de implementações concretas (subclasses), reduzindo o acoplamento entre as partes do sistema.
+- **Legibilidade**: A sobrecarga de métodos torna o código mais limpo, evitando a necessidade de nomes de métodos ligeiramente diferentes para a mesma operação (ex: `somarInts`, `somarDoubles`).
+
+### Interfaces: O Contrato de Comportamento
+
+Enquanto a herança, com classes abstratas, nos permite criar hierarquias baseadas em uma relação "é um", as **Interfaces** nos oferecem uma forma ainda mais poderosa e flexível de definir contratos em Java. Uma interface é, em sua essência, um "contrato" 100% abstrato que uma classe pode prometer cumprir.
+
+Ela define um conjunto de métodos que uma classe deve implementar, especificando **o que** a classe deve ser capaz de fazer, sem se preocupar minimamente em **como** ela fará. Se uma classe `implements` (implementa) uma interface, ela está assinando um contrato, obrigando-se a fornecer uma implementação concreta para todos os métodos definidos naquela interface.
+
+Pense em uma interface como o painel de um aparelho de som. A interface `PainelDeSom` define que existem os botões (métodos) `ligar()`, `aumentarVolume()` e `trocarFaixa()`. Diferentes fabricantes podem criar classes concretas — `SomSony`, `SomPioneer` — que implementam essa interface. A eletrônica interna de cada um será diferente, mas ambos terão os mesmos botões e responderão aos mesmos comandos.
+
+#### Interfaces vs. Classes Abstratas
+
+Interfaces e classes abstratas são ambas ferramentas para se alcançar a abstração, mas elas possuem propósitos e regras diferentes. Entender essa distinção é fundamental para um bom design de software.
+
+|Característica|Classe Abstrata|Interface|
+|---|---|---|
+|**Propósito**|Definir um modelo base para uma família de classes relacionadas (relação **"é um"**).|Definir um contrato de capacidades que podem ser implementadas por classes não relacionadas (relação **"é capaz de"**).|
+|**Métodos**|Pode conter métodos abstratos e métodos concretos (com implementação).|Tradicionalmente, continha apenas métodos abstratos. A partir do Java 8, pode conter `default` e `static` methods.|
+|**Atributos**|Pode conter atributos de instância (estado).|Não pode. Pode conter apenas constantes (`public static final`).|
+|**Herança**|Uma classe pode `extend` (herdar de) **apenas uma** classe abstrata.|Uma classe pode `implements` (implementar) **múltiplas** interfaces.|
+
+A capacidade de uma classe implementar múltiplas interfaces é como o Java resolve o "problema da herança múltipla". Uma classe `Anfibio` não pode herdar de `Terrestre` e `Aquatico` ao mesmo tempo, mas pode implementar as interfaces `Nadador` e `Andador`, adquirindo os comportamentos de ambas.
+
+#### Interfaces na Prática: Polimorfismo Desacoplado
+
+O verdadeiro poder das interfaces se manifesta ao habilitar o polimorfismo entre classes que não possuem nenhuma relação de herança direta. Elas nos permitem escrever código genérico que opera sobre um contrato, e não sobre um tipo concreto.
+
+Vamos imaginar um sistema que precisa exportar diferentes tipos de documentos para um formato textual.
+
+**O Contrato (A Interface):**
+
+Definimos um contrato `Exportavel` que diz que qualquer objeto que queira ser exportado deve saber como gerar seus dados em formato de texto.
+
+```java
+public interface Exportavel {
+    String exportarDados(); // Todo exportável deve ter este método.
+}
+```
+
+**As Implementações (As Classes Concretas):**
+
+Agora, criamos classes completamente diferentes que "assinam" este contrato.
+
+```java
+// Uma classe que representa uma Fatura de cliente.
+class Fatura implements Exportavel {
+    private int numero;
+    private double valor;
+
+    public Fatura(int numero, double valor) {
+        this.numero = numero;
+        this.valor = valor;
+    }
+
+    @Override
+    public String exportarDados() {
+        return "FATURA|" + numero + "|" + valor;
+    }
+}
+
+// Uma classe completamente diferente, que representa um Relatório de Vendas.
+class Relatorio implements Exportavel {
+    private String autor;
+    private String conteudo;
+
+    public Relatorio(String autor, String conteudo) {
+        this.autor = autor;
+        this.conteudo = conteudo;
+    }
+
+    @Override
+    public String exportarDados() {
+        return "RELATORIO|" + autor + "|" + conteudo.substring(0, 10) + "...";
+    }
+}
+```
+
+**O Código Polimórfico (O Benefício):**
+
+Criamos uma classe `ExportadorDeTexto` cujo método exportar não precisa saber se está lidando com uma `Fatura` ou um `Relatorio`. Ele só precisa saber que o objeto cumpre o contrato `Exportavel`.
+
+```java
+public class ExportadorDeTexto {
+    public void exportar(Exportavel documento) {
+        System.out.println("Exportando dados...");
+        String dados = documento.exportarDados(); // Polimorfismo em ação!
+        System.out.println("Dados exportados: " + dados);
+    }
+}
+
+// Em nosso método main...
+ExportadorDeTexto exportador = new ExportadorDeTexto();
+Fatura minhaFatura = new Fatura(123, 599.90);
+Relatorio meuRelatorio = new Relatorio("Carlos", "Análise de vendas do trimestre...");
+
+exportador.exportar(minhaFatura);   // Funciona!
+exportador.exportar(meuRelatorio); // Funciona!
+```
+
+Este design é extremamente flexível. Se amanhã precisarmos exportar um `CadastroDeProduto`, basta que a classe `Produto` implemente a interface `Exportavel`, e o nosso método `exportador.exportar()` funcionará com ela instantaneamente, sem que uma única linha de código precise ser alterada na classe `ExportadorDeTexto`.
+
+#### A Evolução das Interfaces (Java 8+)
+
+Para aumentar sua flexibilidade, as interfaces no Java moderno (a partir da versão 8) foram aprimoradas e agora podem conter:
+
+- **Métodos `default`**: São métodos que possuem uma implementação padrão diretamente na interface. Isso permite adicionar novos métodos a uma interface já existente sem quebrar todas as classes que a implementam.
+- **Métodos `static`**: São métodos utilitários que pertencem à própria interface e podem ser chamados diretamente a partir dela.
+
+## Considerações Finais
+
+Neste capítulo, realizamos a transição mais importante na jornada de um desenvolvedor Java: a passagem do pensamento procedural para o paradigma da **Programação Orientada a Objetos**. Deixamos de apenas escrever sequências de instruções para começar a modelar o mundo através de conceitos, criando um software que é um reflexo mais fiel e organizado dos problemas que buscamos resolver.
+
+Iniciamos estabelecendo a base, a distinção entre a **Classe** — o projeto, o molde abstrato — e o **Objeto** — a instância concreta e viva que existe na memória. Vimos como os objetos unificam seus dados (**atributos**) e suas operações (**métodos**) em uma única entidade coesa, formando os blocos de construção fundamentais de qualquer sistema orientado a objetos.
+
+Em seguida, mergulhamos nos quatro pilares que sustentam este paradigma, compreendendo como eles trabalham em conjunto para produzir um código robusto, flexível e de fácil manutenção:
+
+- A **Abstração** nos ensinou a focar no essencial, criando modelos simplificados que expõem o "o quê" um objeto faz, enquanto oculta o "como", principalmente através de **classes abstratas** e **interfaces**.
+- O **Encapsulamento** nos deu as ferramentas para proteger a integridade de nossos objetos, escondendo seu estado interno e fornecendo acesso controlado através de métodos públicos, garantindo que os dados permaneçam sempre em um estado válido.
+- A **Herança** nos permitiu criar hierarquias de classes, promovendo o reuso de código e estabelecendo relações "é um" que tornam nosso modelo de software mais intuitivo e organizado.
+- O **Polimorfismo**, a consequência mais poderosa da herança e das interfaces, nos mostrou como tratar objetos de diferentes tipos de maneira uniforme, permitindo-nos escrever um código genérico, desacoplado e extremamente extensível.
+
+Com a filosofia e a mecânica da Programação Orientada a Objetos agora parte do seu repertório, a capacidade de desenvolver software mudou de patamar. Não se trata mais apenas de escrever código que funciona, mas de projetar sistemas que são escaláveis, reutilizáveis e elegantes.
