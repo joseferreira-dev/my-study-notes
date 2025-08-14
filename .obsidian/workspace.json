@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-java/contents/07-estruturas-de-dados.md",
+                "file": "linguagem-java/contents/08-excecoes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07-estruturas-de-dados"
+              "title": "08-excecoes"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-java/contents/07-estruturas-de-dados.md",
+                "file": "linguagem-java/contents/08-excecoes.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 07-estruturas-de-dados"
+              "title": "Sumário de 08-excecoes"
             }
           }
         ],
@@ -170,8 +170,8 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
-    "linguagem-java/contents/Sem título.md",
     "linguagem-java/contents/07-estruturas-de-dados.md",
+    "linguagem-java/contents/08-excecoes.md",
     "linguagem-java/contents/06-estruturas-de-repeticao.md",
     "linguagem-java/contents/05-estruturas-condicionais.md",
     "linguagem-java/contents/04-strings.md",
