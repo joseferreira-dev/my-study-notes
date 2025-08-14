@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-java/README.md",
+                "file": "linguagem-java/contents/01-conceitos-gerais-de-java.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "01-conceitos-gerais-de-java"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-java/README.md",
+                "file": "linguagem-java/contents/01-conceitos-gerais-de-java.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de README"
+              "title": "Sumário de 01-conceitos-gerais-de-java"
             }
           }
         ],
@@ -170,8 +170,9 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
-    "arquitetura-e-organizacao-de-computadores/contents/12-hardware.md",
     "linguagem-java/README.md",
+    "linguagem-java/contents/01-conceitos-gerais-de-java.md",
+    "arquitetura-e-organizacao-de-computadores/contents/12-hardware.md",
     "linguagem-java/contents/banner-java.png",
     "linguagem-java/contents",
     "linguagem-java/Nova pasta",
@@ -208,7 +209,6 @@
     "bancos-de-dados/contents/07-modelo-entidade-relacionamento.md",
     "bancos-de-dados/contents/06-modelo-conceitual-e-projeto-de-bancos.md",
     "bancos-de-dados/contents/05-estrutura-interna-e-ambiente-do-sgbd.md",
-    "bancos-de-dados/contents/04-modelos-de-dados-e-arquitetura-em-tres-esquemas.md",
     "conhecimentos-pedagogicos-e-ept/contents/img",
     "conhecimentos-pedagogicos-e-ept/contents/Nova pasta",
     "conhecimentos-pedagogicos-e-ept/contents",
