@@ -268,3 +268,300 @@ public class ContratoDeEstagio implements Remuneravel {
 
 Podemos usar a nova classe no sistema sem fazer **nenhuma alteração** na classe `CalculadoraDeBonus`. A `CalculadoraDeBonus` está agora **fechada para modificação**, mas o sistema como um todo se mostrou **aberto para extensão**. Esse é o poder do OCP.
 
+## L: Liskov Substitution Principle (Princípio da Substituição de Liskov)
+
+O Princípio da Substituição de Liskov (LSP), formulado por Barbara Liskov, é o terceiro pilar do SOLID e está profundamente ligado ao pilar anterior (OCP) e ao conceito de herança. Ele estabelece um critério fundamental para a criação de hierarquias de classes que sejam corretas e robustas. A sua definição formal é:
+
+> "Se S é um subtipo de T, então os objetos do tipo T podem ser substituídos por objetos do tipo S sem alterar nenhuma das propriedades desejáveis do programa (correção, execução de tarefas, etc.)."
+
+Em termos mais simples e diretos: **uma subclasse deve ser substituível por sua superclasse em qualquer contexto, sem causar erros ou comportamentos inesperados.**
+
+Isso significa que uma subclasse não deve apenas herdar os atributos e métodos de sua superclasse; ela deve, fundamentalmente, honrar o "contrato" e o comportamento esperado da superclasse. Se uma subclasse, ao sobrescrever um método, altera seu comportamento de uma forma que quebra as expectativas do código que a utiliza, ela está violando o LSP.
+
+O LSP é um guia para garantir que a herança seja usada para modelar uma relação "é um" (_is-a_) verdadeira, não apenas para reutilizar código. Se o código cliente que funciona perfeitamente com um objeto `Veiculo` quebra quando lhe passamos um objeto `Carro` (que é um `Veiculo`), então a nossa hierarquia de herança está falha.
+
+### Exemplo Prático: A Violação Clássica do LSP
+
+O exemplo mais famoso para ilustrar a violação do LSP é o problema do "Quadrado-Retângulo". Matematicamente, um quadrado _é um_ tipo de retângulo (um retângulo com lados iguais). Tentados por essa lógica, poderíamos modelar isso em código da seguinte forma:
+
+**Código que Viola o LSP:**
+
+```java
+// A superclasse Retangulo
+class Retangulo {
+    protected double altura;
+    protected double largura;
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public void setLargura(double largura) {
+        this.largura = largura;
+    }
+
+    public double getArea() {
+        return this.altura * this.largura;
+    }
+}
+
+// A subclasse Quadrado, que TENTA ser um Retangulo
+class Quadrado extends Retangulo {
+    // Para manter a consistência de um quadrado, ao alterar a altura,
+    // a largura também deve ser alterada, e vice-versa.
+    @Override
+    public void setAltura(double altura) {
+        super.setAltura(altura);
+        super.setLargura(altura); // Violação! Comportamento modificado.
+    }
+
+    @Override
+    public void setLargura(double largura) {
+        super.setLargura(largura);
+        super.setAltura(largura); // Violação! Comportamento modificado.
+    }
+}
+```
+
+À primeira vista, parece fazer sentido. No entanto, o `Quadrado` quebrou o contrato do `Retangulo`. Um cliente que interage com um `Retangulo` espera poder alterar a altura e a largura de forma independente. O `Quadrado` não permite isso.
+
+Vamos ver como isso quebra o código cliente:
+
+```java
+public class TesteLSP {
+    public static void main(String[] args) {
+        // Usando a superclasse diretamente - funciona como esperado
+        Retangulo retangulo = new Retangulo();
+        retangulo.setAltura(10);
+        retangulo.setLargura(5);
+        // Espera-se que a área seja 10 * 5 = 50
+        System.out.println("Área do Retângulo: " + retangulo.getArea()); // Funciona! Saída: 50.0
+
+        System.out.println("---");
+
+        // Agora, substituímos o Retangulo pela sua subclasse Quadrado
+        Retangulo quadrado = new Quadrado();
+        quadrado.setAltura(10);
+        quadrado.setLargura(5); // A expectativa do cliente é que a área seja 10 * 5 = 50
+
+        // O resultado é inesperado!
+        System.out.println("Área do Quadrado: " + quadrado.getArea()); // Surpresa! Saída: 25.0
+    }
+}
+```
+
+O teste falha. A área do `quadrado` é 25, e não 50. Por quê? Porque ao chamar `quadrado.setLargura(5)`, a implementação sobrescrita em `Quadrado` forçou a altura a também se tornar 5, quebrando a expectativa do cliente. O objeto `Quadrado` **não é substituível** por um objeto `Retangulo` sem causar um comportamento inesperado. A herança aqui, embora matematicamente correta, está errada do ponto de vista comportamental e viola o LSP.
+
+### Aplicando o LSP: Reavaliando a Hierarquia
+
+A solução para a violação do LSP geralmente envolve repensar a hierarquia de herança. A herança deve modelar o comportamento, não apenas as propriedades. Neste caso, `Quadrado` e `Retangulo` são conceitualmente diferentes em seu comportamento.
+
+Uma solução comum é criar uma superclasse mais abstrata que não imponha comportamentos que as subclasses não possam cumprir.
+
+**A Abstração Comum:**
+
+Criamos uma classe `FormaGeometrica` que define o contrato comum: toda forma tem uma área.
+
+```java
+public abstract class FormaGeometrica {
+    public abstract double getArea();
+}
+```
+
+**As Implementações Independentes:**
+
+Agora, `Retangulo` e `Quadrado` herdam da nova abstração, mas não uma da outra. Elas são "irmãs", não "mãe e filha".
+
+```java
+public class Retangulo extends FormaGeometrica {
+    private double altura;
+    private double largura;
+
+    public Retangulo(double altura, double largura) {
+        this.altura = altura;
+        this.largura = largura;
+    }
+    
+    @Override
+    public double getArea() {
+        return this.altura * this.largura;
+    }
+    // Getters e Setters para altura e largura
+}
+```
+
+```java
+public class Quadrado extends FormaGeometrica {
+    private double lado;
+
+    public Quadrado(double lado) {
+        this.lado = lado;
+    }
+    
+    @Override
+    public double getArea() {
+        return this.lado * this.lado;
+    }
+    // Getter e Setter para o lado
+}
+```
+
+Com essa nova estrutura, não há mais a possibilidade de um objeto `Quadrado` ser tratado incorretamente como um `Retangulo`. O código cliente que opera sobre a abstração `FormaGeometrica` funcionará corretamente para qualquer uma de suas subclasses, pois nenhuma delas viola o comportamento esperado de sua superclasse. A substitutibilidade está garantida.
+
+## I: Interface Segregation Principle (Princípio da Segregação de Interfaces)
+
+O Princípio da Segregação de Interfaces (ISP) é o quarto pilar do SOLID e foca em como projetamos nossas abstrações, especificamente nossas interfaces. Ele lida com o problema das "interfaces gordas" ou "monolíticas" — interfaces que definem um contrato muito amplo, com múltiplos métodos que nem sempre são relevantes para todas as classes que as implementam.
+
+A definição formal, também de Robert C. Martin, é:
+
+> "Os clientes não devem ser forçados a depender de interfaces que eles não utilizam."
+
+Em termos mais práticos, o ISP nos instrui a **manter nossas interfaces pequenas, coesas e focadas em um único papel**. Em vez de uma única interface grande e genérica, é melhor ter várias interfaces menores e mais específicas. Uma classe pode, então, implementar apenas as interfaces cujos comportamentos são realmente relevantes para ela.
+
+Isso evita que uma classe seja obrigada a fornecer implementações vazias ou a lançar exceções para métodos que ela não precisa e não pode suportar, o que seria uma violação do contrato e também do Princípio da Substituição de Liskov.
+
+### Exemplo Prático: A Violação do ISP
+
+Vamos imaginar um sistema de automação para um escritório que modela diferentes tipos de máquinas. Uma abordagem inicial poderia ser a criação de uma única interface `Maquina` para abranger todas as funcionalidades possíveis.
+
+**Código que Viola o ISP:**
+
+```java
+// Uma interface "gorda" que força todas as classes a implementarem tudo.
+public interface Maquina {
+    void ligar();
+    void desligar();
+    void imprimir(String documento);
+    void digitalizar(String documento);
+    void enviarFax(String documento);
+}
+```
+
+Agora, vamos criar uma classe para uma impressora moderna multifuncional. Para ela, essa interface funciona bem.
+
+```java
+public class ImpressoraMultifuncional implements Maquina {
+    @Override
+    public void ligar() { /* ... */ }
+    
+    @Override
+    public void desligar() { /* ... */ }
+    
+    @Override
+    public void imprimir(String documento) {
+        System.out.println("Imprimindo: " + documento);
+    }
+    
+    @Override
+    public void digitalizar(String documento) {
+        System.out.println("Digitalizando: " + documento);
+    }
+    
+    @Override
+    public void enviarFax(String documento) {
+        System.out.println("Enviando por fax: " + documento);
+    }
+}
+```
+
+O problema se torna evidente quando tentamos modelar uma impressora simples e antiga, que só sabe imprimir.
+
+```java
+public class ImpressoraSimples implements Maquina {
+    @Override
+    public void ligar() { /* ... */ }
+    
+    @Override
+    public void desligar() { /* ... */ }
+    
+    @Override
+    public void imprimir(String documento) {
+        System.out.println("Imprimindo de forma simples: " + documento);
+    }
+
+    // A classe ImpressoraSimples é forçada a implementar métodos que não fazem sentido para ela.
+    @Override
+    public void digitalizar(String documento) {
+        // Implementação vazia ou lança exceção.
+        throw new UnsupportedOperationException("Esta impressora não digitaliza.");
+    }
+
+    @Override
+    public void enviarFax(String documento) {
+        // Implementação vazia ou lança exceção.
+        throw new UnsupportedOperationException("Esta impressora não envia fax.");
+    }
+}
+```
+
+A `ImpressoraSimples` está sendo **forçada a depender de métodos (`digitalizar`, `enviarFax`) que ela não utiliza**. Isso não é apenas um design ruim; é um contrato quebrado. O código cliente que recebe um objeto `Maquina` pode tentar chamar `digitalizar()` em uma `ImpressoraSimples`, resultando em uma exceção e em um comportamento inesperado.
+
+### Aplicando o ISP: Segregando as Interfaces
+
+A solução é quebrar a interface monolítica `Maquina` em interfaces menores e mais coesas, cada uma representando um papel ou uma capacidade específica.
+
+**As Interfaces Segregadas (Pequenas e Coesas)**
+
+```java
+public interface Ligavel {
+    void ligar();
+    void desligar();
+}
+
+public interface Impressora {
+    void imprimir(String documento);
+}
+
+public interface Digitalizadora {
+    void digitalizar(String documento);
+}
+
+public interface Fax {
+    void enviarFax(String documento);
+}
+```
+
+**As Implementações Concretas**
+
+Agora, cada classe implementa apenas as interfaces que são relevantes para ela. A `ImpressoraMultifuncional` implementa todas as capacidades.
+
+```java
+// Esta classe implementa múltiplos contratos.
+public class ImpressoraMultifuncional implements Ligavel, Impressora, Digitalizadora, Fax {
+    @Override
+    public void ligar() { /*...*/ }
+    
+    @Override
+    public void desligar() { /*...*/ }
+    
+    @Override
+    public void imprimir(String documento) { /*...*/ }
+    
+    @Override
+    public void digitalizar(String documento) { /*...*/ }
+    
+    @Override
+    public void enviarFax(String documento) { /*...*/ }
+}
+```
+
+A `ImpressoraSimples` agora tem um contrato muito mais limpo e honesto.
+
+```java
+// Esta classe implementa apenas os contratos que ela pode cumprir.
+public class ImpressoraSimples implements Ligavel, Impressora {
+    @Override
+    public void ligar() { /*...*/ }
+    
+    @Override
+    public void desligar() { /*...*/ }
+    
+    @Override
+    public void imprimir(String documento) { /*...*/ }
+    
+    // Não há mais necessidade de métodos vazios ou que lançam exceções.
+}
+```
+
+Com esse design, o código cliente se torna mais seguro e explícito. Se um método precisa da capacidade de digitalizar, ele pode exigir um parâmetro do tipo `Digitalizadora`, e o compilador garantirá que apenas objetos que realmente podem digitalizar sejam passados para ele. O Princípio da Segregação de Interfaces nos leva a um design mais granular, modular e robusto.
+
