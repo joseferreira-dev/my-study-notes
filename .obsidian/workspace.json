@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-java/contents/10-principios-solid.md",
+                "file": "redes-de-computadores/contents/03-equipamentos-de-rede.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10-principios-solid"
+              "title": "03-equipamentos-de-rede"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-java/contents/10-principios-solid.md",
+                "file": "redes-de-computadores/contents/03-equipamentos-de-rede.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 10-principios-solid"
+              "title": "Sumário de 03-equipamentos-de-rede"
             }
           }
         ],
@@ -170,8 +170,13 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
-    "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
+    "redes-de-computadores/contents/img/03-hub-esquema.png",
+    "redes-de-computadores/contents/img/03-hub.png",
+    "redes-de-computadores/contents/img/03-placa-de-rede.png",
+    "redes-de-computadores/contents/02-meios-de-transmissao-de-sinais.md",
+    "redes-de-computadores/contents/03-equipamentos-de-rede.md",
     "linguagem-java/contents/10-principios-solid.md",
+    "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
     "linguagem-java/contents/img/09-programacao-tradicional-vs-poo.png",
     "linguagem-java/contents/08-excecoes.md",
     "linguagem-java/contents/07-estruturas-de-dados.md",
@@ -196,8 +201,6 @@
     "conhecimentos-pedagogicos-e-ept/contents/img/05-pck-transformar-organizar-e-formular.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/05-pck-ideia-principal.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/05-bloom-cognitivo-niveis-de-complexidade-atualizada.png",
-    "conhecimentos-pedagogicos-e-ept/contents/img/05-bloom-cognitivo-niveis-de-complexidade.png",
-    "conhecimentos-pedagogicos-e-ept/contents/img/05-perrenoud-didatica-areas-pedagogicas.png",
     "legislacao/contents/04-portaria-6719.md",
     "legislacao/contents/03-lei-11892.md",
     "bancos-de-dados/contents/01-fundamentos.md",
@@ -206,9 +209,6 @@
     "bancos-de-dados/contents/12-modelo-relacional-algebra-relacional.md",
     "bancos-de-dados/contents/21-bancos-de-dados-orientados-a-objetos.md",
     "bancos-de-dados/contents/20-seguranca-em-bancos-de-dados.md",
-    "bancos-de-dados/contents/19-organizacao-de-arquivos-tecnicas-de-armazenamento-e-metodos-de-acesso.md",
-    "bancos-de-dados/contents/18-bancos-de-dados-paralelos-e-distribuidos.md",
-    "bancos-de-dados/contents/17-deteccao-de-problemas-e-otimizacao.md",
     "conhecimentos-pedagogicos-e-ept/contents/img",
     "conhecimentos-pedagogicos-e-ept/contents/Nova pasta",
     "conhecimentos-pedagogicos-e-ept/contents",
