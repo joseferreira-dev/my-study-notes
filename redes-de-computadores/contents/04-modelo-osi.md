@@ -248,3 +248,33 @@ A subcamada MAC é a parte inferior da Camada de Enlace e atua como a **interfac
 - **Endereçamento Físico:** A função mais conhecida da subcamada MAC é a de adicionar os endereços de origem e destino ao quadro. É aqui que o **endereço MAC** da placa de rede é utilizado para identificar unicamente os dispositivos na rede local.
 - **Controle de Acesso ao Meio:** Esta subcamada implementa as "regras de trânsito" que determinam quando um dispositivo pode transmitir em um meio compartilhado. É aqui que as tecnologias para evitar ou detectar colisões, como o **CSMA/CD** (usado no Ethernet clássico) e o **CSMA/CA** (usado em redes Wi-Fi), são aplicadas.
 - **Enquadramento (Framing):** A subcamada MAC é responsável por montar o quadro final, encapsulando os dados da LLC, adicionando os endereços MAC e o trailer com a verificação de erros (FCS), e delimitando o início e o fim do quadro para a Camada Física.
+
+### Camada de Rede
+
+A **Camada de Rede (Network Layer)**, ou Camada 3 do Modelo OSI, tem uma missão fundamental e expansiva: realizar a entrega de pacotes de dados desde um host de origem até um host de destino, que podem estar localizados em redes geograficamente distintas e distantes. Enquanto a Camada de Enlace se preocupa com a entrega de quadros entre nós adjacentes na _mesma_ rede, a Camada de Rede se preocupa com a jornada completa, de ponta a ponta, através de múltiplas redes interconectadas. Sua PDU (Unidade de Dados de Protocolo) é o **pacote**, que no contexto do protocolo IP, é frequentemente chamado de **datagrama**.
+
+Para cumprir sua missão, esta camada introduz o conceito de **endereçamento lógico** (como o endereço IP), que permite identificar de forma única não apenas um dispositivo, mas também a rede à qual ele pertence. São os roteadores, os dispositivos nativos da Camada 3, que utilizam esses endereços lógicos para tomar decisões inteligentes e encaminhar os pacotes pelo melhor caminho possível.
+
+#### Funções Principais da Camada de Rede
+
+As responsabilidades da Camada de Rede são diversas e cruciais para a comunicação em larga escala:
+
+- **Roteamento e Encaminhamento:** Esta é sua função mais célebre. O **roteamento** é o processo de determinar o melhor caminho ou rota que um pacote deve seguir através de uma inter-rede. O **encaminhamento** é a ação de mover o pacote de uma interface de entrada para a interface de saída apropriada de um roteador, baseando-se nas decisões do roteamento.
+- **Endereçamento Lógico:** A camada define um esquema de endereçamento que funciona em toda a inter-rede, permitindo que qualquer dispositivo seja unicamente identificado, independentemente da rede local em que se encontre.
+- **Fragmentação e Remontagem:** As diferentes tecnologias da Camada de Enlace podem ter limites diferentes para o tamanho máximo de um quadro que podem transportar, um valor conhecido como **MTU (Maximum Transmission Unit)**. Se um roteador precisa encaminhar um pacote grande para uma rede cujo MTU é menor que o tamanho do pacote, a Camada de Rede é responsável por **fragmentar** (quebrar) o pacote em pedaços menores. Esses fragmentos viajam de forma independente e são **remontados** apenas no host de destino final.
+- **Controle de Congestionamento:** A camada pode implementar mecanismos para controlar o congestionamento na rede, evitando que os roteadores fiquem sobrecarregados com mais pacotes do que conseguem processar.
+
+#### Roteamento
+
+O coração da Camada de Rede é o processo de roteamento. Cada roteador constrói e mantém uma **tabela de roteamento**, um mapa que lista as redes de destino conhecidas e a melhor interface de saída ou o "próximo salto" (o próximo roteador no caminho) para alcançá-las. Quando um pacote chega, o roteador examina o endereço IP de destino, consulta sua tabela e toma uma decisão de encaminhamento.
+
+A construção dessas tabelas pode ser feita de forma estática (configurada manualmente pelo administrador) ou, mais comumente, de forma dinâmica, através de **protocolos de roteamento**. Esses protocolos permitem que os roteadores troquem informações entre si, aprendendo sobre a topologia da rede e calculando os melhores caminhos com base em diversas métricas, como a distância (número de saltos), a largura de banda do link, o atraso e o nível de congestionamento.
+
+#### Da Rede Privada à Rede Global: Intranet, Extranet e Internet
+
+A capacidade da Camada de Rede de interconectar redes distintas é o que permite a criação de diferentes escopos de rede:
+
+- **Internet:** É a "rede das redes", um sistema global e público de redes de computadores interligadas que utilizam o conjunto de protocolos TCP/IP para se comunicar.
+- **Intranet:** É uma rede privada, pertencente a uma organização, e acessível apenas aos seus membros. Ela utiliza as mesmas tecnologias da Internet (navegadores, servidores web, TCP/IP), mas para compartilhar informações e serviços internos de forma segura.
+- **Extranet:** É uma extensão da intranet de uma organização, que permite o acesso seguro a parceiros externos autorizados (como fornecedores, clientes ou colaboradores). A comunicação da extranet geralmente ocorre através de uma **VPN (Virtual Private Network)**, que cria um "túnel" criptografado sobre a internet pública para garantir a confidencialidade e a integridade dos dados.
+
