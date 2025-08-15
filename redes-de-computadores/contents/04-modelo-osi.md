@@ -105,3 +105,34 @@ Os princípios são os seguintes:
 11. Permitir a criação posterior de subgrupos e funções organizadas para formar **subcamadas** dentro de uma camada, caso serviços distintos sejam necessários. Um exemplo clássico é a divisão da Camada de Enlace nas subcamadas MAC e LLC.
 12. Permitir, quando necessário, a criação de duas ou mais subcamadas com funcionalidades mínimas em comum para viabilizar a operação entre as camadas.
 13. Permitir o "by-pass", ou seja, transpassar subcamadas cujas funções não sejam necessárias em uma determinada comunicação.
+
+## As Sete Camadas em Detalhe
+
+Agora que compreendemos a filosofia e a mecânica geral do Modelo OSI, vamos dissecar cada uma de suas sete camadas, começando pela mais fundamental, a Camada 1, e subindo progressivamente na pilha. Para cada camada, exploraremos suas funções, responsabilidades e a forma como ela contribui para o processo de comunicação.
+
+### Camada Física
+
+A **Camada Física (Physical Layer)** é a primeira e mais baixa camada do Modelo OSI. Ela é a base sobre a qual todas as outras camadas são construídas. Sua principal responsabilidade é lidar com a transmissão e a recepção de um fluxo de **bits brutos** e não estruturados através de um meio de transmissão físico.
+
+Pense nesta camada como a engenharia da comunicação: ela não se preocupa com o significado dos bits (se eles formam um e-mail ou um vídeo), mas sim com os aspectos físicos e elétricos necessários para mover esses bits de um ponto a outro. É a camada que define as interfaces mecânicas, elétricas e ópticas com o meio, especificando, por exemplo, o tipo de conector a ser usado, a pinagem dos cabos, os níveis de voltagem para representar um 0 e um 1, e a impedância dos cabos.
+
+As principais responsabilidades da Camada Física incluem:
+
+- **Representação dos Bits:** Converter o fluxo de bits (0s e 1s) em sinais elétricos, pulsos de luz ou ondas de rádio adequados para o meio de transmissão.
+- **Taxa de Dados:** Definir a velocidade da transmissão, ou seja, quantos bits por segundo serão enviados.
+- **Sincronização de Bits:** Garantir que o "relógio" do receptor esteja sincronizado com o do transmissor para que os bits sejam interpretados corretamente.
+- **Interface com o Meio:** Especificar as características físicas dos componentes, como o formato dos conectores e a função de cada pino.
+- **Topologia Física:** Definir como os dispositivos estão fisicamente conectados (barramento, estrela, etc.).
+
+#### Modos de Transmissão
+
+Uma das funções mais importantes definidas na Camada Física é o modo de transmissão, que determina a direcionalidade do fluxo de dados entre dois dispositivos.
+
+<div align="center">
+<img width="480px" src="./img/04-osi-camada-fisica-simplex-duplex.png">
+</div>
+
+- **Simplex:** A comunicação ocorre em **apenas uma direção**, de forma unidirecional. Um dispositivo atua apenas como transmissor, e o outro apenas como receptor. Não há canal de retorno. Exemplos clássicos são as transmissões de rádio e TV comerciais, onde o sinal vai da emissora para o receptor, mas não o contrário.
+- **Half-duplex (Semiduplex):** A comunicação pode ocorrer nos **dois sentidos, porém, não simultaneamente**. Os dispositivos podem transmitir e receber, mas precisam se revezar. É como uma conversa por walkie-talkie, onde uma pessoa fala e a outra escuta, e então os papéis se invertem. As primeiras versões da Ethernet (10BASE-T com hubs) operavam em modo half-duplex, pois o meio era compartilhado e uma transmissão simultânea por dois dispositivos causaria uma colisão.
+- **Full-duplex (Duplex Completo):** A comunicação ocorre nos **dois sentidos de forma simultânea**. Isso é possível porque existem canais separados para transmissão e recepção. Em um cabo de par trançado, por exemplo, um par de fios pode ser usado para enviar dados enquanto outro par é usado para receber dados ao mesmo tempo. As redes Ethernet modernas (Fast Ethernet, Gigabit Ethernet), baseadas em switches, operam em modo full-duplex, o que dobra a largura de banda efetiva da conexão.
+
