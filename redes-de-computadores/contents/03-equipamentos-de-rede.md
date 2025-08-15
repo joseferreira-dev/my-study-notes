@@ -212,3 +212,93 @@ Um roteador, em sua essência, é um computador especializado. Sua arquitetura i
 
 Geralmente, os roteadores possuem uma quantidade de portas menor que os switches, pois cada porta exige um processamento de roteamento mais complexo e custoso.
 
+## Gateways
+
+O termo "gateway" é um dos mais amplos em redes. Em seu uso mais comum, "Default Gateway" (Gateway Padrão) na configuração de um computador refere-se simplesmente ao endereço IP do roteador local, que serve como a "porta de saída" da rede local para a internet. No entanto, em um sentido mais técnico e abrangente, um **gateway** é um dispositivo ou software muito mais especializado, cuja função é atuar como um **tradutor entre redes que utilizam protocolos de comunicação fundamentalmente diferentes e incompatíveis**.
+
+Enquanto um roteador conecta redes diferentes que falam o mesmo "idioma" principal (o protocolo IP), um gateway conecta redes que falam "idiomas" completamente distintos. Para realizar essa tradução, um gateway precisa entender a comunicação em todas as suas camadas, até a **Camada 7 (Aplicação)** do Modelo OSI, pois ele precisa converter não apenas os endereços, mas a própria essência dos dados e dos comandos da aplicação.
+
+<div align="center">
+<img width="480px" src="./img/03-gateway.png">
+</div>
+
+A função básica de um gateway é, portanto, converter os pacotes de uma arquitetura de rede para outra. Por serem construídos para tarefas muito específicas, eles geralmente possuem nomes relacionados à sua aplicação.
+
+Alguns exemplos práticos de Gateways são:
+
+- **Gateway de Voz (VoIP Gateway):** Este é o exemplo clássico. Ele interliga o mundo da telefonia moderna, baseada em Voz sobre IP (VoIP), com a rede de telefonia tradicional (PSTN - Public Switched Telephone Network), que utiliza tecnologias como TDM (Time-Division Multiplexing). Quando alguém faz uma ligação de um telefone IP para um telefone fixo convencional, é o gateway de voz que recebe os pacotes de dados IP, os converte em sinais de telefonia TDM e os envia para a rede tradicional, e vice-versa. Ele traduz tanto os dados da voz quanto os protocolos de sinalização (ex: de SIP para ISDN).
+- **Gateway de E-mail:** Um servidor de e-mail pode atuar como um gateway ao receber mensagens de um sistema de e-mail (ex: um servidor Microsoft Exchange interno) e convertê-las para o protocolo SMTP padrão da internet para enviá-las a destinatários externos.
+- **IoT Gateway:** Em ambientes de Internet das Coisas (IoT), muitos sensores e dispositivos utilizam protocolos de baixa potência e curto alcance (como Zigbee, Z-Wave ou LoRaWAN) que não são compatíveis com a internet. O IoT Gateway coleta os dados desses dispositivos e os traduz para o protocolo IP, permitindo que as informações sejam enviadas para um servidor na nuvem.
+
+## Visão Integrada: A Interação entre os Equipamentos de Rede
+
+Até agora, analisamos cada equipamento de forma isolada. A melhor maneira de entender o papel de cada um é observá-los trabalhando em conjunto em uma infraestrutura de rede típica, como a representada na figura a seguir.
+
+<div align="center">
+<img width="540px" src="./img/03-equipamentos-interacao.png">
+</div>
+
+Este diagrama ilustra uma rede de pequeno a médio porte, dividida em quatro redes locais (LANs) interconectadas. Vamos analisar cada parte:
+
+- **LAN 1 (Segmento de Servidores):** Esta é uma área crítica da rede, abrigando o servidor web e o servidor de e-mail. A escolha de um **Switch** como dispositivo central aqui é fundamental. Ele garante que a comunicação entre os servidores e o resto da rede seja de alta performance, criando conexões dedicadas e sem colisões. Quando um usuário da LAN 3 acessa o site da empresa, o roteador envia a requisição para o switch, que a encaminha de forma inteligente apenas para a porta do servidor web, sem sobrecarregar o servidor de e-mail com tráfego irrelevante.
+- **LAN 2 (Segmento com Hub):** Esta rede utiliza um **Hub**, um dispositivo mais antigo. Todos os computadores conectados a ele compartilham o mesmo barramento lógico e, portanto, estão no mesmo domínio de colisão. Isso significa que apenas um PC pode transmitir por vez, a largura de banda é compartilhada e o desempenho é inferior ao da LAN 1.
+- **LAN 4 (Segmento Híbrido):** Este segmento demonstra como diferentes dispositivos podem ser combinados. O **Repetidor** é utilizado para estender a distância do cabo, regenerando o sinal para alcançar a "Estação de Trabalho" mais distante. A **Bridge**, por sua vez, é usada para segmentar a LAN 4 em duas partes. Ela cria dois domínios de colisão separados, de modo que o tráfego entre os PCs na parte superior não interfere no tráfego da parte inferior, melhorando o desempenho de ambos os sub-segmentos.
+- **O Roteador (O Coração da Rede):** O **Roteador** é o dispositivo central que torna a comunicação entre todas as LANs possível. Ele interconecta as LANs 1, 2, 3 e 4, que são redes distintas. Ele é o responsável por criar múltiplos domínios de broadcast, um para cada uma de suas interfaces. Além disso, é o roteador que fornece a conexão vital para a **Internet**, atuando como o gateway para toda a rede interna.
+
+### Mapeando a Inteligência: Equipamentos e as Camadas OSI
+
+A "inteligência" de um equipamento de rede é definida pela camada mais alta do modelo OSI em que ele opera. Cada camada adiciona uma nova capacidade de interpretação e tomada de decisão, como podemos ver no diagrama a seguir.
+
+<div align="center">
+<img width="480px" src="./img/03-equipamentos-e-camadas.png">
+</div>
+
+- **Camada 1 (Física):** **Hubs e Repetidores** operam aqui. Eles não entendem endereços, apenas sinais elétricos (bits). Sua função é regenerar e/ou distribuir esses sinais.
+- **Camada 2 (Enlace):** **Bridges e Switches** atuam nesta camada. Eles são capazes de ler os endereços MAC dos quadros, permitindo-lhes tomar decisões inteligentes de encaminhamento dentro de uma mesma rede local.
+- **Camada 3 (Rede):** Os **Roteadores** são os dispositivos nativos desta camada. Eles operam com base em endereços lógicos (IP) para encaminhar pacotes entre redes diferentes, escolhendo o melhor caminho.
+- **Camadas Superiores:** Dispositivos mais avançados como **Switches Multicamada** e **Gateways** podem operar em camadas ainda mais altas, inspecionando informações de transporte (Camada 4) ou até mesmo dados de aplicação (Camada 7) para tomar decisões.
+
+#### Resumo dos Domínios de Colisão e Broadcast
+
+A camada em que um dispositivo opera determina como ele lida com os domínios da rede. A regra geral é:
+
+- **Hub ou Repetidor:** Cria um único domínio de colisão e um único domínio de broadcast.
+- **Switch ou Bridge:** Cria um domínio de colisão para cada uma de suas portas (N portas = N domínios de colisão), mas por padrão, cria apenas um domínio de broadcast.
+- **Roteador:** Cria um domínio de colisão e um domínio de broadcast para cada uma de suas interfaces (N portas = N domínios de colisão e N domínios de broadcast).
+
+A tabela a seguir consolida essa informação crucial:
+
+|Equipamento|Domínios de Colisão|Domínios de Broadcast|
+|---|---|---|
+|**Hub ou Repetidor**|1|1|
+|**Switch ou Bridge**|N (Nº de Portas)|1|
+|**Roteador**|N (Nº de Portas)|N (Nº de Portas)|
+
+#### O Fluxo da Comunicação pelas Camadas
+
+Um ponto fundamental a se entender é que os dispositivos finais da comunicação (como os PCs) implementam todas as sete camadas do modelo OSI, enquanto os dispositivos intermediários (como os roteadores) implementam apenas as camadas necessárias para sua função. A figura abaixo ilustra o fluxo de uma comunicação que atravessa múltiplos roteadores.
+
+<div align="center">
+<img width="700px" src="./img/03-equipamentos-e-camadas-fluxo.png">
+</div>
+
+O processo ocorre da seguinte forma:
+
+1. No **PC1** (origem), os dados são gerados na Camada de Aplicação e descem pela pilha, sendo encapsulados com um cabeçalho em cada camada, até serem transmitidos como bits pela Camada Física.
+2. No **Roteador R1**, o sinal é recebido na Camada Física e processado para cima até a **Camada 3 (Rede)**. O roteador analisa o endereço IP de destino, consulta sua tabela de roteamento e decide encaminhar o pacote para R2. Ele então envia o pacote de volta para baixo, encapsulando-o em um novo quadro de Camada 2 para o próximo enlace e o transmite fisicamente. O roteador não precisa processar as camadas 4 a 7.
+3. O processo se repete nos roteadores **R2** e **R3**.
+4. No **PC2** (destino), o sinal é recebido na Camada Física e sobe por toda a pilha. Em cada camada, o respectivo cabeçalho é removido (processo de desencapsulamento) até que os dados originais sejam entregues à aplicação.
+
+## Considerações Finais
+
+Neste capítulo, desmontamos a infraestrutura de uma rede para analisar, peça por peça, os equipamentos que dão vida à conectividade. Realizamos uma jornada ascendente através das camadas do Modelo OSI, observando como cada dispositivo adiciona um novo nível de inteligência e funcionalidade ao processo de comunicação.
+
+Começamos na camada mais fundamental com a **placa de rede (NIC)**, a porta de entrada que fornece a cada dispositivo sua identidade física única, o **endereço MAC**. Em seguida, exploramos os dispositivos de Camada 1, os **hubs e repetidores**, compreendendo seu papel histórico como simples regeneradores e distribuidores de sinal, mas também suas severas limitações, como a criação de um **domínio de colisão** único que tornava as redes ineficientes.
+
+Avançamos para a Camada 2, onde a inteligência começou a surgir com a **bridge** e, de forma mais proeminente, com o **switch**. Vimos como a capacidade de ler endereços MAC e manter uma tabela de encaminhamento (a tabela CAM) revolucionou a rede local, segmentando os domínios de colisão, permitindo a comunicação **full-duplex** e tornando o switch o pilar central da LAN moderna.
+
+Na Camada 3, encontramos o **roteador**, o dispositivo que nos permite olhar além da rede local. Entendemos seu papel crucial na interconexão de redes distintas utilizando o endereçamento lógico (endereço IP) e na determinação dos melhores caminhos para os dados. A sua capacidade de segmentar não apenas domínios de colisão, mas também **domínios de broadcast**, se mostrou essencial para a construção de redes escaláveis, seguras e gerenciáveis, como a própria Internet.
+
+Finalmente, tocamos em dispositivos de camadas superiores, como os **gateways**, que atuam como tradutores entre protocolos de aplicação distintos, e vimos como as linhas entre os equipamentos estão se tornando cada vez mais tênues com o surgimento de **switches multicamada**, que combinam a velocidade da comutação em hardware com a inteligência do roteamento.
+
+Ao final deste capítulo, temos um mapa claro dos componentes físicos e de suas funções na hierarquia da rede. Com essa base de hardware estabelecida, estamos agora prontos para, no próximo capítulo, aprofundar no modelo conceitual que organiza toda essa comunicação, o Modelo OSI, e detalhar o funcionamento de suas principais camadas.
