@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "redes-de-computadores/contents/03-equipamentos-de-rede.md",
+                "file": "redes-de-computadores/contents/04-modelo-osi.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03-equipamentos-de-rede"
+              "title": "04-modelo-osi"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "redes-de-computadores/contents/03-equipamentos-de-rede.md",
+                "file": "redes-de-computadores/contents/04-modelo-osi.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 03-equipamentos-de-rede"
+              "title": "Sumário de 04-modelo-osi"
             }
           }
         ],
@@ -170,6 +170,11 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
+    "redes-de-computadores/contents/img/04-modelo-osi-pdu.png",
+    "redes-de-computadores/contents/img/04-modelo-osi-blocos-de-dados.png",
+    "redes-de-computadores/contents/img/04-modelo-osi-camadas.png",
+    "redes-de-computadores/contents/03-equipamentos-de-rede.md",
+    "redes-de-computadores/contents/04-modelo-osi.md",
     "redes-de-computadores/contents/img/03-equipamentos-interacao.png",
     "redes-de-computadores/contents/img/03-equipamentos-e-camadas-fluxo.png",
     "redes-de-computadores/contents/img/03-equipamentos-e-camadas.png",
@@ -178,11 +183,7 @@
     "redes-de-computadores/contents/img/03-roteador-tabela-de-roteamento.png",
     "redes-de-computadores/contents/img/03-roteador.png",
     "redes-de-computadores/contents/img/03-bridge-esquema.png",
-    "redes-de-computadores/contents/img/03-bridge.png",
-    "redes-de-computadores/contents/img/03-switch-tabela-mac.png",
-    "redes-de-computadores/contents/img/03-switch.png",
     "redes-de-computadores/contents/02-meios-de-transmissao-de-sinais.md",
-    "redes-de-computadores/contents/03-equipamentos-de-rede.md",
     "linguagem-java/contents/10-principios-solid.md",
     "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
     "linguagem-java/contents/08-excecoes.md",
@@ -208,7 +209,6 @@
     "bancos-de-dados/contents/13-modelo-relacional-normalizacao.md",
     "bancos-de-dados/contents/12-modelo-relacional-algebra-relacional.md",
     "bancos-de-dados/contents/21-bancos-de-dados-orientados-a-objetos.md",
-    "bancos-de-dados/contents/20-seguranca-em-bancos-de-dados.md",
     "conhecimentos-pedagogicos-e-ept/contents/img",
     "conhecimentos-pedagogicos-e-ept/contents/Nova pasta",
     "conhecimentos-pedagogicos-e-ept/contents",
