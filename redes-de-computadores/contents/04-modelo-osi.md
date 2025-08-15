@@ -136,3 +136,115 @@ Uma das funções mais importantes definidas na Camada Física é o modo de tran
 - **Half-duplex (Semiduplex):** A comunicação pode ocorrer nos **dois sentidos, porém, não simultaneamente**. Os dispositivos podem transmitir e receber, mas precisam se revezar. É como uma conversa por walkie-talkie, onde uma pessoa fala e a outra escuta, e então os papéis se invertem. As primeiras versões da Ethernet (10BASE-T com hubs) operavam em modo half-duplex, pois o meio era compartilhado e uma transmissão simultânea por dois dispositivos causaria uma colisão.
 - **Full-duplex (Duplex Completo):** A comunicação ocorre nos **dois sentidos de forma simultânea**. Isso é possível porque existem canais separados para transmissão e recepção. Em um cabo de par trançado, por exemplo, um par de fios pode ser usado para enviar dados enquanto outro par é usado para receber dados ao mesmo tempo. As redes Ethernet modernas (Fast Ethernet, Gigabit Ethernet), baseadas em switches, operam em modo full-duplex, o que dobra a largura de banda efetiva da conexão.
 
+### Camada de Enlace de Dados
+
+A **Camada de Enlace de Dados (Data Link Layer)**, ou simplesmente Camada de Enlace, é a segunda camada do Modelo OSI. Sua missão principal é transformar o serviço de transmissão de bits brutos e propenso a erros, oferecido pela Camada Física, em um link de comunicação que pareça confiável e bem definido para a Camada de Rede (a camada superior). Sua PDU (Unidade de Dados de Protocolo) é o **quadro** (_frame_).
+
+Para alcançar esse objetivo, a Camada de Enlace assume duas responsabilidades cruciais: organizar o fluxo de bits em unidades lógicas (os quadros) e implementar mecanismos de controle para lidar com os erros que inevitavelmente ocorrem no meio físico.
+
+É fundamental entender a distinção mencionada em suas anotações: a camada **não torna o meio físico livre de erros**, o que é impossível. Em vez disso, ela implementa técnicas para **detectar** e, em alguns casos, **corrigir** os erros, de modo que, da perspectiva da Camada de Rede, a comunicação aparenta ser confiável. Ela atua como um gerente de qualidade, inspecionando a "linha de montagem" de bits para garantir a integridade do produto final.
+
+#### Enquadramento (Framing)
+
+A Camada Física entrega ao Enlace um fluxo contínuo de bits. O primeiro desafio é saber onde um conjunto de dados termina e o próximo começa. O processo de dividir esse fluxo de bits em unidades discretas, os quadros, é chamado de **enquadramento** (_framing_). Um quadro é, essencialmente, um "envelope" para os pacotes da Camada de Rede. Para que o receptor consiga identificar o início e o fim de cada quadro, diversas técnicas foram desenvolvidas:
+
+1. **Contagem de Caracteres:** Um método antigo onde o cabeçalho do quadro continha um campo que indicava o número de caracteres (bytes) no quadro. Sua grande fragilidade era que um único erro de bit no campo de contagem faria o receptor perder a sincronia, tornando impossível localizar o início do próximo quadro. Por este motivo, não é mais utilizado.
+2. **Bytes de Flag, com Inserção de Bytes (Byte Stuffing):** Nesta técnica, cada quadro começa e termina com um byte especial, chamado de _flag_ (bandeira). O problema surge se o padrão do byte de flag aparecer acidentalmente no meio dos dados. A solução é a "inserção de bytes": o remetente insere um byte de "escape" especial antes de qualquer byte de flag acidental nos dados. O receptor, ao ver o byte de escape, o remove e sabe que o byte de flag seguinte é parte dos dados, e não o fim do quadro.
+3. **Flags Iniciais e Finais, com Inserção de Bits (Bit Stuffing):** Uma solução mais robusta e comum, utilizada por protocolos que influenciaram o Ethernet. Também usa um padrão de bits específico como flag (por exemplo, `01111110`). Para evitar que esse padrão surja acidentalmente nos dados, o hardware do remetente, sempre que detecta uma sequência de cinco '1's consecutivos nos dados, insere ("stuffed") um '0' no fluxo de bits. O hardware do receptor faz o inverso: ao ver cinco '1's seguidos por um '0', ele remove o '0', restaurando os dados originais. Isso garante que a única sequência de seis '1's seja a do flag.
+4. **Violações de Codificação da Camada Física:** Este método se aplica apenas a redes onde a codificação da Camada 1 possui redundância. Por exemplo, em uma codificação Manchester, todo bit válido tem uma transição de voltagem no meio do intervalo. Uma ausência de transição pode ser usada como um símbolo que não representa dados, marcando o início ou o fim de um quadro.
+
+#### Garantindo uma Transmissão Confiável
+
+Além de estruturar os bits em quadros, a Camada de Enlace introduz mecanismos para tornar a comunicação confiável:
+
+- **Controle de Erros:** Para detectar se um quadro foi corrompido durante a transmissão por ruído ou outras interferências, a camada de enlace adiciona uma "cauda" (_trailer_) ao quadro, contendo uma **Sequência de Verificação de Quadro (FCS - Frame Check Sequence)**. O valor do FCS é calculado pelo remetente com base no conteúdo do quadro. O receptor realiza o mesmo cálculo sobre os dados recebidos. Se os valores não baterem, o receptor sabe que o quadro contém erros e o descarta.
+- **Controle de Fluxo:** A camada também pode implementar mecanismos para evitar que um remetente rápido sobrecarregue um receptor lento com dados. O receptor pode enviar sinais de controle para "pausar" e "retomar" a transmissão, garantindo um fluxo de dados gerenciável.
+- **Sequenciamento:** Os quadros são numerados para garantir que sejam processados na ordem correta no destino e para permitir a identificação de quadros perdidos.
+
+#### Comutação: As Estratégias para Encaminhar Dados
+
+Um conceito fundamental, intimamente ligado à operação dos dispositivos da Camada de Enlace e superiores, é o de **comutação** (_switching_). Em seu sentido mais amplo, comutação é o processo pelo qual um equipamento intermediário recebe dados em uma porta de entrada e os encaminha para uma ou mais portas de saída, de modo a levá-los para mais perto de seu destino final. A estratégia utilizada para realizar essa comutação define a natureza da rede. Existem duas abordagens principais: a comutação de circuitos e a comutação por pacotes.
+
+##### Comutação de Circuitos
+
+Na comutação de circuitos, um **caminho de comunicação dedicado e exclusivo** é estabelecido entre a origem e o destino _antes_ que qualquer dado seja transmitido. Esse caminho, ou "circuito", uma vez estabelecido, é reservado para aquela comunicação específica durante toda a sua duração.
+
+O exemplo clássico é a rede de telefonia convencional. Quando se faz uma ligação, uma série de comutadores nos postos telefônicos estabelece uma conexão física fim a fim entre os dois aparelhos. Durante a chamada, todo o recurso daquele circuito (largura de banda) fica inteiramente à disposição dos interlocutores, e ninguém mais pode usá-lo.
+
+O processo ocorre em três fases distintas:
+
+1. **Estabelecimento do Circuito:** A conexão é solicitada e o caminho é montado através dos nós intermediários. Se algum trecho do caminho não estiver disponível, a conexão é bloqueada.
+2. **Transferência de Dados:** Os dados (ou a voz) fluem de forma contínua pelo circuito dedicado.
+3. **Desconexão do Circuito:** Ao final da comunicação, o circuito é desfeito, liberando os recursos para outras chamadas.
+
+**Vantagens:**
+
+- **Garantia de Recursos:** Como o caminho é dedicado, a largura de banda é garantida e constante durante toda a comunicação, sem concorrência.
+- **Baixa Latência:** Uma vez que o circuito está estabelecido, não há atrasos de processamento nos nós intermediários; os dados fluem diretamente.
+
+**Desvantagens:**
+
+- **Desperdício de Recursos:** O circuito permanece alocado mesmo durante os períodos de silêncio ou inatividade na comunicação, desperdiçando largura de banda.
+- **Bloqueio de Conexão:** Se não for possível alocar um circuito completo de ponta a ponta no momento da solicitação, a comunicação simplesmente não pode ser iniciada.
+
+##### Comutação por Pacotes
+
+A comutação por pacotes é a base da internet e da maioria das redes de dados modernas. Diferente da abordagem anterior, ela **não estabelece um caminho dedicado**. Em vez disso, a informação a ser enviada é quebrada em pequenos blocos de tamanho definido, chamados de **pacotes**. Cada pacote contém, além dos dados, um cabeçalho com informações de controle, como os endereços de origem e destino.
+
+Esses pacotes são então injetados na rede e viajam de forma independente. Os recursos da rede (os links de comunicação) são compartilhados entre múltiplos usuários. Cada dispositivo intermediário (como um switch ou roteador) recebe um pacote, o armazena temporariamente em um buffer (técnica de _store-and-forward_), analisa seu endereço de destino e o encaminha para o próximo nó na rota. Os pacotes de uma mesma mensagem podem, inclusive, seguir caminhos diferentes pela rede e chegar fora de ordem ao destino.
+
+**Vantagens:**
+
+- **Eficiência:** A utilização do meio é muito mais eficiente, pois os links só são ocupados quando há pacotes para transmitir, permitindo que múltiplos usuários compartilhem os recursos da rede de forma dinâmica.
+- **Robustez:** Em caso de falha em um nó ou link, os pacotes podem ser desviados por rotas alternativas, tornando a rede mais resiliente.
+
+**Desvantagens:**
+
+- **Atraso e Jitter:** O processo de armazenar e encaminhar em cada nó introduz atrasos (latência) que podem variar para cada pacote (_jitter_), o que pode ser um problema para aplicações de tempo real, como voz e vídeo.
+- **Sem Garantia de Banda:** Como os recursos são compartilhados, não há uma garantia nativa de taxa de transmissão. Em momentos de congestionamento, o desempenho pode degradar.
+
+Uma variação mais antiga é a **comutação por mensagens**, que funciona de forma semelhante, mas envia a mensagem inteira como um único bloco de tamanho ilimitado. Isso exigia que os nós intermediários tivessem uma grande capacidade de armazenamento (discos) e gerava atrasos muito altos, sendo substituída pela comutação por pacotes, que é muito mais ágil.
+
+A tabela a seguir resume as principais diferenças entre as duas técnicas:
+
+|Característica|Comutação por Circuitos|Comutação por Pacotes|
+|---|---|---|
+|**Circuito Físico Dedicado**|Sim|Não|
+|**Largura de Banda**|Fixo|Variável|
+|**Desperdício de Banda**|Sim, em períodos ociosos|Não|
+|**Armazenamento nos Nós**|Não|Sim (buffers)|
+|**Requer Conexão Prévia**|Sim|Não|
+|**Congestionamento**|Apenas no início da chamada (bloqueio)|Ocorre em cada pacote (filas nos nós)|
+|**Ocorrência de Atrasos**|Mínimo após conexão|Sim, em cada nó|
+|**Principais Aplicações**|Telefonia Convencional|Internet, Videoconferência, VoIP|
+
+#### Subdivisões da Camada de Enlace: LLC e MAC
+
+A Camada de Enlace, na prática, lida com duas classes de problemas distintas: as questões lógicas da comunicação (como o controle de erros e fluxo) e as questões de acesso ao meio físico (como o endereçamento físico e as regras para transmitir em um meio compartilhado). Para organizar melhor essas responsabilidades, o comitê IEEE 802, que padroniza as redes locais (LANs), dividiu a Camada de Enlace em duas subcamadas: a **LLC** na parte superior e a **MAC** na parte inferior.
+
+<div align="center">
+<img width="420px" src="./img/04-osi-camada-de-enlace-subcamadas.png">
+</div>
+
+Essa divisão é engenhosa porque permite que a subcamada superior (LLC), que lida com a lógica, seja independente da tecnologia física. Assim, a mesma lógica da LLC pode operar sobre diferentes tecnologias de acesso ao meio, como Ethernet, Wi-Fi ou outras.
+
+##### A Subcamada de Controle do Enlace Lógico (LLC - Logical Link Control)
+
+A subcamada LLC atua como a **interface entre a Camada de Rede e a Camada de Enlace**. Sua principal função é estabelecer e controlar as relações lógicas entre os dispositivos em uma rede. Ela recebe os pacotes da Camada de Rede e se encarrega de adicionar informações de controle para garantir uma transmissão ordenada. Suas responsabilidades incluem:
+
+- **Controle de Erros e Fluxo:** A LLC é responsável por implementar os mecanismos de checagem de erros e, opcionalmente, de confirmação de entrega e controle de fluxo, garantindo que os quadros cheguem de forma confiável ao destino.
+- **Multiplexação:** A LLC permite que múltiplos protocolos da Camada de Rede (como IPv4, IPv6, etc.) utilizem a mesma interface de rede. Ela utiliza pontos de acesso de serviço (SAPs) para identificar para qual protocolo da camada superior o pacote recebido deve ser entregue.
+
+O serviço oferecido pela LLC pode ser de três tipos:
+
+1. **Tipo 1:** Serviço **não orientado à conexão e sem confirmação de entrega**. Este é o serviço mais comum, utilizado pelo protocolo IP sobre Ethernet. É um modelo "best-effort" (melhor esforço), onde os quadros são enviados sem que se estabeleça uma conexão prévia e sem que se espere uma confirmação de recebimento. A responsabilidade pela recuperação de erros é deixada para as camadas superiores (como o TCP).
+2. **Tipo 2:** Serviço **orientado à conexão e com confirmação de entrega**. Neste modelo, uma conexão lógica é estabelecida entre os dispositivos antes da troca de dados, e cada quadro é numerado e confirmado. Garante a entrega ordenada e sem erros dos quadros.
+3. **Tipo 3:** Serviço **não orientado à conexão, mas com confirmação de entrega**. Um modelo híbrido, onde cada quadro é confirmado individualmente, mas sem o estabelecimento de uma conexão formal.
+
+##### A Subcamada de Controle de Acesso ao Meio (MAC - Media Access Control)
+
+A subcamada MAC é a parte inferior da Camada de Enlace e atua como a **interface com a Camada Física**. Ela é responsável por todas as tarefas que dependem diretamente do meio de transmissão e da topologia da rede. Suas principais responsabilidades são:
+
+- **Endereçamento Físico:** A função mais conhecida da subcamada MAC é a de adicionar os endereços de origem e destino ao quadro. É aqui que o **endereço MAC** da placa de rede é utilizado para identificar unicamente os dispositivos na rede local.
+- **Controle de Acesso ao Meio:** Esta subcamada implementa as "regras de trânsito" que determinam quando um dispositivo pode transmitir em um meio compartilhado. É aqui que as tecnologias para evitar ou detectar colisões, como o **CSMA/CD** (usado no Ethernet clássico) e o **CSMA/CA** (usado em redes Wi-Fi), são aplicadas.
+- **Enquadramento (Framing):** A subcamada MAC é responsável por montar o quadro final, encapsulando os dados da LLC, adicionando os endereços MAC e o trailer com a verificação de erros (FCS), e delimitando o início e o fim do quadro para a Camada Física.
