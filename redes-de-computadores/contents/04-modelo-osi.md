@@ -310,3 +310,54 @@ Para otimizar a transmissão, a Camada de Transporte utiliza um parâmetro chama
 
 A principal função do MSS é criar segmentos que, ao serem encapsulados pela Camada de Rede, gerem pacotes IP de um tamanho que não precise ser fragmentado pelos roteadores no caminho. Isso otimiza a comunicação, pois evita o consumo de recursos de processamento nos roteadores para realizar a fragmentação e simplifica a remontagem no destino final.
 
+### Camada de Sessão
+
+A **Camada de Sessão (Session Layer)**, ou Camada 5, é a primeira das camadas de host e atua como uma "moderadora" da comunicação. Se a Camada de Transporte é responsável por criar o canal de comunicação, a Camada de Sessão é responsável por **estabelecer, gerenciar e encerrar as sessões (ou diálogos)** entre as aplicações nos dispositivos de origem e destino. Sua PDU (Unidade de Dados de Protocolo) são os **dados**.
+
+Uma vez que uma conexão é estabelecida, é a Camada de Sessão que organiza e sincroniza o diálogo entre as partes. Conforme descrito por Tanenbaum, seus serviços são cruciais para conversas complexas e de longa duração:
+
+> “Uma sessão oferece diversos serviços, inclusive o controle de diálogo (mantendo o controle de quem deve transmitir em cada momento), o gerenciamento de símbolos ou tokens (impedindo que duas partes tentem executar a mesma operação crítica ao mesmo tempo) e a sincronização (realizando a verificação periódica de transmissões longas para permitir que elas continuem a partir do ponto em que estavam ao ocorrer uma falha).”
+
+As principais responsabilidades desta camada são:
+
+- **Controle de Diálogo:** Ela pode impor uma disciplina à conversação, determinando se a comunicação será em modo _half-duplex_ (os lados se revezam para falar) ou _full-duplex_ (ambos podem falar ao mesmo tempo).
+- **Sincronização:** Para transferências de dados muito longas, como o download de um arquivo de vários gigabytes, a Camada de Sessão pode inserir **pontos de verificação** (_checkpoints_) no fluxo de dados. Se a conexão falhar no meio da transferência, a sessão pode ser restabelecida e a transmissão pode ser retomada a partir do último checkpoint bem-sucedido, em vez de começar tudo do zero.
+
+### Camada de Apresentação
+
+A **Camada de Apresentação (Presentation Layer)**, ou Camada 6, tem uma função primordial: atuar como a "tradutora" da rede. Ela garante que a informação enviada pela Camada de Aplicação de um sistema seja legível e utilizável pela Camada de Aplicação de outro sistema. Sua PDU também são os **dados**.
+
+O problema que esta camada resolve é que diferentes sistemas computacionais podem usar diferentes formas de representar os mesmos dados (por exemplo, diferentes padrões de codificação de caracteres, como ASCII e EBCDIC, ou diferentes ordens de bytes). A Camada de Apresentação é responsável por **formatar e traduzir os dados** em uma sintaxe comum e padronizada que ambos os lados entendam.
+
+Além da tradução, esta camada executa duas outras funções cruciais, que são suas características mais marcantes:
+
+- **Compressão de Dados:** Antes de enviar os dados para as camadas inferiores, a Camada de Apresentação pode comprimi-los para reduzir o número de bits a serem transmitidos. Isso economiza largura de banda e pode acelerar a comunicação. A camada correspondente no receptor é responsável por descomprimir os dados.
+- **Criptografia de Dados:** Esta é uma função vital para a segurança. A Camada de Apresentação é responsável por **criptografar** os dados na origem para garantir a confidencialidade e **descriptografar** no destino. Protocolos como SSL (Secure Sockets Layer) e TLS (Transport Layer Security), que protegem a comunicação web (HTTPS), realizam funções típicas desta camada.
+
+### Camada de Aplicação
+
+A **Camada de Aplicação (Application Layer)**, ou Camada 7, é a camada mais alta do Modelo OSI e a mais próxima do usuário final. É importante notar que esta camada **não é a aplicação em si** (como o seu navegador web ou cliente de e-mail), mas sim a camada que fornece a **interface e os protocolos** que essas aplicações utilizam para acessar os serviços de rede. Todas as suas funcionalidades são implementadas via software. Sua PDU são os **dados**.
+
+Pense nesta camada como um menu de serviços de rede disponíveis para os programas. Quando um aplicativo precisa realizar uma tarefa de rede, ele invoca o protocolo apropriado nesta camada. Suas funcionalidades são vastas e definidas pelos seus diversos protocolos, incluindo:
+
+- **Navegação na Web:** O protocolo HTTP (Hypertext Transfer Protocol) permite que os navegadores solicitem e recebam páginas web de servidores.
+- **Mensagens Eletrônicas (E-mail):** O protocolo SMTP (Simple Mail Transfer Protocol) é usado para enviar e-mails, enquanto os protocolos POP3 (Post Office Protocol 3) e IMAP (Internet Message Access Protocol) são usados para recebê-los.
+- **Transferência de Arquivos:** O protocolo FTP (File Transfer Protocol) gerencia o upload e o download de arquivos entre computadores.
+- **Acesso Remoto:** Protocolos como o SSH (Secure Shell) permitem o acesso seguro e o controle de um computador remotamente.
+- **Resolução de Nomes:** O protocolo DNS (Domain Name System) traduz nomes de domínio legíveis por humanos (como `www.google.com`) para endereços IP compreensíveis pela rede.
+
+## Considerações Finais
+
+Neste capítulo, afastamo-nos dos componentes físicos da rede para explorar a arquitetura conceitual que organiza e padroniza a complexa tarefa da comunicação de dados: o **Modelo de Referência OSI**. Vimos que este modelo não surgiu por acaso, mas como uma solução elegante para os problemas de **incompatibilidade** entre sistemas de diferentes fabricantes e da **complexidade** de protocolos monolíticos que dificultavam a evolução das redes.
+
+A solução proposta pela ISO foi a de "dividir para conquistar", estruturando a comunicação em **sete camadas** modulares. Exploramos os princípios de funcionamento desta arquitetura, fundamentada nos conceitos de **Serviços**, **Interfaces** e **Protocolos**, e entendemos o processo mecânico do **encapsulamento**, no qual os dados descem pela pilha no remetente, ganhando um cabeçalho em cada camada, e são desencapsulados no destino.
+
+Realizamos uma jornada detalhada através de cada uma das camadas, compreendendo suas funções distintas:
+
+- Começamos pela **Camada Física**, a base que lida com a transmissão dos bits brutos através do meio.
+- Subimos para a **Camada de Enlace**, que organiza os bits em quadros e introduz a confiabilidade no enlace local através do controle de erros e do acesso ao meio, sendo subdividida em **LLC** e **MAC**.
+- Na **Camada de Rede**, encontramos a lógica de roteamento e o endereçamento IP, que permitem a interconexão de redes distintas e a navegação pela Internet.
+- A **Camada de Transporte** se revelou a ponte entre a logística da rede e as aplicações, garantindo a entrega dos dados ao processo correto no host de destino, seja de forma confiável (TCP) ou rápida (UDP).
+- Finalmente, exploramos as **Camadas Superiores** — Sessão, Apresentação e Aplicação — que gerenciam o diálogo, traduzem e formatam os dados, e fornecem a interface para que os aplicativos dos usuários acessem os serviços de rede.
+
+Ao dominar o mapa conceitual do Modelo OSI, estamos equipados com o vocabulário e a estrutura mental para analisar qualquer processo de comunicação em rede. Embora seja um modelo de referência teórico, sua terminologia e a separação de funções são universalmente utilizadas por profissionais da área. No próximo capítulo, veremos como esses conceitos teóricos foram aplicados e adaptados no modelo que de fato rege a Internet: a pilha de protocolos TCP/IP.
