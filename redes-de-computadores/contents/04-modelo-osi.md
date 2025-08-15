@@ -278,3 +278,35 @@ A capacidade da Camada de Rede de interconectar redes distintas é o que permite
 - **Intranet:** É uma rede privada, pertencente a uma organização, e acessível apenas aos seus membros. Ela utiliza as mesmas tecnologias da Internet (navegadores, servidores web, TCP/IP), mas para compartilhar informações e serviços internos de forma segura.
 - **Extranet:** É uma extensão da intranet de uma organização, que permite o acesso seguro a parceiros externos autorizados (como fornecedores, clientes ou colaboradores). A comunicação da extranet geralmente ocorre através de uma **VPN (Virtual Private Network)**, que cria um "túnel" criptografado sobre a internet pública para garantir a confidencialidade e a integridade dos dados.
 
+### Camada de Transporte
+
+A **Camada de Transporte (Transport Layer)**, ou Camada 4, é a primeira camada verdadeiramente fim a fim. Enquanto as camadas inferiores se preocupam em mover pacotes entre máquinas, a Camada de Transporte tem como missão fornecer uma comunicação lógica entre **processos ou aplicações** específicas que estão rodando em hosts de origem e destino diferentes.
+
+Se a Camada de Rede é responsável por entregar uma carta ao endereço correto (a casa certa), a Camada de Transporte é responsável por garantir que a carta seja entregue à pessoa correta _dentro_ da casa. Sua PDU (Unidade de Dados de Protocolo) é o **segmento**.
+
+#### Multiplexação e Demultiplexação com Portas
+
+Um computador pode executar diversas aplicações de rede simultaneamente: um navegador web, um cliente de e-mail, um software de videoconferência, etc. A Camada de Transporte gerencia essas múltiplas conversas através de um mecanismo chamado **multiplexação e demultiplexação**, utilizando **números de porta**.
+
+- **Multiplexação:** No host de origem, a Camada de Transporte coleta os dados de diferentes aplicações (processos), segmenta-os e adiciona a cada segmento um cabeçalho contendo o número da porta de origem e de destino. A porta de destino identifica qual aplicação no computador de destino deve receber os dados.
+- **Demultiplexação:** No host de destino, a Camada de Transporte examina o número da porta de destino no cabeçalho de cada segmento recebido e entrega os dados para o soquete da aplicação correta.
+
+#### Os Dois Modelos de Serviço: Confiabilidade vs. Velocidade
+
+A principal característica da Camada de Transporte é que ela oferece dois modelos de serviço distintos, implementados através de dois protocolos principais, para atender às diferentes necessidades das aplicações:
+
+- **Serviço Orientado à Conexão (Confiável):** Representado principalmente pelo **TCP (Transmission Control Protocol)**, este serviço é projetado para garantir que todos os dados cheguem ao destino de forma íntegra, sem erros e na ordem correta. Antes de enviar qualquer dado, o TCP estabelece uma conexão formal entre a origem e o destino (através de um processo chamado _three-way handshake_). Durante a transmissão, ele utiliza recursos como:
+    - **Controle de Erros e Confirmação:** Cada segmento enviado é confirmado pelo receptor. Se uma confirmação não chegar, o segmento é retransmitido.
+    - **Ordenação de Pacotes:** Os segmentos são numerados para que possam ser remontados na ordem correta no destino, mesmo que cheguem fora de sequência pela rede.
+    - **Controle de Fluxo:** Gerencia a taxa de transmissão para não sobrecarregar o receptor.
+    - É o protocolo de escolha para aplicações onde a integridade dos dados é crucial, como navegação web (HTTP/S), envio de e-mails (SMTP) e transferência de arquivos (FTP).
+- **Serviço Não Orientado à Conexão (Rápido):** Representado pelo **UDP (User Datagram Protocol)**, este serviço prioriza a velocidade e a baixa latência em detrimento da confiabilidade. Ele simplesmente envia os datagramas sem estabelecer uma conexão prévia e **sem qualquer mecanismo de confirmação, ordenação ou controle de erros**. É um modelo "enviar e esquecer". É ideal para aplicações de tempo real, onde um pacote perdido ou atrasado é menos problemático do que esperar por uma retransmissão. Exemplos incluem streaming de vídeo, jogos online, e chamadas de Voz sobre IP (VoIP).
+
+#### Otimização de Pacotes: O Papel do MSS
+
+Para otimizar a transmissão, a Camada de Transporte utiliza um parâmetro chamado **MSS (Maximum Segment Size)**. O MSS define o tamanho máximo de dados que um segmento pode conter. Seu valor é calculado com base no MTU (Maximum Transmission Unit) da Camada de Enlace, subtraindo-se o tamanho dos cabeçalhos IP e TCP.
+
+`MSS = MTU - Tamanho do Cabeçalho IP - Tamanho do Cabeçalho TCP`
+
+A principal função do MSS é criar segmentos que, ao serem encapsulados pela Camada de Rede, gerem pacotes IP de um tamanho que não precise ser fragmentado pelos roteadores no caminho. Isso otimiza a comunicação, pois evita o consumo de recursos de processamento nos roteadores para realizar a fragmentação e simplifica a remontagem no destino final.
+
