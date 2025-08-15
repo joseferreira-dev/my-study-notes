@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "redes-de-computadores/contents/04-modelo-osi.md",
+                "file": "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-modelo-osi"
+              "title": "05-arquitetura-tcp-ip"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "redes-de-computadores/contents/04-modelo-osi.md",
+                "file": "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 04-modelo-osi"
+              "title": "Sumário de 05-arquitetura-tcp-ip"
             }
           }
         ],
@@ -170,19 +170,19 @@
   },
   "active": "68c16a7ae7634b08",
   "lastOpenFiles": [
+    "redes-de-computadores/contents/04-modelo-osi.md",
+    "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
     "redes-de-computadores/contents/img/04-osi-camada-de-enlace-subcamadas.png",
     "redes-de-computadores/contents/img/04-osi-camada-fisica-simplex-duplex.png",
     "redes-de-computadores/contents/img/04-modelo-osi-pdu.png",
     "redes-de-computadores/contents/img/04-modelo-osi-blocos-de-dados.png",
     "redes-de-computadores/contents/img/04-modelo-osi-camadas.png",
     "redes-de-computadores/contents/03-equipamentos-de-rede.md",
-    "redes-de-computadores/contents/04-modelo-osi.md",
     "redes-de-computadores/contents/img/03-equipamentos-interacao.png",
     "redes-de-computadores/contents/img/03-equipamentos-e-camadas-fluxo.png",
     "redes-de-computadores/contents/img/03-equipamentos-e-camadas.png",
     "redes-de-computadores/contents/img/03-gateway.png",
     "redes-de-computadores/contents/img/03-roteador-esquema.png",
-    "redes-de-computadores/contents/img/03-roteador-tabela-de-roteamento.png",
     "redes-de-computadores/contents/02-meios-de-transmissao-de-sinais.md",
     "linguagem-java/contents/10-principios-solid.md",
     "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
