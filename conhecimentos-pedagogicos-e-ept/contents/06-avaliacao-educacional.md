@@ -381,3 +381,38 @@ Na prática, um bom ou mau desempenho no SINAES tem consequências diretas para 
 - **Credenciamento e Recredenciamento** de instituições;
 - **Autorização** para a abertura de novos cursos;
 - **Reconhecimento e Renovação de Reconhecimento** de cursos já existentes.
+
+## Avaliação Institucional
+
+A **avaliação institucional**, também conhecida como avaliação da escola, é um processo amplo e coletivo de reflexão sobre a qualidade da educação oferecida por uma determinada instituição de ensino. Diferentemente da avaliação da aprendizagem, seu foco não está no desempenho individual dos alunos em uma sala de aula, mas sim na **escola como um todo**: nas condições de ensino que ela oferece, na coerência e execução de seu Projeto Político Pedagógico (PPP), no planejamento geral dos docentes e na gestão pedagógica e administrativa.
+
+É um momento em que a comunidade escolar "se olha no espelho" para analisar suas práticas, identificar seus pontos fortes e suas fragilidades, e traçar caminhos para a melhoria. Trata-se de uma regulação interna, na qual se verifica se as diferentes ações pedagógicas estão alinhadas com os objetivos e valores que a própria instituição traçou para si.
+
+Um exemplo prático seria uma escola que decide avaliar seu projeto de leitura. A avaliação institucional não se limitaria a aplicar uma prova para ver se os alunos estão lendo mais. Em vez disso, ela promoveria uma ampla discussão com professores, alunos e famílias, buscando coletar opiniões e relatos sobre a qualidade do acervo da biblioteca, a motivação dos estudantes para as atividades, a eficácia das estratégias de mediação de leitura utilizadas pelos professores, entre outras inúmeras possibilidades.
+
+### Pilares da Avaliação Institucional
+
+Para que cumpra seu papel formativo e transformador, a avaliação institucional se apoia em alguns pilares essenciais:
+
+1. **Foco na Escola, Não na Culpabilização do Aluno:** O objeto da análise é a instituição. Diante de um quadro de baixo rendimento, por exemplo, a avaliação institucional evita a postura de culpar os alunos ou suas famílias. A pergunta central não é "Por que este aluno não aprende?", mas sim "O que nós, enquanto instituição, estamos fazendo ou deixando de fazer que contribui para este resultado?". O foco está nas atitudes que podem ser tomadas pela escola para melhorar a qualidade da educação que ela oferece.
+2. **Construção Coletiva em Equipe:** A avaliação institucional não é uma tarefa isolada da equipe gestora, mas um processo que deve envolver toda a equipe da escola: professores, coordenadores, supervisores e direção. Essa construção coletiva quebra o isolamento da prática docente e promove um sentimento de corresponsabilidade pelos rumos da instituição.
+3. **Exercício de Gestão Democrática:** O processo deve ser fundamentalmente democrático, abrindo espaço para a participação de todos os segmentos da comunidade escolar, incluindo pais e alunos, muitas vezes através de instâncias como o Conselho Escolar. A discussão sobre os valores, os objetivos educacionais e os problemas da escola se torna, assim, um exercício prático de cidadania e de gestão democrática.
+
+## Avaliação da Aprendizagem
+
+Após analisarmos a avaliação em suas dimensões mais amplas — sistêmica e institucional —, voltamos nosso olhar para o núcleo do processo pedagógico: a **avaliação da aprendizagem**, aquela que ocorre na interação diária entre professor e alunos. O consenso entre os principais teóricos da educação hoje aponta para uma profunda mudança de paradigma: a superação de um modelo tradicional de avaliação em favor de um **modelo de avaliação formativa**.
+
+### Do Modelo Tradicional ao Formativo
+
+A **avaliação tradicional** era frequentemente vista como um evento isolado, que ocorria apenas ao final de um período (mês, bimestre ou semestre). Seu objetivo era unicamente **medir e classificar** o desempenho dos alunos através de notas ou conceitos. Nessa perspectiva, a avaliação funcionava como um termômetro que, ao final do processo, apenas aferia a "temperatura" do conhecimento do aluno, sem se preocupar em intervir para melhorá-lo. A responsabilidade pelo resultado era depositada exclusivamente no estudante, e não havia uma reflexão crítica sobre os métodos de ensino utilizados ou sobre a adequação dos próprios instrumentos avaliativos.
+
+Em oposição a essa visão, a concepção contemporânea entende a avaliação em seu **caráter formativo**. Ela deixa de ser o ponto final do percurso para se tornar parte integrante e contínua do próprio processo de ensinar e aprender. Diz-se que é "formativa" porque sua principal finalidade é **orientar a formação** dos alunos. Os resultados obtidos não servem para rotular ou classificar, mas sim como um diagnóstico que permite ao professor **replanejar suas aulas**, adaptar suas estratégias e intervir de forma mais eficaz nas dificuldades da turma ou de alunos específicos. A responsabilidade pelo processo é compartilhada, e a avaliação se torna uma ferramenta para a melhoria do ensino e da aprendizagem.
+
+### Esclarecendo Conceitos-Chave na Avaliação da Aprendizagem
+
+Dentro dessa discussão, alguns termos e conceitos são fundamentais para a compreensão das diferentes práticas avaliativas.
+
+- **Avaliação Formal e Informal:** A **avaliação formal** é aquela planejada pelo professor e realizada por meio de um instrumento próprio (como um trabalho escrito, um seminário ou um teste). Já a **avaliação informal** ocorre através da observação cotidiana do professor sobre a participação dos alunos, suas atividades no caderno, seu engajamento em grupo e seu comportamento em sala. Em uma perspectiva formativa, ambos os tipos de avaliação são importantes, pois fornecem informações complementares sobre o processo de aprendizagem.
+- **A Prova como Instrumento:** A **prova** é o instrumento mais característico da avaliação tradicional, especialmente quando sua única finalidade é a de medir o conhecimento para a atribuição de uma nota. Quando desvinculada de uma intenção pedagógica de reorientação do trabalho docente, ela tende a reforçar a lógica de que o aluno é o único responsável por seu resultado.
+- **Avaliação para Intervenção Pedagógica:** Esta expressão define a essência da avaliação formativa. Trata-se de toda e qualquer avaliação — formal ou informal — cujos resultados são utilizados pelo professor para realizar uma **intervenção pedagógica**, ou seja, para agir de forma a superar as dificuldades de aprendizagem identificadas. O sucesso da avaliação, nesta ótica, não está na nota que ela gera, mas na qualidade da ação pedagógica que ela possibilita.
+
