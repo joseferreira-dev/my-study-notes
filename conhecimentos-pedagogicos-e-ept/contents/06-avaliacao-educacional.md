@@ -539,3 +539,36 @@ Perrenoud ressalta um aspecto prático crucial para o sucesso da avaliação for
 
 Implementar a avaliação formativa nos termos de Perrenoud é, portanto, mais do que uma mudança de técnicas avaliativas; é uma profunda **mudança de cultura escolar**, que substitui a lógica da competição e da seleção pela lógica do acompanhamento e do desenvolvimento de todos.
 
+## Autoavaliação
+
+Dentro da perspectiva contemporânea de educação, que valoriza a autonomia e o protagonismo do estudante, a **autoavaliação** surge como uma prática avaliativa de grande importância. É fundamental compreender, no entanto, que ela não é uma modalidade a ser utilizada de forma exclusiva, mas sim como um **complemento** a outras formas de avaliação, enriquecendo o processo de acompanhamento da aprendizagem.
+
+#### O Conceito e a Finalidade da Autoavaliação
+
+Podemos definir a autoavaliação da seguinte maneira:
+
+> Autoavaliação é o processo no qual o aluno avalia a si próprio, orientado pelo professor, para que consiga identificar os avanços que teve em sua aprendizagem e os aspectos que ainda precisam ser melhorados. É uma avaliação que não pode ser exclusiva com risco de se cair no espontaneísmo. Dessa forma, a autoavaliação é um complemento das avaliações formais para cumprir o requisito de tomada de consciência sobre as atitudes, valores e o rendimento do aluno ao longo de determinado tempo. Pode ser realizada individualmente ou em grupo.
+
+O objetivo principal desta prática não é a atribuição de uma nota, mas sim a **tomada de consciência** do estudante sobre seu próprio percurso de aprendizagem. Ao ser convidado a refletir sobre suas atitudes, seus valores e seu rendimento ao longo do tempo, o aluno deixa de ser um objeto passivo da avaliação do professor para se tornar um **sujeito ativo** de seu processo, desenvolvendo a **metacognição** — a capacidade de pensar sobre o próprio pensamento.
+
+#### A Prática da Autoavaliação Guiada
+
+Para que a autoavaliação seja eficaz e não se transforme em um ato de puro "espontaneísmo" (uma avaliação puramente subjetiva e sem critérios), ela precisa ser cuidadosamente planejada e orientada pelo professor. Uma boa prática de autoavaliação envolve:
+
+1. **Definição de Critérios Claros:** Professor e alunos devem ter um entendimento compartilhado sobre os objetivos de aprendizagem e os critérios de qualidade para uma determinada atividade. O uso de **rubricas de avaliação**, por exemplo, ajuda a tornar esses critérios explícitos.
+2. **Uso de Instrumentos:** O professor pode oferecer instrumentos que guiem a reflexão do aluno, como roteiros de perguntas, diários de aprendizagem, checklists ou a análise do próprio **portfólio**.
+3. **Orientação do Professor:** O educador atua como um mediador, ajudando o aluno a analisar suas produções com base nos critérios estabelecidos e a perceber seus pontos fortes e as áreas que necessitam de mais atenção.
+
+A autoavaliação, que pode ser realizada tanto individualmente quanto em grupo (onde os colegas se ajudam a refletir sobre o trabalho coletivo), é, portanto, um dos instrumentos mais poderosos da **avaliação formativa**. Ela é a ferramenta por excelência para o desenvolvimento da **autonomia** e da **autorregulação** da aprendizagem, ensinando o aluno a se tornar o principal gestor de seu próprio percurso de conhecimento.
+
+## Considerações Finais
+
+Neste capítulo, exploramos o complexo e consequential universo da avaliação educacional. Vimos que a avaliação não é um ato único, mas um conjunto de práticas com diferentes finalidades e abrangências, que se desdobram desde o nível macro da **Avaliação de Sistemas**, passando pelo nível meso da **Avaliação Institucional**, até o nível micro da **Avaliação da Aprendizagem** na sala de aula. Analisamos como as políticas nacionais, regulamentadas por decretos, se materializam em instrumentos como o SAEB, o ENEM e o Encceja, e como seus dados são utilizados para compor indicadores como o IDEB.
+
+O percurso por estes temas revelou a existência de uma tensão fundamental que atravessa todo o campo avaliativo, uma disputa entre dois grandes paradigmas. De um lado, temos um paradigma de **avaliação para a classificação e o controle**, predominantemente externo, somativo e focado na mensuração de resultados para fins de ranqueamento e responsabilização. Do outro, emerge um paradigma de **avaliação para a aprendizagem e a emancipação**, de caráter interno, que se manifesta nas funções diagnóstica e formativa.
+
+As ricas contribuições de autores como **Cipriano Luckesi**, **José Carlos Libâneo**, **Jussara Hoffmann** e **Philippe Perrenoud** nos ofereceram as bases teóricas para a construção deste segundo paradigma. Eles nos mostram uma avaliação que não se confunde com o exame seletivo; que é um ato acolhedor e inclusivo; que serve como um instrumento de regulação e mediação do processo de ensino; e que é indissociável de um planejamento e de uma prática pedagógica reflexiva.
+
+Navegar entre as pressões do primeiro paradigma e o compromisso pedagógico com o segundo é um dos maiores desafios do educador contemporâneo. Práticas como a **autoavaliação** surgem como ferramentas concretas para fortalecer uma cultura avaliativa formativa, na qual o estudante deixa de ser o objeto passivo do julgamento do professor para se tornar sujeito ativo de seu próprio processo de aprendizagem.
+
+Fica evidente, portanto, que a avaliação nunca é um ato técnico neutro. A escolha sobre o que avaliar, como avaliar e, principalmente, o que fazer com os resultados da avaliação é sempre uma decisão ética e política. É a escolha entre uma prática que seleciona, classifica e exclui e uma prática que diagnostica, acolhe e transforma. O estudo aprofundado da avaliação visa, em última instância, a capacitar o profissional da educação para fazer essa escolha de forma consciente, transformando sua prática avaliativa em um poderoso instrumento a serviço do direito de todos à aprendizagem.
