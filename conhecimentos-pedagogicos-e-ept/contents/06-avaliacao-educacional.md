@@ -51,3 +51,33 @@ A principal diferença entre as duas reside no fato de que a avaliação externa
 
 Embora possam ser complementares — os dados de uma avaliação externa podem, por exemplo, desencadear um processo de avaliação interna para investigar as causas de um baixo desempenho —, é comum que exista uma tensão entre os dois modelos. A pressão por bons resultados em testes padronizados externos pode levar as escolas a um estreitamento curricular (o chamado "ensinar para o teste"), ofuscando os objetivos mais amplos e humanistas definidos no PPP e trabalhados na avaliação interna.
 
+## A Avaliação na Perspectiva da Construção do Conhecimento
+
+Para aprofundar a compreensão sobre as diversas práticas avaliativas, é útil organizá-las em dois grandes grupos, que se distinguem pelo foco do processo: a **avaliação como construção do conhecimento individual** e a **avaliação como construção do conhecimento em grupo e/ou institucional**. Esta classificação nos ajuda a diferenciar as avaliações que incidem diretamente sobre a trajetória de aprendizagem de cada estudante daquelas que analisam os processos de coletividades, como uma escola ou um sistema de ensino.
+
+### A Avaliação como Construção de Conhecimento Individual
+
+O primeiro grupo abrange as modalidades de avaliação centradas no acompanhamento individual das aprendizagens. São as ferramentas mais diretas do trabalho pedagógico do professor em sala de aula, cujo objetivo é diagnosticar, monitorar e fomentar o processo de construção do saber de cada aluno. As principais propostas dentro deste grupo são:
+
+- Avaliação Somativa (com o objetivo de apenas medir e aferir conhecimentos)
+- Avaliação Diagnóstica
+- Avaliação Formativa e Autoavaliação
+
+<div align="center">
+<img width="700px" src="./img/06-avaliacao-conhecimento-individual.png">
+</div>
+
+### A Avaliação como Construção de Conhecimento em Grupo e/ou Institucional
+
+O segundo grupo de avaliações expande o foco do indivíduo para o coletivo. Trata-se do acompanhamento em grupo e/ou institucional das aprendizagens e dos processos educativos. Estas avaliações se preocupam em analisar o funcionamento de uma instituição, a eficácia de políticas públicas ou as dinâmicas de avaliação em contextos sociais mais amplos. As principais propostas que se inserem nesta categoria são:
+
+- Avaliação Institucional
+- Políticas Educacionais, Meta-avaliação e Educação Comparada
+- Propostas de Luckesi, Libâneo, Hoffmann e Perrenoud (Avaliações de grupos e/ou contextos)
+
+<div align="center">
+<img width="700px" src="./img/06-avaliacao-conhecimento-coletivo.png">
+</div>
+
+A seguir, cada uma dessas propostas será analisada em profundidade, começando pelas avaliações focadas na construção do conhecimento individual.
+
