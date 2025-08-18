@@ -324,3 +324,60 @@ Além dos testes de proficiência, o PISA aplica extensos **questionários conte
 
 É fundamental ressaltar que a finalidade proposta pelo PISA é a do **estudo comparativo** para a aprendizagem mútua entre os países. No entanto, a repercussão de seus resultados na mídia frequentemente simplifica essa complexidade, transformando a avaliação em uma espécie de "copa do mundo da educação", com um foco excessivo no **ranqueamento** dos países. Essa abordagem competitiva é uma distorção do objetivo original do programa e pode gerar pressões indevidas sobre os sistemas educacionais, sem um debate qualificado sobre as razões e os contextos que explicam os diferentes resultados.
 
+### Exame Nacional para Certificação de Competências de Jovens e Adultos (Encceja)
+
+O **Exame Nacional para Certificação de Competências de Jovens e Adultos (Encceja)** é uma avaliação de aplicação voluntária e gratuita, que cumpre uma função social de extrema importância: oferecer um caminho para que jovens e adultos que não concluíram seus estudos na idade apropriada possam obter a certificação de conclusão do Ensino Fundamental ou do Ensino Médio.
+
+#### A Função Social e a Base Legal
+
+O Encceja é a principal política pública de **inclusão educacional e reparação de trajetórias escolares**. Ele representa uma segunda chance para milhões de brasileiros que, por diversas razões (como a necessidade de trabalhar precocemente), tiveram seus estudos interrompidos. A obtenção do certificado através do exame possibilita a essas pessoas o prosseguimento dos estudos em níveis mais elevados (como cursos técnicos ou o ensino superior) e o acesso a melhores oportunidades no mercado de trabalho.
+
+Esta política está fundamentada na **Lei de Diretrizes e Bases da Educação Nacional (LDB 9.394/96)**, que, em seu artigo 38, determina que os sistemas de ensino devem manter exames supletivos. O parágrafo primeiro especifica os requisitos de idade para a certificação:
+
+> **Art. 38.** Os sistemas de ensino manterão cursos e exames supletivos, que compreenderão a base nacional comum do currículo, habilitando ao prosseguimento de estudos em caráter regular.
+> 
+> § 1º Os exames a que se refere este artigo realizar-se-ão:
+> 
+> I - no nível de conclusão do ensino fundamental, para os maiores de quinze anos;
+> II - no nível de conclusão do ensino médio, para os maiores de dezoito anos.
+
+O Encceja é, portanto, a principal via pela qual o governo federal cumpre essa determinação legal, garantindo essa oportunidade em escala nacional.
+
+#### Estrutura da Avaliação
+
+O exame não avalia apenas a memorização de conteúdos, mas busca aferir se o participante desenvolveu as **competências e habilidades** essenciais esperadas ao final de cada etapa da educação básica. A avaliação é composta por quatro provas objetivas, que correspondem às grandes áreas do conhecimento da Base Nacional Comum Curricular (BNCC), e uma prova de Redação.
+
+Uma característica importante do Encceja é a sua flexibilidade. Para obter o certificado, o participante precisa atingir a pontuação mínima em cada uma das quatro áreas e na redação. Caso ele seja aprovado em algumas áreas, mas não em outras, ele pode solicitar uma "Declaração Parcial de Proficiência" e, na edição seguinte do exame, se inscrever para realizar apenas as provas nas quais não obteve a nota necessária.
+
+### Sistema Nacional de Avaliação da Educação Superior (SINAES)
+
+O **Sistema Nacional de Avaliação da Educação Superior (SINAES)**, instituído pela Lei nº 10.861, de 14 de abril de 2004, é o principal instrumento do governo federal para zelar pela qualidade dos cursos e instituições de ensino superior (IES) no país. É fundamental compreender que o SINAES não se resume a uma única prova aplicada aos estudantes, mas sim a um sistema integrado que analisa múltiplos aspectos da vida acadêmica.
+
+Sua criação, no início dos anos 2000, foi uma resposta à necessidade de superar o modelo anterior (o "Provão"), que era focado apenas no desempenho dos concluintes, e de criar um sistema mais completo para regular a grande expansão da educação superior, especialmente no setor privado.
+
+#### Objetivos e Princípios do Sistema
+
+O SINAES tem como objetivos centrais melhorar a qualidade da educação superior, orientar a expansão da oferta de cursos e promover a responsabilidade social das IES. Para garantir um processo justo e formativo, o sistema é balizado por princípios importantes, como:
+
+- A necessidade de uma **avaliação institucional interna e externa**, que contemple análise global e integrada das dimensões, estruturas, relações, compromisso social, atividades, finalidades e responsabilidades sociais das instituições de educação superior (IES) e de seus cursos;
+- O **caráter público** de todos os seus procedimentos e resultados;
+- O **respeito à identidade e à diversidade** de cada instituição e curso;
+- A **participação** do corpo discente, docente e técnico-administrativo das instituições de educação superior, e da sociedade civil, por meio de suas representações.
+
+#### O Tripé da Avaliação
+
+O SINAES se apoia sobre um tripé de componentes avaliativos que, juntos, buscam oferecer um diagnóstico completo da qualidade do ensino superior.
+
+1. **A Avaliação das Instituições (AVALIES):** Este componente analisa a IES como um todo. Ele possui duas fases. A primeira é a **autoavaliação**, coordenada pela Comissão Própria de Avaliação (CPA) de cada instituição. A segunda é a **avaliação externa**, realizada por comissões de especialistas designados pelo Inep, que visitam a instituição para verificar _in loco_ suas condições de ensino, pesquisa, extensão e gestão.
+2. **A Avaliação dos Cursos de Graduação (ACG):** Com foco específico nos cursos, este componente também é realizado por comissões de especialistas externos, que analisam as condições de ensino oferecidas, englobando o projeto pedagógico do curso, o perfil do corpo docente, as instalações físicas e os laboratórios.
+3. **A Avaliação do Desempenho dos Estudantes (ENADE):** Este é o componente mais conhecido. O **Exame Nacional de Desempenho dos Estudantes (ENADE)** é uma prova aplicada periodicamente aos estudantes concluintes dos cursos de graduação. Seu objetivo é aferir o desempenho dos estudantes em relação aos conteúdos programáticos, às suas habilidades e competências. É importante notar que, ao contrário do que se pensa, o ENADE é apenas _um_ dos três pilares do SINAES, e seus resultados são utilizados para compor a avaliação do curso, junto com as outras informações.
+
+#### Dos Dados à Regulação
+
+O **Inep** é o órgão responsável por toda a operacionalização do SINAES, desde a aplicação do ENADE até a coordenação das visitas de comissões. Os resultados consolidados dessas avaliações (que geram indicadores como o Conceito Preliminar de Curso - CPC e o Índice Geral de Cursos - IGC) são publicados e servem como **referencial básico para os processos de regulação e supervisão** realizados pelo Ministério da Educação (MEC).
+
+Na prática, um bom ou mau desempenho no SINAES tem consequências diretas para as IES e seus cursos, influenciando decisões sobre:
+
+- **Credenciamento e Recredenciamento** de instituições;
+- **Autorização** para a abertura de novos cursos;
+- **Reconhecimento e Renovação de Reconhecimento** de cursos já existentes.
