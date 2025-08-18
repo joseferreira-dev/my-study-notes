@@ -416,3 +416,39 @@ Dentro dessa discussão, alguns termos e conceitos são fundamentais para a comp
 - **A Prova como Instrumento:** A **prova** é o instrumento mais característico da avaliação tradicional, especialmente quando sua única finalidade é a de medir o conhecimento para a atribuição de uma nota. Quando desvinculada de uma intenção pedagógica de reorientação do trabalho docente, ela tende a reforçar a lógica de que o aluno é o único responsável por seu resultado.
 - **Avaliação para Intervenção Pedagógica:** Esta expressão define a essência da avaliação formativa. Trata-se de toda e qualquer avaliação — formal ou informal — cujos resultados são utilizados pelo professor para realizar uma **intervenção pedagógica**, ou seja, para agir de forma a superar as dificuldades de aprendizagem identificadas. O sucesso da avaliação, nesta ótica, não está na nota que ela gera, mas na qualidade da ação pedagógica que ela possibilita.
 
+## As Funções da Avaliação: Somativa, Diagnóstica e Formativa
+
+A avaliação da aprendizagem, na prática da sala de aula, pode assumir diferentes formas e, principalmente, cumprir diferentes funções. A depender do momento em que é realizada e de seu objetivo principal, podemos classificá-la em três grandes modalidades: somativa, diagnóstica e formativa.
+
+Se pensarmos no processo de ensino-aprendizagem como uma jornada, as três funções da avaliação podem ser compreendidas da seguinte forma: a **avaliação diagnóstica** é o mapa que nos mostra o ponto de partida de cada viajante; a **avaliação formativa** é a bússola que nos ajuda a ajustar a rota durante todo o percurso; e a **avaliação somativa** é a fotografia que tiramos no ponto de chegada para registrar a viagem.
+
+### Avaliação Diagnóstica: O Ponto de Partida
+
+A **Avaliação Diagnóstica** é aquela realizada **no início** de um processo de ensino, seja no começo do ano letivo, seja no começo de uma nova unidade didática. Seu objetivo principal é investigar e identificar os **conhecimentos prévios** que os alunos já possuem sobre determinado assunto, bem como suas facilidades e dificuldades.
+
+Esta modalidade é fundamental para um planejamento pedagógico eficaz. Ao realizar um bom diagnóstico, o professor evita ensinar o que os alunos já sabem e pode concentrar seus esforços nos pontos que realmente representam um desafio para a turma. A avaliação diagnóstica é, portanto, a base para uma prática de **diferenciação pedagógica**, permitindo ao professor adequar o ensino às necessidades reais de seus estudantes.
+
+Um exemplo clássico, e de grande importância, é a **sondagem da psicogênese da língua escrita** na alfabetização. Ao propor que as crianças escrevam palavras e frases, o professor não está interessado no "certo" ou "errado", mas sim em diagnosticar em qual hipótese de escrita cada criança se encontra (pré-silábica, silábica, alfabética, etc.). Este diagnóstico revela o que a criança já sabe sobre o sistema de escrita e é a informação mais valiosa para o professor planejar as próximas intervenções. A ascensão da avaliação diagnóstica no Brasil está diretamente ligada à influência do construtivismo nas escolas.
+
+### Avaliação Formativa: A Bússola do Percurso
+
+A **Avaliação Formativa** é aquela que acontece **durante** todo o processo de ensino-aprendizagem. Sua principal característica e objetivo é o de **regular** o processo, fornecendo informações contínuas tanto para o professor quanto para o aluno. Ela é a essência da **avaliação _para_ a aprendizagem** (_assessment for learning_).
+
+Diferentemente da avaliação somativa, que é pontual e classificatória, a avaliação formativa é um **acompanhamento contínuo** do cotidiano da sala de aula. O professor utiliza a observação, a análise das atividades e o diálogo para coletar evidências sobre a aprendizagem dos alunos. Com base nessas evidências, ele pode oferecer um retorno (feedback) ao aluno, orientando-o sobre como avançar, e, crucialmente, pode **replanejar sua própria prática pedagógica**, ajustando suas estratégias para atender às necessidades que foram identificadas.
+
+Um dos instrumentos mais elucidativos da avaliação formativa é o **portfólio**, uma coleção organizada dos trabalhos de um aluno ao longo de um período. O portfólio permite visualizar o percurso, os avanços e as dificuldades, tornando-se uma poderosa ferramenta de acompanhamento para o professor e de **autoavaliação** para o próprio aluno.
+
+Apesar de seu imenso potencial pedagógico, a avaliação formativa ainda é uma prática de crescimento vagaroso em muitas escolas brasileiras. Sua implementação exige um rompimento cultural com a forte tradição da avaliação somativa, centrada na prova e na nota, que ainda predomina no imaginário de muitos educadores, famílias e estudantes.
+
+### Avaliação Somativa: A Função Classificatória
+
+A **Avaliação Somativa** é a modalidade mais tradicional e amplamente conhecida de avaliação. Sua principal característica é a de ser uma avaliação **pontual**, realizada ao **final** de um processo de ensino (uma unidade didática, um bimestre, um semestre ou o ano letivo).
+
+O objetivo central desta forma de avaliação é **medir, classificar e certificar** o desempenho dos alunos, verificando o quanto eles aprenderam sobre os conteúdos trabalhados naquele período. É a modalidade que busca fornecer uma **soma** do que foi aprendido, sendo o exemplo clássico da **avaliação _da_ aprendizagem** (_assessment of learning_).
+
+Por seu foco estar nos resultados finais, ela é comumente expressa através de **notas ou conceitos**, que são registrados em boletins. Os instrumentos mais comuns da avaliação somativa são as **provas mensais e bimestrais**, os exames finais e os trabalhos de conclusão de unidade.
+
+É importante ter em mente que, neste modelo, os resultados são frequentemente atribuídos quase que exclusivamente ao desempenho do aluno, com pouca reflexão sobre a influência do método de ensino ou de outros fatores do processo. Embora possa haver algum acompanhamento pedagógico a partir de seus resultados, sua função primordial não é a de orientar o replanejamento imediato da prática do professor, mas sim a de fechar um ciclo de ensino com um balanço final.
+
+Apesar das críticas que recebe por seu caráter muitas vezes classificatório e excludente, a avaliação somativa ainda persiste com muita força em muitas escolas pelo Brasil, em grande parte por ser um modelo culturalmente arraigado e de fácil compreensão pela sociedade de maneira geral, que se habituou à lógica das provas e das notas para aferir o mérito escolar.
+
