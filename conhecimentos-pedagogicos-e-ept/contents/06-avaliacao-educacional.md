@@ -185,3 +185,142 @@ Um dos instrumentos mais poderosos para se realizar uma meta-avaliação é a **
 
 Tanto a avaliação em larga escala quanto a meta-avaliação e a educação comparada dependem de uma rigorosa **análise de dados e estatísticas educacionais**. Este é o trabalho técnico realizado por órgãos como o INEP, que utiliza métodos estatísticos para tratar as informações coletadas e transformá-las em indicadores que possam subsidiar o debate e a formulação de políticas de forma fundamentada.
 
+## A Política Nacional de Avaliação e Exames
+
+A **Política Nacional de Avaliação e Exames** é o principal instrumento do Poder Executivo Federal para cumprir sua função de zelar pela qualidade da educação no país. Conforme estabelecido pela Constituição Federal de 1988, esta política permite ao governo monitorar e acompanhar o desempenho dos diferentes sistemas de ensino (municipal, estadual e federal).
+
+Suas avaliações e exames são aplicados em diversas etapas e modalidades, cobrindo a Educação Básica e o Ensino Superior. Além do diagnóstico dos sistemas, também servem a finalidades específicas, como a certificação de jovens e adultos que não concluíram os estudos na idade apropriada, por meio da modalidade de Educação de Jovens e Adultos (EJA).
+
+### O Decreto nº 9.432/2018: A Estrutura da Política
+
+A regulamentação oficial desta política se dá, principalmente, através do **Decreto nº 9.432, de 20 de junho de 2018**, que instituiu a Política Nacional de Avaliação e Exames da Educação Básica. Este decreto elenca os princípios e objetivos que norteiam as ações avaliativas em âmbito nacional.
+
+Os **princípios** que balizam a política são três, reforçando o compromisso do Estado com a garantia de direitos educacionais:
+
+<div align="center">
+<img width="700px" src="./img/06-decreto-9432-principios.png">
+</div>
+
+Já os **objetivos** detalham as finalidades práticas da política, mostrando sua abrangência desde o diagnóstico da oferta até o fomento à inclusão:
+
+<div align="center">
+<img width="480px" src="./img/06-decreto-9432-objetivos.png">
+</div>
+
+#### Os Instrumentos da Política Nacional
+
+O decreto estabelece que a Política Nacional de Avaliação e Exames da Educação Básica é integrada por um sistema de avaliação e dois exames nacionais, cada um com uma função específica.
+
+|SAEB|ENCCEJA|ENEM|
+|---|---|---|
+|**Sistema de Avaliação da Educação Básica**|**Exame Nacional para Certificação de Competências de Jovens e Adultos**|**Exame Nacional do Ensino Médio**|
+|É um conjunto de instrumentos que permite a produção e a disseminação de evidências, estatísticas e estudos sobre a qualidade da Educação Infantil, do Ensino Fundamental e do Ensino Médio.|Tem como objetivo aferir as competências e as habilidades de jovens e adultos que não concluíram o EF ou EM na idade própria, de pessoas privadas de liberdade e de pessoas que residem no exterior.|Tem como objetivo aferir o domínio das competências e das habilidades esperadas ao final da educação básica.|
+|É realizado pela União, em regime de colaboração com os Estados, o DF e os Municípios, com coleta de dados em escolas públicas e privadas.|Pode ser utilizado para fins de certificação de níveis de ensino.|Pode ser utilizado como mecanismo de acesso à educação superior e a programas governamentais de financiamento ou apoio ao estudante.|
+
+#### A Implementação pelo INEP
+
+Para a implementação desta política, o **Ministério da Educação**, por meio do **Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep)**, é o órgão responsável. Suas atribuições incluem:
+
+- Implementar os procedimentos estabelecidos no Decreto;
+- Definir a concepção pedagógica das avaliações e dos exames;
+- Definir a metodologia de aplicação e aferição dos resultados; e
+- Editar as normas complementares necessárias.
+
+As despesas decorrentes da execução da política correm à conta das dotações orçamentárias do próprio Inep. A seguir, vamos detalhar melhor algumas dessas políticas de avaliação.
+
+### Sistema de Avaliação da Educação Básica (SAEB)
+
+O **Sistema de Avaliação da Educação Básica (SAEB)** é o pilar da política de avaliação do governo federal. Trata-se de um conjunto complexo de avaliações externas em larga escala, cujo objetivo principal é realizar um diagnóstico da educação básica brasileira e dos fatores que podem interferir no desempenho dos estudantes.
+
+A **finalidade** do SAEB é eminentemente diagnóstica. Por meio de testes de proficiência e questionários contextuais, aplicados periodicamente, o sistema levanta dados e informações sobre o perfil dos alunos, os níveis de aprendizagem, a formação dos professores e as condições físicas e estruturais das escolas. Essas informações são consideradas essenciais para que as diferentes esferas de governo (municipal, estadual e federal) possam tomar decisões e formular políticas públicas baseadas em evidências.
+
+Realizado desde 1990 pelo Inep (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira), o SAEB passou por diversas reestruturações ao longo de sua história, ampliando seu alcance e aprimorando seus instrumentos.
+
+#### A Evolução Histórica do Sistema
+
+A complexidade do SAEB atual é fruto de uma evolução que buscou ampliar progressivamente a capacidade de diagnóstico do sistema educacional.
+
+<div align="center">
+<img width="700px" src="./img/06-saeb.png">
+</div>
+
+- **O Início (1990) - Aneb:** Em seu formato original, o SAEB era composto pela **Avaliação Nacional da Educação Básica (Aneb)**. A Aneb era uma avaliação amostral, ou seja, aplicada a um grupo representativo de estudantes do 5º e 9º anos do Ensino Fundamental e do 3º ano do Ensino Médio. Por ser amostral, ela fornecia um panorama da qualidade da educação no Brasil e em cada estado, mas não permitia ter resultados de cada escola ou município.
+- **A Virada de 2005 - Anresc (Prova Brasil):** A grande mudança veio em 2005 com a criação da **Avaliação Nacional do Rendimento Escolar (Anresc)**, que ficou mais conhecida como **Prova Brasil**. Diferentemente da Aneb, a Prova Brasil passou a ser censitária para as escolas públicas, ou seja, aplicada a praticamente todos os alunos do 5º e 9º anos do Ensino Fundamental da rede pública. Essa mudança foi revolucionária, pois, pela primeira vez, tornou-se possível ter dados de desempenho de cada escola individualmente. Foi a criação da Prova Brasil que permitiu a composição do **Índice de Desenvolvimento da Educação Básica (Ideb)**, que cruza esses dados de desempenho com as taxas de aprovação, reprovação e abandono de cada escola, apuradas no Censo Escolar.
+- **O Foco na Alfabetização (2013) - ANA:** Em 2013, o sistema foi ampliado com a criação da **Avaliação Nacional da Alfabetização (ANA)**. Com foco nos estudantes do 3º ano do Ensino Fundamental, a ANA tinha como objetivo avaliar os níveis de alfabetização e letramento em Língua Portuguesa e em Matemática, em resposta à prioridade nacional de garantir a alfabetização na idade certa. A ANA também foi pioneira no uso mais aprofundado de questionários contextuais para investigar fatores como a infraestrutura escolar, a formação de professores e a gestão pedagógica.
+
+#### A Configuração Atual do "Novo Saeb" (Pós-2019)
+
+Em 2019, buscando unificar e simplificar o sistema, os nomes Aneb, Anresc (Prova Brasil) e ANA foram integrados sob a única nomenclatura **SAEB**. Atualmente, o SAEB é aplicado a cada dois anos e tem como público-alvo obrigatório os estudantes do 5º e 9º ano do Ensino Fundamental e da 3ª série do Ensino Médio das escolas públicas. As escolas da rede privada podem participar de forma voluntária.
+
+Além disso, o "Novo Saeb" expandiu seu escopo, passando a contemplar também, de forma amostral, a **Educação Infantil**, com o objetivo de avaliar as condições de oferta desta primeira etapa da educação básica.
+
+Apesar de sua rica função diagnóstica, que vai além da proficiência dos alunos ao avaliar também as condições do sistema, o SAEB continua a enfrentar o desafio do uso indevido de seus dados. Como já discutido, a utilização de seus resultados pela mídia para a criação de rankings de melhores e piores escolas é uma distorção de seu objetivo principal, que é o de fornecer subsídios para o aprimoramento do conjunto da educação brasileira.
+
+### Índice de Desenvolvimento da Educação Básica (IDEB)
+
+O **Índice de Desenvolvimento da Educação Básica (IDEB)** foi criado pelo Inep em 2007 com o objetivo de estabelecer um parâmetro nacional para a qualidade da educação. Antes de sua criação, não havia uma "linguagem comum" para medir e comparar o avanço dos diferentes sistemas de ensino, o que dificultava o monitoramento e a formulação de políticas públicas eficazes. O IDEB surgiu, portanto, como uma proposta para unificar essa medição.
+
+#### A Composição do Índice: Equilibrando Fluxo e Desempenho
+
+A grande inovação do IDEB foi reunir, em um único indicador, dois conceitos igualmente importantes para a qualidade da educação: o **fluxo escolar** e as **médias de desempenho** nas avaliações. Conforme a definição oficial do Inep, o índice é calculado da seguinte forma:
+
+> O Ideb é calculado a partir dos dados sobre aprovação escolar, obtidos no Censo Escolar, e das médias de desempenho no Sistema de Avaliação da Educação Básica (Saeb).
+
+Isso significa que o IDEB é o resultado da multiplicação de duas notas, que vão de 0 a 10:
+
+1. **Nota de Desempenho:** A média das notas dos alunos da escola nas provas de Língua Portuguesa e Matemática do SAEB.
+2. **Nota de Fluxo:** A taxa de aprovação da escola, calculada a partir dos dados do Censo Escolar.
+
+A combinação entre fluxo e aprendizagem tem o mérito de equilibrar as duas dimensões. Se uma escola, para melhorar suas notas no SAEB, decidir reprovar muitos alunos (prejudicando o fluxo), seu IDEB cairá. Se, ao contrário, ela aprovar todos os alunos sem que eles tenham aprendido o suficiente (o que prejudicará o desempenho), seu IDEB também cairá. O índice, portanto, busca incentivar a melhoria da aprendizagem com a garantia da progressão escolar.
+
+#### O IDEB como Ferramenta de Gestão e Política Pública
+
+O IDEB não é apenas um indicador diagnóstico; ele se tornou a principal ferramenta para o acompanhamento das metas de qualidade da educação básica no Brasil. A partir do resultado inicial de cada escola, rede municipal e estadual, o governo federal projetou metas bienais de melhoria. Essa estipulação de metas a serem alcançadas engajou muitas instituições escolares em um esforço contínuo para aprimorar a qualidade de seu ensino.
+
+O índice também estabeleceu uma meta nacional ambiciosa, a de que o Brasil alcançasse, até 2022, um IDEB médio de 6,0 nos anos iniciais do ensino fundamental — um valor que, na época de sua criação, foi considerado comparável ao de um sistema educacional de qualidade de países desenvolvidos.
+
+Apesar de sua importância como condutor de políticas públicas, o IDEB também é alvo de críticas. Especialistas apontam que a redução de um conceito tão complexo como "qualidade da educação" a um único número pode ser simplista e desconsiderar outros aspectos fundamentais da formação humana. Além disso, critica-se o fato de que o índice, ao não ponderar adequadamente as desigualdades socioeconômicas entre as escolas, pode gerar comparações injustas e estigmatizar instituições que atuam em contextos de maior vulnerabilidade.
+
+### Exame Nacional do Ensino Médio (ENEM)
+
+O **Exame Nacional do Ensino Médio (ENEM)** é, sem dúvida, a avaliação de maior repercussão e impacto social no Brasil, principalmente por seu papel central no acesso à educação superior. No entanto, sua função é mais ampla, atuando como um eixo que articula diversas políticas federais de fomento à educação.
+
+#### A Evolução Histórica: De Diagnóstico a Mecanismo de Acesso
+
+É importante compreender que o ENEM passou por uma profunda transformação desde sua criação.
+
+- **O ENEM Original (1998):** Quando foi criado, o ENEM tinha como objetivo principal ser uma **avaliação diagnóstica** da qualidade do Ensino Médio no país, de forma semelhante ao SAEB. A participação era voluntária, e seu uso para o ingresso em universidades era incipiente, servindo como um componente complementar em alguns poucos processos seletivos.
+- **O "Novo ENEM" (a partir de 2009):** Em 2009, o exame foi completamente reformulado, tornando-se o principal mecanismo de acesso à educação superior no Brasil. Essa mudança foi consolidada com a criação do **SiSU (Sistema de Seleção Unificada)**, uma plataforma centralizada na qual as universidades públicas federais passaram a oferecer suas vagas, utilizando a nota do ENEM como único critério de seleção.
+
+#### As Três Principais Finalidades Atuais
+
+Hoje, o ENEM cumpre três funções centrais, que o tornam a espinha dorsal das políticas de acesso ao ensino superior:
+
+1. **Acesso à Educação Superior:** A nota do ENEM é utilizada para o ingresso em praticamente todas as universidades federais e institutos federais (através do SiSU), além de ser aceita por inúmeras universidades estaduais e privadas em seus próprios processos seletivos.
+2. **Acesso a Programas de Bolsa de Estudos:** O desempenho no exame é o critério de seleção para o **ProUni (Programa Universidade para Todos)**, que concede bolsas de estudo integrais e parciais em instituições de ensino superior privadas para estudantes de baixa renda.
+3. **Acesso ao Financiamento Estudantil:** A obtenção de uma nota mínima no ENEM é pré-requisito para que o estudante possa se candidatar ao **FIES (Fundo de Financiamento Estudantil)**, o programa do governo federal que oferece financiamento a juros baixos para cursos em faculdades privadas.
+
+Antes da consolidação do ENEM, não havia um mecanismo que vinculasse o desempenho dos estudantes aos programas de apoio do governo federal. O exame, portanto, não apenas unificou o acesso a diversas universidades, mas também possibilitou a integração de diferentes políticas de acesso, bolsas e financiamento, criando um sistema mais coeso e de alcance nacional.
+
+### Programa Internacional de Avaliação dos Estudantes (PISA)
+
+Além das avaliações de âmbito nacional, o Brasil também participa de avaliações internacionais, sendo a mais influente delas o **Programa Internacional de Avaliação dos Estudantes (PISA)**, sigla em inglês para _Programme for International Student Assessment_. Coordenado pela **OCDE (Organização para a Cooperação e o Desenvolvimento Econômico)**, o PISA é uma avaliação em larga escala aplicada a cada três anos em dezenas de países ao redor do mundo.
+
+#### Objetivos e Características
+
+O objetivo central do PISA é produzir dados internacionalmente comparáveis sobre o desempenho dos estudantes, permitindo que cada país avalie seu sistema educacional em relação a outros, aprenda com as políticas e práticas aplicadas em diferentes contextos e, a partir daí, formule políticas para a melhoria da qualidade e da equidade de sua própria educação.
+
+Diferentemente de avaliações como o SAEB, que focam no currículo nacional, o PISA possui uma característica distintiva: ele não busca avaliar o domínio de um conteúdo curricular específico, mas sim a **literacia** (ou letramento). O foco é verificar se os estudantes de **15 anos de idade** — faixa etária escolhida por representar, na maioria dos países, o final da escolaridade obrigatória — conseguem aplicar seus conhecimentos e habilidades para a resolução de problemas e desafios da vida real.
+
+O PISA avalia três domínios do conhecimento: **leitura, matemática e ciências**. A cada edição trienal, um desses domínios é escolhido como o foco principal, o que significa que um maior número de questões é dedicado a ele, permitindo uma análise mais aprofundada daquela área.
+
+#### O PISA no Brasil
+
+No Brasil, o **Inep** é o órgão responsável por todo o planejamento e a operacionalização do PISA. Suas atribuições incluem representar o país junto à OCDE, coordenar a tradução e adaptação dos instrumentos de avaliação, gerenciar a aplicação dos testes em uma amostra representativa de escolas brasileiras e, por fim, analisar e divulgar os resultados em um relatório nacional.
+
+Além dos testes de proficiência, o PISA aplica extensos **questionários contextuais** aos alunos e diretores de escola. Esses questionários são fundamentais, pois coletam informações sobre o perfil socioeconômico dos estudantes, suas atitudes em relação à aprendizagem, o clima escolar e as práticas pedagógicas. São esses dados que permitem análises mais complexas, que vão além do simples desempenho e buscam explicar os fatores associados ao sucesso educacional.
+
+#### O Uso dos Resultados: Estudo Comparativo versus Ranqueamento
+
+É fundamental ressaltar que a finalidade proposta pelo PISA é a do **estudo comparativo** para a aprendizagem mútua entre os países. No entanto, a repercussão de seus resultados na mídia frequentemente simplifica essa complexidade, transformando a avaliação em uma espécie de "copa do mundo da educação", com um foco excessivo no **ranqueamento** dos países. Essa abordagem competitiva é uma distorção do objetivo original do programa e pode gerar pressões indevidas sobre os sistemas educacionais, sem um debate qualificado sobre as razões e os contextos que explicam os diferentes resultados.
+
