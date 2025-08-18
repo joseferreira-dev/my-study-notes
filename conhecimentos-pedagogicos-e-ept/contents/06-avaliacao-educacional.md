@@ -452,3 +452,90 @@ Por seu foco estar nos resultados finais, ela é comumente expressa através de 
 
 Apesar das críticas que recebe por seu caráter muitas vezes classificatório e excludente, a avaliação somativa ainda persiste com muita força em muitas escolas pelo Brasil, em grande parte por ser um modelo culturalmente arraigado e de fácil compreensão pela sociedade de maneira geral, que se habituou à lógica das provas e das notas para aferir o mérito escolar.
 
+## As Perspectivas dos Autores
+
+Após estabelecermos as funções gerais da avaliação (somativa, diagnóstica e formativa), é importante conhecer as contribuições de alguns dos principais teóricos que se dedicaram a pensar a avaliação de forma crítica, oferecendo novos caminhos para a prática pedagógica.
+
+### Cipriano Luckesi: A Avaliação como Ato Acolhedor
+
+O professor Cipriano Luckesi é um dos mais importantes críticos do modelo tradicional de avaliação no Brasil. Sua teoria se constrói a partir da afirmação de uma **relação recíproca e indissociável entre o planejamento de ensino e a avaliação**. Para ele, o planejamento não é um ato meramente técnico de preenchimento de formulários, mas um posicionamento político e filosófico do educador, que deve considerar a realidade do aluno e suas reais necessidades de aprendizagem.
+
+Nesta perspectiva, a avaliação deixa de ser o ponto final do processo e se torna um elemento integrante e fundamental do próprio planejamento. Avaliar é, sobretudo, um ato de investigar a prática pedagógica a partir das informações que a própria prática fornece. É o retorno constante que indica ao professor se o caminho que ele planejou está sendo eficaz ou se são necessárias correções de rota para garantir a aprendizagem de todos.
+
+#### A Distinção Crucial: Avaliar versus Examinar
+
+A contribuição mais célebre de Luckesi é a sua nítida distinção entre o ato de **avaliar** e o ato de **examinar**. Embora muitas vezes usados como sinônimos, para o autor eles representam práticas com finalidades opostas.
+
+- Os **Exames** são a prática característica da avaliação tradicional e somativa. Seu objetivo principal é **medir o desempenho** do aluno em momentos pontuais, através de provas e testes, com a finalidade de **classificar e selecionar**. O valor que prepondera nos exames é a competição, e eles frequentemente resultam na exclusão daqueles que não atingem o padrão esperado. O exame gera uma sentença: "aprovado" ou "reprovado".
+- A **Avaliação**, em seu sentido autêntico, é um processo contínuo e parte integrante do planejamento. Sua finalidade não é classificar, mas sim **diagnosticar** as dificuldades para poder intervir e melhorar a qualidade da aprendizagem. O valor preponderante na avaliação é a **inclusão**. Luckesi define a avaliação como um **ato acolhedor**: em vez de excluir o aluno com dificuldades, a avaliação busca compreendê-las para poder acolhê-lo e trazê-lo de volta ao processo de aprendizagem. A avaliação gera um diagnóstico: "o que e como precisamos fazer para avançar?".
+
+Para ilustrar: um professor que aplica uma prova, atribui as notas e as registra no boletim, encerrando o processo, está realizando um **exame**. Já o professor que, a partir dos resultados dessa mesma prova, analisa os erros mais comuns da turma, identifica as causas das dificuldades e, com base nisso, **replaneja** sua próxima aula com uma nova estratégia para sanar essas dificuldades, está praticando a **avaliação**. A diferença não está no instrumento (a prova), mas na finalidade e na ação pedagógica que se segue a ele.
+
+Para Luckesi, a superação de uma "pedagogia do exame" em favor de uma "prática da avaliação" é uma condição essencial para a construção de uma escola verdadeiramente democrática e inclusiva.
+
+### José Carlos Libâneo: A Avaliação como Controle do Processo Didático
+
+A concepção de avaliação de José Carlos Libâneo está diretamente ligada à sua teoria da **Pedagogia Crítico-Social dos Conteúdos**. Para o autor, se o objetivo da educação é garantir que os alunos se apropriem dos conhecimentos científicos e culturais como ferramentas para compreender e atuar em sua realidade social, então a avaliação deve ser o instrumento que verifica e garante a qualidade dessa apropriação.
+
+Nesta perspectiva, a avaliação é um **processo de regulação** contínuo e parte integrante do planejamento pedagógico. Ela não é um ato isolado no final do percurso, mas um componente que oferece um retorno constante sobre as condições de aprendizagem dos alunos, permitindo que o professor reflita sobre sua prática e a reoriente sempre que necessário. O que é imprescindível não são as notas ou as classificações, mas a informação que a avaliação fornece para a melhoria do processo de ensino.
+
+Para Libâneo, a avaliação cumpre quatro funções pedagógicas interligadas:
+
+#### Função Diagnóstica
+
+Assim como no consenso geral, a função diagnóstica é a que busca **identificar os conhecimentos prévios** dos alunos sobre determinado assunto. É o ponto de partida que informa o planejamento do professor, permitindo que ele entenda por onde começar o ensino, levando em conta o que a turma já sabe e quais são suas principais dificuldades.
+
+#### Função Pedagógico-Didática
+
+Esta função diz respeito à **coerência**. A avaliação deve ser coerente em dois níveis. No nível **pedagógico**, ela deve estar alinhada aos objetivos mais amplos da escola, expressos em seu Projeto Político Pedagógico (PPP). No nível **didático**, deve haver uma coerência estrita entre o que foi ensinado e o que está sendo avaliado. Não se pode avaliar aquilo que não foi objeto do processo de ensino. Esta função garante a lógica e a justiça do ato avaliativo, que deve ser sempre um reflexo do trabalho didático realizado.
+
+#### Função de Controle (ou Regulação)
+
+Este é o aspecto central da visão de Libâneo. A função de "controle" não deve ser entendida em um sentido autoritário, mas sim como **monitoramento e regulação** do processo de ensino-aprendizagem. Através de avaliações constantes (sejam elas formais ou informais), o professor coleta informações sobre o andamento da aprendizagem e utiliza esses dados para "controlar" sua própria prática, ou seja, para fazer ajustes, mudar de estratégia, retomar conteúdos e tomar decisões conscientes que visem à melhoria da qualidade do ensino.
+
+Para ilustrar: em uma unidade sobre Revolução Industrial, o professor realiza uma avaliação diagnóstica para saber o que os alunos pensam sobre o trabalho e a indústria. Ao longo das aulas, ele monitora (controle/regulação) a compreensão através de debates e pequenos exercícios (coerência didática). Ele percebe que os alunos entenderam os aspectos tecnológicos, mas não os sociais. Com base nessa informação, ele regula seu planejamento e propõe uma nova atividade focada nas condições de vida dos operários, garantindo a coerência com os objetivos gerais de formação crítica da escola (coerência pedagógica).
+
+### Jussara Hoffmann: A Avaliação como Ação Mediadora
+
+A professora Jussara Hoffmann oferece uma perspectiva que busca romper definitivamente com a tradição de uma avaliação classificatória. Para ela, a avaliação não é um momento de julgamento no final do processo, mas sim uma ação contínua e integrada à prática pedagógica. Em suas palavras, a avaliação é:
+
+> Uma ação ampla que abrange o cotidiano do fazer pedagógico e cuja energia faz pulsar o planejamento, a proposta pedagógica e a relação entre todos os elementos da ação educativa. Basta pensar que avaliar é agir com base na compreensão do outro, para se entender que ela nutre de forma vigorosa todo o trabalho educativo.
+
+Nesta concepção, a avaliação tem um sentido **propositivo**: seu objetivo não é medir o que o aluno aprendeu para lhe atribuir uma nota, mas sim compreender seu processo de aprendizagem para poder intervir e promover novas possibilidades. A ação do professor diante das hipóteses e das dificuldades dos alunos é o elemento principal do processo avaliativo, o que exige o uso de instrumentos diversificados, como observações, registros, trabalhos escritos e a autoavaliação.
+
+Alinhada a uma perspectiva **socioconstrutivista**, a autora defende que o professor deve buscar compreender os processos próprios de aprendizagem de cada criança, o seu "jeito de fazer", a lógica que está por trás de seus erros e acertos. Além disso, a avaliação deve promover a interação entre os alunos, entendendo que os colegas podem ser excelentes mediadores uns para os outros na construção do conhecimento.
+
+#### A Avaliação Mediadora: Um Ciclo de Práxis
+
+O conceito central proposto por Jussara Hoffmann é o da **avaliação como mediação**. Ela é "mediadora" em um duplo sentido: ela media a passagem do aluno de um estágio de conhecimento para outro mais avançado, e também media a reflexão do professor, que, a partir dela, promove mudanças em sua própria didática. Este processo ocorre em um ciclo contínuo de três etapas:
+
+1. **Observação Atenta:** O primeiro passo é o acompanhamento próximo e qualitativo do percurso de aprendizagem dos alunos. Isso envolve observar suas estratégias, escutar suas explicações, analisar suas produções e fazer registros detalhados sobre o processo de cada um.
+2. **Reflexão Crítica:** Com base nas informações coletadas na observação, o professor realiza um momento de reflexão. Ele não apenas constata o erro, mas busca compreender os porquês, a lógica por trás do pensamento do aluno. É o momento de "parar e pensar" sobre as causas das dificuldades de aprendizagem.
+3. **Ação/Mediação Pedagógica:** A partir da reflexão, o professor planeja e executa uma **ação** intencional para intervir no processo. Essa ação é a **mediação**: uma nova proposta, uma pergunta desafiadora, um material diferente, uma reorganização da turma, enfim, uma intervenção didática qualificada que visa a provocar um avanço na aprendizagem do aluno.
+
+Para ilustrar: um professor de ciências observa (**observação**) que seus alunos, ao explicarem o ciclo da água, demonstram a concepção de que a água que evapora "desaparece". Em vez de simplesmente dar a resposta correta, ele reflete (**reflexão**) que eles precisam de uma experiência concreta. Como **ação/mediação**, ele propõe a montagem de um terrário fechado na sala de aula, para que os alunos possam observar, ao longo dos dias, a água "desaparecer" da terra e "reaparecer" como gotículas na parede do vidro, construindo uma nova compreensão sobre o processo de condensação. Este ciclo de observar, refletir e agir é a essência da avaliação mediadora.
+
+### Philippe Perrenoud: A Avaliação como Regulação das Aprendizagens
+
+O sociólogo Philippe Perrenoud parte de uma crítica contundente à função social que a avaliação tradicionalmente desempenhou na escola. Para ele, a avaliação é, com frequência, utilizada não para promover a aprendizagem, mas para um fim socialmente seletivo. Em suas palavras:
+
+> a avaliação é tradicionalmente associada [...] à criação de hierarquias de excelências. Os alunos são comparados e depois classificados em virtude de uma norma de excelência, definida no absoluto ou encarnada pelo professor e pelos melhores alunos.
+
+Perrenoud se posiciona radicalmente contra essa concepção de avaliação como um instrumento de medição de desempenho para fins de comparação e ranqueamento. Para ele, práticas avaliativas que se resumem a boletins, notas e classificações não cumprem uma função pedagógica real e devem ser superadas.
+
+#### A Avaliação Formativa como Regulação
+
+Em oposição ao modelo classificatório, o autor defende uma **avaliação genuinamente formativa**, cujo objetivo central é a **regulação, o acompanhamento e o monitoramento** das aprendizagens. Avaliar, nesta perspectiva, é um processo contínuo que busca compreender o percurso de aprendizagem de cada aluno para poder intervir de forma eficaz.
+
+A **regulação das aprendizagens** é o conceito-chave. Funciona como um ciclo: o professor, ao planejar, antecipa um caminho de aprendizagem; ao observar a atividade do aluno, ele diagnostica as distâncias entre o caminho previsto e o percurso real do estudante; a partir desse diagnóstico, ele realiza uma intervenção didática para ajudar o aluno a superar os obstáculos e a ajustar sua rota. O objetivo final é que, através desse processo, o próprio estudante desenvolva a capacidade de **autorregulação**, ou seja, de tomar consciência de seu próprio processo de aprendizagem e de geri-lo com autonomia.
+
+A avaliação formativa, para Perrenoud, é um "estar junto" do aluno, um monitoramento constante para garantir que as habilidades e competências previstas estejam sendo efetivamente construídas ao longo do tempo.
+
+#### A Comunicação com as Famílias e a Mudança de Cultura
+
+Perrenoud ressalta um aspecto prático crucial para o sucesso da avaliação formativa: a **comunicação com os pais e a comunidade**. A sociedade, de modo geral, está acostumada com o modelo tradicional de notas e classificações. Uma escola que decide adotar uma avaliação puramente formativa precisa, portanto, empreender um esforço democrático para comunicar e construir um novo pacto com as famílias.
+
+É necessário explicar que a ausência de notas em um boletim não significa ausência de avaliação. Pelo contrário, significa a adoção de uma avaliação mais complexa e qualitativa, que busca fornecer um retorno mais detalhado sobre o processo de aprendizagem do aluno. A comunicação com os pais deve ter um caráter que se pode chamar de "prognóstico": em vez de apenas informar o que o aluno "tirou" no passado, busca-se dialogar sobre seus avanços, suas dificuldades e os próximos passos de seu percurso, estabelecendo uma parceria em prol do desenvolvimento do estudante.
+
+Implementar a avaliação formativa nos termos de Perrenoud é, portanto, mais do que uma mudança de técnicas avaliativas; é uma profunda **mudança de cultura escolar**, que substitui a lógica da competição e da seleção pela lógica do acompanhamento e do desenvolvimento de todos.
+
