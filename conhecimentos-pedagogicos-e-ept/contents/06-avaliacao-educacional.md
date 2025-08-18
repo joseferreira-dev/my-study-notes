@@ -26,3 +26,28 @@ O segundo esquema demonstra como a finalidade de cada avaliação está diretame
 <img width="700px" src="./img/06-avaliacoes-esquema-finalidade.png">
 </div>
 
+### Avaliação Interna e Avaliação Externa: Diferentes Olhares e Funções
+
+Além da classificação por abrangência e finalidade, a avaliação educacional também pode ser categorizada de acordo com a origem de sua proposição e execução. Nesta perspectiva, temos dois grandes tipos: a avaliação externa e a avaliação interna.
+
+#### Avaliação Externa
+
+A **avaliação externa** é aquela concebida e implementada por agentes que não pertencem à rotina da escola, como as secretarias municipais, estaduais ou o Ministério da Educação. Sua principal característica é o uso de **avaliações em larga escala**, que consistem em testes padronizados aplicados a um grande número de estudantes para verificar o desempenho em determinados conteúdos do currículo oficial.
+
+O objetivo primário dessas avaliações é levantar dados que permitam diagnosticar a qualidade dos sistemas de ensino e orientar a formulação de políticas públicas. Exemplos conhecidos são o SAEB e o ENEM, em nível federal, e avaliações específicas de estados e municípios, como o SAERE (Sistema de Avaliação da Educação Básica de Recife). Frequentemente, os resultados dessas avaliações são utilizados em políticas de responsabilização (_accountability_), vinculando o desempenho das escolas a bônus ou rankings.
+
+#### Avaliação Interna
+
+A **avaliação interna**, por sua vez, é aquela planejada e executada pela própria comunidade escolar. Ela pode ter dois focos principais, que correspondem aos níveis institucional e da aprendizagem que já discutimos:
+
+1. **Avaliação Institucional Interna:** É o processo de autoavaliação da escola. Tendo como referência o seu **Projeto Político Pedagógico (PPP)**, a comunidade escolar (gestão, professores, funcionários, pais e alunos) se organiza para refletir sobre suas práticas, identificar seus pontos fortes e suas fragilidades, e traçar planos de melhoria. Idealmente, é um processo democrático, cujas diretrizes e resultados são discutidos e deliberados no Conselho Escolar.
+2. **Avaliação da Aprendizagem:** É a avaliação interna por excelência, realizada pelo professor em sua sala de aula. É o acompanhamento contínuo do processo de ensino-aprendizagem, utilizando múltiplos instrumentos para diagnosticar as necessidades dos alunos e reorientar a prática pedagógica.
+
+A principal diferença entre as duas reside no fato de que a avaliação externa busca a padronização para permitir a comparação entre diferentes realidades, enquanto a avaliação interna valoriza a contextualização para compreender e aprimorar uma realidade específica.
+
+<div align="center">
+<img width="640px" src="./img/06-avaliacoes-interna-e-externa.png">
+</div>
+
+Embora possam ser complementares — os dados de uma avaliação externa podem, por exemplo, desencadear um processo de avaliação interna para investigar as causas de um baixo desempenho —, é comum que exista uma tensão entre os dois modelos. A pressão por bons resultados em testes padronizados externos pode levar as escolas a um estreitamento curricular (o chamado "ensinar para o teste"), ofuscando os objetivos mais amplos e humanistas definidos no PPP e trabalhados na avaliação interna.
+
