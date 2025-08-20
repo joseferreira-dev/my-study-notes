@@ -34,3 +34,31 @@ Os artigos 17 e 18 do ECA detalham de forma ainda mais específica os contornos 
 Esses artigos vedam explicitamente qualquer prática que submeta o estudante a constrangimento ou humilhação. Infelizmente, em algumas escolas, ainda se observam práticas que violam diretamente a lei, como expor um aluno a situações de ridículo na frente da turma, utilizar castigos vexatórios ou humilhar adolescentes por sua aparência, origem social ou orientação sexual. Tais atitudes, além de serem ilegais, destroem o vínculo de confiança entre professor e aluno e criam um ambiente de medo que é incompatível com a aprendizagem.
 
 Um exemplo prático do respeito a esses princípios ocorre na questão da comemoração de aniversários. Algumas crianças, por motivos religiosos de suas famílias, não participam dessas celebrações. Uma postura docente respeitosa, em conformidade com o ECA, não impõe a participação, o que poderia gerar constrangimento, mas estabelece um diálogo com a família para compreender seus valores e buscar, se for o caso, uma forma alternativa de celebrar a vida daquela criança que seja respeitosa à sua cultura e identidade.
+
+## A Dimensão Afetiva na Relação Pedagógica
+
+Para além dos direitos e deveres legais, a relação professor-aluno é constituída por um elemento fundamental que permeia todas as interações em sala de aula: a **afetividade**. O afeto, neste contexto, é o sentimento construído ao longo do tempo que dá sentido e qualidade ao vínculo entre educador e educando, sendo um fator indispensável para a construção de um ambiente propício à aprendizagem.
+
+Inúmeras pesquisas educacionais já demonstraram que os alunos aprendem melhor quando possuem uma boa relação com seus professores. Um ambiente de segurança afetiva, confiança e respeito mútuo exerce uma influência direta e positiva no desenvolvimento e no engajamento dos estudantes.
+
+#### A Indissociabilidade entre Afetividade e Cognição
+
+Por muito tempo, o pensamento pedagógico tendeu a separar a dimensão cognitiva (o "aprender") da dimensão afetiva (o "sentir"). A visão contemporânea, no entanto, compreende que estas duas esferas são indissociáveis. Teóricos como **Henri Wallon** demonstraram que o desenvolvimento humano é um processo integrado, no qual a afetividade e a inteligência se influenciam mutuamente. As emoções não são inimigas da razão; pelo contrário, elas são o motor que impulsiona o interesse, a curiosidade e o desejo de aprender.
+
+Não é possível, portanto, pensar em um processo de aprendizagem que desconsidere os sentimentos, as emoções e as relações que se estabelecem em sala de aula. A cognição e a afetividade devem caminhar sempre juntas.
+
+<div align="center">
+<img width="700px" src="./img/07-afetividade-e-cognicao.png">
+</div>
+
+#### As Manifestações da Afetividade nas Diferentes Faixas Etárias
+
+A forma como esse vínculo afetivo se constrói e se manifesta varia de acordo com a fase de desenvolvimento dos alunos.
+
+- **Na Educação Infantil e nos Anos Iniciais:** As crianças constroem a afetividade com o professor principalmente quando sentem que ele está **disponível e é sensível às suas demandas**. O professor atua como uma figura de referência e segurança. O afeto se manifesta no cuidado, no acolhimento, na escuta atenta e na validação dos sentimentos da criança, criando a base de confiança necessária para que ela se sinta segura para explorar, arriscar e aprender.
+- **Nos Anos Finais e no Ensino Médio:** Com os adolescentes, a construção da afetividade frequentemente se desloca para o campo do saber. O vínculo se fortalece quando os alunos percebem no professor uma **autêntica paixão pela disciplina que ele ministra**. Um professor que demonstra entusiasmo, que domina seu campo de conhecimento e que trata os estudantes como interlocutores intelectuais válidos, constrói uma relação de admiração e respeito, que é uma poderosa forma de afeto nesta faixa etária.
+
+Em síntese, podemos conceituar a afetividade no campo educacional da seguinte forma:
+
+> Afetividade é um sentimento humano construído dentro de relações sociais estabelecidas por sujeitos que compartilham uma mesma atividade ou ambiente. Esse sentimento pode estabelecer melhores vínculos entre o professor, o aluno e a família. Dessa forma, há a possibilidade de um melhor aprendizado, pois estas relações ganham compartilhamento de significados.
+
