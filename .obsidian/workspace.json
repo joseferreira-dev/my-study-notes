@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/07-relacao-professor-aluno.md",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07-relacao-professor-aluno"
+              "title": "06-avaliacao-educacional"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/07-relacao-professor-aluno.md",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 07-relacao-professor-aluno"
+              "title": "Sumário de 06-avaliacao-educacional"
             }
           }
         ],
@@ -168,10 +168,18 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "45cda9b32c65ce42",
+  "active": "f9950e0646dc86e5",
   "lastOpenFiles": [
-    "conhecimentos-pedagogicos-e-ept/contents/img/07-afetividade-e-cognicao.png",
+    "conhecimentos-pedagogicos-e-ept/contents/img/06-eixos-de-analise.png",
+    "conhecimentos-pedagogicos-e-ept/contents/img/Sem título.png",
     "conhecimentos-pedagogicos-e-ept/contents/07-relacao-professor-aluno.md",
+    "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
+    "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
+    "conhecimentos-pedagogicos-e-ept/contents/04-teorias-pedagogicas-contemporaneas.md",
+    "conhecimentos-pedagogicos-e-ept/contents/03-classificacao-das-tendencias.md",
+    "conhecimentos-pedagogicos-e-ept/contents/02-concepcoes-educacionais-e-teorias-pedagogicas.md",
+    "conhecimentos-pedagogicos-e-ept/contents/01-educacao-e-sociedade.md",
+    "conhecimentos-pedagogicos-e-ept/contents/img/07-afetividade-e-cognicao.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/06-saeb.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/06-decreto-9432-principios.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/06-decreto-9432-objetivos.png",
@@ -180,11 +188,7 @@
     "conhecimentos-pedagogicos-e-ept/contents/img/06-avaliacoes-interna-e-externa.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/06-avaliacoes-esquema-finalidade.png",
     "conhecimentos-pedagogicos-e-ept/contents/img/06-avaliacoes-esquema-piramide.png",
-    "legislacao/contents/img/06-avaliacoes-esquema-piramide.png",
-    "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
-    "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
     "legislacao/contents/05-lei-9394.md",
-    "legislacao/contents/img/lei-9394-recursos-destinacao.png",
     "legislacao/contents/04-portaria-6719.md",
     "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
     "redes-de-computadores/contents/04-modelo-osi.md",
@@ -205,10 +209,6 @@
     "linguagem-java/contents",
     "linguagem-java/Nova pasta",
     "linguagem-java",
-    "arquitetura-e-organizacao-de-computadores/contents/11-proposicoes-algebra-booleana-e-circuitos-logicos.md",
-    "arquitetura-e-organizacao-de-computadores/contents/09-memoria.md",
-    "legislacao/contents/03-lei-11892.md",
-    "bancos-de-dados/contents/01-fundamentos.md",
     "conhecimentos-pedagogicos-e-ept/contents/img",
     "conhecimentos-pedagogicos-e-ept/contents/Nova pasta",
     "conhecimentos-pedagogicos-e-ept/contents",

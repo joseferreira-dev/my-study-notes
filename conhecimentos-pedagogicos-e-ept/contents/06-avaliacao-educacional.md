@@ -366,11 +366,37 @@ O SINAES tem como objetivos centrais melhorar a qualidade da educação superior
 
 #### O Tripé da Avaliação
 
-O SINAES se apoia sobre um tripé de componentes avaliativos que, juntos, buscam oferecer um diagnóstico completo da qualidade do ensino superior.
+O SINAES se apoia sobre um tripé de componentes avaliativos que, juntos, buscam oferecer um diagnóstico completo da qualidade do ensino superior. Cada um desses pilares possui instrumentos e metodologias próprias, que serão detalhados separadamente.
 
-1. **A Avaliação das Instituições (AVALIES):** Este componente analisa a IES como um todo. Ele possui duas fases. A primeira é a **autoavaliação**, coordenada pela Comissão Própria de Avaliação (CPA) de cada instituição. A segunda é a **avaliação externa**, realizada por comissões de especialistas designados pelo Inep, que visitam a instituição para verificar _in loco_ suas condições de ensino, pesquisa, extensão e gestão.
-2. **A Avaliação dos Cursos de Graduação (ACG):** Com foco específico nos cursos, este componente também é realizado por comissões de especialistas externos, que analisam as condições de ensino oferecidas, englobando o projeto pedagógico do curso, o perfil do corpo docente, as instalações físicas e os laboratórios.
-3. **A Avaliação do Desempenho dos Estudantes (ENADE):** Este é o componente mais conhecido. O **Exame Nacional de Desempenho dos Estudantes (ENADE)** é uma prova aplicada periodicamente aos estudantes concluintes dos cursos de graduação. Seu objetivo é aferir o desempenho dos estudantes em relação aos conteúdos programáticos, às suas habilidades e competências. É importante notar que, ao contrário do que se pensa, o ENADE é apenas _um_ dos três pilares do SINAES, e seus resultados são utilizados para compor a avaliação do curso, junto com as outras informações.
+1. **A Avaliação das Instituições (AVALIES):** Analisa a Instituição de Ensino Superior (IES) como um todo, por meio de uma autoavaliação, coordenada pela Comissão Própria de Avaliação (CPA), e de uma avaliação externa _in loco_.
+2. **A Avaliação dos Cursos de Graduação (ACG):** Foca especificamente nas condições de ensino de cada curso, analisando a organização didático-pedagógica, o perfil do corpo docente e a infraestrutura.
+3. **A Avaliação do Desempenho dos Estudantes (ENADE):** Aferir o desempenho dos estudantes concluintes em relação aos conteúdos, habilidades e competências adquiridas ao longo do curso.
+
+#### Avaliação dos Cursos de Graduação (ACG)
+
+A Avaliação dos Cursos de Graduação (ACG) é o componente do SINAES responsável por analisar, de forma aprofundada, as condições de ensino oferecidas em cada curso de graduação no país. Embora o SINAES estabeleça as diretrizes gerais, o processo é minuciosamente detalhado em uma série de documentos normativos do INEP (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira), que definem os critérios e procedimentos administrativos e pedagógicos.
+
+A análise realizada durante a ACG é, obrigatoriamente, conduzida por comissões de especialistas externos, pertencentes às respectivas áreas do conhecimento do curso avaliado.
+
+##### Os Três Eixos da Análise
+
+A avaliação de um curso de graduação é estruturada a partir da análise de três eixos fundamentais, que buscam cobrir as principais dimensões da oferta educacional:
+
+<div align="center">
+<img width="560px" src="./img/06-eixos-de-analise.png">
+</div>
+
+1. **Organização Didático-Pedagógica:** Neste eixo, são analisados os diferentes planejamentos e documentos que norteiam o curso. O foco é verificar a qualidade do projeto de ensino, incluindo o Projeto Pedagógico do Curso (PPC), as políticas institucionais, as metodologias de ensino e de avaliação da aprendizagem, e a coerência entre a proposta do curso e sua execução prática.
+2. **Perfil do Corpo Docente:** O objetivo aqui é verificar a qualificação acadêmica e a experiência profissional dos professores que atuam no curso. A análise leva em conta principalmente a formação em nível de pós-graduação _stricto sensu_ (mestrado e doutorado) e o regime de trabalho dos docentes (tempo integral ou parcial), fatores considerados essenciais para a qualidade da formação.
+3. **Instalações Físicas:** Este eixo avalia a infraestrutura e os recursos materiais disponibilizados para o desenvolvimento do curso. São vistoriadas instalações como salas de aula, laboratórios específicos para atividades práticas, bibliotecas (acervo físico e digital), recursos de informática e a adequação geral do espaço físico às necessidades dos estudantes e professores.
+
+##### Instrumentos e Procedimentos Especiais
+
+A ACG utiliza uma variedade de instrumentos avaliativos, que podem ser aplicados de forma presencial ou virtual. Contudo, o SINAES demonstra uma preocupação singular com a qualidade da formação na área da saúde. Por esse motivo, os cursos de **Medicina, Odontologia, Psicologia e Enfermagem** devem, obrigatoriamente, ser avaliados por meio de dispositivos e visitas presenciais para uma aferição mais rigorosa de suas práticas e estruturas.
+
+##### Resultados da Avaliação
+
+Ao final do processo, a avaliação dos cursos de graduação resulta na atribuição de conceitos para cada uma das dimensões analisadas e para o conjunto da avaliação. Esses conceitos são ordenados em uma escala com **5 (cinco) níveis**, variando de 1 (insuficiente) a 5 (excelente), e servem como um dos principais indicadores de qualidade para os processos de regulação do MEC.
 
 #### Dos Dados à Regulação
 
