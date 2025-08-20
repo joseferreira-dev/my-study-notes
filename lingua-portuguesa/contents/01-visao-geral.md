@@ -2,7 +2,7 @@
 
 O domínio da Língua Portuguesa é, inegavelmente, um dos pilares para a aprovação em qualquer concurso público. Mais do que simplesmente conhecer regras soltas, é preciso compreender a lógica que estrutura o nosso idioma. Este capítulo inicial tem como objetivo construir essa base sólida, apresentando os conceitos fundamentais que permeiam todo o estudo da gramática. Partiremos da ideia mais ampla de comunicação, afunilando o conhecimento para as especificidades da língua e da linguagem, até chegarmos ao conceito de norma padrão — a variante linguística exigida nas provas. Entender esses fundamentos não é um mero preciosismo teórico, mas sim o primeiro passo estratégico para decifrar o que as bancas examinadoras esperam e, assim, garantir um desempenho de excelência.
 
-## O Alicerce de Tudo: Comunicação e seus Elementos
+## Comunicação e seus Elementos
 
 A comunicação é um processo social básico e essencial que consiste na transmissão e recepção de informações, ideias, sentimentos ou experiências. É uma via de mão dupla que envolve, no mínimo, dois participantes em uma troca de mensagens. Para que essa troca seja bem-sucedida, ou seja, para que a informação enviada seja compreendida, um conjunto de elementos precisa estar em harmonia. O estudo desses elementos nos ajuda a entender as engrenagens por trás de qualquer ato comunicativo, seja uma conversa, a leitura de um livro ou a resolução de uma questão de prova.
 
@@ -163,7 +163,7 @@ A distinção entre ditongo e hiato é uma fonte comum de dúvidas. Compare:
 Adicionalmente, os sons vocálicos podem ser orais ou nasais, o que também classifica os encontros:
 
 - **Encontro Oral:** O som é liberado majoritariamente pela boca. Exemplos: _pai, céu, série, poeta_.
-- **Encontro Nasal:** Parte do som é liberado pelo nariz. Na escrita, a nasalização é marcada pelo til (~) ou pelas letras M e N após a vogal. Exemplos: _m**ãe** (ditongo nasal); p**ão** (ditongo nasal); sag-**uão** (tritongo nasal); c**an**-tam (ditongo nasal)_.
+- **Encontro Nasal:** Parte do som é liberado pelo nariz. Na escrita, a nasalização é marcada pelo til (~) ou pelas letras M e N após a vogal. Exemplos: _m**ãe** (ditongo nasal); p**ão** (ditongo nasal); sag-**uão** (tritongo nasal).
 
 ### Tonicidade e Classificação das Palavras
 
@@ -402,7 +402,7 @@ Desde já, é crucial diferenciar os dois conceitos. Não se deve confundir "o q
 
 ### Apresentação das Classes de Palavras
 
-Nesta seção, faremos uma apresentação panorâmica das classes de palavras. É importante notar que alguns tópicos, pela sua complexidade e alta incidência em provas, serão aprofundados em capítulos próprios, como é o caso de **Verbos**, **Pronomes** e **Conjunções**.
+Nesta seção, faremos uma apresentação panorâmica das classes de palavras. É importante notar que alguns tópicos, pela sua complexidade e alta incidência em provas, serão explicados de forma mais aprofundada, como é o caso de **Verbos**, **Pronomes** e **Conjunções**.
 
 #### Substantivo
 
@@ -487,12 +487,12 @@ O numeral é a palavra variável que se refere a um substantivo (acompanhando-o 
 
 Os numerais são classificados de acordo com a ideia que exprimem:
 
-|Classificação|Definição|Exemplos|
-|---|---|---|
-|**Cardinais**|Indicam quantidade exata, contagem.|um, dois, três, cem, mil, milhão.|
-|**Ordinais**|Indicam ordem, posição ou hierarquia.|primeiro, segundo, décimo, centésimo.|
-|**Fracionários**|Indicam parte de um todo, uma divisão.|meio, metade, um terço, dois quintos.|
-|**Multiplicativos**|Indicam uma multiplicação, um aumento na quantidade.|dobro, triplo, quádruplo, cêntuplo.|
+| Classificação       | Definição                                            | Exemplos                              |
+| ------------------- | ---------------------------------------------------- | ------------------------------------- |
+| **Cardinais**       | Indicam quantidade exata, contagem.                  | um, dois, três, cem, mil, milhão.     |
+| **Ordinais**        | Indicam ordem, posição ou hierarquia.                | primeiro, segundo, décimo, centésimo. |
+| **Fracionários**    | Indicam parte de um todo, uma divisão.               | meio, metade, um terço, dois quintos. |
+| **Multiplicativos** | Indicam uma multiplicação, um aumento na quantidade. | dobro, triplo, quádruplo, cêntuplo.   |
 
 - _Exemplos de aplicação:_
     - _A sala tem **quarenta** carteiras._ (Cardinal)
@@ -684,14 +684,14 @@ Os pronomes da Língua Portuguesa são divididos em seis categorias: Pessoais, P
 
 Como o nome indica, são aqueles que se referem diretamente às pessoas do discurso. Eles se subdividem de acordo com a função sintática que exercem.
 
-|Pessoa|Pronomes do Caso Reto|Pronomes Oblíquos Átonos|Pronomes Oblíquos Tônicos|
-|---|---|---|---|
-|1ª Sing.|**eu**|**me**|**mim**, comigo|
-|2ª Sing.|**tu**|**te**|**ti**, contigo|
-|3ª Sing.|**ele**, **ela**|**o**, **a**, **lhe**, **se**|**ele**, **ela**, **si**, consigo|
-|1ª Plur.|**nós**|**nos**|**nós**, conosco|
-|2ª Plur.|**vós**|**vos**|**vós**, convosco|
-|3ª Plur.|**eles**, **elas**|**os**, **as**, **lhes**, **se**|**eles**, **elas**, **si**, consigo|
+| Pessoa   | Pronomes do Caso Reto | Pronomes Oblíquos Átonos         | Pronomes Oblíquos Tônicos           |
+| -------- | --------------------- | -------------------------------- | ----------------------------------- |
+| 1ª Sing. | **eu**                | **me**                           | **mim**, comigo                     |
+| 2ª Sing. | **tu**                | **te**                           | **ti**, contigo                     |
+| 3ª Sing. | **ele**, **ela**      | **o**, **a**, **lhe**, **se**    | **ele**, **ela**, **si**, consigo   |
+| 1ª Plur. | **nós**               | **nos**                          | **nós**, conosco                    |
+| 2ª Plur. | **vós**               | **vos**                          | **vós**, convosco                   |
+| 3ª Plur. | **eles**, **elas**    | **os**, **as**, **lhes**, **se** | **eles**, **elas**, **si**, consigo |
 
 - **Pronomes do Caso Reto:** Atuam exclusivamente como **sujeito** da oração.
     - _Exemplo:_ **Eu** estudei todo o conteúdo do edital.
@@ -767,14 +767,14 @@ Os pronomes demonstrativos são palavras variáveis que têm a função de situa
 
 Indicam uma relação de posse ou pertencimento entre as pessoas do discurso e os seres ou objetos. Concordam em gênero e número com a coisa possuída.
 
-|Pessoa|Pronomes Possessivos|
-|---|---|
-|1ª Sing.|meu(s), minha(s)|
-|2ª Sing.|teu(s), tua(s)|
-|3ª Sing.|seu(s), sua(s)|
-|1ª Plur.|nosso(s), nossa(s)|
-|2ª Plur.|vosso(s), vossa(s)|
-|3ª Plur.|seu(s), sua(s)|
+| Pessoa      | Pronomes Possessivos |
+| ----------- | -------------------- |
+| 1ª Singular | meu(s), minha(s)     |
+| 2ª Singular | teu(s), tua(s)       |
+| 3ª Singular | seu(s), sua(s)       |
+| 1ª Plural   | nosso(s), nossa(s)   |
+| 2ª Plural   | vosso(s), vossa(s)   |
+| 3ª Plural   | seu(s), sua(s)       |
 
 - _Exemplos:_
     - **Meu** computador precisa de um upgrade.
@@ -825,7 +825,7 @@ São formas de tratamento ou reverência, empregadas para se dirigir a pessoas d
 
 ##### Colocação Pronominal: O Lugar Certo do Pronome
 
-A colocação pronominal é o conjunto de regras que determina a posição correta dos pronomes oblíquos átonos — **me, te, se, o, a, lhe, nos, vos, os, as, lhes** — em relação ao verbo. Embora na linguagem coloquial do dia a dia essas regras sejam frequentemente flexibilizadas, na norma padrão, exigida em concursos, elas são estritas.
+A colocação pronominal é o conjunto de regras que determina a posição correta dos pronomes oblíquos átonos — **me, te, se, o, a, lhe, nos, vos, os, as, lhes** — em relação ao verbo. Embora na linguagem coloquial do dia a dia essas regras sejam frequentemente flexibilizadas, na norma padrão elas são estritas.
 
 Existem três posições possíveis para esses pronomes:
 
