@@ -398,6 +398,51 @@ A ACG utiliza uma variedade de instrumentos avaliativos, que podem ser aplicados
 
 Ao final do processo, a avaliação dos cursos de graduação resulta na atribuição de conceitos para cada uma das dimensões analisadas e para o conjunto da avaliação. Esses conceitos são ordenados em uma escala com **5 (cinco) níveis**, variando de 1 (insuficiente) a 5 (excelente), e servem como um dos principais indicadores de qualidade para os processos de regulação do MEC.
 
+#### Exame Nacional de Desempenho dos Estudantes (ENADE)
+
+O Exame Nacional de Desempenho dos Estudantes (ENADE) é o pilar do SINAES focado na avaliação direta do resultado do processo formativo. Criado em 2004 para suceder o antigo "Provão", o ENADE é um instrumento fundamental para medir o rendimento dos alunos dos cursos de graduação em todo o Brasil.
+
+Sua finalidade, conforme estabelecida pelo INEP, é multifacetada: ele não avalia apenas o domínio de conteúdo, mas também a capacidade de aplicação desse conhecimento.
+
+##### Objetivos e Escopo da Avaliação
+
+O ENADE foi desenhado para ir além de uma simples prova de memorização. Seus objetivos centrais são avaliar e acompanhar o processo de aprendizagem e o desempenho acadêmico dos estudantes em relação aos conhecimentos, competências e habilidades desenvolvidas ao longo do curso. De forma mais específica, o exame afere:
+
+- **Domínio de Conteúdo:** O rendimento dos concluintes em relação aos conteúdos programáticos previstos nas Diretrizes Curriculares Nacionais (DCNs) do respectivo curso de graduação.
+- **Competências e Habilidades:** A capacidade do estudante de aplicar seus conhecimentos para se ajustar às novas exigências decorrentes da evolução da ciência e do mercado de trabalho.
+- **Formação Geral e Visão de Mundo:** A competência para compreender temas que extrapolam o âmbito específico de sua profissão, englobando questões ligadas à realidade brasileira e mundial e a outras áreas do saber.
+
+##### Periodicidade e Participantes
+
+Para garantir uma análise cíclica de todo o sistema de ensino superior, a aplicação do ENADE obedece a uma lógica de rotatividade.
+
+- **Periodicidade Trienal:** A frequência máxima de aplicação do exame para cada área do conhecimento é de três anos. Isso significa que um mesmo curso será avaliado, no máximo, a cada três anos, compondo o que se chama de "Ciclo Avaliativo do SINAES".
+- **Estudantes Habilitados:** A avaliação utiliza dois grupos de estudantes como referência:
+    - **Ingressantes:** Alunos que estão no final do primeiro ano do curso.
+    - Concluintes: Alunos que estão no último ano do curso.
+
+        A participação de ambos os grupos permite uma análise do "valor agregado" pelo curso, ou seja, o quanto de conhecimento e competências os estudantes desenvolveram durante sua jornada acadêmica. O desempenho dos ingressantes serve como um ponto de referência inicial.
+
+##### Estrutura da Prova e Instrumentos Adicionais
+
+A avaliação do ENADE é composta por dois instrumentos principais:
+
+1. **A Prova:** O exame em si é dividido em duas partes:
+    - **Formação Geral:** Composta por questões de múltipla escolha e discursivas, esta parte é comum a todos os estudantes, independentemente do curso. Ela aborda temas como direitos humanos, ética, cidadania, sociodiversidade, globalização e outras pautas relevantes para a sociedade contemporânea.
+    - **Componente Específico:** Também com questões de múltipla escolha e discursivas, esta parte é focada nos conteúdos e competências da área de formação do estudante, seguindo as diretrizes curriculares do seu curso.
+2. **O Questionário do Estudante:** Antes da prova, o participante deve preencher um questionário obrigatório. Este instrumento é crucial, pois coleta informações sobre o perfil socioeconômico do estudante e suas percepções sobre o processo formativo (como a qualidade da infraestrutura da IES, o projeto pedagógico do curso e a atuação dos professores). As respostas são fundamentais para contextualizar e interpretar os resultados do exame.
+
+##### Caráter Obrigatório e Responsabilidades
+
+A participação no ENADE não é opcional, sendo um ato de grande importância para a vida acadêmica do estudante e para a instituição.
+
+- **Componente Curricular Obrigatório:** O ENADE é, por lei, um componente curricular obrigatório. A situação de regularidade do estudante perante o exame é inscrita em seu histórico escolar. A não participação (sem dispensa oficial do MEC) deixa o estudante em "situação irregular", o que o impede de colar grau e receber seu diploma.
+- **Responsabilidade da IES:** É responsabilidade do dirigente da instituição de ensino superior inscrever junto ao INEP todos os estudantes, ingressantes e concluintes, que estão habilitados a participar do ENADE em cada ciclo avaliativo.
+
+##### A Utilização dos Resultados
+
+Os resultados do ENADE são insumos essenciais para a composição dos Indicadores de Qualidade da Educação Superior. O desempenho dos estudantes no exame, combinado com os dados obtidos no Questionário do Estudante e com as informações da Avaliação dos Cursos de Graduação (ACG), é utilizado para calcular o **Conceito Preliminar de Curso (CPC)**, um dos principais indicadores de qualidade utilizados pelo MEC para fins de regulação e supervisão.
+
 #### Dos Dados à Regulação
 
 O **Inep** é o órgão responsável por toda a operacionalização do SINAES, desde a aplicação do ENADE até a coordenação das visitas de comissões. Os resultados consolidados dessas avaliações (que geram indicadores como o Conceito Preliminar de Curso - CPC e o Índice Geral de Cursos - IGC) são publicados e servem como **referencial básico para os processos de regulação e supervisão** realizados pelo Ministério da Educação (MEC).
