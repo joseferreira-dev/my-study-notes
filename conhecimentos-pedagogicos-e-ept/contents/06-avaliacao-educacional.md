@@ -420,7 +420,6 @@ Para garantir uma análise cíclica de todo o sistema de ensino superior, a apli
 - **Estudantes Habilitados:** A avaliação utiliza dois grupos de estudantes como referência:
     - **Ingressantes:** Alunos que estão no final do primeiro ano do curso.
     - Concluintes: Alunos que estão no último ano do curso.
-
         A participação de ambos os grupos permite uma análise do "valor agregado" pelo curso, ou seja, o quanto de conhecimento e competências os estudantes desenvolveram durante sua jornada acadêmica. O desempenho dos ingressantes serve como um ponto de referência inicial.
 
 ##### Estrutura da Prova e Instrumentos Adicionais
@@ -442,6 +441,48 @@ A participação no ENADE não é opcional, sendo um ato de grande importância 
 ##### A Utilização dos Resultados
 
 Os resultados do ENADE são insumos essenciais para a composição dos Indicadores de Qualidade da Educação Superior. O desempenho dos estudantes no exame, combinado com os dados obtidos no Questionário do Estudante e com as informações da Avaliação dos Cursos de Graduação (ACG), é utilizado para calcular o **Conceito Preliminar de Curso (CPC)**, um dos principais indicadores de qualidade utilizados pelo MEC para fins de regulação e supervisão.
+
+#### Comissão Própria de Avaliação (CPA)
+
+A Comissão Própria de Avaliação (CPA) é um dos componentes mais estratégicos do SINAES, funcionando como o epicentro do processo de autoavaliação dentro de cada Instituição de Ensino Superior (IES). A característica fundamental que define a CPA é o seu **caráter interno**.
+
+Diferente de uma avaliação externa, que exige padronização de critérios para comparar diferentes instituições, a avaliação interna conduzida pela CPA é singular para cada IES. Isso ocorre porque a CPA possui a prerrogativa de desenvolver e aplicar seus próprios instrumentos de análise. Essa abordagem permite que a avaliação seja sensível ao contexto, à missão e às particularidades de sua própria comunidade acadêmica, gerando um diagnóstico mais autêntico e focado na melhoria contínua.
+
+##### Os Princípios Fundamentais: Autonomia e Democracia
+
+O funcionamento eficaz de uma CPA se sustenta sobre dois pilares essenciais que garantem a legitimidade e a profundidade de seu trabalho: autonomia e democracia.
+
+- **Autonomia:** A CPA atua de forma autônoma em relação aos demais órgãos e conselhos da instituição, bem como em relação às entidades que executam as avaliações externas (como o INEP). Essa independência é crucial para que a comissão possa avaliar a instituição de maneira crítica e isenta, apontando méritos e fragilidades sem pressões internas ou externas. A autonomia se manifesta na liberdade de definir suas metodologias, seus cronogramas e os focos de sua avaliação a cada ciclo.
+- **Democracia:** A avaliação interna deve ser um processo democrático, refletindo as múltiplas vozes que compõem a instituição. A CPA funciona como um microcosmo da comunidade acadêmica, um espaço de diálogo e reflexão coletiva sobre os acertos e os desafios da IES. Esse princípio assegura que a autoavaliação não seja um mero exercício burocrático, mas um processo vivo de construção de um diagnóstico compartilhado e de engajamento de todos na busca pela qualidade.
+
+##### Atribuições e Diretrizes Legais
+
+Apesar de sua ampla autonomia, a existência e o funcionamento da CPA são regidos pela Lei do SINAES (Lei nº 10.861/2004), que estabelece os parâmetros essenciais para sua constituição e atuação. O Artigo 11 da lei é a principal referência:
+
+> Art. 11. Cada instituição de ensino superior, pública ou privada, constituirá Comissão Própria de Avaliação - CPA, no prazo de 60 (sessenta) dias, a contar da publicação desta Lei, com as atribuições de condução dos processos de avaliação internos da instituição, de sistematização e de prestação das informações solicitadas pelo INEP, obedecidas as seguintes diretrizes:
+> 
+> I – constituição por ato do dirigente máximo da instituição de ensino superior, ou por previsão no seu próprio estatuto ou regimento, assegurada a participação de todos os segmentos da comunidade universitária e da sociedade civil organizada, e vedada a composição que privilegie a maioria absoluta de um dos segmentos;
+> II – atuação autônoma em relação a conselhos e demais órgãos colegiados existentes na instituição de educação superior.
+
+Interpretando as diretrizes da lei, podemos destacar os seguintes pontos:
+
+1. **Condução e Sistematização:** A principal atribuição da CPA é conduzir os processos de autoavaliação institucional e, a partir deles, sistematizar os dados e análises em relatórios que devem ser compartilhados com a comunidade acadêmica e prestados ao INEP.
+2. **Composição Plural e Democrática:** A lei garante que a CPA seja um reflexo da diversidade da instituição e de sua relação com a sociedade. É obrigatória a participação de representantes de todos os segmentos — docentes, discentes e técnicos-administrativos — e também da sociedade civil organizada. Crucialmente, a legislação veda a formação de uma maioria absoluta por qualquer um dos segmentos, assegurando o equilíbrio de poder e de perspectivas.
+3. **Independência Assegurada:** A lei reforça o princípio da autonomia ao determinar que a CPA não deve ser subordinada a outros conselhos e colegiados da IES. Isso significa que suas conclusões e recomendações devem ser consideradas pelas lideranças da instituição como a voz legítima do processo de autoavaliação.
+
+##### A CPA em Funcionamento: O Exemplo da Academia Nacional de Polícia
+
+Para ilustrar o funcionamento prático da CPA, podemos citar o exemplo da Academia Nacional de Polícia (ANP), da Polícia Federal. A ANP possui uma CPA que auxilia sua Diretoria de Ensino (DIREN-ANP) na avaliação interna dos cursos ali ministrados.
+
+<div align="center">
+<img width="580px" src="./img/06-cpa.png">
+</div>
+
+Neste arranjo, os princípios são claramente aplicados:
+
+- **Autonomia:** A CPA não é subordinada à DIREN, possuindo independência para elaborar seus próprios relatórios, realizar discussões e enviar suas análises diretamente ao INEP. Sua única subordinação hierárquica é ao Diretor da Academia Nacional de Polícia.
+- **Função de Assessoria:** A comissão atua como um órgão de assessoria para a DIREN, fornecendo diagnósticos e recomendações que subsidiam as decisões sobre a melhoria dos cursos e processos pedagógicos.
+- **Democracia:** Sua composição é democrática, contando com representantes dos professores (peritos criminais federais), dos alunos (candidatos em formação) e dos servidores técnico-administrativos, sem que haja maioria absoluta de nenhum desses grupos.
 
 #### Dos Dados à Regulação
 
