@@ -122,8 +122,6 @@ Essa centralidade se baseia em alguns princípios fundamentais que ele elucidou:
 
 Ao defender uma educação que parte dos interesses e das fases de desenvolvimento do indivíduo, Rousseau lança as bases para muitas das pedagogias progressistas que surgiriam nos séculos seguintes, como o movimento da Escola Nova. Sua insistência em formar um ser humano autônomo, capaz de pensar por si mesmo e de resistir às pressões corruptoras da sociedade, reforça de maneira definitiva o papel da educação como uma ferramenta indispensável para o progresso social e para a transformação de súditos em cidadãos verdadeiramente livres.
 
-Entendido. Continuaremos a desenvolver a seção sobre a educação como ferramenta de transformação, utilizando suas anotações para construir o argumento sobre a formação para a democracia e a cidadania. O foco será estruturar as ideias de forma coesa, aprofundar os conceitos e ilustrar com exemplos claros, mantendo o estilo didático e impessoal que estabelecemos.
-
 ### A Finalidade da Educação Transformadora: Construindo a Democracia e a Cidadania
 
 A educação, em sua essência, é o mecanismo pelo qual uma sociedade transmite seus saberes acumulados e seus valores mais caros às novas gerações. Conhecimentos e princípios são, portanto, a matéria-prima com a qual se constrói o futuro. Contudo, esse processo de transmissão não é uniforme. As sociedades se organizam de maneiras distintas para educar seus membros. Em alguns contextos, como no Brasil, essa estrutura é altamente formalizada, com um aparato legal (leis educacionais), espaços físicos próprios (escolas, universidades) e sistemas de regulação e fiscalização.
