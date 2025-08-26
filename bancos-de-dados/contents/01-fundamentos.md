@@ -1,200 +1,83 @@
-# Capítulo 1 – Fundamentos de Bancos de Dados
+# Capítulo 1 – Fundamentos
 
-## O Mundo Antes dos Bancos de Dados: A Era dos Sistemas de Arquivos
+Toda a jornada no universo da Tecnologia da Informação, desde a mais simples aplicação até os mais complexos sistemas de inteligência artificial, gira em torno de um elemento central: a manipulação e a análise de dados. Compreender o que são os dados, suas diferentes formas, naturezas e restrições é o alicerce sobre o qual todo o conhecimento em bancos de dados será construído. É o ponto de partida essencial para entendermos como organizar, armazenar e, principalmente, extrair valor das informações que moldam o mundo digital.
 
-Antes de mergulharmos no universo dos bancos de dados, é essencial compreendermos o cenário que antecedeu seu surgimento: os sistemas de arquivos. A maioria dos dispositivos computacionais, como notebooks, celulares e servidores, ainda hoje possui um sistema de arquivos. Ele é responsável por organizar os dados em diretórios e arquivos, permitindo que o usuário acesse e modifique conteúdos diversos, como documentos de texto, planilhas e imagens.
+## O que são Dados?
 
-Imagine a seguinte situação: você trabalha no setor de vendas de uma empresa e precisa manter um cadastro de clientes. A solução inicial adotada pela equipe é utilizar uma planilha do Excel, acessada por todos os vendedores. No começo, tudo funciona relativamente bem. Porém, à medida que mais funcionários precisam acessar e modificar a planilha simultaneamente, começam a surgir problemas: conflitos de acesso, perda de dados, sobreposição de informações e até exclusões acidentais. Como tentativa de contornar esses problemas, cada vendedor passa a manter sua própria cópia da planilha. O que parece ser uma solução rápida, na verdade, inaugura uma nova dor de cabeça: **redundância de dados**.
+No nível mais fundamental, **dados** são uma coleção de valores discretos ou contínuos que, em seu estado bruto, representam fatos, medições, observações ou descrições de algo. Podem ser números, textos, símbolos ou imagens que, isoladamente, podem não ter um significado completo. Por exemplo, o número `37` é um dado. A palavra `Recife` é um dado. A data `26/08/2025` é um dado.
 
-Ao existir múltiplas cópias da mesma informação, sem qualquer controle centralizado, a chance de surgirem inconsistências é enorme. Um cliente pode estar com nome atualizado em um arquivo, mas desatualizado em outro. Um e-mail pode ter sido corrigido por um vendedor, mas o restante da equipe continua com a versão antiga. A ausência de um mecanismo confiável de sincronização dos dados torna o sistema vulnerável à perda de confiabilidade e integridade.
+Um conjunto de dados é tecnicamente chamado de _data_, enquanto uma unidade única de dado é referida como _datum_. Contudo, na prática cotidiana e na literatura técnica, o termo "dados" é universalmente utilizado tanto para o singular quanto para o plural.
 
-Esse problema é um retrato fiel do que ocorria nos primórdios da tecnologia da informação. Sistemas empresariais realizavam operações de leitura e escrita diretamente sobre arquivos de texto ou planilhas, sem qualquer software intermediário que garantisse controle e integridade. O resultado era o caos. Foi neste contexto que surgiram os **Sistemas de Gerenciamento de Banco de Dados (SGBDs)**, como uma evolução natural para controlar o acesso aos dados e garantir consistência e segurança. O SGBD passou, então, a ser o mediador entre as aplicações e os dados armazenados, como pode ser visto na figura a seguir:
+É crucial, no entanto, distinguir **Dado** de **Informação**. A informação é o resultado do processamento, organização e contextualização dos dados, conferindo-lhes relevância e propósito.
 
-<div align="center">
-  <img width="720px" src="./img/01-sistema-de-arquivos.png">
-</div>
+- **Dado:** `37`
+- **Informação:** A temperatura registrada em Recife hoje é de `37` graus Celsius.
 
-A figura mostra dois sistemas. O primeiro representa a estrutura de um sistema de arquivos onde os dados são acessados diretamente pelos aplicativos. Na segunda temos um sistema de banco de dados no qual o SGBD aparece entre os dados e os aplicativos, assumindo o papel de mediador.
+Neste exemplo, o dado `37` foi contextualizado (temperatura, local, unidade de medida) para se tornar uma informação útil. O principal objetivo de um banco de dados é justamente organizar dados brutos de forma que possam ser facilmente transformados em informações valiosas.
 
-## Redundância de Dados
+## As Múltiplas Faces dos Dados: Formas de Classificação
 
-Para entender os avanços trazidos pelos bancos de dados, é fundamental compreender a noção de **redundância de dados**, que pode ocorrer de duas formas distintas:
+Para que possamos trabalhar com os dados de maneira eficaz, precisamos primeiro classificá-los. Existem diversas formas de categorizar os dados, mas três delas são essenciais para o nosso estudo: a classificação quanto à sua **natureza** (o tipo de valor que representam), quanto à sua **estrutura** (a forma como são organizados) e quanto ao seu **nível de acesso** (as restrições de segurança impostas a eles).
 
-- **Redundância não controlada**: ocorre quando a replicação da informação é feita de forma manual ou distribuída sem coordenação. O controle da integridade e da atualização correta dos dados está sob responsabilidade exclusiva do usuário. Como vimos no exemplo anterior, múltiplas cópias de uma mesma planilha ilustram essa situação.
-- **Redundância controlada**: neste caso, a repetição de dados é intencional e gerenciada por um sistema que conhece todas as representações existentes da informação e garante que estejam sincronizadas. Em um banco de dados, por exemplo, a repetição de dados pode ocorrer por motivos de desempenho, mas sempre sob a supervisão e lógica do SGBD.
+### Classificação Quanto à Natureza (Tipo)
 
-A introdução de um **SGBD** transformou o cenário de desorganização para um modelo estruturado e seguro. O SGBD atua como **guardião do banco de dados**, intermediando e controlando todas as operações de acesso aos dados, substituindo os antigos sistemas de arquivos independentes.
+A primeira e mais comum forma de classificação diz respeito ao tipo de informação que o dado carrega. Aqui, a divisão se dá em duas grandes categorias: dados qualitativos e dados quantitativos.
 
-## O Que é um Banco de Dados?
+- **Dados Qualitativos:** Como o nome sugere, são dados que descrevem uma **qualidade**, uma característica ou um atributo de algo. Eles não são medidos numericamente, mas sim categorizados. Respondem a perguntas como "de que tipo?" ou "qual a categoria?". Eles se subdividem em:
+    - **Nominal:** Representa uma categoria que não possui uma ordem ou hierarquia intrínseca. Os valores são apenas rótulos. Exemplos incluem:
+        - Cor de um carro (Vermelho, Azul, Prata)
+        - Gênero (Masculino, Feminino, Não-binário)
+        - Nacionalidade (Brasileiro, Argentino, Alemão)
+        - Tipo sanguíneo (A+, O-, AB+)
+    - **Ordinal:** Também representa uma categoria, mas, diferentemente do nominal, existe uma **ordem ou uma hierarquia lógica** entre os valores.
+        - Nível de escolaridade (Ensino Fundamental, Ensino Médio, Ensino Superior)
+        - Grau de satisfação de um cliente (Muito Insatisfeito, Insatisfeito, Neutro, Satisfeito, Muito Satisfeito)
+        - Tamanho de uma peça de roupa (P, M, G, GG)
+        - Classificação em uma competição (1º lugar, 2º lugar, 3º lugar)
+- **Dados Quantitativos:** São dados que representam uma **quantidade** ou uma medida numérica. São o resultado de uma contagem ou de uma medição. Respondem a perguntas como "quanto?" ou "quantos?". Eles também se subdividem em:
+    - **Discreto:** É um valor numérico que resulta de uma contagem, sendo, portanto, um número inteiro e finito. Não é possível ter "meio" valor.
+        - Quantidade de alunos em um curso (ex: 45 alunos)
+        - Número de páginas de um livro (ex: 320 páginas)
+        - Total de produtos em estoque (ex: 1.500 unidades)
+    - **Contínuo:** É um valor numérico que resulta de uma medição, podendo assumir qualquer valor dentro de um intervalo. Geralmente são representados por números decimais e podem ser infinitamente divididos.
+        - Altura de uma pessoa (ex: 1.75m)
+        - Velocidade de um veículo (ex: 82.5 km/h)
+        - Temperatura de um ambiente (ex: 23.7 °C)
+        - Peso de um objeto (ex: 4.68 kg)
 
-Para compreender profundamente o conceito de banco de dados, comecemos pela decomposição do próprio termo. A palavra **"banco"** pode representar, no nosso contexto, uma coleção organizada e categorizada de objetos — como em um banco de imagens, banco de sementes ou banco de leite. Já **"dados"**, no campo da tecnologia da informação, são representações codificadas de eventos ou fatos. Dados, por si só, são desprovidos de significado até que sejam inseridos em um **contexto**.
-
-Considere o seguinte exemplo: a sequência “32260436, cinco, aprovado, Thiago”. Esses elementos, isoladamente, não dizem muito. Porém, se informarmos que esse é o registro de um candidato a uma seleção, com seu telefone, colocação e status de aprovação, os dados agora fazem sentido — eles se transformaram em **informação** contextualizada.
-
-Dessa forma, **um banco de dados pode ser definido como uma coleção de dados relacionados, armazenados de forma organizada com o objetivo de representar aspectos do mundo real**. Essa é uma definição simples, porém eficaz. Importante ressaltar que um banco de dados **não precisa ser digital** — uma agenda telefônica de papel, por exemplo, já representa um banco de dados físico.
-
-Contudo, para aprofundarmos essa definição, consideramos três propriedades essenciais descritas por **Navathe**, autor renomado na área:
-
-1. **Representação de um aspecto do mundo real (minimundo)**: o banco de dados modela uma parte do universo que desejamos descrever e manipular. Um banco de dados de uma escola representa alunos, disciplinas, notas e professores.
-2. **Coerência lógica entre os dados**: os dados armazenados devem estar organizados de maneira estruturada e significativa. Não basta um conjunto de dados aleatórios — eles precisam manter uma relação lógica entre si.
-3. **Finalidade específica**: o banco de dados é criado com um propósito. Ele atende a um conjunto definido de usuários e aplicações, oferecendo uma estrutura eficiente para recuperar e manipular informações.
-
-A aplicação desses princípios pode ser ilustrada com a agenda telefônica já mencionada. Ela representa contatos reais (minimundo), organiza os dados de forma ordenada e categorizada (coerência lógica) e atende à necessidade prática de localizar rapidamente um número (finalidade).
-
-Diversos autores da literatura trazem definições complementares ao conceito de banco de dados:
-
-- **C. J. Date**: "Um banco de dados é o equivalente eletrônico de um armário de arquivamento; um repositório ou recipiente de uma coleção de arquivos de dados computadorizados."
-- **Carlos Heuser**: "Banco de dados é um conjunto de dados integrados que tem por objetivo atender a uma comunidade de usuários."
-- **Silberschatz**: "Banco de dados é um conjunto de dados estruturados que são confiáveis, coerentes e compartilhados por usuários com necessidades diferentes."
-
-## SGBD e Sistema de Banco de Dados: Entendendo os Papéis
-
-Para avançarmos na compreensão dos sistemas de informação modernos, precisamos distinguir três conceitos fundamentais: **Banco de Dados (BD)**, **Sistema de Gerenciamento de Banco de Dados (SGBD)** e **Sistema de Banco de Dados (SBD)**.
-
-- O **Banco de Dados (BD)** é a coleção de dados inter-relacionados, organizada para representar aspectos do mundo real.
-- O **Sistema de Gerenciamento de Banco de Dados (SGBD)** é o software responsável por armazenar, recuperar, modificar e administrar os dados de forma eficiente. Ele é o coração funcional do ambiente de dados.
-- O **Sistema de Banco de Dados (SBD)** é o sistema completo que engloba o banco de dados, o SGBD e os programas de aplicação que interagem com esses dados. De forma simplificada, temos a equação:
-    > **SBD = BD + SGBD + Programas de Aplicação**
+A imagem a seguir ilustra essa hierarquia de classificação.
 
 <div align="center">
-  <img width="760px" src="./img/01-sdb.png">
+<img width="700px" src="./img/01-dados-subdivisoes.png">
 </div>
 
-O SGBD oferece um ambiente padronizado para gerenciar os dados. Suas funcionalidades incluem:
+### Classificação Quanto ao Nível de Acesso
 
-- Controle de acesso simultâneo por múltiplos usuários.
-- Garantia de integridade e consistência dos dados.
-- Mecanismos de segurança contra acessos não autorizados.
-- Redundância controlada e replicação para alta disponibilidade.
-- Controle de transações para evitar inconsistências em operações parciais.
-- Recuperação de falhas causadas por erros de hardware, software ou quedas de energia.
-- Otimização de consultas e auditoria por meio de registros (logs).
+Em qualquer organização, nem todos os dados podem ser acessados por todas as pessoas. A segurança e a confidencialidade da informação são cruciais, e por isso os dados são classificados em níveis de restrição. A abordagem mais comum divide os dados em quatro categorias, formando uma escala crescente de sensibilidade.
 
-## Características da Abordagem de Bancos de Dados
+- **Dados Públicos:** São dados sem qualquer tipo de restrição de confidencialidade. Podem e, muitas vezes, devem ser acessados por qualquer pessoa, dentro ou fora da organização. O vazamento deste tipo de dado não causa nenhum dano.
+    - **Exemplos:** Endereços de filiais da empresa, notícias publicadas no site institucional, informações de produtos em um catálogo online, dados do censo do IBGE.
+- **Dados Internos (ou de Uso Interno):** Possuem um baixo nível de confidencialidade. São dados que pertencem à organização e não devem ser compartilhados externamente, mas cujo vazamento acidental não representaria um grande impacto estratégico, financeiro ou legal. O acesso é geralmente permitido a todos os colaboradores da empresa.
+    - **Exemplos:** Comunicados internos, lista de ramais, políticas de vestimenta, manuais de procedimentos gerais.
+- **Dados Restritos:** Apresentam um nível intermediário de proteção. São informações consideradas importantes ou sensíveis, cujo acesso deve ser limitado a grupos específicos de pessoas ou departamentos que necessitam delas para realizar seu trabalho ("need-to-know basis"). Um vazamento poderia causar prejuízos financeiros ou de reputação.
+    - **Exemplos:** Folha de pagamento, planejamento estratégico da empresa, informações de contato de clientes, relatórios de vendas.
+- **Dados Confidenciais:** Representam o nível mais alto de proteção. São os ativos de informação mais críticos de uma organização. O acesso a esses dados é extremamente controlado e limitado a um número mínimo de pessoas autorizadas. Seu vazamento poderia comprometer gravemente a entidade, resultando em severos danos financeiros, legais, de reputação ou operacionais.
+    - **Exemplos:** Segredos industriais (a fórmula de um produto), dados de cartão de crédito de clientes, prontuários médicos de pacientes, informações de segurança nacional.
 
-Segundo Navathe, são quatro as principais características da abordagem de banco de dados que a fazem sobressair em relação às abordagens de processamento de arquivos:
+<div align="center">
+<img width="700px" src="./img/01-dados-niveis-de-restricao.png">
+</div>
 
-- **Natureza autodescritiva de um sistema de banco de dados**
-- **Isolamento entre programas e dados, abstração de dados**
-- **Suporte a múltiplas visões dos dados**
-- **Compartilhamento de dados e processamento de transações multiusuário**
+### Classificação Quanto à Estrutura
 
-Essas características visam reduzir a redundância, o que implica em diminuir o desperdício no espaço de armazenamento e os esforços para manter os dados comuns ou duplicados atualizados. Tudo isso é realizado por meio de um único repositório.
+Finalmente, podemos classificar os dados pela forma como são organizados e preparados para o processamento por sistemas computacionais.
 
-A **primeira característica**, conhecida como natureza autodescritiva, é também chamada de catálogo do SGBD, dicionário de dados ou **metadados**. Essa propriedade permite ao SGBD gravar as definições das suas estruturas e restrições. Entre as descrições que podem ser registradas estão: descrição de tabelas, tamanho do campo, tipo dos dados, propriedade de ser nulo ou não, valores padrão, restrições de integridade, entre outros. Um exemplo disso pode ser visto na definição de uma tabela em SQL:
+- **Dados Estruturados:** São dados altamente organizados, que seguem um formato e um modelo de dados rígidos e bem definidos. Eles se encaixam perfeitamente em tabelas, com linhas e colunas, onde cada coluna tem um tipo de dado específico (número, texto, data, etc.) e cada linha representa um registro. São fáceis de armazenar, pesquisar e analisar.
+    - **Exemplos:** Uma planilha do Excel, uma tabela de clientes em um banco de dados, informações de um sistema de ponto de funcionários.
+- **Dados Não Estruturados:** São o oposto. Não possuem um modelo de dados predefinido ou uma estrutura organizacional fixa. Representam a grande maioria dos dados gerados no mundo hoje. São mais difíceis de processar e analisar por meios tradicionais.
+    - **Exemplos:** O corpo de um e-mail, o conteúdo de um arquivo PDF ou de um documento do Word, uma imagem, um arquivo de áudio ou vídeo, uma postagem em uma rede social.
 
-```sql
-CREATE TABLE EMPREGADO (
-  ID_EMPREGADO INT PRIMARY KEY,
-  FK_ID_SUPERVISOR INT,
-  PRIMEIRO_NOME VARCHAR2(100) NOT NULL,
-  ULTIMO_NOME VARCHAR2(100) NOT NULL,
-  EMAIL VARCHAR2(100) NOT NULL,
-  DATA_NASC_FUNC DATE NOT NULL,
-  DATA_INICIO_FUN DATE DEFAULT SYSDATE,
-  DATA_FIM_FUN DATE DEFAULT NULL,
-  CONSTRAINT FK_SUP FOREIGN KEY EMPREGADO (ID_EMPREGADO)
-);
-```
+Existe ainda uma categoria intermediária, a de **dados semiestruturados**, que não se encaixam em tabelas rígidas, mas contêm tags ou marcadores para separar elementos semânticos e impor hierarquias. Exemplos clássicos são arquivos **JSON** e **XML**.
 
-A **segunda característica**, o isolamento entre programas e dados, é uma decorrência da existência do catálogo. Com isso, os dados deixam de estar codificados diretamente nos programas, o que permite a chamada **independência entre dados e aplicações**, viabilizada pela **abstração de dados**. A abstração permite a existência de diferentes níveis de modelos (conceitual, lógico, físico), cada qual revelando uma faceta distinta da estrutura dos dados.
+Como veremos ao longo desta apostila, os **dados estruturados** são o domínio principal dos bancos de dados relacionais (como MySQL, PostgreSQL), enquanto os **dados não estruturados** e **semiestruturados** são frequentemente gerenciados por bancos de dados NoSQL (como MongoDB, Cassandra).
 
-A **terceira característica**, o suporte a múltiplas visões dos dados, parte do princípio de que diferentes usuários têm diferentes necessidades de acesso. No SQL, isso é representado por **views**, que são subconjuntos dos dados do banco de dados. Essas views podem representar tanto dados armazenados quanto dados derivados, como por exemplo a idade de uma pessoa calculada com base na data de nascimento.
-
-Por fim, o **compartilhamento de dados e o suporte a transações multiusuário** garante que vários usuários possam acessar simultaneamente o banco de dados, de forma segura e consistente. Para isso, o SGBD utiliza mecanismos de **controle de concorrência**, assegurando as propriedades **ACID**:
-
-- **Atomicidade** (A): a transação ocorre por completo ou não ocorre.
-- **Consistência** (C): o banco de dados permanece em estado válido.
-- **Isolamento** (I): transações não interferem umas nas outras.
-- **Durabilidade** (D): uma vez realizadas, as alterações persistem.
-
-Além das características apontadas por Navathe, Date destaca os **benefícios da abordagem de banco de dados**:
-
-- Os dados podem ser compartilhados
-- A redundância pode ser reduzida
-- Inconsistências podem ser evitadas
-- Pode-se utilizar o suporte a transações
-- A integridade pode ser mantida
-- A segurança pode ser aperfeiçoada
-- Requisitos conflitantes podem ser balanceados
-- Padrões podem ser utilizados
-
-Silberschatz, por sua vez, ressalta os **problemas dos sistemas baseados em arquivos**:
-
-- Redundância e inconsistência dos dados
-- Dificuldade de acesso a dados
-- Isolamento dos dados
-- Problemas de integridade
-- Problemas de atomicidade
-- Anomalias de acesso concorrente
-- Problemas de segurança
-
-Essas comparações ajudam a compreender por que a abordagem de bancos de dados se tornou o padrão nas organizações modernas.
-
-## Metadados
-
-As arquiteturas modernas de dados dependem fortemente de **metadados** para garantir governança, rastreabilidade, segurança e escalabilidade no acesso aos dados. Sem uma base sólida de metadados, essas arquiteturas frequentemente falham em cumprir o que prometem.
-
-Para entender sua importância, podemos fazer uma analogia com empresas de logística: ao enviar um pacote, você quer saber onde ele está e se foi entregue com sucesso. Os metadados oferecem essa mesma **visibilidade** sobre os dados dentro de uma organização, permitindo rastrear alterações, detectar falhas e identificar impactos de modificações.
-
-**Metadados** fornecem informações sobre cada conjunto de dados, como tamanho, estrutura, esquema, data da última modificação, permissões de acesso, histórico de uso, entre outros. Em plataformas como data lakes, os metadados são essenciais para a **governança de dados** e normalmente são armazenados em catálogos centrais.
-
-Os metadados podem ser classificados em **três categorias principais**:
-
-- **Metadados técnicos**: descrevem a **estrutura** dos dados (ex: nomes dos campos, tipos, tamanhos, possibilidade de nulos). São utilizados para garantir que os dados sejam corretamente ingeridos, processados e armazenados.
-- **Metadados operacionais**: descrevem a **linhagem, qualidade e proveniência** dos dados, registrando quando e de onde vieram, sua frequência de atualização, sucesso/falha em cargas de dados, e quantidades de dados rejeitados.
-- **Metadados comerciais**: descrevem o **significado dos dados para os usuários de negócio**, com nomes amigáveis, descrições, regras de qualidade e glossários comerciais que promovem a consistência na interpretação dos dados.
-
-No contexto dos SGBDs, os metadados exercem funções fundamentais:
-
-- **Descrição da estrutura de dados**: tabelas, campos, chaves primárias e estrangeiras, índices, etc.
-- **Controle de acesso**: permissões de usuários e grupos.
-- **Otimização de consultas**: fornecem subsídios para que o SGBD crie planos de execução mais eficientes.
-- **Recuperação de informações**: tornam os dados mais compreensíveis e acessíveis.
-- **Manutenção e administração**: registram histórico de alterações, datas de modificação, versões, etc.
-
-Além disso, podemos classificar os metadados de forma complementar em:
-
-- **Metadados descritivos ou de identificação**: título, autor, assunto, palavras-chave.
-- **Metadados estruturais**: indicam como diferentes objetos digitais estão organizados dentro de um mesmo recurso.
-- **Metadados administrativos**: informações técnicas e jurídicas para a gestão de documentos digitais (formato, data de criação, direitos de acesso, etc.).
-
-Metadados são, portanto, indispensáveis à organização, compreensão e administração eficaz dos dados em um banco de dados moderno.
-
-## Personagens do Ecossistema de Bancos de Dados
-
-Quando tratamos de grandes organizações, as atividades relacionadas a banco de dados devem ser compartilhadas entre diferentes pessoas. Dentre os principais papéis nesse ecossistema, destacam-se dois profissionais fundamentais: o **Administrador de Dados (AD)** e o **Administrador de Banco de Dados (DBA)**.
-
-O **Administrador de Dados** é o profissional responsável por tomar decisões estratégicas e definir normas relacionadas aos dados da organização. Também pode ser conhecido como projetista de dados, sendo sua atuação predominante na fase de projeto do banco de dados, ou seja, antes de sua implementação e preenchimento com dados.
-
-Cabe ao AD identificar os dados a serem armazenados, escolher estruturas apropriadas para sua representação e se comunicar com os diversos usuários da organização para compreender suas necessidades. Com base nisso, o AD propõe um modelo que atenda às exigências dos usuários e define visões específicas para cada grupo.
-
-As principais atribuições do Administrador de Dados incluem:
-
-- Padronizar os nomes dos objetos criados no banco de dados;
-- Gerenciar e auxiliar na definição das regras de integridade;
-- Controlar a existência de informações redundantes;
-- Trabalhar de forma corporativa nos modelos de dados da organização.
-
-Vale destacar que algumas grandes empresas, como o Bradesco, chegam a ter dezenas de ADs atuando em suas equipes, dada a complexidade e o volume de dados com os quais lidam.
-
-Já o Administrador de Banco de Dados, ou **DBA (Database Administrator)**, é o profissional responsável por oferecer o suporte técnico necessário para implementar as decisões estratégicas tomadas pelo AD. O DBA atua diretamente na configuração e operação do banco de dados e dos sistemas relacionados.
-
-Ele é responsável pelo controle geral do sistema em nível técnico, tendo como recurso primário o próprio banco de dados, além do SGBD e outros softwares correlatos. Entre suas atribuições mais relevantes, destacam-se:
-
-- Definir o esquema conceitual (também conhecido como esquema lógico), no contexto da arquitetura de três esquemas;
-- Definir o esquema interno (nível físico do banco de dados);
-- Manter contato com os usuários;
-- Estabelecer restrições de segurança e integridade;
-- Monitorar o desempenho do sistema e adaptar sua configuração conforme mudanças;
-- Definir políticas de backup e recuperação, também conhecidas como normas de dumping e recarga.
-
-Em resumo, o **Administrador de Dados** é o responsável pelo contexto estratégico e organizacional dos dados, cuidando de sua padronização, relevância e adequação às necessidades corporativas. Já o **Administrador de Banco de Dados** cuida da implementação técnica, garantindo que os dados estejam devidamente armazenados, seguros, disponíveis e com desempenho adequado para o uso diário.
-
-## Considerações Finais
-
-Neste capítulo, exploramos a evolução dos sistemas de informação, desde os sistemas de arquivos até os sofisticados sistemas de banco de dados. Compreendemos os problemas iniciais de redundância e inconsistência, e como os SGBDs surgiram como solução robusta para garantir integridade, segurança e desempenho.
-
-Vimos também o conceito de banco de dados sob diferentes perspectivas, destacando suas propriedades fundamentais. Por fim, diferenciamos os elementos que compõem um sistema de banco de dados e destacamos as características que diferenciam a abordagem de banco de dados em relação aos sistemas baseados em arquivos, conforme descrito por autores como Navathe, Date e Silberschatz. Em seguida, fizemos uma análise aprofundada dos metadados, fundamentais para a governança, rastreabilidade, performance e segurança no uso de dados em ambientes corporativos. Finalizamos com a descrição dos principais papéis profissionais dentro do contexto de administração de Bancos de Dados.
-
-O domínio desses conceitos é essencial para qualquer profissional de tecnologia da informação e será a base para os próximos capítulos.
