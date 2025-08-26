@@ -131,3 +131,60 @@ Para guiar a implementação de políticas de dados abertos ao redor do mundo, u
 | **6. Acesso Não Discriminatório** | Os dados devem estar disponíveis a todos, sem a necessidade de cadastro, identificação ou justificativa de uso.                                                                                          |
 | **7. Formatos Não Proprietários** | Os dados devem ser disponibilizados em formatos sobre os quais nenhuma entidade tenha controle exclusivo, evitando a dependência de softwares específicos e caros.                                       |
 | **8. Livres de Licenças**         | Os dados não devem estar sujeitos a direitos autorais, patentes ou outras restrições que impeçam sua reutilização. A única exigência aceitável é a de creditar a fonte original.                         |
+
+## A Hierarquia do Valor: Da Pirâmide de Dados ao Conhecimento (DIKW)
+
+Para compreender como os dados se transformam em ações estratégicas dentro de uma organização, utiliza-se um modelo hierárquico conhecido como **pirâmide DIKW** ou **pirâmide do conhecimento**. O acrônimo DIKW representa os quatro níveis da pirâmide, em inglês: **D**ata (Dados), **I**nformation (Informação), **K**nowledge (Conhecimento) e **W**isdom (Sabedoria). Em português, o modelo é por vezes chamado de DICS.
+
+Essa abordagem estrutura a jornada evolutiva dos dados, mostrando como fatos brutos e isolados podem ser gradualmente refinados até se tornarem insights profundos que orientam decisões inteligentes. Conforme se avança para o topo da pirâmide, a complexidade, o valor e o nível de abstração aumentam, enquanto o volume de itens diminui. A base é composta por uma vasta quantidade de dados, mas o topo representa uma sabedoria concisa e de alto impacto.
+
+<div align="center">
+<img width="480px" src="./img/01-piramide-do-conhecimento.png">
+</div>
+
+Vamos detalhar cada um desses estágios.
+
+#### Dados (A Base da Pirâmide)
+
+Como já vimos, os dados são a matéria-prima. São fatos brutos, símbolos, números e registros sem um contexto imediato. Neste nível, os elementos são discretos e não organizados. Eles simplesmente existem.
+
+- **Exemplo de Negócios:** Em um sistema de vendas, uma lista de registros como `["01/08/2025", "Cliente A", "Produto X", 10, "R$ 50,00"]` e `["01/08/2025", "Cliente B", "Produto Y", 5, "R$ 200,00"]` representa os dados brutos. São apenas os fatos registrados pelas transações.
+- **Atividade Associada:** Os dados são tipicamente gerados e armazenados por **sistemas de gestão empresarial (ERPs)**, sistemas de ponto de venda (PDV), CRMs e outras ferramentas operacionais que registram as atividades do dia a dia.
+
+#### Informação (Adicionando Contexto)
+
+A informação surge quando o contexto é adicionado aos dados. É o primeiro nível de processamento, onde os dados são organizados, agrupados, classificados e estruturados para responder a perguntas básicas como "o quê?", "quem?", "quando?" e "onde?". A informação confere relevância aos dados brutos.
+
+- **Fórmula:** `Dados + Contexto = Informação`
+- **Exemplo de Negócios:** Ao processar os dados brutos do sistema de vendas, podemos gerar a seguinte informação: "No dia 1º de agosto de 2025, a empresa vendeu um total de R$ 700,00, sendo R$ 500,00 do Produto X e R$ 200,00 do Produto Y". Os dados foram agregados e contextualizados no tempo, gerando um relatório útil.
+- **Atividade Associada:** Este é o domínio do **Business Intelligence (BI)**. Ferramentas de BI são utilizadas para conectar-se às fontes de dados, processá-los e apresentá-los em forma de relatórios, painéis (dashboards) e visualizações que permitem aos gestores entender o que aconteceu no negócio.
+
+#### Conhecimento (Atribuindo Significado)
+
+O conhecimento é o próximo passo na cadeia de valor. Ele emerge da análise da informação, da identificação de padrões, tendências e relações. Enquanto a informação nos diz "o que aconteceu", o conhecimento nos ajuda a entender "como" e "por que" aconteceu. O conhecimento é contextualizado e frequentemente atrelado à experiência da organização.
+
+- **Fórmula:** `Informação + Significado = Conhecimento`
+- **Exemplo de Negócios:** Analisando as informações de vendas ao longo de vários meses, a equipe pode chegar ao seguinte conhecimento: "O Produto X vende mais no início do mês, logo após o pagamento dos salários, enquanto o Produto Y tem um pico de vendas nos fins de semana. Além disso, a combinação da compra de X e Y pelo mesmo cliente é rara". Aqui, foram identificados padrões de consumo.
+- **Atividade Associada:** Este nível envolve a **análise de dados descritiva**. Analistas utilizam técnicas estatísticas e de exploração de dados para "mergulhar" nas informações e extrair insights e aprendizados sobre o comportamento do negócio.
+
+#### Sabedoria (Ação e Aplicação)
+
+A sabedoria representa o topo da pirâmide. É a aplicação do conhecimento para tomar decisões eficazes e fazer previsões sobre o futuro. A sabedoria não está apenas em entender o passado (conhecimento), mas em usar esse entendimento para moldar o futuro. Ela está ligada à ação, ao julgamento e à estratégia.
+
+- **Fórmula:** `Conhecimento + Aplicação = Sabedoria`
+- **Exemplo de Negócios:** Com base no conhecimento adquirido, a gestão toma uma decisão estratégica: "Vamos criar uma campanha de marketing para o Produto X focada nos primeiros cinco dias do mês e oferecer um desconto especial na compra conjunta dos produtos X e Y nos fins de semana para incentivar a venda combinada. Devemos também ajustar o estoque para atender a esses picos de demanda". Isso é sabedoria em ação.
+- **Atividade Associada:** Aqui entram as **análises preditivas** e prescritivas. Utilizando modelos mais avançados, é possível não apenas prever o que provavelmente acontecerá, mas também simular os resultados de diferentes ações, recomendando o melhor caminho a seguir.
+
+Para solidificar o conceito, um exemplo mais simples do cotidiano pode ser útil. Imagine um semáforo:
+
+- **Dado:** A luz está vermelha.
+- **Informação (Dado + Contexto):** A luz do semáforo à minha frente, no cruzamento em que estou dirigindo, está vermelha.
+- **Conhecimento (Informação + Significado):** Uma luz vermelha em um semáforo significa que devo parar o veículo, pois, caso contrário, estarei violando uma lei de trânsito e corro o risco de causar um acidente.
+- **Sabedoria (Conhecimento + Aplicação):** Eu irei pisar no freio e parar o carro de forma segura antes da faixa de pedestres.
+
+O esquema a seguir resume a interação entre os níveis da pirâmide, as transformações que ocorrem em cada etapa e as atividades empresariais correspondentes.
+
+<div align="center">
+<img width="700px" src="./img/01-piramide-do-conhecimento-atividades.png">
+</div>
+
