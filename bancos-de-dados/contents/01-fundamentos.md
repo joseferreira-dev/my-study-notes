@@ -569,3 +569,57 @@ A **independência de dados** é, portanto, o objetivo final alcançado através
 <img width="700px" src="./img/01-banco-de-dados-independencias.png">
 </div>
 
+### Projeto de Banco de Dados
+
+Assim como a construção de uma casa avança por diferentes estágios de projeto — do esboço arquitetônico inicial, passando pelo projeto estrutural, até o detalhado projeto executivo que guia a obra —, o desenvolvimento de um banco de dados também segue um processo de refinamento progressivo. Partimos de uma visão de alto nível, abstrata e focada nas regras de negócio, e gradualmente adicionamos detalhes técnicos até chegarmos à implementação física.
+
+Notoriamente, esse processo é classificado em três grandes etapas, ou **três modelos de projeto**. É fundamental ter atenção neste ponto, pois os nomes podem gerar confusão com a arquitetura ANSI/SPARC que acabamos de estudar. A relação, no entanto, é direta e intencional. Cada modelo de projeto corresponde a um nível específico da arquitetura, representando a materialização daquele nível de abstração.
+
+A correspondência se dá da seguinte forma:
+
+|ARQUITETURA ANSI/SPARC|MODELO DE PROJETO|
+|---|---|
+|Nível Externo|**Modelo Conceitual**|
+|Nível Conceitual|**Modelo Lógico**|
+|Nível Interno|**Modelo Físico**|
+
+Vamos analisar cada um desses modelos de projeto.
+
+#### Modelo Conceitual ("O Quê?")
+
+O projeto conceitual é o ponto de partida. Seu objetivo é capturar e representar os requisitos de dados de um negócio de uma forma clara, concisa e, acima de tudo, **compreensível para os usuários e stakeholders** — que, em geral, não são especialistas em tecnologia. Portanto, este modelo é desenvolvido na perspectiva do **nível externo** da arquitetura.
+
+A principal característica do modelo conceitual é ser **completamente independente de tecnologia**. Ele não se preocupa com qual SGBD será usado, como os dados serão armazenados ou que linguagem de programação irá acessá-los. Seu foco é puramente em definir:
+
+- As **entidades** principais do negócio (ex: `Cliente`, `Produto`, `Pedido`).
+- Os **atributos** (características) de cada entidade (ex: um `Cliente` tem `Nome`, `CPF`, `Email`).
+- Os **relacionamentos** entre as entidades (ex: um `Cliente` _faz_ um `Pedido`, um `Pedido` _contém_ `Produtos`).
+
+A ferramenta mais comum para representar o modelo conceitual é o **MER (Modelo Entidade-Relacionamento)**, e sua representação gráfica é o **DER (Diagrama Entidade-Relacionamento)**. Este modelo nos oferece uma visão de altíssima abstração, servindo como uma ponte de comunicação entre a equipe técnica e a área de negócio para validar se a compreensão dos requisitos está correta.
+
+#### Modelo Lógico ("Como?")
+
+Uma vez que o modelo conceitual está definido e validado, o próximo passo é traduzi-lo para uma estrutura mais técnica: o modelo lógico. Este modelo representa como os dados serão estruturados **dentro de um paradigma de banco de dados específico**, como o modelo relacional. É aqui que o projeto começa a tomar a forma que terá dentro do SGBD, correspondendo ao **nível conceitual** da arquitetura ANSI/SPARC.
+
+O processo de conversão do modelo conceitual para o lógico é chamado de **mapeamento**. Nesta fase:
+
+- As entidades do MER são mapeadas para **tabelas**.
+- Os atributos se tornam as **colunas** de cada tabela, com seus respectivos tipos de dados definidos (`INT`, `VARCHAR`, etc.).
+- Os relacionamentos são implementados através de **chaves primárias** e **chaves estrangeiras**.
+- São definidas as **restrições de integridade** para garantir a consistência dos dados.
+
+O resultado do modelo lógico é, geralmente, um diagrama relacional que mostra as tabelas, suas colunas e como elas se conectam. Embora seja mais técnico que o conceitual, o modelo lógico ainda é, em grande parte, independente do SGBD específico (um modelo lógico relacional pode ser implementado em MySQL, PostgreSQL, etc., com pequenas adaptações).
+
+#### Modelo Físico ("Onde?")
+
+O modelo físico é a etapa final e mais detalhada do projeto. Ele traduz o modelo lógico em uma **implementação concreta e específica** para o SGBD e o ambiente de hardware escolhidos. Este modelo corresponde ao **nível interno** da arquitetura, lidando com os detalhes de como os dados serão fisicamente armazenados para otimizar o desempenho, a segurança e o uso de recursos.
+
+Nesta fase, são tomadas decisões puramente técnicas, como:
+
+- A definição exata das estruturas de armazenamento, como a forma que os arquivos de dados serão organizados no disco.
+- A criação de **índices** em colunas específicas para acelerar as consultas.
+- A configuração de **particionamento** de tabelas muito grandes para melhorar o gerenciamento e a performance.
+- A alocação de espaço de armazenamento e outras configurações específicas do SGBD.
+
+O modelo físico é, portanto, totalmente dependente da plataforma. Um modelo físico projetado para um servidor Oracle em um ambiente Linux será diferente de um projetado para o Microsoft SQL Server em um ambiente Windows. É o projeto executivo final que guia a criação e a configuração do banco de dados no mundo real.
+
