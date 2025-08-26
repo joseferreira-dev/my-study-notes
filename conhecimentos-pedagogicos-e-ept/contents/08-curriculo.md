@@ -155,7 +155,53 @@ Um exemplo hipotético seria um município que, após reuniões com especialista
 
 A tabela a seguir resume as cinco definições para facilitar a diferenciação.
 
-|PLANEJAMENTO EDUCACIONAL|PLANEJAMENTO ESCOLAR|PLANEJAMENTO CURRICULAR|PLANEJAMENTO DE ENSINO|PLANO DE AULA|
-|---|---|---|---|---|
-|Plano executado pelo sistema de ensino|É a aplicação da proposta educativa da escola|Organização das experiências escolares oferecidas aos estudantes|Ação executada pelos docentes no cotidiano escolar|É o planejamento de 1 (uma) aula apenas|
+| Planejamento  Educacional              | Planejamento Escolar                          | Planejamento Curricular                                          | Planejamento de Ensino                             | Plano de Aula                           |
+| -------------------------------------- | --------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------- |
+| Plano executado pelo sistema de ensino | É a aplicação da proposta educativa da escola | Organização das experiências escolares oferecidas aos estudantes | Ação executada pelos docentes no cotidiano escolar | É o planejamento de 1 (uma) aula apenas |
+
+### Conhecimento e Poder: O Currículo Crítico de Michael Apple
+
+No final da década de 1970, em um cenário de intensa efervescência das teorias críticas, o sociólogo norte-americano **Michael Apple** surge como uma das vozes mais influentes da chamada "Nova Sociologia da Educação". Seu trabalho representa uma ruptura radical com a perspectiva técnica e supostamente neutra do currículo, encarnada no modelo de Ralph Tyler. Se a pergunta de Tyler era _como_ organizar o currículo de forma eficiente, a pergunta de Apple é eminentemente política: **de quem é o conhecimento que está no currículo e que interesses sociais, econômicos e políticos ele serve?**
+
+A premissa central de sua teoria é a de que a relação entre **conhecimento e poder** é indissociável. O currículo escolar nunca é um conjunto neutro, universal e inquestionável de saberes. Pelo contrário, o processo de selecionar, organizar e avaliar o que é considerado um conhecimento legítimo é um ato político, profundamente implicado na manutenção das estruturas de poder da sociedade.
+
+<div align="center">
+<img width="700px" src="./img/08-apple-curriculo.png">
+</div>
+
+#### O Currículo como Instrumento de Hegemonia
+
+Apoiando-se em conceitos do pensamento neo-marxista, Apple argumenta que o currículo é um dos mais eficientes instrumentos para a construção da **hegemonia**. A hegemonia não é apenas a dominação pela força, mas a capacidade da classe dominante de fazer com que sua visão de mundo, seus valores e seus interesses sejam vistos por toda a sociedade como "senso comum", como a forma natural e única de se ver a realidade.
+
+O currículo escolar desempenha um papel crucial nesse processo ao apresentar o conhecimento da classe dominante como o **"conhecimento oficial"**. A história dos grandes generais e presidentes, a literatura dos cânones europeus, a ciência focada na aplicação tecnológica para o mercado — tudo isso é selecionado e organizado como o saber universal que todos devem aprender. Em contrapartida, outros saberes são sistematicamente omitidos, silenciados ou considerados de menor valor.
+
+<div align="center">
+<img width="700px" src="./img/08-apple-curriculo-esquema.png">
+</div>
+
+Os saberes de povos indígenas sobre a natureza, o conhecimento histórico e cultural das comunidades quilombolas, as tradições dos povos ciganos ou mesmo as práticas culturais das periferias urbanas são exemplos de conhecimentos que, por não pertencerem ao universo da ideologia dominante, são invalidados ou folclorizados pelo currículo escolar.
+
+#### As Múltiplas Faces do Currículo
+
+Para analisar como essa hegemonia opera, a teoria crítica desdobra o currículo em três dimensões:
+
+- **Currículo Formal (ou Prescrito):** É o currículo oficial, o "discurso" do Estado e dos especialistas, expresso em documentos como a LDB, a BNCC e as propostas curriculares das redes de ensino. É a arena da disputa política explícita sobre o que deve ser ensinado.
+- **Currículo Real (ou em Ação):** É o que de fato acontece na sala de aula, o "currículo vivido". Ele nunca é uma simples aplicação do currículo formal. É um espaço de negociação, de reinterpretação e, por vezes, de resistência, onde professores e alunos interagem e dão novos significados ao conhecimento oficial.
+- **Currículo Oculto:** É talvez a dimensão mais poderosa. Refere-se a tudo aquilo que a escola "ensina" sem parecer estar ensinando. São os valores, as normas e as atitudes transmitidos de forma implícita através das rotinas (o sinal que rege o tempo), da arquitetura (a sala do diretor em posição de destaque), das regras (o que é considerado um comportamento "adequado") e das relações sociais. É no currículo oculto que os alunos aprendem sobre competição (pelo sistema de notas), sobre hierarquia e, muitas vezes, sobre o seu "lugar" na sociedade.
+
+#### A Influência dos Múltiplos Contextos
+
+A análise curricular crítica proposta por Apple exige que se compreenda que o que acontece na escola não é determinado apenas por fatores internos. O currículo é o resultado da influência de uma série de contextos aninhados, que se determinam mutuamente.
+
+<div align="center">
+<img width="360px" src="./img/08-apple-esquema-contextos.png">
+</div>
+
+O exemplo de uma escola de periferia ilustra perfeitamente essa teia de determinações. O **currículo real** dessa escola pode ser artificial e desvinculado da vida dos alunos. Isso não acontece por acaso, mas pela confluência de múltiplos contextos:
+
+- **O contexto da escola:** Professores com baixos salários e pouca formação, reflexo de **políticas nacionais e estaduais** de desvalorização da carreira docente.
+- **O contexto do bairro:** Uma realidade de violência e falta de oportunidades que molda as expectativas e os interesses dos alunos.
+- **O contexto da cidade:** Uma política educacional municipal elitista, que concentra os melhores recursos nas áreas centrais e negligencia as escolas periféricas.
+
+Todas essas determinações contextuais se somam para produzir um currículo que, na prática, pode acabar por reforçar o ciclo de exclusão. A análise de Apple, portanto, nos fornece as ferramentas para desnaturalizar o currículo e questionar criticamente as relações de poder que definem o que é ensinado – e o que é deixado de fora – nas escolas.
 
