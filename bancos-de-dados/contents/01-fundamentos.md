@@ -188,3 +188,61 @@ O esquema a seguir resume a interação entre os níveis da pirâmide, as transf
 <img width="700px" src="./img/01-piramide-do-conhecimento-atividades.png">
 </div>
 
+## A Estrutura dos Dados: Tipos e Domínios
+
+Quando lidamos com dados em um ambiente estruturado, como o que encontraremos nos bancos de dados, a organização é a chave para a consistência e a confiabilidade. Não basta apenas armazenar os dados; é preciso garantir que eles sejam do tipo correto e que obedeçam a certas regras. Para isso, definimos **restrições de domínio** para os dados, mais conhecidas no dia a dia como **tipos de dados**.
+
+O **domínio** de um atributo (ou de uma coluna em uma tabela, como veremos adiante) é o conjunto de todos os valores possíveis e permitidos para ele. Definir que o campo "Idade" é do tipo numérico e inteiro, por exemplo, é uma forma de restringir seu domínio, impedindo que textos como "vinte e cinco" ou números decimais como `25.5` sejam inseridos.
+
+A definição de tipos de dados é crucial por três motivos principais:
+
+1. **Integridade dos Dados:** Garante que apenas dados válidos sejam armazenados. Uma coluna de data não aceitará um texto inválido, e uma coluna de preço não aceitará caracteres não numéricos.
+2. **Eficiência de Armazenamento:** O sistema de banco de dados otimiza o espaço em disco com base no tipo de dado. Um número inteiro pequeno (`TINYINT`) ocupa muito menos espaço do que um texto longo (`TEXT`).
+3. **Otimização de Desempenho:** O motor do banco de dados pode realizar operações (cálculos, buscas, ordenações) de forma muito mais rápida quando conhece a natureza exata dos dados com os quais está trabalhando.
+
+Embora existam dezenas de tipos de dados específicos para cada sistema de banco de dados, eles podem ser agrupados em cinco grandes categorias.
+
+### Tipos Numéricos
+
+São utilizados para armazenar valores numéricos sobre os quais operações matemáticas podem ser realizadas.
+
+- **INT (ou INTEGER):** Representa números inteiros, positivos ou negativos, sem casas decimais. É ideal para contagens, quantidades e códigos de identificação. Dependendo do sistema, existem variações para otimizar o armazenamento:
+    - **TINYINT:** Para inteiros muito pequenos (ex: idade, número de dependentes).
+    - **SMALLINT:** Para inteiros pequenos (ex: ano de fabricação).
+    - **BIGINT:** Para inteiros muito grandes (ex: população de um país, visualizações de um vídeo).
+- **FLOAT e REAL:** Armazenam números com casas decimais, conhecidos como números de ponto flutuante. São úteis para medições científicas e cálculos onde uma pequena imprecisão de arredondamento é aceitável. A diferença entre `FLOAT` e `REAL` geralmente está na precisão (o número de dígitos que podem armazenar).
+- **DECIMAL (ou NUMERIC):** É o tipo mais indicado para valores monetários e cálculos financeiros. Diferente do `FLOAT`, ele armazena números com precisão exata, evitando os erros de arredondamento que podem ocorrer com números de ponto flutuante. Geralmente é definido com a precisão e a escala (ex: `DECIMAL(10, 2)` para armazenar um número com até 10 dígitos no total, sendo 2 deles após a vírgula).
+
+### Tipos de Data e Hora
+
+Destinados a armazenar informações temporais.
+
+- **DATE:** Armazena exclusivamente uma data, sem informação de horário. O formato padrão é `'YYYY-MM-DD'` (Ano-Mês-Dia). Exemplo: `'2025-12-25'`.
+- **TIME:** Armazena exclusivamente um horário, sem informação de data. O formato padrão é `'HH:MM:SS'` (Hora:Minuto:Segundo). Exemplo: `'15:45:00'`.
+- **DATETIME ou TIMESTAMP:** Combina data e hora em um único campo. É o tipo mais comum para registrar momentos exatos, como a data de um cadastro, uma data de publicação ou o momento de uma transação. Embora similares, `DATETIME` e `TIMESTAMP` podem ter diferenças sutis em como lidam com fusos horários, dependendo do sistema de banco de dados. Exemplo: `'2025-08-26 14:30:00'`.
+
+### Tipos de Caractere (String)
+
+Utilizados para armazenar texto.
+
+- **CHAR:** Armazena uma cadeia de caracteres de **tamanho fixo**. Ao definir um campo como `CHAR(10)`, ele sempre ocupará 10 caracteres de espaço, mesmo que o texto inserido seja menor (o restante é preenchido com espaços). É ideal para dados que sempre têm o mesmo tamanho, como siglas de estados ('SP', 'RJ' - `CHAR(2)`) ou CEPs com formato fixo.
+- **VARCHAR:** Armazena uma cadeia de caracteres de **tamanho variável**. Ao definir um campo como `VARCHAR(255)`, ele só ocupará o espaço do texto inserido mais um pequeno controle sobre o tamanho. É o tipo mais flexível e recomendado para a maioria dos dados textuais, como nomes, endereços, e-mails, etc.
+- **TEXT:** Projetado para armazenar textos muito longos, que excedem o limite do `VARCHAR` (que geralmente é de milhares de caracteres). É ideal para guardar o conteúdo de um post de blog, a descrição de um produto, comentários de usuários, etc.
+
+### Tipos de Caractere Unicode
+
+São variações dos tipos de string, projetadas para garantir a compatibilidade com diferentes idiomas e conjuntos de caracteres. Enquanto os tipos `CHAR` e `VARCHAR` tradicionais podem ter limitações, os tipos Unicode (geralmente prefixados com `N`, de _National_) utilizam padrões como o UTF-8 para armazenar caracteres de praticamente qualquer língua do mundo (ex: "olá", "你好", "Здравствуйте").
+
+- **NCHAR:** Versão Unicode do `CHAR` (tamanho fixo).
+- **NVARCHAR:** Versão Unicode do `VARCHAR` (tamanho variável). É a escolha mais segura para aplicações que precisam ser multilíngues.
+- **NTEXT:** Versão Unicode do `TEXT` (textos longos).
+
+### Tipos Binários e Booleanos
+
+Utilizados para armazenar dados binários e dados booleanos.
+
+- **BINARY e VARBINARY:** Armazenam dados binários brutos (sequências de bytes) em vez de texto. A lógica fixo vs. variável é a mesma de `CHAR`/`VARCHAR`. São usados para guardar dados como uma pequena imagem, um arquivo de áudio, ou qualquer outro tipo de arquivo diretamente no banco de dados. Para arquivos maiores, o tipo **BLOB** (Binary Large Object) é mais comum.
+- **BOOLEAN (ou BOOL, BIT):** Um tipo fundamental para armazenar valores de verdadeiro ou falso (`TRUE`/`FALSE`). É extremamente útil para campos que representam um estado binário, como "ativo/inativo", "pago/não pago", "lido/não lido".
+
+A escolha correta do tipo de dado para cada campo de um banco de dados é um dos primeiros e mais importantes passos no design de um sistema eficiente e confiável. Essa decisão impactará diretamente o armazenamento, o desempenho e, acima de tudo, a integridade das informações que constituem o bem mais valioso de qualquer organização.
+
