@@ -246,3 +246,58 @@ Utilizados para armazenar dados binários e dados booleanos.
 
 A escolha correta do tipo de dado para cada campo de um banco de dados é um dos primeiros e mais importantes passos no design de um sistema eficiente e confiável. Essa decisão impactará diretamente o armazenamento, o desempenho e, acima de tudo, a integridade das informações que constituem o bem mais valioso de qualquer organização.
 
+## Bancos de Dados
+
+Após entendermos o que são os dados e como eles se transformam em sabedoria, chegamos ao elemento central que torna essa evolução possível em larga escala: o **banco de dados** (ou **DB**, da sigla em inglês _database_). Em sua essência, um banco de dados é uma coleção organizada de dados, armazenados e gerenciados eletronicamente em um sistema de computador.
+
+Contudo, essa definição simples esconde sua verdadeira potência. Um banco de dados não é apenas um "depósito" de arquivos. É um sistema projetado para permitir que os dados sejam **armazenados, gerenciados, atualizados e recuperados** de maneira eficiente, segura e consistente. O objetivo final é transformar grandes volumes de dados brutos em informações úteis para o dia a dia de uma organização.
+
+É importante fazer uma distinção técnica: o banco de dados é a coleção de dados em si. O software que utilizamos para interagir com ele (como MySQL, Oracle, PostgreSQL, etc.) é chamado de **Sistema de Gerenciamento de Banco de Dados (SGBD)**. Na prática, porém, é comum usarmos o termo "banco de dados" para nos referirmos ao conjunto (dados + SGBD).
+
+Ao planejar a arquitetura de dados de uma empresa, é raro que exista apenas um único e monolítico banco de dados. O mais comum é ter um conjunto de bancos de dados distintos rodando em um mesmo sistema central, geralmente um **servidor**. Um servidor é um computador (ou um conjunto de computadores) de alta capacidade, cujo propósito é fornecer recursos, serviços ou dados a outros computadores (os _clientes_) através de uma rede.
+
+Nesse ambiente, cada banco de dados no servidor é criado para atender a um propósito específico, agrupando dados por afinidade de assunto. Uma empresa pode, por exemplo, ter um banco de dados para o setor de **Recursos Humanos** (com dados de funcionários, salários, férias), outro para o **Financeiro** (contas a pagar e a receber, faturamento) e um terceiro para o **Marketing** (dados de clientes, campanhas, resultados).
+
+### Uma Analogia: O Arquivo Organizado
+
+Para visualizar essa estrutura, a melhor analogia é a de um armário de arquivos físico:
+
+- **O Armário (Gabinete):** Representa o **servidor**, a estrutura física e lógica que contém todos os diferentes bancos de dados da organização.
+- **Cada Gaveta:** Representa um **banco de dados** individual. Cada gaveta tem um propósito claro e definido. A gaveta "RH" só contém documentos de RH; a gaveta "Financeiro" só contém documentos financeiros.
+- **As Pastas dentro da Gaveta:** Representam as **agregações de dados**. São as formas como agrupamos os dados relacionados dentro de um mesmo banco de dados. No tipo mais comum, o banco de dados relacional, essas "pastas" são as **tabelas**. Na gaveta "RH", poderíamos ter a pasta "Funcionários", a pasta "Cargos" e a pasta "Departamentos".
+- **Os Arquivos (Fichas) dentro das Pastas:** Representam os **dados** propriamente ditos, os registros individuais. Dentro da pasta "Funcionários", cada ficha seria um funcionário específico, com seu nome, CPF, cargo, salário, etc.
+
+Esses dados são intercambiáveis. Podemos pegar a "ficha" de um funcionário e associá-la a uma pasta de "Projetos" na gaveta de "Operações", criando uma relação entre as informações.
+
+<div align="center">
+<img width="620px" src="./img/01-banco-de-dados-analogia.png">
+</div>
+
+É fundamental reforçar: **um banco de dados deve ser organizado e ter um propósito específico**. Isso, porém, não significa que conterá sempre e apenas dados estruturados. Embora a organização seja um pilar, existem modelos de banco de dados projetados para lidar com dados não estruturados, como veremos mais à frente.
+
+### Organização e Flexibilidade: O Papel do Esquema
+
+Apesar de precisarem de organização, os bancos de dados não são estruturas completamente rígidas. Sua organização é definida por um **esquema** (_schema_), que funciona como a "planta baixa" ou o "blueprint" do banco de dados. O esquema descreve a estrutura, os tipos de dados de cada campo e as relações entre suas diferentes partes.
+
+Contudo, esses esquemas são flexíveis e podem ser modificados ao longo do tempo para se adaptar a novas necessidades do negócio. Essa flexibilidade é garantida por regras de independência de dados. Como será detalhado em um capítulo futuro, a arquitetura de um banco de dados é geralmente separada em três níveis (externo, conceitual e interno), permitindo que um nível seja alterado sem impactar drasticamente os outros.
+
+### As Operações Fundamentais: CRUD
+
+Para que toda essa estrutura de armazenamento seja útil, precisamos de uma forma de interagir com os dados: inserindo novos registros, consultando os existentes, modificando-os quando necessário e removendo-os quando não são mais úteis.
+
+Essas quatro operações básicas de manipulação de dados são a base de praticamente tudo o que fazemos em um banco de dados e são universalmente conhecidas pelo acrônimo **CRUD**:
+
+- **CREATE (Criar):** É a operação de **inserir** um novo registro no banco de dados.
+    - _Exemplo:_ Contratar um novo funcionário. Um novo registro com nome, CPF, cargo e salário é **criado** na tabela de funcionários.
+- **READ (Ler):** É a operação de **recuperar** ou **consultar** dados que já existem no banco de dados.
+    - _Exemplo:_ Buscar as informações de um funcionário específico pelo seu número de matrícula para verificar seu histórico de férias.
+- **UPDATE (Atualizar):** É a operação de **modificar** um registro existente.
+    - _Exemplo:_ Promover um funcionário. O registro desse funcionário é **atualizado** para refletir seu novo cargo e seu novo salário.
+- **DELETE (Remover):** É a operação de **excluir** um registro do banco de dados.
+    - _Exemplo:_ Desligar um funcionário da empresa. Seu registro é permanentemente **removido** da tabela de funcionários ativos.
+
+<div align="center">
+<img width="420px" src="./img/01-banco-de-dados-crud.png">
+</div>
+
+Toda e qualquer interação mais complexa com um banco de dados, desde a emissão de um relatório de vendas até a finalização de uma compra em um site de e-commerce, é, em sua essência, uma combinação sofisticada dessas quatro operações fundamentais.
