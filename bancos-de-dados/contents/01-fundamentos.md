@@ -81,3 +81,53 @@ Existe ainda uma categoria intermediária, a de **dados semiestruturados**, que 
 
 Como veremos ao longo desta apostila, os **dados estruturados** são o domínio principal dos bancos de dados relacionais (como MySQL, PostgreSQL), enquanto os **dados não estruturados** e **semiestruturados** são frequentemente gerenciados por bancos de dados NoSQL (como MongoDB, Cassandra).
 
+## Dados Abertos: Transparência e Cidadania
+
+Até agora, classificamos os dados por sua natureza, estrutura e nível de acesso dentro de uma organização. No entanto, existe uma categoria de dados cuja importância reside justamente na quebra de barreiras de acesso: os **Dados Abertos**. Este é um movimento global que defende que certos dados devem estar livremente disponíveis para que todos possam acessá-los, reutilizá-los e redistribuí-los, sem restrições.
+
+A definição formal, consolidada pela Open Knowledge Foundation, estabelece que:
+
+> Os dados são considerados abertos quando qualquer pessoa pode **acessar, usar, modificar e compartilhar livremente** para qualquer finalidade (sujeito a, no máximo, a requisitos que preservem a proveniência e a sua abertura).
+
+Para que essa definição seja plenamente satisfeita, duas condições são essenciais: a publicação dos dados em **formato aberto** e sob uma **licença aberta**. Um formato aberto (como CSV, JSON, XML) garante que ninguém seja impedido de acessar os dados por precisar de um software específico ou proprietário. Uma licença aberta, por sua vez, concede permissão legal explícita para a sua livre reutilização.
+
+No contexto governamental, a prática de Dados Abertos transforma-se em uma poderosa ferramenta para a democracia. Trata-se de uma metodologia para a publicação de dados do governo em formatos reutilizáveis, com o objetivo primordial de aumentar a transparência, fortalecer o controle social e fomentar uma maior participação política por parte dos cidadãos. No Brasil, diversos órgãos da Administração Pública já disponibilizam seus dados na web, não apenas na forma de relatórios estáticos, mas como conjuntos de dados brutos que podem ser processados e analisados. Isso permite que qualquer cidadão, jornalista, pesquisador ou empresa possa acompanhar os resultados das ações de governo de forma muito mais profunda.
+
+Os efeitos dos dados abertos governamentais sobre as políticas públicas são vastos e podem ser compreendidos a partir de três pilares:
+
+- **Inclusão:** Fornecer dados em formatos padronizados, abertos e acessíveis permite que qualquer cidadão, independentemente de seus recursos, possa utilizá-los. Um desenvolvedor pode criar um aplicativo que monitora os gastos com educação em seu município; um jornalista pode cruzar dados de saúde para investigar a eficácia de uma campanha de vacinação. A informação deixa de ser um privilégio.
+- **Transparência:** A disponibilização de informações do setor público de forma aberta e acessível eleva o nível de transparência a um novo patamar. Não se trata mais apenas de publicar um resumo das contas públicas, mas de fornecer os dados detalhados que permitem a qualquer interessado auditar e verificar as informações por conta própria, usando as ferramentas que julgar mais adequadas.
+- **Responsabilidade (Accountability):** Com acesso aos dados corretos, a sociedade pode construir diferentes visões sobre o desempenho do governo. É possível verificar se as metas de uma política pública foram cumpridas, comparar o desempenho de diferentes municípios em uma mesma área e, consequentemente, cobrar de forma mais eficaz a responsabilidade dos gestores públicos.
+
+### A Política de Dados Abertos no Brasil
+
+No âmbito federal, a gestão da Política de Dados Abertos é uma atribuição coordenada pela **Controladoria-Geral da União (CGU)**, por meio da **Infraestrutura Nacional de Dados Abertos (INDA)**, que é o portal centralizado para a busca e o acesso a esses dados.
+
+A política foi instituída formalmente pelo **Decreto nº 8.777, de 11 de maio de 2016**. Este decreto estabelece as diretrizes para a disponibilização de dados abertos pelos órgãos e entidades da administração pública federal direta, autárquica e fundacional. Recomenda-se a leitura do decreto na íntegra, mas alguns pontos merecem destaque especial em nosso estudo.
+
+O primeiro são os **objetivos** da política, que incluem reforçar a cultura da transparência, franquear o acesso aos dados para a sociedade, fomentar o controle social e promover o compartilhamento de recursos de tecnologia, buscando maior eficiência governamental.
+
+O segundo ponto, e talvez o mais importante para o nosso contexto, são as **definições** que o decreto estabelece, criando um vocabulário comum e preciso para o tema.
+
+|Conceito|Descrição|
+|---|---|
+|**Dado**|Sequência de símbolos ou valores, representados em qualquer meio, produzidos como resultado de um processo natural ou artificial.|
+|**Dado Acessível ao Público**|Qualquer dado gerado ou acumulado pelo Governo que não esteja sob sigilo ou sob restrição de acesso nos termos da Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação).|
+|**Dados Abertos**|Dados acessíveis ao público, representados em meio digital, estruturados em **formato aberto**, **processáveis por máquina**, referenciados na internet e disponibilizados sob **licença aberta** que permita sua livre utilização, consumo ou cruzamento, limitando-se a creditar a autoria ou a fonte.|
+|**Formato Aberto**|Formato de arquivo não proprietário, cuja especificação esteja documentada publicamente e seja de livre conhecimento e implementação, livre de patentes ou qualquer outra restrição legal quanto à sua utilização.|
+|**Plano de Dados Abertos (PDA)**|Documento orientador para as ações de implementação e promoção de abertura de dados de cada órgão ou entidade da administração pública federal, obedecidos os padrões mínimos de qualidade, de forma a facilitar o entendimento e a reutilização das informações.|
+
+### Os 8 Princípios dos Dados Abertos
+
+Para guiar a implementação de políticas de dados abertos ao redor do mundo, um conjunto de princípios foi estabelecido. A lista a seguir, baseada na Open Government Data (OGD), detalha essas diretrizes fundamentais.
+
+| Princípio                         | Descrição                                                                                                                                                                                                |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1. Completude**                 | Todos os dados públicos devem ser tornados disponíveis. Dados públicos são aqueles que não estão sujeitos a limitações de privacidade, segurança ou sigilo legal.                                        |
+| **2. Primariedade**               | Os dados devem ser disponibilizados em sua forma bruta, como foram coletados na fonte, com o maior nível de detalhe (granularidade) possível, sem agregações ou modificações que possam ocultar nuances. |
+| **3. Atualidade**                 | Os dados devem ser disponibilizados o mais rápido possível após sua coleta ou geração, garantindo que mantenham sua relevância e valor.                                                                  |
+| **4. Acessibilidade**             | Os dados devem ser facilmente encontráveis e acessíveis para o maior número possível de usuários e para os mais variados propósitos.                                                                     |
+| **5. Processáveis por Máquinas**  | Os dados devem ser estruturados de forma a permitir que computadores possam processá-los e analisá-los de forma automatizada (ex: em planilhas ou APIs, e não em imagens de tabelas ou PDFs).            |
+| **6. Acesso Não Discriminatório** | Os dados devem estar disponíveis a todos, sem a necessidade de cadastro, identificação ou justificativa de uso.                                                                                          |
+| **7. Formatos Não Proprietários** | Os dados devem ser disponibilizados em formatos sobre os quais nenhuma entidade tenha controle exclusivo, evitando a dependência de softwares específicos e caros.                                       |
+| **8. Livres de Licenças**         | Os dados não devem estar sujeitos a direitos autorais, patentes ou outras restrições que impeçam sua reutilização. A única exigência aceitável é a de creditar a fonte original.                         |
