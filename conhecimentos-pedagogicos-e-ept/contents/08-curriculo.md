@@ -424,3 +424,87 @@ Dessa forma, o processo de construção do currículo se dá na apropriação do
 
 Para ilustrar: em uma aula de literatura para o Ensino Médio, o currículo como apropriação crítica não se contentaria em fazer os alunos memorizarem as características do Romantismo para uma prova (abordagem tradicional). Em vez disso, o professor os levaria a ler e a se apropriar criticamente de um romance como "Senhora", de José de Alencar. A avaliação não seria uma prova de múltipla escolha sobre o enredo, mas talvez um debate ou um ensaio sobre como as relações de gênero e classe social, presentes no livro do século XIX, ainda se manifestam na sociedade atual. O conteúdo (a obra literária) torna-se, assim, uma ferramenta para a leitura crítica da realidade.
 
+Compreendido. Dando sequência, vamos agora explorar o Currículo por Competências e Habilidades, uma das abordagens mais influentes no debate e na formulação das políticas curriculares contemporâneas.
+
+---
+
+### O Currículo por Competências e Habilidades
+
+O **Currículo por Competências e Habilidades** pode ser entendido como um desdobramento e uma atualização da Racionalidade Tyleriana, adaptada aos novos contextos da sociedade do conhecimento e do mundo do trabalho.
+
+A **similaridade** com o modelo de Tyler está na manutenção de uma lógica de planejamento que enfatiza metas curriculares, a organização de experiências de aprendizagem e a avaliação como forma de verificar o alcance dos objetivos. Ambas as propostas, portanto, estão submetidas a uma mesma racionalidade técnica e prescritiva. A **diferença** fundamental, no entanto, está no foco: enquanto a proposta de Tyler, influenciada pelo behaviorismo, se concentrava em mudanças de comportamento observáveis, o Currículo por Competências, já sob a influência da psicologia cognitiva, volta-se para a aprendizagem e para a mobilização de saberes em situações complexas.
+
+#### A Nova Hierarquia: Conteúdo como Meio, Competência como Fim
+
+A mudança mais importante que esta abordagem introduz está na relação entre os elementos do currículo. No modelo tradicional, o conteúdo disciplinar é o fim em si mesmo. No Currículo por Competências, o conteúdo perde essa centralidade e passa a ser visto como um **meio para se atingir um fim maior: o desenvolvimento de competências**.
+
+A estrutura se inverte: uma **competência** geral determina um conjunto de **habilidades** específicas, e estas, por sua vez, mobilizam diferentes **conteúdos** para serem desenvolvidas.
+
+<div align="center">
+<img width="700px" src="./img/08-teoria-curricular-competencias-habilidades.png">
+</div>
+
+Como o enfoque está na aprendizagem de competências, muitas vezes relacionadas ao mundo do trabalho, este modelo pode levar a uma **redução dos conteúdos** disponibilizados no plano curricular. Saberes que não possuem uma "utilidade prática" imediata para a aquisição de uma competência podem ser deixados de lado. Um exemplo histórico é o ensino dos coletivos das palavras, que antes era considerado um conhecimento enciclopédico importante e hoje perdeu espaço, pois pode ser facilmente consultado. Em contrapartida, a educação bilíngue, que antes era um diferencial raro, hoje é vista como uma competência essencial para o mercado de trabalho, ganhando enorme destaque nos currículos de escolas particulares.
+
+#### A Definição de Competência
+
+No campo educativo, o conceito de competência é definido de forma ampla:
+
+> Competência é a capacidade de agir de maneira eficiente em determinadas situações complexas, podendo apoiar ações em determinados conhecimentos. Além disso, sendo possível utilizar conscientemente saberes, atitudes, valores e informações de modo que o sujeito consiga dar soluções criativas para situações-problema em tempo hábil. As competências podem ser utilizadas para o desenvolvimento pessoal e profissional.
+
+Em resumo, desenvolver uma competência é saber **mobilizar diferentes recursos** (conhecimentos, habilidades, atitudes e valores) para **agir e resolver problemas** em situações complexas. A **Base Nacional Comum Curricular (BNCC)**, por exemplo, é o mais importante documento curricular brasileiro atual e está inteiramente estruturado em torno de dez competências gerais que devem ser desenvolvidas ao longo de toda a educação básica.
+
+#### Os Conteúdos Conceituais, Procedimentais e Atitudinais
+
+A adoção de um Currículo por Competências implica em uma mudança na própria forma de se entender o que é "conteúdo". Se a competência é a capacidade de mobilizar diferentes saberes para agir em situações complexas, então o "conteúdo" a ser ensinado não pode ser apenas a informação. Ele precisa, necessariamente, abranger as múltiplas dimensões do saber humano.
+
+Nesta perspectiva, o conteúdo é desdobrado em três categorias interligadas, que correspondem à famosa tríade do "saber", "saber fazer" e "saber ser/conviver".
+
+1. **Conteúdos Conceituais (O Saber):** Esta é a dimensão mais tradicional do conteúdo. Ela se refere ao domínio de **conceitos, fatos, teorias e informações** de diferentes áreas disciplinares ou temáticas. É o conhecimento que nos permite compreender e explicar o mundo.
+    - **Exemplo:** Em uma aula de Biologia, o domínio dos conceitos de mitose e meiose, suas fases e suas diferenças, constitui o conteúdo conceitual.
+2. **Conteúdos Procedimentais (O Saber Fazer):** Esta dimensão se refere à capacidade do aluno de **executar procedimentos**, ou seja, de saber como realizar uma ação para atingir um objetivo. Envolve o domínio de técnicas, habilidades e estratégias de ação, tanto físicas quanto mentais.
+    - **Exemplo:** Os conteúdos procedimentais se manifestam quando um aluno aprende a realizar uma entrevista para a turma, a buscar uma informação de forma eficiente na internet, a executar uma técnica artística específica ou a resolver um tipo de equação matemática.
+3. **Conteúdos Atitudinais (O Saber Ser e Conviver):** Esta é a dimensão referente às **atitudes e valores**. São os conteúdos ligados à cooperação, ao espírito de equipe, à solidariedade, ao respeito às diferenças e à razoabilidade na resolução de conflitos. É a dimensão que forma o caráter e a capacidade de convivência do estudante.
+    - **Exemplo:** Os conteúdos atitudinais são trabalhados quando o professor propõe um trabalho em grupo e media as interações para que os alunos aprendam a colaborar, a ouvir os colegas e a construir uma solução em conjunto.
+
+Uma prática pedagógica alinhada ao currículo por competências busca, portanto, articular essas três dimensões em suas atividades. Uma proposta de seminário em uma aula de História, por exemplo, não visa apenas à aprendizagem dos **conceitos** históricos (saber). Ela exige também o desenvolvimento de **procedimentos**, como pesquisar em fontes confiáveis e apresentar as ideias de forma clara (saber fazer), e de **atitudes**, como trabalhar em equipe e respeitar as apresentações dos outros grupos (saber ser e conviver).
+
+### O Currículo por Projetos
+
+O **Currículo por Projetos** é um desdobramento direto da teoria educacional de John Dewey e dos princípios da Escola Nova. Sua premissa fundamental é a **centralidade da educação no estudante**, que deixa de ser um receptor passivo de informações para se tornar o protagonista de seu próprio processo de aprendizagem.
+
+Nesta abordagem, a organização curricular não parte de uma lista de disciplinas ou de conteúdos predefinidos, mas sim de **problemas do cotidiano** que os próprios alunos, com a mediação do professor, elegem para investigar. O professor, por sua vez, assume o papel de **orientador**, que auxilia os estudantes em sua pesquisa e zela pela **integração dos saberes** de diferentes áreas do conhecimento que são mobilizados durante o projeto. Esta forma de organização do ensino ficou conhecida como **método de projetos**.
+
+#### O Saber Produzido pelo Aluno
+
+Uma das características mais marcantes desta perspectiva é a de que o **conhecimento é produzido pelos próprios alunos** na sala de aula. Não existe um conhecimento hierarquizado e transmitido "de cima para baixo", pois são os próprios estudantes que conduzem a busca e a construção dos saberes necessários para responder às suas investigações. Isso inclui tanto os conhecimentos acadêmicos quanto os não acadêmicos, pois um projeto baseado na vida real raramente se limita aos saberes eruditos.
+
+<div align="center">
+<img width="700px" src="./img/08-teoria-curricular-projetos.png">
+</div>
+
+Por exemplo, um projeto para a criação de uma horta na escola exigirá dos alunos conhecimentos de Biologia (conceitual), mas também demandará saberes práticos sobre como preparar a terra (que pode vir de um membro da comunidade), habilidades de planejamento e orçamento (procedimental) e a capacidade de trabalhar em equipe (atitudinal).
+
+#### Contraste com o Currículo como Apropriação Crítica
+
+É importante observar que a organização desta proposta curricular é muito diferente daquela da Apropriação Crítica dos Conteúdos.
+
+- Na **Pedagogia Crítico-Social dos Conteúdos**, o ponto de partida é uma seleção, feita pelo professor, de um conteúdo sistematizado e considerado essencial da cultura humana, que será utilizado como ferramenta para a análise crítica da realidade. O professor é central na escolha "do quê" estudar.
+- Na **pedagogia de projetos**, o ponto de partida é um problema ou tema de interesse dos alunos. O conteúdo é buscado e articulado em função da necessidade de se resolver aquele problema. Aqui, os estudantes têm um maior protagonismo na seleção dos assuntos que irão compor o projeto.
+
+### O Currículo Adaptado ou Inclusivo
+
+O **currículo adaptado ou inclusivo** é uma abordagem que se concentra nas estratégias e modificações necessárias para garantir o acesso, a participação e a aprendizagem dos **alunos com deficiência**. Devemos lembrar que, segundo a legislação e as políticas de educação especial na perspectiva da educação inclusiva, este público inclui estudantes com Transtorno do Espectro Autista (TEA), deficiência intelectual, deficiência física (motora), deficiência visual e deficiência auditiva.
+
+A premissa central desta abordagem é a de que a inclusão não se faz apenas com a matrícula do aluno na escola regular. É preciso garantir que ele tenha acesso ao currículo oficial de forma significativa. Para isso, muitas vezes são necessárias **adaptações curriculares**, que podem ser realizadas tanto nos conteúdos e objetivos quanto nas metodologias, nos tempos e nos processos de avaliação.
+
+O que isto quer dizer? Significa que o currículo é modificado e flexibilizado para atender às necessidades específicas deste estudante, a fim de que a aprendizagem seja possível e que seu direito à educação seja plenamente garantido. Não se trata de criar um currículo "à parte" ou "empobrecido", mas de construir pontes e remover barreiras para o acesso ao currículo comum.
+
+#### A Prática da Adaptação Curricular
+
+Podemos exemplificar este conceito com um caso fictício. Imagine um estudante, A., com deficiência intelectual, que apresenta, entre outras características, dificuldades com a reversibilidade de pensamento (a capacidade de inverter uma linha de raciocínio). Em uma avaliação psicopedagógica, identifica-se que, para superar essa rigidez mental, o estudante necessita de apoios concretos e de situações que partam de sua própria vivência.
+
+Diante deste diagnóstico, a equipe pedagógica, em conjunto com o professor de matemática, elabora uma **adaptação curricular**. Ao trabalhar as operações de adição e subtração, em vez de utilizar apenas exercícios abstratos no caderno, o professor passa a usar materiais concretos que fazem parte da experiência do aluno, como tampinhas de garrafa ou o dinheiro de um pequeno mercado montado na sala de aula. Esta adaptação, que conecta o conteúdo à vivência do estudante, é o que permite que ele construa a noção de reversibilidade (percebendo que somar é o inverso de subtrair), garantindo sua aprendizagem.
+
+Essa necessidade de adaptação pode ocorrer em todos os níveis de ensino e em todas as áreas do conhecimento. O currículo adaptado, portanto, não é um modelo fixo, mas uma prática contínua de planejamento que parte de uma avaliação cuidadosa das necessidades de cada aluno para buscar os melhores caminhos pedagógicos para o seu desenvolvimento, efetivando o princípio de uma educação para todos.
+
