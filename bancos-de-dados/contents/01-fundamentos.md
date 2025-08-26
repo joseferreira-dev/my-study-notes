@@ -717,6 +717,10 @@ A imagem a seguir mostra um exemplo de interface gráfica para um SGBD, no caso 
 
 Para que um SGBD possa, de fato, gerenciar um banco de dados de forma segura e eficiente, ele emprega uma série de ferramentas e mecanismos internos. Essas salvaguardas são essenciais para otimizar consultas, controlar o acesso dos usuários, realizar backups e, fundamentalmente, garantir o correto funcionamento das transações concorrentes.
 
+<div align="center">
+<img width="700px" src="./img/01-banco-de-dados-ferramentas.png">
+</div>
+
 #### Controle de Concorrência
 
 Como vimos, uma das características essenciais de um banco de dados é o suporte a múltiplas transações simultâneas, uma capacidade conhecida como **concorrência**. Em qualquer sistema moderno, é comum que dezenas, centenas ou até milhares de usuários e processos tentem ler e modificar os mesmos dados ao mesmo tempo. O **controle de concorrência** é o conjunto de mecanismos que o SGBD utiliza para gerenciar esses acessos simultâneos, garantindo que o princípio de **Isolamento** do ACID seja respeitado e que a integridade dos dados seja preservada.
@@ -868,3 +872,117 @@ O esquema a seguir ilustra perfeitamente essa dinâmica entre os dois processos.
 
 É importante não confundir estes processos com o **rollback**. Enquanto failover/failback são estratégias de **disponibilidade** (manter o serviço no ar trocando de servidor), o rollback (neste contexto de recuperação de desastres) é uma estratégia de **recuperação** que retorna um _único servidor_ a um estado estável anterior, geralmente restaurando um backup. O rollback é usado em casos de corrupção de dados, por exemplo, mas tipicamente envolve uma janela de indisponibilidade maior e a perda de todas as transações ocorridas entre o momento do backup e a falha.
 
+#### Escalabilidade e Performance: Balanceamento de Carga
+
+Enquanto o mecanismo de _failover_ garante que um sistema permaneça **disponível** em caso de falhas, o **balanceamento de carga** (_load balancing_) garante que o sistema tenha um bom **desempenho** sob tráfego intenso. As duas estratégias são pilares para a construção de sistemas robustos e confiáveis.
+
+O balanceamento de carga é uma técnica utilizada em computação distribuída para distribuir equitativamente as solicitações de trabalho (como consultas ou transações) entre múltiplos recursos computacionais, como servidores de banco de dados. O objetivo principal é otimizar o uso dos recursos, maximizar a vazão (_throughput_), minimizar o tempo de resposta e evitar que um único servidor se torne um gargalo, sobrecarregado enquanto outros permanecem ociosos.
+
+Imagine um grande portal de notícias no dia de uma eleição. Milhões de usuários acessam o site simultaneamente, gerando um volume imenso de consultas ao banco de dados. Um único servidor seria rapidamente sobrecarregado, tornando o site lento ou indisponível. Com o balanceamento de carga, um dispositivo ou software intermediário, o **balanceador de carga** (_load balancer_), atua como um "controlador de tráfego", recebendo todas as solicitações e distribuindo-as de forma inteligente entre um conjunto (_cluster_) de servidores de banco de dados.
+
+##### Métodos Comuns de Balanceamento de Carga
+
+A "inteligência" do balanceador de carga reside no algoritmo que ele utiliza para decidir para qual servidor enviar a próxima solicitação. Alguns dos métodos mais comuns são:
+
+- **Round Robin (Distribuição Cíclica):** O método mais simples. As solicitações são distribuídas de forma sequencial e rotativa entre os servidores. A primeira solicitação vai para o Servidor 1, a segunda para o Servidor 2, a terceira para o Servidor 3, a quarta de volta para o Servidor 1, e assim por diante.
+    - **Analogia:** Distribuir cartas de baralho para os jogadores, uma para cada um, em um ciclo contínuo.
+    - **Vantagem:** Extremamente simples de implementar.
+    - **Desvantagem:** Não leva em conta a capacidade ou a carga atual de cada servidor. Um servidor pode estar ocupado com uma consulta pesada e, mesmo assim, continuará recebendo novas solicitações no seu turno.
+- **Least Connections (Menor Número de Conexões):** Um método mais dinâmico. O balanceador de carga verifica qual servidor possui o menor número de conexões ativas no momento e envia a nova solicitação para ele.
+    - **Analogia:** Escolher a fila do caixa no supermercado com o menor número de pessoas.
+    - **Vantagem:** Adapta-se à carga atual, distribuindo o trabalho de forma mais justa e evitando sobrecarregar um único servidor.
+- **Algoritmos Ponderados (Weighted Algorithms):** Este método reconhece que nem todos os servidores são iguais; alguns podem ser mais potentes (mais CPU, mais memória) que outros. O administrador atribui um "peso" a cada servidor com base em sua capacidade. O balanceador de carga então distribui as solicitações de forma proporcional a esses pesos. Um servidor com peso 3 receberá o triplo de solicitações de um servidor com peso 1. Esta técnica pode ser combinada com as outras (ex: _Weighted Round Robin_).
+    - **Analogia:** Um líder de equipe que delega mais tarefas aos membros mais experientes e produtivos.
+- **Baseado em Conteúdo ou Consulta (Content-Based):** O método mais sofisticado. O balanceador de carga inspeciona o conteúdo da própria solicitação para tomar uma decisão de roteamento. No contexto de bancos de dados, isso é extremamente poderoso.
+    - **Exemplo Prático (Read/Write Splitting):** Uma arquitetura comum utiliza um servidor de banco de dados "mestre" para todas as operações de **escrita** (`INSERT`, `UPDATE`, `DELETE`) e múltiplos servidores "réplica" (cópias somente leitura) para todas as operações de **leitura** (`SELECT`). O balanceador de carga pode ser configurado para analisar a consulta SQL: se for um `SELECT`, ele a envia para uma das várias réplicas; se for um `UPDATE`, ele a envia, obrigatoriamente, para o servidor mestre. Isso otimiza drasticamente o desempenho, já que a carga de leitura, geralmente muito maior, é distribuída.
+
+#### Procedimentos Armazenados (Stored Procedures)
+
+Um **Procedimento Armazenado** (_Stored Procedure_) é um conjunto de comandos SQL e lógica de controle (como condicionais e laços) que é nomeado e armazenado diretamente no banco de dados. Uma vez criado, ele pode ser executado por qualquer aplicação autorizada, simplesmente chamando seu nome e passando os parâmetros necessários, de forma muito semelhante a chamar uma função em uma linguagem de programação.
+
+Pense em um procedimento armazenado como uma "receita" ou uma "macro" guardada no SGBD. Em vez de a aplicação enviar uma longa e complexa sequência de comandos SQL toda vez que precisa realizar uma operação comum, ela simplesmente envia uma única instrução para "executar a receita". O SGBD, que já conhece todos os passos, executa a lógica internamente.
+
+##### Vantagens do Uso de Procedimentos Armazenados
+
+A utilização de procedimentos armazenados oferece diversos benefícios em termos de organização, desempenho e segurança.
+
+- **Abstração e Reutilização de Lógica:** Lógicas de negócio complexas podem ser encapsuladas dentro de um procedimento. Por exemplo, o processo de "cadastrar um novo cliente" pode envolver a inserção de dados na tabela `Clientes`, a criação de um registro na tabela `Enderecos` e a verificação de duplicidade de CPF. Toda essa sequência pode ser contida em um único procedimento chamado `sp_CadastrarCliente`. Qualquer parte do sistema que precise cadastrar um cliente simplesmente chama este procedimento, garantindo que a regra de negócio seja executada de forma consistente e reutilizável.
+- **Melhoria de Desempenho:** Quando um procedimento armazenado é criado, o SGBD o **compila**. A compilação, nesse contexto, envolve a verificação da sintaxe e, mais importante, a criação de um **plano de execução** otimizado pelo SGBD. Esse plano é então armazenado e reutilizado em todas as chamadas futuras. Isso elimina a sobrecarga de analisar, interpretar e otimizar o mesmo bloco de código SQL repetidamente, resultando em uma execução mais rápida, especialmente para operações complexas.
+- **Redução de Tráfego de Rede:** Em vez de enviar um bloco de texto com dezenas de linhas de código SQL da aplicação para o servidor de banco de dados através da rede, a aplicação envia apenas uma linha curta, como `EXEC sp_CadastrarCliente 'João Silva', ...`. Isso reduz a quantidade de dados trafegados na rede, o que pode ser significativo em sistemas com alto volume de transações.
+- **Segurança Aprimorada:** Os procedimentos armazenados funcionam como uma camada de segurança. Em vez de conceder permissões diretas de `INSERT` ou `UPDATE` nas tabelas para um usuário da aplicação, o DBA pode conceder a esse usuário apenas a permissão para `EXECUTE` (executar) procedimentos específicos. Dessa forma, o usuário pode realizar as operações de negócio necessárias (como cadastrar um cliente) através de uma interface controlada, sem ter acesso direto para manipular as tabelas de forma arbitrária.
+
+Abaixo, um exemplo de como um procedimento armazenado se parece (neste caso, na sintaxe PL/SQL do Oracle). O procedimento recebe um número de ID de departamento e retorna o seu nome.
+
+```sql
+CREATE OR REPLACE PROCEDURE get_department_name (
+    p_department_id IN NUMBER,
+    p_department_name OUT VARCHAR2
+)
+IS
+BEGIN
+    SELECT department_name INTO p_department_name
+    FROM departments
+    WHERE department_id = p_department_id;
+END;
+```
+
+Neste exemplo, `p_department_id IN NUMBER` é um parâmetro de entrada (`IN`), e `p_department_name OUT VARCHAR2` é um parâmetro de saída (`OUT`), que retornará o valor encontrado pela consulta `SELECT`.
+
+#### Cursores
+
+A linguagem SQL é, por natureza, orientada a conjuntos. Um comando como `UPDATE`, `DELETE` ou `SELECT` opera sobre um **conjunto inteiro de linhas** de uma só vez. No entanto, em certas situações, especialmente dentro de blocos de código procedimentais como _Stored Procedures_ ou _Triggers_, pode ser necessário processar os resultados de uma consulta **linha por linha**.
+
+Para fazer a ponte entre o mundo orientado a conjuntos do SQL e o mundo procedural (linha a linha), os SGBDs fornecem uma estrutura de controle chamada **cursor**. Um cursor é, essencialmente, um ponteiro que permite a uma aplicação percorrer o conjunto de resultados de uma consulta, um registro de cada vez, de forma semelhante a como um programa percorre as linhas de um arquivo de texto.
+
+Existem dois tipos principais de cursores:
+
+##### Cursores Implícitos
+
+Um cursor implícito é criado e gerenciado automaticamente pelo SGBD toda vez que um comando DML (Data Manipulation Language - `INSERT`, `UPDATE`, `DELETE`) é executado. O desenvolvedor não o declara nem o controla diretamente, mas pode acessar seus atributos após a execução do comando para obter informações sobre o que aconteceu.
+
+- **Exemplo:** Quando o comando `UPDATE Funcionarios SET salario = salario * 1.1 WHERE departamento_id = 10;` é executado, o SGBD utiliza um cursor implícito internamente para localizar e atualizar cada funcionário do departamento 10. Após a operação, o desenvolvedor pode verificar atributos como:
+    - `SQL%FOUND`: Retorna `TRUE` se pelo menos uma linha foi afetada.
+    - `SQL%NOTFOUND`: Retorna `TRUE` se nenhuma linha foi afetada.
+    - `SQL%ROWCOUNT`: Retorna o número exato de linhas que foram afetadas pela operação.
+
+Esses atributos são úteis para verificar o resultado de uma operação dentro de um bloco de código.
+
+##### Cursores Explícitos
+
+Um cursor explícito é aquele que o desenvolvedor declara, abre, utiliza e fecha manualmente dentro de um bloco de código. Ele oferece controle total sobre o processamento de um conjunto de resultados, sendo útil para lógicas complexas que não podem ser resolvidas com um único comando SQL.
+
+O ciclo de vida de um cursor explícito envolve quatro etapas:
+
+1. **DECLARAR (DECLARE):** O cursor é nomeado e associado a uma consulta `SELECT`. Neste momento, a consulta ainda não foi executada.
+2. **ABRIR (OPEN):** A consulta associada ao cursor é executada, e o conjunto de resultados é carregado na memória. O cursor é posicionado _antes_ da primeira linha.
+3. **BUSCAR (FETCH):** O comando `FETCH` recupera a linha atual para a qual o cursor está apontando, armazena os valores de suas colunas em variáveis locais e avança o cursor para a próxima linha. Esta operação é tipicamente realizada dentro de um laço (_loop_) que continua até que todas as linhas tenham sido processadas.
+4. **FECHAR (CLOSE):** Após o término do laço, o cursor é fechado para liberar os recursos (memória e bloqueios) que ele estava utilizando no servidor.
+
+- **Exemplo Prático:** Imagine a necessidade de calcular um bônus individual para cada vendedor com base em uma regra complexa e, em seguida, inserir esse bônus em uma tabela de pagamentos. Um procedimento armazenado poderia usar um cursor explícito para:
+    1. **Declarar** um cursor para selecionar o ID e o salário de cada funcionário no departamento de vendas.
+    2. **Abrir** o cursor.
+    3. Iniciar um **laço** que, a cada iteração, faz o **fetch** dos dados de um vendedor.
+    4. Dentro do laço, aplicar a lógica de cálculo do bônus e inserir o resultado na tabela `Pagamento_Bonus`.
+    5. Ao final do laço, **fechar** o cursor.
+
+##### Uma Nota Sobre o Uso Moderno de Cursores
+
+Apesar de serem uma ferramenta poderosa, os cursores devem ser utilizados com cautela. O processamento linha a linha é, por natureza, muito menos eficiente do que o processamento baseado em conjuntos do SQL padrão. Operações que utilizam cursores tendem a ser mais lentas e consumir mais recursos do servidor.
+
+No SQL moderno, muitas tarefas que antigamente exigiriam cursores podem agora ser resolvidas de forma mais elegante e performática com construções baseadas em conjuntos, como **Funções de Janela** (_Window Functions_) e **Expressões de Tabela Comuns** (_Common Table Expressions - CTEs_). A recomendação geral é sempre buscar uma solução baseada em conjuntos primeiro e recorrer aos cursores apenas quando a lógica procedural for verdadeiramente indispensável.
+
+## Considerações Finais
+
+Neste capítulo inaugural, navegamos pelas águas fundamentais que formam o alicerce de todo o universo dos bancos de dados. Partimos do elemento mais básico, o **dado**, para construir, passo a passo, uma compreensão abrangente das estruturas, conceitos e tecnologias que permitem transformar fatos brutos em ativos estratégicos para qualquer organização.
+
+Nossa jornada começou com a desconstrução do que é um dado, aprendendo a classificá-lo por sua **natureza** (qualitativa e quantitativa), por sua **estrutura** (estruturado, semiestruturado e não estruturado) e por seu **nível de acesso**, além de explorar o importante conceito de **Dados Abertos** e seu papel na transparência e cidadania. Vimos, através da **pirâmide DIKW**, como os dados evoluem em uma hierarquia de valor, transformando-se em **informação** com a adição de contexto, em **conhecimento** com a atribuição de significado, e em **sabedoria** com sua aplicação prática.
+
+Com essa base, mergulhamos no coração do nosso estudo: o **banco de dados**, compreendido não como um simples depósito, mas como um sistema organizado. A distinção crucial entre o banco de dados (os dados em si) e o **SGBD** (o software que o gerencia) foi estabelecida, revelando o papel deste último como o motor que dá vida, segurança e eficiência aos dados.
+
+Exploramos as características essenciais que definem um sistema de banco de dados moderno, como a **natureza de autodescrição** através dos metadados, a **abstração de dados** e o suporte a **múltiplas visões e transações**. Aprofundamos o conceito de transações ao detalhar as propriedades **ACID**, que são a espinha dorsal da confiabilidade em sistemas transacionais.
+
+Analisamos a arquitetura conceitual que estrutura os SGBDs, a **arquitetura de três níveis ANSI/SPARC**, entendendo como suas camadas (Externa, Conceitual e Interna) proporcionam a fundamental **independência de dados**, tanto lógica quanto física. Vimos como essa arquitetura se reflete no processo prático do **projeto de banco de dados**, que evolui do **Modelo Conceitual**, passando pelo **Lógico** e culminando no **Modelo Físico**.
+
+Por fim, abrimos a "caixa de ferramentas" de um SGBD, investigando os mecanismos internos que garantem seu funcionamento robusto em ambientes complexos. Discutimos o **controle de concorrência** para gerenciar acessos simultâneos, as estratégias de **alta disponibilidade** como _failover_ e _failback_, a busca por performance com o **balanceamento de carga**, e as ferramentas de automação e encapsulamento de lógica, como **procedimentos armazenados**, **gatilhos** e **cursores**.
+
+Ao concluir este capítulo, temos em mãos não apenas um conjunto de definições, mas um mapa conceitual coeso. Com estes fundamentos estabelecidos, estamos agora preparados para avançar da teoria para a prática, do "o que é" para o "como se faz". Nos próximos capítulos, começaremos a aplicar esses conceitos para modelar e construir nossos próprios bancos de dados.
