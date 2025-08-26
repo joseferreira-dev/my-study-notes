@@ -665,3 +665,51 @@ Analisando o esquema:
 - **No Modelo Lógico,** o detalhamento aumenta significativamente. As entidades viraram tabelas com colunas definidas (`FirstName`, `ProductName`). Mais importante, os relacionamentos foram materializados através das chaves estrangeiras (`CustomerID(FK)`, `ProductID(FK)`) na tabela `Orders`, definindo a estrutura relacional.
 - **No Modelo Físico,** chegamos ao nível de implementação. Vemos os nomes exatos das tabelas (como `tbl_Customer`), os nomes das colunas (muitas vezes abreviados, como `FNAME` e `P_NAME`), e, crucialmente, os **tipos de dados** específicos para cada coluna (`INTEGER`, `VARCHAR`). Este é o projeto final que será traduzido em código SQL para criar o banco de dados.
 
+## Sistemas Gestores de Bancos de Dados (SGBDs)
+
+Ao longo deste capítulo, falamos sobre o banco de dados como uma coleção organizada de dados. No entanto, para que essa coleção seja verdadeiramente útil, segura e eficiente, precisamos de um software especializado para gerenciá-la. Esse software é o **SGBD (Sistema Gestor de Banco de Dados)**, ou DBMS (_DataBase Management System_), em inglês.
+
+O SGBD atua como uma camada intermediária entre o banco de dados físico (os arquivos armazenados em disco) e os usuários ou aplicações. Ele é o motor que permite criar, manipular, consultar e administrar os dados de forma abstrata, sem que o usuário precise ter qualquer conhecimento sobre a complexa estrutura de armazenamento físico. Usando uma analogia, se o banco de dados é uma vasta biblioteca, o SGBD é toda a equipe de bibliotecários junto com o sistema de catalogação, que organiza os livros, controla os empréstimos e ajuda os visitantes a encontrar exatamente o que procuram.
+
+É o SGBD o responsável por implementar as transações e, consequentemente, garantir que os princípios **ACID** (Atomicidade, Consistência, Isolamento e Durabilidade) sejam rigorosamente aplicados. Além disso, ele oferece um conjunto robusto de ferramentas e funcionalidades para controle de concorrência, segurança, backup e recuperação de falhas.
+
+Quando estudarmos a linguagem SQL, estaremos, na prática, enviando comandos para um SGBD. Ele interpreta esses comandos e faz a ponte entre a nossa intenção e os dados armazenados.
+
+#### Principais SGBDs do Mercado
+
+O mercado oferece uma vasta gama de SGBDs, cada um com suas próprias forças e casos de uso ideais. Os mais proeminentes no paradigma relacional são:
+
+- **MySQL:** Um SGBD relacional de código aberto extremamente popular, especialmente em aplicações web (é o "M" da famosa pilha de tecnologia "LAMP" - Linux, Apache, MySQL, PHP). É conhecido por sua performance, simplicidade e facilidade de uso. Será este o SGBD que utilizaremos em nossos exemplos práticos com SQL.
+- **Microsoft SQL Server:** O SGBD relacional desenvolvido pela Microsoft, amplamente utilizado em ambientes corporativos que operam com o ecossistema Windows. Destaca-se por sua forte integração com outras tecnologias da Microsoft, como a plataforma .NET e o serviço de nuvem Azure.
+- **PostgreSQL:** Um SGBD relacional de código aberto com uma forte reputação de robustez, extensibilidade e conformidade com os padrões SQL. É frequentemente escolhido para aplicações críticas que exigem alta confiabilidade e a capacidade de lidar com tipos de dados complexos.
+- **Oracle Database:** Um dos SGBDs relacionais líderes no mercado corporativo. É conhecido por sua escalabilidade, segurança e um conjunto vasto de recursos avançados, sendo a escolha comum para grandes empresas que gerenciam volumes massivos de dados críticos.
+
+#### Papéis e o Administrador do Banco de Dados (DBA)
+
+Um SGBD também é responsável por gerenciar a segurança e o acesso aos dados através da definição de **papéis** (_roles_). Um papel é um conjunto de permissões e privilégios que pode ser atribuído a um ou mais usuários. Em vez de conceder permissões individuais a cada novo funcionário, pode-se criar um papel "Analista_de_Marketing", por exemplo, e atribuí-lo a todos os membros da equipe, simplificando a gestão de acessos.
+
+Nesse contexto hierárquico, uma figura se destaca como central: o **Administrador do Banco de Dados**, ou **DBA** (_DataBase Administrator_). O DBA é o profissional responsável por gerenciar e manter todo o sistema de banco de dados, garantindo que ele esteja disponível, seguro e performático. Suas responsabilidades incluem:
+
+- **Projeto e Implementação:** Trabalhar com os desenvolvedores para criar o modelo físico do banco de dados.
+- **Configuração e Instalação:** Instalar e configurar o software do SGBD no servidor.
+- **Segurança:** Gerenciar os papéis e usuários, garantindo que cada um tenha acesso apenas aos dados necessários.
+- **Performance e Otimização:** Monitorar o desempenho das consultas e realizar ajustes (como a criação de índices) para garantir a rapidez do sistema.
+- **Backup e Recuperação:** Definir e executar rotinas de backup para garantir que os dados possam ser restaurados em caso de falha.
+
+#### A Arquitetura de um SGBD
+
+Internamente, um SGBD é um sistema complexo, composto por diversos módulos que trabalham em conjunto para processar as solicitações. Os componentes típicos são:
+
+- **Interface de Usuário:** É a camada com a qual os usuários interagem, seja através de uma linha de comando (CLI), uma interface gráfica (GUI) como a do MySQL Workbench, ou uma interface web.
+- **Processador de Consultas:** Recebe os comandos (como uma consulta SQL), verifica sua sintaxe e os traduz para uma forma que o sistema possa executar.
+- **Otimizador de Consultas:** Este é um dos componentes mais "inteligentes". Ele analisa a consulta e decide a maneira mais eficiente de executá-la, escolhendo a melhor ordem de acesso às tabelas e os melhores índices a serem utilizados.
+- **Gerenciador de Transações:** Garante que todas as operações dentro de uma transação obedeçam aos princípios ACID, controlando a concorrência entre múltiplos usuários.
+- **Gerenciador de Arquivos:** É a ponte com o sistema operacional, responsável por gerenciar o armazenamento físico dos dados no disco, controlando a alocação de espaço e a leitura e escrita dos arquivos.
+- **Gerenciador de Recuperação e Backups:** Mantém um log de todas as transações para garantir a durabilidade e permitir a restauração do sistema a um estado consistente após uma falha.
+
+A imagem a seguir mostra um exemplo de interface gráfica para um SGBD, no caso o MySQL Workbench.
+
+<div align="center">
+<img width="700px" src="./img/01-banco-de-dados-mysql.png">
+</div>
+
