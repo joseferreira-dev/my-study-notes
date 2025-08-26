@@ -795,3 +795,76 @@ Para resolver o problema de bloqueio do 2PC, surgiu o 3PC. Ele introduz uma fase
 
 A vantagem do 3PC é que, se o coordenador falhar após a fase de pré-confirmação, os participantes não ficam bloqueados. Eles podem se comunicar entre si. Se um participante sabe que outro já recebeu a mensagem de `PRE-COMMIT`, ele pode assumir com segurança que a transação deve ser confirmada, mesmo sem o coordenador. Isso torna o 3PC um **protocolo não bloqueante**, embora seja mais complexo e exija mais comunicação entre os nós.
 
+#### Gatilhos (Triggers)
+
+Dentro de um SGBD, é possível configurar **gatilhos** (em inglês, _triggers_), que são um tipo especial de procedimento armazenado executado automaticamente em resposta a um evento específico de modificação de dados em uma tabela. Em outras palavras, um gatilho é uma regra de "causa e efeito": quando um determinado evento ocorre (a causa), o SGBD "dispara" uma ação predefinida (o efeito).
+
+A "causa" (ou evento) é sempre uma operação de manipulação de dados:
+
+- `INSERT`: a inserção de uma nova linha.
+- `UPDATE`: a atualização de uma ou mais linhas.
+- `DELETE`: a remoção de uma ou mais linhas.
+
+O "efeito" (a ação) é um bloco de código que pode realizar uma vasta gama de operações, desde a modificação de dados em outras tabelas até a imposição de regras de negócio complexas. Além disso, a ação do gatilho pode ser configurada para ocorrer **ANTES (`BEFORE`)** ou **DEPOIS (`AFTER`)** do evento que o disparou.
+
+Os gatilhos são ferramentas poderosas para automatizar tarefas e centralizar regras de negócio diretamente no banco de dados. Vejamos alguns de seus usos mais comuns e importantes.
+
+##### Manutenção de Trilhas de Auditoria
+
+Um dos usos mais clássicos para os gatilhos é a criação de um registro histórico de alterações, conhecido como trilha de auditoria. Isso é crucial para a segurança e a rastreabilidade em sistemas críticos.
+
+- **Exemplo:** Imagine uma tabela de `Funcionarios` com uma coluna `salario`. Para rastrear qualquer alteração salarial, podemos criar um gatilho que, **DEPOIS (`AFTER`)** de cada **`UPDATE`** na tabela `Funcionarios`, insere automaticamente uma nova linha em uma tabela `Auditoria_Salarios`. Essa nova linha pode registrar o ID do funcionário, o salário antigo, o novo salário, o usuário que fez a alteração e a data e hora exatas da mudança. Dessa forma, cria-se um histórico de modificações que não pode ser contornado pela aplicação.
+
+##### Validação e Aplicação de Regras de Negócio Complexas
+
+Enquanto as restrições (`constraints`) são ótimas para regras simples (como garantir que um valor não seja nulo), os gatilhos podem implementar lógicas de negócio muito mais sofisticadas.
+
+- **Exemplo:** Em um sistema de e-commerce, a tabela `Clientes` possui uma coluna `limite_credito`. Podemos criar um gatilho na tabela `Pedidos` que, **ANTES (`BEFORE`)** de cada **`INSERT`** de um novo pedido, executa um código que verifica se o valor total dos pedidos em aberto do cliente, somado ao novo pedido, ultrapassa o `limite_credito`. Se ultrapassar, o gatilho pode impedir a inserção e retornar uma mensagem de erro.
+
+##### Manutenção de Dados Derivados ou de Sumário
+
+Em algumas situações, para otimizar o desempenho de consultas, pode ser útil armazenar dados de sumário ou derivados (uma prática de desnormalização controlada). Os gatilhos são a ferramenta ideal para manter esses dados consistentemente atualizados.
+
+- **Exemplo:** Um fórum online tem uma tabela de `Topicos` com uma coluna `total_respostas`. Em vez de contar as respostas com uma consulta lenta toda vez que o tópico é exibido, podemos usar gatilhos. Um gatilho **DEPOIS (`AFTER`)** de um **`INSERT`** na tabela `Respostas` incrementaria o valor na coluna `total_respostas` do tópico correspondente. Um segundo gatilho, disparado **DEPOIS (`AFTER`)** de um **`DELETE`** na tabela `Respostas`, decrementaria esse valor. Assim, o sumário se mantém sempre preciso e a consulta para exibi-lo é instantânea.
+
+##### Cuidado ao Usar Gatilhos
+
+Apesar de sua utilidade, os gatilhos devem ser usados com critério. Eles podem introduzir uma "lógica oculta" no banco de dados, que não é visível no código da aplicação, dificultando a depuração. Um gatilho mal escrito também pode causar um impacto negativo severo no desempenho das operações de `INSERT`, `UPDATE` e `DELETE`. A regra geral é utilizá-los para tarefas que são centrais para a integridade e as regras do próprio dado, e que não podem ser garantidas de forma confiável apenas pela camada de aplicação.
+
+#### Alta Disponibilidade: Failover e Failback
+
+Para sistemas críticos — como bancos, sites de e-commerce, hospitais ou controle de tráfego aéreo — a indisponibilidade do banco de dados não é uma opção. Cada minuto offline pode representar perdas financeiras massivas, riscos à segurança ou danos irreparáveis à reputação. Para garantir que esses sistemas permaneçam operacionais o máximo de tempo possível, implementa-se uma estratégia de **Alta Disponibilidade (High Availability - HA)**.
+
+O pilar para alcançar a alta disponibilidade é a **redundância**. A redundância é a prática de duplicar componentes críticos do sistema, como servidores, discos de armazenamento ou conexões de rede. A ideia é simples: se o componente principal falhar, um componente reserva idêntico está pronto para assumir suas funções imediatamente.
+
+É nesse contexto que entram os processos de **failover** e **failback**.
+
+##### Failover
+
+O **failover** é o procedimento, muitas vezes automatizado, que transfere as operações de um componente primário que falhou para um componente redundante (ou de standby). O objetivo é garantir a continuidade do serviço de forma rápida e, idealmente, transparente para o usuário final, minimizando o tempo de inatividade (_downtime_).
+
+Imagine o seguinte cenário em um banco de dados:
+
+1. **Operação Normal:** Um **Servidor Principal** está ativo, processando todas as leituras e escritas do banco de dados. Em paralelo, um **Servidor Redundante** é mantido em sincronia, recebendo réplicas de todos os dados do servidor principal quase em tempo real.
+2. **Ocorra a Falha:** O Servidor Principal sofre uma falha crítica de hardware e fica offline.
+3. **O Processo de Failover:** Um sistema de monitoramento detecta a falha. Automaticamente, ele "promove" o Servidor Redundante a novo servidor principal. O tráfego de rede das aplicações que antes apontava para o servidor antigo é redirecionado para o novo servidor ativo.
+
+O resultado é que o serviço é restaurado em segundos ou minutos, em vez de horas, mantendo a disponibilidade do sistema.
+
+##### Failback
+
+O **failback** é o processo reverso e planejado. Uma vez que o Servidor Principal original tenha sido reparado, testado e estabilizado, o failback é o procedimento de transferir as operações de volta do servidor redundante para o principal.
+
+Continuando o cenário anterior:
+
+1. **Sistema Recuperado:** A equipe de TI conserta o Servidor Principal original.
+2. **O Processo de Failback:** Durante uma janela de manutenção planejada (geralmente em um período de baixo tráfego), os dados mais recentes do servidor redundante (que estava atuando como principal) são sincronizados de volta para o servidor original. Após a sincronização, o tráfego é novamente redirecionado para o Servidor Principal, que retoma sua função primária, e o Servidor Redundante volta ao seu estado de standby, pronto para uma nova eventualidade.
+
+O esquema a seguir ilustra perfeitamente essa dinâmica entre os dois processos.
+
+<div align="center">
+<img width="700px" src="./img/01-banco-de-dados-failover-failback.png">
+</div>
+
+É importante não confundir estes processos com o **rollback**. Enquanto failover/failback são estratégias de **disponibilidade** (manter o serviço no ar trocando de servidor), o rollback (neste contexto de recuperação de desastres) é uma estratégia de **recuperação** que retorna um _único servidor_ a um estado estável anterior, geralmente restaurando um backup. O rollback é usado em casos de corrupção de dados, por exemplo, mas tipicamente envolve uma janela de indisponibilidade maior e a perda de todas as transações ocorridas entre o momento do backup e a falha.
+
