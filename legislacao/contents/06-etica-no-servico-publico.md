@@ -322,3 +322,34 @@ O conceito de cidadania está, portanto, fortemente ligado ao de democracia. Na 
 
 Nessa perspectiva moderna, ser cidadão implica na preocupação e no exercício de ações que garantam o desenvolvimento harmonioso da sociedade e a preservação dos direitos alheios. Ser cidadão não é simplesmente cobrar os próprios direitos, mas lutar para defender os interesses e a dignidade dos semelhantes. O pleno exercício da cidadania e da democracia está, em última análise, associado à ideia de igualdade e de solidariedade entre os indivíduos.
 
+###  As Dimensões da Cidadania
+
+Fundamentalmente, a acepção que se tem de cidadania abrange duas dimensões principais e complementares.
+
+1. A primeira dimensão está intrinsecamente ligada e deriva dos **movimentos sociais**, que, geralmente, encampam a luta por direitos. Nesta visão, o exercício da cidadania relaciona-se diretamente com a consolidação e o aprofundamento da democracia. É importante notar que a falta de conhecimento efetivo de tais direitos não configura, por si só, uma ausência de cidadania, mas, por sua vez, o conhecimento dos direitos inerentes à pessoa **amplia e qualifica** o exercício da cidadania.
+2. A segunda dimensão, além da titularidade de direitos, é aquela que deriva do **republicanismo clássico**, enfatizando a **preocupação com a coisa pública (_res publica_)**. O gestor público ocupa um cargo de natureza transitória, e os bens que ele administra não são seus; são da coletividade. Por isso, os agentes públicos devem representar o povo, atuando de maneira ética e moral. O descaso com a “coisa pública”, a confusão entre o patrimônio público e o privado, e os casos de corrupção vêm sendo cada vez mais refutados pela sociedade, que exige uma postura de zelo e responsabilidade dos seus representantes.
+
+Vale lembrar que a **democracia**, neste contexto, é o sistema político onde o povo é soberano, e a cidadania ativa é o principal instrumento para o exercício dessa soberania.
+
+O filósofo Immanuel Kant enumerava algumas características que entendia como comuns a um cidadão. A primeira é a **autonomia**, a capacidade de conduzir-se segundo seu próprio arbítrio. A segunda é a **igualdade perante a lei**. A terceira é a **independência**, ou seja, a capacidade de sustentar-se a si próprio, sem depender de outrem para formar seu juízo.
+
+### A Ética da Ação Política: Convicção vs. Responsabilidade
+
+O sociólogo Max Weber se ocupou da fundamentação ética das ações políticas, que demandam um senso moral diferenciado das ações individuais. Para o autor, existem dois tipos de fundamentação ética que distinguem as boas e as más razões dos atores políticos:
+
+- **A Ética da Convicção:** Corresponde a uma ética de deveres, de natureza "principiológica preestabelecida". O agente age de acordo com seus princípios morais e convicções, independentemente das consequências. A ação é julgada por sua pureza de intenção e sua aderência a um código moral (como os Dez Mandamentos).
+- **A Ética da Responsabilidade:** Corresponde a uma ética de fins, que busca "resultados". Esta é a ética própria e adequada à política e à gestão pública, pois não é pautada apenas no valor consagrado no princípio, mas na **racionalidade segundo o fim**. Ela se funda na adequação dos meios aos fins pretendidos, o que exige do agente um juízo que leve em consideração as **consequências** de sua decisão. A situação do médico que mente para um paciente terminal para poupá-lo do sofrimento (uma "mentira caridosa") ilustra essa lógica: a ação (mentir), embora viole um princípio da ética de convicção, é justificada pelo resultado desejado (evitar a dor).
+
+### A Educação para a Ética e a Cidadania
+
+Ainda segundo os filósofos, o que dá conteúdo à organização social é a ética. Assim como a estética está relacionada com a construção do belo e a busca da perfeição na arte, a ética está relacionada à busca da perfeição na convivência social. O mundo ético é o mundo bom. A ética é indispensável para o desenvolvimento social, e há quem diga que ética é sinônimo de bem-estar social. O economista e filósofo Eduardo Giannetti, por exemplo, afirma que sem um ambiente de confiança mútua (fruto da ética), a própria sobrevivência e a prosperidade econômica ficam comprometidas.
+
+Contudo, observa-se que os cidadãos, em sua maioria, desconhecem o histórico e o contexto atual de seus próprios direitos fundamentais; muitos não reconhecem o valor da conquista de uma Constituição democrática ou o significado de _res publica_. Diante disso, surge a questão: é possível formar o cidadão para que ele tenha condições de reivindicar ética nas atuações políticas? Como sugeriu Platão, podemos educar o indivíduo no espírito das melhores leis?
+
+A resposta da pedagogia moderna é afirmativa.
+
+- De acordo com Josep Maria Puig (1998), a educação deve se converter em um âmbito de reflexão individual e coletiva que permita elaborar, de forma racional e autônoma, princípios gerais de valor. Esses princípios devem ajudar os indivíduos a se defrontarem criticamente com realidades como a violência, a tortura ou a guerra. A educação ética e moral deve, portanto, ajudar na análise crítica da realidade cotidiana e das normas sociomorais vigentes, de modo que contribua para idealizar formas mais justas de convivência.
+- Adela Cortina (2003) complementa, entendendo que a educação do cidadão e da cidadã deve levar em conta a **dimensão comunitária** das pessoas, seu projeto pessoal e também sua capacidade de universalização, que deve ser exercida **dialogicamente**. Dessa maneira, as pessoas poderão ajudar na construção do melhor mundo possível, demonstrando saber que são responsáveis pela realidade social. Os indicadores do desenvolvimento moral e ético de uma sociedade são, justamente, a efetivação da cidadania e a consciência coletiva dessa cidadania.
+
+De forma específica, lidar com a dimensão comunitária e dialogar com a realidade cotidiana nos remete ao trabalho com a **diversidade humana**. É preciso desenvolver ações que enfrentem as exclusões, os preconceitos e as discriminações advindos das distintas formas de deficiência e das diferenças sociais, econômicas, psíquicas, físicas, culturais, religiosas, raciais, ideológicas e de gênero. Conceber esse trabalho na própria comunidade onde está localizada a escola, no bairro e no ambiente natural, social e cultural de seu entorno, é essencial para a construção de uma cidadania efetiva e de uma sociedade eticamente mais justa.
+
