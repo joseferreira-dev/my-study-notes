@@ -57,3 +57,29 @@ Diversos pensadores se debruçaram sobre a natureza do Estado e da justiça, e s
 
 Os princípios e valores defendidos por esses autores são essenciais para a ética no setor público. A impessoalidade, a racionalidade, a justiça, a igualdade de oportunidades e a promoção do desenvolvimento humano são todos princípios que devem guiar os funcionários públicos em suas ações, transcendendo a mera execução burocrática de tarefas e alinhando sua atuação ao propósito maior do bem comum.
 
+Além desses princípios, existem também uma série de regras e normas que devem ser seguidas pelos funcionários públicos. Essas regras e normas são estabelecidas em leis, decretos e outros regulamentos. Elas servem para garantir que os funcionários públicos atuem de acordo com os princípios éticos e para proteger os interesses da sociedade.
+
+O cumprimento das regras e normas éticas é essencial para a boa governança. Quando os funcionários públicos atuam de forma ética, eles contribuem para o desenvolvimento de uma sociedade mais justa e democrática.
+
+### Os Pilares da Governança Pública
+
+A governança pública pode ser entendida como o conjunto de mecanismos de liderança, estratégia e controle postos em prática para avaliar, direcionar e monitorar a atuação da gestão, com vistas à condução de políticas públicas e à prestação de serviços de interesse da sociedade. Segundo Matias-Pereira (2008), a governança pública está apoiada em quatro princípios fundamentais:
+
+<div align="center">
+<img width="360px" src="./img/etica-governanca-principios.png">
+</div>
+
+  * **Relações Éticas:** Este é o pilar fundamental. A ética não é apenas um conjunto de boas intenções, mas se traduz em ações concretas que devem ser pautadas pelo interesse público. Todo ato administrativo possui implicações e, do ponto de vista ético, seu limite é a não nocividade social, ou seja, a obrigação de não causar dano à coletividade.
+  * **Transparência (Transparency):** Este princípio determina que as ações, decisões e, principalmente, o uso de recursos públicos devem ser abertos ao conhecimento e ao escrutínio da sociedade. A transparência vai além da mera divulgação de dados; ela busca garantir que as informações sejam claras, compreensíveis e acessíveis ao cidadão mediano, permitindo-lhe exercer um controle social eficaz sobre a conduta do gestor público.
+  * **Conformidade (Compliance):** Este pilar garante que os atos da Administração estejam em total sintonia com as leis, as normas e os regulamentos vigentes. É a materialização do princípio da legalidade, assegurando que a atuação do agente público não se desvie do que é permitido e determinado pelo ordenamento jurídico.
+  * **Prestação de Contas (Accountability):** Este conceito, como bem pontuado por O'Donnell (1998), é mais amplo que uma mera prestação de contas financeira. *Accountability* representa uma postura de responsabilidade e compromisso inegociável com a verdade. Implica não apenas o dever de informar sobre os atos praticados, mas também o de **justificá-los** perante a sociedade e as instâncias de controle, estando sujeito a **sanções** em caso de desvios.
+
+No Brasil, as agências de *accountability* formam uma rede robusta, incluindo o Ministério Público, o Poder Judiciário, o sistema de controle interno de cada Poder e, de forma destacada, os **Tribunais de Contas**. Estes últimos têm a responsabilidade de fiscalizar a correta aplicação dos recursos públicos e assegurar a obediência à Lei de Responsabilidade Fiscal, que tem a transparência como um de seus pilares centrais.
+
+A administração pública é o meio pelo qual o Estado executa as prioridades do governo, e a efetividade, nesse contexto, refere-se ao grau em que essas ações refletem o verdadeiro interesse público. A coletividade deve ser capaz de reconhecer suas demandas nas ações governamentais.
+
+Em suma, a transparência e a prestação de contas são alicerces sólidos de uma governança eficaz e ética. A transparência permite que a sociedade, através de instrumentos como análise de conformidade e desempenho, avalie e decida sobre a continuidade ou modificação de uma gestão. Afinal, é a sociedade, munida de informações claras e relevantes, que representa o mais poderoso mecanismo de controle da conduta do gestor público, conduzindo não só ao cumprimento das leis, mas ao atendimento genuíno das necessidades e expectativas da coletividade.
+
+<div align="center">
+<img width="700px" src="./img/etica-administracao-vontade-e-lei.png">
+</div>
