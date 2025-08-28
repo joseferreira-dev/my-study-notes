@@ -83,3 +83,60 @@ Em suma, a transparência e a prestação de contas são alicerces sólidos de u
 <div align="center">
 <img width="700px" src="./img/etica-administracao-vontade-e-lei.png">
 </div>
+
+Como vimos, a Administração Pública ética é orientada para o bem comum e regida por princípios que transcendem a lógica do setor privado. Essa orientação se materializa em um conjunto de regras e normas que devem ser seguidas pelos servidores públicos, estabelecidas em leis, decretos e, de forma especial, nos Códigos de Ética.
+
+### O Código de Ética e sua Relação com a Lei
+
+Poderia surgir o questionamento: por que seria necessário um código de ética, se as leis e o regime disciplinar já estabelecem o que o servidor pode ou não fazer? A resposta reside na diferença de foco e profundidade entre a legalidade estrita e a conduta ética. A lei, por sua natureza, concentra-se na correta realização dos **procedimentos** e na definição de proibições objetivas. O código de ética, por sua vez, visa garantir que esses procedimentos sejam realizados com **integridade**, capturando o espírito por trás da norma.
+
+A ética vai além da mera adesão às regras; ela busca o bem comum e a justiça social. No contexto da administração, isso significa não apenas seguir o que é legal, mas também o que é moral e justo, agindo sempre com o objetivo de beneficiar a coletividade.
+
+#### Código de Ética vs. Regime Disciplinar
+
+O Código de Ética e o Regime Disciplinar do Servidor (previsto na Lei nº 8.112/1990) são instrumentos fundamentais na governança pública, mas possuem naturezas e objetivos distintos e complementares.
+
+- O **Código de Ética** é um documento que estabelece os padrões de comportamento esperados dos servidores, baseando-se em valores e princípios morais. Ele serve como uma **bússola moral**, orientando as ações de maneira **proativa**. Seu objetivo é inspirar e educar, oferecendo diretrizes que definem uma prática desejável e honrosa, motivando a reflexão e incentivando os servidores a agirem de maneira ética mesmo em situações não explicitamente previstas em lei.
+- O **Regime Disciplinar**, por outro lado, é um conjunto de regras que especificam as condutas inadequadas e as sanções aplicáveis. Seu foco é **reativo** e **punitivo**, estabelecendo as consequências legais para atos que desviam dos padrões. É uma ferramenta de controle que visa assegurar que o serviço público opere dentro dos limites da legalidade e que os servidores que falharem em seguir as normas sejam responsabilizados.
+
+Também não faria sentido ter um código de ética que apenas repetisse o que já está plenamente determinado na lei. Para que não seja uma mera repetição, o código deve explicitar os **valores** afirmados por aquele grupo profissional e, em seguida, solidificá-los por meio de normas que sirvam de instrumento para realizar tais valores. Por isso, um código de ética não é simplesmente um conjunto de regras punitivas, mas sim um **guia para a conduta**.
+
+#### A Construção Coletiva do Código de Ética: O Papel da Sociedade
+
+Para que um código de ética seja eficaz e ressoe com os valores tanto internos (dos servidores) quanto externos (da sociedade), é fundamental que ele seja construído de forma participativa.
+
+A **participação da sociedade** na construção de um código de ética confere **legitimidade** ao documento. Quando a comunidade tem a oportunidade de contribuir, ela se torna coautora das normas e, por conseguinte, mais comprometida em respeitar e defender os princípios ali estabelecidos. Esse processo democrático garante que as diretrizes se alinhem com as expectativas da população.
+
+O envolvimento da sociedade também promove **transparência e responsabilidade**. Ao abrir o diálogo para diferentes setores, as instituições demonstram seu compromisso com a inclusão. Ademais, a construção coletiva fomenta a **educação e a conscientização** sobre a ética, estimulando o debate e a reflexão.
+
+Como citado pelo antropólogo Roberto Da Matta, “quando falamos de ética como instrumento de gestão, não podemos deixar de convidar a sociedade como um todo, para o programa de reformas”. A reflexão de Da Matta aponta para a necessidade de uma abordagem inclusiva, baseada nos seguintes pontos:
+
+- **Participação Social:** A eficácia das práticas éticas depende do envolvimento de diferentes setores sociais no processo de mudança, garantindo que as reformas atendam às verdadeiras necessidades da população.
+- **Corresponsabilidade:** A construção de uma gestão pública íntegra é um papel de todos, não apenas dos gestores, mas de cada indivíduo na sociedade.
+- **Educação para a Cidadania:** Para que a sociedade participe ativamente, é necessário promover a educação sobre direitos, deveres e o funcionamento das instituições.
+- **Transparência e Diálogo:** O diálogo constante entre o Estado e a sociedade é fundamental para que a ética seja percebida e valorizada como um instrumento de gestão.
+- **Monitoramento e Avaliação:** A sociedade deve ter meios de monitorar e avaliar as práticas de gestão pública, contribuindo para um controle social efetivo.
+
+Por fim, é importante ressaltar que a construção de um código de ética em conjunto com a sociedade é um processo contínuo. A ética pública não é estática, e os códigos devem ser revisados e atualizados periodicamente para refletir as mudanças nos valores sociais e nas expectativas da comunidade.
+
+## A Ética à luz dos Princípios Fundamentais
+
+Os servidores públicos são agentes do Estado e, como tal, devem representá-lo de forma ética e moral. Isso significa que eles devem agir de acordo com os valores que o Estado defende, como a honestidade, a transparência, a eficiência e a justiça.
+
+Para garantir que a atuação do agente público não se desvie desses valores, a própria Constituição Federal, em seu artigo 37, estabelece os princípios básicos que devem nortear toda a Administração Pública. Esses princípios não são meras sugestões, mas sim mandamentos jurídicos que formam a base da ética no serviço público. Além deles, existem, obviamente, uma série de outras regras e normas que devem ser seguidas, estabelecidas em leis e regulamentos. O cumprimento desse arcabouço ético-jurídico é essencial para a boa governança e para o desenvolvimento de uma sociedade justa e democrática.
+
+### Os Princípios Constitucionais da Administração Pública
+
+O _caput_ do artigo 37 da Constituição Federal de 1988 elenca cinco princípios fundamentais que devem reger os atos da Administração Pública direta e indireta, de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios. Para fins de memorização, estes princípios são conhecidos pelo mnemônico **LIMPE**.
+
+- **Legalidade:** Este princípio determina que o agente público só pode fazer o que a lei permite ou determina. Diferentemente do cidadão comum, que pode fazer tudo o que a lei não proíbe (princípio da autonomia da vontade), o administrador público está estritamente adstrito à lei. A lei não é apenas um limite, mas o fundamento de sua ação.
+    - **Exemplo:** Se uma lei municipal de zoneamento proíbe a construção de edifícios com mais de dez andares em uma determinada área, um servidor da secretaria de urbanismo não pode, sob nenhuma hipótese ou justificativa, aprovar um projeto de doze andares nessa zona. Sua vontade é irrelevante; a vontade que ele deve executar é a da lei.
+- **Impessoalidade:** O servidor deve tratar todos os cidadãos de maneira igual, sem favorecimentos ou preconceitos. O foco deve ser sempre o interesse público, e não interesses pessoais, de grupos ou de terceiros. A impessoalidade possui uma dupla face:
+    1. **Em relação aos administrados:** Veda perseguições ou privilégios. Em um processo de licitação, por exemplo, o servidor não deve dar vantagem a uma empresa devido a relações pessoais com seus sócios.
+    2. **Em relação à própria Administração:** Os atos praticados pelo servidor são imputados ao Estado, e não à pessoa do agente. Por essa razão, é vedada a promoção pessoal de autoridades ou servidores em atos, obras e campanhas dos órgãos públicos.
+- **Moralidade:** A moralidade no serviço público não se limita à distinção entre o bem e o mal, mas se traduz em um conceito jurídico que exige do servidor um comportamento pautado pela honestidade, pela lealdade e pela boa-fé. Um ato pode ser legal, mas imoral e, por isso, inválido. A moralidade administrativa implica, por exemplo, que o servidor deve evitar situações que possam gerar conflito de interesses, como participar de decisões em que ele ou seus familiares tenham interesses particulares.
+- **Publicidade:** As ações do serviço público devem ser transparentes e abertas ao escrutínio da sociedade, garantindo que os cidadãos sejam informados sobre os atos administrativos. A publicidade não é apenas um dever de transparência, mas também um requisito de eficácia para muitos atos, que só passam a valer após sua devida publicação.
+    - **Exemplo:** A divulgação de editais de concursos e licitações, dos salários dos servidores no Portal da Transparência e dos relatórios de gestão em sites oficiais são manifestações do princípio da publicidade, que é instrumentalizado principalmente pela Lei de Acesso à Informação (LAI).
+- **Eficiência:** Incluído pela Emenda Constitucional nº 19/1998, este princípio exige que o serviço público seja exercido com presteza, perfeição e rendimento funcional, buscando sempre a otimização de recursos e a qualidade dos serviços prestados. A eficiência impõe uma lógica gerencial à Administração, que deve buscar não apenas a legalidade, mas o melhor resultado possível com os recursos disponíveis, evitando desperdícios e buscando a melhoria contínua.
+    - **Exemplo:** A implementação de sistemas eletrônicos para agilizar processos burocráticos, reduzindo o tempo de espera do cidadão, é uma medida que concretiza o princípio da eficiência.
+
