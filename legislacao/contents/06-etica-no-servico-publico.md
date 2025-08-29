@@ -353,3 +353,33 @@ A resposta da pedagogia moderna é afirmativa.
 
 De forma específica, lidar com a dimensão comunitária e dialogar com a realidade cotidiana nos remete ao trabalho com a **diversidade humana**. É preciso desenvolver ações que enfrentem as exclusões, os preconceitos e as discriminações advindos das distintas formas de deficiência e das diferenças sociais, econômicas, psíquicas, físicas, culturais, religiosas, raciais, ideológicas e de gênero. Conceber esse trabalho na própria comunidade onde está localizada a escola, no bairro e no ambiente natural, social e cultural de seu entorno, é essencial para a construção de uma cidadania efetiva e de uma sociedade eticamente mais justa.
 
+### A Ética como Justificação Racional
+
+Os Códigos Tradicionais de Conduta e o Direito são dois planos do universo dos valores e das normas, mas há ainda um terceiro plano, que é analisado pela Filosofia. Tal plano é a **Ética** ou **Moral** em seu sentido mais profundo, que tem a ver com valores e com normas, mas sob um ponto de vista peculiar: o da **racionalidade**. A Ética, como disciplina filosófica, abrange, pretensamente, um ou mais sistemas de valores e normas de conduta que sejam **racional ou argumentativamente defensáveis**.
+
+O exemplo, muitas vezes citado, do que seja um comportamento de acordo com normas éticas é tirado do diálogo platônico chamado **Críton**, no qual é descrita a situação do filósofo Sócrates, condenado a morrer bebendo cicuta, sob a falsa acusação de corromper a juventude.
+
+#### A Lição de Sócrates em "Críton"
+
+Corria o ano de 399 a.C. e Sócrates aguardava sua execução em uma prisão de Atenas. Os atenienses, porém, não acreditavam que o filósofo, de fato, viesse a ser executado, em virtude de um velho costume social que levava os amigos de um condenado importante a subornar os guardas e fugir com o prisioneiro para outra cidade, na qual ele passaria a residir. Críton, amigo leal e rico de Sócrates, conhecia um dos vigias e preparava-se para suborná-lo.
+
+Críton entrou na cela do filósofo, apressando-o a sair. Surpreendentemente, porém, Sócrates decidiu ficar. Atônito, Críton apresentou seus argumentos: os amigos de Sócrates seriam mal interpretados pela opinião pública, que os consideraria avarentos, a ponto de deixar o mestre morrer para não pagar propinas aos guardas. Além disso, argumentou Críton, haveria pleno consenso em Atenas de que Sócrates era inocente e que a fuga seria o ato justo a se fazer.
+
+Imperturbável, Sócrates disse a Críton que ignorasse a opinião pública, uma vez que ela seria incapaz de produzir grande bem ou grande mal. Além disso, ele desqualificou o consenso como critério, lembrando que a maioria também está sujeita a erro. Disposto a dar a Críton sua última lição, Sócrates resolve exercer a sua profissão de filósofo, justificando **racionalmente** sua decisão de ficar e mostrando por que ela seria a decisão **eticamente correta**.
+
+Sócrates apresentou vários argumentos, dentre os quais o seguinte silogismo:
+
+> **Premissa Maior (Princípio Universal):** Devemos cumprir nossas promessas justas.
+> 
+> **Premissa Menor (Fato Particular):** Ora, ao escolher viver livremente em Atenas por toda a minha vida, eu, implicitamente, prometi cumprir-lhe as leis.
+> 
+> **Conclusão (Dever Decorrente):** Logo, devo cumprir as leis e ficar.
+
+As três sentenças acima formam um argumento ou raciocínio lógico. As duas primeiras frases são as **premissas** (as teses básicas, os pontos de partida) e a última é a **conclusão** (que decorre logicamente das premissas).
+
+A primeira premissa, “Devemos cumprir promessas”, é um **princípio moral**, ou seja, é uma regra cujo cumprimento deve ser esperado de qualquer ser humano para que a convivência em sociedade seja possível. Quem pede algo emprestado e promete devolver, deve cumprir o combinado, pouco importando o grupo étnico ao qual pertença. Se alguém promete e não cumpre, terá seu convívio com as outras pessoas prejudicado, pois perderá a credibilidade, que é a base da confiança.
+
+Ao mencionado princípio universal, Sócrates agrega a segunda premissa, enunciando um fato de sua vida: ele nunca foi um escravo; ele **escolheu** viver em Atenas. Ao fazer essa escolha e usufruir dos benefícios de ser um cidadão ateniense por mais de 70 anos, ele estabeleceu um pacto, uma promessa implícita, de obedecer às leis daquela cidade, mesmo quando elas fossem aplicadas de forma injusta contra ele.
+
+Das premissas assim colocadas, segue-se, necessariamente, a conclusão de que Sócrates deve ficar. Tal conclusão lógica justifica, racionalmente, a decisão socrática: o certo a fazer não é o que o costume social dita (a fuga), nem o que a maioria pensa (o consenso), mas aquilo que a razão demonstra ser o dever.
+
