@@ -802,3 +802,63 @@ Por ser uma regra de vocabulário impreciso ("certos compostos", "em certa medid
 - **Principais exemplos:** girassol, madressilva, mandachuva, pontapé, paraquedas, paraquedista.
 
 Em caso de dúvida com outras palavras, a regra geral dos prefixos (vogais e consoantes iguais se separam; diferentes se unem, duplicando R e S) continua sendo a referência mais segura.
+
+## O Emprego das Letras: Convenções Ortográficas
+
+Entramos agora no campo da Ortografia que lida com a correta escolha das letras (como G/J, S/Z, X/CH, etc.) para representar os sons das palavras. Diferentemente da acentuação, que segue um sistema de regras mais lógico, o emprego de letras é, em grande parte, resultado da história e da etimologia (origem) de cada palavra. As regras são numerosas e, muitas vezes, repletas de exceções.
+
+Por essa razão, a familiaridade com a grafia correta das palavras é uma habilidade que se consolida principalmente através da leitura constante e da prática com exercícios. O objetivo aqui não é memorizar listas exaustivas, mas sim reconhecer os padrões mais importantes e as regularidades que podem guiar a escrita na hora da prova.
+
+> **O Princípio da Coerência Radical**
+> 
+> A dica fundamental para resolver a maioria das dúvidas de ortografia é: **uma palavra derivada, em geral, mantém a grafia da palavra primitiva da qual se origina.** Ao se deparar com uma dúvida, procure pela palavra de origem ou por outra da mesma família (com o mesmo radical).
+> 
+> - _Exemplo:_ A palavra "paralisar" é com "s" ou "z"? Se lembrarmos que ela deriva de "parali**s**ia", a resposta se torna clara: parali**s**ar.
+> - _Exemplo:_ A palavra "jeitoso" é com "g" ou "j"? Ela vem de "**j**eito". Logo, **j**eitoso.
+
+### O Uso do "Ç" e dos Sufixos "-ção", "-tenção" e "-çar"
+
+A letra "Ç" (cedilha) é um dígrafo fonético, pois representa o som de /s/ antes das vogais "a", "o", "u". Seu uso está frequentemente associado a sufixos que formam substantivos a partir de outras palavras.
+
+**O Sufixo -ção**
+
+Este sufixo, que geralmente indica "o ato ou o efeito de", é empregado em substantivos derivados de:
+
+- **Verbos (Ações):** A regra é remover o "-r" do infinitivo e adicionar o sufixo "-ção".
+    - educar → educa**ção**
+    - exportar → exporta**ção**
+    - repartir → reparti**ção**
+    - combinar → combina**ção**
+    - observar → observa**ção**
+- **Palavras terminadas em -to, -tor, -tivo:**
+    - De palavras terminadas em **-to**:
+        - erudito → erudi**ção**
+        - exceto → exce**ção**
+        - atento → aten**ção**
+    - De palavras terminadas em **-tor**:
+        - setor → se**ção**
+        - redator → reda**ção**
+        - infrator → infra**ção**
+    - De palavras terminadas em **-tivo**:
+        - intuitivo → intui**ção**
+        - relativo → rela**ção**
+
+**O Sufixo -tenção**
+
+Este é um caso específico e regular. Os substantivos que correspondem a verbos derivados do verbo ter são sempre grafados com -tenção.
+
+| Verbo      | Substantivo Correspondente |     |
+| ---------- | -------------------------- | --- |
+| Man**ter** | manu**tenção**             |     |
+| Re**ter**  | re**tenção**               |     |
+| De**ter**  | de**tenção**               |     |
+| Con**ter** | con**tenção**              |     |
+| Ob**ter**  | ob**tenção**               |     |
+
+**O Sufixo -çar (em verbos)**
+
+Os verbos que derivam de substantivos terminados em -ce são grafados com -çar. A lógica é manter o som de /s/.
+
+- alcan**ce** → alcan**çar**
+- lan**ce** → lan**çar**
+- do**ce** → ado**çar**
