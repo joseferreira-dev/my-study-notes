@@ -862,3 +862,79 @@ Os verbos que derivam de substantivos terminados em -ce são grafados com -çar.
 - alcan**ce** → alcan**çar**
 - lan**ce** → lan**çar**
 - do**ce** → ado**çar**
+
+### O Uso da Letra "S"
+
+A escolha entre "s", "z", "c", "ç" ou os dígrafos "ss", "sc", "xc" é uma das maiores fontes de dúvida na ortografia do português. A letra "s", em particular, aparece em diversos contextos, e seu uso frequentemente segue padrões previsíveis, especialmente na formação de palavras derivadas de verbos.
+
+#### Em Derivados de Verbos com Radicais Específicos
+
+Um grande número de substantivos e adjetivos derivados de verbos são grafados com "s" por manterem a sonoridade do radical primitivo.
+
+- **Verbos terminados em -nder e -ndir:**
+    - prete**nder** → preten**s**ão
+    - defe**nder** → defe**s**a, defen**s**ivo
+    - compree**nder** → compreen**s**ão
+    - suspe**nder** → suspe**ns**ão
+    - expa**ndir** → expan**s**ão
+    - fu**ndir** → fu**s**ão
+- **Verbos terminados em -erter, -ertir e -ergir:**
+    - conv**erter** → conver**s**ão
+    - rev**erter** → rever**s**ão
+    - div**ertir** → diver**s**ão
+    - asp**ergir** → asper**s**ão
+    - im**ergir** → imer**s**ão
+    - subm**ergir** → submer**s**ão
+- **Verbos terminados em -pelir (formando derivados em -puls-):**
+    - ex**pelir** → ex**puls**ão, ex**puls**o
+    - im**pelir** → im**puls**o, im**puls**ivo
+    - com**pelir** → com**puls**ório
+    - re**pelir** → re**puls**a
+- **Verbos terminados em -correr (formando derivados em -curs-):**
+    - con**correr** → con**curs**o
+    - dis**correr** → dis**curs**o
+    - per**correr** → per**curs**o
+    - in**correr** → in**curs**ão
+
+#### Emprego em Sufixos Formadores de Palavras
+
+A letra "s" é a grafia padrão em diversos sufixos comuns.
+
+- **Sufixos -oso e -osa:** Usados para formar adjetivos que indicam "cheio de", "provido de".
+    - gost**oso**, gost**osa**
+    - sabor**oso**, sabor**osa**
+    - glamur**oso**, glamur**osa**
+    - medr**oso**, medr**osa**
+    - cheir**oso**, cheir**osa**
+- **Sufixos -ase, -ese, -ise, -ose:** Presentes em substantivos, muitos de origem grega.
+    - f**ase**, cr**ase**
+    - t**ese**, sín**tese**
+    - cr**ise**, análi**se**
+    - osm**ose**, hipn**ose**
+- **Sufixo -isa:** Usado para formar o feminino de alguns substantivos e títulos.
+    - poet**isa**
+    - profet**isa**
+    - sacerdot**isa**
+    - pap**isa**
+    - Nomes próprios: Helo**ísa**, Mar**isa**
+
+> **Fique de Olho: Exceções**
+> 
+> Algumas palavras fogem a esses padrões e são grafadas com "z", merecendo atenção.
+> 
+> - _Exemplos:_ go**z**o, ga**z**e, desli**z**e, bali**z**a, cori**z**a.
+
+#### Na Conjugação de Verbos Específicos
+
+Esta é uma regra de grande importância e frequência em provas. As formas conjugadas dos verbos **pôr**, **querer** e **usar**, bem como de seus derivados (compor, repor, requerer, etc.), são sempre grafadas com **S**.
+
+| Verbo                 | Formas Conjugadas com "S"                                                                                        |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Pôr** (e derivados) | eu **pus**, ele **pôs**, nós **pusemos**, eles **puseram**;<br>se eu **pusesse**;<br>quando nós **pusermos**.    |
+| **Querer**            | eu **quis**, ele **quis**, nós **quisemos**, eles **quiseram**;<br>que ele **queira**;<br>se eles **quisessem**. |
+| **Usar**              | eu **uso**, ele **usa**, nós **usamos**, que eles **usem**;<br>se nós **usássemos**.                             |
+
+- _Exemplos:_
+    - Ele **quis** participar, mas não **pôs** seu nome na lista.
+    - Quando nós **compusermos** a música, **usaremos** o violão novo.
+    - Seria ótimo se eles **quisessem** e **pusessem** em prática o novo plano.
