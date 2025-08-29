@@ -184,13 +184,13 @@ Nos próximos capítulos, exploraremos essas estruturas de maneira mais concreta
 A seguir temos duas imagens que resumem o que foi exposto aqui. Nesta primeira imagem, levamos em consideração como os tipos de dados podem ser constituídos:
 
 <div align="center">
-  <img width="800px" src="./img/01-resumo-01.png">
+  <img width="700px" src="./img/01-resumo-01.png">
 </div>
 
 Já nesta segunda imagem levamos em consideração como os dados podem ser estruturados. É válido ressaltar que apenas os TADs são apresentados nesta imagem.
 
 <div align="center">
-  <img width="800px" src="./img/01-resumo-02.png">
+  <img width="700px" src="./img/01-resumo-02.png">
 </div>
 
 Nota-se que em ambas as imagens há alguns termos em destaque. Esses termos são as principais Estruturas de Dados, sendo também as mais conhecidas. As demais fazem parte de outras disciplinas no universo da programação.
