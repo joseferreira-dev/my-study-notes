@@ -745,3 +745,60 @@ Usa-se o hífen para ligar duas ou mais palavras que formam um encadeamento de s
 
 - _Exemplos:_ ponte Rio-Niterói, eixo Rio-São Paulo, percurso casa-trabalho.
 
+### Regras Especiais de Hifenização por Prefixo
+
+Além da regra geral de "letras iguais e diferentes", existem regras específicas para determinados prefixos que se sobrepõem à lógica principal. O conhecimento destes casos é fundamental, pois eles são frequentemente explorados em provas.
+
+#### Os Prefixos "Bem" e "Mal"
+
+A hifenização com estes dois prefixos segue uma lógica particular.
+
+- **Com o prefixo BEM-:** A regra é usar sempre o hífen, exceto quando a palavra seguinte for um derivado dos verbos fazer ou querer.
+    - **Casos com hífen (regra geral):** bem-vindo, bem-humorado, bem-estar, bem-criado, bem-aventurado, bem-sucedido, bem-nascido.
+    - **Exceções sem hífen (derivados de _fazer/querer_):** benfeito, benfeitor, benfazejo, benquerer, benquisto.
+- **Com o prefixo MAL-:** A regra depende da letra que inicia a palavra seguinte.
+    - Usa-se o hífen se a palavra seguinte começar com **vogal** ou **H**.
+        - _Exemplos:_ mal-educado, mal-estar, mal-humorado, mal-afortunado.
+    - **Não** se usa o hífen (junta-se tudo) se a palavra seguinte começar com **consoante** (diferente de H).
+        - _Exemplos:_ malfeito, malcriado, malvisto, malnascido.
+
+|Prefixo|Antes de VOGAL ou H|Antes de CONSOANTE|Exceções|
+|---|---|---|---|
+|**BEM-**|**COM HÍFEN** (bem-estar)|**COM HÍFEN** (bem-criado)|**SEM HÍFEN** com `fazer`/`querer` (benfeito, benquerer)|
+|**MAL-**|**COM HÍFEN** (mal-educado)|**SEM HÍFEN** (malfeito)|N/A|
+
+#### Prefixos com Hífen Obrigatório
+
+Alguns prefixos exigem o uso do hífen em praticamente todas as situações.
+
+- **Com `além-`, `aquém-`, `recém-`, `sem-`, `ex-`, `vice-`:**
+    - _Exemplos:_ além-mar, aquém-fronteiras, recém-casado, sem-terra, ex-diretor, vice-presidente.
+- **Com `pós-`, `pré-`, `pró-` (quando tônicos e acentuados):**
+    - _Exemplos:_ pós-graduação, pré-vestibular, pró-americano.
+    - **Atenção:** Quando são átonos (sem acento e sem autonomia fonética), aglutinam-se à palavra seguinte sem hífen.
+        - _Exemplos:_ **pre**estabelecer, **pro**mover, **pos**por.
+
+#### Regras Específicas por Consoante
+
+- Com sub- e sob-:
+    Usa-se o hífen antes de palavras iniciadas por R ou B.
+    - _Exemplos:_ sub-região, sub-reitor, sub-base, sob-roda.
+    - (A regra das letras iguais `sub-bibliotecário` também se aplica aqui).
+    - A mesma lógica se aplica a prefixos como `ad-`, `ab-`, `ob-`: _ad-renal, ab-rogar, ob-rogar_.
+- Com circum- e pan-:
+    Usa-se o hífen antes de palavras iniciadas por vogal, M, N ou H.
+    - _Exemplos:_ pan-americano, pan-helenismo, circum-navegação, circum-escolar.
+
+### O Caso das Palavras que "Perderam a Noção de Composição"
+
+O texto do Acordo Ortográfico abre uma exceção à regra de duplicação do "r" e "s" para palavras que, pelo uso, já não são percebidas como compostas. A regra oficial diz:
+
+> "Certos compostos, em relação aos quais se perdeu, em certa medida, a noção de composição, grafam-se aglutinadamente: girassol, madressilva, mandachuva, pontapé, paraquedas, paraquedista etc.”
+
+A lógica é que o hífen serve para marcar a união de radicais distintos que mantêm sua individualidade (como em **homem-bomba**). Em palavras como **girassol**, a noção original de "gira + sol" se perdeu; pensamos nela como uma entidade única, uma flor. O mesmo ocorre com **pontapé** (não pensamos na "ponta do pé") e **paraquedas** (não pensamos em algo que "para a queda").
+
+Por ser uma regra de vocabulário impreciso ("certos compostos", "em certa medida"), a melhor estratégia é memorizar os principais exemplos que podem ser cobrados em prova.
+
+- **Principais exemplos:** girassol, madressilva, mandachuva, pontapé, paraquedas, paraquedista.
+
+Em caso de dúvida com outras palavras, a regra geral dos prefixos (vogais e consoantes iguais se separam; diferentes se unem, duplicando R e S) continua sendo a referência mais segura.
