@@ -938,3 +938,80 @@ Esta é uma regra de grande importância e frequência em provas. As formas conj
     - Ele **quis** participar, mas não **pôs** seu nome na lista.
     - Quando nós **compusermos** a música, **usaremos** o violão novo.
     - Seria ótimo se eles **quisessem** e **pusessem** em prática o novo plano.
+
+### O Uso de "S" em Oposição a "Z"
+
+A alternância entre as letras "s" e "z" é uma das maiores fontes de erros ortográficos, principalmente porque, em muitos contextos, o "s" assume o som de /z/ (como em "casa"). A chave para a grafia correta está, na maioria das vezes, em entender a formação da palavra, especialmente os sufixos utilizados em sua derivação.
+
+#### Sufixos de Nacionalidade/Títulos (-ês / -esa) vs. de Qualidade (-ez / -eza)
+
+Esta é uma das distinções mais clássicas e regulares da ortografia.
+
+- **Usa-se S nos sufixos -ês e -esa:** Para formar adjetivos pátrios (nacionalidades), títulos de nobreza e alguns nomes próprios.
+    - _Nacionalidades:_ portugu**ês**, ingl**ês**, franc**esa**, noruegu**esa**, finland**ês**.
+    - _Títulos:_ marqu**ês**, duqu**esa**, barone**sa**, consul**esa**.
+    - _Nomes Próprios:_ In**ês**, Ter**esa**.
+- **Usa-se Z nos sufixos -ez e -eza:** Para formar substantivos abstratos que derivam de adjetivos, indicando a qualidade ou o estado expresso pelo adjetivo.
+
+| Adjetivo | Substantivo Abstrato |
+| -------- | -------------------- |
+| limpo    | limp**eza**          |
+| nobre    | nobr**eza**          |
+| pobre    | pobr**eza**          |
+| belo     | bel**eza**           |
+| certo    | cert**eza**          |
+| lúcido   | lucid**ez**          |
+| rápido   | rapid**ez**          |
+| inválido | invalid**ez**        |
+
+#### Sufixos Formadores de Verbos (-isar vs. -izar)
+
+Esta regra se baseia diretamente no **Princípio da Coerência Radical**: a palavra derivada tende a manter a grafia da primitiva.
+
+- **Usa-se -isar (com S):** Quando a palavra primitiva **já possui a letra "s"** no seu radical. Na prática, a palavra original apenas recebe o sufixo "-ar".
+    - análi**s**e → anal**is**ar
+    - pe**s**quisa → pesqu**is**ar
+    - parali**s**ia → parali**s**ar
+    - avi**s**o → av**is**ar
+    - pi**s**o → p**is**ar
+- **Usa-se -izar (com Z):** Quando a palavra primitiva **não possui "s"** no seu radical. Nestes casos, a palavra recebe o sufixo "-izar".
+    - economia → econom**izar**
+    - terror → aterror**izar**
+    - frágil → fragil**izar**
+    - canal → canal**izar**
+    - moderno → modern**izar**
+
+> **Fique de Olho: Exceções**
+> 
+> Algumas palavras, por razões etimológicas (de sua origem histórica), fogem a essa regra. Os casos mais conhecidos são:
+> 
+> - cateque**s**e → catequi**z**ar
+> - sínte**s**e → sinteti**z**ar
+> - hipno**s**e → hipnoti**z**ar
+> - bati**s**mo → bati**z**ar
+
+#### Sufixos Diminutivos (-sinho vs. -zinho)
+
+A mesma lógica da palavra primitiva se aplica à formação de diminutivos.
+
+- **Usa-se -sinho(a) (com S):** Se a palavra primitiva **já possui "s"** na sua sílaba final.
+    - ca**s**a → ca**s**inha
+    - Tere**s**a → Tere**s**inha
+    - portugu**ês** → portugue**s**inho
+    - lápi**s** → lapi**s**inho
+- **Usa-se -zinho(a) (com Z):** Se a palavra primitiva **não possui "s"** em sua sílaba final. O sufixo adicionado é o "-zinho".
+    - mulher → mulher**zinha**
+    - árvore → arvore**zinha**
+    - pai → pai**zinho**
+    - flor → flor**zinha**
+    - café → cafe**zinho**
+
+### O Uso de "Ç" ou "S" após Ditongos
+
+Esta regra é de natureza puramente fonética (baseada no som). Após um ditongo, a grafia da consoante depende do som que ela representa.
+
+- **Usa-se Ç para o som de /s/:**
+    - _Exemplos:_ elei**ç**ão, trai**ç**ão, refeição, bei**ç**o.
+- **Usa-se S para o som de /z/:**
+    - _Exemplos:_ coi**s**a, cau**s**a, Neu**s**a, lou**s**a, deu**s**a.
+
