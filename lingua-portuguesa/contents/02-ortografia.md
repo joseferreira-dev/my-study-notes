@@ -446,3 +446,169 @@ Para consolidar o conhecimento e facilitar a memorização, o quadro a seguir si
 
 É fundamental notar que o quadro acima resume as regras que dependem da **terminação** das palavras. A regra das proparoxítonas, que independe de terminação, é a mais simples de todas e sobrepõe-se a estas: **TODA PROPAROXÍTONA É ACENTUADA**.
 
+### As Regras Especiais de Acentuação
+
+Além das regras gerais que se baseiam na tonicidade e terminação (monossílabos, oxítonas, paroxítonas, proparoxítonas), existem regras especiais que se sobrepõem a elas. A mais importante e cobrada em concursos é a regra de acentuação do hiato.
+
+#### A Regra do Hiato: Protegendo a Pronúncia
+
+Como vimos, o hiato é o encontro de duas vogais em sílabas adjacentes (Ex: s**a-ú**-de). A regra de acentuação do hiato existe por uma razão fonética muito específica: evitar que a sequência de vogais seja lida como um ditongo. O acento gráfico serve como um "aviso" de que a segunda vogal do encontro é tônica e forma sua própria sílaba.
+
+- Compare a pronúncia:
+    - **cai** (um único impulso de voz, ditongo, monossílaba)
+    - **ca-í** (dois impulsos de voz, hiato, dissílaba)
+
+O acento em "caí" é o que garante a pronúncia correta do hiato. É fundamental entender que esta regra é autônoma e se aplica independentemente da classificação geral da palavra.
+
+- **a-ça-í** (oxítona com hiato)
+- **sa-ú-de** (paroxítona com hiato)
+
+Ambas são acentuadas pela mesma regra especial do hiato.
+
+##### A Regra Principal do Hiato
+
+Acentuam-se as vogais **"i"** e **"u"** quando representam a segunda vogal tônica de um hiato, desde que atendam, simultaneamente, às seguintes condições:
+
+1. Sejam **tônicas**.
+2. Formem sílaba **sozinhas ou acompanhadas apenas da letra "s"**.
+3. Não sejam seguidas pelo dígrafo **"nh"** na sílaba seguinte.
+
+|Exemplos Acentuados (Regra Aplicada)|
+|---|
+|sa-**í**-da, e-go-**ís**-ta, fa-**ís**-ca, Pa-ra-**í**-ba|
+|sa-**ú**-de, ga-**ú**-cho, ba-**ú**, ba-la-**ús**-tre|
+
+| Exemplos Não Acentuados (Regra Não Aplicada)              | Motivo                                                     |
+| --------------------------------------------------------- | ---------------------------------------------------------- |
+| c**a-ir**, sa-**ir**-mos, j**u-iz**, R**a-ul**            | O "i" ou "u" tônico é seguido por outra letra que não "s". |
+| r**a-i**-nha, b**a-i**-nha, m**o-i**-nho, camp**a-i**-nha | O "i" tônico é seguido pelo dígrafo "nh".                  |
+| s**aiu**, contr**i-buiu**                                 | O "i" ou "u" não é tônico (a sílaba tônica é a anterior).  |
+
+##### O Novo Acordo Ortográfico e as Exceções ao Hiato
+
+O Acordo Ortográfico de 2009 trouxe mudanças importantes que criaram exceções a esta regra, principalmente envolvendo hiatos que aparecem após ditongos e os hiatos de vogais repetidas.
+
+**Hiatos após Ditongos:**
+
+Esta é uma das regras mais complexas e detalhadas.
+
+- **A Mudança:** Deixam de ser acentuadas as vogais **"i"** e **"u"** tônicas de um hiato quando vêm após um **ditongo decrescente** em uma palavra **paroxítona**.
+    - _Exemplos (não são mais acentuados):_ fei-**u**-ra, bai-**u**-ca, bo-cai-**u**-va.
+
+A regra, no entanto, é mantida em outros cenários, o que gera a necessidade de atenção redobrada.
+
+| Condição da Palavra                                   | Acentuação do Hiato              | Exemplo                              |
+| ----------------------------------------------------- | -------------------------------- | ------------------------------------ |
+| **Paroxítona** com hiato após ditongo **decrescente** | **NÃO** leva acento (Nova Regra) | fei-**u**-ra, bai-**u**-ca           |
+| **Paroxítona** com hiato após ditongo **crescente**   | **LEVA** acento (Regra Mantida)  | Gua-**í**-ra, Gua-**í**-ba           |
+| **Oxítona** com hiato após qualquer ditongo           | **LEVA** acento (Regra Mantida)  | Pi-au-**í**, tui-ui-**ú**, tei-**ú** |
+
+**Hiatos de Vogais Repetidas (-eem, -oo):**
+
+- **A Mudança:** O acento circunflexo que era usado para marcar os hiatos **-eem** (na 3ª pessoa do plural de verbos como _crer, dar, ler, ver_) e **-oo(s)** foi abolido.
+    - _Exemplos (não são mais acentuados):_
+        - Eles **creem**, **deem**, **leem**, **veem**.
+        - v**oo**, enj**oo**, perd**oo**, abenç**oo**.
+
+> **Dica Estratégica: Simplificando a Regra do Hiato para Provas**
+> 
+> A regra do hiato e suas exceções podem parecer complexas. Para fins práticos, concentre-se em memorizar os seguintes pontos:
+> 
+> 1. As palavras **feiura, baiuca e bocaiuva** (e similares) **não têm acento**.
+> 2. As palavras **Guaíra** e **Guaíba** **têm acento**.
+> 3. As palavras oxítonas como **Piauí, tuiuiú** e **teiú** **têm acento**.
+> 4. As terminações **-eem** e **-oo(s)**, como em **creem** e **voo**, **não têm acento**.
+> 5. Palavras como **juiz, ruim, Raul, rainha** e **moinho** **não têm acento** porque o "i" ou "u" do hiato não cumpre as condições da regra principal.
+
+### Casos Específicos e de Dúvida Frequente
+
+Além das regras gerais e especiais, o estudo da acentuação envolve o conhecimento de casos particulares que foram mantidos ou alterados pelo Novo Acordo Ortográfico, bem como a correta pronúncia de palavras que frequentemente causam confusão.
+
+#### Os Acentos Diferenciais Remanescentes
+
+O acento diferencial é um acento gráfico que não serve para marcar a tonicidade, mas sim para distinguir palavras com a mesma grafia (homógrafas), mas com significados, classes gramaticais ou tempos verbais diferentes. O Novo Acordo Ortográfico de 2009 aboliu a maioria desses acentos, simplificando as regras. A estratégia correta é focar apenas nos casos que permaneceram válidos.
+
+##### Acentos Obrigatórios
+
+**Pôr (verbo) vs. Por (preposição)**
+
+Esta distinção é mantida para diferenciar o verbo da preposição.
+
+- **Pôr (Verbo):** Leva acento circunflexo. Uma dica para confirmar é tentar substituí-lo por seu sinônimo "colocar".
+    - _Exemplo:_ É preciso **pôr** (colocar) os livros na prateleira correta.
+- **Por (Preposição):** Não é acentuado.
+    - _Exemplo:_ Viajamos **por** uma estrada de terra.
+
+**Pôde (passado) vs. Pode (presente)**
+
+O acento diferencia os tempos do verbo "poder" na 3ª pessoa do singular.
+
+- **Pôde (Pretérito Perfeito):** Com acento, indica uma ação no passado. A pronúncia do "o" é fechada.
+    - _Exemplo:_ Ontem, ele não **pôde** comparecer à reunião por motivos de saúde.
+- **Pode (Presente):** Sem acento, indica uma ação no presente. A pronúncia do "o" é aberta.
+    - _Exemplo:_ Ele não **pode** falar ao telefone neste momento.
+
+**Têm/Vêm (plural) e seus derivados**
+
+Este é um caso de concordância verbal marcado por acento. O acento circunflexo é usado para indicar a 3ª pessoa do plural dos verbos ter e vir e de todos os seus derivados.
+
+| Singular (sem acento)          | Plural (com acento circunflexo) |
+| ------------------------------ | ------------------------------- |
+| Ele **tem**...                 | Eles **têm**...                 |
+| Ele **vem**...                 | Eles **vêm**...                 |
+| Ele **mantém**... (manter)     | Eles **mantêm**...              |
+| Ele **contém**... (conter)     | Eles **contêm**...              |
+| Ele **intervém**... (intervir) | Eles **intervêm**...            |
+| Ele **convém**... (convir)     | Eles **convêm**...              |
+
+- **Atenção:** Os verbos derivados (manter, conter, intervir, etc.) já recebem um acento **agudo** na 3ª pessoa do **singular** por serem oxítonos terminados em "-em" (Ex: ele man**tém**). No plural, esse acento apenas se transforma em **circunflexo** (Ex: eles man**têm**).
+
+##### Acento Facultativo
+
+O Acordo Ortográfico tornou o acento diferencial facultativo em um caso principal, para ser usado apenas quando houver risco de ambiguidade.
+
+- **Fôrma (com acento):** Usado para se referir ao objeto, ao utensílio (fôrma de bolo).
+- **Forma (sem acento):** Usado para se referir ao formato, ao jeito ou ao verbo "formar".
+- **Uso:** O acento em "fôrma" é opcional.
+    - _Exemplo:_ Qual é a **forma** correta de preencher esta **fôrma**? (O uso do acento aqui ajuda a evitar a repetição sonora e a esclarecer o sentido).
+
+##### Acentos Abolidos: Foco de Prova
+
+É importante saber quais palavras **perderam** o acento diferencial para não cometer erros ou cair em "pegadinhas" que testam o conhecimento desatualizado.
+
+- **pelo** (substantivo) / **pelo** (verbo pelar) -> Agora são iguais a **pelo** (per + o).
+- **pera** (substantivo - fruta) -> Agora é igual a **pera** (preposição arcaica).
+- **polo** (substantivo - extremidade) -> Agora é igual a **polo** (contração antiga).
+- **para** (verbo parar) -> Agora é igual a **para** (preposição).
+
+#### Ortoépia e Prosódia: Palavras que Geram Dúvidas
+
+Como vimos, a aplicação correta das regras de acentuação depende do conhecimento da prosódia da palavra, ou seja, da sua sílaba tônica correta. Muitas palavras do vocabulário formal ou técnico possuem uma pronúncia que contraria a intuição, podendo levar a erros de classificação e, consequentemente, de acentuação. A seguir, uma lista de palavras importantes, organizadas por sua correta classificação tônica.
+
+| Classificação      | Palavras                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Oxítonas**       | aloés, cateter, Gibraltar, harém, mister (=necessário), Nobel, novel, recém, refém, ruim (hiato u-im), sutil, ureter.                                                                                                                                                                                                                                                                                                                              |
+| **Paroxítonas**    | acórdão, âmbar, ambrosia, avaro, aziago, barbaria, cânon, caracteres, cartomancia, ciclope, edito (=lei, decreto), epifania, exegese, filantropo, fluido (ui ditongo), fortuito (ui ditongo), gratuito (ui ditongo), ibero, inaudito, látex, maquinaria, misantropo, necropsia, Normandia, oximoro (tb. oximóron), pudico, quiromancia, simulacro.                                                                                                 |
+| **Proparoxítonas** | aeródromo, aerólito, álcali, álcool, alcoólatra, álibi, alvíssaras, âmago, amálgama, ambrósia, anátema, andrógino, antídoto, arquétipo, autóctone, brâmane, cáfila, condômino, crisântemo, década, díptero, écloga, édito (ordem judicial), Éfeso, êmbolo, epíteto, épsilon, escâncaras (às), êxodo, fac-símile, fíbula, idólatra, ímprobo, ínclito, ínterim, máxime ou maxime (lat.), ômega, plêiade (-a), protótipo, Tâmisa, trânsfuga, vândalo. |
+
+##### Palavras com Dupla Prosódia
+
+Algumas palavras da língua admitem duas pronúncias (e, às vezes, duas grafias) como corretas pela norma padrão.
+
+| Pronúncia Proparoxítona | Pronúncia Paroxítona |
+| ----------------------- | -------------------- |
+| acróbata                | acrobata             |
+| alópata                 | alopata              |
+| ambrósia                | ambrosia             |
+| crisântemo              | crisantemo           |
+| geodésia                | geodesia             |
+| hieróglifo              | hieroglifo           |
+| homília                 | homilia              |
+| nefelíbata              | nefelibata           |
+| Oceânia                 | Oceania              |
+| ortoépia                | ortoepia             |
+| projétil                | projetil             |
+| réptil                  | reptil               |
+| reseda (ê)              | resedá               |
+| sóror                   | soror                |
+| zângão                  | zangão               |
