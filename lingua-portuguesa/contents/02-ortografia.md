@@ -1086,3 +1086,69 @@ Nas conjugações de verbos com o radical **-sc-**, a grafia muda para **-sç-**
 - cre**sc**er → eu cre**sç**o, que você cre**sç**a
 - de**sc**er → eu de**sç**o, que nós de**sç**amos
 
+### O Uso de "G" e "J"
+
+A alternância entre "g" e "j" é uma fonte comum de erros ortográficos porque, antes das vogais **"e"** e **"i"**, ambas as letras representam o mesmo fonema /ʒ/ (como em "**ge**lo" e "**ji**pe"). A escolha correta, portanto, não é guiada pelo som, mas sim pela etimologia (a origem histórica da palavra) e pelos padrões de derivação da língua.
+
+#### Casos de Emprego da Letra "J"
+
+A grafia com "j" geralmente está associada a palavras de origens específicas ou a derivações que mantêm a letra da palavra primitiva.
+
+**Em palavras de origem Tupi, Africana, Árabe ou popular:**
+
+Muitas palavras incorporadas ao português a partir dessas matrizes linguísticas são grafadas com "j".
+
+- _Exemplos:_ **j**iboia, **j**iló, pa**j**é, can**j**ica, **j**erimum, man**j**ericão.
+
+**Em palavras derivadas de outras que já possuem "j" no radical:**
+
+Seguindo o Princípio da Coerência Radical, a família de palavras mantém a grafia da primitiva.
+
+- lo**j**a → lo**j**ista, lo**j**inha
+- gor**j**a → gor**j**eta
+- can**j**a → can**j**ica
+- laran**j**a → laran**j**eira
+- cere**j**a → cere**j**eira
+- ri**j**o → enri**j**ecer
+
+**Em verbos terminados em -jar e em suas formas conjugadas:**
+
+Os verbos que terminam em -jar mantêm o "j" em toda a sua conjugação.
+
+- tra**j**ar → eu tra**j**ei, que eles tra**j**em
+- encora**j**ar → encora**j**ei, que eles encora**j**em
+- via**j**ar → eu via**j**o, que eles via**j**em
+
+#### Casos de Emprego da Letra "G"
+
+A grafia com "g" é a mais comum em palavras de origem greco-latina e em sufixos específicos.
+
+**Nas terminações -ágio, -égio, -ígio, -ógio, -úgio:**
+
+Substantivos com estes sufixos são sempre grafados com "g".
+
+- _Exemplos:_ ped**ágio**, est**ágio**, sortil**égio**, col**égio**, prest**ígio**, vest**ígio**, rel**ógio**, ref**úgio**.
+
+**Nos substantivos terminados em -gem:**
+
+Esta terminação, muito comum em substantivos, é grafada com "g".
+
+- _Exemplos:_ vanta**gem**, cora**gem**, persona**gem**, ferru**gem**, fuli**gem**, verna**gem**, la**gem**, passa**gem**.
+
+> **Foco de Prova: Viagem (com G) vs. Viajem (com J)**
+> 
+> Esta é uma das distinções mais cobradas em concursos e ilustra perfeitamente as regras que vimos.
+> 
+> - **Viagem (com G):** É o **substantivo**. Refere-se ao ato de viajar.
+>     - _Exemplo:_ A **viagem** foi maravilhosa. / Fiz uma boa **viagem**.
+> - **Viajem (com J):** É a forma do **verbo** "viajar" no Presente do Subjuntivo e no Imperativo.
+>     - _Exemplo:_ Espero que eles **viajem** em segurança. / Não **viajem** à noite!
+
+#### Exceções e Palavras de Dúvida Frequente
+
+Algumas palavras fogem às regras gerais e devem ser memorizadas.
+
+- **Exceções à terminação "-gem":** As palavras **pajem** e **lambujem** são grafadas com "j".
+- **Palavras importantes com "j":** o**j**eriza (muito cobrada em provas), berin**j**ela, ma**j**estade, **j**eito, tra**j**e, sar**j**eta.
+- **Palavras importantes com "g":** ti**g**ela, va**g**em, rabu**g**ento, fuli**g**em, al**g**ema, here**g**e, cônju**g**e.
+
