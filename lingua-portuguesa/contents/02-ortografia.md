@@ -389,3 +389,60 @@ Essa regra não afetou as palavras oxítonas nem os monossílabos tônicos, que 
     - **Exceção:** Palavras como **Méier** e **destróier** são acentuadas. Elas não são vistas como prefixos, mas como substantivos próprios ou comuns terminados em **-r**, enquadrando-se na regra geral das paroxítonas.
 5. **Verbos em -am:** Verbos na 3ª pessoa do plural do presente do indicativo, como _cant**am**_ e _chor**am**_, são paroxítonas terminadas no ditongo nasal **-am**, mas **não são acentuadas**.
 
+### Proparoxítonas
+
+Chegamos à regra mais simples e absoluta de toda a acentuação gráfica. As palavras **proparoxítonas** — aquelas cuja sílaba tônica é a antepenúltima — são **todas acentuadas**, sem exceção.
+
+Esta regra prevalece sobre qualquer outra. Não é necessário analisar a terminação da palavra ou qualquer outro critério. Se, na separação silábica, a sílaba tônica for a antepenúltima, a palavra obrigatoriamente levará um acento gráfico.
+
+- **Exemplos:**
+    - **mé**-di-co
+    - **lâm**-pa-da
+    - es-pe-**cí**-fi-co
+    - ma-te-**má**-ti-ca
+    - **trân**-si-to
+    - an-**tô**-ni-mo
+    - ca-**ó**-ti-co
+    - fe-**nô**-me-no
+
+#### Uma Polêmica Gramatical: As "Proparoxítonas Aparentes"
+
+Existe uma discussão teórica na gramática sobre a classificação de palavras paroxítonas terminadas em ditongo crescente, como **história**, **série** e **pátio**. A polêmica reside na possibilidade de uma dupla análise da separação silábica do encontro vocálico final.
+
+A visão tradicional e dominante classifica essas palavras como paroxítonas terminadas em ditongo:
+
+- his-**tó**-ria (paroxítona terminada no ditongo "-ia")
+- **sé**-rie (paroxítona terminada no ditongo "-ie")
+
+No entanto, uma segunda corrente de análise, apoiada por alguns gramáticos e pelo próprio texto do Acordo Ortográfico, admite a possibilidade de separar esse encontro vocálico final em um hiato, o que transformaria a palavra em uma proparoxítona:
+
+- his-**tó**-ri-a (proparoxítona)
+- **sé**-ri-e (proparoxítona)
+
+O próprio Acordo Ortográfico menciona a acentuação das "...chamadas proparoxítonas aparentes, isto é, que (...) terminam por sequências vocálicas pós-tónicas/pós-tônicas praticamente consideradas como ditongos crescentes (-ea, -eo, -ia, -ie, -io, -oa, -ua, -uo, etc.)".
+
+O renomado gramático Domingos Paschoal Cegalla também registra essa dualidade, mas recomenda a classificação principal:
+
+> "Os encontros ia, ie, io, ua, ue, uo finais átonos, seguidos ou não de s, classificam-se quer como ditongos, quer como hiatos (...). Todavia, é preferível considerar tais grupos ditongos crescentes e, consequentemente, paroxítonos os vocábulos em que ocorrem."
+
+> **Foco de Prova: Como Abordar a Questão?**
+> 
+> Diante dessa polêmica, qual postura adotar em um concurso? A orientação é clara e estratégica:
+> 
+> 1. **A Regra Dominante:** Para a esmagadora maioria das bancas e questões, a classificação a ser considerada é a tradicional: **PAROXÍTONA TERMINADA EM DITONGO**. Esta deve ser sempre a sua primeira análise.
+> 2. **Questões de "Mesma Justificativa":** Se uma questão apresentar as palavras "farmácia", "critério" e "mágoa" e perguntar se são acentuadas pela mesma razão, a resposta é **SIM**. Elas se encaixam no mesmo grupo, seja pela regra das paroxítonas terminadas em ditongo, seja pela das proparoxítonas aparentes.
+> 3. **Quando Considerar a Dupla Possibilidade:** Apenas em questões de nível muito avançado, ou se a alternativa que considera a regra principal parecer incorreta, deve-se pensar na possibilidade da palavra ser classificada como uma proparoxítona "aparente" ou "eventual".
+> 4. **Distinção Importante:** Esta discussão **não se aplica** a paroxítonas terminadas em ditongo **decrescente**, como _fáceis_ ou _amáveis_. Essas são, sem qualquer polêmica, apenas paroxítonas.
+
+Em resumo, a regra a ser levada como principal é a da **paroxítona terminada em ditongo**. A teoria da proparoxítona aparente é um conhecimento acessório para situações excepcionais.
+
+### Quadro-Resumo das Regras Gerais de Acentuação
+
+Para consolidar o conhecimento e facilitar a memorização, o quadro a seguir sintetiza as regras gerais de acentuação baseadas na terminação das palavras monossílabas, oxítonas e paroxítonas.
+
+<div align="center">
+<img width="700px" src="./img/02-acentuacao-resumo.png">
+</div>
+
+É fundamental notar que o quadro acima resume as regras que dependem da **terminação** das palavras. A regra das proparoxítonas, que independe de terminação, é a mais simples de todas e sobrepõe-se a estas: **TODA PROPAROXÍTONA É ACENTUADA**.
+
