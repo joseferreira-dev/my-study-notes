@@ -435,3 +435,76 @@ A Organização para a Cooperação e Desenvolvimento Econômico (OCDE), uma org
     - **c) Estabelecer procedimentos claros e proporcionais:** Devem existir mecanismos eficazes para prevenir violações aos padrões de integridade e para gerir conflitos de interesse, sejam eles reais ou potenciais.
     - **d) Comunicar os valores e padrões do setor público:** A comunicação deve ser feita tanto internamente, para os servidores, quanto externamente, para o setor privado, a sociedade civil e os cidadãos, solicitando que estes parceiros também respeitem esses valores em suas interações com os agentes públicos.
 
+### O Arcabouço Normativo da Integridade Pública no Brasil
+
+A promoção da integridade na Administração Pública não se baseia apenas em aspirações morais, mas em um robusto e multifacetado conjunto de leis, decretos e normas. Existem diversos programas e instrumentos que visam a balizar a conduta dos agentes públicos e a estrutura das instituições.
+
+#### Principais Normas Nacionais
+
+O ordenamento jurídico brasileiro possui um conjunto de normas que, de forma direta ou indireta, estruturam a política de integridade. Dentre elas, destacam-se:
+
+- **Lei nº 8.112/1990 (Estatuto dos Servidores Públicos Civis Federais):** É a base do regime disciplinar, estabelecendo os deveres, as proibições e as penalidades aplicáveis aos servidores, como já estudamos em capítulos anteriores.
+- **Decreto nº 1.171, de 22 de junho de 1994 (Código de Ética do Servidor Público Civil Federal):** É o código deontológico do servidor do Executivo Federal. Ele vai além da legalidade estrita, estabelecendo as regras de decoro e os princípios morais que devem guiar a conduta do servidor.
+- **Decreto nº 6.029, de 1º de fevereiro de 2007:** Instituiu o Sistema de Gestão da Ética do Poder Executivo Federal, criando a estrutura de Comissões de Ética em todos os órgãos e entidades para aplicar o Código de Ética.
+- **Lei nº 12.813, de 16 de maio de 2013 (Lei de Conflito de Interesses):** Norma específica que dispõe sobre as situações que configuram conflito entre o interesse público e o privado no exercício de cargo ou emprego no Poder Executivo Federal.
+
+#### Influências e Compromissos Internacionais
+
+A política de integridade brasileira também é influenciada por compromissos internacionais e por legislações estrangeiras de grande impacto.
+
+- **Convenções Internacionais contra a Corrupção:** O Brasil é signatário das principais convenções sobre o tema, como as da Organização para a Cooperação e Desenvolvimento Econômico (**OCDE**), da Organização dos Estados Americanos (**OEA**) e da Organização das Nações Unidas (**ONU**). Ao ratificar esses tratados, o país se compromete a adotar padrões internacionais de transparência e combate à corrupção.
+- **Foreign Corrupt Practices Act (FCPA - EUA):** Embora seja uma lei norte-americana, o FCPA tem alcance extraterritorial. Ele visa a combater o suborno de funcionários públicos no exterior por parte de empresas que têm alguma ligação com os EUA. Essa lei pressionou empresas que atuam no Brasil a adotarem rigorosos programas de _compliance_, o que, por sua vez, elevou o padrão de exigência nas relações entre o setor privado e o setor público.   
+
+#### O Moderno Sistema de Integridade Federal
+
+Recentemente, o **Decreto nº 11.529/2023** consolidou e modernizou a política de integridade no âmbito da administração pública federal direta, autárquica e fundacional, ao instituir:
+
+- O **Sistema de Integridade, Transparência e Acesso à Informação da Administração Pública Federal (Sitai)**; e
+- A **Política de Transparência e Acesso à Informação da Administração Pública Federal**.
+
+Este decreto define os elementos centrais que compõem a estratégia de integridade de um órgão público:
+
+- **Programa de Integridade:** É o **conjunto de princípios, normas, procedimentos e mecanismos** de prevenção, detecção e remediação de práticas de corrupção, fraudes, irregularidades e outros desvios éticos e de conduta. É a estratégia geral de integridade do órgão.
+- **Plano de Integridade:** É o **plano de ação** que organiza as medidas de integridade a serem adotadas em um determinado período. É elaborado pela unidade setorial do Sitai e aprovado pela autoridade máxima do órgão. Nele, são definidos os riscos, as metas e as ações concretas a serem implementadas.
+- **Funções de Integridade:** São as **unidades setoriais** que executam o programa, como a **Corregedoria** (apuração e punição), a **Ouvidoria** (canal de denúncias), o **Controle Interno**, a **Comissão de Gestão da Ética** e as unidades de **Transparência**.
+
+Uma importante Portaria da Controladoria-Geral da União (CGU) sobre o tema define o **"risco para a integridade"** como toda vulnerabilidade que pode favorecer ou facilitar a ocorrência de práticas de corrupção, fraudes, irregularidades e/ou desvios éticos e de conduta, podendo comprometer os objetivos da instituição. A identificação e o tratamento desses riscos são o foco principal dos Planos de Integridade.
+
+Como visto, existem diversos trabalhos sobre integridade na administração pública, e todos eles convergem para uma mesma conclusão: a integridade se materializa em um conjunto de ações institucionais que têm como objetivo manter a Administração dentro de sua razão de existir, que é entregar uma gestão eficiente, adequada e transparente à sociedade, prevenindo fraudes e atos de corrupção.
+
+## Sigilo Profissional: O Dever de Confidencialidade
+
+O termo **sigilo** tem origem no latim _sigillum_, que significa selo ou segredo. No contexto da ética, entende-se por **sigilo profissional** o dever de guardar informações obtidas em razão do exercício de uma profissão. Ele abrange a preservação de dados adquiridos durante o desempenho de funções, incluindo tudo o que foi confidencialmente confiado ou aquilo que se tornou conhecido em virtude da posição profissional ocupada.
+
+### Fundamento Constitucional
+
+O sigilo profissional não é apenas um preceito ético, mas um direito com amparo constitucional, resguardado como cláusula pétrea no artigo 5º da Constituição Federal de 1988:
+
+> Constituição Federal (Art. 5º)
+> 
+> XIII - é livre o exercício de qualquer trabalho, ofício ou profissão, atendidas as qualificações profissionais que a lei estabelecer;
+> XIV - é assegurado a todos o acesso à informação e resguardado o sigilo da fonte, quando necessário ao exercício profissional.
+
+O inciso XIV é a base jurídica que garante que, para o livre e seguro exercício de certas profissões, o profissional tem o direito e o dever de proteger a confidencialidade das informações que recebe.
+
+### Objetivos e Importância do Sigilo Profissional
+
+O dever de confidencialidade é fundamental em várias carreiras, pois sustenta a relação de confiança entre o profissional e o cliente ou cidadão. Seus objetivos são múltiplos:
+
+- **Salvaguardar a privacidade** dos indivíduos;
+- **Fomentar a confiança** nas relações profissionais, permitindo que as pessoas compartilhem informações sensíveis sem receio de exposição;
+- **Sustentar a ética profissional**, que exige lealdade e respeito;
+- **Resguardar dados sensíveis** e estratégicos;
+- **Assegurar a observância de normas legais e éticas**;
+- **Promover o bem-estar dos indivíduos e defender a integridade** das diversas profissões.
+
+Este dever se manifesta de formas distintas em diferentes âmbitos. Profissionais como médicos, psicólogos e outros especialistas da saúde são responsáveis por guardar as informações médicas e pessoais de seus pacientes em segredo (sigilo médico). De modo similar, advogados devem proteger os dados confidenciais de seus clientes (sigilo advocatício). No âmbito corporativo, é essencial preservar o sigilo para proteger dados estratégicos, comerciais e financeiros.
+
+### O Sigilo Profissional na Administração Pública: O Equilíbrio com a Transparência
+
+Na administração pública, o sigilo emerge como um pilar fundamental para a proteção de informações sensíveis, assegurando que dados pessoais, estratégias de segurança nacional e detalhes de investigações permaneçam resguardados contra o escrutínio público indevido.
+
+Essa prática, entretanto, caminha sobre uma linha tênue, equilibrando-se entre a necessidade de confidencialidade e o **princípio da publicidade**, que é a regra geral no serviço público. Em um mundo ideal, o sigilo é aplicado com discernimento, protegendo o bem-estar coletivo e a integridade de operações cruciais, sem, contudo, eclipsar o compromisso com a transparência e a responsabilidade pública.
+
+O desafio reside em encontrar esse equilíbrio, garantindo que o sigilo não se converta em um véu para a ocultação de atos ilícitos ou para a proteção de interesses indevidos, mas sim em um instrumento legítimo de proteção ao interesse público. Uma administração pública íntegra e confiável é aquela que sabe proteger o que é necessário, ao mesmo tempo em que se mantém transparente e aberta ao controle social.
+
