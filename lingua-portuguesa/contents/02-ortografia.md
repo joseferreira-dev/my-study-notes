@@ -1554,3 +1554,108 @@ Estas locuções expressam ideias opostas e não devem ser confundidas.
     - _Exemplos:_
         - O filho correu **ao encontro do** pai. (Aproximação física).
         - A nova proposta veio **ao encontro dos** nossos interesses. (Concordância, favor).
+
+### Senão vs. Se não
+
+A distinção entre `senão` (junto) e `se não` (separado) é uma das mais complexas da ortografia, pois envolve análise sintática. A melhor estratégia é entender os papéis de cada expressão.
+
+- **Se não (separado):** É a união de duas palavras independentes, a conjunção **se** e o advérbio de negação **não**. Pode ser usado em três contextos principais:
+    1. **Com valor de Condição:** Introduz uma oração condicional negativa ("caso não").
+        - _Exemplo:_ **Se não** chover amanhã, iremos à praia.
+        - _Exemplo:_ **Se não** revisar o conteúdo, você o esquecerá.
+    2. **Com valor de Dúvida:** A conjunção integrante "se" introduz uma dúvida que contém uma negação.
+        - _Exemplo:_ O professor perguntou **se não** haveria aula na sexta-feira.
+        - _Exemplo:_ Quero saber **se não** é melhor resolvermos isso agora.
+    3. **Com valor de "quando não":** Em estruturas que apresentam uma alternativa.
+        - _Exemplo:_ Ele sempre contribui com a discussão, **se não** com uma solução, ao menos com uma nova perspectiva.
+- **Senão (junto):** É uma palavra única que pode funcionar como conjunção, preposição ou até substantivo, com múltiplos significados.
+    1. **Como "do contrário", "caso contrário":**
+        - _Exemplo:_ É melhor estudar, **senão** você será reprovado.
+    2. **Como "a não ser", "exceto":**
+        - _Exemplo:_ Ninguém, **senão** Deus, poderia salvá-lo.
+        - _Exemplo:_ Na festa não havia **senão** parentes e amigos próximos.
+    3. **Como "mas sim":**
+        - _Exemplo:_ Ele não era um candidato despreparado, **senão** um pouco nervoso.
+    4. **Como "defeito", "falha" (substantivo):**
+        - _Exemplo:_ O único **senão** do projeto é o seu alto custo.
+
+> **Fique de Olho: O Caso Facultativo**
+> 
+> Em algumas construções, a escolha entre **senão** e **se não** pode ser facultativa, a depender da interpretação.
+> 
+> - Passar no concurso é difícil, **senão** impossível. (Usando "senão" como "mas sim").
+> - Passar no concurso é difícil, **se não** for impossível. (Usando "se não" com o verbo "ser" implícito).
+
+### A Família "Baixo": Abaixo, Debaixo, Embaixo, etc.
+
+A grafia junta ou separada depende da função da palavra na frase.
+
+- **Abaixo / Debaixo / Embaixo (junto):** São **advérbios de lugar**. Indicam uma posição inferior ("sob") e, quando precisam de complemento, são geralmente seguidos da preposição "de".
+    - _Exemplos:_
+        - O gato está escondido **debaixo da** cama.
+        - Assine seu nome no campo **abaixo**.
+        - A temperatura ficou **abaixo de** zero.
+        - Guarde as ferramentas **embaixo da** bancada.
+- **De baixo / Em baixo / Por baixo (separado):** Ocorrem quando "baixo" é um **adjetivo** ou **advérbio** independente, modificado por uma preposição que faz parte da estrutura da frase. A expressão **de baixo** frequentemente se opõe a **de cima**.
+    - _Exemplos:_
+        - O apartamento **de baixo** está em obras. (Oposto a "o de cima").
+        - As ordens vêm **de cima para baixo**.
+        - Ela me olhou **de cima a baixo**.
+        - O rio passa **por baixo da** ponte.
+        - Fale **em baixo** volume para não acordar o bebê.
+
+| Grafia        | Classe Gramatical     | Exemplo                                     |
+| ------------- | --------------------- | ------------------------------------------- |
+| **Abaixo**    | Advérbio              | Veja o gráfico **abaixo**.                  |
+| **Debaixo**   | Advérbio              | O livro está **debaixo do** jornal.         |
+| **Embaixo**   | Advérbio              | Ele mora no apartamento **embaixo do** meu. |
+| **de baixo**  | Preposição + Adjetivo | A gaveta **de baixo** está emperrada.       |
+| **por baixo** | Preposição + Advérbio | O atleta passou **por baixo da** corda.     |
+
+## O Novo Acordo Ortográfico: Um Resumo das Principais Mudanças
+
+Ao longo deste capítulo, vimos diversas regras de acentuação e hifenização que foram diretamente impactadas pelo Acordo Ortográfico vigente. Esta seção serve como um resumo final para consolidar as alterações mais significativas que um candidato precisa dominar.
+
+**O Fim do Trema (¨)**
+
+O trema foi completamente abolido da grafia de palavras portuguesas. Ele permanece apenas em nomes próprios de origem estrangeira e seus derivados (ex: Müller, mülleriano).
+
+- **Grafia Antiga:** cinqüenta, lingüiça, tranqüilo, freqüente.
+- **Grafia Atual:** **cinquenta, linguiça, tranquilo, frequente**.
+- **Dupla Pronúncia:** Em consequência da queda do trema, os verbos terminados em **-guar, -quar, -quir** passaram a admitir oficialmente uma dupla pronúncia para certas formas.
+    - _Exemplos:_
+        - enxaguar → enxáguo / enxaguo
+        - delinquir → delínques / delinques
+
+**A Queda da Maioria dos Acentos Diferenciais**
+
+Como vimos, a maioria dos acentos usados para diferenciar palavras homógrafas foi eliminada. Restaram apenas os casos obrigatórios de pôr/por, pôde/pode e têm/vêm (e derivados), além do caso facultativo de fôrma/forma.
+
+**A Queda do Acento nos Ditongos Abertos Paroxítonos**
+
+O acento agudo nos ditongos abertos -éi e -ói foi abolido apenas em palavras paroxítonas.
+
+- **Grafia Antiga:** idéia, assembléia, heróico, jibóia.
+- **Grafia Atual:** **ideia, assembleia, heroico, jiboia**.
+
+**A Queda do Acento nos Hiatos ee e oo**
+
+O acento circunflexo que marcava o hiato em vogais repetidas foi eliminado.
+
+- **Grafia Antiga:** crêem, lêem, vôo, enjôo.
+- **Grafia Atual:** **creem, leem, voo, enjoo**.
+
+**A Queda do Acento em "Arguir" e "Redarguir"**
+
+O acento agudo no "u" tônico das formas rizotônicas (com acento no radical) destes verbos foi abolido.
+
+- **Grafia Antiga:** Eu argúo.
+- **Grafia Atual:** Eu **arguo**.
+
+## Considerações Finais
+
+Neste capítulo, realizamos uma imersão profunda no universo da Ortografia, o conjunto de convenções que rege a forma correta da escrita na norma padrão da Língua Portuguesa. Partimos dos fundamentos da Fonologia, distinguindo os conceitos de fonema e letra e analisando os encontros vocálicos e consonantais que estruturam as sílabas. Com essa base, desvendamos o sistema de acentuação gráfica, desde as regras gerais que organizam monossílabos, oxítonas, paroxítonas e proparoxítonas, até as regras especiais, como a do hiato e os remanescentes acentos diferenciais.
+
+Aprofundamos o estudo no complexo emprego do hífen e nas convenções para o uso de letras específicas, como S/Z, G/J e X/CH, cujo domínio depende do reconhecimento de padrões de formação de palavras. Abordamos também regras pragmáticas essenciais para a escrita formal, como o uso de letras maiúsculas, siglas e abreviações. Por fim, exploramos um extenso repertório de expressões problemáticas, cujo domínio correto é um grande diferencial competitivo, e consolidamos as principais mudanças trazidas pelo Novo Acordo Ortográfico.
+
+O conhecimento apresentado aqui é de natureza eminentemente prática. A correção ortográfica é um dos primeiros e mais objetivos critérios de avaliação em qualquer concurso, seja em questões específicas que testam diretamente estas regras, seja napenalização por desvios em produções textuais, como as redações. Este capítulo deve ser visto não como um conteúdo a ser memorizado de uma só vez, mas como um manual de consulta constante, um guia para sanar dúvidas e fortalecer a segurança na escrita. A precisão ortográfica é a base sobre a qual a clareza, a coesão e a elegância de um texto são construídas.
