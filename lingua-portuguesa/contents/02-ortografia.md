@@ -1241,3 +1241,81 @@ A função mais básica da letra maiúscula é marcar os nomes próprios.
 - Personificações e Individualizações: Um substantivo comum pode ser grafado com maiúscula para indicar que ele está sendo personificado ou tratado como uma entidade única e específica.
     - _Exemplos:_ A **M**orte (entidade) o levou. / A **N**ação (o Brasil) espera por mudanças.
 
+## Siglas, Símbolos e Abreviações: As Formas Reduzidas da Escrita
+
+Na comunicação escrita, é comum o uso de formas reduzidas para otimizar o espaço e agilizar a leitura de nomes e expressões extensas. Essas formas, no entanto, seguem convenções específicas. É fundamental distinguir os três principais tipos de redução: siglas, abreviações (ou abreviaturas) e símbolos.
+
+### Siglas: A Economia na Escrita Oficial
+
+A sigla é uma palavra formada pelas letras ou sílabas iniciais de um nome composto, geralmente de instituições, órgãos, partidos, estados, etc.
+
+**Regras de Grafia e Capitalização**
+
+1. **Siglas de até três letras:** São grafadas com todas as letras maiúsculas.
+    - _Exemplos:_ **ONU** (Organização das Nações Unidas), **USP** (Universidade de São Paulo), **PIB** (Produto Interno Bruto), **CPF** (Cadastro de Pessoas Físicas), **PT**, **RJ**.
+2. **Siglas com mais de três letras, soletradas:** Se a sigla é pronunciada letra por letra, também é grafada com todas as letras maiúsculas.
+    - _Exemplos:_ **UFRJ** (Universidade Federal do Rio de Janeiro), **BNDES** (Banco Nacional de Desenvolvimento Econômico e Social), **INSS** (Instituto Nacional do Seguro Social), **ICMS**.
+3. **Siglas com mais de três letras, pronunciadas como palavras:** Se a sigla forma uma palavra que pode ser lida silabicamente, apenas a primeira letra é grafada em maiúscula.
+    - _Exemplos:_ **Detran** (Departamento Estadual de Trânsito), **Unesco** (Organização das Nações Unidas para a Educação, a Ciência e a Cultura), **Petrobras**, **Uerj**, **Suframa**.
+4. **Casos Híbridos:** Algumas siglas podem apresentar letras maiúsculas e minúsculas de forma mista, geralmente por convenção da própria instituição.
+    - _Exemplos:_ **UnB** (Universidade de Brasília), **CNPq** (Conselho Nacional de Desenvolvimento Científico e Tecnológico).
+
+**Plural das Siglas**
+
+A norma padrão indica que o plural das siglas é feito simplesmente com o acréscimo de um "s" minúsculo, sem o uso de apóstrofo.
+
+- **Correto:** os **CPFs**, as **UPAs**, os **PDFs**.
+- **Incorreto:** os CPF's, as UPA's, os PDFS.
+
+**Lexicalização e Derivação**
+
+Com o tempo, algumas siglas se tornam tão comuns que passam a ser tratadas como palavras do léxico, sendo grafadas em minúsculas e podendo, inclusive, gerar palavras derivadas.
+
+- _Exemplos de lexicalização:_ **aids**, **ibope**, **jipe**, **laser**, **radar**, **óvni**.
+- _Exemplos de derivação:_ Do **PT** → **petista**; de **aids** → **aidético**.
+
+### Abreviações: A Redução Gráfica das Palavras
+
+A abreviação (ou abreviatura) é a representação de uma palavra por meio de suas sílabas ou letras iniciais, sendo sempre finalizada por um **ponto abreviativo**.
+
+**Regras Gerais de Formação**
+
+1. A forma mais comum é utilizar a primeira sílaba mais a primeira letra da segunda sílaba, seguidas de ponto. Se a palavra original tiver acento na primeira sílaba, ele é mantido.
+    - _Exemplos:_ **gram.** (gramática), **num.** (numeral), **pág.** (página), **séc.** (século).
+2. Se a segunda sílaba da palavra se iniciar com um encontro consonantal, ambas as consoantes fazem parte da abreviação.
+    - _Exemplos:_ **constr.** (construção), **pess.** (pessoa), **secr.** (secretaria).
+
+**Abreviações Consagradas pelo Uso**
+
+Muitas abreviações não seguem as regras gerais, mas são fixadas pela tradição. A tabela abaixo lista algumas das mais comuns.
+
+| Palavra                     | Abreviação(ões) |
+| --------------------------- | --------------- |
+| apartamento                 | apto.           |
+| avenida                     | Av.             |
+| companhia                   | Cia.            |
+| Doutor(a)                   | Dr. / Dr.ª      |
+| et cetera (e outras coisas) | etc.            |
+| Limitada                    | Ltda.           |
+| observação                  | obs.            |
+| página                      | p. ou pág.      |
+| por exemplo                 | p. ex.          |
+| professor(a)                | prof. / prof.ª  |
+| Senhor(a)                   | Sr. / Sr.ª      |
+| veja                        | v.              |
+
+### Símbolos: Representações Internacionais
+
+Os símbolos são representações gráficas de unidades de medida e elementos químicos, padronizados internacionalmente. Eles se diferenciam das abreviações por seguirem regras próprias:
+
+- **Não levam ponto final** (a menos que coincidam com o fim da frase).
+- **Não possuem forma plural** (o número que os antecede indica a quantidade).
+- São, em geral, grafados com letras **minúsculas**.
+
+| Grandeza   | Símbolo | Exemplo de Uso                              |
+| ---------- | ------- | ------------------------------------------- |
+| quilograma | **kg**  | A encomenda pesa 15 **kg**. (e não 15 kgs.) |
+| metro      | **m**   | O terreno tem 200 **m** de comprimento.     |
+| litro      | **L**   | Comprei 2 **L** de suco.                    |
+| hora       | **h**   | A viagem durou 3 **h**.                     |
+| minuto     | **min** | A prova começará em 10 **min**.             |
