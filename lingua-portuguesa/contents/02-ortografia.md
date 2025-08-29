@@ -63,3 +63,80 @@ Os dois acentos gráficos usados sobre as vogais também carregam uma informaç�
     - _Exemplos:_ l**â**mpada, voc**ê**, av**ô**.
 
 A oposição entre os timbres é claramente percebida em pares de palavras como **avó** (som aberto) e **avô** (som fechado).
+
+## Sons, Fonemas, Letras e Dígrafos
+
+Para compreender as regras de acentuação e de ortografia de forma lógica, é preciso antes entender a matéria-prima com a qual a língua é construída: os sons e sua representação gráfica. O campo da Fonologia estuda a função dos sons na formação e na distinção das palavras. Dominar noções como fonema, letra, dígrafo e encontro consonantal é essencial para a correta separação de sílabas e, consequentemente, para a classificação da sílaba tônica, que é a base de toda a acentuação gráfica.
+
+### Fonema e Letra: A Distinção entre Som e Símbolo
+
+Um **Fonema** é a menor **unidade sonora** de uma língua capaz de criar distinção de significado entre palavras. O fonema é um conceito abstrato, é o som que mentalizamos. A troca de um único fonema pode alterar completamente o sentido de um vocábulo.
+
+- _Exemplo:_ Na palavra **pato**, temos a união de quatro fonemas: /p/ /a/ /t/ /o/.
+- Se trocarmos o fonema /p/ pelo fonema /g/, formamos uma nova palavra: **gato**.
+- Se trocarmos o /t/ pelo /k/ (representado pela letra "c"), temos **paco**.
+
+Já uma **Letra** é a **representação gráfica**, o símbolo visual que usamos na escrita para representar um fonema.
+
+Idealmente, cada letra representaria um único fonema, mas essa correspondência não é perfeita no português. A relação entre o número de letras e o de fonemas em uma palavra pode variar por três motivos principais:
+
+1. Uma mesma letra pode representar fonemas diferentes (ex: a letra **X** pode ter som de /ch/ em _xícara_, /z/ em _exame_, /s/ em _texto_ ou /ks/ em _táxi_).
+2. Um mesmo fonema pode ser representado por letras diferentes (ex: o fonema /z/ pode ser representado pela letra **Z** em _azeite_ ou pela letra **S** em _casa_).
+3. Um único fonema pode ser representado por duas letras. A este fenômeno damos o nome de **dígrafo**.
+
+### Dígrafos: Duas Letras, Um Só Som
+
+O dígrafo ocorre quando um grupo de duas letras é usado para representar um único fonema. A presença de um dígrafo em uma palavra significa que ela terá **mais letras do que fonemas**.
+
+- _Exemplo:_ **Chuva**
+    - **Letras:** 5 (c-h-u-v-a)
+    - **Fonemas:** 4 (/ch/ - /u/ - /v/ - /a/). O grupo "ch" representa um único som.
+
+Os dígrafos podem ser consonantais ou vocálicos.
+
+#### Dígrafos Consonantais
+
+São os encontros de duas letras que representam um único som de consoante.
+
+|Dígrafo|Exemplo|Dígrafo|Exemplo|Dígrafo|Exemplo|
+|---|---|---|---|---|---|
+|**ch**|**ch**ave|**rr**|ca**rr**o|**sc**|na**sc**er|
+|**lh**|pa**lh**a|**ss**|pa**ss**o|**sç**|na**sç**a|
+|**nh**|ni**nh**o|**xc**|e**xc**eto|**xs**|e**xs**udar|
+|**qu**|**qu**eijo|**gu**|**gu**erra|||
+
+> **Fique de Olho:** Os grupos **gu** e **qu** só são dígrafos quando o "u" não é pronunciado, o que ocorre antes das vogais "e" e "i". Em palavras como "a**gu**ado" ou "**qu**ase", o "u" é pronunciado, portanto, não há dígrafo.
+
+#### Dígrafos Vocálicos (ou Nasais)
+
+Ocorrem quando as letras **m** ou **n** aparecem após uma vogal na mesma sílaba. Nesses casos, "m" e "n" não representam fonemas de consoantes, mas apenas indicam que a vogal anterior deve ser pronunciada com um som nasal.
+
+|Dígrafo|Exemplo|
+|---|---|
+|**am** / **an**|c**am**po / s**an**gue|
+|**em** / **en**|t**em**po / l**en**to|
+|**im** / **in**|l**im**po / c**in**to|
+|**om** / **on**|c**om**pra / t**on**to|
+|**um** / **un**|at**um** / m**un**do|
+
+### Encontros Consonantais: Duas Letras, Dois Sons
+
+Diferentemente do dígrafo, o **encontro consonantal** é a sequência de duas ou mais consoantes na palavra, onde **cada letra representa um fonema distinto**. Aqui, todos os sons das consoantes são pronunciados.
+
+- _Exemplo:_ **br**a**d**o (o "b" e o "r" são pronunciados; o "d" também).
+- _Exemplo:_ **tr**a**nst**o**rn**o (há três encontros consonantais: "tr", "ns", "rn").
+
+O encontro consonantal pode ser classificado de acordo com sua posição na sílaba:
+
+- **Encontro Consonantal Perfeito (ou Próprio):** Ocorre na mesma sílaba, sendo inseparável na divisão silábica. Geralmente, envolve a letra "l" ou "r" como segunda consoante.
+    - _Exemplos:_ **pr**a-to, **bl**u-sa, **ps**i-có-lo-go, a-**tl**e-ta.
+- **Encontro Consonantal Imperfeito (ou Impróprio):** Ocorre em sílabas diferentes, sendo separável na divisão silábica.
+    - _Exemplos:_ a**d-v**o-ga-do, ri**t-m**o, o**b-j**e-to, su**b-s**olo.
+
+> **Resumo da Diferença:**
+> 
+> - **Dígrafo:** Duas letras, um som (Ex: ca**rr**o).
+> - **Encontro Consonantal:** Duas letras, dois sons (Ex: ca**rt**a).
+
+A identificação correta desses fenômenos é o primeiro passo para a divisão silábica correta, que por sua vez é pré-requisito para as regras de acentuação que veremos a seguir.
+
