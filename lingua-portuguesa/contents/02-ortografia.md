@@ -1452,3 +1452,105 @@ Apesar da pronúncia idêntica em muitas regiões, essas palavras têm significa
         - Preciso de **mais** tempo para terminar.
         - Quero um pouco **mais** de café.
 
+### A fim de vs. Afim
+
+- **A fim de (separado):** É uma locução prepositiva que indica **finalidade, propósito ou intenção**. É sinônimo de "para".
+    - _Exemplos:_
+        - Ele estudou muito **a fim de** passar no concurso.
+        - Estamos aqui **a fim de** resolver este problema.
+- **Afim (junto):** É um **adjetivo** que significa **semelhante, parente, que possui afinidade**.
+    - _Exemplos:_
+        - Temos ideias **afins** sobre política.
+        - Matemática e Física são áreas **afins**.
+
+### A par vs. Ao par
+
+- **A par:** É uma expressão que significa **estar ciente, informado, por dentro de** algo.
+    - _Exemplos:_
+        - Preciso me manter **a par** das novas legislações.
+        - Você já está **a par** do que aconteceu na reunião?
+- **Ao par:** É uma expressão usada quase exclusivamente no contexto financeiro, indicando **equivalência de valor ou câmbio** entre moedas ou títulos.
+    - _Exemplos:_
+        - Por muito tempo, o dólar esteve quase **ao par** do euro.
+        - As ações foram negociadas **ao par**, ou seja, pelo seu valor nominal.
+
+### Acerca de vs. A cerca de vs. Há cerca de
+
+- **Acerca de (junto):** É uma locução que significa **sobre, a respeito de**. Refere-se a um assunto.
+    - _Exemplos:_
+        - Conversamos **acerca dos** novos projetos da empresa.
+        - O livro é **acerca da** história do Brasil.
+- **A cerca (separado):** É a combinação do artigo "a" com o substantivo "cerca" (muro, vedação).
+    - _Exemplo:_ **A cerca** de arame farpado foi derrubada.
+- **Há cerca de (com verbo Haver):** Expressão que indica **tempo decorrido aproximado**.
+    - _Exemplo:_ Ele se mudou para cá **há cerca de** cinco anos.
+- **A cerca de (com preposição A):** Expressão que indica **distância ou tempo futuro aproximado**.
+    - _Exemplo:_ Estamos **a cerca de** 10 km do nosso destino.
+
+### Tampouco vs. Tão pouco
+
+- **Tampouco:** É um advérbio de negação, sinônimo de **também não** ou **nem**. É usado para adicionar uma ideia negativa a outra já expressa.
+    - _Exemplos:_
+        - Ele não estudou para a prova, **tampouco** pareceu preocupado com isso.
+        - A comida não estava saborosa, **tampouco** bem apresentada.
+- **Tão pouco (separado):** É a combinação do advérbio de intensidade "tão" com o advérbio ou pronome "pouco". Indica uma **quantidade muito pequena**.
+    - _Exemplos:_
+        - Trabalhamos por **tão pouco** tempo e já produzimos tanto.
+        - Comi **tão pouco** no almoço que já estou com fome.
+
+### Trás vs. Traz
+
+- **Trás (com "s" e acento):** É um **advérbio de lugar**, indicando a parte posterior. Geralmente é precedido por uma preposição.
+    - _Exemplos:_
+        - Ele olhou para **trás** para ver se alguém o seguia.
+        - O ladrão se escondeu por **trás** do muro.
+- **Traz (com "z" e sem acento):** É a forma do verbo **trazer** na 3ª pessoa do singular do presente do indicativo.
+    - _Exemplos:_
+        - Ele sempre **traz** boas notícias.
+        - O carteiro **traz** as correspondências pela manhã.
+
+### Cessão vs. Sessão vs. Seção (ou Secção)
+
+Este é um trio de homófonos clássico. A melhor forma de distingui-los é associá-los a outras palavras da mesma família.
+
+| Grafia     | Associação  | Definição                                    | Exemplo                                                                      |
+| ---------- | ----------- | -------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Cessão** | **Ceder**   | Ato de ceder, transferir, doar.              | O autor assinou a **cessão** dos seus direitos autorais.                     |
+| **Sessão** | **Sentar**  | Intervalo de tempo de uma reunião ou evento. | A **sessão** de cinema começa às 20h. / A **sessão** da tarde foi produtiva. |
+| **Seção**  | **Separar** | Divisão, parte de um todo, departamento.     | Procure o produto na **seção** de limpeza.                                   |
+
+### Ao invés de vs. Em vez de
+
+- **Ao invés de:** Expressa uma **oposição real, o contrário, o inverso**. Deve ser usado apenas com ideias antônimas.
+    - _Exemplos:_
+        - **Ao invés de** subir, ele desceu as escadas. (subir ≠ descer)
+        - **Ao invés de** ajudar, ele só atrapalhou. (ajudar ≠ atrapalhar)
+- **Em vez de:** Expressa uma **substituição, uma troca**. É uma locução mais genérica que pode ser usada em qualquer contexto de troca, inclusive com antônimos.
+    - _Exemplos:_
+        - **Em vez de** ir ao cinema, preferiu ficar em casa.
+        - **Em vez de** pedir pizza, vamos fazer o jantar.
+
+> **Dica de Redação:** Na dúvida, opte sempre por **"em vez de"**. Seu uso é mais amplo e sempre estará correto nos casos em que "ao invés de" também se aplicaria.
+
+### De mais vs. Demais
+
+- **De mais (separado):** É uma locução adjetiva, oposta a **"de menos"**. Geralmente modifica um substantivo.
+    - _Exemplos:_
+        - Não vejo nada **de mais** no que ele disse. (Contrário: nada **de menos**).
+        - Não há nada **de mais** nesta sala, apenas o básico.
+- **Demais (junto):** Pode ser um advérbio de intensidade (sinônimo de "muito") ou um pronome indefinido (sinônimo de "os outros", "os restantes").
+    - _Como Advérbio:_ Ele fala **demais**. / Este exercício é fácil **demais**.
+    - _Como Pronome:_ Um foi aprovado; os **demais** foram reprovados.
+
+### De encontro a vs. Ao encontro de
+
+Estas locuções expressam ideias opostas e não devem ser confundidas.
+
+- **De encontro a:** Indica **oposição, choque, conflito, discordância**.
+    - _Exemplos:_
+        - A motocicleta foi **de encontro ao** poste. (Choque físico).
+        - Suas ideias vêm **de encontro às** minhas; discordamos em tudo. (Oposição de ideias).
+- **Ao encontro de:** Indica **concordância, aproximação, estar a favor de**.
+    - _Exemplos:_
+        - O filho correu **ao encontro do** pai. (Aproximação física).
+        - A nova proposta veio **ao encontro dos** nossos interesses. (Concordância, favor).
