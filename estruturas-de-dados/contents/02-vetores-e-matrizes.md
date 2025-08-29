@@ -86,7 +86,7 @@ O elemento na **linha 0** e **coluna 0** é acessado por `matriz[0][0]` em lingu
 Internamente, as matrizes são armazenadas como **vetores de vetores**, o que significa que, na prática, uma matriz 3x3 pode ser visualizada como:
 
 <div align="center">
-  <img width="720px" src="./img/02-matriz-02.png">
+  <img width="700px" src="./img/02-matriz-02.png">
 </div>
 
 Cada linha é, na verdade, um vetor independente, contendo seus próprios elementos. Esse modelo é chamado de **array de arrays** e é a forma mais comum de representação em linguagens modernas.
