@@ -1015,3 +1015,74 @@ Esta regra é de natureza puramente fonética (baseada no som). Após um ditongo
 - **Usa-se S para o som de /z/:**
     - _Exemplos:_ coi**s**a, cau**s**a, Neu**s**a, lou**s**a, deu**s**a.
 
+### O Uso do Dígrafo "SS"
+
+Foneticamente, o dígrafo "ss" é o recurso utilizado na escrita para representar o som de /s/ (como em "sapo") quando ele aparece entre duas vogais. Se usássemos um "s" único entre vogais, o som seria de /z/ (como em "casa"). A grafia com "ss", portanto, é uma forma de garantir a manutenção do som sibilante original.
+
+O emprego de "ss" segue padrões previsíveis, especialmente em palavras formadas a partir de verbos com terminações específicas.
+
+#### Em Derivados de Verbos com Radicais Específicos
+
+- **Verbos terminados em -ceder:** Os substantivos e adjetivos derivados desses verbos são formados com o radical **-cess-**.
+    - ante**ceder** → antece**ss**or
+    - ex**ceder** → exce**ss**o
+    - con**ceder** → conce**ss**ão
+    - pro**ceder** → proce**ss**o
+    - su**ceder** → suce**ss**o, suce**ss**or
+    
+    > **Foco de Prova: A Grande Exceção**
+    > 
+    > A palavra **exceção** é a exceção mais famosa a esta regra. Por sua origem etimológica, é grafada com **"ç"**, e não com "ss". A atenção a este vocábulo é fundamental em provas.
+
+- **Verbos terminados em -primir:** Os derivados são formados com o radical **-press-**.
+    - im**primir** → impre**ss**ão, impre**ss**o
+    - com**primir** → compre**ss**a, compre**ss**ão
+    - de**primir** → depre**ss**ivo, depre**ss**ão
+    - re**primir** → repre**ss**ão
+    - o**primir** → opre**ss**or, opre**ss**ão
+- **Verbos terminados em -gredir:** Os derivados são formados com o radical **-gress-**.
+    - pro**gredir** → progre**ss**o, progre**ss**ão
+    - a**gredir** → agre**ss**ão, agre**ss**or
+    - trans**gredir** → transgre**ss**ão, transgre**ss**or
+    - re**gredir** → regre**ss**o, regre**ss**ão
+- **Verbos terminados em -meter:** Os derivados são formados com os radicais **-miss-** ou **-mess-**.
+    - compro**meter** → compro**miss**o
+    - intro**meter** → intro**miss**ão
+    - pro**meter** → prome**ss**a
+    - re**meter** → reme**ss**a
+    - sub**meter** → submi**ss**ão, submi**ss**o
+
+### O Uso dos Grupos "SC", "SÇ" e "XC"
+
+Estes grupos de letras são dígrafos quando representam o som único de /s/. São frequentes em palavras de origem latina e merecem atenção especial.
+
+#### Palavras com "SC"
+
+A lista a seguir contém vocábulos importantes cuja grafia com "sc" deve ser memorizada.
+- acre**sc**entar, acré**sc**imo
+- adole**sc**ência, adole**sc**ente
+- a**sc**ender (subir), a**sc**ensão, a**sc**ensorista
+- con**sc**iência, côn**sc**io
+- cre**sc**er, cre**sc**imento
+- de**sc**ender, de**sc**endente
+- di**sc**ernimento, di**sc**ente, di**sc**iplina, di**sc**ípulo
+- fa**sc**ículo, fa**sc**ínio, fa**sc**inante
+- impre**sc**indível
+- mi**sc**igenação, mi**sc**ível
+- na**sc**er, na**sc**imento
+- ob**sc**eno
+- pi**sc**ina
+- plebi**sc**ito
+- re**sc**isão, re**sc**indir
+- ressu**sc**itar
+- su**sc**itar
+- tran**sc**ender
+
+#### A Variação para "SÇ"
+
+Nas conjugações de verbos com o radical **-sc-**, a grafia muda para **-sç-** antes das vogais **"a"** e **"o"** para manter o som de /s/.
+
+- na**sc**er → eu na**sç**o, que eles na**sç**am
+- cre**sc**er → eu cre**sç**o, que você cre**sç**a
+- de**sc**er → eu de**sç**o, que nós de**sç**amos
+
