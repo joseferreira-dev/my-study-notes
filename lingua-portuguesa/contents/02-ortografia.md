@@ -612,3 +612,136 @@ Algumas palavras da língua admitem duas pronúncias (e, às vezes, duas grafias
 | reseda (ê)              | resedá               |
 | sóror                   | soror                |
 | zângão                  | zangão               |
+
+## O Emprego do Hífen: As Regras da União e Separação
+
+O hífen (-) é um sinal de pontuação com múltiplas funções: é usado na divisão de sílabas ao final da linha (translineação), na união de pronomes oblíquos átonos a verbos (ênclise e mesóclise) e, principalmente, na formação de palavras compostas. É neste último campo, especialmente na união de prefixos a radicais, que o Novo Acordo Ortográfico trouxe as mudanças mais significativas e onde se concentra a maior parte das questões de concurso.
+
+O tema é extenso e possui diversas exceções consagradas pelo uso. O foco aqui será apresentar a lógica geral e as regras de maior incidência em provas, fornecendo uma base sólida para a resolução da maioria dos casos.
+
+### Entendendo a Formação das Palavras: Prefixo vs. Composição
+
+Para aplicar corretamente as regras do hífen, é fundamental distinguir os dois principais processos de formação de palavras: a **derivação** (com prefixos e sufixos) e a **composição** (com dois ou mais radicais).
+
+O **radical** é o elemento que contém o significado básico e primitivo da palavra.
+
+- _Exemplo:_ A partir do radical **pedr-**, formam-se diversas palavras: _pedra, pedrinha, pedregulho, pedreiro, apedrejar, petrificar_.
+
+Quando adicionamos um elemento no início do radical, temos uma **derivação prefixal**. É o caso de **anti**-inflamatório e **super**-resistente. As regras de hífen que estudaremos a seguir se aplicam majoritariamente a este processo.
+
+Quando unimos dois ou mais radicais para formar uma nova palavra, temos uma **composição**. A palavra composta, por ter mais de um radical, segue outras lógicas. A união pode ocorrer de duas formas:
+
+- **Composição por Justaposição:** Os radicais se juntam sem perda de sons, podendo ou não ter hífen.
+    - _Exemplos:_ homem-bomba, salário-família, guarda-chuva, pontapé, girassol.
+- **Composição por Aglutinação:** Os radicais se fundem e há alteração fonética, sem uso de hífen.
+    - _Exemplos:_ planalto (_plano + alto_), lobisomem (_lobo + homem_), petróleo (_pedra + óleo_).
+
+Essa distinção é crucial, pois as regras de "letras iguais e diferentes" que veremos a seguir aplicam-se à **prefixação**. Palavras formadas por composição, como **corre-corre** ou **pega-pega**, são a união de dois radicais (dois verbos, no caso) e não entram nessa análise, seguindo regras próprias.
+
+### A Regra Geral para Prefixos
+
+A maioria das regras de hifenização com prefixos pode ser entendida a partir de um princípio mnemônico simples: **os iguais se repelem, os diferentes se atraem**. Na prática, isso significa que letras iguais são separadas pelo hífen, enquanto letras diferentes tendem a se unir.
+
+A lista de prefixos (ou falsos prefixos) é extensa. Os mais comuns em provas são:
+
+| aero-  | auto-   | extra- | macro- | proto-  | sobre- |
+| ------ | ------- | ------ | ------ | ------- | ------ |
+| agro-  | circum- | geo-   | micro- | pós-    | sub-   |
+| além-  | co-     | hidro- | mini-  | pré-    | super- |
+| ante-  | contra- | hiper- | multi- | pró-    | supra- |
+| anti-  | eletro- | infra- | neo-   | pseudo- | tele-  |
+| aquém- | entre-  | inter- | pan-   | retro-  | ultra- |
+
+Vamos detalhar a aplicação da regra geral.
+
+**Usa-se o hífen:**
+
+- **Para separar letras iguais:** Quando o prefixo termina com a mesma letra com que se inicia a palavra seguinte, o hífen é obrigatório.
+    - _Vogais iguais:_ micr**o-o**ndas, contr**a-a**taque, ant**i-i**nflamatório, aut**o-o**bservação.
+    - _Consoantes iguais:_ supe**r-r**omântico, inte**r-r**egional, su**b-b**ibliotecário.
+
+**Não se usa o hífen (junta-se tudo):**
+
+- **Quando as letras são diferentes:** Se o prefixo termina com uma letra e a palavra seguinte começa com outra diferente, a união é feita sem hífen.
+    - _Vogal + Vogal diferente:_ **autoes**trada, **agroin**dustrial, **antion**tem, **extrao**ficial, **infraes**trutura.
+    - _Consoante + Vogal diferente:_ **hipera**tivo, **interes**colar, **supere**conômico.
+    - _Vogal + Consoante diferente:_ **autoa**prendizagem, **semia**nalfabeto.
+    - _Consoante + Consoante diferente:_ **hiperme**rcado, **superba**ctéria, **intermu**nicipal.
+
+**Uso Obrigatório do Hífen Antes da Letra H**
+
+Esta é uma regra especial e absoluta dentro do universo dos prefixos: independentemente do prefixo utilizado, **usa-se sempre o hífen antes de uma palavra iniciada pela letra H**.
+
+- **Exemplos:**
+    - anti-**h**igiênico
+    - circum-**h**ospitalar
+    - contra-**h**armônico
+    - extra-**h**umano
+    - geo-**h**istória
+    - neo-**h**elênico
+    - pan-**h**elenismo
+    - pré-**h**istória
+    - semi-**h**ospitalar
+    - sobre-**h**umano
+    - sub-**h**epático
+    - super-**h**omem
+    - ultra-**h**iperbólico
+
+> **Exceção Importante:**
+> 
+> Não se usa o hífen em palavras formadas com os prefixos **des-** e **in-** em que o segundo elemento perdeu o "h" inicial por um processo histórico de formação.
+> 
+> - **Exemplos:** desumano (_des + humano_), desonesto, desidratar, inábil (_in + hábil_), inumano.
+>
+
+> **Foco de Prova: A Duplicação do R e do S**
+> 
+> Uma regra especial e muito cobrada deriva do caso "vogal + consoante diferente". Quando o prefixo termina em vogal e a palavra seguinte começa com **R** ou **S**, **não se usa hífen e essas consoantes são duplicadas**.
+> 
+> - ant**iss**ocial, ant**irr**acismo, ant**irr**ugas
+> - contr**ass**enso, contr**arr**egra, contr**arr**azões
+> - min**iss**aia, ultr**ass**om, ne**orr**ealismo
+> - co**rr**esponsável
+
+> **Exceção Importante:**
+> 
+> O prefixo co- é uma exceção à regra das "letras iguais". Ele geralmente se aglutina mesmo quando a palavra seguinte começa com "o": cooperativa, coobrigar, coordenar.
+
+### Outros Casos de Hifenização (Palavras Compostas em Geral)
+
+É crucial entender que a regra geral dos prefixos não é universal. Muitas palavras compostas, formadas pela união de dois radicais (e não prefixo + radical), seguem outras lógicas. Não se deve sair suprimindo o hífen de palavras como _segunda-feira_, _mato-grossense_, _bem-te-vi_, _guarda-roupa_ ou _verde-amarelo_.
+
+**Compostos com Elemento de Ligação**
+
+Por regra, não se usa hífen em palavras compostas que possuem um elemento de ligação (geralmente uma preposição como "de", "com", "a"). A lógica é que a preposição já serve como conector.
+
+- _Exemplos:_ mão de obra, dia a dia, café com leite, cão de guarda, fim de semana, pé de moleque, camisa de força, pé de moleque, cara de pau.
+- **Exceções (consagradas pelo uso):** Algumas palavras mantêm o hífen mesmo com elemento de ligação.
+    - _Exemplos:_ cor-de-rosa, água-de-colônia, arco-da-velha, mais-que-perfeito, pé-de-meia, ao deus-dará, gota-d’água, à queima-roupa.
+    - Nomes de espécies botânicas e zoológicas também são exceções: bem-te-vi, pimenta-do-reino, cravo-da-índia, erva-doce, bico-de-papagaio.
+
+**Compostos sem Elemento de Ligação**
+
+Quando não há preposição e os termos formam uma nova unidade de sentido, o hífen geralmente é empregado.
+
+- _Exemplos:_ arco-íris, boa-fé, guarda-chuva, porta-malas, vaga-lume.
+
+**Palavras Repetidas ou Onomatopeias**
+
+- **Com hífen:** Se não houver elemento de ligação.
+    - _Exemplos:_ corre-corre, pega-pega, pingue-pongue, cri-cri, glu-glu, bate-boca.
+- **Sem hífen:** Se houver um elemento de ligação.
+    - _Exemplos:_ dia a dia, corpo a corpo, face a face.
+
+**Advérbios "Não" e "Quase"**
+
+Não se usa hífen quando "não" e "quase" funcionam como advérbios, modificando a palavra seguinte.
+
+- _Exemplos:_ não agressão, não fumante, não violência, quase delito, quase morte.
+
+**Encadeamentos Vocabulares**
+
+Usa-se o hífen para ligar duas ou mais palavras que formam um encadeamento de sentido, como em trajetos ou relações.
+
+- _Exemplos:_ ponte Rio-Niterói, eixo Rio-São Paulo, percurso casa-trabalho.
+
