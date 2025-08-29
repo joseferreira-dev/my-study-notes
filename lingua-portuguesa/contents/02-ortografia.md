@@ -272,3 +272,120 @@ Os ditongos marcados com til são sempre nasais e sempre representam dois sons v
 |**Função do M/N**|Atua como sinal de nasalização (como um til).|O "m" final atua foneticamente como uma semivogal.|
 |**Exemplo-Chave**|c**an**-to (UM som nasal: /ɐ̃/)|cant**am** (DOIS sons nasais: /ɐ̃w̃/)|
 
+## As Regras Gerais de Acentuação Gráfica
+
+As regras de acentuação gráfica da Língua Portuguesa operam com base em uma lógica que combina dois fatores essenciais: a **posição da sílaba tônica** na palavra e a **terminação** dessa palavra. Para aplicar as regras corretamente, é preciso primeiro classificar a palavra quanto à sua tonicidade. Na língua portuguesa, a sílaba tônica ocupa sempre uma das três últimas posições:
+
+|Nomenclatura|Definição|Exemplo|
+|---|---|---|
+|**Oxítona**|A sílaba tônica é a **última**.|va-ta-**pÁ**, ca-rro**s-SEL**, de-va-**GAR**|
+|**Paroxítona**|A sílaba tônica é a **penúltima**.|es-**CO**-la, se-cre-**TÁ**-ria, la-**VA**-bo|
+|**Proparoxítona**|A sílaba tônica é a **antepenúltima**.|**MÉ**-di-co, **LÂM**-pa-da, es-pe-**CÍ**-fi-co|
+
+Como se pode observar na tabela, nem toda palavra que possui uma sílaba tônica recebe um acento gráfico. A acentuação na escrita segue regras específicas que visam orientar a pronúncia correta, especialmente nos casos que fogem ao padrão mais comum da língua. Além das palavras com múltiplas sílabas, os monossílabos também possuem regras próprias.
+
+### Monossílabos Tônicos
+
+Os monossílabos tônicos — palavras de uma única sílaba com pronúncia forte e sentido autônomo — recebem acento gráfico quando terminam em **-a(s)**, **-e(s)**, **-o(s)** ou nos **ditongos abertos -éu(s), -éi(s), -ói(s)**.
+
+|Terminação|Exemplos|
+|---|---|
+|**-a(s)**|pá, pás, má, más, já, lá|
+|**-e(s)**|pé, pés, ré, rês, lê, mês|
+|**-o(s)**|pó, pós, nó, nós, só, dôo|
+|**-éu(s)**|céu, céus, véu, véus|
+|**-éi(s)**|réis, méis|
+|**-ói(s)**|dói, sóis|
+
+> **Nota:** Monossílabos tônicos com outras terminações não são acentuados. Exemplos: _luz, mar, som, flor, um, trem, bem_.
+
+### Oxítonas
+
+As palavras oxítonas — aquelas cuja sílaba tônica é a última — são acentuadas quando possuem terminações muito semelhantes às dos monossílabos, com o acréscimo de **-em** e **-ens**.
+
+Acentuam-se as oxítonas terminadas em **-a(s)**, **-e(s)**, **-o(s)**, **-em**, **-ens** e nos **ditongos abertos -éu(s), -éi(s), -ói(s)**.
+
+|Terminação|Exemplos|
+|---|---|
+|**-a(s)**|so**fá**, guara**ná**, Cajá, para**ná**s|
+|**-e(s)**|ca**fé**, vo**cê**, ponta**pé**, cro**chê**, Tietê|
+|**-o(s)**|avô, a**vó**, jiló, paletó, cipó|
+|**-em**|al**guém**, tam**bém**, arma**zém**, refém|
+|**-ens**|para**béns**, arma**zéns**, reféns|
+|**-éu(s)**|cha**péu**, tro**féu**, cha**péus**|
+|**-éi(s)**|pa**péis**, fi**éis**, a**néis**|
+|**-ói(s)**|he**rói**, Nit**erói**, cor**rói**, an**zóis**|
+
+> **Nota:** Palavras oxítonas com outras terminações não são acentuadas. Exemplos: _saci, urubu, aqui, animal, cantor, talvez_.
+
+> **Foco de Prova: A Lógica por Trás das Regras**
+> 
+> Uma das chaves para resolver questões de acentuação é entender que as regras gerais são, em princípio, mutuamente exclusivas. Uma palavra é classificada quanto à tonicidade (monossílaba, oxítona, paroxítona ou proparoxítona) e, a partir daí, enquadra-se em uma única regra geral.
+> 
+> Portanto, se uma questão afirmar que duas palavras de tonicidades diferentes são acentuadas pela mesma regra, a alternativa provavelmente estará incorreta.
+> 
+> Exemplo: "As palavras ‘parabéns’ e ‘hífen’ são acentuadas pelo mesmo motivo."
+> 
+> Análise: Sem sequer saber a regra específica de cada uma, é possível identificar o erro. Parabéns é uma oxítona (tônica na última sílaba). Hífen é uma paroxítona (tônica na penúltima sílaba). Logo, elas não podem ser justificadas pela mesma regra geral de acentuação.
+> 
+> **Atenção:** Existe uma exceção importante a essa lógica: as **regras especiais**, como a do **hiato**, que estudaremos a seguir. Uma regra especial pode se sobrepor à classificação geral. Por exemplo, as palavras **Sa-ú-de** (paroxítona) e **A-ça-í** (oxítona) são acentuadas pela mesma regra especial do hiato, mesmo tendo tonicidades diferentes.
+
+### Paroxítonas
+
+As paroxítonas — palavras cuja sílaba tônica é a penúltima — constituem o maior grupo de vocábulos da Língua Portuguesa. Por serem a maioria, sua regra de acentuação funciona de maneira inversa à das oxítonas, ou seja, por **exclusão**.
+
+A lógica é a seguinte: as terminações mais comuns da língua (`-a, -e, -o, -em, -ens`) já são usadas para acentuar as oxítonas. Para diferenciar, a norma estabelece que as paroxítonas com essas mesmas terminações **não recebem acento**.
+
+- **Não são acentuadas** as paroxítonas terminadas em **-a(s), -e, -o(s), -em, -ens**:
+    - _Exemplos:_ c**a**s**a**, p**o**st**e**, l**i**vr**o**, **i**t**em**, hif**ens**, p**o**l**ens**.
+
+Consequentemente, acentuam-se as paroxítonas com **todas as outras terminações**. Elas podem ser agrupadas em duas grandes regras: a regra geral (por terminação específica) e a regra especial (por terminação em ditongo).
+
+#### A Regra Geral: Acentuação por Terminações Específicas
+
+Acentuam-se as paroxítonas que possuem as seguintes terminações:
+
+|Terminação|Exemplos|
+|---|---|
+|**-l**|amáve**l**, fáci**l**, possíve**l**, têxti**l**|
+|**-r**|caráte**r**, repórte**r**, açúca**r**, Ménie**r**|
+|**-n**|hífe**n**, próto**n**, elétro**n**, lúme**n**|
+|**-x**|tóra**x**, lâte**x**, fêni**x**, ônix|
+|**-i(s)**|júr**i**, táx**i**, láp**is**, tên**is**|
+|**-us**|vír**us**, bôn**us**, ôn**us**, Vên**us**|
+|**-ps**|bíce**ps**, fórce**ps**, tríce**ps**|
+|**-ã(s)**|ím**ã**, ím**ãs**, órf**ã**, órf**ãs**|
+|**-ão(s)**|órg**ão**, órg**ãos**, sót**ão**, bênç**ão**|
+|**-um, -uns**|álb**um**, álb**uns**, fór**um**, médi**uns**|
+
+#### A Regra Especial: Paroxítonas Terminadas em Ditongo Oral
+
+Esta é uma regra de grande importância e alta incidência em provas. Acentuam-se todas as paroxítonas terminadas em **ditongo oral** (crescente ou decrescente), seguido ou não de "s".
+
+- _Exemplos:_
+    - histór**ia**, sár**ie**, secretár**ia**, mágo**a**
+    - indivíd**uo**, planíc**ie**, calvíc**ie**, imóv**eis**
+    - rádio, império, farmácia, pônei
+
+> **Cuidado:** Não confunda a terminação. A palavra **água** não termina na vogal "-a", mas sim no ditongo crescente **-ua**. Por isso, ela é acentuada por esta regra. O mesmo vale para **distância** (termina no ditongo **-ia**).
+
+#### O Novo Acordo e a Queda do Acento nos Ditongos Abertos
+
+Uma das mudanças mais significativas do Novo Acordo Ortográfico afetou diretamente a regra das paroxítonas. O acento agudo que era usado nos ditongos abertos **-éi** e **-ói** foi **abolido APENAS nas palavras paroxítonas**.
+
+Essa regra não afetou as palavras oxítonas nem os monossílabos tônicos, que continuam sendo acentuados.
+
+|Não são mais acentuadas (Paroxítonas)|Continuam acentuadas (Oxítonas e Monossílabos)|
+|---|---|
+|id**ei**a, plat**ei**a, assembl**ei**a, colm**ei**a|an**éis**, fi**éis**, pap**éis**, r**éis**|
+|her**oi**co, aster**oi**de, paran**oi**co, jib**oi**a|her**ói**, corrói, d**ói**, an**zóis**|
+
+#### Observações Importantes e Dicas de Prova
+
+1. **Justificativa pela Regra Geral:** Palavras como **amável** (terminada em -l), **bíceps** (terminada em -ps) e **caráter** (terminada em -r) são acentuadas pela **mesma regra geral das paroxítonas**, apesar de suas terminações serem diferentes. A justificativa é a mesma: "acentua-se paroxítona não terminada em -a, -e, -o, -em, -ens".
+2. **Justificativa pela Regra Especial:** Da mesma forma, palavras como **história**, **relógio** e **pônei** são acentuadas pela **mesma regra especial das paroxítonas**, pois todas terminam em ditongo oral.
+3. **Hífen vs. Hifens:** A palavra **hífen** é acentuada por ser uma paroxítona terminada em **-n**. No plural, **hifens** perde o acento, pois passa a ser uma paroxítona terminada em **-ens**, que é uma das terminações que não recebem acento. O mesmo ocorre com **item** (não tem acento, termina em -em) e **itens** (não tem acento, termina em -ens).
+4. **Prefixos:** Prefixos paroxítonos terminados em **-i** ou **-r**, como _super-, hiper-, inter-, mini-, semi-_, não são acentuados.
+    - **Exceção:** Palavras como **Méier** e **destróier** são acentuadas. Elas não são vistas como prefixos, mas como substantivos próprios ou comuns terminados em **-r**, enquadrando-se na regra geral das paroxítonas.
+5. **Verbos em -am:** Verbos na 3ª pessoa do plural do presente do indicativo, como _cant**am**_ e _chor**am**_, são paroxítonas terminadas no ditongo nasal **-am**, mas **não são acentuadas**.
+
