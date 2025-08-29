@@ -383,3 +383,55 @@ Ao mencionado princípio universal, Sócrates agrega a segunda premissa, enuncia
 
 Das premissas assim colocadas, segue-se, necessariamente, a conclusão de que Sócrates deve ficar. Tal conclusão lógica justifica, racionalmente, a decisão socrática: o certo a fazer não é o que o costume social dita (a fuga), nem o que a maioria pensa (o consenso), mas aquilo que a razão demonstra ser o dever.
 
+## A Ética e a Função Pública: O Dever de Integridade
+
+Quando se reflete sobre o que significa uma pessoa ser **íntegra**, emergem valores como honestidade, retidão, imparcialidade, boa conduta e a recusa a subornos. Todos esses são, de fato, comportamentos e ações desejáveis e esperados tanto do agente público individualmente quanto das instituições que ele representa.
+
+Nesse contexto, a **integridade** de uma instituição pública depende do comportamento de todos os seus integrantes, desde a mais alta administração até os servidores em início de carreira e os trabalhadores terceirizados, pois a reputação de cada um deles macula ou enaltece a reputação do órgão como um todo.
+
+A Organização para a Cooperação e Desenvolvimento Econômico (OCDE), referência mundial em boas práticas de governança, define o conceito da seguinte forma:
+
+> Integridade pública refere-se ao alinhamento consistente e à adesão de valores, princípios e normas éticas comuns para sustentar e priorizar o interesse público sobre os interesses privados no setor público.
+
+Infere-se, portanto, que os padrões de ética e conduta são medidas de controle da integridade e devem ser apurados e monitorados de forma contínua, formando a base do que se conhece como um **Programa de Integridade**.
+
+### A Integridade Institucional e o Papel da Liderança
+
+Para o sucesso de um programa de integridade, o comprometimento da alta direção é absolutamente crucial. Este conceito é conhecido no setor privado pela expressão “_tone from the top_” (ou “_tone at the top_”), que pode ser traduzida como **“o exemplo vem de cima”**.
+
+O “número um” da organização precisa, efetivamente, apoiar, engajar-se e promover o desdobramento do programa em atividades práticas, tomando para si a responsabilidade de fomentar a sua mensagem. Tal fomento deve permear todos os níveis hierárquicos, convencendo-os acerca da importância das medidas de integridade e criando mecanismos para encorajar e reforçar esse comprometimento em todos os níveis, até alcançar todos os agentes públicos.
+
+### A Integridade como um Dever Funcional
+
+A integridade não é apenas uma qualidade pessoal desejável, mas um dever funcional do servidor público. Isso significa que, em sua atuação, o servidor deve ser íntegro em suas ações e, quando estiver diante de mais de uma opção legalmente válida, deve optar por aquela que seja mais vantajosa para o **bem comum**, ou seja, que beneficie o maior número de pessoas e atenda da melhor forma ao interesse público.
+
+Esta não é uma mera recomendação moral, mas uma obrigação formal. O Decreto nº 1.171/94, que aprova o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal, estabelece de forma inequívoca:
+
+> **XIV - São deveres fundamentais do servidor público:**
+> 
+> c) ser probo, reto, leal e justo, demonstrando toda a **integridade** do seu caráter, escolhendo sempre, quando estiver diante de duas opções, a melhor e a mais vantajosa para o bem comum;
+
+A integridade pública é, portanto, um conceito-chave que une a conduta pessoal do servidor à missão da instituição, sendo fundamental para garantir a confiança na governança e na administração de uma sociedade. Ela implica um compromisso permanente do servidor de agir de maneira honesta, justa e imparcial, priorizando sempre o interesse coletivo sobre o privado.
+
+### Os Pilares da Integridade Pública
+
+A integridade pública é um conceito abrangente que se sustenta sobre um conjunto de pilares interdependentes. A ausência de qualquer um desses pilares compromete a solidez da estrutura ética da Administração. São eles:
+
+- **Valores e Princípios Éticos:** A integridade é fundamentada em valores universais como a honestidade, a responsabilidade, a transparência, a equidade e o respeito pelos direitos dos cidadãos.
+- **Alinhamento Consistente:** Não basta aderir aos valores de forma pontual. A integridade exige que os servidores públicos demonstrem um alinhamento consistente e permanente com esses princípios em todas as suas ações e decisões.
+- **Normas Éticas Comuns:** Para manter a integridade, o setor público adota normas éticas (como os Códigos de Ética e de Conduta) que são aplicadas a todos os servidores, independentemente de sua posição hierárquica, criando um padrão de comportamento esperado.
+- **Priorização do Interesse Público:** A essência da integridade pública reside na capacidade do servidor de priorizar o interesse da coletividade acima de seus interesses pessoais, privados ou de grupo. Isso implica em uma vigilância constante para evitar conflitos de interesse.
+- **Responsabilidade e Prestação de Contas (_Accountability_):** A integridade implica em uma forte ênfase na responsabilidade. Os servidores públicos devem ser capazes de justificar suas ações e decisões e estar preparados para serem responsabilizados se violarem as normas éticas.
+- **Cultura Organizacional:** A promoção da integridade requer uma cultura organizacional que ativamente apoie e encoraje comportamentos éticos. Isso se materializa em treinamentos, políticas claras, liderança pelo exemplo e mecanismos seguros para a denúncia e a correção de condutas antiéticas.
+- **Confiança Pública:** Em última análise, a integridade pública é o elemento essencial para construir e manter a confiança da população no governo e em suas instituições. Quando os cidadãos percebem que os servidores agem com integridade, eles se sentem mais seguros e confiantes de que o Estado atuará de forma justa e eficaz.
+
+### Recomendações da OCDE para a Promoção da Integridade
+
+A Organização para a Cooperação e Desenvolvimento Econômico (OCDE), uma organização internacional que serve como referência em boas práticas de governança, estabelece uma série de recomendações para que os países fortaleçam a integridade em seu setor público. Dentre elas, destacam-se:
+
+- **Definir altos padrões de conduta para os servidores públicos, em particular através de:**
+    - **a) Ir além dos requisitos mínimos:** A gestão pública deve priorizar o interesse público e a adesão a valores, fomentando uma cultura aberta que encoraje a boa governança, em vez de se limitar a um cumprimento meramente formal da lei.
+    - **b) Incluir padrões de integridade no sistema legal e em políticas organizacionais:** Os valores éticos devem ser formalizados em instrumentos como códigos de conduta, que servem de base clara para a investigação e a aplicação de sanções disciplinares, administrativas, cíveis e/ou penais.
+    - **c) Estabelecer procedimentos claros e proporcionais:** Devem existir mecanismos eficazes para prevenir violações aos padrões de integridade e para gerir conflitos de interesse, sejam eles reais ou potenciais.
+    - **d) Comunicar os valores e padrões do setor público:** A comunicação deve ser feita tanto internamente, para os servidores, quanto externamente, para o setor privado, a sociedade civil e os cidadãos, solicitando que estes parceiros também respeitem esses valores em suas interações com os agentes públicos.
+
