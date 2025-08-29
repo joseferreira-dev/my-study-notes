@@ -140,3 +140,135 @@ O encontro consonantal pode ser classificado de acordo com sua posição na síl
 
 A identificação correta desses fenômenos é o primeiro passo para a divisão silábica correta, que por sua vez é pré-requisito para as regras de acentuação que veremos a seguir.
 
+## Sons Vocálicos: Ditongo, Tritongo e Hiato
+
+Além dos encontros entre consoantes, a estrutura das sílabas em português é definida pela maneira como os sons vocálicos se agrupam ou se separam. A correta identificação desses encontros — Ditongo, Tritongo e Hiato — é crucial para a divisão silábica e, consequentemente, para a aplicação das regras de acentuação.
+
+### Ditongo: Dois Sons, Uma Só Sílaba
+
+O ditongo é o encontro de dois sons vocálicos — uma **vogal** (som mais forte, núcleo da sílaba) e uma **semivogal** (som mais fraco, que acompanha a vogal) — pronunciados na mesma sílaba.
+
+- _Exemplos:_ p**ai**, s**au**dade, histór**ia**, s**érie**, c**éu**.
+
+Os ditongos podem ser classificados segundo diferentes critérios: a posição da vogal, a sonoridade e o timbre.
+
+#### Classificação quanto à Posição da Vogal (Crescente vs. Decrescente)
+
+Esta classificação se baseia na ordem em que a vogal e a semivogal aparecem, o que cria um efeito de "crescimento" ou "decréscimo" na intensidade do som.
+
+- **Ditongo Crescente (semivogal + vogal):** A pronúncia vai do som mais fraco (semivogal) para o mais forte (vogal).
+    - _Exemplos:_ sé-r**ie**, his-tó-r**ia**, má-g**oa**, á-g**ua**, q**ua**se, q**ui**eto.
+- **Ditongo Decrescente (vogal + semivogal):** A pronúncia vai do som mais forte (vogal) para o mais fraco (semivogal).
+    - _Exemplos:_ p**ai**, a-z**ei**-te, c**éu**, n**oi**te, fl**ui**-do, s**au**dade.
+
+#### Classificação quanto à Sonoridade (Oral vs. Nasal)
+
+- **Ditongo Oral:** O ar passa exclusivamente pela boca durante a pronúncia.
+    - _Exemplos:_ p**ai**, c**éu**, s**éi**s, histór**ia**.
+- **Ditongo Nasal:** Parte do ar passa também pelo nariz. Na escrita, são marcados com til (~) ou seguidos de "m" ou "n" na mesma sílaba.
+    - _Exemplos:_ m**ãe**, p**ão**, c**ã**imbra, p**õe**m, m**ui**to.
+
+#### Classificação quanto ao Timbre (Aberto vs. Fechado)
+
+Esta classificação se aplica principalmente aos ditongos decrescentes **éi**, **éu**, **ói**.
+
+- **Ditongo Aberto:** A vogal é pronunciada com timbre aberto.
+    - _Exemplos:_ pap**éis**, c**éu**, her**ói**, an**éis**, d**ói**.
+- **Ditongo Fechado:** A vogal é pronunciada com timbre fechado.
+    - _Exemplos:_ l**ei**, m**eu**, b**oi**, r**ei**no.
+
+### Tritongo: Três Sons, Uma Só Sílaba
+
+O tritongo é o encontro de três sons vocálicos na mesma sílaba, seguindo a ordem: **semivogal + vogal + semivogal**.
+
+- **Tritongos Orais:**
+    - _Exemplos:_ U-ru-g**uai**, Pa-ra-g**uai**, i-g**uais**, a-ve-ri-g**uou**.
+- **Tritongos Nasais:**
+    - _Exemplos:_ sa-g**uão**, en-xá-g**uam**, á-g**uem**.
+
+> **Fique de Olho:** Em palavras como **águam** e **deságuem**, a letra "m" no final não representa o fonema /m/, mas sim nasaliza a vogal e funciona foneticamente como uma semivogal com som de "u" ou "i". Por isso, temos tritongos: á-g**uam** (/wɐ̃w̃/), de-sá-g**uem** (/gẽj̃/).
+
+### Hiato: Dois Sons, Duas Sílabas
+
+O hiato é o encontro de duas vogais em uma palavra, que, por serem ambas sons fortes (núcleos de sílaba), pertencem a **sílabas diferentes**. A existência do hiato é uma consequência direta da regra de que só pode haver uma vogal por sílaba.
+
+- _Exemplos:_
+    - s**a-ú**-de
+    - p**a-í**s
+    - c**o-o**r-de-nar
+    - r**a-i**-nha
+    - j**u-í**-zo
+    - c**a-ó**-ti-co
+
+A diferença entre ditongo e hiato é uma das chaves para a acentuação. Compare:
+
+- **pais** (monossílaba) -> **ai** é um ditongo decrescente.
+- **pa-ís** (dissílaba) -> **a-í** é um hiato.
+
+### Classificação das Palavras Quanto ao Número de Sílabas
+
+Relembrar esta classificação é fundamental, pois, juntamente com a identificação da sílaba tônica, ela forma a base para a aplicação das regras de acentuação.
+
+|Categoria|Número de sílabas|Exemplos|
+|---|---|---|
+|**Monossílabas**|Uma sílaba|pá, pé, chá, sol, trem, um|
+|**Dissílabas**|Duas sílabas|so-fá, a-té, ca-sa, hí-fen, tam-bém|
+|**Trissílabas**|Três sílabas|va-ta-pá, te-cla-do, mé-di-co, ar-ma-zém|
+|**Polissílabas**|Quatro ou mais sílabas|ja-ca-ran-dá, pro-pa-ro-xí-to-na, es-pe-ci-al-men-te|
+
+### Dígrafo Nasal vs. Ditongo Nasal
+
+A presença das letras "m" e "n" após uma vogal pode criar dois fenômenos fonéticos distintos: o dígrafo nasal e o ditongo nasal. Embora pareçam semelhantes na escrita, eles são fundamentalmente diferentes em sua sonoridade e na contagem de fonemas. Dominar essa diferença é crucial para a análise fonológica correta.
+
+A distinção essencial reside no número de sons vocálicos produzidos:
+
+- **Dígrafo Nasal:** Duas letras representam **UM ÚNICO SOM** de vogal nasal.
+- **Ditongo Nasal:** Duas ou mais letras representam **DOIS SONS** vocálicos (uma vogal nasal + uma semivogal nasal).
+
+#### Compreendendo o Dígrafo Nasal (Um Som)
+
+O dígrafo nasal ocorre quando as letras **m** ou **n** aparecem após uma vogal e são seguidas por uma consoante (exceto "h") na sílaba seguinte. Nesses casos, as letras "m" e "n" não são pronunciadas como consoantes; sua única função é atuar como um sinal de nasalização, transformando a vogal anterior em uma vogal nasal, de forma muito semelhante ao til (~).
+
+|Dígrafo|Som|Exemplo|Análise Fonética|Divisão Silábica|
+|---|---|---|---|---|
+|**am/an**|/ɐ̃/|c**am**po / c**an**to|O "am" e o "an" representam o som único da vogal nasal /ɐ̃/.|c**am**-po / c**an**-to|
+|**em/en**|/ẽ/|t**em**po / v**en**da|O "em" e o "en" representam o som único da vogal nasal /ẽ/.|t**em**-po / v**en**-da|
+|**im/in**|/ĩ/|l**im**po / l**in**do|O "im" e o "in" representam o som único da vogal nasal /ĩ/.|l**im**-po / l**in**-do|
+|**om/on**|/õ/|s**om**bra / t**on**to|O "om" e o "on" representam o som único da vogal nasal /õ/.|s**om**-bra / t**on**-to|
+|**um/un**|/ũ/|t**um**ba / m**un**do|O "um" e o "un" representam o som único da vogal nasal /ũ/.|t**um**-ba / m**un**-do|
+
+Em todos esses casos, o grupo de duas letras (vogal + m/n) resulta em apenas **um fonema**.
+
+#### Compreendendo o Ditongo Nasal (Dois Sons)
+
+O ditongo nasal, por sua vez, é um encontro vocálico genuíno, formado por uma vogal nasal seguida por uma semivogal nasal. Ele ocorre tipicamente no final das palavras ou é marcado pelo til (~).
+
+**Com as terminações -am / -em / -ens:**
+
+Quando as terminações -am e -em aparecem no final das palavras (especialmente em verbos na 3ª pessoa do plural ou em palavras como "alguém"), elas não produzem um único som de vogal, mas sim dois sons vocálicos nasais. A letra "m" no final soa como uma semivogal nasalizada, com som de "u" ou "i".
+
+- **-am** soa como **-ão** (/ɐ̃w̃/)
+    - _Exemplo:_ Eles fal**am**. (Pronúncia: fál**ão**)
+- **-em/-ens** soa como **-eim** (/ẽj̃/)
+    - _Exemplo:_ Eles v**em**. (Pronúncia: v**êim**)
+    - _Exemplo:_ armaz**éns** (Pronúncia: armaz**êins**)
+
+|Terminação|Exemplo|Análise Fonética|Sons Vocálicos|
+|---|---|---|---|
+|**-am**|cant**am**|Pronunciado como "cántão" (/kɐ̃tɐ̃w̃/).|Dois sons: /ɐ̃/ + /w̃/ (semivogal)|
+|**-em**|bat**em**|Pronunciado como "bátêim" (/batẽj̃/).|Dois sons: /ẽ/ + /j̃/ (semivogal)|
+|**-em**|algu**ém**|Pronunciado como "alguêim" (/awgẽj̃/).|Dois sons: /ẽ/ + /j̃/ (semivogal)|
+
+**Com o til (~):**
+
+Os ditongos marcados com til são sempre nasais e sempre representam dois sons vocálicos.
+
+- _Exemplos:_ m**ãe**, p**ão**, p**õe**, c**ã**ibra.
+
+|Resumo Comparativo|Dígrafo Nasal|Ditongo Nasal|
+|---|---|---|
+|**Número de Sons Vocálicos**|**UM** (apenas uma vogal nasal)|**DOIS** (vogal nasal + semivogal nasal)|
+|**Posição Típica**|No meio da palavra, antes de consoante.|No final da palavra (-am, -em) ou marcado com til (~).|
+|**Função do M/N**|Atua como sinal de nasalização (como um til).|O "m" final atua foneticamente como uma semivogal.|
+|**Exemplo-Chave**|c**an**-to (UM som nasal: /ɐ̃/)|cant**am** (DOIS sons nasais: /ɐ̃w̃/)|
+
