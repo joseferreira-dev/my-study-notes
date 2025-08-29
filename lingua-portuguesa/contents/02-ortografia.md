@@ -1152,3 +1152,92 @@ Algumas palavras fogem às regras gerais e devem ser memorizadas.
 - **Palavras importantes com "j":** o**j**eriza (muito cobrada em provas), berin**j**ela, ma**j**estade, **j**eito, tra**j**e, sar**j**eta.
 - **Palavras importantes com "g":** ti**g**ela, va**g**em, rabu**g**ento, fuli**g**em, al**g**ema, here**g**e, cônju**g**e.
 
+### O Uso de "X" e "CH"
+
+A alternância entre "x" e o dígrafo "ch" é uma fonte comum de erros, pois ambos podem representar o mesmo fonema /ʃ/ (o som de "ch" em "chave"). A grafia correta, portanto, não é determinada pela pronúncia, mas sim pela etimologia (origem) da palavra e por algumas convenções ortográficas que servem como guia.
+
+#### Grafia após os Inícios "en-" e "mex-"
+
+- **Após o prefixo "en-":** Por regra geral, emprega-se a letra **X**.
+    - _Exemplos:_ **enx**ada, **enx**ame, **enx**urrada, **enx**oval, **enx**aqueca, **enx**uto, **enx**erido.
+    - Uma das palavras mais cobradas neste caso é **enxergar**.
+    
+    > **Foco de Prova: A Exceção do "CH"**
+    > 
+    > A regra acima não se aplica quando o prefixo **en-** se une a uma palavra que já se inicia com **ch**. Nesses casos, vale o Princípio da Coerência Radical, e a grafia com "ch" da palavra primitiva é mantida.
+    > 
+    > - **ch**eio → en**ch**er, en**ch**ente, preen**ch**er
+    > - **ch**arco → en**ch**arcar
+    > - **ch**iqueiro → en**ch**iqueirar
+    > - **ch**umaço → en**ch**umaçar
+
+- **Após a sílaba inicial "mex-":** A regra é empregar a letra **X**.
+    - _Exemplos:_ **mex**er, **mex**ilhão, **mex**erico, **Méx**ico, **mex**icano, re**mex**er.
+    - **Exceção Principal:** A palavra **mecha** (de cabelo) e seus derivados.
+
+#### Grafia após Ditongos
+
+Por regra geral, após um **ditongo**, emprega-se a letra **X**.
+
+- _Exemplos:_
+    - am**ei**xa
+    - b**ai**xo
+    - c**ai**xa
+    - d**ei**xar
+    - **ei**xo
+    - f**ei**xe
+    - fr**ou**xo
+    - p**ei**xe
+    - qu**ei**xa
+
+- **Exceções:** As principais exceções a esta regra são a palavra **guache** e o verbo **recauchutar** e seus derivados.
+
+## O Emprego das Letras Maiúsculas e Minúsculas
+
+O uso de letras maiúsculas e minúsculas não é aleatório; ele segue um princípio fundamental: a letra maiúscula serve para **particularizar, individualizar e destacar** um substantivo. Ela transforma um ser comum em um ser específico dentro de um determinado contexto. Compreender essa lógica de "especificação vs. generalização" é a chave para aplicar corretamente as regras.
+
+Observe a diferença de sentido criada pela capitalização:
+
+- _Uso geral (minúscula):_ Todos os **estados** da federação enviaram representantes.
+- _Uso específico (maiúscula):_ O **Estado** do Rio de Janeiro enfrenta uma crise. (Um estado particular).
+- _Uso único/personificado (maiúscula):_ O **Estado** deve garantir a segurança de seus cidadãos. (A Nação, uma entidade única).
+
+A partir desse princípio, derivam as seguintes regras de uso.
+
+### Em Nomes Próprios e Títulos
+
+A função mais básica da letra maiúscula é marcar os nomes próprios.
+
+- **Nomes de Pessoas, Divindades, Personagens e Seres Mitológicos (Antropônimos):**
+    - _Exemplos:_ **J**oão da **S**ilva, **M**achado de **A**ssis, **D**eus, **J**úpiter, **S**aci-**P**ererê.
+- **Nomes de Lugares (Topônimos):**
+    - _Exemplos:_ **B**rasil, **P**ortugal, **A**mazônia, **R**io **A**mazonas, **O**ceano **A**tlântico, **C**ordilheira dos **A**ndes.
+- **Nomes de Instituições, Órgãos, Empresas, Edifícios e Logradouros Públicos:**
+    - _Exemplos:_ **S**enado **F**ederal, **M**inistério da **E**ducação, **P**raça da **S**é, **A**venida **B**rasil, **P**arque do **I**birapuera.
+- **Nomes de Corpos Celestes (quando usados como nomes próprios):**
+    - _Exemplos:_ **T**erra, **S**ol, **L**ua, **N**etuno, **V**ia **L**áctea.
+- Títulos de Obras (Livros, Filmes, Músicas, Jornais, etc.): A primeira palavra do título é sempre maiúscula. Os substantivos, adjetivos, verbos e numerais subsequentes também costumam ser grafados com maiúscula. As palavras de ligação curtas (artigos, preposições, conjunções) ficam em minúscula.
+    - _Exemplos:_ **M**emórias **P**óstumas de **B**rás **C**ubas, **J**ornal do **C**omércio, **C**idade de **D**eus, **S**onata ao **L**uar.
+- **Pronomes de Tratamento e Títulos de Reverência:**
+    - _Exemplos:_ **V**ossa **E**xcelência (V. Ex.ª), **S**enhor (Sr.), **D**ona (D.), **S**ua **S**antidade.
+
+### Em Referências Temporais e Espaciais
+
+- **Datas Oficiais, Festividades e Épocas Históricas:**
+    - _Exemplos:_ **S**ete de **S**etembro, **D**ia das **M**ães, **N**atal, **P**áscoa, **I**dade **M**édia, **R**enascimento, **R**evolução **F**rancesa.
+- Pontos Cardeais: A capitalização depende do uso.
+    - **Com maiúscula:** Quando designam as grandes regiões do Brasil ou do mundo.
+        - _Exemplo:_ A culinária do **N**ordeste é muito rica. / O conflito ocorreu no **O**riente **M**édio.
+    - **Com minúscula:** Quando designam direção, localização ou aspecto geográfico.
+        - _Exemplo:_ O vento **n**orte é mais frio. / Ele mora na zona **s**ul da cidade. / O **n**ordeste do estado é mais seco.
+
+### Em Outros Contextos Específicos
+
+- Início de Períodos e Citações Diretas: Toda frase se inicia com letra maiúscula. Após ponto final, ponto de interrogação, ponto de exclamação e reticências (quando encerram a ideia), também se usa a maiúscula. A citação direta também se inicia com maiúscula.
+    - _Exemplo:_ Ele perguntou: "**Q**uem está aí?".
+    - **Atenção:** Após dois-pontos, em geral, usa-se letra minúscula (a não ser que a palavra seguinte seja um nome próprio). _Exemplo: Comprei três coisas: **p**ão, leite e queijo._
+- Áreas do Saber, Cursos e Disciplinas: Usa-se a maiúscula para designar ramos do conhecimento em sua dimensão mais ampla ou o nome formal de uma disciplina ou curso.
+    - _Exemplos:_ Ele é um especialista em **L**inguística. / O curso de **M**edicina é muito concorrido. / Minha pior nota foi em **M**atemática.
+- Personificações e Individualizações: Um substantivo comum pode ser grafado com maiúscula para indicar que ele está sendo personificado ou tratado como uma entidade única e específica.
+    - _Exemplos:_ A **M**orte (entidade) o levou. / A **N**ação (o Brasil) espera por mudanças.
+
