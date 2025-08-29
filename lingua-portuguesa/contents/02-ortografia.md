@@ -1324,6 +1324,66 @@ Os símbolos são representações gráficas de unidades de medida e elementos q
 
 Certas palavras e expressões da Língua Portuguesa, por possuírem grafia ou pronúncia muito semelhantes (parônimos e homônimos), são uma fonte recorrente de dúvidas e erros. Para as bancas examinadoras, representam uma excelente oportunidade para testar a atenção e o conhecimento do candidato. Dominar as distinções a seguir é um passo fundamental para garantir a precisão na escrita e na resolução de questões.
 
+### Os Quatro "Porquês": Uma Análise Definitiva
+
+A correta utilização das quatro formas de "porquê" é um dos testes mais reveladores de domínio da norma padrão. Embora foneticamente semelhantes, suas funções gramaticais e contextos de uso são completamente distintos. Compreender a lógica por trás de cada um deles é essencial para a escrita formal e para o sucesso em questões de ortografia.
+
+#### Porque (junto e sem acento)
+
+Esta forma é uma **conjunção** e seu papel é conectar orações para introduzir uma **causa**, uma **explicação** ou uma **finalidade**. É a forma utilizada em respostas.
+
+- **Dica:** Pode ser substituído por conjunções como **pois**, **uma vez que**, **já que**, **para que**.
+- **Exemplos (Causa):**
+    - Ele não foi à festa **porque** estava doente.
+    - O trânsito está lento **porque** houve um acidente na via principal.
+- **Exemplos (Explicação):**
+    - Estude, **porque** a prova será difícil. (Justificando uma ordem).
+    - Deve estar chovendo, **porque** o chão da rua está molhado. (Justificando uma suposição).
+
+#### Por que (separado e sem acento)
+
+Esta forma é a mais versátil e pode ser usada em duas situações principais:
+
+- **Em Interrogações (diretas ou indiretas):** É utilizado no início ou no meio de frases interrogativas.
+    - **Dica:** Pode ser substituído pelas expressões **"por qual motivo"** ou **"por qual razão"**.
+    - _Exemplo (Interrogativa Direta):_ **Por que** o edital ainda não foi publicado?
+    - _Exemplo (Interrogativa Direta):_ **Por que** você não me avisou antes?
+    - _Exemplo (Interrogativa Indireta):_ Gostaria de saber **por que** a reunião foi cancelada.
+    - _Exemplo (Interrogativa Indireta):_ Ninguém entende **por que** ele tomou essa decisão.
+- **Preposição "por" + Pronome Relativo "que":** Ocorre quando é possível substituir a expressão por **"pelo qual"** e suas variações (pela qual, pelos quais, pelas quais).
+    - _Exemplo:_ A causa **por que** lutamos é nobre. (A causa **pela qual** lutamos...).
+    - _Exemplo:_ Os caminhos **por que** passamos eram longos. (Os caminhos **pelos quais** passamos...).
+
+#### Por quê (separado e com acento)
+
+Esta forma possui exatamente o mesmo sentido do `por que` interrogativo, mas é usada em uma posição específica: **imediatamente antes de um sinal de pontuação** (ponto final, ponto de interrogação, exclamação) que encerra a frase ou uma pausa. O acento surge porque o monossílabo "que" se torna tônico ao final da frase.
+
+- **Dica:** Se está no final de uma pergunta ou de uma frase e tem o sentido de "por qual motivo", será acentuado.
+- **Exemplos:**
+    - Você não compareceu à reunião. **Por quê**?
+    - Ele está rindo e não quer dizer o motivo. Eu não sei **por quê**.
+    - Mudar todos os planos agora, **por quê**?!
+
+#### Porquê (junto e com acento)
+
+Esta forma é um **substantivo**. Significa "o motivo", "a razão", "a causa". Por ser um substantivo, ele geralmente vem acompanhado de um artigo (o, um) ou outro determinante (pronome, numeral) e pode ser pluralizado (os porquês).
+
+- **Dica:** Pode ser substituído diretamente por **"o motivo"**.
+- **Exemplos:**
+    - Ninguém sabe **o porquê** de tanta confusão. (Ninguém sabe **o motivo**...).
+    - Existe **um porquê** para cada decisão que tomamos.
+    - O diretor da empresa explicou **os porquês** do corte de gastos.
+
+#### Quadro-Resumo: O Uso dos Porquês
+
+| Forma       | Função                                   | Dica de Substituição   | Exemplo                                  |
+| ----------- | ---------------------------------------- | ---------------------- | ---------------------------------------- |
+| **Porque**  | **Conjunção** (causa/explicação)         | _pois, uma vez que_    | Não saí **porque** estava chovendo.      |
+| **Por que** | **Interrogativo** (início/meio de frase) | _por qual motivo_      | **Por que** você não veio?               |
+| **Por que** | **Preposição + Pronome Relativo**        | _pelo qual, pela qual_ | A rua **por que** passei estava deserta. |
+| **Por quê** | **Interrogativo** (final de frase)       | _por qual motivo_      | Você não veio **por quê**?               |
+| **Porquê**  | **Substantivo**                          | _o motivo, a razão_    | Não sei **o porquê** da sua ausência.    |
+
 ### Mal vs. Mau
 
 Esta é, talvez, a distinção mais clássica da ortografia. A regra para diferenciá-los é simples e eficaz, baseada em seus antônimos.
