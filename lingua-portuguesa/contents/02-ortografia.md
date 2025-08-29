@@ -1319,3 +1319,76 @@ Os símbolos são representações gráficas de unidades de medida e elementos q
 | litro      | **L**   | Comprei 2 **L** de suco.                    |
 | hora       | **h**   | A viagem durou 3 **h**.                     |
 | minuto     | **min** | A prova começará em 10 **min**.             |
+
+## Expressões Problemáticas: Distinções Essenciais
+
+Certas palavras e expressões da Língua Portuguesa, por possuírem grafia ou pronúncia muito semelhantes (parônimos e homônimos), são uma fonte recorrente de dúvidas e erros. Para as bancas examinadoras, representam uma excelente oportunidade para testar a atenção e o conhecimento do candidato. Dominar as distinções a seguir é um passo fundamental para garantir a precisão na escrita e na resolução de questões.
+
+### Mal vs. Mau
+
+Esta é, talvez, a distinção mais clássica da ortografia. A regra para diferenciá-los é simples e eficaz, baseada em seus antônimos.
+
+- **MAU é o contrário de BOM.** É um **adjetivo** e, portanto, caracteriza um substantivo.
+    - _Exemplos:_
+        - Ele sempre foi um **mau** aluno. (Contrário: um **bom** aluno).
+        - O lobo **mau** é um personagem clássico. (Contrário: o lobo **bom**).
+        - Estava de **mau** humor o dia todo. (Contrário: de **bom** humor).
+- **MAL é o contrário de BEM.** Pode exercer diferentes funções na frase.
+    - **Como Advérbio de Modo:** Modifica um verbo, indicando a maneira como uma ação foi realizada.
+        - _Exemplo:_ O candidato foi **mal** na prova. (Contrário: foi **bem** na prova).
+        - _Exemplo:_ A redação estava **mal** escrita. (Contrário: estava **bem** escrita).
+    - **Como Substantivo:** Significa "doença", "problema", "coisa ruim".
+        - _Exemplo:_ O **mal** da sociedade é a indiferença. (Contrário: o **bem** da sociedade).
+        - _Exemplo:_ Ele sofre de um **mal** desconhecido.
+    - **Como Conjunção Temporal:** Significa "logo que", "assim que".
+        - _Exemplo:_ **Mal** cheguei em casa, o telefone tocou. (Equivale a: **Assim que** cheguei...).
+
+> **Dica Rápida:** Na dúvida, tente substituir pela palavra oposta. Se a frase fizer sentido com **BOM**, use **MAU**. Se fizer sentido com **BEM**, use **MAL**.
+
+### Há vs. A
+
+A confusão aqui envolve um verbo e uma preposição.
+
+- **HÁ (do verbo HAVER):** É usado em dois contextos principais, ambos com uma ideia de passado ou existência.
+    1. **Tempo decorrido (passado):** Pode ser substituído por "faz".
+        - _Exemplo:_ **Há** três anos não viajo. (Equivale a: **Faz** três anos...).
+        - _Exemplo:_ Ele concluiu o curso **há** poucos meses.
+    2. **Sentido de "existir" ou "ocorrer":**
+        - _Exemplo:_ **Há** muitas pessoas na fila. (Equivale a: **Existem** muitas pessoas...).
+        - _Exemplo:_ Não **há** vagas neste setor.
+- **A (Preposição):** É usado em contextos que indicam futuro ou distância.
+    1. **Tempo futuro:**
+        - _Exemplo:_ A reunião começará daqui **a** dez minutos.
+        - _Exemplo:_ Voltarei **a** visitá-lo na próxima semana.
+    2. **Distância:**
+        - _Exemplo:_ O posto de gasolina mais próximo fica **a** dois quilômetros daqui.
+
+### Onde vs. Aonde
+
+Como vimos no estudo dos pronomes relativos, a escolha entre "onde" e "aonde" depende da regência do verbo, ou seja, da preposição que ele exige.
+
+- **ONDE (lugar fixo):** Indica permanência, lugar em que algo ou alguém está. É usado com verbos que pedem a preposição **"em"**.
+    - _Verbos comuns:_ estar, morar, ficar, residir, localizar-se.
+    - _Exemplos:_
+        - A cidade **onde** nasci é muito pequena. (Nasci **em** uma cidade).
+        - Não sei **onde** estacionei o carro. (Estacionei **em** algum lugar).
+- **AONDE (movimento, destino):** Indica movimento em direção a um lugar. É usado com verbos que pedem a preposição **"a"**.
+    - _Verbos comuns:_ ir, chegar, voltar, levar, dirigir-se.
+    - _Exemplos:_
+        - **Aonde** você vai com tanta pressa? (Vai **a** algum lugar).
+        - A praia **aonde** fomos estava lotada. (Fomos **a** uma praia).
+
+### Mas vs. Mais
+
+Apesar da pronúncia idêntica em muitas regiões, essas palavras têm significados e funções completamente diferentes.
+
+- **MAS:** É uma **conjunção adversativa**. Introduz uma ideia de oposição, contraste ou ressalva. É sinônimo de **porém, contudo, todavia, entretanto**.
+    - _Exemplos:_
+        - Ela estuda muito, **mas** não consegue boas notas.
+        - O dia está ensolarado, **mas** frio.
+- **MAIS:** É um **advérbio de intensidade** (ou pronome indefinido). Indica adição, aumento ou quantidade. Seu oposto é **menos**.
+    - _Exemplos:_
+        - Ele é o aluno **mais** dedicado da turma. (Oposto: **menos** dedicado).
+        - Preciso de **mais** tempo para terminar.
+        - Quero um pouco **mais** de café.
+
