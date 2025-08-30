@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/logica-de-programacao"><img src="./contents/banner-engenharia-de-software.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/engenharia-de-software"><img src="./contents/banner-engenharia-de-software.png"></a>
 </div>
 <br>
 
