@@ -328,7 +328,7 @@ Essa visão integrada da formação docente dialoga diretamente com os autores q
 
 ## Didática na Prática: Conceitos Fundamentais
 
-Após a jornada pelas teorias e conceitos que fundamentam a Didática, este é o momento de nos aproximarmos de sua dimensão mais concreta: a sala de aula. As discussões a seguir abordam termos e situações vividas no cotidiano do professor, que frequentemente aparecem em avaliações e concursos. O foco passa da teoria mais ampla para a aplicação prática dos princípios didáticos.
+Após a jornada pelas teorias e conceitos que fundamentam a Didática, este é o momento de nos aproximarmos de sua dimensão mais concreta: a sala de aula. As discussões a seguir abordam termos e situações vividas no cotidiano do professor. O foco passa da teoria mais ampla para a aplicação prática dos princípios didáticos.
 
 ### O Conceito de Método de Ensino
 
