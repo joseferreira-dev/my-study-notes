@@ -232,7 +232,7 @@ O sociólogo Philippe Perrenoud, professor da Universidade de Genebra, oferece u
 
 #### O Contexto: A Resistência à Precarização Docente
 
-A proposta de Perrenoud surge de um diagnóstico da difícil situação vivida por muitos professores, marcada por políticas públicas insuficientes, baixos salários e uma crescente desvalorização profissional. Este cenário de "penúria", como descrevem as notas, muitas vezes leva à desilusão, ao abandono da profissão ou a uma prática burocrática e sem engajamento.
+A proposta de Perrenoud surge de um diagnóstico da difícil situação vivida por muitos professores, marcada por políticas públicas insuficientes, baixos salários e uma crescente desvalorização profissional. Este cenário de "penúria" muitas vezes leva à desilusão, ao abandono da profissão ou a uma prática burocrática e sem engajamento.
 
 No entanto, Perrenoud observa que muitos professores resistem a essa precarização e se mantêm comprometidos com a nobre missão de ensinar. É a partir da análise da prática desses "professores desafiadores" que ele busca identificar o que constitui um profissional de excelência. Em suas palavras, são aqueles que aceitam o desafio:
 
