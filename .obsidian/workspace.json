@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "estruturas-de-dados/contents/07-outras-estruturas.md",
+                "file": "informatica-basica/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07-outras-estruturas"
+              "title": "README"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "estruturas-de-dados/contents/07-outras-estruturas.md",
+                "file": "informatica-basica/README.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 07-outras-estruturas"
+              "title": "Sumário de README"
             }
           }
         ],
@@ -171,6 +171,18 @@
   },
   "active": "358ec5964b2dbf47",
   "lastOpenFiles": [
+    "informatica-basica/contents/banner-informatica-basica.png",
+    "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
+    "informatica-basica/README.md",
+    "engenharia-de-software/README.md",
+    "engenharia-de-prompt/README.md",
+    "conhecimentos-pedagogicos-e-ept/README.md",
+    "legislacao/README.md",
+    "informatica-basica/contents/img",
+    "informatica-basica/contents",
+    "informatica-basica",
+    "conhecimentos-pedagogicos-e-ept/contents/04-teorias-pedagogicas-contemporaneas.md",
+    "estruturas-de-dados/contents/07-outras-estruturas.md",
     "estruturas-de-dados/contents/06-grafos.md",
     "estruturas-de-dados/contents/05-arvores.md",
     "estruturas-de-dados/contents/04-pilhas-e-filas.md",
@@ -202,21 +214,9 @@
     "bancos-de-dados/contents/Nova pasta",
     "bancos-de-dados/old-contents/01-fundamentos.md",
     "bancos-de-dados/old-contents/11-modelo-relacional-integridade-e-regras-de-codd.md",
-    "bancos-de-dados/README.md",
-    "bancos-de-dados/old-contents/08-modelo-entidade-relacionamento-estendido.md",
     "bancos-de-dados/contents",
-    "bancos-de-dados/old-contents/02-evolucao-historica.md",
-    "conhecimentos-pedagogicos-e-ept/contents/08-curriculo.md",
-    "conhecimentos-pedagogicos-e-ept/contents/07-relacao-professor-aluno.md",
-    "conhecimentos-pedagogicos-e-ept/contents/04-teorias-pedagogicas-contemporaneas.md",
-    "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
-    "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
     "Sem título.base",
     "Sem título.canvas",
-    "2025-08-25.md",
-    "linguagem-java/contents",
-    "linguagem-java/Nova pasta",
-    "linguagem-java",
-    "conhecimentos-pedagogicos-e-ept/contents/img"
+    "linguagem-java/contents"
   ]
 }
