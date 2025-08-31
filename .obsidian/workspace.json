@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
-                "mode": "preview",
+                "file": "informatica-basica/contents/01-navegadores.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-didatica"
+              "title": "01-navegadores"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
+                "file": "informatica-basica/contents/01-navegadores.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 05-didatica"
+              "title": "Sumário de 01-navegadores"
             }
           }
         ],
@@ -172,8 +172,9 @@
   "active": "358ec5964b2dbf47",
   "lastOpenFiles": [
     "informatica-basica/README.md",
-    "informatica-basica/contents/banner-informatica-basica.png",
+    "informatica-basica/contents/01-navegadores.md",
     "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
+    "informatica-basica/contents/banner-informatica-basica.png",
     "engenharia-de-software/README.md",
     "engenharia-de-prompt/README.md",
     "conhecimentos-pedagogicos-e-ept/README.md",
