@@ -734,7 +734,7 @@ Aqui, a união entre o conhecimento disciplinar, o de contexto e o pedagógico �
 
 Usando a mesma analogia, se o modelo integrativo são os ingredientes da receita, o modelo transformativo é o **bolo já assado**. Uma vez que os ingredientes foram combinados e transformados pelo calor, não é mais possível separá-los em sua forma original. Da mesma forma, um professor experiente não pensa de forma separada: "Agora vou usar meu conhecimento de conteúdo, agora meu conhecimento pedagógico". Seu conhecimento de "como ensinar fotossíntese para esta turma do 7º ano" já é uma coisa só, um amálgama que funde o que ele sabe sobre biologia, sobre as dificuldades comuns dos alunos com esse tema e sobre as melhores analogias e atividades para usá-las.
 
-Ambos os modelos são úteis. O modelo integrativo nos ajuda a entender os _componentes_ que formam o PCK, enquanto o modelo transformativo nos ajuda a compreender a _natureza_ do conhecimento de um professor que atingiu a excelência em sua prática.
+Ambos os modelos são úteis. O modelo integrativo nos ajuda a entender os **componentes** que formam o PCK, enquanto o modelo transformativo nos ajuda a compreender a **natureza** do conhecimento de um professor que atingiu a excelência em sua prática.
 
 ### As Consequências do PCK na Formação e na Prática Docente
 
