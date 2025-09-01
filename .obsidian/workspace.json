@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "informatica-basica/contents/01-navegadores.md",
+                "file": "legislacao/contents/07-decreto-1171.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-navegadores"
+              "title": "07-decreto-1171"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "informatica-basica/contents/01-navegadores.md",
+                "file": "legislacao/contents/07-decreto-1171.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 01-navegadores"
+              "title": "Sumário de 07-decreto-1171"
             }
           }
         ],
@@ -171,6 +171,18 @@
   },
   "active": "358ec5964b2dbf47",
   "lastOpenFiles": [
+    "engenharia-de-software/contents/12-modelo-rup.md",
+    "legislacao/contents/07-decreto-1171.md",
+    "engenharia-de-software/contents/11-modelo-orientado-a-aspectos.md",
+    "engenharia-de-software/contents/10-modelo-baseado-em-componentes.md",
+    "engenharia-de-software/contents/09-metodos-formais.md",
+    "engenharia-de-software/contents/08-modelo-espiral.md",
+    "engenharia-de-software/contents/07-modelo-prototipo.md",
+    "engenharia-de-software/contents/06-modelo-iterativo-e-evolutivo.md",
+    "engenharia-de-software/contents/05-modelo-rad.md",
+    "engenharia-de-software/contents/04-modelo-iterativo-e-incremental.md",
+    "informatica-basica/README.md",
+    "informatica-basica/contents/01-navegadores.md",
     "informatica-basica/contents/img/01-firefox-configuracao-por-url.png",
     "informatica-basica/contents/img/01-firefox-senha-principal.png",
     "informatica-basica/contents/img/01-firefox-sync.png",
@@ -181,9 +193,6 @@
     "informatica-basica/contents/img/01-chrome-sync.png",
     "informatica-basica/contents/img/01-chrome-logo.png",
     "informatica-basica/contents/img/01-ie-poluicao-visual.png",
-    "informatica-basica/contents/img/01-edge-rastreamento.png",
-    "informatica-basica/README.md",
-    "informatica-basica/contents/01-navegadores.md",
     "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
     "engenharia-de-software/README.md",
     "engenharia-de-prompt/README.md",
@@ -201,19 +210,10 @@
     "estruturas-de-dados/contents/02-vetores-e-matrizes.md",
     "estruturas-de-dados/contents/01-conceitos-fundamentais.md",
     "estruturas-de-dados/README.md",
-    "logica-de-programacao/README.md",
-    "linguagem-c/README.md",
-    "lingua-portuguesa/README.md",
-    "lingua-portuguesa/contents/02-ortografia.md",
     "lingua-portuguesa/contents/img",
     "lingua-portuguesa/contents/Nova pasta",
-    "lingua-portuguesa/contents/01-visao-geral.md",
-    "legislacao/contents/06-etica-no-servico-publico.md",
-    "legislacao/contents/01-lei-8112.md",
-    "bancos-de-dados/contents/01-fundamentos.md",
     "bancos-de-dados/contents/img",
     "bancos-de-dados/contents/Nova pasta",
-    "bancos-de-dados/old-contents/01-fundamentos.md",
     "bancos-de-dados/contents",
     "Sem título.base",
     "Sem título.canvas",
