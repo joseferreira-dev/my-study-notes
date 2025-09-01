@@ -379,3 +379,29 @@ Na imagem, ao pousar o cursor sobre o botão "Veja nossos resultados", a Barra d
 `https://www.estrategiaconcursos.com.br/resultados`.
 
 Essa verificação prévia é uma prática de navegação segura. Ela permite que o usuário confirme se o link realmente leva para o destino esperado, ajudando a identificar links suspeitos ou enganosos que poderiam redirecioná-lo para sites mal-intencionados.
+
+## Funcionalidades Essenciais do Navegador
+
+Além dos componentes visuais que formam sua estrutura, os navegadores são equipados com um robusto conjunto de funcionalidades projetadas para otimizar, personalizar e tornar mais produtiva a nossa interação com a web. A seguir, vamos analisar uma das mais básicas e úteis dessas ferramentas: a configuração de uma página inicial.
+
+### Página Inicial e de Inicialização
+
+A **Página Inicial** é o endereço web que o navegador abre quando o usuário clica no ícone de "casa" (popularmente conhecido como "casinha"), geralmente localizado na barra de navegação. Trata-se de um atalho configurável que serve como um ponto de partida ou um "porto seguro" para o qual se pode retornar rapidamente a qualquer momento.
+
+Contudo, é importante fazer uma distinção que alguns navegadores, como o Google Chrome e o Microsoft Edge, estabelecem entre dois conceitos parecidos:
+
+1. **Página Inicial:** Refere-se exclusivamente à página (sempre única) que é carregada ao se clicar no **ícone da casa**. Por exemplo, um usuário pode definir seu portal de notícias preferido como a página inicial para acessá-lo rapidamente com um clique.
+2. **Página de Inicialização:** Refere-se à(s) página(s) que são carregadas **automaticamente toda vez que o navegador é aberto**. Esta opção é mais flexível, permitindo que o usuário configure um conjunto de várias páginas que serão abertas simultaneamente, cada uma em sua própria aba.
+
+Essa segunda funcionalidade é extremamente útil para otimizar rotinas de trabalho ou estudo. Um estudante, por exemplo, pode configurar sua página de inicialização para abrir automaticamente o portal da universidade, seu e-mail acadêmico e a biblioteca virtual. Da mesma forma, um profissional pode iniciar seu dia de trabalho com o navegador já abrindo o sistema da empresa, a ferramenta de gestão de projetos e seu calendário.
+
+A imagem a seguir destaca o ícone da "casinha" nos principais navegadores, que é o atalho universal para acessar a **Página Inicial**.
+
+<div align="center">
+
+<img width="700px" src="./img/01-pagina-inicial.png">
+
+</div>
+
+Além do clique no ícone, a maioria dos navegadores também oferece um atalho de teclado para retornar à página inicial: **ALT + Home**. Essa combinação de teclas executa a mesma ação do botão "casinha", oferecendo uma alternativa rápida para a navegação. A configuração de qual site será a sua página inicial ou de inicialização é feita no menu de "Configurações" ou "Opções" do navegador.
+
