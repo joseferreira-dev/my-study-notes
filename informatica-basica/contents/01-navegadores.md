@@ -1137,9 +1137,7 @@ Além da navegação pelos menus gráficos, o Google Chrome oferece um método d
 Na prática, isso funciona como um atalho de teclado, mas para páginas inteiras de configuração. Por exemplo, em vez de clicar no menu de três pontos no canto superior direito e depois em "Configurações", o usuário pode simplesmente digitar `chrome://settings` na barra de endereços e pressionar Enter para chegar ao mesmo local.
 
 <div align="center">
-
-<img width="700px" src="./img/01-chrome-configuracao-por-url.png" alt="Janela de configurações do Google Chrome, mostrando o menu lateral e o endereço chrome://settings na barra de endereços.">
-
+<img width="700px" src="./img/01-chrome-configuracao-por-url.png">
 </div>
 
 Como a imagem ilustra, ao acessar `chrome://settings`, a página principal de configurações é carregada. Cada uma das seções visíveis no menu lateral ("Você e o Google", "Preenchimento automático", "Aparência", etc.) também possui sua própria URL específica, permitindo um acesso ainda mais direto a ajustes pontuais.
@@ -1163,3 +1161,38 @@ A tabela a seguir apresenta os principais endereços internos para as configura�
 | `chrome://extensions`              | Permite acessar a página de gerenciamento de extensões.                                                |
 | `chrome://version` ou `about:`     | Permite acessar a página com informações detalhadas sobre a versão do navegador.                       |
 
+#### Gerenciando suas Chaves Digitais: O Cofre de Senhas do Google Chrome
+
+A regra fundamental para a segurança online é utilizar senhas fortes e, principalmente, exclusivas para cada conta. No entanto, gerenciar dezenas de senhas complexas é um desafio para a memória humana. Para solucionar esse problema, o Google Chrome integra um robusto **Gerenciador de Senhas**, que funciona como um cofre digital seguro, vinculado diretamente à Conta do Google do usuário.
+
+A ferramenta foi projetada para simplificar todo o ciclo de vida de uma senha, desde sua criação até seu uso diário, oferecendo um equilíbrio entre segurança e conveniência.
+
+##### Principais Características do Gerenciador de Senhas
+
+O gerenciador do Chrome atua em diversas frentes para proteger as contas do usuário e facilitar o acesso a elas.
+
+| Característica                       | Descrição                                                                                                                                                                                                                  |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Armazenamento Seguro**             | As senhas são salvas e criptografadas na sua Conta Google, não apenas no navegador, garantindo que estejam protegidas.                                                                                                     |
+| **Preenchimento Automático**         | Ao visitar um site com credenciais salvas, o Chrome preenche automaticamente os campos de login, agilizando o acesso.                                                                                                      |
+| **Sincronização entre Dispositivos** | Através do Chrome Sync, as senhas salvas em um dispositivo ficam instantaneamente disponíveis em qualquer outro (computador, celular, tablet) onde o usuário esteja conectado com a mesma Conta Google.                    |
+| **Geração de Senhas Fortes**         | Ao criar uma nova conta, o Chrome pode sugerir e salvar automaticamente uma senha longa, complexa e única, eliminando o risco de senhas fracas ou reutilizadas.                                                            |
+| **Check-up de Senha**                | Uma ferramenta de verificação de segurança que analisa todas as senhas salvas e alerta sobre possíveis vulnerabilidades.                                                                                                   |
+| **Acesso e Gerenciamento**           | O usuário tem controle total para visualizar, editar e remover senhas salvas a qualquer momento através das configurações do navegador.                                                                                    |
+| **Segurança Adicional**              | Para acessar suas senhas no Chrome, pode ser necessário confirmar sua identidade, especialmente ao visualizar senhas no gerenciador de senhas. Isso adiciona uma camada extra de segurança para proteger suas informações. |
+
+##### O "Check-up de Senha": Uma Verificação de Segurança Proativa
+
+Uma das funcionalidades mais poderosas do gerenciador é o **Check-up de Senha**. Trata-se de uma ferramenta de auditoria de segurança que analisa todas as suas senhas salvas e as classifica em três categorias de risco, como ilustrado na imagem abaixo.
+
+<div align="center">
+<img width="680px" src="./img/01-chrome-check-up-senhas.png">
+</div>
+
+A verificação, que é feita de forma segura e com os dados criptografados para proteger a privacidade do usuário, apresenta os seguintes alertas:
+
+- **Senhas comprometidas:** Este é o alerta mais crítico. Ele indica que uma ou mais de suas senhas foram encontradas em um vazamento de dados de algum site na internet. A recomendação é **mudar essas senhas imediatamente**, pois elas estão em posse de criminosos.
+- **Senhas reutilizadas:** Aponta as senhas que estão sendo usadas em múltiplos sites. Isso representa um grande risco, pois se um desses sites for invadido, os criminosos tentarão usar a mesma combinação de e-mail e senha em outros serviços populares. A recomendação é **criar senhas exclusivas** para cada conta.
+- **Senhas fracas:** Identifica senhas que são fáceis de adivinhar ou quebrar por meio de ataques de força bruta (como "123456" ou "senha123"). A recomendação é **criar senhas fortes**, idealmente utilizando a própria ferramenta de geração de senhas do Chrome.
+
+Essa ferramenta transforma o gerenciador de senhas de um simples "cofre" em um assistente de segurança ativo, ajudando o usuário a manter suas contas online protegidas de forma contínua.
