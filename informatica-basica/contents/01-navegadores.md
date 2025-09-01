@@ -1325,4 +1325,34 @@ Imagine um computador de uso familiar, compartilhado entre várias pessoas. Sem 
 > 
 > É crucial entender que, por razões de segurança, a Mozilla não armazena nem tem como recuperar a sua Senha Principal. Caso o usuário a esqueça, não será possível acessar as senhas salvas. A única opção será redefinir a Senha Principal, um processo que apagará permanentemente todos os nomes de usuário e senhas que estavam armazenados no navegador. Portanto, este recurso deve ser utilizado com a consciência de que a senha escolhida precisa ser memorizada ou guardada em um local muito seguro.
 
+#### Acesso a Funções via URL
+
+De forma análoga ao que vimos nos navegadores baseados em Chromium, o Mozilla Firefox também oferece um método de acesso direto às suas páginas de configurações e ferramentas internas através de URLs especiais. Em vez do esquema `edge://` ou `chrome://`, o Firefox utiliza o tradicional protocolo interno **`about:`**.
+
+Isso permite que o usuário acesse qualquer painel de configuração de forma rápida, sem a necessidade de navegar pelos menus gráficos. Por exemplo, para chegar à tela principal de configurações, em vez de clicar no menu de três traços e depois em "Opções" ou "Configurações", basta digitar **`about:preferences`** na barra de endereços.
+
+<div align="center">
+
+<img width="700px" src="./img/01-firefox-configuracao-por-url.png" alt="Janela de configurações do Mozilla Firefox, mostrando o menu lateral e o endereço about:preferences na barra de endereços.">
+
+</div>
+
+Como a imagem ilustra, ao acessar `about:preferences`, a página principal de configurações é carregada. No menu à esquerda, vemos as diferentes seções, como "Geral", "Início", "Pesquisa" e "Privacidade e segurança". É possível navegar diretamente para cada uma dessas seções utilizando um **fragmento** na URL (o caractere `#`), que direciona o navegador para uma parte específica da página.
+
+A tabela a seguir lista os atalhos diretos para as principais seções de configuração:
+
+|Endereço (URL Interna)|Descrição|
+|---|---|
+|`about:preferences`|Permite acessar a página principal de configurações, geralmente abrindo na seção "Geral".|
+|`about:preferences#home`|Permite acessar a página de configurações de Início (página inicial, novas janelas e abas).|
+|`about:preferences#search`|Permite acessar a página de configurações do mecanismo de pesquisa padrão.|
+|`about:preferences#privacy`|Permite acessar a página de configurações de Privacidade e segurança, onde se gerencia a proteção contra rastreamento.|
+|`about:preferences#sync`|Permite acessar a página de configurações de sincronização da Conta Firefox.|
+
+Além das preferências, o Firefox possui diversas outras páginas `about:` úteis para acessar ferramentas e informações:
+
+- **`about:addons`**: Leva diretamente para o gerenciador de Complementos (extensões e temas).
+- **`about:config`**: Abre uma página de configurações avançadas. (**Atenção:** modificar essas opções sem conhecimento pode afetar a estabilidade do navegador).
+- **`about:support`**: Exibe informações de diagnóstico para a solução de problemas.
+- **`about:about`**: Mostra uma lista com todas as páginas `about:` disponíveis no navegador.
 
