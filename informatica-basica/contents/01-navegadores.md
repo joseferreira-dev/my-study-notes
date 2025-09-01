@@ -1196,3 +1196,60 @@ A verificação, que é feita de forma segura e com os dados criptografados para
 - **Senhas fracas:** Identifica senhas que são fáceis de adivinhar ou quebrar por meio de ataques de força bruta (como "123456" ou "senha123"). A recomendação é **criar senhas fortes**, idealmente utilizando a própria ferramenta de geração de senhas do Chrome.
 
 Essa ferramenta transforma o gerenciador de senhas de um simples "cofre" em um assistente de segurança ativo, ajudando o usuário a manter suas contas online protegidas de forma contínua.
+
+#### Atalhos de Teclado no Google Chrome
+
+Uma das maneiras mais eficazes de agilizar a navegação e se tornar um usuário mais produtivo é dominar os atalhos de teclado. O Google Chrome oferece uma vasta gama de comandos que permitem executar ações rapidamente, sem a necessidade de usar o mouse. Muitos desses atalhos são padronizados e funcionam de forma similar em outros navegadores, especialmente naqueles que também são baseados na tecnologia Chromium, como o Microsoft Edge.
+
+A seguir, apresentamos uma lista dos atalhos mais úteis, organizados por categoria.
+
+##### Gerenciamento de Abas e Janelas
+
+Essenciais para quem trabalha com múltiplas páginas, estes atalhos facilitam a organização do seu espaço de trabalho digital.
+
+|Atalho|Descrição|
+|---|---|
+|`CTRL + T`|Abre uma nova aba (guia).|
+|`CTRL + N`|Abre uma nova janela do navegador.|
+|`CTRL + W`|Fecha a aba (guia) atual.|
+|`CTRL + SHIFT + T`|Reabre a última aba que foi fechada. Um atalho extremamente útil para recuperar uma página fechada por engano. (Observação: não funciona no Modo de Navegação Anônima, pois este não guarda histórico).|
+|`CTRL + TAB`|Alterna para a próxima aba à direita, permitindo navegar rapidamente entre as guias abertas.|
+|`CTRL + SHIFT + N`|Abre uma nova janela no modo de Navegação Anônima.|
+
+##### Navegação e Pesquisa
+
+Comandos para controlar seu fluxo de navegação e interagir de forma eficiente com a barra de endereços.
+
+|Atalho|Descrição|
+|---|---|
+|`F5` ou `CTRL + R`|Atualiza (recarrega) a página atual.|
+|`ALT + HOME`|Navega diretamente para a página inicial configurada no navegador.|
+|`CTRL + E` ou `CTRL + K`|Coloca o cursor diretamente na barra de endereços para iniciar uma nova pesquisa.|
+|`F6`|Move o foco do cursor para a barra de endereços, selecionando a URL atual para que você possa digitar um novo endereço ou pesquisa.|
+|`CTRL + ENTER`|Completa um endereço na barra de endereços, adicionando `www.` ao início e `.com` ao final do texto digitado (Ex: digitar "google" e pressionar `CTRL+ENTER` leva a `www.google.com`).|
+
+##### Acesso a Ferramentas e Funcionalidades
+
+Atalhos para acessar rapidamente os painéis e as ferramentas mais importantes do navegador.
+
+|Atalho|Descrição|
+|---|---|
+|`CTRL + H`|Abre a página do Histórico de navegação.|
+|`CTRL + J`|Abre a página de Downloads.|
+|`CTRL + D`|Adiciona a página atual aos Favoritos.|
+|`CTRL + F`|Abre a ferramenta "Localizar" para pesquisar por palavras na página atual.|
+|`CTRL + G`|Navega para a próxima correspondência da busca feita com a ferramenta "Localizar".|
+|`CTRL + P`|Abre a caixa de diálogo para imprimir a página atual.|
+|`F11`|Ativa ou desativa o modo de visualização em Tela Cheia.|
+
+##### Gerenciamento de Dados e Ajuda
+
+| Atalho               | Descrição                                                                         |
+| -------------------- | --------------------------------------------------------------------------------- |
+| `CTRL + SHIFT + DEL` | Abre a janela para "Limpar dados de navegação" (histórico, cookies, cache, etc.). |
+| `F1`                 | Abre a Central de Ajuda do Google Chrome em uma nova aba.                         |
+
+Esta lista cobre os principais atalhos para o uso cotidiano. Para uma referência completa com todos os comandos de teclado disponíveis para o Google Chrome, é possível consultar a página de suporte oficial do Google:
+
+`https://support.google.com/chrome/answer/157179?hl=pt`
+
