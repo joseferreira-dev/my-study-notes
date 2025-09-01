@@ -1075,3 +1075,37 @@ Além do visual, o sucesso do Chrome foi impulsionado por inovações técnicas 
 - **Velocidade e Estabilidade:** O navegador foi projetado para ser extremamente rápido, desde a sua inicialização até o carregamento das páginas. Uma de suas grandes inovações foi a arquitetura de **processos independentes**, na qual cada aba rodava de forma isolada. Isso significava que, se uma página travasse, apenas aquela aba seria afetada, sem derrubar o navegador inteiro – um problema muito frustrante e comum em seus concorrentes.
 - **Segurança Reforçada:** O Chrome popularizou as **atualizações automáticas e silenciosas**, garantindo que os usuários estivessem sempre com a versão mais recente e segura sem qualquer esforço. Além disso, a arquitetura de processos isolados (_sandboxing_) também funcionava como uma barreira de segurança, dificultando que um site malicioso em uma aba pudesse afetar o restante do sistema.
 
+#### Sincronização na Nuvem
+
+Em um mundo onde utilizamos múltiplos dispositivos – o computador do trabalho, o notebook de casa, o smartphone e o tablet –, manter uma experiência de navegação consistente entre todos eles seria um desafio. É para solucionar essa questão que o Google Chrome oferece o **Chrome Sync**.
+
+Este serviço integra o navegador à sua Conta Google, armazenando de forma segura seus dados de navegação na nuvem. O objetivo é permitir que toda a sua configuração e seus dados estejam perfeitamente sincronizados e disponíveis em qualquer dispositivo onde você faça login.
+
+Ao ativar a sincronização, o usuário pode compartilhar entre seus aparelhos:
+
+- **Favoritos:** Todos os sites salvos na barra de favoritos.
+- **Histórico:** O registro completo de navegação.
+- **Guias Abertas:** É possível começar a ler um artigo no computador e continuar de onde parou no celular, pois as abas abertas em um dispositivo ficam acessíveis nos outros.
+- **Senhas e Chaves de Acesso:** O gerenciador de senhas integrado é sincronizado.
+- **Informações de Preenchimento Automático:** Endereços, telefones e dados de pagamento.
+- **Extensões e Configurações:** As extensões instaladas e as configurações de aparência e funcionamento do navegador.
+
+##### Como Funciona a Sincronização
+
+Para ativar o recurso, basta fazer login no Chrome com uma Conta Google. Uma vez ativado, o navegador passa a salvar os dados na nuvem e a espelhá-los em todos os outros dispositivos conectados à mesma conta. Além da conveniência, a sincronização oferece uma camada de segurança e recuperação de dados. Em caso de perda de um dispositivo ou aquisição de um novo, basta instalar o Chrome e fazer login para que toda a sua experiência de navegação seja restaurada automaticamente.
+
+A tela de configurações do serviço permite um controle granular sobre o que é sincronizado, como mostra a imagem a seguir.
+
+<div align="center">
+<img width="640px" src="./img/01-chrome-sync.png">
+</div>
+
+Nesta tela, o usuário pode ver com qual conta está sincronizado e acessar opções importantes:
+
+- **Gerenciar o que é sincronizado:** Permite escolher individualmente quais categorias de dados serão compartilhadas (por exemplo, sincronizar favoritos e senhas, mas não o histórico).
+- **Opções de criptografia:** Para aumentar a segurança, todos os dados são criptografados. É possível, inclusive, configurar uma "frase secreta de sincronização", que adiciona uma camada extra de criptografia que nem mesmo o Google pode acessar.
+
+##### Segurança Integrada: A Verificação de Senhas
+
+Integrada à funcionalidade de sincronização de senhas, o Google Chrome oferece uma ferramenta proativa de segurança. O navegador é capaz de verificar as senhas salvas e alertar o usuário caso alguma delas seja considerada fraca, esteja sendo reutilizada em múltiplos sites ou, o mais importante, tenha sido comprometida em algum vazamento de dados conhecido na internet. Ao identificar uma senha vulnerável, o Chrome recomenda a sua alteração imediata para proteger a segurança da conta.
+
