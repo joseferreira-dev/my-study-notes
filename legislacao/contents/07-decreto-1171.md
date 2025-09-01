@@ -62,3 +62,34 @@ O esquema a seguir sintetiza o âmbito de aplicação do Decreto nº 1.171/1994:
 
 A total separação entre o Código de Ética e a lei disciplinar fica evidente na forma de adesão do servidor a cada uma delas. O servidor adere à lei por uma simples conformidade exterior, impessoal e coercitiva, imposta pelo Estado, pois a lei se impõe por si só. Em contrapartida, no que diz respeito ao Código de Ética, a obrigatoriedade moral inclui a liberdade de escolha e de ação do próprio sujeito, até para discordar das normas que porventura entenda injustas e lutar por sua adequação aos princípios da Justiça. A norma ética busca uma adesão interna, baseada na convicção e na consciência do agente, enquanto a norma disciplinar se impõe pela força da sanção.
 
+## A Organização do Código de Ética
+
+O Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal, aprovado pelo Decreto nº 1.171/1994, contempla essencialmente duas partes. A primeira é de **ordem substancial**, tratando dos princípios e regras de conduta (o que fazer e o que não fazer), e a segunda é de **ordem formal**, dispondo sobre a criação e o funcionamento das Comissões de Ética, que são os órgãos responsáveis por sua aplicação.
+
+O código é estruturado em dois capítulos, com o primeiro sendo subdividido em três seções cruciais:
+
+<div align="center">
+<img width="620px" src="./img/decreto-1171-organizacao.png">
+</div>
+
+- **Seção I - Das Regras Deontológicas:** "Deontologia" é o estudo dos deveres. Esta seção, portanto, representa o padrão ético ideal, o conjunto de valores e princípios morais que devem inspirar a conduta do servidor. Tais valores incluem a dignidade, o decoro, o zelo, a honra, a eficácia, a cortesia e, acima de tudo, a consciência de que o bem comum é a finalidade maior do serviço público.
+- **Seção II - Dos Principais Deveres:** Esta seção traduz os valores abstratos das regras deontológicas em deveres funcionais mais concretos. Alguns desses deveres refletem diretamente os valores desejados; outros, a necessidade de garantir a integridade do exercício da função pública; e outros, ainda, o que se poderia chamar de “boas maneiras” no ambiente de trabalho.
+- **Seção III - Das Vedações:** Esta seção estabelece as condutas negativas, ou seja, aquilo que é expressamente proibido ao servidor. De forma geral, muitas dessas vedações correspondem a condutas que também são qualificadas como infrações disciplinares na Lei nº 8.112/1990 ou como atos de improbidade administrativa.
+
+Essa estrutura reflete a adoção de uma "ética de responsabilidade", ou seja, uma ética que não se preocupa apenas com a pureza da intenção, mas foca principalmente nas **consequências** dos atos dos agentes para o bem comum. O servidor não tem escolha: ele tem o dever de agir de acordo com os interesses coletivos e de orientar seus esforços para a otimização da satisfação do maior número de pessoas, manifestando uma conduta ética baseada na moral e no direito.
+
+### A Dupla Natureza Jurídica do Decreto
+
+Um último item sobre a natureza do Código de Ética é sua complexa natureza jurídica. O decreto, em seu prefácio, indica a sua base legal:
+
+> O PRESIDENTE DA REPÚBLICA, no uso das atribuições que lhe confere o art. 84, incisos IV e VI, e ainda tendo em vista o disposto no art. 37 da Constituição, bem como nos arts. 116 e 117 da Lei n° 8.112, de 11 de dezembro de 1990, e nos arts. 10, 11 e 12 da Lei n° 8.429 (...)
+
+A menção aos incisos IV e VI do art. 84 da Constituição revela que este decreto é, em parte, **regulamentar** e, em parte, **autônomo**.
+
+- **Decreto Regulamentar (ou de Execução):** É o tipo mais comum de decreto. É um ato administrativo utilizado para **detalhar e assegurar a correta aplicação de uma lei** já existente. Ele não pode inovar na ordem jurídica ou contrariar a lei que regulamenta, servindo apenas como um instrumento para a sua fiel execução (fundamento no art. 84, IV, da CF). O Decreto nº 1.171/94 é regulamentar quando ele detalha deveres e vedações que já encontram correspondência na Lei nº 8.112/1990 ou na Lei de Improbidade Administrativa.
+- **Decreto Autônomo:** É um ato normativo emitido pelo Chefe do Poder Executivo que **possui força de lei**, inovando na ordem jurídica sem a necessidade de uma lei prévia do Congresso para lhe dar fundamento. A partir da Emenda Constitucional nº 32/2001, o decreto autônomo só é admitido em duas hipóteses, previstas no art. 84, VI, da Constituição:
+    - a) Organização e funcionamento da Administração Federal, desde que **não implique aumento de despesa nem criação ou extinção de órgãos públicos**;
+    - b) Extinção de cargos ou funções públicas, desde que **vagos**.
+
+O Decreto nº 1.171/94 é considerado autônomo na parte em que trata da organização e do funcionamento do Sistema de Gestão da Ética, como a criação das Comissões de Ética, pois está exercendo a competência presidencial de organizar a Administração Federal.
+
