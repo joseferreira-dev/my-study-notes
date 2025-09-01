@@ -438,3 +438,117 @@ Dentro dessa interface de gerenciamento, o usuário pode realizar uma série de 
 
 Os navegadores modernos integram mecanismos de segurança ao gerenciador de downloads. Eles podem analisar os arquivos durante e após a transferência, verificando se são conhecidos por conterem software mal-intencionado (malware) ou vírus. Caso um arquivo seja considerado suspeito, o navegador exibirá um alerta, dando ao usuário a opção de descartá-lo. É uma prática de segurança fundamental sempre desconfiar de downloads de fontes não conhecidas ou não confiáveis.
 
+### Histórico de Navegação
+
+Enquanto navegamos pela internet, saltando de um link para outro, o navegador atua como um "diário de bordo", registrando cada página que visitamos. Essa funcionalidade, conhecida como **Histórico de Navegação**, cria uma lista cronológica de todos os sites acessados, tornando-se uma poderosa ferramenta de memória que nos permite encontrar e retornar facilmente a uma página visitada anteriormente, mesmo que não nos lembremos do endereço exato.
+
+#### Acessando e Utilizando o Histórico
+
+Para acessar o histórico, os principais navegadores também utilizam um atalho de teclado universal, o **Ctrl + H**. Ao acionar esse comando, o navegador exibe uma página ou um painel dedicado que lista os sites visitados, geralmente organizados por data (Hoje, Ontem, Semana Passada, etc.), exibindo o título da página, seu endereço (URL) e a hora da visita.
+
+|Navegador|Atalho|Descrição|
+|---|---|---|
+|Google Chrome|Ctrl + H|Exibe a página de histórico com os sites visitados.|
+|Mozilla Firefox|Ctrl + H|Abre a barra lateral ou a janela da biblioteca com o histórico.|
+|Internet Explorer|Ctrl + H|Abre o painel de histórico.|
+|Microsoft Edge|Ctrl + H|Exibe a página de histórico com os sites visitados.|
+
+<div align="center">
+
+<img width="700px" src="./img/01-historico-de-navegacao.png">
+
+</div>
+
+A principal utilidade do histórico é a **pesquisa**. Em vez de rolar por uma lista potencialmente infinita, o usuário pode digitar uma palavra-chave relacionada ao site que procura (o nome de um produto, o tema de um artigo, etc.) e o navegador filtrará instantaneamente a lista, exibindo apenas as páginas relevantes.
+
+#### Gerenciando Seus Rastros Digitais
+
+O histórico de navegação é um dado pessoal e, por isso, os navegadores oferecem controle total sobre ele. O usuário pode, a qualquer momento, realizar ações como:
+
+- **Remover páginas específicas:** É possível apagar entradas individuais do histórico para fins de privacidade ou organização.
+- **Limpar o histórico completo:** Os navegadores oferecem uma ferramenta de "Limpar dados de navegação" que permite apagar todo o registro. Essa ferramenta geralmente oferece opções de granularidade, permitindo apagar o histórico da última hora, do último dia, da última semana ou de todo o período.
+
+### Modo Privado
+
+Por padrão, os navegadores são projetados para serem assistentes pessoais, guardando uma série de informações para facilitar e agilizar nossa experiência online. Eles memorizam nosso **histórico de páginas visitadas**, para que possamos reencontrar um site facilmente; salvam nossas **buscas**, para o caso de precisarmos refazê-las; e preenchem automaticamente **informações em formulários** (nome, endereço, CPF), poupando-nos do trabalho de digitar os mesmos dados repetidamente. Essa conveniência, no entanto, nem sempre é desejável.
+
+Existem situações em que precisamos utilizar a internet sem deixar rastros em um determinado computador. É para atender a essa necessidade que os navegadores oferecem a funcionalidade de **Navegação Privativa**.
+
+<div align="center">
+
+<img width="700px" src="./img/01-navegacao-privativa.png">
+
+</div>
+
+#### Quando e Por Que Utilizar a Navegação Privativa?
+
+A decisão de usar o modo privado geralmente se baseia em duas necessidades principais: o uso de computadores compartilhados e a privacidade em um dispositivo local.
+
+1. **Uso em Computadores Públicos ou Compartilhados:** Imagine a necessidade de acessar seu e-mail ou responder a mensagens em um computador de uma _lan house_, biblioteca ou hotel. Em uma rede de uso compartilhado, seria extremamente arriscado inserir informações pessoais e senhas em um navegador que salva todos esses dados. Ao utilizar o modo privado, garante-se que, ao fechar a janela, nenhuma informação pessoal, senha, ou site visitado ficará armazenado naquele computador.
+2. **Privacidade no Dispositivo Local:** Outro uso comum é para manter uma atividade de navegação privada de outras pessoas que usam o mesmo computador. Por exemplo, ao pesquisar um presente de aniversário surpresa, planejar uma viagem ou buscar informações sobre um tema sensível, o uso do modo privado impede que essas buscas e sites apareçam no histórico do navegador, preservando a surpresa ou a privacidade da pesquisa.
+
+#### O Que o Modo Privado Realmente Faz?
+
+Quando se inicia uma sessão de navegação privada, o navegador abre uma nova janela que opera de forma isolada. Ao final da sessão, quando essa janela é fechada, o navegador automaticamente apaga todos os dados de navegação gerados nela. Isso inclui:
+
+- **Histórico de navegação:** Nenhuma página visitada na janela privada é registrada.
+- **Cookies e dados de sites:** Os sites ainda podem usar cookies durante a sessão, mas eles são excluídos assim que a janela é fechada.
+- **Informações inseridas em formulários:** Quaisquer dados digitados em campos de login, senhas ou formulários de cadastro não são salvos.
+
+#### Os Limites da Privacidade: O Que o Modo Privado Não Faz
+
+É fundamental compreender a principal limitação desta funcionalidade: a Navegação Privativa torna o usuário "anônimo" apenas para o **navegador local**, e não para a internet. Ela não oculta sua identidade de sites ou de seu provedor de internet. Em outras palavras, sua atividade ainda pode ser visível para:
+
+- **Os sites que você visita:** Eles ainda podem registrar seu endereço IP e sua atividade em suas páginas.
+- **Seu provedor de acesso à internet:** A empresa que fornece sua conexão ainda pode rastrear os sites que você acessa.
+- **Seu empregador ou instituição de ensino:** Se estiver utilizando uma rede corporativa ou acadêmica, o administrador da rede pode monitorar seu tráfego.
+
+A privacidade, portanto, é focada no dispositivo, garantindo que outras pessoas que o utilizem não vejam sua atividade.
+
+#### Como Acessar e os Diferentes Nomes
+
+Cada navegador dá um nome específico para essa funcionalidade: o **Google Chrome** a chama de "Navegação Anônima", o **Mozilla Firefox** de "Navegação Privada", e o **Microsoft Edge** e **Internet Explorer** de "Navegação InPrivate".
+
+A forma mais rápida de abrir uma nova janela de navegação privada é através de um atalho de teclado, que varia ligeiramente entre os navegadores.
+
+|Navegador|Atalho|Descrição|
+|---|---|---|
+|Google Chrome|Ctrl + Shift + N|Abre uma nova janela no modo de Navegação Anônima.|
+|Microsoft Edge|Ctrl + Shift + N|Abre uma nova janela de Navegação InPrivate.|
+|Mozilla Firefox|Ctrl + Shift + P|Abre uma nova janela de Navegação Privada.|
+|Internet Explorer|Ctrl + Shift + P|Abre uma nova janela de Navegação InPrivate.|
+
+### Impressão de Páginas
+
+Apesar de vivermos em um mundo cada vez mais digital, a necessidade de ter uma cópia física de uma página web ainda é muito comum, seja para estudar um artigo, guardar um comprovante, ou compartilhar uma informação offline. Todos os navegadores modernos possuem uma funcionalidade de impressão robusta e integrada, que permite ao usuário enviar o conteúdo de uma página diretamente para uma impressora.
+
+O acesso à janela de impressão é universalmente padronizado pelo atalho de teclado **Ctrl + P** (onde "P" vem do inglês _Print_, que significa Imprimir).
+
+|Navegador|Atalho|Descrição|
+|---|---|---|
+|Google Chrome|Ctrl + P|Abre a caixa de diálogo de impressão da página atual.|
+|Mozilla Firefox|Ctrl + P|Abre a caixa de diálogo de impressão da página atual.|
+|Internet Explorer|Ctrl + P|Abre a caixa de diálogo de impressão da página atual.|
+|Microsoft Edge|Ctrl + P|Abre a caixa de diálogo de impressão da página atual.|
+
+Ao acionar esse comando, o navegador exibe uma janela de pré-visualização e um painel de configurações, permitindo um controle detalhado sobre o resultado final da impressão.
+
+<div align="center">
+
+<img width="700px" src="./img/01-impressao-de-paginas.png">
+
+</div>
+
+#### Configurando sua Impressão
+
+A janela de impressão oferece diversas opções para personalizar o documento antes de enviá-lo para o papel. As mais comuns são:
+
+- **Destino:** Permite escolher em qual impressora o documento será impresso. Além das impressoras físicas, esta opção geralmente inclui a funcionalidade de **"Salvar como PDF"**, uma ferramenta extremamente útil que "imprime" a página em um arquivo PDF, preservando sua formatação e permitindo que seja salva e compartilhada digitalmente.
+- **Páginas:** Oferece controle sobre quais páginas do documento serão impressas. O usuário pode optar por imprimir:
+    - **Tudo:** Imprime o documento completo.
+    - **Páginas específicas:** É possível selecionar páginas individuais, separando-as por vírgula (ex: `1, 3, 5`), ou um intervalo contínuo de páginas, utilizando um hífen (ex: `2-4`). É possível também combinar as duas notações (ex: `1, 4-6`, para imprimir a página 1 e o intervalo das páginas 4 a 6).
+- **Layout:** Define a orientação do papel, que pode ser **Retrato** (vertical, o padrão) ou **Paisagem** (horizontal).
+- **Mais configurações:** Geralmente há opções adicionais para controlar o tamanho do papel (A4, Ofício, etc.), a qualidade da impressão, a impressão em frente e verso e se os cabeçalhos e rodapés (que incluem informações como o endereço da página e a data) devem ser incluídos.
+
+Essa capacidade de pré-visualizar e ajustar a impressão garante que o usuário tenha total controle sobre o resultado final, otimizando o uso de papel e tinta e adequando o documento às suas necessidades específicas.
+
