@@ -138,3 +138,42 @@ Qualquer outra pena, como advertência ou suspensão, se atribuída à Comissão
 
 A **censura** é uma sanção de natureza moral, que consiste em uma repreensão formal e por escrito ao servidor pela infração ética cometida. Seu extrato é publicado no Diário Oficial da União e ela é registrada nos assentamentos funcionais do servidor, constituindo um antecedente negativo que pode ser considerado em futuras apurações. Se a conduta investigada pela Comissão de Ética também configurar uma infração disciplinar, a comissão deverá encaminhar o caso para a unidade correcional competente para a instauração de sindicância ou PAD.
 
+### Composição e Mandato
+
+As Comissões de Ética são integradas por **três membros titulares e três suplentes**, escolhidos entre servidores e empregados do seu quadro permanente, e designados pelo dirigente máximo da respectiva entidade ou órgão, para mandatos de três anos.
+
+<div align="center">
+<img width="440px" src="./img/decreto-1171-comissao-composicao.png">
+</div>
+
+- **O Mandato Não Coincidente:** A exigência de que os mandatos de três anos sejam **não coincidentes** é um mecanismo para garantir a continuidade e a preservação da memória institucional. Isso significa que os membros são renovados de forma escalonada, evitando que toda a comissão seja substituída de uma só vez, o que poderia interromper os trabalhos em andamento. O esquema a seguir ilustra um ciclo de mandatos não coincidentes.
+
+<div align="center">
+<img width="520px" src="./img/decreto-1171-comissao-mandatos.png">
+</div>
+
+- **Requisitos dos Membros:** Os componentes das Comissões de Ética são escolhidos entre os servidores públicos ocupantes de cargo efetivo ou de emprego permanente do quadro do órgão. Entende-se por Quadro Permanente aquele composto por servidores admitidos para o desempenho das atividades fins e meios, estejam eles ocupando cargo comissionado ou não. Excluem-se desse quadro somente os ocupantes de cargo comissionado sem vínculo efetivo com a administração. Caso não haja servidores em número suficiente na entidade, poderão ser escolhidos servidores de outros órgãos da Administração Pública.
+
+> **Ponto de Atenção: O Dirigente Máximo não pode ser Membro**
+> 
+> O dirigente máximo do órgão ou entidade **NÃO poderá ser membro** da Comissão de Ética. Essa vedação justifica-se para evitar conflitos de interesse, tendo em vista que o próprio dirigente é o responsável por designar os membros e, eventualmente, por executar algumas das deliberações da comissão.
+
+### Autonomia e Atribuições
+
+A atuação da Comissão de Ética, no que concerne ao exercício de suas competências, **não se subordina à instância superior a que se vincule**. Trata-se de um órgão com autonomia técnica para deliberar sobre a matéria ética.
+
+Eventuais dúvidas de natureza **legal** devem ser resolvidas junto ao setor jurídico da entidade ou órgão. Já as dúvidas sobre a **aplicação das normas do Código de Ética** devem ser dirimidas pela **Comissão de Ética Pública (CEP)**, que é a instância superior do Sistema de Gestão da Ética do Poder Executivo Federal. As comissões setoriais atuam, portanto, como elemento de ligação com a CEP.
+
+As atribuições da comissão são de natureza preventiva, consultiva e repressiva, conforme o esquema a seguir:
+
+<div align="center">
+<img width="700px" src="./img/decreto-1171-comissao-de-etica-setorial.png">
+</div>
+
+Em resumo, compete à Comissão de Ética:
+
+- **Promover** a adoção de normas de conduta ética para os servidores.
+- **Orientar e Aconselhar** sobre a ética profissional do servidor, no tratamento com as pessoas e com o patrimônio público.
+- **Tomar conhecimento** de procedimentos que possam ensejar a aplicação da penalidade de censura.
+- **Supervisionar** a observância do Código de Conduta da Alta Administração Federal, comunicando à CEP eventuais descumprimentos.
+
