@@ -1253,3 +1253,28 @@ Esta lista cobre os principais atalhos para o uso cotidiano. Para uma referênci
 
 `https://support.google.com/chrome/answer/157179?hl=pt`
 
+### Mozilla Firefox
+
+Lançado oficialmente em 2004, o Mozilla Firefox surgiu em um cenário onde a internet era dominada de forma quase absoluta pelo Internet Explorer. Naquela época, o navegador da Microsoft, que vinha pré-instalado no Windows e não podia ser removido, era visto por muitos usuários como lento, limitado e, principalmente, vulnerável a ataques. O Firefox chegou como a primeira grande alternativa viável, trazendo uma filosofia e uma proposta de navegação completamente diferentes.
+
+<div align="center">
+<img width="280px" src="./img/01-firefox-logo.png">
+</div>
+
+#### A Filosofia do Código Aberto
+
+A diferença mais fundamental entre o Firefox e o Internet Explorer reside em sua natureza. O Firefox é um software de **código aberto** (_open source_), enquanto o IE é de **código proprietário**. Mas o que isso significa?
+
+- **Código Proprietário:** O "código-fonte" – a receita que compõe o programa – é um segredo industrial, pertencente exclusivamente à empresa que o desenvolve (no caso, a Microsoft). Ninguém de fora da empresa pode ver, auditar ou modificar esse código.
+- **Código Aberto:** O código-fonte é público. Qualquer pessoa no mundo pode acessá-lo para estudar como o navegador funciona, procurar por falhas de segurança e até mesmo sugerir melhorias.
+
+Essa abertura permitiu que o Firefox fosse construído com a ajuda de uma vasta comunidade global de colaboradores voluntários. Estima-se que cerca de 40% do código original do navegador foi escrito por essa comunidade, que trabalhava para corrigir falhas e implementar novos recursos, os quais eram então avaliados e incorporados ao produto final pela Fundação Mozilla.
+
+#### As Vantagens que Impulsionaram sua Popularidade
+
+Além de sua filosofia colaborativa, o Firefox conquistou os usuários por oferecer vantagens práticas e inovadoras para a época:
+
+- **Multiplataforma:** Diferente do Internet Explorer, que era atrelado ao Windows, o Firefox foi projetado para funcionar em diversos sistemas operacionais, incluindo Windows, macOS (Apple) e Linux, oferecendo uma experiência consistente em todas as plataformas.
+- **Segurança e Desempenho:** Era notavelmente mais leve, rápido e seguro que seu principal concorrente, oferecendo uma navegação mais estável e protegida contra softwares mal-intencionados.
+- **Personalização via Complementos (_Add-ons_):** O Firefox foi o grande popularizador do conceito de extensibilidade. Ele foi construído para ser uma plataforma personalizável, permitindo que os usuários instalassem "complementos" (_add-ons_) para adicionar novas funcionalidades (extensões), alterar completamente a aparência (temas) ou, na época, habilitar recursos de mídia (plug-ins). Essa capacidade de adaptar o navegador às necessidades de cada um foi um diferencial revolucionário e um dos principais motivos de seu sucesso.
+
