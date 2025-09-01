@@ -688,3 +688,42 @@ Em suma, os cookies desempenham quatro funções principais:
 - **Publicidade:** Permitem a exibição de anúncios de acordo com o perfil do usuário.
 
 Todos os navegadores modernos oferecem ao usuário controle total sobre os cookies. Nas configurações de privacidade, é possível visualizar todos os cookies armazenados, apagá-los individualmente ou em massa, bloquear todos os cookies (o que pode impedir o funcionamento de alguns sites) ou, uma opção cada vez mais comum e recomendada, **bloquear apenas os cookies de terceiros**, mantendo a funcionalidade dos sites e aumentando significativamente a privacidade.
+
+### Cache
+
+Imagine a seguinte situação: uma pizzaria de entregas em uma grande metrópole como São Paulo, onde a velocidade da entrega é crucial para o sucesso. A pizzaria começa a receber muitos pedidos de uma pizza de calabresa para uma mesma região, perto de uma universidade. No início, a cada novo pedido, o processo é o mesmo: a pizza é preparada do zero, e um entregador é enviado do restaurante até o local.
+
+Percebendo o padrão, a gestão da pizzaria tem uma ideia. No próximo pedido de pizza de calabresa para aquela região, em vez de preparar apenas uma, eles preparam quatro e as enviam com o entregador, que ficará posicionado perto da universidade. Minutos depois, surgem mais dois pedidos para a mesma pizza, na mesma área. A pizzaria simplesmente liga para o entregador, que já está no local com as pizzas extras, e o direciona para os novos endereços. O resultado? Uma entrega incrivelmente rápida, que surpreende os clientes e coloca a pizzaria à frente da concorrência.
+
+Essencialmente, é assim que o **cache da web** funciona.
+
+Ao navegar na internet, os navegadores armazenam temporariamente em uma pasta no seu computador diversos elementos dos sites que você visita, como imagens, logotipos e até a estrutura das páginas. Isso é o **cache**. O objetivo é criar uma "entrega rápida" para suas próximas visitas. Quando você retorna a um site, em vez de baixar tudo novamente do servidor original (o que seria como preparar a pizza do zero), o navegador primeiro verifica seu armazenamento local e carrega os elementos que já estão salvos. O resultado é um carregamento de página muito mais rápido.
+
+#### Os Benefícios e a Manutenção do Cache
+
+O uso do cache traz duas grandes vantagens:
+
+1. **Velocidade:** Reduz drasticamente o tempo de carregamento de páginas visitadas com frequência, pois a leitura de dados do disco local é muito mais rápida do que o download pela internet.
+2. **Economia de Dados:** Ao evitar o download repetido dos mesmos arquivos, o cache ajuda a economizar o consumo da sua franquia de internet.
+
+Ocasionalmente, o cache pode causar um problema: ao guardar uma versão antiga de um site, ele pode impedir que você veja as atualizações mais recentes. Quando um site parece "travado" ou não exibe um conteúdo novo, uma das primeiras soluções é **limpar o cache do navegador**. Essa ação força o navegador a apagar todos os dados armazenados e baixar a versão mais recente e completa do site diretamente do servidor.
+
+#### Não Confunda: Cache da Web, Memória Cache e Cookies
+
+É fundamental não confundir três termos que, embora parecidos, se referem a conceitos muito diferentes.
+
+- **Cache da Web:** É um recurso de **software**, uma funcionalidade do navegador que armazena arquivos de sites no disco rígido para acelerar a navegação.
+- **Memória Cache:** É um componente de **hardware**, um tipo de memória física ultrarrápida, menor e mais cara que a memória RAM, utilizada pelo processador do computador para armazenar dados e instruções acessados com frequência, acelerando o desempenho geral do sistema.
+
+Outra dúvida muito comum é sobre a diferença entre cache e cookies. Embora ambos armazenem dados no computador do usuário, suas finalidades e características são completamente distintas. Em resumo: o **cache acelera** a navegação ao guardar os "elementos visuais" de um site, enquanto os **cookies personalizam** a experiência ao guardar "informações sobre o usuário e suas preferências".
+
+A tabela a seguir detalha as principais diferenças:
+
+| CACHE                                                                                                        | COOKIES                                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Finalidade:** Armazenar o conteúdo de uma página (imagens, códigos) para acelerar o carregamento futuro.   | **Finalidade:** Armazenar dados sobre as escolhas e a identidade do usuário (preferências, login, etc.).                                                          |
+| **Local de Armazenamento:** Os dados são armazenados apenas no computador do cliente.                        | **Local de Armazenamento:** Os dados são armazenados no cliente e também podem ser lidos e atualizados pelo servidor.                                             |
+| **Expiração:** Geralmente, os dados expiram após um longo período ou são removidos manualmente pelo usuário. | **Expiração:** Possuem datas de validade definidas pelo site e podem expirar automaticamente (cookies persistentes) ou ao fechar o navegador (cookies de sessão). |
+| **Capacidade:** Consome um espaço considerável de armazenamento (megabytes ou até gigabytes).                | **Capacidade:** Consome um espaço mínimo de armazenamento (apenas alguns kilobytes).                                                                              |
+| **Conteúdo Armazenado:** Páginas HTML, imagens, arquivos de estilo (CSS) e de script (JavaScript).           | **Conteúdo Armazenado:** Informações de sessão, dados de rastreamento, preferências do usuário.                                                                   |
+
