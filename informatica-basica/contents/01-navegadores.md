@@ -640,3 +640,51 @@ A tabela a seguir, baseada em comparações de mercado, oferece uma visão geral
 
 Como a imagem ilustra, enquanto o modo de navegação privativa é um recurso universal, o bloqueio por padrão de rastreadores de mídias sociais, cookies de terceiros e _scripts_ de criptomineração varia, com navegadores como Firefox, Edge e Brave oferecendo uma proteção mais abrangente desde a instalação.
 
+### Cookies
+
+Ao navegar na internet, os sites que visitamos frequentemente parecem "lembrar" de nós. Seja ao manter nossa conta logada, ao exibir o conteúdo em nosso idioma preferido ou ao guardar os itens que adicionamos a um carrinho de compras, essa "memória" é, na maioria das vezes, proporcionada por uma tecnologia chamada **cookie**.
+
+Cookies são pequenos arquivos de texto que um site, através de seu servidor web, envia para o navegador do usuário. O navegador, por sua vez, armazena esse arquivo em uma pasta local no computador. Em acessos futuros ao mesmo site, o navegador envia o cookie de volta para o servidor, que lê as informações salvas e personaliza a experiência de navegação automaticamente.
+
+Imagine a seguinte situação: ao planejar uma viagem, uma pessoa acessa um site de reservas de hotéis internacional e, ao ser questionada sobre seu idioma, seleciona "Português". Nesse momento, o site cria um cookie contendo essa preferência e o envia para o navegador. No dia seguinte, ao retornar ao mesmo site, o navegador reenvia o cookie para o servidor. O site lê a informação e, sem precisar perguntar novamente, já exibe todo o conteúdo em português. Essa é a principal função dos cookies: melhorar e agilizar a experiência do usuário.
+
+#### As Duas Faces dos Cookies: Conveniência vs. Rastreamento
+
+Embora sua função primária seja a conveniência, os cookies se tornaram uma ferramenta de dupla face. É fundamental distinguir os cookies do próprio site que se está visitando (de primeiro nível) daqueles que pertencem a outros domínios (de terceiros).
+
+- **Cookies de Primeiro Nível (_First-Party Cookies_):** São criados pelo site que o usuário está acessando diretamente. Geralmente, são "bons" cookies, usados para funcionalidades essenciais como manter o login ativo, salvar as preferências de idioma e moeda, e manter os produtos em um carrinho de compras.
+- **Cookies de Terceiros (_Third-Party Cookies_):** São criados por domínios diferentes daquele que o usuário está visitando. Eles são a principal ferramenta para o **rastreamento entre sites**. É por meio deles que as redes de publicidade constroem um perfil sobre os interesses do usuário. O exemplo clássico: alguém pesquisa por um modelo de tênis em uma loja virtual (Site A). Essa loja permite que uma rede de publicidade (Site B) salve um cookie de terceiro no navegador. Mais tarde, ao acessar um portal de notícias (Site C) que exibe anúncios da mesma rede, a rede de publicidade lê seu próprio cookie, identifica o interesse em tênis e exibe um anúncio daquele produto.
+
+#### Tipos de Cookies: Sessão vs. Persistentes
+
+Os cookies também se diferenciam pelo seu "tempo de vida":
+
+1. **Cookies de Sessão:** São temporários e armazenados apenas na memória do navegador. Eles existem somente enquanto a sessão está ativa e são **automaticamente apagados quando o navegador é fechado**. Não possuem data de validade e são ideais para funcionalidades momentâneas, como o carrinho de compras.
+2. **Cookies Persistentes:** São salvos no disco rígido do computador e **continuam existindo mesmo após o navegador ser fechado**. Eles possuem uma data de validade, que pode ser de minutos ou até anos, e são usados para lembrar de preferências de longo prazo, como o idioma de um site ou a opção "Mantenha-me conectado".
+
+Ao se utilizar a **navegação anônima ou privada**, o navegador opera exclusivamente com **cookies de sessão**. Mesmo que um site tente criar um cookie persistente, ele será tratado como um cookie de sessão e deletado assim que a janela privada for fechada.
+
+#### Cookies e Segurança
+
+É importante desmistificar a natureza dos cookies. Eles **não são vírus, spyware ou qualquer tipo de programa executável**. São arquivos de texto simples e, portanto, não podem capturar dados do seu computador, ler seus arquivos pessoais ou instalar malware. O risco associado aos cookies não é de segurança para a máquina, mas sim de **privacidade** para o usuário.
+
+Ao navegar, é comum que sites complexos utilizem dezenas ou até centenas de cookies, tanto próprios quanto de terceiros, para funcionar.
+
+<div align="center">
+
+<img width="420px" src="./img/01-cookies.png">
+
+</div>
+
+A imagem acima, que ilustra a quantidade de cookies em uso em um grande portal de notícias, pode assustar, mas em um site confiável, esse número é normal e reflete a complexidade dos serviços integrados (análises de audiência, publicidade, vídeos, etc.).
+
+#### Funções e Gerenciamento
+
+Em suma, os cookies desempenham quatro funções principais:
+
+- **Funções Técnicas:** Controlam o tráfego, identificam sessões de uso e armazenam conteúdos.
+- **Personalização:** Ajustam o site ao idioma, navegador e região do usuário.
+- **Monitoramento:** Acompanham o comportamento do público para análise de audiência.
+- **Publicidade:** Permitem a exibição de anúncios de acordo com o perfil do usuário.
+
+Todos os navegadores modernos oferecem ao usuário controle total sobre os cookies. Nas configurações de privacidade, é possível visualizar todos os cookies armazenados, apagá-los individualmente ou em massa, bloquear todos os cookies (o que pode impedir o funcionamento de alguns sites) ou, uma opção cada vez mais comum e recomendada, **bloquear apenas os cookies de terceiros**, mantendo a funcionalidade dos sites e aumentando significativamente a privacidade.
