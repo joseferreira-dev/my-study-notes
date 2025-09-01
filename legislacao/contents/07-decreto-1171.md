@@ -177,3 +177,41 @@ Em resumo, compete à Comissão de Ética:
 - **Tomar conhecimento** de procedimentos que possam ensejar a aplicação da penalidade de censura.
 - **Supervisionar** a observância do Código de Conduta da Alta Administração Federal, comunicando à CEP eventuais descumprimentos.
 
+## Capítulo 7 – Das Regras e Deveres
+
+### Seção I – Das Regras Deontológicas
+
+A Seção I do Código de Ética estabelece as **regras deontológicas**, que representam o fundamento moral e a base principiológica de todo o decreto. O termo "deontologia" refere-se ao estudo dos deveres. Assim, esta seção apresenta o conjunto de princípios e valores que formam o padrão ético ideal e que devem nortear a conduta de todo servidor público no exercício de sua profissão.
+
+Essas regras estão intimamente relacionadas com os deveres e proibições encontrados na Lei nº 8.112/1990 (Regime Jurídico Único), mas possuem um enfoque mais amplo e principiológico, buscando orientar a consciência do servidor para além da mera legalidade.
+
+As regras deontológicas são as seguintes:
+
+> I - A dignidade, o decoro, o zelo, a eficácia e a consciência dos princípios morais são primados maiores que devem nortear o servidor público, seja no exercício do cargo ou função, ou fora dele, já que refletirá o exercício da vocação do próprio poder estatal. Seus atos, comportamentos e atitudes serão direcionados para a preservação da honra и da tradição dos serviços públicos.
+> 
+> II - O servidor público não poderá jamais desprezar o elemento ético de sua conduta. Assim, не terá que decidir somente entre o legal e o ilegal, o justo e o injusto, o conveniente e o inconveniente, o oportuno e o inoportuno, mas principalmente entre o honesto e o desonesto.
+> 
+> III - A moralidade da Administração Pública não se limita à distinção entre o bem e o mal, devendo ser acrescida da ideia de que o fim é sempre o bem comum. O equilíbrio entre a legalidade e a finalidade, na conduta do servidor público, é que poderá consolidar a moralidade do ato administrativo.
+> 
+> IV - A remuneração do servidor público é custeada pelos tributos pagos direta ou indiretamente por todos, até por ele próprio, e por isso se exige, como contrapartida, que a moralidade administrativa se integre no Direito, como elemento indissociável de sua aplicação e de sua finalidade, erigindo-se, como consequência, em fator de legalidade.
+> 
+> V - O trabalho desenvolvido pelo servidor público perante a comunidade deve ser entendido como acréscimo ao seu próprio bem-estar, já que, como cidadão, integrante da sociedade, o êxito desse trabalho pode ser considerado como seu maior patrimônio.
+> 
+> VI - A função pública deve ser tida como exercício profissional e, portanto, se integra na vida particular de cada servidor público. Assim, os fatos e atos verificados na conduta do dia-a-dia em sua vida privada poderão acrescer ou diminuir o seu bom conceito na vida funcional.
+> 
+> VII - Salvo os casos de segurança nacional, investigações policiais ou interesse superior do Estado e da Administração Pública, a serem preservados em processo previamente declarado sigiloso, nos termos da lei, a publicidade de qualquer ato administrativo constitui requisito de eficácia e moralidade, ensejando sua omissão comprometimento ético contra o bem comum, imputável a quem a negar.
+> 
+> VIII - Toda pessoa tem direito à verdade. O servidor não pode omiti-la ou falseá-la, ainda que contrária aos interesses da própria pessoa interessada ou da Administração Pública. Nenhum Estado pode crescer ou estabilizar-se sobre o poder corruptivo do hábito do erro, da opressão ou da mentira, que sempre aniquilam até mesmo a dignidade humana quanto mais a de uma Nação.
+> 
+> IX - A cortesia, a boa vontade, o cuidado e o tempo dedicados ao serviço público caracterizam o esforço pela disciplina. Tratar mal uma pessoa que paga seus tributos direta ou indiretamente significa causar-lhe dano moral. Da mesma forma, causar dano a qualquer bem pertencente ao patrimônio público, deteriorando-o, por descuido ou má vontade, não constitui apenas uma ofensa ao equipamento e às instalações ou ao Estado, mas a todos os homens de boa vontade que dedicaram sua inteligência, seu tempo, suas esperanças e seus esforços para construí-los.
+> 
+> X - Deixar o servidor público qualquer pessoa à espera de solução que compete ao setor em que exerça suas funções, permitindo a formação de longas filas, ou qualquer outra espécie de atraso na prestação do serviço, não caracteriza apenas atitude contra a ética ou ato de desumanidade, mas principalmente grave dano moral aos usuários dos serviços públicos.
+> 
+> XI - O servidor deve prestar toda a sua atenção às ordens legais de seus superiores, velando atentamente por seu cumprimento, e, assim, evitando a conduta negligente. Os repetidos erros, o descaso e o acúmulo de desvios tornam-se, às vezes, difíceis de corrigir e caracterizam até mesmo imprudência no desempenho da função pública.
+> 
+> XII - Toda ausência injustificada do servidor de seu local de trabalho é fator de desmoralização do serviço público, o que quase sempre conduz à desordem nas relações humanas.
+> 
+> XIII - O servidor que trabalha em harmonia com a estrutura organizacional, respeitando seus colegas e cada concidadão, colabora e de todos pode receber colaboração, pois sua atividade pública é a grande oportunidade para o crescimento e o engrandecimento da Nação.
+
+Nas seções seguintes, estes pontos serão analisados em maior profundidade.
+
