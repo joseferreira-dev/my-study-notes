@@ -1303,3 +1303,26 @@ O grande destaque do Firefox Sync é o seu compromisso com a privacidade. O serv
 
 O resultado é um nível de segurança em que ninguém mais pode acessar suas informações – **nem mesmo a própria Mozilla**. Esse foco em privacidade é um dos pilares da fundação e um dos principais atrativos do navegador para usuários preocupados com a segurança de seus dados.
 
+#### A Senha Principal do Firefox
+
+Enquanto o gerenciador de senhas padrão salva suas credenciais de forma criptografada, o Mozilla Firefox oferece uma camada extra e opcional de segurança para proteger esses dados localmente: a **Senha Principal** (antigamente conhecida como Senha Mestra).
+
+Por padrão, esta funcionalidade vem desativada para priorizar a conveniência. No entanto, o usuário pode ativá-la a qualquer momento nas configurações de privacidade e segurança do navegador.
+
+<div align="center">
+<img width="540px" src="./img/01-firefox-senha-principal.png">
+</div>
+
+##### Como Funciona e Para Que Serve?
+
+A Senha Principal funciona como uma "chave mestra" que tranca o cofre de senhas do navegador. Quando ativada, o Firefox solicitará que o usuário digite essa senha única uma vez por sessão, geralmente na primeira vez que o navegador precisar acessar uma credencial salva para preencher um formulário de login.
+
+Enquanto a Senha Principal não for inserida, o Firefox não irá preencher automaticamente nenhum nome de usuário ou senha. A principal finalidade deste recurso é proteger suas contas salvas contra o acesso não autorizado de outras pessoas que possam usar o mesmo computador.
+
+Imagine um computador de uso familiar, compartilhado entre várias pessoas. Sem a Senha Principal, qualquer pessoa que abra o navegador poderia, por exemplo, acessar um site de e-mail ou rede social e, com a ajuda do preenchimento automático, entrar facilmente na conta de outro membro da família. Ao definir uma Senha Principal, cria-se uma barreira de autenticação que garante que apenas o dono das credenciais possa utilizá-las.
+
+> **Ponto de Atenção: A Senha Principal é Irrecuperável**
+> 
+> É crucial entender que, por razões de segurança, a Mozilla não armazena nem tem como recuperar a sua Senha Principal. Caso o usuário a esqueça, não será possível acessar as senhas salvas. A única opção será redefinir a Senha Principal, um processo que apagará permanentemente todos os nomes de usuário e senhas que estavam armazenados no navegador. Portanto, este recurso deve ser utilizado com a consciência de que a senha escolhida precisa ser memorizada ou guardada em um local muito seguro.
+
+
