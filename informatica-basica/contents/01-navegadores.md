@@ -569,3 +569,74 @@ Em provas e no uso diário, o mais importante é conhecer o atalho de teclado qu
 
 A tecla **F11** é o padrão para ativar e desativar o Modo Tela Cheia em praticamente todos os navegadores para os sistemas operacionais Windows e Linux. Em dispositivos macOS, o atalho equivalente costuma ser **Cmd + Shift + F**.
 
+### Bloqueador de Pop-ups
+
+Quem navegou na internet no início dos anos 2000 certamente se lembra de uma prática de publicidade extremamente intrusiva: os **pop-ups**. Um pop-up é uma nova janela, geralmente menor, que o navegador abre automaticamente sobre a página principal, sem que o usuário tenha solicitado. Originalmente, a ideia era exibir informações importantes ou complementares, mas a ferramenta foi rapidamente cooptada para exibir anúncios de forma agressiva.
+
+Não era raro acessar um site e ser bombardeado por uma sucessão de janelas de propaganda, forçando o usuário a um cansativo ritual de fechar cada uma delas antes de conseguir, enfim, acessar o conteúdo desejado. Essa experiência frustrante levou ao desenvolvimento de uma das funcionalidades de conveniência e segurança mais importantes dos navegadores modernos: o **Bloqueador de Pop-ups**.
+
+Trata-se de um recurso nativo que, como o nome sugere, impede a abertura automática da maioria dessas janelas indesejadas, devolvendo ao usuário o controle de sua experiência de navegação. A imagem a seguir, capturada com o bloqueador desativado, mostra um exemplo de pop-up publicitário que surge sobre o conteúdo de um portal de notícias.
+
+<div align="center">
+
+<img width="700px" src="./img/01-pop-up.png">
+
+</div>
+
+Atualmente, o bloqueador de pop-ups já vem **habilitado por padrão** em todos os principais navegadores, atuando silenciosamente para tornar a navegação mais limpa e agradável.
+
+#### Gerenciando Exceções: Quando um Pop-up é Necessário
+
+É importante saber que nem todo pop-up é um anúncio malicioso. Muitos sites utilizam janelas pop-up para fins legítimos e necessários, como:
+
+- Exibir formulários de login de serviços de terceiros (como "Entrar com o Google").
+- Abrir janelas de confirmação de pagamento em sites de comércio eletrônico.
+- Apresentar ferramentas ou opções detalhadas em aplicações web.
+
+Cientes disso, os navegadores não bloqueiam tudo de forma cega. Quando um pop-up é bloqueado, geralmente um pequeno ícone ou notificação aparece na barra de endereços. Ao clicar nesse ícone, o usuário tem a opção de gerenciar o bloqueio para aquele site específico, podendo permitir a abertura daquele pop-up apenas uma vez ou adicionar o site a uma "lista de permissões", autorizando que ele sempre possa abrir janelas pop-up. Esse controle granular garante o equilíbrio entre a proteção contra anúncios intrusivos e a funcionalidade de sites confiáveis.
+
+### Rastreamento e Bloqueadores
+
+Toda vez que navegamos na internet, deixamos uma espécie de "rastro digital". Muitos sites, especialmente os de redes sociais e redes de publicidade, utilizam tecnologias para coletar informações sobre nossos hábitos de navegação. Já aconteceu de você pesquisar por um produto em uma loja virtual e, minutos depois, começar a ver anúncios daquele mesmo produto em suas redes sociais ou em outros sites? Isso é o **rastreamento online** em ação.
+
+Esse rastreamento é feito por meio de _scripts_ e _cookies_ de terceiros, que monitoram as páginas que um usuário visita para criar um perfil detalhado de seus interesses, permitindo a exibição de publicidade direcionada. Para dar aos usuários mais controle sobre sua privacidade, os navegadores modernos desenvolveram mecanismos para limitar essa prática.
+
+#### As Defesas do Navegador: Duas Abordagens para a Privacidade
+
+Existem duas abordagens principais que os navegadores utilizam para combater o rastreamento: uma passiva e uma ativa.
+
+##### A Abordagem Passiva: _Do Not Track_ (Não Rastrear)
+
+A funcionalidade **_Do Not Track_ (DNT)**, ou "Não Rastrear", é um mecanismo passivo. Quando ativada, o navegador envia um sinal, uma espécie de "pedido", a cada site visitado, informando que o usuário não deseja ser rastreado. No entanto, esta é apenas uma solicitação; não há nenhuma obrigação técnica para que os sites a respeitem. Na prática, embora a opção esteja disponível em todos os principais navegadores, a grande maioria dos sites e redes de publicidade ignora esse pedido, tornando a eficácia do DNT bastante limitada.
+
+##### A Abordagem Ativa: Proteção Contra Rastreamento
+
+Muito mais eficaz é a **Proteção Contra Rastreamento**. Em vez de apenas pedir para não ser rastreado, o navegador atua de forma **ativa**, utilizando listas de domínios conhecidos por realizar rastreamento e bloqueando qualquer conteúdo vindo deles. Se um site de notícias tenta carregar um _script_ de uma rede de publicidade que está nessa lista, o navegador simplesmente impede que esse _script_ seja executado, protegendo a privacidade do usuário.
+
+A maioria dos navegadores, com a notável exceção do Google Chrome, já oferece alguma forma de proteção ativa contra rastreamento de forma nativa. No caso do Chrome, para obter uma proteção similar, é necessário instalar extensões de terceiros.
+
+Navegadores com foco em privacidade, como o Mozilla Firefox, oferecem uma sinalização visual clara quando a proteção está ativa. Um ícone de **escudo** aparece na barra de endereços, indicando que rastreadores estão sendo bloqueados naquela página.
+
+<div align="center">
+
+<img width="360px" src="./img/01-protecao-contra-rastreamento.png">
+
+</div>
+
+#### O Cenário da Privacidade nos Navegadores
+
+O nível de proteção oferecido por padrão varia significativamente entre os navegadores. O Mozilla Firefox, por exemplo, é conhecido por suas configurações de privacidade robustas, que vêm ativadas por padrão. Essa proteção inclui o bloqueio de diversos tipos de rastreadores:
+
+- **Rastreadores de mídias sociais:** Impede que empresas como Facebook, Twitter e LinkedIn monitorem sua atividade em outros sites.
+- **Cookies de rastreamento entre sites:** Bloqueia cookies que te seguem de um site para outro.
+- **Criptomineradores:** Impede que sites utilizem o poder de processamento do seu computador para minerar criptomoedas sem sua permissão.
+- **_Fingerprinters_:** Bloqueia _scripts_ que tentam criar uma "impressão digital" única do seu navegador e dispositivo para rastreá-lo.
+
+A tabela a seguir, baseada em comparações de mercado, oferece uma visão geral das funcionalidades de segurança e privacidade presentes por padrão nos navegadores mais populares.
+
+<div align="center">
+<img width="700px" src="./img/01-seguranca-e-privacidade.png">
+</div>
+
+Como a imagem ilustra, enquanto o modo de navegação privativa é um recurso universal, o bloqueio por padrão de rastreadores de mídias sociais, cookies de terceiros e _scripts_ de criptomineração varia, com navegadores como Firefox, Edge e Brave oferecendo uma proteção mais abrangente desde a instalação.
+
