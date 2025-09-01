@@ -346,3 +346,117 @@ O inciso estende esse raciocínio ao patrimônio público. O dever do servidor d
 
 Assim, o descuido com a "coisa pública" é visto como uma ofensa à coletividade, a "todos os homens de boa vontade que dedicaram sua inteligência, seu tempo, suas esperanças e seus esforços para construí-los".
 
+##### A Presteza no Serviço e o Dano Moral por Atraso (Inciso X)
+
+> **X -** Deixar o servidor público qualquer pessoa à espera de solução que compete ao setor em que exerça suas funções, permitindo a **formação de longas filas, ou qualquer outra espécie de atraso** na prestação do serviço, não caracteriza apenas atitude contra a ética ou ato de desumanidade, mas principalmente **grave dano moral** aos usuários dos serviços públicos.
+
+Mais uma vez, o Código de Ética direciona seu foco para a presteza e a eficiência no atendimento ao cidadão. Este inciso estabelece que a morosidade injustificada é uma grave falta ética.
+
+É importante ponderar que nem toda fila ou atraso é, por si só, uma infração ética. Muitas vezes, a demora decorre de fatores estruturais, como a falta de pessoal, falhas no sistema ou excesso de demanda, que estão além do controle do servidor. O que a norma condena é o atraso decorrente da **conduta do agente público**, como a procrastinação, a desorganização ou a má vontade.
+
+O ponto central deste dispositivo é a qualificação do atraso injustificado como um **"grave dano moral"** aos usuários. Isso eleva a questão para além de um mero aborrecimento, reconhecendo que o tempo do cidadão é valioso e que fazê-lo esperar desnecessariamente é uma afronta à sua dignidade.
+
+<div align="center">
+<img width="480px" src="./img/decreto-1171-formacao-de-filas.png">
+</div>
+
+##### O Dever de Cuidado: Negligência, Imprudência e Ordens Ilegais (Inciso XI)
+
+> **XI -** O servidor deve prestar toda a sua atenção às **ordens legais** de seus superiores, velando atentamente por seu cumprimento, e, assim, evitando a **conduta negligente**. Os repetidos erros, o descaso e o acúmulo de desvios tornam-se, às vezes, difíceis de corrigir e caracterizam até mesmo **imprudência** no desempenho da função pública.
+
+Este inciso trata do dever de acatar as ordens legais dos superiores hierárquicos, um dos pilares da organização administrativa. O descumprimento ou o cumprimento desatento dessas ordens pode configurar duas condutas culposas:
+
+- **Negligência:** É uma conduta **omissiva**. Ocorre quando o servidor deixa de fazer algo que deveria, age com descaso, descuido, indiferença ou desatenção, não tomando as devidas precauções.
+
+<div align="center">
+<img width="700px" src="./img/decreto-1171-conduta-negligente.png">
+</div>
+
+- **Imprudência:** É uma conduta **comissiva**. Ocorre quando o servidor age, mas de forma precipitada, sem a cautela necessária, assumindo riscos desnecessários. É uma ação que vai além do permitido ou do razoável.
+
+<div align="center">
+<img width="700px" src="./img/decreto-1171-imprudencia.png">
+</div>
+
+> **Ponto de Atenção: O Cumprimento de Ordem Manifestamente Ilegal**
+> 
+> O dever de obediência do servidor não é absoluto. O próprio inciso XI fala em "ordens **legais**". A Lei nº 8.112/1990, em seu art. 116, IV, é explícita ao determinar que é dever do servidor "cumprir as ordens superiores, **exceto quando manifestamente ilegais**".
+> 
+> Uma ordem **manifestamente ilegal** é aquela cuja ilegalidade é evidente, óbvia, que não exige uma análise jurídica complexa para ser percebida. Por exemplo, se um chefe ordena a um servidor que utilize um veículo oficial para fins particulares, a ilegalidade é manifesta.
+> 
+> Nesses casos, o dever do servidor é **não cumprir a ordem** e representar contra a autoridade que a emitiu. Se, sabendo da ilegalidade, o servidor cumprir a ordem, ele também será responsabilizado pela infração cometida.
+
+##### A Assiduidade e a Moralização do Serviço Público (Inciso XII)
+
+> **XII -** Toda **ausência injustificada** do servidor de seu local de trabalho é fator de **desmoralização do serviço público**, o que quase sempre conduz à desordem nas relações humanas.
+
+Este princípio ético encontra correspondência direta no Regime Jurídico dos Servidores (Lei nº 8.112/1990), que estabelece como dever a **assiduidade e a pontualidade** (art. 116, X) e como proibição a **ausência do serviço durante o expediente sem autorização** (art. 117, I).
+
+O código vai além da simples regra e aponta a consequência da ausência injustificada: a **desmoralização do serviço público**. Essa desmoralização ocorre em duas frentes. Externamente, perante o cidadão que busca um serviço e não o encontra, gerando uma imagem de descaso e ineficiência. Internamente, a ausência de um membro da equipe sobrecarrega os demais e gera desordem nas relações de trabalho.
+
+<div align="center">
+<img width="440px" src="./img/decreto-1171-falta-injustificada.png">
+</div>
+
+##### A Harmonia Organizacional e o Engrandecimento da Nação (Inciso XIII)
+
+> **XIII -** O servidor que trabalha em **harmonia com a estrutura organizacional**, respeitando seus colegas e cada concidadão, colabora e de todos pode receber colaboração, pois sua atividade pública é a grande oportunidade para o **crescimento e o engrandecimento da Nação**.
+
+Este último inciso das regras deontológicas possui um forte caráter motivacional. Ele estabelece que uma postura colaborativa e respeitosa com os colegas e com os cidadãos é essencial para o bom funcionamento da máquina pública.
+
+Mais do que isso, ele enquadra a atividade pública não como um fardo, mas como uma **"grande oportunidade"**. Ele conecta o trabalho diário e individual de cada servidor a um propósito maior e nobre: o crescimento e o engrandecimento da Nação. É um chamado para que o servidor veja em sua função uma vocação e uma forma de contribuir para o desenvolvimento do país.
+
+### Seção II – Dos Principais Deveres do Servidor Público
+
+Ser servidor público é uma função de grande responsabilidade e privilégio, pois o agente público atua como um instrumento de transformação do Estado, sempre a serviço da sociedade. Partindo desse pressuposto, a atuação do servidor deve ser guiada por preceitos fundamentais que reflitam seu compromisso com a cidadania e o bem comum. Uma atuação ancorada em tais preceitos deve se converter no âmbito da reflexão individual e coletiva, permitindo gerar valor à atividade pública e, de forma específica, contribuir para o desenvolvimento socioeconômico do país.
+
+O exercício compartilhado da atividade pública sustenta seu sucesso duradouro. Para isso, é necessário haver um padrão de deveres para quem a executa. O Decreto nº 1.171/1994, em sua Seção II, enumera os **deveres fundamentais** do servidor. É crucial notar que este é um **rol não exaustivo**, ou seja, exemplificativo. Isso quer dizer que, além dos deveres aqui expressos, outros podem ser exigidos do servidor, decorrentes de outras leis ou dos princípios gerais que regem a Administração Pública.
+
+A seguir, apresentamos a lista dos deveres e, na sequência, iniciaremos a análise pormenorizada de cada um deles.
+
+> **XIV - São deveres fundamentais do servidor público:**
+> 
+> a) desempenhar, a tempo, as atribuições do cargo, função ou emprego público de que seja titular;
+> 
+> b) exercer suas atribuições com rapidez, perfeição e rendimento, pondo fim ou procurando prioritariamente resolver situações procrastinatórias, principalmente diante de filas ou de qualquer outra espécie de atraso na prestação dos serviços pelo setor em que exerça suas atribuições, com o fim de evitar dano moral ao usuário;
+> 
+> c) ser probo, reto, leal e justo, demonstrando toda a integridade do seu caráter, escolhendo sempre, quando estiver diante de duas opções a melhor e a mais vantajosa para o bem comum;
+> 
+> d) jamais retardar qualquer prestação de contas, condição essencial da gestão dos bens, direitos e serviços da coletividade a seu cargo;
+> 
+> e) tratar cuidadosamente os usuários dos serviços aperfeiçoando o processo de comunicação e contato com o público;
+> 
+> f) ter consciência de que seu trabalho é regido por princípios éticos que se materializam na adequada prestação dos serviços públicos;
+> 
+> g) ser cortês, ter urbanidade, disponibilidade e atenção, respeitando a capacidade e as limitações individuais de todos os usuários do serviço público, sem qualquer espécie de preconceito ou distinção de raça, sexo, nacionalidade, cor, idade, religião, cunho político e posição social, abstendo-se, dessa forma, de causar-lhes dano moral;
+> 
+> h) ter respeito à hierarquia, porém sem nenhum temor de representar contra qualquer comprometimento indevido da estrutura em que se funda o Poder Estatal;
+> 
+> i) resistir a todas as pressões de superiores hierárquicos, de contratantes, interessados e outros que visem obter quaisquer favores, benesses ou vantagens indevidas em decorrência de ações imorais, ilegais ou aéticas e denunciá-las;
+> 
+> j) zelar, no exercício do direito de greve, pelas exigências específicas da defesa da vida e da segurança coletiva;
+> 
+> l) ser assíduo e frequente ao serviço, na certeza de que sua ausência provoca danos ao trabalho ordenado, refletindo negativamente em todo o sistema;
+> 
+> m) comunicar imediatamente a seus superiores todo e qualquer ato ou fato contrário ao interesse público, exigindo as providências cabíveis;
+> 
+> n) manter limpo e em perfeita ordem o local de trabalho, seguindo os métodos mais adequados à sua organização e distribuição;
+> 
+> o) participar dos movimentos e estudos que se relacionem com a melhoria do exercício de suas funções, tendo por escopo a realização do bem comum;
+> 
+> p) apresentar-se ao trabalho com vestimentas adequadas ao exercício da função;
+> 
+> q) manter-se atualizado com as instruções, as normas de serviço e a legislação pertinente ao órgão onde exerce suas funções;
+> 
+> r) cumprir, de acordo com as normas do serviço e as instruções superiores, as tarefas de seu cargo ou função, tanto quanto possível, com critério, segurança e rapidez, mantendo tudo sempre em boa ordem;
+> 
+> s) facilitar a fiscalização de todos os atos ou serviços por quem de direito;
+> 
+> t) exercer com estrita moderação as prerrogativas funcionais que lhe sejam atribuídas, abstendo-se de fazê-lo contrariamente aos legítimos interesses dos usuários do serviço público e dos jurisdicionados administrativos;
+> 
+> u) abster-se, de forma absoluta, de exercer sua função, poder ou autoridade com finalidade estranha ao interesse público, mesmo que observando as formalidades legais e não cometendo qualquer violação expressa à lei;
+> 
+> v) divulgar e informar a todos os integrantes da sua classe sobre a existência deste Código de Ética, estimulando o seu integral cumprimento.
+
+A seguir, analisaremos cada um desses deveres fundamentais.
+
