@@ -269,3 +269,80 @@ Não basta o ato ser legal; ele deve ser praticado com a finalidade para a qual 
 <img width="440px" src="./img/decreto-1171-moralidade.png">
 </div>
 
+##### A Remuneração Pública e o Dever de Reciprocidade (Inciso IV)
+
+> **IV -** A remuneração do servidor público é custeada pelos tributos pagos direta ou indiretamente por todos, até por ele próprio, e por isso se exige, como contrapartida, que a moralidade administrativa se integre no Direito, como elemento indissociável de sua aplicação e de sua finalidade, erigindo-se, como consequência, em fator de legalidade.
+
+Este inciso estabelece uma relação de **reciprocidade** entre o servidor e a sociedade. Ele lembra ao agente público que sua remuneração é fruto do esforço coletivo da nação, financiada pelos tributos pagos por todos os cidadãos. Em contrapartida a essa remuneração, a sociedade exige não apenas um serviço legalmente correto, mas moralmente íntegro.
+
+A moralidade, portanto, não é um mero adorno, mas um elemento que se integra ao próprio Direito. A parte final do inciso é crucial: a moralidade se torna um **fator de legalidade**. Isso significa que um ato administrativo que, embora cumpra os ritos formais, seja profundamente imoral (por exemplo, um ato de nepotismo, um desperdício flagrante de recursos), pode ser considerado inválido por violar a própria legalidade em seu sentido mais amplo, que pressupõe a observância da moralidade.
+
+##### O Trabalho Público como Patrimônio do Cidadão-Servidor (Inciso V)
+
+> **V -** O trabalho desenvolvido pelo servidor público perante a comunidade deve ser entendido como acréscimo ao seu próprio bem-estar, já que, como cidadão, integrante da sociedade, o êxito desse trabalho pode ser considerado como seu maior patrimônio.
+
+Este é um dos incisos de caráter mais motivacional do código. Ele busca combater a ideia de que o servidor é um ente separado da sociedade a quem serve. Pelo contrário, ele lembra que o servidor é, antes de tudo, um **cidadão**.
+
+Dessa forma, o sucesso do serviço público que ele presta reverte-se em benefício para ele mesmo e para sua comunidade. O êxito do trabalho público — uma escola de qualidade, um hospital que funciona, uma rua bem pavimentada — é um patrimônio de toda a sociedade, incluindo o próprio servidor que contribuiu para sua realização.
+
+##### A Publicidade como Requisito de Eficácia e Moralidade (Inciso VII)
+
+> **VII -** Salvo os casos de segurança nacional, investigações policiais ou interesse superior do Estado e da Administração Pública, a serem preservados em processo previamente declarado sigiloso, nos termos da lei, a publicidade de qualquer ato administrativo constitui requisito de eficácia e moralidade, ensejando sua omissão comprometimento ético contra o bem comum, imputável a quem a negar.
+
+Este inciso reforça o princípio constitucional da **publicidade**, estabelecendo-o como um dever ético fundamental. Negar a publicidade a um ato que deveria ser público é uma conduta antiética grave. A publicidade é apresentada com uma dupla função:
+
+1. **Requisito de Eficácia:** Muitos atos administrativos só passam a produzir seus efeitos legais após a devida publicação.
+2. **Requisito de Moralidade:** A transparência é o que permite o controle social, inibindo a prática de atos ilícitos e garantindo que a gestão pública seja feita à luz do dia.
+
+As exceções à regra da publicidade (o **sigilo**) são tratadas como excepcionais e devem ser formalmente justificadas. É a **Lei de Acesso à Informação (LAI) - Lei nº 12.527/2011** que regulamenta detalhadamente as hipóteses e os procedimentos para a classificação de informações como sigilosas.
+
+<div align="center">
+<img width="700px" src="./img/decreto-1171-publicidade.png">
+</div>
+
+##### O Direito à Verdade (Inciso VIII)
+
+> **VIII -** Toda pessoa tem direito à verdade. O servidor não pode omiti-la ou falseá-la, ainda que contrária aos interesses da própria pessoa interessada ou da Administração Pública. Nenhum Estado pode crescer ou estabilizar-se sobre o poder corruptivo do hábito do erro, da opressão ou da mentira, que sempre aniquilam até mesmo a dignidade humana quanto mais a de uma Nação.
+
+Este inciso estabelece o compromisso radical do servidor público com a verdade. É o dever de agir com total transparência e honestidade perante o cidadão. A expressão popular "doa a quem doer" traduz bem o espírito desta norma.
+
+O servidor não pode omitir ou distorcer a verdade, mesmo que ela seja desfavorável à própria Administração ou à pessoa interessada. Essa diretriz é um pilar contra a arbitrariedade e o abuso de poder, pois, como afirmou o historiador Lord Acton, "o poder tende a corromper, e o poder absoluto corrompe absolutamente". A obrigação de dizer a verdade é um freio a essa tendência.
+
+A questão do sigilo, mencionada no inciso anterior, não conflita com o direito à verdade. Nos casos legalmente sigilosos, o servidor não deve mentir, mas sim informar que, por força de lei, aquela informação está protegida para resguardar um bem maior, como a Segurança Nacional.
+
+<div align="center">
+<img width="700px" src="./img/decreto-1171-verdade.png">
+</div>
+
+##### A Disciplina no Atendimento e no Cuidado com o Patrimônio Público (Inciso IX)
+
+> **IX -** A cortesia, a boa vontade, o cuidado e o tempo dedicados ao serviço público caracterizam o **esforço pela disciplina**. Tratar mal uma pessoa que paga seus tributos direta ou indiretamente significa causar-lhe dano moral. Da mesma forma, causar dano a qualquer bem pertencente ao patrimônio público, deteriorando-o, por descuido ou má vontade, не constitui apenas uma ofensa ao equipamento e às instalações ou ao Estado, mas a todos os homens de boa vontade que dedicaram sua inteligência, seu tempo, suas esperanças e seus esforços para construí-los.
+
+Este inciso aborda duas dimensões fundamentais da conduta ética do servidor: a sua relação com o cidadão e a sua relação com os bens públicos. A norma estabelece que o "esforço pela disciplina" se manifesta em quatro atitudes essenciais:
+
+<div align="center">
+<img width="400px" src="./img/decreto-1171-esforco-disciplina.png">
+</div>
+
+###### A Ética no Atendimento ao Cidadão
+
+O Código de Ética eleva a qualidade do atendimento ao cidadão a um patamar de dever moral. A norma é taxativa ao afirmar que **tratar mal uma pessoa que paga seus tributos direta ou indiretamente significa causar-lhe dano moral**.
+
+<div align="center">
+<img width="440px" src="./img/decreto-1171-tratamento.png">
+</div>
+
+Esta afirmação é de profunda importância. Ela retira o mau atendimento do campo da mera ineficiência administrativa e o coloca na esfera da **violação da dignidade** do cidadão. O código reconhece que o cidadão, ao buscar um serviço público, não está pedindo um favor, mas exercendo um direito, financiado por seus próprios recursos. A cortesia, a boa vontade e o respeito no atendimento não são, portanto, opcionais, mas uma contrapartida obrigatória e um dever ético fundamental.
+
+###### A Ética no Cuidado com o Patrimônio Público
+
+O inciso estende esse raciocínio ao patrimônio público. O dever do servidor de zelar pela economia do material e pela conservação dos bens do Estado é reforçado aqui sob uma ótica ética. Causar dano a um bem público, por descuido ou má vontade, não é apenas um prejuízo material ao Estado.
+
+É, como retrata o inciso IX, uma ofensa direta ao cidadão que contribuiu para a aquisição daquele bem. A imagem de um bem público "largado às moscas" causa revolta justamente porque representa o desrespeito ao esforço coletivo da sociedade.
+
+<div align="center">
+<img width="520px" src="./img/decreto-1171-descuido.png">
+</div>
+
+Assim, o descuido com a "coisa pública" é visto como uma ofensa à coletividade, a "todos os homens de boa vontade que dedicaram sua inteligência, seu tempo, suas esperanças e seus esforços para construí-los".
+
