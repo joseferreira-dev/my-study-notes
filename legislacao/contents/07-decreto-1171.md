@@ -177,7 +177,7 @@ Em resumo, compete à Comissão de Ética:
 - **Tomar conhecimento** de procedimentos que possam ensejar a aplicação da penalidade de censura.
 - **Supervisionar** a observância do Código de Conduta da Alta Administração Federal, comunicando à CEP eventuais descumprimentos.
 
-## Capítulo 7 – Das Regras e Deveres
+## Capítulo 1 – Das Regras e Deveres
 
 ### Seção I – Das Regras Deontológicas
 
@@ -214,4 +214,58 @@ As regras deontológicas são as seguintes:
 > XIII - O servidor que trabalha em harmonia com a estrutura organizacional, respeitando seus colegas e cada concidadão, colabora e de todos pode receber colaboração, pois sua atividade pública é a grande oportunidade para o crescimento e o engrandecimento da Nação.
 
 Nas seções seguintes, estes pontos serão analisados em maior profundidade.
+
+#### Análise Detalhada das Regras Deontológicas
+
+Feita a apresentação geral das regras deontológicas, podemos começar a estudar cada uma delas em maior profundidade.
+
+##### Os Primados Maiores e a Integração da Vida Pública e Privada (Incisos I e VI)
+
+> **I -** A dignidade, o decoro, o zelo, a eficácia e a consciência dos princípios morais são **primados maiores** que devem nortear o servidor público, seja no exercício do cargo ou função, ou fora dele, já que refletirá o exercício da vocação do próprio poder estatal. Seus atos, comportamentos e atitudes serão direcionados para a preservação da honra e da tradição dos serviços públicos.
+
+Este primeiro inciso estabelece os valores fundamentais que devem guiar a conduta do servidor. A norma deixa claro que a obrigação de manter uma conduta ética não se restringe ao horário de expediente ou ao espaço físico da repartição. O servidor público, por representar o Estado, deve zelar por sua conduta **dentro e fora** do serviço, pois seus atos privados podem impactar a imagem e a confiança na instituição pública a que pertence.
+
+Essa ideia é reforçada e detalhada no inciso VI:
+
+> **VI -** A função pública deve ser tida como exercício profissional e, portanto, se integra na vida particular de cada servidor público. Assim, os fatos e atos verificados na conduta do dia-a-dia em sua vida privada poderão acrescer ou diminuir o seu bom conceito na vida funcional.
+
+Ambos os incisos consagram o princípio da **inseparabilidade entre a vida pública e a vida privada** do agente público. A conduta privada de um servidor pode, sim, ser objeto de avaliação e pode gerar consequências em sua vida funcional, especialmente quando tal conduta afeta a honra e a imagem da Administração Pública.
+
+- **Exemplo:** O caso, amplamente divulgado, de um juiz que, ao ser parado em uma blitz da Lei Seca, utiliza seu cargo para intimidar e dar voz de prisão à agente de trânsito. Embora o fato tenha ocorrido fora de seu horário de trabalho, a atitude mancha a imagem do Poder Judiciário, demonstrando um desvio ético que viola o decoro exigido pela função. Da mesma forma, um prefeito que dirige embriagado certamente manchará a imagem da prefeitura que representa.
+
+O esquema a seguir sintetiza a abrangência desses primados maiores:
+
+<div align="center">
+<img width="700px" src="./img/decreto-1171-primados-maiores.png">
+</div>
+
+É fundamental notar que o fim último de toda essa conduta ética é sempre o **bem comum**, e não o interesse da própria Administração Pública enquanto instituição.
+
+##### A Decisão Ética: Para Além da Legalidade (Inciso II)
+
+> **II -** O servidor público não poderá jamais desprezar o elemento ético de sua conduta. Assim, не terá que decidir somente entre o legal e o ilegal, o justo e o injusto, o conveniente e o inconveniente, o oportuno e o inoportuno, mas principalmente entre o **honesto e o desonesto**.
+
+Este inciso estabelece que a legalidade é o piso, e não o teto, da conduta do servidor. O processo de decisão do agente público deve passar por múltiplos filtros. Não basta se perguntar "isto é legal?". É preciso ir além e questionar: "Isto é justo? É conveniente para o interesse público? É oportuno? E, acima de tudo, isto é honesto?". A honestidade é colocada como o critério principal, a nortear todos os outros.
+
+Este princípio ético fundamental encontra respaldo direto nos princípios constitucionais da Administração Pública, previstos no art. 37 da Constituição:
+
+> **Art. 37.** A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência. (...)
+> 
+> **§ 4º -** Os atos de improbidade administrativa importarão a **suspensão dos direitos políticos**, a **perda da função pública**, a indisponibilidade dos bens e o ressarcimento ao erário, na forma e gradação previstas em lei, sem prejuízo da ação penal cabível.
+
+É importante não confundir a "suspensão dos direitos políticos" com a "perda da função pública". A perda da função é, em regra, uma consequência da condenação por improbidade. A suspensão dos direitos políticos, por sua vez, é uma sanção adicional que impede o condenado de votar e ser votado por um determinado período. Um exemplo histórico foi o do ex-presidente Fernando Collor que, após seu impeachment, teve seus direitos políticos suspensos por oito anos, findos os quais pôde se candidatar novamente e foi eleito para o cargo de Senador.
+
+##### A Moralidade Administrativa e a Busca pelo Bem Comum (Inciso III)
+
+> **III -** A moralidade da Administração Pública не se limita à distinção entre o bem e o mal, devendo ser acrescida da ideia de que **o fim é sempre o bem comum**. O equilíbrio entre a legalidade e a finalidade, na conduta do servidor público, é que poderá consolidar a moralidade do ato administrativo.
+
+Este inciso aprofunda o conceito de moralidade administrativa, já previsto no art. 37 da Constituição. Ele estabelece que a moralidade de um ato público não se mede pela moral pessoal do agente, mas sim por sua conformidade com o bem comum. A verdadeira moralidade administrativa reside no **equilíbrio entre a legalidade e a finalidade**.
+
+Não basta o ato ser legal; ele deve ser praticado com a finalidade para a qual a lei foi criada, que é sempre o interesse público. Quando um agente público pratica um ato legal, mas com uma finalidade diversa da prevista (por exemplo, para beneficiar a si mesmo ou a terceiros), ocorre o que o Direito Administrativo chama de "desvio de finalidade", um ato que, embora aparente ser legal, é profundamente imoral e, portanto, inválido.
+
+> "O princípio da moralidade está indissociavelmente ligado à noção do bom administrador, que não somente deve ser conhecedor da lei como dos princípios éticos regentes da função administrativa" (Carvalho Filho, 2013).
+
+<div align="center">
+<img width="440px" src="./img/decreto-1171-moralidade.png">
+</div>
 
