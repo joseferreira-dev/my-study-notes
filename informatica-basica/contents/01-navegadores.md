@@ -1278,3 +1278,28 @@ Além de sua filosofia colaborativa, o Firefox conquistou os usuários por ofere
 - **Segurança e Desempenho:** Era notavelmente mais leve, rápido e seguro que seu principal concorrente, oferecendo uma navegação mais estável e protegida contra softwares mal-intencionados.
 - **Personalização via Complementos (_Add-ons_):** O Firefox foi o grande popularizador do conceito de extensibilidade. Ele foi construído para ser uma plataforma personalizável, permitindo que os usuários instalassem "complementos" (_add-ons_) para adicionar novas funcionalidades (extensões), alterar completamente a aparência (temas) ou, na época, habilitar recursos de mídia (plug-ins). Essa capacidade de adaptar o navegador às necessidades de cada um foi um diferencial revolucionário e um dos principais motivos de seu sucesso.
 
+#### Sincronização com o Firefox Sync
+
+Assim como seus concorrentes, o Mozilla Firefox oferece uma solução robusta para manter uma experiência de navegação unificada entre múltiplos dispositivos: o **Firefox Sync**. O serviço, que requer a criação de uma Conta Firefox gratuita, armazena os dados do usuário de forma segura nos servidores da Mozilla, permitindo que suas informações estejam sempre atualizadas e acessíveis, não importa onde.
+
+<div align="center">
+<img width="480px" src="./img/01-firefox-sync.png">
+</div>
+
+Com o Sync ativado, é possível sincronizar:
+
+- **Páginas favoritas** (marcadores)
+- **Histórico** de navegação
+- **Senhas** e logins
+- **Abas abertas**
+- **Complementos** (_add-ons_) instalados
+- **Preferências** e configurações do navegador
+
+A utilidade prática desse recurso é imensa. Imagine encontrar uma receita interessante no computador durante o almoço; com o Sync, basta abrir o Firefox no tablet na cozinha à noite para que a aba com a receita esteja lá, pronta para ser consultada. Da mesma forma, é possível iniciar uma compra no notebook e finalizá-la mais tarde no celular, sem perder os itens do carrinho ou ter que procurar o site novamente.
+
+##### Criptografia de Ponta a Ponta
+
+O grande destaque do Firefox Sync é o seu compromisso com a privacidade. O serviço utiliza **criptografia de ponta a ponta** (_end-to-end encryption_) para proteger os dados do usuário. Na prática, isso significa que todas as suas informações (histórico, senhas, favoritos, etc.) são criptografadas no seu dispositivo **antes** de serem enviadas para os servidores da Mozilla. A "chave" para decifrar esses dados fica apenas com o usuário, em seus dispositivos.
+
+O resultado é um nível de segurança em que ninguém mais pode acessar suas informações – **nem mesmo a própria Mozilla**. Esse foco em privacidade é um dos pilares da fundação e um dos principais atrativos do navegador para usuários preocupados com a segurança de seus dados.
+
