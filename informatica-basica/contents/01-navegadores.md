@@ -942,3 +942,44 @@ Para desativar a oferta de salvamento de senhas, o caminho é:
 3. No menu lateral, selecionar **Perfis** e, em seguida, **Senhas**.
 4. Desativar a opção **"Oferecer para salvar senhas"**.
 
+#### Proteção de Privacidade Ativa: A Prevenção de Rastreamento do Edge
+
+Como vimos anteriormente, o rastreamento online é uma prática comum na qual sites, redes de publicidade e empresas de análise de dados coletam informações sobre seus hábitos de navegação para criar perfis de usuário e exibir anúncios personalizados. O Microsoft Edge possui uma ferramenta nativa e poderosa para combater essa prática: a **Prevenção de Rastreamento**.
+
+Diferente de uma simples solicitação passiva (como o _Do Not Track_), esta é uma funcionalidade **ativa** que bloqueia automaticamente rastreadores conhecidos com base em listas mantidas pela Microsoft. Ela oferece ao usuário um controle granular sobre sua privacidade, permitindo escolher entre três níveis de proteção.
+
+<div align="center">
+
+<img width="700px" src="./img/01-edge-rastreamento.png" alt="Janela de configurações da Prevenção de Rastreamento no Microsoft Edge, mostrando os três níveis de proteção: Básico, Balanceado e Estrito.">
+
+</div>
+
+Essa tela de configuração, acessível pelo endereço `edge://settings/privacy/trackingPrevention`, permite ao usuário definir o quão agressivo o navegador deve ser ao bloquear esses rastreadores.
+
+##### Os Três Níveis de Proteção
+
+A ferramenta classifica os rastreadores e os bloqueia de acordo com o nível de proteção que o usuário escolhe.
+
+|Nível|Descrição|Indicado para quem...|
+|---|---|---|
+|**Básico**|Bloqueia apenas rastreadores maliciosos conhecidos (como os de _criptomineração_ ou _fingerprinting_). Permite a maioria dos outros rastreadores para que os anúncios permaneçam personalizados e os sites funcionem como esperado.|...deseja a proteção mínima contra as ameaças mais graves, mas não se importa com anúncios personalizados e quer garantir a máxima compatibilidade com todos os sites.|
+|**Balanceado (Recomendado)**|Bloqueia rastreadores de sites que o usuário nunca visitou diretamente. O conteúdo e os anúncios serão menos personalizados. É o equilíbrio ideal entre privacidade e funcionalidade.|...quer uma navegação significativamente mais privada, bloqueando rastreadores desconhecidos, mas sem o risco de quebrar a funcionalidade de sites legítimos.|
+|**Restrito**|Bloqueia a grande maioria dos rastreadores de terceiros em todos os sites. Os anúncios terão personalização mínima ou nenhuma. **Atenção:** esta opção pode fazer com que partes de alguns sites não funcionem corretamente.|...deseja o nível máximo de privacidade, mesmo que isso signifique que alguns vídeos, botões de login de redes sociais ou seções de comentários em sites possam não carregar.|
+
+##### A Balança da Privacidade: Vantagens e Desvantagens
+
+A ativação da Prevenção de Rastreamento traz benefícios claros, mas também pode ter alguns efeitos colaterais, especialmente no nível mais restrito.
+
+**Vantagens:**
+
+- **Melhora da Privacidade:** Reduz drasticamente a quantidade de dados sobre sua navegação que são coletados por terceiros.
+- **Menos Anúncios Invasivos:** Com menos dados coletados, os anúncios se tornam menos personalizados e, em alguns casos, podem até ser bloqueados.
+- **Segurança:** Ajuda a evitar o vazamento de dados e protege contra técnicas avançadas de identificação, como o _fingerprinting_ (que cria uma "impressão digital" do seu navegador).
+
+**Possíveis Desvantagens:**
+
+- **Quebra de Funcionalidades:** Especialmente no modo "Restrito", o bloqueio agressivo pode impedir que alguns conteúdos, como vídeos incorporados, _widgets_ de redes sociais ou sistemas de comentários, carreguem corretamente.
+- **Problemas de Login:** Pode interferir em sistemas de login que dependem de cookies de terceiros (como o "Entrar com...").
+
+O Edge permite um controle fino, dando ao usuário a possibilidade de ver quais rastreadores foram bloqueados em cada site e de criar uma lista de **Exceções** para desativar a prevenção em sites específicos nos quais confia.
+
