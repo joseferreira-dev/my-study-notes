@@ -825,3 +825,120 @@ A imagem a seguir sintetiza a disponibilidade nativa do recurso nos principais n
 <img width="700px" src="./img/01-agrupamento-de-abas-navegadores.png">
 </div>
 
+Com certeza! Suas anotações contam a história da evolução do Microsoft Edge de forma muito clara. Vou usar essa linha do tempo para construir uma seção detalhada sobre o navegador padrão da Microsoft, explicando suas duas grandes fases e o que cada uma representa.
+
+---
+
+## Os Navegadores em Detalhe
+
+Após explorarmos as funcionalidades e os conceitos gerais que se aplicam a todos os navegadores, vamos agora dedicar um tempo para conhecer as características e o contexto histórico dos principais programas de navegação do mercado. Começaremos pelo navegador da Microsoft, o Edge.
+
+### Microsoft Edge
+
+O Microsoft Edge nasceu da necessidade da Microsoft de se modernizar e superar a reputação negativa de seu antigo navegador, o Internet Explorer, que por anos sofreu com problemas de segurança, lentidão e incompatibilidade com os novos padrões da web. A história do Edge pode ser dividida em duas gerações distintas, marcadas por uma mudança radical de tecnologia e estratégia.
+
+#### A Primeira Geração: O Edge Original (2015-2019)
+
+Anunciado em 2015, o Microsoft Edge original foi lançado como o navegador padrão do Windows 10. Ele representou um corte definitivo com o passado: abandonou tecnologias legadas e problemáticas como o ActiveX e trouxe uma interface mais limpa e recursos modernos, como a integração com a assistente virtual Cortana e um leitor de PDFs nativo.
+
+<div align="center">
+<img width="280px" src="./img/01-edge-logo-antiga.png">
+</div>
+
+Apesar dos avanços em relação ao seu antecessor, esta primeira versão do Edge não conseguiu conquistar o público. Seu principal desafio era o uso de um motor de renderização próprio (o EdgeHTML). Embora fosse moderno, muitos sites não eram otimizados para ele, o que causava falhas de compatibilidade e afastava os usuários, que migravam para concorrentes como o Google Chrome.
+
+#### A Segunda Geração: O Edge "Chromium" (A partir de 2020)
+
+Percebendo as dificuldades, a Microsoft tomou uma decisão estratégica drástica em 2019: abandonar seu motor próprio e reconstruir o Edge do zero, utilizando como base o **Chromium**. O Chromium é um projeto de navegador de código aberto mantido pelo Google, que serve como a fundação para o próprio Google Chrome. Em outras palavras, desde o seu relançamento no início de 2020, o Microsoft Edge e o Google Chrome compartilham a mesma tecnologia de base, o que os torna, de certa forma, "primos".
+
+Essa mudança foi marcada por um novo logotipo e trouxe consequências imensamente positivas para o navegador.
+
+<div align="center">
+<img width="280px" src="./img/01-edge-logo-nova.png">
+</div>
+
+As principais vantagens da nova versão são:
+
+- **Máxima Compatibilidade:** Ao usar o mesmo motor do navegador mais popular do mundo, os problemas de incompatibilidade com sites foram praticamente eliminados.
+- **Ecossistema de Extensões:** Esta foi a mudança mais impactante. O novo Edge se tornou compatível com toda a vasta biblioteca de extensões da **Chrome Web Store**. Isso eliminou uma das maiores barreiras para a migração de usuários, que agora podem usar suas extensões favoritas do Chrome diretamente no Edge, além daquelas disponíveis na loja da própria Microsoft.
+- **Desempenho e Multiplataforma:** A nova base tecnológica trouxe melhorias significativas de velocidade e permitiu que o Edge se tornasse um navegador multiplataforma, com versões disponíveis não apenas para Windows, mas também para macOS, Linux, Android e iOS.
+- **Modo Internet Explorer:** Para não abandonar o mercado corporativo, que muitas vezes depende de sistemas antigos, o novo Edge incluiu o "Modo IE". Essa funcionalidade permite recarregar uma página utilizando a tecnologia do antigo Internet Explorer dentro do Edge, garantindo a compatibilidade com aplicações legadas.
+
+#### Atalhos Internos: Acessando Configurações via URL
+
+Além da navegação por menus e botões, o Microsoft Edge oferece uma maneira alternativa e direta de acessar suas telas de configuração e outras páginas internas: através de URLs especiais. Em vez de utilizar os protocolos `http://` ou `https://` que nos levam a sites na internet, o Edge utiliza um esquema próprio, o `edge://`, para navegar para suas próprias funcionalidades internas.
+
+Isso significa que, em vez de clicar no menu de três pontos, selecionar "Configurações" e depois navegar pelas seções, o usuário pode simplesmente digitar um endereço específico na barra de endereços para ir diretamente à página desejada. O principal endereço é o `edge://settings`, que leva à tela principal de configurações.
+
+<div align="center">
+<img width="700px" src="./img/01-edge-configuracao-por-url.png">
+</div>
+
+Como a imagem demonstra, ao acessar `edge://settings`, a página de configurações é carregada. No menu lateral esquerdo, é possível ver as diversas categorias de ajustes, como "Perfis", "Privacidade", "Aparência", entre outras. Cada uma dessas categorias também possui sua própria URL direta, o que permite a criação de atalhos e um acesso ainda mais rápido a ajustes específicos.
+
+A tabela a seguir lista os principais endereços internos para as configurações do Microsoft Edge.
+
+| Endereço                                                                         | Descrição                                                                                |
+| -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `edge://settings/` ou `edge://settings/profiles`                                 | Permite acessar a página de configurações de perfil.                                     |
+| `edge://settings/privacy`                                                        | Permite acessar a página de configurações de privacidade e proteção contra rastreamento. |
+| `edge://settings/appearance`                                                     | Permite acessar a página de configurações de aparência, como temas e fontes.             |
+| `edge://settings/onStartup` ou `edge://settings/startHomeNTP`                    | Permite acessar a página de configurações de inicialização.                              |
+| `edge://settings/newTabPage` ou `edge://settings/startHomeNTP`                   | Permite acessar a página de configurações de novas guias.                                |
+| `edge://settings/shareCopyPaste` ou `edge://settings/appearance/browserBehavior` | Permite acessar a página de configurações de recortar, copiar e colar (comportamentos).  |
+| `edge://settings/defaultBrowser`                                                 | Permite acessar a página de configurações de navegador padrão.                           |
+| `edge://settings/downloads`                                                      | Permite acessar a página de configurações de downloads.                                  |
+| `edge://settings/familySafety`                                                   | Permite acessar a página de configurações de proteção familiar.                          |
+| `edge://settings/languages`                                                      | Permite acessar a página de configurações de idiomas.                                    |
+| `edge://settings/printing`                                                       | Permite acessar a página de configurações de impressão.                                  |
+| `edge://settings/system`                                                         | Permite acessar a página de configurações de sistema e desempenho.                       |
+| `edge://settings/reset`                                                          | Permite acessar a página de redefinição das configurações do navegador.                  |
+| `edge://settings/help`                                                           | Permite acessar a página de informações "Sobre o Microsoft Edge".                        |
+| `edge://settings/autofill`                                                       | Permite acessar a página de Senhas e preenchimento automático.                           |
+| `edge://settings/accessibility`                                                  | Permite acessar a página de Acessibilidade.                                              |
+
+##### Um Padrão nos Navegadores Modernos
+
+Essa prática de utilizar um protocolo interno para acessar configurações não é exclusiva do Edge. Por compartilhar a mesma base tecnológica (Chromium), o Google Chrome possui um sistema praticamente idêntico, utilizando o protocolo `chrome://` (por exemplo, `chrome://settings`). O Mozilla Firefox, por sua vez, utiliza um esquema semelhante, o `about:` (por exemplo, `about:preferences` para as configurações e `about:config` para ajustes avançados). Esse método se consolidou como um padrão para oferecer aos usuários um acesso rápido e direto às funcionalidades internas do navegador.
+
+#### Gerenciando suas Chaves Digitais: O Cofre de Senhas do Edge
+
+Na internet atual, a segurança de nossas contas online depende da criação de senhas fortes e, idealmente, únicas para cada serviço que utilizamos. No entanto, lembrar de dezenas de senhas complexas é uma tarefa humanamente impossível. Para resolver esse dilema, o Microsoft Edge, assim como outros navegadores modernos, integra um **Gerenciador de Senhas** – uma espécie de cofre digital que armazena, protege e preenche suas credenciais de login automaticamente.
+
+Quando o usuário insere um nome de usuário e senha em um site pela primeira vez, o Edge exibe um aviso perguntando se deseja salvar essas informações. Caso o usuário aceite, a senha é armazenada de forma segura e criptografada, associada àquele site específico.
+
+##### Principais Características do Gerenciador de Senhas
+
+A ferramenta oferece um conjunto de funcionalidades projetadas para tornar o acesso a contas online mais seguro e conveniente.
+
+|Característica|Descrição|
+|---|---|
+|**Armazenamento Seguro**|As senhas são guardadas localmente de forma criptografada, protegendo-as contra acessos não autorizados no dispositivo.|
+|**Preenchimento Automático**|Em visitas futuras a um site para o qual a senha foi salva, o Edge preenche automaticamente os campos de login, agilizando o acesso com um único clique.|
+|**Sincronização entre Dispositivos**|Ao conectar-se com uma Conta Microsoft no Edge, as senhas salvas são sincronizadas de forma segura na nuvem, ficando disponíveis em todos os seus dispositivos (computador, celular, tablet).|
+|**Sugestão de Senhas Fortes**|Ao criar uma nova conta, o Edge pode gerar e sugerir uma senha longa, complexa e aleatória (ex: `Jk#8-pX!qZ$vR7n`), que é muito mais segura do que senhas criadas por humanos.|
+|**Verificação de Segurança (Monitor de Senhas)**|O navegador pode verificar ativamente suas senhas salvas, comparando-as com um vasto banco de dados de credenciais que foram expostas em vazamentos de dados conhecidos, alertando o usuário caso uma de suas senhas esteja comprometida.|
+
+A funcionalidade de **Verificação de Segurança**, também chamada de "Monitor de Senhas", é um recurso proativo de grande importância. Ela não espera que um problema aconteça; em vez disso, monitora constantemente se alguma de suas senhas salvas apareceu em listas de credenciais vazadas na internet. Caso isso ocorra, o Edge o notificará e o orientará a alterar a senha daquele serviço imediatamente para proteger sua conta.
+
+##### Personalizando o Controle: Como Gerenciar as Configurações de Senha
+
+O Edge oferece ao usuário controle total sobre o funcionamento do gerenciador. Através da página de configurações de senhas (acessível pelo endereço `edge://settings/passwords`), é possível ajustar todas as opções.
+
+<div align="center">
+
+<img width="700px" src="./img/01-edge-senhas.png" alt="Janela de configurações de senhas do Microsoft Edge, mostrando opções como 'Oferecer para salvar senhas' e 'Verificar se há senhas vazadas'.">
+
+</div>
+
+Como a imagem ilustra, o usuário pode habilitar ou desabilitar cada uma das funcionalidades, como a oferta para salvar senhas, o preenchimento automático e a sugestão de senhas fortes.
+
+Uma das configurações mais importantes é a "Oferecer para salvar senhas". Embora a conveniência seja grande, alguns usuários podem preferir desativar essa opção por motivos de segurança, especialmente em computadores compartilhados, onde o armazenamento de credenciais pode representar um risco. Outro motivo comum para desativar o recurso é a preferência por utilizar **gerenciadores de senhas dedicados** (como 1Password, Bitwarden ou LastPass), que são aplicativos especializados e muitas vezes considerados ainda mais seguros e com mais funcionalidades que os gerenciadores integrados aos navegadores.
+
+Para desativar a oferta de salvamento de senhas, o caminho é:
+
+1. Acessar o menu principal do Edge (ícone de três pontos ou pelo atalho **Alt + F**).
+2. Clicar em **Configurações**.
+3. No menu lateral, selecionar **Perfis** e, em seguida, **Senhas**.
+4. Desativar a opção **"Oferecer para salvar senhas"**.
+
