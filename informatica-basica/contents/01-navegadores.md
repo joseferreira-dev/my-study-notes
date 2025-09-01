@@ -326,9 +326,7 @@ Em nossa navegação diária, é comum visitarmos repetidamente um mesmo conjunt
 A Barra de Favoritos é um elemento gráfico, geralmente uma barra horizontal, localizada logo abaixo da barra de endereços, que serve como um painel de atalhos personalizável. Nela, o usuário pode salvar links para suas páginas preferidas, permitindo o acesso a elas com um único clique, sem a necessidade de digitar qualquer endereço. A imagem a seguir ilustra a aparência dessa barra nos principais navegadores.
 
 <div align="center">
-
 <img width="700px" src="./img/01-barra-de-favoritos.png">
-
 </div>
 
 #### Como Adicionar e Gerenciar Favoritos
@@ -369,9 +367,7 @@ Essa funcionalidade é um recurso de transparência e segurança. Ao posicionar 
 A imagem a seguir ilustra perfeitamente essa ação.
 
 <div align="center">
-
 <img width="700px" src="./img/01-barra-de-status.png">
-
 </div>
 
 Na imagem, ao pousar o cursor sobre o botão "Veja nossos resultados", a Barra de Status surge na parte inferior, revelando o endereço de destino:
@@ -398,9 +394,7 @@ Essa segunda funcionalidade é extremamente útil para otimizar rotinas de traba
 A imagem a seguir destaca o ícone da "casinha" nos principais navegadores, que é o atalho universal para acessar a **Página Inicial**.
 
 <div align="center">
-
 <img width="700px" src="./img/01-pagina-inicial.png">
-
 </div>
 
 Além do clique no ícone, a maioria dos navegadores também oferece um atalho de teclado para retornar à página inicial: **ALT + Home**. Essa combinação de teclas executa a mesma ação do botão "casinha", oferecendo uma alternativa rápida para a navegação. A configuração de qual site será a sua página inicial ou de inicialização é feita no menu de "Configurações" ou "Opções" do navegador.
@@ -454,9 +448,7 @@ Para acessar o histórico, os principais navegadores também utilizam um atalho 
 |Microsoft Edge|Ctrl + H|Exibe a página de histórico com os sites visitados.|
 
 <div align="center">
-
 <img width="700px" src="./img/01-historico-de-navegacao.png">
-
 </div>
 
 A principal utilidade do histórico é a **pesquisa**. Em vez de rolar por uma lista potencialmente infinita, o usuário pode digitar uma palavra-chave relacionada ao site que procura (o nome de um produto, o tema de um artigo, etc.) e o navegador filtrará instantaneamente a lista, exibindo apenas as páginas relevantes.
@@ -475,9 +467,7 @@ Por padrão, os navegadores são projetados para serem assistentes pessoais, gua
 Existem situações em que precisamos utilizar a internet sem deixar rastros em um determinado computador. É para atender a essa necessidade que os navegadores oferecem a funcionalidade de **Navegação Privativa**.
 
 <div align="center">
-
 <img width="700px" src="./img/01-navegacao-privativa.png">
-
 </div>
 
 #### Quando e Por Que Utilizar a Navegação Privativa?
@@ -534,9 +524,7 @@ O acesso à janela de impressão é universalmente padronizado pelo atalho de te
 Ao acionar esse comando, o navegador exibe uma janela de pré-visualização e um painel de configurações, permitindo um controle detalhado sobre o resultado final da impressão.
 
 <div align="center">
-
 <img width="700px" src="./img/01-impressao-de-paginas.png">
-
 </div>
 
 #### Configurando sua Impressão
@@ -578,9 +566,7 @@ Não era raro acessar um site e ser bombardeado por uma sucessão de janelas de 
 Trata-se de um recurso nativo que, como o nome sugere, impede a abertura automática da maioria dessas janelas indesejadas, devolvendo ao usuário o controle de sua experiência de navegação. A imagem a seguir, capturada com o bloqueador desativado, mostra um exemplo de pop-up publicitário que surge sobre o conteúdo de um portal de notícias.
 
 <div align="center">
-
 <img width="700px" src="./img/01-pop-up.png">
-
 </div>
 
 Atualmente, o bloqueador de pop-ups já vem **habilitado por padrão** em todos os principais navegadores, atuando silenciosamente para tornar a navegação mais limpa e agradável.
@@ -618,9 +604,7 @@ A maioria dos navegadores, com a notável exceção do Google Chrome, já oferec
 Navegadores com foco em privacidade, como o Mozilla Firefox, oferecem uma sinalização visual clara quando a proteção está ativa. Um ícone de **escudo** aparece na barra de endereços, indicando que rastreadores estão sendo bloqueados naquela página.
 
 <div align="center">
-
 <img width="360px" src="./img/01-protecao-contra-rastreamento.png">
-
 </div>
 
 #### O Cenário da Privacidade nos Navegadores
@@ -671,9 +655,7 @@ Ao se utilizar a **navegação anônima ou privada**, o navegador opera exclusiv
 Ao navegar, é comum que sites complexos utilizem dezenas ou até centenas de cookies, tanto próprios quanto de terceiros, para funcionar.
 
 <div align="center">
-
 <img width="420px" src="./img/01-cookies.png">
-
 </div>
 
 A imagem acima, que ilustra a quantidade de cookies em uso em um grande portal de notícias, pode assustar, mas em um site confiável, esse número é normal e reflete a complexidade dos serviços integrados (análises de audiência, publicidade, vídeos, etc.).
@@ -741,9 +723,7 @@ Os dois exemplos mais clássicos que dominaram a internet por quase duas década
 - **Java:** Necessário para rodar aplicações mais complexas dentro do navegador, como os antigos sistemas de _internet banking_ de muitos bancos.
 
 <div align="center">
-
 <img width="700px" src="./img/01-plugins.png">
-
 </div>
 
 Apesar de sua importância histórica, os plug-ins caíram em desuso e hoje são considerados uma tecnologia obsoleta. Isso ocorreu por dois motivos principais: eles frequentemente apresentavam falhas de segurança e consumiam muitos recursos do computador. Com a evolução de tecnologias web nativas como o HTML5, os navegadores passaram a ser capazes de reproduzir vídeos, animações e aplicações complexas diretamente, sem a necessidade desses componentes externos. Como resultado, os navegadores modernos removeram ativamente o suporte aos plug-ins.
@@ -774,9 +754,7 @@ Longe de serem apenas janelas passivas para a web, os navegadores modernos atuam
 Essas tecnologias são, em grande parte, alimentadas por dois gigantes da segurança digital: o **Google Safe Browsing**, utilizado por navegadores como Chrome, Firefox e Safari, e o **Microsoft Defender SmartScreen**, integrado ao Microsoft Edge.
 
 <div align="center">
-
-<img width="700px" src="./img/01-antimalware.png" alt="Logotipo do Google Safe Browsing e uma janela de aviso do Windows SmartScreen protegendo o computador contra um aplicativo não reconhecido.">
-
+<img width="700px" src="./img/01-antimalware.png">
 </div>
 
 A proteção oferecida por esses filtros antimalware geralmente opera em três camadas distintas, que se complementam para garantir uma navegação mais segura.
@@ -803,4 +781,47 @@ O filtro **SmartScreen** da Microsoft adiciona uma camada extra de proteção ba
 Além de bloquear sites e arquivos, os navegadores também tentam proteger os usuários de ataques mais sofisticados, como o **Cross-Site Scripting (XSS)**. Nesse tipo de ataque, um criminoso consegue injetar um código (_script_) malicioso em um site legítimo, mas vulnerável. Quando um usuário visita essa página comprometida, o _script_ malicioso é executado em seu navegador.
 
 Os objetivos de um ataque XSS são variados, mas geralmente envolvem o roubo de dados pessoais (como cookies de sessão, que podem conter informações de login), o redirecionamento para sites fraudulentos ou a execução de ações em nome do usuário sem seu consentimento. Os navegadores modernos possuem filtros que buscam identificar e neutralizar esses _scripts_ maliciosos, impedindo sua execução e protegendo o usuário mesmo que o site visitado esteja comprometido.
+
+### Agrupamento de Abas
+
+Para usuários que costumam trabalhar com um grande número de páginas abertas simultaneamente, a barra de abas pode rapidamente se tornar um ambiente visualmente poluído e pouco produtivo. Pensando nisso, navegadores mais modernos introduziram o recurso de **Agrupamento de Abas**, uma ferramenta poderosa para organizar e gerenciar sessões de navegação complexas.
+
+A funcionalidade permite que o usuário agrupe abas relacionadas sob um único "grupo mestre", que pode ser nomeado e identificado por uma cor. Em vez de uma longa fileira de abas individuais, o navegador passa a exibir grupos contextuais, que podem ser expandidos ou recolhidos conforme a necessidade.
+
+Imagine um estudante pesquisando para um trabalho. Ele pode criar um grupo chamado "Fontes Históricas", outro chamado "Biografias" e um terceiro para "Mapas e Imagens". Essa organização facilita a alternância entre diferentes linhas de pesquisa sem se perder em meio a dezenas de abas. No exemplo da imagem abaixo, as abas foram organizadas por temas de estudo para concursos.
+
+<div align="center">
+<img width="700px" src="./img/01-agrupamento-de-abas.png">
+</div>
+
+#### A Vantagem da Organização: Expandir e Recolher
+
+A principal vantagem do agrupamento é a capacidade de "sanfonar" os grupos. Com um único clique no nome do grupo, todas as abas contidas nele são recolhidas, liberando um enorme espaço na barra de navegação e permitindo que o usuário foque apenas no grupo de tarefas que lhe interessa no momento. A imagem a seguir demonstra o ganho visual e organizacional quando os grupos estão retraídos.
+
+<div align="center">
+<img width="700px" src="./img/01-agrupamento-de-abas-restraidas.png">
+</div>
+
+#### Como Agrupar e Gerenciar as Abas
+
+O processo para criar e gerenciar grupos é bastante intuitivo nos navegadores que oferecem o recurso, como o Google Chrome e o Microsoft Edge:
+
+1. Clica-se com o botão direito do mouse sobre uma aba que se deseja organizar.
+2. Seleciona-se a opção "Adicionar aba ao novo grupo".
+3. Abre-se um menu para nomear o grupo e escolher uma cor de identificação.
+4. Para adicionar outras abas, basta arrastá-las para dentro do grupo criado ou clicar com o botão direito sobre elas e selecionando o grupo desejado.
+
+#### Disponibilidade nos Navegadores
+
+Apesar de ser uma funcionalidade muito útil, o agrupamento de abas não está presente de forma nativa em todos os navegadores.
+
+- **Google Chrome e Microsoft Edge:** Adotaram o recurso oficialmente em 2021 (a partir das versões 88 e 92, respectivamente). A funcionalidade é praticamente idêntica em ambos.
+- **Internet Explorer:** Por ser um navegador descontinuado, nunca recebeu essa funcionalidade.
+- **Mozilla Firefox:** O Firefox chegou a ter um recurso similar de forma experimental em versões antigas, mas ele foi removido. Atualmente, a funcionalidade pode ser adicionada ao Firefox por meio da instalação de **extensões** (complementos) específicas, como a popular "Tab Groups".
+
+A imagem a seguir sintetiza a disponibilidade nativa do recurso nos principais navegadores.
+
+<div align="center">
+<img width="700px" src="./img/01-agrupamento-de-abas-navegadores.png">
+</div>
 
