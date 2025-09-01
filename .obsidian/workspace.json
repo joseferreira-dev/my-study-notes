@@ -156,7 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 309.5
+    "width": 310.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,6 +171,7 @@
   },
   "active": "358ec5964b2dbf47",
   "lastOpenFiles": [
+    "informatica-basica/contents/img/01-barra-de-menu.png",
     "informatica-basica/contents/img/01-barra-de-navegacao.png",
     "informatica-basica/contents/img/01-guias-agrupadas-retraidas.png",
     "informatica-basica/contents/img/01-guias-agrupadas.png",
@@ -210,7 +211,6 @@
     "legislacao/contents/06-etica-no-servico-publico.md",
     "legislacao/contents/01-lei-8112.md",
     "bancos-de-dados/contents/01-fundamentos.md",
-    "bancos-de-dados/contents/img/01-banco-de-dados-ferramentas.png",
     "bancos-de-dados/contents/img",
     "bancos-de-dados/contents/Nova pasta",
     "bancos-de-dados/old-contents/01-fundamentos.md",

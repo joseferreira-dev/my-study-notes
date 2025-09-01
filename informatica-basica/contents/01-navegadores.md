@@ -296,3 +296,40 @@ Essa barra multifuncional é capaz de interpretar o que o usuário digita e deci
 
 Além disso, a Omnibox moderna é integrada ao histórico de navegação e aos favoritos, sugerindo sites já visitados ou salvos à medida que o usuário digita, tornando o processo de reencontrar uma página muito mais rápido e eficiente. Essa integração tornou a barra de pesquisa dedicada uma ferramenta obsoleta na maioria dos navegadores atuais.
 
+### Barra de Menu
+
+Em softwares de computador mais antigos, era um padrão de design haver uma **Barra de Menu** no topo da janela. Trata-se de um elemento gráfico horizontal que apresenta uma série de menus textuais, como "Arquivo", "Editar", "Exibir", "Histórico", "Favoritos", "Ferramentas" e "Ajuda". Cada um desses menus, ao ser clicado, desdobra uma lista de funcionalidades e configurações relacionadas, servindo como o repositório central para todas as ações possíveis dentro do programa.
+
+Os primeiros navegadores de internet seguiram essa mesma lógica. No entanto, com a evolução do design de interfaces, a tendência passou a ser a de criar ambientes mais limpos e minimalistas, que maximizam o espaço útil da tela para o conteúdo principal – no caso, a própria página web. Como resultado, a tradicional Barra de Menu passou por um processo de transformação, sendo ocultada ou até mesmo completamente substituída nos navegadores mais modernos.
+
+A imagem a seguir demonstra claramente essa transição, comparando a interface de quatro navegadores populares.
+
+<div align="center">
+
+<img width="700px" src="./img/01-barra-de-menu.png">
+
+</div>
+
+Como podemos observar, existem duas abordagens distintas para a Barra de Menu no cenário atual, que vamos detalhar a seguir.
+
+#### Oculta, mas Presente (Mozilla Firefox e Internet Explorer)
+
+Alguns navegadores, como o Mozilla Firefox e o já descontinuado Internet Explorer, optaram por não remover a Barra de Menu, mas sim **ocultá-la por padrão**. A ferramenta ainda existe, com todos os seus menus tradicionais, mas não fica visível para não poluir a interface.
+
+Para os usuários que desejam acessá-la, existe um atalho simples: basta pressionar a tecla **ALT** no teclado. Ao pressioná-la, a Barra de Menu surge temporariamente no topo da janela, permitindo o acesso a funcionalidades como:
+
+- **Arquivo:** Opções para abrir novas janelas, salvar a página atual ou imprimi-la.
+- **Editar:** Comandos de copiar, colar e localizar texto na página.
+- **Exibir:** Controles de zoom, visualização em tela cheia e acesso a barras de ferramentas.
+- **Histórico:** Acesso à lista de sites visitados recentemente.
+- **Favoritos:** Gerenciamento dos sites salvos (bookmarks).
+- **Ferramentas:** Acesso a configurações mais avançadas, downloads e extensões (add-ons).
+
+#### Removida e Reintegrada (Google Chrome e Microsoft Edge)
+
+Os navegadores mais modernos, como o Google Chrome e o Microsoft Edge, adotaram uma abordagem mais radical: eles **eliminaram completamente** a tradicional Barra de Menu. Isso não significa, contudo, que as funcionalidades desapareceram.
+
+O que ocorreu foi uma **reorganização**. Todas as opções que antes estavam espalhadas pelos menus "Arquivo", "Editar", "Ferramentas", etc., foram consolidadas e integradas em um **único botão de menu principal**. Esse ícone, geralmente localizado no canto superior direito do navegador, é popularmente conhecido como "menu de três pontos" (no Chrome e Edge) ou "menu de hambúrguer" (três linhas horizontais, como no Firefox).
+
+Ao clicar neste único botão, o usuário tem acesso a um painel que agrupa de forma organizada todas as configurações e ferramentas do navegador: histórico, downloads, favoritos, zoom, impressão, configurações de privacidade e muito mais. Essa abordagem se tornou o padrão de design atual por oferecer uma interface mais limpa e intuitiva, concentrando todas as ações em um único ponto de acesso.
+
