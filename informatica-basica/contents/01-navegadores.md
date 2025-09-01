@@ -552,3 +552,20 @@ A janela de impressão oferece diversas opções para personalizar o documento a
 
 Essa capacidade de pré-visualizar e ajustar a impressão garante que o usuário tenha total controle sobre o resultado final, otimizando o uso de papel e tinta e adequando o documento às suas necessidades específicas.
 
+### Modo Tela Cheia
+
+Para situações que exigem foco total no conteúdo de uma página, como ao assistir a um vídeo, realizar uma apresentação ou ler um artigo longo, os navegadores oferecem o **Modo Tela Cheia** (ou Tela Inteira). Ao ser ativado, este modo expande a página web para que ela ocupe todo o espaço do monitor, ocultando temporariamente todos os elementos da interface do navegador – a barra de abas, a barra de endereços, os menus e as barras de ferramentas desaparecem, proporcionando uma experiência de visualização completamente imersiva e livre de distrações.
+
+A melhor forma de compreender o efeito deste modo é experimentá-lo. Ao visitar qualquer página, pressionar a tecla de atalho fará com que o conteúdo preencha a tela instantaneamente. Para retornar à visualização normal, basta pressionar a mesma tecla novamente.
+
+Em provas e no uso diário, o mais importante é conhecer o atalho de teclado que ativa e desativa essa função. Felizmente, ele é universal na maioria dos sistemas.
+
+|Navegador|Atalho|Descrição|
+|---|---|---|
+|Google Chrome|F11|Ativa ou desativa o Modo Tela Cheia.|
+|Mozilla Firefox|F11|Ativa ou desativa o Modo Tela Cheia.|
+|Internet Explorer|F11|Ativa ou desativa o Modo Tela Cheia.|
+|Microsoft Edge|F11|Ativa ou desativa o Modo Tela Cheia.|
+
+A tecla **F11** é o padrão para ativar e desativar o Modo Tela Cheia em praticamente todos os navegadores para os sistemas operacionais Windows e Linux. Em dispositivos macOS, o atalho equivalente costuma ser **Cmd + Shift + F**.
+
