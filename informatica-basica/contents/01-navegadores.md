@@ -983,3 +983,60 @@ A ativação da Prevenção de Rastreamento traz benefícios claros, mas também
 
 O Edge permite um controle fino, dando ao usuário a possibilidade de ver quais rastreadores foram bloqueados em cada site e de criar uma lista de **Exceções** para desativar a prevenção em sites específicos nos quais confia.
 
+#### Atalhos de Teclado no Microsoft Edge
+
+Embora a navegação com o mouse seja intuitiva, o domínio dos atalhos de teclado é o que diferencia um usuário casual de um usuário avançado, permitindo executar ações de forma muito mais rápida e eficiente. O Microsoft Edge, assim como outros navegadores, oferece um vasto conjunto de atalhos para praticamente todas as suas funcionalidades.
+
+A seguir, apresentamos uma lista dos atalhos mais úteis, organizados por categoria de função.
+
+##### Gerenciamento de Abas e Janelas
+
+Estes atalhos são essenciais para quem trabalha com múltiplas páginas ao mesmo tempo, agilizando a organização do espaço de trabalho.
+
+| Atalho             | Descrição                                                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| `CTRL + T`         | Abre uma nova aba (guia).                                                                                                 |
+| `CTRL + N`         | Abre uma nova janela do navegador.                                                                                        |
+| `CTRL + W`         | Fecha a aba (guia) atualmente em foco.                                                                                    |
+| `CTRL + SHIFT + K` | Duplica a aba atual, criando uma cópia exata em uma nova guia.                                                            |
+| `CTRL + SHIFT + T` | Reabre a última aba que foi fechada. Este é um atalho extremamente útil para recuperar uma página fechada acidentalmente. |
+| `CTRL + TAB`       | Alterna para a próxima aba à direita.                                                                                     |
+| `CTRL + SHIFT + N` | Abre uma nova janela no modo de Navegação InPrivate.                                                                      |
+
+##### Navegação e Pesquisa Essencial
+
+Comandos para controlar o fluxo de navegação e interagir com a barra de endereços.
+
+| Atalho                   | Descrição                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `CTRL + R` ou `F5`       | Atualiza (recarrega) a página atual.                                                                          |
+| `ALT + HOME`             | Navega diretamente para a página inicial configurada no navegador.                                            |
+| `CTRL + E` ou `CTRL + K` | Coloca o cursor diretamente na barra de endereços para iniciar uma nova pesquisa.                             |
+| `F6`                     | Move o foco do cursor para a barra de endereços, selecionando a URL atual.                                    |
+| `CTRL + ENTER`           | Completa um endereço na barra de endereços, adicionando `www.` ao início e `.com` ao final do texto digitado. |
+
+##### Acesso a Ferramentas e Funcionalidades
+
+Atalhos para acessar rapidamente os painéis e as ferramentas mais importantes do navegador.
+
+| Atalho     | Descrição                                                                  |
+| ---------- | -------------------------------------------------------------------------- |
+| `CTRL + H` | Abre o painel do Histórico de navegação.                                   |
+| `CTRL + J` | Abre o painel de Downloads.                                                |
+| `CTRL + D` | Adiciona a página atual aos Favoritos ou à Lista de Leitura.               |
+| `CTRL + F` | Abre a ferramenta "Localizar" para pesquisar por palavras na página atual. |
+| `CTRL + G` | Navega entre os resultados da busca feita com a ferramenta "Localizar".    |
+| `CTRL + P` | Abre a caixa de diálogo para imprimir a página atual.                      |
+| `F11`      | Ativa ou desativa o modo de visualização em Tela Cheia.                    |
+
+##### Gerenciamento de Dados e Ajuda
+
+| Atalho               | Descrição                                                                          |
+| -------------------- | ---------------------------------------------------------------------------------- |
+| `CTRL + SHIFT + DEL` | Abre a janela para limpar os dados de navegação (histórico, cookies, cache, etc.). |
+| `F1`                 | Abre a seção de Ajuda e Suporte do Microsoft Edge.                                 |
+
+A lista acima apresenta os atalhos mais comuns e úteis para o dia a dia. Para uma lista completa e exaustiva de todos os comandos de teclado disponíveis no Microsoft Edge, é possível consultar a documentação oficial da Microsoft no seguinte endereço:
+
+`https://support.microsoft.com/pt-br/microsoft-edge/atalhos-de-teclado-no-microsoft-edge-50d3edab-3d42-b75e-538a-37c2c2f21915`
+
