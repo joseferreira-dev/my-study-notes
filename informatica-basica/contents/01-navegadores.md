@@ -1109,3 +1109,57 @@ Nesta tela, o usuário pode ver com qual conta está sincronizado e acessar opç
 
 Integrada à funcionalidade de sincronização de senhas, o Google Chrome oferece uma ferramenta proativa de segurança. O navegador é capaz de verificar as senhas salvas e alertar o usuário caso alguma delas seja considerada fraca, esteja sendo reutilizada em múltiplos sites ou, o mais importante, tenha sido comprometida em algum vazamento de dados conhecido na internet. Ao identificar uma senha vulnerável, o Chrome recomenda a sua alteração imediata para proteger a segurança da conta.
 
+#### Segurança Reforçada: A Arquitetura "Sandbox" (Caixa de Areia)
+
+Imagine uma criança brincando em uma caixa de areia em um parquinho. Tudo o que ela faz ali dentro – construir castelos, cavar buracos, espalhar areia – fica contido dentro das bordas daquela caixa, sem afetar o resto do parquinho. Esse é o princípio exato por trás da arquitetura de segurança do Google Chrome, conhecida como **Sandbox** (Caixa de Areia).
+
+Essa funcionalidade foi desenvolvida para isolar os processos do navegador, aumentando tanto a estabilidade quanto a segurança da navegação. A lógica por trás dela se baseia em um pilar fundamental: no Chrome, cada aba ou aplicativo web que você abre é executado como um processo separado e independente no seu computador.
+
+<div align="center">
+<img width="640px" src="./img/01-gerenciador-de-tarefas.png">
+</div>
+
+A imagem acima, uma captura do Gerenciador de Tarefas do Windows, ilustra perfeitamente essa arquitetura. Note que, embora haja apenas uma janela do navegador aberta, existem dezenas de processos "Google Chrome" em execução – um para o navegador principal, um para a placa de vídeo, e um para cada aba e extensão ativa.
+
+Essa separação traz duas grandes vantagens:
+
+1. **Estabilidade Aprimorada:** Como cada aba é um processo independente, se uma página travar ou apresentar um erro grave, ela não afetará o restante do navegador. O usuário pode simplesmente fechar a aba problemática e continuar navegando nas outras, sem o risco de perder todo o seu trabalho – um problema comum em navegadores mais antigos.
+2. **Segurança por Isolamento:** É aqui que o conceito de _sandbox_ realmente brilha. Cada um desses processos de aba é executado dentro de uma "caixa de areia" virtual, um ambiente restritivo e isolado. Isso significa que o código da página web tem acesso muito limitado aos recursos do seu computador. Ele não pode ler arquivos do seu disco rígido, modificar configurações do sistema ou interagir com outros programas.
+
+Se, por exemplo, um usuário acessar acidentalmente uma página maliciosa, o _sandbox_ atua como uma barreira de contenção. O código malicioso fica preso dentro de sua própria "caixa", incapaz de infectar outras abas ou o seu computador. Ao fechar a aba, o processo isolado é completamente destruído, e com ele, a ameaça desaparece sem deixar danos.
+
+O Google Chrome foi o primeiro navegador a implementar essa arquitetura de segurança de forma robusta, e seu sucesso influenciou todo o mercado, levando outros navegadores, como o Mozilla Firefox e o Microsoft Edge, a adotarem tecnologias de isolamento similares.
+
+#### Acesso a Funções via URL
+
+Além da navegação pelos menus gráficos, o Google Chrome oferece um método de acesso direto e rápido às suas diversas telas de configuração e ferramentas internas. Isso é feito através de URLs especiais que utilizam o protocolo interno `chrome://` em vez do tradicional `http://` ou `https://`.
+
+Na prática, isso funciona como um atalho de teclado, mas para páginas inteiras de configuração. Por exemplo, em vez de clicar no menu de três pontos no canto superior direito e depois em "Configurações", o usuário pode simplesmente digitar `chrome://settings` na barra de endereços e pressionar Enter para chegar ao mesmo local.
+
+<div align="center">
+
+<img width="700px" src="./img/01-chrome-configuracao-por-url.png" alt="Janela de configurações do Google Chrome, mostrando o menu lateral e o endereço chrome://settings na barra de endereços.">
+
+</div>
+
+Como a imagem ilustra, ao acessar `chrome://settings`, a página principal de configurações é carregada. Cada uma das seções visíveis no menu lateral ("Você e o Google", "Preenchimento automático", "Aparência", etc.) também possui sua própria URL específica, permitindo um acesso ainda mais direto a ajustes pontuais.
+
+Esse recurso é útil para usuários avançados que desejam criar favoritos para suas telas de configuração mais utilizadas ou para seguir instruções de suporte técnico de forma precisa.
+
+A tabela a seguir apresenta os principais endereços internos para as configurações e ferramentas do Google Chrome.
+
+| Endereço                           | Descrição                                                                                              |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `chrome://settings`                | Permite acessar a página principal de configurações.                                                   |
+| `chrome://settings/people`         | Permite acessar a página de configurações de sincronização e serviços do Google.                       |
+| `chrome://settings/autofill`       | Permite acessar a página de configurações de preenchimento automático (senhas, pagamentos, endereços). |
+| `chrome://settings/appearance`     | Permite acessar a página de configurações de aparência (temas, fontes, barra de favoritos).            |
+| `chrome://settings/search`         | Permite acessar a página de configurações do mecanismo de pesquisa padrão.                             |
+| `chrome://settings/defaultBrowser` | Permite acessar a página de configurações de navegador padrão.                                         |
+| `chrome://settings/onStartup`      | Permite acessar a página de configurações de inicialização.                                            |
+| `chrome://bookmarks`               | Permite acessar o gerenciador de favoritos.                                                            |
+| `chrome://history`                 | Permite acessar a página de histórico de navegação.                                                    |
+| `chrome://downloads`               | Permite acessar a página de gerenciamento de downloads.                                                |
+| `chrome://extensions`              | Permite acessar a página de gerenciamento de extensões.                                                |
+| `chrome://version` ou `about:`     | Permite acessar a página com informações detalhadas sobre a versão do navegador.                       |
+
