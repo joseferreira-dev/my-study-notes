@@ -93,3 +93,48 @@ A menção aos incisos IV e VI do art. 84 da Constituição revela que este decr
 
 O Decreto nº 1.171/94 é considerado autônomo na parte em que trata da organização e do funcionamento do Sistema de Gestão da Ética, como a criação das Comissões de Ética, pois está exercendo a competência presidencial de organizar a Administração Federal.
 
+## As Comissões de Ética: O Sistema de Gestão da Ética
+
+Para garantir a aplicação e a observância do Código de Ética, o Decreto nº 1.171/1994 determinou a criação de um sistema de gestão descentralizado, cujo pilar é a **Comissão de Ética** em cada órgão e entidade.
+
+> **Art. 2°** Os órgãos e entidades da Administração Pública Federal direta e indireta implementarão, em sessenta dias, as providências necessárias à plena vigência do Código de Ética, inclusive mediante a constituição da respectiva Comissão de Ética, integrada por três servidores ou empregados titulares de cargo efetivo ou emprego permanente.
+> 
+> Parágrafo único. A constituição da Comissão de Ética será comunicada à Secretaria da Administração Federal da Presidência da República, com a indicação dos respectivos membros titulares e suplentes.
+
+Este artigo estabelece a **obrigatoriedade** da criação de uma Comissão de Ética em todos os órgãos e entidades da Administração Pública Federal direta, indireta, autárquica e fundacional, ou em qualquer entidade que exerça atribuições delegadas pelo poder público.
+
+### Composição e Mandato
+
+A composição da comissão é desenhada para garantir a imparcialidade e a continuidade dos trabalhos:
+
+- **Membros:** A comissão é integrada por **três membros titulares e três suplentes**.
+- **Vínculo:** Os membros devem ser escolhidos entre servidores e empregados do **quadro permanente** do órgão, ou seja, devem ser servidores de carreira (ocupantes de cargo efetivo ou emprego permanente), o que exclui a participação de pessoas que ocupam exclusivamente cargos em comissão. A exigência de vínculo permanente visa a garantir a estabilidade e a independência dos membros, que ficam menos suscetíveis a pressões externas.
+- **Designação e Mandato:** Os membros são designados pelo dirigente máximo do órgão para mandatos de **três anos**, que devem ser **não coincidentes**. A não coincidência dos mandatos é um mecanismo que assegura a continuidade e a preservação da memória institucional, evitando que toda a comissão seja trocada de uma só vez.
+
+### Atribuições e Competências
+
+As comissões de ética, também chamadas de **Comissões de Ética Setoriais**, possuem uma dupla natureza em suas atribuições: uma preventiva/educativa e outra repressiva/punitiva.
+
+- **Função Educativa e Preventiva:** Esta é a sua principal missão. As comissões são encarregadas de **orientar e aconselhar** sobre a ética profissional do servidor, no tratamento com as pessoas e com o patrimônio público. Elas devem atuar na divulgação do código, na realização de treinamentos e na resolução de consultas sobre dilemas éticos que os servidores enfrentam no dia a dia.
+- **Função Repressiva:** Compete à comissão **conhecer concretamente de imputação ou de procedimento susceptível de censura**. Ou seja, é a instância responsável por receber denúncias, instaurar o processo de apuração de infração ética e, se for o caso, aplicar a penalidade cabível.
+
+Além disso, a comissão tem a importante atribuição de fornecer, aos organismos encarregados da gestão de carreiras, os registros sobre a conduta ética do servidor. Conforme o item XVIII do Código:
+
+> À Comissão de Ética incumbe fornecer, aos organismos encarregados da execução do quadro de carreira dos servidores, os registros sobre sua conduta ética, para o efeito de instruir e fundamentar promoções e para todos os demais procedimentos próprios da carreira do servidor público.
+
+Isso significa que a conduta ética do servidor tem um impacto direto em sua progressão funcional, sendo um dos critérios a serem considerados na promoção por merecimento.
+
+### A Penalidade de Censura: A Única Sanção Aplicável
+
+Este é um dos pontos mais importantes sobre a competência das Comissões de Ética. Diferentemente das comissões de processo administrativo disciplinar (PAD), que podem aplicar diversas sanções previstas na Lei nº 8.112/1990, a Comissão de Ética tem sua competência punitiva restrita a uma única penalidade.
+
+> **PONTO FUNDAMENTAL: A única penalidade aplicável pela Comissão de Ética é a de CENSURA.**
+
+Qualquer outra pena, como advertência ou suspensão, se atribuída à Comissão de Ética em uma questão de prova, estará incorreta.
+
+<div align="center">
+<img width="440px" src="./img/decreto-1171-comissao-censura.png">
+</div>
+
+A **censura** é uma sanção de natureza moral, que consiste em uma repreensão formal e por escrito ao servidor pela infração ética cometida. Seu extrato é publicado no Diário Oficial da União e ela é registrada nos assentamentos funcionais do servidor, constituindo um antecedente negativo que pode ser considerado em futuras apurações. Se a conduta investigada pela Comissão de Ética também configurar uma infração disciplinar, a comissão deverá encaminhar o caso para a unidade correcional competente para a instauração de sindicância ou PAD.
+
