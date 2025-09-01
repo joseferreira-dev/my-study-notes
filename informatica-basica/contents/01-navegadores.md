@@ -727,3 +727,80 @@ A tabela a seguir detalha as principais diferenças:
 | **Capacidade:** Consome um espaço considerável de armazenamento (megabytes ou até gigabytes).                | **Capacidade:** Consome um espaço mínimo de armazenamento (apenas alguns kilobytes).                                                                              |
 | **Conteúdo Armazenado:** Páginas HTML, imagens, arquivos de estilo (CSS) e de script (JavaScript).           | **Conteúdo Armazenado:** Informações de sessão, dados de rastreamento, preferências do usuário.                                                                   |
 
+### Extensões, Plug-ins e Temas
+
+Um navegador, em sua instalação padrão, já oferece um conjunto robusto de ferramentas. No entanto, uma de suas maiores forças é a capacidade de ser uma plataforma extensível, ou seja, de permitir que o usuário adicione novas funcionalidades, modifique sua aparência e o integre a outros serviços. Isso é feito por meio de pequenos programas conhecidos como extensões, plug-ins e temas.
+
+#### Plug-ins (Uma Tecnologia do Passado)
+
+Os **Plug-ins** foram, por muitos anos, uma parte essencial da experiência na web. Eram programas de terceiros que precisavam ser instalados separadamente no computador para que o navegador pudesse exibir conteúdos que ele não conseguia processar nativamente. Eles funcionavam como "intérpretes" para formatos especiais de mídia e aplicações.
+
+Os dois exemplos mais clássicos que dominaram a internet por quase duas décadas foram:
+
+- **Adobe Flash Player:** Indispensável para reproduzir a maioria dos vídeos, animações e jogos online.
+- **Java:** Necessário para rodar aplicações mais complexas dentro do navegador, como os antigos sistemas de _internet banking_ de muitos bancos.
+
+<div align="center">
+
+<img width="700px" src="./img/01-plugins.png">
+
+</div>
+
+Apesar de sua importância histórica, os plug-ins caíram em desuso e hoje são considerados uma tecnologia obsoleta. Isso ocorreu por dois motivos principais: eles frequentemente apresentavam falhas de segurança e consumiam muitos recursos do computador. Com a evolução de tecnologias web nativas como o HTML5, os navegadores passaram a ser capazes de reproduzir vídeos, animações e aplicações complexas diretamente, sem a necessidade desses componentes externos. Como resultado, os navegadores modernos removeram ativamente o suporte aos plug-ins.
+
+#### Extensões (As Ferramentas de Hoje)
+
+As **Extensões** são as sucessoras modernas dos plug-ins no que diz respeito a adicionar novas funcionalidades. A grande e fundamental diferença é que as extensões são pequenos códigos integrados diretamente ao navegador e distribuídos de forma segura através de uma loja oficial, mantida pelo próprio desenvolvedor do navegador (como a Chrome Web Store, os Complementos para Firefox ou os Microsoft Edge Add-ons).
+
+Enquanto os plug-ins atuavam para exibir conteúdo _dentro_ da página, as extensões geralmente adicionam novos botões à barra de ferramentas ou trabalham nos bastidores para modificar ou aprimorar a experiência de navegação. As possibilidades são quase infinitas. Alguns exemplos práticos de extensões muito populares incluem:
+
+- **Bloqueadores de Anúncios:** Ferramentas como o AdBlock Plus, que removem a maioria dos anúncios das páginas.
+- **Gerenciadores de Senhas:** Serviços como LastPass ou 1Password, que salvam e preenchem senhas de forma segura.
+- **Ferramentas de Produtividade:** Extensões que permitem acelerar a velocidade de videoaulas, traduzir textos, criar listas de tarefas ou consultar rapidamente o significado de uma palavra em um dicionário.
+- **Personalização:** Ferramentas que alteram o comportamento de sites, como o modo escuro para redes sociais.
+
+#### Temas (Mudando o Visual)
+
+Diferentemente das extensões, os **Temas** são complementos puramente estéticos. Sua única função é alterar a aparência do navegador, personalizando suas cores, a imagem de fundo da página "Nova Guia" e o design dos botões. Eles não adicionam nenhuma nova funcionalidade, servindo apenas para deixar a interface do navegador com um estilo que agrade mais ao usuário.
+
+#### Complementos: O Termo Abrangente
+
+Para organizar esses diferentes tipos de "adicionais", alguns navegadores utilizam um termo genérico. O **Mozilla Firefox**, por exemplo, chama de **Complementos** (ou _Add-ons_) o conjunto que engloba as **Extensões**, os **Temas** e, historicamente, os **Plug-ins**. Pode-se entender, portanto, que "Complemento" é a categoria mais ampla, que descreve tudo aquilo que pode ser adicionado ao navegador para expandir suas capacidades ou alterar sua aparência.
+
+### Segurança e Proteção do Navegador
+
+Longe de serem apenas janelas passivas para a web, os navegadores modernos atuam como uma primeira e poderosa linha de defesa contra as ameaças digitais. Eles vêm equipados com filtros e mecanismos de segurança que trabalham silenciosamente para proteger o usuário contra sites fraudulentos e a instalação de softwares mal-intencionados (_malware_).
+
+Essas tecnologias são, em grande parte, alimentadas por dois gigantes da segurança digital: o **Google Safe Browsing**, utilizado por navegadores como Chrome, Firefox e Safari, e o **Microsoft Defender SmartScreen**, integrado ao Microsoft Edge.
+
+<div align="center">
+
+<img width="700px" src="./img/01-antimalware.png" alt="Logotipo do Google Safe Browsing e uma janela de aviso do Windows SmartScreen protegendo o computador contra um aplicativo não reconhecido.">
+
+</div>
+
+A proteção oferecida por esses filtros antimalware geralmente opera em três camadas distintas, que se complementam para garantir uma navegação mais segura.
+
+#### Análise em Tempo Real de Páginas Suspeitas
+
+Enquanto o usuário navega, o navegador analisa ativamente as características das páginas visitadas. Se ele detecta um comportamento suspeito – como um site que tenta se passar por um banco, mas está em um endereço estranho, ou uma página que solicita permissões incomuns – ele pode exibir um aviso, sugerindo cautela ao prosseguir.
+
+#### Bloqueio de Sites Perigosos (Phishing e Malware)
+
+Essa é a camada de proteção mais visível. Os navegadores mantêm e consultam constantemente uma lista dinâmica e global de sites já identificados como perigosos. Se o usuário tenta acessar um endereço que consta nessa "lista negra", o navegador intervém, bloqueando o acesso e exibindo uma tela de aviso em vermelho vivo. Essa proteção é crucial contra duas ameaças comuns:
+
+- **Sites de Phishing:** São sites fraudulentos que imitam a aparência de páginas legítimas (bancos, redes sociais, serviços de e-mail) com o objetivo de enganar o usuário e roubar suas senhas e informações pessoais.
+- **Sites de Malware:** São páginas projetadas para explorar vulnerabilidades no sistema e instalar softwares mal-intencionados (vírus, spyware, ransomware) no computador do visitante.
+
+#### Verificação de Downloads Maliciosos
+
+A proteção se estende aos arquivos baixados da internet. O navegador verifica o arquivo e o site de origem, comparando-os com sua lista de softwares maliciosos conhecidos. Se uma correspondência é encontrada, o download é bloqueado para a segurança do usuário.
+
+O filtro **SmartScreen** da Microsoft adiciona uma camada extra de proteção baseada em **reputação**. Além de bloquear arquivos conhecidos como perigosos, ele também pode alertar sobre arquivos que são desconhecidos ou que foram baixados poucas vezes pela comunidade de usuários. Esse aviso, como o exibido na imagem, sinaliza um risco potencial, pois programas novos e não verificados podem ser uma ameaça.
+
+#### Proteção Avançada: O Combate ao Cross-Site Scripting (XSS)
+
+Além de bloquear sites e arquivos, os navegadores também tentam proteger os usuários de ataques mais sofisticados, como o **Cross-Site Scripting (XSS)**. Nesse tipo de ataque, um criminoso consegue injetar um código (_script_) malicioso em um site legítimo, mas vulnerável. Quando um usuário visita essa página comprometida, o _script_ malicioso é executado em seu navegador.
+
+Os objetivos de um ataque XSS são variados, mas geralmente envolvem o roubo de dados pessoais (como cookies de sessão, que podem conter informações de login), o redirecionamento para sites fraudulentos ou a execução de ações em nome do usuário sem seu consentimento. Os navegadores modernos possuem filtros que buscam identificar e neutralizar esses _scripts_ maliciosos, impedindo sua execução e protegendo o usuário mesmo que o site visitado esteja comprometido.
+
