@@ -405,3 +405,36 @@ A imagem a seguir destaca o ícone da "casinha" nos principais navegadores, que 
 
 Além do clique no ícone, a maioria dos navegadores também oferece um atalho de teclado para retornar à página inicial: **ALT + Home**. Essa combinação de teclas executa a mesma ação do botão "casinha", oferecendo uma alternativa rápida para a navegação. A configuração de qual site será a sua página inicial ou de inicialização é feita no menu de "Configurações" ou "Opções" do navegador.
 
+### Gerenciador de Downloads
+
+Uma das atividades mais comuns na internet é a de salvar arquivos em nosso computador ou dispositivo, um processo conhecido como **download**. Seja para baixar uma videoaula, um documento em PDF, um programa de instalação ou uma imagem, os navegadores vêm equipados com uma ferramenta integrada para gerenciar essas transferências: o **Gerenciador de Downloads**.
+
+Quando se clica em um link para baixar um arquivo, o navegador inicia o processo e, por padrão, salva o arquivo em uma pasta pré-definida no sistema. Essa localização pode ser alterada nas configurações do navegador, mas os locais padrão são:
+
+- **No Windows:** `C:\Usuários\<Nome do Usuário>\Downloads`
+- **No Linux:** `/home/<nome do usuário>/Downloads`
+- **No macOS:** `/Users/<nome do usuário>/Downloads`
+
+#### Acessando e Gerenciando seus Downloads
+
+Para visualizar e interagir com os arquivos que estão sendo baixados ou que já foram transferidos, os navegadores oferecem uma tela ou painel de gerenciamento. O acesso a essa área é padronizado na grande maioria dos navegadores através de um atalho de teclado universal: **Ctrl + J**.
+
+|Navegador|Atalho|Descrição|
+|---|---|---|
+|Google Chrome|Ctrl + J|Acessa a página com o histórico de arquivos baixados.|
+|Mozilla Firefox|Ctrl + J|Abre o painel com o histórico de arquivos baixados.|
+|Internet Explorer|Ctrl + J|Abre a janela de exibição de downloads.|
+|Microsoft Edge|Ctrl + J|Acessa a página com o histórico de arquivos baixados.|
+
+Dentro dessa interface de gerenciamento, o usuário pode realizar uma série de ações que lhe dão total controle sobre as transferências de arquivos:
+
+- **Visualizar o Histórico:** Acessar uma lista completa de todos os downloads realizados, incluindo os que foram concluídos com sucesso, os que falharam e os que foram cancelados.
+- **Pausar e Retomar:** Em caso de downloads de arquivos grandes, é possível pausar a transferência temporariamente e retomá-la mais tarde, um recurso muito útil em conexões instáveis (desde que o servidor de origem suporte essa funcionalidade).
+- **Cancelar:** Interromper um download em andamento, seja por ter sido iniciado por engano ou por não ser mais necessário.
+- **Abrir Arquivo ou Pasta:** A maioria dos gerenciadores oferece atalhos para abrir o arquivo baixado diretamente com o programa associado ou para abrir a pasta onde o arquivo foi salvo no computador, facilitando sua localização.
+- **Tentar Novamente:** Caso um download falhe por problemas de conexão, é possível solicitar que o navegador tente baixar o arquivo novamente.
+
+#### Uma Nota Sobre Segurança
+
+Os navegadores modernos integram mecanismos de segurança ao gerenciador de downloads. Eles podem analisar os arquivos durante e após a transferência, verificando se são conhecidos por conterem software mal-intencionado (malware) ou vírus. Caso um arquivo seja considerado suspeito, o navegador exibirá um alerta, dando ao usuário a opção de descartá-lo. É uma prática de segurança fundamental sempre desconfiar de downloads de fontes não conhecidas ou não confiáveis.
+
