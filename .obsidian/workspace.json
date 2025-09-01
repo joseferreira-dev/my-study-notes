@@ -156,7 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 310.5
+    "width": 313.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,6 +171,8 @@
   },
   "active": "358ec5964b2dbf47",
   "lastOpenFiles": [
+    "informatica-basica/contents/img/01-barra-de-status.png",
+    "informatica-basica/contents/img/01-barra-de-favoritos.png",
     "informatica-basica/contents/img/01-barra-de-menu.png",
     "informatica-basica/contents/img/01-barra-de-navegacao.png",
     "informatica-basica/contents/img/01-guias-agrupadas-retraidas.png",
@@ -203,8 +205,6 @@
     "linguagem-c/README.md",
     "lingua-portuguesa/README.md",
     "lingua-portuguesa/contents/02-ortografia.md",
-    "lingua-portuguesa/contents/img/02-acentos-diferenciais.png",
-    "lingua-portuguesa/contents/img/02-acentuacao-resumo.png",
     "lingua-portuguesa/contents/img",
     "lingua-portuguesa/contents/Nova pasta",
     "lingua-portuguesa/contents/01-visao-geral.md",

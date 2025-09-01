@@ -168,9 +168,7 @@ O DNS pode ser entendido como a **gigantesca lista telefônica da internet**. Qu
 Esse sistema não é centralizado. Ele possui uma estrutura **hierárquica e distribuída**. Isso significa que a "lista telefônica" está espalhada por milhares de servidores DNS pelo mundo, organizados em uma árvore hierárquica, o que garante que o sistema seja rápido e resiliente a falhas. A imagem a seguir ilustra a hierarquia de domínios no Brasil.
 
 <div align="center">
-
 <img width="700px" src="./img/01-dominios-br.png">
-
 </div>
 
 Para garantir que cada nome de domínio seja único e não haja ambiguidade (assim como não podem existir dois telefones com o mesmo número), existe um sistema de governança. Em nível global, a entidade responsável por gerenciar os domínios de topo (como `.com`, `.org`, e os de países como `.br` para o Brasil, `.pt` para Portugal e `.jp` para o Japão) é a **ICANN (Internet Corporation for Assigned Names and Numbers)**.
@@ -202,9 +200,7 @@ A **Barra de Guias**, também conhecida como **Barra de Abas** ou **Separadores*
 Pode parecer difícil de imaginar hoje, mas houve uma época em que essa funcionalidade não existia. Para acessar o e-mail, uma rede social e um portal de notícias simultaneamente, era necessário abrir três janelas separadas do navegador, poluindo a área de trabalho e tornando a alternância entre as páginas uma tarefa lenta e desorganizada. A introdução da navegação por abas representou uma quebra de paradigma, uma inovação tão poderosa que foi rapidamente adotada por todos os navegadores modernos.
 
 <div align="center">
-
 <img width="700px" src="./img/01-barra-de-guias-navegadores.png">
-
 </div>
 
 Hoje, é comum que usuários mantenham dezenas de abas abertas ao mesmo tempo, seja para trabalho, estudo ou lazer. O limite máximo de abas que um navegador pode abrir não é fixo, sendo determinado principalmente pela quantidade de recursos computacionais disponíveis no dispositivo (memória RAM e capacidade de processamento). No entanto, em um computador moderno, é possível abrir mais de cinquenta abas com facilidade.
@@ -218,9 +214,7 @@ Com a possibilidade de abrir tantas páginas simultaneamente, a barra de guias p
 Para aquelas páginas que utilizamos com altíssima frequência ao longo do dia – como o e-mail, o calendário ou uma ferramenta de trabalho –, existe a funcionalidade de **fixar a guia**. Ao fixar uma guia, o navegador a posiciona permanentemente no lado esquerdo da barra de abas, em um formato reduzido que exibe apenas o ícone do site (o _favicon_).
 
 <div align="center">
-
-<img width="540px" src="./img/01-guias-fixadas.png">
-
+<img width="480px" src="./img/01-guias-fixadas.png">
 </div>
 
 Essa ação traz duas vantagens: economiza um espaço precioso na barra de guias e garante que seus sites mais importantes estejam sempre no mesmo lugar, fáceis de encontrar, não importa quantas outras abas sejam abertas. Para utilizar o recurso, basta clicar com o botão direito do mouse sobre a aba desejada e escolher a opção "Fixar Guia".
@@ -240,9 +234,7 @@ O processo para criar e gerenciar grupos é bastante simples:
 Imagine um navegador com mais de 20 abas abertas simultaneamente. A imagem a seguir ilustra como o agrupamento pode organizar esse cenário, criando contextos claros para cada conjunto de páginas.
 
 <div align="center">
-
 <img width="700px" src="./img/01-guias-agrupadas.png">
-
 </div>
 
 Na imagem, as abas foram organizadas em grupos temáticos: "Entretenimento" (com páginas de filmes e blogs), "Dieta", "Estratégia Concursos" (com materiais de estudo), "Questões" e "Youtube". Note que algumas páginas permanecem desagrupadas.
@@ -250,9 +242,7 @@ Na imagem, as abas foram organizadas em grupos temáticos: "Entretenimento" (com
 A grande vantagem dessa funcionalidade é a possibilidade de **expandir e retrair** os grupos. Ao clicar sobre o nome de um grupo, todas as suas abas são recolhidas, liberando um enorme espaço visual na barra de guias e reduzindo a poluição visual. O resultado, como mostra a imagem abaixo, é um ambiente de trabalho muito mais limpo e organizado.
 
 <div align="center">
-
 <img width="700px" src="./img/01-guias-agrupadas-retraidas.png">
-
 </div>
 
 Dessa forma, ferramentas como a fixação e o agrupamento de guias transformam o navegador de uma simples janela para a web em um poderoso ambiente de trabalho, permitindo ao usuário gerenciar grandes volumes de informação de maneira eficiente e produtiva.
@@ -264,9 +254,7 @@ Logo abaixo da barra de abas, encontramos a área mais interativa do navegador, 
 É preciso ter atenção, pois alguns materiais podem se referir a todo esse conjunto simplesmente como "Barra de Navegação". Para garantir a clareza, vamos analisar cada componente separadamente, utilizando como guia a imagem a seguir, que destaca as funções de cada área.
 
 <div align="center">
-
 <img width="700px" src="./img/01-barra-de-navegacao.png">
-
 </div>
 
 #### Os Controles de Navegação (Área Vermelha)
@@ -305,9 +293,7 @@ Os primeiros navegadores de internet seguiram essa mesma lógica. No entanto, co
 A imagem a seguir demonstra claramente essa transição, comparando a interface de quatro navegadores populares.
 
 <div align="center">
-
 <img width="700px" src="./img/01-barra-de-menu.png">
-
 </div>
 
 Como podemos observar, existem duas abordagens distintas para a Barra de Menu no cenário atual, que vamos detalhar a seguir.
@@ -333,3 +319,63 @@ O que ocorreu foi uma **reorganização**. Todas as opções que antes estavam e
 
 Ao clicar neste único botão, o usuário tem acesso a um painel que agrupa de forma organizada todas as configurações e ferramentas do navegador: histórico, downloads, favoritos, zoom, impressão, configurações de privacidade e muito mais. Essa abordagem se tornou o padrão de design atual por oferecer uma interface mais limpa e intuitiva, concentrando todas as ações em um único ponto de acesso.
 
+### Barra de Favoritos
+
+Em nossa navegação diária, é comum visitarmos repetidamente um mesmo conjunto de sites: o portal de notícias, a caixa de entrada do e-mail, a rede social, a plataforma de estudos, entre outros. Digitar o endereço completo desses sites toda vez que desejamos acessá-los seria uma tarefa repetitiva e pouco produtiva. Para resolver exatamente esse problema, os navegadores oferecem a **Barra de Favoritos** (também conhecida como **Barra de Marcadores** ou, em inglês, _Bookmarks Bar_).
+
+A Barra de Favoritos é um elemento gráfico, geralmente uma barra horizontal, localizada logo abaixo da barra de endereços, que serve como um painel de atalhos personalizável. Nela, o usuário pode salvar links para suas páginas preferidas, permitindo o acesso a elas com um único clique, sem a necessidade de digitar qualquer endereço. A imagem a seguir ilustra a aparência dessa barra nos principais navegadores.
+
+<div align="center">
+
+<img width="700px" src="./img/01-barra-de-favoritos.png">
+
+</div>
+
+#### Como Adicionar e Gerenciar Favoritos
+
+O processo para salvar uma página na Barra de Favoritos é intencionalmente simples e muito similar em todos os navegadores. Geralmente, o ícone que representa a ação de "favoritar" uma página é uma **estrela (☆)**, localizada dentro ou ao final da barra de endereços.
+
+Ao visitar uma página que se deseja salvar, basta clicar neste ícone. Uma pequena janela se abrirá, permitindo que o usuário edite o nome do atalho (para que fique mais curto e claro) e, o mais importante, escolha em qual local o favorito será salvo. A opção padrão é adicioná-lo diretamente à Barra de Favoritos.
+
+#### O Poder da Organização: O Uso de Pastas
+
+A verdadeira força da Barra de Favoritos reside em sua capacidade de organização. Em vez de simplesmente adicionar dezenas de atalhos soltos, o que tornaria a barra poluída e confusa, é possível criar **pastas** para agrupar os links por tema ou contexto. Essas pastas podem, inclusive, conter outras subpastas, criando uma estrutura hierárquica que facilita enormemente a localização dos sites.
+
+Por exemplo, um usuário pode organizar sua Barra de Favoritos da seguinte forma:
+
+- **Uma pasta "Trabalho"**: contendo links para o e-mail corporativo, o sistema interno da empresa e sites de referência profissional.
+- **Uma pasta "Estudos"**: com atalhos para a plataforma da faculdade, dicionários online e portais de artigos científicos.
+- **Uma pasta "Lazer"**: que pode conter subpastas como "Notícias", "Esportes" e "Streaming", cada uma com os respectivos links.
+
+Essa organização transforma a Barra de Favoritos em um menu pessoal e altamente produtivo, adaptado às necessidades e à rotina de cada pessoa.
+
+#### Exibindo e Ocultando a Barra
+
+Para os usuários que preferem uma interface mais limpa, a Barra de Favoritos pode ser facilmente ocultada e exibida conforme a necessidade. A maioria dos navegadores oferece uma opção no menu de configurações para controlar sua visibilidade, e também um atalho de teclado para alternar rapidamente entre exibir e ocultar a barra (geralmente **Ctrl + Shift + B** no Windows ou **Cmd + Shift + B** no macOS).
+
+### Barra de Status
+
+A **Barra de Status** é um elemento informativo, tradicionalmente localizado na parte inferior da janela do navegador. Sua principal função é apresentar o status atual de uma ação ou o destino de um link, fornecendo ao usuário um feedback em tempo real sobre suas interações com a página web.
+
+Assim como a Barra de Menu, a Barra de Status também passou por uma significativa evolução de design. Em navegadores mais antigos, ela era uma barra permanentemente visível que exibia uma gama maior de informações, como o progresso de carregamento dos elementos da página ("Carregando imagem...", "Concluído"), detalhes do certificado de segurança e o endereço de links.
+
+Seguindo a tendência de interfaces mais limpas, os navegadores modernos optaram por **ocultar a Barra de Status por padrão**. Ela não foi removida, mas transformada em um elemento dinâmico, que surge apenas quando é necessário, cumprindo uma função essencial: revelar o endereço de um hyperlink antes que o usuário clique nele.
+
+Essa funcionalidade é um recurso de transparência e segurança. Ao posicionar o ponteiro do mouse sobre qualquer elemento clicável de uma página – seja um trecho de texto, um botão ou uma imagem que contenha um link – duas coisas acontecem simultaneamente:
+
+1. O cursor do mouse geralmente se transforma em um ícone de "mãozinha" (ponteiro), indicando que aquele elemento é interativo.
+2. A Barra de Status aparece momentaneamente no canto inferior esquerdo da tela, exibindo a URL completa para a qual aquele link aponta.
+
+A imagem a seguir ilustra perfeitamente essa ação.
+
+<div align="center">
+
+<img width="700px" src="./img/01-barra-de-status.png">
+
+</div>
+
+Na imagem, ao pousar o cursor sobre o botão "Veja nossos resultados", a Barra de Status surge na parte inferior, revelando o endereço de destino:
+
+`https://www.estrategiaconcursos.com.br/resultados`.
+
+Essa verificação prévia é uma prática de navegação segura. Ela permite que o usuário confirme se o link realmente leva para o destino esperado, ajudando a identificar links suspeitos ou enganosos que poderiam redirecioná-lo para sites mal-intencionados.
