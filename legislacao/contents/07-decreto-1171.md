@@ -746,3 +746,55 @@ A conduta de se valer do cargo para obter vantagens indevidas é tão grave que 
 
     No crime de corrupção passiva, ocorre uma espécie de "negociação" da função pública. O sujeito ativo do crime é o funcionário público, e o sujeito passivo (a vítima) é o Estado. A mera **solicitação** da vantagem indevida, mesmo que não seja paga, já é suficiente para configurar o crime.
 
+##### A Vedação a Atos Contra a Honra (Alínea "b")
+
+> **b)** **prejudicar deliberadamente a reputação** de outros servidores ou de cidadãos que deles dependam;
+
+Esta vedação protege a honra e a imagem das pessoas no ambiente de trabalho e na relação com o serviço público. O termo "deliberadamente" indica que a conduta proibida é aquela praticada com dolo, ou seja, com a **intenção** de manchar a reputação de alguém.
+
+Tal conduta pode, a depender do caso, configurar um dos **crimes contra a honra** previstos no Código Penal (calúnia, difamação ou injúria) e, na esfera cível, pode gerar o dever de indenização por danos morais. A responsabilização pode ser imputada ao poder público ou diretamente ao servidor. A vedação se aplica tanto a atos praticados contra colegas de trabalho quanto contra os cidadãos-usuários do serviço.
+
+Esta regra ética dialoga com a proibição prevista na Lei nº 8.112/1990, que veda ao servidor "promover manifestação de apreço ou desapreço no recinto da repartição" (art. 117, V).
+
+##### A Vedação à Conivência (Alínea "c")
+
+> **c)** ser, em função de seu espírito de solidariedade, **conivente com erro ou infração** a este Código de Ética ou ao Código de Ética de sua profissão;
+
+Este inciso proíbe o que se poderia chamar de "solidariedade mal compreendida" ou "espírito de corpo negativo". Ele estabelece que a lealdade do servidor aos seus colegas não pode se sobrepor ao seu compromisso com a ética e o interesse público. O servidor tem o dever de comunicar aos seus superiores qualquer erro ou infração que presenciar, ainda que essa atitude seja impopular no ambiente de trabalho.
+
+A conduta omissiva de não relatar uma infração cometida por um subordinado pode, inclusive, configurar o crime de **condescendência criminosa**:
+
+> **Art. 320 do Código Penal** - Deixar o funcionário, por indulgência, de responsabilizar subordinado que cometeu infração no exercício do cargo ou, quando lhe falte competência, não levar o fato ao conhecimento da autoridade competente.
+
+##### A Vedação à Procrastinação Dolosa (Alínea "d")
+
+> **d)** usar de **artifícios para procrastinar ou dificultar** o exercício regular de direito por qualquer pessoa, causando-lhe dano moral ou material;
+
+Mais uma vez, o Código de Ética condena a procrastinação. Contudo, aqui a conduta é mais grave do que a simples demora por ineficiência (tratada no dever da alínea "b"). Esta vedação se refere ao uso de **"artifícios"**, ou seja, de manobras intencionais para atrasar ou impedir que um cidadão exerça um direito. Trata-se de uma conduta dolosa e de má-fé, que pode configurar também o crime de **prevaricação** (art. 319 do Código Penal).
+
+##### O Dever de Utilizar os Avanços Técnicos e Científicos (Alínea "e")
+
+> **e)** **deixar de utilizar os avanços técnicos e científicos** ao seu alcance ou do seu conhecimento para atendimento do seu mister;
+
+Embora listada entre as vedações, esta norma estabelece, na prática, um dever positivo. O servidor tem a obrigação ética de se manter atualizado e de empregar as melhores e mais modernas ferramentas técnicas e científicas disponíveis para a execução de seu trabalho. A recusa injustificada em adotar uma nova tecnologia que tornaria o serviço mais eficiente e de melhor qualidade para o cidadão é, portanto, uma conduta antiética.
+
+##### A Vedação à Parcialidade (Alínea "f")
+
+> **f)** permitir que **perseguições, simpatias, antipatias, caprichos, paixões ou interesses de ordem pessoal interfiram** no trato com o público, com os jurisdicionados administrativos ou com colegas hierarquicamente superiores ou inferiores;
+
+Este é o cerne do princípio da **impessoalidade**. O servidor, no exercício de sua função, deve despir-se de suas emoções e relações pessoais. Suas decisões e seu tratamento para com os outros não podem ser pautados por sentimentos de amizade ou inimizade, mas exclusivamente por critérios técnicos, legais e pelo interesse público.
+
+Caso a imparcialidade do servidor para atuar em um determinado processo esteja comprometida por razões de ordem pessoal, ele tem o dever de se declarar **suspeito** (instituto da **suspeição**), solicitando seu afastamento daquele caso específico, que será então redistribuído a outro colega.
+
+##### A Vedação ao Recebimento de Vantagens Indevidas (Alínea "g")
+
+> **g)** **pleitear, solicitar, provocar, sugerir ou receber** qualquer tipo de ajuda financeira, gratificação, prêmio, comissão, doação ou vantagem de qualquer espécie, para si, familiares ou qualquer pessoa, para o cumprimento da sua missão ou para influenciar outro servidor para o mesmo fim;
+
+Esta é a vedação mais explícita contra os atos de **corrupção**. A norma utiliza uma série de verbos (`pleitear, solicitar, receber`, etc.) para abranger todas as formas de conduta, desde a mais ativa (exigir a vantagem) até a mais passiva (simplesmente aceitar a oferta).
+
+Esta conduta também é vedada expressamente na Lei nº 8.112/1990 e configura o crime de **corrupção passiva** (art. 317 do Código Penal), sendo uma das infrações mais graves que um servidor pode cometer.
+
+> Lei 8.112, Art. 117. Ao servidor é proibido:
+> 
+> XII - receber propina, comissão, presente ou vantagem de qualquer espécie, em razão de suas atribuições;
+
