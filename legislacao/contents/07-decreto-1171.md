@@ -460,3 +460,51 @@ A seguir, apresentamos a lista dos deveres e, na sequência, iniciaremos a anál
 
 A seguir, analisaremos cada um desses deveres fundamentais.
 
+#### Análise Detalhada dos Deveres Fundamentais
+
+A Seção II do Código de Ética traduz os princípios e as regras deontológicas em deveres concretos, estabelecendo as condutas positivas que são esperadas de todo agente público no exercício de suas funções.
+
+##### O Dever de Desempenho Tempestivo (Alínea "a")
+
+> XIV - São deveres fundamentais do servidor público:
+> 
+> a) desempenhar, a tempo, as atribuições do cargo, função ou emprego público de que seja titular;
+
+Este primeiro dever estabelece a obrigação de **tempestividade**, ou seja, de cumprir as atribuições dentro dos prazos devidos. A menção expressa a "cargo, função ou emprego público" reforça a tese da aplicação ampla do Código de Ética, abrangendo as diferentes formas de vínculo com a Administração Pública. Para fins de clareza, é importante distinguir esses termos:
+
+- **Cargo Público:** É o conjunto de atribuições e responsabilidades, criado por lei, com denominação própria, número certo e remuneração paga pelos cofres públicos, a ser cometido a um servidor. É o vínculo típico do regime estatutário (Lei nº 8.112/1990).
+
+| Tipos de Cargo                | Descrição                                                                                                                                                               |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **de Provimento Efetivo**     | São providos mediante aprovação prévia em concurso público.<br>O servidor adquire estabilidade após 3 anos de efetivo exercício e aprovação em avaliação de desempenho. |
+| **de Provimento em Comissão** | São de livre nomeação e exoneração, destinados às atribuições de chefia, direção e assessoramento.<br>Não exigem concurso público e não geram estabilidade.             |
+
+- **Emprego Público:** É o vínculo de trabalho regido pela Consolidação das Leis do Trabalho (CLT), típico das entidades da Administração Pública Indireta que exploram atividade econômica, como as **Empresas Públicas** e as **Sociedades de Economia Mista**. O ingresso também se dá por concurso público.
+- **Função Pública:** Refere-se a um conjunto de atribuições exercidas por uma pessoa física junto à Administração. Pode se manifestar, por exemplo, na **função de confiança**, que é exercida exclusivamente por servidor ocupante de cargo efetivo para atribuições de direção, chefia e assessoramento, ou em funções exercidas por particulares em colaboração com o Estado, como os mesários em uma eleição.
+
+##### O Dever de Eficiência e Presteza (Alínea "b")
+
+> **b)** exercer suas atribuições com **rapidez, perfeição e rendimento**, pondo fim ou procurando prioritariamente resolver situações procrastinatórias, principalmente diante de filas ou de qualquer outra espécie de atraso na prestação dos serviços pelo setor em que exerça suas atribuições, com o fim de evitar dano moral ao usuário;
+
+Este dever é a manifestação ética do princípio constitucional da **eficiência**. Ele exige do servidor uma atuação pautada pela qualidade e pela celeridade. A norma define "situação procrastinatória" como aquela que é indevidamente adiada, "empurrada com a barriga". O dever do servidor não é apenas executar suas tarefas, mas atuar proativamente para resolver os gargalos e as demoras que causam dano moral ao cidadão.
+
+<div align="center">
+<img width="700px" src="./img/decreto-1171-situacao-procrastinatoria.png">
+</div>
+
+##### O Dever de Integridade e Foco no Bem Comum (Alínea "c")
+
+> **c)** ser **probo, reto, leal e justo**, demonstrando toda a integridade do seu caráter, escolhendo sempre, quando estiver diante de duas opções a **melhor e a mais vantajosa para o bem comum**;
+
+Este inciso é o coração da conduta ética. Ser **probo** e **reto** é ser íntegro, honesto e incorruptível. Ser **leal** é ser fiel aos princípios da Administração e ao interesse público. Ser **justo** é agir com imparcialidade e equidade.
+
+A parte final deste dever é de extrema importância. Ela estabelece o critério que deve guiar o servidor em suas decisões: a escolha da opção que seja "a melhor e a mais vantajosa para o **bem comum**".
+
+> **Ponto de Atenção: "Bem Comum" vs. "Interesse da Administração"**
+> 
+> É comum que questões de concurso tentem confundir o candidato, substituindo a expressão "bem comum" por "interesse da Administração Pública". Embora pareçam sinônimos, há uma diferença sutil e crucial. O "interesse da Administração" pode ser interpretado de forma restrita e meramente gerencial (ex: a opção de menor custo imediato). O **"bem comum"** é um conceito mais amplo, que exige do servidor uma análise do impacto social, da qualidade e da sustentabilidade de sua decisão a longo prazo. A opção eticamente correta é aquela que melhor serve à sociedade como um todo.
+
+<div align="center">
+<img width="600px" src="./img/decreto-1171-escolha-bem-comum.png">
+</div>
+
