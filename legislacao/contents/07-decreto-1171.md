@@ -564,3 +564,57 @@ Caso o servidor presencie ou receba uma ordem que configure um "comprometimento 
 
 O servidor deve, portanto, respeitar a hierarquia, mas sem temor de denunciar as irregularidades, utilizando os canais institucionais corretos para fazê-lo.
 
+##### O Dever de Resistência e Denúncia (Alínea "i")
+
+> **i)** **resistir a todas as pressões** de superiores hierárquicos, de contratantes, interessados e outros que visem obter quaisquer favores, benesses ou vantagens indevidas em decorrência de ações imorais, ilegais ou aéticas e **denunciá-las**;
+
+Este dever impõe ao servidor uma postura ativa e corajosa diante de tentativas de corrupção ou de desvio de finalidade. A norma reconhece que o servidor pode ser pressionado por diversas fontes – superiores hierárquicos, fornecedores, políticos ou outros interessados – a praticar um ato indevido.
+
+A conduta ética exigida é dupla: primeiro, **resistir**, ou seja, não ceder à pressão e não praticar o ato solicitado. Segundo, e de igual importância, **denunciar** a tentativa de pressão aos canais competentes. A simples recusa, sem a denúncia, permite que o agente corruptor continue a atuar, buscando pressionar outros servidores. A denúncia é o que permite à Administração identificar e punir os responsáveis, protegendo a integridade da instituição.
+
+##### A Ética no Exercício do Direito de Greve (Alínea "j")
+
+> **j)** zelar, no exercício do **direito de greve**, pelas exigências específicas da **defesa da vida e da segurança coletiva**;
+
+Este inciso é de grande relevância, pois o Código de Ética reconhece a legitimidade do direito de greve, um direito constitucionalmente assegurado. O código não considera antiético que o servidor faça greve.
+
+Contudo, ele impõe um limite ético a esse direito: a necessidade de zelar pela **manutenção dos serviços essenciais** à população, cujas atividades se relacionem com a defesa da vida e da segurança coletiva.
+
+- **Exemplo:** Em uma greve de servidores da saúde de um hospital público, é dever ético e legal da categoria manter um efetivo mínimo para garantir o atendimento de emergências, o cuidado de pacientes internados em UTIs e a realização de procedimentos inadiáveis. Da mesma forma, em uma greve de policiais, a segurança pública não pode ser completamente interrompida.
+
+##### O Dever de Assiduidade (Alínea "l")
+
+> **l)** ser **assíduo e frequente** ao serviço, na certeza de que sua ausência provoca danos ao trabalho ordenado, refletindo negativamente em todo o sistema;
+
+Este dever ético corresponde diretamente ao dever funcional de assiduidade e pontualidade previsto na Lei nº 8.112/1990. Ser assíduo é ser presente, pontual e aplicado ao serviço. O código reforça que a ausência injustificada provoca um dano duplo: um dano direto ao trabalho, que deixa de ser realizado, e um dano sistêmico, pois reflete negativamente na imagem de toda a instituição e sobrecarrega os demais colegas de equipe.
+
+##### O Dever de Representação e Colaboração com a Fiscalização (Alíneas "m" e "s")
+
+> **m)** **comunicar imediatamente a seus superiores** todo e qualquer ato ou fato contrário ao interesse público, exigindo as providências cabíveis;
+> 
+> **s)** **facilitar a fiscalização** de todos os atos ou serviços por quem de direito;
+
+Estes dois deveres se complementam e estabelecem a obrigação do servidor de atuar como um fiscal do interesse público. Ele não pode ser conivente ou omisso diante de irregularidades.
+
+O dever de **comunicar** um fato contrário ao interesse público é reforçado pela expressão **"exigindo as providências cabíveis"**. Isso indica que não basta uma mera comunicação; o servidor tem o dever de acompanhar o desdobramento de sua representação.
+
+O dever de **facilitar a fiscalização** significa que o servidor deve colaborar ativamente com as instâncias de controle, sejam elas internas (auditoria interna, corregedoria) ou externas (Tribunal de Contas da União, Controladoria-Geral da União, Ministério Público), fornecendo as informações e os documentos solicitados com presteza e transparência.
+
+##### O Dever de Cuidado com o Ambiente de Trabalho (Alínea "n")
+
+> **n)** manter **limpo e em perfeita ordem o local de trabalho**, seguindo os métodos mais adequados à sua organização e distribuição;
+
+Este dever, aparentemente simples, está diretamente ligado ao princípio da **eficiência**. Um local de trabalho organizado, com documentos e processos em ordem, otimiza o tempo, reduz a chance de erros e extravios, e melhora a qualidade do serviço prestado.
+
+##### O Dever de Aperfeiçoamento Profissional (Alínea "o")
+
+> **o)** **participar dos movimentos e estudos** que se relacionem com a melhoria do exercício de suas funções, tendo por escopo a realização do bem comum;
+
+Este é o dever de **capacitação contínua**. A ética profissional exige que o servidor busque constantemente o aperfeiçoamento de suas competências. A Administração tem a obrigação de oferecer oportunidades de capacitação, e o servidor tem o dever ético de participar ativamente dessas oportunidades, com o objetivo de aplicar os novos conhecimentos para a melhoria do serviço público.
+
+##### O Dever de Apresentação Pessoal (Alínea "p")
+
+> **p)** apresentar-se ao trabalho com **vestimentas adequadas** ao exercício da função;
+
+Este dever está relacionado ao **decoro** e à imagem da instituição. A adequação das vestimentas não se refere a luxo ou a um padrão estético específico, mas sim à compatibilidade com a formalidade e a natureza do ambiente de trabalho. Uma apresentação pessoal cuidada é uma forma de comunicação não verbal que transmite profissionalismo e respeito ao cidadão e à função pública exercida.
+
