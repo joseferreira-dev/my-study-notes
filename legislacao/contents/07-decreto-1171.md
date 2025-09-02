@@ -853,3 +853,57 @@ Esta vedação visa a proteger o patrimônio público. A ressalva "sem estar leg
 
 A retirada indevida de um bem público, mesmo que de pequeno valor como uma simples resma de papel, pode configurar o crime de **Peculato**, previsto no art. 312 do Código Penal, que consiste na apropriação, por parte do funcionário público, de bem de que tem a posse em razão do cargo.
 
+##### A Vedação ao Uso de Informação Privilegiada (Alínea "m")
+
+> **m)** fazer uso de **informações privilegiadas** obtidas no âmbito interno de seu serviço, em benefício próprio, de parentes, de amigos ou de terceiros;
+
+É vedado ao servidor utilizar-se de informações relevantes a que teve acesso em razão do cargo, e que ainda não são de conhecimento público, para obter qualquer tipo de vantagem. Muitas decisões governamentais, antes de serem publicadas, podem ter grande impacto na sociedade, especialmente no mercado financeiro.
+
+A **informação privilegiada**, neste contexto, é todo conhecimento sigiloso ou de acesso restrito que, se divulgado, pode influenciar o mercado ou gerar vantagens indevidas. O uso dessa informação é uma grave falta ética, pois viola os princípios da impessoalidade, da moralidade e da lealdade à instituição.
+
+- **Exemplo:** Imagine que um servidor do Banco Central participe de reuniões que decidem pelo aumento da taxa básica de juros (Selic), informação que só será divulgada ao mercado no dia seguinte. Se este servidor utilizar essa informação para realizar investimentos pessoais ou avisar amigos e parentes para que o façam, ele estará cometendo a infração ética, além de um possível ato de improbidade e crime.
+
+##### A Vedação à Embriaguez (Alínea "n")
+
+> **n)** apresentar-se **embriagado no serviço ou fora dele habitualmente**;
+
+Esta vedação possui uma dupla faceta, abrangendo tanto a conduta no ambiente de trabalho quanto, de forma qualificada, na vida privada.
+
+1. **Embriaguez no serviço:** É proibido que o servidor se apresente para o trabalho ou se embriague durante o expediente. Uma única ocorrência já é suficiente para configurar a falta ética, por violar o decoro e comprometer a capacidade de trabalho.
+2. **Embriaguez habitual fora do serviço:** O código não proíbe o consumo de bebidas alcoólicas na vida privada. O que se veda é a embriaguez **habitual**, ou seja, a conduta reiterada que se torna um padrão de comportamento. Tal hábito compromete a reputação e a dignidade do servidor e, por reflexo, a imagem do serviço público.
+
+É importante notar que o alcoolismo crônico é hoje compreendido como uma doença, o que pode levar a um tratamento de saúde e licença médica. Contudo, essa condição não isenta o servidor de ser responsabilizado por seus atos, especialmente se ele se recusar a buscar tratamento.
+
+##### A Vedação à Colaboração com Instituições Imorais (Alínea "o")
+
+> **o)** dar o seu **concurso a qualquer instituição que atente contra a moral**, a honestidade ou a dignidade da pessoa humana;
+
+O servidor público, ao escolher a carreira pública, opta por uma vida pautada pela transparência. Por essa razão, é vedado que ele associe seu nome ou preste qualquer tipo de colaboração ("dar o seu concurso") a instituições cujas atividades sejam contrárias aos valores éticos e morais da sociedade.
+
+- **Exemplo:** Seria uma grave falta ética um servidor público participar ativamente de uma organização que promova discursos de ódio ou que se organize para praticar atos de violência contra grupos minoritários, pois tais atividades atentam violentamente contra a moral e a dignidade da pessoa humana.
+
+##### A Vedação a Atividades de Cunho Duvidoso (Alínea "p")
+
+> **p)** exercer **atividade profissional aética ou ligar o seu nome a empreendimentos de cunho duvidoso**.
+
+Esta vedação complementa a anterior e se refere à necessidade de o servidor zelar pelo decoro e pela dignidade da função pública em todas as suas atividades, mesmo fora do cargo. É vedado que ele exerça uma segunda atividade profissional que seja considerada antiética ou que associe seu nome a negócios ou empreendimentos de reputação questionável.
+
+A atividade pode ser, inclusive, lícita, mas eticamente incompatível com o exercício da função pública.
+
+- **Exemplo:** Um fiscal da vigilância sanitária que, em sua atividade privada, seja proprietário de um estabelecimento que reiteradamente desrespeita as normas de higiene. Embora ser dono do estabelecimento seja lícito, a atividade, da forma como é conduzida, é eticamente incompatível e de cunho duvidoso para quem tem o dever público de zelar justamente por aquelas normas.
+
+## Considerações Finais
+
+Ao longo deste capítulo, realizamos um mergulho aprofundado no **Decreto nº 1.171, de 22 de junho de 1994**, o instrumento normativo que aprova e institui o **Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal**. Vimos que este não é um mero regulamento, mas um documento de fundamental importância, que busca traduzir os elevados princípios da ética pública em diretrizes concretas para a conduta cotidiana do agente estatal.
+
+Iniciamos compreendendo a **natureza** deste decreto, que, embora possua força normativa, se propõe a ser mais um **guia para a consciência** do que um simples código punitivo. Analisamos sua ampla **aplicabilidade**, que abrange todos aqueles que prestam serviço ao Poder Executivo Federal, independentemente da natureza de seu vínculo, e sua clara **distinção em relação ao regime disciplinar** da Lei nº 8.112/1990.
+
+Aprofundamos na estrutura do Código, dissecando suas três seções principais, que formam os pilares da conduta esperada do servidor:
+
+1. As **Regras Deontológicas**, que estabelecem os "primados maiores" – os valores e princípios filosóficos como a dignidade, o decoro, o zelo e a busca pelo bem comum – que devem inspirar toda a atuação pública.
+2. Os **Principais Deveres**, que traduzem esses valores em obrigações positivas, detalhando as ações que o servidor _deve praticar_, como o desempenho eficiente, a cortesia no atendimento, o respeito crítico à hierarquia e a resistência a pressões indevidas.
+3. As **Vedações**, que estabelecem as obrigações negativas, detalhando as condutas que o servidor _não pode praticar_, como o uso do cargo para benefício próprio, a conivência com erros, a procrastinação dolosa e a utilização de informações privilegiadas.
+
+Analisamos, ainda, a estrutura de governança criada para zelar pelo cumprimento do código: as **Comissões de Ética Setoriais**. Compreendemos sua composição, seu mandato e suas atribuições, com destaque para sua dupla função – educativa e apuratória – e sua competência exclusiva para aplicar a **penalidade de censura**.
+
+O estudo do Decreto nº 1.171/1994 é, portanto, essencial para qualquer candidato ao serviço público federal. Ele não representa apenas um conjunto de regras a serem memorizadas, mas a própria definição do caráter profissional esperado de um servidor. Compreender este Código é entender o padrão de excelência em conduta que o Estado e, em última instância, a sociedade, esperam daqueles que têm o privilégio de servir ao público. É, em suma, o manual prático para a transformação do princípio abstrato do "bem comum" em ações concretas e diárias.
