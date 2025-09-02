@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/engenharia-de-prompt"><img src="banner-eng-prompt.png"></a>
+  <a href="https://github.com/joseferreira-dev/my-study-notes/tree/main/engenharia-de-prompt"><img src="./contents/banner-eng-prompt.png"></a>
 </div>
 <br>
 
