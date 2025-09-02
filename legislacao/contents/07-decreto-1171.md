@@ -508,3 +508,59 @@ A parte final deste dever é de extrema importância. Ela estabelece o critério
 <img width="600px" src="./img/decreto-1171-escolha-bem-comum.png">
 </div>
 
+##### O Dever de Prestação de Contas (Alínea "d")
+
+> **d)** jamais retardar qualquer **prestação de contas**, condição essencial da gestão dos bens, direitos e serviços da coletividade a seu cargo;
+
+A prestação de contas (_accountability_) é um direito do cidadão e um dever intransferível do agente público. Este inciso estabelece que retardar, dificultar ou impedir a prestação de contas é uma grave falta ética, pois atenta diretamente contra o princípio da **publicidade** e da **transparência**. A lógica é simples: espera-se uma atitude íntegra e leal do servidor e, se sua conduta é pautada por esses valores, não há motivos para se recusar a prestar contas de seus atos à sociedade e às instâncias de controle.
+
+##### O Dever de Cuidado e Comunicação com o Público (Alínea "e")
+
+> **e)** tratar cuidadosamente os usuários dos serviços **aperfeiçoando o processo de comunicação** e contato com o público;
+
+Este dever, aparentemente simples, aborda uma das maiores fontes de insatisfação do cidadão com o serviço público: a dificuldade de comunicação. É corriqueiro em uma repartição pública o cidadão ser recebido com respostas evasivas como “isso não é comigo” ou “não sei informar”. Eticamente, essa não é a conduta correta.
+
+O dever de tratar cuidadosamente o usuário implica em uma postura de **presteza e diligência**. Mesmo que a demanda do cidadão não seja da competência direta daquele servidor, ele tem o dever ético de, no mínimo, orientá-lo corretamente, indicando o setor ou a pessoa adequada para resolver o problema. O servidor deve atuar como um facilitador, e não como um obstáculo, no acesso do cidadão aos seus direitos.
+
+##### A Consciência Ética e a Finalidade do Serviço (Alínea "f")
+
+> **f)** ter **consciência** de que seu trabalho é regido por princípios éticos que se materializam na adequada prestação dos serviços públicos;
+
+Este item complementa o anterior, reforçando que a atuação do servidor não é meramente mecânica, mas deve ser consciente e orientada por princípios. Ele estabelece que a materialização da ética se dá na "adequada prestação dos serviços públicos".
+
+> **Ponto de Atenção: O Objetivo da Prestação de Serviços**
+> 
+> É crucial atentar para o que se considera uma "adequada prestação de serviços". O objetivo "mestre" de uma conduta ética é a prestação de serviços que visem atender ao **BEM COMUM**, ou seja, à **COLETIVIDADE**.
+> 
+> É uma pegadinha clássica de concursos afirmar que o objetivo seria "atender aos desejos de cada cidadão". A Administração Pública rege-se pelo princípio da impessoalidade e da isonomia, não podendo satisfazer vontades individuais que contrariem o interesse coletivo ou a lei.
+
+##### O Dever de Urbanidade e a Vedação ao Preconceito (Alínea "g")
+
+> **g)** ser **cortês, ter urbanidade, disponibilidade e atenção**, respeitando a capacidade e as limitações individuais de todos os usuários do serviço público, **sem qualquer espécie de preconceito ou distinção** de raça, sexo, nacionalidade, cor, idade, religião, cunho político e posição social, abstendo-se, dessa forma, de causar-lhes dano moral;
+
+Este é o dever de tratar a todos com respeito e sem discriminação, materializando o princípio constitucional da **isonomia**. A primeira parte do inciso exige **urbanidade**, que é a polidez e a cortesia no trato com o público.
+
+A segunda parte, "respeitando a capacidade e as limitações individuais", exige do servidor a sensibilidade de adaptar sua comunicação. Por exemplo, ao atender um cidadão leigo sobre um processo complexo, o servidor deve usar uma linguagem clara e objetiva, explicando minuciosamente os procedimentos. Essa adaptação não é preconceito, mas uma forma de garantir que o direito à informação seja efetivo para todos.
+
+A parte final veda expressamente qualquer forma de preconceito ou distinção, listando uma série de marcadores sociais. O tratamento discriminatório, além de ser uma grave falta ética, pode configurar crime.
+
+##### O Respeito Crítico à Hierarquia (Alínea "h")
+
+> **h)** ter **respeito à hierarquia**, porém **sem nenhum temor de representar** contra qualquer comprometimento indevido da estrutura em que se funda o Poder Estatal;
+
+Este dever estabelece um equilíbrio fundamental: o servidor deve respeitar a estrutura hierárquica, que é essencial para a organização administrativa, mas essa obediência não é cega ou absoluta. A lealdade maior do servidor não é com seu chefe, mas com o interesse público e com a legalidade.
+
+<div align="center">
+<img width="700px" src="./img/decreto-1171-hierarquia.png">
+</div>
+
+Caso o servidor presencie ou receba uma ordem que configure um "comprometimento indevido" — ou seja, um ato de ilegalidade, omissão ou abuso de poder — ele tem o dever de representar contra tal ato. Este dever ético está em perfeita sintonia com a Lei nº 8.112/1990:
+
+> Art. 116. São deveres do servidor:
+> 
+> XII - representar contra ilegalidade, omissão ou abuso de poder.
+> 
+> Parágrafo único. A representação de que trata o inciso XII será encaminhada pela via hierárquica e apreciada pela autoridade superior àquela contra a qual é formulada, assegurando-se ao representando ampla defesa.
+
+O servidor deve, portanto, respeitar a hierarquia, mas sem temor de denunciar as irregularidades, utilizando os canais institucionais corretos para fazê-lo.
+
