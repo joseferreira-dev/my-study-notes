@@ -59,3 +59,65 @@ A tabela a seguir resume essa grande divisão da Morfologia:
 
 Esta distinção deve ser mantida em mente durante o estudo de cada uma das classes a seguir.
 
+## Substantivo
+
+O substantivo é a classe de palavras central da Morfologia. Sua função primordial é **nomear** os seres e as coisas em geral, sejam eles reais ou imaginários. É a palavra que dá nome a tudo o que percebemos, sentimos ou concebemos: pessoas, lugares, objetos, sentimentos, qualidades, ações, estados e conceitos. Por essa característica, o substantivo frequentemente atua como o núcleo dos termos sintáticos mais importantes, como o sujeito e os objetos.
+
+Sendo uma classe **variável**, o substantivo se flexiona para indicar:
+
+- **Gênero:** masculino ou feminino (ex: _menino, menina_).
+- **Número:** singular ou plural (ex: _casa, casas_).
+- **Grau:** aumentativo ou diminutivo (ex: _casa, casarão, casinha_).
+
+### Classificação dos Substantivos
+
+Os substantivos podem ser classificados a partir de diferentes critérios, que analisam sua origem, estrutura, tipo de referência e abrangência.
+
+- **Primitivo e Derivado:** Esta classificação se refere à formação da palavra.
+    - **Primitivo:** É o substantivo que não se origina de nenhuma outra palavra já existente na língua. Ele serve como base para a formação de novas palavras. Exemplos: _pedra, ferro, jornal, flor, luz_.
+    - **Derivado:** É o substantivo que se origina a partir de uma palavra primitiva, geralmente pelo acréscimo de afixos (prefixos ou sufixos). Exemplos: _pedr**eiro**, ferr**ageiro**, jornal**ista**, flor**icultura**, **in**felicidade_.
+- **Simples e Composto:** Refere-se ao número de radicais que formam a palavra.
+    - **Simples:** Possui apenas um radical. Exemplos: _tempo, chuva, roupa, sol_.
+    - **Composto:** Possui mais de um radical, sendo formado pela junção de duas ou mais palavras. Exemplos: _passa-tempo, guarda-chuva, guarda-roupa, girassol_.
+- **Comum e Próprio:** Analisa a abrangência do ser nomeado.
+    - **Comum:** Designa de forma genérica qualquer ser de uma mesma espécie, sem individualizá-lo. É grafado com letra minúscula. Exemplos: _mulher, cidade, país, rio, cachorro_.
+    - **Próprio:** Designa um ser específico, particular, individualizando-o dentro de sua espécie. É sempre grafado com letra inicial maiúscula. Exemplos: _Maria, Paris, Brasil, Rio Amazonas, Rex_.
+- **Concreto e Abstrato:** Esta é uma classificação que frequentemente gera dúvidas. A distinção se baseia na natureza da existência do ser nomeado.
+    - **Concreto:** Designa seres que possuem existência autônoma, independentemente de outros seres. Podem ser reais ou imaginários, materiais ou espirituais. Uma dica prática é pensar se o ser pode ser, de alguma forma, visualizado ou representado como uma imagem. Exemplos: _pedra, menino, carro, Deus, fada, saci, som, vento, alma_.
+    - **Abstrato:** Designa ações, estados, sentimentos, qualidades ou conceitos cuja existência depende de outro ser para se manifestar. Geralmente, são palavras derivadas de verbos, adjetivos ou outros substantivos. Exemplos: _beleza_ (qualidade, depende de um ser para ser belo), _viagem_ (ação, depende de alguém que viaja), _tristeza_ (sentimento), _vida_ (estado), _liberalismo_ (conceito).
+- **Coletivo:** É um substantivo que, mesmo no singular, designa um conjunto de seres ou coisas da mesma espécie.
+
+|Coletivo|Grupo Representado|Coletivo|Grupo Representado|
+|---|---|---|---|
+|**Alcateia**|de lobos|**Elenco**|de atores|
+|**Arquipélago**|de ilhas|**Esquadra**|de navios de guerra|
+|**Banca**|de examinadores, advogados|**Fauna**|de animais de uma região|
+|**Cardume**|de peixes|**Flora**|de plantas de uma região|
+|**Código**|de leis|**Frota**|de veículos (ônibus, táxis)|
+|**Constelação**|de estrelas|**Manada**|de bois, búfalos, elefantes|
+|**Congresso**|de parlamentares|**Pinacoteca**|de quadros, pinturas|
+|**Discoteca**|de discos|**Prole**|de filhos|
+|**Enxame**|de abelhas, insetos|**Tropa**|de soldados, muares|
+
+> **Fique de Olho: A Importância do Contexto**
+> 
+> A classificação de um substantivo não é absoluta; ela pode mudar drasticamente dependendo do contexto em que a palavra é usada.
+> 
+> - **Judas** foi um dos apóstolos. (Substantivo **próprio**, refere-se a um indivíduo específico).
+> - Aquele amigo revelou-se um **judas**. (Substantivo **comum**, passou a significar "traidor").
+> - A **saída** para a crise é investir em educação. (Substantivo **abstrato**, refere-se à "solução").
+> - A **saída** de incêndio fica no final do corredor. (Substantivo **concreto**, refere-se à "porta").
+
+### Flexão de Gênero dos Substantivos
+
+Quanto ao gênero, os substantivos podem ser classificados em dois grandes grupos: Biformes e Uniformes.
+
+- **Substantivos Biformes:** São aqueles que apresentam duas formas distintas, uma para o masculino e outra para o feminino.
+    - _Exemplos:_ lobo/loba, menino/menina, capitão/capitã, poeta/poetisa, boi/vaca, homem/mulher.
+- **Substantivos Uniformes:** São aqueles que possuem uma única forma para se referir a ambos os gêneros. Eles se subdividem em três tipos:
+
+|Classificação|Definição|Exemplos|
+|---|---|---|
+|**Epicenos**|Referem-se a animais e possuem um só gênero gramatical. A distinção do sexo é feita com as palavras "macho" e "fêmea".|**a** águia (macho/fêmea), **a** cobra (macho/fêmea), **o** jacaré (macho/fêmea).|
+|**Sobrecomuns**|Referem-se a pessoas e possuem um só gênero gramatical para designar ambos os sexos.|**a** criança, **o** cônjuge, **a** vítima, **a** testemunha, **o** ídolo, **o** monstro.|
+|**Comuns de Dois Gêneros**|Apresentam uma única forma, mas a distinção de gênero é feita pelo artigo ou por outro determinante que o acompanha.|**o** chefe / **a** chefe, **o** cliente / **a** cliente, **o** artista / **a** artista, **o** jornalista / **a** jornalista.|
