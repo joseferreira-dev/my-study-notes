@@ -798,3 +798,58 @@ Esta conduta também é vedada expressamente na Lei nº 8.112/1990 e configura o
 > 
 > XII - receber propina, comissão, presente ou vantagem de qualquer espécie, em razão de suas atribuições;
 
+##### A Vedação à Falsificação de Documentos (Alínea "h")
+
+> **h)** **alterar ou deturpar o teor de documentos** que deva encaminhar para providências;
+
+Esta vedação protege a **fé pública** e a integridade dos documentos oficiais, que são a materialização e o registro formal dos atos da Administração. Alterar ou deturpar o conteúdo de um documento que está sob a responsabilidade do servidor é uma falta ética gravíssima, pois atenta contra a verdade e a segurança jurídica.
+
+> **Ponto de Atenção: O Crime de Falsidade Ideológica**
+> 
+> A conduta descrita nesta vedação encontra correspondência direta no crime de **falsidade ideológica**, previsto no art. 299 do Código Penal. Este crime ocorre não quando se forja um documento (falsidade material), mas quando se insere uma informação falsa em um documento verdadeiro, com o fim de prejudicar direito, criar obrigação ou alterar a verdade sobre fato juridicamente relevante.
+> 
+> **Art. 299 do Código Penal** - Omitir, em documento público ou particular, declaração que dele devia constar, ou nele inserir ou fazer inserir declaração falsa ou diversa da que devia ser escrita, com o fim de prejudicar direito, criar obrigação ou alterar a verdade sobre fato juridicamente relevante.
+> 
+> A pena é aumentada de sexta parte se o crime for cometido por funcionário público que se prevalece do cargo.
+
+##### A Vedação à Ludibriação do Cidadão (Alínea "i")
+
+> **i)** **iludir ou tentar iludir** qualquer pessoa que necessite do atendimento em serviços públicos;
+
+É vedado ao servidor enganar, induzir a erro ou criar falsas expectativas no cidadão. Esta conduta atenta diretamente contra os deveres de honestidade, lealdade e boa-fé que devem reger a relação entre a Administração e o público.
+
+Essa conduta pode configurar **ato de improbidade administrativa** que atenta contra os princípios da administração pública, conforme o art. 11 da Lei nº 8.429/1992.
+
+##### A Vedação ao Desvio de Pessoal para Fins Particulares (Alínea "j")
+
+> **j)** **desviar servidor público para atendimento a interesse particular**;
+
+Esta é uma vedação clássica contra a confusão entre o público e o privado. É terminantemente proibido utilizar o tempo e o trabalho de um servidor público, cuja remuneração é paga pela coletividade, para a execução de tarefas de natureza particular, seja do próprio chefe ou de terceiros.
+
+- **Exemplos:** Um gestor que determina que o motorista do órgão o leve para compromissos particulares, ou que pede a um assistente administrativo que organize sua agenda de viagens de férias.
+
+Esta conduta é tão grave que também recebe uma **tríplice reprimenda** no ordenamento jurídico:
+
+1. **Falta Ética:** Sujeita o infrator à pena de censura.
+2. **Infração Disciplinar Grave (Lei nº 8.112/1990):**
+    
+    > Art. 117. Ao servidor é proibido:
+    > 
+    > XVI - utilizar pessoal ou recursos materiais da repartição em serviços ou atividades particulares;
+    
+    A violação desta proibição é punível com **DEMISSÃO**.
+    
+3. **Ato de Improbidade Administrativa (Lei nº 8.429/1992):**
+    
+    > Art. 10. Constitui ato de improbidade administrativa que causa lesão ao erário qualquer ação ou omissão, dolosa, que enseje, efetiva e comprovadamente, perda patrimonial, desvio, apropriação, malbaratamento ou dilapidação dos bens ou haveres das entidades referidas no art. 1º desta lei, e notadam1ente:
+    > 
+    > XIII - permitir que se utilize (...) o trabalho de servidor público (...) em obra ou serviço particular.
+
+##### A Vedação à Retirada Indevida de Bens Públicos (Alínea "l")
+
+> **l)** **retirar da repartição pública, sem estar legalmente autorizado**, qualquer documento, livro ou bem pertencente ao patrimônio público;
+
+Esta vedação visa a proteger o patrimônio público. A ressalva "sem estar legalmente autorizado" é fundamental. Um servidor pode, por exemplo, levar um notebook da repartição para casa para realizar trabalho remoto, desde que haja uma autorização formal para isso. A conduta antiética é a retirada clandestina e sem justificativa.
+
+A retirada indevida de um bem público, mesmo que de pequeno valor como uma simples resma de papel, pode configurar o crime de **Peculato**, previsto no art. 312 do Código Penal, que consiste na apropriação, por parte do funcionário público, de bem de que tem a posse em razão do cargo.
+
