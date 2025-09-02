@@ -618,3 +618,53 @@ Este é o dever de **capacitação contínua**. A ética profissional exige que 
 
 Este dever está relacionado ao **decoro** e à imagem da instituição. A adequação das vestimentas não se refere a luxo ou a um padrão estético específico, mas sim à compatibilidade com a formalidade e a natureza do ambiente de trabalho. Uma apresentação pessoal cuidada é uma forma de comunicação não verbal que transmite profissionalismo e respeito ao cidadão e à função pública exercida.
 
+##### O Dever de Atualização e Cumprimento das Normas (Alíneas "q" e "r")
+
+> **q)** manter-se **atualizado** com as instruções, as normas de serviço e a legislação pertinente ao órgão onde exerce suas funções;
+> 
+> **r)** **cumprir**, de acordo com as normas do serviço e as instruções superiores, as tarefas de seu cargo ou função, tanto quanto possível, com **critério, segurança e rapidez**, mantendo tudo sempre em boa ordem.
+
+Estes dois deveres, que se complementam, tratam da **competência técnica** como um pilar da conduta ética. Um servidor ético é, necessariamente, um servidor competente e diligente.
+
+O dever de **manter-se atualizado** é uma obrigação proativa. Não basta que o servidor aplique as normas que aprendeu ao ingressar no cargo; ele tem o dever de acompanhar as mudanças na legislação e nas instruções de serviço que afetam seu trabalho, garantindo que sua atuação esteja sempre em conformidade com as regras vigentes.
+
+<div align="center">
+<img width="580px" src="./img/decreto-1171-atualizacao.png">
+</div>
+
+O dever de **cumprir as tarefas** estabelece o padrão de qualidade esperado para a execução do serviço. A tarefa deve ser realizada com:
+
+- **Critério:** Com discernimento, bom senso e análise.
+- **Segurança:** De forma a garantir a validade jurídica do ato e a segurança para a Administração e para o cidadão.
+- **Rapidez:** Em observância ao princípio da eficiência, evitando a morosidade.
+
+##### O Dever de Moderação e a Vedação ao Desvio de Finalidade (Alíneas "t" e "u")
+
+> **t)** exercer com **estrita moderação as prerrogativas funcionais** que lhe sejam atribuídas, abstendo-se de fazê-lo contrariamente aos legítimos interesses dos usuários do serviço público e dos jurisdicionados administrativos;
+> 
+> **u)** **abster-se, de forma absoluta, de exercer sua função, poder ou autoridade com finalidade estranha ao interesse público**, mesmo que observando as formalidades legais e não cometendo qualquer violação expressa à lei;
+
+Estes incisos tratam de um dos temas mais sensíveis da ética pública: o **abuso de poder**. O servidor público detém prerrogativas que o cidadão comum не possui. O dever ético impõe que essas prerrogativas sejam usadas com "estrita moderação" e exclusivamente para o cumprimento do interesse público.
+
+A prática de usar o cargo para obter vantagens ou se impor em situações privadas, conhecida popularmente como **"carteirada"**, é uma violação direta deste dever. Como afirma o ditado, o poder tende a corromper, e a ética exige uma vigilância constante para que o cargo não "suba à cabeça".
+
+A alínea "u" é particularmente importante, pois consagra a vedação ao **desvio de finalidade**. Este é um vício que contamina o ato administrativo quando o agente, embora atuando dentro de suas competências legais, o pratica por motivos ou com fins diversos daqueles que a lei prevê.
+
+<div align="center">
+<img width="640px" src="./img/decreto-1171-abstencao.png">
+</div>
+
+- **Exemplo:** Um chefe de setor possui a competência legal para remover um servidor de sua equipe. Se ele o faz para melhor adequar o serviço, o ato é válido. Contudo, se ele remove o servidor como forma de punição ou perseguição pessoal, o ato, embora formalmente legal, está viciado pelo desvio de finalidade e é, portanto, nulo e antiético.
+
+> **Ponto de Atenção: O Crime de Prevaricação**
+> 
+> A conduta de exercer a função para satisfazer interesse ou sentimento pessoal, descrita neste dever ético, encontra uma correspondência direta no Código Penal, no crime de **prevaricação**:
+> 
+> > **Art. 319 do Código Penal:** Retardar ou deixar de praticar, indevidamente, ato de ofício, ou praticá-lo contra disposição expressa de lei, para **satisfazer interesse ou sentimento pessoal**.
+
+##### O Dever de Disseminação do Código de Ética (Alínea "v")
+
+> **v)** **divulgar e informar** a todos os integrantes da sua classe sobre a existência deste Código de Ética, estimulando o seu integral cumprimento.
+
+Este último dever estabelece que cada servidor público é um multiplicador da cultura ética. Não basta conhecer e cumprir o código; é dever de todos divulgá-lo entre seus pares e estimular sua observância. O Código de Ética não é um documento restrito às Comissões de Ética, mas um guia que deve ser de conhecimento e prática de toda a coletividade do serviço público.
+
