@@ -660,11 +660,89 @@ A alínea "u" é particularmente importante, pois consagra a vedação ao **desv
 > 
 > A conduta de exercer a função para satisfazer interesse ou sentimento pessoal, descrita neste dever ético, encontra uma correspondência direta no Código Penal, no crime de **prevaricação**:
 > 
-> > **Art. 319 do Código Penal:** Retardar ou deixar de praticar, indevidamente, ato de ofício, ou praticá-lo contra disposição expressa de lei, para **satisfazer interesse ou sentimento pessoal**.
+> **Art. 319 do Código Penal:** Retardar ou deixar de praticar, indevidamente, ato de ofício, ou praticá-lo contra disposição expressa de lei, para **satisfazer interesse ou sentimento pessoal**.
 
 ##### O Dever de Disseminação do Código de Ética (Alínea "v")
 
 > **v)** **divulgar e informar** a todos os integrantes da sua classe sobre a existência deste Código de Ética, estimulando o seu integral cumprimento.
 
 Este último dever estabelece que cada servidor público é um multiplicador da cultura ética. Não basta conhecer e cumprir o código; é dever de todos divulgá-lo entre seus pares e estimular sua observância. O Código de Ética não é um documento restrito às Comissões de Ética, mas um guia que deve ser de conhecimento e prática de toda a coletividade do serviço público.
+
+### Seção III – Das Vedações ao Servidor Público
+
+Enquanto a Seção II do Código de Ética se dedica a estabelecer os deveres, ou seja, as condutas positivas que são esperadas do servidor, a Seção III trata das **vedações**. Estas são as condutas negativas, os atos que são expressamente **proibidos** ao agente público por atentarem contra os princípios éticos e a moralidade administrativa.
+
+É importante notar que muitas das vedações listadas nesta seção possuem correspondência direta com as proibições do regime disciplinar da Lei nº 8.112/1990 e com os atos de improbidade administrativa. Isso reforça a ideia de que a conduta antiética, muitas vezes, também constitui uma infração de natureza legal.
+
+A seguir, apresentamos a lista das vedações e, na sequência, iniciaremos a análise pormenorizada de cada uma delas.
+
+> **XV - É vedado ao servidor público:**
+> 
+> a) o uso do cargo ou função, facilidades, amizades, tempo, posição e influências, para obter qualquer favorecimento, para si ou para outrem;
+> 
+> b) prejudicar deliberadamente a reputação de outros servidores ou de cidadãos que deles dependam;
+> 
+> c) ser, em função de seu espírito de solidariedade, conivente com erro ou infração a este Código de Ética ou ao Código de Ética de sua profissão;
+> 
+> d) usar de artifícios para procrastinar ou dificultar o exercício regular de direito por qualquer pessoa, causando-lhe dano moral ou material;
+> 
+> e) deixar de utilizar os avanços técnicos e científicos ao seu alcance ou do seu conhecimento para atendimento do seu mister;
+> 
+> f) permitir que perseguições, simpatias, antipatias, caprichos, paixões ou interesses de ordem pessoal interfiram no trato com o público, com os jurisdicionados administrativos ou com colegas hierarquicamente superiores ou inferiores;
+> 
+> g) pleitear, solicitar, provocar, sugerir ou receber qualquer tipo de ajuda financeira, gratificação, prêmio, comissão, doação ou vantagem de qualquer espécie, para si, familiares ou qualquer pessoa, para o cumprimento da sua missão ou para influenciar outro servidor para o mesmo fim;
+> 
+> h) alterar ou deturpar o teor de documentos que deva encaminhar for providências;
+> 
+> i) iludir ou tentar iludir qualquer pessoa que necessite do atendimento em serviços públicos;
+> 
+> j) desviar servidor público para atendimento a interesse particular;
+> 
+> l) retirar da repartição pública, sem estar legalmente autorizado, qualquer documento, livro ou bem pertencente ao patrimônio público;
+> 
+> m) fazer uso de informações privilegiadas obtidas no âmbito interno de seu serviço, em benefício próprio, de parentes, de amigos ou de terceiros;
+> 
+> n) apresentar-se embriagado no serviço ou fora dele habitualmente;
+> 
+> o) dar o seu concurso a qualquer instituição que atente contra a moral, a honestidade ou a dignidade da pessoa humana;
+> 
+> p) exercer atividade profissional aética ou ligar o seu nome a empreendimentos de cunho duvidoso.
+
+Iremos tratar de cada uma a seguir.
+
+#### Análise Detalhada das Vedações
+
+A Seção III do Código de Ética detalha as condutas que são expressamente proibidas ao servidor público. Analisaremos cada uma delas.
+
+##### A Vedação ao Uso do Cargo para Obtenção de Favorecimento (Alínea "a")
+
+> XV - É vedado ao servidor público:
+> 
+> a) o uso do cargo ou função, facilidades, amizades, tempo, posição e influências, para obter qualquer favorecimento, para si ou para outrem;
+
+Esta é uma das vedações mais importantes, pois atinge o cerne de uma prática culturalmente conhecida como o "jeitinho brasileiro". A norma proíbe de forma taxativa que o servidor utilize qualquer aspecto de sua posição pública — seja o cargo em si, o tempo de trabalho, as informações a que tem acesso ou a influência que possui — para obter vantagens indevidas.
+
+O "favorecimento" aqui deve ser entendido em seu sentido mais amplo. Ele abrange não apenas vantagens econômicas (como propinas ou presentes), mas também privilégios e benesses imateriais, como furar uma fila, agilizar um trâmite interno para um amigo ou familiar, ou obter um tratamento diferenciado que não seria concedido ao cidadão comum. A vedação se aplica tanto quando o favorecimento é para o próprio servidor quanto quando é para terceiros.
+
+- **Exemplo Prático:** O caso noticiado pela Revista VEJA em 2008, envolvendo a então ministra do Turismo, Marta Suplicy, ilustra a aplicação desta vedação. Ao tentar utilizar sua posição de autoridade para não passar pela inspeção de segurança em um aeroporto, a ministra estaria se valendo do cargo para obter um favorecimento (a isenção de um procedimento aplicável a todos os outros passageiros), o que gerou reação dos demais cidadãos e do comandante da aeronave.
+
+###### A Tríplice Reprimenda: A Esfera Ética, a Administrativa e a Penal
+
+A conduta de se valer do cargo para obter vantagens indevidas é tão grave que ela é reprimida em três esferas distintas do ordenamento jurídico:
+
+1. **A Falta Ética (Decreto nº 1.171/1994):** É a violação direta desta alínea, sujeitando o servidor à penalidade de **censura**, aplicada pela Comissão de Ética.
+2. **A Infração Administrativa (Lei nº 8.112/1990):** A mesma conduta é tipificada como uma proibição no Estatuto dos Servidores, sujeita a uma penalidade muito mais severa.
+    > Art. 117. Ao servidor é proibido:
+    > 
+    > IX - valer-se do cargo para lograr proveito pessoal ou de outrem, em detrimento da dignidade da função pública;
+
+    A violação desta proibição é punível com a pena de **DEMISSÃO**.
+
+3. **O Crime de Corrupção Passiva (Código Penal):** Em muitos casos, o uso do cargo para obter vantagens pode configurar o crime de corrupção passiva.
+
+    > Art. 317 - Solicitar ou receber, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida, ou aceitar promessa de tal vantagem:
+    > 
+    > Pena – reclusão, de 2 (dois) a 12 (doze) anos, e multa.
+
+    No crime de corrupção passiva, ocorre uma espécie de "negociação" da função pública. O sujeito ativo do crime é o funcionário público, e o sujeito passivo (a vítima) é o Estado. A mera **solicitação** da vantagem indevida, mesmo que não seja paga, já é suficiente para configurar o crime.
 
