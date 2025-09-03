@@ -1048,3 +1048,36 @@ A seguir, uma lista de referência com as principais circunstâncias e os advér
 - **A Omissão do Sufixo "-mente":** Quando dois ou mais advérbios terminados em "-mente" modificam o mesmo verbo em uma estrutura coordenada, é comum e elegante omitir o sufixo do primeiro, mantendo-o apenas no último.
     - _Exemplo:_ Ele agiu **rápida** e **silenciosamente**.
     - **Atenção:** Na frase acima, a palavra "rápida" continua sendo morfologicamente um **advérbio** (por elipse do sufixo). Sua função sintática é de adjunto adverbial de modo, pois modifica o verbo "agiu", e não de adjetivo, pois não caracteriza um substantivo.
+
+### O Advérbio de Forma Adjetiva
+
+Um dos fenômenos mais interessantes da língua é a **derivação imprópria**, processo pelo qual uma palavra de uma classe é empregada com a função de outra, sem que sua forma se altere. Um caso clássico, e muito cobrado em provas, ocorre quando palavras originalmente da classe dos **adjetivos** são utilizadas para modificar um **verbo**.
+
+Quando isso acontece, a palavra, apesar de ter a "aparência" de um adjetivo, assume o papel e a característica principal de um **advérbio de modo**: ela se torna **invariável**.
+
+- _Exemplos:_
+    - Ele fala **grosso**.
+    - Os atletas jogaram **limpo**.
+    - Esta caneta custa **caro**.
+    - A cerveja que desce **redondo**.
+
+Nesses casos, as palavras "grosso", "limpo", "caro" e "redondo" não estão caracterizando um substantivo, mas sim indicando o **modo** como as ações de "falar", "jogar", "custar" e "descer" ocorrem.
+
+> **Foco de Prova: O Teste da Variação**
+> 
+> Para ter certeza de que uma palavra com forma de adjetivo está, de fato, funcionando como um advérbio, basta aplicar um teste simples de concordância: flexione o substantivo ou o sujeito da frase em gênero ou número.
+> 
+> 1. **Se a palavra em questão variar** para concordar com o substantivo, ela é um **adjetivo**.
+> 2. **Se a palavra em questão permanecer invariável**, ela está funcionando como **advérbio**.
+
+Vamos aplicar o teste aos exemplos:
+
+|Frase Original|Sujeito/Substantivo Flexionado|Análise|
+|---|---|---|
+|Ele fala **grosso**.|Elas falam **grosso**.|"Grosso" não variou → **Advérbio**|
+|A cerveja desce **redondo**.|As cervejas descem **redondo**.|"Redondo" não variou → **Advérbio**|
+|O jogador chutou **forte**.|As jogadoras chutaram **forte**.|"Forte" não variou → **Advérbio**|
+|Esta blusa custou **caro**.|Estas blusas custaram **caro**.|"Caro" não variou → **Advérbio**|
+|**Contraste:** O carro é **caro**.|Os carros são **caros**.|"Caros" variou para concordar com "carros" → **Adjetivo**|
+
+Dominar essa distinção é fundamental, pois as bancas frequentemente constroem questões que exigem a correta classificação de termos como estes, testando a capacidade do candidato de diferenciar a classe morfológica original da função sintática exercida na frase.
