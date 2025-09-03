@@ -602,3 +602,58 @@ Suas principais características são:
 | carne **bovina**         | Tipo/Espécie           | É a carne que vem do boi.                                                                       |
 
 O reconhecimento dos adjetivos de relação é importante para questões de semântica e de reescrita, pois sua posição e gradação são rígidas, ao contrário dos adjetivos opinativos.
+
+### O Papel Sintático do Adjetivo
+
+A análise morfológica e a sintática são, como já vimos, indissociáveis. A classe gramatical de uma palavra (sua identidade morfológica) a habilita para exercer certas funções na frase (seu papel sintático). O adjetivo, por sua natureza qualificadora e por sua ligação intrínseca com o substantivo, desempenha dois papéis sintáticos principais.
+
+1. **Adjunto Adnominal:** É a função mais comum do adjetivo. Ocorre quando o adjetivo está diretamente ligado ao substantivo, dentro do mesmo sintagma nominal, modificando-o sem o intermédio de um verbo.
+    - _Exemplos:_
+        - O carro **velho** quebrou.
+        - Comprei uma mesa **redonda**.
+        - Li um livro **interessante**.
+
+2. **Predicativo (do Sujeito ou do Objeto):** Ocorre quando o adjetivo, apesar de se referir a um substantivo (o sujeito ou o objeto), está posicionado no predicado e se liga a esse nome por meio de um verbo. Ele atribui uma característica ao substantivo de forma indireta.
+    - **Predicativo do Sujeito:** A característica é atribuída ao sujeito.
+        - _Exemplo:_ João está **chato**. / A prova parecia **difícil**.
+    - **Predicativo do Objeto:** A característica é atribuída ao objeto (direto ou indireto).
+        - _Exemplo:_ Considerei o filme **chato**. / O juiz julgou o réu **culpado**.
+
+> **Foco de Prova: "Ser Adjetivo" vs. "Ter Valor Adjetivo"**
+> 
+> As bancas examinadoras frequentemente exploram a diferença entre a **classe** de uma palavra e a **função** que ela exerce. É fundamental entender que "ter valor adjetivo" não significa necessariamente "ser da classe dos adjetivos".
+> 
+> **Ter valor adjetivo** significa desempenhar a função sintática de **Adjunto Adnominal**, ou seja, modificar diretamente um substantivo. Diversas classes de palavras podem fazer isso.
+> 
+> Vamos analisar a estrutura "O meu violão novo":
+
+|Termo|Classe Morfológica|Função Sintática|Tem Valor Adjetivo?|É um Adjetivo?|
+|---|---|---|---|---|
+|**O**|Artigo|Adjunto Adnominal|Sim|Não|
+|**meu**|Pronome Possessivo|Adjunto Adnominal|Sim|Não|
+|**novo**|Adjetivo|Adjunto Adnominal|Sim|**Sim**|
+
+> Portanto, se uma questão pede para identificar um termo de "valor adjetivo", a resposta pode ser um artigo, um pronome ou um numeral, além do próprio adjetivo.
+
+#### Pronomes e Numerais: A Dupla Função
+
+A distinção acima fica muito clara na classificação de pronomes e numerais, que podem ser **adjetivos** (quando acompanham o nome) ou **substantivos** (quando o substituem).
+
+- **Pronome/Numeral Adjetivo (acompanha o substantivo):**
+    - _Exemplos:_
+        - **Minhas** mãos estão limpas.
+        - **Dois** irmãos estão doentes.
+- **Pronome/Numeral Substantivo (substitui o substantivo):**
+    - _Exemplos:_
+        - Lave as **suas** [mãos].
+        - Ajudarei os **dois** [irmãos].
+
+#### A Posição na Frase: Diferenciando Adjunto Adnominal de Predicativo
+
+Uma dica estrutural para diferenciar as duas funções do adjetivo é observar sua posição em relação ao substantivo a que se refere.
+
+- **Adjunto Adnominal:** O adjetivo está "junto ao nome", dentro do mesmo bloco sintático.
+    - _Exemplo:_ [A vida **solitária**] dura menos. (O adjetivo "solitária" faz parte do sujeito "A vida solitária").
+- **Predicativo:** O adjetivo está "separado" do nome por um verbo.
+    - _Exemplo:_ [**A vida**] está **solitária**. (O adjetivo "solitária" está no predicado, caracterizando o sujeito "A vida" através do verbo "está").
+    - _Exemplo:_ Acho [**a vida**] muito **solitária**. (O adjetivo "solitária" está no predicado, caracterizando o objeto "a vida" através do verbo "Acho").
