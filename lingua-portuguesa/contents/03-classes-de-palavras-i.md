@@ -436,3 +436,88 @@ Além disso, os pronomes podem ser classificados como **pronome adjetivo** (quan
     - **O porquê** (conjunção) da demissão não foi explicado.
 
 Este estudo da relação entre a classe e a função sintática será aprofundado nos próximos capítulos, mas a centralidade do substantivo como núcleo das estruturas nominais é a base para toda essa análise.
+
+## Adjetivo
+
+O adjetivo é a classe de palavra **variável** cuja função principal é modificar um substantivo ou um termo de valor substantivo (como um pronome), atribuindo-lhe uma característica, qualidade, estado ou condição. Ele atua como um "satélite" do substantivo, especificando ou restringindo seu sentido e, por ser uma classe variável, deve concordar com o nome a que se refere em gênero (masculino/feminino) e número (singular/plural).
+
+- **Exemplos no singular:** _homem **mau**, mulher **simples**, céu **azul**, casa **arruinada**._
+- **Exemplos no plural:** _homens **maus**, mulheres **simples**, céus **azuis**, casas **arruinadas**._
+
+Sintaticamente, o adjetivo desempenha principalmente duas funções: a de **adjunto adnominal**, quando está diretamente ligado ao nome, e a de **predicativo** (do sujeito ou do objeto), quando se liga ao nome por meio de um verbo.
+
+### Classificação dos Adjetivos
+
+Os adjetivos podem ser classificados segundo diferentes critérios, como sua formação e o tipo de significado que expressam.
+
+#### Quanto à Formação
+
+- **Simples:** Formado por um único radical.
+    - _Exemplos:_ estilo **literário**, homem **bom**, camisa **verde**.
+- **Composto:** Formado por mais de um radical.
+    - _Exemplos:_ estilo **lítero-musical**, camisa **verde-clara**, problema **socioeconômico**.
+- **Primitivo:** É a forma original, que não deriva de outra palavra.
+    - _Exemplos:_ **bom**, **belo**, **claro**, **triste**.
+- **Derivado:** É formado a partir de outra palavra (substantivo, verbo ou outro adjetivo).
+    - _Exemplos:_ **bondoso** (de bom), **embelezar** (de belo), **clarear** (de claro), **entristecer** (de triste).
+
+#### Quanto ao Significado
+
+- **Explicativo:** Indica uma qualidade que é inerente, própria e universal do ser.
+    - _Exemplos:_ homem **mortal**, neve **fria**, fogo **quente**. (Todo homem é mortal, toda neve é fria).
+- **Restritivo:** Indica uma qualidade que não é inerente ao ser, servindo para particularizá-lo e distingui-lo do resto de sua espécie.
+    - _Exemplos:_ homem **valente**, fruta **madura**, aluno **inteligente**. (Nem todo homem é valente, nem toda fruta é madura).
+
+### Flexão de Gênero do Adjetivo
+
+Quanto à flexão de gênero, os adjetivos se dividem em dois grupos:
+
+- **Biformes:** Apresentam duas formas distintas, uma para o masculino e outra para o feminino.
+    - _Exemplos:_ ativ**o**/ativ**a**, brasileir**o**/brasileir**a**, cru**el**/cru**a**.
+- **Uniformes:** Apresentam uma única forma que serve tanto para o masculino quanto para o feminino. Geralmente, são os terminados em -a, -e, -l, -ar, -s, -z, -m.
+
+|Terminação|Exemplo de Uso|
+|---|---|
+|**-a**|homem hipócrit**a** / mulher hipócrit**a**|
+|**-e**|candidato competent**e** / candidata competent**e**|
+|**-l**|serviço amáve**l** / pessoa amáve**l**|
+|**-ar**|costume singul**ar** / beleza singul**ar**|
+|**-s**|homem simpl**es** / mulher simpl**es**|
+|**-z**|rapaz feli**z** / moça feli**z**|
+|**-m**|olhar ru**im** / pessoa ru**im**|
+
+### Adjetivos Pátrios e Gentílicos
+
+São os adjetivos que indicam a origem ou a procedência geográfica de um ser. O termo "gentílico" é mais amplo (povos, raças), enquanto "pátrio" se refere a continentes, países, estados e cidades. Na prática, são usados como sinônimos.
+
+É importante notar que os adjetivos pátrios são sempre grafados com **letra inicial minúscula**.
+
+A tabela a seguir mostra alguns sufixos comuns na formação desses adjetivos:
+
+|Sufixo|Exemplos|
+|---|---|
+|**-ês/-esa**|portugu**ês**, ingl**ês**, franc**esa**, japon**ês**|
+|**-ano/-ana**|americ**ano**, goia**no**, italia**na**, africa**no**|
+|**-ense**|ceaar**ense**, estadunid**ense**, flumin**ense**|
+|**-eiro**|brasil**eiro**, min**eiro**|
+|**-ista**|paul**ista**|
+|**-eu/-eia**|europ**eu**, europ**eia**|
+|**-ino/-ina**|argent**ino**, nordest**ina**|
+
+### Estruturas com Valor de Adjetivo
+
+A função de caracterizar um substantivo não é exclusiva do adjetivo. Outras estruturas, como as locuções e as orações, podem exercer o mesmo papel.
+
+- **Locução Adjetiva:** É a união de duas ou mais palavras (geralmente `preposição + substantivo`) que equivale a um adjetivo.
+    - _Exemplos:_
+        - cidadão **inglês** → cidadão **da Inglaterra**
+        - amor **materno** → amor **de mãe**
+        - energia **solar** → energia **do sol**
+- **Oração Subordinada Adjetiva:** É uma oração inteira, introduzida por um pronome relativo, que funciona como um adjetivo, caracterizando um termo anterior.
+    - _Exemplos:_
+        - cidadão **inglês** → cidadão **que é nativo da Inglaterra**
+        - problema **insolúvel** → problema **que não tem solução**
+- **Substantivação do Adjetivo:** Por meio da derivação imprópria, um adjetivo pode ser transformado em substantivo ao ser precedido por um artigo ou outro determinante.
+    - _Exemplo:_ O céu **azul** me tranquiliza. (Adjetivo)
+    - _Exemplo:_ **O azul** do céu me tranquiliza. (Adjetivo substantivado)
+
