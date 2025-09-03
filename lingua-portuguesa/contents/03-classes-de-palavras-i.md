@@ -121,3 +121,61 @@ Quanto ao gênero, os substantivos podem ser classificados em dois grandes grupo
 |**Epicenos**|Referem-se a animais e possuem um só gênero gramatical. A distinção do sexo é feita com as palavras "macho" e "fêmea".|**a** águia (macho/fêmea), **a** cobra (macho/fêmea), **o** jacaré (macho/fêmea).|
 |**Sobrecomuns**|Referem-se a pessoas e possuem um só gênero gramatical para designar ambos os sexos.|**a** criança, **o** cônjuge, **a** vítima, **a** testemunha, **o** ídolo, **o** monstro.|
 |**Comuns de Dois Gêneros**|Apresentam uma única forma, mas a distinção de gênero é feita pelo artigo ou por outro determinante que o acompanha.|**o** chefe / **a** chefe, **o** cliente / **a** cliente, **o** artista / **a** artista, **o** jornalista / **a** jornalista.|
+
+### Formação dos Substantivos
+
+Compreender como os substantivos são formados é uma maneira eficaz de reconhecê-los em um texto e de ampliar o vocabulário. A grande maioria dos substantivos da língua portuguesa surge a partir de quatro processos principais: derivação sufixal, derivação regressiva, derivação imprópria e composição.
+
+#### Derivação por Afixação
+
+Este é o processo mais comum, no qual novas palavras (derivadas) são criadas a partir de outras já existentes (primitivas) pelo acréscimo de afixos (prefixos e sufixos).
+
+- **Substantivos Primitivos:** São aqueles que dão origem a outras palavras e não possuem afixos.
+    - _Exemplos:_ pedra, fogo, terra, chuva, feliz.
+- **Substantivos Derivados:** São formados a partir de um primitivo.
+    - _Exemplos:_ **pedr**eiro (sufixo), **terr**estre (sufixo), **in**feliz (prefixo), **in**felicidade (prefixo e sufixo).
+
+O processo mais produtivo para a criação de novos substantivos é a **derivação sufixal**, em que um sufixo é adicionado a um verbo, adjetivo ou outro substantivo. Conhecer os principais sufixos formadores de substantivos ("sufixos substantivadores") é de grande ajuda.
+
+| Sufixo                     | Ideia que Expressa         | Exemplo de Formação                                                                   |
+| -------------------------- | -------------------------- | ------------------------------------------------------------------------------------- |
+| **-ada**                   | Ação, golpe, marca         | faca → fac**ada**; cabeça → cabeç**ada**                                              |
+| **-agem, -ugem**           | Coleção, conjunto, estado  | folha → folh**agem**; pena → pen**ugem**                                              |
+| **-eiro, -aria, -ário**    | Profissão, ofício, lugar   | açougue → açougu**eiro**; sorvete → sorvet**eria**; banco → banc**ário**              |
+| **-ista**                  | Ocupação, adepto de        | contabilidade → contabil**ista**; social → social**ista**                             |
+| **-dade, -ice, -ez, -eza** | Qualidade, estado          | bom → bon**dade**; velho → velh**ice**; insensato → insensat**ez**; belo → bel**eza** |
+| **-ção, -são, -mento**     | Ação ou resultado da ação  | corromper → corrup**ção**; dissolver → dissolu**ção**; casar → casa**mento**          |
+| **-tude, -idão**           | Qualidade, estado abstrato | alto → alti**tude**; grato → grat**idão**                                             |
+| **-ia, -ura**              | Qualidade, estado          | alegre → alegr**ia**; eufórico → eufor**ia**; feio → fei**ura**                       |
+| **-ite**                   | Inflamação                 | apêndice → apendic**ite**; brônquios → bronqu**ite**                                  |
+
+#### Derivação Regressiva
+
+Neste processo, em vez de se adicionar um afixo, **retira-se a parte final de um verbo** para formar um substantivo, geralmente abstrato, que nomeia a ação. São os chamados substantivos deverbais.
+
+- _Exemplos:_
+    - cant**ar** → o cant**o**
+    - almoç**ar** → o almoç**o**
+    - compr**ar** → a compr**a**
+    - atac**ar** → o ataqu**e**
+    - chor**ar** → o chor**o**
+
+#### Derivação Imprópria (ou Conversão)
+
+A derivação imprópria é um processo de formação de palavras que ocorre **sem qualquer alteração na forma** da palavra primitiva. Uma palavra de uma determinada classe é "convertida" em um substantivo simplesmente por ser empregada em um novo contexto, geralmente precedida por um artigo ou outro determinante.
+
+É o poder do artigo de **substantivar** qualquer classe gramatical.
+
+- **Verbo → Substantivo:**
+    - Os verbos possuem formas nominais (infinitivo, gerúndio, particípio) que podem ser facilmente substantivadas.
+    - _Exemplos:_ **O fazer** é mais importante que o falar. / **O jantar** será servido às 20h. / Ele tem um **olhar** penetrante.
+- **Adjetivo → Substantivo:**
+    - _Exemplo:_ Os **bons** sempre vencem no final. / A **bela** adormecida acordou.
+- **Advérbio → Substantivo:**
+    - _Exemplo:_ Receber um **não** é sempre difícil.
+- **Conjunção → Substantivo:**
+    - _Exemplo:_ Não entendi **o porém** que você colocou no seu argumento.
+- **Numeral → Substantivo:**
+    - _Exemplo:_ O **sete** é considerado um número de sorte.
+
+Conhecer esses mecanismos de formação e transformação de palavras é uma ferramenta valiosa, pois permite reconhecer a função de um substantivo mesmo quando ele se apresenta de forma atípica.
