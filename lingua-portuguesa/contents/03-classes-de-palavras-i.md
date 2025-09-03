@@ -712,3 +712,58 @@ A famosa frase de Machado de Assis em _Memórias Póstumas de Brás Cubas_ é o 
 
 - **Dica de Análise:** Quando for difícil determinar qual é o substantivo e qual é o adjetivo (ex: _sábio religioso_), a tendência lógica da língua é considerar o primeiro termo como o substantivo (núcleo) e o segundo como o adjetivo (característica).
 
+### Locuções Adjetivas e a Distinção com o Complemento Nominal
+
+Como vimos, o adjetivo é a palavra que caracteriza o substantivo. No entanto, muitas vezes essa caracterização é feita por um conjunto de palavras, e não por uma única. A esse conjunto, damos o nome de **locução adjetiva**.
+
+A estrutura mais comum de uma locução adjetiva é **`preposição + substantivo`**. Sintaticamente, essa locução desempenha a função de **adjunto adnominal**, pois está "junto ao nome", modificando-o.
+
+- _Exemplos:_
+    - Homem **sem coragem** (locução adjetiva) = Homem **covarde** (adjetivo)
+    - Rosto **de anjo** (locução adjetiva) = Rosto **angelical** (adjetivo)
+
+O grande desafio, e um ponto de alta incidência em provas, é que nem toda expressão no formato `preposição + substantivo` que se liga a um nome é uma locução adjetiva. Em alguns casos, essa expressão será um **complemento nominal**.
+
+A banca examinadora explora essa diferença ao perguntar qual termo exerce "valor adjetivo" (função de adjunto adnominal) e qual não exerce (função de complemento nominal). Embora o tema seja aprofundado em Sintaxe, a distinção pode ser feita a partir de critérios semânticos.
+
+> **Foco de Prova: Adjunto Adnominal (Locução Adjetiva) vs. Complemento Nominal**
+> 
+> A diferença fundamental entre os dois reside na relação que o termo preposicionado estabelece com o substantivo anterior.
+
+| Critério               | Adjunto Adnominal (Locução Adjetiva)                                                                                                  | Complemento Nominal                                                                                            |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Relação Semântica**  | Expressa uma ideia **ATIVA (de agente)**, de **posse**, pertinência, matéria, origem, etc.                                            | Expressa uma ideia **PASSIVA (de paciente ou alvo)** da ação contida no nome.                                  |
+| **Termo Anterior**     | Pode se ligar a substantivos **concretos** ou **abstratos**.                                                                          | Liga-se a substantivos **abstratos**, adjetivos ou advérbios que pedem um complemento.                         |
+| **Dependência**        | É um termo acessório, que acrescenta uma característica (como um adjetivo faria).                                                     | É um termo integrante, que completa um sentido que estaria vago. A palavra anterior "pede" esse complemento.   |
+| **Exemplo de Análise** | As músicas **do pianista** são lindas. <br>(Análise: O pianista **possui** ou **compõe** as músicas. Relação de posse/agente. Ativo.) | A invenção **do carro** mudou o mundo. <br>(Análise: O carro **foi inventado**. Relação de paciente. Passivo.) |
+
+Vamos aplicar essa lógica:
+
+- **Locução Adjetiva (Adjunto Adnominal):**
+    - _O processamento **do computador** é rápido._
+        - **Análise:** O computador **processa** (agente, ativo). O termo "processamento" não exige um complemento obrigatório. "Do computador" especifica o tipo de processamento. Logo, é uma locução adjetiva.
+- **Complemento Nominal:**
+    - _A construção **do muro** foi demorada._
+        - **Análise:** O muro **foi construído** (paciente, passivo). O substantivo abstrato "construção" deixa uma pergunta no ar ("construção de quê?"), exigindo um complemento. Logo, é um complemento nominal.
+
+#### Tabela de Correspondência: Locuções Adjetivas Comuns
+
+A seguir, uma lista de referência com locuções adjetivas e seus adjetivos correspondentes, que auxiliam no reconhecimento e enriquecem o vocabulário.
+
+|Locução Adjetiva|Adjetivo|Locução Adjetiva|Adjetivo|
+|---|---|---|---|
+|de aluno|discente|de madeira|lígneo|
+|de anjo|angelical|de monge|monacal|
+|de boi|bovino|de orelha|auricular|
+|de estômago|gástrico|de ouro|áureo|
+|de paixão|passional|de ovelha|ovino|
+|de frente|frontal|de porco|suíno, porcino|
+|de irmão|fraternal|de prata|argênteo|
+|de lago|lacustre|de sonho|onírico|
+|de leão|leonino|de terra|telúrico, terrestre|
+|de lebre|leporino|de trás|traseiro|
+|de lobo|lupino|de velho|senil|
+|de lua|lunar, selênico|de vento|eólico|
+|de mestre|magistral|de vidro|vítreo, hialino|
+
+Lembre-se: nem sempre existirá um adjetivo correspondente. O critério mais seguro é sempre a análise da relação semântica (ativa/posse vs. passiva) entre os termos.
