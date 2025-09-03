@@ -159,3 +159,60 @@ A mesma lógica se aplica a **muito(s)** e **pouco(s)**: quando modificam substa
     - As pessoas estavam **muito** animadas. (Advérbio)
     - **Poucos** candidatos foram aprovados. (Pronome Indefinido)
     - Os candidatos estavam **pouco** preparados. (Advérbio)
+
+### Pronomes Possessivos: A Expressão da Posse
+
+Os pronomes possessivos são palavras variáveis que indicam uma relação de **posse** ou **pertencimento** entre os seres ou objetos e as pessoas do discurso (o possuidor).
+
+A tabela a seguir apresenta os pronomes possessivos correspondentes a cada pessoa do discurso:
+
+|Pessoa do Discurso|Singular|Plural|
+|---|---|---|
+|**1ª pessoa** (eu/nós)|meu, minha|meus, minhas, nosso, nossa, nossos, nossas|
+|**2ª pessoa** (tu/vós)|teu, tua|teus, tuas, vosso, vossa, vossos, vossas|
+|**3ª pessoa** (ele/ela/eles/elas)|seu, sua|seus, suas|
+
+#### As Regras de Concordância
+
+A concordância do pronome possessivo segue uma regra fundamental que pode gerar dúvidas: ele concorda em gênero e número com a **coisa possuída** (o substantivo que ele determina), e não necessariamente com a pessoa do possuidor.
+
+- **Exemplo 1:** Eu respeito **o Português** por **sua importância** na prova.
+    - **Análise:** O pronome **sua** está no feminino singular para concordar com o substantivo **importância** (a coisa possuída), mesmo que o possuidor, **o Português**, seja um termo masculino.
+
+- **Exemplo 2:** **Ela** guardou **seus documentos** na pasta.
+    - **Análise:** O pronome **seus** está no masculino plural para concordar com o substantivo **documentos**, e não com a possuidora, **Ela**, que é do gênero feminino.
+
+Sintaticamente, quando acompanha um nome, o pronome possessivo exerce sempre a função de **adjunto adnominal**.
+
+#### A Ambiguidade de "Seu/Sua"
+
+Como o pronome "seu" (e suas variações) pode se referir tanto à 3ª pessoa do discurso (`ele/dela`) quanto à pessoa com quem se fala (`você`), seu uso pode gerar ambiguidade em certas frases.
+
+- **Frase Ambigua:** Maria disse a João que **sua** irmã ligou.
+    - **Dúvida:** A irmã é de Maria ou de João?
+
+Para garantir a clareza, a norma padrão recomenda o uso das formas **dele(s)** e **dela(s)** para desfazer a ambiguidade.
+
+- **Para esclarecer:**
+    - Maria disse a João que a irmã **dele** ligou. (A irmã de João).
+    - Maria disse a João que a irmã **dela** ligou. (A irmã de Maria).
+
+
+#### O Valor Possessivo dos Pronomes Oblíquos
+
+Um ponto de análise refinado e recorrente em provas é o fato de que os **pronomes pessoais oblíquos átonos (me, te, lhe, nos, vos, lhes)** podem, em certas construções, adquirir um valor possessivo, equivalendo a um pronome possessivo. Isso ocorre frequentemente quando o substantivo se refere a partes do corpo, vestimentas ou atributos pessoais.
+
+|Frase com Pronome Oblíquo|Equivalência com Pronome Possessivo|
+|---|---|
+|O assaltante feriu-**lhe** o braço.|Feriu o **seu** braço.|
+|Beijou-**me** a testa com carinho.|Beijou a **minha** testa.|
+|Penteou-**lhes** os cabelos.|Penteou os cabelos **deles/delas**.|
+|Levaram-**nos** os pertences.|Levaram os **nossos** pertences.|
+
+Nesses casos, embora o pronome esteja ligado ao verbo, sua função sintática é de **adjunto adnominal** do substantivo que representa a posse (mão, testa, cabelos, etc.).
+
+#### A Função Coesiva do Pronome Possessivo
+
+Assim como os demais pronomes, os possessivos são ferramentas essenciais para a **coesão textual**. Eles retomam um termo já mencionado no texto (o possuidor), criando uma ligação entre as partes do discurso e evitando repetições.
+
+- **Exemplo:** **O candidato** preparou-se durante um ano. **Seu** esforço foi finalmente recompensado. (O pronome "Seu" retoma "O candidato", conectando as duas orações).
