@@ -377,3 +377,62 @@ Na análise sintática, é crucial reconhecer o sintagma nominal inteiro como um
     - **Determinantes:** Os (artigo), meus (pronome), dois (numeral), mineiros (adjetivo), de longa data (locução adjetiva)
 
 Reconhecer a estrutura do sintagma nominal ajuda a identificar corretamente o núcleo de um termo sintático, o que é fundamental para aplicar as regras de concordância e para a correta interpretação das relações dentro da frase.
+
+### O Papel Sintático do Substantivo
+
+A análise da classe de uma palavra (Morfologia) e da função que ela desempenha na frase (Sintaxe) são estudos indissociáveis. A classe gramatical de uma palavra é o que a habilita a exercer determinadas funções. O substantivo, por ser a classe que nomeia, ocupa uma posição de destaque, atuando como o centro gravitacional das estruturas nominais.
+
+Para identificar um substantivo, uma das estratégias mais eficazes é analisar a função que a palavra exerce. Em funções sintáticas nominais — como sujeito, objeto, complemento nominal, etc. — o **substantivo** (ou uma palavra de valor substantivo) será, em regra, o **núcleo** dessa função.
+
+#### O Substantivo como Núcleo e os Termos Satélites
+
+Podemos visualizar a estrutura de um termo sintático a partir da analogia de um sistema planetário:
+
+- **O Núcleo:** É o elemento central e principal, a palavra que carrega o significado essencial do termo. No Sintagma Nominal, esse papel é do **substantivo**.
+- **Os Satélites (ou Determinantes):** São as palavras que "orbitam" ao redor do núcleo, modificando-o, especificando-o ou caracterizando-o. Essas palavras pertencem a outras classes (artigo, adjetivo, pronome, numeral) e devem concordar com o núcleo em gênero e número.
+
+Vamos analisar essa estrutura em um exemplo detalhado:
+
+> **Os seus cinco patinhos amarelos nadam na lagoa.**
+
+O sujeito da oração é o sintagma nominal "Os seus cinco patinhos amarelos". A análise morfológica de seus componentes revela a relação núcleo-satélite:
+
+| Palavra      | Classe Morfológica | Função e Relação                                             |
+| ------------ | ------------------ | ------------------------------------------------------------ |
+| **Os**       | Artigo definido    | Satélite/Determinante: define o substantivo "patinhos".      |
+| **seus**     | Pronome possessivo | Satélite/Determinante: indica posse em relação a "patinhos". |
+| **cinco**    | Numeral            | Satélite/Determinante: quantifica o substantivo "patinhos".  |
+| **patinhos** | **Substantivo**    | **NÚCLEO** do sujeito. É o termo central.                    |
+| **amarelos** | Adjetivo           | Satélite/Determinante: caracteriza o substantivo "patinhos". |
+
+Todos os determinantes (`Os`, `seus`, `cinco`, `amarelos`) concordam em gênero (masculino) e número (plural) com o núcleo `patinhos`. O verbo `nadam` também concorda em número e pessoa com este núcleo.
+
+#### A Versatilidade do Substantivo como Núcleo
+
+O substantivo ocupa a posição de núcleo na grande maioria das funções sintáticas nominais. Reconhecer o substantivo como o centro do termo é o primeiro passo para uma análise sintática correta.
+
+- **Núcleo do Sujeito:** _As **meninas** ricas do Leblon chegaram._
+- **Núcleo do Objeto Direto:** _Elas compraram muitos **vestidos** novos._
+- **Núcleo do Objeto Indireto:** _Eu preciso de **ajuda**._
+- **Núcleo do Complemento Nominal:** _Tenho consciência de meus **defeitos**._
+- **Núcleo do Agente da Passiva:** _A lei foi aprovada pelos **deputados**._
+- **Núcleo do Aposto:** _Carlos, grande **advogado**, defendeu a causa._
+- **Núcleo do Adjunto Adnominal:** _Comprei um muro de **concreto**._
+- **Núcleo do Vocativo:** _Ó **Deus**, ajudai-me!_
+
+#### Outras Classes em Papel de Substantivo (Substantivação)
+
+Como vimos, outras classes de palavras podem assumir o papel de substantivo, passando a funcionar como o núcleo de um termo sintático. Esse processo, chamado de derivação imprópria ou substantivação, geralmente ocorre pela presença de um artigo.
+
+Além disso, os pronomes podem ser classificados como **pronome adjetivo** (quando acompanham um substantivo) ou **pronome substantivo** (quando o substituem, assumindo o papel de núcleo).
+
+- **Pronome Adjetivo:** Acompanha o núcleo.
+    - _Exemplo:_ **Minhas** mãos estão limpas. (O pronome "Minhas" acompanha o substantivo "mãos").
+- **Pronome Substantivo:** Substitui o núcleo.
+    - _Exemplo:_ Minhas mãos estão limpas; lave as **suas**. (O pronome "suas" substitui "mãos" e atua como núcleo do objeto direto).
+- **Outros Exemplos de Substantivação:**
+    - **O jantar** (verbo) está servido.
+    - **O não** (advérbio) já está garantido.
+    - **O porquê** (conjunção) da demissão não foi explicado.
+
+Este estudo da relação entre a classe e a função sintática será aprofundado nos próximos capítulos, mas a centralidade do substantivo como núcleo das estruturas nominais é a base para toda essa análise.
