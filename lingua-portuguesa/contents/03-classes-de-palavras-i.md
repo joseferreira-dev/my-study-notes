@@ -468,24 +468,6 @@ Os adjetivos podem ser classificados segundo diferentes critérios, como sua for
 - **Restritivo:** Indica uma qualidade que não é inerente ao ser, servindo para particularizá-lo e distingui-lo do resto de sua espécie.
     - _Exemplos:_ homem **valente**, fruta **madura**, aluno **inteligente**. (Nem todo homem é valente, nem toda fruta é madura).
 
-### Flexão de Gênero do Adjetivo
-
-Quanto à flexão de gênero, os adjetivos se dividem em dois grupos:
-
-- **Biformes:** Apresentam duas formas distintas, uma para o masculino e outra para o feminino.
-    - _Exemplos:_ ativ**o**/ativ**a**, brasileir**o**/brasileir**a**, cru**el**/cru**a**.
-- **Uniformes:** Apresentam uma única forma que serve tanto para o masculino quanto para o feminino. Geralmente, são os terminados em -a, -e, -l, -ar, -s, -z, -m.
-
-|Terminação|Exemplo de Uso|
-|---|---|
-|**-a**|homem hipócrit**a** / mulher hipócrit**a**|
-|**-e**|candidato competent**e** / candidata competent**e**|
-|**-l**|serviço amáve**l** / pessoa amáve**l**|
-|**-ar**|costume singul**ar** / beleza singul**ar**|
-|**-s**|homem simpl**es** / mulher simpl**es**|
-|**-z**|rapaz feli**z** / moça feli**z**|
-|**-m**|olhar ru**im** / pessoa ru**im**|
-
 ### Adjetivos Pátrios e Gentílicos
 
 São os adjetivos que indicam a origem ou a procedência geográfica de um ser. O termo "gentílico" é mais amplo (povos, raças), enquanto "pátrio" se refere a continentes, países, estados e cidades. Na prática, são usados como sinônimos.
@@ -521,3 +503,102 @@ A função de caracterizar um substantivo não é exclusiva do adjetivo. Outras 
     - _Exemplo:_ O céu **azul** me tranquiliza. (Adjetivo)
     - _Exemplo:_ **O azul** do céu me tranquiliza. (Adjetivo substantivado)
 
+### Flexão de Gênero do Adjetivo
+
+Quanto à flexão de gênero, os adjetivos se dividem em dois grupos:
+
+- **Biformes:** Apresentam duas formas distintas, uma para o masculino e outra para o feminino.
+    - _Exemplos:_ ativ**o**/ativ**a**, brasileir**o**/brasileir**a**, cru**el**/cru**a**.
+- **Uniformes:** Apresentam uma única forma que serve tanto para o masculino quanto para o feminino. Geralmente, são os terminados em -a, -e, -l, -ar, -s, -z, -m.
+
+|Terminação|Exemplo de Uso|
+|---|---|
+|**-a**|homem hipócrit**a** / mulher hipócrit**a**|
+|**-e**|candidato competent**e** / candidata competent**e**|
+|**-l**|serviço amáve**l** / pessoa amáve**l**|
+|**-ar**|costume singul**ar** / beleza singul**ar**|
+|**-s**|homem simpl**es** / mulher simpl**es**|
+|**-z**|rapaz feli**z** / moça feli**z**|
+|**-m**|olhar ru**im** / pessoa ru**im**|
+
+### Flexão de Número do Adjetivo
+
+Já vimos que a flexão de gênero do adjetivo pode classificá-lo como biforme ou uniforme. Agora, veremos as regras de flexão de número (plural), com foco especial nos adjetivos compostos.
+
+#### O Plural dos Adjetivos Compostos
+
+A formação do plural dos adjetivos compostos segue regras específicas que merecem atenção.
+
+**A Regra Geral**
+
+Por regra geral, nos adjetivos compostos formados por dois adjetivos, apenas o último elemento flexiona em número (e em gênero, se for o caso). Frequentemente, o primeiro elemento aparece em uma forma reduzida (como luso- para luso, político- para político).
+
+- _Exemplos:_
+    - acordos **luso-brasileiros**
+    - problemas **socioeconômicos**
+    - camisas **verde-claras**
+    - obras **político-sociais**
+    - culturas **afro-brasileiras**
+
+**Os Casos de Invariabilidade**
+
+Existem duas situações principais em que o adjetivo composto se torna invariável, ou seja, não flexiona no plural.
+
+- **a) Adjetivo + Substantivo (indicando cor):** Quando o segundo elemento da composição é um substantivo usado para especificar uma cor, o adjetivo composto como um todo permanece invariável.
+
+|Singular|Plural|
+|---|---|
+|camisa **amarelo-ouro**|camisas **amarelo-ouro**|
+|parede **verde-oliva**|paredes **verde-oliva**|
+|gravata **vermelho-sangue**|gravatas **vermelho-sangue**|
+|tecido **verde-bandeira**|tecidos **verde-bandeira**|
+
+- **b) Compostos Invariáveis por Convenção:** Alguns adjetivos compostos são, por tradição e uso, sempre invariáveis.
+
+|Singular|Plural|
+|---|---|
+|terno **azul-marinho**|ternos **azul-marinho**|
+|céu **azul-celeste**|céus **azul-celeste**|
+|tecido **furta-cor**|tecidos **furta-cor**|
+|casaco **verde-musgo**|casacos **verde-musgo**|
+|laço **cor-de-rosa**|laços **cor-de-rosa**|
+|carro **zero-quilômetro**|carros **zero-quilômetro**|
+|raios **ultravioleta**|— (a palavra "ultravioleta" já é naturalmente invariável)|
+
+### Adjetivos Opinativos e Descritivos
+
+Além de sua função gramatical, o adjetivo carrega um valor semântico que pode ser objetivo (descrevendo um fato) ou subjetivo (expressando uma opinião). Essa distinção é crucial para a interpretação de textos.
+
+- **Adjetivos Subjetivos (ou Opinativos):** Expressam um julgamento de valor, uma avaliação pessoal do emissor sobre o substantivo. Por serem uma opinião, são termos acessórios que podem ser retirados da frase sem prejuízo para a informação central.
+    - _Exemplos:_
+        - um carro **bonito**
+        - um turista **animado**
+        - um filme **chato**
+        - uma ideia **genial**
+- **Adjetivos Objetivos (ou Descritivos):** Expressam uma característica concreta, factual e verificável do substantivo, que não depende da interpretação do emissor.
+    - _Exemplos:_
+        - um carro **preto**
+        - um turista **japonês**
+        - uma mesa **redonda**
+        - uma parede **branca**
+
+#### Adjetivo de Relação: Um Caso Especial de Objetividade
+
+Dentro do grupo dos adjetivos objetivos, existe uma subclasse muito importante: o **adjetivo de relação**. Ele se caracteriza por categorizar o substantivo, estabelecendo com ele uma relação específica (de origem, matéria, finalidade, etc.), em vez de atribuir-lhe uma qualidade inerente.
+
+Suas principais características são:
+
+- **Valor sempre objetivo:** Indica uma classificação técnica.
+- **Derivado de um substantivo:** Geralmente, deriva de um nome.
+- **Não admite variação de grau:** Não pode ser intensificado com advérbios como "muito" ou "pouco".
+- **Posição fixa:** Aparece sempre depois do substantivo.
+
+| Adjetivo de Relação      | Relação que Estabelece | Análise                                                                                         |
+| ------------------------ | ---------------------- | ----------------------------------------------------------------------------------------------- |
+| vinho **português**      | Origem/Procedência     | É um tipo de vinho de Portugal. Não se pode dizer "vinho muito português" ou "português vinho". |
+| reunião **mensal**       | Tempo/Periodicidade    | É uma reunião relativa ao mês. Não existe "reunião mensalíssima".                               |
+| movimento **estudantil** | Agente/Propriedade     | É o movimento pertencente ou feito por estudantes.                                              |
+| energia **solar**        | Origem/Tipo            | É a energia proveniente do sol.                                                                 |
+| carne **bovina**         | Tipo/Espécie           | É a carne que vem do boi.                                                                       |
+
+O reconhecimento dos adjetivos de relação é importante para questões de semântica e de reescrita, pois sua posição e gradação são rígidas, ao contrário dos adjetivos opinativos.
