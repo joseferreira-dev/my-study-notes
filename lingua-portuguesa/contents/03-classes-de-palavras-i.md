@@ -1322,3 +1322,157 @@ A maioria dos numerais é invariável em gênero. As exceções são:
 > Palavras que indicam uma sequência, mas não uma posição matemática exata, são classificadas como **adjetivos**, e não como numerais ordinais.
 > 
 > - _Exemplos:_ **último, penúltimo, antepenúltimo, derradeiro, posterior, anterior.**
+
+## Interjeição
+
+A interjeição é a classe gramatical **invariável** que serve como um veículo direto para a expressão de emoções, sensações, estados de espírito súbitos, apelos ou ordens. Diferentemente das outras classes, a interjeição não se encaixa na estrutura sintática da oração (sujeito, predicado, etc.); ela mesma constitui uma frase, com sentido completo em seu contexto. Por essa característica, é frequentemente chamada de **palavra-frase**.
+
+Uma única interjeição como "Puxa!" pode sintetizar uma frase exclamativa inteira ("Estou decepcionado com isso!"), enquanto uma como "Cuidado!" pode equivaler a uma frase apelativa ("Peço que você tenha cuidado!"). Sua função é exteriorizar uma reação imediata do emissor.
+
+### O Contexto como Chave para o Sentido
+
+Embora as gramáticas tradicionais apresentem listas de interjeições associadas a sentimentos específicos (ex: "Ai!" = dor), essa abordagem é limitada e pouco prática. O verdadeiro valor semântico de uma interjeição é revelado **pelo contexto e pela entonação** com que é empregada. Uma mesma palavra pode expressar emoções completamente distintas.
+
+|Interjeição|Contexto|Sentido Expresso|
+|---|---|---|
+|**Psiu!**|...venha cá, por favor!|Chamado, convite|
+|**Psiu!**|...faça silêncio na biblioteca!|Ordem, repreensão|
+|**Puxa!**|Pensei que passaria, mas errei a última questão.|Decepção, lamentação|
+|**Puxa!**|Ele passou com apenas três meses de estudo!|Admiração, surpresa|
+|**Ufa!**|A prova finalmente acabou.|Alívio|
+|**Ufa!**|Corri dez quilômetros sem parar.|Cansaço, exaustão|
+
+A lista de palavras que podem funcionar como interjeição é virtualmente infinita. Portanto, a análise do contexto é sempre a ferramenta mais segura para sua correta interpretação.
+
+### Locuções Interjetivas e Outras Expressões
+
+- **Locuções Interjetivas:** São conjuntos de duas ou mais palavras que, juntas, funcionam como uma única interjeição.
+    - _Exemplos:_ **Meu Deus!**, **Ora bolas!**, **Valha-me Deus!**, **Nossa Senhora!**, **Puxa vida!**, **Quem me dera!**.
+
+- **Expressões Interjetivas:** Na prática, qualquer palavra ou expressão, dita com entonação exclamativa e de forma isolada, pode adquirir valor de interjeição para expressar uma emoção.
+    - _Exemplos:_ **Coragem!**, **Firme!**, **Basta!**.
+    - Os **palavrões**, do ponto de vista linguístico, são interjeições por excelência, pois são usados primariamente para expressar emoções súbitas e intensas (raiva, surpresa, dor, frustração), e seu sentido varia enormemente com o contexto.
+
+### A Interjeição no Contexto das Provas
+
+A interjeição raramente é objeto de questões complexas de classificação morfológica. Sua principal relevância em concursos está na **Interpretação de Textos**. A correta identificação do sentimento ou da atitude expressa por uma interjeição é, muitas vezes, a chave para compreender:
+
+- O estado de espírito de um personagem em um diálogo.
+- O tom do autor (irônico, crítico, entusiasmado).
+- A situação de humor ou crítica em **tirinhas e charges**.
+
+Portanto, mais do que decorar listas, é preciso desenvolver a sensibilidade para interpretar o valor dessas expressões dentro da situação comunicativa apresentada no texto.
+
+## Palavras Polifuncionais: Análise de Casos Especiais
+
+Como vimos ao longo deste capítulo, a classe gramatical de uma palavra não é, muitas vezes, uma característica fixa, mas sim uma função que ela desempenha em um determinado contexto. Certas palavras são especialmente versáteis e podem assumir diferentes classificações e sentidos, sendo alvos frequentes em questões de morfossintaxe.
+
+Esta seção irá sistematizar as principais funções de algumas dessas palavras. Embora classes como pronomes e preposições sejam estudadas em detalhe nos próximos capítulos, é importante que já se familiarize com a multifuncionalidade desses vocábulos.
+
+### As Funções de "O, A, Os, As"
+
+A palavra "a" e suas variantes ("o", "os", "as") é uma das mais polifuncionais da língua portuguesa, podendo pertencer a cinco classes distintas.
+
+<div align="center">
+<img width="700px" src="./img/03-palavras-especiais-o-a-os-as.png">
+</div>
+
+1. **Artigo Definido:** É sua função mais comum, na qual determina um substantivo.
+    - _Exemplo:_ **A** candidata estudou **os** conteúdos do edital.
+
+2. **Pronome Pessoal Oblíquo Átono:** Substitui um substantivo que tem a função de complemento verbal (objeto).
+    - _Exemplo:_ Encontrei Maria na biblioteca e **a** cumprimentei. (cumprimentei **ela** → a cumprimentei).
+    - _Exemplo:_ João não ama Mário. Ele **o** odeia! (odeia **ele** → o odeia).
+
+3. **Pronome Demonstrativo:** Ocorre quando equivale a **"aquilo", "aquele(s)"** ou **"aquela(s)"**.
+    - _Exemplo:_ Não entendi **o** que você disse. (Equivale a: Não entendi **aquilo** que você disse).
+    - _Exemplo:_ Entre as camisas, comprei **a** que estava mais barata. (Equivale a: ...comprei **aquela** que estava mais barata).
+    - _Exemplo:_ Fui reprovado, **o** que me deixou muito triste. (O "o" retoma toda a ideia anterior).
+
+4. **Preposição:** É a preposição pura "a", invariável, exigida pela regência de um verbo ou nome.
+    - _Exemplo:_ Ele se referiu **a** João.
+    - _Exemplo:_ Você está disposto **a** sacrifícios?
+
+5. **Substantivo:** Ocorre quando a palavra se refere ao nome da própria letra.
+    - _Exemplo:_ A letra **a** é a primeira vogal do alfabeto.
+
+### As Funções de "Só"
+
+A palavra "só" pode mudar de classe e de sentido dependendo do termo que modifica.
+
+<div align="center">
+<img width="700px" src="./img/03-palavras-especiais-so.png">
+</div>
+
+1. **Adjetivo:** Quando significa "sozinho", é variável e concorda com o nome a que se refere.
+    - _Exemplo:_ Ele estava **só**. / Eles estavam **sós**. / Elas ficaram **sós**.
+
+2. **Advérbio:** Quando modifica um verbo, significando "apenas" ou "somente". É invariável.
+    - _Exemplo:_ Você **só** reclama da vida. / Eles **só** querem estudar.
+
+3. **Palavra Denotativa de Exclusão:** Quando modifica um substantivo (ou qualquer termo que não seja verbo, adjetivo ou advérbio), significando "apenas" ou "somente". É invariável.
+    - _Exemplo:_ **Só** você pode resolver isso. / Ele gosta de **só** um tipo de música.
+
+### As Funções de "Até"
+
+<div align="center">
+<img width="640px" src="./img/03-palavras-especiais-ate.png">
+</div>
+
+1. **Preposição:** Indica um limite de tempo ou espaço.
+    - _Exemplo:_ A prova vai **até** as 17h. / Caminhamos **até** o final da trilha.
+
+2. **Palavra Denotativa de Inclusão:** Enfatiza um elemento, incluindo-o em um conjunto. Modifica o nome.
+    - _Exemplo:_ Todos vieram, **até** o chefe. / **Até** o padre riu da piada.
+
+3. **Advérbio:** Também com sentido de inclusão ou reforço, mas modificando o verbo.
+    - _Exemplo:_ Ele **até** tentou ajudar, mas não conseguiu.
+
+### Os Sentidos de "Ainda"
+
+A palavra "ainda" é classificada ora como advérbio, ora como palavra denotativa, mas o mais importante é reconhecer os diferentes valores semânticos que ela pode expressar, dependendo do contexto.
+
+<div align="center">
+<img width="700px" src="./img/03-palavras-especiais-ainda.png">
+</div>
+
+- **Tempo:** Ele **ainda** não entregou o relatório.
+- **Ênfase:** O problema é **ainda** maior do que imaginávamos.
+- **Adição (Além disso):** Era um homem inteligente e **ainda** por cima, honesto.
+- **Ressalva (Ao menos):** Se **ainda** fosse barato, poderíamos arriscar.
+- **Oposição (Apesar disso):** A prova estava fácil e **ainda** assim ele foi reprovado.
+
+### As Funções de "Mesmo"
+
+"Mesmo" é outra palavra extremamente polifuncional e variável em alguns de seus usos.
+
+<div align="center">
+<img width="700px" src="./img/03-palavras-especiais-mesmo.png">
+</div>
+
+1. **Pronome Demonstrativo:** É variável e pode ter valor de reforço ("próprio") ou de identidade ("igual").
+    - _Reforço:_ Eu **mesma** farei o discurso. / Eles **mesmos** consertaram o carro.
+    - _Identidade:_ Cometemos os **mesmos** erros de sempre.
+
+2. **Advérbio:** É invariável e significa "realmente", "de fato".
+    - _Exemplo:_ Você gostou **mesmo** da surpresa?
+
+3. **Palavra Denotativa de Inclusão:** É invariável e equivale a "até", "inclusive".
+    - _Exemplo:_ **Mesmo** os mais experientes podem errar.
+
+4. **Conjunção Concessiva:** É invariável e aparece em locuções como "mesmo que" ou iniciando orações reduzidas com sentido de "embora".
+    - _Exemplo:_ **Mesmo que** chova, o evento acontecerá.
+    - _Exemplo:_ **Mesmo** cansado, ele continuou a trabalhar.
+
+### O Uso Correto da Expressão "O Mesmo"
+
+A expressão "o mesmo" (e suas variações) é alvo de muitas dúvidas e erros.
+
+- **Uso INADEQUADO:** A norma padrão condena o uso de "o mesmo" como um pronome pessoal para retomar um substantivo já citado.
+    - _Inadequado:_ O aluno entregou o trabalho. O mesmo será corrigido em breve.
+    - _Forma Adequada:_ O aluno entregou o trabalho. **Ele** será corrigido em breve.
+    - _Inadequado:_ Falei com os funcionários e os mesmos concordaram.
+    - _Forma Adequada:_ Falei com os funcionários e **eles** concordaram.
+
+- **Uso ADEQUADO:** O emprego de "o mesmo" é correto quando ele atua como um pronome demonstrativo invariável, retomando uma oração ou uma ideia anterior, com o sentido de "a mesma coisa", "o mesmo fato", "isso".
+    - _Exemplo:_ Várias pessoas foram assaltadas na rua; **o mesmo** aconteceu comigo. (Ou seja, "o mesmo fato" aconteceu).
