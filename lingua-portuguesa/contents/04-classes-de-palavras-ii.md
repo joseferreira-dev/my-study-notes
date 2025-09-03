@@ -97,3 +97,65 @@ Ocorre quando a pergunta está inserida dentro de uma oração declarativa, sem 
 > - **Com Expletivo:** _O que **é que** ele fez para merecer isso?_
 > - **Sem Expletivo:** _O que ele fez para merecer isso?_
 
+### Pronomes Indefinidos
+
+Os pronomes indefinidos são palavras, em sua maioria variáveis, que se referem à 3ª pessoa do discurso de maneira vaga, imprecisa ou genérica. Eles são utilizados para indicar uma quantidade, identidade ou totalidade indeterminada.
+
+Assim como os outros pronomes, podem ser classificados como:
+
+- **Pronomes Adjetivos Indefinidos:** Quando acompanham um substantivo.
+    - _Exemplo:_ **Alguns** alunos não fizeram o trabalho.
+
+- **Pronomes Substantivos Indefinidos:** Quando substituem um substantivo.
+    - _Exemplo:_ **Alguém** precisa fazer o trabalho.
+
+#### Listas de Pronomes e Locuções
+
+Para facilitar o estudo, podemos dividir os pronomes indefinidos em variáveis e invariáveis.
+
+|Pronomes Indefinidos Variáveis|Pronomes Indefinidos Invariáveis|
+|---|---|
+|algum, alguma, alguns, algumas|alguém|
+|nenhum, nenhuma, nenhuns, nenhumas|ninguém|
+|todo, toda, todos, todas|tudo|
+|outro, outra, outros, outras|nada|
+|muito, muita, muitos, muitas|algo|
+|pouco, pouca, poucos, poucas|cada (sempre pronome adjetivo)|
+|certo, certa, certos, certas|outrem|
+|vário, vária, vários, várias||
+|tanto, tanta, tantos, tantas||
+|quanto, quanta, quantos, quantas||
+|qualquer, quaisquer||
+
+- **Locuções Pronominais Indefinidas:** São expressões formadas por mais de uma palavra com valor de pronome indefinido.
+    - _Exemplos:_ **cada um, cada qual, qualquer um, quem quer que, seja quem for, todo aquele que, um ou outro, etc.**
+
+#### Palavras com Múltiplas Classificações
+
+Certas palavras podem funcionar como pronome indefinido, adjetivo ou advérbio, dependendo do contexto. A posição e a palavra modificada são as chaves para a correta classificação.
+
+**O caso de "Certo"**
+
+|Posição|Exemplo|Análise (Classe e Sentido)|
+|---|---|---|
+|**Antes** do substantivo|Procurei por **certas** pessoas.|**Pronome Indefinido:** Indica uma identidade indeterminada ("umas pessoas", "determinadas pessoas").|
+|**Depois** do substantivo|Procurei pelas pessoas **certas**.|**Adjetivo:** Indica uma qualidade ("corretas", "adequadas").|
+
+**O caso de "Bastante"**
+
+Esta palavra é uma das que mais geram dúvidas. A análise é sempre relacional.
+
+|Uso de "Bastante(s)"|Exemplo|Palavra Modificada|Classe Gramatical|Análise|
+|---|---|---|---|---|
+|**Variável (com "s")**|Temos **bastantes** problemas.|`problemas` (Substantivo)|**Pronome Indefinido**|Indica quantidade vaga ("muitos"). Concorda em número com o substantivo.|
+|**Variável (com "s")**|Temos provas **bastantes** para a acusação.|`provas` (Substantivo)|**Adjetivo**|Indica qualidade ("suficientes"). Vem após o nome e concorda com ele.|
+|**Invariável (sem "s")**|Elas são **bastante** competentes.|`competentes` (Adjetivo)|**Advérbio**|Indica intensidade ("muito"). Não varia.|
+|**Invariável (sem "s")**|Elas estudaram **bastante**.|`estudaram` (Verbo)|**Advérbio**|Indica intensidade ("muito"). Não varia.|
+
+A mesma lógica se aplica a **muito(s)** e **pouco(s)**: quando modificam substantivos, são pronomes e variam; quando modificam verbos ou adjetivos, são advérbios e não variam.
+
+- _Exemplos:_
+    - Havia **muita** gente na festa. (Pronome Indefinido)
+    - As pessoas estavam **muito** animadas. (Advérbio)
+    - **Poucos** candidatos foram aprovados. (Pronome Indefinido)
+    - Os candidatos estavam **pouco** preparados. (Advérbio)
