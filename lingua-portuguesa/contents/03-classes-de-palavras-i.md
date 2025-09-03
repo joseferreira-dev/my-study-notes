@@ -933,3 +933,63 @@ Os advérbios **onde**, **quando**, **como** e **por que** são classificados co
 | **Por que**            | Causa         | **Por que** tantos candidatos desistem? | É um mistério **por que** tantos desistem.                  |
 
 É importante notar que, em uma análise mais rigorosa, a expressão "por que" é classificada como uma **locução adverbial interrogativa de causa**.
+
+### Advérbio de Intensidade vs. Pronome Indefinido
+
+Palavras como _muito, pouco, bastante, mais, menos_ e _demais_ podem pertencer a duas classes gramaticais distintas, e a capacidade de diferenciá-las é uma habilidade recorrentemente testada. A chave para a correta classificação não está na palavra em si, mas na **palavra que ela está modificando**.
+
+A regra fundamental é:
+
+- Se o termo modifica um **verbo, adjetivo ou outro advérbio**, ele é um **ADVÉRBIO** e, portanto, **invariável**.
+- Se o termo modifica um **substantivo**, ele é um **PRONOME INDEFINIDO** e, em geral, **variável** (concorda com o substantivo).
+
+#### O Papel do Advérbio (Invariável)
+
+Quando essas palavras funcionam como advérbios, elas expressam a **intensidade** da ação (verbo), da qualidade (adjetivo) ou de outra circunstância (advérbio). Como advérbios, são sempre **invariáveis**, ou seja, não possuem feminino nem plural.
+
+- **Modificando Verbos:**
+    - _Exemplos:_
+        - Os candidatos estudaram **muito** para a prova.
+        - Maria viaja **bastante**.
+        - Comi **pouco** no almoço.
+
+- **Modificando Adjetivos:**
+    - _Exemplos:_
+        - Gil é **muito** rico.
+        - As questões eram **bastante** complexas.
+        - Ele ficou **menos** irritado depois da conversa.
+
+- **Modificando Advérbios:**
+    - _Exemplos:_
+        - As crianças chegaram **muito** cedo.
+        - A encomenda chegou tarde **demais**.
+        - O carro se movia **bem** devagar.
+
+#### O Papel do Pronome Indefinido (Variável)
+
+Quando essas mesmas palavras funcionam como pronomes indefinidos, elas se referem a um **substantivo**, indicando uma quantidade vaga e imprecisa. Como pronomes, eles devem **concordar** em gênero e número com o substantivo a que se referem.
+
+- _Exemplos:_
+    - Gil possui **muitos** carros e **muitas** casas. (Concorda com "carros" e "casas").
+    - Temos **poucos** recursos e **poucas** esperanças. (Concorda com "recursos" e "esperanças").
+    - Havia **bastantes** pessoas na fila. (Concorda com "pessoas". Este é um caso clássico em provas).
+
+> **Atenção:** As palavras **mais**, **menos** e **demais** são invariáveis mesmo quando atuam como pronomes indefinidos.
+> 
+> - _Exemplos:_
+>     - Temos agora **mais** tempo e **mais** oportunidades.
+>     - Havia **menos** problemas antigamente.
+
+#### Quadro Comparativo
+
+Para consolidar a diferença, observe a comparação direta:
+
+| -                          | **Advérbio de Intensidade**                                        | **Pronome Indefinido**                                             |
+| -------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| **Palavra Modificada**     | **Verbo, Adjetivo ou Advérbio**                                    | **Substantivo**                                                    |
+| **Flexão**                 | **INVARIÁVEL** (nunca muda)                                        | **VARIÁVEL** (concorda com o substantivo)<sup>1</sup>              |
+| **Exemplo com "Muito"**    | Ele correu **muito**. (modifica o verbo "correu")                  | Ele tem **muitos** amigos. (modifica o substantivo "amigos")       |
+| **Exemplo com "Bastante"** | Eles estão **bastante** cansados. (modifica o adjetivo "cansados") | Eles têm **bastantes** motivos. (modifica o substantivo "motivos") |
+
+<sup>1</sup> _Lembrando que "mais", "menos" e "demais" são invariáveis em ambos os casos._
+
