@@ -316,3 +316,64 @@ A flexão de compostos iniciados por "guarda" depende da classe gramatical dessa
 |o bota-fora|os bota-fora|**Invariável**. Composto por dois verbos.|
 |bem-te-vi|bem-te-vi**s**|Apenas o último elemento flexiona.|
 
+#### Flexão de Grau: Aumentativo e Diminutivo
+
+A flexão de grau é a capacidade que os substantivos têm de expressar variações de tamanho, podendo ser para mais (aumentativo) ou para menos (diminutivo). Essa flexão pode ocorrer de duas maneiras:
+
+- **Grau Analítico:** Utiliza-se um adjetivo que indica tamanho, como _grande_, _enorme_, _pequeno_ ou _minúsculo_.
+    - _Exemplos:_ casa **grande**, livro **pequeno**, problema **enorme**.
+- **Grau Sintético:** Utiliza-se o acréscimo de sufixos específicos ao substantivo, como _-ão_, _-ona_, _-inho_, _-inha_, _-zinho_.
+    - _Exemplos:_ cas**arão**, livr**inho**, problem**ão**.
+
+**O Valor Discursivo do Grau**
+
+Em provas, especialmente em questões de interpretação de texto, é fundamental entender que o grau do substantivo raramente indica apenas tamanho. Com muito mais frequência, ele é empregado para expressar a atitude do falante, agregando valores de afetividade, admiração, ironia ou desprezo.
+
+| Valor Discursivo         | Exemplo                                                  | Análise do Sentido                                                          |
+| ------------------------ | -------------------------------------------------------- | --------------------------------------------------------------------------- |
+| **Afetividade/Carinho**  | Que **cachorrinho** fofo!                                | O diminutivo expressa ternura, não necessariamente o tamanho do animal.     |
+| **Admiração/Ênfase**     | O Porsche é um **carrão**!                               | O aumentativo expressa admiração pela qualidade do carro.                   |
+| **Depreciação/Desprezo** | Não trabalho tanto para dar dinheiro àquele **padreco**! | O sufixo "-eco" confere um valor pejorativo.                                |
+| **Depreciação/Desprezo** | Não se misture com essa **gentalha**!                    | O sufixo "-alha" expressa desprezo pelo grupo de pessoas.                   |
+| **Ironia**               | Então... O **sabichão** aí se enganou de novo?           | O aumentativo é usado de forma irônica para criticar uma suposta sabedoria. |
+| **Ironia**               | **Queridinho**, devolva o que você pegou.                | O diminutivo é usado com sarcasmo para repreender.                          |
+
+**O Plural dos Diminutivos Sintéticos**
+
+A formação do plural de substantivos no diminutivo segue uma regra específica e lógica:
+
+1. Primeiro, passa-se a palavra primitiva para o plural.
+2. Em seguida, retira-se o **-s** final dessa forma plural.
+3. Por fim, acrescenta-se o sufixo **-zinhos** ou **-zinhas**.
+
+| Primitivo | Plural Primitivo | Sem o "-s" | Plural do Diminutivo |
+| --------- | ---------------- | ---------- | -------------------- |
+| animal    | animai**s**      | animai     | animai**zinhos**     |
+| flor      | flore**s**       | flore      | flore**zinhas**      |
+| coração   | coraçõe**s**     | coraçõe    | coraçõe**zinhos**    |
+| papel     | papéi**s**       | papéi      | papei**zinhos**      |
+| pão       | pãe**s**         | pãe        | pãe**zinhos**        |
+
+- **Formas Alternativas:** Em alguns casos, a língua admite formas variantes para o diminutivo.
+    - _Exemplos:_ colherzinha ou colherinha; florzinha ou florinha; pastorzinho ou pastorinho.
+
+### Sintagma Nominal: Substantivo como Núcleo
+
+Para conectar o estudo da Morfologia com a Sintaxe, é útil compreender o conceito de **sintagma**. Um sintagma é um bloco de palavras que forma uma unidade de sentido dentro da oração, construído em torno de um elemento central, o **núcleo**.
+
+O **Sintagma Nominal (SN)** é o bloco de palavras cujo núcleo é um **substantivo** (ou uma palavra com valor de substantivo, como um pronome). Todas as outras palavras dentro desse bloco (artigos, adjetivos, numerais, pronomes, locuções adjetivas) são os **determinantes**, que servem para modificar ou especificar o núcleo.
+
+Na análise sintática, é crucial reconhecer o sintagma nominal inteiro como uma única unidade que desempenha uma função (sujeito, objeto, etc.).
+
+- **Exemplo 1:**
+    - **[O homem previdente]** cuida do futuro.
+    - **Sintagma Nominal (função de sujeito):** O homem previdente
+    - **Núcleo:** homem
+    - **Determinantes:** O (artigo), previdente (adjetivo)
+- **Exemplo 2:**
+    - **[Os meus dois amigos mineiros de longa data]** chegaram hoje.
+    - **Sintagma Nominal (função de sujeito):** Os meus dois amigos mineiros de longa data
+    - **Núcleo:** amigos
+    - **Determinantes:** Os (artigo), meus (pronome), dois (numeral), mineiros (adjetivo), de longa data (locução adjetiva)
+
+Reconhecer a estrutura do sintagma nominal ajuda a identificar corretamente o núcleo de um termo sintático, o que é fundamental para aplicar as regras de concordância e para a correta interpretação das relações dentro da frase.
