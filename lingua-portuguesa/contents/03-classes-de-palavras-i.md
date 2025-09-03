@@ -772,6 +772,10 @@ Lembre-se: nem sempre existirá um adjetivo correspondente. O critério mais seg
 
 Além de variar em gênero e número para concordar com o substantivo, o adjetivo também se flexiona em **grau** para expressar a intensidade de uma característica ou para comparar essa característica entre dois ou mais seres. O grau do adjetivo se divide em dois grandes grupos: o **Comparativo** e o **Superlativo**.
 
+<div align="center">
+<img width="700px" src="./img/03-grau-dos-adjetivos.png">
+</div>
+
 #### Grau Comparativo
 
 O grau comparativo é utilizado para estabelecer uma relação de comparação da mesma característica entre dois ou mais seres, ou de duas ou mais características de um mesmo ser.
@@ -857,3 +861,4 @@ Na prática, a língua dispõe de diversos outros recursos estilísticos para ex
     - _Exemplo:_ O empresário era **podre de rico**. / É um profissional **de mão cheia**.
 - **Uso do Artigo Definido:**
     - _Exemplo:_ Ele não é um médico qualquer, ele é **o** médico.
+
