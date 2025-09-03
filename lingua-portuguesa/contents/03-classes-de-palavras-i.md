@@ -657,3 +657,58 @@ Uma dica estrutural para diferenciar as duas funções do adjetivo é observar s
 - **Predicativo:** O adjetivo está "separado" do nome por um verbo.
     - _Exemplo:_ [**A vida**] está **solitária**. (O adjetivo "solitária" está no predicado, caracterizando o sujeito "A vida" através do verbo "está").
     - _Exemplo:_ Acho [**a vida**] muito **solitária**. (O adjetivo "solitária" está no predicado, caracterizando o objeto "a vida" através do verbo "Acho").
+
+### A Posição do Adjetivo e a Alteração de Sentido
+
+Uma característica notável da Língua Portuguesa é que a posição do adjetivo em relação ao substantivo não é meramente uma questão de estilo; ela pode alterar profundamente o sentido da expressão. A ordem considerada "natural" ou padrão é **substantivo + adjetivo**. A inversão dessa ordem (**adjetivo + substantivo**) é um recurso expressivo que pode resultar em três cenários distintos.
+
+#### Sem Alteração de Classe ou Sentido
+
+Em alguns casos, a inversão da ordem é puramente estilística e não provoca uma mudança significativa no sentido da expressão. Isso ocorre geralmente com adjetivos que expressam qualidades inerentes ou universalmente reconhecidas.
+
+- _Exemplos:_
+    - cão **bom** ↔ **bom** cão
+    - mulher **bela** ↔ **bela** mulher
+    - acidente **terrível** ↔ **terrível** acidente
+
+#### Alteração de Sentido sem Mudança de Classe
+
+Este é o caso mais comum e mais explorado em provas. Aqui, a classe gramatical das palavras se mantém (substantivo e adjetivo), mas a mudança de posição altera o significado. A regra geral é:
+
+- **Adjetivo depois do substantivo:** Tende a ter um valor mais **objetivo**, denotativo, descritivo.
+- **Adjetivo antes do substantivo:** Tende a adquirir um valor mais **subjetivo**, conotativo, afetivo ou figurado.
+
+|Substantivo + Adjetivo (Sentido Objetivo)|Adjetivo + Substantivo (Sentido Subjetivo/Figurado)|
+|---|---|
+|homem **grande** (de alta estatura)|**grande** homem (notável, importante)|
+|homem **pobre** (sem recursos financeiros)|**pobre** homem (coitado, digno de pena)|
+|amigo **velho** (idoso)|**velho** amigo (amizade de longa data)|
+|mulher **nova** (jovem)|**nova** mulher (outra mulher, uma segunda mulher)|
+|questão **simples** (fácil, não complexa)|**simples** questão (mera questão, insignificante)|
+|sabor **único** (inigualável, especial)|**único** sabor (apenas um sabor disponível)|
+|funcionário **alto** (de alta estatura)|**alto** funcionário (de cargo elevado)|
+|soldado **bravo** (irritado, zangado)|**bravo** soldado (corajoso, valente)|
+
+#### Alteração de Classe e de Sentido
+
+Em algumas situações, a expressão é formada por duas palavras que podem, ambas, funcionar como substantivo ou adjetivo. Nesses casos, a inversão da ordem muda qual palavra é o núcleo (o substantivo) e qual é a característica (o adjetivo), alterando o foco e, consequentemente, o sentido.
+
+A famosa frase de Machado de Assis em _Memórias Póstumas de Brás Cubas_ é o exemplo máximo desse fenômeno:
+
+> “...não sou propriamente um **autor defunto**, mas um **defunto autor**.”
+
+- **autor defunto:** O núcleo é "autor" (substantivo), e "defunto" é a sua característica (adjetivo). Trata-se de um escritor que morreu.
+- **defunto autor:** O núcleo passa a ser "defunto" (substantivo), e "autor" é sua nova e inusitada característica (adjetivo). Trata-se de um morto que agora escreve.
+
+> **Foco de Prova: A Mudança de Classe Garante a Mudança de Sentido**
+> 
+> Em questões de reescrita, este é um critério decisivo: **se a inversão da ordem causa uma alteração na classe morfológica das palavras, o sentido da expressão é obrigatoriamente alterado**. Identificar a troca de papéis entre substantivo e adjetivo é uma forma segura de avaliar a mudança semântica.
+
+- **Outros exemplos:**
+    - **preso político** (subst. + adj.): Um prisioneiro cuja detenção se deve a motivos políticos.
+    - **político preso** (subst. + adj.): Um político (profissão) que está encarcerado.
+    - **amigo médico** (subst. + adj.): Um amigo cuja profissão é a medicina.
+    - **médico amigo** (subst. + adj.): Um médico que é amigável, cordial.
+
+- **Dica de Análise:** Quando for difícil determinar qual é o substantivo e qual é o adjetivo (ex: _sábio religioso_), a tendência lógica da língua é considerar o primeiro termo como o substantivo (núcleo) e o segundo como o adjetivo (característica).
+
