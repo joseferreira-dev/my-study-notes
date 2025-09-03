@@ -41,3 +41,59 @@ A tradicional divisão dos pronomes em seis categorias está diretamente ligada 
 | Formular perguntas diretas ou indiretas.                                       | **Pronomes Interrogativos** |
 
 A seguir, analisaremos detalhadamente cada uma dessas categorias.
+
+### Pronomes Interrogativos
+
+Os pronomes interrogativos são palavras (variáveis ou invariáveis) utilizadas para formular perguntas, sejam elas diretas ou indiretas. Eles se referem à terceira pessoa do discurso de uma forma imprecisa, buscando uma informação que é desconhecida.
+
+Os pronomes interrogativos são:
+
+- **que** (invariável)
+- **quem** (invariável)
+- **qual** (plural: **quais**)
+- **quanto** (variáveis: **quanta, quantos, quantas**)
+
+#### A Interrogação Direta
+
+É o uso mais evidente, ocorrendo em frases que terminam com um ponto de interrogação (?).
+
+- **Que:** Usado de forma ampla para perguntar sobre coisas ou fatos.
+    - _Exemplos:_
+        - **Que** aconteceu aqui?
+        - **Que** livro você comprou?
+    - **Nota:** Na expressão "O que", a palavra "o" é frequentemente considerada uma partícula expletiva (de realce), que pode ser retirada sem prejuízo ao sentido essencial da pergunta. _Exemplo: **(O) que** você disse?_
+
+- **Quem:** Refere-se exclusivamente a pessoas.
+    - _Exemplos:_
+        - **Quem** resolveu a questão?
+        - Com **quem** você estava falando?
+
+- **Qual / Quais:** Implica uma ideia de seleção ou escolha dentro de um conjunto, definido ou não.
+    - _Exemplos:_
+        - **Qual** é a sua disciplina favorita?
+        - Dentre estes, **quais** você prefere?
+
+- **Quanto / Quanta / Quantos / Quantas:** Usado para perguntar sobre quantidades. Deve concordar em gênero e número com o substantivo a que se refere.
+    - _Exemplos:_
+        - **Quanto** custa a inscrição?
+        - **Quantas** vagas estão disponíveis no edital?
+
+#### A Interrogação Indireta
+
+Ocorre quando a pergunta está inserida dentro de uma oração declarativa, sem o uso do ponto de interrogação. Geralmente, a oração iniciada pelo pronome interrogativo complementa o sentido de verbos como _saber, perguntar, indagar, dizer, ignorar, desconhecer_.
+
+- **Exemplos:**
+    - A banca não informou **que** aconteceu.
+    - Gostaria de saber **quem** resolveu a questão.
+    - Ele me perguntou **qual** era a minha disciplina favorita.
+    - Desconheço **quantas** vagas estão disponíveis.
+
+> **Foco de Prova: A Expressão Expletiva "é que"**
+> 
+> Em frases interrogativas, é muito comum o uso da expressão **"é que"** com valor de realce ou ênfase. Ela não possui função sintática e pode ser retirada da frase sem alterar o seu sentido fundamental. O pronome interrogativo é apenas a palavra inicial.
+> 
+> - **Com Expletivo:** _Quem **é que** te contou essa fofoca?_
+> - **Sem Expletivo:** _Quem te contou essa fofoca?_
+> - **Com Expletivo:** _O que **é que** ele fez para merecer isso?_
+> - **Sem Expletivo:** _O que ele fez para merecer isso?_
+
