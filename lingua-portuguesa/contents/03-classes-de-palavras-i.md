@@ -1476,3 +1476,13 @@ A expressão "o mesmo" (e suas variações) é alvo de muitas dúvidas e erros.
 
 - **Uso ADEQUADO:** O emprego de "o mesmo" é correto quando ele atua como um pronome demonstrativo invariável, retomando uma oração ou uma ideia anterior, com o sentido de "a mesma coisa", "o mesmo fato", "isso".
     - _Exemplo:_ Várias pessoas foram assaltadas na rua; **o mesmo** aconteceu comigo. (Ou seja, "o mesmo fato" aconteceu).
+
+## Considerações Finais
+
+Neste capítulo, iniciamos o estudo sistemático e aprofundado das classes de palavras, focando no grupo de classes nominais e circunstanciais que formam o esqueleto de grande parte das orações. Começamos com a análise do **substantivo**, a classe central que nomeia o mundo, detalhando suas múltiplas classificações, flexões de gênero, número e grau, e seus processos de formação. Em seguida, exploramos seus "satélites" diretos: o **artigo**, que o define; o **adjetivo**, que o caracteriza; e o **numeral**, que o quantifica e ordena.
+
+Avançamos para o estudo do **advérbio**, a classe invariável responsável por imprimir circunstância e intensidade ao discurso, e da **interjeição**, a pura expressão da emoção. Por fim, consolidamos o aprendizado com uma análise de diversas **palavras polifuncionais**, demonstrando na prática como um mesmo vocábulo pode assumir diferentes identidades morfológicas e semânticas, a depender do contexto em que está inserido.
+
+O fio condutor deste capítulo foi a demonstração da relação indissociável entre a classe de uma palavra (sua identidade morfológica) e a função que ela desempenha na frase (seu papel sintático). Vimos repetidamente como a identificação do substantivo como **núcleo** de um sintagma nos permite compreender a função e a concordância dos termos que o orbitam, e como a distinção entre classes **variáveis e invariáveis** é a base para a correta aplicação das regras gramaticais.
+
+O domínio das classes de palavras aqui apresentadas é o alicerce indispensável para a análise sintática. Compreender a identidade do substantivo, do adjetivo e do advérbio nos prepara para identificar com segurança os sujeitos, predicativos, adjuntos e complementos de uma oração. Este capítulo forneceu as peças fundamentais do quebra-cabeça gramatical. No próximo, daremos continuidade ao estudo das classes de palavras, focando naquelas que atuam como os grandes conectores do discurso e no motor da oração: a preposição, a conjunção, o pronome e o verbo.
