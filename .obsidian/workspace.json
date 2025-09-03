@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lingua-portuguesa/contents/03-classes-de-palavras-i.md",
+                "file": "lingua-portuguesa/contents/04-classes-de-palavras-ii.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03-classes-de-palavras-i"
+              "title": "04-classes-de-palavras-ii"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lingua-portuguesa/contents/03-classes-de-palavras-i.md",
+                "file": "lingua-portuguesa/contents/04-classes-de-palavras-ii.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 03-classes-de-palavras-i"
+              "title": "Sumário de 04-classes-de-palavras-ii"
             }
           }
         ],
@@ -171,6 +171,8 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "lingua-portuguesa/contents/03-classes-de-palavras-i.md",
+    "lingua-portuguesa/contents/04-classes-de-palavras-ii.md",
     "lingua-portuguesa/contents/img/03-palavras-especiais-mesmo.png",
     "lingua-portuguesa/contents/img/03-palavras-especiais-ainda.png",
     "lingua-portuguesa/contents/img/03-palavras-especiais-ate.png",
@@ -179,7 +181,6 @@
     "lingua-portuguesa/contents/img/03-circunstancias-adverbiais.png",
     "lingua-portuguesa/README.md",
     "lingua-portuguesa/contents/img/03-grau-dos-adjetivos.png",
-    "lingua-portuguesa/contents/03-classes-de-palavras-i.md",
     "lingua-portuguesa/contents/01-visao-geral.md",
     "engenharia-de-prompt/prompt-de-protocolo.md",
     "engenharia-de-prompt/Sem título.md",
@@ -194,7 +195,6 @@
     "legislacao/contents/07-decreto-1171.md",
     "legislacao/contents/img/decreto-1171-abstencao.png",
     "legislacao/contents/img/decreto-1171-atualizacao.png",
-    "legislacao/contents/img/decreto-1171-resistir-a-pressoes.png",
     "legislacao/contents/04-portaria-6719.md",
     "legislacao/contents/05-lei-9394.md",
     "engenharia-de-software/contents/12-modelo-rup.md",
