@@ -179,3 +179,140 @@ A derivação imprópria é um processo de formação de palavras que ocorre **s
     - _Exemplo:_ O **sete** é considerado um número de sorte.
 
 Conhecer esses mecanismos de formação e transformação de palavras é uma ferramenta valiosa, pois permite reconhecer a função de um substantivo mesmo quando ele se apresenta de forma atípica.
+
+### Flexão dos Substantivos
+
+Como vimos, o substantivo é uma classe variável. Sua capacidade de se flexionar é o que permite a concordância e a precisão na comunicação. As flexões do substantivo ocorrem em:
+
+- **Gênero:** masculino e feminino (tema já abordado na seção de classificação).
+- **Número:** singular e plural.
+- **Grau:** aumentativo e diminutivo.
+
+Inicialmente, nosso foco será a **flexão de número**, ou seja, as regras e particularidades da formação do plural dos substantivos, tanto simples quanto compostos.
+
+#### Plural dos Substantivos Simples
+
+Os substantivos simples são formados por um único radical. A formação de seu plural depende da terminação da palavra no singular.
+
+**A Regra Geral**
+
+A regra mais básica, aplicada à maioria dos substantivos terminados em vogal, é o simples acréscimo da desinência -s.
+
+- _Exemplos:_ casa → casa**s**, livro → livro**s**, colega → colega**s**, táxi → táxi**s**.
+
+**Regras Especiais por Terminação**
+
+Para as demais terminações, existem regras específicas que devem ser observadas.
+
+|Terminação no Singular|Formação do Plural|Exemplos|
+|---|---|---|
+|**-r, -z, -n**|Acrescenta-se **-es**|caráter → caracter**es**, luz → luz**es**, cônsul → cônsul**es**, hífen → hifen**es**|
+|**-s** (oxítonos/monossílabos)|Acrescenta-se **-es**|gás → gas**es**, mês → mes**es**, deus → deus**es**|
+|**-s** (paroxítonos/proparoxítonos)|**Invariável** (o plural é marcado pelo artigo)|o lápis → os lápis, o ônibus → os ônibus, o atlas → os atlas|
+|**-al, -el, -ol, -ul**|Troca-se o **-l** por **-is**|anim**al** → anim**ais**, pap**el** → pap**éis**, far**ol** → far**óis**, pa**ul** → pa**uis**|
+|**-il** (oxítonos)|Troca-se o **-l** por **-s**|fun**il** → fun**is**, barr**il** → barr**is**, fuz**il** → fuz**is**|
+|**-il** (paroxítonos)|Troca-se o **-il** por **-eis**|fóss**il** → fóss**eis**, répt**il** → répt**eis**, projét**il** → projét**eis**|
+|**-x**|**Invariável**|o tórax → os tórax, o látex → os látex, a fênix → as fênix|
+
+**O Plural dos Substantivos em "-ão"**
+
+Esta terminação é a que apresenta maior variedade, admitindo três possíveis plurais: -ãos, -ões e -ães. Não há uma regra fixa; a forma correta é determinada pela etimologia e pelo uso consagrado da palavra.
+
+- **Plural em -ãos:** Geralmente em paroxítonas. _Exemplos:_ órgão**s**, sótão**s**, bênção**s**, órfão**s**. E em algumas oxítonas: _mão**s**_, _irmão**s**_, _cidadão**s**_.
+- **Plural em -ões:** É a forma mais comum. _Exemplos:_ eleiç**ões**, lim**ões**, bal**ões**, coraç**ões**, naç**ões**.
+- **Plural em -ães:** É a forma mais restrita. _Exemplos:_ p**ães**, c**ães**, capit**ães**, alem**ães**, escriv**ães**.
+
+**Substantivos com Múltiplos Plurais**
+
+Algumas palavras terminadas em "-ão" admitem mais de uma forma de plural, todas consideradas corretas pela norma padrão.
+
+|Singular|Plurais Aceitos|
+|---|---|
+|Aldeão|aldeãos, aldeões, aldeães|
+|Ancião|anciãos, anciões, anciães|
+|Anão|anãos, anões|
+|Charlatão|charlatões, charlatães|
+|Corrimão|corrimãos, corrimões|
+|Ermitão|ermitãos, ermitões, ermitães|
+|Guardião|guardiões, guardiães|
+|Vilão|vilãos, vilões, vilães|
+|Vulcão|vulcãos, vulcões|
+
+##### Casos Especiais: "Pluralia Tantum"
+
+Existem substantivos na língua portuguesa que são empregados quase exclusivamente na forma plural, mesmo que se refiram a uma única entidade. São conhecidos como _pluralia tantum_ (apenas plural, em latim).
+
+- _Exemplos:_ as **núpcias**, as **férias**, os **arredores**, as **fezes**, os **pêsames**, os **óculos**, as **cócegas**, as **olheiras**.
+
+#### Plural dos Substantivos Compostos
+
+A formação do plural para substantivos compostos segue uma lógica que depende das classes de palavras que formam o composto. A regra geral é bastante intuitiva: os elementos que pertencem a classes de palavras variáveis (substantivo, adjetivo, numeral) vão para o plural; os elementos que pertencem a classes invariáveis (advérbio, preposição, interjeição) ou que são verbos, permanecem no singular.
+
+**A Regra Geral: "Quem varia, varia; quem não varia, não varia"**
+
+1. **Ambos os elementos flexionam:** Isso ocorre quando a palavra composta é formada por classes variáveis.
+    
+    |Composição|Exemplo Singular|Plural|
+    |---|---|---|
+    |Substantivo + Substantivo|couve-flor|couve**s**-flor**es**|
+    |Substantivo + Adjetivo|amor-perfeito|amor**es**-perfeito**s**|
+    |Adjetivo + Substantivo|baixo-relevo|baixo**s**-relevo**s**|
+    |Numeral + Substantivo|quarta-feira|quarta**s**-feira**s**|
+    
+2. **Apenas o segundo elemento flexiona:** Isso ocorre quando o primeiro elemento é de uma classe invariável ou é um verbo.
+    
+    |Composição|Exemplo Singular|Plural|
+    |---|---|---|
+    |Verbo + Substantivo|beija-flor|beija-flor**es**|
+    |Advérbio + Adjetivo|alto-falante|alto-falante**s**|
+    |Palavras Repetidas|corre-corre|corre-corre**s**|
+
+##### Casos Especiais e Exceções
+
+A regra geral, embora útil, não abrange todas as situações. Existem diversos casos específicos que devem ser memorizados.
+
+**Quando o Segundo Substantivo Especifica o Primeiro**
+
+Quando o segundo substantivo da composição serve para especificar o primeiro, indicando seu tipo, finalidade ou semelhança, a gramática normativa aceita duas formas de plural:
+
+- Flexionando apenas o primeiro elemento (mais comum).
+- Flexionando ambos os elementos.
+
+|Exemplo Singular|Plural (Opção 1)|Plural (Opção 2)|
+|---|---|---|
+|peixe-espada|peixe**s**-espada|peixe**s**-espada**s**|
+|pombo-correio|pombo**s**-correio|pombo**s**-correio**s**|
+|salário-família|salário**s**-família|salário**s**-família**s**|
+|licença-maternidade|licença**s**-maternidade|licença**s**-maternidade**s**|
+|banho-maria|banho**s**-maria|banho**s**-maria**s**|
+
+**Compostos com Preposição**
+
+Em palavras compostas ligadas por uma preposição (explícita ou oculta), apenas o primeiro elemento vai para o plural.
+
+- _Exemplos:_
+    - pé de moleque → pé**s** de moleque
+    - mula sem cabeça → mula**s** sem cabeça
+    - mão de obra → mão**s** de obra
+    - água-de-colônia → água**s**-de-colônia
+    - pôr do sol → **pores** do sol (Aqui, "pôr" é um substantivo derivado do verbo).
+
+**Compostos com o Verbo "Guarda"**
+
+A flexão de compostos iniciados por "guarda" depende da classe gramatical dessa palavra no composto.
+
+- **Quando "Guarda" é Verbo:** Apenas o segundo elemento (o substantivo) vai para o plural.
+    - _Exemplos:_ guarda-chuva → guarda-chuva**s**; guarda-roupa → guarda-roupa**s**; guarda-sol → guarda-s**óis**.
+- **Quando "Guarda" é Substantivo (o agente):** Ambos os elementos (substantivo + adjetivo) vão para o plural.
+    - _Exemplos:_ guarda-noturno → guarda**s**-noturno**s**; guarda-civil → guarda**s**-civi**s**; guarda-florestal → guarda**s**-florestai**s**.
+
+**Outros Casos Importantes**
+
+|Singular|Plural|Observação|
+|---|---|---|
+|mal-estar|mal-estar**es**|Advérbio + Substantivo (apenas o substantivo flexiona).|
+|o louva-a-deus|os louva-a-deus|**Invariável**. O plural é marcado pelo artigo.|
+|arco-íris|arco**s**-íris|Apenas o primeiro elemento flexiona.|
+|o bota-fora|os bota-fora|**Invariável**. Composto por dois verbos.|
+|bem-te-vi|bem-te-vi**s**|Apenas o último elemento flexiona.|
+
