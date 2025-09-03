@@ -1177,3 +1177,81 @@ Essa lógica de análise posicional é fundamental para resolver questões de re
 
 Conforme mencionado, a linha entre advérbio e palavra denotativa é tênue. O mais importante é focar no sentido que a expressão confere à frase no contexto em que está inserida.
 
+## Artigo
+
+O artigo é a classe de palavra **variável** em gênero e número que precede o substantivo para determiná-lo, ou seja, para indicar se o ser nomeado é específico ou genérico. Além disso, o artigo tem a função de marcar o gênero (masculino/feminino) e o número (singular/plural) do substantivo a que se refere.
+
+Sua função sintática é sempre a de **adjunto adnominal**, pois está "junto ao nome", modificando-o. Os artigos se dividem em dois grandes grupos: definidos e indefinidos.
+
+### Os Artigos Definidos (o, a, os, as)
+
+Os artigos definidos são usados para se referir a um substantivo de forma particular, precisa e específica. Indicam que o ser ou objeto nomeado é conhecido pelos interlocutores, seja por já ter sido mencionado no texto, seja por fazer parte de um conhecimento de mundo compartilhado.
+
+- **Função Coesiva (Retomada de Informação):** O artigo definido é uma importante ferramenta de coesão, pois retoma um termo já apresentado, evitando a repetição e garantindo a progressão do texto.
+    - _Exemplo:_ Havia **um** policial na esquina. Minutos depois, **o** policial se aproximou do veículo. (Na segunda menção, "o policial" é um ser específico e já conhecido).
+
+#### Valores Semânticos e Estilísticos do Artigo Definido
+
+- **Valor Generalizante (Universalizador):** Paradoxalmente, o artigo definido, quando anteposto a um substantivo comum no singular, pode ser usado para se referir a toda a espécie ou categoria, conferindo um valor universal à declaração.
+    - _Exemplos:_
+        - **O** homem é mortal. (Equivale a: Todo homem é mortal).
+        - **A** mulher tem conquistado cada vez mais espaço na sociedade. (A mulher como um todo, não uma específica).
+        - **O** brasileiro é, em geral, um povo hospitaleiro.
+
+- **Artigo de Notoriedade (Enfático):** Na linguagem moderna e expressiva, o artigo definido pode ser usado para conferir um realce superlativo a um substantivo, indicando que aquele ser é único, o mais notável ou o melhor em sua categoria.
+    - _Exemplos:_
+        - Ele não é apenas um médico; ele é **o** médico.
+        - Aquela não foi uma festa qualquer, foi **a** festa!
+
+> **Foco de Prova: "Todo" vs. "Todo o"**
+> 
+> A presença ou ausência do artigo definido após o pronome indefinido "todo" altera completamente o sentido da expressão.
+> 
+> - **Todo(a) + Substantivo (sem artigo):** Significa "qualquer", "cada". Tem valor generalizante.
+>     - _Exemplo:_ **Toda** cidade brasileira tem problemas de infraestrutura. (Qualquer cidade).
+> - **Todo(a) + Artigo + Substantivo:** Significa "inteiro", "completo".
+>     - _Exemplo:_ **Toda a** cidade ficou sem luz durante o temporal. (A cidade inteira).
+
+#### A Ausência do Artigo e a Ligação com a Crase
+
+A omissão do artigo definido antes de um substantivo indica que ele está sendo empregado em um sentido genérico, indeterminado.
+
+- _Exemplo:_ Não dou ouvidos **a político**. (A qualquer político, de forma geral).
+- _Exemplo:_ Esta é uma parede de **tijolo**. (De um material genérico, não de um tijolo específico).
+
+Este conceito é a chave para entender diversas regras de crase. Como o fenômeno da crase (`à`) exige a fusão da preposição "a" com o artigo "a", se o artigo não for empregado (por o termo ter sentido genérico), a crase não pode ocorrer. Isso explica os casos envolvendo palavras como "casa", "terra" e nomes de lugares (topônimos).
+
+| Sem Artigo (Sentido Genérico) → Sem Crase | Com Artigo (Sentido Específico) → Com Crase                     |
+| ----------------------------------------- | --------------------------------------------------------------- |
+| Cheguei **a casa** cedo.                  | Cheguei **à** casa **de meus pais**. (Casa especificada)        |
+| Os marinheiros desceram **a terra**.      | Os astronautas retornaram **à** Terra (Planeta). (Nome próprio) |
+| Fomos **a Roma**.                         | Fomos **à** Roma **dos imperadores**. (Roma especificada)       |
+
+### Os Artigos Indefinidos (um, uma, uns, umas)
+
+Os artigos indefinidos são usados para se referir a um substantivo de forma vaga, imprecisa e genérica. Geralmente, introduzem um elemento que ainda não foi mencionado no texto.
+
+- **Função de Indeterminação:**
+    - _Exemplos:_
+        - Vi **um** filme excelente ontem. (Um filme qualquer, não especificado).
+        - Preciso comprar **umas** canetas para a prova.
+
+#### Valores Semânticos e Estilísticos do Artigo Indefinido
+
+- **Valor de Aproximação Numérica:** Frequentemente utilizado antes de numerais para indicar uma quantidade aproximada.
+    - _Exemplo:_ Ele deve ter **uns** 40 anos de idade.
+
+- **Valor de Ênfase/Intensificação:** Pode ser usado para realçar um substantivo, conferindo-lhe uma qualidade notável.
+    - _Exemplo:_ Ela demonstrou **uma** força de vontade incrível!
+    - _Exemplo:_ Que **um** absurdo o que ele disse!
+
+- **Valor Generalizante:** Assim como o artigo definido, o indefinido também pode ser usado para se referir a toda uma categoria.
+    - _Exemplo:_ **Um** candidato preparado não teme a concorrência. (Qualquer candidato preparado).
+
+### Contrações e Combinações
+
+É fundamental reconhecer os artigos quando eles aparecem contraídos ou combinados com preposições como "de", "em", "a" e "por".
+
+- **Definidos:** do, da, dos, das, no, na, nos, nas, ao, à, aos, às, pelo, pela, pelos, pelas.
+- **Indefinidos:** dum, duma, duns, dumas, num, numa, nuns, numas.
+
