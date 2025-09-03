@@ -767,3 +767,93 @@ A seguir, uma lista de referência com locuções adjetivas e seus adjetivos cor
 |de mestre|magistral|de vidro|vítreo, hialino|
 
 Lembre-se: nem sempre existirá um adjetivo correspondente. O critério mais seguro é sempre a análise da relação semântica (ativa/posse vs. passiva) entre os termos.
+
+### Flexão de Grau do Adjetivo
+
+Além de variar em gênero e número para concordar com o substantivo, o adjetivo também se flexiona em **grau** para expressar a intensidade de uma característica ou para comparar essa característica entre dois ou mais seres. O grau do adjetivo se divide em dois grandes grupos: o **Comparativo** e o **Superlativo**.
+
+#### Grau Comparativo
+
+O grau comparativo é utilizado para estabelecer uma relação de comparação da mesma característica entre dois ou mais seres, ou de duas ou mais características de um mesmo ser.
+
+**Comparativo de Superioridade:**
+
+- **Estrutura:** `mais + adjetivo + (do) que`
+- **Exemplo:** A prova de Português foi **mais difícil que** a de Matemática.
+
+**Comparativo de Inferioridade:**
+
+- **Estrutura:** `menos + adjetivo + (do) que`
+- **Exemplo:** João é **menos ágil que** seu irmão.
+
+**Comparativo de Igualdade:**
+
+- **Estrutura:** `tão + adjetivo + quanto/como`
+- **Exemplo:** Este livro é **tão interessante quanto** o filme.
+
+> **Nota:** Nas estruturas de superioridade e inferioridade, o uso da preposição "do" antes do "que" é facultativo e mais comum na linguagem coloquial. Ex: _Sou mais alto (do) que você_.
+
+**Comparativos Sintéticos (Eruditos)**
+
+Quatro adjetivos possuem formas comparativas sintéticas, herdadas do latim, que já embutem a ideia de "mais". Por isso, não se deve usar o advérbio "mais" junto a elas.
+
+| Adjetivo | Comparativo Analítico | Comparativo Sintético |
+| -------- | --------------------- | --------------------- |
+| bom      | mais bom              | **melhor**            |
+| mau      | mais mau              | **pior**              |
+| grande   | mais grande           | **maior**             |
+| pequeno  | mais pequeno          | **menor**             |
+
+- **Exemplo:** A sua nota foi **melhor** que a minha. (e não "mais melhor").
+
+#### Grau Superlativo
+
+O grau superlativo expressa uma qualidade em seu nível mais intenso ou elevado, seja de forma absoluta, seja em relação a um conjunto de outros seres.
+
+**Superlativo Relativo**
+
+Eleva a qualidade de um ser em relação a todos os outros de um mesmo grupo.
+
+- **De Superioridade:** `o/a mais + adjetivo + de/dentre`
+    - _Exemplo:_ Pelé foi **o mais famoso de** todos os jogadores.
+- **De Inferioridade:** `o/a menos + adjetivo + de/dentre`
+    - _Exemplo:_ Esta foi **a questão menos complexa da** prova.
+
+**Superlativo Absoluto**
+
+Intensifica a qualidade de um ser de forma extrema, sem compará-lo a nenhum outro.
+
+- **Absoluto Analítico:** Formado com o auxílio de um advérbio de intensidade.
+    - _Exemplos:_ A candidata estava **muito nervosa**. / O resultado foi **extremamente positivo**.
+- **Absoluto Sintético:** Formado pelo acréscimo de um sufixo ao adjetivo, geralmente **-íssimo**.
+    - _Exemplos:_ difícil → dific**ílimo**; fácil → fac**ílimo**; comum → comun**íssimo**.
+
+Muitos adjetivos possuem formas sintéticas irregulares ou eruditas.
+
+| Adjetivo | Superlativo Absoluto Sintético         |
+| -------- | -------------------------------------- |
+| bom      | **ótimo**                              |
+| mau      | **péssimo**                            |
+| grande   | **máximo**                             |
+| pequeno  | **mínimo**                             |
+| magro    | **macérrimo** (erudito) ou magríssimo  |
+| pobre    | **paupérrimo** (erudito) ou pobríssimo |
+| humilde  | **humílimo**                           |
+| fiel     | **fidelíssimo**                        |
+
+#### Outros Recursos de Superlativação
+
+Na prática, a língua dispõe de diversos outros recursos estilísticos para expressar a ideia de superlativo, muito comuns em textos literários e na fala.
+
+- **Repetição do Adjetivo:**
+    - _Exemplo:_ A água estava **fria, fria, fria**.
+- **Prefixos Intensificadores:**
+    - _Exemplo:_ Ele é um profissional **super**competente. / A questão era **ultra**difícil.
+- **Aumentativos ou Diminutivos:**
+    - _Exemplo:_ O gol foi **rapidinho**, nem deu para ver. / Que **golaço**!
+- **Comparações Expressivas:**
+    - _Exemplo:_ O rapaz era **forte como um touro**.
+- **Expressões Fixas:**
+    - _Exemplo:_ O empresário era **podre de rico**. / É um profissional **de mão cheia**.
+- **Uso do Artigo Definido:**
+    - _Exemplo:_ Ele não é um médico qualquer, ele é **o** médico.
