@@ -1255,3 +1255,70 @@ Os artigos indefinidos são usados para se referir a um substantivo de forma vag
 - **Definidos:** do, da, dos, das, no, na, nos, nas, ao, à, aos, às, pelo, pela, pelos, pelas.
 - **Indefinidos:** dum, duma, duns, dumas, num, numa, nuns, numas.
 
+## Numeral
+
+O numeral é a classe de palavra **variável** que se refere a um substantivo para expressar uma ideia de número exato, seja indicando quantidade, ordem, fração ou multiplicação. É a classe responsável por conferir precisão matemática ao discurso.
+
+Assim como os pronomes, os numerais podem desempenhar um papel adjetivo (acompanhando o nome) ou substantivo (substituindo o nome).
+
+- **Numeral Adjetivo:** Acompanha e modifica um substantivo.
+    - _Exemplo:_ **Duas** alunas chegaram atrasadas.
+- **Numeral Substantivo:** Substitui um substantivo, assumindo o seu lugar na frase.
+    - _Exemplo:_ Das alunas, apenas **duas** chegaram atrasadas.
+
+### Classificação dos Numerais
+
+Os numerais são classificados em quatro grandes grupos, de acordo com a ideia que exprimem.
+
+| Tipo                | Função                                               | Exemplos                                    |
+| ------------------- | ---------------------------------------------------- | ------------------------------------------- |
+| **Cardinais**       | Indicam quantidade exata, uma contagem.              | um, dois, três, cem, mil, milhão.           |
+| **Ordinais**        | Indicam ordem, posição ou hierarquia numa sequência. | primeiro, segundo, décimo, vigésimo quinto. |
+| **Multiplicativos** | Indicam uma multiplicação de uma quantidade.         | dobro, triplo, quádruplo, cêntuplo.         |
+| **Fracionários**    | Indicam uma divisão, uma parte de um todo.           | meio, metade, um terço, dois quintos.       |
+
+- **Exemplos em frases:**
+    - Ele comprou **três** pães. (Cardinal)
+    - Ele foi o **primeiro** candidato a ser chamado. (Ordinal)
+    - Ele teve o **triplo** do trabalho para refazer o projeto. (Multiplicativo)
+    - Comeu apenas **um terço** da pizza. (Fracionário)
+
+### Casos Especiais e Outras Formas de Quantificação
+
+**Substantivos Coletivos Numéricos**
+
+Existem substantivos que, embora pertençam à classe dos nomes, expressam uma ideia de quantidade numérica exata. São chamados de coletivos numéricos.
+
+- **Quantidades diversas:** par, dezena, dúzia, centena, milhar, grosa (doze dúzias).
+- **Períodos de tempo:** biênio (2 anos), triênio (3 anos), lustro/quinquênio (5 anos), década/decênio (10 anos), século (100 anos), milênio (1000 anos).
+- **Outros:** novena (9 dias), resma (500 folhas de papel).
+
+> **Nota:** Palavras como **milhão, bilhão, trilhão**, etc., possuem uma natureza híbrida, sendo classificadas por alguns gramáticos como numerais cardinais e por outros como substantivos. Na prática, elas se comportam como substantivos, exigindo concordância. Ex: _Os **dois milhões** de reais foram investidos_.
+
+**A Flexão dos Numerais**
+
+A maioria dos numerais é invariável em gênero. As exceções são:
+
+- Os cardinais **um** e **dois**: um/uma, dois/duas.
+- As centenas a partir de **duzentos**: duzentos/duzentas, trezentos/trezentas, etc.
+- Todos os **ordinais**: primeiro/primeira, vigésimo/vigésima, etc.
+
+**Outros Numerais e Palavras Relacionadas**
+
+- **"Ambos":** É considerado um numeral dual, com o sentido de "os dois" ou "um e outro".
+    - _Exemplo:_ **Ambos** os candidatos foram aprovados.
+
+- **"Zero":** É o numeral cardinal que indica ausência de quantidade.
+
+- **Letra como Ordinal:** Em contextos de enumeração, as letras podem assumir o valor de numerais ordinais.
+    - _Exemplo:_ O erro se encontra na opção **c**. (Na terceira opção).
+
+- **Derivação Imprópria:** Os numerais, especialmente os ordinais, podem ser empregados com valor de adjetivo, expressando qualidade.
+    - _Exemplo:_ Este é um produto de **primeira** qualidade.
+    - _Exemplo:_ Não quero fazer parte de um time de **segunda** categoria.
+
+> **Foco de Prova: O que NÃO é numeral**
+> 
+> Palavras que indicam uma sequência, mas não uma posição matemática exata, são classificadas como **adjetivos**, e não como numerais ordinais.
+> 
+> - _Exemplos:_ **último, penúltimo, antepenúltimo, derradeiro, posterior, anterior.**
