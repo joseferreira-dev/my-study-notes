@@ -993,3 +993,58 @@ Para consolidar a diferença, observe a comparação direta:
 
 <sup>1</sup> _Lembrando que "mais", "menos" e "demais" são invariáveis em ambos os casos._
 
+### As Circunstâncias Adverbiais
+
+A principal função semântica do advérbio é adicionar à oração uma noção de **circunstância**, ou seja, um detalhe sobre as condições em que a ação verbal ocorre. Ao ler uma frase, podemos nos perguntar _como, onde, quando_ ou _por que_ a ação foi praticada. As respostas a essas perguntas são, em geral, expressas por termos de valor adverbial.
+
+Essa circunstância pode ser expressa de três formas:
+
+1. **Por um Advérbio:** uma única palavra.
+    - _Exemplo:_ Estudo **sempre**.
+
+2. **Por uma Locução Adverbial:** um conjunto de duas ou mais palavras com valor de advérbio.
+    - _Exemplo:_ Estudo **a todo momento**.
+
+3. **Por uma Oração Subordinada Adverbial:** uma oração inteira que modifica a oração principal.
+    - _Exemplo:_ Estudo **sempre que posso**.
+
+A imagem a seguir ilustra como diferentes ações (`morreu`, `roubou`, `cairá`) podem ser detalhadas por uma variedade de advérbios e locuções adverbiais, cada um atribuindo uma circunstância específica — como causa, modo, lugar, tempo, intensidade, dúvida — que enriquece e precisa a informação original.
+
+<div align="center">
+<img width="520px" src="./img/03-circunstancias-adverbiais.png">
+</div>
+
+
+#### Principais Circunstâncias e Seus Advérbios
+
+A seguir, uma lista de referência com as principais circunstâncias e os advérbios e locuções que geralmente as expressam.
+
+|Circunstância|Principais Advérbios e Locuções Adverbiais|
+|---|---|
+|**Afirmação**|certamente, certo, decididamente, decerto, deveras, efetivamente, indubitavelmente, realmente, sim, com certeza.|
+|**Dúvida**|acaso, casualmente, porventura, possivelmente, provavelmente, quiçá, talvez, por certo.|
+|**Intensidade**|assaz, bastante, bem, demais, mais, menos, muito, pouco, quanto, quão, quase, tão, tanto, extremamente, intensamente.|
+|**Lugar**|abaixo, acima, acolá, adiante, adentro, afora, aí, além, algures (em algum lugar), alhures (em outro lugar), aqui, atrás, cá, debaixo, defronte, dentro, detrás, embaixo, externamente, fora, lá, longe, nenhures (em nenhum lugar), onde, perto, à direita, à esquerda, ao lado, de perto.|
+|**Modo**|acinte (de propósito), adrede (de propósito), assim, bem, debalde (em vão), de cor, depressa, devagar, mal, melhor, pior, e a maioria dos advérbios terminados em "-mente" (calmamente, tristemente), às pressas, à vontade, frente a frente.|
+|**Negação**|jamais, nem, não, nunca, tampouco, de forma nenhuma, de modo algum, de jeito nenhum.|
+|**Tempo**|afinal, agora, ainda, amiúde (frequentemente), amanhã, antes, antigamente, breve, cedo, constantemente, depois, doravante, enfim, então, entrementes, hoje, imediatamente, jamais, já, logo, nunca, ontem, ora, outrora, primeiro, sempre, tarde, à noite, às vezes, de manhã, de repente, de vez em quando, em breve, hoje em dia.|
+
+> **Foco de Prova: O Contexto é Soberano**
+> 
+> As listas acima são guias de referência, mas não devem ser memorizadas de forma cega. A classificação semântica de um advérbio depende **exclusivamente do sentido que ele expressa no contexto da frase**. Uma mesma palavra pode expressar circunstâncias diferentes.
+> 
+> - _Exemplo:_ Na frase "Não quero vê-lo **nunca mais**", o advérbio "mais" expressa uma ideia de **tempo**.
+> - _Exemplo:_ Na frase "Preciso que você corra **mais** rápido", o advérbio "mais" expressa uma ideia de **intensidade**.
+> 
+> Portanto, a análise do sentido global da frase é sempre o passo mais importante.
+
+#### Outras Funções e Particularidades do Advérbio
+
+- **A Função Coesiva:** Além de modificar termos dentro de uma oração, alguns advérbios e locuções (chamados de conectivos ou sequenciais) servem para ligar orações ou parágrafos, fazendo referência a ideias, tempo ou espaço já mencionados.
+    - _Exemplos:_
+        - Fui à Europa e **lá** percebi que somos felizes **aqui**. (Referência de lugar).
+        - O problema é complexo. **Ainda assim**, devemos tentar resolvê-lo. (Conexão de ideias).
+
+- **A Omissão do Sufixo "-mente":** Quando dois ou mais advérbios terminados em "-mente" modificam o mesmo verbo em uma estrutura coordenada, é comum e elegante omitir o sufixo do primeiro, mantendo-o apenas no último.
+    - _Exemplo:_ Ele agiu **rápida** e **silenciosamente**.
+    - **Atenção:** Na frase acima, a palavra "rápida" continua sendo morfologicamente um **advérbio** (por elipse do sufixo). Sua função sintática é de adjunto adverbial de modo, pois modifica o verbo "agiu", e não de adjetivo, pois não caracteriza um substantivo.
