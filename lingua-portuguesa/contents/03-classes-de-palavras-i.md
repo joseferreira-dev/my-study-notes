@@ -1081,3 +1081,99 @@ Vamos aplicar o teste aos exemplos:
 |**Contraste:** O carro é **caro**.|Os carros são **caros**.|"Caros" variou para concordar com "carros" → **Adjetivo**|
 
 Dominar essa distinção é fundamental, pois as bancas frequentemente constroem questões que exigem a correta classificação de termos como estes, testando a capacidade do candidato de diferenciar a classe morfológica original da função sintática exercida na frase.
+
+### As Palavras Denotativas: Advérbios ou uma Classe à Parte?
+
+Existe um grupo de palavras na Língua Portuguesa que, por seu valor semântico, se assemelham aos advérbios, mas não se encaixam perfeitamente em sua definição, pois nem sempre modificam um verbo, um adjetivo ou outro advérbio. São as chamadas **palavras ou expressões denotativas**.
+
+A classificação dessas palavras é um ponto de debate entre os gramáticos: alguns as consideram uma classe à parte, enquanto outros as enquadram como "advérbios denotativos". Para fins de concurso, a polêmica classificatória é menos importante do que a capacidade de **reconhecer o valor semântico** que essas palavras agregam à frase.
+
+#### Classificação Semântica das Palavras Denotativas
+
+A seguir, os principais grupos de palavras denotativas, organizados pelo sentido que expressam.
+
+**Palavras Denotativas de Designação**
+
+Servem para apontar ou mostrar algo de forma direta. A principal palavra deste grupo é _eis_.
+
+- _Exemplos:_
+    - **Eis** o filho do homem.
+    - Procurei por toda parte. **Eis**, enfim, a solução que buscávamos.
+
+**Palavras Denotativas de Explicação ou Retificação**
+
+Servem para esclarecer, exemplificar, corrigir ou continuar um raciocínio. Geralmente, vêm isoladas por vírgulas.
+
+- **Principais:** _isto é, por exemplo, ou seja, a saber, qual seja, aliás, digo, ou melhor, quer dizer_.
+- _Exemplos:_
+    - Comprei uma ferramenta de precisão, **isto é**, um paquímetro.
+    - Vire à direita, **ou melhor**, à esquerda. **Aliás**, acho que o melhor é seguir reto.
+    - Os defeitos do relatório são dois; **aliás**, três.
+
+**Palavras Denotativas de Realce (Expletivas)**
+
+A função destas palavras é puramente estilística: dar ênfase ou realce a uma ideia. Elas não possuem uma função sintática essencial na frase.
+
+- **Principais:** _é que (ser+que), cá, lá, não, mas, se_.
+- **Característica Fundamental:** Podem ser retiradas da frase sem causar prejuízo gramatical ou alteração do sentido principal. Apenas a ênfase é perdida.
+- _Exemplos:_
+    - Eu **é que** faço as regras. (Ênfase no sujeito "Eu"). → _Retirando:_ Eu faço as regras.
+    - Quase **que** eu caio da laje. (Realce comum na oralidade). → _Retirando:_ Quase eu caio da laje.
+    - Eles têm **lá** seus motivos para agir assim. (Realce da existência dos motivos).
+    - **Vão-se** os anéis, ficam os dedos. (O "se" é expletivo, realçando a ação de ir).
+    - Ele **riu-se** por dentro. (O "se" não é reflexivo, apenas realça o verbo rir).
+
+**Palavras Denotativas de Situação (Marcadores Discursivos)**
+
+São palavras usadas para introduzir ou situar um comentário, organizando o fluxo da conversa ou do texto. Nesses casos, perdem seu valor semântico original (temporal, adversativo, etc.).
+
+- **Principais:** _então, mas, se, agora, afinal_.
+- _Exemplos:_
+    - **Afinal**, quem é você para me dar ordens?
+    - **Então**, você decidiu se vai aceitar a proposta?
+    - **Mas** quem é essa pessoa que insiste em me ligar? (Aqui, "mas" não indica oposição, apenas introduz a pergunta com surpresa).
+
+**Palavras Denotativas de Exclusão**
+
+Servem para restringir um conjunto, indicando que a declaração se aplica apenas a um elemento e exclui os demais.
+
+- **Principais:** _somente, só, salvo, exceto, senão, sequer, apenas_.
+- _Exemplos:_
+    - **Só** os frutos do mar estão à venda, **exceto** lagosta.
+    - Todos os tripulantes morreram no acidente, **salvo** um.
+    - Ele nem **sequer** se despediu.
+
+**Palavras Denotativas de Inclusão**
+
+Servem para adicionar um elemento a um conjunto, muitas vezes ressaltando que até mesmo aquele elemento, talvez inesperado, faz parte.
+
+- **Principais:** _até, ainda, mesmo, também, inclusive_.
+- _Exemplos:_
+    - Qualquer pessoa, **até** o mais ignorante, sabe disso!
+    - Todos os parentes vieram à festa, **inclusive** os que moram mais longe.
+    - João é bombeiro, lutador **também**.
+
+#### A Posição da Palavra e a Mudança de Sentido
+
+A classificação e o sentido de uma palavra denotativa (ou de um advérbio) podem mudar drasticamente dependendo do termo que ela está modificando na oração. O deslocamento de um termo como "só" ou "até" não é uma mera escolha de estilo; é uma alteração semântica.
+
+**Estudo de Caso: a palavra "só"**
+
+|Frase|Palavra Modificada|Análise (Classe e Sentido)|
+|---|---|---|
+|**Só** João fuma charutos.|João (Substantivo)|**Palavra Denotativa de Exclusão:** Apenas João, e mais ninguém.|
+|João **só** fuma charutos.|fuma (Verbo)|**Advérbio:** A única ação que João pratica é fumar; ele não bebe, não come, etc.|
+|João fuma **só** charutos.|charutos (Substantivo)|**Palavra Denotativa de Exclusão:** Apenas charutos, e nenhum outro tipo de fumo.|
+|João fuma charutos **só**.|João (Substantivo)|**Adjetivo:** Equivale a "sozinho".|
+
+Essa lógica de análise posicional é fundamental para resolver questões de reescrita e de alteração de sentido.
+
+- **Outros exemplos de deslocamento:**
+    - **Até** o padre riu da piada. (Inclusão: Outras pessoas riram, e o padre também).
+    - O padre **até** riu da piada. (Realce: O padre, que não costuma rir, chegou a rir).
+    - O padre riu **até** da piada. (Inclusão: Ele riu de outras coisas e também da piada).
+	* Isso não pode ser verdade. (Certeza; é impossível que seja verdade).
+	* Isso pode não ser verdade. (Dúvida; existe a possibilidade de não ser verdade).
+
+Conforme mencionado, a linha entre advérbio e palavra denotativa é tênue. O mais importante é focar no sentido que a expressão confere à frase no contexto em que está inserida.
+
