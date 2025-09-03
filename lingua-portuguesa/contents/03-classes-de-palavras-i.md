@@ -862,3 +862,66 @@ Na prática, a língua dispõe de diversos outros recursos estilísticos para ex
 - **Uso do Artigo Definido:**
     - _Exemplo:_ Ele não é um médico qualquer, ele é **o** médico.
 
+## Advérbio
+
+O advérbio é a classe de palavra **invariável**, por excelência, cuja função principal é modificar um **verbo**, acrescentando-lhe uma noção de circunstância. Ele informa _quando_, _onde_, _como_ ou _por que_ uma ação verbal ocorre.
+
+- _Exemplos:_
+    - Ele chegou **ontem**. (circunstância de tempo)
+    - Moramos **aqui**. (circunstância de lugar)
+    - Ela agiu **corretamente**. (circunstância de modo)
+
+No entanto, a atuação do advérbio é mais ampla. Ele também pode modificar outras classes de palavras e até mesmo orações inteiras.
+
+### A Abrangência do Advérbio
+
+**Modificando um Adjetivo**
+
+Quando se liga a um adjetivo, o advérbio tem a função de intensificar a qualidade expressa.
+
+- _Exemplos:_
+    - A prova estava **muito** difícil.
+    - Seu raciocínio é **bastante** lógico.
+
+**Modificando outro Advérbio**
+
+Da mesma forma, um advérbio pode intensificar o sentido de outro advérbio.
+
+- _Exemplos:_
+    - O candidato fala **extremamente** bem.
+    - O local da prova fica **bem** longe daqui.
+
+**Modificando uma Oração Inteira**
+
+Neste caso, o advérbio não se refere a um termo específico, mas expressa um comentário ou ponto de vista do emissor sobre toda a declaração. Frequentemente, aparece no início da frase, separado por vírgula.
+
+- _Exemplos:_
+    - **Infelizmente**, o projeto não foi aprovado.
+    - **Felizmente**, todos os passageiros sobreviveram.
+    - **Certamente**, haverá uma solução para o problema.
+
+### A Invariabilidade e sua Principal Exceção
+
+A característica definidora do advérbio é ser invariável, ou seja, não se flexionar em gênero (masculino/feminino) ou número (singular/plural). Contudo, existe uma exceção importante e muito cobrada em provas.
+
+> **Foco de Prova: A Flexão do Advérbio "Todo"**
+> 
+> A palavra **todo**, quando utilizada com o sentido de **"totalmente", "completamente"**, funciona como um advérbio, mas, excepcionalmente, concorda em gênero e número com o termo a que se refere.
+> 
+> - _Exemplos:_
+>     - Ele chegou **todo** sujo da partida de futebol. (= totalmente sujo)
+>     - A noiva estava **toda** emocionada. (= completamente emocionada)
+>     - Os alunos ficaram **todos** orgulhosos com o resultado.
+>     - As paredes da casa estão **todas** pintadas.
+
+### Os Advérbios Interrogativos
+
+Os advérbios **onde**, **quando**, **como** e a locução **por que** são classificados como interrogativos quando são usados para iniciar perguntas (diretas ou indiretas) sobre as circunstâncias de lugar, tempo, modo e causa, respectivamente.
+
+| Advérbio Interrogativo | Circunstância | Exemplo (Interrogativa Direta)      | Exemplo (Interrogativa Indireta)                         |
+| ---------------------- | ------------- | ----------------------------------- | -------------------------------------------------------- |
+| **Onde**               | Lugar         | **Onde** você mora?                 | Ninguém sabe **onde** ele mora.                          |
+| **Quando**             | Tempo         | **Quando** será a prova?            | Gostaria de saber **quando** será a prova.               |
+| **Como**               | Modo          | **Como** eles organizaram a festa?  | Não entendi **como** eles organizaram a festa.           |
+| **Por que**            | Causa         | **Por que** tantos alunos desistem? | A pesquisa investiga **por que** tantos alunos desistem. |
+
