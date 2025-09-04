@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operacionais/contents/06-sistemas-de-arquivos.md",
+                "file": "sistemas-operacionais/contents/07-windows-desktop.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "06-sistemas-de-arquivos"
+              "title": "07-windows-desktop"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sistemas-operacionais/contents/06-sistemas-de-arquivos.md",
+                "file": "sistemas-operacionais/contents/07-windows-desktop.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 06-sistemas-de-arquivos"
+              "title": "Sumário de 07-windows-desktop"
             }
           }
         ],
@@ -171,20 +171,23 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
-    "sistemas-operacionais/contents/05-gerenciamento-de-armazenamento.md",
     "sistemas-operacionais/contents/06-sistemas-de-arquivos.md",
+    "sistemas-operacionais/contents/07-windows-desktop.md",
+    "sistemas-operacionais/contents/img/07-instalacao-13.png",
+    "sistemas-operacionais/contents/img/07-instalacao-12.png",
+    "sistemas-operacionais/contents/img/07-instalacao-11.png",
+    "sistemas-operacionais/contents/img/07-instalacao-10.png",
+    "sistemas-operacionais/contents/img/07-instalacao-09.png",
+    "sistemas-operacionais/contents/img/07-instalacao-08.png",
+    "sistemas-operacionais/contents/img/07-instalacao-07.png",
+    "sistemas-operacionais/contents/img/07-instalacao-06.png",
+    "sistemas-operacionais/contents/img/07-instalacao-05.png",
+    "sistemas-operacionais/contents/img/07-instalacao-04.png",
+    "sistemas-operacionais/contents/05-gerenciamento-de-armazenamento.md",
     "conhecimentos-pedagogicos-e-ept/contents/07-relacao-professor-aluno.md",
     "lingua-portuguesa/contents/04-classes-de-palavras-ii.md",
     "lingua-portuguesa/contents/03-classes-de-palavras-i.md",
-    "lingua-portuguesa/contents/img/04-colocacao-pronomial-proclise.png",
-    "lingua-portuguesa/contents/img/03-palavras-especiais-mesmo.png",
-    "lingua-portuguesa/contents/img/03-palavras-especiais-ainda.png",
-    "lingua-portuguesa/contents/img/03-palavras-especiais-ate.png",
-    "lingua-portuguesa/contents/img/03-palavras-especiais-so.png",
-    "lingua-portuguesa/contents/img/03-palavras-especiais-o-a-os-as.png",
-    "lingua-portuguesa/contents/img/03-circunstancias-adverbiais.png",
     "lingua-portuguesa/README.md",
-    "lingua-portuguesa/contents/img/03-grau-dos-adjetivos.png",
     "lingua-portuguesa/contents/01-visao-geral.md",
     "engenharia-de-prompt/prompt-de-protocolo.md",
     "engenharia-de-prompt/Sem título.md",
@@ -192,12 +195,10 @@
     "engenharia-de-prompt/Sem título 1.md",
     "engenharia-de-prompt/README.md",
     "engenharia-de-prompt/contents",
-    "engenharia-de-prompt/contents/banner-eng-prompt.png",
     "engenharia-de-prompt/contents/02-algoritmos-de-ordenacao/README.md",
     "engenharia-de-prompt/contents/01-introducao-algoritmos-ordenacao/README.md",
     "lingua-portuguesa/Prompt de Triagem.md",
     "legislacao/contents/07-decreto-1171.md",
-    "legislacao/contents/img/decreto-1171-abstencao.png",
     "legislacao/contents/04-portaria-6719.md",
     "legislacao/contents/05-lei-9394.md",
     "engenharia-de-software/contents/12-modelo-rup.md",
@@ -207,7 +208,6 @@
     "engenharia-de-software/contents/08-modelo-espiral.md",
     "engenharia-de-software/contents/07-modelo-prototipo.md",
     "engenharia-de-software/contents/06-modelo-iterativo-e-evolutivo.md",
-    "engenharia-de-software/contents/05-modelo-rad.md",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
     "informatica-basica",

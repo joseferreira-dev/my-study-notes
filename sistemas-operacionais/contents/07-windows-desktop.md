@@ -1,0 +1,166 @@
+# Capítulo 7 – Windows Desktop
+
+Ao longo de décadas, a família de sistemas operacionais Microsoft Windows consolidou-se como a plataforma dominante no mercado de computadores pessoais (desktops e notebooks). Sua popularidade deve-se, em grande parte, à sua interface gráfica intuitiva, vasta compatibilidade de hardware e a um gigantesco ecossistema de software desenvolvido para ela. Para qualquer profissional ou entusiasta da tecnologia, compreender os processos de instalação, configuração e os componentes fundamentais do Windows é um conhecimento essencial. Embora existam diversas versões — como o Windows XP, 7, 8, 10 e 11, cada uma com suas particularidades —, os princípios básicos de sua implementação e gerenciamento compartilham uma base comum.
+
+Neste capítulo, exploraremos o processo de instalação e configuração de uma das versões mais icônicas, o Windows 7, que serve como um excelente modelo para entendermos os passos lógicos que se aplicam, com pequenas variações, às demais edições. Vamos detalhar cada etapa, desde a inicialização do computador a partir da mídia de instalação até as configurações finais que preparam o sistema para o primeiro uso, desvendando o que acontece "por baixo dos panos" em cada decisão tomada pelo usuário.
+
+## O Processo de Instalação e Configuração Inicial
+
+A instalação de um sistema operacional como o Windows é um procedimento que transforma um conjunto de hardware em um ambiente computacional funcional. O método mais tradicional para iniciar esse processo é através de uma **mídia de inicialização (boot)**, que pode ser um DVD, um pen drive ou até mesmo uma imagem disponibilizada através de uma rede local. Para que isso funcione, o computador precisa ser instruído a tentar carregar um sistema a partir dessas mídias antes de tentar inicializar pelo disco rígido (HD) ou SSD interno. Essa ordem de prioridade de inicialização é configurada no **SETUP** do computador, uma interface de baixo nível, também conhecida como BIOS ou, em sistemas mais modernos, UEFI.
+
+O processo de instalação das diferentes versões do Windows é notavelmente semelhante em sua estrutura. Utilizaremos como exemplo um passo a passo detalhado da instalação do Windows 7, que ilustra de forma clara todas as etapas cruciais.
+
+**1. Inicialização a partir da Mídia:**
+
+Com o computador ligado e a ordem de boot corretamente configurada, a mídia de instalação do Windows 7 (DVD ou pen drive) é inserida. Ao reiniciar o PC, o SETUP (BIOS/UEFI) detecta a mídia e exibe uma mensagem como "Pressione qualquer tecla para iniciar do CD ou DVD...". Nesse momento, o usuário deve pressionar qualquer tecla para que o programa de instalação, contido na mídia, seja carregado na memória RAM, dando início ao processo. Se nenhuma tecla for pressionada, o sistema prosseguirá para o próximo dispositivo na ordem de boot, que geralmente é o disco rígido.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-01.png">
+</div>
+
+**2. Configurações de Localização:**
+
+As primeiras telas do instalador são dedicadas à personalização regional. É aqui que o usuário define o idioma que será usado em toda a interface do sistema, o formato de hora e moeda (que influencia como datas, números e valores monetários são exibidos) e o layout do teclado. A escolha correta do layout do teclado é fundamental para garantir que os caracteres especiais e a acentuação correspondam às teclas físicas (por exemplo, ABNT2 para teclados padrão brasileiro com a tecla "Ç").
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-02.png">
+</div>
+<br>
+<div align="center">
+<img width="540px" src="./img/07-instalacao-03.png">
+</div>
+
+**3. Início da Instalação e Escolha do Tipo:**
+
+Após as configurações de localização, a tela principal do instalador oferece a opção de iniciar a cópia dos arquivos.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-04.png">
+</div>
+
+Em seguida, uma das decisões mais importantes é apresentada: o tipo de instalação.
+
+- **Atualização (Upgrade):** Esta opção tenta instalar uma nova versão do Windows sobre uma versão anterior já existente, mantendo os arquivos pessoais, configurações e programas do usuário. É uma opção conveniente, mas só está disponível quando o instalador é executado a partir de um sistema Windows já em funcionamento. A desvantagem é que problemas ou instabilidades do sistema antigo podem ser "carregados" para a nova instalação.
+- **Personalizada (Avançada) (Clean Install):** Esta é a opção para uma **instalação limpa**. Ela instala uma cópia nova do Windows, sem manter configurações ou programas anteriores. É a escolha que oferece o maior nível de controle, permitindo ao usuário gerenciar os discos e as partições. Embora exija a reinstalação de todos os programas e a restauração de arquivos a partir de um backup, uma instalação limpa geralmente resulta em um sistema mais estável, rápido e livre de resquícios de softwares antigos. Para a instalação em um disco vazio ou para a formatação completa, esta é a única opção.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-05.png">
+</div>
+
+**4. Gerenciamento de Disco: Particionamento e Formatação:**
+
+Ao escolher a instalação "Personalizada", o instalador exibe os discos de armazenamento disponíveis. É nesta etapa que se define onde o Windows será instalado.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-06.png">
+</div>
+
+Na imagem, vemos um disco (Disco 0) com uma partição já criada. Ao clicar em "Opções de unidade", ferramentas avançadas são exibidas. A opção **Formatar** é crucial: ela apaga completamente todos os dados de uma partição e cria um novo sistema de arquivos (no caso do Windows 7 e versões posteriores, o NTFS) para organizar o espaço. É um passo destrutivo, mas necessário para preparar a partição para receber os arquivos do sistema operacional. O instalador frequentemente emite um aviso de que todos os dados serão perdidos. Após selecionar a partição e formatá-la, o botão "Avançar" dá continuidade à cópia dos arquivos do Windows para o disco.
+
+É comum que o instalador do Windows crie automaticamente uma pequena partição adicional chamada **"Reservado pelo Sistema"**. Esta partição não recebe uma letra (como C:) e fica oculta para o usuário. Ela é de extrema importância, pois armazena o **Gerenciador de Inicialização (Boot Manager)** e os **Dados de Configuração de Inicialização (BCD)**, que são os componentes responsáveis por carregar o sistema operacional quando o computador é ligado.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-07.png">
+</div>
+
+**5. Configurações Iniciais da Conta de Usuário:**
+
+Após a cópia dos arquivos e a primeira reinicialização, o Windows inicia a fase de configuração pós-instalação (conhecida como OOBE - Out-of-Box Experience). O primeiro passo é criar a conta do usuário principal.
+
+- **Nome de usuário:** É o nome que identificará a conta do usuário no sistema (ex: "edivaldo").
+- **Nome do computador:** É o nome que identificará a máquina em uma rede local (ex: "edivaldo-PC"). É uma boa prática definir um nome descritivo, especialmente em ambientes com múltiplos computadores, como `ESCRITORIO-01` ou `SALA-NOTEBOOK`.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-08.png">
+</div>
+
+**6. Definição da Senha da Conta:**
+
+A segurança começa com uma senha forte. Nesta etapa, o usuário define uma senha para sua conta. É altamente recomendado criar uma senha que combine letras maiúsculas, minúsculas, números e símbolos. O Windows também exige a criação de uma dica de senha. É importante que a dica seja algo que apenas o usuário entenda e que o ajude a lembrar da senha, sem revelá-la diretamente. Por exemplo, se a senha for MeuCachorroNasceuEm2015!, uma dica ruim seria "cachorro 2015", mas uma dica boa poderia ser "Aniversário do meu primeiro pet".
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-09.png">
+</div>
+
+**7. Chave do Produto e Ativação:**
+
+A chave do produto (Product Key) é um código alfanumérico que serve como licença de uso do software. Inseri-la nesta etapa e marcar a opção "Ativar automaticamente o Windows quando eu estiver online" inicia o processo de ativação. A ativação é um mecanismo anti-pirataria que valida a chave junto aos servidores da Microsoft, vinculando-a àquele hardware específico. É possível pular esta etapa e inserir a chave posteriormente; o Windows funcionará normalmente por um período de carência, mas solicitará a ativação após esse tempo.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-10.png">
+</div>
+
+**8. Configuração das Atualizações Automáticas:**
+
+Manter o sistema operacional atualizado é uma das práticas de segurança mais importantes. O Windows Update é o serviço responsável por baixar e instalar correções de segurança (patches), correções de bugs e melhorias de recursos. As opções oferecidas são:
+
+- **Usar configurações recomendadas:** Instala automaticamente todas as atualizações importantes e recomendadas, oferecendo o maior nível de proteção.
+- **Instalar somente atualizações importantes:** Foca apenas nas atualizações críticas, principalmente as de segurança.
+- **Perguntar depois:** Desativa temporariamente as atualizações automáticas, deixando a decisão para o usuário. Esta opção não é recomendada, pois pode deixar o computador vulnerável a ameaças recém-descobertas.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-11.png">
+</div>
+
+**9. Configuração de Data e Hora:**
+
+A precisão do relógio do sistema é vital não apenas para o usuário, mas também para o funcionamento correto de diversas aplicações, registros de eventos (logs) e protocolos de rede seguros. Nesta tela, o usuário configura o fuso horário (ex: UTC-03:00 Brasília), a data e a hora.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-12.png">
+</div>
+
+**10. Seleção do Local da Rede:**
+
+Se o computador estiver conectado a uma rede, o Windows solicita que o usuário classifique o tipo de rede. Esta escolha não é apenas informativa; ela define um conjunto de regras de firewall e compartilhamento para proteger o computador.
+
+- **Rede Doméstica:** Para redes residenciais seguras, onde todos os dispositivos são conhecidos e confiáveis. Ativa a descoberta de rede, permitindo que computadores se enxerguem para compartilhar arquivos e impressoras.
+- **Rede de Trabalho:** Semelhante à rede doméstica, mas otimizada para um ambiente de escritório. A descoberta de rede também é ativada.
+- **Rede Pública:** A opção mais segura, destinada a redes não confiáveis como Wi-Fi de aeroportos, hotéis ou cafeterias. Desativa a descoberta de rede, tornando o computador "invisível" para outros dispositivos na mesma rede e aplicando regras de firewall mais restritivas para bloquear conexões indesejadas.
+
+<div align="center">
+<img width="540px" src="./img/07-instalacao-13.png">
+</div>
+
+Após esta última configuração, o instalador finaliza os preparativos e, em poucos instantes, apresenta a Área de Trabalho, marcando o fim do processo de instalação. O sistema está agora pronto para ser utilizado, receber a instalação de programas e ser personalizado pelo usuário.
+
+### Edições do Windows Moderno
+
+A Microsoft tradicionalmente lança suas versões do sistema operacional Windows em diferentes **edições** (às vezes chamadas de SKUs - Stock Keeping Units). Essa estratégia visa atender a diversos segmentos de mercado, desde o usuário doméstico com necessidades básicas até grandes corporações com requisitos complexos de segurança e gerenciamento. Cada edição oferece um conjunto específico de funcionalidades, com preços correspondentes, permitindo que os consumidores escolham a versão que melhor se adapta ao seu perfil de uso. Analisaremos as edições mais conhecidas das versões mais influentes do Windows.
+
+#### Windows 7
+
+O Windows 7 foi amplamente elogiado por sua estabilidade e interface amigável, e sua estrutura de edições serviu de base para as versões futuras.
+
+- **Windows 7 Starter:** A edição mais básica, projetada para hardware de baixo custo, como os netbooks populares na época de seu lançamento. Suas limitações eram significativas: era exclusivamente distribuído em versão de 32 bits, não possuía os efeitos visuais da interface Aero Glass e, a mais notória, impedia que o usuário executasse mais de três aplicativos simultaneamente.
+- **Windows 7 Home Basic:** Uma versão intermediária, voltada para mercados emergentes. Eliminava a restrição de três aplicativos da edição Starter e estava disponível em versões de 32 e 64 bits, mas ainda carecia dos recursos multimídia e estéticos mais avançados.
+- **Windows 7 Home Premium:** Considerada a edição padrão para usuários domésticos, acumulava as funcionalidades das versões anteriores e adicionava recursos importantes para entretenimento e usabilidade. Os destaques incluíam o suporte completo à interface **Aero Glass**, com suas transparências e animações, o **Aero Background**, que permitia a troca automática de papéis de parede, e o suporte a tecnologias de tela sensível ao toque (Windows Touch).
+- **Windows 7 Professional:** Voltada para pequenas e médias empresas e usuários avançados. Além de todos os recursos da Home Premium, esta edição introduzia ferramentas focadas em produtividade e segurança de rede. Um recurso crucial era a capacidade de ingressar em um **Domínio do Windows Server**, permitindo o gerenciamento centralizado de usuários e políticas. Também incluía o **Encrypting File System (EFS)**, uma tecnologia de criptografia no nível do sistema de arquivos que permite proteger arquivos e pastas individuais contra acesso não autorizado.
+- **Windows 7 Enterprise:** Destinada a grandes corporações e disponível apenas através de licenciamento por volume. Construída sobre a base da edição Professional, adicionava recursos de segurança e gerenciamento em larga escala, como o **BitLocker**, uma solução de criptografia que protege volumes de disco inteiros (a partição do sistema ou discos de dados), e o **AppLocker**, que permite aos administradores de TI criar regras para impedir a execução de softwares não autorizados.
+- **Windows 7 Ultimate:** A edição mais completa, que combinava absolutamente todos os recursos das edições Enterprise e Home Premium. Era voltada para entusiastas de tecnologia e profissionais que desejavam ter acesso a todas as funcionalidades disponíveis, sem as restrições de licenciamento por volume da edição Enterprise.
+
+Uma inovação notável no Windows 7 foi o **Windows Anytime Upgrade**. Esse recurso permitia que os usuários fizessem o upgrade de uma edição inferior para uma superior (por exemplo, de Home Premium para Professional) de forma simples e rápida, diretamente pelo sistema, comprando uma nova chave de licença online. O processo mantinha todos os arquivos, programas e configurações do usuário, apenas desbloqueando as funcionalidades da nova edição.
+
+#### Windows 10
+
+Com o Windows 10, a Microsoft simplificou um pouco a estrutura de edições, focando em um modelo de "Windows como Serviço", com atualizações contínuas de recursos.
+
+- **Windows 10 Home:** A edição padrão para a maioria dos computadores vendidos no varejo. Inclui o núcleo de funcionalidades do sistema, como o menu Iniciar redesenhado, o navegador Microsoft Edge, a assistente virtual Cortana e o sistema de autenticação biométrica **Windows Hello**.
+- **Windows 10 Pro:** Direcionada a profissionais e pequenas empresas. Adiciona à edição Home recursos de gerenciamento e segurança essenciais para o ambiente corporativo, como o **BitLocker**, a Área de Trabalho Remota, o gerenciamento de políticas de grupo e o **Windows Update for Business**, que oferece mais controle sobre como e quando as atualizações são aplicadas.
+- **Windows 10 Enterprise:** A solução para grandes organizações, disponível via licenciamento por volume. Inclui todos os recursos da edição Pro e adiciona ferramentas avançadas para implantação em massa, virtualização e segurança aprimorada, como o **DirectAccess** e o **Credential Guard**.
+- **Windows 10 Education:** Funcionalmente muito semelhante à edição Enterprise, mas licenciada para instituições acadêmicas (escolas e universidades) com preços especiais.
+- **Windows 10 Pro for Workstations:** Uma edição de nicho, projetada para hardware de altíssimo desempenho. Oferece suporte a um número maior de processadores e a mais memória RAM, além de incluir o **ReFS (Resilient File System)**, um sistema de arquivos mais moderno e robusto contra a corrupção de dados, ideal para grandes volumes de armazenamento.
+- **Windows 10 Mobile:** Uma versão descontinuada, projetada para smartphones e pequenos tablets, com uma interface otimizada para toque (Continuum). Não obteve sucesso no mercado e foi encerrada.
+- **Windows 10 IoT (Internet of Things):** Uma família de edições projetada para dispositivos embarcados e de finalidade específica, como caixas eletrônicos, terminais de ponto de venda, equipamentos industriais e outros dispositivos da "Internet das Coisas".
+
+#### Windows 11
+
+O Windows 11 manteve uma estrutura de edições muito parecida com a do seu predecessor, o Windows 10, focando as mudanças na interface do usuário, segurança e produtividade.
+
+- **Windows 11 Home:** A edição base para o consumidor geral, apresentando a nova interface com o Menu Iniciar centralizado, os Widgets, uma Microsoft Store renovada e a integração nativa com o Microsoft Teams. Uma mudança importante é que esta edição **exige uma conta Microsoft e conexão com a internet** para a configuração inicial.
+- **Windows 11 Pro:** Para usuários avançados e ambientes de negócios. Inclui todos os recursos da Home e adiciona as mesmas ferramentas de gerenciamento e segurança da versão Pro do Windows 10, como BitLocker, Políticas de Grupo e a capacidade de configurar o sistema sem uma conta Microsoft.
+- **Windows 11 Enterprise:** A edição para grandes corporações, com o conjunto mais completo de ferramentas de segurança, implantação e gerenciamento, distribuída por licenciamento por volume.
+- **Windows 11 Education:** Equivalente à edição Enterprise, mas licenciada para o setor educacional.
+- **Windows 11 Pro for Workstations:** Assim como sua contraparte no Windows 10, esta edição é otimizada para hardware de ponta, suportando configurações com múltiplos processadores, grandes quantidades de memória e o sistema de arquivos ReFS.
+- **Windows 11 SE:** Uma nova edição introduzida especificamente para o mercado educacional de baixo custo, competindo com os Chromebooks. É uma versão simplificada do Windows 11, otimizada para dispositivos mais modestos, com uma interface que minimiza distrações e um sistema que limita a instalação de aplicativos àqueles aprovados pelos administradores de TI da escola, garantindo um ambiente de aprendizado mais focado e seguro.
+
