@@ -802,3 +802,13 @@ Lembre-se sempre das proibições gerais, que continuam válidas nas locuções:
 > 1. **Memorizar as proibições:** Nunca inicie frase com pronome átono e nunca use ênclise após futuro ou particípio.
 > 2. **Memorizar os fatores de atração:** Palavras negativas, advérbios, pronomes relativos e conjunções subordinativas forçam a próclise.
 > 3. **Em uma locução com palavra atrativa,** lembre-se que a **ênclise ao verbo auxiliar é o erro clássico** cobrado pelas bancas (Ex: _Não posso-lhe ajudar_ está errado).
+
+## Considerações Finais
+
+Neste capítulo, realizamos uma imersão no universo complexo e multifacetado dos **Pronomes**, uma classe de palavras que se destaca por sua enorme versatilidade e importância para a estrutura do texto. Iniciamos pela distinção fundamental entre pronomes **adjetivos** (que acompanham o nome) e **substantivos** (que o substituem), um conceito que permeou o estudo de todas as categorias. Em seguida, analisamos as particularidades dos pronomes **Pessoais**, **Possessivos**, **Demonstrativos**, **Indefinidos**, **Interrogativos**, **Relativos** e de **Tratamento**, detalhando suas classificações, regras de concordância e valores semânticos.
+
+O capítulo culminou com um estudo aprofundado e estratégico da **Colocação Pronominal**, detalhando as regras de próclise, mesóclise e ênclise em orações simples e em locuções verbais. A abordagem, focada nas proibições e nos fatores de atração, buscou fornecer uma ferramenta prática e segura para a aplicação da norma padrão em provas e na escrita formal.
+
+O grande fio condutor deste capítulo foi o papel do pronome como o principal arquiteto da **coesão textual**. Vimos como os pronomes evitam a repetição, criam laços entre as partes do texto através da **anáfora** e da **catáfora**, e situam informações no discurso, garantindo a clareza e a fluidez da escrita. Ficou evidente, também, a indissociável relação dos pronomes com a **Sintaxe**, seja na concordância dos possessivos, na regência exigida pelos relativos ou nas funções de sujeito e complemento dos pronomes pessoais.
+
+O domínio dos pronomes e de sua correta colocação é uma das habilidades mais sofisticadas da língua e um divisor de águas na proficiência de um candidato. Este conhecimento será a base para a construção de períodos compostos mais complexos e para a análise sintática de orações subordinadas. Com o estudo detalhado desta classe, estamos mais preparados para compreender as engrenagens que articulam o pensamento e a argumentação em um texto.
