@@ -160,7 +160,7 @@ A mesma lógica se aplica a **muito(s)** e **pouco(s)**: quando modificam substa
     - **Poucos** candidatos foram aprovados. (Pronome Indefinido)
     - Os candidatos estavam **pouco** preparados. (Advérbio)
 
-### Pronomes Possessivos: A Expressão da Posse
+### Pronomes Possessivos
 
 Os pronomes possessivos são palavras variáveis que indicam uma relação de **posse** ou **pertencimento** entre os seres ou objetos e as pessoas do discurso (o possuidor).
 
@@ -216,3 +216,65 @@ Nesses casos, embora o pronome esteja ligado ao verbo, sua função sintática �
 Assim como os demais pronomes, os possessivos são ferramentas essenciais para a **coesão textual**. Eles retomam um termo já mencionado no texto (o possuidor), criando uma ligação entre as partes do discurso e evitando repetições.
 
 - **Exemplo:** **O candidato** preparou-se durante um ano. **Seu** esforço foi finalmente recompensado. (O pronome "Seu" retoma "O candidato", conectando as duas orações).
+
+### Pronomes Demonstrativos
+
+Os pronomes demonstrativos são palavras variáveis que situam seres e objetos, estabelecendo sua posição no espaço, no tempo ou no próprio corpo do texto. Eles "demonstram" ou "apontam" para os elementos do discurso, criando uma relação de proximidade ou distância em relação às três pessoas gramaticais.
+
+A lista de pronomes demonstrativos inclui:
+
+- **Essenciais:** este(s), esta(s), isto; esse(s), essa(s), isso; aquele(s), aquela(s), aquilo.
+- **Outros pronomes com valor demonstrativo:** o(s), a(s); mesmo(s), mesma(s); próprio(s), própria(s); tal, tais; semelhante(s).
+
+A tabela a seguir organiza os pronomes demonstrativos essenciais de acordo com a pessoa do discurso a que se associam:
+
+|Pessoa|Variáveis|Invariáveis|Relação de Proximidade|
+|---|---|---|---|
+|**1ª Pessoa**|este(s), esta(s)|**isto**|Perto de quem fala (aqui).|
+|**2ª Pessoa**|esse(s), essa(s)|**isso**|Perto de com quem se fala (aí).|
+|**3ª Pessoa**|aquele(s), aquela(s)|**aquilo**|Longe de ambos (lá, ali).|
+
+#### As Funções Referenciais do Pronome Demonstrativo
+
+**Uso Espacial (Localização Física)**
+
+É o uso mais concreto, indicando a posição física de um objeto em relação aos interlocutores.
+
+- **Este(s), esta(s), isto:** Indicam o que está perto de quem fala (1ª pessoa).
+    - _Exemplo:_ **Este** livro **aqui** em minhas mãos é o que estudaremos.
+- **Esse(s), essa(s), isso:** Indicam o que está perto de com quem se fala (2ª pessoa) ou longe de quem fala.
+    - _Exemplo:_ Por favor, passe-me **essa** caneta que está **aí** na sua frente.
+- **Aquele(s), aquela(s), aquilo:** Indicam o que está distante de ambos os interlocutores (falante e ouvinte).
+    - _Exemplo:_ Você está vendo **aquele** prédio **lá** no final da rua?
+
+**Uso Temporal**
+
+A mesma lógica de proximidade se aplica à referência no tempo.
+
+- **Este(s), esta(s), isto:** Referem-se ao tempo presente ou a um futuro muito próximo.
+    - _Exemplo:_ **Este** ano está sendo de muito estudo. / **Nesta** semana, terei a prova.
+- **Esse(s), essa(s), isso:** Referem-se a um tempo passado relativamente recente.
+    - _Exemplo:_ A crise de 2020 foi severa. **Nesse** ano, muitas empresas fecharam.
+- **Aquele(s), aquela(s), aquilo:** Referem-se a um tempo passado distante, remoto.
+    - _Exemplo:_ O Brasil foi descoberto em 1500. **Naquela** época, o mundo era outro.
+
+**Uso Textual (Coesão)**
+
+Esta é a função mais explorada em provas. Os pronomes demonstrativos são ferramentas essenciais de coesão, conectando partes do texto. Quando a referência ocorre dentro do próprio texto, ela é chamada de endofórica. A referência endofórica pode ser de dois tipos:
+
+- **Função Anafórica (Retomada):** O pronome retoma uma informação que **já foi mencionada** no texto. Os pronomes **esse(s), essa(s), isso** são os principais responsáveis por essa função.
+    - _Exemplos:_
+        - O candidato não estudou o suficiente. Por **isso**, não foi aprovado. ("isso" retoma toda a oração anterior).
+        - A corrupção é um mal que assola o país. O combate a **esse** problema é dever de todos. ("esse" retoma "corrupção").
+
+- **Função Catafórica (Anunciação):** O pronome anuncia uma informação que **ainda será mencionada** no texto. Os pronomes **este(s), esta(s), isto** são os principais responsáveis por essa função.
+    - _Exemplos:_
+        - A verdade é **esta**: ninguém estava preparado para a prova. ("esta" anuncia a informação que vem após os dois-pontos).
+        - Meu maior desejo é **isto**: a sua aprovação.
+
+> **Foco de Prova: Referência a Dois Termos**
+> 
+> Para se referir a dois elementos já citados, usa-se **este** (e suas variações) para o termo mais próximo e **aquele** (e suas variações) para o termo mais distante.
+> 
+> - _Exemplo:_ Português e Matemática são disciplinas cruciais; **esta** (Matemática) exige raciocínio, enquanto **aquela** (Português) exige interpretação.
+
