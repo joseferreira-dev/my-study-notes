@@ -249,7 +249,7 @@ Ao selecionar "Desinstalar", o Windows invoca o desinstalador correspondente, qu
 
 É importante notar que, a partir do Windows 10, a Microsoft introduziu uma nova interface para o gerenciamento de aplicativos na janela principal de **Configurações**, na seção **"Aplicativos e recursos"**. Essa nova interface unifica a gestão tanto de programas de desktop tradicionais quanto dos aplicativos modernos baixados da Microsoft Store, oferecendo as mesmas funcionalidades de desinstalação e modificação de forma mais integrada ao novo design do sistema.
 
-### Personalização do Ambiente: Idioma, Região e Dispositivos de Entrada
+## Personalização do Ambiente: Idioma, Região e Dispositivos de Entrada
 
 Após a instalação inicial, o próximo passo natural é ajustar o sistema operacional para que ele se adeque perfeitamente às preferências e necessidades do usuário. O Windows oferece um painel de controle centralizado e moderno para essas personalizações, conhecido como o aplicativo **Configurações**. Esta interface, que pode ser acessada rapidamente através do atalho de teclado **`WINDOWS + I`**, organiza de forma lógica as diversas opções de customização do sistema, desde a aparência visual até o comportamento de dispositivos de hardware.
 
@@ -259,7 +259,7 @@ Nesta seção, exploraremos como realizar os ajustes finos em componentes essenc
 <img width="700px" src="./img/07-janela-idioma-e-regiao.png">
 </div>
 
-#### Configurações de Idioma e Região
+### Configurações de Idioma e Região
 
 As configurações de idioma e região são fundamentais, pois definem não apenas a língua da interface, mas também como as informações são formatadas e qual conteúdo local é apresentado ao usuário. Essas opções estão concentradas na seção **"Hora e idioma"** > **"Idioma e região"**.
 
@@ -268,7 +268,7 @@ As configurações de idioma e região são fundamentais, pois definem não apen
 - **País ou Região:** Esta configuração informa ao sistema e aos aplicativos a localização geográfica do usuário. Isso é usado para fornecer conteúdo localizado e relevante. Por exemplo, ao definir a região como "Brasil", a Microsoft Store irá priorizar aplicativos populares no mercado brasileiro, e os componentes de notícias do sistema (como os Widgets) destacarão eventos locais.
 - **Formato Regional:** Uma configuração poderosa que define como datas, horas, números e valores monetários são exibidos, independentemente do idioma de exibição. Isso permite um alto grau de personalização. Um usuário pode, por exemplo, preferir usar a interface do Windows em Inglês, mas configurar o formato regional para "Português (Brasil)" para que as datas apareçam no formato `DD/MM/AAAA` e a moeda seja exibida como `R$`.
 
-#### Configuração do Teclado
+### Configuração do Teclado
 
 A configuração do teclado está diretamente ligada aos "Idiomas preferidos". Para cada idioma adicionado a essa lista, é possível instalar um ou mais layouts de teclado correspondentes. Um layout de teclado é o mapa que define qual caractere é gerado por cada tecla física.
 
@@ -280,7 +280,7 @@ Para adicionar um novo layout, o caminho é:
 
 Uma vez que mais de um layout de teclado esteja instalado, um indicador de idioma aparecerá na Barra de Tarefas (próximo ao relógio), permitindo que o usuário alterne rapidamente entre os layouts disponíveis, seja com o mouse ou com o atalho de teclado **`WINDOWS + Barra de espaço`**.
 
-#### Configuração do Mouse
+### Configuração do Mouse
 
 O mouse é um dos principais dispositivos de entrada, e ajustar seu comportamento pode melhorar significativamente a produtividade e o conforto. As configurações do mouse podem ser encontradas em **"Bluetooth e dispositivos"** > **"Mouse"**.
 
@@ -291,4 +291,43 @@ Nesta seção, é possível ajustar diversas configurações essenciais:
 - **Rolagem:** Define o comportamento da roda de rolagem do mouse, como o número de linhas que a página avança a cada "clique" da roda.
 
 Para configurações mais avançadas, como a alteração da aparência do ponteiro, a ativação de rastros ou o ajuste da velocidade do clique duplo, o Windows ainda oferece um painel de "Propriedades do Mouse" mais detalhado, geralmente acessível através de um link de "Configurações adicionais do mouse" na mesma tela.
+
+## Manutenção e Evolução do Sistema: Windows Update e Upgrades de Edição
+
+Um sistema operacional não é um software estático. Após a sua instalação, ele entra em um ciclo contínuo de manutenção e evolução, essencial para garantir sua segurança, estabilidade e funcionalidade ao longo do tempo. No ecossistema Windows, esse ciclo é gerenciado principalmente através de duas frentes: as atualizações de rotina, controladas pelo serviço Windows Update, e as atualizações de versão ou edição, que representam um salto para um produto mais avançado.
+
+### Windows Update: A Manutenção Contínua
+
+O **Windows Update** é o serviço central da Microsoft para a distribuição de atualizações para o sistema operacional. Sua função é verificar, baixar e instalar pacotes de software que corrigem falhas, aprimoram recursos e, o mais importante, fecham brechas de segurança. Se o recurso de Atualizações Automáticas estiver habilitado, como é o padrão na maioria das instalações, todo esse processo pode ocorrer em segundo plano, sem a necessidade de intervenção do usuário.
+
+<div align="center">
+<img width="480px" src="./img/07-windows-update.png">
+</div>
+
+O Windows Update distribui diferentes tipos de atualizações:
+
+- **Atualizações de Segurança:** Conhecidas como _patches_, são as mais críticas. Elas corrigem vulnerabilidades no código do sistema que poderiam ser exploradas por malwares, vírus ou invasores para comprometer o computador.
+- **Atualizações de Qualidade:** Pacotes que corrigem bugs não relacionados à segurança, melhorando a estabilidade e o desempenho geral do sistema.
+- **Atualizações de Drivers:** Conforme vimos, o Windows Update também serve como um repositório para drivers de hardware, facilitando a manutenção da compatibilidade dos periféricos.
+- **Atualizações de Recursos (Feature Updates):** Específicas do modelo "Windows como Serviço" (adotado a partir do Windows 10), são grandes pacotes semestrais ou anuais que instalam novas funcionalidades e podem alterar significativamente a interface e o comportamento do sistema, funcionando como uma mini-atualização de versão.
+
+### O Conceito de Service Pack (SP)
+
+Em versões mais antigas do Windows (como XP, Vista e 7), o modelo de atualização era menos fragmentado. Quando o número de correções e atualizações individuais se tornava muito grande, a Microsoft as compilava em um único pacote cumulativo chamado **Service Pack (SP)**. A instalação de um único Service Pack era uma forma prática e eficiente de aplicar centenas de correções de uma só vez, garantindo que o sistema ficasse totalmente atualizado.
+
+Um Service Pack não se limitava a corrigir problemas. Em muitos casos, ele também introduzia novas funcionalidades e melhorias significativas. O exemplo mais emblemático é o **Service Pack 2 (SP2) do Windows XP**, lançado em 2004. Ele não foi apenas um pacote de correções; foi uma grande reformulação da segurança do sistema, introduzindo a "Central de Segurança do Windows", um firewall mais robusto e nativamente ativado, e melhorias de segurança no Internet Explorer. Os Service Packs eram sempre gratuitos e, embora pudessem ser baixados manualmente, a Microsoft sempre recomendou sua instalação através do próprio Windows Update.
+
+### Upgrade de Edição: Windows Anytime Upgrade e o Modelo Moderno
+
+É crucial diferenciar um _update_ (atualização) de um _upgrade_ (melhora de versão/edição). Enquanto um update corrige e aprimora a versão atual, um **upgrade** eleva o sistema a um patamar superior, com mais recursos.
+
+No Windows 7, a Microsoft introduziu o **Windows Anytime Upgrade**, um método simplificado que permitia ao usuário migrar de uma edição mais básica para uma mais completa (por exemplo, da _Home Premium_ para a _Professional_) sem a necessidade de formatar o computador ou usar discos de instalação. O processo era feito online, adquirindo uma nova chave de licença, e mantinha todos os arquivos, programas e configurações do usuário intactos, apenas "desbloqueando" os recursos da edição superior.
+
+Esse conceito evoluiu e foi integrado de forma mais direta no Windows 10 e 11. O upgrade de edição agora é realizado através da tela de **Ativação**, dentro do aplicativo Configurações. Para realizar o upgrade, por exemplo, do Windows 10 Home para o Windows 10 Pro, o usuário precisa de uma chave de produto (Product Key) válida da edição Pro ou de uma licença digital vinculada à sua conta Microsoft.
+
+<div align="center">
+<img width="480px" src="./img/07-update-da-versao-do-windows.png">
+</div>
+
+Ao inserir a nova chave na opção "Alterar chave do produto", o sistema valida a licença e inicia um processo que baixa e habilita os recursos exclusivos da edição Pro, como o BitLocker, a Área de Trabalho Remota e o ingresso em um domínio. Após uma reinicialização, o sistema operacional já estará operando como a nova edição, mantendo todos os dados do usuário preservados.
 
