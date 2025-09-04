@@ -299,3 +299,53 @@ A escolha entre `este`, `esse` e `aquele` depende se a referência é espacial, 
 - **Observação sobre o Uso Anafórico de "Este":** Embora a regra mais rigorosa indique esse para retomadas, é comum e aceito na norma culta o uso de este para se referir a um elemento na oração imediatamente anterior, conferindo-lhe maior proximidade ou destaque.
     - _Exemplo:_ Precisamos respeitar o professor, pois **este** é um grande formador de caráter.
 
+#### Outras Palavras com Valor Demonstrativo
+
+Além do trio `este/esse/aquele`, diversas outras palavras podem ser classificadas como pronomes demonstrativos, a depender do contexto em que são empregadas.
+
+**"O, A, Os, As" como Pronomes Demonstrativos**
+
+As palavras **o, a, os, as** podem funcionar como pronomes demonstrativos quando for possível substituí-las por **aquilo, aquele(s)** ou **aquela(s)**. Isso ocorre comumente em duas estruturas:
+
+- **Antes da preposição "de":**
+    - _Exemplo:_ Entre as camisas, prefiro **a** de algodão. (Equivale a: ...prefiro **aquela** de algodão).
+    - _Exemplo:_ Seu discurso foi igual **ao** de seu antecessor. (Equivale a: ...foi igual **àquele** de seu antecessor).
+
+- **Antes do pronome relativo "que":**
+    - _Exemplo:_ Quero **o** que estiver em promoção. (Equivale a: Quero **aquilo** que estiver em promoção).
+    - _Exemplo:_ As propostas que ele fez não são **as** que esperávamos. (Equivale a: ...não são **aquelas** que esperávamos).
+
+- **Retomando uma oração inteira (com valor neutro):** Quando retomam uma ideia completa, "o" equivale a "isso".
+    - _Exemplo:_ Ele sabia que devia estudar, mas não **o** fez. (não fez **isso** = não estudou).
+    - _Exemplo:_ Ela parece simpática, mas na verdade não **o** é. (não é **isso** = não é simpática).
+
+> **Foco de Prova: Não Confundir as Funções!**
+> 
+> É crucial diferenciar o "o, a, os, as" demonstrativo de suas outras funções:
+> 
+> - **Artigo Definido:** Acompanha um substantivo. (_Vi **a** menina_).
+> - **Pronome Pessoal Oblíquo:** Substitui um substantivo-objeto. (_Vi-**a** na rua_).
+> - **Pronome Demonstrativo:** Equivale a "aquilo/aquele/aquela". (_Quero **a** que for mais barata_).
+
+> **Uma Polêmica Gramatical**
+> 
+> É importante registrar que uma corrente minoritária de gramáticos, como Evanildo Bechara e Celso Pedro Luft, defende que, em casos como "comprei **a** de algodão", a palavra "a" continua sendo um **artigo**, e o que ocorre é a elipse (omissão) do substantivo: "comprei a [camisa] de algodão". Embora a visão majoritária em concursos classifique como pronome demonstrativo, conhecer essa dupla interpretação pode ser útil em questões mais teóricas.
+
+**"Tal", "Tais" e "Semelhante(s)"**
+
+Essas palavras funcionam como demonstrativos quando podem ser substituídas por `este(s)`, `esta(s)`, `esse(s)`, `essa(s)`, `aquele(s)`, `aquela(s)`.
+
+- _Exemplos:_
+    - Não esperava **tal** atitude de você. (**essa** atitude).
+    - Não se deve dar atenção a **semelhantes** absurdos. (**esses** absurdos).
+    - Sei que está triste, mas não diga **tal**. (não diga **isso**).
+
+**"Mesmo(s)", "Mesma(s)" e "Próprio(s)", "Própria(s)"**
+
+Quando usados para reforçar um nome ou pronome, têm valor demonstrativo e enfático.
+
+- _Exemplos:_
+    - **Ele próprio** se demitiu do cargo. (Ele em pessoa).
+    - **Eu mesma** resolverei o problema. (Eu em pessoa).
+    - Eles cometeram os **mesmos** erros. (Exatamente aqueles erros, erros iguais).
+
