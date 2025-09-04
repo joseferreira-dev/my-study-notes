@@ -542,3 +542,99 @@ Por regra geral, a maioria dos pronomes de tratamento (especialmente os iniciado
 - **Exceções:** Formas de tratamento mais comuns como **senhor, senhora, senhorita**, **madame**, **doutora** e **dona** admitem o uso de artigo. Portanto, diante delas, a crase pode ocorrer.
     - _Exemplo:_ Entreguei o presente **à senhora**. (Preposição "a" + artigo "a").
 
+### Pronomes Pessoais: A Indicação das Pessoas do Discurso
+
+Os pronomes pessoais são aqueles que representam diretamente as três pessoas do discurso: a que fala (1ª pessoa), a com quem se fala (2ª pessoa) e a de quem/que se fala (3ª pessoa). Eles se subdividem em duas grandes categorias, de acordo com a função sintática que desempenham na oração: **retos** e **oblíquos**.
+
+|Pessoas do Discurso|Pronomes Retos|Pronomes Oblíquos Átonos|Pronomes Oblíquos Tônicos|
+|---|---|---|---|
+|1ª pessoa do singular|**Eu**|**me**|**mim**, comigo|
+|2ª pessoa do singular|**Tu**|**te**|**ti**, contigo|
+|3ª pessoa do singular|**Ele/Ela**|**se**, **o**, **a**, **lhe**|**si**, consigo, ele, ela|
+|1ª pessoa do plural|**Nós**|**nos**|**nós**, conosco|
+|2ª pessoa do plural|**Vós**|**vos**|**vós**, convosco|
+|3ª pessoa do plural|**Eles/Elas**|**se**, **os**, **as**, **lhes**|**si**, consigo, eles, elas|
+
+#### Pronomes do Caso Reto (Função de Sujeito)
+
+A função primordial dos pronomes retos (`eu, tu, ele/ela, nós, vós, eles/elas`) é exercer o papel de **sujeito** ou de **predicativo do sujeito** na oração.
+
+- **Exemplos:**
+    - **João** é um ótimo aluno. → **Ele** é um ótimo aluno.
+    - O culpado sou **eu**. (Predicativo do Sujeito)
+
+> **Foco de Prova: Pronome Reto como Objeto Direto**
+> 
+> A norma padrão condena o uso de pronomes retos como complementos verbais diretos (Ex: "Vi ele", "Manda um abraço para nós"). No entanto, o uso é abonado por grandes gramáticos quando o pronome reto vem modificado por palavras como **"todos", "só", "apenas"** ou por um **numeral**.
+> 
+> - _Exemplos:_
+>     - Encontrei **ele só** na festa.
+>     - A diretora convocou **todos eles** para a reunião.
+>     - Vi **elas duas** no cinema.
+
+#### Pronomes do Caso Oblíquo (Função de Complemento)
+
+Os pronomes oblíquos atuam como **complementos** (objetos diretos, indiretos, etc.). Dividem-se em **átonos** (sem preposição) e **tônicos** (com preposição).
+
+**Pronomes Oblíquos Átonos**
+
+São pronomes de pronúncia fraca que se ligam diretamente ao verbo, sem preposição. Sua função como objeto direto ou indireto é fixa:
+
+|Pronome(s)|Função Sintática|Exemplo|
+|---|---|---|
+|**o, a, os, as**|Apenas **Objeto Direto (OD)**|Vi **o filme**. → Vi-**o**.|
+|**lhe, lhes**|Apenas **Objeto Indireto (OI)**|Entreguei o livro **a ele**. → Entreguei-**lhe** o livro.|
+|**me, te, se, nos, vos**|**Objeto Direto ou Indireto**|Ele **me** viu na rua. (OD) / Ele **me** obedeceu. (OI)|
+
+**Pronomes Oblíquos Tônicos**
+
+São pronomes de pronúncia forte e são sempre antecedidos por uma preposição.
+
+- _Exemplos:_
+    - Não há mais nada entre **mim** e **ela**.
+    - Fizeram tudo **para ti**.
+    - Fiquei preocupado **contigo**.
+
+#### Casos Especiais de Emprego
+
+- **"Entre mim e ti" vs. "Entre eu e tu":** Após preposições, em regra, usam-se os pronomes oblíquos tônicos (mim, ti).
+    - _Correto:_ Havia um acordo entre mim e ti.
+        A exceção ocorre quando o pronome funciona como sujeito de um verbo no infinitivo que vem logo a seguir. Nesse caso, usa-se o pronome reto.
+    - _Correto:_ Não há nada para **eu** fazer aqui. (Pois "eu" é o sujeito de "fazer").
+    - _Correto:_ A tarefa de organizar tudo ficou para **mim**.
+
+#### Adaptações dos Pronomes Oblíquos em Ênclise
+
+Quando os pronomes **o, a, os, as** são ligados a um verbo após este (ênclise), a forma do verbo e do pronome pode sofrer adaptações para facilitar a pronúncia.
+
+**Verbos terminados em -r, -s, -z**
+
+Estas consoantes finais são suprimidas e o pronome assume as formas -lo, -la, -los, -las.
+
+- _Exemplos:_
+    - comprar o carro → comprá-**lo**
+    - felicitamos as alunas → felicitamo-**las**
+    - fiz a tarefa → fi-**la**
+
+**Verbos terminados em som nasal (-m, -ão, -õe)**
+
+Acrescenta-se um -n- ao pronome, que assume as formas -no, -na, -nos, -nas.
+
+- _Exemplos:_
+    - viram o acidente → viram-**no**
+    - põe a mesa → põe-**na**
+    - dão o presente → dão-**no**
+
+**Verbos terminados em "-mos" + "-nos"**
+
+Quando a primeira pessoa do plural (-mos) é seguida do pronome oblíquo nos, o "-s" final do verbo é suprimido.
+
+- _Exemplo:_ Nós nos alistamos. → Alistamo-**nos** no exército.
+
+**Combinação de Pronomes**
+
+Na linguagem formal ou arcaica, é possível contrair dois pronomes oblíquos (um indireto e um direto) em uma única forma.
+
+- _Exemplos:_
+    - Deu o livro a mim. → Deu-**mo**. (`me + o`)
+    - Entregou a carta a ele. → Entregou-**lha**. (`lhe + a`)
