@@ -384,3 +384,94 @@ O segundo texto é infinitamente mais claro e bem-estruturado. Cada pronome rela
 
 A seguir, vamos analisar o uso e as particularidades de cada um dos principais pronomes relativos, pontos que são indispensáveis para um bom desempenho na sua prova.
 
+#### Pronome Relativo Universal: "Que"
+
+O pronome **que** é o mais versátil e frequente dos relativos. Pode ser usado para retomar tanto **pessoas** quanto **coisas**, no singular ou no plural.
+
+Sua função principal é introduzir uma **oração subordinada adjetiva**, que, como o nome sugere, equivale a um adjetivo, caracterizando o termo anterior.
+
+- _Exemplos:_
+    - O menino **estudioso** passa no concurso. (Adjetivo)
+    - O menino **que estuda** passa no concurso. (Oração Subordinada Adjetiva)
+
+Como o pronome `que` sempre retoma um termo anterior (função anafórica), é fundamental atentar para a regência verbal ou nominal da oração que ele introduz. Se o verbo ou nome dessa oração exigir uma preposição, ela deverá, obrigatoriamente, ser colocada antes do pronome `que`. A omissão da preposição é um erro grave e muito cobrado em provas.
+
+- _Incorreto:_ O filme **que** assisti era ótimo.
+- _Correto:_ O filme **a que** assisti era ótimo. (Pois quem assiste, no sentido de "ver", assiste **a** algo).
+- _Incorreto:_ As ideias **que** ele concorda são polêmicas.
+- _Correto:_ As ideias **com que** ele concorda são polêmicas. (Pois quem concorda, concorda **com** algo).
+
+#### Pronome "O Qual" (e suas variações)
+
+Os pronomes **o qual, a qual, os quais, as quais** são variáveis e podem, em muitos casos, substituir o pronome `que`. Seu uso é preferível ou obrigatório em duas situações principais:
+
+1. **Para Evitar Ambiguidade:** Como estes pronomes flexionam em gênero e número, eles são uma ferramenta precisa para deixar claro a qual antecedente se referem, desfazendo possíveis ambiguidades.
+    - _Frase Ambigua:_ Conheci a filha do vizinho, **que** é muito simpática. (Quem é simpática? A filha ou o vizinho?)
+    - **Desfazendo a Ambiguidade:**
+        - Conheci a filha do vizinho, **a qual** é muito simpática. (Refere-se à filha).
+        - Conheci a filha do vizinho, **o qual** é muito simpático. (Refere-se ao vizinho).
+
+2. **Após Preposições Longas:** Após preposições com duas ou mais sílabas (como _sobre, entre, perante_) ou locuções prepositivas (como _apesar de, acerca de_), o uso de "o qual" e suas variações é obrigatório.
+    - _Exemplo:_ Este é o autor **sobre o qual** conversamos. (e não _"sobre que"_).
+    - _Exemplo:_ As dificuldades **apesar das quais** vencemos nos fortaleceram. (e não _"apesar que"_).
+
+#### Pronome "Quem"
+
+- **Referência:** Refere-se exclusivamente a **pessoas** ou a seres personificados.
+- **Preposição:** É quase sempre precedido por uma preposição.
+    - _Exemplos:_
+        - A pessoa **a quem** me dirigi não soube informar.
+        - O artista **de quem** sou fã fará um show no Brasil.
+        - Este é o colega **por quem** tenho grande apreço.
+
+- **Uso Absoluto:** Em sentenças proverbiais ou de sentido genérico, "quem" pode ser usado sem um antecedente explícito.
+    - _Exemplo:_ **Quem** com ferro fere, com ferro será ferido.
+
+#### Pronome "Cujo" (e suas variações)
+
+O pronome **cujo, cuja, cujos, cujas** é o único que expressa, primariamente, uma relação de **posse**. Seu uso segue regras rígidas:
+
+1. **Posição:** Aparece sempre entre dois substantivos: o **possuidor** (termo antecedente) e a **coisa possuída** (termo consequente).
+2. **Concordância:** Concorda em gênero e número com a **coisa possuída** (o substantivo que vem depois dele).
+3. **Artigo:** **NUNCA** se usa artigo depois do pronome `cujo`. As construções "cujo o", "cuja a" são erros graves.
+
+- _Exemplos:_
+    - Vi o filme **cujo diretor** ganhou o Oscar. (O diretor é do filme. "Cujo" concorda com "diretor").
+    - A árvore **cujas folhas** caíram era antiga. (As folhas são da árvore. "Cujas" concorda com "folhas").
+    - O escritor **a cuja obra** me referi é brilhante. (A preposição "a" é exigida por "referi-me". "Cuja" concorda com "obra").
+
+#### Pronomes Relativos de Lugar: "Onde", "Aonde", "Donde"
+
+- **Onde:** Retoma um antecedente que indica **lugar físico** e equivale a **em que / no qual**. É usado com verbos que indicam permanência.
+    - _Exemplo:_ A casa **onde** moro fica em um bairro tranquilo.
+    - _Uso Inadequado:_ A reunião **onde** discutimos o projeto foi longa. (O correto seria: A reunião **em que/na qual**...).
+
+- **Aonde:** Retoma um antecedente de lugar, mas é usado com verbos que indicam **movimento, destino** e que regem a preposição "a". Equivale a **a que / ao qual**.
+    - _Exemplo:_ A cidade **aonde** iremos nas férias é histórica.
+
+- **Donde:** É uma forma mais arcaica que equivale a **de onde**, indicando origem ou procedência.
+    - _Exemplo:_ A terra **donde** ele veio é muito distante.
+
+#### Outros Pronomes Relativos: "Quanto", "Como", "Quando"
+
+O uso destes pronomes é determinado pelo sentido do termo antecedente.
+
+- **Quanto(s), Quanta(s):** Usado após pronomes indefinidos como _tudo, tanto, todos_.
+    - _Exemplo:_ Ele fez **tudo quanto** pôde para ajudar.
+
+- **Como:** Usado após substantivos como _modo, maneira, forma, jeito_.
+    - _Exemplo:_ Admiro a **forma como** ele resolve os problemas.
+
+- **Quando:** Usado após substantivos que indicam tempo.
+    - _Exemplo:_ Recordo-me do **tempo quando** brincávamos na rua.
+
+> **Foco de Prova: A Regência com Pronomes Relativos**
+> 
+> A chave para acertar questões de regência com pronomes relativos é "desfazer" a estrutura. Para saber qual preposição usar (ou se ela é necessária), construa uma frase simples com o verbo/nome da oração adjetiva e o termo antecedente.
+> 
+> - **Frase:** _O cargo **que** aspiro é muito concorrido._
+>     - **Teste:** Eu aspiro **ao** cargo. → A preposição "a" é exigida.
+>     - **Correto:** O cargo **a que** aspiro é muito concorrido.
+> - **Frase:** _A autora **cujos** livros gosto muito virá ao Brasil._
+>     - **Teste:** Eu gosto muito **dos** livros (de + os). → A preposição "de" é exigida.
+>     - **Correto:** A autora **de cujos** livros gosto muito virá ao Brasil.
