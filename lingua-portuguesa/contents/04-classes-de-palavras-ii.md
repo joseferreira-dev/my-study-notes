@@ -638,3 +638,93 @@ Na linguagem formal ou arcaica, é possível contrair dois pronomes oblíquos (u
 - _Exemplos:_
     - Deu o livro a mim. → Deu-**mo**. (`me + o`)
     - Entregou a carta a ele. → Entregou-**lha**. (`lhe + a`)
+
+## Colocação Pronominal: A Posição Correta dos Pronomes Átonos
+
+Colocação pronominal é o estudo da correta posição dos pronomes pessoais oblíquos átonos na oração. Embora na linguagem falada do dia a dia haja uma forte tendência ao uso do pronome antes do verbo (próclise), a norma padrão escrita estabelece regras precisas que devem ser seguidas.
+
+Os pronomes em questão são: **me, te, se, o, a, lhe, nos, vos, os, as, lhes**.
+
+Existem três posições possíveis para esses pronomes em relação ao verbo:
+
+|Posição|Nome|Exemplo|
+|---|---|---|
+|**Antes** do verbo|**Próclise**|Hoje **me** escondi na mata.|
+|**Depois** do verbo|**Ênclise**|Escondi-**me** na mata.|
+|**No meio** do verbo|**Mesóclise**|Esconder-**me**-ia na mata.|
+
+### As Regras Fundamentais: O que é Proibido
+
+A maneira mais eficaz de dominar a colocação pronominal é começar pelo que a norma padrão **proíbe**. Se uma construção não for proibida e não houver uma regra que obrigue uma posição específica, ela é, em princípio, permitida.
+
+1. **É proibido iniciar um período com pronome oblíquo átono.**
+    - _Inadequado:_ **Me** dá um cigarro?
+    - _Adequado:_ **Dá-me** um cigarro? (Usa-se a ênclise).
+
+2. **É proibido usar o pronome após um verbo no futuro (do presente ou do pretérito) ou no particípio.**
+    - _Inadequado (Futuro do Presente):_ Darei-**te** um presente.
+    - _Adequado:_ **Dar-te-ei** um presente. (Usa-se a mesóclise, pois a ênclise é proibida e não há palavra atrativa).
+    - _Inadequado (Futuro do Pretérito):_ Daria-**te** um presente.
+    - _Adequado:_ **Dar-te-ia** um presente. (Mesma lógica da mesóclise).
+    - _Inadequado (Particípio):_ Tinha emprestado-**lhe** o dinheiro.
+    - _Adequado:_ Tinha-**lhe** emprestado o dinheiro. (O pronome se liga ao verbo auxiliar).
+
+3. **Não se deve iniciar uma oração com pronome átono após uma pausa forte (vírgula, ponto e vírgula).**
+    - _Inadequado:_ Ele não virá amanhã; **me** disse que estará ocupado.
+    - _Adequado:_ Ele não virá amanhã; **disse-me** que estará ocupado.
+
+### A Regra Principal: Próclise e os Fatores de Atração
+
+A próclise (pronome antes do verbo) é a colocação preferencial no português brasileiro. Ela se torna **obrigatória** quando há, antes do verbo, uma **"palavra atrativa"** ou **"fator de próclise"**. A regra geral é que palavras de natureza invariável (advérbios, conjunções subordinativas, certos pronomes) "puxam" o pronome para perto de si.
+
+O esquema a seguir resume os principais fatores de atração:
+
+<div align="center">
+
+<img width="540px" src="./img/04-colocacao-pronomial-proclise.png">
+
+</div>
+
+- **Palavras de sentido negativo:** _não, nunca, jamais, ninguém, nada, etc._
+    - Exemplo: **Nunca se** arrependeu do que fez.
+
+- **Advérbios (sem vírgula):** _já, sempre, talvez, aqui, hoje, etc._
+    - Exemplo: **Talvez se** encontrem amanhã.
+
+- **Pronomes Relativos:** _que, quem, o qual, cujo, onde, etc._
+    - Exemplo: O livro **que me** emprestaram era ótimo.
+
+- **Pronomes Indefinidos:** _alguém, todos, tudo, ninguém, etc._
+    - Exemplo: **Alguém me** ligou durante a reunião.
+
+- **Pronomes Interrogativos:** _quem, que, qual, quando, etc._
+    - Exemplo: **Quem te** contou essa história?
+
+- **Conjunções Subordinativas:** _quando, se, porque, embora, conforme, etc._
+
+    - Exemplo: **Quando se** precisa de ajuda, os amigos aparecem.
+    - Exemplo: **Embora me** dedique à matéria, ainda tenho dificuldades.
+
+### Regras Especiais e Outros Casos de Colocação
+
+**1. Orações Optativas:** Em frases que expressam desejo (optativas), a próclise é obrigatória.
+- Exemplos: **Deus lhe** pague. / **Bons ventos o** levem.
+
+
+**2. Preposição "Em" + Verbo no Gerúndio:** Nesta construção fixa, usa-se sempre a próclise.
+- Exemplos: **Em se** tratando de vinhos, ele é uma autoridade. / **Em se** plantando tudo dá.
+
+**3. Construções com Infinitivo:** Quando o verbo está no infinitivo (não flexionado), a colocação do pronome é, em geral, livre, podendo ocorrer a próclise ou a ênclise, especialmente se precedido por uma preposição ou palavra negativa.
+- Exemplos: Prefiro não **te convidar**. / Prefiro não **convidar-te**. / Para **me ajudar**... / Para **ajudar-me**...
+
+**4. Orações Coordenadas:** Em orações ligadas por conjunções coordenativas (como "e", "mas", "ou"), a colocação costuma ser livre.
+- Exemplo: Cheguei ao local, **e me** sentei, **e preparei-me** para a prova.
+    - **Observação:** Com alguns conectivos aditivos e alternativos, como `nem`, `ora... ora`, `não só... mas também`, a próclise é fortemente recomendada.
+        - Exemplo: João não respeitou o horário **nem se** desculpou.
+
+**5. Próclise em Orações Subordinadas:** Como regra geral, as orações subordinadas (iniciadas por conjunções subordinativas ou pronomes relativos) sempre favorecem a próclise. A força de atração do conectivo inicial se mantém mesmo que haja outras palavras entre ele e o verbo.
+- Exemplo: Soube que, **naquele dia, se** sentiu mal.
+- Exemplo: **Enquanto** os protestos violentos **se** espalham, a população espera.
+    - **Exceção:** Se houver uma pausa bem marcada (uma intercalação longa entre vírgulas), a força de atração pode ser "quebrada", tornando a ênclise também possível.
+        - Exemplo: Jamais, segundo pensam os economistas, **se fizeram** (ou **fizeram-se**) tantas despesas.
+
