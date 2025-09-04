@@ -728,3 +728,77 @@ O esquema a seguir resume os principais fatores de atração:
     - **Exceção:** Se houver uma pausa bem marcada (uma intercalação longa entre vírgulas), a força de atração pode ser "quebrada", tornando a ênclise também possível.
         - Exemplo: Jamais, segundo pensam os economistas, **se fizeram** (ou **fizeram-se**) tantas despesas.
 
+### A Colocação Pronominal em Locuções Verbais
+
+Uma locução verbal, como vimos, é a combinação de um **Verbo Auxiliar** (que é conjugado) e um **Verbo Principal** (em uma das formas nominais: infinitivo, gerúndio ou particípio).
+
+- _Exemplos:_
+    - **Posso dizer** a verdade. (Auxiliar + Infinitivo)
+    - **Estava dizendo** a verdade. (Auxiliar + Gerúndio)
+    - **Tinha dito** a verdade. (Auxiliar + Particípio)
+
+A posição do pronome oblíquo átono em uma locução verbal segue as regras gerais de próclise e ênclise, mas com mais possibilidades de posicionamento.
+
+#### Locuções Verbais SEM Fator de Atração
+
+Quando não há uma palavra atrativa (advérbio, pronome relativo, etc.) antes da locução, o pronome pode ocupar, em geral, duas posições principais, consideradas corretas pela maioria dos gramáticos:
+
+- **Após o Verbo Auxiliar (Ênclise ao Auxiliar):** O pronome é ligado ao auxiliar por hífen.
+    - _Exemplos:_
+        - Os alunos **tinham-se** revoltado.
+        - **Vou-me** arrastando pela vida.
+        - **Ia-me** esquecendo da reunião.
+
+- **Após o Verbo Principal (Ênclise ao Principal):** O pronome é ligado ao principal por hífen.
+    - _Exemplos:_
+        - Os alunos tinham revoltado-**se**.
+        - Quero convidar-**te** para a festa.
+        - Ele estava testando-**me** sempre.
+
+> **Observação sobre o Pronome "Solto" no Meio:**
+> 
+> No português do Brasil, é extremamente comum a colocação do pronome "solto" (sem hífen) entre os dois verbos, em próclise ao verbo principal. Embora a gramática mais tradicional prefira as formas com hífen, este uso é amplamente aceito e abonado por gramáticas modernas.
+> 
+> - _Exemplos de uso corrente:_
+>     - Eu **estou lhe** emprestando dinheiro.
+>     - **Vou me** arrastando pela vida.
+
+#### Locuções Verbais COM Fator de Atração
+
+Esta é a situação mais importante para provas. Quando uma palavra atrativa precede a locução verbal, ela força a **próclise**. Isso cria duas posições corretas e **proíbe** uma terceira.
+
+- **Posições CORRETAS:**
+    1. **Antes do Verbo Auxiliar:** O pronome é atraído para o início do bloco verbal.
+    2. **Antes do Verbo Principal (solto no meio):** O pronome é atraído para antes do verbo principal.
+
+- **Posição INCORRETA:**
+    1. **Após o Verbo Auxiliar:** A ênclise ao verbo auxiliar é **proibida**, pois a palavra atrativa "puxa" o pronome para antes do verbo.
+
+Vamos analisar o exemplo "Eu não estou emprestando dinheiro":
+
+|Exemplo|Posição do Pronome|Análise|
+|---|---|---|
+|Eu **não lhe** estou emprestando dinheiro.|Antes da locução|**Correto.** Próclise ao verbo auxiliar, atraído por "não".|
+|Eu não **estou lhe** emprestando dinheiro.|Antes do verbo principal|**Correto.** Próclise ao verbo principal, atraído por "não".|
+|Eu não estou emprestando-**lhe** dinheiro.|Depois do verbo principal|**Correto** (apenas com infinitivo e gerúndio).|
+|_Eu não estou-**lhe** emprestando dinheiro._|_Depois do verbo auxiliar_|**INCORRETO.** A palavra "não" proíbe a ênclise ao verbo "estou".|
+
+#### Casos Específicos: Particípio e Futuro
+
+Lembre-se sempre das proibições gerais, que continuam válidas nas locuções:
+
+- **Com Particípio:** **Nunca** se usa o pronome após o particípio.
+    - _Correto:_ Eles **haviam-me** enganado. / Eles **me haviam** enganado.
+    - _Incorreto:_ Eles haviam enganado-**me**.
+
+- **Com Futuro:** **Nunca** se usa o pronome após um verbo no futuro. A mesóclise ocorrerá no verbo auxiliar.
+    - _Correto:_ **Convidar-te-ei** para a festa. (Verbo simples)
+    - _Correto:_ **Hei de** convidar-**te**. (Locução verbal)
+
+> **Resumo Estratégico para Provas**
+> 
+> Apesar das nuances e divergências, o conhecimento essencial para resolver questões de prova sobre colocação pronominal em locuções se resume a:
+> 
+> 1. **Memorizar as proibições:** Nunca inicie frase com pronome átono e nunca use ênclise após futuro ou particípio.
+> 2. **Memorizar os fatores de atração:** Palavras negativas, advérbios, pronomes relativos e conjunções subordinativas forçam a próclise.
+> 3. **Em uma locução com palavra atrativa,** lembre-se que a **ênclise ao verbo auxiliar é o erro clássico** cobrado pelas bancas (Ex: _Não posso-lhe ajudar_ está errado).
