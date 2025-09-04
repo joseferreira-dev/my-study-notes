@@ -349,3 +349,38 @@ Quando usados para reforçar um nome ou pronome, têm valor demonstrativo e enf�
     - **Eu mesma** resolverei o problema. (Eu em pessoa).
     - Eles cometeram os **mesmos** erros. (Exatamente aqueles erros, erros iguais).
 
+### Pronomes Relativos
+
+Os pronomes relativos são palavras que desempenham uma dupla função crucial na estrutura da frase:
+
+1. **Retomam um termo anterior (o antecedente):** Eles se referem a um substantivo ou pronome já mencionado na oração, evitando sua repetição.
+2. **Introduzem uma nova oração:** Dão início a uma oração subordinada adjetiva, que serve para caracterizar ou restringir o sentido do termo antecedente.
+
+Por essa capacidade de conectar ideias e retomar informações, os pronomes relativos são as ferramentas de **coesão textual** por excelência. Eles "costuram" o texto, tornando-o mais elegante, conciso e articulado.
+
+Podem ser **variáveis**, quando se flexionam em gênero e número para concordar com seu antecedente, ou **invariáveis**.
+
+| Variáveis (Masculinos) | Variáveis (Femininos) | Invariáveis |
+| ---------------------- | --------------------- | ----------- |
+| o qual (os quais)      | a qual (as quais)     | **quem**    |
+| cujo (cujos)           | cuja (cujas)          | **que**     |
+| quanto (quantos)       | quanta (quantas)      | **onde**    |
+
+#### A Função Coesiva na Prática
+
+Para entender o poder dos pronomes relativos, observe a diferença entre um texto construído sem eles e um texto coeso.
+
+**Texto sem pronomes relativos (repetitivo e truncado):**
+
+> _O aluno foi aprovado. O aluno é primo de João. João tem mãe. A mãe de João é professora. A mãe do João foi professora da menina. A menina roubava livros. Os livros eram caríssimos. Os livros foram comprados numa loja distante. Havia muitos enfeites na loja. Perguntaram a várias pessoas a localização da loja. As pessoas não souberam responder._
+
+A leitura é difícil e a falta de conexão entre as ideias é evidente. Agora, veja como o uso dos pronomes relativos transforma a estrutura.
+
+**Texto com pronomes relativos (fluido e coeso):**
+
+> _O aluno **que** foi aprovado é primo de João, **cuja** mãe foi professora daquela menina **que** roubava livros, **os quais** eram caríssimos e foram comprados numa loja **onde** havia muitos enfeites. As pessoas a **quem** perguntaram a localização da loja não souberam responder._
+
+O segundo texto é infinitamente mais claro e bem-estruturado. Cada pronome relativo retoma um termo anterior (`que` → aluno; `cuja` → de João; `que` → menina; `os quais` → livros; `onde` → loja; `quem` → pessoas), conectando as informações em um fluxo lógico e contínuo.
+
+A seguir, vamos analisar o uso e as particularidades de cada um dos principais pronomes relativos, pontos que são indispensáveis para um bom desempenho na sua prova.
+
