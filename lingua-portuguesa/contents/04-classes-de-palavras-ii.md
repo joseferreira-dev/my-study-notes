@@ -234,47 +234,68 @@ A tabela a seguir organiza os pronomes demonstrativos essenciais de acordo com a
 |**2ª Pessoa**|esse(s), essa(s)|**isso**|Perto de com quem se fala (aí).|
 |**3ª Pessoa**|aquele(s), aquela(s)|**aquilo**|Longe de ambos (lá, ali).|
 
-#### As Funções Referenciais do Pronome Demonstrativo
+#### As Funções Referenciais: Fora e Dentro do Texto
 
-**Uso Espacial (Localização Física)**
+A função primordial de um pronome é fazer referência a algo. Essa referência pode apontar para um elemento no mundo real (fora do texto) ou para um elemento dentro do próprio texto.
 
-É o uso mais concreto, indicando a posição física de um objeto em relação aos interlocutores.
+**Referência Exofórica (ou Dêitica)**
 
-- **Este(s), esta(s), isto:** Indicam o que está perto de quem fala (1ª pessoa).
-    - _Exemplo:_ **Este** livro **aqui** em minhas mãos é o que estudaremos.
-- **Esse(s), essa(s), isso:** Indicam o que está perto de com quem se fala (2ª pessoa) ou longe de quem fala.
-    - _Exemplo:_ Por favor, passe-me **essa** caneta que está **aí** na sua frente.
-- **Aquele(s), aquela(s), aquilo:** Indicam o que está distante de ambos os interlocutores (falante e ouvinte).
-    - _Exemplo:_ Você está vendo **aquele** prédio **lá** no final da rua?
+Ocorre quando o pronome aponta para um elemento que está fora do texto, na situação de comunicação. O sentido desses pronomes depende do contexto: de quem está falando, para quem, onde e quando.
 
-**Uso Temporal**
+- _Exemplo:_ **Neste país**, **neste momento**, **este autor** que vos fala está otimista.
+    - **Análise:** Para entender a quais "país", "momento" e "autor" os pronomes se referem, é preciso conhecer o contexto externo em que a frase foi produzida. A referência espacial (`este violão aqui`) e temporal (`nesta semana`) dos demonstrativos é, por natureza, exofórica ou dêitica.
 
-A mesma lógica de proximidade se aplica à referência no tempo.
+**Referência Endofórica (Textual)**
 
-- **Este(s), esta(s), isto:** Referem-se ao tempo presente ou a um futuro muito próximo.
-    - _Exemplo:_ **Este** ano está sendo de muito estudo. / **Nesta** semana, terei a prova.
-- **Esse(s), essa(s), isso:** Referem-se a um tempo passado relativamente recente.
-    - _Exemplo:_ A crise de 2020 foi severa. **Nesse** ano, muitas empresas fecharam.
-- **Aquele(s), aquela(s), aquilo:** Referem-se a um tempo passado distante, remoto.
-    - _Exemplo:_ O Brasil foi descoberto em 1500. **Naquela** época, o mundo era outro.
+Ocorre quando o pronome aponta para um elemento que está dentro do texto. É o mecanismo fundamental da coesão textual e se divide em duas funções:
 
-**Uso Textual (Coesão)**
+- **Função Anafórica (Retomada):** O pronome retoma uma informação que **já foi mencionada** no texto.
+    - _Exemplo:_ O candidato não estudou. Apesar **disso**, ele passou. ("disso" retoma "não ter estudado").
 
-Esta é a função mais explorada em provas. Os pronomes demonstrativos são ferramentas essenciais de coesão, conectando partes do texto. Quando a referência ocorre dentro do próprio texto, ela é chamada de endofórica. A referência endofórica pode ser de dois tipos:
+- **Função Catafórica (Anunciação):** O pronome anuncia uma informação que **ainda será mencionada** no texto.
+    - _Exemplo:_ Eu só pensava **nisto**: passar no concurso. ("nisto" anuncia "passar no concurso").
 
-- **Função Anafórica (Retomada):** O pronome retoma uma informação que **já foi mencionada** no texto. Os pronomes **esse(s), essa(s), isso** são os principais responsáveis por essa função.
-    - _Exemplos:_
-        - O candidato não estudou o suficiente. Por **isso**, não foi aprovado. ("isso" retoma toda a oração anterior).
-        - A corrupção é um mal que assola o país. O combate a **esse** problema é dever de todos. ("esse" retoma "corrupção").
+#### O Emprego dos Demonstrativos
 
-- **Função Catafórica (Anunciação):** O pronome anuncia uma informação que **ainda será mencionada** no texto. Os pronomes **este(s), esta(s), isto** são os principais responsáveis por essa função.
-    - _Exemplos:_
-        - A verdade é **esta**: ninguém estava preparado para a prova. ("esta" anuncia a informação que vem após os dois-pontos).
-        - Meu maior desejo é **isto**: a sua aprovação.
+A escolha entre `este`, `esse` e `aquele` depende se a referência é espacial, temporal ou textual.
 
-> **Foco de Prova: Referência a Dois Termos**
+**No Espaço (Uso Dêitico)**
+
+|Relação de Proximidade|Pronomes Utilizados|Advérbio Associado|Exemplo|
+|---|---|---|---|
+|Perto de quem fala (1ª pessoa)|**este(s), esta(s), isto**|**aqui**|**Este** violão **aqui** na minha mão é de madeira maciça.|
+|Perto de com quem se fala (2ª pessoa)|**esse(s), essa(s), isso**|**aí**|**Esse** violão **aí** na sua mão é de madeira maciça?|
+|Longe de ambos (3ª pessoa)|**aquele(s), aquela(s), aquilo**|**lá, ali**|**Aquela** pintura **lá** na parede é um afresco.|
+
+**No Tempo (Uso Dêitico)**
+
+|Referência Temporal|Pronomes Utilizados|Exemplo|
+|---|---|---|
+|**Presente ou período corrente**|**este(s), esta(s), isto**|**Este** domingo está ensolarado. / **Neste** verão, viajarei.|
+|**Passado ou futuro recentes**|**esse(s), essa(s), isso**|Lembro-me de 2024; **nesse** ano, estudei muito.|
+|**Passado ou futuro remotos**|**aquele(s), aquela(s), aquilo**|A década de 70 foi marcante. **Naquele** tempo, tudo era diferente.|
+
+**No Texto (Uso Endofórico para Coesão)**
+
+- **Para anunciar (Catáfora):** Usa-se **este(s), esta(s), isto**.
+    - _Exemplo:_ **Esta** é a sua nova senha: ynot.xp$%.
+    - _Exemplo:_ O objetivo da vida é **isto**: ser feliz.
+
+- **Para retomar (Anáfora):** Usa-se **esse(s), essa(s), isso**.
+    - _Exemplo:_ João foi aprovado em primeiro lugar. **Esse** rapaz é um gênio.
+    - _Exemplo:_ Dinheiro, sucesso e prestígio; **isso** tudo era importante para ela.
+
+> **Foco de Prova: A Retomada de Dois ou Mais Termos**
 > 
-> Para se referir a dois elementos já citados, usa-se **este** (e suas variações) para o termo mais próximo e **aquele** (e suas variações) para o termo mais distante.
+> Para se referir a dois elementos já citados em uma frase, a norma padrão prescreve o seguinte uso:
 > 
-> - _Exemplo:_ Português e Matemática são disciplinas cruciais; **esta** (Matemática) exige raciocínio, enquanto **aquela** (Português) exige interpretação.
+> - **este** (e suas variações) para o termo mencionado por **último** (o mais próximo).
+> - **aquele** (e suas variações) para o termo mencionado em **primeiro** lugar (o mais distante).
+> 
+> Exemplo: João e Maria são concursados; esta é do Bacen, aquele é do TCU.
+> 
+> Análise: esta (Maria, o termo mais próximo) / aquele (João, o termo mais distante).
+
+- **Observação sobre o Uso Anafórico de "Este":** Embora a regra mais rigorosa indique esse para retomadas, é comum e aceito na norma culta o uso de este para se referir a um elemento na oração imediatamente anterior, conferindo-lhe maior proximidade ou destaque.
+    - _Exemplo:_ Precisamos respeitar o professor, pois **este** é um grande formador de caráter.
 
