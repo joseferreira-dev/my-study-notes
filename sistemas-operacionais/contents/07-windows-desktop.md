@@ -4,7 +4,7 @@ Ao longo de décadas, a família de sistemas operacionais Microsoft Windows cons
 
 Neste capítulo, exploraremos o processo de instalação e configuração de uma das versões mais icônicas, o Windows 7, que serve como um excelente modelo para entendermos os passos lógicos que se aplicam, com pequenas variações, às demais edições. Vamos detalhar cada etapa, desde a inicialização do computador a partir da mídia de instalação até as configurações finais que preparam o sistema para o primeiro uso, desvendando o que acontece "por baixo dos panos" em cada decisão tomada pelo usuário.
 
-## O Processo de Instalação e Configuração Inicial
+## Instalação e Configuração Inicial
 
 A instalação de um sistema operacional como o Windows é um procedimento que transforma um conjunto de hardware em um ambiente computacional funcional. O método mais tradicional para iniciar esse processo é através de uma **mídia de inicialização (boot)**, que pode ser um DVD, um pen drive ou até mesmo uma imagem disponibilizada através de uma rede local. Para que isso funcione, o computador precisa ser instruído a tentar carregar um sistema a partir dessas mídias antes de tentar inicializar pelo disco rígido (HD) ou SSD interno. Essa ordem de prioridade de inicialização é configurada no **SETUP** do computador, uma interface de baixo nível, também conhecida como BIOS ou, em sistemas mais modernos, UEFI.
 
@@ -124,11 +124,11 @@ Se o computador estiver conectado a uma rede, o Windows solicita que o usuário 
 
 Após esta última configuração, o instalador finaliza os preparativos e, em poucos instantes, apresenta a Área de Trabalho, marcando o fim do processo de instalação. O sistema está agora pronto para ser utilizado, receber a instalação de programas e ser personalizado pelo usuário.
 
-### Edições do Windows Moderno
+## Edições do Windows Moderno
 
 A Microsoft tradicionalmente lança suas versões do sistema operacional Windows em diferentes **edições** (às vezes chamadas de SKUs - Stock Keeping Units). Essa estratégia visa atender a diversos segmentos de mercado, desde o usuário doméstico com necessidades básicas até grandes corporações com requisitos complexos de segurança e gerenciamento. Cada edição oferece um conjunto específico de funcionalidades, com preços correspondentes, permitindo que os consumidores escolham a versão que melhor se adapta ao seu perfil de uso. Analisaremos as edições mais conhecidas das versões mais influentes do Windows.
 
-#### Windows 7
+### Windows 7
 
 O Windows 7 foi amplamente elogiado por sua estabilidade e interface amigável, e sua estrutura de edições serviu de base para as versões futuras.
 
@@ -141,7 +141,7 @@ O Windows 7 foi amplamente elogiado por sua estabilidade e interface amigável, 
 
 Uma inovação notável no Windows 7 foi o **Windows Anytime Upgrade**. Esse recurso permitia que os usuários fizessem o upgrade de uma edição inferior para uma superior (por exemplo, de Home Premium para Professional) de forma simples e rápida, diretamente pelo sistema, comprando uma nova chave de licença online. O processo mantinha todos os arquivos, programas e configurações do usuário, apenas desbloqueando as funcionalidades da nova edição.
 
-#### Windows 10
+### Windows 10
 
 Com o Windows 10, a Microsoft simplificou um pouco a estrutura de edições, focando em um modelo de "Windows como Serviço", com atualizações contínuas de recursos.
 
@@ -153,7 +153,7 @@ Com o Windows 10, a Microsoft simplificou um pouco a estrutura de edições, foc
 - **Windows 10 Mobile:** Uma versão descontinuada, projetada para smartphones e pequenos tablets, com uma interface otimizada para toque (Continuum). Não obteve sucesso no mercado e foi encerrada.
 - **Windows 10 IoT (Internet of Things):** Uma família de edições projetada para dispositivos embarcados e de finalidade específica, como caixas eletrônicos, terminais de ponto de venda, equipamentos industriais e outros dispositivos da "Internet das Coisas".
 
-#### Windows 11
+### Windows 11
 
 O Windows 11 manteve uma estrutura de edições muito parecida com a do seu predecessor, o Windows 10, focando as mudanças na interface do usuário, segurança e produtividade.
 
@@ -164,3 +164,46 @@ O Windows 11 manteve uma estrutura de edições muito parecida com a do seu pred
 - **Windows 11 Pro for Workstations:** Assim como sua contraparte no Windows 10, esta edição é otimizada para hardware de ponta, suportando configurações com múltiplos processadores, grandes quantidades de memória e o sistema de arquivos ReFS.
 - **Windows 11 SE:** Uma nova edição introduzida especificamente para o mercado educacional de baixo custo, competindo com os Chromebooks. É uma versão simplificada do Windows 11, otimizada para dispositivos mais modestos, com uma interface que minimiza distrações e um sistema que limita a instalação de aplicativos àqueles aprovados pelos administradores de TI da escola, garantindo um ambiente de aprendizado mais focado e seguro.
 
+## Gerenciamento de Hardware e Drivers
+
+Um sistema operacional, por si só, é um software genérico. Para que ele possa se comunicar e controlar a vasta gama de componentes de hardware que podem ser conectados a um computador — desde placas de vídeo e de rede até impressoras e webcams —, ele precisa de um componente de software especializado: o **driver**. Como abordado em capítulos anteriores, um driver atua como um tradutor ou uma ponte de comunicação. Ele contém um conjunto de instruções e rotinas que "ensina" ao sistema operacional a linguagem específica de um determinado periférico, permitindo que o S.O. envie comandos, receba dados e utilize todas as funcionalidades do dispositivo. Ninguém conhece melhor o funcionamento de um hardware do que seu próprio fabricante, e, por isso, é ele o principal responsável por desenvolver e distribuir os drivers adequados.
+
+Sistemas operacionais modernos como o Windows simplificaram enormemente esse processo com a tecnologia **PnP (Plug and Play)**. O Windows mantém uma imensa base de dados interna com drivers para milhares de dispositivos comuns. Quando um periférico PnP é conectado ao computador (geralmente via USB ou outro barramento moderno), ele se identifica para o sistema operacional, informando seus identificadores únicos de hardware. O Windows então consulta sua base de dados e, se encontrar um driver compatível, realiza a instalação de forma automática e transparente para o usuário, que em poucos segundos já pode utilizar o novo dispositivo.
+
+Contudo, haverá situações em que essa automação não é suficiente. Se um dispositivo for muito recente, de um fabricante pouco conhecido, ou se for um hardware especializado, o Windows pode não ter um driver compatível em sua base. Nesses casos, a intervenção manual se faz necessária, seja para instalar o driver a partir de uma mídia fornecida pelo fabricante (como o CD que acompanha o produto) ou para baixá-lo diretamente do site do fabricante.
+
+A ferramenta central para monitorar e gerenciar todos os componentes de hardware e seus respectivos drivers no Windows é o **Gerenciador de Dispositivos**. Acessível através do Painel de Controle ou clicando com o botão direito no menu Iniciar, ele apresenta uma visão hierárquica de todo o hardware instalado no computador.
+
+<div align="center">
+<img width="420px" src="./img/07-gerenciador-de-dispositivos.png">
+</div>
+
+O Gerenciador de Dispositivos é uma ferramenta de diagnóstico e administração fundamental. Nele, é possível:
+
+- **Verificar o Status:** Dispositivos que estão funcionando corretamente são listados normalmente. Se um dispositivo apresentar um problema — como a falta de um driver, um conflito de recursos ou um mau funcionamento — ele será marcado com um ícone de alerta, geralmente um **ponto de exclamação amarelo**. Um dispositivo marcado com um **'X' vermelho** está desabilitado.
+- **Atualizar Driver:** Permite buscar e instalar uma versão mais nova do driver para um dispositivo. Mesmo que um dispositivo esteja funcionando, a atualização do driver pode corrigir bugs, melhorar o desempenho (especialmente para placas de vídeo) ou adicionar novas funcionalidades.
+- **Desabilitar Dispositivo:** Desativa temporariamente um dispositivo sem desinstalar seu driver. É útil para solucionar conflitos ou para economizar recursos.
+- **Desinstalar Dispositivo:** Remove o dispositivo da configuração do sistema e, opcionalmente, apaga seus arquivos de driver do computador. Na próxima vez que o hardware for detectado, o Windows tentará reinstalá-lo do zero.
+- **Verificar se há alterações de hardware:** Força o sistema a fazer uma nova varredura em busca de dispositivos PnP que possam ter sido conectados ou desconectados desde a última verificação.
+- **Propriedades:** Abre uma janela com informações detalhadas sobre o dispositivo, incluindo o status, a versão do driver, os recursos de hardware alocados e códigos de erro específicos, que são vitais para a solução de problemas avançados.
+
+Ao selecionar a opção para atualizar um driver, o Windows oferece duas abordagens:
+
+<div align="center">
+<img width="540px" src="./img/07-janela-de-atualizacao-de-drivers.png">
+</div>
+
+1. **Pesquisar automaticamente software de driver atualizado:** Esta é a opção mais simples. O Windows primeiro verifica sua própria base de drivers local e, em seguida, se conecta ao serviço **Windows Update** para buscar online por um driver mais recente validado pela Microsoft.
+2. **Procurar software de driver no computador:** Esta opção é usada quando o usuário já possui os arquivos do driver, seja por tê-los baixado do site do fabricante ou por possuir o CD de instalação. O usuário deve então indicar a pasta onde os arquivos do driver (geralmente incluindo um arquivo `.inf`) estão localizados para que o sistema possa instalá-los.
+
+Ao optar pela busca automática, o sistema inicia uma varredura online.
+
+<div align="center">
+<img width="540px" src="./img/07-janela-buscando-drivers.png">
+</div>
+
+Após a busca, o sistema informa o resultado. É comum que o Windows reporte que "Os melhores drivers para seus dispositivo já estão instalados". Isso significa que, de acordo com o catálogo do Windows Update, não há uma versão mais nova ou mais compatível disponível. No entanto, isso não significa que não exista um driver mais recente. Fabricantes, especialmente de placas de vídeo como AMD e NVIDIA, frequentemente lançam drivers otimizados em seus sites antes de disponibilizá-los no Windows Update. Portanto, para obter o máximo de desempenho ou acesso a recursos mais novos, verificar diretamente o site do fabricante ainda é uma prática recomendada.
+
+<div align="center">
+<img width="540px" src="./img/07-janela-resultado-busca-drivers.png">
+</div>
