@@ -249,3 +249,46 @@ Ao selecionar "Desinstalar", o Windows invoca o desinstalador correspondente, qu
 
 É importante notar que, a partir do Windows 10, a Microsoft introduziu uma nova interface para o gerenciamento de aplicativos na janela principal de **Configurações**, na seção **"Aplicativos e recursos"**. Essa nova interface unifica a gestão tanto de programas de desktop tradicionais quanto dos aplicativos modernos baixados da Microsoft Store, oferecendo as mesmas funcionalidades de desinstalação e modificação de forma mais integrada ao novo design do sistema.
 
+### Personalização do Ambiente: Idioma, Região e Dispositivos de Entrada
+
+Após a instalação inicial, o próximo passo natural é ajustar o sistema operacional para que ele se adeque perfeitamente às preferências e necessidades do usuário. O Windows oferece um painel de controle centralizado e moderno para essas personalizações, conhecido como o aplicativo **Configurações**. Esta interface, que pode ser acessada rapidamente através do atalho de teclado **`WINDOWS + I`**, organiza de forma lógica as diversas opções de customização do sistema, desde a aparência visual até o comportamento de dispositivos de hardware.
+
+Nesta seção, exploraremos como realizar os ajustes finos em componentes essenciais da interação do usuário com o sistema: o idioma, as configurações regionais, o teclado e o mouse.
+
+<div align="center">
+<img width="700px" src="./img/07-janela-idioma-e-regiao.png">
+</div>
+
+#### Configurações de Idioma e Região
+
+As configurações de idioma e região são fundamentais, pois definem não apenas a língua da interface, mas também como as informações são formatadas e qual conteúdo local é apresentado ao usuário. Essas opções estão concentradas na seção **"Hora e idioma"** > **"Idioma e região"**.
+
+- **Idioma de Exibição do Windows:** Esta é a configuração mais visível, determinando o idioma principal de toda a interface gráfica do sistema operacional. Menus, janelas, mensagens de erro e todos os textos do sistema serão exibidos no idioma selecionado aqui. Para adicionar um novo idioma de exibição, é necessário primeiro adicioná-lo à lista de "Idiomas preferidos" e, em seguida, baixar o respectivo pacote de idiomas.
+- **Idiomas Preferidos:** Esta é uma lista ordenada dos idiomas que o usuário entende. Sua principal função é comunicar a outros aplicativos e a sites da web qual idioma deve ser usado, caso o idioma de exibição principal não esteja disponível. Por exemplo, se o idioma de exibição for "Português (Brasil)" e o segundo idioma preferido for "Inglês (Estados Unidos)", um aplicativo que não tenha tradução para o português, mas tenha para o inglês, será exibido em inglês. Esta lista também determina quais dicionários para correção ortográfica e quais layouts de teclado estarão disponíveis para uso.
+- **País ou Região:** Esta configuração informa ao sistema e aos aplicativos a localização geográfica do usuário. Isso é usado para fornecer conteúdo localizado e relevante. Por exemplo, ao definir a região como "Brasil", a Microsoft Store irá priorizar aplicativos populares no mercado brasileiro, e os componentes de notícias do sistema (como os Widgets) destacarão eventos locais.
+- **Formato Regional:** Uma configuração poderosa que define como datas, horas, números e valores monetários são exibidos, independentemente do idioma de exibição. Isso permite um alto grau de personalização. Um usuário pode, por exemplo, preferir usar a interface do Windows em Inglês, mas configurar o formato regional para "Português (Brasil)" para que as datas apareçam no formato `DD/MM/AAAA` e a moeda seja exibida como `R$`.
+
+#### Configuração do Teclado
+
+A configuração do teclado está diretamente ligada aos "Idiomas preferidos". Para cada idioma adicionado a essa lista, é possível instalar um ou mais layouts de teclado correspondentes. Um layout de teclado é o mapa que define qual caractere é gerado por cada tecla física.
+
+Para adicionar um novo layout, o caminho é:
+
+1. Na seção "Idioma e região", localizar o idioma desejado na lista de "Idiomas preferidos" e clicar nas opções (ícone de três pontos).
+2. Selecionar "Opções de idioma".
+3. Na seção "Teclados", clicar em "Adicionar um teclado" e escolher o layout desejado na lista (por exemplo, "Estados Unidos (Internacional)" ou "Português (Brasil ABNT2)").
+
+Uma vez que mais de um layout de teclado esteja instalado, um indicador de idioma aparecerá na Barra de Tarefas (próximo ao relógio), permitindo que o usuário alterne rapidamente entre os layouts disponíveis, seja com o mouse ou com o atalho de teclado **`WINDOWS + Barra de espaço`**.
+
+#### Configuração do Mouse
+
+O mouse é um dos principais dispositivos de entrada, e ajustar seu comportamento pode melhorar significativamente a produtividade e o conforto. As configurações do mouse podem ser encontradas em **"Bluetooth e dispositivos"** > **"Mouse"**.
+
+Nesta seção, é possível ajustar diversas configurações essenciais:
+
+- **Botão principal do mouse:** Permite inverter a função dos botões esquerdo e direito. Este é um recurso de acessibilidade crucial para usuários canhotos, que podem preferir usar o botão direito para o clique principal (seleção) e o esquerdo para o clique secundário (menu de contexto).
+- **Velocidade do cursor:** Controla a sensibilidade do ponteiro, ou seja, a distância que o cursor percorre na tela em relação ao movimento físico do mouse. Uma velocidade maior é útil para navegar rapidamente em telas grandes ou de alta resolução, enquanto uma velocidade menor oferece mais precisão para tarefas detalhadas.
+- **Rolagem:** Define o comportamento da roda de rolagem do mouse, como o número de linhas que a página avança a cada "clique" da roda.
+
+Para configurações mais avançadas, como a alteração da aparência do ponteiro, a ativação de rastros ou o ajuste da velocidade do clique duplo, o Windows ainda oferece um painel de "Propriedades do Mouse" mais detalhado, geralmente acessível através de um link de "Configurações adicionais do mouse" na mesma tela.
+
