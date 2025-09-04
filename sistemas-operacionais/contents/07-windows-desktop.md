@@ -207,3 +207,45 @@ Após a busca, o sistema informa o resultado. É comum que o Windows reporte que
 <div align="center">
 <img width="540px" src="./img/07-janela-resultado-busca-drivers.png">
 </div>
+
+## Gerenciamento de Aplicativos: Instalação, Reparo e Desinstalação
+
+A principal finalidade de um sistema operacional de desktop é servir como plataforma para a execução de softwares ou aplicativos. O processo de adicionar, remover ou manter esses programas é uma das interações mais comuns que um usuário tem com o S.O. Compreender como esse ciclo de vida do software é gerenciado no Windows é crucial para garantir a estabilidade e o bom desempenho do sistema.
+
+A instalação de um novo programa geralmente começa com a execução de um arquivo instalador, que pode ter diversos nomes, como `Setup.exe`, `Install.exe`, ou ser um pacote `.msi` (Microsoft Installer). Este executável é muito mais do que um simples descompactador de arquivos. Ele orquestra uma série de operações complexas para integrar profundamente o software ao sistema operacional:
+
+- **Criação de Estruturas de Arquivos:** O instalador cria as pastas necessárias para o programa, geralmente dentro de diretórios padrão como `C:\Program Files` (para aplicativos de 64 bits) ou `C:\Program Files (x86)` (para aplicativos de 32 bits em um sistema de 64 bits). Além disso, pode criar pastas em locais de dados do usuário (como `AppData`) para armazenar configurações e arquivos temporários.
+- **Cópia de Bibliotecas (DLLs):** Muitos programas dependem de bibliotecas de vínculo dinâmico (arquivos `.dll`), que contêm código reutilizável. O instalador copia essas DLLs para a pasta do programa ou, em alguns casos, para pastas do sistema (como `C:\Windows\System32`) para que possam ser compartilhadas por outros aplicativos.
+- **Modificações no Registro do Windows:** Esta é uma das etapas mais críticas. O instalador realiza alterações no **Registro do Windows**, um banco de dados hierárquico que armazena configurações de baixo nível para o sistema operacional e para os aplicativos instalados. As modificações podem incluir:
+    - **Associações de Arquivos:** Registrar que tipos de arquivo o programa pode abrir (ex: associar a extensão `.pdf` ao Adobe Reader).
+    - **Entradas de Menu de Contexto:** Adicionar opções ao menu que aparece quando se clica com o botão direito em um arquivo.
+    - **Informações de Desinstalação:** Gravar os dados sobre o programa, como nome, versão, publicador e, o mais importante, o comando exato para executar seu próprio desinstalador.
+
+Devido a essa profunda integração, a remoção de um programa nunca deve ser feita simplesmente apagando sua pasta. Tal ação deixaria para trás inúmeros "resíduos digitais", como entradas órfãs no Registro, arquivos DLL desnecessários em pastas do sistema e associações de arquivo quebradas. Com o tempo, esse acúmulo pode levar à lentidão, instabilidade e erros no sistema.
+
+O método correto e seguro para gerenciar os softwares instalados é através do utilitário **Programas e Recursos**, localizado no **Painel de Controle**, o tradicional centro de configurações do Windows.
+
+<div align="center">
+<img width="700px" src="./img/07-painel-de-controle.png">
+</div>
+
+Ao abrir "Programas e Recursos", o sistema exibe uma lista de todos os softwares de desktop que foram devidamente instalados. A partir desta interface, o usuário pode selecionar um programa e escolher uma das ações disponíveis, geralmente através do menu de contexto (clique com o botão direito do mouse):
+
+<div align="center">
+<img width="700px" src="./img/07-programas-e-recursos.png">
+</div>
+
+As opções mais comuns são:
+
+- **Desinstalar:** Esta é a ação para remover completamente um programa. Ao ser acionada, ela não apaga os arquivos diretamente. Em vez disso, ela executa o programa **desinstalador** específico daquele software. Esse desinstalador é projetado para reverter de forma limpa todas as ações realizadas durante a instalação: apagar os arquivos e pastas criados, remover as entradas do Registro e anular as associações de arquivos.
+- **Alterar:** Esta opção geralmente executa o instalador original em um "modo de manutenção". Ela permite ao usuário modificar os componentes do programa que estão instalados. Por exemplo, em uma suíte de escritório, seria possível usar a opção "Alterar" para adicionar um componente que não foi incluído na instalação inicial, como um corretor ortográfico para um novo idioma.
+- **Reparar:** Uma função de diagnóstico e correção. A reparação verifica a integridade dos arquivos principais do programa e suas configurações no Registro. Se encontrar arquivos corrompidos, ausentes ou configurações inválidas, ela tentará restaurá-los a partir dos arquivos de instalação originais. É uma excelente primeira medida para tentar consertar um programa que parou de funcionar corretamente.
+
+Ao selecionar "Desinstalar", o Windows invoca o desinstalador correspondente, que então assume o controle do processo de remoção.
+
+<div align="center">
+<img width="700px" src="./img/07-desinstalando-um-programa.png">
+</div>
+
+É importante notar que, a partir do Windows 10, a Microsoft introduziu uma nova interface para o gerenciamento de aplicativos na janela principal de **Configurações**, na seção **"Aplicativos e recursos"**. Essa nova interface unifica a gestão tanto de programas de desktop tradicionais quanto dos aplicativos modernos baixados da Microsoft Store, oferecendo as mesmas funcionalidades de desinstalação e modificação de forma mais integrada ao novo design do sistema.
+
