@@ -475,3 +475,70 @@ O uso destes pronomes é determinado pelo sentido do termo antecedente.
 > - **Frase:** _A autora **cujos** livros gosto muito virá ao Brasil._
 >     - **Teste:** Eu gosto muito **dos** livros (de + os). → A preposição "de" é exigida.
 >     - **Correto:** A autora **de cujos** livros gosto muito virá ao Brasil.
+
+### Pronomes de Tratamento
+
+Os pronomes de tratamento são palavras ou locuções que funcionam como uma forma especial de pronome pessoal. São empregados para se dirigir a pessoas de acordo com sua idade, cargo, título ou posição social, expressando um grau de formalidade, cortesia ou reverência.
+
+Embora a lista de pronomes de tratamento seja extensa, especialmente em manuais de redação oficial (como os da Presidência da República e de tribunais superiores), para fins de concurso, o foco recai sobre os mais comuns e, principalmente, sobre as regras de concordância associadas a eles.
+
+#### Principais Formas de Tratamento e seu Emprego
+
+| Pronome de Tratamento    | Abreviação(ões)        | Destinatário(s) / Emprego                                                                                           |
+| ------------------------ | ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Vossa Senhoria**       | V. S.ª / V. S.as       | Usado em correspondência formal para funcionários graduados, diretores, e pessoas de prestígio em geral.            |
+| **Vossa Excelência**     | V. Ex.ª / V. Ex.as     | Altas autoridades do Estado (Presidente, Ministros, Senadores, Deputados, Juízes, Embaixadores, Oficiais Generais). |
+| **Vossa Magnificência**  | V. M.ª / V. Mag.as     | Reitores de universidades.                                                                                          |
+| **Vossa Santidade**      | V. S.                  | Papa.                                                                                                               |
+| **Vossa Eminência**      | V. Em.ª / V. Em.as     | Cardeais.                                                                                                           |
+| **Vossa Alteza**         | V. A. / VV. AA.        | Príncipes, duques, arquiduques.                                                                                     |
+| **Vossa Majestade**      | V. M. / VV. MM.        | Reis e imperadores.                                                                                                 |
+| **Vossa Reverendíssima** | V. Rev.ma / V. Rev.mas | Sacerdotes e religiosos em geral.                                                                                   |
+
+#### As Regras de Concordância
+
+A correta concordância com os pronomes de tratamento é o ponto mais crucial deste tópico. As regras podem parecer contraintuitivas, mas seguem uma lógica clara.
+
+**Concordância Verbal e Pronominal (3ª Pessoa)**
+
+Embora os pronomes de tratamento se refiram à 2ª pessoa do discurso (a pessoa com quem se fala), toda a concordância de verbos e demais pronomes deve ser feita na 3ª pessoa (singular ou plural).
+
+A lógica por trás disso é que a concordância se estabelece com o substantivo que é o núcleo da expressão (`Senhoria`, `Excelência`, `Majestade`), que é um substantivo de terceira pessoa.
+
+- **Dica:** Para simplificar, faça a concordância como se estivesse usando "você" ou "vocês".
+
+| -                      | Exemplo de Concordância                                               |
+| ---------------------- | --------------------------------------------------------------------- |
+| **Verbo**              | **Vossa Excelência decidiu** corretamente. (e não "decidistes").      |
+| **Pronome Oblíquo**    | Eu **o** vi ontem, Senhor Presidente. (e não "vos vi").               |
+| **Pronome Possessivo** | **Vossa Senhoria** pode trazer **seus** documentos? (e não "vossos"). |
+
+- _Exemplo do Manual da Presidência:_ **Vossa Senhoria** nomeará **seu** substituto.
+
+**Concordância Nominal (Gênero da Pessoa)**
+
+Diferentemente da concordância verbal, os adjetivos e particípios que se referem à pessoa tratada devem concordar com o gênero real (masculino ou feminino) dessa pessoa, e não com o gênero da palavra que compõe o pronome de tratamento (que geralmente é feminino, como "Excelência", "Senhoria", "Majestade").
+
+- _Exemplos:_
+    - Se o interlocutor for um juiz: **Vossa Excelência** está muito **ocupado** hoje.
+    - Se a interlocutora for uma senadora: **Vossa Excelência** foi **eleita** com muitos votos.
+    - Se a interlocutora for uma rainha: **Vossa Majestade** é muito **bondosa**.
+
+#### A Diferença entre "Vossa" e "Sua"
+
+A escolha entre "Vossa" e "Sua" depende da posição do interlocutor na conversa.
+
+- **VOSSA (Excelência, Senhoria, etc.):** Usa-se para falar **DIRETAMENTE COM** a autoridade.
+    - _Exemplo:_ Senhor Deputado, esperamos que **Vossa** Excelência aprecie nosso projeto.
+
+- **SUA (Excelência, Senhoria, etc.):** Usa-se para falar **SOBRE** a autoridade, referindo-se a ela como uma terceira pessoa.
+    - _Exemplo:_ O Deputado não pôde comparecer, mas **Sua** Excelência enviou um representante.
+
+#### Uso de Artigo e Crase
+
+Por regra geral, a maioria dos pronomes de tratamento (especialmente os iniciados por "Vossa") **rejeita o uso de artigo**. Como consequência, **não ocorre crase** antes deles.
+
+- _Exemplo:_ Encaminho o ofício **a Vossa** Senhoria. (Sem crase).
+- **Exceções:** Formas de tratamento mais comuns como **senhor, senhora, senhorita**, **madame**, **doutora** e **dona** admitem o uso de artigo. Portanto, diante delas, a crase pode ocorrer.
+    - _Exemplo:_ Entreguei o presente **à senhora**. (Preposição "a" + artigo "a").
+
