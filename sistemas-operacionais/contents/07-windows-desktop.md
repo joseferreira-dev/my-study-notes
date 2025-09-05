@@ -783,3 +783,58 @@ Além do Histórico de Arquivos, o Windows mantém outras ferramentas que servem
 - **Backup e Restauração (Windows 7):** Um utilitário legado, ainda presente nas versões mais recentes do Windows para fins de compatibilidade. Sua principal utilidade hoje é a criação de uma **Imagem do Sistema**. Diferente do Histórico de Arquivos, uma imagem do sistema é uma cópia exata, bit a bit, de uma partição inteira (geralmente a unidade `C:`). Ela inclui o sistema operacional, drivers, programas instalados, configurações e todos os arquivos. É uma ferramenta de recuperação de desastres poderosa: se o disco rígido principal falhar, o usuário pode instalar um novo disco e restaurar a imagem do sistema, retornando o computador ao estado exato em que ele estava no momento do backup.
 - **Sincronização com o OneDrive:** As versões modernas do Windows estão profundamente integradas com o serviço de armazenamento em nuvem da Microsoft, o OneDrive. Através das configurações de "Backup do Windows", é possível habilitar a sincronização das pastas Área de Trabalho, Documentos e Imagens com a nuvem. Embora tecnicamente seja uma sincronização, ela atua como uma forma de backup em tempo real e off-site (fora do local físico), protegendo os arquivos contra falhas de hardware e desastres locais, além de permitir o acesso a eles a partir de qualquer dispositivo conectado à internet.
 
+### Proteção de Rede: Windows Defender Firewall
+
+Em um mundo onde os computadores estão constantemente conectados a redes locais e à Internet, a proteção contra tráfego de rede malicioso e acessos não autorizados é fundamental. Para essa finalidade, o Windows integra uma sofisticada barreira de proteção conhecida como **Windows Defender Firewall**. Um firewall atua como um segurança digital na fronteira da conexão de rede do computador, monitorando e controlando todo o tráfego de dados que entra (entrada) e que sai (saída), com base em um conjunto de regras de segurança predefinidas.
+
+O firewall do Windows é do tipo _stateful_, o que significa que ele não apenas inspeciona pacotes de dados individualmente, mas também monitora o estado das conexões de rede ativas. Isso permite que ele, por exemplo, permita automaticamente o tráfego de resposta a uma solicitação que foi iniciada pelo seu computador, tornando sua operação mais inteligente e segura.
+
+#### Perfis de Rede: A Base da Política de Segurança
+
+O comportamento do firewall não é monolítico; ele se adapta ao ambiente de rede em que o computador está conectado. Para isso, o Windows utiliza três **perfis de rede** distintos, e a política do firewall é aplicada com base no perfil ativo no momento:
+
+- **Público:** O perfil mais restritivo. Deve ser usado em redes não confiáveis, como Wi-Fi de aeroportos, hotéis e cafés. Neste modo, o firewall bloqueia a maioria das conexões de entrada não solicitadas para tornar o computador "invisível" a outros dispositivos na mesma rede, protegendo-o contra possíveis ameaças.
+- **Particular (ou Privado):** Um perfil mais permissivo, destinado a redes confiáveis, como a rede doméstica ou de um pequeno escritório. Neste modo, o firewall permite o tráfego necessário para funcionalidades como a descoberta de rede (para que computadores se enxerguem) e o compartilhamento de arquivos e impressoras.
+- **Domínio:** Este perfil é ativado automaticamente quando o computador está ingressado em um domínio do Active Directory, típico de ambientes corporativos. As regras para este perfil são geralmente gerenciadas de forma centralizada pelo administrador da rede através de Políticas de Grupo.
+
+#### Configurações Básicas e Avançadas do Firewall
+
+O acesso e a configuração do firewall podem ser feitos em dois níveis: uma interface simplificada para tarefas comuns e um console avançado para um controle granular.
+
+Para acessar a interface principal, pode-se usar o atalho **`Win + I`** para abrir as Configurações e navegar até **"Privacidade e segurança"** → **"Segurança do Windows"** e, por fim, clicar em **"Firewall e proteção de rede"**.
+
+<div align="center">
+<img width="640px" src="./img/07-seguranca-do-windows.png">
+</div>
+
+Esta tela funciona como um painel de controle de alto nível, mostrando o status do firewall para cada um dos perfis de rede e permitindo tarefas simples, como "Permitir um aplicativo pelo firewall" — uma interface amigável que cria as regras necessárias em segundo plano para um programa específico — e configurar as notificações que alertam o usuário quando uma nova aplicação é bloqueada.
+
+Para um controle detalhado, é necessário acessar o console **"Windows Defender Firewall com Segurança Avançada"** (`wf.msc`), clicando em "Configurações avançadas" na tela anterior.
+
+<div align="center">
+<img width="700px" src="./img/07-windows-defender-firewall.png">
+</div>
+
+Esta ferramenta avançada é onde as políticas de segurança de rede são verdadeiramente definidas através da criação e gerenciamento de regras.
+
+#### Gerenciamento de Regras de Entrada e Saída
+
+O firewall opera com base em dois conjuntos de regras:
+
+- **Regras de Entrada (Inbound):** Controlam o tráfego que é **iniciado por um dispositivo externo e destinado ao seu computador**. Por padrão, o firewall do Windows segue uma política de "bloquear por padrão", ou seja, ele bloqueia todas as conexões de entrada não solicitadas, a menos que exista uma regra específica que as permita. Estas são as regras mais importantes para a segurança.
+- **Regras de Saída (Outbound):** Controlam o tráfego que é **iniciado pelo seu computador e destinado a um dispositivo externo**. Por padrão, o Windows permite todo o tráfego de saída. Regras de saída são criadas em ambientes de alta segurança para impedir que determinados aplicativos acessem a rede ou a Internet.
+
+Para criar uma nova regra, deve-se selecionar "Regras de Entrada" ou "Regras de Saída" no painel esquerdo e clicar em "Nova Regra..." no painel de Ações.
+
+<div align="center">
+<img width="700px" src="./img/07-regras-de-entrada.png">
+</div>
+
+O assistente de criação de regras oferece diferentes tipos de regras:
+
+- **Programa:** A regra se aplica a um arquivo executável específico. Esta é a forma mais segura e comum de permitir um aplicativo, pois a permissão está vinculada apenas àquele programa.
+- **Porta:** A regra abre uma porta de comunicação específica (ex: porta TCP 80 para um servidor web). Esta abordagem é mais ampla e deve ser usada com cautela, pois qualquer programa poderia, teoricamente, usar a porta aberta.
+- **Pré-definida:** Permite habilitar um conjunto de regras já prontas para serviços comuns do Windows, como "Compartilhamento de Arquivo e Impressora" ou "Área de Trabalho Remota".
+- **Personalizada:** Oferece controle total, permitindo combinações complexas de programas, portas, protocolos (TCP/UDP) e escopos de endereço IP.
+
+Após definir o tipo, o assistente guia o usuário na especificação da ação (Permitir ou Bloquear a conexão) e dos perfis de rede aos quais a regra se aplica, garantindo uma configuração de segurança precisa e adaptada a cada cenário de uso.
