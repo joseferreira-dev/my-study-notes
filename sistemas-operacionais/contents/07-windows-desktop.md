@@ -838,3 +838,68 @@ O assistente de criação de regras oferece diferentes tipos de regras:
 - **Personalizada:** Oferece controle total, permitindo combinações complexas de programas, portas, protocolos (TCP/UDP) e escopos de endereço IP.
 
 Após definir o tipo, o assistente guia o usuário na especificação da ação (Permitir ou Bloquear a conexão) e dos perfis de rede aos quais a regra se aplica, garantindo uma configuração de segurança precisa e adaptada a cada cenário de uso.
+
+## Gerenciamento de Usuários e Controle de Acesso
+
+Um sistema operacional multiusuário, por definição, deve ser capaz de gerenciar múltiplos usuários de forma segura e organizada. No Windows, essa gestão é realizada através de **contas de usuário**. Uma conta de usuário é mais do que um simples nome de login; é um conjunto de informações que define a identidade de um usuário no sistema, englobando seus arquivos pessoais, suas configurações de personalização (como papel de parede e tema) e, o mais importante, seu nível de permissão e privilégios. O uso de contas distintas garante a separação e a privacidade dos dados de cada pessoa que utiliza o computador e estabelece uma hierarquia de controle de acesso.
+
+### Contas de Usuário no Windows
+
+A administração das contas de usuário pode ser realizada através de diferentes interfaces. A abordagem tradicional, ainda presente, é através do **Painel de Controle**.
+
+<div align="center">
+<img width="700px" src="./img/07-painel-de-controle-usuarios.png">
+</div>
+
+Ao selecionar a opção "Contas de Usuário", o sistema exibe um painel com informações e ações rápidas para a conta do usuário atualmente logado.
+
+<div align="center">
+<img width="700px" src="./img/07-contas-de-usuarios.png">
+</div>
+
+Nesta tela, é possível identificar rapidamente o nome do usuário, se a conta está vinculada a um e-mail (indicando uma Conta Microsoft), seu tipo (neste caso, "Administrador") e se está protegida por senha.
+
+#### Tipos de Contas e Níveis de Privilégio
+
+O Windows opera com diferentes níveis de privilégio para as contas de usuário, uma medida de segurança fundamental para proteger a integridade do sistema.
+
+- **Administrador (Administrator):** Uma conta de Administrador possui controle total sobre o computador. Ela pode instalar e remover qualquer software, alterar configurações críticas do sistema, acessar todos os arquivos de todas as contas, e criar, modificar ou excluir outras contas de usuário. Devido a esse poder irrestrito, é uma prática de segurança recomendada não utilizar uma conta de administrador para as tarefas do dia a dia. Se um software malicioso for executado em uma sessão de administrador, ele também terá privilégios totais para danificar o sistema.
+- **Padrão (Standard):** É o tipo de conta recomendado para o uso cotidiano. Um usuário Padrão pode executar programas, gerenciar seus próprios arquivos e personalizar seu ambiente. No entanto, ele não pode instalar softwares que afetem todo o sistema, modificar arquivos protegidos do Windows ou alterar configurações que impactem outros usuários. Para realizar uma tarefa que exija privilégios elevados, o sistema ativará o **UAC (Controle de Conta de Usuário)**, que exibirá um prompt solicitando a senha de uma conta de administrador para autorizar a operação. O UAC atua como uma barreira de segurança, impedindo que alterações críticas sejam feitas sem consentimento explícito.
+- **Convidado (Guest):** Um tipo de conta com privilégios extremamente limitados, projetada para acesso temporário. Em versões mais recentes do Windows, a conta de Convidado foi descontinuada por padrão por razões de segurança, mas o conceito de acesso restrito permanece relevante.
+
+O tipo de uma conta pode ser alterado a qualquer momento, mas o sistema impõe uma regra de segurança crucial: **deve haver pelo menos uma conta de Administrador ativa no computador**. Isso impede que o usuário se "tranque para fora" do sistema, perdendo a capacidade de realizar tarefas administrativas.
+
+<div align="center">
+<img width="640px" src="./img/07-alteracao-tipo-de-conta.png">
+</div>
+
+#### Criando e Gerenciando Novas Contas
+
+Para adicionar um novo usuário ao computador, pode-se usar a opção "Gerenciar outra conta".
+
+<div align="center">
+<img width="540px" src="./img/07-adicionar-novo-usuario.png">
+</div>
+
+O Windows moderno oferece a opção de criar dois tipos de contas:
+
+- **Conta Microsoft:** Utiliza um endereço de e-mail como login e está integrada aos serviços de nuvem da Microsoft. Seus benefícios incluem a sincronização de configurações (temas, senhas, preferências) entre diferentes dispositivos Windows, integração com o OneDrive para armazenamento de arquivos e acesso à Microsoft Store.
+- **Conta Local:** Uma conta tradicional que existe apenas naquele computador específico. Não está vinculada a um e-mail e suas configurações e arquivos não são sincronizados.
+
+Após a criação, a nova conta aparecerá na lista de gerenciamento, onde seu tipo, nome ou senha podem ser alterados posteriormente por um administrador.
+
+<div align="center">
+<img width="540px" src="./img/07-novo-usuario-adicionado.png">
+</div>
+
+#### Configuração de Logon Automático (`netplwiz`)
+
+Para ambientes onde a segurança física é garantida e a conveniência é prioritária (como um computador de mesa em casa, usado por uma única pessoa), o Windows permite desativar a tela de login, configurando um logon automático. Isso é feito através do utilitário **`netplwiz`**.
+
+Ao executar este comando, uma janela de "Contas de Usuário" mais avançada é exibida. Desmarcando a opção "Os usuários devem digitar um nome de usuário e uma senha para usar este computador" e confirmando com a senha da conta desejada, o sistema passará a iniciar a sessão automaticamente naquela conta toda vez que o computador for ligado. É crucial ressaltar que **esta configuração elimina uma camada fundamental de segurança** e nunca deve ser utilizada em notebooks ou em qualquer computador que possa ser acessado por pessoas não autorizadas.
+
+<div align="center">
+<img width="360px" src="./img/07-contas-de-usuario.png">
+</div>
+
+O perfil de usuário, além de armazenar arquivos e configurações, também funciona como um repositório seguro para credenciais pessoais. Quando um **certificado digital** é utilizado, por exemplo, para assinar documentos ou acessar sistemas seguros, ele deve ser importado e salvo no "repositório pessoal de certificados" da conta de usuário, garantindo que ele esteja protegido e acessível apenas àquele usuário.
