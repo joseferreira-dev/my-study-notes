@@ -1130,3 +1130,51 @@ Para localizar arquivos, o Explorador de Arquivos possui uma poderosa ferramenta
 <div align="center">
 <img width="700px" src="./img/07-busca-de-arquivos.png">
 </div>
+
+## A Interface de Linha de Comando: Prompt de Comando
+
+Enquanto o Explorador de Arquivos oferece uma maneira visual e intuitiva de interagir com o sistema, o Windows mantém uma poderosa **interface de linha de comando (CLI - Command-Line Interface)**, o **Prompt de Comando**. Esta interface baseada em texto permite que os usuários executem comandos diretamente, oferecendo um nível de controle e automação que muitas vezes não é possível através da interface gráfica. Para tarefas de administração de rede, solução de problemas avançados e automação de rotinas através de scripts (arquivos `.bat`), o Prompt de Comando é uma ferramenta essencial.
+
+Embora o Windows moderno tenha introduzido um sucessor mais poderoso, o **PowerShell**, o Prompt de Comando (`cmd.exe`) permanece como um componente integral do sistema para garantir a compatibilidade e executar uma vasta gama de comandos fundamentais.
+
+### Acessando o Prompt e Principais Comandos
+
+Para iniciar o Prompt de Comando, pode-se usar a caixa de diálogo "Executar" (atalho **`Win + R`**) e digitar `cmd.exe`. Outras formas incluem pesquisar por "Prompt de Comando" no Menu Iniciar. Para tarefas que exigem privilégios elevados, como modificar configurações de rede ou arquivos de sistema, é crucial executá-lo **"Como Administrador"**.
+
+<div align="center">
+<img width="360px" src="./img/07-janela-de-executar.png">
+</div>
+
+<div align="center">
+<img width="440px" src="./img/07-prompt-de-comando.png">
+</div>
+
+A seguir, apresentamos uma tabela de referência com alguns dos comandos mais importantes e frequentemente cobrados em avaliações, com uma breve descrição e exemplos.
+
+| Comando                                    | Descrição                                                                                                        | Parâmetros Notáveis / Exemplo de Uso                                                                                                                           |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Gerenciamento de Arquivos e Diretórios** |                                                                                                                  |                                                                                                                                                                |
+| `tree`                                     | Exibe a estrutura de diretórios de um caminho de forma gráfica (árvore).                                         | `tree C:\Users`                                                                                                                                                |
+| `comp`                                     | Compara o conteúdo de dois arquivos byte a byte, indicando diferenças.                                           | `comp arquivo1.txt arquivo2.txt`                                                                                                                               |
+| `attrib`                                   | Exibe ou altera os atributos de um arquivo (Somente Leitura, Oculto, Sistema).                                   | `attrib +h segredo.txt` (torna o arquivo oculto). Parâmetros: `r` (somente leitura), `s` (sistema), `h` (oculto), `a` (arquivo-morto).                         |
+| `md` ou `mkdir`                            | Cria um novo diretório (pasta).                                                                                  | `md C:\Relatorios`                                                                                                                                             |
+| `cd` ou `chdir`                            | Muda o diretório de trabalho atual.                                                                              | `cd C:\Relatorios`                                                                                                                                             |
+| `rd` ou `rmdir`                            | Remove um diretório. Por padrão, o diretório deve estar vazio.                                                   | `rd C:\Temporario`                                                                                                                                             |
+| `ftype`                                    | Exibe ou modifica o tipo de arquivo usado em associações de extensão.                                            | `ftype` (lista todos os tipos)                                                                                                                                 |
+| **Gerenciamento de Processos**             |                                                                                                                  |                                                                                                                                                                |
+| `tasklist`                                 | Lista todos os processos em execução no sistema, incluindo seu PID (ID do Processo).                             | `tasklist`                                                                                                                                                     |
+| `taskkill`                                 | Finaliza um ou mais processos, seja pelo nome da imagem ou pelo PID.                                             | `taskkill /f /im chrome.exe` (força o fechamento de todos os processos do Chrome). Parâmetros: `/f` (forçar), `/im` (nome da imagem), `/pid` (ID do processo). |
+| `tskill`                                   | Um comando mais antigo para finalizar um processo. Foi amplamente substituído pelo `taskkill`.                   | `tskill 1234` (finaliza o processo com PID 1234)                                                                                                               |
+| **Diagnóstico de Rede**                    |                                                                                                                  |                                                                                                                                                                |
+| `ping`                                     | Testa a conectividade de rede com outro dispositivo, enviando pacotes e aguardando a resposta.                   | `ping www.google.com`                                                                                                                                          |
+| `ipconfig`                                 | Exibe as informações de configuração de rede TCP/IP do computador (IP, máscara, gateway).                        | `ipconfig /all` (exibe informações detalhadas). `ipconfig /flushdns` (limpa o cache de resolução de DNS).                                                      |
+| `nslookup`                                 | Ferramenta para consultar o sistema DNS para obter mapeamentos de nome para IP (e vice-versa).                   | `nslookup www.google.com`                                                                                                                                      |
+| `tracert`                                  | Rastreia a rota (os "saltos" através de roteadores) que um pacote de dados leva para chegar a um destino.        | `tracert www.google.com`                                                                                                                                       |
+| `netstat`                                  | Exibe estatísticas do protocolo e conexões de rede TCP/IP ativas.                                                | `netstat -a` (mostra todas as conexões e portas de escuta).                                                                                                    |
+| `arp`                                      | Exibe e modifica o cache ARP, que mapeia endereços IP para endereços MAC na rede local.                          | `arp -a` (exibe o cache ARP atual).                                                                                                                            |
+| **Ferramentas de Sistema**                 |                                                                                                                  |                                                                                                                                                                |
+| `msconfig`                                 | Abre o utilitário de Configuração do Sistema, usado para gerenciar programas de inicialização e opções de boot.  | `msconfig`                                                                                                                                                     |
+| `regedit`                                  | Abre o Editor do Registro, um banco de dados hierárquico que armazena configurações do Windows e de aplicativos. | `regedit` (requer privilégios de administrador). **Aviso:** Alterações incorretas no Registro podem causar instabilidade severa no sistema.                    |
+
+Esta lista serve como uma introdução aos comandos mais comuns. Nas seções seguintes, alguns deles serão explorados com mais profundidade, agrupados por suas categorias de função.
+
