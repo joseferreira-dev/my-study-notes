@@ -736,3 +736,50 @@ Apesar das mudanças visuais na interface do Visualizador de Eventos ao longo da
 <div align="center">
 <img width="700px" src="./img/07-visualizador-de-eventos-windows-11.png">
 </div>
+
+### Proteção de Dados: Backup e Restauração
+
+A perda de dados é um risco constante em qualquer ambiente computacional, podendo ser causada por uma variedade de fatores, como falhas de hardware (um disco rígido que para de funcionar), erros humanos (a exclusão acidental de um arquivo importante), corrupção de software ou ataques de malware, como os devastadores _ransomwares_. A única defesa eficaz contra a perda permanente de dados é a manutenção de uma estratégia de **backup** consistente, que consiste em criar e armazenar cópias de segurança dos arquivos em um local separado e seguro.
+
+O Windows oferece diversas ferramentas nativas para ajudar os usuários a protegerem seus dados, desde o backup seletivo de arquivos pessoais até a criação de uma imagem completa do sistema para recuperação de desastres.
+
+#### Histórico de Arquivos (File History)
+
+A principal ferramenta moderna do Windows para o backup de arquivos pessoais é o **Histórico de Arquivos**. Este recurso não é projetado para fazer um backup completo do sistema operacional ou dos programas, mas sim para focar naquilo que é mais valioso para o usuário: seus documentos, fotos, músicas, vídeos e outros arquivos pessoais. Ele funciona como uma "máquina do tempo" para os arquivos, salvando cópias periodicamente e permitindo que o usuário restaure versões anteriores de um arquivo que foi alterado ou recupere um arquivo que foi excluído.
+
+**1. Configurando o Histórico de Arquivos:**
+
+Para utilizar o Histórico de Arquivos, é pré-requisito o uso de uma unidade de armazenamento separada. Pode ser um disco rígido externo, um SSD externo ou até mesmo um local de rede mapeado. Usar uma unidade externa é crucial, pois um backup armazenado no mesmo disco que os dados originais não oferece proteção contra uma falha física desse disco.
+
+O processo de configuração é iniciado através do aplicativo Configurações:
+
+- Abra as Configurações com o atalho **`Win + I`**.
+- Navegue até "Sistema" → "Armazenamento" e, em seguida, procure por "Opções de backup" ou "Configurações avançadas de armazenamento".
+- Localize a opção para configurar o Histórico de Arquivos (que pode estar sob um link como "Fazer backup usando o Histórico de Arquivos").
+- Na tela de configuração, o primeiro passo é clicar em "Adicionar uma unidade" e selecionar o disco externo conectado que será usado para armazenar os backups.
+
+Uma vez que a unidade é selecionada, o Windows ativa o serviço e começa a realizar o primeiro backup das pastas de usuário padrão (Documentos, Imagens, Músicas, Vídeos e Área de Trabalho) em segundo plano.
+
+**2. Personalizando o Backup:**
+
+O Histórico de Arquivos permite um controle granular sobre como os backups são realizados. Nas "Mais opções" da tela de configuração, é possível personalizar:
+
+- **Frequência do Backup:** Define com que frequência o Windows deve verificar e salvar novas versões dos seus arquivos. As opções variam desde "A cada 10 minutos" até "Diariamente". Uma frequência maior oferece mais pontos de restauração, mas consome mais espaço em disco.
+- **Retenção dos Backups:** Determina por quanto tempo as versões antigas dos arquivos devem ser mantidas. A opção padrão, "Até que o espaço seja necessário", irá apagar automaticamente as versões mais antigas quando o disco de backup começar a encher. Alternativamente, pode-se optar por manter as versões para sempre ou por um período específico.
+- **Seleção de Pastas:** Por padrão, o Histórico de Arquivos monitora as principais pastas da biblioteca do usuário. Nesta seção, é possível adicionar outras pastas ao conjunto de backup (por exemplo, uma pasta de projetos em `C:\Trabalho`) ou excluir pastas específicas que não necessitam de backup (como a pasta de Downloads), otimizando o uso do espaço de armazenamento.
+
+**3. Restaurando Arquivos e Pastas:**
+
+Quando a necessidade de recuperação surge, o processo é igualmente simples:
+
+- Acesse a mesma tela de configuração do Histórico de Arquivos e clique na opção **"Restaurar arquivos de um backup atual"** ou "Restaurar arquivos pessoais".
+- O sistema abrirá uma interface que permite navegar pela estrutura de pastas do backup. Na parte inferior da janela, setas de navegação permitem "viajar no tempo", percorrendo os diferentes snapshots (cópias) que foram salvos em datas e horas diferentes.
+- O usuário pode então selecionar um arquivo ou pasta de uma data anterior e clicar no botão de restauração. O sistema oferecerá a opção de restaurar o item para seu local original (substituindo a versão atual, se houver) ou para um novo local.
+
+#### Outras Ferramentas de Backup Nativas
+
+Além do Histórico de Arquivos, o Windows mantém outras ferramentas que servem a propósitos diferentes:
+
+- **Backup e Restauração (Windows 7):** Um utilitário legado, ainda presente nas versões mais recentes do Windows para fins de compatibilidade. Sua principal utilidade hoje é a criação de uma **Imagem do Sistema**. Diferente do Histórico de Arquivos, uma imagem do sistema é uma cópia exata, bit a bit, de uma partição inteira (geralmente a unidade `C:`). Ela inclui o sistema operacional, drivers, programas instalados, configurações e todos os arquivos. É uma ferramenta de recuperação de desastres poderosa: se o disco rígido principal falhar, o usuário pode instalar um novo disco e restaurar a imagem do sistema, retornando o computador ao estado exato em que ele estava no momento do backup.
+- **Sincronização com o OneDrive:** As versões modernas do Windows estão profundamente integradas com o serviço de armazenamento em nuvem da Microsoft, o OneDrive. Através das configurações de "Backup do Windows", é possível habilitar a sincronização das pastas Área de Trabalho, Documentos e Imagens com a nuvem. Embora tecnicamente seja uma sincronização, ela atua como uma forma de backup em tempo real e off-site (fora do local físico), protegendo os arquivos contra falhas de hardware e desastres locais, além de permitir o acesso a eles a partir de qualquer dispositivo conectado à internet.
+
