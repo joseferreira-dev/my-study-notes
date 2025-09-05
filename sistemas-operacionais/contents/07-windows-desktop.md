@@ -1048,3 +1048,85 @@ Ao formatar, o Windows apresenta uma janela com várias opções de configuraç�
 - A **liberação de espaço** (exclusão de arquivos temporários) é feita pela "Limpeza de Disco".
 - A **criação de cotas de disco** (limites de espaço por usuário) é configurada nas propriedades da unidade no Explorador de Arquivos.
 - A **criação de pools de armazenamento e RAID avançado** é gerenciada pela funcionalidade "Espaços de Armazenamento".
+
+## Navegação e Gerenciamento: Explorador de Arquivos
+
+A principal interface gráfica do Windows para que os usuários possam interagir com a estrutura de arquivos e pastas do sistema é o **Explorador de Arquivos** (conhecido em versões mais antigas como Windows Explorer). Esta ferramenta é muito mais do que um simples gerenciador de arquivos; ela constitui o _shell_ do sistema operacional, sendo responsável por renderizar a Área de Trabalho, a Barra de Tarefas e o Menu Iniciar.
+
+O Explorador de Arquivos pode ser acessado de várias maneiras: através do ícone de pasta na Barra de Tarefas, pelo Menu Iniciar, ou pelo conveniente atalho de teclado **`Win + E`**.
+
+<div align="center">
+<img width="160px" src="./img/07-explorador-de-arquivos.png">
+</div>
+
+É possível abrir múltiplas janelas do Explorador de Arquivos simultaneamente, o que significa que cada janela é um processo independente, permitindo ao usuário trabalhar em diferentes diretórios ao mesmo tempo.
+
+#### Anatomia da Janela do Explorador de Arquivos
+
+A interface do Explorador de Arquivos é projetada para ser intuitiva, dividida em várias áreas funcionais que facilitam a navegação e a manipulação de dados.
+
+<div align="center">
+<img width="700px" src="./img/07-janela-explorador-de-arquivos.png">
+</div>
+
+- **Faixa de Opções (Ribbon):** Localizada na parte superior, agrupa os comandos mais comuns em abas como "Início" (para ações como copiar, colar, excluir e renomear), "Compartilhar" e "Exibir" (para alterar o modo de visualização dos arquivos).
+- **Barra de Endereços:** Exibe o caminho completo da pasta atual. É uma ferramenta de navegação interativa que permite ao usuário clicar em qualquer nível do caminho para subir na hierarquia de diretórios. Ela também aceita caminhos de rede no formato UNC (Convenção Universal de Nomenclatura), como `\\NOME-DA-MAQUINA\Compartilhamento`.
+- **Painel de Navegação:** A coluna à esquerda que apresenta uma visão em árvore da estrutura do computador, incluindo atalhos para o "Acesso rápido", "Este Computador" (com suas unidades de disco) e locais de rede.
+- **Painel de Conteúdo:** A área principal que exibe a lista de arquivos e subpastas contidos no diretório atual.
+
+#### Organizando a Exibição e Trabalhando com Arquivos
+
+O Explorador de Arquivos oferece um alto grau de personalização na forma como os arquivos são exibidos. No modo de exibição "Detalhes", é possível clicar com o botão direito nos cabeçalhos das colunas para escolher quais informações (metadados) serão exibidas, além das padrão (Nome, Data de modificação, Tipo e Tamanho). Ao clicar em "Mais...", uma vasta lista de opções se torna disponível, permitindo exibir atributos específicos como "Dimensões" para imagens ou "Taxa de bits" para arquivos de áudio.
+
+<div align="center">
+<img width="700px" src="./img/07-classificacao-de-arquivos.png">
+</div>
+
+Por padrão, o Windows oculta as extensões de tipos de arquivo conhecidos (ex: `.docx`, `.txt`, `.jpg`) para simplificar a visualização. No entanto, é uma prática de segurança altamente recomendada habilitar a exibição das extensões. Isso impede que softwares maliciosos se disfarcem com nomes enganosos (ex: `Fatura.pdf.exe`). A opção pode ser ativada na aba "Exibir" da Faixa de Opções, marcando a caixa **"Extensões de nomes de arquivos"**.
+
+<div align="center">
+<img width="700px" src="./img/07-mostrar-extensoes-de-arquivos.png">
+</div>
+
+A principal forma de interagir com um arquivo ou pasta é através do **menu de contexto**, que aparece ao clicar com o botão direito do mouse. Este menu oferece acesso a todas as ações relevantes, como Abrir, Recortar, Copiar, Excluir, Renomear e, de forma muito importante, **Propriedades**.
+
+<div align="center">
+<img width="700px" src="./img/07-menu-de-contexto.png">
+</div>
+
+A janela de Propriedades é um painel de diagnóstico que revela informações detalhadas sobre o item selecionado, organizadas em abas:
+
+- **Geral:** Exibe informações básicas como o tipo do arquivo, o local, o "Tamanho" (o tamanho real dos dados) e o "Tamanho em disco" (o espaço que ele efetivamente ocupa, que é sempre um múltiplo do tamanho do cluster do disco). Também mostra os carimbos de data e hora de Criação, Modificação e Acesso (conhecidos como _MAC times_) e permite alternar atributos básicos como "Somente leitura" e "Oculto".
+
+<div align="center">
+<img width="360px" src="./img/07-propriedades-de-arquivos-1.png">
+</div>
+
+- **Segurança:** Esta aba é o ponto de entrada para a configuração das permissões NTFS. É aqui que se define, de forma granular, quais usuários e grupos podem ler, gravar, executar ou ter controle total sobre o arquivo ou pasta.
+
+<div align="center">
+<img width="360px" src="./img/07-propriedades-de-arquivos-2.png">
+</div>
+
+- **Detalhes:** Mostra metadados adicionais específicos do tipo de arquivo, como o autor de um documento, a resolução de uma imagem ou o artista de uma música.
+
+<div align="center">
+<img width="360px" src="./img/07-propriedades-de-arquivos-3.png">
+</div>
+
+#### Nomeando e Encontrando Arquivos
+
+O sistema de arquivos do Windows impõe regras sobre os nomes de arquivos. Os seguintes caracteres são proibidos: `\ / : * ? " < > |`. Tentar usar um desses caracteres resultará em um aviso.
+
+<div align="center">
+<img width="540px" src="./img/07-aviso-nome-de-arquivos.png">
+</div>
+
+Para localizar arquivos, o Explorador de Arquivos possui uma poderosa ferramenta de busca integrada no canto superior direito. Além de pesquisar por palavras no nome do arquivo ou em seu conteúdo, a busca suporta caracteres coringa:
+
+- `*` (asterisco): Substitui qualquer sequência de caracteres. Por exemplo, `Quest*` encontrará `Questões`, `Questão01` e `Questionário`.
+- `?` (interrogação): Substitui um único caractere. Por exemplo, `Teste??.txt` encontraria `Teste01.txt`, `TesteAB.txt`, mas não `Teste.txt` ou `Teste123.txt`.
+
+<div align="center">
+<img width="700px" src="./img/07-busca-de-arquivos.png">
+</div>
