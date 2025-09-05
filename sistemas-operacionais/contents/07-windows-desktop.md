@@ -622,3 +622,48 @@ Com o roteador configurado e transmitindo o sinal, conectar um computador com Wi
 - Quando solicitado, digitar a senha da rede que foi configurada no roteador e clicar em "Avançar".
 
 Após a primeira conexão bem-sucedida, o Windows salvará o perfil da rede (incluindo a senha), permitindo que o computador se reconecte automaticamente sempre que a rede estiver ao alcance.
+
+### Acesso Remoto: A Área de Trabalho Remota
+
+O Acesso Remoto é uma tecnologia que permite a um usuário conectar-se e controlar um computador a partir de outro, através de uma rede local ou da Internet. A experiência é como se o usuário estivesse fisicamente sentado em frente à máquina remota, com acesso total à sua área de trabalho, arquivos e aplicativos. A principal ferramenta nativa para esta finalidade no Windows é a **Área de Trabalho Remota**, que utiliza o **Protocolo de Área de Trabalho Remota (RDP - Remote Desktop Protocol)** para realizar a comunicação.
+
+É fundamental destacar uma limitação importante relacionada às edições do Windows: a capacidade de **receber** uma conexão remota (atuar como _host_ ou servidor) está disponível apenas nas edições **Pro, Enterprise e Education**. As edições **Home** do Windows podem atuar como _cliente_ para se conectar a outros computadores, mas não podem ser acessadas remotamente através deste recurso nativo.
+
+O processo de utilização da Área de Trabalho Remota envolve duas etapas principais: configurar o computador que será acessado (o _host_) e, em seguida, usar outro computador (o _cliente_) para iniciar a conexão.
+
+#### Configurando o Computador Host (Acesso Remoto)
+
+Para que um computador possa aceitar conexões remotas, a funcionalidade precisa ser explicitamente ativada e, em alguns casos, o firewall precisa ser configurado.
+
+**1. Ativando o Acesso Remoto:**
+
+O método mais direto para habilitar o recurso é através do aplicativo Configurações.
+
+- Pode-se abrir as Configurações rapidamente com o atalho de teclado **`Win + I`**.
+- Dentro das Configurações, navegue até **"Sistema"** e, em seguida, selecione **"Área de Trabalho Remota"**.
+
+<div align="center">
+<img width="640px" src="./img/07-area-de-trabalho-remota.png">
+</div>
+
+- Na tela seguinte, basta ativar o interruptor da "Área de Trabalho Remota". O sistema exibirá uma confirmação de segurança, pois habilitar este recurso expõe o computador a possíveis conexões da rede.
+
+Ao ativar a funcionalidade, o Windows inicia os serviços necessários e começa a "escutar" por tentativas de conexão na porta de rede padrão do RDP, que é a **TCP 3389**. É crucial anotar o **Nome do computador** exibido nesta tela, pois ele (ou o endereço IP do computador) será usado para iniciar a conexão a partir do cliente.
+
+**2. Configuração do Firewall:**
+
+Por padrão, ao ativar a Área de Trabalho Remota, o Windows automaticamente cria uma regra de exceção no Windows Defender Firewall para permitir o tráfego de rede necessário. No entanto, é uma boa prática verificar se essa permissão está corretamente configurada, especialmente em ambientes com políticas de segurança mais rígidas.
+
+- Abra o Painel de Controle, navegue até "Sistema e Segurança" → "Windows Defender Firewall".
+- Clique em "Permitir um aplicativo ou recurso através do Windows Defender Firewall".
+- Na lista, localize "Área de Trabalho Remota" e certifique-se de que a caixa de seleção esteja marcada para o perfil de rede correto (geralmente "Privada"). Habilitar o acesso remoto para redes "Públicas" não é recomendado, pois representa um risco de segurança significativo.
+
+#### Conectando-se a partir de um Computador Cliente
+
+Uma vez que o computador host está configurado, conectar-se a ele a partir de outro computador da rede é um processo simples.
+
+- No computador cliente, abra o aplicativo **"Conexão de Área de Trabalho Remota"**. A forma mais fácil de encontrá-lo é digitar "área de trabalho remota" ou "`mstsc.exe`" na barra de pesquisa do Menu Iniciar.
+- Na janela do aplicativo, insira o **Nome do computador** (ou o endereço IP) do host que você anotou anteriormente.
+- Clique em **"Conectar"**. O cliente tentará estabelecer uma conexão com o host.
+- Se a conexão for bem-sucedida, uma tela de login será apresentada, solicitando o **nome de usuário e a senha** de uma conta de usuário autorizada _no computador remoto_. Por padrão, todas as contas do grupo "Administradores" têm permissão para se conectar.
+- Após a autenticação, a área de trabalho do computador remoto será exibida na tela do cliente, seja em uma janela ou em tela cheia. O teclado e o mouse do cliente passarão a controlar a sessão remota. Enquanto a sessão remota estiver ativa, a tela física do computador host ficará bloqueada, impedindo o uso local e garantindo a privacidade da sessão.
