@@ -667,3 +667,72 @@ Uma vez que o computador host está configurado, conectar-se a ele a partir de o
 - Clique em **"Conectar"**. O cliente tentará estabelecer uma conexão com o host.
 - Se a conexão for bem-sucedida, uma tela de login será apresentada, solicitando o **nome de usuário e a senha** de uma conta de usuário autorizada _no computador remoto_. Por padrão, todas as contas do grupo "Administradores" têm permissão para se conectar.
 - Após a autenticação, a área de trabalho do computador remoto será exibida na tela do cliente, seja em uma janela ou em tela cheia. O teclado e o mouse do cliente passarão a controlar a sessão remota. Enquanto a sessão remota estiver ativa, a tela física do computador host ficará bloqueada, impedindo o uso local e garantindo a privacidade da sessão.
+
+### Auditoria e Diagnóstico: O Visualizador de Eventos
+
+Todo sistema operacional moderno precisa de um mecanismo robusto para registrar ocorrências significativas. Essa funcionalidade, conhecida como **log de eventos**, atua como um diário detalhado do sistema, gravando informações sobre a operação de aplicativos, o estado dos componentes de hardware e do sistema, e as atividades de segurança. Para administradores de sistema, técnicos de suporte e peritos forenses, os logs são uma fonte de informação inestimável para diagnosticar problemas, monitorar a saúde do sistema e investigar incidentes de segurança.
+
+A ferramenta primária para interagir com esses registros no Windows é o **Visualizador de Eventos** (`eventvwr.msc`). Ele fornece uma interface estruturada para navegar, filtrar e analisar os milhares de eventos que podem ser gerados durante o funcionamento do computador.
+
+Os logs são organizados em categorias para facilitar a análise. As principais são os "Logs do Windows" e os "Logs de Aplicativos e Serviços".
+
+#### Logs do Windows: O Coração da Auditoria do Sistema
+
+Esta categoria contém os logs mais importantes e gerais, que monitoram o núcleo do sistema e a segurança.
+
+- **Aplicativo (Application):** Este log registra eventos gerados pelos programas instalados no computador. É responsabilidade do desenvolvedor do software decidir quais eventos são importantes o suficiente para serem registrados. Uma aplicação bem desenvolvida pode registrar erros críticos (como a falha ao acessar um banco de dados), avisos (como a falta de um arquivo de configuração opcional) ou informações gerais (como o início bem-sucedido de um serviço).
+
+<div align="center">
+<img width="700px" src="./img/07-visualizador-de-eventos-aplicativos.png">
+</div>
+
+- **Segurança (Security):** Este é o log mais crítico para a auditoria de segurança. Ele registra eventos como tentativas de logon (bem-sucedidas e falhas), acesso a arquivos e outros objetos, alterações em contas de usuário e grupos, entre outras atividades relacionadas à segurança. É importante notar que, por padrão, a auditoria de segurança pode não estar totalmente habilitada. Um administrador precisa configurar as **Políticas de Auditoria** (através do Editor de Política de Grupo Local - `gpedit.msc`) para definir exatamente quais tipos de eventos de segurança devem ser registrados.
+
+<div align="center">
+<img width="700px" src="./img/07-visualizador-de-eventos-seguranca.png">
+</div>
+
+- **Instalação (Setup):** Este log é dedicado a eventos relacionados à instalação de softwares e componentes. Ele rastreia principalmente a instalação de atualizações do Windows, pacotes de serviço, e a adição ou remoção de funções e recursos do sistema operacional.
+
+<div align="center">
+<img width="700px" src="./img/07-visualizador-de-eventos-instalacao.png">
+</div>
+
+- **Sistema (System):** Contém eventos gerados pelos componentes do próprio Windows. É um log essencial para o diagnóstico de problemas de hardware e do sistema operacional. Exemplos de eventos registrados aqui incluem a falha no carregamento de um driver de dispositivo, um erro de comunicação com um disco rígido, ou o início e parada de serviços do sistema.
+
+<div align="center">
+<img width="700px" src="./img/07-visualizador-de-eventos-sistema.png">
+</div>
+
+- **Eventos Encaminhados (Forwarded Events):** Em ambientes corporativos com muitos computadores, é impraticável verificar os logs localmente em cada máquina. Este log é um repositório especial que, quando configurado, pode receber cópias de eventos de outros computadores da rede, permitindo a centralização e análise dos logs de toda a infraestrutura em um único local.
+
+#### Logs de Aplicativos e Serviços
+
+Esta categoria expande a capacidade de registro para componentes específicos, oferecendo logs muito mais granulares. À medida que novos softwares da Microsoft ou recursos são instalados (como Hyper-V, Internet Explorer, Servidor DNS), logs dedicados são criados aqui, permitindo um diagnóstico focado sem o "ruído" dos logs principais.
+
+#### Análise Forense e Localização dos Arquivos de Log
+
+Para um perito digital, os arquivos físicos que armazenam os logs são de extrema importância. Eles podem ser coletados de um disco rígido e analisados offline em outra máquina. A localização e o formato desses arquivos evoluíram com as versões do Windows:
+
+- **Windows XP / Server 2003:** Os logs eram armazenados no formato binário com a extensão **`.evt`** no diretório `%WinDir%\System32\Config`.
+- **Windows Vista / Server 2008 e mais recentes:** Os logs passaram a ser armazenados em um formato baseado em XML com a extensão **`.evtx`**, que é mais estruturado e robusto. A localização padrão mudou para `%WinDir%\System32\Winevt\Logs`.
+
+<div align="center">
+<img width="440px" src="./img/07-arquivos-de-eventos.png">
+</div>
+
+O Visualizador de Eventos de versões mais novas do Windows é capaz de abrir os arquivos `.evt` mais antigos. Ao fazê-lo, ele pode sugerir a conversão do log para o formato `.evtx` para otimizar o desempenho da análise, criando uma cópia convertida sem alterar o arquivo original, que serve como evidência.
+
+<div align="center">
+<img width="580px" src="./img/07-analise-de-eventos-1.png">
+</div>
+
+<div align="center">
+<img width="580px" src="./img/07-analise-de-eventos-2.png">
+</div>
+
+Apesar das mudanças visuais na interface do Visualizador de Eventos ao longo das versões do Windows, como pode ser visto na tela do Windows 11, a estrutura fundamental e a finalidade dos logs de Aplicativo, Segurança e Sistema permaneceram consistentes, tornando a habilidade de análise de logs uma competência duradoura e essencial.
+
+<div align="center">
+<img width="700px" src="./img/07-visualizador-de-eventos-windows-11.png">
+</div>
