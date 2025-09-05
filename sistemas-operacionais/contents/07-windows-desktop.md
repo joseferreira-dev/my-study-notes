@@ -903,3 +903,61 @@ Ao executar este comando, uma janela de "Contas de Usuário" mais avançada é e
 </div>
 
 O perfil de usuário, além de armazenar arquivos e configurações, também funciona como um repositório seguro para credenciais pessoais. Quando um **certificado digital** é utilizado, por exemplo, para assinar documentos ou acessar sistemas seguros, ele deve ser importado e salvo no "repositório pessoal de certificados" da conta de usuário, garantindo que ele esteja protegido e acessível apenas àquele usuário.
+
+#### Gerenciamento de Grupos Locais
+
+Em um ambiente com múltiplos usuários, atribuir permissões individualmente para cada conta é uma tarefa repetitiva e ineficiente. Imagine uma empresa com dez funcionários no departamento financeiro que precisam de acesso de leitura e escrita a uma pasta de planilhas. Atribuir essa permissão dez vezes é trabalhoso. Se um novo funcionário for contratado, o processo precisa ser repetido. A solução para essa questão de escalabilidade é o uso de **grupos**.
+
+Um grupo é um contêiner que agrupa diversas contas de usuário. A permissão é então atribuída ao grupo uma única vez, e todos os usuários que são membros daquele grupo herdam automaticamente essa permissão. Isso centraliza e simplifica enormemente a administração do controle de acesso.
+
+A ferramenta mais robusta para gerenciar usuários e grupos locais é o console de **Gerenciamento do Computador** (`compmgmt.msc`).
+
+<div align="center">
+<img width="580px" src="./img/07-gerenciamento-do-computador.png">
+</div>
+
+Dentro do console, na seção "Usuários e Grupos Locais", é possível criar novos grupos, adicionar ou remover membros e visualizar os grupos já existentes no sistema. Além dos grupos criados pelo usuário (como o grupo "Estratégia" no exemplo), o Windows possui diversos **grupos internos** com finalidades específicas, como:
+
+- **Administradores:** Membros deste grupo têm controle total sobre o sistema.
+- **Usuários:** O grupo padrão para contas de usuário Padrão, com permissões limitadas.
+- **Operadores de Backup:** Podem realizar backups e restaurações de arquivos no sistema, ignorando as permissões de arquivo normais.
+- **Usuários da Área de Trabalho Remota:** Usuários neste grupo têm permissão para se conectar remotamente ao computador.
+
+<div align="center">
+<img width="700px" src="./img/07-grupos-de-usuarios.png">
+</div>
+
+### Compartilhamento de Pastas e Controle de Acesso
+
+O compartilhamento de pastas permite que arquivos armazenados em um computador sejam acessados por outros usuários através da rede. No Windows, o controle de acesso a pastas compartilhadas é governado por **duas camadas de permissões** que trabalham em conjunto:
+
+1. **Permissões de Compartilhamento:** Aplicam-se **apenas** quando a pasta é acessada pela rede. São mais simples e consistem em "Leitura", "Alteração" e "Controle Total".
+2. **Permissões NTFS:** Aplicam-se **sempre**, tanto para acessos locais (direto no computador) quanto para acessos via rede. São muito mais granulares (incluindo permissões como Modificar, Listar conteúdo da pasta, Gravar, etc.).
+
+Quando um usuário acessa uma pasta pela rede, a permissão efetiva será a **mais restritiva** entre as duas camadas. Por exemplo, se a permissão de compartilhamento for "Leitura" e a permissão NTFS for "Controle Total", o usuário só conseguirá ler os arquivos.
+
+O Windows oferece uma interface de compartilhamento simplificada, acessível ao clicar com o botão direito em uma pasta → "Propriedades" → aba "Compartilhamento" → botão "Compartilhar...". Este assistente permite adicionar usuários ou grupos e definir um nível de permissão simples, como "Leitura" ou "Leitura/Gravação". Nos bastidores, ele ajusta ambas as camadas de permissão para o usuário.
+
+<div align="center">
+<img width="580px" src="./img/07-permissao-de-acesso-exemplo.png">
+</div>
+
+Para um controle mais técnico, o botão **"Compartilhamento Avançado..."** permite configurar as permissões da camada de Compartilhamento de forma explícita. É aqui que se define o **Nome do Compartilhamento**, que será usado para acessar a pasta pela rede. Este nome pode ser diferente do nome real da pasta.
+
+<div align="center">
+<img width="700px" src="./img/07-compartilhamento-de-rede.png">
+</div>
+
+Uma vez que uma pasta é compartilhada com o nome "Teste" em um computador chamado "NOTEBOOK-BUENO", ela se torna acessível a outros computadores na rede através de um caminho no formato UNC (Convenção Universal de Nomenclatura): `\\NOTEBOOK-BUENO\Teste`.
+
+### Compartilhamento de Impressoras
+
+Compartilhar uma impressora permite que um único dispositivo de impressão, conectado a um computador, seja utilizado por vários outros computadores na mesma rede. O computador ao qual a impressora está fisicamente conectada atua como um **servidor de impressão**, recebendo os trabalhos de impressão dos clientes, enfileirando-os (processo de _spooling_) e enviando-os para a impressora.
+
+A configuração é feita através das Configurações do Windows:
+
+- Abra as Configurações com **`Win + I`** e navegue até "Bluetooth e dispositivos" → "Impressoras e scanners".
+- Selecione a impressora que deseja compartilhar e clique em "Propriedades da impressora".
+- Na nova janela, vá para a aba "Compartilhamento", marque a opção "Compartilhar esta impressora" e atribua um nome para o compartilhamento.
+
+Uma grande vantagem do compartilhamento de impressoras no Windows é que, ao se conectar a uma impressora compartilhada pela primeira vez, o computador cliente geralmente baixa e instala o driver necessário diretamente do computador servidor, simplificando o processo de configuração. Como em qualquer compartilhamento, é crucial garantir que as regras do firewall permitam o "Compartilhamento de Arquivo e Impressora" e que os usuários tenham as permissões necessárias para imprimir.
