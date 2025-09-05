@@ -961,3 +961,90 @@ A configuração é feita através das Configurações do Windows:
 - Na nova janela, vá para a aba "Compartilhamento", marque a opção "Compartilhar esta impressora" e atribua um nome para o compartilhamento.
 
 Uma grande vantagem do compartilhamento de impressoras no Windows é que, ao se conectar a uma impressora compartilhada pela primeira vez, o computador cliente geralmente baixa e instala o driver necessário diretamente do computador servidor, simplificando o processo de configuração. Como em qualquer compartilhamento, é crucial garantir que as regras do firewall permitam o "Compartilhamento de Arquivo e Impressora" e que os usuários tenham as permissões necessárias para imprimir.
+
+## Gerenciamento de Disco
+
+O gerenciamento de discos é o processo de organizar o espaço físico de armazenamento de um computador (HDs, SSDs) em unidades lógicas e utilizáveis, conhecidas como **partições** ou **volumes**. Esta é uma tarefa administrativa fundamental, essencial para instalar sistemas operacionais, separar dados de sistema dos arquivos do usuário, criar unidades para backup ou simplesmente organizar os dados de forma mais eficiente.
+
+A ferramenta gráfica primária para esta finalidade no Windows é o utilitário **Gerenciamento de Disco**.
+
+#### Acessando o Utilitário de Gerenciamento de Disco
+
+Existem diversas maneiras de acessar esta poderosa ferramenta administrativa:
+
+**Via Gerenciamento do Computador:** A forma mais tradicional é através do console de "Gerenciamento do Computador", que pode ser encontrado em "Ferramentas Administrativas" no Painel de Controle.
+
+<div align="center">
+<img width="700px" src="./img/07-gerenciamento-de-disco.png">
+</div>
+
+**Via Comando Direto:** Uma maneira rápida para usuários avançados é executar o arquivo de console `diskmgmt.msc`. Pode-se pressionar `Win + R` para abrir a caixa de diálogo "Executar" ou digitar o comando diretamente no Prompt de Comando. A extensão `.msc` identifica um arquivo do **Microsoft Management Console (MMC)**, uma estrutura que hospeda a maioria das ferramentas administrativas avançadas do Windows.
+
+<div align="center">
+<img width="360px" src="./img/07-gerenciamento-de-disco-diskmgmt-1.png">
+</div>
+
+<div align="center">
+<img width="480px" src="./img/07-gerenciamento-de-disco-diskmgmt-2.png">
+</div>
+
+**Via Pesquisa do Windows:** O método mais simples é digitar "gerenciamento de disco" na barra de pesquisa do Menu Iniciar e selecionar a opção "Criar e formatar partições do disco rígido".
+
+<div align="center">
+<img width="280px" src="./img/07-gerenciamento-de-disco-menu.png">
+</div>
+
+#### Operações Fundamentais de Gerenciamento de Disco
+
+A interface do Gerenciamento de Disco apresenta uma visão detalhada de todos os dispositivos de armazenamento conectados, mostrando os discos físicos e a forma como estão particionados. A partir daqui, diversas operações podem ser realizadas.
+
+- **Criar Partições (Volumes):** Uma partição é criada a partir de um espaço **"Não alocado"** — uma área do disco que ainda não foi preparada para uso. Ao clicar com o botão direito sobre esse espaço, a opção "Novo Volume Simples..." inicia um assistente que guia o usuário na criação da partição, permitindo definir seu tamanho, atribuir uma letra de unidade (como `F:`) e formatá-la com um sistema de arquivos e um rótulo (nome).
+
+<div align="center">
+<img width="540px" src="./img/07-criacao-de-particao.png">
+</div>
+
+- **Redimensionar Partições:** O Gerenciamento de Disco permite alterar o tamanho de partições existentes de forma flexível, geralmente sem perda de dados.
+    - **Diminuir Volume:** Esta opção reduz o tamanho de uma partição, liberando o espaço excedente como "Não alocado". Essa é uma operação comum para abrir espaço para a criação de uma nova partição no mesmo disco. A quantidade máxima que se pode diminuir é limitada pelo espaço livre dentro da partição.
+    - **Estender Volume:** É a operação inversa, que permite aumentar o tamanho de uma partição, incorporando um espaço "Não alocado" que deve ser **contíguo (adjacente) e à direita** da partição que se deseja estender.
+
+
+<div align="center">
+<img width="640px" src="./img/07-alteracao-de-tamanho-de-particao.png">
+</div>
+
+<div align="center">
+<img width="440px" src="./img/07-particao-reduzida.png">
+</div>
+
+- **Alterar Letra de Unidade e Caminhos:** Cada volume no Windows é identificado por uma letra (ex: `C:`, `D:`). Essa letra é um ponteiro lógico e pode ser alterada. Esta função é útil para organizar as unidades ou resolver conflitos. No entanto, deve-se ter muito cuidado: alterar a letra de uma unidade onde programas foram instalados fará com que eles parem de funcionar, pois seus atalhos e registros apontam para o caminho antigo. A letra da unidade do sistema (onde o Windows está instalado) não pode ser alterada.
+
+<div align="center">
+<img width="640px" src="./img/07-alteracao-de-letra-de-particao.png">
+</div>
+
+#### Formatação de Unidades de Armazenamento
+
+**Formatar** uma partição é o processo de criar uma nova estrutura de sistema de arquivos nela, o que **apaga permanentemente todos os dados contidos** e a prepara para armazenar novos arquivos. A formatação pode ser feita em uma partição já existente ou como parte do processo de criação de um novo volume.
+
+<div align="center">
+<img width="640px" src="./img/07-formatacao-de-particao.png">
+</div>
+
+Ao formatar, o Windows apresenta uma janela com várias opções de configuração:
+
+<div align="center">
+<img width="320px" src="./img/07-escolha-de-sistema-de-arquivos.png">
+</div>
+
+- **Rótulo do volume:** Um nome amigável para a partição (ex: "DADOS", "BACKUP").
+- **Sistema de arquivos:** Permite escolher entre os sistemas de arquivos nativos do Windows, como **NTFS** (o padrão moderno, com suporte a segurança, compressão e arquivos grandes), **FAT32** (para compatibilidade com outros dispositivos, mas com limitações de tamanho de arquivo de 4 GB) e **exFAT** (otimizado para unidades flash como pen drives).
+- **Tamanho da unidade de alocação:** O tamanho do cluster, a menor unidade de espaço em disco que pode ser usada para armazenar um arquivo. Geralmente, o valor "Padrão" é o mais recomendado.
+- **Executar uma formatação rápida:** Se marcada, a formatação apenas recria a tabela do sistema de arquivos, sendo um processo quase instantâneo. Se desmarcada, realiza uma formatação completa, que inclui uma verificação de toda a superfície do disco em busca de setores defeituosos, um processo muito mais demorado.
+
+É importante notar que o Gerenciamento de Disco é uma ferramenta especializada. Outras tarefas relacionadas ao armazenamento são realizadas por utilitários diferentes:
+
+- A **desfragmentação de disco** é feita pela ferramenta "Desfragmentar e Otimizar Unidades".
+- A **liberação de espaço** (exclusão de arquivos temporários) é feita pela "Limpeza de Disco".
+- A **criação de cotas de disco** (limites de espaço por usuário) é configurada nas propriedades da unidade no Explorador de Arquivos.
+- A **criação de pools de armazenamento e RAID avançado** é gerenciada pela funcionalidade "Espaços de Armazenamento".
