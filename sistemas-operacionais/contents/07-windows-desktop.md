@@ -451,3 +451,102 @@ Na janela de propriedades do protocolo, basta selecionar as opções **"Obter um
 <img width="360px" src="./img/07-propriedades-de-protocolo-ip.png">
 </div>
 
+### DNS: O Sistema de Nomes de Domínio
+
+Navegar na Internet seria uma tarefa impraticável se precisássemos memorizar sequências numéricas complexas para cada site ou serviço que desejamos acessar. A Internet é construída sobre o conjunto de protocolos TCP/IP, onde cada dispositivo é unicamente identificado por um endereço IP (como `172.217.169.132`). Para preencher a lacuna entre a forma como os humanos se lembram de locais (por nomes, como `www.google.com.br`) e a forma como as máquinas se comunicam (por números), foi criado o **DNS (Domain Name System)**.
+
+De forma simples, o DNS pode ser visto como a "lista telefônica da Internet". Sua função principal é traduzir nomes de domínio, que são fáceis para nós lembrarmos, nos endereços IP correspondentes que os computadores usam para se localizar. Tecnicamente, o DNS é definido como um **esquema hierárquico de atribuição de nomes** combinado com um **sistema de banco de dados distribuído** para implementar essa nomenclatura. "Distribuído" significa que nenhuma máquina no mundo contém todos os mapeamentos de nome para IP; essa informação está espalhada por milhares de servidores DNS, tornando o sistema resiliente e escalável. "Hierárquico" refere-se à sua estrutura em forma de árvore, que organiza os nomes de forma lógica.
+
+O DNS opera na camada de Aplicação do modelo OSI e, curiosamente, utiliza dois protocolos de transporte: o **UDP** na porta **53** para a maioria das consultas rápidas de nome, e o **TCP**, também na porta **53**, para transferências de dados maiores e mais confiáveis, como a replicação de informações entre servidores DNS (transferência de zona). Um computador cliente descobre quais servidores DNS ele deve consultar através de sua configuração de rede, que pode ser fornecida automaticamente via DHCP ou configurada manualmente. O comando `ipconfig /all` no Prompt de Comando do Windows exibe, entre outras informações, os endereços dos servidores DNS que o sistema está utilizando.
+
+<div align="center">
+<img width="640px" src="./img/07-cmd-servidores-dns.png">
+</div>
+
+#### A Estrutura Hierárquica do DNS
+
+O espaço de nomes do DNS é organizado como uma árvore invertida, cuja estrutura garante que cada nome de domínio no mundo seja único.
+
+<div align="center">
+<img width="640px" src="./img/07-estrutura-dns.png">
+</div>
+
+Os níveis desta hierarquia são:
+
+1. **Raiz (Root):** O topo da árvore, representado por um ponto (`.`). É gerenciado por um conjunto de servidores raiz globais que conhecem os endereços dos servidores de TLD.
+2. **Top-Level Domains (TLDs):** Os domínios de mais alto nível, logo abaixo da raiz. Eles se dividem em:
+    - **gTLDs (generic TLDs):** Como `.com`, `.org`, `.net`, `.gov`.
+    - **ccTLDs (country-code TLDs):** Sufixos de dois caracteres para países, como `.br` (Brasil), `.pt` (Portugal), `.de` (Alemanha).
+3. **Second-Level Domains (SLDs):** É o nome que as organizações e indivíduos registram, como `microsoft` em `microsoft.com` ou `google` em `google.com.br`.
+4. **Third-Level Domains (Subdomínios):** São subdivisões criadas dentro de um domínio principal para organizar serviços, como `mail` em `mail.google.com` ou `loja` em `loja.empresa.com.br`.
+
+<div align="center">
+<img width="360px" src="./img/07-exemplo-com-subdominio.png">
+</div>
+
+A administração global dos TLDs é responsabilidade da **ICANN (Internet Corporation for Assigned Names and Numbers)**. A ICANN delega a administração dos ccTLDs a organizações locais. No caso do domínio `.br`, o responsável é o **Comitê Gestor da Internet no Brasil (CGI.br)**, através do `registro.br`.
+
+<div align="center">
+<img width="420px" src="./img/07-responsabilidade-dominios.png">
+</div>
+
+#### O Processo de Resolução de Nomes
+
+Quando um usuário digita `www.exemplo.com.br` no navegador, um processo complexo de resolução de nomes é iniciado. Esse processo envolve dois tipos de consulta:
+
+<div align="center">
+<img width="540px" src="./img/07-servidores-dns-consultas.png">
+</div>
+
+- **Consulta Recursiva:** É a comunicação entre o seu computador (o "resolvedor") e o seu servidor DNS local (geralmente fornecido pelo seu provedor de Internet). O cliente faz uma única pergunta ("Qual o IP de `maq.a.b.edu`?") e espera uma única resposta final. O servidor DNS local assume a responsabilidade de encontrar essa resposta, realizando os passos seguintes.
+- **Consulta Iterativa:** É a comunicação que o servidor DNS local faz com outros servidores DNS na Internet. O processo ocorre em iterações:
+    1. O servidor local pergunta a um **servidor raiz**: "Quem sabe sobre `.edu`?". O servidor raiz responde com o endereço do servidor TLD responsável pelo `.edu`.
+    2. O servidor local pergunta ao **servidor TLD .edu**: "Quem sabe sobre `b.edu`?". O servidor `.edu` responde com o endereço do servidor de nomes (NS) autoritativo para o domínio `b.edu`.
+    3. Este processo continua iterativamente descendo na hierarquia até que o servidor local encontre o servidor autoritativo que conhece a resposta final.
+    4. O servidor DNS local entrega a resposta final ao computador do usuário e armazena (coloca em **cache**) essa informação por um tempo, para que possa responder imediatamente a futuras consultas para o mesmo endereço.
+
+#### Zonas e Registros de Recursos (RRs)
+
+O banco de dados distribuído do DNS é organizado em **zonas**. Uma zona é uma porção do espaço de nomes gerenciada por um servidor específico. Por exemplo, a `microsoft.com` pode ser uma zona, contendo todos os registros para esse domínio e seus subdomínios, a menos que um subdomínio seja delegado para outra zona.
+
+<div align="center">
+
+<img width="540px" src="./img/07-zonas-de-dns.png">
+
+</div>
+
+As informações dentro de uma zona são armazenadas como **Registros de Recursos (Resource Records - RRs)**. Cada registro é uma tupla de informação composta por cinco campos: `<Nome do Domínio, Tempo de Vida, Classe, Tipo, Valor>`. O `Tipo` do registro define a natureza da informação. Abaixo estão os tipos mais importantes:
+
+|Tipo|Significado|Valor|
+|---|---|---|
+|SOA|Início de autoridade (Start of Authority)|Parâmetros para essa zona|
+|A|Endereço IPv4|Inteiro de 32 bits|
+|AAAA|Endereço IPv6|Inteiro de 128 bits|
+|MX|Troca de mensagens de e-mail|Prioridade, domínio disposto a aceitar e-mails|
+|NS|Servidor de nomes|Nome de um servidor para este domínio|
+|CNAME|Nome canônico (alias = apelido)|Nome de domínio|
+|PTR|Ponteiro (usado para o DNS reverso)|Nome alternativo de um end. IP|
+|SPF|Estrutura de política do transmissor|Codificação de texto da política de envio de mensagens de e-mail|
+|SRV|Serviço|Identifica computadores que hospedam serviços específicos|
+|TXT|Texto|Informações sobre um servidor, rede, datacenter etc|
+
+- **SOA (Start of Authority):** É o registro principal de uma zona. Ele define informações administrativas, como qual é o servidor primário para a zona, o e-mail do administrador, o número de série da zona (que controla a replicação) e temporizadores.
+- **A e AAAA:** São os registros mais comuns, mapeando um nome de host para um endereço IPv4 (A) ou IPv6 (AAAA).
+- **MX (Mail Exchange):** Especifica para quais servidores as mensagens de e-mail de um domínio devem ser entregues. O campo "Prioridade" permite configurar servidores primários e de backup.
+- **NS (Name Server):** Indica quais servidores DNS são os responsáveis (autoritativos) por uma determinada zona. São eles que mantêm os registros originais.
+- **CNAME (Canonical Name):** Cria um apelido (alias) para um nome de domínio. Por exemplo, `www.empresa.com` pode ser um CNAME que aponta para `servidor01.hospedagem.net`.
+- **PTR (Pointer):** Usado no processo de DNS reverso, onde a consulta é feita com um endereço IP para se obter o nome de domínio correspondente. É muito utilizado por sistemas de segurança e servidores de e-mail para verificar a legitimidade de uma conexão.
+- **SPF, SRV e TXT:** São registros baseados em texto com finalidades específicas. **SPF (Sender Policy Framework)** ajuda a combater spam, listando os servidores autorizados a enviar e-mails em nome de um domínio. **SRV (Service)** é usado para localizar serviços específicos em uma rede, como servidores de VoIP ou de mensagens instantâneas. **TXT** é um registro genérico usado para armazenar informações textuais diversas, como chaves de verificação de propriedade de domínio para serviços de terceiros.
+
+#### Ferramentas e Conceitos Adicionais
+
+Para consultar esses registros manualmente, sistemas Windows e Linux oferecem a ferramenta de linha de comando **`nslookup`**. Ela permite que um usuário ou administrador consulte diretamente um servidor DNS para obter os registros associados a um domínio.
+
+<div align="center">
+<img width="280px" src="./img/07-nslookup.png">
+</div>
+
+A saída do `nslookup` frequentemente informa se a resposta é **autoritativa** ou **não autoritativa**. Uma resposta **autoritativa** é aquela fornecida diretamente pelo servidor DNS que é o dono original da informação (o servidor primário ou secundário da zona). Uma resposta **não autoritativa** é aquela fornecida a partir do cache de um servidor intermediário. Embora as respostas de cache sejam geralmente corretas e muito mais rápidas, elas podem, teoricamente, estar desatualizadas.
+
+Para garantir a robustez do serviço, é prática padrão configurar múltiplos servidores DNS para cada zona: um **servidor primário**, que contém a cópia original e editável dos registros, e um ou mais **servidores secundários**, que periodicamente copiam os registros do primário para fornecer redundância e balanceamento de carga.
+
