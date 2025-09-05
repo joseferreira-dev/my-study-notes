@@ -331,3 +331,67 @@ Esse conceito evoluiu e foi integrado de forma mais direta no Windows 10 e 11. O
 
 Ao inserir a nova chave na opção "Alterar chave do produto", o sistema valida a licença e inicia um processo que baixa e habilita os recursos exclusivos da edição Pro, como o BitLocker, a Área de Trabalho Remota e o ingresso em um domínio. Após uma reinicialização, o sistema operacional já estará operando como a nova edição, mantendo todos os dados do usuário preservados.
 
+## Monitoramento e Gerenciamento de Recursos: Gerenciador de Tarefas
+
+Uma das ferramentas de diagnóstico e administração mais poderosas e acessíveis do Windows é o **Gerenciador de Tarefas**. Este utilitário multifuncional oferece uma visão em tempo real do que está acontecendo no sistema, permitindo monitorar o desempenho do hardware, analisar o consumo de recursos por cada aplicativo e serviço, e intervir diretamente para gerenciar processos em execução. Para acessá-lo, pode-se usar um dos vários atalhos, sendo o mais comum **`Ctrl + Shift + Esc`**, ou clicar com o botão direito do mouse na Barra de Tarefas e selecionar "Gerenciador de Tarefas".
+
+### A Guia "Processos": Análise e Controle de Aplicativos
+
+A primeira guia, "Processos", fornece um resumo detalhado de tudo o que está em execução no sistema. Os processos são inteligentemente agrupados para facilitar a identificação:
+
+- **Aplicativos:** Programas que o usuário iniciou e que geralmente possuem uma janela visível na tela.
+- **Processos em segundo plano:** Tarefas que rodam nos bastidores, sem uma interface direta. Podem ser processos auxiliares de aplicativos, serviços do sistema ou softwares de terceiros.
+- **Processos do Windows:** Processos essenciais para o funcionamento do próprio sistema operacional.
+
+Para cada processo, são exibidas colunas que mostram o consumo de recursos em tempo real: **CPU (processador), Memória, Disco, Rede e GPU (placa de vídeo)**. Essa visão é extremamente útil para diagnosticar problemas de lentidão. Por exemplo, se o sistema está lento e a coluna "Disco" mostra 100% de uso, isso indica que o gargalo de desempenho está no armazenamento, e não necessariamente no processador.
+
+<div align="center">
+<img width="700px" src="./img/07-gerenciador-de-tarefas.png">
+</div>
+
+Quando um aplicativo para de responder ("trava") ou começa a consumir uma quantidade excessiva de recursos, o Gerenciador de Tarefas permite uma ação direta. Ao clicar com o botão direito sobre um processo, um menu de contexto é exibido com várias opções.
+
+<div align="center">
+<img width="700px" src="./img/07-finalizar-processo.png">
+</div>
+
+A opção mais utilizada é a **"Finalizar tarefa"**, que força o encerramento imediato do processo selecionado. É um recurso drástico que deve ser usado com cautela, pois não dá ao programa a chance de salvar qualquer trabalho em andamento, podendo levar à perda de dados. Outras opções úteis no menu de contexto incluem:
+
+- **Modo de eficiência:** Um recurso mais recente que reduz a prioridade de um processo, limitando seu consumo de recursos para melhorar a eficiência energética e a responsividade do sistema.
+- **Ir para detalhes:** Leva para a guia "Detalhes", que oferece uma visão mais técnica do processo, com informações como seu PID (Identificador de Processo) e o usuário que o executa.
+- **Abrir local do arquivo:** Abre o Explorador de Arquivos diretamente na pasta onde o arquivo executável do processo está localizado.
+- **Criar arquivo de despejo de memória:** Uma ferramenta de depuração avançada que salva um "instantâneo" completo da memória utilizada pelo processo em um arquivo, que pode ser analisado por desenvolvedores para diagnosticar a causa de travamentos ou erros.
+
+### A Guia "Desempenho": Diagnóstico do Sistema em Tempo Real
+
+Enquanto a guia "Processos" foca no "quem", a guia **"Desempenho"** foca no "o quê". Ela funciona como um painel de controle geral da "saúde" do hardware do sistema, exibindo gráficos detalhados e em tempo real do uso dos componentes críticos.
+
+<div align="center">
+<img width="700px" src="./img/07-gerenciador-de-tarefas-desempenho.png">
+</div>
+
+Ao selecionar um componente na barra lateral (como CPU, Memória, Disco, etc.), a área principal exibe informações vitais para análise:
+
+- **CPU (Processador):** Mostra o gráfico de utilização percentual ao longo do tempo, a velocidade atual do clock, o número de processos e threads em execução e o **tempo de atividade** (há quanto tempo o sistema está ligado). Além disso, fornece detalhes técnicos do processador, como o número de **núcleos** (unidades de processamento físicas) e **processadores lógicos** (que podem ser o dobro do número de núcleos em CPUs com tecnologia Hyper-Threading), e o tamanho dos caches de memória.
+- **Memória:** Exibe o consumo total de RAM, a quantidade em uso e a disponível, além de um gráfico que detalha como a memória está sendo utilizada (por exemplo, em cache ou alocada para processos).
+- **Disco:** Mostra a porcentagem de tempo em que o disco está ativo (lendo ou gravando dados), a velocidade de leitura/escrita e o tempo médio de resposta, sendo crucial para identificar gargalos de armazenamento.
+- **Rede e GPU:** Fornecem informações semelhantes para a utilização da rede (Wi-Fi, Ethernet) e da unidade de processamento gráfico.
+
+## Programas Acessórios Integrados
+
+Toda instalação do Windows inclui um conjunto de pequenos aplicativos utilitários, conhecidos como **Acessórios do Windows**. São programas que fazem parte do sistema operacional, projetados para realizar tarefas básicas do dia a dia de forma rápida e eficiente. Eles se distinguem dos softwares que o usuário precisa instalar manualmente.
+
+Para acessá-los, basta abrir o Menu Iniciar e procurar pela pasta "Acessórios do Windows" ou digitar o nome do programa desejado na barra de pesquisa.
+
+<div align="center">
+<img width="200px" src="./img/07-programas-acessorios.png">
+</div>
+
+Dentre os acessórios mais conhecidos e úteis, destacam-se:
+
+- **Bloco de Notas (Notepad):** Um editor de texto puro e simples. Por não suportar formatação (como negrito, itálico ou fontes diferentes), ele é a ferramenta ideal para criar e editar arquivos de texto plano (`.txt`), scripts de programação e arquivos de configuração que não podem conter caracteres de formatação ocultos.
+- **WordPad:** Um processador de texto básico, superior ao Bloco de Notas. O WordPad permite formatação de texto (alterar fonte, cor, tamanho), alinhamento de parágrafos, inserção de imagens e salvamento em formatos como RTF (Rich Text Format), sendo uma ótima ferramenta para criar documentos simples sem a necessidade de uma suíte de escritório completa.
+- **Paint:** Um editor de imagens e desenhos simples, útil para criar gráficos básicos, fazer anotações em capturas de tela, recortar e redimensionar imagens.
+- **Ferramenta de Captura (Snipping Tool):** Um utilitário essencial para capturar imagens da tela do computador. Permite tirar "fotos" da tela inteira, de uma janela específica ou de uma área retangular ou de formato livre selecionada pelo usuário.
+- **Conexão de Área de Trabalho Remota:** Uma ferramenta poderosa que permite conectar-se e controlar remotamente outro computador com Windows (versão Pro ou superior) através de uma rede, como se o usuário estivesse fisicamente sentado em frente a ele.
+- **Mapa de Caracteres:** Um utilitário que exibe todos os caracteres disponíveis em uma determinada fonte, permitindo ao usuário encontrar e copiar símbolos especiais (como ©, ™, €, α) que não estão presentes no teclado físico.
