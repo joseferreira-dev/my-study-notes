@@ -395,3 +395,59 @@ Dentre os acessórios mais conhecidos e úteis, destacam-se:
 - **Ferramenta de Captura (Snipping Tool):** Um utilitário essencial para capturar imagens da tela do computador. Permite tirar "fotos" da tela inteira, de uma janela específica ou de uma área retangular ou de formato livre selecionada pelo usuário.
 - **Conexão de Área de Trabalho Remota:** Uma ferramenta poderosa que permite conectar-se e controlar remotamente outro computador com Windows (versão Pro ou superior) através de uma rede, como se o usuário estivesse fisicamente sentado em frente a ele.
 - **Mapa de Caracteres:** Um utilitário que exibe todos os caracteres disponíveis em uma determinada fonte, permitindo ao usuário encontrar e copiar símbolos especiais (como ©, ™, €, α) que não estão presentes no teclado físico.
+
+## Serviços de Rede e Segurança
+
+Um sistema operacional de desktop raramente opera de forma isolada. Sua verdadeira força reside na capacidade de se comunicar com outros dispositivos, consumir serviços e acessar informações através de uma rede. Embora o foco desta apostila seja o Windows Desktop, a interação cliente-servidor é a base da computação moderna. Portanto, é essencial compreender como os serviços de rede são fornecidos, geralmente por um sistema operacional de servidor como o Windows Server, e como o sistema desktop (o cliente) os utiliza.
+
+No Windows Server, o administrador de sistemas pode instalar e configurar uma vasta gama de serviços de rede de forma nativa. Através do **Gerenciador de Servidores**, é possível adicionar **Funções**, que são os papéis principais que um servidor pode desempenhar na infraestrutura de TI, como controlador de domínio (Active Directory), servidor de arquivos, servidor de impressão e, como veremos em detalhe, servidor DHCP e DNS.
+
+<div align="center">
+<img width="420px" src="./img/07-adicionar-funcionalidades.png">
+</div>
+
+### DHCP: A Automação da Configuração de Rede
+
+Em qualquer rede baseada no protocolo TCP/IP, cada dispositivo (computador, smartphone, impressora, etc.) precisa de um endereço IP único para poder se comunicar. A atribuição manual desses endereços, conhecida como endereçamento estático, é uma tarefa viável em redes muito pequenas, mas se torna impraticável, tediosa e suscetível a erros em redes maiores. Para resolver esse problema, foi criado o **DHCP (Dynamic Host Configuration Protocol)**.
+
+O DHCP é um protocolo cliente-servidor cuja principal função é **automatizar e centralizar a distribuição e o gerenciamento das configurações de rede**. Em uma rede com DHCP, um dispositivo servidor é encarregado de atribuir dinamicamente um endereço IP e outras informações de configuração a qualquer cliente que se conecte à rede.
+
+<div align="center">
+<img width="440px" src="./img/07-protocolo-dhcp.png">
+</div>
+
+#### O Processo de Obtenção de Endereço (DORA)
+
+O processo de comunicação entre um cliente e um servidor DHCP para a obtenção de um endereço IP é conhecido pelo acrônimo **DORA**, que representa as quatro etapas principais:
+
+1. **Discover (Descoberta):** Um cliente que acaba de se conectar à rede e não possui um endereço IP envia uma mensagem de **descoberta** (`DHCPDISCOVER`) em _broadcast_. Uma mensagem em broadcast é enviada para todos os dispositivos na rede local, pois o cliente ainda não sabe o endereço específico do servidor DHCP.
+2. **Offer (Oferta):** Todos os servidores DHCP na rede que recebem a mensagem de descoberta respondem ao cliente com uma mensagem de **oferta** (`DHCPOFFER`). Essa mensagem contém uma proposta de endereço IP que o cliente pode usar, juntamente com outras configurações, como a máscara de sub-rede e o tempo de concessão (lease time).
+3. **Request (Requisição):** O cliente geralmente aceita a primeira oferta que recebe. Ele então envia uma mensagem de **requisição** (`DHCPREQUEST`), também em broadcast, informando qual endereço IP (e de qual servidor) ele está solicitando. O envio em broadcast serve para notificar os outros servidores DHCP (caso existam) de que suas ofertas não foram aceitas.
+4. **Acknowledge (Confirmação):** O servidor DHCP cuja oferta foi aceita finaliza o processo enviando uma mensagem de **confirmação** (`DHCPACK`). Esta mensagem confirma a concessão (lease) do endereço IP para o cliente por um determinado período.
+
+#### Configuração de um Servidor DHCP
+
+Para que um servidor DHCP possa operar, ele precisa ser configurado com um conjunto de parâmetros que serão distribuídos aos clientes. É crucial notar que **o próprio servidor DHCP deve possuir um endereço IP estático (fixo)**, pois ele precisa ser um ponto de referência constante na rede. As principais configurações incluem:
+
+- **Escopo (Scope):** O intervalo de endereços IP que o servidor está autorizado a distribuir. Por exemplo, de `192.168.1.100` a `192.168.1.150`. Dentro do escopo, o administrador também pode definir **faixas de exclusão**, que são endereços dentro do intervalo que não devem ser distribuídos automaticamente, sendo reservados para dispositivos que necessitam de IP fixo, como outras impressoras ou servidores.
+- **Máscara de Sub-rede:** Define os limites da rede local, permitindo que os dispositivos saibam se outro endereço IP está na mesma rede ou em uma rede externa. Para uma rede doméstica ou de pequeno porte (Classe C), a máscara comum é `255.255.255.0`.
+- **Gateway Padrão:** É o endereço IP do roteador da rede, o dispositivo que serve como "porta de saída" para a Internet ou outras redes. Todo o tráfego destinado a um endereço fora da rede local é enviado para o gateway.
+- **Servidores DNS:** Os endereços IP dos servidores de Nomes de Domínio (DNS) que os clientes devem usar para traduzir nomes de sites (como `www.google.com`) em seus respectivos endereços IP (como `8.8.8.8`).
+- **Tempo de Concessão (Lease Time):** O período durante o qual um cliente pode utilizar o endereço IP que lhe foi atribuído antes de precisar renová-lo com o servidor.
+
+#### Configuração do Cliente DHCP no Windows
+
+Do lado do cliente Windows, a configuração para utilizar o serviço DHCP é extremamente simples. O processo envolve acessar as propriedades do adaptador de rede (seja ele Wi-Fi ou Ethernet) e instruir o sistema a obter suas configurações automaticamente.
+
+O caminho típico é: `Painel de Controle` → `Central de Rede e Compartilhamento` → `Alterar as configurações do adaptador`. Em seguida, clica-se com o botão direito no adaptador desejado, seleciona-se "Propriedades", e na lista de itens, dá-se um duplo clique em **"Protocolo IP Versão 4 (TCP/IPv4)"**.
+
+<div align="center">
+<img width="320px" src="./img/07-propriedades-de-wifi.png">
+</div>
+
+Na janela de propriedades do protocolo, basta selecionar as opções **"Obter um endereço IP automaticamente"** e **"Obter o endereço dos servidores DNS automaticamente"**. Ao fazer isso, sempre que o computador se conectar a uma rede, ele executará o processo DORA para receber sua configuração completa do servidor DHCP local.
+
+<div align="center">
+<img width="360px" src="./img/07-propriedades-de-protocolo-ip.png">
+</div>
+
