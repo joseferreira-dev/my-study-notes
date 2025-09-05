@@ -550,3 +550,75 @@ A saída do `nslookup` frequentemente informa se a resposta é **autoritativa** 
 
 Para garantir a robustez do serviço, é prática padrão configurar múltiplos servidores DNS para cada zona: um **servidor primário**, que contém a cópia original e editável dos registros, e um ou mais **servidores secundários**, que periodicamente copiam os registros do primário para fornecer redundância e balanceamento de carga.
 
+### Configuração de Conexões de Rede: Cabeada e Sem Fio
+
+A capacidade de se conectar a uma rede local (LAN) e à Internet é uma função primordial de qualquer sistema operacional de desktop. O Windows oferece interfaces gráficas intuitivas para gerenciar as conexões através de seus adaptadores de rede — os componentes de hardware, como a porta Ethernet (para redes cabeadas) e a placa Wi-Fi (para redes sem fio), que permitem a comunicação do computador. Veremos a seguir os passos para configurar ambos os tipos de conexão.
+
+#### Configurando uma Rede Cabeada (Ethernet)
+
+A conexão cabeada, ou Ethernet, é conhecida por sua estabilidade e velocidade, sendo a escolha preferencial para computadores de mesa e situações onde o desempenho máximo da rede é crucial.
+
+**1. Conexão Física e Acesso às Configurações:**
+
+O primeiro passo é físico: conectar uma extremidade de um cabo de rede (Ethernet) na porta correspondente do computador e a outra em um dispositivo de rede, como um roteador, um switch ou uma tomada de rede na parede.
+
+Após a conexão, o Windows geralmente detecta a rede automaticamente. Para visualizar ou alterar as configurações, pode-se clicar com o botão direito do mouse sobre o ícone de rede na bandeja do sistema (próximo ao relógio) e selecionar **"Configurações de rede e da Internet"**.
+
+<div align="center">
+<img width="280px" src="./img/07-icone-de-rede.png">
+</div>
+
+**2. Navegando até as Propriedades do Adaptador:**
+
+Na janela de Configurações, selecione a opção "Ethernet". Esta tela fornecerá um status geral da conexão.
+
+<div align="center">
+<img width="540px" src="./img/07-secao-ethernet.png">
+</div>
+
+Para acessar as configurações detalhadas de IP, role a tela de "Ethernet" para baixo até encontrar as opções de atribuição de IP e DNS e clique em **"Editar"**.
+
+<div align="center">
+<img width="440px" src="./img/07-configuracao-adaptador-de-rede.png">
+</div>
+
+Um caminho alternativo, que leva a uma interface mais tradicional (presente em versões mais antigas do Windows), é navegar até "Configurações avançadas de rede" e selecionar "Mais opções do adaptador de rede". Isso abrirá a pasta "Conexões de Rede" do antigo Painel de Controle, onde se pode clicar com o botão direito sobre o adaptador "Ethernet" e ir em "Propriedades".
+
+**3. Configurando o Protocolo TCP/IPv4:**
+
+Ambos os caminhos levarão à configuração do Protocolo IP Versão 4 (TCP/IPv4), que é o protocolo fundamental para a comunicação na maioria das redes atuais.
+
+<div align="center">
+<img width="320px" src="./img/07-propriedades-de-ethernet.png">
+</div>
+
+Nesta janela, existem duas abordagens principais para a configuração:
+
+- **Automática (via DHCP):** É o método padrão e recomendado para a grande maioria dos usuários. Ao selecionar **"Obter um endereço IP automaticamente"** e **"Obter o endereço dos servidores DNS automaticamente"**, o computador é configurado como um cliente DHCP. Ele solicitará e receberá automaticamente todas as informações necessárias para se comunicar na rede (endereço IP, máscara, gateway e DNS) do servidor DHCP (geralmente o roteador).
+- **Manual (Endereço IP Estático):** Em cenários específicos, como em redes corporativas para servidores, impressoras de rede ou computadores que precisam ter um endereço fixo, a configuração manual é necessária. Ao selecionar "Usar o seguinte endereço IP", o administrador deve preencher manualmente todos os campos: o Endereço IP, a Máscara de sub-rede, o Gateway padrão e os endereços dos Servidores DNS. Qualquer erro na digitação desses valores resultará em falha de conexão.
+
+#### Configurando uma Rede Sem Fio (Wi-Fi)
+
+A configuração de uma rede sem fio (WLAN) envolve duas etapas: a preparação da infraestrutura (o roteador) e a conexão do cliente (o computador).
+
+**1. Configuração do Roteador Wireless (Infraestrutura):**
+
+Antes que qualquer dispositivo possa se conectar, o roteador sem fio, que atua como o ponto de acesso central, deve ser configurado. Este processo geralmente envolve:
+
+- Conectar o roteador ao modem da Internet através de um cabo Ethernet (na porta WAN/Internet).
+- Acessar a interface de administração do roteador através de um navegador web, digitando seu endereço IP padrão (comumente `192.168.0.1` ou `192.168.1.1`).
+- Configurar os parâmetros essenciais da rede Wi-Fi:
+    - **SSID (Service Set Identifier):** O nome público da sua rede sem fio, que aparecerá na lista de redes disponíveis.
+    - **Segurança e Senha:** É vital proteger a rede com uma senha forte. O protocolo de segurança recomendado é, no mínimo, **WPA2 (Wi-Fi Protected Access 2)**. O padrão mais recente e ainda mais seguro é o **WPA3**, que deve ser usado se o roteador e os dispositivos forem compatíveis. Protocolos mais antigos como WEP e WPA são considerados inseguros e devem ser evitados.
+- Salvar as configurações e, se necessário, reiniciar o roteador.
+
+**2. Conectando o Computador à Rede Wi-Fi:**
+
+Com o roteador configurado e transmitindo o sinal, conectar um computador com Windows é um processo simples:
+
+- Clicar no ícone de rede na bandeja do sistema. Uma lista de redes Wi-Fi disponíveis ao alcance será exibida.
+- Selecionar o nome da rede (SSID) desejada na lista.
+- Clicar no botão "Conectar".
+- Quando solicitado, digitar a senha da rede que foi configurada no roteador e clicar em "Avançar".
+
+Após a primeira conexão bem-sucedida, o Windows salvará o perfil da rede (incluindo a senha), permitindo que o computador se reconecte automaticamente sempre que a rede estiver ao alcance.
