@@ -640,3 +640,64 @@ Analisando o diagrama final, podemos ler toda a história do nosso minimundo:
 - A entidade `LIVRO` e a entidade `PESSOA` se conectam através da entidade associativa `EMPRESTA`.
 - A entidade `EMPRESTA` resolve a relação muitos-para-muitos e possui seus próprios atributos para descrever cada transação de empréstimo: `ID`, `Data` e `Responsável`.
 
+## Normalização
+
+Após a criação do modelo conceitual, o próximo passo no design de um banco de dados é a transição para o modelo lógico, onde definimos as tabelas e colunas. A **normalização** é um processo formal e sistemático, composto por uma série de etapas, que aplicamos a esse modelo lógico para garantir que a estrutura das tabelas seja eficiente, consistente e livre de problemas.
+
+O objetivo principal da normalização é **minimizar a redundância de dados** e, consequentemente, **evitar anomalias de atualização**. Em termos práticos, o processo consiste em decompor tabelas grandes e complexas em tabelas menores e mais bem estruturadas, onde cada tabela armazena informações sobre uma única entidade ou conceito.
+
+#### Redundância de Dados e Anomalias
+
+A redundância, que é a repetição desnecessária da mesma informação em múltiplos locais, é a raiz de diversos problemas em um banco de dados. Ela não apenas desperdiça espaço de armazenamento, mas, muito mais grave, abre portas para inconsistências e para um trio de problemas conhecidos como **anomalias de atualização**:
+
+- **Anomalia de Inserção:** Ocorre quando não conseguimos inserir um dado sobre uma entidade porque precisamos, obrigatoriamente, de um dado de outra entidade.
+    - **Exemplo:** Imagine uma única tabela `ALUNO_CURSO` que armazena dados do aluno e do curso em que ele está matriculado. Se quisermos cadastrar um novo curso que ainda não tem nenhum aluno, não conseguiríamos, pois precisaríamos de dados de um aluno (que não existe) para preencher a linha.
+
+- **Anomalia de Exclusão:** Ocorre quando a exclusão de um registro leva à perda de informações de outra entidade que não gostaríamos de perder.
+    - **Exemplo:** Na mesma tabela `ALUNO_CURSO`, se o último aluno de um determinado curso for excluído, podemos acabar perdendo todas as informações sobre aquele curso (nome do curso, nome do professor, etc.), pois ele não existe em nenhum outro lugar.
+
+- **Anomalia de Alteração:** Ocorre quando a alteração de um único dado exige a atualização de múltiplos registros.
+    - **Exemplo:** Se um professor que leciona para 50 alunos mudar de número de telefone, e essa informação estiver repetida em cada uma das 50 linhas dos alunos, seria necessário atualizar todas as 50 linhas. Se uma delas for esquecida, o banco de dados se torna inconsistente.
+
+#### Decompondo as Tabelas
+
+A normalização resolve esses problemas através da decomposição. Vamos usar o exemplo de um atributo "Localização" que armazena a cidade e o estado juntos (ex: "Santos - São Paulo", "Campinas - São Paulo").
+
+**Antes da Normalização (com redundância):**
+
+|ID_CLIENTE|NOME_CLIENTE|LOCALIZACAO|
+|---|---|---|
+|1|João Silva|Santos - São Paulo|
+|2|Maria Lins|Campinas - São Paulo|
+|3|Pedro Alves|Niterói - Rio de Janeiro|
+
+O nome do estado "São Paulo" se repete. Para alterar o nome do estado, teríamos que modificar múltiplas linhas.
+
+**Depois da Normalização (sem redundância):**
+
+Criamos uma tabela separada para `ESTADOS` e referenciamos seu ID na tabela de `CLIENTES`, que agora também separa `CIDADE`.
+
+Tabela ESTADOS:
+
+| ID_ESTADO (PK) | NOME_ESTADO |
+| --- | --- |
+| 1 | São Paulo |
+| 2 | Rio de Janeiro |
+
+Tabela CLIENTES:
+
+| ID_CLIENTE (PK) | NOME_CLIENTE | CIDADE | ID_ESTADO (FK) |
+|:--- | --- | --- | --- |
+| 1 | João Silva | Santos | 1 |
+| 2 | Maria Lins | Campinas | 1 |
+| 3 | Pedro Alves | Niterói | 2 |
+
+Agora, a informação "São Paulo" está armazenada em um único local. Se o nome do estado precisasse ser alterado, a modificação seria feita em apenas uma linha na tabela `ESTADOS`, e a mudança seria refletida automaticamente para todos os clientes associados.
+
+#### As Formas Normais (FN)
+
+A normalização não é um processo aleatório; ela segue um conjunto de regras bem definidas chamadas **Formas Normais (FN)**. Existem diversas formas normais (1FN, 2FN, 3FN, BCNF, 4FN, 5FN), cada uma abordando um tipo específico de redundância.
+
+O processo é cumulativo: para que uma tabela esteja na Segunda Forma Normal (2FN), ela precisa primeiro atender a todos os critérios da Primeira Forma Normal (1FN), e assim por diante. Na prática, para a maioria dos sistemas transacionais, alcançar a **Terceira Forma Normal (3FN)** é suficiente para garantir um design de banco de dados robusto e livre das anomalias mais comuns.
+
+Nos próximos tópicos, vamos explorar em detalhe cada uma dessas formas normais.
