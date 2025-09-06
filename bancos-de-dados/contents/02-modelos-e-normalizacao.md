@@ -250,11 +250,80 @@ Uma **entidade associativa** é um construto especial usado para modelar um **re
 
 A tabela a seguir resume os três tipos de entidades:
 
-| Entidade        | Descrição                                                                                                           | Representação                                                                        |
-| --------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| **Forte**       | Representa um objeto ou conceito que é independente no modelo, ou seja, não depende de outra entidade para existir. | <div align="center"><img width="160px" src="./img/02-entidade-forte.png"><div>       |
-| **Fraca**       | Representa um objeto ou conceito que é dependente de uma entidade forte para existir.                               | <div align="center"><img width="160px" src="./img/02-entidade-fraca.png"><div>       |
-| **Associativa** | Utilizada para representar relacionamentos complexos entre duas ou mais entidades fortes.                           | <div align="center"><img width="160px" src="./img/02-entidade-associativa.png"><div> |
+| Entidade        | Descrição                                                                                                           | Representação                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| **Forte**       | Representa um objeto ou conceito que é independente no modelo, ou seja, não depende de outra entidade para existir. | <div align="center"><img width="160px" src="./img/02-entidade-forte.png"></div>       |
+| **Fraca**       | Representa um objeto ou conceito que é dependente de uma entidade forte para existir.                               | <div align="center"><img width="160px" src="./img/02-entidade-fraca.png"></div>       |
+| **Associativa** | Utilizada para representar relacionamentos complexos entre duas ou mais entidades fortes.                           | <div align="center"><img width="160px" src="./img/02-entidade-associativa.png"></div> |
 
 É importante notar que a representação gráfica pode variar. Dependendo da notação adotada (como IDEF1X, por exemplo), uma entidade fraca pode ser representada por um retângulo com cantos arredondados. A notação que utilizamos aqui é a de Peter Chen, uma das mais comuns e didáticas.
+
+### Atributos
+
+Se as entidades são os "substantivos" do nosso modelo de dados, os **atributos** são os "adjetivos". Eles representam as características, propriedades ou fatos que queremos conhecer e armazenar sobre cada ocorrência de uma entidade. No Diagrama Entidade-Relacionamento (DER), os atributos são comumente representados por elipses (ou círculos) ligadas à sua respectiva entidade.
+
+Por exemplo, para a entidade `Aluno`, podemos definir atributos como `Matrícula`, `Nome`, `Data_de_Nascimento` e `Email`. Cada um desses atributos descreve uma faceta específica do aluno.
+
+Os atributos não são todos iguais; eles são classificados de acordo com sua função e estrutura, o que nos ajuda a modelar o minimundo com maior precisão.
+
+#### Atributo Identificador (Chave)
+
+O **atributo identificador**, também conhecido como **atributo chave**, é aquele cujo valor identifica unicamente cada ocorrência de uma entidade. Ele é a representação da **chave primária** no modelo conceitual.
+
+- **Exemplo:** Na entidade `Aluno`, o atributo `Matrícula` é o identificador, pois não podem existir dois alunos com o mesmo número de matrícula. Na entidade `Produto`, poderia ser o `Código_de_Barras`.
+- **Representação no DER:** Uma elipse com o nome sublinhado ou, em diagramas mais generalistas, uma elipse/círculo preenchido.
+
+#### Atributo Simples (ou Atômico)
+
+Um **atributo simples** é aquele que possui um valor indivisível, ou seja, que não pode ser subdividido em partes menores com significado próprio. A maioria dos atributos em um modelo de dados são simples.
+
+- **Exemplos:** `Sexo` de uma pessoa, `Preço` de um produto, `Quantidade_em_Estoque`.
+
+#### Atributo Composto
+
+Um **atributo composto** é aquele que pode ser decomposto em um conjunto de atributos mais simples. Ele é usado para agrupar características que, juntas, formam uma informação completa.
+
+- **Exemplo:** O atributo `Endereço` é um exemplo clássico. Ele pode ser composto pelos sub-atributos `Logradouro`, `Número`, `Bairro`, `Cidade`, `UF` e `CEP`. Para entender o endereço completo, precisamos do conjunto de suas partes.
+
+#### Atributo Multivalorado
+
+Um **atributo multivalorado** é aquele que pode conter múltiplos valores para uma única ocorrência da entidade.
+
+- **Exemplo:** A entidade `Pessoa` pode ter um atributo `Telefone`. Como uma pessoa pode ter mais de um número de telefone (celular, residencial, comercial), `Telefone` é um atributo multivalorado. Outro exemplo seria `Habilidades` para um `Funcionário`.
+
+É crucial não confundir atributos compostos e multivalorados:
+
+- **Composto:** Refere-se à **estrutura** de um único valor complexo (um endereço é composto por várias partes diferentes).
+- **Multivalorado:** Refere-se à **quantidade** de valores que o atributo pode ter (uma pessoa pode ter vários telefones, cada um sendo um valor completo e do mesmo tipo).
+
+No momento de traduzir o modelo conceitual para o lógico (as tabelas), os atributos multivalorados exigem atenção especial, pois violam a propriedade de atomicidade do modelo relacional. A solução comum é criar uma nova tabela para representá-los.
+
+#### Atributo Derivado
+
+Um **atributo derivado** é aquele cujo valor pode ser calculado ou inferido a partir de outro(s) atributo(s) no banco de dados.
+
+- **Exemplo:** A entidade `Pessoa` possui o atributo `Data_de_Nascimento`. A partir dele, podemos calcular o atributo `Idade`. Outro exemplo: a entidade `Item_Pedido` possui os atributos `Quantidade` e `Preço_Unitário`; a partir deles, podemos derivar o atributo `Preço_Total`.
+- Por representarem uma informação redundante, os atributos derivados geralmente **não são armazenados** fisicamente no banco de dados (não se tornam colunas). Seus valores são calculados pela aplicação sempre que necessário para garantir que estejam sempre atualizados.
+
+#### Cardinalidade de Atributos
+
+A cardinalidade, quando aplicada a atributos, define quantos valores um atributo pode ter para cada ocorrência da entidade.
+
+- **Cardinalidade (1,1):** O atributo é **monovalorado** e obrigatório. Cada ocorrência da entidade deve ter exatamente um valor para este atributo (ex: `CPF` de uma pessoa).
+- **Cardinalidade (0,1):** O atributo é **monovalorado** e opcional. Cada ocorrência pode ter no máximo um valor, mas pode não ter nenhum (ex: `Email_Secundario`).
+- **Cardinalidade (1,n):** O atributo é **multivalorado** e obrigatório. Cada ocorrência deve ter pelo menos um valor, e pode ter vários (ex: `Telefone`, se for obrigatório ter ao menos um).
+- **Cardinalidade (0,n):** O atributo é **multivalorado** e opcional. Cada ocorrência pode ter de zero a muitos valores (ex: `Dependente`).
+
+#### Representação Gráfica dos Atributos
+
+A tabela a seguir resume as diferentes classificações de atributos e suas respectivas representações gráficas na notação de Peter Chen.
+
+| Tipo de Atributo           | Representação Gráfica                                                                   |
+| -------------------------- | --------------------------------------------------------------------------------------- |
+| **Atributo Simples**       | <div align="center"><img width="160px" src="./img/02-atributo.png"></div>               |
+| **Atributo Chave***        | <div align="center"><img width="160px" src="./img/02-atributo-chave.png"></div>         |
+| **Atributo Composto**      | <div align="center"><img width="160px" src="./img/02-atributo-composto.png"></div>      |
+| **Atributo Multivalorado** | <div align="center"><img width="160px" src="./img/02-atributo-multivalorado.png"></div> |
+| **Atributo Derivado**      | <div align="center"><img width="160px" src="./img/02-atributos-derivados.png"></div>    |
+_* É possível representar atributos chave, ou identificadores, através de circunferências preenchidas. A notação sublinhada é usada quando temos um nível de detalhe maior no modelo, enquanto a notação preenchida passa uma visão mais generalista._
 
