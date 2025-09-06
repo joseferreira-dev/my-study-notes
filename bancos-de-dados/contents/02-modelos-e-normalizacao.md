@@ -871,3 +871,144 @@ Com essa decomposição, eliminamos a dependência transitiva e a redundância. 
 
 Ambas as tabelas resultantes, `FUNCIONÁRIOS` e `DEPARTAMENTOS`, estão agora na **Terceira Forma Normal**. Para a grande maioria das aplicações de banco de dados, alcançar a 3FN é o objetivo principal da normalização, pois ela resolve as anomalias de atualização mais comuns, resultando em um design limpo, eficiente e consistente. Embora existam formas normais mais avançadas (BCNF, 4FN, 5FN) que lidam com casos de dependência mais complexos e raros, a 3FN é considerada o padrão para um bom projeto de banco de dados relacional.
 
+#### Forma Normal de Boyce-Codd (FNBC)
+
+A **Forma Normal de Boyce-Codd (FNBC ou BCNF, em inglês)** é uma versão mais estrita da Terceira Forma Normal. Por ser um refinamento da 3FN, ela é informalmente conhecida como **3.5FN**.
+
+Para que uma tabela esteja na FNBC, ela deve atender a duas condições:
+
+1. A tabela já deve estar na 3FN.
+2. Para toda dependência funcional não-trivial `A → B`, o determinante `A` deve ser uma **superchave**.
+
+Vamos detalhar esses conceitos:
+
+- **Dependência Funcional:** Como vimos, é uma relação entre atributos. `A → B` ("A determina B") significa que para cada valor de A, existe apenas um valor correspondente de B. Por exemplo, `CPF → Nome`.
+- **Superchave:** É qualquer conjunto de um ou mais atributos que, juntos, identificam unicamente uma linha na tabela. Uma chave primária é, por definição, uma superchave.
+
+A regra da FNBC, em termos simples, diz que o único tipo de dependência permitida é aquela em que a chave "determina" o resto dos atributos. Nenhum atributo não-chave pode determinar outro atributo.
+
+A maioria das tabelas que estão na 3FN também já se encontram na FNBC. As violações são raras e ocorrem em cenários específicos, geralmente quando há múltiplas chaves candidatas compostas e sobrepostas.
+
+##### Estudo de Caso: Identificando uma Violação da FNBC
+
+Para ilustrar um caso que viola a FNBC (mas não a 3FN), vamos imaginar um cenário de uma universidade onde:
+
+- Cada aluno pode cursar várias disciplinas.
+- Para cada disciplina que um aluno cursa, ele é auxiliado por um único professor (tutor).
+- Cada professor (tutor) leciona apenas **uma** disciplina.
+
+Poderíamos modelar isso em uma única tabela `ALUNO_TUTOR_DISCIPLINA`:
+
+| id_aluno | disciplina | nome_professor |
+| -------- | ---------- | -------------- |
+| 10       | Matemática | Prof. Carlos   |
+| 10       | Física     | Prof. Bia      |
+| 20       | Matemática | Prof. Carlos   |
+| 30       | Química    | Prof. Ana      |
+
+Nesta tabela, a chave primária é a combinação de (`id_aluno`, `disciplina`), pois um aluno tem um único tutor por disciplina.
+
+Vamos analisar as dependências funcionais:
+
+1. `{id_aluno, disciplina} → nome_professor`: A chave primária inteira determina o professor. Isto está correto.
+2. `nome_professor → disciplina`: Como cada professor leciona apenas uma disciplina, o nome do professor determina a disciplina.
+
+**Esta tabela está na 3FN?** Sim. Não há dependências parciais. E `disciplina` não tem uma dependência transitiva da chave primária, pois o determinante (`nome_professor`) não é determinado pela chave.
+
+**Mas ela viola a FNBC.** A dependência `nome_professor → disciplina` é o problema. O determinante `nome_professor` **não é uma superchave**. Ele não identifica unicamente uma linha (o Prof. Carlos aparece em duas linhas).
+
+Essa violação causa anomalias. Se o Prof. Carlos decidir mudar sua disciplina de Matemática para Lógica, teríamos que atualizar todas as linhas de todos os alunos que ele tutela.
+
+##### Aplicando as Regras da FNBC (Decomposição)
+
+Para corrigir a violação, decompomos a tabela, isolando a dependência problemática:
+
+**1. Criamos a tabela PROFESSOR_DISCIPLINA: Esta tabela armazena a informação de qual professor leciona qual disciplina:**
+
+| nome_professor (PK) | disciplina |
+| --- | --- |
+| Prof. Carlos | Matemática |
+| Prof. Bia | Física |
+| Prof. Ana | Química |
+
+**2. Ajustamos a tabela original, que agora é ALUNO_PROFESSOR:**
+
+| id_aluno (FK) | nome_professor (FK) |
+| --- | --- |
+| 10 | Prof. Carlos |
+| 10 | Prof. Bia |
+| 20 | Prof. Carlos |
+| 30 | Prof. Ana |
+
+Agora, ambas as tabelas estão na FNBC. A redundância foi eliminada e, para alterar a disciplina de um professor, basta modificar um único registro na tabela `PROFESSOR_DISCIPLINA`.
+
+Vamos analisar um segundo exemplo:
+
+<div align="center">
+<img width="700px" src="./img/02-forma-normal-boyce-codd-1.png">
+</div>
+
+**1. Análise para a 1FN:** A tabela está na Primeira Forma Normal. Todos os atributos são atômicos; cada célula contém um único valor.
+**2. Análise para a 2FN:** A chave primária que identifica unicamente a nota de um aluno em um curso é a chave composta (`id_aluno`, `id_curso`).
+
+<div align="center">
+<img width="700px" src="./img/02-forma-normal-boyce-codd-2.png">
+</div>
+
+Agora, identificamos as dependências funcionais:
+
+- `{id_aluno, id_curso} → nota_final`: A nota final depende da chave inteira. (Dependência total - OK).
+- `id_aluno → nome_aluno`: O nome do aluno depende apenas de parte da chave (`id_aluno`). (**Dependência Parcial** - Violação da 2FN).
+- `id_curso → nome_curso`: O nome do curso depende apenas de parte da chave (`id_curso`). (**Dependência Parcial** - Violação da 2FN).
+
+Para resolver isso, decompomos a tabela:
+
+- **Tabela `ALUNOS`:** `{id_aluno (PK), nome_aluno}`
+- **Tabela `CURSOS`:** `{id_curso (PK), nome_curso}`
+- **Tabela `MATRICULAS`:** `{id_aluno (FK), id_curso (FK), nota_final}`. A chave primária desta tabela é a combinação `{id_aluno, id_curso}`.
+
+**3. Análise para a 3FN e FNBC:** Agora, analisamos as três tabelas resultantes:
+
+- **Tabelas `ALUNOS` e `CURSOS`:** Ambas possuem chaves primárias simples. Como já estão na 1FN, elas automaticamente cumprem a 2FN e a 3FN (pois não há como ter dependências parciais ou transitivas). Elas também cumprem a FNBC, pois a única dependência funcional em cada uma (`id_aluno → nome_aluno` e `id_curso → nome_curso`) tem como determinante uma superchave (a própria chave primária).
+- **Tabela `MATRICULAS`:** Esta é a tabela mais interessante. Sua chave primária é `{id_aluno, id_curso}`. O único atributo não-chave é `nota_final`. A única dependência funcional não-trivial é `{id_aluno, id_curso} → nota_final`.
+    - Esta tabela está na 3FN? Sim. Não há dependências transitivas.
+    - **Esta tabela está na FNBC?** Sim. Para a única dependência funcional que ela possui, o determinante `{id_aluno, id_curso}` é uma superchave (é a chave primária da tabela).
+
+Portanto, o exemplo das imagens, após ser corretamente normalizado até a 3FN, resulta em um conjunto de tabelas que também satisfazem as regras da Forma Normal de Boyce-Codd.
+
+<div align="center">
+<img width="700px" src="./img/02-forma-normal-boyce-codd-3.png">
+</div>
+
+O diagrama acima ilustra as dependências na tabela original não normalizada. As setas vermelhas indicam as dependências da chave primária para os atributos, enquanto as setas azuis indicam as dependências parciais de partes da chave para outros atributos. A normalização correta separa essas dependências em tabelas distintas e bem estruturadas.
+
+#### As Regras de Inferência para Dependências Funcionais
+
+As regras de inferência, mais conhecidas como **Axiomas de Armstrong**, são um conjunto de regras formais que formam a base teórica para a análise de dependências funcionais. Elas nos permitem, a partir de um conjunto conhecido de dependências, descobrir (ou "inferir") todas as outras dependências que são logicamente implicadas por elas.
+
+Embora seja um tópico de teoria de bancos de dados mais aprofundado, compreender os três axiomas principais ajuda a solidificar o porquê das regras de normalização, especialmente a 3FN.
+
+|Regra|Descrição|
+|---|---|
+|**Reflexividade**|Se B é um subconjunto de A, então A → B.|
+|**Aumentatividade**|Se A → B, então AC → BC.|
+|**Transitividade**|Se A → B e B → C, então A → C.|
+|**Autodeterminação**|A → A.|
+|**Decomposição**|Se A → BC, então A → B e A → C.|
+|**União**|Se A → B e A → C, então A → BC.|
+|**Composição**|Se A → B e C → D, então AC → BD.|
+|**Unificação**|Se A → B e C → D, então A ∪ ( C – B ) → BD.|
+
+**Explicando os Axiomas Principais:**
+
+- **Axioma da Reflexividade:** Esta é uma regra trivial que afirma que qualquer conjunto de atributos determina a si mesmo ou a qualquer um de seus subconjuntos.
+    - **Exemplo:** O conjunto de atributos `{CPF, Nome}` obviamente determina o atributo `{Nome}`.
+
+- **Axioma da Aumentatividade:** Afirma que, se temos uma dependência funcional, podemos adicionar o mesmo atributo a ambos os lados e a dependência ainda será válida.
+    - **Exemplo:** Se sabemos que `CPF → Nome`, então também é verdade que `{CPF, Endereço} → {Nome, Endereço}`.
+
+- **Axioma da Transitividade:** Este é o mais importante para a normalização. Ele afirma que as dependências funcionais são transitivas.
+    - **Exemplo:** Se `id_func → id_dep` (o ID do funcionário determina seu departamento) e `id_dep → nome_dep` (o ID do departamento determina o nome do departamento), então, por transitividade, `id_func → nome_dep`. É exatamente esta dependência transitiva que a Terceira Forma Normal (3FN) visa eliminar.
+
+As outras regras, como a **União** e a **Decomposição**, são derivadas desses três axiomas principais e são extremamente úteis na prática para simplificar e analisar conjuntos de dependências.
+
