@@ -217,3 +217,56 @@ Em algumas construções, a preposição "de" pode ser usada de forma **expletiv
 
 - **Em Expressões de Realce:**
     - _Exemplo:_ Aquele tolo **(do)** rapaz estragou tudo!
+
+## Conjunção
+
+A conjunção é uma classe de palavra **invariável** que atua como um dos principais articuladores lógicos da língua. Sua função é conectar termos de mesma função dentro de uma oração ou, mais comumente, ligar duas ou mais orações, estabelecendo entre elas uma relação de sentido precisa. Por essa característica, as conjunções são também conhecidas por outros nomes, como **síndetos**, **conectivos** ou **operadores argumentativos**. O domínio de seu uso e de seu valor semântico é fundamental para a coesão e a coerência textual.
+
+### Coordenação vs. Subordinação
+
+A distinção mais fundamental entre as conjunções reside no tipo de relação que elas estabelecem entre as orações que conectam.
+
+- **Relação de Coordenação:** Ocorre quando a conjunção liga orações ou termos que são **sintaticamente independentes**. Cada oração possui sua própria estrutura e sentido completo, podendo existir de forma autônoma. A conjunção apenas as une, adicionando um nexo lógico.
+    - _Exemplos:_
+        - Cães **e** gatos são animais domésticos. (Liga dois termos de mesma função).
+        - [Acordei cedo] **e** [fui correr na praia]. (Liga duas orações independentes).
+        - [O carro é bonito], **mas** [custa caro]. (Liga duas orações independentes).
+
+- **Relação de Subordinação:** Ocorre quando a conjunção liga uma oração **sintaticamente dependente** a uma oração principal. A oração subordinada não possui sentido completo por si só e exerce uma função sintática (de sujeito, objeto, adjunto adverbial, etc.) em relação à oração principal.
+    - _Exemplos:_
+        - [**Quando eu chegar**], [todas as alegrias estarão completas]. (A primeira oração indica o tempo da segunda).
+        - [É necessário] [**que haja mais compreensão**]. (A segunda oração funciona como sujeito da primeira).
+        - João, [**que é filho único**], vive solitário. (A segunda oração funciona como um adjetivo para "João").
+
+### As Conjunções Coordenativas
+
+As conjunções coordenativas ligam orações independentes (coordenadas), estabelecendo entre elas cinco possíveis relações de sentido: adição, oposição, alternância, conclusão e explicação.
+
+Antes de analisá-las, é importante conhecer dois conceitos:
+
+- **Locuções Conjuntivas:** São conjuntos de duas ou mais palavras que, juntas, equivalem a uma conjunção. Por exemplo, a locução `no entanto` equivale à conjunção `mas`; a locução `visto que` equivale a `porque`.
+- **Pares Correlatos:** Algumas conjunções atuam em pares para correlacionar ideias, como `ou... ou` e `não só... mas também`.
+
+Para fins de análise, tanto as conjunções simples, quanto as locuções e os pares correlatos são classificados de acordo com o mesmo valor semântico.
+
+#### **1. Conjunções Coordenativas Aditivas**
+
+Expressam uma ideia de **adição, soma, acréscimo** ou sequência de ideias.
+
+- **Principais:** e, nem (com sentido de "e não"), bem como, mas também, como também, mas ainda.
+- **Exemplos:**
+    - Ela estuda com afinco **e** trabalha nos fins de semana.
+    - O candidato não entregou a redação **nem** assinou a folha de respostas.
+    - Ele é um profissional competente, **bem como** uma pessoa honesta.
+    - A empresa **não só** oferece bons salários, **mas também** excelentes benefícios.
+
+> **Foco de Prova: Nuanças das Conjunções Aditivas**
+> 
+> - **O uso de "nem":** A conjunção `nem` já possui um valor aditivo e negativo (`= e não`). Por isso, a construção "e nem" é considerada redundante pela norma padrão.
+> - **As Correlações Enfáticas:** Os pares como `não só... mas também` são usados para dar ênfase à adição, destacando o segundo elemento.
+> - **O "e" com valor de sequência:** Em narrativas, a conjunção "e" pode indicar uma sequência cronológica de ações. _Exemplo: Vim, vi **e** venci._
+> - **Outras Palavras com Valor Aditivo:**
+>     - **Senão:** Pode ter valor aditivo quando equivale a "mas também", geralmente após "não só". _Exemplo: O projeto agradou não só ao diretor, **senão** a toda a equipe._
+>     - **Tampouco:** É um advérbio que pode ser usado com valor aditivo-negativo, em substituição a "nem". _Exemplo: Não concordou com o plano, **tampouco** apresentou uma alternativa._
+>     - **Ainda:** O advérbio "ainda" pode ser usado para introduzir um último elemento aditivo, com valor de "além disso". _Exemplo: Ele é inteligente, dedicado e **ainda** tem um ótimo senso de humor._
+
