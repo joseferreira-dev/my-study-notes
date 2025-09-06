@@ -552,3 +552,91 @@ Vamos analisar os exemplos completos de diagramas:
 
 - **Análise do Diagrama `PESSOA`:** As letras `ct` junto ao triângulo indicam uma restrição **compartilhada (`c`)** e **total (`t`)**. Isso significa que uma `PESSOA` pode ser `SERVIDOR` **e** `ALUNO` ao mesmo tempo (compartilhada), e que toda `PESSOA` no sistema deve ser, obrigatoriamente, ou um servidor, ou um aluno, ou ambos (total).
 
+### Estudo de Caso: Modelando o Banco de Dados de uma Biblioteca
+
+A melhor forma de consolidar os conceitos de entidades, atributos e relacionamentos é aplicá-los a um problema do mundo real. Vamos, portanto, construir passo a passo o Modelo Conceitual para um sistema de gerenciamento de uma biblioteca.
+
+**Cenário (Minimundo):** Precisamos projetar um banco de dados para uma biblioteca que precisa registrar os livros de seu acervo, os autores de cada livro, e os empréstimos desses livros para as pessoas cadastradas.
+
+O processo de modelagem seguirá três etapas lógicas:
+
+1. Identificar as entidades e seus atributos.
+2. Definir os relacionamentos e suas cardinalidades.
+3. Refinar o modelo, tratando relacionamentos complexos.
+
+#### Etapa 1: Identificando as Entidades e seus Atributos
+
+O primeiro passo é identificar os principais "substantivos" ou objetos do nosso minimundo. Neste caso, os objetos centrais são claramente `LIVRO`, `AUTOR` e `PESSOA` (a pessoa que pega o livro emprestado).
+
+Uma vez identificadas as entidades, definimos os atributos que descrevem cada uma delas:
+
+**1. Entidade LIVRO**
+
+Para cada livro, precisamos saber seu identificador único, seu título e seu gênero.
+
+- **ID:** Atributo identificador (chave primária) para garantir que cada livro seja único no sistema.
+- **Título:** Atributo simples para armazenar o nome do livro.
+- **Gênero:** Atributo simples para categorizar o livro (ex: Ficção, Biografia).
+
+<div align="center">
+<img width="180px" src="./img/02-exemplo-entidade-livro.png">
+</div>
+
+**2. Entidade AUTOR**
+
+Para cada autor, precisamos de um identificador, seu nome e sua nacionalidade.
+
+- **ID:** Atributo identificador (chave primária).
+- **Nome:** Atributo simples.
+- **Nacionalidade:** Atributo simples.
+
+<div align="center">
+<img width="200px" src="./img/02-exemplo-entidade-autor.png">
+</div>
+
+**3. Entidade PESSOA**
+
+Para cada pessoa cadastrada na biblioteca, precisamos de um identificador, seu nome e seu endereço.
+
+- **ID:** Atributo identificador (chave primária).
+- **Nome:** Atributo simples.
+- **Endereço:** Atributo composto, pois um endereço é formado por várias partes (logradouro, cidade, CEP, etc.).
+
+<div align="center">
+<img width="180px" src="./img/02-exemplo-entidade-pessoa.png">
+</div>
+
+#### Etapa 2: Definindo os Relacionamentos e Cardinalidades
+
+Agora que temos as entidades, precisamos conectá-las através dos "verbos" que descrevem suas interações, definindo as regras de negócio com a cardinalidade.
+
+- **Relacionamento entre `LIVRO` e `AUTOR`:** Um livro é _escrito por_ um autor. Analisando as regras:
+    - "Um `LIVRO` é escrito por no mínimo `1` e no máximo `N` `AUTORES`." (Cardinalidade do lado do AUTOR: **(1,n)**).
+    - "Um `AUTOR` escreve no mínimo `1` e no máximo `N` `LIVROS`." (Cardinalidade do lado do LIVRO: **(1,n)**).
+    - Temos, portanto, um relacionamento **muitos-para-muitos (N:M)**.
+
+- **Relacionamento entre `LIVRO` e `PESSOA`:** Uma pessoa _empresta_ um livro. Analisando as regras:
+    - "Uma `PESSOA` empresta no mínimo `0` e no máximo `N` `LIVROS`." (Cardinalidade do lado do LIVRO: **(0,n)**).
+    - "Um `LIVRO` é emprestado por no mínimo `0` e no máximo `N` `PESSOAS`." (Cardinalidade do lado da PESSOA: **(0,n)**).
+    - Este também é um relacionamento **muitos-para-muitos (N:M)**.
+
+#### Etapa 3: Refinando o Modelo com Entidades Associativas
+
+Identificamos um ponto que exige refinamento. O relacionamento `EMPRESTA` é do tipo muitos-para-muitos, e, mais importante, o ato de emprestar é um evento que possui suas próprias informações. Onde guardaríamos a `Data` do empréstimo ou o `Responsável` (o bibliotecário) pela transação? Esses atributos não pertencem nem a `LIVRO` nem a `PESSOA`, mas sim ao relacionamento entre eles.
+
+A solução é promover o relacionamento `EMPRESTA` a uma **entidade associativa**. Ela resolverá a relação N:M e poderá conter seus próprios atributos, descrevendo o evento do empréstimo.
+
+#### O Diagrama Completo
+
+Juntando todas as peças — as três entidades originais, o relacionamento `ESCRITO` e a nova entidade associativa `EMPRESTA` —, chegamos ao nosso Modelo Entidade-Relacionamento completo:
+
+<div align="center">
+<img width="700px" src="./img/02-exemplo-diagrama-completo.png">
+</div>
+
+Analisando o diagrama final, podemos ler toda a história do nosso minimundo:
+
+- A entidade `LIVRO` se relaciona com `AUTOR` através do relacionamento `ESCRITO`, que é do tipo muitos-para-muitos.
+- A entidade `LIVRO` e a entidade `PESSOA` se conectam através da entidade associativa `EMPRESTA`.
+- A entidade `EMPRESTA` resolve a relação muitos-para-muitos e possui seus próprios atributos para descrever cada transação de empréstimo: `ID`, `Data` e `Responsável`.
+
