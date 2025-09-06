@@ -153,3 +153,67 @@ As preposições **ante** e **perante** já expressam uma noção de lugar ("dia
 - _Correto:_ Ele se apresentou **ante** o juiz.
 - _Correto:_ Ele se apresentou **perante** o juiz.
 
+### As Locuções Prepositivas e Outras Estruturas
+
+As **locuções prepositivas** são conjuntos de duas ou mais palavras que, juntas, possuem o valor de uma única preposição. Elas servem para estabelecer as mesmas relações de sentido que as preposições essenciais (lugar, causa, finalidade, etc.).
+
+A estrutura mais comum de uma locução prepositiva é `advérbio + preposição` ou `substantivo + preposição`. A característica fundamental é que elas sempre terminam com uma preposição.
+
+- _Exemplo:_ Falei **sobre** o tema. (Preposição)
+- _Exemplo:_ Falei **acerca do** tema. (Locução Prepositiva)
+
+A tabela a seguir apresenta algumas das locuções mais comuns e suas preposições ou ideias equivalentes:
+
+|Locução Prepositiva|Preposição / Ideia Equivalente|Valor Semântico|
+|---|---|---|
+|**a fim de**|para|Finalidade|
+|**acerca de**|sobre|Assunto|
+|**a respeito de**|sobre|Assunto|
+|**abaixo de**|sob|Lugar (posição inferior)|
+|**de acordo com**|conforme, segundo|Conformidade|
+|**de encontro a**|contra|Oposição, choque|
+|**ao encontro de**|a favor de|Concordância, aproximação|
+|**embaixo de**|sob|Lugar (posição inferior)|
+|**em vez de**|—|Substituição|
+|**em virtude de**|por, com|Causa|
+|**por meio de**|por, com|Meio, instrumento|
+
+#### Foco de Prova: Nuances de Uso
+
+**A Questão de "Através de":**
+
+A gramática normativa mais rigorosa preconiza que a locução através de seja usada apenas com seu sentido literal de "atravessar", "passar por dentro de".
+
+- _Uso Prescritivo:_ A luz entrava **através da** janela. / Olhava o movimento **através do** vidro.
+
+No entanto, o uso de "através de" com o sentido de "por meio de" ou "por intermédio de" é extremamente difundido e consagrado pelo uso, inclusive em textos formais.
+
+- _Uso Consagrado:_ Conseguiu a promoção **através de** muito esforço.
+
+Em provas, é importante ter atenção ao comando da questão. Se a banca pedir uma análise segundo a norma prescritiva, o uso com sentido de "meio" pode ser considerado inadequado.
+
+**Substituição por Locuções Conjuntivas:**
+
+É comum que questões de reescrita peçam para substituir uma locução prepositiva por uma locução conjuntiva de mesmo valor semântico. Essa troca exige uma adaptação na estrutura da frase: a locução prepositiva é seguida por um verbo no infinitivo, enquanto a locução conjuntiva exige um verbo flexionado (geralmente no subjuntivo).
+
+- _Com Locução Prepositiva:_ Ele estudou **a fim de passar** no concurso.
+- _Com Locução Conjuntiva:_ Ele estudou **a fim de que passasse** no concurso.
+
+#### A Preposição Expletiva "de"
+
+Em algumas construções, a preposição "de" pode ser usada de forma **expletiva** (ou pleonástica). Isso significa que ela não é uma exigência da regência de nenhum termo, sendo utilizada apenas para dar ênfase ou ritmo à frase. Sua principal característica é que ela **pode ser retirada sem prejuízo gramatical** ou alteração relevante de sentido.
+
+- **Em Estruturas Comparativas:**
+    - _Exemplo:_ Ele tem mais dinheiro **(do) que** juízo.
+
+- **Com Apostos Especificativos (Nomes de Lugares):**
+    - _Exemplo:_ A cidade **(de)** São Paulo é imensa. / O bairro **(das)** Laranjeiras é charmoso.
+
+- **Em Orações Subordinadas Predicativas:**
+    - _Exemplo:_ A minha impressão era **(de)** que ninguém se importava.
+
+- **Com o verbo "chamar" (e sinônimos) + Predicativo do Objeto:**
+    - _Exemplo:_ O chefe chamou o funcionário **(de)** incompetente.
+
+- **Em Expressões de Realce:**
+    - _Exemplo:_ Aquele tolo **(do)** rapaz estragou tudo!
