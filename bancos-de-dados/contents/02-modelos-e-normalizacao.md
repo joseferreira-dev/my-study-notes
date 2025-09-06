@@ -188,7 +188,7 @@ O processo de criação de um banco de dados começa com a definição do **mini
 
 O foco do modelo conceitual é criar uma representação de alto nível da informação, que seja clara para todos os envolvidos no projeto (gestores, usuários finais e desenvolvedores). Por essa razão, a modelagem nesta fase é **completamente independente de qualquer tecnologia**. Não importa qual SGBD será usado ou se o paradigma será relacional ou NoSQL; o modelo conceitual se concentra apenas em identificar as principais "peças" de informação e como elas se conectam. A técnica mais comum e universalmente aceita para criar o modelo conceitual é o **Modelo Entidade-Relacionamento (MER)**.
 
-### A Linguagem do Modelo Conceitual: O Modelo Entidade-Relacionamento (MER)
+### Modelo Entidade-Relacionamento (MER)
 
 O **Modelo Entidade-Relacionamento (MER)** é uma técnica de modelagem de dados usada para produzir um esquema conceitual de um banco de dados. Proposto por Peter Chen em 1976, o MER oferece uma maneira estruturada de visualizar os dados em termos de **entidades**, os **atributos** que as descrevem, e os **relacionamentos** entre elas.
 
@@ -210,4 +210,51 @@ O diagrama a seguir é um exemplo de um DER simples, que utilizaremos como base 
 </div>
 
 Como ilustrado, o diagrama é composto por vários elementos simbólicos. Nos próximos tópicos, vamos dissecar cada um desses conceitos — Entidades, Atributos e Relacionamentos — para compreender como eles se combinam para formar um modelo de dados coeso e completo.
+
+### Entidades
+
+Uma **entidade** é o bloco de construção central do MER. Ela representa um objeto, pessoa, lugar, evento ou conceito do mundo real (o _minimundo_) sobre o qual desejamos armazenar informações. É importante distinguir a **entidade** como um tipo ou classe de objeto (ex: o conceito de Aluno) de uma **ocorrência da entidade**, que é uma instância específica daquele tipo (ex: o aluno específico "José da Silva").
+
+No nosso exemplo do diagrama anterior, `Cliente` e `Produto` são as entidades. Em um sistema acadêmico, as entidades poderiam ser `Alunos`, `Professores`, `Cursos` e `Disciplinas`. No DER, as entidades são representadas graficamente por retângulos.
+
+Ao modelar um banco de dados, é crucial entender que nem todas as entidades são criadas da mesma forma. Elas são classificadas em três tipos principais, com base em sua independência e função no modelo: entidades fortes, fracas e associativas.
+
+#### Entidades Fortes
+
+Uma **entidade forte** representa um conceito que pode existir por si só, de forma independente de outras entidades. Ela é o pilar do modelo de dados. Tecnicamente, sua principal característica é possuir um ou mais atributos próprios que possam servir como **chave primária**, identificando cada ocorrência da entidade de forma única e inequívoca.
+
+- **Exemplos:** `CLIENTE` (identificado pelo `CPF` ou `id_cliente`), `PRODUTO` (identificado pelo `código_de_barras` ou `id_produto`), `BANCO` (identificado pelo `código_bancario`). Cada um desses conceitos existe e pode ser identificado sem depender de nenhuma outra informação no modelo.
+- **Representação no DER:** Um retângulo com linha simples.
+
+#### Entidades Fracas
+
+Uma **entidade fraca** é aquela cuja existência e identificação dependem de outra entidade, chamada de entidade proprietária (que é sempre uma entidade forte). Ela não possui atributos suficientes para formar uma chave primária por conta própria.
+
+Para ser unicamente identificada, uma ocorrência de uma entidade fraca precisa da chave primária de sua entidade forte proprietária, combinada com um de seus próprios atributos, que chamamos de **atributo discriminante** (ou chave parcial).
+
+- **Exemplo Clássico:** Considere a relação entre `FUNCIONARIO` (entidade forte) e `DEPENDENTE` (entidade fraca).
+    - A entidade `DEPENDENTE` não faz sentido sozinha; um dependente sempre existe _em função de_ um funcionário.
+    - O atributo `nome` de um dependente ("Maria") não é único no sistema, pois vários funcionários podem ter dependentes com o mesmo nome.
+    - Para identificar uma "Maria" específica, precisamos saber de qual funcionário ela é dependente. Portanto, a chave primária da entidade `DEPENDENTE` seria a combinação da chave estrangeira (`id_funcionario`) com o atributo discriminante (`nome`).
+- **Outro Exemplo:** A entidade `AGÊNCIA` é fraca em relação à entidade `BANCO`. O número de uma agência (ex: "0123") só é único dentro do contexto de um banco específico.
+- **Representação no DER:** Um retângulo com linha dupla.
+
+#### Entidades Associativas
+
+Uma **entidade associativa** é um construto especial usado para modelar um **relacionamento de muitos-para-muitos (N:M)** entre duas ou mais entidades. Ela surge quando o próprio relacionamento possui atributos próprios. Em vez de ser apenas uma linha de conexão, o relacionamento é "promovido" ao status de entidade.
+
+- **Exemplo:** A relação entre `MÉDICO` e `PACIENTE`. Um médico atende muitos pacientes, e um paciente pode ser atendido por muitos médicos. Onde armazenar a `data` e a `hora` de uma consulta específica? Essa informação não pertence nem ao médico, nem ao paciente, mas sim ao evento da **consulta** que os une.
+- Nesse caso, criamos uma entidade associativa chamada `CONSULTA`. Sua chave primária será a combinação das chaves primárias de `MÉDICO` (`id_medico`) e `PACIENTE` (`id_paciente`), e ela poderá ter seus próprios atributos, como `data_hora` e `diagnostico`.
+- Retomaremos este conceito com mais detalhes ao falarmos sobre relacionamentos.
+- **Representação no DER:** Um retângulo com um losango inscrito.
+
+A tabela a seguir resume os três tipos de entidades:
+
+| Entidade        | Descrição                                                                                                           | Representação                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **Forte**       | Representa um objeto ou conceito que é independente no modelo, ou seja, não depende de outra entidade para existir. | <div align="center"><img width="160px" src="./img/02-entidade-forte.png"><div>       |
+| **Fraca**       | Representa um objeto ou conceito que é dependente de uma entidade forte para existir.                               | <div align="center"><img width="160px" src="./img/02-entidade-fraca.png"><div>       |
+| **Associativa** | Utilizada para representar relacionamentos complexos entre duas ou mais entidades fortes.                           | <div align="center"><img width="160px" src="./img/02-entidade-associativa.png"><div> |
+
+É importante notar que a representação gráfica pode variar. Dependendo da notação adotada (como IDEF1X, por exemplo), uma entidade fraca pode ser representada por um retângulo com cantos arredondados. A notação que utilizamos aqui é a de Peter Chen, uma das mais comuns e didáticas.
 
