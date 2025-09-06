@@ -646,7 +646,7 @@ Após a criação do modelo conceitual, o próximo passo no design de um banco d
 
 O objetivo principal da normalização é **minimizar a redundância de dados** e, consequentemente, **evitar anomalias de atualização**. Em termos práticos, o processo consiste em decompor tabelas grandes e complexas em tabelas menores e mais bem estruturadas, onde cada tabela armazena informações sobre uma única entidade ou conceito.
 
-#### Redundância de Dados e Anomalias
+### Redundância de Dados e Anomalias
 
 A redundância, que é a repetição desnecessária da mesma informação em múltiplos locais, é a raiz de diversos problemas em um banco de dados. Ela não apenas desperdiça espaço de armazenamento, mas, muito mais grave, abre portas para inconsistências e para um trio de problemas conhecidos como **anomalias de atualização**:
 
@@ -659,7 +659,7 @@ A redundância, que é a repetição desnecessária da mesma informação em mú
 - **Anomalia de Alteração:** Ocorre quando a alteração de um único dado exige a atualização de múltiplos registros.
     - **Exemplo:** Se um professor que leciona para 50 alunos mudar de número de telefone, e essa informação estiver repetida em cada uma das 50 linhas dos alunos, seria necessário atualizar todas as 50 linhas. Se uma delas for esquecida, o banco de dados se torna inconsistente.
 
-#### Decompondo as Tabelas
+### Decompondo as Tabelas
 
 A normalização resolve esses problemas através da decomposição. Vamos usar o exemplo de um atributo "Localização" que armazena a cidade e o estado juntos (ex: "Santos - São Paulo", "Campinas - São Paulo").
 
@@ -694,10 +694,66 @@ Tabela CLIENTES:
 
 Agora, a informação "São Paulo" está armazenada em um único local. Se o nome do estado precisasse ser alterado, a modificação seria feita em apenas uma linha na tabela `ESTADOS`, e a mudança seria refletida automaticamente para todos os clientes associados.
 
-#### As Formas Normais (FN)
+### As Formas Normais (FN)
 
 A normalização não é um processo aleatório; ela segue um conjunto de regras bem definidas chamadas **Formas Normais (FN)**. Existem diversas formas normais (1FN, 2FN, 3FN, BCNF, 4FN, 5FN), cada uma abordando um tipo específico de redundância.
 
 O processo é cumulativo: para que uma tabela esteja na Segunda Forma Normal (2FN), ela precisa primeiro atender a todos os critérios da Primeira Forma Normal (1FN), e assim por diante. Na prática, para a maioria dos sistemas transacionais, alcançar a **Terceira Forma Normal (3FN)** é suficiente para garantir um design de banco de dados robusto e livre das anomalias mais comuns.
 
 Nos próximos tópicos, vamos explorar em detalhe cada uma dessas formas normais.
+
+#### Primeira Forma Normal (1FN)
+
+A Primeira Forma Normal (1FN) é o ponto de partida para a normalização de um banco de dados. Sua regra central é direta e fundamental, ligada a uma das propriedades essenciais do modelo relacional que já discutimos: a **atomicidade**.
+
+Para que uma tabela esteja na 1FN, ela deve satisfazer uma única condição: **todos os valores de seus atributos devem ser atômicos**. Um valor é considerado atômico se ele for indivisível do ponto de vista do modelo de dados. Em outras palavras, cada célula (a intersecção de uma linha e uma coluna) na tabela deve conter um, e apenas um, valor.
+
+A violação da 1FN geralmente ocorre de duas maneiras: através de **atributos compostos** e **atributos multivalorados**.
+
+- **Atributos Compostos:** São colunas que armazenam múltiplos valores de _diferentes significados_ em uma única string. Por exemplo, uma coluna `Endereço` que contém "Rua das Flores, 123, São Paulo".
+- **Atributos Multivalorados:** São colunas que armazenam múltiplos valores do _mesmo significado_ em uma única célula. Por exemplo, uma coluna `Telefone` que contém "999-444, 999-000".
+
+Vamos aplicar o processo de normalização para a 1FN em um exemplo prático.
+
+##### Estudo de Caso: Normalizando uma Tabela de Pessoas
+
+Imagine que temos a seguinte tabela, que ainda não está normalizada:
+
+<div align="center">
+<img width="700px" src="./img/02-primeira-forma-normal-1.png">
+</div>
+
+**1. Identificação dos Atributos Problemáticos**
+
+O primeiro passo é analisar a tabela em busca de colunas que violem a regra da atomicidade.
+
+<div align="center">
+<img width="700px" src="./img/02-primeira-forma-normal-2.png">
+</div>
+
+Identificamos dois problemas:
+
+- A coluna **`Localização`** é um **atributo composto**, pois armazena duas informações distintas (cidade e estado) em um único campo. Isso dificulta a realização de buscas ou agrupamentos por estado ou cidade.
+- A coluna **`Telefone`** é um **atributo multivalorado**, pois armazena uma lista de números de telefone em uma única célula para as pessoas Ana e Bruno. Isso torna impossível tratar cada telefone como uma informação individual.
+
+**2. Aplicando as Regras da 1FN**
+
+Agora, vamos corrigir esses problemas.
+
+- **Para o atributo composto (`Localização`):** A solução é simples. Decompomos o atributo em suas partes atômicas, criando novas colunas para cada parte. A coluna `Localização` é eliminada e substituída pelas colunas `Cidade` e `Estado`.
+
+<div align="center">
+<img width="700px" src="./img/02-primeira-forma-normal-3.png">
+</div>
+
+- **Para o atributo multivalorado (`Telefone`):** A solução é mais elaborada. Não podemos simplesmente adicionar mais colunas de telefone na tabela `PESSOA` (Telefone1, Telefone2, etc.), pois isso cria um limite fixo e desperdiça espaço. A abordagem correta é:
+    1. Remover a coluna multivalorada (`Telefone`) da tabela original.
+    2. Criar uma **nova tabela** dedicada a armazenar os telefones.
+    3. Essa nova tabela conterá uma coluna para o telefone e uma coluna que funcione como **chave estrangeira (FK)**, referenciando a chave primária da tabela original (`CPF`) para manter o vínculo.
+
+<div align="center">
+<img width="240px" src="./img/02-primeira-forma-normal-4.png">
+</div>
+
+Após o processo, nossa base de dados está na **Primeira Forma Normal**. Agora temos duas tabelas, `PESSOA` e `TELEFONE`, e em ambas, cada célula contém um e apenas um valor. A estrutura está mais organizada, flexível e pronta para ser analisada pelas regras da Segunda Forma Normal.
+
