@@ -481,3 +481,56 @@ Quando palavras como `conforme`, `segundo` e `consoante` introduzem uma oração
 - **Conjunção:** O projeto foi executado **conforme** a equipe **planejou**.
 - **Preposição Acidental:** O projeto foi executado **conforme** o planejamento da equipe.
 
+##### Conjunções Finais
+
+Expressam a **finalidade, o propósito** ou **o objetivo** da ação declarada na oração principal. A oração introduzida por elas responde à pergunta "para quê?".
+
+- **Principais:** para que, a fim de que, que, porque (com valor de "para que").
+- **Exemplos:**
+    - Estude com afinco **a fim de que** você alcance seus objetivos.
+    - Dou muitos exemplos **para que** o conteúdo fique claro.
+    - O palestrante fez um sinal **que** todos se calassem. (Equivale a "para que todos se calassem").
+    - "É preciso rezar **porque** não estoure uma nova guerra mundial.” (Equivale a "para que não estoure").
+
+##### Conjunções Proporcionais
+
+Expressam uma ideia de **proporcionalidade**, indicando que um fato ocorre ou se desenvolve de forma simultânea e proporcional (direta ou inversamente) ao fato expresso na oração principal.
+
+- **Principais:** à medida que, à proporção que, ao passo que, e as correlações `quanto mais... (mais/menos)` e `quanto menos... (mais/menos)`.
+- **Exemplos:**
+    - **À medida que** o tempo passa, a confiança aumenta.
+    - **Ao passo que** o produto escasseia no mercado, seu preço sobe.
+    - **Quanto mais** estudo, mais sorte pareço ter nas provas.
+    - **Quanto menos** me preocupo, mais as coisas dão certo.
+
+##### Conjunções Temporais
+
+Expressam uma circunstância de **tempo**, situando o fato da oração principal em um momento específico. A relação temporal pode ser de simultaneidade, anterioridade ou posterioridade.
+
+- **Principais:** quando, enquanto, desde que, sempre que, toda vez que, assim que, logo que, mal (com sentido de "assim que"), depois que, antes que.
+- **Exemplos:**
+    - **Mal** cheguei ao trabalho, fui bombardeado de perguntas. (Indica tempo imediato).
+    - **Assim que** o edital for publicado, iniciarei os estudos.
+    - Comprei roupas **enquanto** ela escolhia sapatos. (Indica tempo simultâneo).
+    - Ele mudou muito **depois que** se casou. (Indica tempo posterior).
+
+> **Observação Gramatical:**
+> 
+> Alguns gramáticos, como Sacconi, apontam um uso específico da conjunção "quando" com valor de causa, especialmente em contextos argumentativos. Isso ocorre quando ela pode ser substituída por "já que".
+> 
+> - _Exemplo:_ “Por que ficar amontoado na cidade, sob a poluição, **quando** existe um mundo de terra fértil no campo para se trabalhar?” (Equivale a: **já que** existe...).
+
+##### Conjunções Comparativas
+
+Expressam uma **comparação** entre os fatos ou seres mencionados na oração principal e na subordinada.
+
+- **Principais:** como, assim como, tal qual, tal como, (mais/menos/maior/menor...) do que, (tão) quanto.
+- **Exemplos:**
+    - Essa matéria é **mais** fácil **do que** a que estudamos ontem.
+    - Ele é **tão** esforçado **quanto** seu irmão.
+    - A criança corria pela casa **como** um foguete.
+
+É muito comum que, nas orações comparativas, o verbo da oração subordinada esteja elíptico (oculto), pois é o mesmo da oração principal.
+
+- **Exemplo:** Ele estuda **tanto quanto** seu tio médico (estuda).
+- **Exemplo:** Ela é inteligente **como** a mãe (é).
