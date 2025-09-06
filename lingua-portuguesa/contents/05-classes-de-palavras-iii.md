@@ -320,3 +320,65 @@ Esta percepção é crucial para questões de interpretação que pedem para ide
     - _Adversativa:_ Ele é honesto, **mas** não concordo com suas ideias. (O foco está na discordância).
     - _Concessiva:_ **Embora** ele seja honesto, não concordo com suas ideias. (O foco principal continua sendo a discordância; a honestidade é um obstáculo que não impediu a opinião contrária).
 
+#### Conjunções Coordenativas Alternativas
+
+Expressam uma ideia de **alternância, escolha** ou **exclusão** entre os fatos ou conceitos apresentados nas orações.
+
+- **Principais:** ou, ou...ou, ora...ora, quer...quer, já...já, seja...seja.
+
+O conectivo "ou" é o mais comum, mas seu sentido pode variar, exigindo atenção ao contexto.
+
+> **Foco de Prova: Os Múltiplos Sentidos de "Ou"**
+> 
+> A conjunção "ou" pode estabelecer diferentes relações, nem sempre de exclusão mútua.
+> 
+> - **Exclusão:** Apresenta opções em que a escolha de uma impede a realização da outra.
+>     - _Exemplo:_ Estude para o concurso **ou** desista de uma vez.
+> - **Inclusão / Adição:** Pode conectar termos que não se excluem, mas que se somam, tendo um efeito semelhante ao da conjunção "e".
+>     - _Exemplo:_ Fritura **ou** açúcar em excesso fazem mal à saúde. (Ambos fazem mal; o verbo no plural confirma a soma dos sujeitos).
+> - **Retificação ou Equivalência:** Usado para apresentar um sinônimo ou um nome alternativo.
+>     - _Exemplo:_ Edson Arantes do Nascimento, **ou** Pelé, é considerado o Rei do Futebol.
+> - **Alternância:** Os pares correlatos como `ora...ora` ou `quer...quer` enfatizam a alternância de estados ou a indiferença entre as opções.
+>     - _Exemplo:_ **Ora** estava motivado, **ora** pensava em desistir.
+>     - _Exemplo:_ **Seja** por bem, **seja** por mal, vou convencê-lo.
+
+A palavra **senão** também pode adquirir um valor alternativo, geralmente com sentido de "do contrário" ou "ou então".
+
+- _Exemplo:_ Saia em silêncio, **senão** acordará o bebê.
+
+#### Conjunções Coordenativas Conclusivas
+
+Expressam uma ideia de **conclusão, consequência** ou **dedução lógica** a partir da oração anterior.
+
+- **Principais:** logo, portanto, por isso, assim, então, por conseguinte, pois (posposto ao verbo), destarte.
+- **Exemplos:**
+    - O edital foi publicado, **portanto** devemos intensificar os estudos.
+    - Penso, **logo** existo.
+    - O time jogou mal, **assim**, não mereceu a vitória.
+
+> **Foco de Prova: A Posição e a Pontuação do "Pois" Conclusivo**
+> 
+> A conjunção **pois** tem seu valor semântico definido por sua posição na frase.
+> 
+> - **Para ter valor conclusivo:** O `pois` deve vir **após o verbo** (posposto) e, por ser um termo deslocado, deve estar **isolado por vírgulas**.
+>     - _Exemplo:_ Estava despreparado; não foi, **pois**, aprovado.
+>     - _Exemplo:_ A instabilidade econômica persiste; o dólar voltará, **pois**, a subir.
+
+#### Conjunções Coordenativas Explicativas
+
+Expressam uma ideia de **explicação, justificativa** ou **motivo** em relação ao que foi enunciado na oração anterior.
+
+- **Principais:** que, porque, pois (anteposto ao verbo), porquanto.
+
+Uma característica marcante das orações explicativas é que elas frequentemente sucedem uma oração com o verbo no modo **imperativo** (uma ordem, um pedido, um conselho).
+
+- **Exemplos:**
+    - Fujam, **porque** a bruxa está à solta!
+    - Fique em silêncio, **pois** o filme já começou.
+    - Economize recursos, **porquanto** o futuro é incerto.
+    - Vem, vamos embora, **que** esperar não é saber.
+
+A diferença entre o **pois explicativo** e o **pois conclusivo** é, portanto, posicional:
+
+- **Pois explicativo:** Inicia a oração, antes do verbo. _Ex: Volte, **pois** sinto sua falta._
+- **Pois conclusivo:** Vem após o verbo, entre vírgulas. _Ex: Sinto sua falta; voltarei, **pois**, imediatamente._
