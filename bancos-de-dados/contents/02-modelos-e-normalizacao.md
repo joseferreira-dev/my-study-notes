@@ -1081,3 +1081,77 @@ Com essa decomposição, a redundância é eliminada. Para adicionar o hobby "Na
 
 Embora os cenários que violam a 4FN sejam menos comuns que os das formas normais anteriores, identificá-los e corrigi-los é essencial para criar um modelo de dados verdadeiramente robusto e livre de redundâncias.
 
+#### Quinta Forma Normal (5FN): Eliminando Dependências de Junção
+
+Chegamos à etapa final da normalização clássica: a **Quinta Forma Normal (5FN)**, também conhecida como **Project-Join Normal Form (PJ/NF)**. Esta é a forma normal mais avançada e teórica, projetada para lidar com um tipo raro e sutil de redundância que as formas anteriores não conseguem resolver.
+
+Para que uma tabela esteja na 5FN, ela deve atender a duas condições:
+
+1. A tabela já deve estar na 4FN.
+2. A tabela não deve conter **dependências de junção** (_join dependencies_) que permitam uma decomposição sem perdas.
+
+##### O Que é uma Dependência de Junção?
+
+Uma dependência de junção é uma restrição mais generalizada do que as dependências que vimos até agora. Uma tabela possui uma dependência de junção se ela puder ser decomposta em múltiplas tabelas menores e, posteriormente, ser perfeitamente reconstruída através da junção (_join_) dessas tabelas menores, sem gerar nenhuma linha a mais ou a menos.
+
+A 5FN afirma que, se essa "decomposição sem perdas" é possível, ela **deve** ser feita para eliminar a redundância de dados.
+
+##### Estudo de Caso: O Cenário Fornecedor-Projeto-Peça
+
+As violações da 5FN são raras na prática e geralmente ocorrem em tabelas que representam relacionamentos complexos entre três ou mais entidades. O exemplo clássico envolve Fornecedores, Projetos e Peças.
+
+Imagine uma tabela única `Fornecimentos` que registra qual fornecedor fornece qual peça para qual projeto.
+
+Tabela `Fornecimentos` (Não está na 5FN):
+
+| FORNECEDOR | PROJETO | PEÇA |
+| --- | --- | --- |
+| Fornecedor A | Projeto Alfa | Parafuso |
+| Fornecedor A | Projeto Alfa | Porca |
+| Fornecedor B | Projeto Beta | Parafuso |
+| Fornecedor A | Projeto Beta | Parafuso |
+
+Agora, vamos adicionar uma regra de negócio complexa: "Se um fornecedor está habilitado a fornecer uma certa peça, e um projeto requer essa mesma peça, e esse fornecedor está alocado para esse projeto, então o fornecedor deve, obrigatoriamente, fornecer essa peça para esse projeto".
+
+Nesta tabela única, estamos armazenando três fatos diferentes de forma interligada, o que gera redundância:
+
+1. Quais fornecedores fornecem quais peças.
+2. Quais projetos usam quais peças.
+3. Quais fornecedores trabalham em quais projetos.
+
+A informação de que o `Fornecedor A` fornece `Parafuso` está implicitamente repetida em duas linhas.
+
+##### Aplicando as Regras da 5FN (Decomposição)
+
+A dependência de junção nesta tabela nos permite decompô-la em três tabelas menores, cada uma representando um dos fatos independentes, sem perda de informação.
+
+- Tabela 1: `FORNECEDOR_PECA`
+
+| FORNECEDOR | PEÇA |
+| --- | --- |
+| Fornecedor A | Parafuso |
+| Fornecedor A | Porca |
+| Fornecedor B | Parafuso |
+
+- Tabela 2: `PROJETO_PECA`
+
+| PROJETO | PEÇA |
+| --- | --- |
+| Projeto Alfa | Parafuso |
+| Projeto Alfa | Porca |
+| Projeto Beta | Parafuso |
+
+- Tabela 3: `FORNECEDOR_PROJETO`
+
+| FORNECEDOR | PROJETO |
+| --- | --- |
+| Fornecedor A | Projeto Alfa |
+| Fornecedor B | Projeto Beta |
+| Fornecedor A | Projeto Beta |
+
+Se realizarmos uma junção natural (_natural join_) entre essas três tabelas, reconstruiremos a tabela `Fornecimentos` original perfeitamente. Com a decomposição, eliminamos a redundância. A informação de que "Fornecedor A fornece Parafuso" agora existe em um único lugar.
+
+As novas tabelas estão agora na **Quinta Forma Normal**.
+
+É importante reforçar, como mencionado nas anotações, que a 4FN e a 5FN lidam com cenários de modelagem muito específicos. Na grande maioria dos projetos de banco de dados do mundo real, um design que atinge a Terceira Forma Normal (3FN) ou a FNBC já é considerado totalmente normalizado, robusto e livre das anomalias de dados mais prejudiciais.
+
