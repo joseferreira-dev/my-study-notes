@@ -1183,3 +1183,132 @@ A seguir, apresentamos uma tabela de referência com alguns dos comandos mais im
 
 Esta lista serve como uma introdução aos comandos mais comuns. Nas seções seguintes, alguns deles serão explorados com mais profundidade, agrupados por suas categorias de função.
 
+### Manipulação de Arquivos e Pastas e o Redirecionamento de E/S
+
+Embora o Explorador de Arquivos seja a ferramenta gráfica padrão para gerenciar o sistema de arquivos, o Prompt de Comando oferece um método poderoso e eficiente para realizar essas mesmas tarefas via texto. Dominar os comandos de manipulação de arquivos e diretórios é essencial para automação de tarefas e para situações onde a interface gráfica não está disponível.
+
+#### Listando Arquivos e Diretórios com `dir`
+
+Antes de manipular qualquer arquivo, é preciso saber o que existe no local atual. O comando `dir` (de diretório) é usado para listar o conteúdo do diretório de trabalho.
+
+<div align="center">
+<img width="480px" src="./img/07-comando-dir.png">
+</div>
+
+A saída do comando `dir` fornece várias informações: o rótulo e o número de série do volume, o caminho do diretório listado e, para cada item, a data e hora da última modificação, se é um diretório (`<DIR>`) ou um arquivo (indicado pelo tamanho em bytes), e o nome. Note as duas entradas especiais:
+
+- `.` (ponto): Representa o próprio diretório atual.
+- `..` (ponto duplo): Representa o diretório pai (o diretório um nível acima na hierarquia).
+
+#### Criando e Visualizando Arquivos de Texto (`echo`, `more` e Redirecionamento)
+
+O comando `echo` tem a função primária de exibir uma mensagem de texto na tela. No entanto, sua verdadeira força aparece quando combinado com o **redirecionamento de saída**, um recurso do shell que permite desviar a saída de um comando, que normalmente iria para a tela, para um arquivo.
+
+- `>` (Redirecionar): Este operador envia a saída para um arquivo. Se o arquivo não existir, ele será criado. Se já existir, seu conteúdo será **completamente sobrescrito**.
+
+<div align="center">
+<img width="480px" src="./img/07-comando-echo.png">
+</div>
+
+Para visualizar o conteúdo de um arquivo de texto recém-criado, pode-se usar o comando `more`, que exibe o conteúdo do arquivo na tela, pausando a cada página se o texto for muito longo.
+
+<div align="center">
+<img width="480px" src="./img/07-comando-more.png">
+</div>
+
+- `>>` (Anexar): Este operador também envia a saída para um arquivo, mas com uma diferença crucial: em vez de sobrescrever, ele **adiciona o novo conteúdo ao final** do arquivo, preservando o que já existia.
+
+<div align="center">
+<img width="440px" src="./img/07-comando-echo-e-more.png">
+</div>
+
+#### Gerenciando Arquivos (`ren`, `del`, `copy`, `move`)
+
+O Prompt de Comando oferece um conjunto de comandos diretos para as operações mais comuns de gerenciamento de arquivos.
+
+- **Renomear:** O comando `rename` ou sua abreviação `ren` é usado para alterar o nome de um arquivo ou diretório. A sintaxe é `ren nome_antigo nome_novo`.
+
+<div align="center">
+<img width="480px" src="./img/07-comando-ren.png">
+</div>
+
+- **Excluir:** O comando `del` é usado para apagar um ou mais arquivos. É importante notar uma diferença fundamental em relação à interface gráfica: os arquivos excluídos com o comando `del` **não são enviados para a Lixeira**. A exclusão é, em geral, permanente.
+
+<div align="center">
+<img width="480px" src="./img/07-comando-del.png">
+</div>
+
+- **Copiar e Mover:** Os comandos `copy` e `move` são usados para gerenciar a localização dos arquivos.
+    - `copy`: Cria uma duplicata de um arquivo em um novo destino, mantendo o arquivo original intacto.
+    - `move`: Transfere um arquivo de uma origem para um destino. O arquivo deixa de existir no local original.
+
+<div align="center">
+<img width="420px" src="./img/07-comando-copy.png">
+</div>
+
+#### Cópia Avançada com `robocopy`
+
+Para tarefas de cópia mais complexas, especialmente aquelas envolvendo grandes volumes de dados ou estruturas de diretórios inteiras, o Windows oferece uma ferramenta muito mais poderosa e flexível que o `copy`: o `robocopy` (Robust File Copy).
+
+A sintaxe básica é `robocopy <Origem> <Destino> [Arquivo...] [Opções...]`. Alguns de seus parâmetros mais úteis são:
+
+- `/s`: Copia todos os subdiretórios, exceto os que estiverem vazios.
+- `/e`: Copia todos os subdiretórios, **incluindo** os que estiverem vazios.
+- `/mir`: Espelha um diretório. Faz com que o destino seja uma cópia exata da origem, inclusive apagando do destino os arquivos que não existem mais na origem. É excelente para sincronização e backup.
+- `/z`: Modo reiniciável. Se a cópia for interrompida no meio de um arquivo grande, ela pode ser retomada do ponto onde parou, em vez de começar do zero.
+- `/log:<arquivo>`: Cria um arquivo de log detalhado de toda a operação de cópia.
+
+#### Navegando e Gerenciando a Estrutura de Diretórios
+
+Além de manipular arquivos individuais, o Prompt de Comando oferece um conjunto de ferramentas essenciais para visualizar, navegar, criar e remover a estrutura de diretórios (pastas) do sistema de arquivos.
+
+- **Visualizando a Estrutura com `tree`:** Para obter uma visão geral e hierárquica de uma estrutura de pastas, o comando `tree` é extremamente útil. Ele exibe o layout dos diretórios a partir do ponto atual em um formato de árvore gráfica. Para incluir também os arquivos dentro de cada diretório na listagem, utiliza-se o parâmetro `/f`.
+
+<div align="center">
+<img width="700px" src="./img/07-comando-tree.png">
+</div>
+
+- **Navegando entre Diretórios com `cd`:** O comando `chdir` (ou sua forma abreviada e universalmente utilizada, `cd`) é o comando fundamental para a navegação. Ele altera o diretório de trabalho atual, ou seja, a "localização" onde o prompt está operando.
+
+<div align="center">
+<img width="380px" src="./img/07-comando-cd-e-chdir.png">
+</div>
+
+A navegação com `cd` utiliza algumas sintaxes especiais:
+
+- `cd nome_da_pasta`: Entra em um subdiretório do local atual.
+- `cd ..`: Sobe um nível na hierarquia, indo para o diretório pai.
+- `cd \`: Vai diretamente para o diretório raiz da unidade atual (ex: `C:\`).
+- `cd` (sem parâmetros): Apenas exibe o caminho completo do diretório atual.
+
+Já para se criar e remover diretórios, usa-se:
+
+- **Criando Diretórios com `md`:** O comando `md` (ou `mkdir` - _make directory_) é usado para criar novos diretórios. Sua sintaxe básica é `md nome_do_diretorio`. Uma funcionalidade poderosa do `md` é a capacidade de criar uma árvore de diretórios aninhados de uma só vez. Por exemplo, o comando `md Relatorios\2025\Janeiro` criará as três pastas, caso elas não existam.
+
+<div align="center">
+<img width="540px" src="./img/07-comando-md.png">
+</div>
+
+- **Removendo Diretórios com `rd`:** O comando `rmdir` (ou sua abreviação `rd` - _remove directory_) é usado para excluir diretórios. Por padrão, o `rd` só funciona em **diretórios vazios**. Se houver qualquer arquivo ou subpasta dentro do diretório, o comando falhará com uma mensagem de erro. O procedimento correto, neste caso, é primeiro apagar o conteúdo e depois remover o diretório.
+
+<div align="center">
+<img width="540px" src="./img/07-comando-rmdir.png">
+</div>
+
+Para remover um diretório e todo o seu conteúdo (incluindo todos os arquivos e subdiretórios) de uma só vez, pode-se usar o parâmetro `/s`. **Este é um comando extremamente poderoso e perigoso**, pois a exclusão é permanente e não envia os itens para a Lixeira. A sintaxe `rd /s /q nome_do_diretorio` (onde `/q` executa em modo silencioso, sem pedir confirmação) deve ser usada com o máximo de cautela.
+
+#### Comparando o Conteúdo de Arquivos com `comp`
+
+Para verificar se dois arquivos são idênticos em seu conteúdo binário, utiliza-se o comando `comp`. Ele realiza uma comparação byte a byte e informa se os arquivos são iguais ou, caso contrário, onde a primeira diferença foi encontrada. Esta ferramenta é útil para validar a integridade de uma cópia de arquivo, por exemplo.
+
+Quando os arquivos são idênticos, a saída é direta:
+
+<div align="center">
+<img width="480px" src="./img/07-comando-comp-arquivos-iguais.png">
+</div>
+
+Quando há diferenças, o comando `comp` reporta o "offset" (a posição em hexadecimal, a partir do início do arquivo) onde a primeira divergência ocorreu, e mostra os valores dos bytes diferentes em cada arquivo.
+
+<div align="center">
+<img width="480px" src="./img/07-comando-comp-arquivos-diferentes.png">
+</div>
