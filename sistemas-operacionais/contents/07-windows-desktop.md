@@ -1401,3 +1401,81 @@ No exemplo a seguir, os processos do Paint e do Bloco de Notas, identificados an
 <div align="center">
 <img width="480px" src="./img/07-comando-tskill.png">
 </div>
+
+## A Evolução da Linha de Comando: Windows PowerShell
+
+Enquanto o Prompt de Comando (`cmd.exe`) serve como a interface de linha de comando legada do Windows, a Microsoft desenvolveu um sucessor muito mais poderoso e flexível: o **Windows PowerShell**. O PowerShell não é apenas um _shell_, mas sim uma **plataforma de automação e uma linguagem de script robusta**, projetada desde o início para dar a administradores de sistemas e desenvolvedores um controle profundo sobre o sistema operacional e suas aplicações.
+
+Construído sobre o **.NET Framework**, o PowerShell possui uma característica fundamental que o diferencia de shells tradicionais: ele opera com **objetos**, e não com texto puro. Quando um comando do PowerShell é executado, a saída não é apenas um conjunto de caracteres na tela; é um objeto ou uma coleção de objetos, cada um com suas próprias propriedades e métodos. Essa abordagem orientada a objetos permite encadear comandos de forma muito mais poderosa e confiável do que era possível com os arquivos de lote (`.bat`) do antigo Prompt.
+
+#### Cmdlets: Os Blocos de Construção do PowerShell
+
+O coração do PowerShell é o conceito de **cmdlet** (pronuncia-se _command-let_). Um cmdlet é um comando nativo, de função única, que realiza uma ação específica. A grande vantagem dos cmdlets é sua padronização e previsibilidade, seguindo uma convenção de nomenclatura estrita de **`Verbo-Substantivo`**.
+
+Essa estrutura torna a linguagem extremamente fácil de aprender e descobrir. Uma vez que o usuário aprende os verbos comuns (`Get`, `Set`, `New`, `Remove`, `Start`, `Stop`), ele pode frequentemente intuir o nome do comando de que precisa.
+
+|Cmdlet|Verbo|Substantivo|Função|
+|---|---|---|---|
+|`Get-Location`|Get (Obter)|Location (Localização)|Obter o diretório atual|
+|`Set-Location`|Set (Definir)|Location (Localização)|Alterar o diretório atual|
+|`Copy-Item`|Copy (Copiar)|Item (Item)|Copiar arquivos ou pastas|
+|`Remove-Item`|Remove (Remover)|Item (Item)|Remover um arquivo ou diretório|
+|`Rename-Item`|Rename (Renomear)|Item (Item)|Renomear um arquivo|
+|`New-Item`|New (Novo)|Item (Item)|Criar um novo arquivo ou diretório|
+|`Get-AppxPackage`|Get (Obter)|AppxPackage (Pacote de App)|Lista os pacotes de aplicativos instalados|
+
+#### Acessando e Utilizando o PowerShell
+
+O PowerShell pode ser iniciado de várias formas, como através da janela "Executar" (`Win + R`) ou pesquisando no Menu Iniciar. É importante notar que o menu pode apresentar múltiplas opções, incluindo o **PowerShell ISE (Integrated Scripting Environment)**, uma interface gráfica que facilita a escrita e depuração de scripts mais longos.
+
+<div align="center">
+<img width="300px" src="./img/07-executar-powershell.png">
+</div>
+
+<div align="center">
+<img width="280px" src="./img/07-executar-powershell-menu.png">
+</div>
+
+Ao executar um cmdlet, os parâmetros podem ser fornecidos na mesma linha ou, se o comando for executado sem eles, o PowerShell solicitará interativamente cada parâmetro necessário.
+
+<div align="center">
+<img width="480px" src="./img/07-powershell.png">
+</div>
+
+#### Compatibilidade e Aliases
+
+Para facilitar a transição de usuários de outras plataformas, o PowerShell possui um robusto sistema de **aliases**. Um alias é um nome alternativo ou um apelido para um cmdlet. Graças a isso, muitos dos comandos familiares do Prompt de Comando e do shell do Linux funcionam diretamente no PowerShell.
+
+Por exemplo, o comando `dir`, do `cmd.exe`, e o comando `ls`, do Linux, funcionam no PowerShell. No entanto, eles são apenas aliases para o cmdlet nativo do PowerShell `Get-ChildItem`. É por isso que a saída do comando, embora funcionalmente a mesma, é formatada de maneira diferente e mais estruturada no PowerShell, refletindo sua natureza baseada em objetos.
+
+**Saída do `dir` no Prompt de Comando (baseado em texto):**
+
+<div align="center">
+<img width="540px" src="./img/07-comando-dir-cmd.png">
+</div>
+
+**Saída do `dir` (alias de `Get-ChildItem`) no PowerShell (baseado em objetos):**
+
+<div align="center">
+<img width="540px" src="./img/07-comando-dir-powershell.png">
+</div>
+
+**Saída do `ls` (alias de `Get-ChildItem`) no PowerShell:**
+
+<div align="center">
+<img width="540px" src="./img/07-comando-ls.png">
+</div>
+
+Essa compatibilidade via aliases torna a curva de aprendizado mais suave, permitindo que os usuários continuem usando os comandos com os quais já estão familiarizados enquanto aprendem gradualmente a nova sintaxe e os recursos mais poderosos do PowerShell.
+
+## Considerações Finais
+
+Neste capítulo, fizemos uma imersão prática no ecossistema do Windows Desktop, desvendando desde o seu nascimento em um novo computador até as tarefas de gerenciamento e manutenção que definem sua operação diária. Partimos do processo fundamental de **instalação**, compreendendo as decisões críticas sobre particionamento, formatação e a criação da primeira conta de usuário, que transformam o hardware bruto em um ambiente de trabalho funcional.
+
+Exploramos a vasta gama de ferramentas administrativas que o Windows oferece para o controle do sistema. Vimos como o **Gerenciador de Dispositivos** atua como a ponte entre o sistema operacional e o hardware, orquestrando drivers e garantindo a funcionalidade dos periféricos. Aprofundamos no **Gerenciamento de Disco**, uma ferramenta essencial para a organização lógica do armazenamento, e no **Visualizador de Eventos**, o diário do sistema, indispensável para o diagnóstico de problemas e a auditoria de segurança.
+
+Abordamos as interfaces de interação do usuário, contrastando a navegação visual e intuitiva do **Explorador de Arquivos** com o poder e a flexibilidade das interfaces de linha de comando. Dissecamos o legado e a utilidade do **Prompt de Comando** para tarefas diretas de manipulação de arquivos, diretórios e processos, e introduzimos o **Windows PowerShell**, a moderna e robusta plataforma de automação que representa o futuro da administração do Windows.
+
+A segurança e a conectividade foram temas centrais, desde a configuração de redes cabeadas e sem fio, passando pela compreensão de serviços essenciais como **DHCP** e **DNS**, até o estabelecimento de uma barreira de proteção com o **Windows Defender Firewall**. Reforçamos a importância da proteção de dados através de ferramentas como o **Histórico de Arquivos** e a gestão de acesso através de **contas de usuário, grupos e permissões**, que formam a espinha dorsal da segurança em um ambiente multiusuário.
+
+Ao final desta jornada, fica claro que um sistema operacional como o Windows é um ecossistema complexo, com múltiplas camadas de funcionalidade. Dominar suas ferramentas, desde as interfaces gráficas de configuração até os comandos textuais, capacita o usuário e o profissional de TI não apenas a utilizar o sistema, mas a gerenciá-lo de forma eficiente, segura e resiliente. O conhecimento prático aqui adquirido serve como uma aplicação concreta dos conceitos teóricos de gerenciamento de processos, arquivos e recursos que fundamentam todos os sistemas operacionais modernos.
