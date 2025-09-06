@@ -1312,3 +1312,51 @@ Quando há diferenças, o comando `comp` reporta o "offset" (a posição em hexa
 <div align="center">
 <img width="480px" src="./img/07-comando-comp-arquivos-diferentes.png">
 </div>
+
+### Permissão e Acesso a Arquivos via Linha de Comando
+
+Enquanto a interface gráfica oferece uma forma visual para gerenciar permissões de arquivos e pastas, o Prompt de Comando disponibiliza ferramentas poderosas para realizar essas mesmas tarefas de forma programática, ideal para automação e administração avançada. Para entender como o Windows gerencia permissões em baixo nível, primeiro precisamos conhecer o conceito de **SID**.
+
+#### SID (Security Identifier): A Identidade Real no Sistema
+
+No Windows, cada entidade de segurança — seja um usuário, um grupo de usuários ou o próprio computador — não é identificada internamente pelo seu nome amigável, mas sim por um valor único e imutável chamado **SID (Security Identifier)**. O SID é uma longa sequência alfanumérica que o sistema operacional atribui no momento da criação da conta.
+
+A vantagem de usar SIDs em vez de nomes é a robustez. Um usuário pode ter seu nome de exibição alterado (de "Teste" para "Usuário Teste", por exemplo), mas seu SID permanecerá o mesmo por toda a vida da conta. Como todas as permissões de acesso a arquivos e outros recursos são vinculadas ao SID, e não ao nome, a renomeação de um usuário não quebra suas permissões.
+
+É possível listar os SIDs de todas as contas de um computador usando o comando `wmic` (Windows Management Instrumentation Command-line), que permite consultar informações de gerenciamento do sistema.
+
+<div align="center">
+
+<img width="540px" src="./img/07-usuarios-e-sids.png">
+
+</div>
+
+#### Gerenciando Permissões com `icacls`
+
+O comando principal para visualizar e modificar as permissões de acesso no sistema de arquivos NTFS a partir da linha de comando é o **`icacls`**. Seu nome é uma referência direta à sua função: ele interage com as **ACLs (Access Control Lists)**, ou Listas de Controle de Acesso, que são as listas de permissões anexadas a cada arquivo e pasta.
+
+O `icacls` pode ser usado para tarefas como:
+
+- Exibir as permissões (ACLs) de um arquivo ou diretório.
+- Conceder (`/grant`) ou negar (`/deny`) permissões a um usuário ou grupo.
+- Salvar e restaurar as ACLs de uma estrutura de diretórios, útil para backups de permissões.
+- Alterar o proprietário de um arquivo.
+
+Sua sintaxe pode ser complexa, mas entender sua estrutura básica é o mais importante. Alguns parâmetros úteis incluem:
+
+|Parâmetro|Descrição|
+|---|---|
+|`<Arquivo/Diretório>`|Especifica o alvo da operação.|
+|`/t`|Realiza a operação de forma recursiva, em todos os arquivos e subdiretórios.|
+|`/c`|Continua a operação mesmo que encontre erros em alguns arquivos.|
+|`/q`|Suprime as mensagens de sucesso (modo silencioso).|
+|`/grant <SID>:<perm>`|Concede as permissões (`perm`) especificadas para o usuário ou grupo (`SID`).|
+
+Por exemplo, no comando `icacls teste.txt /grant *S-1-1-0:(d,wdac)`:
+
+- `icacls teste.txt`: O comando está atuando sobre o arquivo `teste.txt`.
+- `/grant`: A ação é de conceder permissões.
+- `*S-1-1-0`: O SID `S-1-1-0` é um identificador bem conhecido que representa o grupo "Todos" (_Everyone_). O asterisco antes do SID o diferencia de um nome.
+- `:(d,wdac)`: As permissões específicas que estão sendo concedidas. Neste caso, `d` corresponde a "Excluir" (_Delete_) e `wdac` a "Gravar DAC" (_Write DAC_), que é a permissão para alterar as próprias permissões do arquivo.
+
+Embora o domínio completo da sintaxe do `icacls` seja uma tarefa complexa, para a maioria dos contextos, o conhecimento mais importante é entender sua finalidade: ser a ferramenta de linha de comando para gerenciar as permissões de acesso a arquivos e pastas no Windows.
