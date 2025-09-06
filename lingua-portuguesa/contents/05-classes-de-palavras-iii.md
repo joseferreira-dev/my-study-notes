@@ -567,3 +567,67 @@ Expressam a **causa, o motivo** ou **a razão** do fato enunciado na oração pr
 > 
 > A distinção entre **causa** e **explicação** é, por vezes, muito sutil, e grandes gramáticos admitem que "não possui limites claros". Em geral, não é preciso se preocupar com essa diferenciação, tratando ambas como uma "justificativa". Contudo, se uma questão apresentar "causa" em uma alternativa e "explicação" em outra, aplique o critério: a **causa** é a origem de um **fato**; a **explicação** é o fundamento para uma **afirmação, ordem ou suposição**.
 
+##### Conjunções Consecutivas
+
+Expressam a **consequência** ou o **resultado** de um fato que foi intensificado na oração principal. A oração introduzida por elas geralmente vem precedida de um termo de intensidade na oração principal, como _tão, tal, tanto, tamanho_.
+
+- **Principais:** que (precedido por um intensificador), de modo que, de sorte que, de forma que, de maneira que.
+- **Exemplos:**
+    - Ele estudou **tanto que** ficou exausto.
+    - A ventania foi **tão** forte **que** derrubou a árvore.
+    - Fez **tamanho** escândalo na festa **que** foi expulsa do local.
+    - O palestrante explicou o conteúdo com clareza, **de modo que** não restaram dúvidas.
+    - O silêncio era profundo, **que** se podia ouvir o zumbido de um mosquito. (Aqui, a intensidade está implícita).
+
+###### A Relação Causa-Efeito: Consecutivas vs. Causais
+
+Como vimos, a causa é o evento que ocorre _antes_ e provoca o outro. A consequência é o evento que ocorre _depois_, como resultado. A conjunção recebe a classificação de acordo com a oração que ela introduz.
+
+- **Conjunção Causal:** Inicia a oração que contém a **causa**.
+    - _Exemplo:_ O rio transbordou **porque choveu muito**. (A chuva é a causa).
+
+- **Conjunção Consecutiva:** Inicia a oração que contém a **consequência**.
+    - _Exemplo:_ Choveu tanto **que o rio transbordou**. (A transbordamento é a consequência).
+
+É importante notar que a relação de causa e efeito pode existir no texto mesmo sem a presença de um conectivo explícito. A capacidade de identificar essa decorrência lógica é uma habilidade fundamental de interpretação.
+
+##### Conjunções Concessivas
+
+Expressam uma ideia de **concessão**, ou seja, admitem um fato que é contrário à ação da oração principal, mas que **não é capaz de impedi-la**. A concessão estabelece uma quebra de expectativa. A oração concessiva apresenta um obstáculo que, logicamente, deveria impedir a ação principal, mas não impede.
+
+- **Principais:** embora, ainda que, mesmo que, apesar de que, conquanto, por mais que, posto que, se bem que, não obstante.
+- **Exemplos:**
+    - **Embora** estivesse doente, ele foi trabalhar. (A doença deveria impedi-lo de ir, mas não impediu).
+    - **Mesmo que** chova, o show acontecerá.
+    - **Posto que** estivessem em menor número, os soldados venceram a batalha.
+    - Ele conseguiu a vaga, **conquanto** não fosse o mais preparado.
+
+> **Foco de Prova: Concessão e o Modo Subjuntivo**
+> 
+> Uma característica gramatical fundamental das orações concessivas é que elas exigem que o verbo seja conjugado no **Modo Subjuntivo**, o modo da hipótese.
+> 
+> - **Embora fosse** gago...
+> - **Ainda que eu falasse**...
+> - **Conquanto não tivesse** gostado...
+> 
+> Fique atento a isso em questões de reescrita. Ao substituir uma conjunção concessiva por uma adversativa (que usa o verbo no indicativo), é necessário fazer o ajuste verbal.
+
+###### Outras Estruturas Concessivas
+
+- A locução prepositiva **apesar de** também tem valor concessivo e é frequentemente usada em provas para reescrita.
+    - **Apesar de estar** doente, ele foi trabalhar.
+
+- **Posto que:** É sinônimo de "embora" e tem valor **concessivo**. É um erro comum, especialmente na linguagem jurídica, usá-lo com valor de causa ("visto que"). Para a norma padrão, **posto que = embora**.
+
+###### A Diferença Argumentativa: Concessão vs. Adversidade
+
+Ambas as estruturas expressam contraste, mas o foco argumentativo é diferente.
+
+- **Conjunção Adversativa (mas):** A informação mais importante é a que vem **depois** da conjunção.
+    - _Exemplo:_ O réu agiu em legítima defesa, **mas matou** uma pessoa. (O foco está no fato de ter matado).
+
+- **Conjunção Concessiva (embora):** A informação mais importante é a da **oração principal**. A oração concessiva apresenta um argumento secundário, que é "rebaixado".
+    - _Exemplo:_ **Embora** tenha agido em legítima defesa, o réu **matou** uma pessoa. (O foco continua sendo o fato de ter matado).
+
+Essa distinção é crucial para entender a intenção do autor e a hierarquia das ideias em um texto.
+
