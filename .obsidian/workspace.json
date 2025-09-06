@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "engenharia-de-software/contents/13-metodologias-ageis.md",
+                "file": "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "13-metodologias-ageis"
+              "title": "05-classes-de-palavras-iii"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "engenharia-de-software/contents/13-metodologias-ageis.md",
+                "file": "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 13-metodologias-ageis"
+              "title": "Sumário de 05-classes-de-palavras-iii"
             }
           }
         ],
@@ -169,10 +169,12 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "f9950e0646dc86e5",
+  "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
-    "engenharia-de-software/contents/25-gestao-agil-de-projetos.md",
+    "lingua-portuguesa/contents/04-classes-de-palavras-ii.md",
+    "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
     "engenharia-de-software/contents/13-metodologias-ageis.md",
+    "engenharia-de-software/contents/25-gestao-agil-de-projetos.md",
     "engenharia-de-software/contents/12-modelo-rup.md",
     "engenharia-de-software/contents/11-modelo-orientado-a-aspectos.md",
     "engenharia-de-software/contents/20-refatoracao.md",
@@ -205,8 +207,6 @@
     "bancos-de-dados/contents/01-fundamentos.md",
     "sistemas-operacionais/contents/07-windows-desktop.md",
     "sistemas-operacionais/contents/06-sistemas-de-arquivos.md",
-    "sistemas-operacionais/contents/05-gerenciamento-de-armazenamento.md",
-    "conhecimentos-pedagogicos-e-ept/contents/07-relacao-professor-aluno.md",
     "engenharia-de-prompt/contents",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
