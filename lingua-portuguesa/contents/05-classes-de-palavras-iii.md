@@ -429,3 +429,55 @@ As orações subordinadas substantivas, como o nome indica, exercem as funções
 
 Nesses casos, "que" e "de" são considerados **preposições acidentais**, e não conjunções integrantes, pois a estrutura não pode ser substituída por "isto" (_"Tenho isto"_ não recupera o sentido original).
 
+#### Conjunções Adverbiais
+
+As conjunções adverbiais são aquelas que introduzem as **orações subordinadas adverbiais**. A oração iniciada por elas funciona como um grande **adjunto adverbial** da oração principal, acrescentando-lhe uma noção de circunstância.
+
+- **Exemplo de Análise:** Visitei meus parentes maternos **quando viajei para Natal**.
+    - **Oração Principal:** Visitei meus parentes maternos
+    - **Oração Subordinada Adverbial:** quando viajei para Natal
+    - **Conjunção:** quando
+    - **Análise:** A segunda oração inteira informa **quando** a visita ocorreu, funcionando como um adjunto adverbial de tempo para o verbo "visitei". Ela equivale a um simples advérbio: _Visitei meus parentes maternos **naquela ocasião**._
+
+Existem nove tipos principais de conjunções adverbiais, classificados de acordo com a circunstância que expressam: **Causais, Comparativas, Concessivas, Condicionais, Conformativas, Consecutivas, Finais, Proporcionais e Temporais.**
+
+Vamos analisar cada um deles.
+
+##### Conjunções Condicionais
+
+Expressam a **condição** ou a **hipótese** necessária para que o fato da oração principal se realize (ou não). As orações introduzidas por elas geralmente apresentam o verbo no **modo subjuntivo**, que é o modo da incerteza e da hipótese.
+
+- **Principais:** se, caso, contanto que, desde que, a menos que, a não ser que, sem que (= se não).
+- **Exemplos:**
+    - **Se** chover, o jogo será cancelado.
+    - Ajudarei com o trabalho, **contanto que** todos colaborem.
+    - O evento ocorrerá, **a não ser que** haja um imprevisto de última hora.
+    - Não se consegue a aprovação **sem que** haja muito esforço e disciplina.
+
+> **Foco de Prova: A Troca entre "Se" e "Caso"**
+> 
+> As bancas examinadoras frequentemente pedem para substituir "se" por "caso" (ou vice-versa). Essa troca exige uma **alteração obrigatória no tempo verbal** para que a correção gramatical seja mantida.
+> 
+> |Conjunção|Tempo Verbal Exigido|Exemplo|
+> |---|---|---|
+> |**Se**|**Futuro do Subjuntivo**|**Se** eu **puder**, viajarei. / **Se** eles **fizerem** silêncio...|
+> |**Caso**|**Presente do Subjuntivo**|**Caso** eu **possa**, viajarei. / **Caso** eles **façam** silêncio...|
+
+##### Conjunções Conformativas
+
+Expressam a ideia de **conformidade, acordo** ou **segundo** o que foi declarado em outra fonte ou na oração principal.
+
+- **Principais:** conforme, como (com sentido de conforme), segundo, consoante.
+- **Exemplos:**
+    - Tudo ocorreu **conforme** havíamos planejado.
+    - **Segundo** informou o meteorologista, haverá chuva no fim de semana.
+    - O relatório foi elaborado **consoante** as normas da empresa.
+    - Ele agiu **como** o pai lhe ensinara.
+
+###### Distinção Importante: Conjunção Conformativa vs. Preposição Acidental
+
+Quando palavras como `conforme`, `segundo` e `consoante` introduzem uma oração (ou seja, uma estrutura **com verbo**), elas são classificadas como conjunções. No entanto, se introduzem um sintagma nominal (uma estrutura **sem verbo**), elas funcionam como **preposições acidentais**.
+
+- **Conjunção:** O projeto foi executado **conforme** a equipe **planejou**.
+- **Preposição Acidental:** O projeto foi executado **conforme** o planejamento da equipe.
+
