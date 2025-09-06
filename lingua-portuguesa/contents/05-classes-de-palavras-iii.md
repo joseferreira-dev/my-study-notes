@@ -631,3 +631,107 @@ Ambas as estruturas expressam contraste, mas o foco argumentativo é diferente.
 
 Essa distinção é crucial para entender a intenção do autor e a hierarquia das ideias em um texto.
 
+### Conjunções Polissêmicas (Múltiplos Sentidos)
+
+Como vimos ao longo deste capítulo, o valor semântico de um conectivo é a chave para a correta interpretação do texto. Algumas conjunções são especialmente versáteis e podem expressar diferentes relações lógicas, dependendo do contexto. O conhecimento dessas nuances é fundamental para resolver questões de semântica e reescrita. Vamos sistematizar os casos mais importantes.
+
+#### Conjunção "E"
+
+Embora sua função primária seja aditiva, a conjunção "e" pode assumir outros valores, como oposição e conclusão.
+
+<div align="center">
+<img width="580px" src="./img/05-conjuncao-e.png">
+</div>
+
+- **Valor Aditivo:** É seu uso mais comum, indicando soma ou sequência.
+    - _Exemplo:_ Ele levantou, tomou café **e** saiu para trabalhar.
+
+- **Valor Adversativo:** Ocorre quando o "e" conecta ideias opostas, equivalendo a "mas". A vírgula antes do "e" é um forte indício desse valor.
+    - _Exemplo:_ O candidato estudou muito para a prova, **e** não foi aprovado.
+
+- **Valor Conclusivo:** Ocorre quando a segunda oração é uma consequência natural da primeira.
+    - _Exemplo:_ O time treinou com dedicação **e** conquistou o campeonato.
+
+#### Conjunção "Como"
+
+A palavra "como" pode introduzir três tipos distintos de orações adverbiais.
+
+<div align="center">
+<img width="540px" src="./img/05-conjuncao-como.png">
+</div>
+
+- **Valor Comparativo:** Estabelece uma comparação.
+    - _Exemplo:_ Ele é forte **como** um touro.
+
+- **Valor Conformativo:** Indica que algo foi feito "conforme" ou "segundo" o que foi declarado.
+    - _Exemplo:_ O relatório foi redigido **como** o diretor havia solicitado.
+
+- **Valor Causal:** Indica a causa de um evento, equivalendo a "porque" ou "visto que". Este uso ocorre sempre no **início do período**.
+    - _Exemplo:_ **Como** estava chovendo, decidimos não ir à praia.
+
+#### Conjunção "Porque"
+
+A conjunção "porque" é primariamente causal ou explicativa, mas também pode ter valor de finalidade.
+
+<div align="center">
+<img width="540px" src="./img/05-conjuncao-porque.png">
+</div>
+
+- **Valor Causal / Explicativo:** Indica o motivo ou a justificativa de um fato.
+    - _Exemplo:_ Não viajei **porque** perdi o voo.
+
+- **Valor de Finalidade:** É um uso menos comum, no qual equivale a "para que".
+    - _Exemplo:_ Fiz um sinal **porque** ele parasse.
+
+#### Locução Conjuntiva "Desde que"
+
+Esta locução pode expressar tanto tempo quanto condição. A distinção é feita pelo tempo verbal que a acompanha.
+
+<div align="center">
+<img width="580px" src="./img/05-conjuncao-desde-que.png">
+</div>
+
+- **Valor Temporal:** Indica o ponto de partida de uma ação. O verbo geralmente vai para o **modo indicativo**.
+    - _Exemplo:_ **Desde que** ele se mudou, a vida no prédio ficou mais silenciosa.
+
+- **Valor Condicional:** Estabelece uma condição, equivalendo a "contanto que" ou "caso". O verbo vai para o **modo subjuntivo**.
+    - _Exemplo:_ Emprestarei o carro, **desde que** você o devolva com o tanque cheio.
+
+#### Conjunção "Pois"
+
+A posição da conjunção "pois" na frase é o que define seu valor semântico.
+
+<div align="center">
+<img width="620px" src="./img/05-conjuncao-pois.png">
+</div>
+
+- **Valor Causal / Explicativo:** Quando aparece no **início da segunda oração**, antes do verbo.
+    - _Exemplo:_ Volte para casa, **pois** está ficando tarde.
+
+- **Valor Conclusivo:** Quando aparece **deslocada** na segunda oração (após o verbo), ficando entre vírgulas.
+    - _Exemplo:_ O time treinou intensamente; será, **pois**, o campeão.
+
+#### Outras Distinções Importantes
+
+- **na medida em que** vs. **à medida que**: A primeira é **causal** (= porque); a segunda é **proporcional**. Formas como "na medida que" ou "à medida em que" são consideradas inadequadas.
+- **porquanto** vs. **conquanto**: `porquanto` é **causal/explicativo** (= porque); `conquanto` é **concessivo** (= embora).
+- **quando** com valor condicional: A conjunção temporal "quando" pode, em certos contextos, adquirir valor condicional, equivalendo a "se".
+    - _Exemplo:_ O país só se desenvolverá **quando** (= se) investir em educação.
+
+## Considerações Finais
+
+Neste capítulo, aprofundamos o estudo das classes de palavras responsáveis por tecer as conexões lógicas e gramaticais do discurso: a **Preposição** e a **Conjunção**. Exploramos estas duas classes de conectivos em suas múltiplas facetas, indo muito além de uma simples memorização de listas.
+
+Analisamos a Preposição em sua classificação morfológica (**essenciais e acidentais**), em sua função sintático-semântica como um elo **relacional** (exigido por regência) ou **nocional** (portadora de sentido), em suas diversas formas de **contração** e na riqueza de seus **valores semânticos**. Em seguida, mergulhamos no universo das Conjunções, estabelecendo a distinção fundamental entre **Coordenação** e **Subordinação**. Detalhamos os cinco tipos de conectivos coordenativos e os nove tipos de conectivos subordinativos adverbiais, além das conjunções integrantes, finalizando com uma análise estratégica das **conjunções polissêmicas**, cujo domínio é crucial para a interpretação de textos.
+
+O fio condutor deste capítulo foi a demonstração de que a clareza e a precisão de um texto não dependem apenas da escolha correta das palavras, mas, fundamentalmente, da **correta articulação entre elas**. Tanto as preposições quanto as conjunções são os pilares da coesão e da coerência. Elas definem as relações de dependência, hierarquia e lógica, transformando frases simples em períodos complexos e argumentativamente sofisticados. Compreender o valor de um "mas" em oposição a um "embora", ou a função de um "de" nocional em oposição a um "de" relacional, é o que permite ao leitor decifrar a verdadeira intenção do autor.
+
+O domínio dos conectivos estudados aqui é a porta de entrada para o tópico mais importante da Sintaxe: a **Análise do Período Composto**. Saber identificar uma conjunção e seu valor é o pré-requisito para classificar orações coordenadas e subordinadas, uma habilidade testada exaustivamente em todas as provas de concurso. Com este capítulo, estamos equipados com as ferramentas necessárias para analisar a estrutura lógica do texto em seu nível mais elaborado.
+
+Neste capítulo, aprofundamos o estudo das classes de palavras responsáveis por tecer as conexões lógicas e gramaticais do discurso: a **Preposição** e a **Conjunção**. Exploramos estas duas classes de conectivos em suas múltiplas facetas, indo muito além de uma simples memorização de listas.
+
+Analisamos a Preposição em sua classificação morfológica (**essenciais e acidentais**), em sua função sintático-semântica como um elo **relacional** (exigido por regência) ou **nocional** (portadora de sentido), em suas diversas formas de **contração** e na riqueza de seus **valores semânticos**. Em seguida, mergulhamos no universo das Conjunções, estabelecendo a distinção fundamental entre **Coordenação** e **Subordinação**. Detalhamos os cinco tipos de conectivos coordenativos e os nove tipos de conectivos subordinativos adverbiais, além das conjunções integrantes, finalizando com uma análise estratégica das **conjunções polissêmicas**, cujo domínio é crucial para a interpretação de textos.
+
+O fio condutor deste capítulo foi a demonstração de que a clareza e a precisão de um texto não dependem apenas da escolha correta das palavras, mas, fundamentalmente, da **correta articulação entre elas**. Tanto as preposições quanto as conjunções são os pilares da coesão e da coerência. Elas definem as relações de dependência, hierarquia e lógica, transformando frases simples em períodos complexos e argumentativamente sofisticados. Compreender o valor de um "mas" em oposição a um "embora", ou a função de um "de" nocional em oposição a um "de" relacional, é o que permite ao leitor decifrar a verdadeira intenção do autor.
+
+O domínio dos conectivos estudados aqui é a porta de entrada para o tópico mais importante da Sintaxe: a **Análise do Período Composto**. Saber identificar uma conjunção e seu valor é o pré-requisito para classificar orações coordenadas e subordinadas, uma habilidade testada exaustivamente em todas as provas de concurso. Com este capítulo, estamos equipados com as ferramentas necessárias para analisar a estrutura lógica do texto em seu nível mais elaborado.
