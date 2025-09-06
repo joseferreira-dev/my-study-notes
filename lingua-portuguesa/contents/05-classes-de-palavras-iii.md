@@ -117,3 +117,39 @@ As preposições são palavras que frequentemente se unem a outras que as seguem
 > - Na frase "Gosto **do** seu trabalho", deve-se entender que **do = de + o**. Assim, fica claro que o verbo "gostar" rege a preposição "de".
 > - Na frase "Confio **nela**", deve-se entender que **nela = em + ela**. Fica claro que o verbo "confiar" rege a preposição "em".
 
+### Valor Semântico das Preposições (Preposições Nocionais)
+
+Como vimos, as preposições nocionais (ou semânticas) não são uma exigência gramatical da regência de um termo, mas são empregadas para adicionar um valor de sentido, uma noção ou uma circunstância à frase. A variedade de sentidos que as preposições podem expressar é vasta, e a correta identificação depende fundamentalmente do contexto.
+
+> **Foco de Prova: Como Identificar o Valor Semântico**
+> 
+> A melhor maneira de identificar o sentido de uma preposição é analisar a ideia expressa pela **locução inteira que ela introduz** (preposição + termo regido). A pergunta _"Qual noção ou circunstância esta expressão adiciona à frase?"_ revelará o valor semântico da preposição naquele contexto específico. Não há necessidade de decorar listas; a chave é a análise da relação de sentido.
+
+A seguir, uma tabela com as principais relações semânticas cobradas em provas, com diversos exemplos.
+
+| Relação de Sentido (Valor Nocional) | Exemplos                                                                                                                |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Assunto**                         | Não gosto de falar **sobre** política. / A palestra foi **acerca do** novo acordo.                                      |
+| **Causa**                           | Ele tremia **de** frio. / Fiquei chocado **com** a novidade. / O show foi cancelado **por** causa da chuva.             |
+| **Companhia**                       | Fui ao cinema **com** minha namorada. / Viajou **com** os amigos.                                                       |
+| **Conformidade / Opinião**          | **Para** Freud, o sonho é a realização de um desejo. / **Segundo** o edital, a prova terá 4 horas.                      |
+| **Direção / Destino**               | Vou **para** Lisboa no próximo ano. (Ideia de permanência).<br>Vou **a** Lisboa no próximo ano. (Ideia de ida e volta). |
+| **Finalidade / Objetivo**           | Estudo muito **para** passar no concurso. / Ele se esforçou **a fim de** conseguir a promoção.                          |
+| **Instrumento**                     | Escrevi o bilhete **a** lápis. / Feriu-se **com** a faca. / Resolvi a questão **com** um macete.                        |
+| **Lugar**                           | Moro **em** São Paulo. / O livro está **sobre** a mesa. / O avião passou **por** cima da cidade.                        |
+| **Matéria**                         | O anel era **de** ouro. / Comprei um violão **de** mogno.                                                               |
+| **Meio**                            | Vivo **de** aluguéis. / Viajamos **de** avião. / Comuniquei-me com ele **por** telefone.                                |
+| **Modo**                            | Agiu **com** cautela. / Estudo **com** gana. / Saiu **às** pressas.                                                     |
+| **Oposição**                        | O time jogou **contra** o seu maior rival. / Sou **contra** o populismo.                                                |
+| **Origem / Procedência**            | Sou **de** Campinas. / Este vinho veio **de** Portugal.                                                                 |
+| **Posse**                           | Este é o carro **de** Ricardo. / Devolva-me o livro **do** aluno.                                                       |
+| **Tempo**                           | O prazo **para** a entrega é de 30 dias. / Chegarei **em** cinco minutos. / Viajo **durante** as férias.                |
+
+#### Uma Observação sobre "Ante" e "Perante"
+
+As preposições **ante** e **perante** já expressam uma noção de lugar ("diante de", "na presença de"). Por essa razão, a norma padrão não admite o uso da preposição "a" após elas.
+
+- _Incorreto:_ Ele se apresentou ante ao juiz.
+- _Correto:_ Ele se apresentou **ante** o juiz.
+- _Correto:_ Ele se apresentou **perante** o juiz.
+
