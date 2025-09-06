@@ -757,3 +757,62 @@ Agora, vamos corrigir esses problemas.
 
 Após o processo, nossa base de dados está na **Primeira Forma Normal**. Agora temos duas tabelas, `PESSOA` e `TELEFONE`, e em ambas, cada célula contém um e apenas um valor. A estrutura está mais organizada, flexível e pronta para ser analisada pelas regras da Segunda Forma Normal.
 
+#### Segunda Forma Normal (2FN)
+
+Uma vez que a tabela esteja na Primeira Forma Normal (1FN), com todos os seus atributos atômicos, o próximo passo é garantir que ela atenda aos critérios da Segunda Forma Normal (2FN).
+
+O objetivo da 2FN é **eliminar as dependências parciais**. Para que uma tabela seja classificada nesta forma, ela deve atender a duas condições:
+
+1. A tabela já deve estar na 1FN.
+2. Todos os seus atributos não-chave devem ser **funcionalmente dependentes da chave primária em sua totalidade**, e não apenas de uma parte dela.
+
+Este conceito de "dependência parcial" só se aplica a tabelas que possuem uma **chave primária composta** (ou seja, uma chave formada por duas ou mais colunas). Se uma tabela está na 1FN e sua chave primária é simples (formada por uma única coluna), ela automaticamente já satisfaz os critérios da 2FN.
+
+##### Estudo de Caso: Removendo Dependências Parciais
+
+Vamos analisar uma tabela que registra as horas que cada funcionário trabalhou em cada projeto. Esta tabela já está na 1FN.
+
+<div align="center">
+<img width="700px" src="./img/02-segunda-forma-normal-1.png">
+</div>
+
+**1. Análise da Tabela e suas Dependências**
+
+A chave primária desta tabela é a combinação de (`id_func`, `id_proj`), pois é a única forma de identificar unicamente cada linha (as horas que um funcionário específico trabalhou em um projeto específico).
+
+Agora, vamos analisar como os atributos não-chave se relacionam com esta chave primária composta:
+
+- **`horas_trabalhadas`:** Para saber as horas, precisamos saber **qual funcionário** (`id_func`) e **qual projeto** (`id_proj`). Portanto, `horas_trabalhadas` depende da **chave primária inteira**. Esta é uma dependência funcional total, o que é correto.
+- **`nome_func`:** Para saber o nome do funcionário, precisamos apenas do `id_func`. O `id_proj` é irrelevante. Portanto, `nome_func` depende de **apenas uma parte** da chave primária. Esta é uma **dependência parcial**.
+- **`nome_proj` e `local_proj`:** Para saber o nome e o local do projeto, precisamos apenas do `id_proj`. O `id_func` é irrelevante. Portanto, `nome_proj` e `local_proj` também dependem de **apenas uma parte** da chave primária. Esta é outra **dependência parcial**.
+
+<div align="center">
+<img width="700px" src="./img/02-segunda-forma-normal-2.png">
+</div>
+
+Essas dependências parciais criam redundância e anomalias. Note que o nome "Luís" está repetido. Se o nome de Luís precisasse ser corrigido, teríamos que alterá-lo em todas as linhas em que ele aparece, correndo o risco de inconsistência.
+
+**2. Aplicando as Regras da 2FN (Decomposição)**
+
+Para resolver as dependências parciais, decompomos a tabela original em tabelas menores, onde cada tabela agrupa os atributos que dependem da mesma chave (ou parte da chave).
+
+- **Criamos a tabela `FUNCIONARIO`:** Retiramos os atributos que dependem apenas de `id_func` (`nome_func`) e os colocamos em uma nova tabela, onde `id_func` é a chave primária.
+
+<div align="center">
+<img width="220px" src="./img/02-segunda-forma-normal-3.png">
+</div>
+
+- **Criamos a tabela `PROJETO`:** Retiramos os atributos que dependem apenas de `id_proj` (`nome_proj`, `local_proj`) e os colocamos em uma nova tabela, onde `id_proj` é a chave primária.
+
+<div align="center">
+<img width="320px" src="./img/02-segunda-forma-normal-4.png">
+</div>
+
+- **Ajustamos a tabela original:** O que sobra na tabela original são a chave primária composta (`id_func`, `id_proj`) e o atributo que depende totalmente dela (`horas_trab`). Esta tabela se torna uma tabela associativa que liga funcionários e projetos.
+
+<div align="center">
+<img width="400px" src="./img/02-segunda-forma-normal-5.png">
+</div>
+
+Ao final do processo, decompusemos a tabela original em três novas tabelas. A redundância foi eliminada (o nome de cada funcionário e de cada projeto agora está armazenado em um único lugar) e todas as tabelas resultantes estão na **Segunda Forma Normal**. Com a base de dados mais organizada, podemos avançar para a próxima etapa.
+
