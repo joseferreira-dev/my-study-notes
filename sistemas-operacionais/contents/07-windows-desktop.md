@@ -1326,9 +1326,7 @@ A vantagem de usar SIDs em vez de nomes é a robustez. Um usuário pode ter seu 
 É possível listar os SIDs de todas as contas de um computador usando o comando `wmic` (Windows Management Instrumentation Command-line), que permite consultar informações de gerenciamento do sistema.
 
 <div align="center">
-
 <img width="540px" src="./img/07-usuarios-e-sids.png">
-
 </div>
 
 #### Gerenciando Permissões com `icacls`
@@ -1360,3 +1358,46 @@ Por exemplo, no comando `icacls teste.txt /grant *S-1-1-0:(d,wdac)`:
 - `:(d,wdac)`: As permissões específicas que estão sendo concedidas. Neste caso, `d` corresponde a "Excluir" (_Delete_) e `wdac` a "Gravar DAC" (_Write DAC_), que é a permissão para alterar as próprias permissões do arquivo.
 
 Embora o domínio completo da sintaxe do `icacls` seja uma tarefa complexa, para a maioria dos contextos, o conhecimento mais importante é entender sua finalidade: ser a ferramenta de linha de comando para gerenciar as permissões de acesso a arquivos e pastas no Windows.
+
+### Gerenciamento de Processos via Linha de Comando
+
+Enquanto o Gerenciador de Tarefas oferece uma interface gráfica para monitorar e interagir com os processos em execução, o Prompt de Comando fornece um conjunto de ferramentas para realizar as mesmas funções de forma textual. A vantagem da linha de comando reside em sua capacidade de ser utilizada em scripts para automação e em ambientes sem interface gráfica, como o Windows Server Core.
+
+No jargão da Microsoft, um processo é frequentemente referido como uma **"tarefa" (_task_)**, e essa nomenclatura se reflete nos nomes dos principais comandos de gerenciamento.
+
+#### Listando Processos com `tasklist`
+
+O comando `tasklist` é a contraparte textual da aba "Processos" do Gerenciador de Tarefas. Quando executado, ele exibe uma lista detalhada de todos os processos que estão rodando no sistema, tanto os aplicativos iniciados pelo usuário quanto os serviços de segundo plano.
+
+<div align="center">
+<img width="540px" src="./img/07-comando-tasklist.png">
+</div>
+
+A saída do comando é organizada em colunas que fornecem informações essenciais sobre cada processo:
+
+- **Nome da Imagem:** O nome do arquivo executável do processo (ex: `notepad.exe`).
+- **Identificador do Processo] (PID):** Um número de identificação único que o Windows atribui a cada processo no momento de sua criação. Este número é a forma mais precisa de se referir a um processo específico.
+- **Nome da sessão:** Indica o contexto em que o processo foi iniciado. "Services" geralmente se refere a processos de sistema que rodam em segundo plano, enquanto "Console" indica processos iniciados pelo usuário logado na sessão atual.
+- **Uso de memória:** A quantidade de memória RAM que o processo está consumindo no momento.
+
+<div align="center">
+<img width="540px" src="./img/07-comando-tasklist-resultado.png">
+</div>
+
+Na imagem acima, podemos identificar os processos do Bloco de Notas (`notepad.exe`) com o PID `8144` e do Paint (`mspaint.exe`) com o PID `1152`.
+
+#### Finalizando Processos com `taskkill` e `tskill`
+
+Uma vez que um processo é identificado (seja pelo seu nome ou pelo seu PID), ele pode ser finalizado usando os comandos `taskkill` ou `tskill`.
+
+- **`taskkill`:** É o comando moderno e mais versátil para encerrar processos. Ele permite que o alvo seja especificado de duas formas principais:
+    - `/pid <PID>`: Finaliza o processo com o número de identificação especificado. É o método mais preciso.
+    - `/im <Nome da Imagem>`: Finaliza **todos** os processos que correspondem ao nome do executável fornecido. Por exemplo, `taskkill /im chrome.exe` encerraria todas as janelas e processos de segundo plano do Google Chrome.
+    - `/f`: Um parâmetro crucial que **força** o encerramento do processo. Sem este parâmetro, o comando envia uma solicitação de término padrão, permitindo que o programa tente fechar de forma organizada. Com `/f`, o processo é encerrado imediatamente, o que pode causar perda de dados não salvos.
+- **`tskill`:** Um comando mais antigo e simples que finaliza um processo com base em seu PID. Embora ainda funcional, o `taskkill` é considerado o padrão por sua maior flexibilidade.
+
+No exemplo a seguir, os processos do Paint e do Bloco de Notas, identificados anteriormente, são encerrados usando ambos os comandos. A execução de cada comando resulta no fechamento imediato da janela do aplicativo correspondente.
+
+<div align="center">
+<img width="480px" src="./img/07-comando-tskill.png">
+</div>
