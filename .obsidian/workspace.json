@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bancos-de-dados/contents/02-modelos-e-normalizacao.md",
+                "file": "engenharia-de-software/contents/13-metodologias-ageis.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-modelos-e-normalizacao"
+              "title": "13-metodologias-ageis"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 295.5
   },
   "right": {
     "id": "f8a96a2def8be295",
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bancos-de-dados/contents/02-modelos-e-normalizacao.md",
+                "file": "engenharia-de-software/contents/13-metodologias-ageis.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 02-modelos-e-normalizacao"
+              "title": "Sumário de 13-metodologias-ageis"
             }
           }
         ],
@@ -169,8 +169,29 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "fdfc72c1063925fa",
+  "active": "f9950e0646dc86e5",
   "lastOpenFiles": [
+    "engenharia-de-software/contents/25-gestao-agil-de-projetos.md",
+    "engenharia-de-software/contents/13-metodologias-ageis.md",
+    "engenharia-de-software/contents/12-modelo-rup.md",
+    "engenharia-de-software/contents/11-modelo-orientado-a-aspectos.md",
+    "engenharia-de-software/contents/20-refatoracao.md",
+    "engenharia-de-software/contents/21-integracao-entrega-e-implantacao-continuas.md",
+    "engenharia-de-software/contents/19-devops.md",
+    "engenharia-de-software/contents/18-bdd-ddd-mda-mdd-fdd-dsdm.md",
+    "engenharia-de-software/contents/17-tdd.md",
+    "engenharia-de-software/contents/16-kanban.md",
+    "engenharia-de-software/contents/10-modelo-baseado-em-componentes.md",
+    "engenharia-de-software/contents/06-modelo-iterativo-e-evolutivo.md",
+    "engenharia-de-software/contents/04-modelo-iterativo-e-incremental.md",
+    "engenharia-de-software/contents/03-modelos-cascata-e-v.md",
+    "engenharia-de-software/contents/02-ciclo-de-vida.md",
+    "engenharia-de-software/contents/01-fundamentos.md",
+    "engenharia-de-software/contents/09-metodos-formais.md",
+    "engenharia-de-software/contents/07-modelo-prototipo.md",
+    "engenharia-de-software/contents/08-modelo-espiral.md",
+    "engenharia-de-software/contents/05-modelo-rad.md",
+    "bancos-de-dados/contents/02-modelos-e-normalizacao.md",
     "bancos-de-dados/contents/img/02-valores-nulos.png",
     "bancos-de-dados/contents/img/02-valores-nulos-1.png",
     "bancos-de-dados/contents/img/02-quarta-forma-normal-3.png",
@@ -181,33 +202,12 @@
     "bancos-de-dados/contents/img/02-forma-normal-boyce-codd-1.png",
     "bancos-de-dados/contents/img/02-terceira-forma-normal-4.png",
     "bancos-de-dados/contents/img/02-terceira-forma-normal-3.png",
-    "bancos-de-dados/contents/img/02-terceira-forma-normal-2.png",
     "bancos-de-dados/contents/01-fundamentos.md",
-    "bancos-de-dados/contents/02-modelos-e-normalizacao.md",
     "sistemas-operacionais/contents/07-windows-desktop.md",
     "sistemas-operacionais/contents/06-sistemas-de-arquivos.md",
     "sistemas-operacionais/contents/05-gerenciamento-de-armazenamento.md",
     "conhecimentos-pedagogicos-e-ept/contents/07-relacao-professor-aluno.md",
-    "lingua-portuguesa/contents/04-classes-de-palavras-ii.md",
-    "lingua-portuguesa/contents/03-classes-de-palavras-i.md",
-    "lingua-portuguesa/README.md",
-    "lingua-portuguesa/contents/01-visao-geral.md",
-    "engenharia-de-prompt/prompt-de-protocolo.md",
-    "engenharia-de-prompt/Sem título.md",
-    "engenharia-de-prompt/prompt-de-geracao-de-triagem.md",
-    "engenharia-de-prompt/Sem título 1.md",
-    "engenharia-de-prompt/README.md",
     "engenharia-de-prompt/contents",
-    "engenharia-de-prompt/contents/02-algoritmos-de-ordenacao/README.md",
-    "engenharia-de-prompt/contents/01-introducao-algoritmos-ordenacao/README.md",
-    "lingua-portuguesa/Prompt de Triagem.md",
-    "legislacao/contents/07-decreto-1171.md",
-    "legislacao/contents/04-portaria-6719.md",
-    "legislacao/contents/05-lei-9394.md",
-    "engenharia-de-software/contents/12-modelo-rup.md",
-    "engenharia-de-software/contents/11-modelo-orientado-a-aspectos.md",
-    "engenharia-de-software/contents/10-modelo-baseado-em-componentes.md",
-    "engenharia-de-software/contents/09-metodos-formais.md",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
     "informatica-basica",
