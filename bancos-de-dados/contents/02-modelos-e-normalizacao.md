@@ -1155,3 +1155,22 @@ As novas tabelas estão agora na **Quinta Forma Normal**.
 
 É importante reforçar, como mencionado nas anotações, que a 4FN e a 5FN lidam com cenários de modelagem muito específicos. Na grande maioria dos projetos de banco de dados do mundo real, um design que atinge a Terceira Forma Normal (3FN) ou a FNBC já é considerado totalmente normalizado, robusto e livre das anomalias de dados mais prejudiciais.
 
+#### Resumo das Formas Normais: Um Guia de Referência Rápida
+
+O processo de normalização, com suas regras e terminologias técnicas, pode parecer complexo. No entanto, o objetivo de cada Forma Normal é claro e distinto, com cada etapa construindo sobre a anterior para refinar o design do banco de dados.
+
+A tabela a seguir resume o propósito central de cada uma das principais Formas Normais, servindo como um guia para consulta e para a identificação rápida dos problemas que cada uma visa resolver. Lembre-se que o processo é cumulativo: para estar em uma determinada forma normal, uma tabela deve primeiro satisfazer todas as regras das formas anteriores.
+
+|Forma Normal|Objetivo Principal e Critérios|
+|---|---|
+|**1FN**|• **Garantir a atomicidade:** Cada coluna de uma tabela deve conter apenas valores atômicos (indivisíveis).<br>• Elimina atributos compostos e multivalorados.|
+|**2FN**|• Estar na 1FN.<br>• **Eliminar dependências parciais:** Todos os atributos não-chave devem depender funcionalmente da chave primária em sua totalidade, e não apenas de uma parte dela (relevante apenas para chaves primárias compostas).|
+|**3FN**|• Estar na 2FN.<br>• **Eliminar dependências transitivas:** Nenhum atributo não-chave pode depender de outro atributo não-chave. Todos os atributos não-chave devem depender exclusivamente da chave primária.|
+|**FNBC (3.5FN)**|• Estar na 3FN.<br>• **Refinar a 3FN:** Para toda e qualquer dependência funcional não-trivial na tabela, o atributo ou conjunto de atributos determinante deve ser uma superchave.|
+|**4FN**|• Estar na FNBC.<br>• **Eliminar dependências multivaloradas:** Garante que fatos independentes e multivalorados sobre uma entidade não sejam armazenados na mesma tabela.|
+|**5FN**|• Estar na 4FN.<br>• **Eliminar dependências de junção:** Garante que a tabela não possa ser decomposta em tabelas menores e reconstruída perfeitamente através de junções, eliminando a última forma sutil de redundância.|
+
+Embora existam seis formas normais principais na teoria, na prática, a grande maioria dos sistemas de banco de dados transacionais é projetada para atingir a **Terceira Forma Normal (3FN)**. Atingir a 3FN é geralmente o ponto de equilíbrio ideal, pois resolve as anomalias de atualização mais comuns e prejudiciais sem tornar o modelo excessivamente complexo.
+
+A Forma Normal de Boyce-Codd (FNBC), a 4FN e a 5FN são consideradas formas normais avançadas. Elas são de grande importância teórica e resolvem anomalias sutis que ocorrem em cenários de modelagem de dados mais raros e complexos. Para o dia a dia do desenvolvimento e da administração de bancos de dados, um domínio sólido das três primeiras formas normais é o conhecimento mais essencial e aplicável.
+
