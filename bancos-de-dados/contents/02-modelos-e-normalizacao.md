@@ -982,7 +982,7 @@ Portanto, o exemplo das imagens, após ser corretamente normalizado até a 3FN, 
 
 O diagrama acima ilustra as dependências na tabela original não normalizada. As setas vermelhas indicam as dependências da chave primária para os atributos, enquanto as setas azuis indicam as dependências parciais de partes da chave para outros atributos. A normalização correta separa essas dependências em tabelas distintas e bem estruturadas.
 
-#### As Regras de Inferência para Dependências Funcionais
+##### As Regras de Inferência para Dependências Funcionais
 
 As regras de inferência, mais conhecidas como **Axiomas de Armstrong**, são um conjunto de regras formais que formam a base teórica para a análise de dependências funcionais. Elas nos permitem, a partir de um conjunto conhecido de dependências, descobrir (ou "inferir") todas as outras dependências que são logicamente implicadas por elas.
 
@@ -1011,4 +1011,73 @@ Embora seja um tópico de teoria de bancos de dados mais aprofundado, compreende
     - **Exemplo:** Se `id_func → id_dep` (o ID do funcionário determina seu departamento) e `id_dep → nome_dep` (o ID do departamento determina o nome do departamento), então, por transitividade, `id_func → nome_dep`. É exatamente esta dependência transitiva que a Terceira Forma Normal (3FN) visa eliminar.
 
 As outras regras, como a **União** e a **Decomposição**, são derivadas desses três axiomas principais e são extremamente úteis na prática para simplificar e analisar conjuntos de dependências.
+
+#### Quarta Forma Normal (4FN)
+
+Após atingir a 3FN e a FNBC, que lidam com dependências funcionais, o processo de normalização pode avançar para tratar de um tipo diferente de dependência: a **dependência multivalorada**. A Quarta Forma Normal (4FN) tem como objetivo eliminar esse tipo de dependência.
+
+Para que uma tabela esteja na 4FN, ela deve atender a duas condições:
+
+1. A tabela já deve estar na Forma Normal de Boyce-Codd (FNBC).
+2. A tabela não deve conter dependências multivaloradas não-triviais.
+
+É importante não confundir os conceitos:
+
+| FORMA NORMAL | OBJETIVO PRINCIPAL                                 |
+| ------------ | -------------------------------------------------- |
+| **1FN**      | Eliminar atributos **multivalorados** e compostos. |
+| **3FN**      | Eliminar dependências **transitivas**.             |
+| **4FN**      | Eliminar dependências **multivaloradas**.          |
+
+##### O Que é uma Dependência Multivalorada?
+
+Uma **dependência multivalorada (DMV)** ocorre em uma tabela com pelo menos três atributos (digamos A, B e C), quando um único valor do atributo A está associado a um conjunto de valores do atributo B e a um conjunto de valores do atributo C, e, crucialmente, os valores de B e C são **independentes entre si**.
+
+A notação para uma DMV é `A →→ B` ("A multidetermina B").
+
+O problema surge quando tentamos armazenar dois ou mais fatos independentes e multivalorados sobre a mesma entidade (A) em uma única tabela. Para manter os dados consistentes, somos forçados a criar linhas para todas as combinações possíveis, gerando uma grande redundância e anomalias de atualização.
+
+##### Estudo de Caso: Removendo Dependências Multivaloradas
+
+Imagine uma tabela que armazena os cursos que um aluno faz e os hobbies que ele pratica. Um aluno pode fazer vários cursos e ter vários hobbies, e seus cursos não têm nenhuma relação com seus hobbies.
+
+<div align="center">
+<img width="700px" src="./img/02-quarta-forma-normal-1.png">
+</div>
+
+**1. Análise da Tabela**
+
+Esta tabela está na FNBC. Sua única chave candidata é a combinação dos três atributos (`aluno_id`, `curso`, `hobby`), e não há outras dependências funcionais. No entanto, ela possui um problema de design evidente.
+
+Para registrar que o aluno 1, que faz "Ciência" e "Matemática", também pratica "Cricket" e "Hockey", precisamos de quatro linhas para representar todas as combinações. Se quisermos adicionar um novo hobby, "Natação", para o aluno 1, precisaríamos adicionar duas novas linhas: `(1, Ciência, Natação)` e `(1, Matemática, Natação)`. Esta é uma clara anomalia de inserção e atualização.
+
+O problema fundamental é que estamos misturando dois fatos independentes em uma única tabela:
+
+- Fato 1: Um aluno faz um conjunto de cursos.
+- Fato 2: Um aluno tem um conjunto de hobbies.
+
+Isso nos leva a identificar duas dependências multivaloradas:
+
+- `aluno_id →→ curso`
+- `aluno_id →→ hobby`
+
+**2. Aplicando as Regras da 4FN (Decomposição)**
+
+A solução para eliminar dependências multivaloradas é sempre a mesma: **separar os fatos independentes em suas próprias tabelas**.
+
+- **Criamos a tabela `ALUNO_CURSO`:** Esta tabela armazena apenas a relação entre alunos e cursos.
+
+<div align="center">
+<img width="340px" src="./img/02-quarta-forma-normal-2.png">
+</div>
+
+- **Criamos a tabela `ALUNO_HOBBY`:** Esta tabela armazena apenas a relação entre alunos e seus hobbies.
+
+<div align="center">
+<img width="340px" src="./img/02-quarta-forma-normal-3.png">
+</div>
+
+Com essa decomposição, a redundância é eliminada. Para adicionar o hobby "Natação" ao aluno 1, agora só precisamos inserir uma única linha na tabela `ALUNO_HOBBY`: `(1, Natação)`. As duas tabelas resultantes estão agora na **Quarta Forma Normal**.
+
+Embora os cenários que violam a 4FN sejam menos comuns que os das formas normais anteriores, identificá-los e corrigi-los é essencial para criar um modelo de dados verdadeiramente robusto e livre de redundâncias.
 
