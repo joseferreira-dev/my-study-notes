@@ -481,3 +481,74 @@ Os principais componentes da notação são:
 
 Embora mais complexa, a notação IDEF1X carrega mais informações semânticas sobre a estrutura do banco de dados, sendo muito precisa para detalhar as regras de dependência entre as entidades.
 
+### Criando Hierarquias: Generalização e Especialização
+
+A generalização e a especialização são conceitos de modelagem que nos permitem representar relacionamentos do tipo **"é um tipo de"**, criando hierarquias entre entidades. Essa abordagem, inspirada nos princípios da orientação a objetos, ajuda a organizar o modelo, reduzir a redundância e representar as regras de negócio de forma mais precisa.
+
+- **Especialização (Processo Top-Down):** É o processo de partir de uma entidade genérica (a **superclasse**) e identificar subgrupos que possuem atributos ou relacionamentos específicos. Esses subgrupos se tornam **subclasses**. Por exemplo, partindo da entidade genérica `VEÍCULO`, podemos especializá-la nas subclasses `CARRO` (que tem o atributo específico `numero_de_portas`) e `MOTO` (que tem o atributo `cilindradas`).
+- **Generalização (Processo Bottom-Up):** É o processo inverso. Começamos com um conjunto de entidades que compartilham atributos em comum e criamos uma superclasse genérica para conter esses atributos compartilhados. Por exemplo, se tivermos as entidades `SECRETÁRIO`, `TÉCNICO` e `ENGENHEIRO`, e todas elas possuem os atributos `CPF`, `Nome` e `Salário`, podemos generalizá-las em uma superclasse `EMPREGADO`.
+
+Em ambos os casos, as subclasses **herdam** todos os atributos e relacionamentos da superclasse. No Diagrama Entidade-Relacionamento, essa hierarquia é comumente representada por um triângulo que conecta a superclasse às suas subclasses.
+
+<div align="center">
+<img width="480px" src="./img/02-generalizacao-e-especializacao.png">
+</div>
+
+#### As Regras da Hierarquia: Restrições de Especialização
+
+Para que a hierarquia represente corretamente as regras de negócio, precisamos definir duas restrições independentes: a de **disjunção** (ou exclusividade) e a de **completude** (ou totalidade).
+
+##### Restrição de Disjunção (Disjointness)
+
+Esta restrição responde à pergunta: "Uma ocorrência da superclasse pode ser membro de mais de uma subclasse ao mesmo tempo?".
+
+- **Disjunta (Disjoint - 'd'):** As subclasses são mutuamente exclusivas. Uma ocorrência da superclasse pode pertencer a, no máximo, **uma** das subclasses.
+    - **Exemplo:** Uma entidade `CONTA BANCÁRIA` pode ser especializada em `CONTA CORRENTE` ou `CONTA POUPANÇA`. Uma conta específica não pode ser dos dois tipos ao mesmo tempo.
+    - **Notação:** Um `d` dentro de um círculo no diagrama.
+
+<div align="center">
+<img width="320px" src="./img/02-notacao-de-disjuncao.png">
+</div>
+
+- **Sobreposta (Overlap - 'o'):** As subclasses não são mutuamente exclusivas. Uma ocorrência da superclasse pode pertencer a **várias** subclasses simultaneamente.
+    - **Exemplo:** Em uma universidade, uma `PESSOA` pode ser `ALUNO` e `PROFESSOR` ao mesmo tempo.
+    - **Notação:** Um `o` dentro de um círculo no diagrama.
+
+<div align="center">
+<img width="320px" src="./img/02-notacao-de-sobreposicao.png">
+</div>
+##### Restrição de Completude (Completeness)
+
+Esta restrição responde à pergunta: "Toda ocorrência da superclasse deve, obrigatoriamente, pertencer a pelo menos uma das subclasses?".
+
+- **Total (Total - 't'):** Sim. Toda ocorrência da superclasse **deve** pertencer a pelo menos uma subclasse. Não podem existir ocorrências que sejam apenas do tipo da superclasse.
+    - **Exemplo:** Se a entidade `PACIENTE` é especializada em `PACIENTE INTERNADO` e `PACIENTE AMBULATORIAL`, e todo paciente deve se enquadrar em uma dessas duas categorias, a especialização é total.
+    - **Notação:** Uma linha dupla conectando a superclasse ao símbolo da hierarquia (triângulo ou círculo).
+
+- **Parcial (Partial - 'p'):** Não. Uma ocorrência da superclasse **pode existir** sem pertencer a nenhuma das subclasses definidas.
+    - **Exemplo:** A entidade `EMPREGADO` pode ser especializada em `ENGENHEIRO` e `TÉCNICO`, mas podem existir empregados que não são nem engenheiros nem técnicos (como gerentes ou analistas). A especialização é parcial.
+    - **Notação:** Uma linha simples conectando a superclasse ao símbolo da hierarquia.
+
+##### Notações Combinadas
+
+Em algumas notações, como a que usa o triângulo, as restrições são combinadas em um par de letras (exclusividade, completude):
+
+||**Total (t)**|**Parcial (p)**|
+|---|---|---|
+|**Exclusiva (x)**|**xt**|**xp**|
+|**Compartilhada (c)**|**ct**|**cp**|
+
+Vamos analisar os exemplos completos de diagramas:
+
+<div align="center">
+<img width="520px" src="./img/02-generalizacao-e-especializacao-relacao.png">
+</div>
+
+- **Análise do Diagrama `EMPREGADO`:** A letra `d` no círculo indica uma restrição **disjunta**, ou seja, um empregado pode ser `SECRETÁRIO` **ou** `TÉCNICO` **ou** `ENGENHEIRO`, mas nunca mais de um desses tipos ao mesmo tempo. A linha simples (implícita na notação de círculo) indica uma especialização **parcial**, significando que pode haver empregados que não se encaixam em nenhuma dessas três categorias.
+
+<div align="center">
+<img width="360px" src="./img/02-generalizacao-e-especializacao-restricoes.png">
+</div>
+
+- **Análise do Diagrama `PESSOA`:** As letras `ct` junto ao triângulo indicam uma restrição **compartilhada (`c`)** e **total (`t`)**. Isso significa que uma `PESSOA` pode ser `SERVIDOR` **e** `ALUNO` ao mesmo tempo (compartilhada), e que toda `PESSOA` no sistema deve ser, obrigatoriamente, ou um servidor, ou um aluno, ou ambos (total).
+
