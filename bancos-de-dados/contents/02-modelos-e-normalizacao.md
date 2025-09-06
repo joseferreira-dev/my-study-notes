@@ -1174,3 +1174,74 @@ Embora existam seis formas normais principais na teoria, na prática, a grande m
 
 A Forma Normal de Boyce-Codd (FNBC), a 4FN e a 5FN são consideradas formas normais avançadas. Elas são de grande importância teórica e resolvem anomalias sutis que ocorrem em cenários de modelagem de dados mais raros e complexos. Para o dia a dia do desenvolvimento e da administração de bancos de dados, um domínio sólido das três primeiras formas normais é o conhecimento mais essencial e aplicável.
 
+## Tratamento de Valores Nulos
+
+Ao projetar e interagir com um banco de dados, nos deparamos constantemente com situações onde a informação para um determinado campo simplesmente não existe. Para lidar com isso, o modelo relacional, conforme estipulado pela 3ª Regra de Codd, possui um marcador especial: o valor **`NULL`**.
+
+Um valor nulo representa a **ausência de um valor**. É crucial entender que `NULL` não é a mesma coisa que o número zero (`0`) ou uma string de texto vazia (`''`). Zero e uma string vazia são valores concretos; `NULL` é a declaração de que o valor é:
+
+- **Desconhecido:** Temos uma entidade `CLIENTE` com um campo `Telefone`. Se o campo está `NULL`, significa que o cliente tem um telefone, mas nós não sabemos qual é.
+- **Inaplicável:** Temos uma entidade `FUNCIONARIO` com um campo `Comissao_Vendas`. Se o funcionário trabalha no departamento de RH, este campo não se aplica a ele, então seu valor seria `NULL`.
+- **Ainda não definido:** Temos uma entidade `PEDIDO` com um campo `Data_Envio`. Enquanto o pedido não for despachado, este campo permanecerá `NULL`.
+
+Essa distinção é fundamental. Por exemplo, se calculássemos a média de comissões de todos os funcionários, um valor `0` entraria no cálculo e diminuiria a média, enquanto um valor `NULL` seria simplesmente ignorado, levando a um resultado correto.
+
+### A Lógica de Três Valores (Lógica Ternária)
+
+A natureza "desconhecida" do `NULL` introduz uma complexidade na lógica booleana. A lógica tradicional, com a qual estamos acostumados, é binária: uma afirmação só pode ser **Verdadeira (`TRUE`)** ou **Falsa (`FALSE`)**. No entanto, como o SGBD avalia uma comparação como `Salario > 5000` quando o `Salario` é `NULL`? A resposta não é nem verdadeira, nem falsa.
+
+Para lidar com isso, os bancos de dados operam com uma **lógica de três valores (3VL)**, também chamada de lógica ternária. Os três valores possíveis são:
+
+- **`TRUE`** (Verdadeiro)
+- **`FALSE`** (Falso)
+- **`UNKNOWN`** (Desconhecido), representado no diagrama por `?`
+
+Qualquer operação aritmética ou de comparação envolvendo um `NULL` resultará em `UNKNOWN`. Por exemplo, `5 + NULL` é `UNKNOWN`, e `NULL = NULL` também é `UNKNOWN`.
+
+Essa lógica se estende aos operadores booleanos `AND`, `OR` e `NOT`, conforme detalhado na tabela verdade a seguir.
+
+<div align="center">
+<img width="700px" src="./img/02-valores-nulos.png">
+</div>
+
+#### Decifrando a Lógica Ternária
+
+Para entender a tabela verdade de forma intuitiva, podemos pensar em termos da "condição mínima" necessária para que uma operação lógica tenha um resultado definitivo.
+
+- **Para o operador `OR` (Disjunção):** A condição mínima para o resultado ser `TRUE` é que **pelo menos um** dos operandos seja `TRUE`.
+    - `TRUE OR UNKNOWN`: Já temos um `TRUE`, então não importa qual seja o valor desconhecido. O resultado é, com certeza, **`TRUE`**.
+    - `FALSE OR UNKNOWN`: O resultado agora depende inteiramente do valor desconhecido. Se ele for `TRUE`, o resultado será `TRUE`; se for `FALSE`, o resultado será `FALSE`. Como não podemos saber, o resultado é **`UNKNOWN`**.
+
+- **Para o operador `AND` (Conjunção):** A condição mínima para o resultado ser `FALSE` é que **pelo menos um** dos operandos seja `FALSE`.
+    - `FALSE AND UNKNOWN`: Já temos um `FALSE`, então o resultado é, com certeza, **`FALSE`**.
+    - `TRUE AND UNKNOWN`: O resultado depende do valor desconhecido. Se ele for `TRUE`, o resultado será `TRUE`; se for `FALSE`, o resultado será `FALSE`. Como não podemos saber, o resultado é **`UNKNOWN`**.
+
+- **Para o operador `NOT` (Negação):** A negação de algo `UNKNOWN` continua sendo `UNKNOWN`.
+
+#### Implicações Práticas em Consultas SQL
+
+Essa lógica de três valores tem um impacto direto e crucial na forma como escrevemos consultas SQL, especialmente na cláusula `WHERE`. Uma cláusula `WHERE` só retorna as linhas para as quais a condição resulta em **`TRUE`**. Linhas que resultam em `FALSE` ou `UNKNOWN` são **descartadas**.
+
+- **Exemplo:** Considere a consulta `SELECT nome FROM FUNCIONARIO WHERE salario > 3000;`. Se um funcionário tiver o campo `salario` como `NULL`, a condição `NULL > 3000` resultará em `UNKNOWN`, e este funcionário **não** aparecerá no resultado.
+
+Para lidar com isso, o SQL fornece operadores especiais:
+
+- **`IS NULL`:** Usado para verificar se um campo é nulo. `WHERE salario IS NULL`.
+- **`IS NOT NULL`:** Usado para verificar se um campo não é nulo. `WHERE salario IS NOT NULL`.
+
+Estes são os únicos operadores corretos para comparar algo com `NULL`, pois uma condição como `WHERE salario = NULL` nunca será `TRUE`. Este tema será aprofundado quando começarmos nosso estudo da linguagem SQL.
+
+## Considerações Finais
+
+Neste capítulo, mergulhamos fundo nos pilares que sustentam o design de bancos de dados modernos, percorrendo a jornada desde a concepção teórica até o refinamento prático de sua estrutura. O percurso nos levou por três territórios interligados e essenciais: o **Modelo Relacional**, o **Modelo Conceitual** e o processo de **Normalização**.
+
+Iniciamos nossa exploração pelo **Modelo Relacional**, o paradigma mais influente e duradouro da história dos bancos de dados. Desvendamos sua estrutura fundamental, baseada em relações (tabelas), tuplas (linhas) e atributos (colunas), e compreendemos as propriedades matemáticas que lhe conferem consistência. Vimos o papel crucial das **chaves primárias e estrangeiras**, que não são meros atributos, mas os mecanismos que garantem a identidade única dos registros e tecem a teia de relacionamentos que dá sentido aos dados. A análise das **12 Regras de Codd** nos forneceu a base filosófica e técnica que define o que um sistema deve cumprir para ser considerado verdadeiramente relacional.
+
+Em seguida, demos um passo atrás em direção à abstração para dominar o **Modelo Conceitual** através do **Modelo Entidade-Relacionamento (MER)**. Aprendemos a sua linguagem visual e semântica, identificando **Entidades** (fortes, fracas e associativas), detalhando-as com **Atributos** (simples, compostos, multivalorados e derivados) e conectando-as através de **Relacionamentos**. O estudo da **cardinalidade** e das hierarquias de **generalização e especialização** nos capacitou a traduzir regras de negócio complexas em um diagrama claro e preciso, criando uma ponte indispensável entre a visão do negócio e a implementação técnica.
+
+Com o modelo conceitual em mãos, avançamos para o processo de refinar a estrutura lógica através da **Normalização**. Desmistificamos este processo passo a passo, compreendendo-o não como um exercício teórico, mas como uma técnica pragmática para eliminar a redundância e proteger a integridade dos dados contra as anomalias de atualização. Percorremos as **Formas Normais**, desde a fundamental **1FN**, que garante a atomicidade, passando pela **2FN** e **3FN**, que eliminam as dependências parciais e transitivas, até as formas mais avançadas como a **FNBC**, **4FN** e **5FN**, que resolvem anomalias mais sutis.
+
+Por fim, abordamos o tratamento de **valores nulos**, um aspecto prático e onipresente que introduz a complexidade da lógica de três valores, fundamental para a correta manipulação e consulta de dados no mundo real.
+
+Ao concluir este capítulo, temos um entendimento coeso de como transformar uma necessidade de negócio em um modelo conceitual robusto e, em seguida, refinar esse modelo em um conjunto de tabelas bem estruturadas, normalizadas e prontas para a implementação. Estes são os alicerces indispensáveis sobre os quais construiremos nosso conhecimento prático na linguagem SQL, o tema do nosso próximo encontro.
+
