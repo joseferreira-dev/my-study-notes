@@ -249,7 +249,7 @@ Antes de analisá-las, é importante conhecer dois conceitos:
 
 Para fins de análise, tanto as conjunções simples, quanto as locuções e os pares correlatos são classificados de acordo com o mesmo valor semântico.
 
-#### **1. Conjunções Coordenativas Aditivas**
+#### Conjunções Coordenativas Aditivas
 
 Expressam uma ideia de **adição, soma, acréscimo** ou sequência de ideias.
 
@@ -269,4 +269,54 @@ Expressam uma ideia de **adição, soma, acréscimo** ou sequência de ideias.
 >     - **Senão:** Pode ter valor aditivo quando equivale a "mas também", geralmente após "não só". _Exemplo: O projeto agradou não só ao diretor, **senão** a toda a equipe._
 >     - **Tampouco:** É um advérbio que pode ser usado com valor aditivo-negativo, em substituição a "nem". _Exemplo: Não concordou com o plano, **tampouco** apresentou uma alternativa._
 >     - **Ainda:** O advérbio "ainda" pode ser usado para introduzir um último elemento aditivo, com valor de "além disso". _Exemplo: Ele é inteligente, dedicado e **ainda** tem um ótimo senso de humor._
+
+#### Conjunções Coordenativas Adversativas
+
+As conjunções adversativas são aquelas que ligam duas orações independentes estabelecendo uma relação de **contraste, oposição, ressalva, compensação** ou **quebra de expectativa**.
+
+- **Principais:** mas, porém, contudo, todavia, entretanto, no entanto, senão (com valor de "mas sim"), não obstante.
+
+Embora todas expressem uma ideia de adversidade, o tipo de contraste pode variar sutilmente, a depender do contexto:
+
+- **Oposição Direta:** As ideias apresentadas são claramente antagônicas.
+    - _Exemplo:_ Ele é um homem bom, **mas** cometeu um ato mau.
+
+- **Compensação:** A segunda ideia compensa ou equilibra a primeira.
+    - _Exemplo:_ O carro não é o mais bonito, **porém** é muito econômico.
+    - _Exemplo:_ Falou pouco, **mas** falou bonito.
+
+- **Quebra de Expectativa:** A segunda oração contraria a consequência lógica que se esperava da primeira.
+    - _Exemplo:_ O professor era muito tímido, **não obstante** falava bem em público.
+    - _Exemplo:_ Estudou o ano inteiro para a prova, **entretanto** não foi aprovado.
+
+- **Retificação:** A segunda oração corrige ou refina a informação da primeira.
+    - _Exemplo:_ Não tenho apenas um filho, **mas** dois.
+    - _Exemplo:_ A culpa não foi da população, **senão** dos governantes. (Aqui, "senão" equivale a "mas sim").
+
+> **Foco de Prova: O Valor Adversativo da Conjunção "E"**
+> 
+> Embora seja a principal conjunção aditiva, a conjunção **"e"** pode adquirir um valor adversativo, equivalendo a **"mas"**. As bancas examinadoras frequentemente exploram essa possibilidade em questões de semântica.
+> 
+> - _Exemplo:_ O rico tem tudo, **e** vive amargurado. (= mas vive amargurado).
+> - _Exemplo:_ Estava querendo ler, **e** o sono não deixava. (= mas o sono não deixava).
+> 
+> A presença de uma **vírgula antes da conjunção "e"** é um forte indício deste uso adversativo, sendo recomendada pela norma padrão para marcar a quebra de expectativa.
+
+##### A Força Argumentativa da Conjunção Adversativa
+
+Em um texto, a escolha de uma conjunção não é neutra; ela direciona a interpretação do leitor. As conjunções adversativas são consideradas **operadores argumentativos fortes** por uma razão fundamental: em uma estrutura com uma conjunção adversativa, a informação mais relevante, a que representa a opinião final do autor, é sempre a que vem **depois** da conjunção.
+
+- **Análise de Foco:**
+    - _Frase 1:_ O candidato é esforçado, **mas** um pouco despreparado.
+        - **Foco Argumentativo:** A ênfase recai na ressalva, no ponto negativo ("despreparado"). A qualidade "esforçado" é minimizada.
+
+    - _Frase 2:_ O candidato é um pouco despreparado, **mas** esforçado.
+        - **Foco Argumentativo:** A ênfase recai na qualidade ("esforçado"), que se sobrepõe ao ponto negativo. A impressão final é positiva.
+
+Esta percepção é crucial para questões de interpretação que pedem para identificar o ponto de vista do autor.
+
+- **Adversidade vs. Concessão:** A adversidade é semanticamente "prima" da concessão (expressa por "embora", "ainda que", etc.). Ambas indicam contraste. A diferença está no foco argumentativo. A conjunção adversativa destaca o contraste, enquanto a concessiva "rebaixa" uma ideia para dar mais força à outra.
+    
+    - _Adversativa:_ Ele é honesto, **mas** não concordo com suas ideias. (O foco está na discordância).
+    - _Concessiva:_ **Embora** ele seja honesto, não concordo com suas ideias. (O foco principal continua sendo a discordância; a honestidade é um obstáculo que não impediu a opinião contrária).
 
