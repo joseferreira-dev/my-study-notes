@@ -816,3 +816,58 @@ Para resolver as dependências parciais, decompomos a tabela original em tabelas
 
 Ao final do processo, decompusemos a tabela original em três novas tabelas. A redundância foi eliminada (o nome de cada funcionário e de cada projeto agora está armazenado em um único lugar) e todas as tabelas resultantes estão na **Segunda Forma Normal**. Com a base de dados mais organizada, podemos avançar para a próxima etapa.
 
+#### Terceira Forma Normal (3FN)
+
+Após garantir que a tabela esteja na 1FN (valores atômicos) e na 2FN (sem dependências parciais), o próximo passo é alcançar a Terceira Forma Normal (3FN).
+
+O objetivo da 3FN é **eliminar as dependências funcionais transitivas**. Para ser classificada nesta forma, a tabela deve atender a duas condições:
+
+1. A tabela já deve estar na 2FN.
+2. Nenhum atributo não-chave pode ser funcionalmente dependente de outro atributo não-chave.
+
+Uma **dependência transitiva** ocorre quando temos a seguinte situação: a Chave Primária determina um Atributo A (que não é chave), e esse Atributo A determina um Atributo B (que também não é chave). Em outras palavras, `PK → Atributo_A → Atributo_B`. O Atributo B depende indiretamente da chave primária, através de outro atributo. A regra da 3FN diz que todos os atributos não-chave devem depender **diretamente e exclusivamente** da chave primária.
+
+##### Estudo de Caso: Removendo Dependências Transitivas
+
+Vamos analisar a seguinte tabela de funcionários, que já se encontra na 2FN (pois possui uma chave primária simples, `id_func`, e, portanto, não pode ter dependências parciais).
+
+<div align="center">
+<img width="700px" src="./img/02-terceira-forma-normal-1.png">
+</div>
+
+**1. Análise da Tabela e suas Dependências**
+
+Apesar de estar na 2FN, esta tabela ainda apresenta redundância. Note que as informações do departamento de RH (nome "RH" e gerente "Bruna") se repetem para os funcionários Rodrigo e Tiago. Essa redundância é um sintoma de uma dependência transitiva e pode causar anomalias de atualização: se o gerente do RH mudar, seria preciso atualizar a linha de todos os funcionários daquele departamento.
+
+Vamos analisar as dependências funcionais:
+
+- A chave primária é `id_func`.
+- Os atributos `nome_func`, `sexo` e `id_dep` dependem diretamente da chave primária `id_func` (para cada `id_func`, temos um único nome, sexo e ID de departamento).
+- No entanto, os atributos `nome_dep` e `gerente_dep` **não dependem** da chave primária `id_func`. Eles dependem do `id_dep`.
+
+Temos aqui uma clara dependência transitiva: `id_func` → `id_dep` → (`nome_dep`, `gerente_dep`).
+
+<div align="center">
+<img width="700px" src="./img/02-terceira-forma-normal-2.png">
+</div>
+
+**2. Aplicando as Regras da 3FN (Decomposição)**
+
+Para resolver a dependência transitiva, devemos mover os atributos transitivamente dependentes e o atributo do qual eles dependem para uma nova tabela.
+
+- **Criamos a tabela `DEPARTAMENTOS`:** Criamos uma nova tabela para armazenar exclusivamente as informações sobre os departamentos. Ela conterá o `id_dep` como sua chave primária, e os atributos que dependem dele (`nome_dep`, `gerente_dep`).
+
+<div align="center">
+<img width="400px" src="./img/02-terceira-forma-normal-3.png">
+</div>
+
+- **Ajustamos a tabela `FUNCIONÁRIOS`:** Na tabela original, removemos as colunas `nome_dep` e `gerente_dep`. A coluna `id_dep` é mantida, mas agora ela serve como uma **chave estrangeira (FK)** que aponta para a chave primária da nova tabela `DEPARTAMENTOS`, estabelecendo a relação entre um funcionário e seu departamento.
+
+<div align="center">
+<img width="460px" src="./img/02-terceira-forma-normal-4.png">
+</div>
+
+Com essa decomposição, eliminamos a dependência transitiva e a redundância. As informações de cada departamento agora estão armazenadas em um único local. Se o gerente de um departamento mudar, a alteração precisa ser feita em apenas um registro na tabela `DEPARTAMENTOS`.
+
+Ambas as tabelas resultantes, `FUNCIONÁRIOS` e `DEPARTAMENTOS`, estão agora na **Terceira Forma Normal**. Para a grande maioria das aplicações de banco de dados, alcançar a 3FN é o objetivo principal da normalização, pois ela resolve as anomalias de atualização mais comuns, resultando em um design limpo, eficiente e consistente. Embora existam formas normais mais avançadas (BCNF, 4FN, 5FN) que lidam com casos de dependência mais complexos e raros, a 3FN é considerada o padrão para um bom projeto de banco de dados relacional.
+
