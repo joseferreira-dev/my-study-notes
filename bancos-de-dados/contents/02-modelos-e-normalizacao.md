@@ -327,3 +327,157 @@ A tabela a seguir resume as diferentes classificações de atributos e suas resp
 | **Atributo Derivado**      | <div align="center"><img width="160px" src="./img/02-atributos-derivados.png"></div>    |
 _* É possível representar atributos chave, ou identificadores, através de circunferências preenchidas. A notação sublinhada é usada quando temos um nível de detalhe maior no modelo, enquanto a notação preenchida passa uma visão mais generalista._
 
+### Relacionamentos
+
+Se as entidades são os "substantivos" e os atributos são os "adjetivos" do nosso modelo, os **relacionamentos** são os "verbos". Eles representam as associações, interações ou vínculos que existem entre as ocorrências de uma ou mais entidades, descrevendo como elas estão conectadas. No DER, os relacionamentos são representados por losangos.
+
+Por exemplo, em um sistema de uma instituição de ensino, temos a entidade `Aluno` e a entidade `Curso`. A ação que as conecta é o fato de que um aluno **se matricula em** um curso. "Matricula-se" é, portanto, o relacionamento entre elas. Da mesma forma, um `Professor` **ministra** um `Curso`, estabelecendo outro relacionamento.
+
+É importante destacar que a existência de um relacionamento não significa que toda ocorrência de uma entidade precise, obrigatoriamente, participar dele. Um professor pode estar cadastrado no sistema, mas ainda não ministrar nenhum curso. Essa característica, chamada de **opcionalidade** ou **participação**, é definida através da cardinalidade, um conceito que veremos em detalhe a seguir.
+
+Os relacionamentos são classificados de acordo com o número de entidades que participam dele, uma característica chamada de **grau do relacionamento**.
+
+#### Grau do Relacionamento
+
+- **Relacionamento Unário (ou Recursivo):** É um relacionamento de grau 1, no qual uma entidade se relaciona consigo mesma. Ou seja, ocorrências da mesma entidade se associam.
+    - **Exemplo 1: Casamento.** Em um banco de dados de um cartório, a entidade `PESSOA` pode ter um relacionamento `Casa-se com` com a própria entidade `PESSOA`.
+    - **Exemplo 2: Supervisão.** Em uma empresa, a entidade `FUNCIONARIO` pode ter um relacionamento `Supervisiona`, onde uma ocorrência (o gestor) se relaciona com outras ocorrências (os subordinados).
+
+<div align="center">
+<img width="280px" src="./img/02-relacionamento-recursivo.png">
+</div>
+
+- **Relacionamento Binário:** É o tipo mais comum, de grau 2, que associa ocorrências de **duas** entidades distintas. A maioria dos exemplos, como `Aluno se matricula em Curso`, são relacionamentos binários.
+- **Relacionamento Ternário:** É um relacionamento de grau 3, que associa ocorrências de **três** entidades simultaneamente. São menos comuns, mas necessários quando uma associação só faz sentido com a presença de três partes.
+    - **Exemplo:** Em um sistema de logística, um `FORNECEDOR` fornece uma `PEÇA` para um `PROJETO`. O relacionamento `Fornece` é ternário, pois a informação completa exige saber quem forneceu, o que foi fornecido e para qual projeto.
+
+#### Entidades Associativas: Quando o Relacionamento tem Atributos
+
+Via de regra, relacionamentos apenas indicam a existência de um vínculo. No entanto, em alguns casos, especialmente em relacionamentos de muitos-para-muitos (N:M), o próprio relacionamento pode ter atributos que o descrevem.
+
+Nestes casos, o relacionamento é "promovido" a uma **entidade associativa**, um construto híbrido que se comporta tanto como uma entidade (pois possui atributos) quanto como um relacionamento (pois conecta outras entidades).
+
+- **Exemplo:** A relação entre `MÉDICO` e `PACIENTE` é de muitos-para-muitos. Um médico atende vários pacientes e um paciente pode ser atendido por vários médicos. O evento que os une é a `CONSULTA`. Onde armazenar a `Data`, a `Hora` e o `Diagnóstico` da consulta? Essa informação não pertence exclusivamente ao médico nem ao paciente, mas sim à interação entre eles. A solução é transformar `CONSULTA` em uma entidade associativa.
+- **Representação no DER:** Um retângulo envolvendo o losango do relacionamento.
+
+Como uma entidade associativa também é uma entidade, ela pode participar de outros relacionamentos.
+
+<div align="center">
+<img width="440px" src="./img/02-relacionamento-associativo.png">
+</div>
+
+### Cardinalidade
+
+Após definirmos as entidades e os relacionamentos, precisamos especificar as **regras de negócio** que governam como as ocorrências dessas entidades podem se associar. Essa especificação é feita através da **cardinalidade**.
+
+A cardinalidade de um relacionamento define o **número mínimo e máximo** de ocorrências de uma entidade que podem estar associadas a **uma** ocorrência da outra entidade participante. Em termos simples, ela responde à pergunta "quantos?". Os valores possíveis são:
+
+- **0 (zero):** indica que a participação no relacionamento é opcional.
+- **1 (um):** indica uma participação específica e única.
+- **N**: indica "muitos", sem um limite superior definido.
+
+Esses valores são sempre representados em um par **(mínimo, máximo)**.
+
+#### Lendo a Cardinalidade no Diagrama
+
+A leitura da cardinalidade é um ponto que frequentemente causa confusão, mas segue uma regra simples: para entender a relação de uma entidade A com uma entidade B, deve-se ler o par de cardinalidade que está posicionado **ao lado da entidade B**.
+
+Vamos analisar o exemplo clássico `Professor ministra Curso`:
+
+<div align="center">
+<img width="700px" src="./img/02-cardinalidade.png">
+</div>
+
+Para interpretar o diagrama, seguimos um método passo a passo:
+
+1. **Leitura (Professor → Curso):**
+    - Comece na entidade de origem: "UM `Professor`..."
+    - Leia o nome do relacionamento: "...`ministra`..."
+    - Leia o par de cardinalidade ao lado da entidade de destino: "...no mínimo `0` e no máximo `N`..."
+    - Finalize com o nome da entidade de destino: "...`Cursos`."
+    - **Frase completa:** "Um professor ministra no mínimo 0 e no máximo N cursos."
+
+2. **Leitura (Curso → Professor):**
+    - Comece na entidade de origem: "UM `Curso`..."
+    - Leia o nome do relacionamento: "...é `ministrado por`..." (note que o verbo pode ser adaptado para fazer sentido)
+    - Leia o par de cardinalidade ao lado da entidade de destino: "...no mínimo `1` e no máximo `n`..."
+    - Finalize com o nome da entidade de destino: "...`Professores`."
+    - **Frase completa:** "Um curso é ministrado por no mínimo 1 e no máximo n professores."
+
+#### Os Componentes da Cardinalidade: Participação e Grau
+
+O par (mínimo, máximo) nos revela duas informações cruciais sobre o relacionamento:
+
+- **Cardinalidade Mínima (Restrição de Participação):** Define se a participação de uma entidade no relacionamento é obrigatória ou opcional.
+    - **Participação Opcional (mínimo = 0):** Uma ocorrência da entidade **pode existir** sem estar associada a nenhuma ocorrência da outra entidade. No nosso exemplo, um `Professor` pode estar cadastrado no sistema sem ministrar nenhum `Curso`.
+    - **Participação Obrigatória (mínimo = 1 ou mais):** Uma ocorrência da entidade **deve obrigatoriamente** estar associada a pelo menos uma ocorrência da outra entidade. No nosso exemplo, um `Curso` não pode existir se não tiver pelo menos um `Professor` associado a ele.
+
+- **Cardinalidade Máxima (Razão de Cardinalidade ou Grau):** Define o número máximo de associações e classifica o tipo de relacionamento.
+    - **Um-para-Um (1:1):** Cada ocorrência de A se relaciona com no máximo uma de B, e vice-versa. Exemplo: `DIRETOR` (1,1) — `dirige` — (1,1) `ESCOLA`.
+    - **Um-para-Muitos (1:N):** Uma ocorrência de A se relaciona com muitas de B, mas uma de B se relaciona com apenas uma de A. Exemplo: `MÃE` (1,1) — `tem` — (1,N) `FILHO`.
+    - **Muitos-para-Muitos (N:M ou N:N):** Uma ocorrência de A se relaciona com muitas de B, e vice-versa. Exemplo: `ALUNO` (0,N) — `cursa` — (0,N) `DISCIPLINA`.
+
+É importante não confundir a cardinalidade de relacionamentos com a **cardinalidade de atributos**, que descreve o número de valores que um único atributo pode ter para uma instância de uma entidade (monovalorado vs. multivalorado).
+
+#### Outras Notações de Cardinalidade
+
+Além da notação numérica (mínimo, máximo), que é muito comum em modelos conceituais teóricos, existem outras duas formas de representação gráfica da cardinalidade que são amplamente utilizadas em ferramentas de modelagem e na documentação de sistemas. Cada uma possui suas próprias convenções e nível de detalhe.
+
+##### Notação "Pé de Galinha" (Crow's Foot)
+
+Esta é, possivelmente, a notação mais popular e intuitiva, utilizada em uma vasta gama de ferramentas de modelagem de dados. Seu nome deriva do símbolo usado para representar "muitos", que se assemelha a um pé de galinha. A grande vantagem desta notação é a sua clareza visual, decompondo a cardinalidade em dois símbolos distintos em cada extremidade do relacionamento.
+
+A simbologia é lida da entidade para a linha de relacionamento, com o símbolo mais próximo da entidade representando a **cardinalidade mínima** (participação) e o símbolo na extremidade da linha representando a **cardinalidade máxima** (grau).
+
+Os símbolos são:
+
+- **Cardinalidade Mínima:**
+    - **O (círculo):** Representa **zero (0)**, indicando uma participação **opcional**.
+    - **| (traço vertical):** Representa **um (1)**, indicando uma participação **obrigatória**.
+
+- **Cardinalidade Máxima:**
+    - **| (traço vertical):** Representa **um (1)**.
+    - **< (pé de galinha):** Representa **muitos (N)**.
+
+Combinando esses símbolos, podemos representar todas as cardinalidades:
+
+- **Zero ou Um (0,1):** Representado por `O|`.
+    - _Exemplo:_ `FUNCIONÁRIO` e `VAGA_ESTACIONAMENTO`. Um funcionário pode ter zero ou no máximo uma vaga. A participação é opcional, e a cardinalidade máxima é um.
+
+- **Exatamente Um (1,1):** Representado por `||`.
+    - _Exemplo:_ `PEDIDO` e `CLIENTE`. Um pedido deve pertencer a exatamente um cliente. A participação é obrigatória, e a cardinalidade máxima é um.
+
+- **Zero ou Muitos (0,N):** Representado por `O<`.
+    - _Exemplo:_ `CLIENTE` e `PEDIDO`. Um cliente pode ter feito zero ou muitos pedidos. A participação é opcional, e a cardinalidade máxima é muitos.
+
+- **Um ou Muitos (1,N):** Representado por `|<`.
+    - _Exemplo:_ `DEPARTAMENTO` e `FUNCIONÁRIO`. Um departamento deve ter no mínimo um e pode ter muitos funcionários. A participação é obrigatória, e a cardinalidade máxima é muitos.
+
+<div align="center">
+<img width="480px" src="./img/02-notacao-pe-de-galinha.png">
+</div>
+
+##### Notação IDEF1X
+
+A notação IDEF1X (Integration DEFinition for Information Modeling) é um padrão mais formal e rico em informações, frequentemente utilizado em projetos de engenharia de software, data warehousing e por agências governamentais dos EUA. Sua simbologia consegue expressar não apenas a cardinalidade, mas também o tipo do relacionamento (se ele ajuda a identificar a entidade filha ou não).
+
+Os principais componentes da notação são:
+
+- **Tipo da Linha (Natureza do Relacionamento):**
+    - **Linha Sólida:** Representa um **relacionamento identificador**. Isso significa que a chave primária da entidade "pai" migra para a entidade "filha" e se torna **parte** da chave primária da entidade filha. Isso é típico em relacionamentos com entidades fracas.
+    - **Linha Tracejada:** Representa um **relacionamento não-identificador**. Este é o caso mais comum. A chave primária da entidade "pai" migra para a entidade "filha" como uma chave estrangeira, mas **não** faz parte da chave primária da filha.
+
+- **Símbolo na Extremidade (Cardinalidade):**
+    - Um círculo sem nenhuma marcação ao lado geralmente indica **zero, um ou muitos**.
+    - Um círculo com a letra **Z** ao lado indica **zero ou um (0,1)**.
+    - Um círculo com a letra **P** (de "Positive") ao lado indica **um ou mais (1,N)**.
+    - Um círculo com um número (`n`) ao lado indica **exatamente `n`**.
+    - A ausência de qualquer símbolo na extremidade geralmente implica uma cardinalidade máxima de **um (1)**.
+    - Um **losango** na extremidade da linha indica que a participação é **opcional (0)**. A ausência do losango indica participação **obrigatória (1)**.
+
+<div align="center">
+<img width="480px" src="./img/02-notacao-idef1x.png">
+</div>
+
+Embora mais complexa, a notação IDEF1X carrega mais informações semânticas sobre a estrutura do banco de dados, sendo muito precisa para detalhar as regras de dependência entre as entidades.
+
