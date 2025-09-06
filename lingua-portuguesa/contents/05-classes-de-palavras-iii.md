@@ -382,3 +382,50 @@ A diferença entre o **pois explicativo** e o **pois conclusivo** é, portanto, 
 
 - **Pois explicativo:** Inicia a oração, antes do verbo. _Ex: Volte, **pois** sinto sua falta._
 - **Pois conclusivo:** Vem após o verbo, entre vírgulas. _Ex: Sinto sua falta; voltarei, **pois**, imediatamente._
+
+### As Conjunções Subordinativas
+
+Diferentemente das coordenativas, que ligam elementos independentes, as conjunções subordinativas conectam duas orações que possuem uma relação de **dependência sintática**. A oração iniciada pela conjunção é chamada de **oração subordinada**, e ela exerce uma função sintática (de sujeito, objeto, adjunto adverbial, etc.) em relação à outra, que é chamada de **oração principal**.
+
+O domínio desta matéria é fundamental, pois é a base para a correta análise e pontuação do período composto. As conjunções subordinativas se dividem em dois grandes grupos: as **integrantes** e as **adverbiais**.
+
+#### Conjunções Integrantes
+
+As conjunções integrantes recebem este nome porque iniciam uma oração que **integra** ou **completa** o sentido da oração principal, que, sem ela, estaria sintaticamente incompleta. Elas introduzem as chamadas **orações subordinadas substantivas**.
+
+As conjunções integrantes não possuem valor semântico próprio; funcionam apenas como um conectivo gramatical. São apenas duas:
+
+- **QUE** (a mais comum)
+- **SE** (quando introduz uma dúvida ou incerteza)
+
+> **Foco de Prova: O Teste da Substituição por "ISTO"**
+> 
+> A maneira mais eficaz de identificar se "que" ou "se" são conjunções integrantes é tentar substituir toda a oração que elas iniciam pela palavra **ISTO** (ou suas variações, como "disso", "nisso"). Se a substituição for possível e mantiver a lógica da frase, trata-se de uma conjunção integrante.
+> 
+> - _Exemplo:_ Só quero **que você me aqueça nesse inverno**.
+> - _Teste:_ Só quero **ISTO**. (A substituição funciona perfeitamente).
+
+##### As Orações Substantivas: Uma Visão Geral
+
+As orações subordinadas substantivas, como o nome indica, exercem as funções sintáticas típicas de um substantivo (sujeito, objeto direto, objeto indireto, etc.). Embora a análise detalhada de cada uma seja matéria de Sintaxe, reconhecer suas estruturas ajuda a identificar a conjunção integrante.
+
+|Tipo de Oração Substantiva|Função Sintática|Exemplo|
+|---|---|---|
+|**Subjetiva**|**Sujeito** da oração principal.|**É necessário que você estude.** (Isto é necessário).|
+|**Objetiva Direta**|**Objeto Direto** do verbo da oração principal.|Quero **que você estude.** (Quero isto). <br> Eles não sabiam **se haveria aula.**|
+|**Objetiva Indireta**|**Objeto Indireto** do verbo da oração principal (iniciada por preposição).|O candidato necessita **de que todos o apoiem.** (Necessita disto).|
+|**Completiva Nominal**|**Complemento Nominal** de um nome da oração principal (iniciada por preposição).|Tenho esperança **de que vamos vencer.** (Tenho esperança disto).|
+|**Predicativa**|**Predicativo do Sujeito** da oração principal (geralmente após o verbo "ser").|O bom é **que a prova foi adiada.** (O bom é isto).|
+|**Apositiva**|**Aposto** de um termo da oração principal (geralmente após dois-pontos).|João só queria uma coisa: **que fosse aprovado logo.**|
+
+##### Distinção Importante: Conjunção vs. Preposição Acidental
+
+É preciso ter cuidado para não confundir a conjunção integrante "que" com a preposição acidental "que" em locuções verbais que indicam obrigação ou necessidade.
+
+- **Estrutura:** `verbo ter/haver + que/de + infinitivo`
+- **Exemplos:**
+    - Tenho **que** estudar mais. (= Tenho **de** estudar mais).
+    - Hei **de** passar neste concurso.
+
+Nesses casos, "que" e "de" são considerados **preposições acidentais**, e não conjunções integrantes, pois a estrutura não pode ser substituída por "isto" (_"Tenho isto"_ não recupera o sentido original).
+
