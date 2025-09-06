@@ -534,3 +534,36 @@ Expressam uma **comparação** entre os fatos ou seres mencionados na oração p
 
 - **Exemplo:** Ele estuda **tanto quanto** seu tio médico (estuda).
 - **Exemplo:** Ela é inteligente **como** a mãe (é).
+
+##### Conjunções Causais
+
+Expressam a **causa, o motivo** ou **a razão** do fato enunciado na oração principal. A oração introduzida por uma conjunção causal contém o evento que, cronologicamente, antecede e provoca o acontecimento da oração principal.
+
+- **Principais:** porque, que, como (sempre no início da frase), pois que, já que, uma vez que, visto que, na medida em que, porquanto.
+- **Exemplos:**
+    - Não fomos à praia **porque** estava chovendo.
+    - **Como** o tempo estava instável, a viagem foi cancelada.
+    - Ele foi aprovado, **uma vez que** estudou com muita dedicação.
+    - **Visto que** todos concordaram, a proposta foi aceita.
+
+###### Reescrita com Preposição Causal
+
+É muito comum em provas a solicitação para reescrever uma oração causal, substituindo a conjunção por uma preposição de mesmo valor semântico (como "por"). Essa alteração exige uma mudança na forma verbal, que geralmente vai para o infinitivo.
+
+- **Com Conjunção:** Não fiz a questão **porque não sabia** o conteúdo.
+- **Com Preposição:** Não fiz a questão **por não saber** o conteúdo.
+
+> **Foco de Prova: Causa vs. Consequência vs. Explicação**
+> 
+> A relação de causa e efeito é um pilar da argumentação e da interpretação de textos. É fundamental não confundir a **causa** (a origem do fato) com a **consequência** (o resultado do fato) e a **explicação** (a justificativa para uma afirmação).
+> 
+> |Relação Lógica|Exemplo|Análise da Relação|
+> |---|---|---|
+> |**CAUSA**|A grama cresceu **porque choveu muito**.|A chuva (causa, fato anterior) provocou o crescimento da grama (efeito).|
+> |**CONSEQUÊNCIA**|Choveu tanto **que a grama cresceu**.|O crescimento da grama (consequência) foi o resultado da intensidade da chuva.|
+> |**EXPLICAÇÃO**|Choveu, **porque a grama está molhada**.|A grama molhada (evidência) é a justificativa para a _afirmação_ de que choveu, não a sua causa. A vírgula antes da conjunção é um forte indício da relação explicativa.|
+> 
+> **Conselho para a Prova:**
+> 
+> A distinção entre **causa** e **explicação** é, por vezes, muito sutil, e grandes gramáticos admitem que "não possui limites claros". Em geral, não é preciso se preocupar com essa diferenciação, tratando ambas como uma "justificativa". Contudo, se uma questão apresentar "causa" em uma alternativa e "explicação" em outra, aplique o critério: a **causa** é a origem de um **fato**; a **explicação** é o fundamento para uma **afirmação, ordem ou suposição**.
+
