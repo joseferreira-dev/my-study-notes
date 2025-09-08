@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lingua-portuguesa/README.md",
-                "mode": "source",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "06-avaliacao-educacional"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lingua-portuguesa/README.md",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de README"
+              "title": "Sumário de 06-avaliacao-educacional"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "lingua-portuguesa/README.md",
     "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
     "lingua-portuguesa/contents/img/05-conjuncao-pois.png",
     "lingua-portuguesa/contents/img/05-conjuncao-como.png",

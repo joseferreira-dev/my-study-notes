@@ -79,7 +79,7 @@ O segundo grupo de avaliações expande o foco do indivíduo para o coletivo. Tr
 <img width="700px" src="./img/06-avaliacao-conhecimento-coletivo.png">
 </div>
 
-A seguir, cada uma dessas propostas será analisada em profundidade, começando pelas avaliações focadas na construção do conhecimento individual.
+A seguir, cada uma dessas propostas será analisada em profundidade, começando pelas avaliações focadas na construção do conhecimento coletivo e institucional.
 
 ## Concepções e Críticas
 
@@ -87,7 +87,7 @@ O tema da avaliação, como vimos, se desdobra em múltiplos níveis e funções
 
 ### Concepções das Avaliações em Larga Escala
 
-A partir da década de 1990, alinhado a um movimento global de busca por maior eficiência e accountability na gestão pública, o Brasil passou a adotar de forma sistemática o uso de **testes padronizados** como a principal ferramenta para diagnosticar a educação nacional. Estas avaliações, que correspondem ao que já definimos como **Avaliação de Sistemas** e **Avaliação Externa**, são elaboradas com o objetivo central de levantar dados sobre a qualidade do ensino e a aprendizagem dos alunos em todo o país.
+A partir da década de 1990, alinhado a um movimento global de busca por maior eficiência e _accountability_ na gestão pública, o Brasil passou a adotar de forma sistemática o uso de **testes padronizados** como a principal ferramenta para diagnosticar a educação nacional. Estas avaliações, que correspondem ao que já definimos como **Avaliação de Sistemas** e **Avaliação Externa**, são elaboradas com o objetivo central de levantar dados sobre a qualidade do ensino e a aprendizagem dos alunos em todo o país.
 
 A concepção fundamental que orienta estas políticas é a de que, para melhorar o sistema, é preciso primeiro ter um diagnóstico preciso de seus problemas. A avaliação em larga escala, portanto, é definida da seguinte forma:
 
@@ -127,7 +127,11 @@ A implementação de políticas de avaliação em larga escala pelo governo fede
 > **VII - garantia de padrão de qualidade.**
 > VIII - piso salarial profissional nacional para os profissionais da educação escolar pública, nos termos de lei federal.
 
-Este inciso VII estabelece a **garantia de um padrão de qualidade** como um direito e um dever. Para verificar e promover este padrão em um país de dimensões continentais, a própria Constituição prevê o papel do governo federal. O parágrafo primeiro do artigo 210 afirma que a União exercerá, em matéria educacional, uma função redistributiva e supletiva para garantir a equalização de oportunidades e o padrão mínimo de qualidade, e fará isso mediante **assistência técnica e financeira** aos estados e municípios.
+Este inciso VII estabelece a **garantia de um padrão de qualidade** como um direito e um dever. Para verificar e promover este padrão em um país de dimensões continentais, a própria Constituição prevê o papel do governo federal. O parágrafo primeiro do artigo 211 afirma que a União exercerá, em matéria educacional, uma função redistributiva e supletiva para garantir a equalização de oportunidades e o padrão mínimo de qualidade, e fará isso mediante **assistência técnica e financeira** aos estados e municípios.
+
+> **Art. 211**. A União, os Estados, o Distrito Federal e os Municípios organizarão em regime de colaboração seus sistemas de ensino.
+> 
+> § 1º A União organizará o sistema federal de ensino e o dos Territórios, financiará as instituições de ensino públicas federais e exercerá, em matéria educacional, função redistributiva e supletiva, de forma a garantir equalização de oportunidades educacionais e padrão mínimo de qualidade do ensino mediante **assistência técnica** e financeira aos Estados, ao Distrito Federal e aos Municípios;
 
 É precisamente o termo **"assistência técnica"** que serve como justificativa legal para a criação e aplicação de sistemas de avaliação nacionais. A lógica é que, para poder prestar assistência e garantir um padrão de qualidade, o governo federal precisa primeiro diagnosticar a situação da educação no país. As avaliações em larga escala são, portanto, concebidas como o principal instrumento para realizar este diagnóstico.
 
@@ -419,7 +423,7 @@ Para garantir uma análise cíclica de todo o sistema de ensino superior, a apli
 - **Periodicidade Trienal:** A frequência máxima de aplicação do exame para cada área do conhecimento é de três anos. Isso significa que um mesmo curso será avaliado, no máximo, a cada três anos, compondo o que se chama de "Ciclo Avaliativo do SINAES".
 - **Estudantes Habilitados:** A avaliação utiliza dois grupos de estudantes como referência:
     - **Ingressantes:** Alunos que estão no final do primeiro ano do curso.
-    - Concluintes: Alunos que estão no último ano do curso.
+    - **Concluintes:** Alunos que estão no último ano do curso.
         A participação de ambos os grupos permite uma análise do "valor agregado" pelo curso, ou seja, o quanto de conhecimento e competências os estudantes desenvolveram durante sua jornada acadêmica. O desempenho dos ingressantes serve como um ponto de referência inicial.
 
 ##### Estrutura da Prova e Instrumentos Adicionais
@@ -534,7 +538,7 @@ A avaliação da aprendizagem, na prática da sala de aula, pode assumir diferen
 
 Se pensarmos no processo de ensino-aprendizagem como uma jornada, as três funções da avaliação podem ser compreendidas da seguinte forma: a **avaliação diagnóstica** é o mapa que nos mostra o ponto de partida de cada viajante; a **avaliação formativa** é a bússola que nos ajuda a ajustar a rota durante todo o percurso; e a **avaliação somativa** é a fotografia que tiramos no ponto de chegada para registrar a viagem.
 
-### Avaliação Diagnóstica: O Ponto de Partida
+### Avaliação Diagnóstica
 
 A **Avaliação Diagnóstica** é aquela realizada **no início** de um processo de ensino, seja no começo do ano letivo, seja no começo de uma nova unidade didática. Seu objetivo principal é investigar e identificar os **conhecimentos prévios** que os alunos já possuem sobre determinado assunto, bem como suas facilidades e dificuldades.
 
@@ -542,7 +546,7 @@ Esta modalidade é fundamental para um planejamento pedagógico eficaz. Ao reali
 
 Um exemplo clássico, e de grande importância, é a **sondagem da psicogênese da língua escrita** na alfabetização. Ao propor que as crianças escrevam palavras e frases, o professor não está interessado no "certo" ou "errado", mas sim em diagnosticar em qual hipótese de escrita cada criança se encontra (pré-silábica, silábica, alfabética, etc.). Este diagnóstico revela o que a criança já sabe sobre o sistema de escrita e é a informação mais valiosa para o professor planejar as próximas intervenções. A ascensão da avaliação diagnóstica no Brasil está diretamente ligada à influência do construtivismo nas escolas.
 
-### Avaliação Formativa: A Bússola do Percurso
+### Avaliação Formativa
 
 A **Avaliação Formativa** é aquela que acontece **durante** todo o processo de ensino-aprendizagem. Sua principal característica e objetivo é o de **regular** o processo, fornecendo informações contínuas tanto para o professor quanto para o aluno. Ela é a essência da **avaliação _para_ a aprendizagem** (_assessment for learning_).
 
@@ -552,7 +556,7 @@ Um dos instrumentos mais elucidativos da avaliação formativa é o **portfólio
 
 Apesar de seu imenso potencial pedagógico, a avaliação formativa ainda é uma prática de crescimento vagaroso em muitas escolas brasileiras. Sua implementação exige um rompimento cultural com a forte tradição da avaliação somativa, centrada na prova e na nota, que ainda predomina no imaginário de muitos educadores, famílias e estudantes.
 
-### Avaliação Somativa: A Função Classificatória
+### Avaliação Somativa
 
 A **Avaliação Somativa** é a modalidade mais tradicional e amplamente conhecida de avaliação. Sua principal característica é a de ser uma avaliação **pontual**, realizada ao **final** de um processo de ensino (uma unidade didática, um bimestre, um semestre ou o ano letivo).
 
@@ -574,7 +578,7 @@ O professor Cipriano Luckesi é um dos mais importantes críticos do modelo trad
 
 Nesta perspectiva, a avaliação deixa de ser o ponto final do processo e se torna um elemento integrante e fundamental do próprio planejamento. Avaliar é, sobretudo, um ato de investigar a prática pedagógica a partir das informações que a própria prática fornece. É o retorno constante que indica ao professor se o caminho que ele planejou está sendo eficaz ou se são necessárias correções de rota para garantir a aprendizagem de todos.
 
-#### A Distinção Crucial: Avaliar versus Examinar
+#### A Distinção entre Avaliar e Examinar
 
 A contribuição mais célebre de Luckesi é a sua nítida distinção entre o ato de **avaliar** e o ato de **examinar**. Embora muitas vezes usados como sinônimos, para o autor eles representam práticas com finalidades opostas.
 
@@ -591,7 +595,7 @@ A concepção de avaliação de José Carlos Libâneo está diretamente ligada �
 
 Nesta perspectiva, a avaliação é um **processo de regulação** contínuo e parte integrante do planejamento pedagógico. Ela não é um ato isolado no final do percurso, mas um componente que oferece um retorno constante sobre as condições de aprendizagem dos alunos, permitindo que o professor reflita sobre sua prática e a reoriente sempre que necessário. O que é imprescindível não são as notas ou as classificações, mas a informação que a avaliação fornece para a melhoria do processo de ensino.
 
-Para Libâneo, a avaliação cumpre quatro funções pedagógicas interligadas:
+Para Libâneo, a avaliação cumpre quatro funções pedagógicas interligadas, conforme vemos a seguir.
 
 #### Função Diagnóstica
 
