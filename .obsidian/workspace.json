@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
+                "file": "lingua-portuguesa/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-classes-de-palavras-iii"
+              "title": "README"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
+                "file": "lingua-portuguesa/README.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 05-classes-de-palavras-iii"
+              "title": "Sumário de README"
             }
           }
         ],
@@ -171,13 +171,13 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
     "lingua-portuguesa/contents/img/05-conjuncao-pois.png",
     "lingua-portuguesa/contents/img/05-conjuncao-como.png",
     "lingua-portuguesa/contents/img/05-conjuncao-e.png",
     "lingua-portuguesa/contents/img/05-conjuncao-desde-que.png",
     "lingua-portuguesa/contents/img/05-conjuncao-porque.png",
     "lingua-portuguesa/contents/04-classes-de-palavras-ii.md",
-    "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
     "engenharia-de-software/contents/13-metodologias-ageis.md",
     "engenharia-de-software/contents/25-gestao-agil-de-projetos.md",
     "engenharia-de-software/contents/12-modelo-rup.md",
@@ -204,7 +204,6 @@
     "bancos-de-dados/contents/img/02-quarta-forma-normal-3.png",
     "bancos-de-dados/contents/img/02-quarta-forma-normal-2.png",
     "bancos-de-dados/contents/img/02-quarta-forma-normal-1.png",
-    "bancos-de-dados/contents/img/02-forma-normal-boyce-codd-3.png",
     "bancos-de-dados/contents/01-fundamentos.md",
     "sistemas-operacionais/contents/07-windows-desktop.md",
     "engenharia-de-prompt/contents",
