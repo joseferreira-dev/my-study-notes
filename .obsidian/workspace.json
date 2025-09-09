@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "seguranca-da-informacao/README.md",
+                "file": "seguranca-da-informacao/contents/01-principios-de-seguranca.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "01-principios-de-seguranca"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "seguranca-da-informacao/README.md",
+                "file": "seguranca-da-informacao/contents/01-principios-de-seguranca.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de README"
+              "title": "Sumário de 01-principios-de-seguranca"
             }
           }
         ],
@@ -171,8 +171,9 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
-    "sistemas-de-gerenciamento-de-bancos-de-dados/README.md",
     "seguranca-da-informacao/README.md",
+    "seguranca-da-informacao/contents/01-principios-de-seguranca.md",
+    "sistemas-de-gerenciamento-de-bancos-de-dados/README.md",
     "seguranca-da-informacao/contents",
     "seguranca-da-informacao",
     "engenharia-de-software/contents/14-scrum.md",
@@ -204,7 +205,6 @@
     "engenharia-de-software/contents/01-fundamentos.md",
     "engenharia-de-software/contents/09-metodos-formais.md",
     "engenharia-de-software/contents/07-modelo-prototipo.md",
-    "engenharia-de-software/contents/08-modelo-espiral.md",
     "bancos-de-dados/contents/img/02-valores-nulos.png",
     "bancos-de-dados/contents/img/02-valores-nulos-1.png",
     "bancos-de-dados/contents/img/02-quarta-forma-normal-3.png",
