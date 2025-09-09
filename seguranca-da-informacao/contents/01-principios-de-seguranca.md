@@ -42,3 +42,65 @@ Outro exemplo dramático de ataque à disponibilidade é o **ransomware**, um ti
 
 Para assegurar a disponibilidade, as organizações investem em **redundância** de sistemas (servidores e links de comunicação reservas), **planos de recuperação de desastres**, rotinas de **backup** e tecnologias para mitigar ataques de negação de serviço.
 
+### Expandindo a Base: Autenticidade e Não-Repúdio
+
+Embora a confidencialidade, a integridade e a disponibilidade formem a tríade clássica, a complexidade das ameaças modernas e a necessidade de garantir a validade das transações digitais levaram à consolidação de outros princípios igualmente vitais. Entre eles, a autenticidade e o não-repúdio se destacam como pilares para a construção de confiança no ambiente digital.
+
+#### Autenticidade
+
+O princípio da **Autenticidade** busca garantir que uma entidade — seja uma pessoa, um sistema ou um processo — é, de fato, quem ela alega ser. É a propriedade que assegura a validade e a legitimidade da identidade de uma das partes em uma comunicação ou transação. Quando utilizamos o simples recurso de inserir um nome de usuário e uma senha em um sistema, estamos participando de um processo de autenticação. O sistema assume que somente o usuário legítimo possui a combinação correta dessas credenciais e, ao validá-las, confirma a sua identidade.
+
+É importante ressaltar que o processo de **autenticação** depende de uma etapa preliminar indispensável: a **identificação**. A identificação é o ato de apresentar uma identidade, de dizer "eu sou este usuário". A autenticação é o passo seguinte, o de **provar** essa identidade.
+
+No nosso dia a dia, encontramos inúmeros exemplos práticos desses mecanismos:
+
+- **Algo que você sabe:** A forma mais comum, como senhas e PINs. A segurança reside no sigilo dessa informação.
+- **Algo que você tem:** Refere-se a um objeto físico, como um cartão de acesso, um token de segurança que gera códigos numéricos, ou o seu próprio smartphone ao receber um código de verificação por SMS.
+- **Algo que você é:** Refere-se às suas características biométricas, como a impressão digital para desbloquear o celular, o reconhecimento facial para acessar um aplicativo bancário ou a leitura de íris em sistemas de alta segurança.
+
+Sistemas robustos frequentemente combinam dois ou mais desses fatores, em um processo conhecido como **Autenticação de Múltiplos Fatores (MFA)**, para aumentar drasticamente o nível de segurança.
+
+#### Não-Repúdio (Irretratabilidade)
+
+O princípio do **Não-Repúdio**, também conhecido como **Irretratabilidade**, é a garantia de que uma entidade não pode negar a autoria de uma ação que tenha realizado. Ele cria uma prova incontestável que vincula uma ação a uma identidade, impedindo que o autor negue ter enviado uma mensagem, autorizado uma transação ou assinado um documento.
+
+Este princípio tem uma natureza dual, protegendo tanto quem envia quanto quem recebe uma informação. O autor William Stallings, uma referência na área, define essa dualidade da seguinte forma:
+
+> “A irretratabilidade impede que o emissor ou o receptor negue uma mensagem transmitida. Assim, quando uma mensagem é enviada, o receptor pode provar que o emissor alegado de fato enviou a mensagem. De modo semelhante, quando uma mensagem é recebida, o emissor pode provar que o receptor alegado de fato recebeu a mensagem.”
+
+Na prática, o não-repúdio é fundamental para a validade de transações comerciais e legais no mundo digital. Imagine um cenário em que um gestor autoriza uma ordem de compra de alto valor em um sistema. Sem o não-repúdio, ele poderia, mais tarde, alegar que não realizou a autorização para se eximir da responsabilidade. Mecanismos como a **assinatura digital**, que utiliza criptografia para vincular a identidade do signatário a um documento específico, são a principal ferramenta para garantir a irretratabilidade, conferindo validade jurídica ao ato.
+
+### Outros Princípios de Suporte
+
+Além dos pilares já mencionados, outros conceitos servem como suporte e reforço para a construção de um ambiente seguro, garantindo a consistência lógica e a conformidade das operações.
+
+#### Irretroatividade
+
+Diretamente associado aos processos de autenticidade, integridade e não-repúdio, o princípio da **Irretroatividade** estabelece que, uma vez que um evento ou ação tenha sido executado e devidamente registrado, não é possível reverter o ato ou questionar a data e o momento de sua realização. Ele cria um registro temporal definitivo e imutável. Este princípio é vital para garantir a integridade de históricos e a confiabilidade de sistemas de informação, especialmente em contextos de auditoria e forense digital.
+
+Podemos citar como exemplos:
+
+1. Uma vez que uma transação financeira é registrada em uma tecnologia de _blockchain_, torna-se computacionalmente inviável alterá-la ou excluí-la, garantindo sua irretroatividade.
+2. Quando um documento é assinado digitalmente com um carimbo de tempo válido, o ato da assinatura e o momento exato em que ocorreu são fixados permanentemente, não sendo possível revertê-los.
+3. Uma vez que uma autoridade certificadora emite um certificado digital, não é possível revogá-lo com data retroativa.
+
+#### Legalidade
+
+O aspecto da legislação e da normatização é um componente indispensável da Segurança da Informação. O princípio da **Legalidade** (ou **Conformidade**) dita que todas as ações e controles de segurança devem estar em estrita conformidade com as leis, regulamentos e normas vigentes. Respeitar a legislação não é apenas uma obrigação, mas também serve como base para o aprimoramento e a robustez dos ambientes de segurança, garantindo que a organização opere de forma ética e legal. Exemplos incluem a adequação à Lei Geral de Proteção de Dados (LGPD) no Brasil, normas setoriais como as do Banco Central para instituições financeiras, e padrões internacionais como a ISO/IEC 27001.
+
+### Serviços de Segurança da Norma X.800
+
+Para formalizar e padronizar a discussão sobre segurança, especialmente no contexto de redes de computadores e sistemas distribuídos, a União Internacional de Telecomunicações (UIT) desenvolveu a recomendação **X.800**, que define a arquitetura de segurança para a interconexão de sistemas abertos. Esta norma estabelece um vocabulário preciso para diversos serviços de segurança, muitos dos quais são refinamentos dos princípios que acabamos de discutir. Conhecê-los é importante para a compreensão de contextos técnicos mais aprofundados.
+
+- **Autenticação de Entidade Parceira:** Em uma comunicação contínua (uma conexão), este serviço fornece a confiança de que a identidade da entidade na outra ponta da linha é genuína e permanece a mesma durante toda a sessão.
+- **Autenticação da Origem dos Dados:** Em uma transferência de dados sem uma conexão pré-estabelecida (como o envio de um único pacote de dados), este serviço visa assegurar que a origem declarada daquele pacote é quem ela afirma ser.
+- **Confidencialidade Seletiva de Campo:** Este serviço permite proteger a confidencialidade de campos específicos dentro de uma mensagem ou fluxo de dados maior, sem a necessidade de criptografar toda a comunicação.
+- **Confidencialidade do Fluxo de Tráfego:** Visa ocultar informações que poderiam ser obtidas pela simples análise do tráfego de rede, como quem está se comunicando com quem, com que frequência e o volume de dados trocados.
+- **Integridade de Conexão com Recuperação:** Garante a integridade de uma sequência de dados em uma conexão, sendo capaz de detectar qualquer modificação, inserção, deleção ou repetição de dados. Crucialmente, este serviço também é capaz de **recuperar** a informação, revertendo a alteração indevida.
+- **Integridade de Conexão sem Recuperação:** Similar ao anterior, detecta alterações na sequência de dados, mas **não possui** a capacidade de recuperar o estado original da informação.
+- **Integridade Seletiva de Campo em Conexão:** Foca em garantir a integridade de campos específicos dentro dos dados que trafegam em uma conexão.
+- **Integridade sem Conexão:** Proporciona a garantia de integridade para uma única unidade de dados transferida sem conexão, detectando modificações.
+- **Integridade Seletiva de Campo sem Conexão:** Mesma condição do tipo acima, porém, de campos específicos dentro dos dados que trafegam em uma conexão.
+- **Irretratabilidade de Origem:** É o serviço que materializa o não-repúdio na perspectiva do remetente. Fornece ao destinatário uma prova incontestável de que a mensagem foi enviada por uma origem específica.
+- **Irretratabilidade de Destino:** É o serviço que materializa o não-repúdio na perspectiva do receptor. Fornece ao remetente uma prova incontestável de que a mensagem foi recebida por um destino específico.
+
