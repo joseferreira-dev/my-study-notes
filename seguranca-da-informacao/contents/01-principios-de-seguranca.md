@@ -139,7 +139,7 @@ Ao discutir a Segurança da Informação, é essencial diferenciar as duas grand
 
 Ambas as camadas são interdependentes e igualmente cruciais. De nada adianta possuir o firewall mais avançado do mundo (segurança lógica) se um invasor pode simplesmente entrar na sala do servidor e roubar um disco rígido (uma falha de segurança física). A proteção eficaz é aquela que aborda a segurança de forma holística, compreendendo que uma corrente é tão forte quanto seu elo mais fraco.
 
-### Segurança Física: A Primeira Linha de Defesa
+### Segurança Física
 
 A segurança física compreende todas as medidas e controles implementados para proteger fisicamente os ativos de tecnologia da informação — como edifícios, salas de servidores (_datacenters_), equipamentos, cabeamento e fontes de energia — contra ameaças que possam comprometer sua integridade ou disponibilidade. Essa camada de proteção busca impedir o acesso físico não autorizado, bem como mitigar danos causados por desastres naturais, falhas de infraestrutura ou ações maliciosas.
 
@@ -185,4 +185,34 @@ Mesmo dentro de um ambiente controlado, os equipamentos individuais podem ser al
 <div align="center">
 <img width="640px" src="./img/01-seguranca-fisica-travas.png">
 </div>
+
+### Segurança Lógica
+
+Enquanto a segurança física ergue barreiras no mundo tangível, a **segurança lógica** constrói as defesas no domínio digital. Ela abrange o vasto conjunto de medidas, ferramentas e políticas destinadas a proteger os ativos de informação que não possuem forma física: os dados, o software, os sistemas operacionais e os processos. Seu objetivo é garantir a confidencialidade, a integridade e a disponibilidade da informação contra ameaças que operam no ambiente computacional.
+
+A segurança lógica é uma disciplina de múltiplas camadas, pois as ameaças podem surgir em diferentes níveis de um sistema. Podemos considerar suas diversas vertentes:
+
+- **A nível de Rede:** O foco é controlar o fluxo de dados, inspecionar o tráfego em busca de atividades maliciosas e impedir acessos indevidos vindos de redes externas, como a internet. Ferramentas como _firewalls_, Sistemas de Detecção e Prevenção de Intrusão (IDS/IPS) e _Proxies_ são os pilares desta camada.
+- **A nível de Sistema:** A proteção se concentra nos servidores e estações de trabalho. O objetivo é fortalecer o sistema operacional e os serviços em execução, aplicando configurações seguras e garantindo que apenas usuários autorizados tenham acesso. Esta prática é conhecida como _hardening_.
+- **A nível de Aplicação:** A segurança é implementada no próprio software, garantindo que ele seja desenvolvido de forma a resistir a ataques e que os dados manipulados por ele sejam protegidos.
+- **A nível de Dados:** Esta é a camada mais fundamental, que busca proteger a informação em si, através de mecanismos como a criptografia e controles de acesso rigorosos que definem quem pode ler, modificar ou excluir determinados dados.
+
+#### O Conceito de _Hardening_: "Endurecendo" os Sistemas
+
+Um dos processos mais cruciais na segurança lógica de servidores e sistemas é o **_hardening_**. O termo, que pode ser traduzido como "enrijecimento" ou "endurecimento", refere-se ao conjunto de práticas e técnicas aplicadas para tornar um sistema computacional mais robusto e seguro. O objetivo principal do _hardening_ é **reduzir a superfície de ataque** (_attack surface_), ou seja, minimizar o número de vulnerabilidades e pontos de entrada que um atacante poderia explorar.
+
+Um sistema operacional recém-instalado, com suas configurações padrão, geralmente vem com uma variedade de serviços e portas de comunicação ativados para maximizar a compatibilidade e a facilidade de uso. No entanto, cada serviço ativo é uma potencial porta de entrada para um ataque. O _hardening_ inverte essa lógica, seguindo um princípio de "negar tudo por padrão" e habilitar apenas o que é estritamente necessário para a função daquele sistema.
+
+As principais técnicas de _hardening_ incluem:
+
+- **Controle de Privilégios (Acesso _Root_):** Em sistemas baseados em Unix/Linux, o usuário `root` (ou Administrador, no Windows) possui poder irrestrito. Permitir o login direto com essa conta é extremamente arriscado, pois um erro de comando pode destruir o sistema e não há um registro claro de quem realizou a ação. A prática correta é desabilitar o login direto do `root` e forçar o uso de **escalação de privilégios** (com ferramentas como `sudo`). Dessa forma, um administrador faz login com sua conta pessoal e, quando precisa executar uma tarefa administrativa, ele "eleva" temporariamente seus privilégios. Essa abordagem garante que todas as ações privilegiadas fiquem registradas em trilhas de auditoria, vinculadas ao usuário que as executou, adicionando uma camada vital de segurança e rastreabilidade.
+- **Minimização da Superfície de Ataque:** Um servidor deve executar o mínimo possível de serviços. Se um servidor foi configurado para ser um banco de dados, não há razão para ele ter um serviço de e-mail ou um servidor web rodando. Cada serviço desnecessário removido ou desabilitado é uma porta a menos para um atacante explorar. Deve-se manter apenas o que é essencial para a operação.
+- **Controle de Acesso Remoto:** O acesso remoto a servidores deve ser estritamente controlado. Protocolos inseguros que transmitem dados em texto claro, como o Telnet, devem ser desabilitados em favor de protocolos seguros que utilizam criptografia, como o **SSH (_Secure Shell_)**. Além disso, o acesso pode ser ainda mais restringido configurando-se regras de _firewall_ que permitem conexões apenas de máquinas ou redes específicas (uma lista de IPs autorizados, por exemplo).
+- **Gerenciamento de Patches e Atualizações:** Manter o sistema operacional e todas as aplicações instaladas com suas últimas atualizações (_patches_) é um procedimento fundamental. Desenvolvedores de software estão constantemente descobrindo e corrigindo falhas de segurança. Aplicar essas correções rapidamente fecha as brechas antes que elas possam ser exploradas por atacantes.
+
+#### Controle de Acesso Lógico e Auditoria
+
+Mesmo em um sistema "endurecido", é preciso gerenciar quem pode fazer o quê. O **controle de acesso lógico** é o mecanismo que define as permissões dos usuários e sistemas. Após um usuário ser autenticado (provar quem ele é), a **autorização** determina quais recursos (arquivos, sistemas, bancos de dados) ele pode acessar e quais ações (leitura, escrita, exclusão) ele pode executar.
+
+Outro pilar da segurança lógica são os **registros (_logs_)** gerados pelos diversos equipamentos, sistemas e aplicações. Cada ação relevante — um login bem-sucedido, uma tentativa de login falha, a alteração de um arquivo, uma conexão de rede — é registrada. Esses _logs_ são fundamentais para os processos de **auditoria**, permitindo que os administradores monitorem a saúde do sistema, detectem atividades suspeitas e, em caso de um incidente de segurança, realizem uma investigação forense para entender exatamente o que aconteceu.
 
