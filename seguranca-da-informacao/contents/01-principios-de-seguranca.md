@@ -126,10 +126,63 @@ Uma vez que o atacante tenha informações sobre a rede ou consiga uma forma de 
 - **Exploração de Vulnerabilidades:** Uma vulnerabilidade é uma falha de segurança em um software, hardware ou protocolo. Um atacante pode "explorar" essa falha para executar ações maliciosas, como invadir um sistema, escalar privilégios de acesso ou instalar um código malicioso. Equipamentos de rede, como modems e roteadores domésticos, são alvos frequentes. Se vulneráveis, podem ser invadidos, ter suas configurações alteradas e passar a redirecionar as conexões dos usuários para sites fraudulentos, em um ataque conhecido como _pharming_.
 - **Ataque de Personificação (_Spoofing_):** Neste tipo de ataque, um agressor se faz passar por uma entidade legítima na rede. Ele pode, por exemplo, introduzir um ponto de acesso Wi-Fi falso em um local público, com um nome similar ao da rede oficial (ex: "Aeroporto_WiFi_Gratis"). Quando um usuário desatento se conecta a essa rede maliciosa, o atacante se posiciona entre a vítima e a internet, podendo interceptar toda a sua comunicação, em um ataque conhecido como _Man-in-the-Middle_ (MitM).
 
-#### Ataques à Disponibilidade e aos Recursos
+### Ataques à Disponibilidade e aos Recursos
 
 Nem todos os ataques visam roubar informações. Muitos têm como objetivo paralisar sistemas ou utilizar os recursos da vítima para fins ilícitos.
 
 - **Ataque de Negação de Serviço (DoS):** O objetivo deste ataque é violar o princípio da **Disponibilidade**. O atacante utiliza um ou mais computadores para enviar um volume massivo de solicitações ou mensagens para um sistema-alvo (como um servidor web), sobrecarregando seus recursos (processador, memória, link de internet) a tal ponto que ele se torna incapaz de responder a solicitações legítimas, ficando lento ou completamente inoperante. Quando o ataque é orquestrado a partir de milhares de computadores infectados (_zumbis_) ao redor do mundo, ele é chamado de **Ataque de Negação de Serviço Distribuído (DDoS)**.
 - **Uso Indevido de Recursos:** Um atacante pode obter acesso a um computador conectado à rede e, sem o conhecimento do dono, utilizá-lo para a prática de atividades maliciosas. O computador da vítima pode ser transformado em parte de uma **botnet** (rede de robôs) para desferir ataques DDoS, ser usado como um servidor para disseminar _spam_ e _phishing_, ou ter seu poder de processamento sequestrado para minerar criptomoedas, tudo isso enquanto esconde a real identidade do atacante.
+
+## As Camadas de Proteção: Segurança Física e Lógica
+
+Ao discutir a Segurança da Informação, é essencial diferenciar as duas grandes camadas de controle que a compõem: a **segurança física** e a **segurança lógica**. Essa distinção segue o mesmo princípio utilizado para diferenciar a topologia física e a topologia lógica de uma rede. A segurança física lida com o mundo tangível, com tudo aquilo que pode ser tocado, enquanto a segurança lógica se ocupa do universo digital e intangível dos dados e do software.
+
+Ambas as camadas são interdependentes e igualmente cruciais. De nada adianta possuir o firewall mais avançado do mundo (segurança lógica) se um invasor pode simplesmente entrar na sala do servidor e roubar um disco rígido (uma falha de segurança física). A proteção eficaz é aquela que aborda a segurança de forma holística, compreendendo que uma corrente é tão forte quanto seu elo mais fraco.
+
+### Segurança Física: A Primeira Linha de Defesa
+
+A segurança física compreende todas as medidas e controles implementados para proteger fisicamente os ativos de tecnologia da informação — como edifícios, salas de servidores (_datacenters_), equipamentos, cabeamento e fontes de energia — contra ameaças que possam comprometer sua integridade ou disponibilidade. Essa camada de proteção busca impedir o acesso físico não autorizado, bem como mitigar danos causados por desastres naturais, falhas de infraestrutura ou ações maliciosas.
+
+A seguir, vamos detalhar alguns dos principais recursos de segurança física.
+
+#### Proteção da Continuidade de Operações
+
+Um dos maiores riscos físicos para um ambiente de TI é a interrupção do fornecimento de energia elétrica, que pode paralisar completamente as operações. Para garantir a continuidade, são utilizadas soluções de redundância energética.
+
+- **Unidade de Alimentação Ininterrupta (UPS - _Uninterruptible Power Supply_):** Conhecida no Brasil como _Nobreak_, a UPS é um sistema equipado com baterias que armazena energia. Sua função principal é fornecer alimentação elétrica imediata aos equipamentos em caso de uma queda de energia. Isso permite duas ações vitais: dar tempo aos administradores para desligarem os sistemas de forma controlada (_graceful shutdown_), evitando a corrupção de dados, ou manter tudo funcionando por um período limitado até que uma fonte de energia secundária, como um gerador, seja acionada.
+
+<div align="center">
+<img width="360px" src="./img/01-seguranca-fisica-ups.png">
+</div>
+
+- **Gerador:** Seguindo a mesma linha da UPS, o gerador também tem como propósito manter o sistema em operação frente à eventual falta de energia da concessionária. A grande diferença está na autonomia. Enquanto a UPS oferece uma solução de curto prazo, o gerador, alimentado por combustível, pode sustentar a operação por horas ou até dias, sendo essencial para sistemas de missão crítica que não podem parar.
+
+<div align="center">
+<img width="440px" src="./img/01-seguranca-fisica-gerador.png">
+</div>
+
+- **Site Físico Redundante:** Para se proteger contra desastres de grande escala (incêndios, inundações, terremotos) que possam inutilizar completamente o local principal, as organizações podem manter um site físico redundante. Este ambiente secundário é capaz de assumir a operação em caso de uma catástrofe. A replicação dos dados e sistemas para este local é uma parte crucial da estratégia.
+
+#### Proteção do Ambiente e Controle de Acesso
+
+Estes controles visam proteger o perímetro físico e garantir que apenas pessoas autorizadas possam acessar áreas restritas.
+
+- **CFTV (Circuito Fechado de Televisão):** A utilização de câmeras de vigilância para monitorar e gravar as atividades em ambientes críticos, como a entrada de um _datacenter_. Embora seja um meio eminentemente reativo — as gravações são frequentemente usadas para auditoria e investigação após um incidente —, a simples presença de câmeras também atua como um forte fator de dissuasão (preventivo).
+- **Catracas e Portas com Acesso Controlado:** Para restringir o acesso a áreas sensíveis, utilizam-se barreiras físicas como catracas e portas com fechaduras eletrônicas. A autenticação para liberar o acesso pode ser feita através de crachás, _smart cards_, senhas ou, em ambientes de maior segurança, dados biométricos (impressão digital, reconhecimento facial).
+- **Alarmes:** Sistemas de alarme são essenciais para a detecção de eventos anormais. Podem ser alarmes contra intrusão (sensores de movimento, sensores de abertura de portas) ou contra ameaças ambientais (detectores de fumaça para incêndios, sensores de inundação).
+- **Sala-Cofre**: Para a proteção máxima de um datacenter, constroem-se as Salas-Cofre. São ambientes blindados, projetados para resistir a uma vasta gama de desastres, incluindo incêndios, inundações, explosões, arrombamentos e até mesmo interferência eletromagnética. Elas implementam múltiplos controles de segurança, como sistemas de supressão de incêndio com gás inerte (para não danificar os equipamentos), controle de temperatura e umidade, e rigorosos mecanismos de controle de acesso.
+
+<div align="center">
+<img width="640px" src="./img/01-seguranca-fisica-sala-cofre.png">
+</div>
+
+#### Proteção de Equipamentos
+
+Mesmo dentro de um ambiente controlado, os equipamentos individuais podem ser alvos.
+
+- **Travas de Equipamentos**: Existem travas com finalidades distintas. As travas Kensington, por exemplo, são cabos de aço que prendem fisicamente um equipamento (como um notebook ou monitor) a um objeto fixo, como uma mesa, para impedir seu furto. Outro tipo de trava física é o bloqueador de portas, como as travas para portas USB, que impedem fisicamente que um dispositivo não autorizado seja conectado a um computador, protegendo contra a extração de dados ou a introdução de malware.
+
+<div align="center">
+<img width="640px" src="./img/01-seguranca-fisica-travas.png">
+</div>
 
