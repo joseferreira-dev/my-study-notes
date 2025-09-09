@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "engenharia-de-software/contents/14-scrum.md",
+                "file": "seguranca-da-informacao/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "14-scrum"
+              "title": "README"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "engenharia-de-software/contents/14-scrum.md",
+                "file": "seguranca-da-informacao/README.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 14-scrum"
+              "title": "Sumário de README"
             }
           }
         ],
@@ -171,6 +171,11 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "sistemas-de-gerenciamento-de-bancos-de-dados/README.md",
+    "seguranca-da-informacao/README.md",
+    "seguranca-da-informacao/contents",
+    "seguranca-da-informacao",
+    "engenharia-de-software/contents/14-scrum.md",
     "engenharia-de-software/contents/img/14-teste-do-elevador.png",
     "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
     "lingua-portuguesa/README.md",
@@ -200,13 +205,10 @@
     "engenharia-de-software/contents/09-metodos-formais.md",
     "engenharia-de-software/contents/07-modelo-prototipo.md",
     "engenharia-de-software/contents/08-modelo-espiral.md",
-    "engenharia-de-software/contents/05-modelo-rad.md",
-    "bancos-de-dados/contents/02-modelos-e-normalizacao.md",
     "bancos-de-dados/contents/img/02-valores-nulos.png",
     "bancos-de-dados/contents/img/02-valores-nulos-1.png",
     "bancos-de-dados/contents/img/02-quarta-forma-normal-3.png",
     "bancos-de-dados/contents/img/02-quarta-forma-normal-2.png",
-    "bancos-de-dados/contents/img/02-quarta-forma-normal-1.png",
     "engenharia-de-prompt/contents",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
@@ -215,8 +217,6 @@
     "lingua-portuguesa/contents/Nova pasta",
     "bancos-de-dados/contents/img",
     "bancos-de-dados/contents/Nova pasta",
-    "bancos-de-dados/contents",
-    "Sem título.base",
     "Sem título.canvas"
   ]
 }
