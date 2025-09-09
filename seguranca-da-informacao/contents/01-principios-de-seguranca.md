@@ -104,3 +104,32 @@ Para formalizar e padronizar a discussão sobre segurança, especialmente no con
 - **Irretratabilidade de Origem:** É o serviço que materializa o não-repúdio na perspectiva do remetente. Fornece ao destinatário uma prova incontestável de que a mensagem foi enviada por uma origem específica.
 - **Irretratabilidade de Destino:** É o serviço que materializa o não-repúdio na perspectiva do receptor. Fornece ao remetente uma prova incontestável de que a mensagem foi recebida por um destino específico.
 
+## Ameaças e Riscos no Ambiente de Rede
+
+Quando um computador ou dispositivo se conecta a uma rede, seja a internet ou uma rede local, ele abre um universo de possibilidades de comunicação e acesso à informação. No entanto, essa mesma conexão se torna uma porta de entrada para uma vasta gama of de ameaças. A segurança em redes é a disciplina que se dedica a proteger os dados durante sua transmissão e a resguardar os sistemas contra ataques que se originam do ambiente conectado.
+
+O Centro de Estudos, Resposta e Tratamento de Incidentes de Segurança no Brasil (Cert.br), principal referência nacional no assunto, cataloga uma série de riscos e ataques comuns que exploram essa conectividade. Compreender a natureza de cada um deles é o primeiro passo para a construção de defesas eficazes.
+
+### Reconhecimento e Obtenção de Acesso
+
+Antes de um ataque efetivo, os agressores geralmente realizam uma fase de reconhecimento para mapear o ambiente e encontrar pontos fracos.
+
+- **Varredura (_Scanning_):** Um atacante pode realizar varreduras na rede com o objetivo de descobrir quais computadores, servidores e outros dispositivos estão ativos e quais serviços estão em execução em cada um deles. Essa técnica funciona como um "radar", permitindo ao atacante identificar alvos potenciais e, em seguida, focar seus esforços na exploração de vulnerabilidades específicas dos serviços encontrados.
+- **Ataque de Força Bruta (_Brute-force Attack_):** Sistemas que utilizam senhas como método de autenticação estão constantemente expostos a ataques de força bruta. Nessa modalidade, o atacante utiliza um software automatizado que testa sistematicamente todas as combinações possíveis de caracteres, ou um dicionário de senhas comuns, até encontrar a credencial correta. A eficácia desses ataques é drasticamente aumentada quando os usuários utilizam senhas fracas, curtas ou previsíveis, como "123456" ou "senha", que infelizmente ainda são extremamente comuns.
+
+### Ataques à Confidencialidade e Integridade
+
+Uma vez que o atacante tenha informações sobre a rede ou consiga uma forma de acesso, ele pode lançar ataques que visam diretamente a informação.
+
+- **Interceptação de Tráfego (_Sniffing_):** Um atacante que obtém acesso à rede pode utilizar ferramentas para "farejar" (do inglês, _sniff_) os pacotes de dados que trafegam entre os computadores. Se a comunicação não estiver criptografada, ele pode capturar e ler todo o conteúdo, incluindo nomes de usuário, senhas, e-mails e informações sensíveis, em uma violação direta do princípio da **Confidencialidade**.
+- **Furto de Dados:** Como consequência da interceptação de tráfego ou da exploração de vulnerabilidades, informações pessoais e dados sigilosos podem ser furtados. Um atacante pode invadir um servidor mal protegido e copiar sua base de dados de clientes, ou infectar um computador pessoal com um _spyware_ que registra tudo o que é digitado, roubando senhas bancárias e números de cartão de crédito.
+- **Exploração de Vulnerabilidades:** Uma vulnerabilidade é uma falha de segurança em um software, hardware ou protocolo. Um atacante pode "explorar" essa falha para executar ações maliciosas, como invadir um sistema, escalar privilégios de acesso ou instalar um código malicioso. Equipamentos de rede, como modems e roteadores domésticos, são alvos frequentes. Se vulneráveis, podem ser invadidos, ter suas configurações alteradas e passar a redirecionar as conexões dos usuários para sites fraudulentos, em um ataque conhecido como _pharming_.
+- **Ataque de Personificação (_Spoofing_):** Neste tipo de ataque, um agressor se faz passar por uma entidade legítima na rede. Ele pode, por exemplo, introduzir um ponto de acesso Wi-Fi falso em um local público, com um nome similar ao da rede oficial (ex: "Aeroporto_WiFi_Gratis"). Quando um usuário desatento se conecta a essa rede maliciosa, o atacante se posiciona entre a vítima e a internet, podendo interceptar toda a sua comunicação, em um ataque conhecido como _Man-in-the-Middle_ (MitM).
+
+#### Ataques à Disponibilidade e aos Recursos
+
+Nem todos os ataques visam roubar informações. Muitos têm como objetivo paralisar sistemas ou utilizar os recursos da vítima para fins ilícitos.
+
+- **Ataque de Negação de Serviço (DoS):** O objetivo deste ataque é violar o princípio da **Disponibilidade**. O atacante utiliza um ou mais computadores para enviar um volume massivo de solicitações ou mensagens para um sistema-alvo (como um servidor web), sobrecarregando seus recursos (processador, memória, link de internet) a tal ponto que ele se torna incapaz de responder a solicitações legítimas, ficando lento ou completamente inoperante. Quando o ataque é orquestrado a partir de milhares de computadores infectados (_zumbis_) ao redor do mundo, ele é chamado de **Ataque de Negação de Serviço Distribuído (DDoS)**.
+- **Uso Indevido de Recursos:** Um atacante pode obter acesso a um computador conectado à rede e, sem o conhecimento do dono, utilizá-lo para a prática de atividades maliciosas. O computador da vítima pode ser transformado em parte de uma **botnet** (rede de robôs) para desferir ataques DDoS, ser usado como um servidor para disseminar _spam_ e _phishing_, ou ter seu poder de processamento sequestrado para minerar criptomoedas, tudo isso enquanto esconde a real identidade do atacante.
+
