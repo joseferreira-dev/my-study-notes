@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "engenharia-de-software/contents/14-scrum.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "engenharia-de-software/contents/img/14-teste-do-elevador.png",
     "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
     "lingua-portuguesa/README.md",
     "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
@@ -206,7 +207,6 @@
     "bancos-de-dados/contents/img/02-quarta-forma-normal-3.png",
     "bancos-de-dados/contents/img/02-quarta-forma-normal-2.png",
     "bancos-de-dados/contents/img/02-quarta-forma-normal-1.png",
-    "bancos-de-dados/contents/01-fundamentos.md",
     "engenharia-de-prompt/contents",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
