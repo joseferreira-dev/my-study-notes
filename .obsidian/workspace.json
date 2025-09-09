@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
+                "file": "engenharia-de-software/contents/14-scrum.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "06-avaliacao-educacional"
+              "title": "14-scrum"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
+                "file": "engenharia-de-software/contents/14-scrum.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 06-avaliacao-educacional"
+              "title": "Sumário de 14-scrum"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
     "lingua-portuguesa/README.md",
     "lingua-portuguesa/contents/05-classes-de-palavras-iii.md",
     "lingua-portuguesa/contents/img/05-conjuncao-pois.png",
@@ -206,7 +207,6 @@
     "bancos-de-dados/contents/img/02-quarta-forma-normal-2.png",
     "bancos-de-dados/contents/img/02-quarta-forma-normal-1.png",
     "bancos-de-dados/contents/01-fundamentos.md",
-    "sistemas-operacionais/contents/07-windows-desktop.md",
     "engenharia-de-prompt/contents",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
