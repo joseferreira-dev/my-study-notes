@@ -94,8 +94,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "arquitetura-e-organizacao-de-computadores/contents/06-compilador-montador-ligador-e-interpretador.md",
-                "collapseAll": true,
+                "file": "lingua-portuguesa/contents/06-classes-de-palavras-iv.md",
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Links inversos para 06-compilador-montador-ligador-e-interpretador"
+              "title": "Links inversos para 06-classes-de-palavras-iv"
             }
           },
           {
@@ -169,7 +169,7 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "fdfc72c1063925fa",
+  "active": "8a498263b6fa6ebd",
   "lastOpenFiles": [
     "lingua-portuguesa/contents/img/06-modo-imperativo.png",
     "lingua-portuguesa/contents/img/06-modo-subjuntivo-futuro.png",

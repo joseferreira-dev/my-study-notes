@@ -1009,9 +1009,7 @@ Exige **dois complementos** simultaneamente: um objeto direto (sem preposição)
 | **Transitivo Indireto (VTI)**           | Sim, um.                | Sim                         | Objeto Indireto (OI)                      |
 | **Transitivo Direto e Indireto (VTDI)** | Sim, dois.              | Sim (para o segundo)        | Objeto Direto (OD) e Objeto Indireto (OI) |
 
-## Classificação dos Verbos quanto à Predicação
-
-Além da conjugação e da transitividade, os verbos também podem ser classificados de acordo com o tipo de sujeito que admitem. Esta análise é fundamental para a correta aplicação das regras de concordância verbal.
+## Classificação dos Verbos
 
 ### Verbos Impessoais
 
@@ -1072,3 +1070,47 @@ Verbos unipessoais são aqueles que, embora possuam sujeito, são conjugados, po
 	    - **Importa** [que você estude muito].
 	    - **Consta** [que você se atrasou].
 	    - **Cumpre** ao policial [proteger as pessoas].
+
+### Verbos Auxiliares
+
+Os verbos auxiliares são aqueles que se unem a um verbo principal para formar uma **locução verbal**, um conjunto que funciona sintaticamente como um único verbo. Enquanto o verbo principal carrega o sentido central da ação, o auxiliar tem duas funções:
+
+1. **Função Gramatical:** É o verbo auxiliar que recebe a flexão de tempo, modo, número e pessoa, concordando com o sujeito. O verbo principal permanece em uma de suas formas nominais (infinitivo, gerúndio ou particípio).
+2. **Função Semântica:** O auxiliar adiciona "matizes" de sentido à ação principal, expressando noções de tempo, aspecto (a fase da ação), modalidade (a atitude do falante), entre outras.
+
+A estrutura básica da locução verbal é:
+
+**Verbo Auxiliar (flexionado) + Verbo Principal (forma nominal)**
+
+Observe como diferentes auxiliares e formas nominais alteram o sentido do verbo "pensar":
+
+| Locução Verbal     | Verbo Auxiliar (flexionado)        | Verbo Principal (forma nominal) | Sentido Expresso                            |
+| ------------------ | ---------------------------------- | ------------------------------- | ------------------------------------------- |
+| **deve pensar**    | **deve** (presente do indicativo)  | **pensar** (infinitivo)         | Possibilidade / Probabilidade               |
+| **tenho pensado**  | **tenho** (presente do indicativo) | **pensado** (particípio)        | Ação contínua que se estende até o presente |
+| **estou pensando** | **estou** (presente do indicativo) | **pensando** (gerúndio)         | Ação em andamento no momento da fala        |
+
+#### Os Principais Verbos Auxiliares
+
+Os verbos **ter, haver, ser** e **estar** são os auxiliares mais comuns, sendo a base para a formação dos tempos compostos e da voz passiva. Além deles, uma vasta gama de outros verbos pode atuar como auxiliares, agregando significados específicos.
+
+#### Verbos Auxiliares Modais e Aspectuais
+
+Muitos verbos auxiliares funcionam como **modalizadores**, ou seja, eles expressam a atitude do falante em relação à ação (possibilidade, dever, certeza, etc.). Outros indicam o **aspecto verbal**, ou seja, a fase em que a ação se encontra (início, continuidade, conclusão).
+
+A tabela a seguir sistematiza as principais noções semânticas que os auxiliares podem agregar:
+
+|Noção Semântica (Modo ou Aspecto)|Verbo(s) Auxiliar(es) Típico(s)|Exemplo(s)|
+|---|---|---|
+|**Possibilidade / Probabilidade**|poder, dever|Ele **pode estar** doente. / Ele **deve estar** chegando.|
+|**Capacidade / Habilidade**|poder|Ele **pode ficar** horas sem dormir.|
+|**Dever / Obrigação / Conselho**|ter (que), haver (de), dever|**Tenho que** ir agora. / Você **deve estudar** mais.|
+|**Desejo / Intenção**|haver (de), querer|Vocês **hão de** passar neste concurso.|
+|**Aparência / Incerteza**|parecer|Ele **parece ser** um bom profissional.|
+|**Início da Ação (Aspecto Incoativo)**|começar a, pôr-se a|O bebê **começou a** chorar. / O time **pôs-se a** atacar.|
+|**Continuidade da Ação (Aspecto Cursivo)**|estar, andar, vir, ir|**Estou pensando** no assunto. / **Venho tratando** essa doença.|
+|**Iminência da Ação (Aspecto Iminencial)**|estar para, estar a ponto de|O avião **está para** chegar.|
+|**Fim da Ação (Aspecto Conclusivo)**|acabar de, deixar de|O avião **acabou de** aterrissar. / Ele **deixou de** fumar.|
+|**Ação Interrompida / Não Realizada**|ficar por|O trabalho **ficou por** terminar.|
+
+O reconhecimento desses valores é uma importante ferramenta de interpretação textual, pois revela as nuances e as intenções por trás do que é dito.
