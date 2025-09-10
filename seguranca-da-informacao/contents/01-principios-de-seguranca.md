@@ -216,8 +216,6 @@ Mesmo em um sistema "endurecido", é preciso gerenciar quem pode fazer o quê. O
 
 Outro pilar da segurança lógica são os **registros (_logs_)** gerados pelos diversos equipamentos, sistemas e aplicações. Cada ação relevante — um login bem-sucedido, uma tentativa de login falha, a alteração de um arquivo, uma conexão de rede — é registrada. Esses _logs_ são fundamentais para os processos de **auditoria**, permitindo que os administradores monitorem a saúde do sistema, detectem atividades suspeitas e, em caso de um incidente de segurança, realizem uma investigação forense para entender exatamente o que aconteceu.
 
-Entendido. As anotações sobre Controle de Acesso são excelentes e fornecem uma base sólida. Dando continuidade ao capítulo, irei agora aprofundar e estruturar esses conceitos, detalhando os modelos de gerenciamento de acesso e sua aplicação nos contextos físico e lógico.
-
 ### Controle de Acesso
 
 O **Controle de Acesso** é o mecanismo de segurança que gerencia e restringe o acesso a recursos, garantindo que apenas entidades autorizadas possam interagir com eles. Este é um método fundamental aplicado tanto no contexto físico quanto no lógico, com o objetivo de estabelecer barreiras que regulam quem pode entrar em um local, utilizar um equipamento, acessar um sistema ou manipular um dado.
@@ -259,3 +257,14 @@ Para implementar as políticas de autorização de forma estruturada, a indústr
 4. **Controle de Acesso Baseado em Atributos (ABAC - _Attribute-Based Access Control_):** É o modelo mais moderno, flexível e granular. No ABAC, as decisões de acesso são tomadas em tempo real, com base em uma política que avalia uma combinação de **atributos**. Esses atributos podem ser do usuário (ex: cargo, departamento, localização), do recurso que está sendo acessado (ex: tipo de documento, nível de sensibilidade) e do contexto da solicitação (ex: hora do dia, local de acesso).
     - **Exemplo prático:** Uma política ABAC poderia ser: "Permitir que médicos (atributo do usuário) acessem prontuários médicos (atributo do recurso), mas apenas dos pacientes de sua própria ala (outro atributo do usuário) e somente durante o horário de expediente (atributo de contexto)". Essa capacidade de criar regras dinâmicas e contextuais torna o ABAC ideal para ambientes complexos e de segurança zero-trust.
 
+## Considerações Finais
+
+Neste capítulo inaugural, navegamos pelos conceitos que formam o alicerce de todo o universo da Segurança da Informação. Partimos da premissa fundamental de que a informação é o ativo mais valioso da era digital para, em seguida, construir, passo a passo, a estrutura de princípios, ameaças e defesas que definem esta área do conhecimento.
+
+Iniciamos nossa jornada desvendando a **Tríade CID (Confidencialidade, Integridade e Disponibilidade)**, o modelo basilar que estabelece os objetivos primários de qualquer estratégia de segurança. Vimos que a proteção da informação não se resume a um único aspecto, mas a um equilíbrio constante para garantir que os dados sejam sigilosos, confiáveis e acessíveis quando necessário. Expandimos essa base com outros pilares cruciais como a **Autenticidade** e o **Não-Repúdio**, que são indispensáveis para a construção de confiança nas transações e comunicações digitais.
+
+Com os princípios estabelecidos, exploramos o outro lado da moeda: o vasto cenário de **ameaças e riscos** presentes no ambiente de rede. Analisamos desde as técnicas de reconhecimento, como varreduras e ataques de força bruta, até os ataques diretos que visam violar cada um dos pilares estudados, como a interceptação de tráfego, a exploração de vulnerabilidades e os ataques de negação de serviço. Ficou claro que cada ameaça é, em sua essência, uma tentativa de quebrar um ou mais desses princípios fundamentais.
+
+Finalmente, solidificamos o conhecimento ao analisar a implementação da segurança em camadas, uma estratégia conhecida como **defesa em profundidade**. Compreendemos a importância da **Segurança Física** como a primeira linha de defesa, protegendo a infraestrutura tangível contra acessos indevidos e desastres. Em seguida, adentramos na **Segurança Lógica**, explorando as ferramentas e práticas, como o _hardening_, que "endurecem" os sistemas contra ataques digitais. Por fim, detalhamos o mecanismo de **Controle de Acesso**, compreendendo os diferentes modelos (MAC, DAC, RBAC e ABAC) que governam quem pode fazer o quê, sendo a ponte que conecta a identidade dos usuários às suas permissões.
+
+Ao concluir este capítulo, temos em mãos um mapa conceitual coeso sobre os fundamentos da Segurança da Informação. Com a compreensão dos princípios que nos guiam, das ameaças que enfrentamos e das camadas de defesa que podemos construir, estamos agora preparados para avançar.
