@@ -125,7 +125,7 @@ Em uma rotina de acesso, o fluxo de comunicação entre esses três papéis, med
 A imagem a seguir ilustra, de forma simplificada, a sequência de passos em um fluxo de SSO iniciado pelo Provedor de Serviço, que é o cenário mais comum.
 
 <div align="center">
-<img width="600px" src="./img/02-saml-fluxo.png">
+<img width="560px" src="./img/02-saml-fluxo.png">
 </div>
 
 Vamos detalhar cada etapa dessa comunicação:
@@ -140,4 +140,42 @@ Vamos detalhar cada etapa dessa comunicação:
 8. **Resposta com o Recurso:** O SP entrega ao navegador o conteúdo do recurso que o usuário queria acessar desde o início.
 
 Esse processo, embora pareça complexo, ocorre em poucos segundos e de forma transparente para o usuário, que tem a experiência de um _login_ único. É essa capacidade de federar identidades que permite o surgimento de ecossistemas de serviços integrados, onde a autenticação em um sistema central abre as portas para diversas outras aplicações, como veremos a seguir com o padrão OAuth.
+
+### O Padrão OAuth: A Autorização Delegada
+
+Enquanto o SAML é um padrão robusto focado primariamente em **autenticação** (provar quem o usuário é) em ambientes corporativos, o **OAuth** é um padrão aberto focado em **autorização** (definir o que uma aplicação pode fazer em nome do usuário). Embora frequentemente utilizado em fluxos de _login_, sua função essencial não é autenticar o usuário, mas sim permitir que um usuário conceda a uma aplicação de terceiros um acesso limitado e específico aos seus dados, que estão armazenados em outro serviço, sem precisar compartilhar sua senha.
+
+Concebido em um esforço conjunto de empresas como Google e Twitter, o OAuth se tornou o padrão de fato para a autorização delegada na internet, viabilizando os familiares botões de "Entrar com o Google" ou "Conectar com o Facebook" que encontramos em inúmeros sites e aplicativos.
+
+<div align="center">
+<img width="560px" src="./img/02-oauth-fluxo.png">
+</div>
+
+A imagem acima ilustra a experiência do usuário. Ao clicar no botão "Sign in with Google", o usuário está, na prática, iniciando um processo no qual ele autoriza a aplicação que está utilizando a trocar informações com os servidores da Google para acessar uma parte de seus dados.
+
+O OAuth, atualmente em sua versão 2.0, define uma arquitetura com quatro papéis básicos para orquestrar esse processo de delegação de forma segura.
+
+1. **_Resource Owner_** **(Dono do Recurso):** É o usuário final, a pessoa que possui os dados e que tem o poder de conceder ou negar o acesso a eles.
+2. **_Client_** **(Cliente):** É a aplicação de terceiros que deseja acessar os dados do usuário. Pode ser um site, um aplicativo de celular ou um software de desktop.
+3. **_Authorization Server_** **(Servidor de Autorização):** É o servidor que gerencia a identidade do usuário e emite os "tokens de acesso" após obter sua autorização. É ele quem apresenta a tela de _login_ e a tela de consentimento.
+4. **_Resource Server_** **(Servidor de Recursos):** É o servidor que hospeda os dados protegidos do usuário (como o Google Photos, a API do Gmail ou a lista de contatos do Facebook) e que aceita e valida os tokens de acesso.
+
+##### O Fluxo de Concessão de Autorização
+
+O processo de delegação do OAuth 2.0, conhecido como "fluxo de concessão", pode parecer complexo, mas segue uma lógica clara de solicitação e consentimento, como ilustra o diagrama a seguir.
+
+<div align="center">
+<img width="400px" src="./img/02-oauth-papeis-e-fluxos.png">
+</div>
+
+Vamos detalhar cada etapa desse fluxo:
+
+1. **Solicitação de Autorização:** A aplicação (_Client_) solicita autorização ao usuário (_Resource Owner_). Isso geralmente se manifesta como um redirecionamento do navegador para uma página do Servidor de Autorização (ex: Google), que exibe uma tela informando qual aplicação está pedindo acesso e a quais dados específicos ela deseja acessar (ex: "O Aplicativo X deseja ver seu nome, e-mail e foto de perfil").
+2. **Concessão de Autorização:** O usuário, após se autenticar no Servidor de Autorização (se já não tiver uma sessão ativa), analisa as permissões solicitadas e concede a autorização, geralmente clicando em um botão "Permitir" ou "Autorizar".
+3. **Envio da Concessão ao Servidor de Autorização:** A aplicação (_Client_) recebe do usuário um código de autorização temporário e o envia, de forma segura e em _background_, para o Servidor de Autorização.
+4. **Emissão do Token de Acesso:** O Servidor de Autorização valida o código recebido e, se tudo estiver correto, emite um **Token de Acesso (_Access Token_)** para a aplicação. Este token é a chave que comprova a autorização concedida pelo usuário. Geralmente, ele é um **_Bearer Token_**, o que significa que qualquer sistema que o "porte" (do inglês, _to bear_) pode utilizá-lo para acessar os recursos.
+5. **Requisição ao Servidor de Recursos:** De posse do Token de Acesso, a aplicação (_Client_) pode agora fazer requisições ao Servidor de Recursos (ex: a API do Google Drive), incluindo o token no cabeçalho da requisição para provar que tem a permissão do usuário.
+6. **Retorno do Recurso Protegido:** O Servidor de Recursos valida o token junto ao Servidor de Autorização e, se for válido, retorna os dados solicitados para a aplicação (_Client_). É nesta etapa que a aplicação consegue, por exemplo, exibir a foto de perfil do usuário, importar seus contatos ou salvar um arquivo em seu Google Drive.
+
+É fundamental ressaltar que todo esse tráfego, especialmente a transmissão do _Bearer Token_, deve ocorrer obrigatoriamente sobre uma conexão segura **HTTPS**. Como o token é a credencial de acesso, se ele for interceptado, um atacante poderia utilizá-lo para acessar os dados do usuário. O HTTPS garante que toda a comunicação seja criptografada, protegendo o token durante seu trânsito.
 
