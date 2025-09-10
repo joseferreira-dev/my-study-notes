@@ -1002,10 +1002,73 @@ Exige **dois complementos** simultaneamente: um objeto direto (sem preposição)
 
 #### Quadro-Resumo da Transitividade
 
-|Tipo de Verbo|Precisa de Complemento?|Usa Preposição Obrigatória?|Nome do(s) Complemento(s)|
-|---|---|---|---|
-|**Intransitivo (VI)**|Não|-|Não tem.|
-|**Transitivo Direto (VTD)**|Sim, um.|Não|Objeto Direto (OD)|
-|**Transitivo Indireto (VTI)**|Sim, um.|Sim|Objeto Indireto (OI)|
-|**Transitivo Direto e Indireto (VTDI)**|Sim, dois.|Sim (para o segundo)|Objeto Direto (OD) e Objeto Indireto (OI)|
+| Tipo de Verbo                           | Precisa de Complemento? | Usa Preposição Obrigatória? | Nome do(s) Complemento(s)                 |
+| --------------------------------------- | ----------------------- | --------------------------- | ----------------------------------------- |
+| **Intransitivo (VI)**                   | Não                     | -                           | Não tem.                                  |
+| **Transitivo Direto (VTD)**             | Sim, um.                | Não                         | Objeto Direto (OD)                        |
+| **Transitivo Indireto (VTI)**           | Sim, um.                | Sim                         | Objeto Indireto (OI)                      |
+| **Transitivo Direto e Indireto (VTDI)** | Sim, dois.              | Sim (para o segundo)        | Objeto Direto (OD) e Objeto Indireto (OI) |
 
+## Classificação dos Verbos quanto à Predicação
+
+Além da conjugação e da transitividade, os verbos também podem ser classificados de acordo com o tipo de sujeito que admitem. Esta análise é fundamental para a correta aplicação das regras de concordância verbal.
+
+### Verbos Impessoais
+
+Verbos impessoais são aqueles que não se referem a nenhuma "pessoa" ou sujeito gramatical. A oração formada por eles não possui sujeito, sendo por isso chamada de **oração sem sujeito** (ou com sujeito inexistente).
+
+A consequência gramatical mais importante, e o ponto mais cobrado em provas, é: **verbos impessoais são conjugados sempre e exclusivamente na 3ª pessoa do singular.**
+
+#### Principais Casos de Verbos Impessoais
+
+1. **Verbos que expressam fenômenos da natureza:** Verbos que indicam fenômenos naturais são, em seu sentido literal, impessoais.
+	- _Exemplos:_ **chover, nevar, gear, ventar, trovejar, relampejar, amanhecer, anoitecer.**
+	- _Frases de exemplo:_
+	    - **Choveu** muito em Cajazeiras na noite passada.
+	    - **Nevará** na serra gaúcha amanhã.
+	    - **Anoitece** mais cedo no inverno.
+
+> **Foco de Prova: O Uso Figurado**
+> 
+> Se um verbo que indica fenômeno da natureza for usado em sentido **figurado**, ele deixa de ser impessoal e passa a ter um sujeito, com o qual deve concordar normalmente.
+> 
+> - _Exemplo:_ **Choveram** críticas sobre o novo projeto. (Sujeito: "críticas").
+> - _Exemplo:_ Naquela manhã, o candidato **amanheceu** doente. (Sujeito: "o candidato").
+
+2. **O Verbo "Haver":** Este é o verbo impessoal de maior incidência em provas. Ele permanece sempre no singular quando possui um dos seguintes sentidos:
+	- **Sentido de "existir":**
+	    - _Exemplo:_ **Havia** muitas pessoas com sudorese no trem.
+	    - **Atenção à Pegadinha:** O verbo **existir** não é impessoal. Ele possui sujeito e, portanto, concorda com ele no plural.
+	        - **Correto:** **Havia** graves problemas na cidade.
+	        - **Incorreto:** **Haviam** graves problemas na cidade.
+	        - **Correto:** **Existiam** graves problemas na cidade.
+	- **Sentido de "ocorrer" ou "acontecer":**
+	    - _Exemplo:_ **Houve** acidentes graves na rodovia.
+	    - _Contraste:_ **Ocorreram** acidentes graves na rodovia.
+	- **Sentido de "tempo decorrido":**
+	    - _Exemplo:_ **Há** dois anos não me drogo.
+	    - _Exemplo:_ Ele concluiu o curso **havia** poucos meses.
+
+3. **Verbos "Fazer", "Ser" e "Estar" indicando tempo ou clima:** Esses verbos, quando usados em expressões que indicam tempo decorrido ou fenômenos climáticos, também são impessoais e ficam no singular.
+	- **Fazer:** **Faz** dez anos que me mudei. / **Fazia** muito frio naquela noite.
+	- **Ser / Estar:** Já **é** tarde. / **Está** na hora do almoço. / **Estava** frio ontem.
+
+### Verbos Unipessoais
+
+Verbos unipessoais são aqueles que, embora possuam sujeito, são conjugados, por sua natureza semântica, apenas na **3ª pessoa** (do singular ou do plural).
+
+#### Principais Casos de Verbos Unipessoais
+
+1. **Verbos que indicam vozes ou ações de animais:** O sujeito desses verbos é o nome do animal.
+	- _Exemplos:_ latir, miar, mugir, cacarejar, zurrar, galopar.
+	- _Frases de exemplo:_
+	    - O cão **latiu** durante a noite.
+	    - Os cavalos **galopavam** pelo campo.
+
+2. **Verbos que possuem uma oração como sujeito:** Certos verbos (como convir, parecer, importar, cumprir, constar) são frequentemente usados na 3ª pessoa do singular porque seu sujeito é toda uma oração (uma oração subordinada substantiva subjetiva).
+	- _Exemplos:_
+	    - **Convém** [acordar mais cedo]. (O sujeito de "convém" é a oração "acordar mais cedo").
+	    - **Parece** [que vai chover]. (O sujeito de "parece" é a oração "que vai chover").
+	    - **Importa** [que você estude muito].
+	    - **Consta** [que você se atrasou].
+	    - **Cumpre** ao policial [proteger as pessoas].
