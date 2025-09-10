@@ -63,3 +63,17 @@ A MFA adaptativa utiliza uma série de informações contextuais para avaliar o 
 
 Com base na análise desses parâmetros, o sistema pode tomar decisões inteligentes. Por exemplo, se um usuário tenta fazer o login de seu computador habitual, na rede de sua casa e em um horário normal, o sistema pode permitir o acesso apenas com a senha. No entanto, se o mesmo usuário tenta acessar a conta minutos depois de um endereço IP em outro continente, o sistema identificará o alto risco e exigirá uma verificação adicional robusta, como uma autenticação biométrica ou um código de um token físico, antes de liberar o acesso.
 
+### Otimizando o Acesso: Single Sign-On (SSO)
+
+À medida que o número de sistemas e aplicações que utilizamos no dia a dia cresce, gerenciar dezenas de senhas diferentes se torna uma tarefa insustentável e, paradoxalmente, um risco de segurança (pois leva à reutilização de senhas fracas). Para resolver esse problema, surgiu o conceito de **_Single Sign-On_** **(SSO)**, ou **Logon Único**.
+
+A ideia fundamental do SSO é permitir que um usuário, após se autenticar uma única vez em um sistema central de identidade, possa acessar múltiplos sistemas, serviços e aplicações independentes sem a necessidade de digitar suas credenciais novamente.
+
+Imagine o cenário de um dia de trabalho típico em uma corporação. Ao chegar, o funcionário liga seu computador e acessa sua máquina com um _login_ e senha. A partir desse momento, ele consegue abrir o sistema de ponto eletrônico, acessar seu e-mail corporativo, utilizar o sistema de gestão de projetos e consultar a intranet, tudo de forma transparente, sem ser interrompido a cada passo para inserir a mesma senha repetidamente. O SSO funciona como um "passaporte digital": uma vez validado na entrada, ele garante trânsito livre por todos os "territórios" (sistemas) autorizados.
+
+É importante destacar que o SSO é um serviço que permite a integração entre sistemas que são, por natureza, independentes. A mágica acontece nos bastidores, onde um sistema de gerenciamento de identidades atua como uma autoridade central de confiança. Quando o usuário tenta acessar um novo serviço, este, em vez de pedir a senha ao usuário, "pergunta" ao sistema central se aquele usuário já está autenticado e se tem permissão para acessá-lo.
+
+O principal protocolo que viabiliza o SSO em ambientes corporativos é o **LDAP (_Lightweight Directory Access Protocol_)**, que permite a comunicação com serviços de diretório, como o _Microsoft Active Directory_, onde as identidades e permissões dos usuários são gerenciadas de forma centralizada. Em aplicações web, uma implementação mais simples pode ser feita através do uso de **cookies** e _tokens_ de sessão compartilhados entre os domínios de uma mesma organização.
+
+O conceito inverso também se aplica. Através do **_Single Sign-Off_**, ao encerrar a sessão em um dos sistemas (fazer _logoff_) ou no portal central, o usuário é automaticamente desconectado de todos os outros serviços que foram acessados através daquela sessão de SSO, garantindo que o acesso seja completamente revogado de forma segura.
+
