@@ -419,3 +419,74 @@ A forma composta deste tempo verbal possui dois valores semânticos distintos.
         - _Exemplo:_ Ele não veio à festa. **Terá ficado** doente? (Suposição sobre um fato ocorrido no passado).
         - _Exemplo:_ O suspeito **terá fugido** pela janela durante a madrugada. (Indica uma forte probabilidade sobre o passado).
 
+### Futuro do Pretérito do Indicativo
+
+O Futuro do Pretérito é o tempo verbal da **hipótese** e da **condição**. Ele descreve uma ação que poderia acontecer ou ter acontecido, mas cuja realização depende ou dependia de uma determinada condição. Formalmente, ele também pode indicar uma ação futura vista a partir de um ponto de referência no passado (o "futuro do passado").
+
+#### Forma Simples e Conjugação
+
+Sua desinência (terminação) característica é **-ria** (e suas variações).
+
+|Pessoa|1ª Conjugação (Levantar)|2ª Conjugação (Beber)|3ª Conjugação (Cair)|
+|---|---|---|---|
+|Eu|levanta**ria**|bebe**ria**|cai**ria**|
+|Tu|levanta**rias**|bebe**rias**|cai**rias**|
+|Ele/Ela|levanta**ria**|bebe**ria**|cai**ria**|
+|Nós|levantá**ríamos**|bebê**ramos**|cair**íamos**|
+|Vós|levanta**ríeis**|bebe**ríeis**|cair**íeis**|
+|Eles/Elas|levanta**riam**|bebe**riam**|cair**iam**|
+
+> **Dica de Reconhecimento:** Para identificar o Futuro do Pretérito, use o gatilho da hipótese: **"Se eu pudesse, eu..."**: _"Se eu pudesse, eu **viajaria**"_, _"Se eu pudesse, eu **compraria**"_.
+
+#### Os Valores Semânticos da Forma Simples
+
+1. **Ação Condicionada:** É seu uso principal. Expressa uma ação que só se realizaria se uma determinada condição fosse atendida. Frequentemente, aparece em correlação com o Pretérito Imperfeito do Subjuntivo (cuja desinência é -sse).
+	- _Exemplos:_
+	    - Se eu soube**sse**, **contaria** a todos a verdade.
+	    - Eu **continuaria** trabalhando, mesmo se ganha**sse** na loteria.
+	    - Nós **iríamos** à praia, se não estive**sse** chovendo.
+
+2. **Incerteza ou Suposição sobre o Passado:** É usado para expressar uma dúvida, uma suposição ou uma estimativa sobre um fato ocorrido no passado.
+	- _Exemplos:_
+	    - Quem **seria** o autor daquela obra anônima?
+	    - Naquela época, ele **teria** uns 30 anos de idade.
+	    - Segundo estimativas, a fortuna dela **seria** de 4 milhões de libras.
+
+3. **Polidez, Conselho ou Indignação:** É um recurso estilístico para suavizar pedidos e afirmações, tornando-os mais polidos, ou para expressar surpresa e indignação.
+	- _Exemplos (Polidez):_
+	    - Você me **faria** um favor?
+	    - Eu **gostaria** de fazer uma pergunta.
+	- _Exemplo (Conselho):_
+	    - **Seria** bom você estudar mais a matéria de português.
+	- _Exemplo (Indignação):_
+	    - Quem **diria** que ele seria capaz de fazer isso!
+
+#### Futuro do Pretérito Composto
+
+A forma composta (formada pelo verbo auxiliar **TER** ou **HAVER** no Futuro do Pretérito Simples + **Particípio**) expressa ideias semelhantes.
+
+1. **Ação que Teria Ocorrido sob uma Condição Passada:** Descreve uma ação no passado que não aconteceu porque sua condição, também no passado, não foi cumprida.
+	- _Exemplo:_ Se eu **tivesse estudado** mais, **teria sido** aprovado.
+	- _Exemplo:_ Nós **teríamos viajado**, se não **tivéssemos perdido** o voo.
+
+2. **Suposição sobre um Fato Passado:** Assim como o Futuro do Presente Composto, a forma composta do Futuro do Pretérito também expressa uma probabilidade sobre o passado, muitas vezes com um grau maior de incerteza.
+	- _Exemplo:_ Imaginei que o ladrão **teria escapado** pela janela.
+	- _Comparação:_
+	    - Não **terá sido** em vão nosso esforço? (Dúvida com maior probabilidade).
+	    - Não **teria sido** em vão nosso esforço? (Dúvida mais hipotética, remota).
+
+### Quadro-Resumo do Modo Indicativo
+
+Para consolidar o estudo dos tempos do Modo Indicativo, os esquemas a seguir resumem os principais valores semânticos de cada tempo verbal, divididos em presente, pretérito e futuro.
+
+<div align="center">
+<img width="520px" src="./img/06-modo-indicativo-presente.png">
+</div>
+
+<div align="center">
+<img width="640px" src="./img/06-modo-indicativo-preterito.png">
+</div>
+
+<div align="center">
+<img width="620px" src="./img/06-modo-indicativo-futuro.png">
+</div>
