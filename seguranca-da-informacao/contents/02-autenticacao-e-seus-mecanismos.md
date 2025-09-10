@@ -371,3 +371,29 @@ Do ponto de vista criptográfico, ambos os padrões são seguros e utilizam o me
 
 Em resumo, HOTP e TOTP resolvem o mesmo problema com âncoras diferentes: evento versus tempo. O TOTP se consolidou como a escolha padrão para a maioria das implementações modernas devido à sua simplicidade operacional.
 
+## OpenID Connect (OIDC): A Camada de Identidade sobre o OAuth
+
+Após compreendermos que o OAuth 2.0 é um protocolo focado em **autorização** (delegar permissões), surge uma questão natural: como a aplicação cliente pode, de fato, saber **quem** é o usuário que concedeu essa autorização? O OAuth, por si só, não responde a essa pergunta de forma padronizada. Para preencher essa lacuna, foi criado o **OpenID Connect (OIDC)**.
+
+O OIDC não é um concorrente do OAuth; ele é uma **camada fina de identidade construída sobre o OAuth 2.0**. Ele estende o OAuth para adicionar um fluxo de autenticação padronizado, permitindo que as aplicações (_Clients_) verifiquem a identidade do usuário final e obtenham informações básicas de seu perfil de forma segura e interoperável. Em resumo: enquanto o OAuth 2.0 fornece o _Access Token_ para acessar recursos, o OIDC adiciona o **_ID Token_** para provar a identidade do usuário.
+
+##### As Principais Características do OIDC
+
+O OIDC foi projetado para ser um protocolo leve e flexível, ideal para as necessidades de aplicações web e móveis modernas. Suas principais características são:
+
+- **Autenticação baseada em Tokens:** Assim como o OAuth, o OIDC opera com tokens. O _ID Token_, que é um JWT (_JSON Web Token_), é a peça central. Ele é emitido pelo Provedor de Identidade (IdP) e contém "declarações" (_claims_) sobre o usuário e sobre o evento de autenticação (como o ID do usuário, quando ele se autenticou, etc.).
+- **Autorização baseada em Declarações:** O protocolo utiliza as _claims_ para transmitir informações que podem ser usadas para autorização, determinando o que o usuário pode acessar.
+- **Descentralização:** Por ser um padrão aberto e federado, o OIDC não depende de um único ponto de controle, permitindo a interoperabilidade entre inúmeros Provedores de Identidade e serviços.
+- **Simplicidade e Interoperabilidade:** O OIDC opera sobre fluxos já conhecidos do OAuth 2.0 e utiliza tecnologias web padrão, como APIs RESTful, o que o torna relativamente simples de implementar e compatível com uma vasta gama de plataformas e linguagens de programação.
+
+##### Vantagens sobre Tecnologias Anteriores
+
+O OIDC oferece uma série de vantagens que o tornaram o padrão de fato para a autenticação federada na web moderna:
+
+- **Simplicidade:** É consideravelmente mais simples de implementar do que padrões mais antigos, como o SAML, especialmente para clientes móveis e aplicações de página única (SPAs).
+- **Flexibilidade:** Pode ser facilmente integrado a qualquer tipo de serviço, desde aplicações web e móveis até APIs.
+- **Segurança:** Utiliza criptografia (via JWTs assinados) e exige a comunicação sobre HTTPS para proteger os dados do usuário.
+- **Interoperabilidade:** Por ser um padrão aberto, pode ser usado com uma ampla gama de Provedores de Identidade, como Google, Microsoft, Okta, e muitos outros.
+
+Na prática, quando você utiliza o botão "Entrar com o Google" em um serviço e, após o _login_, o serviço já sabe seu nome, e-mail e foto de perfil, é muito provável que o protocolo OIDC esteja em ação, trabalhando em conjunto com o OAuth 2.0 para fornecer tanto a autenticação (OIDC) quanto a autorização (OAuth) de forma integrada e segura.
+
