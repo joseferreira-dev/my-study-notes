@@ -59,6 +59,14 @@ A flexão de modo indica a **atitude do falante** em relação ao fato que ele e
 | **Modo**   | Diferentes maneiras em que um fato pode se realizar.                    | **Indicativo** – indica um fato certo.<br>**Subjuntivo** – enuncia um fato hipotético, duvidoso.<br>**Imperativo** – exprime ordem, conselho, pedido. |
 | **Pessoa** | Quem realiza a ação verbal.                                             | **Singular** – eu (1ª), tu (2ª), ele (3ª)<br>**Plural** – nós (1ª), vós (2ª), eles (3ª)                                                               |
 
+<div align="center">
+<img width="620px" src="./img/06-modos-verbais.png">
+</div>
+
+<div align="center">
+<img width="620px" src="./img/06-flexoes-verbais.png">
+</div>
+
 ## A Estrutura dos Verbos e o Padrão de Conjugação
 
 A chave para dominar a conjugação verbal não é memorizar tabelas infinitas, mas sim compreender a lógica por trás de sua estrutura. O português organiza seus verbos em três grandes grupos, chamados **conjugações**, que funcionam como "famílias" com um padrão de flexão semelhante. Ao dominar um verbo-modelo de cada família, torna-se possível conjugar, por analogia, a grande maioria dos verbos da língua.
