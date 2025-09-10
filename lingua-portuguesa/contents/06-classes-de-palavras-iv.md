@@ -865,3 +865,84 @@ Em provas, o gerúndio é frequentemente explorado por sua capacidade de introdu
 |**Locução com Gerúndio**|Ele **vem buscando** a aprovação há anos.|Enfatiza o processo contínuo e progressivo.|
 |**Locução com Infinitivo**|Ele **está a buscar** a aprovação.|Forma mais comum em Portugal, também com valor de continuidade.|
 |**Tempo Composto com Particípio**|Ele **tem buscado** a aprovação.|Enfatiza a repetição da ação ao longo do tempo até o presente.|
+
+### Particípio
+
+O particípio é a forma nominal do verbo que expressa a ideia de uma **ação finalizada, concluída**. Sua principal função é atuar com valor de **adjetivo**, caracterizando um substantivo ou compondo os tempos verbais compostos e a voz passiva.
+
+Sua forma regular é marcada pelas terminações **-ado** (para verbos da 1ª conjugação) e **-ido** (para verbos da 2ª e 3ª conjugações).
+
+#### Particípios Abundantes (Regulares vs. Irregulares)
+
+Alguns verbos, conhecidos como **abundantes**, possuem duas formas de particípio:
+
+- Uma **regular** (longa), terminada em -ado/-ido.
+- Uma **irregular** (curta), com terminações variadas.
+
+O uso de cada forma não é livre; ele é determinado pelo verbo auxiliar que o acompanha na locução verbal.
+
+> **Foco de Prova: A Regra de Uso dos Particípios Abundantes**
+> 
+> Esta é uma das regras de ortografia e morfologia mais cobradas em concursos.
+> 
+> - **Com os verbos auxiliares TER e HAVER (Voz Ativa):** Usa-se o particípio **REGULAR** (-ado/-ido).
+> - **Com os verbos auxiliares SER e ESTAR (Voz Passiva):** Usa-se o particípio **IRREGULAR** (forma curta).
+
+|Verbo|Uso com TER/HAVER (Voz Ativa)|Uso com SER/ESTAR (Voz Passiva)|
+|---|---|---|
+|**Aceitar**|Eu tinha **aceitado** o convite.|O convite foi **aceito**.|
+|**Pagar**|Ele havia **pagado** a dívida.|A dívida foi **paga**.|
+|**Eleger**|O povo tinha **elegido** o candidato.|O candidato foi **eleito**.|
+|**Imprimir**|A gráfica havia **imprimido** os folhetos.|O folheto já está **impresso**.|
+|**Suspender**|O juiz tinha **suspendido** a sessão.|A sessão está **suspensa**.|
+
+> **Atenção:** Os verbos **chegar** e **trazer** não são abundantes. Suas únicas formas de particípio são as regulares: **chegado** e **trazido**. Formas como "chego" e "trago" como particípios são inadequadas na norma padrão.
+
+A seguir, uma lista de referência de verbos com particípios abundantes:
+
+| Infinitivo | Particípio Regular (com ter/haver) | Particípio Irregular (com ser/estar) |
+| ---------- | ---------------------------------- | ------------------------------------ |
+| **Aceitar**    | Aceitado                           | Aceito                               |
+| **Acender**    | Acendido                           | Aceso                                |
+| **Afligir**    | Afligido                           | Aflito                               |
+| **Assentar**   | Assentado                          | Assento                              |
+| **Corrigir**   | Corrigido                          | Correto                              |
+| **Encher**     | Enchido                            | Cheio                                |
+| **Entregar**   | Entregado                          | Entregue                             |
+| **Expressar**  | Expressado                         | Expresso                             |
+| **Extinguir**  | Extinguido                         | Extinto                              |
+| **Fixar**      | Fixado                             | Fixo                                 |
+| **Limpar**     | Limpado                            | Limpo                                |
+| **Misturar**   | Misturado                          | Misto                                |
+| **Morrer**     | Morrido                            | Morto                                |
+| **Pagar**      | Pagado                             | Pago                                 |
+| **Submeter**   | Submetido                          | Submisso                             |
+| **Suspender**  | Suspendido                         | Suspenso                             |
+| **Tingir**     | Tingido                            | Tinto                                |
+| **Vagar**      | Vagado                             | Vago                                 |
+| **Imprimir**   | Imprimido                          | Impresso                             |
+
+#### Os Valores Circunstanciais do Particípio
+
+Assim como o gerúndio, o particípio pode iniciar **orações reduzidas de particípio**, que expressam diferentes circunstâncias adverbiais.
+
+| Valor Circunstancial | Exemplo                                                    | Análise (Equivalência com Oração Desenvolvida) |
+| -------------------- | ---------------------------------------------------------- | ---------------------------------------------- |
+| **Tempo**            | **Concluído** o curso, começou a procurar emprego.         | **Quando concluiu** o curso...                 |
+| **Condição**         | **Resolvida** a questão, poderemos prosseguir.             | **Se a questão for resolvida**...              |
+| **Causa**            | **Preso** no trânsito, não conseguiu chegar a tempo.       | **Porque ficou preso** no trânsito...          |
+| **Concessão**        | **Mesmo cercado** de policiais, o bandido não se entregou. | **Embora estivesse cercado** de policiais...   |
+
+#### A Distinção entre Adjetivo e Particípio
+
+A função adjetiva do particípio é tão forte que, em muitos casos, a distinção entre um particípio e um adjetivo puro torna-se uma questão teórica e controversa, raramente cobrada de forma direta em provas. No entanto, para fins de análise, alguns critérios podem ser utilizados.
+
+1. **Possibilidade de Oração Adjetiva:** Se o termo pode ser desdobrado em uma oração adjetiva (com "que é", "que foi"), ele pode ser classificado tanto como adjetivo quanto como particípio com valor de adjetivo.
+    - _Exemplo:_ Os dados **divulgados** são precisos. (Pode ser visto como particípio de "divulgar" ou como adjetivo, pois equivale a "dados **que foram divulgados**").
+
+2. **Impossibilidade de Oração Adjetiva:** Se o termo expressa um estado ou característica e não pode ser desdobrado em oração, trata-se de um adjetivo puro, geralmente na função de predicativo.
+    - _Exemplo:_ A aluna chegou **cansada**. (Indica o estado em que a aluna chegou. Não é possível dizer _"A aluna chegou que é cansada"_).
+
+3. **Presença de Agente da Passiva:** Este é o critério mais definitivo. Se o termo é seguido por um **agente da passiva** (introduzido por "por" ou "de"), ele é inequivocamente um **verbo no particípio**, pois a estrutura verbal da voz passiva está explícita.
+    - _Exemplo:_ O texto, **escrito pelo autor**, foi publicado. (A presença de "pelo autor" confirma que "escrito" é um particípio verbal).
+
