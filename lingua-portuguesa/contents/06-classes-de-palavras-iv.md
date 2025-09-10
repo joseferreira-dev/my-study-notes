@@ -760,3 +760,108 @@ O esquema a seguir sintetiza a origem das formas do Modo Imperativo, ilustrando 
 <div align="center">
 <img width="540px" src="./img/06-modo-imperativo.png">
 </div>
+
+## As Formas Nominais do Verbo
+
+Além dos tempos e modos que expressam ações conjugadas, os verbos possuem três formas que não indicam tempo ou modo diretamente. São as **Formas Nominais**: o **Infinitivo**, o **Gerúndio** e o **Particípio**. Elas recebem este nome porque, além de seu valor verbal, podem desempenhar funções sintáticas típicas dos "nomes" (substantivo e adjetivo) ou de um advérbio.
+
+|Forma Nominal|Terminação|Função Nominal Típica|Exemplo|
+|---|---|---|---|
+|**Infinitivo**|-ar, -er, -ir|**Substantivo**|O **viver** é uma arte. (= A vida é uma arte).|
+|**Gerúndio**|-ndo|**Advérbio** ou **Adjetivo**|Saiu da sala **correndo**. (= modo como saiu).|
+|**Particípio**|-ado, -ido|**Adjetivo**|Era um texto bem **escrito**. (= um texto bom).|
+
+As Formas Nominais são a base para a construção das **locuções verbais** (ex: _vou estudar, estava correndo, tinha feito_) e das **orações reduzidas**, que são orações sem um conectivo explícito (ex: _Ao chegar, percebeu o erro_).
+
+### Infinitivo
+
+O infinitivo é a forma que "dá nome" ao verbo, expressando a ação de maneira neutra e abstrata. Ele se divide em duas categorias: impessoal e pessoal.
+
+#### Infinitivo Impessoal vs. Pessoal
+
+- **Infinitivo Impessoal (não flexionado):** É a forma que não se refere a nenhum sujeito específico. Enuncia a ação de modo vago e genérico.
+    - _Exemplos:_
+        - **Amar** é o que importa.
+        - É proibido **fumar** neste local.
+        - Nas locuções verbais, o infinitivo é sempre impessoal: _Eles precisam **estudar** mais_.
+
+- **Infinitivo Pessoal (flexionado):** É a forma que possui um sujeito próprio e, por isso, pode ser flexionada para concordar com ele.
+
+|Flexão do Infinitivo Pessoal (verbo ESTUDAR)|
+|---|
+|(para) estud**ar** eu|
+|(para) estud**ares** tu|
+|(para) estud**ar** ele|
+|(para) estud**armos** nós|
+|(para) estud**ardes** vós|
+|(para) estud**arem** eles|
+
+> **Atenção: Singular não é sinônimo de Impessoal**
+> 
+> A forma não flexionada do infinitivo (`estudar`) pode ser tanto impessoal quanto pessoal. A diferença está na presença ou ausência de um sujeito claro.
+> 
+> - É importante **estudar** para a prova. (Quem vai estudar? A ideia é genérica. **Infinitivo Impessoal**).
+> - É importante **ele estudar** para a prova. (Quem vai estudar? "ele". **Infinitivo Pessoal** concordando com o sujeito singular).
+> - É importante **estudarmos** para a prova. (Quem vai estudar? "nós". **Infinitivo Pessoal** concordando com o sujeito plural).
+> 
+> Embora existam casos em que a flexão do infinitivo pessoal é obrigatória ou recomendada, a norma culta é, em geral, flexível. O mais importante é saber que a flexão existe e está ligada à presença de um sujeito.
+
+#### Infinitivo vs. Futuro do Subjuntivo
+
+Para a maioria dos verbos regulares, a forma do Infinitivo Pessoal é **idêntica** à do Futuro do Subjuntivo. Esta semelhança é uma fonte constante de confusão e um alvo preferencial das bancas.
+
+| Verbo  | Infinitivo Pessoal | Futuro do Subjuntivo |
+| ------ | ------------------ | -------------------- |
+| chegar | para eu cheg**ar** | quando eu cheg**ar** |
+
+O contexto geralmente esclarece a diferença: o Futuro do Subjuntivo está ligado a uma ideia de **hipótese ou condição futura** (com _se, quando_), enquanto o Infinitivo aparece em outros contextos, como após preposições.
+
+O método mais seguro para a distinção é **substituir o verbo em questão por um verbo irregular** cujas formas são distintas. O verbo **FAZER** é o melhor modelo.
+
+- **Se a forma for `...fazer`, trata-se do Infinitivo.**
+- **Se a forma for `...fizer`, trata-se do Futuro do Subjuntivo.**
+
+| Frase de Teste                                  | Substituição pelo verbo FAZER              | Análise                  |
+| ----------------------------------------------- | ------------------------------------------ | ------------------------ |
+| Ao **chegar** à festa, cumprimente a todos.     | Ao **fazer** o trabalho, seja cuidadoso.   | **Infinitivo**           |
+| Quando o inverno **chegar**, quero estar junto. | Quando o inverno **fizer** seu trabalho... | **Futuro do Subjuntivo** |
+
+Esta distinção é especialmente crucial para os verbos irregulares derivados de **PÔR, TER, VER** e **VIR**.
+
+| Verbo                 | Infinitivo      | Futuro do Subjuntivo |
+| --------------------- | --------------- | -------------------- |
+| **VER** (e derivados) | para eu **ver** | quando eu **vir**    |
+| **VIR** (e derivados) | para eu **vir** | quando eu **vier**   |
+| **PÔR** (e derivados) | para eu **pôr** | quando eu **puser**  |
+| **TER** (e derivados) | para eu **ter** | quando eu **tiver**  |
+
+### Gerúndio
+
+O gerúndio é a forma nominal do verbo que expressa a ideia de uma **ação em curso, em andamento** ou um processo contínuo. Sua forma é fixa, marcada pela terminação **-ndo** (cantando, bebendo, partindo), e, por ser uma forma nominal, é invariável.
+
+Sua função mais comum é indicar uma ação que ocorre simultaneamente a outra, ou descrever o modo como uma ação se desenrola.
+
+#### Os Valores Circunstanciais do Gerúndio
+
+Em provas, o gerúndio é frequentemente explorado por sua capacidade de introduzir **orações reduzidas de gerúndio**, que podem expressar diversas circunstâncias adverbiais. Identificar corretamente o valor semântico da oração iniciada pelo gerúndio é uma habilidade de interpretação fundamental.
+
+| Valor Circunstancial | Exemplo                                             | Análise (Equivalência com Oração Desenvolvida)           |
+| -------------------- | --------------------------------------------------- | -------------------------------------------------------- |
+| **Tempo**            | **Chegando** ao banco, ele se assustou com a fila.  | **Quando chegou** ao banco, ele se assustou...           |
+| **Condição**         | **Lavando** a louça, deixo você sair.               | **Se você lavar** a louça, deixo você sair.              |
+| **Modo**             | Ele saiu da sala **batendo** a porta.               | O modo como ele saiu foi batendo a porta.                |
+| **Causa**            | **Estudando** com dedicação por anos, foi aprovada. | **Porque estudou** com dedicação por anos, foi aprovada. |
+
+#### Outras Funções e Estruturas com Gerúndio
+
+- **Valor Adjetivo:** Embora sua função principal seja adverbial, o gerúndio pode, em certos contextos, introduzir uma oração com valor adjetivo, caracterizando um substantivo de forma semelhante a uma oração subordinada adjetiva.
+    - _Exemplo:_ Vi um filme **mostrando** a história do Brasil. (Equivale a: Vi um filme **que mostrava**...).
+    - _Exemplo:_ Tenho um livro **ensinando** essa matéria. (Equivale a: Tenho um livro **que ensina**...).
+
+- **Expressando a Continuidade:** A ideia de uma ação contínua e duradoura pode ser expressa por diferentes locuções verbais. Conhecer essas equivalências é útil para questões de reescrita.
+
+|Estrutura|Exemplo|Análise|
+|---|---|---|
+|**Locução com Gerúndio**|Ele **vem buscando** a aprovação há anos.|Enfatiza o processo contínuo e progressivo.|
+|**Locução com Infinitivo**|Ele **está a buscar** a aprovação.|Forma mais comum em Portugal, também com valor de continuidade.|
+|**Tempo Composto com Particípio**|Ele **tem buscado** a aprovação.|Enfatiza a repetição da ação ao longo do tempo até o presente.|
