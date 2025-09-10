@@ -490,3 +490,139 @@ Para consolidar o estudo dos tempos do Modo Indicativo, os esquemas a seguir res
 <div align="center">
 <img width="620px" src="./img/06-modo-indicativo-futuro.png">
 </div>
+
+## Modo Subjuntivo
+
+Diferentemente do Modo Indicativo, que expressa a certeza e a realidade, o Modo Subjuntivo é empregado para enunciar um fato de maneira **incerta, duvidosa, hipotética** ou **irreal**. Ele não apresenta a ação como um fato concreto, mas sim como uma **possibilidade**, um **desejo**, uma **suposição** ou uma **condição**.
+
+Por essa natureza, o Subjuntivo é o modo característico das **orações subordinadas**, sendo frequentemente introduzido por conjunções ou pronomes que estabelecem essa relação de dependência.
+
+- _Exemplos:_
+    - **Ainda que** eu **estude** muito...
+    - **Se** eu **pudesse** viajar...
+    - **Quando** você **vir** o resultado...
+    - Quero um emprego **que me faça** bem.
+
+O Modo Subjuntivo possui três tempos verbais: o Presente, o Pretérito Imperfeito e o Futuro.
+
+### Presente do Subjuntivo
+
+O Presente do Subjuntivo expressa uma possibilidade, um desejo ou uma dúvida que se projeta no presente ou no futuro.
+
+#### Formas e Conjugação
+
+Uma dica prática para formar o Presente do Subjuntivo é partir da 1ª pessoa do singular do Presente do Indicativo. Troca-se a terminação "-o" pela vogal temática oposta:
+
+- Verbos em **-AR** (terminação **-E**): _eu canto → que eu cant**e**_
+- Verbos em **-ER** e **-IR** (terminação **-A**): _eu bebo → que eu beb**a**; eu parto → que eu part**a**_
+
+|Pessoa|1ª Conjugação (Levantar)|2ª Conjugação (Beber)|3ª Conjugação (Cair)|
+|---|---|---|---|
+|Eu|que eu levant**e**|que eu beb**a**|que eu cai**a**|
+|Tu|que tu levant**es**|que tu beb**as**|que tu cai**as**|
+|Ele/Ela|que ele levant**e**|que ele beb**a**|que ele cai**a**|
+|Nós|que nós levant**emos**|que nós beb**amos**|que nós cai**amos**|
+|Vós|que vós levant**eis**|que vós beb**ais**|que vós cai**ais**|
+|Eles/Elas|que eles levant**em**|que eles beb**am**|que eles cai**am**|
+
+> **Dica de Reconhecimento:** Para conjugar ou reconhecer o Presente do Subjuntivo, utilize o gatilho de uma expressão que exija esse tempo verbal, como **"Espero que..."** ou **"Talvez..."**: _"Espero que eu **faça** uma boa prova"_.
+
+#### Os Valores Semânticos do Presente do Subjuntivo
+
+Este tempo é empregado em orações que expressam:
+
+1. **Desejo, Vontade ou Ordem Indireta:**
+    - _Exemplos:_
+        - **Espero que** você **seja** aprovado.
+        - **Tomara que** não **chova** amanhã.
+        - O professor quer **que** os alunos **façam** silêncio.
+
+2. **Dúvida ou Possibilidade:**
+    - _Exemplos:_
+        - **Talvez** ele **chegue** a tempo.
+        - É **provável que** a banca **divulgue** o gabarito hoje.
+        - **Pena que** a vida não **seja** assim tão colorida.
+
+3. **Necessidade ou Importância:**
+    - _Exemplos:_
+        - É **necessário que** todos **colaborem**.
+        - **Convém que** o assunto **seja** discutido em reunião.
+
+> **Foco de Prova: Indicativo vs. Subjuntivo em Orações Adjetivas**
+> 
+> A escolha entre o Modo Indicativo e o Subjuntivo em uma oração adjetiva (iniciada por "que") altera profundamente o sentido da frase.
+> 
+> - **Indicativo → Realidade, Certeza:** Refere-se a um ser ou grupo específico, cuja existência é um fato.
+>     - _Exemplo:_ Procuro os alunos **que estudam** para o concurso. (O falante se refere a um grupo real e conhecido de alunos que estudam).
+>     
+> - **Subjuntivo → Hipótese, Indefinição:** Refere-se a um ser ou grupo hipotético, desejado ou de existência incerta.
+>     - _Exemplo:_ Procuro alunos **que estudem** para o concurso. (O falante procura por quaisquer alunos que tenham essa característica; ele não sabe quem são ou se existem).
+> 
+> |Frase|Modo|Análise do Sentido|
+> |---|---|---|
+> |Há quem **comete** maldade.|Indicativo|Afirma a existência de pessoas que, de fato, cometem maldade.|
+> |Há quem **cometa** maldade.|Subjuntivo|Expressa a possibilidade de existirem pessoas que cometam maldade.|
+
+### Pretérito Imperfeito do Subjuntivo
+
+O Pretérito Imperfeito do Subjuntivo é o tempo verbal da **condição** e da **hipótese**, especialmente em relação a fatos passados ou a desejos. Sua desinência (terminação) característica e marcante é **-sse**.
+
+#### Formas e Conjugação
+
+A tabela a seguir apresenta a conjugação do Pretérito Imperfeito do Subjuntivo para os verbos-modelo.
+
+|Pessoa|1ª Conjugação (Levantar)|2ª Conjugação (Beber)|3ª Conjugação (Cair)|
+|---|---|---|---|
+|Eu|se eu levanta**sse**|se eu bebe**sse**|se eu ca**ísse**|
+|Tu|se tu levanta**sses**|se tu bebe**sses**|se tu ca**ísses**|
+|Ele/Ela|se ele levanta**sse**|se ele bebe**sse**|se ele ca**ísse**|
+|Nós|se nós levantá**ssemos**|se nós bebê**ssemos**|se nós ca**íssemos**|
+|Vós|se vós levantá**sseis**|se vós bebê**sseis**|se vós ca**ísseis**|
+|Eles/Elas|se eles levanta**ssem**|se eles bebe**ssem**|se eles ca**íssem**|
+
+> **Dica de Reconhecimento:** Para identificar o Pretérito Imperfeito do Subjuntivo, utilize o gatilho da condição, a conjunção **"Se"**: _"Se eu **pudesse**..."_, _"Se nós **estudássemos**..."_.
+
+#### Os Valores Semânticos do Pretérito Imperfeito do Subjuntivo
+
+1. **Condição ou Hipótese (geralmente irreal ou pouco provável):** É seu uso mais comum, frequentemente em correlação com o Futuro do Pretérito do Indicativo (-ria) para formar períodos condicionais.
+	- _Exemplos:_
+	    - **Se** eu **estudasse** todo dia, passa**ria** em qualquer prova.
+	    - Ele agiu como **se não soubesse** de nada.
+	    - **Caso** você **precisasse** de ajuda, eu o ajuda**ria**.
+
+2. **Desejo ou Vontade:** É usado para expressar um desejo, muitas vezes em construções com o verbo "querer" ou "gostar".
+	- _Exemplos:_
+	    - Eu gostaria que você **falasse** a verdade.
+	    - Queria que eles **se levantassem** mais cedo.
+
+3. **Fato Incerto ou Duvidoso no Passado:** Indica uma ação posterior a uma dúvida, temor ou pedido expresso no passado na oração principal.
+	- _Exemplos:_
+	    - Eu duvidei que minha avó **bebesse** tanta tequila.
+	    - O professor pediu que os alunos **fizessem** silêncio.
+	    - Eu temia que **fosse** um golpe.
+
+#### Os Tempos Compostos do Pretérido Subjuntivo
+
+Assim como no Indicativo, o Modo Subjuntivo também possui tempos compostos, formados pelo verbo auxiliar (TER ou HAVER) no subjuntivo + o particípio do verbo principal.
+
+##### Pretérito Perfeito Composto do Subjuntivo
+
+- **Formação:** Auxiliar no **Presente do Subjuntivo** + Particípio.
+- **Valor Semântico:** Expressa um **fato passado**, mas de cuja ocorrência se duvida ou se deseja. Também pode indicar um **fato futuro já concluído**.
+- **Exemplos (Fato Passado Hipotético):**
+    - Espero que você **tenha entendido** a explicação de ontem. (Expressa um desejo sobre um fato passado).
+    - É uma pena que ele não **tenha vindo** à festa.
+
+- **Exemplos (Fato Futuro Concluído):**
+    - Quando chegarmos lá, suponho que João já **tenha saído**. (Expressa uma hipótese sobre uma ação futura que estará terminada antes de outra).
+    - Avisem-me assim que vocês **tiverem terminado** o relatório.
+
+##### Pretérito Mais-que-perfeito Composto do Subjuntivo
+
+- **Formação:** Auxiliar no **Pretérito Imperfeito do Subjuntivo** + Particípio.
+- **Valor Semântico:** É o tempo da **hipótese irreal no passado**. Indica uma ação que poderia ter acontecido, mas não aconteceu, pois sua condição também não se realizou.
+- **Exemplos:**
+    - **Se** a sorte nos **tivesse favorecido**, não faltaria dinheiro hoje. (A condição — a sorte nos favorecer — não ocorreu).
+    - **Se** eu **tivesse aplicado** tudo em ações, hoje estaria rico.
+    - Ele teria evitado o acidente **se tivesse dirigido** com mais cuidado.
+
