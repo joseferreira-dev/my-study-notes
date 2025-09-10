@@ -335,7 +335,7 @@ Embora cada um possua suas particularidades, o fluxo básico de configuração e
 
 Essa segunda prova pode se manifestar de duas formas principais: através de códigos numéricos ou de notificações _push_.
 
-## Geração de Códigos OTP: HOTP e TOTP
+### Geração de Códigos OTP: HOTP e TOTP
 
 A geração dos códigos dinâmicos e descartáveis utilizados na autenticação multifator (MFA) não é aleatória. Ela é regida por padrões abertos e robustos que garantem que tanto o dispositivo do usuário quanto o servidor do serviço consigam gerar o mesmo código de forma sincronizada. Esses códigos são conhecidos como **OTP (_One-Time Password_ ou Senha de Uso Único)**, e sua finalidade é criar uma "chave de sessão" efêmera que valida um acesso sem expor o segredo de longo prazo. Os dois principais algoritmos para a geração de OTPs são o HOTP e o TOTP.
 
@@ -345,7 +345,7 @@ A geração dos códigos dinâmicos e descartáveis utilizados na autenticação
 
 Ambos os mecanismos derivam um código curto (geralmente de 6 a 8 dígitos) a partir de dois elementos fundamentais: um **segredo compartilhado** (_seed_) e um **parâmetro variável**. A diferença entre eles reside na natureza desse parâmetro.
 
-### HOTP (_HMAC-Based One-Time Password_)
+#### HOTP (_HMAC-Based One-Time Password_)
 
 No padrão HOTP, o parâmetro variável é um **contador de eventos**. A cada vez que um novo código é gerado, um contador é incrementado. O código OTP é o resultado de uma função criptográfica (HMAC) aplicada sobre o par {segredo, contador}.
 
@@ -353,7 +353,7 @@ No padrão HOTP, o parâmetro variável é um **contador de eventos**. A cada ve
 - **Casos de Uso:** Por não depender de um relógio, o HOTP é ideal para cenários _offline_ ou de acionamento assíncrono. É a tecnologia frequentemente utilizada em _tokens_ de segurança físicos que possuem um botão: cada vez que o botão é pressionado, o contador avança e um novo código é gerado.
 - **Desafios:** A principal fragilidade do HOTP é a **perda de sincronia do contador**. Se o usuário gerar muitos códigos sem validá-los, o contador do seu dispositivo ficará muito à frente do contador do servidor. Isso pode exigir um processo de resincronização, gerando custos de suporte e uma potencial complexidade para o usuário.
 
-### TOTP (_Time-Based One-Time Password_)
+#### TOTP (_Time-Based One-Time Password_)
 
 No padrão TOTP, o parâmetro variável é o **tempo**. O tempo universal é dividido em intervalos ou "passos" (_time-steps_), que são tipicamente de 30 ou 60 segundos. O código OTP é o resultado da função HMAC aplicada sobre o par {segredo, passo de tempo atual}.
 
@@ -361,7 +361,7 @@ No padrão TOTP, o parâmetro variável é o **tempo**. O tempo universal é div
 - **Casos de Uso:** O TOTP é o padrão preferido e amplamente dominante para os aplicativos autenticadores em _smartphones_ (como Google Authenticator, Authy e Microsoft Authenticator). Sua simplicidade de uso ("abra o aplicativo e leia o código") e o fato de não exigir a gestão de um estado de contador no servidor o tornam operacionalmente mais simples.
 - **Desafios:** A dependência de relógios sincronizados é seu principal ponto de atenção. Dispositivos com a hora incorreta podem gerar códigos inválidos, levando a falhas na autenticação.
 
-### Considerações de Segurança e Limitações
+#### Considerações de Segurança e Limitações
 
 Do ponto de vista criptográfico, ambos os padrões são seguros e utilizam o mesmo fundamento (HMAC). No entanto, a segurança efetiva de uma implementação de OTP depende de outros fatores:
 
@@ -370,6 +370,10 @@ Do ponto de vista criptográfico, ambos os padrões são seguros e utilizam o me
 - **Vulnerabilidade a _Phishing_:** É crucial entender que nem o HOTP nem o TOTP são imunes a ataques de _phishing_ em tempo real. Um invasor pode criar uma página de _login_ falsa que solicita ao usuário suas credenciais e, em seguida, o código OTP. Se o usuário fornecer o código, o atacante pode utilizá-lo imediatamente na página legítima para ganhar acesso. O OTP é um comprovante efêmero de posse do segredo, mas não garante a identidade do site com o qual o usuário está interagindo. Para uma proteção robusta contra _phishing_, são necessários padrões mais avançados, como o **FIDO2/WebAuthn**.
 
 Em resumo, HOTP e TOTP resolvem o mesmo problema com âncoras diferentes: evento versus tempo. O TOTP se consolidou como a escolha padrão para a maioria das implementações modernas devido à sua simplicidade operacional.
+
+### Notificações Push
+
+Para tornar o processo ainda mais simples para o usuário, muitos sistemas implementaram a autenticação via **notificação _push_**. Em vez de exigir que o usuário abra o aplicativo, leia o código e o digite no site, o servidor envia uma notificação diretamente para o celular cadastrado. A tela do celular exibe uma mensagem simples, como "Você está tentando fazer _login_?", com botões para "Aprovar" ou "Negar". Com um único toque, o usuário consegue validar sua identidade, combinando segurança e uma excelente experiência de uso.
 
 ## OpenID Connect (OIDC): A Camada de Identidade sobre o OAuth
 
@@ -422,3 +426,108 @@ A imagem a seguir apresenta o painel de gerenciamento do Keycloak, onde os admin
 <img width="700px" src="./img/02-keycloak.png">
 </div>
 
+Com certeza. Suas anotações sobre a autenticação sem senha são extremamente atuais e importantes. Vamos agora detalhar o padrão FIDO2/WebAuthn, que representa a vanguarda da segurança de acesso, e explicar como ele resolve as falhas fundamentais das senhas e dos OTPs.
+
+## Protocolos de Autenticação Sem Senha
+
+Apesar de sua onipresença, a senha é um dos elos mais fracos da segurança digital. Ela é vulnerável ao esquecimento, ao roubo por meio de _phishing_ e _malware_, e à reutilização em múltiplos serviços. Mesmo a Autenticação Multifator (MFA) baseada em OTPs (códigos de uso único), embora seja uma melhoria significativa, não é imune a ataques de interceptação em tempo real.
+
+Diante desse cenário, a indústria de tecnologia tem se movido em direção a um futuro sem senhas (_passwordless_), desenvolvendo protocolos que oferecem uma segurança muito superior aliada a uma experiência de uso mais simples. O principal padrão para a autenticação em serviços online é o **FIDO2 / WebAuthn**.
+
+### FIDO2 e WebAuthn: A Era das _Passkeys_
+
+O **FIDO2** é um projeto da **FIDO Alliance** (uma aliança de gigantes da tecnologia como Google, Microsoft, Apple e Amazon) que estabelece um padrão aberto para a autenticação sem senha. Ele é, na verdade, a combinação de dois componentes principais:
+
+- **WebAuthn (Web Authentication):** É uma API (Interface de Programação de Aplicações) padronizada pelo W3C (o consórcio que padroniza a web). O WebAuthn é a camada de comunicação que permite que os navegadores e as aplicações web interajam de forma segura com os mecanismos de autenticação.
+- **CTAP2 (Client-to-Authenticator Protocol):** É o protocolo que permite que o dispositivo do usuário (como um computador ou celular) se comunique com o **autenticador** (seja ele um dispositivo físico, como uma chave USB, ou um componente de _hardware_ integrado, como um leitor de digital).
+
+Juntos, WebAuthn e CTAP2 formam o padrão FIDO2, que busca substituir completamente as senhas e os OTPs pelas **_passkeys_** — credenciais digitais baseadas em criptografia de chaves públicas, que são criadas e armazenadas de forma segura no dispositivo do usuário e liberadas através de um gesto simples, como o uso da biometria ou de um PIN.
+
+A arquitetura do FIDO2 envolve a interação entre o navegador (ou um aplicativo nativo), o autenticador e o servidor do site (conhecido como RP - _Relying Party_).
+
+<div align="center">
+<img width="420px" src="./img/02-webauthn-1.png">
+</div>
+
+<div align="center">
+<img width="420px" src="./img/02-webauthn-2.png">
+</div>
+
+Os **autenticadores** podem ser de dois tipos:
+
+- **Autenticadores de Plataforma (_Platform_):** Integrados ao dispositivo que está sendo usado, como o leitor de impressão digital ou o sistema de reconhecimento facial de um _smartphone_ (Android HAL), ou o chip de segurança TPM (_Trusted Platform Module_) de um computador.
+- **Autenticadores Itinerantes (_Roaming_):** Dispositivos externos que podem ser movidos entre diferentes computadores, como as chaves de segurança USB (ex: YubiKey) ou dispositivos que se conectam via NFC ou Bluetooth.
+
+#### O Funcionamento Criptográfico
+
+O FIDO2 é baseado em criptografia de chave pública. O processo ocorre em duas fases:
+
+1. **Fase de Registro (_Create_):** Quando um usuário se cadastra em um site compatível, o site (RP) envia um "desafio" (_challenge_) para o navegador. O autenticador do usuário então gera um **par de chaves criptográficas** único e exclusivo para aquele site. A **chave pública** é enviada para o servidor do site e armazenada, enquanto a **chave privada nunca, em hipótese alguma, deixa o dispositivo do usuário**.
+2. **Fase de Autenticação (_Get_):** Em um _login_ futuro, o site envia um novo desafio. O usuário desbloqueia sua chave privada com um gesto (biometria ou PIN). O autenticador então usa a chave privada para "assinar" digitalmente o desafio. Essa assinatura é enviada de volta ao servidor, que a verifica usando a chave pública armazenada. Se a assinatura for válida, o acesso é concedido.
+
+Cada autenticação é, na prática, um **MFA implícito**, pois combina "algo que você tem" (o dispositivo com a chave privada) com "algo que você é" (biometria) ou "algo que você sabe" (PIN local).
+
+#### As Vantagens do Padrão FIDO2/WebAuthn
+
+Este modelo oferece uma segurança superior às abordagens tradicionais.
+
+|Vantagem|Descrição|
+|---|---|
+|**Resistência a _Phishing_**|Esta é a principal vantagem. A chave privada gerada para um site é criptograficamente vinculada ao seu domínio. Se um usuário for enganado e acessar uma página de _phishing_ (ex: `google-login.com` em vez de `accounts.google.com`), o autenticador simplesmente se recusará a assinar o desafio, pois o domínio não corresponde. O ataque falha automaticamente.|
+|**Segurança Superior a OTPs**|Diferente de um código SMS ou TOTP, que é um segredo legível que pode ser interceptado e reutilizado por um atacante em tempo real (_Man-in-the-Middle_), no FIDO2 não há nenhum segredo compartilhado para ser roubado. A comunicação é uma prova criptográfica que não pode ser reutilizada.|
+|**Privacidade**|Como um par de chaves diferente é gerado para cada site, não é possível que diferentes serviços rastreiem um usuário através do seu autenticador.|
+
+Com a adesão massiva de empresas como Apple, Google e Microsoft, as _passkeys_ estão rapidamente se tornando o novo padrão para uma autenticação mais simples e drasticamente mais segura na web.
+
+### Protocolo Signal: Criptografia e Autenticação em Mensageria
+
+Enquanto o FIDO2/WebAuthn foi projetado para proteger o _login_ em serviços, o **Protocolo Signal** foi criado para resolver um desafio diferente: garantir a **autenticação mútua e a confidencialidade ponta-a-ponta em conversas por mensagens**, tudo isso sem a necessidade de senhas. Desenvolvido pela Signal Messenger, este protocolo é a base tecnológica de aplicativos como Signal, WhatsApp e outros, sendo considerado o padrão-ouro para a comunicação segura.
+
+O objetivo do Signal é viabilizar uma autenticação mútua entre os participantes de uma conversa e, a partir daí, garantir a **confidencialidade** e a **integridade** de todas as mensagens trocadas. Para isso, ele implementa propriedades de segurança avançadas.
+
+<div align="center">
+<img width="700px" src="./img/02-signal.png">
+</div>
+
+#### Propriedades de Segurança Avançadas
+
+- **_Forward Secrecy_ (Sigilo Futuro):** Esta é uma das garantias mais fortes do protocolo. Significa que, se as chaves de longo prazo de um usuário forem comprometidas em algum momento, todas as **conversas passadas** permanecerão seguras e indecifráveis. Isso é possível porque o protocolo gera chaves de sessão efêmeras para cada conversa, que são descartadas após o uso.
+- **_Post-Compromise Security_ (Segurança Pós-Comprometimento):** Também conhecida como "propriedade de autocura", esta garantia assegura que, se um atacante conseguir comprometer uma chave de sessão atual, ele será rapidamente impedido de ler as **mensagens futuras**. O protocolo é projetado para se "curar" continuamente, gerando novas chaves que são independentes das anteriores.
+- **Negabilidade (_Deniability_):** O protocolo foi construído de forma a não gerar assinaturas digitais persistentes e irrefutáveis para cada mensagem. Isso cria uma ambiguidade plausível que torna difícil para um terceiro provar criptograficamente que uma pessoa específica foi a autora de uma determinada mensagem, protegendo os usuários.
+
+#### O Fluxo de Funcionamento
+
+O protocolo alcança essas garantias através de uma combinação engenhosa de algoritmos, principalmente o **X3DH (_Extended Triple Diffie-Hellman_)** para o estabelecimento inicial da sessão e o **Double Ratchet** para a troca contínua de mensagens.
+
+1. **Publicação de Pré-Chaves:** Cada usuário gera um conjunto de chaves públicas (chaves de identidade de longo prazo e um lote de chaves de uso único, as _prekeys_) e as publica em um servidor central. O servidor atua como uma "lista telefônica", mas não tem acesso a nenhuma chave privada.
+2. **Estabelecimento da Sessão:** Quando o Usuário A quer iniciar uma conversa com o Usuário B, ele baixa o pacote de pré-chaves de B do servidor. Usando o protocolo X3DH, ele combina suas próprias chaves privadas com as chaves públicas de B para calcular, de forma independente, uma **chave mestra secreta compartilhada**. Este processo pode ser feito de forma assíncrona, sem que B precise estar online.
+3. **Troca de Mensagens (_Double Ratchet_):** Uma vez que a chave mestra é estabelecida, o algoritmo _Double Ratchet_ entra em ação para gerar uma nova chave para cada mensagem trocada. Ele funciona como duas catracas (do inglês, _ratchet_) que avançam continuamente:
+    - **Catraca de Chave Simétrica:** Para cada mensagem, uma nova chave é derivada da anterior em uma cadeia, garantindo o _Forward Secrecy_.
+    - **Catraca Diffie-Hellman:** Periodicamente, os usuários trocam novas chaves públicas junto com as mensagens, o que permite "pular" para uma cadeia de chaves completamente nova e independente, garantindo a propriedade de autocura (_Post-Compromise Security_).
+4. **Re-chaveamento:** Para limitar ainda mais a janela de um possível comprometimento, a catraca Diffie-Hellman é acionada para gerar uma nova chave mestra após um determinado número de mensagens ou um período de tempo (ex: 7 dias), reforçando a segurança da sessão.
+
+### Signal vs. FIDO2
+
+Embora ambos sejam protocolos "sem senha", seus objetivos e mecanismos são fundamentalmente diferentes.
+
+|Propriedade|Protocolo Signal|FIDO2 / WebAuthn|
+|---|---|---|
+|**Camada OSI**|Aplicação (específico para mensageria).|Aplicação (API WebAuthn) + Autenticador (Hardware/Software).|
+|**Tipo de Segredo**|Chaves de sessão efêmeras que são continuamente rotacionadas (_ratcheted_).|Chave privada fixa (por serviço), protegida por _hardware_ ou sistema operacional.|
+|**Alvo de _Phishing_**|Não se aplica no mesmo contexto. A verificação é feita por _safety numbers_ (comparação de QR Codes/números).|A barra de endereço do navegador. A segurança reside na assinatura vinculada ao domínio.|
+|**Resistência Pós-Quântica**|Parcial (com o uso do protocolo PQXDH).|A ser definido (a FIDO Alliance estuda a integração de criptografia pós-quântica).|
+
+Em síntese, o FIDO2 e o Signal são soluções complementares para um mundo sem senhas:
+
+- **FIDO2 / WebAuthn** eliminam senhas no **processo de _login_ a serviços**, provando a identidade do usuário para um servidor através de chaves assimétricas e autenticação local.
+- O **Protocolo Signal** aplica a autenticação sem senha e a criptografia ponta-a-ponta para proteger a **comunicação entre usuários**, garantindo o sigilo, a autenticidade e a rotatividade constante de chaves nas mensagens.
+
+## Considerações Finais
+
+Neste capítulo, mergulhamos fundo no universo da **Autenticação**, o processo que funciona como o portão de entrada para o mundo digital e a primeira linha de defesa lógica de qualquer sistema. Vimos que autenticar é muito mais do que simplesmente verificar uma senha; é um campo complexo e em constante evolução, que busca equilibrar segurança, usabilidade e gerenciamento em larga escala.
+
+Iniciamos nossa jornada estabelecendo os **Fatores de Autenticação** — algo que você sabe, algo que você tem e algo que você é —, os pilares sobre os quais todos os mecanismos de verificação de identidade são construídos. Compreendemos que a robustez da segurança aumenta exponencialmente quando esses fatores são combinados em estratégias de **Autenticação Multifator (MFA)**, uma prática que se tornou indispensável no cenário de ameaças atual. Aprofundamos este conceito com a **MFA Adaptativa**, uma abordagem inteligente que ajusta o nível de desafio de acordo com o risco de cada tentativa de acesso.
+
+Exploramos as soluções que visam otimizar a experiência do usuário e centralizar a administração de identidades, como o **Single Sign-On (SSO)**. Vimos como os padrões abertos **SAML** e **OAuth 2.0**, complementado pelo **OpenID Connect**, viabilizam a federação de identidades, permitindo que um único _login_ seguro conceda acesso a um ecossistema de serviços, seja em um ambiente corporativo ou na web. Detalhamos o papel de ferramentas como o **Keycloak**, que materializam esses padrões em soluções práticas e gerenciáveis.
+
+Por fim, olhamos para o futuro da autenticação, analisando as tecnologias que buscam eliminar a principal fragilidade da segurança digital: a senha. Detalhamos o funcionamento da **Biometria** e, principalmente, do padrão **FIDO2/WebAuthn**, que, através das _passkeys_, utiliza a criptografia de chave pública para oferecer uma autenticação resistente a _phishing_ e drasticamente mais segura. Contrastamos essa abordagem com a do **Protocolo Signal**, que aplica princípios similares para garantir a segurança ponta-a-ponta na comunicação entre usuários.
