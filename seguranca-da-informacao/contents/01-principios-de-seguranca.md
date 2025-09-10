@@ -216,3 +216,46 @@ Mesmo em um sistema "endurecido", é preciso gerenciar quem pode fazer o quê. O
 
 Outro pilar da segurança lógica são os **registros (_logs_)** gerados pelos diversos equipamentos, sistemas e aplicações. Cada ação relevante — um login bem-sucedido, uma tentativa de login falha, a alteração de um arquivo, uma conexão de rede — é registrada. Esses _logs_ são fundamentais para os processos de **auditoria**, permitindo que os administradores monitorem a saúde do sistema, detectem atividades suspeitas e, em caso de um incidente de segurança, realizem uma investigação forense para entender exatamente o que aconteceu.
 
+Entendido. As anotações sobre Controle de Acesso são excelentes e fornecem uma base sólida. Dando continuidade ao capítulo, irei agora aprofundar e estruturar esses conceitos, detalhando os modelos de gerenciamento de acesso e sua aplicação nos contextos físico e lógico.
+
+### Controle de Acesso
+
+O **Controle de Acesso** é o mecanismo de segurança que gerencia e restringe o acesso a recursos, garantindo que apenas entidades autorizadas possam interagir com eles. Este é um método fundamental aplicado tanto no contexto físico quanto no lógico, com o objetivo de estabelecer barreiras que regulam quem pode entrar em um local, utilizar um equipamento, acessar um sistema ou manipular um dado.
+
+O controle de acesso é a materialização dos princípios da **Autenticidade** e da **Autorização**. Primeiramente, o sistema precisa autenticar a identidade de quem solicita o acesso (provar que a pessoa é quem diz ser). Em seguida, com a identidade confirmada, o sistema verifica a autorização, ou seja, quais são as permissões daquela identidade para decidir se o acesso solicitado deve ser concedido ou negado.
+
+#### Controle de Acesso Físico
+
+A proteção começa no mundo físico. O controle de acesso físico implementa a primeira barreira de defesa, controlando a movimentação de pessoas e objetos em um ambiente. Ele permite diferenciar funcionários de visitantes, restringir o acesso a áreas sensíveis e criar um registro de quem entrou e saiu de cada local.
+
+Um exemplo prático da aplicação de múltiplas camadas de controle de acesso físico é a jornada de um técnico para realizar uma manutenção em um servidor dentro de um _datacenter_ de alta segurança:
+
+1. Ele pode precisar passar por uma cancela na entrada do complexo, onde sua identidade e o veículo são verificados.
+2. Na recepção do edifício, ele se identifica novamente e passa por uma portaria e uma catraca.
+3. Para entrar na sala do _datacenter_, ele pode precisar passar por uma porta com múltiplos fatores de autenticação, como um leitor de crachá e um scanner de biometria.
+4. Dentro da sala, para acessar o _rack_ específico onde está o servidor, ele pode precisar de uma chave física ou de um código de acesso.
+
+Cada uma dessas etapas é um ponto de controle que valida a autorização do técnico para estar naquele local específico.
+
+#### Controle de Acesso Lógico
+
+No ambiente digital, o controle de acesso lógico aplica os mesmos princípios para proteger sistemas e dados. Alguns exemplos incluem:
+
+- A restrição de acesso a um serviço de rede apenas para uma faixa de endereços IP específicos.
+- A necessidade de fornecer um _login_ e senha para acessar um sistema operacional ou uma aplicação.
+- A exigência de privilégios de administrador (_root_) para executar comandos que alteram a configuração de um servidor.
+
+##### Modelos de Controle de Acesso
+
+Para implementar as políticas de autorização de forma estruturada, a indústria de tecnologia da informação desenvolveu diferentes modelos de controle de acesso. Cada modelo representa uma estratégia distinta para gerenciar permissões, com diferentes níveis de flexibilidade e rigor. As quatro técnicas mais importantes são:
+
+1. **Controle de Acesso Obrigatório (MAC - _Mandatory Access Control_):** Este é o modelo mais restritivo. Nele, o acesso é decidido pelo próprio sistema operacional, com base em níveis de sensibilidade. Tanto os recursos (objetos, como arquivos) quanto os usuários (sujeitos) recebem rótulos de segurança (ex: "Confidencial", "Secreto", "Ultrassecreto"). O sistema então impõe uma regra rígida: um usuário só pode ler um arquivo se seu nível de segurança for igual ou superior ao do arquivo. Este modelo não dá autonomia aos usuários; nem mesmo o dono de um arquivo pode alterar suas permissões. Por sua rigidez, o MAC é utilizado principalmente em ambientes que exigem altíssima segurança, como sistemas militares e governamentais.
+2. **Controle de Acesso Discricionário (DAC - _Discretionary Access Control_):** Este é um modelo muito mais flexível. No DAC, o **proprietário** de um recurso tem o poder (a "discrição") de decidir quem pode acessá-lo e quais permissões conceder. É o modelo utilizado pela maioria dos sistemas operacionais de uso geral, como Windows e Linux. Quando um usuário cria um arquivo, ele se torna o dono e pode definir se outros usuários podem apenas ler, ou também escrever e executar aquele arquivo. A flexibilidade, no entanto, pode se tornar um risco de segurança em grandes organizações, pois o gerenciamento das permissões é descentralizado e pode ser difícil de auditar.
+3. **Controle de Acesso Baseado em Papéis (RBAC - _Role-Based Access Control_):** Também conhecido como controle baseado em funções, o RBAC é o modelo mais comum em ambientes corporativos. Em vez de atribuir permissões diretamente a cada usuário, o administrador cria "papéis" (funções) que correspondem a cargos ou responsabilidades dentro da organização (ex: "Contador", "Vendedor", "Gerente de RH"). As permissões são atribuídas a esses papéis, e os usuários simplesmente recebem os papéis que lhes correspondem. Essa estratégia simplifica enormemente o gerenciamento: ao contratar um novo vendedor, basta atribuir-lhe o papel "Vendedor", e ele automaticamente herda todas as permissões necessárias. O RBAC pode ser implementado em diferentes níveis de complexidade:
+    - **RBAC 0 (Básico):** É o modelo "plano", sem hierarquia. Requer que os papéis sejam atribuídos diretamente aos usuários e as permissões diretamente aos papéis.
+    - **RBAC 1 (Hierárquico):** Introduz a hierarquia de papéis, permitindo que um papel herde as permissões de outro. Por exemplo, o papel "Gerente de Vendas" pode herdar todas as permissões do papel "Vendedor" e ter permissões adicionais.
+    - **RBAC 2 (Restrito):** Adiciona o conceito de "separação de deveres", impondo restrições. Por exemplo, um usuário com o papel "Solicitante de Compra" não pode ter, ao mesmo tempo, o papel "Aprovador de Compra".
+    - **RBAC 3 (Unificado):** Combina as funcionalidades dos modelos 1 e 2, oferecendo tanto hierarquia quanto restrições.
+4. **Controle de Acesso Baseado em Atributos (ABAC - _Attribute-Based Access Control_):** É o modelo mais moderno, flexível e granular. No ABAC, as decisões de acesso são tomadas em tempo real, com base em uma política que avalia uma combinação de **atributos**. Esses atributos podem ser do usuário (ex: cargo, departamento, localização), do recurso que está sendo acessado (ex: tipo de documento, nível de sensibilidade) e do contexto da solicitação (ex: hora do dia, local de acesso).
+    - **Exemplo prático:** Uma política ABAC poderia ser: "Permitir que médicos (atributo do usuário) acessem prontuários médicos (atributo do recurso), mas apenas dos pacientes de sua própria ala (outro atributo do usuário) e somente durante o horário de expediente (atributo de contexto)". Essa capacidade de criar regras dinâmicas e contextuais torna o ABAC ideal para ambientes complexos e de segurança zero-trust.
+
