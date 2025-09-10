@@ -626,3 +626,69 @@ Assim como no Indicativo, o Modo Subjuntivo também possui tempos compostos, for
     - **Se** eu **tivesse aplicado** tudo em ações, hoje estaria rico.
     - Ele teria evitado o acidente **se tivesse dirigido** com mais cuidado.
 
+### Futuro do Subjuntivo
+
+O Futuro do Subjuntivo é o tempo verbal que descreve uma ação **eventual ou hipotética que poderá ocorrer no futuro**. Ele não expressa uma certeza, mas sim uma condição para que outra ação futura se realize. É frequentemente introduzido por conjunções como **"quando"** (com sentido de "no momento em que") e **"se"**.
+
+#### Formas e Conjugação
+
+A tabela a seguir apresenta a conjugação do Futuro do Subjuntivo para os verbos-modelo.
+
+|Pessoa|1ª Conjugação (Levantar)|2ª Conjugação (Beber)|3ª Conjugação (Cair)|
+|---|---|---|---|
+|Eu|quando eu levanta**r**|quando eu bebe**r**|quando eu cai**r**|
+|Tu|quando tu levanta**res**|quando tu bebe**res**|quando tu caí**res**|
+|Ele/Ela|quando ele levanta**r**|quando ele bebe**r**|quando ele cai**r**|
+|Nós|quando nós levanta**rmos**|quando nós bebe**rmos**|quando nós caí**rmos**|
+|Vós|quando vós levanta**rdes**|quando vós bebe**rdes**|quando vós caí**rdes**|
+|Eles/Elas|quando eles levanta**rem**|quando eles bebe**rem**|quando eles caí**rem**|
+
+> **Dica de Reconhecimento:** Para identificar o Futuro do Subjuntivo, utilize o gatilho de uma hipótese futura, como **"Quando eu..."**: _"Quando eu **fizer**..."_, _"Quando nós **pudermos**..."_.
+
+#### Os Valores Semânticos do Futuro do Subjuntivo
+
+1. **Ação Eventual ou Hipotética no Futuro:** Este tempo verbal está quase sempre em correlação com um verbo no Futuro do Presente do Indicativo ou no Imperativo na oração principal.
+    - _Exemplos:_
+        - **Quando** você **terminar** o relatório, avise-me.
+        - **Se** eu **quiser** falar com Deus, tenho que ficar a sós.
+        - Daremos o prêmio àquele que **atingir** a meta primeiro.
+
+2. **Futuro do Subjuntivo Composto:** A forma composta (formada pelo auxiliar TIVER/HOUVER + Particípio) expressa uma ação futura que já estará concluída antes de outra ação também futura.
+    - _Exemplo:_ **Quando** você **tiver terminado** o relatório, poderá ir para casa.
+    - _Exemplo:_ Só poderemos comemorar **depois que tivermos recebido** o resultado oficial.
+
+#### Futuro do Subjuntivo vs. Infinitivo Pessoal
+
+Em verbos regulares, a forma da 1ª e 3ª pessoa do singular do Futuro do Subjuntivo é **idêntica** à do Infinitivo Pessoal (`entregar`). Esta semelhança é uma fonte constante de confusão e um alvo preferencial das bancas.
+
+Para distinguir as duas formas, a análise do contexto é fundamental. No entanto, o método mais rápido e seguro é o da **substituição por um verbo irregular**, cujas formas são distintas. O verbo **FAZER** é o melhor modelo para este teste.
+
+|Frase de Teste|Substituição pelo verbo FAZER|Análise|
+|---|---|---|
+|**Quando** eu **entregar** o trabalho...|**Quando** eu **fizer** o trabalho...|A forma "fizer" confirma **Futuro do Subjuntivo**.|
+|**Para entregar** o trabalho, fiz horas extras.|**Para fazer** o trabalho, fiz horas extras.|A forma "fazer" confirma **Infinitivo**.|
+
+Esta diferença é especialmente importante para os verbos irregulares derivados de **PÔR, TER, VER** e **VIR**, cujas formas são muito cobradas.
+
+|Verbo|Infinitivo|Futuro do Subjuntivo|
+|---|---|---|
+|**Pôr** (e derivados)|pro**por**|propo**user**|
+|**Ter** (e derivados)|entre**ter**|entret**iver**|
+|**Ver** (e derivados)|re**ver**|re**vir**|
+|**Vir** (e derivados)|inter**vir**|inter**vier**|
+
+### Quadro-Resumo do Modo Subjuntivo
+
+Os esquemas a seguir consolidam os principais valores semânticos de cada tempo verbal do Modo Subjuntivo, servindo como um guia rápido para consulta.
+
+<div align="center">
+<img width="640px" src="./img/06-modo-subjuntivo-presente.png">
+</div>
+
+<div align="center">
+<img width="580px" src="./img/06-modo-subjuntivo-preterito.png">
+</div>
+
+<div align="center">
+<img width="540px" src="./img/06-modo-subjuntivo-futuro.png">
+</div>
