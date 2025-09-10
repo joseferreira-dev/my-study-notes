@@ -358,3 +358,55 @@ Na prática, a ideia do "passado do passado" é mais frequentemente expressa pel
 > 
 > É fundamental notar que essa equivalência depende de um contexto que deixe a anterioridade da ação subentendida.
 
+### Futuro do Presente do Indicativo
+
+O Futuro do Presente é o tempo verbal que expressa uma ação que ocorrerá em um momento **posterior ao momento da fala**. É o futuro visto a partir de "agora", expressando, em geral, um fato tido como certo ou provável.
+
+#### Forma Simples e Conjugação (-rei, -rás, -rá)
+
+A forma simples do Futuro do Presente, embora seja a padrão na escrita formal, é frequentemente substituída na linguagem cotidiana pela locução verbal `verbo IR (no presente) + Infinitivo` (ex: "vou fazer" em vez de "farei"). Mesmo assim, seu domínio é indispensável para a norma culta.
+
+|Pessoa|1ª Conjugação (Levantar)|2ª Conjugação (Beber)|3ª Conjugação (Cair)|
+|---|---|---|---|
+|Eu|levanta**rei**|bebe**rei**|cai**rei**|
+|Tu|levanta**rás**|bebe**rás**|cai**rás**|
+|Ele/Ela|levanta**rá**|bebe**rá**|cai**rá**|
+|Nós|levanta**remos**|bebe**remos**|cai**remos**|
+|Vós|levanta**reis**|bebe**reis**|cai**reis**|
+|Eles/Elas|levanta**rão**|bebe**rão**|cai**rão**|
+
+> **Dica de Reconhecimento:** Para identificar o Futuro do Presente, basta tentar encaixar um marcador temporal como **"Amanhã"**: _"Amanhã eu **estudarei**"_, _"Amanhã ele **partirá**"_.
+
+#### Os Valores Semânticos da Forma Simples
+
+1. **Fato Futuro Certo ou Provável:** É o seu uso mais comum, indicando uma ação que se realizará no futuro.
+	- _Exemplos:_
+	    - **Passarei** no concurso dos meus sonhos.
+	    - A cerimônia de posse **começará** às 10h.
+	    - No próximo ano, nós **viajaremos** para a Europa.
+
+2. **Incerteza ou Suposição sobre o Presente:** De forma modal, o Futuro do Presente pode ser usado para expressar uma dúvida, uma incerteza ou uma suposição sobre um fato que ocorre no presente.
+	- _Exemplos:_
+	    - Onde **estará** Maria agora?
+	    - Quantos anos ele **terá**?
+	    - **Será** que eles estão falando a verdade?
+
+3. **Valor de Imperativo Categórico:** Em textos solenes, como os bíblicos ou os jurídicos, o Futuro do Presente é usado para expressar uma ordem ou um mandamento de forma enfática e inquestionável.
+	- _Exemplos:_
+	    - **Honrarás** pai e mãe.
+	    - Não **matarás**.
+	    - A lei não **prejudicará** o direito adquirido.
+
+#### Futuro do Presente Composto
+
+A forma composta deste tempo verbal possui dois valores semânticos distintos.
+
+- **Formação:** Verbo Auxiliar **TER** (ou **HAVER**) no Futuro do Presente Simples + **Particípio** do Verbo Principal.
+- **Valores Semânticos:**
+    1. **Ação Futura Concluída Antes de Outra Ação Futura:** Indica uma ação que já estará terminada quando outra ação, também futura, acontecer.
+        - _Exemplo:_ Quando você **chegar** ao aeroporto, o avião já **terá decolado**. (A decolagem é um futuro anterior à chegada).
+        - _Exemplo:_ Em dezembro, eu já **terei concluído** meu curso.
+
+    2. **Suposição sobre um Fato Passado:** Expressa uma probabilidade ou uma hipótese sobre algo que já aconteceu.
+        - _Exemplo:_ Ele não veio à festa. **Terá ficado** doente? (Suposição sobre um fato ocorrido no passado).
+        - _Exemplo:_ O suspeito **terá fugido** pela janela durante a madrugada. (Indica uma forte probabilidade sobre o passado).
