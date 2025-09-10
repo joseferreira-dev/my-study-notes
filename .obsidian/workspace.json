@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "seguranca-da-informacao/contents/02-autenticacao-e-seus-mecanismos.md",
+                "file": "lingua-portuguesa/contents/06-classes-de-palavras-iv.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-autenticacao-e-seus-mecanismos"
+              "title": "06-classes-de-palavras-iv"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "seguranca-da-informacao/contents/02-autenticacao-e-seus-mecanismos.md",
+                "file": "lingua-portuguesa/contents/06-classes-de-palavras-iv.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 02-autenticacao-e-seus-mecanismos"
+              "title": "Sumário de 06-classes-de-palavras-iv"
             }
           }
         ],
@@ -171,6 +171,8 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "seguranca-da-informacao/contents/02-autenticacao-e-seus-mecanismos.md",
+    "lingua-portuguesa/contents/06-classes-de-palavras-iv.md",
     "seguranca-da-informacao/contents/img/02-signal.png",
     "seguranca-da-informacao/contents/img/02-webauthn-2.png",
     "seguranca-da-informacao/contents/img/02-webauthn-1.png",
@@ -181,9 +183,7 @@
     "seguranca-da-informacao/contents/img/(A).png",
     "seguranca-da-informacao/contents/img/02-biometria-tecnicas.png",
     "seguranca-da-informacao/contents/img/02-oauth-fluxos-de-mensagens.png",
-    "seguranca-da-informacao/contents/img/02-oauth-papeis-e-fluxos.png",
     "seguranca-da-informacao/contents/01-principios-de-seguranca.md",
-    "seguranca-da-informacao/contents/02-autenticacao-e-seus-mecanismos.md",
     "seguranca-da-informacao/contents/img",
     "seguranca-da-informacao/contents/Nova pasta",
     "seguranca-da-informacao/README.md",
