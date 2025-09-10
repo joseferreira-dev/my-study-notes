@@ -269,3 +269,92 @@ A mesma ideia de continuidade e duração até o presente, expressa pelo Pretér
     - A situação **tem piorado** a cada dia. (Pretérito Perfeito Composto)
     - A situação **vai piorando** a cada dia. (Estrutura Equivalente)
 
+### Pretérito Imperfeito do Indicativo
+
+Enquanto o Pretérito Perfeito é a "fotografia" de um fato concluído no passado, o Pretérito Imperfeito é o "filme". Ele não foca no início ou no fim da ação, mas sim em sua **continuidade, duração ou repetição** ao longo de um período do passado. É o tempo verbal da rotina, da descrição e do cenário.
+
+#### Formas e Conjugação
+
+A tabela a seguir apresenta a conjugação do Pretérito Imperfeito para os verbos-modelo. Note as desinências (terminações) características: **-VA-** para a 1ª conjugação (-AR) e **-IA-** para a 2ª e 3ª conjugações (-ER e -IR).
+
+|Pessoa|1ª Conjugação (Levantar)|2ª Conjugação (Beber)|3ª Conjugação (Cair)|
+|---|---|---|---|
+|Eu|levanta**va**|beb**ia**|ca**ía**|
+|Tu|levanta**vas**|beb**ias**|ca**ías**|
+|Ele/Ela|levanta**va**|beb**ia**|ca**ía**|
+|Nós|levantá**vamos**|beb**íamos**|ca**íamos**|
+|Vós|levantá**veis**|beb**íeis**|ca**íeis**|
+|Eles/Elas|levanta**vam**|beb**iam**|ca**íam**|
+
+> **Dica de Reconhecimento:** Para identificar o Pretérito Imperfeito, basta tentar encaixar um marcador temporal de passado habitual, como **"Antigamente"**: _"Antigamente eu **estudava**"_, _"Antigamente eles **viviam** felizes"_.
+
+#### Os Valores Semânticos do Pretérito Imperfeito
+
+1. **Ação Habitual ou Contínua no Passado:** É o seu uso mais comum, para descrever rotinas, costumes ou estados que se prolongavam no passado.
+	- _Exemplos:_
+	    - **Antigamente**, eu **estudava** todo dia e ainda **malhava** à noite.
+	    - Quando eu era pequeno, **achava** a vida mais simples.
+	    - Naquele tempo, nós **íamos** ao cinema todos os sábados.
+
+2. **Descrição e "Pano de Fundo" Narrativo:** O Pretérito Imperfeito é amplamente utilizado para descrever cenários e situações que serviam de "pano de fundo" para um evento principal e pontual (geralmente expresso no Pretérito Perfeito).
+	- _Exemplos:_
+	    - Eu **dormia** tranquilamente quando o alarme **disparou**. (Ação contínua de "dormir" é o cenário para a ação pontual de "disparar").
+	    - O céu **estava** azul e os pássaros **cantavam**, mas de repente o tempo **fechou**.
+	    - Ele **lia** um livro na varanda quando o telefone **tocou**.
+
+3. **Ação Planejada e Não Realizada:** Pode ser usado para indicar uma intenção ou um plano do passado que acabou sendo frustrado ou não se concretizou por algum motivo.
+	- _Exemplos:_
+	    - Eu **pretendia** começar o curso hoje, porém tudo foi cancelado.
+	    - Nós **íamos** viajar para a praia, mas o carro quebrou.
+	    - Ele **vinha** me visitar, mas teve um imprevisto e não pôde vir.
+
+4. **Pretérito de Cortesia ou Modéstia:** É um uso estilístico muito comum no presente para fazer pedidos ou afirmações de forma mais polida e menos impositiva.
+	- _Exemplos:_
+	    - Com licença, eu **queria** pedir uma informação. (Mais polido que "quero").
+	    - **Gostaria** de um café, por favor.
+	    - O senhor **desejava** alguma coisa?
+
+### Pretérito Mais-Que-Perfeito do Indicativo
+
+O Pretérito Mais-que-perfeito é o tempo verbal que expressa o **"passado do passado"**. Sua função específica é indicar uma ação que ocorreu e foi concluída **antes de outra ação também já passada**. Ele estabelece uma relação de anterioridade entre dois eventos no passado.
+
+#### Forma Simples e Conjugação
+
+A forma simples do Pretérito Mais-que-perfeito é caracterizada pela desinência **-ra** (e suas variações de pessoa). Embora seja pouco utilizada na linguagem falada contemporânea, seu uso é comum na escrita formal, em textos literários, e é um conhecimento exigido em concursos públicos.
+
+|Pessoa|1ª Conjugação (Levantar)|2ª Conjugação (Beber)|3ª Conjugação (Cair)|
+|---|---|---|---|
+|Eu|levanta**ra**|bebe**ra**|ca**íra**|
+|Tu|levanta**ras**|bebe**ras**|ca**íras**|
+|Ele/Ela|levanta**ra**|bebe**ra**|ca**íra**|
+|Nós|levantá**ramos**|bebê**ramos**|ca**íramos**|
+|Vós|levantá**reis**|bebê**reis**|ca**íreis**|
+|Eles/Elas|levanta**ram**|bebe**ram**|ca**íram**|
+
+- **Exemplo 1:** Quando a polícia **chegou** (passado 1), o ladrão já **fugira** (passado 2, anterior).
+- **Exemplo 2:** Ele me **disse** (passado 1) que já **lêra** (passado 2) aquele livro.
+- **Exemplo 3:** Já passa**ra** das dez horas quando o táxi **chegou**.
+
+#### Forma Composta (tinha/havia + particípio)
+
+Na prática, a ideia do "passado do passado" é mais frequentemente expressa pela forma composta, que é perfeitamente equivalente à forma simples.
+
+- **Formação:** Verbo Auxiliar **TER** ou **HAVER** no Pretérito Imperfeito do Indicativo + **Particípio** do Verbo Principal.
+- **Equivalência Semântica:** A substituição da forma simples pela composta (ou vice-versa) não gera alteração de sentido nem prejuízo gramatical, sendo uma reescritura perfeita.
+
+|Forma Simples|Forma Composta (Equivalente)|
+|---|---|
+|Quando cheguei ao ponto, o ônibus já **passara**.|Quando cheguei ao ponto, o ônibus já **tinha passado**.|
+|O paciente já **falecera** quando o médico chegou.|O paciente já **havia falecido** quando o médico chegou.|
+
+> **Foco de Prova: A Substituição pelo Pretérito Perfeito Simples**
+> 
+> Em contextos específicos, a norma culta permite que o **Pretérito Perfeito Simples** (`viu`) seja usado com o valor do Mais-que-perfeito (`vira` / `tinha visto`). Isso ocorre principalmente em orações temporais (introduzidas por `depois que`, `assim que`, etc.) ou em narrativas onde a sequência cronológica dos fatos passados é muito clara.
+> 
+> - **Exemplo:** Depois que **viu** a confusão, achou melhor se afastar.
+>     - **Análise:** A forma "viu" (Perfeito) tem, neste contexto, o mesmo valor de "vira" ou "tinha visto" (Mais-que-perfeito), pois a ação de ver é claramente anterior à de se afastar.
+> - **Exemplo:** Assim que **terminou** o trabalho, ele foi para casa.
+>     - **Análise:** "terminou" (Perfeito) equivale a "terminara" ou "tinha terminado" (Mais-que-perfeito).
+> 
+> É fundamental notar que essa equivalência depende de um contexto que deixe a anterioridade da ação subentendida.
+
