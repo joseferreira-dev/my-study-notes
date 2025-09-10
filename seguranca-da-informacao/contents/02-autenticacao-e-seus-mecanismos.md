@@ -282,9 +282,7 @@ No contexto da segurança da informação, a biometria é a materialização do 
 As diversas técnicas de biometria podem ser divididas em duas grandes categorias, conforme ilustra o diagrama a seguir.
 
 <div align="center">
-
-<img width="560px" src="./img/02-biometria-tecnicas.png">
-
+<img width="700px" src="./img/02-biometria-tecnicas.png">
 </div>
 
 1. **Características Fisiológicas:** Referem-se a traços relacionados à estrutura física do corpo, que são relativamente estáveis ao longo do tempo.
@@ -317,4 +315,59 @@ Um sistema biométrico opera em um ciclo que envolve quatro etapas principais:
 2. **Captura:** Em um momento posterior de autenticação, o usuário apresenta novamente sua característica ao sensor (ex: coloca o dedo no leitor).
 3. **Extração:** O sistema processa a amostra recém-capturada e extrai seus pontos únicos, criando um novo _template_ temporário.
 4. **Comparação:** O _template_ temporário é comparado com o _template_ original, armazenado no banco de dados. Se a correspondência (_match_) estiver dentro de uma margem de tolerância aceitável, a identidade do usuário é validada com sucesso.
+
+## Autenticadores Móveis
+
+Com a onipresença dos _smartphones_, estes dispositivos se tornaram uma das principais ferramentas para a implementação do fator de autenticação "algo que você tem", substituindo em muitos casos os _tokens_ físicos de segurança. Os **autenticadores de dispositivos móveis** são aplicativos que transformam o celular em um gerador de credenciais de uso único, adicionando uma camada robusta de segurança ao processo de _login_.
+
+Dentre os aplicativos mais conhecidos do mercado, podemos citar o **Google Authenticator**, o **Authy** e o **Microsoft Authenticator**.
+
+<div align="center">
+<img width="700px" src="./img/02-autenticadores-de-dispositivos.png">
+</div>
+
+Embora cada um possua suas particularidades, o fluxo básico de configuração e uso é padronizado. O processo de vinculação de uma conta a um aplicativo autenticador geralmente ocorre da seguinte forma:
+
+1. **Habilitação:** O usuário, no site do serviço que deseja proteger (ex: seu provedor de e-mail, sua conta em uma corretora), habilita a autenticação de dois fatores via aplicativo.
+2. **Geração do Segredo:** O serviço gera uma **chave secreta** única para aquela conta. Essa chave é apresentada ao usuário na forma de um **QR Code**.
+3. **Vinculação:** O usuário abre o aplicativo autenticador em seu celular e utiliza a câmera para ler o QR Code. Nesse momento, a chave secreta é armazenada de forma segura dentro do aplicativo, criando o vínculo entre a conta e o dispositivo.
+4. **Uso:** A partir desse instante, todo novo _login_ no serviço exigirá, além da senha, a apresentação de uma segunda prova de identidade fornecida pelo aplicativo.
+
+Essa segunda prova pode se manifestar de duas formas principais: através de códigos numéricos ou de notificações _push_.
+
+## Geração de Códigos OTP: HOTP e TOTP
+
+A geração dos códigos dinâmicos e descartáveis utilizados na autenticação multifator (MFA) não é aleatória. Ela é regida por padrões abertos e robustos que garantem que tanto o dispositivo do usuário quanto o servidor do serviço consigam gerar o mesmo código de forma sincronizada. Esses códigos são conhecidos como **OTP (_One-Time Password_ ou Senha de Uso Único)**, e sua finalidade é criar uma "chave de sessão" efêmera que valida um acesso sem expor o segredo de longo prazo. Os dois principais algoritmos para a geração de OTPs são o HOTP e o TOTP.
+
+<div align="center">
+<img width="560px" src="./img/02-otp-hotp-e-topt.png">
+</div>
+
+Ambos os mecanismos derivam um código curto (geralmente de 6 a 8 dígitos) a partir de dois elementos fundamentais: um **segredo compartilhado** (_seed_) e um **parâmetro variável**. A diferença entre eles reside na natureza desse parâmetro.
+
+### HOTP (_HMAC-Based One-Time Password_)
+
+No padrão HOTP, o parâmetro variável é um **contador de eventos**. A cada vez que um novo código é gerado, um contador é incrementado. O código OTP é o resultado de uma função criptográfica (HMAC) aplicada sobre o par {segredo, contador}.
+
+- **Funcionamento:** Para que a autenticação funcione, o dispositivo do usuário e o servidor precisam manter seus contadores sincronizados. Quando o usuário apresenta um código, o servidor o valida contra o valor esperado para o contador atual. Para tolerar pequenos desalinhamentos (por exemplo, se o usuário gerar um código mas não o utilizar), o servidor geralmente aceita códigos gerados por uma pequena "janela" de contadores futuros.
+- **Casos de Uso:** Por não depender de um relógio, o HOTP é ideal para cenários _offline_ ou de acionamento assíncrono. É a tecnologia frequentemente utilizada em _tokens_ de segurança físicos que possuem um botão: cada vez que o botão é pressionado, o contador avança e um novo código é gerado.
+- **Desafios:** A principal fragilidade do HOTP é a **perda de sincronia do contador**. Se o usuário gerar muitos códigos sem validá-los, o contador do seu dispositivo ficará muito à frente do contador do servidor. Isso pode exigir um processo de resincronização, gerando custos de suporte e uma potencial complexidade para o usuário.
+
+### TOTP (_Time-Based One-Time Password_)
+
+No padrão TOTP, o parâmetro variável é o **tempo**. O tempo universal é dividido em intervalos ou "passos" (_time-steps_), que são tipicamente de 30 ou 60 segundos. O código OTP é o resultado da função HMAC aplicada sobre o par {segredo, passo de tempo atual}.
+
+- **Funcionamento:** Aqui, a sincronização é de relógio. Como o dispositivo do usuário e o servidor compartilham o mesmo segredo e consultam o mesmo relógio universal, eles conseguem gerar o mesmo código durante o mesmo intervalo de tempo. Para acomodar pequenas diferenças de relógio entre o cliente e o servidor, é comum que o servidor aceite não apenas o código do passo de tempo atual, mas também o do passo imediatamente anterior e posterior.
+- **Casos de Uso:** O TOTP é o padrão preferido e amplamente dominante para os aplicativos autenticadores em _smartphones_ (como Google Authenticator, Authy e Microsoft Authenticator). Sua simplicidade de uso ("abra o aplicativo e leia o código") e o fato de não exigir a gestão de um estado de contador no servidor o tornam operacionalmente mais simples.
+- **Desafios:** A dependência de relógios sincronizados é seu principal ponto de atenção. Dispositivos com a hora incorreta podem gerar códigos inválidos, levando a falhas na autenticação.
+
+### Considerações de Segurança e Limitações
+
+Do ponto de vista criptográfico, ambos os padrões são seguros e utilizam o mesmo fundamento (HMAC). No entanto, a segurança efetiva de uma implementação de OTP depende de outros fatores:
+
+- **Proteção Contra Força Bruta:** Como os códigos OTP são curtos, eles são, em teoria, vulneráveis a ataques de força bruta _online_ (tentativa e erro). Por isso, é indispensável que o servidor implemente políticas de **limitação de tentativas (_rate limiting_)** e de bloqueio progressivo de conta após um número de falhas.
+- **Manejo do Segredo (_Seed_):** O segredo compartilhado, provisionado durante o cadastro, é o ativo mais crítico. Ele deve ser armazenado de forma segura tanto no dispositivo do usuário quanto no servidor, e a organização deve ter políticas para sua rotação e revogação.
+- **Vulnerabilidade a _Phishing_:** É crucial entender que nem o HOTP nem o TOTP são imunes a ataques de _phishing_ em tempo real. Um invasor pode criar uma página de _login_ falsa que solicita ao usuário suas credenciais e, em seguida, o código OTP. Se o usuário fornecer o código, o atacante pode utilizá-lo imediatamente na página legítima para ganhar acesso. O OTP é um comprovante efêmero de posse do segredo, mas não garante a identidade do site com o qual o usuário está interagindo. Para uma proteção robusta contra _phishing_, são necessários padrões mais avançados, como o **FIDO2/WebAuthn**.
+
+Em resumo, HOTP e TOTP resolvem o mesmo problema com âncoras diferentes: evento versus tempo. O TOTP se consolidou como a escolha padrão para a maioria das implementações modernas devido à sua simplicidade operacional.
 

@@ -156,7 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 308.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "seguranca-da-informacao/contents/img/02-otp-hotp-e-topt.png",
     "seguranca-da-informacao/contents/img/02-autenticadores-de-dispositivos.png",
     "seguranca-da-informacao/contents/img/02-.png",
     "seguranca-da-informacao/contents/img/(A).png",
@@ -183,7 +184,6 @@
     "seguranca-da-informacao/contents/02-autenticacao-e-seus-mecanismos.md",
     "seguranca-da-informacao/contents/img/01-seguranca-fisica-sala-cofre.png",
     "seguranca-da-informacao/contents/img/01-seguranca-fisica-travas.png",
-    "seguranca-da-informacao/contents/img/01-seguranca-fisica-gerador.png",
     "seguranca-da-informacao/contents/img",
     "seguranca-da-informacao/contents/Nova pasta",
     "seguranca-da-informacao/README.md",
