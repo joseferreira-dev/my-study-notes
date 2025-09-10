@@ -269,3 +269,52 @@ A estratégia mais moderna e segura para o gerenciamento de tokens combina os co
 4. **Verifique a Expiração:** O servidor de recursos deve, em toda requisição, verificar a _claim_ de expiração (`exp`) do _Access Token_ e rejeitar imediatamente qualquer token que já tenha expirado.
 5. **Aproveite o Desempenho e a Escalabilidade:** A natureza _stateless_ dos JWTs significa que o servidor não precisa consultar um banco de dados de sessões para validar um token. A validação é feita apenas com a chave de assinatura. Isso torna o processo extremamente rápido e facilita a escalabilidade horizontal da aplicação.
 
+## Biometria: A Identidade como Chave
+
+Dentre os fatores de autenticação, a biometria representa a abordagem mais intrinsecamente ligada ao indivíduo. A própria etimologia da palavra já nos revela seu conceito: **BIO** (vida) + **METRIA** (medida). A biometria é, portanto, a ciência e a tecnologia de medir e analisar características biológicas para fins de identificação. Em termos de segurança, é a forma de reconhecer de maneira única um indivíduo por meio de suas características **fisiológicas** (a estrutura de seu corpo) ou **comportamentais** (seus padrões de ação).
+
+Embora pareça uma tecnologia futurista, seus fundamentos científicos são antigos. O antropólogo inglês **Francis Galton** é considerado um dos pioneiros da biometria moderna. Em 1892, a partir de seus estudos sobre traços genéticos e hereditariedade, Galton desenvolveu o primeiro sistema robusto para a classificação de **impressões digitais**, um método que foi rapidamente adotado por departamentos de polícia ao redor do mundo e que, até hoje, é um dos mais conhecidos.
+
+No contexto da segurança da informação, a biometria é a materialização do fator "algo que você é", sendo utilizada para implementar um controle de acesso extremamente seguro, pois, diferentemente de uma senha, uma característica biométrica não pode ser esquecida, perdida ou, em teoria, facilmente roubada.
+
+### Classificação das Técnicas Biométricas
+
+As diversas técnicas de biometria podem ser divididas em duas grandes categorias, conforme ilustra o diagrama a seguir.
+
+<div align="center">
+
+<img width="560px" src="./img/02-biometria-tecnicas.png">
+
+</div>
+
+1. **Características Fisiológicas:** Referem-se a traços relacionados à estrutura física do corpo, que são relativamente estáveis ao longo do tempo.
+    - **Impressão Digital:** Analisa os padrões únicos formados pelas cristas e vales na ponta dos dedos. É a tecnologia biométrica mais difundida e utilizada no mundo.
+    - **Reconhecimento Facial:** Mapeia as características únicas do rosto de uma pessoa, como a distância entre os olhos, o formato do nariz e o contorno da mandíbula, criando uma "assinatura facial".
+    - **Geometria da Mão:** Mede e analisa as dimensões da mão e dos dedos.
+    - **Reconhecimento Ocular:** Esta técnica se divide em duas abordagens distintas:
+        - **Íris:** Analisa o padrão complexo e aleatório dos anéis coloridos que circundam a pupila. O processo é rápido, feito com uma câmera de alta resolução, e oferece um nível de precisão altíssimo.
+        - **Retina:** Mapeia o padrão único dos vasos sanguíneos no fundo do olho. É ainda mais precisa que a leitura de íris, mas o processo é mais invasivo, exigindo que o usuário olhe fixamente para um ponto de luz.
+
+2. **Características Comportamentais:** Referem-se a traços relacionados a padrões de comportamento e ação, que são aprendidos e desenvolvidos ao longo do tempo.
+    - **Reconhecimento de Voz:** Analisa as características acústicas da fala, que são determinadas tanto pela fisiologia (formato do trato vocal) quanto pelo comportamento (ritmo, sotaque).
+    - **Dinâmica da Assinatura:** Não analisa a aparência estática da assinatura, mas sim o **ato de assinar**. Sensores capturam a velocidade, a pressão, a aceleração e o ritmo dos traços, criando um perfil comportamental único.
+    - **Ritmo de Escrita (_Keystroke Dynamics_):** Analisa o padrão e o ritmo com que uma pessoa digita em um teclado, medindo o tempo entre as teclas pressionadas e a duração de cada pressionamento. É uma técnica que pode ser usada para autenticação contínua.
+
+### Princípios de um Traço Biométrico Ideal
+
+Para que uma característica biológica seja considerada eficaz para fins de identificação, ela deve atender a um conjunto de princípios:
+
+1. **Universalidade:** Todas as pessoas devem possuir a característica. (Ex: a maioria das pessoas possui impressões digitais).
+2. **Singularidade:** A característica deve ser suficientemente diferente entre dois indivíduos, garantindo que não haja duplicidade. (Ex: o padrão da íris é único para cada pessoa).
+3. **Permanência:** A característica não deve mudar significativamente ao longo do tempo. (Ex: as impressões digitais são formadas no útero e permanecem as mesmas por toda a vida).
+4. **Mensurabilidade:** A característica deve poder ser capturada e medida quantitativamente por um dispositivo.
+
+### O Funcionamento de um Sistema Biométrico
+
+Um sistema biométrico opera em um ciclo que envolve quatro etapas principais:
+
+1. **Cadastro (_Enrollment_):** É o primeiro passo. O usuário apresenta sua característica biométrica a um sensor pela primeira vez. O sistema captura a amostra, extrai seus pontos únicos e cria um **template** (um modelo matemático), que é armazenado de forma segura em uma base de dados.
+2. **Captura:** Em um momento posterior de autenticação, o usuário apresenta novamente sua característica ao sensor (ex: coloca o dedo no leitor).
+3. **Extração:** O sistema processa a amostra recém-capturada e extrai seus pontos únicos, criando um novo _template_ temporário.
+4. **Comparação:** O _template_ temporário é comparado com o _template_ original, armazenado no banco de dados. Se a correspondência (_match_) estiver dentro de uma margem de tolerância aceitável, a identidade do usuário é validada com sucesso.
+
