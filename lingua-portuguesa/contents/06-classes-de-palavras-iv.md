@@ -946,3 +946,66 @@ A função adjetiva do particípio é tão forte que, em muitos casos, a distin�
 3. **Presença de Agente da Passiva:** Este é o critério mais definitivo. Se o termo é seguido por um **agente da passiva** (introduzido por "por" ou "de"), ele é inequivocamente um **verbo no particípio**, pois a estrutura verbal da voz passiva está explícita.
     - _Exemplo:_ O texto, **escrito pelo autor**, foi publicado. (A presença de "pelo autor" confirma que "escrito" é um particípio verbal).
 
+## A Predicação e a Transitividade Verbal
+
+A **predicação verbal** é o estudo da relação que um verbo estabelece com seus complementos. O conceito central dessa análise é a **transitividade**, que se refere à necessidade que alguns verbos têm de que sua ação "transite" (ou seja, passe) para outro elemento para que a frase tenha sentido completo.
+
+Quando um verbo possui sentido completo por si só, dizemos que ele é **intransitivo**. Quando ele exige um complemento para completar seu sentido, dizemos que é **transitivo**. O estudo da transitividade, portanto, é a base para a correta identificação dos objetos direto e indireto, como veremos em Sintaxe.
+
+### Verbos Intransitivos (VI)
+
+São os verbos que **não exigem um complemento** (objeto), pois já possuem sentido completo. A ação expressa pelo verbo se encerra em si mesma ou no sujeito.
+
+- _Exemplos:_
+    - Dercy **morreu**.
+    - Nosso barco **partiu**.
+    - Acidentes **acontecem**.
+    - O bebê **nasceu**.
+
+> **Foco de Prova: Complemento vs. Circunstância**
+> 
+> É crucial não confundir a **ausência de complemento** com a **ausência de outros termos na frase**. Um verbo intransitivo pode perfeitamente ser acompanhado por **adjuntos adverbiais**, que adicionam informações de circunstância (tempo, lugar, modo, etc.), mas não são exigidos pelo verbo.
+> 
+> - O bebê **nasceu**. (VI com sentido completo).
+> - O bebê **nasceu ontem**, **em um hospital particular**, **de parto normal**. (O mesmo VI, agora acompanhado por três adjuntos adverbiais que detalham a ação, mas não a completam).
+
+### Verbos Transitivos
+
+São os verbos que **exigem um complemento** para que a frase tenha sentido completo. A ação expressa por eles "transita" para um objeto. Eles se dividem em três categorias.
+
+#### Verbo Transitivo Direto (VTD)
+
+Exige um complemento (o **objeto direto**) que se liga ao verbo **sem a necessidade de uma preposição** obrigatória. A pergunta que se faz ao verbo para encontrar o objeto direto é **"o quê?"** ou **"quem?"**.
+
+- _Exemplos:_
+    - Comprei **charutos**. (Comprou **o quê?** → charutos).
+    - O aluno leu **o edital inteiro**. (Leu **o quê?** → o edital inteiro).
+    - Encontrei **meus amigos** no parque. (Encontrou **quem?** → meus amigos).
+
+#### Verbo Transitivo Indireto (VTI)
+
+Exige um complemento (o **objeto indireto**) que se liga ao verbo **obrigatoriamente por meio de uma preposição**. As perguntas que se fazem ao verbo são **"de quê/quem?", "a quê/quem?", "com quê/quem?", "em quê/quem?"**, etc.
+
+- _Exemplos:_
+    - Gosto **de frituras**. (Gosta **de quê?** → de frituras).
+    - Eu acredito **em você**. (Acredita **em quem?** → em você).
+    - Todos precisam **de ajuda**. (Precisam **de quê?** → de ajuda).
+
+#### Verbo Transitivo Direto e Indireto (VTDI)
+
+Exige **dois complementos** simultaneamente: um objeto direto (sem preposição) e um objeto indireto (com preposição). A estrutura da pergunta é, geralmente, **"algo a/para alguém"**.
+
+- _Exemplos:_
+    - Mazinho deu **balinhas** (OD) **aos meninos da rua** (OI). (Deu **o quê?** a **quem?**).
+    - O professor entregou **a prova** (OD) **a cada aluno** (OI). (Entregou **o quê?** a **quem?**).
+    - Agradeci **a oportunidade** (OD) **ao diretor** (OI). (Agradeceu **o quê?** a **quem?**).
+
+#### Quadro-Resumo da Transitividade
+
+|Tipo de Verbo|Precisa de Complemento?|Usa Preposição Obrigatória?|Nome do(s) Complemento(s)|
+|---|---|---|---|
+|**Intransitivo (VI)**|Não|-|Não tem.|
+|**Transitivo Direto (VTD)**|Sim, um.|Não|Objeto Direto (OD)|
+|**Transitivo Indireto (VTI)**|Sim, um.|Sim|Objeto Indireto (OI)|
+|**Transitivo Direto e Indireto (VTDI)**|Sim, dois.|Sim (para o segundo)|Objeto Direto (OD) e Objeto Indireto (OI)|
+
