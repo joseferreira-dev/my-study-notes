@@ -377,7 +377,7 @@ Após compreendermos que o OAuth 2.0 é um protocolo focado em **autorização**
 
 O OIDC não é um concorrente do OAuth; ele é uma **camada fina de identidade construída sobre o OAuth 2.0**. Ele estende o OAuth para adicionar um fluxo de autenticação padronizado, permitindo que as aplicações (_Clients_) verifiquem a identidade do usuário final e obtenham informações básicas de seu perfil de forma segura e interoperável. Em resumo: enquanto o OAuth 2.0 fornece o _Access Token_ para acessar recursos, o OIDC adiciona o **_ID Token_** para provar a identidade do usuário.
 
-##### As Principais Características do OIDC
+### As Principais Características do OIDC
 
 O OIDC foi projetado para ser um protocolo leve e flexível, ideal para as necessidades de aplicações web e móveis modernas. Suas principais características são:
 
@@ -386,7 +386,7 @@ O OIDC foi projetado para ser um protocolo leve e flexível, ideal para as neces
 - **Descentralização:** Por ser um padrão aberto e federado, o OIDC não depende de um único ponto de controle, permitindo a interoperabilidade entre inúmeros Provedores de Identidade e serviços.
 - **Simplicidade e Interoperabilidade:** O OIDC opera sobre fluxos já conhecidos do OAuth 2.0 e utiliza tecnologias web padrão, como APIs RESTful, o que o torna relativamente simples de implementar e compatível com uma vasta gama de plataformas e linguagens de programação.
 
-##### Vantagens sobre Tecnologias Anteriores
+### Vantagens sobre Tecnologias Anteriores
 
 O OIDC oferece uma série de vantagens que o tornaram o padrão de fato para a autenticação federada na web moderna:
 
@@ -396,4 +396,29 @@ O OIDC oferece uma série de vantagens que o tornaram o padrão de fato para a a
 - **Interoperabilidade:** Por ser um padrão aberto, pode ser usado com uma ampla gama de Provedores de Identidade, como Google, Microsoft, Okta, e muitos outros.
 
 Na prática, quando você utiliza o botão "Entrar com o Google" em um serviço e, após o _login_, o serviço já sabe seu nome, e-mail e foto de perfil, é muito provável que o protocolo OIDC esteja em ação, trabalhando em conjunto com o OAuth 2.0 para fornecer tanto a autenticação (OIDC) quanto a autorização (OAuth) de forma integrada e segura.
+
+Com certeza. Suas notas sobre o Keycloak nos permitem apresentar uma ferramenta prática que materializa muitos dos conceitos teóricos que discutimos. Vamos agora detalhar essa solução, posicionando-a como um exemplo concreto de um sistema moderno de gerenciamento de identidades.
+
+## Keycloak: Uma Solução Open Source para Gestão de Identidade
+
+Nos tópicos anteriores, exploramos os padrões que regem a autenticação e a autorização federada, como o SSO, o OAuth 2.0 e o OpenID Connect. A implementação desses padrões do zero, no entanto, é uma tarefa complexa e de alta responsabilidade. É para simplificar e padronizar essa implementação que surgiram ferramentas especializadas, e uma das mais importantes e populares no universo de código aberto (_open source_) é o **Keycloak**.
+
+O Keycloak é uma solução completa de **Gerenciamento de Acesso e Identidade (IAM - _Identity and Access Management_)**. Ele atua como um servidor de autenticação centralizado que pode ser facilmente configurado e implantado, permitindo que as organizações isolem suas aplicações da complexa lógica de gerenciamento de usuários. Em vez de cada aplicação ter seu próprio banco de dados de senhas e suas próprias telas de _login_, elas delegam toda essa responsabilidade para o Keycloak.
+
+Baseado em tecnologias web modernas, como APIs RESTful, o Keycloak vem ganhando uma adoção cada vez maior em instituições de todos os portes devido à sua robustez, flexibilidade e ao fato de ser uma solução de código aberto, sem custos de licenciamento.
+
+Suas principais características incluem:
+
+- **_Single Sign-On_ (SSO):** É uma de suas funções centrais. Uma vez que o usuário se autentica no Keycloak, ele pode navegar entre múltiplas aplicações integradas sem a necessidade de um novo _login_.
+- **Suporte a Padrões Abertos:** O Keycloak implementa nativamente os protocolos **OAuth 2.0** e **OpenID Connect**, permitindo uma integração segura e padronizada com qualquer aplicação moderna.
+- **Gerenciamento de Identidades:** Possui seu próprio banco de dados para armazenar usuários e suas credenciais, mas também pode se integrar e federar com provedores de identidade externos, como o **Active Directory (AD)** da Microsoft ou outros servidores **LDAP**, centralizando a gestão de identidades corporativas.
+- **Autenticação Multifator (MFA):** Oferece recursos nativos para a configuração de MFA, incluindo a autenticação via aplicativos (TOTP) e o envio de códigos por SMS, permitindo adicionar camadas extras de segurança aos _logins_.
+- **Personalização da Interface:** As telas de _login_, registro, recuperação de senha e termos de uso podem ser completamente personalizadas com a identidade visual da organização, garantindo uma experiência de usuário coesa.
+- **Facilidade de Integração:** Por isolar a camada de autenticação, as aplicações não precisam se preocupar com a complexidade de armazenar senhas ou implementar fluxos de recuperação. A integração é feita através de "adaptadores" fornecidos pelo Keycloak, muitas vezes sem a necessidade de codificação extensiva.
+
+A imagem a seguir apresenta o painel de gerenciamento do Keycloak, onde os administradores podem configurar todos os aspectos do serviço, desde o cadastro de aplicações (_clients_) e usuários até a definição de políticas de segurança e a personalização da aparência.
+
+<div align="center">
+<img width="700px" src="./img/02-keycloak.png">
+</div>
 
