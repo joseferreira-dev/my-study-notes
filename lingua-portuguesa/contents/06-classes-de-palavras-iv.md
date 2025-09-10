@@ -418,3 +418,4 @@ A forma composta deste tempo verbal possui dois valores semânticos distintos.
     2. **Suposição sobre um Fato Passado:** Expressa uma probabilidade ou uma hipótese sobre algo que já aconteceu.
         - _Exemplo:_ Ele não veio à festa. **Terá ficado** doente? (Suposição sobre um fato ocorrido no passado).
         - _Exemplo:_ O suspeito **terá fugido** pela janela durante a madrugada. (Indica uma forte probabilidade sobre o passado).
+
