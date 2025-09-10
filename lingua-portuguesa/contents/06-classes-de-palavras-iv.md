@@ -692,3 +692,71 @@ Os esquemas a seguir consolidam os principais valores semânticos de cada tempo 
 <div align="center">
 <img width="540px" src="./img/06-modo-subjuntivo-futuro.png">
 </div>
+
+## Modo Imperativo
+
+O Modo Imperativo é utilizado para expressar diretamente uma **ordem, pedido, conselho, convite** ou **súplica**. Seu foco é influenciar a ação do interlocutor. Por essa razão, ele não possui a 1ª pessoa do singular ("eu"), pois, gramaticalmente, não se dá uma ordem direta a si mesmo.
+
+Este modo se apresenta em duas formas distintas, com regras de formação diferentes: o Imperativo Afirmativo e o Imperativo Negativo.
+
+### Imperativo Afirmativo
+
+A formação do Imperativo Afirmativo é um processo híbrido, pois deriva de dois tempos verbais diferentes: o Presente do Indicativo e o Presente do Subjuntivo.
+
+> **Foco de Prova: A Formação do Imperativo Afirmativo**
+> 
+> A regra de formação do afirmativo é um dos tópicos mais cobrados sobre verbos, especialmente por suas exceções. O processo é o seguinte:
+> 
+> 1. As formas de **`tu`** e **`vós`** derivam do **Presente do Indicativo**, com a **retirada do "s" final**.
+>     - _Exemplo:_ tu cant**as** → cant**a** tu / vós cant**ais** → cant**ai** vós.
+>     
+> 2. As formas de **`você`**, **`nós`** e **`vocês`** são **idênticas** às do **Presente do Subjuntivo**.
+>     - _Exemplo:_ que você **cante** → **cante** você / que nós **cantemos** → **cantemos** nós.
+
+**Conjugação (Forma Afirmativa):**
+
+|Pessoa|1ª Conjugação (Levantar)|2ª Conjugação (Beber)|3ª Conjugação (Cair)|
+|---|---|---|---|
+|(tu)|levanta tu|bebe tu|cai tu|
+|(você)|levante você|beba você|caia você|
+|(nós)|levantemos nós|bebamos nós|caiamos nós|
+|(vós)|levantai vós|bebei vós|caí vós|
+|(vocês)|levantem vocês|bebam vocês|caiam vocês|
+
+### Imperativo Negativo
+
+A formação do Imperativo Negativo é mais simples e regular.
+
+- **Regra de Formação:** Todas as pessoas do Imperativo Negativo são **idênticas** às do **Presente do Subjuntivo**, precedidas pelo advérbio de negação **"não"**.
+
+**Conjugação (Forma Negativa):**
+
+|Pessoa|1ª Conjugação (Levantar)|2ª Conjugação (Beber)|3ª Conjugação (Cair)|
+|---|---|---|---|
+|(tu)|não levantes tu|não bebas tu|não caias tu|
+|(você)|não levante você|não beba você|não caia você|
+|(nós)|não levantemos nós|não bebamos nós|não caiamos nós|
+|(vós)|não levanteis vós|não bebais vós|não caiais vós|
+|(vocês)|não levantem vocês|não bebam vocês|não caiam vocês|
+
+### Observações Importantes sobre o Imperativo
+
+1. **Uniformidade de Tratamento:** É um princípio fundamental da norma culta manter a consistência no tratamento do interlocutor. Misturar as formas de tu e você em um mesmo texto ou enunciado é considerado um desvio gramatical.
+	- _Inadequado:_ **Faz** o que eu te peço e **pegue** o livro. (`Faz` é da 2ª pessoa `tu`; `pegue` é da 3ª pessoa `você`).
+	- **Adequado (tratamento por "tu"):** **Faze** o que eu te peço e **pega** o livro.
+	- **Adequado (tratamento por "você"):** **Faça** o que eu lhe peço e **pegue** o livro.
+
+2. **Casos Especiais de Conjugação:**
+	- Verbos terminados em **-zer** e **-zir** admitem duas formas para a 2ª pessoa do singular (tu) no afirmativo:
+	    - Dizer: **Dize** tu / **Diz** tu.
+	    - Fazer: **Faze** tu / **Faz** tu.
+	    - Conduzir: **Conduze** tu / **Conduz** tu.
+	- O verbo **SER** é irregular: **Sê** tu, **seja** você, **sejamos** nós, **sede** vós, **sejam** vocês.
+
+### Quadro-Resumo do Modo Imperativo
+
+O esquema a seguir sintetiza a origem das formas do Modo Imperativo, ilustrando a derivação do Presente do Indicativo e do Presente do Subjuntivo.
+
+<div align="center">
+<img width="540px" src="./img/06-modo-imperativo.png">
+</div>
