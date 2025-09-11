@@ -1311,3 +1311,50 @@ Existe um grupo de cinco verbos terminados em **-IAR** (e um de seus derivados) 
 
 - **Observação:** O verbo **mobiliar** se conjuga de forma regular, mas suas formas rizotônicas são acentuadas para marcar o hiato e a correta pronúncia: _Eu mo**bíl**io, tu mo**bíl**ias, ele mo**bíl**ia..._
 
+### Verbos com Terminações em -UAR, -OAR, -UIR
+
+1. **Verbos terminados em -UAR:** Em geral, os verbos terminados em -uar são regulares. Seguem o modelo de aguar (águo, águas, água...).
+	- **Observação de Pronúncia:** Alguns verbos, como `averiguar`, admitem uma dupla pronúncia (e, consequentemente, dupla grafia) nas formas rizotônicas do presente.
+	    - _Exemplos:_
+	        - Eu averi**guo** (pronúncia mais comum no Brasil) ou aver**íguo**.
+	        - Que ele averi**gue** ou aver**ígue**.
+
+2. **Verbos terminados em -OAR:** Os verbos terminados em -oar, como doar, perdoar e abençoar, são regulares, mas suas formas rizotônicas apresentam a vogal tônica "o" aberta (som de "ó").
+	- **Modelo DOAR:** eu d**o**o, tu d**o**as, ele d**o**a, eles d**o**am.
+	- **Lembrete:** Conforme o Novo Acordo Ortográfico, o hiato `oo` não é mais acentuado.
+	    - _Exemplos:_ abenç**oo**, per**oo**, v**oo**, enj**oo**.
+
+3. **O caso de "Arguir" (terminado em -UIR):** O verbo arguir (acusar, questionar) e seu derivado redarguir (responder a uma acusação) tiveram seu acento gráfico abolido nas formas rizotônicas pelo Acordo Ortográfico. Sua conjugação irregular pode ser mais facilmente compreendida pelo modelo do verbo influir.
+
+| Pessoa | Influir (Modelo) | Arguir (Conjugação Correta) |
+| ------ | ---------------- | --------------------------- |
+| Eu     | influ**o**       | arg**uo**                   |
+| Tu     | influ**is**      | arg**uis**                  |
+| Ele    | influ**i**       | arg**ui**                   |
+| Nós    | influ**ímos**    | argu**ímos**                |
+| Vós    | influ**ís**      | argu**ís**                  |
+| Eles   | influ**em**      | arg**uem**                  |
+
+### O Verbo "Vir" e seus Derivados
+
+O verbo **vir** é irregular e serve de base para uma série de outros verbos importantes e muito cobrados em provas, que seguem exatamente o seu padrão de conjugação. A dificuldade reside em reconhecer o padrão de "vir" dentro de um verbo mais longo.
+
+- **Principais Derivados:**
+    - **Intervir:** (interferir)
+    - **Convir:** (ser conveniente, concordar)
+    - **Provir:** (originar-se de)
+    - **Advir:** (resultar, sobrevir)
+    - **Sobrevir:** (acontecer depois)
+
+A regra é simples: **se "vir" se conjuga de uma forma, seus derivados se conjugarão da mesma forma, apenas com o acréscimo do prefixo.**
+
+| Tempo Verbal             | Verbo VIR (Modelo)     | Verbo INTERVIR              | Verbo CONVIR              |
+| ------------------------ | ---------------------- | --------------------------- | ------------------------- |
+| **Pretérito Perfeito**   | ele **veio**           | ele inter**veio**           | ele con**veio**           |
+|                          | eles **vieram**        | eles inter**vieram**        | eles con**vieram**        |
+| **Pret. Imperf. Subj.**  | se eu **viesse**       | se eu inter**viesse**       | se eu con**viesse**       |
+|                          | se ele **viesse**      | se ele inter**viesse**      | se ele con**viesse**      |
+| **Futuro do Subjuntivo** | quando eu **vier**     | quando eu inter**vier**     | quando eu con**vier**     |
+|                          | quando nós **viermos** | quando nós inter**viermos** | quando nós con**viermos** |
+
+É fundamental familiarizar-se com essas formas, pois são muito diferentes do que a conjugação por "intuição" poderia sugerir.
