@@ -1696,3 +1696,63 @@ Além de identificar a correlação correta, as bancas frequentemente pedem para
 
 O mais produtivo para a prova não é tentar decorar todas as combinações possíveis, mas focar nas correlações essenciais e na lógica do eixo temporal.
 
+## As Vozes Verbais e o Comportamento do Particípio
+
+A análise das locuções verbais e dos tempos compostos está intrinsecamente ligada ao conceito de **vozes verbais** (ativa e passiva). A forma como o particípio se comporta — variando ou não — é uma das principais diferenças entre essas estruturas.
+
+### A Flexão do Particípio
+
+A regra que define se o particípio de uma locução verbal flexiona ou não é um dos tópicos mais cobrados em provas e depende diretamente da voz verbal.
+
+1. **Nos Tempos Compostos (Voz Ativa):** Nos tempos compostos da voz ativa, formados com os auxiliares TER ou HAVER, o particípio é sempre INVARIÁVEL, permanecendo na forma masculina singular.
+	- _Exemplos:_
+	    - Os alunos tinham **estudado** a matéria.
+	    - As alunas tinham **estudado** a matéria.
+	    - Elas têm **viajado** muito a trabalho.
+
+2. **Na Voz Passiva Analítica:** Na voz passiva, formada com os auxiliares SER ou ESTAR, o particípio funciona como um adjetivo, assumindo a função de predicativo do sujeito. Portanto, ele é VARIÁVEL, concordando em gênero e número com o sujeito paciente.
+	- _Exemplos:_
+	    - O aluno foi **aprovado**.
+	    - A aluna foi **aprovada**.
+	    - Os alunos foram **aprovados**.
+	    - As alunas foram **aprovadas**.
+
+O esquema a seguir resume esta distinção fundamental:
+
+<div align="center">
+<img width="500px" src="./img/06-voz-passiva-e-tempo-composto.png">
+</div>
+
+### A Transposição de Vozes com Tempos Compostos
+
+Compreender a estrutura acima é essencial para realizar a conversão de uma frase na voz ativa com tempo composto para a voz passiva.
+
+- **Frase na Voz Ativa (com tempo composto):**
+    - _O governo **havia realizado** a pesquisa._
+        - Sujeito Agente: O governo
+        - Locução Verbal Ativa: havia realizado
+        - Objeto Direto: a pesquisa
+
+- **Para converter para a Voz Passiva:**
+    1. O objeto direto ("a pesquisa") torna-se o **sujeito paciente**.
+    2. O sujeito agente ("O governo") torna-se o **agente da passiva** ("pelo governo").
+    3. A locução verbal é expandida: mantém-se o auxiliar original (**havia**), acrescenta-se o verbo **ser** no particípio (**sido**), e o verbo principal (**realizado**) passa a concordar com o novo sujeito (**realizada**).
+
+- **Frase na Voz Passiva (com tempo composto):**
+    - _A pesquisa **havia sido realizada** pelo governo._
+
+### Reescrita e a Colocação Pronominal
+
+Para fins de concurso, a **voz passiva analítica** (com **ser + particípio**) e a **voz passiva sintética** (com o pronome apassivador **se**) são consideradas semanticamente equivalentes, sendo frequentemente objeto de questões de reescrita.
+
+Ao fazer essa conversão, é crucial atentar para as regras de **colocação pronominal**.
+
+- **Voz Passiva Analítica:**
+    - _Exemplo:_ Alguns pontos não **foram contabilizados** na prova.
+
+- **Conversão para a Voz Passiva Sintética:**
+    - **Forma Correta:** Alguns pontos não **se contabilizaram** na prova.
+        - **Análise:** A palavra negativa "não" é um fator de atração, exigindo a **próclise** (pronome antes do verbo).
+    - **Forma Incorreta:** _Alguns pontos não contabilizaram-se na prova._
+        - **Análise:** A ênclise (pronome depois do verbo) está incorreta, pois a presença da palavra atrativa "não" torna a próclise obrigatória.
+
