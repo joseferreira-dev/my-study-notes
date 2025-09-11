@@ -1260,3 +1260,54 @@ Essa substituição geralmente é acompanhada pelo pronome demonstrativo **o**, 
     - Se ela não aceita o convite, **é** porque tem outro compromisso. (`é` substitui "o fato de ela não aceitar").
 
 O reconhecimento dessa estrutura é importante em questões de coesão e de compreensão textual, que podem perguntar a qual ideia ou termo um verbo vicário ou um pronome demonstrativo se refere.
+
+## Regularidade Verbal: Padrões e Exceções
+
+Nesta parte do estudo, veremos verbos que se comportam de maneira a enganar ou criar dúvidas, pois se parecem com outros, mas não seguem a conjugação que aparentam. A maioria dos verbos segue os paradigmas de conjugação, contudo, as exceções a esses modelos são o principal foco das bancas examinadoras. A principal estratégia utilizada para confundir o candidato é conjugar um verbo irregular como se fosse regular.
+
+### Classificação quanto à Regularidade
+
+Quanto à manutenção ou alteração do radical e das desinências em relação ao paradigma de sua conjugação, os verbos se classificam em:
+
+|Tipo|Explicação|Exemplos|
+|---|---|---|
+|**Regulares**|Mantêm o radical inalterado e as desinências seguem o modelo de sua conjugação.|O radical **levant-** se mantém em: _Eu levanto, tu levantas, ele levanta, nós levantamos, vós levantais, eles levantam._|
+|**Irregulares**|Ocorrem alterações no radical ou nas desinências, ou em ambos, ao longo da conjugação.|**Caber** (caibo, coube); **Dar** (dou, dei); **Dizer** (digo, disse); **Querer** (quero, quis); **Ouvir** (ouço, ouve); **Trazer** (trago, trouxe).|
+|**Anômalos**|A irregularidade é tão profunda que o verbo apresenta radicais completamente diferentes.|**Ser/Ir** apresentam total diversidade: _Eu sou, tu és… eu fui… eu era… (que) eu seja… (se) eu fosse… (quando) eu for…_|
+|**Defectivos**|Apresentam "defeito" na conjugação, ou seja, não são conjugados em todas as formas.|**Abolir, Precaver, Reaver...**|
+
+### Verbos terminados em -IAR e -EAR
+
+A terminação do infinitivo é um forte indício sobre a regularidade de um verbo. A distinção entre os verbos terminados em **-iar** e **-ear** é um caso clássico em provas.
+
+- **Verbos terminados em -IAR:** Em sua grande maioria, são **regulares**. Seguem o modelo do verbo **criar**: _Eu crio, tu crias, ele cria..._ São também desse grupo verbos como **variar, copiar, espiar**.
+- **Verbos terminados em -EAR:** São **irregulares**. Eles recebem um **"i"** tônico nas **formas rizotônicas** (aquelas em que a sílaba tônica recai no radical: **eu, tu, ele, eles/elas** do Presente do Indicativo e do Subjuntivo). O verbo **passear** é o melhor modelo:
+
+|Presente do Indicativo|Presente do Subjuntivo|Imperativo Afirmativo|
+|---|---|---|
+|eu pass**ei**o|que eu pass**ei**e|-|
+|tu pass**ei**as|que tu pass**ei**es|pass**ei**a tu|
+|ele(a) pass**ei**a|que ele(a) pass**ei**e|pass**ei**e você|
+|nós passeamos|que nós passeemos|passeemos nós|
+|vós passeais|que vós passeeis|passeai vós|
+|eles(as) pass**ei**am|que eles(as) pass**ei**em|pass**ei**em vocês|
+
+#### A Exceção: O Grupo "MARIO"
+
+Existe um grupo de cinco verbos terminados em **-IAR** (e um de seus derivados) que são **exceções** à regra. Eles são irregulares e seguem a conjugação dos verbos em **-EAR**, como **passear**. Para memorizá-los, usa-se o mnemônico **MARIO**:
+
+- **M**ediar
+- **A**nsiar
+- **R**emediar
+- **I**ncendiar (e **I**ntermediar)
+- **O**diar
+
+| Comparação de Conjugação (Presente do Indicativo) |
+| ------------------------------------------------- |
+| **Regular em -IAR (Copiar):**                     |
+| eu cop**io**                                      |
+| tu cop**ias**                                     |
+| ele cop**ia**                                     |
+
+- **Observação:** O verbo **mobiliar** se conjuga de forma regular, mas suas formas rizotônicas são acentuadas para marcar o hiato e a correta pronúncia: _Eu mo**bíl**io, tu mo**bíl**ias, ele mo**bíl**ia..._
+
