@@ -1114,3 +1114,149 @@ A tabela a seguir sistematiza as principais noções semânticas que os auxiliar
 |**Ação Interrompida / Não Realizada**|ficar por|O trabalho **ficou por** terminar.|
 
 O reconhecimento desses valores é uma importante ferramenta de interpretação textual, pois revela as nuances e as intenções por trás do que é dito.
+
+### Verbos de Ligação
+
+Enquanto a maioria dos verbos, chamados **nocionais**, expressam uma ideia de ação ou fenômeno, existe um grupo especial de verbos cuja função principal não é indicar um processo, mas sim **ligar** o sujeito a uma palavra que o caracteriza. São os **verbos de ligação**, também conhecidos como verbos copulativos ou relacionais.
+
+Sua função é conectar o sujeito a um **predicativo do sujeito**, que é o termo que atribui ao sujeito um estado, uma qualidade ou uma condição.
+
+- _Exemplos:_
+    - João **é** feliz. (O verbo "é" liga o sujeito "João" à sua característica "feliz").
+    - Maria **está** alegre.
+    - O Rio de Janeiro **continua** lindo.
+
+#### Os Valores Semânticos dos Verbos de Ligação
+
+Os verbos de ligação não são meros conectores vazios; cada um agrega uma nuance de sentido específica ao estado que está sendo atribuído ao sujeito. As bancas examinadoras frequentemente exploram essa diferença semântica.
+
+| Noção Semântica Expressa                | Verbos Típicos e Exemplos                                                                                                                                                                 |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Estado Permanente**                   | **ser**<br>Indica uma característica inerente, essencial ou atemporal do sujeito.<br>_Ex: Minha mãe **é** mal-humorada. / A neve **é** fria._                                             |
+| **Estado Transitório / Circunstancial** | **estar, andar**<br>Indica um estado momentâneo, passageiro ou circunstancial.<br>_Ex: Minha mãe **está** feliz hoje. / Ele **anda** preocupado ultimamente._                             |
+| **Continuidade de Estado**              | **continuar, permanecer, ficar**<br>Indica que um estado preexistente se mantém.<br>_Ex: Minha mãe **continua** mal-humorada. / Ele **permaneceu** calado._                               |
+| **Mudança de Estado (Transmutação)**    | **ficar, tornar-se, virar**<br>Indica uma transição de um estado para outro.<br>_Ex: Minha mãe **ficou** mal-humorada. / Ele **tornou-se** um grande líder. / O sapo **virou** príncipe._ |
+| **Estado Aparente**                     | **parecer**<br>Indica um estado que é uma aparência, uma impressão.<br>_Ex: Minha mãe **parece** distraída. / A prova **parece** difícil._                                                |
+
+> **Observação Semântica:** A diferença entre um estado permanente (ser) e um estado continuado (continuar) é sutil. O estado permanente descreve uma qualidade vista como inerente, sem um ponto de início ou fim definido. O estado continuado, por sua vez, pressupõe que o estado teve um início e foca em sua persistência no tempo.
+
+#### Verbo de Ligação vs. Verbo Nocional
+
+Um mesmo verbo pode ser de ligação ou nocional (intransitivo ou transitivo), dependendo exclusivamente do contexto. A palavra só é classificada como verbo de ligação se, na frase, estiver de fato ligando o sujeito a um predicativo. Se o mesmo verbo indicar uma ação, ele será nocional.
+
+|Verbo|Como Verbo de Ligação (indicando Estado)|Como Verbo Nocional (indicando Ação)|
+|---|---|---|
+|**Andar**|Ana **anda** deprimida. (= está)|Ana **anda** no parque todos os dias. (= caminha)|
+|**Ficar**|Ele **ficou** rico após a herança. (= tornou-se)|Ele **ficou** em casa no fim de semana. (= permaneceu em um lugar)|
+|**Virar**|O atleta **virou** herói nacional. (= tornou-se)|O atleta **virou** a garrafa de água. (= inverteu a posição)|
+|**Continuar**|A cidade **continua** linda. (= permanece)|Ele **continuou** o trabalho após o almoço. (= prosseguiu com)|
+
+A capacidade de fazer essa distinção contextual é essencial para a correta análise sintática do predicado.
+
+### Verbos Defectivos
+
+Os verbos defectivos são aqueles que possuem um "defeito" em sua conjugação, ou seja, **não são conjugados em todas as pessoas, tempos ou modos**. Essa ausência de formas ocorre, geralmente, por dois motivos:
+
+1. **Eufonia:** Para evitar formas que soariam estranhas ou desagradáveis (cacofonia). Por exemplo, a forma _"eu computo"_ do verbo _computar_ é evitada.
+2. **Homofonia:** Para evitar formas que seriam idênticas às de outros verbos mais comuns, o que poderia gerar confusão. Por exemplo, a forma _"eu falo"_ do verbo _falir_ seria idêntica à do verbo _falar_.
+
+> **A Lógica da Defectividade**
+> 
+> A principal consequência da defectividade de muitos desses verbos segue uma lógica em cascata, que é fundamental para entender suas lacunas:
+> 
+> 1. Muitos verbos defectivos **não possuem a 1ª pessoa do singular do Presente do Indicativo** (a forma "eu").
+> 2. O **Presente do Subjuntivo** é formado a partir do radical da 1ª pessoa do singular do Presente do Indicativo (Ex: _eu faço_ → _que eu faça_).
+> 3. **Consequência:** Se não há a forma "eu" no Presente do Indicativo, **não existe o Presente do Subjuntivo** para aquele verbo.
+> 4. **Consequência Adicional:** Se não há Presente do Subjuntivo, também **não existe o Imperativo Negativo** (que deriva totalmente dele) e faltam as formas do Imperativo Afirmativo que também são herdadas do Subjuntivo (você, nós, vocês).
+
+Por essa razão, a maioria dos verbos defectivos só possui conjugação para "nós" e "vós" no Presente do Indicativo.
+
+- **Lista de Verbos Defectivos Comuns:** abolir, banir, brandir, carpir, colorir, computar, delir, explodir, ruir, exaurir, demolir, puir, delinquir, fulgir (resplandecer), feder, aturdir, bramir, esculpir, extorquir, retorquir, soer (costumar: ter costume de).
+
+#### Os Verbos "Reaver" e "Precaver"
+
+Estes dois verbos são clássicos em questões de concurso por suas conjugações altamente restritas.
+
+- **Verbo REAVER (recuperar, ter de volta):** Este verbo só é conjugado nas formas em que o verbo HAVER possui a letra "v".
+
+|Conjugação do HAVER|Conjugação Correspondente do REAVER|
+|---|---|
+|nós ha**v**emos|nós re**av**emos|
+|vós ha**v**eis|vós re**av**eis|
+|eu h**ouv**e|eu re**ouv**e|
+|ele h**ouv**e|ele re**ouv**e|
+|eu h**av**ia|eu re**av**ia|
+|eu h**av**erei|eu re**av**erei|
+|eu h**av**eria|eu re**av**eria|
+
+**Atenção:** Formas como "eu reavo", "que eu reava" ou "reaveja" **não existem**.
+
+- **Verbo PRECAVER:** Este verbo só possui as formas em que a vogal temática "e" é mantida. Na prática, suas formas existentes nos tempos presente e imperativo são:
+    - **Presente do Indicativo:** nós precav**emos**, vós precav**eis**.
+    - **Imperativo Afirmativo:** precav**ei** vós.
+    - **Presente do Subjuntivo:** Não possui.
+
+**Atenção:** Formas como "eu precavo", "ele precavê" ou "que eu precavenha" **não existem**.
+
+#### Verbos que Parecem, mas Não São Defectivos
+
+É importante não confundir os verbos genuinamente defectivos com verbos irregulares que possuem formas "estranhas", mas completas. Os verbos a seguir **possuem conjugação completa** e são frequentemente usados em provas para testar o conhecimento do candidato.
+
+- **Exemplos de verbos com conjugação completa:** _caber_ (eu caibo), _valer_ (eu valho), _polir_ (eu pulo), _sortir_ (eu surto), _rir_ (eu rio), _sacudir_ (eu sacudo), _entupir_ (eu entupo), _redimir_ (eu redimo), _escapulir_ (eu escapulo).
+
+### Verbos Pronominais
+
+Os verbos pronominais são aqueles que se conjugam obrigatoriamente (ou opcionalmente) com um pronome oblíquo átono (me, te, se, nos, vos) da mesma pessoa do sujeito. O pronome, nestes casos, é parte fundamental da estrutura ou do sentido do verbo. Eles se dividem em dois grupos.
+
+#### Verbos Essencialmente Pronominais
+
+São verbos que **não existem na língua sem o pronome oblíquo**. O pronome é uma parte integrante e inseparável do verbo, não possuindo uma função sintática própria (não é objeto direto nem indireto).
+
+- **Principais Verbos:** _arrepender-se, queixar-se, orgulhar-se, atrever-se, dignar-se, esforçar-se, suicidar-se, zangar-se, assemelhar-se, candidatar-se, refugiar-se, estreitar-se._
+- **Análise:** No verbo **arrepender-se**, por exemplo, não é possível "arrepender alguém" ou "arrepender a si mesmo". A ação não transita; ela se manifesta no próprio sujeito. Por isso, o pronome **se** é apenas uma partícula que integra o verbo.
+- **Exemplos:**
+    - Eles **se queixaram** do barulho excessivo. (Incorreto: _Eles queixaram..._)
+    - Eu **me orgulho** de suas conquistas. (Incorreto: _Eu orgulho..._)
+
+#### Verbos Acidentalmente Pronominais
+
+São verbos que existem e podem ser usados com ou sem o pronome oblíquo. A presença do pronome, no entanto, altera a **regência** do verbo e, por vezes, seu sentido.
+
+> **Foco de Prova: "Lembrar" e "Esquecer"**
+> 
+> Este é o par mais cobrado em concursos. A regra de regência muda completamente com a presença do pronome.
+> 
+> - **Sem Pronome:** Os verbos `lembrar` e `esquecer` são **Transitivos Diretos (VTD)**, com objeto direto sem preposição.
+>     - _Exemplo:_ Eu esqueci **o compromisso**.
+>     
+> - **Com Pronome:** Os verbos `lembrar-se` e `esquecer-se` são **Transitivos Indiretos (VTI)**, exigindo um objeto indireto com a preposição **"de"**.
+>     - _Exemplo:_ Eu me esqueci **do compromisso**.
+> 
+> |Análise de Correção|
+> |---|
+> |**Certo:** Lembrei **o nome** dele.|
+> |**Certo:** Lembrei-**me do nome** dele.|
+> |**Errado:** Lembrei **do nome** dele. (Falta o pronome `me`).|
+> |**Errado:** Lembrei-**me o nome** dele. (Falta a preposição `de`).|
+
+**Distinção Importante:** É fundamental não confundir o **se** de um verbo pronominal com o **se** de voz passiva sintética.
+
+- _Verbo Pronominal:_ O candidato **esforçou-se** muito. (O **se** é parte do verbo).
+- _Voz Passiva Sintética:_ **Alugam-se** casas. (O **se** é partícula apassivadora; **casas são alugadas**).
+
+### Verbos Vicários
+
+Os verbos vicários são aqueles que, em um determinado contexto, "fazem as vezes" de outro verbo ou de uma ideia já enunciada, substituindo-os para evitar repetição. Os principais verbos que desempenham essa função são **SER** e **FAZER**.
+
+Essa substituição geralmente é acompanhada pelo pronome demonstrativo **o**, que retoma anaforicamente a ação ou o evento anterior.
+
+- **Exemplos com o verbo FAZER:**
+    - Eu poderia ter me dedicado mais, mas não **o fiz**. (Onde **o fiz** substitui "me dediquei mais").
+    - Ele pediu para que eu entregasse o relatório, e eu **o farei** amanhã. (**o farei** substitui "entregarei o relatório").
+
+- **Exemplos com o verbo SER:**
+    - Ele é um bom aluno, mas o irmão não **é**. (`é` substitui "é um bom aluno").
+    - Se você não estudou, **foi** porque não quis. (`foi` substitui a ideia de "o fato de você não ter estudado").
+    - Se ela não aceita o convite, **é** porque tem outro compromisso. (`é` substitui "o fato de ela não aceitar").
+
+O reconhecimento dessa estrutura é importante em questões de coesão e de compreensão textual, que podem perguntar a qual ideia ou termo um verbo vicário ou um pronome demonstrativo se refere.
