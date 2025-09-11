@@ -1633,3 +1633,66 @@ A memorização da "base" (radical alterado) dos principais verbos irregulares n
 | **Requerer**             | **REQUERE-** (regular)                       | Se ele **requeresse**, quando ele **requerer**... |
 | **Prover**               | **PROVE-** (regular nestes tempos)           | Se eu **provesse**, quando eu **prover**...       |
 | **Precaver**             | **PRECAVE-** (regular nos tempos existentes) | Se nós **precavêssemos**...                       |
+
+## Correlação dos Tempos Verbais
+
+A correlação verbal é a relação de harmonia e coerência que se estabelece entre os tempos e modos verbais das diferentes orações de um período composto. Embora muitas combinações sejam possíveis e flexíveis, a norma padrão estabelece alguns padrões lógicos que garantem a clareza da sequência temporal dos fatos. O princípio fundamental por trás de todas as regras é a **coerência do eixo temporal**.
+
+> **As Correlações Essenciais (Foco de Prova)**
+> 
+> Se fosse necessário memorizar apenas duas estruturas de correlação para uma prova, seriam estas, que representam as principais relações de hipótese:
+> 
+> 1. **Hipótese Possível/Provável no Futuro:**
+>     - **Se eu puder** (Futuro do Subjuntivo), **farei** (Futuro do Presente).
+>     
+> 2. **Hipótese Improvável/Irreal no Presente/Futuro:**
+>     - **Se eu pudesse** (Pretérito Imperfeito do Subjuntivo), **faria** (Futuro do Pretérito).
+>     
+
+### A Regra do Eixo Temporal
+
+A escolha do tempo verbal em uma oração subordinada é, em grande parte, determinada pelo tempo verbal da oração principal. O tempo da oração principal funciona como o "eixo" ou o ponto de referência a partir do qual as outras ações são situadas.
+
+1. **Ponto de Referência no PRESENTE ou FUTURO:** Se a oração principal está no Presente ou no Futuro do Presente do Indicativo, as ações dependentes geralmente se expressam em tempos do presente ou do futuro.
+	- **Presente do Indicativo + Presente do Indicativo:** (Fatos simultâneos ou habituais)
+	    - _Exemplo:_ **Sei** que você **estuda** muito.
+	- **Presente do Indicativo + Presente do Subjuntivo:** (Desejo, necessidade, dúvida no presente/futuro)
+	    - _Exemplo:_ **É preciso** que você **estude**. / **Espero** que você **passe**.
+	- **Presente do Indicativo + Futuro do Presente:** (Promessa ou certeza futura)
+	    - _Exemplo:_ **Prometo** que **estudarei** mais.
+	- **Futuro do Presente + Futuro do Subjuntivo:** (Ação futura condicionada a outra ação futura)
+	    - _Exemplo:_ **Farei** tudo o que eu **puder**.
+
+2. **Ponto de Referência no PRETÉRITO:** Se a oração principal está em um tempo do pretérito, a ação dependente será expressa por outro tempo do pretérito ou pelo Futuro do Pretérito (o "futuro do passado").
+	- **Pretérito Perfeito + Pretérito Imperfeito do Subjuntivo:** (Desejo ou ordem no passado)
+	    - _Exemplo:_ Eu **sugeri** que ele **procurasse** um médico.
+	- **Pretérito Imperfeito do Indicativo + Pretérito Imperfeito do Subjuntivo:** (Hipótese ou desejo contínuo no passado)
+	    - _Exemplo:_ Eu **queria** que você **viesse** à festa.
+	- **Pretérito Imperfeito do Subjuntivo + Futuro do Pretérito:** (A correlação condicional clássica)
+	    - _Exemplo:_ Se ele **descobrisse** a verdade, eu **morreria** de vergonha.
+
+### Outras Correlações Clássicas
+
+1. **Relações no Pretérito (Narrativas):**
+	- **Ação Durativa vs. Ação Pontual (Interrupção):** Pretérito Imperfeito + Pretérito Perfeito.
+	    - _Exemplo:_ Eu **estudava** tranquilamente quando o telefone **tocou**.
+	- **Ações Simultâneas:** Pretérito Imperfeito + Pretérito Imperfeito.
+	    - _Exemplo:_ Eu **estudava** enquanto ele **ouvia** música.
+
+2. **O Uso Literário de "Como" + Subjuntivo:** Em um registro extremamente formal ou literário, é possível encontrar a conjunção causal "como" seguida de um verbo no Pretérito Imperfeito do Subjuntivo.
+	- _Exemplo:_ **Como chovesse** torrencialmente, não pudemos sair de casa. (Equivale a: _Como chovia_...).
+
+### Reescrita e Substituições Válidas
+
+Além de identificar a correlação correta, as bancas frequentemente pedem para reconhecer reescrituras válidas entre diferentes estruturas verbais.
+
+|Expressão Original|Substituição Válida|
+|---|---|
+|**Têm de** ser fiscalizados|**devem** ser fiscalizados (locução verbal modal)|
+|**Tem gerado** nas últimas décadas|**gerou** nas últimas décadas (ação contínua vs. ação concluída)|
+|**Tinha estado**|**estivera** (Pret. Mais-que-perfeito composto pelo simples)|
+|**Tenha sido**|**haja sido** (troca de auxiliar no Pret. Perfeito Subjuntivo)|
+|Se **pudéssemos**, **faríamos**|Se **pudermos**, **faremos** (troca do eixo hipotético para o futuro)|
+
+O mais produtivo para a prova não é tentar decorar todas as combinações possíveis, mas focar nas correlações essenciais e na lógica do eixo temporal.
+
