@@ -1538,3 +1538,98 @@ Atenção à ortografia relacionada ao acento diferencial:
 
 - Os **derivados de "pôr" não são acentuados**. A razão é que palavras como **compor**, **repor** e **supor** são oxítonas terminadas em **-r**, e essa terminação não faz parte da regra de acentuação das oxítonas.
 
+### Verbo "Aprazer"
+
+Este verbo irregular, com o sentido de "agradar", "causar prazer", compartilha o radical do adjetivo _aprazível_. Embora possua uma conjugação completa na teoria, seu uso prático é quase sempre restrito às **terceiras pessoas** (`apraz`, `aprazem`).
+
+Para fins de reconhecimento em prova, é útil notar que, nos tempos pretéritos e no futuro do subjuntivo, seu radical se torna **aprouve-**.
+
+- **Pretérito Perfeito do Indicativo:** Ele **aprouve**.
+- **Pretérito Mais-que-perfeito do Indicativo:** Eu **aprouvera**, tu **aprouveras**...
+- **Pretérito Imperfeito do Subjuntivo:** Se eu **aprouvesse**, se tu **aprouvesses**...
+- **Futuro do Subjuntivo:** Quando eu **aprouver**, quando tu **aprouveres**...
+
+### Verbos com Alteração no Radical: Medir, Pedir, Valer, Eleger
+
+Este grupo de verbos apresenta uma irregularidade na **1ª pessoa do singular do Presente do Indicativo**. Essa alteração no radical se estende, por consequência, a todo o **Presente do Subjuntivo**.
+
+- **MEDIR e PEDIR:** A consoante **"d"** do radical se transforma em **"ç"** antes das vogais "o" e "a".
+
+|Verbo|1ª Pessoa Pres. Indicativo|Presente do Subjuntivo (completo)|
+|---|---|---|
+|**Medir**|Eu me**ç**o|que eu me**ç**a, me**ç**as, me**ç**a, me**ç**amos, me**ç**ais, me**ç**am|
+|**Pedir**|Eu pe**ç**o|que eu pe**ç**a, pe**ç**as, pe**ç**a, pe**ç**amos, pe**ç**ais, pe**ç**am|
+
+- **VALER:** A consoante **"l"** do radical se transforma em **"lh"** antes das vogais "o" e "a".
+
+|Verbo|1ª Pessoa Pres. Indicativo|Presente do Subjuntivo (Exemplo)|
+|---|---|---|
+|**Valer**|Eu va**lh**o|que eu va**lh**a... / **Valha**-me Deus!|
+
+- **ELEGER (e verbos em -GER/-GIR):** A consoante **"g"** do radical se transforma em **"j"** antes das vogais "o" e "a". Essa troca ocorre para manter o som de /ʒ/.
+
+|Verbo|1ª Pessoa Pres. Indicativo|Presente do Subjuntivo (Exemplo)|
+|---|---|---|
+|**Eleger**|Eu ele**j**o|que eu ele**j**a...|
+|**Proteger**|Eu prote**j**o|que eu prote**j**a...|
+|**Agir**|Eu a**j**o|que eu a**j**a...|
+
+### A Falsa Semelhança dos Verbos "Querer" vs. "Requerer"
+
+Apesar da aparência, o verbo **requerer** **NÃO é um derivado de querer**. Eles possuem origens e, consequentemente, conjugações muito distintas. Confundir os dois é um erro comum e um alvo frequente das bancas examinadoras.
+
+- **QUERER:** É um verbo altamente **irregular**, com um radical `quis-` em diversos tempos do pretérito e do subjuntivo.
+- **REQUERER:** É um verbo majoritariamente **regular**, que segue o paradigma da 2ª conjugação (como `vender` ou `beber`). Sua única irregularidade ocorre na 1ª pessoa do singular do Presente do Indicativo (`requeiro`), que impacta a formação do Presente do Subjuntivo (`requeira`).
+
+> **Foco de Prova: Análise Comparativa da Conjugação**
+> 
+> A melhor forma de dominar a diferença é comparar os tempos em que a irregularidade de "querer" se manifesta, em contraste com a regularidade de "requerer".
+
+|Tempo Verbal|Verbo QUERER (Irregular)|Verbo REQUERER (Regular na maior parte)|Análise da Diferença|
+|---|---|---|---|
+|**Presente do Indicativo (eu)**|eu **quero**|eu **requeiro**|`Requerer` ganha um `-i-` e foge ao seu próprio padrão.|
+|**Pretérito Perfeito (eu)**|eu **quis**|eu **requeri**|`Querer` tem o radical irregular `quis-`; `Requerer` é regular.|
+|**Pret. Imperf. Subjuntivo**|se eu **quisesse**|se eu **requeresse**|`Querer` usa a base `quis-`; `Requerer` usa a base regular `requere-`.|
+|**Futuro do Subjuntivo**|quando eu **quiser**|quando eu **requerer**|`Querer` usa a base `quis-`; `Requerer` usa a base regular `requere-`.|
+
+**Observação sobre o Imperativo:** Os verbos requerer, dizer, fazer e trazer, na 2ª pessoa do singular do imperativo afirmativo, admitem duas formas: requere ou requer; dize ou diz; faze ou faz; traze ou traz.
+
+A seguir, para consulta detalhada, apresentam-se as conjugações integrais de ambos os verbos.
+
+**QUERER (Irregular)**
+
+- **Presente do indicativo:** quero, queres, quer, queremos, quereis, querem.
+- **Pretérito perfeito do indicativo:** quis, quiseste, quis, quisemos, quisestes, quiseram.
+- **Pretérito imperfeito do indicativo:** queria, querias, queria, queríamos, queríeis, queriam.
+- **Pretérito mais-que-perfeito do indicativo:** quisera, quiseras, quisera, quiséramos, quiséreis, quiseram.
+- **Futuro do presente do indicativo:** quererei, quererás, quererá, quereremos, querereis, quererão.
+- **Futuro do pretérito do indicativo:** quereria, quererias, quereria, quereríamos, quereríeis, quereriam.
+- **Presente do subjuntivo:** queira, queiras, queira, queiramos, queirais, queiram.
+- **Pretérito imperfeito do subjuntivo:** quisesse, quisesses, quisesse, quiséssemos, quisésseis, quisessem.
+- **Futuro do subjuntivo:** quiser, quiseres, quiser, quisermos, quiserdes, quiserem.
+
+**REQUERER (Regular, com exceção)**
+
+- **Presente do indicativo:** requeiro, requeres, requer, requeremos, requereis, requerem.
+- **Pretérito perfeito do indicativo:** requeri, requereste, requereu, requeremos, requerestes, requereram.
+- **Pretérito imperfeito do indicativo:** requeria, requerias, requeria, requeríamos, requeríeis, requeriam.
+- **Pretérito mais-que-perfeito do indicativo:** requerera, requereras, requerera, requerêramos, requerêreis, requereram.
+- **Futuro do presente do indicativo:** requererei, requererás, requererá, requerereremos, requerereis, requererão.
+- **Futuro do pretérito do indicativo:** requereria, requererias, requereria, requereríamos, requereríeis, requereriam.
+- **Presente do subjuntivo:** requeira, requeiras, requeira, requeiramos, requeirais, requeiram.
+- **Pretérito imperfeito do subjuntivo:** requeresse, requeresses, requeresse, requerêssemos, requerêsseis, requeressem.
+- **Futuro do subjuntivo:** requerer, requereres, requerer, requerermos, requererdes, requererem.
+
+### Resumo Estratégico: Bases Irregulares para Memorizar
+
+A memorização da "base" (radical alterado) dos principais verbos irregulares nos tempos do subjuntivo e nos pretéritos é uma ferramenta poderosa para acertar questões de conjugação. Essas formas geralmente aparecem em orações introduzidas por conjunções como **se, que, quando, caso, embora**.
+
+| Verbo Primitivo / Modelo | Base Irregular Chave                         | Exemplo de Aplicação (Subjuntivo/Pretérito)       |
+| ------------------------ | -------------------------------------------- | ------------------------------------------------- |
+| **Ter** (e derivados)    | **TIVE-**                                    | Se eu **tivesse**, quando eu **tiver**...         |
+| **Pôr** (e derivados)    | **PUSE-**                                    | Se eu **pusesse**, quando nós **pusermos**...     |
+| **Ver** (e derivados)    | **VI-** (`visse`) / **VIR-** (`vir`)         | Se nós **víssemos**, quando eu **vir**...         |
+| **Vir** (e derivados)    | **VIE-** (`viesse`) / **VIER-** (`vier`)     | Se eles **viessem**, quando você **vier**...      |
+| **Requerer**             | **REQUERE-** (regular)                       | Se ele **requeresse**, quando ele **requerer**... |
+| **Prover**               | **PROVE-** (regular nestes tempos)           | Se eu **provesse**, quando eu **prover**...       |
+| **Precaver**             | **PRECAVE-** (regular nos tempos existentes) | Se nós **precavêssemos**...                       |
