@@ -1451,3 +1451,90 @@ As tabelas a seguir apresentam as conjugações do Futuro e do Pretérito Imperf
 > - **Incorreto:** _Eles deteram os ladrões._ → **Correto:** Eles **detiveram** os ladrões.
 > - **Incorreto:** _Se ele mantesse a palavra..._ → **Correto:** Se ele **mantivesse** a palavra...
 
+### Verbos com Alternância Vocálica
+
+Existe um importante grupo de verbos irregulares da 3ª conjugação (-IR) que apresentam uma alteração vocálica em seu radical. A vogal **"e"** do radical muda para **"i"** na 1ª pessoa do singular do Presente do Indicativo.
+
+Esta alteração inicial provoca um efeito em cascata, pois, como vimos, o Presente do Subjuntivo é formado a partir do radical da 1ª pessoa do Indicativo. Portanto, a vogal **"i"** se manterá em toda a conjugação do Presente do Subjuntivo.
+
+O verbo **FERIR** é o modelo perfeito para este grupo:
+
+- **Presente do Indicativo:**
+    - Eu **firo** (radical **fir-**)
+    - Tu f**e**res, ele f**e**re (radical **fer-** volta ao normal)
+    - Nós f**e**rimos, vós f**e**ris (radical **fer-**)
+    - Eles f**e**rem (radical **fer-**)
+
+- **Presente do Subjuntivo:** (Todo derivado do radical **fir-**)
+    - que eu **fira**
+    - que tu **firas**
+    - que ele **fira**
+    - que nós **firamos**
+    - que vós **firais**
+    - que eles **firam**
+
+Diversos verbos de uso comum seguem este exato padrão de irregularidade. Memorizar o grupo é uma estratégia eficaz.
+
+- **Principais Verbos do Grupo:**
+    - **aderir**
+    - **advertir**
+    - **competir**
+    - **digerir**
+    - **divergir**
+    - **ferir**
+    - **gerir**
+    - **mentir**
+    - **polir**
+    - **repelir**
+    - **sugerir**
+    - **vestir**
+
+A seguir, a conjugação completa do verbo **ADERIR** como exemplo detalhado deste paradigma.
+
+| Tempo/Modo                             | Conjugação Completa do Verbo ADERIR                                                                                    |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Presente do Indicativo**             | eu ad**i**ro, tu aderes, ele adere, nós aderimos, vós aderis, eles aderem                                              |
+| **Pretérito Perfeito do Indicativo**   | eu aderi, tu aderiste, ele aderiu, nós aderimos, vós aderistes, eles aderiram                                          |
+| **Pretérito Imperfeito do Indicativo** | eu aderia, tu aderias, ele aderia, nós aderíamos, vós aderíeis, eles aderiam                                           |
+| **Pret. Mais-que-perfeito do Ind.**    | eu aderira, tu aderiras, ele aderira, nós aderíramos, vós aderíreis, eles aderiram                                     |
+| **Futuro do Presente do Indicativo**   | eu aderirei, tu aderirás, ele aderirá, nós aderiremos, vós aderireis, eles aderirão                                    |
+| **Futuro do Pretérito do Indicativo**  | eu aderiria, tu aderirias, ele aderiria, nós aderiríamos, vós aderiríeis, eles adeririam                               |
+| **Presente do Subjuntivo**             | que eu ad**i**ra, que tu ad**i**ras, que ele ad**i**ra, que nós ad**i**ramos, que vós ad**i**rais, que eles ad**i**ram |
+| **Pretérito Imperfeito do Subjuntivo** | se eu aderisse, se tu aderisses, se ele aderisse, nós aderíssemos, vós aderísseis, eles aderissem                      |
+| **Futuro do Subjuntivo**               | quando eu aderir, quando tu aderires, quando ele aderir, nós aderirmos, vós aderirdes, eles aderirem                   |
+| **Imperativo Afirmativo**              | adere tu, ad**i**ra você, ad**i**ramos nós, aderi vós, ad**i**ram vocês                                                |
+| **Imperativo Negativo**                | não ad**i**ras tu, não ad**i**ra você, não ad**i**ramos nós, não ad**i**rais vós, não ad**i**ram vocês                 |
+| **Formas Nominais**                    | **Infinitivo Pessoal:** por aderir eu, ...aderires tu, etc.<br>**Gerúndio:** aderindo<br>**Particípio:** aderido       |
+
+### Verbo "Pôr" e Seus Derivados
+
+Apesar de sua terminação em **-or**, o verbo **pôr** (e todos os seus derivados) pertence à **2ª conjugação**. Isso se deve à sua origem no latim _ponere_, que o enquadra no paradigma dos verbos terminados em -ER. Ele é um verbo altamente irregular, apresentando diferentes radicais ao longo de sua conjugação.
+
+No Presente do Indicativo, por exemplo, a conjugação é: _eu **ponho**, tu **pões**, ele **põe**, nós **pomos**, vós **pondes**, eles **põem**_.
+
+> **Foco de Prova: A Base Irregular "-puse-"**
+> 
+> A principal irregularidade do verbo "pôr", e a mais explorada em concursos, é a alteração de seu radical para **-pus-** ou **-pusé-** em diversos tempos do pretérito e no futuro do subjuntivo. Dominar estas formas é crucial.
+
+|Tempo Verbal (com base "-puse-")|Verbo PÔR (Modelo)|Exemplo com Derivado (COMPOR)|
+|---|---|---|
+|**Pretérito Perfeito do Indicativo**|Eu **pus**, ele **pôs**, eles **puseram**|Ele **compôs** uma bela canção.|
+|**Pret. Mais-que-perfeito do Ind.**|Eu **pusera**, nós **puséramos**|Nós **compuséramos** o texto anteriormente.|
+|**Pret. Imperfeito do Subjuntivo**|Se eu **pusesse**, se tu **pusesses**...|Se ele **compusesse** a música...|
+|**Futuro do Subjuntivo**|Quando eu **puser**, quando nós **pusermos**...|Quando nós **compusermos** o acordo...|
+
+A regra de conjugação é consistente: **todos os verbos derivados de "pôr" seguem exatamente o mesmo padrão de irregularidade**.
+
+- **Principais Derivados:** _compor, dispor, impor, opor, propor, repor, supor, transpor, entrepor, sobrepor._
+- **Exemplos de Aplicação:**
+    - O juiz **propôs** um acordo às partes. (Pretérito Perfeito de `propor`).
+    - Se a empresa **dispusesse** de mais recursos, o projeto avançaria. (Pretérito Imperfeito do Subjuntivo de `dispor`).
+    - Quando a equipe **se impuser** em campo, certamente vencerá. (Futuro do Subjuntivo de `impor`).
+
+Atenção à ortografia relacionada ao acento diferencial:
+
+- O verbo **pôr** no infinitivo recebe acento circunflexo para se diferenciar da preposição **por**.
+    - _Exemplo:_ Vou **pôr** o livro na mesa. / Fui **por** outro caminho.
+
+- Os **derivados de "pôr" não são acentuados**. A razão é que palavras como **compor**, **repor** e **supor** são oxítonas terminadas em **-r**, e essa terminação não faz parte da regra de acentuação das oxítonas.
+
