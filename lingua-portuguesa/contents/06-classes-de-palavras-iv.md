@@ -1335,7 +1335,7 @@ Existe um grupo de cinco verbos terminados em **-IAR** (e um de seus derivados) 
 | Vós    | influ**ís**      | argu**ís**                  |
 | Eles   | influ**em**      | arg**uem**                  |
 
-### O Verbo "Vir" e seus Derivados
+### Verbo "Vir" e seus Derivados
 
 O verbo **vir** é irregular e serve de base para uma série de outros verbos importantes e muito cobrados em provas, que seguem exatamente o seu padrão de conjugação. A dificuldade reside em reconhecer o padrão de "vir" dentro de um verbo mais longo.
 
@@ -1358,3 +1358,96 @@ A regra é simples: **se "vir" se conjuga de uma forma, seus derivados se conjug
 |                          | quando nós **viermos** | quando nós inter**viermos** | quando nós con**viermos** |
 
 É fundamental familiarizar-se com essas formas, pois são muito diferentes do que a conjugação por "intuição" poderia sugerir.
+
+### Verbos "Ver", "Prover" e "Provir"
+
+Estes três verbos são frequentemente confundidos pela semelhança sonora, mas possuem significados e, principalmente, conjugações distintas.
+
+- **Verbo PROVIR:**
+    - **Significado:** "originar-se de", "derivar", "resultar".
+    - **Conjugação:** Segue integralmente a conjugação do verbo **VIR**.
+    - **Exemplos Comparativos:**
+        - ele **veio** → o mal **proveio** da ignorância.
+        - eles **vieram** → os lucros **provieram** dos investimentos.
+        - se ele **viesse** → se o resultado **proviesse** do esforço.
+        - quando ele **vier** → quando o bem **provier**.
+
+- **Verbo PROVER:**
+    - **Significado:** "fornecer", "abastecer", "providenciar".
+    - **Conjugação:** Possui uma conjugação híbrida. Na maioria dos tempos, é **regular** como `vender`. No entanto, em alguns tempos-chave, ele segue a conjugação do verbo **VER**.
+        - **Segue o verbo VER:** no Presente do Indicativo (`eu vejo` → `eu provejo`), no Presente do Subjuntivo (`que eu veja` → `que eu proveja`) e no Pretérito Imperfeito do Indicativo (`eu via` → `eu provia`).
+        - **É REGULAR nos demais tempos:** como o Pretérito Perfeito (`eu provi`, e não _"proveu"_), o Pretérito Imperfeito do Subjuntivo (`se eu provesse`) e o Futuro do Subjuntivo (`quando eu prover`).
+
+> **Foco de Prova: "Vir" vs. "Ver" no Futuro do Subjuntivo**
+> 
+> A confusão entre o Futuro do Subjuntivo dos verbos **VIR** e **VER** é uma das mais exploradas em concursos. A memorização destas formas é indispensável.
+
+|Verbo VIR|Verbo VER|
+|---|---|
+|quando eu **vier**|quando eu **vir**|
+|quando tu **vieres**|quando tu **vires**|
+|quando ele **vier**|quando ele **vir**|
+|quando nós **viermos**|quando nós **virmos**|
+|quando vós **vierdes**|quando vós **virdes**|
+|quando eles **vierem**|quando eles **virem**|
+
+- **Aplicação em Frases:**
+    - Se você **vir** o João, avise-o. (Verbo VER)
+    - Se você **vier** à festa, traga um amigo. (Verbo VIR)
+
+### Verbos "Ver" e "Ter" e Seus Derivados
+
+Os verbos **ver** e **ter**, e todos os seus derivados, compartilham o mesmo padrão de irregularidade. A regra é simples: o derivado se conjuga exatamente como o verbo primitivo, apenas com o acréscimo do prefixo.
+
+- **Verbos derivados de VER:** _rever, prever, antever, entrever_.
+    - _Exemplos Comparativos:_
+        - ele **viu** → ele **reviu** o texto.
+        - eles **viram** → eles **previram** o resultado.
+        - se eu **visse** → se eu **revisse** o material.
+        - quando nós **virmos** → quando nós **previrmos** o perigo.
+
+- **Verbos derivados de TER:** _manter, conter, deter, reter, entreter, obter, abster_.
+    - _Exemplos Comparativos:_
+        - ele **teve** → ele **manteve** a calma.
+        - eles **tiveram** → eles **detiveram** os suspeitos.
+        - se nós **tivéssemos** → se nós **obtivéssemos** a licença.
+        - quando você **tiver** → quando você **mantiver** o foco.
+
+    - **Acento Diferencial:** A regra do acento diferencial de número também se aplica aos derivados:
+        - ele tem → ele man**tém**, con**tém**, de**tém**.
+        - eles têm → eles man**têm**, con**têm**, de**têm**.
+
+As tabelas a seguir apresentam as conjugações do Futuro e do Pretérito Imperfeito do Subjuntivo para os verbos **Vir** e **Ter**, que servem de modelo para todos os seus derivados.
+
+**Futuro do Subjuntivo**
+
+| VIR (e derivados) | TER (e derivados) |
+| --- | --- |
+| quando eu vier | quando eu tiver |
+| quando tu vieres | quando tu tiveres |
+| quando ele vier | quando ele tiver |
+| quando nós viermos | quando nós tivermos |
+| quando vós vierdes | quando vós tiverdes |
+| quando eles vierem | quando eles tiverem |
+
+**Pretérito Imperfeito do Subjuntivo**
+
+| VIR (e derivados) | TER (e derivados) |
+| --- | --- |
+| se eu viesse | se eu tivesse |
+| se tu viesses | se tu tivesses |
+| se ele viesse | se ele tivesse |
+| se nós viéssemos | se nós tivéssemos |
+| se vós viésseis | se vós tivésseis |
+| se eles viessem | se eles tivessem |
+
+> **Foco de Prova: Erros Comuns de Conjugação**
+> 
+> A principal estratégia das bancas é conjugar esses verbos irregulares como se fossem regulares. Fique atento a estas formas:
+> 
+> - **Incorreto:** _Se eu propor..._ → **Correto:** Se eu **propuser**...
+> - **Incorreto:** _Quando eu ver o resultado..._ → **Correto:** Quando eu **vir** o resultado...
+> - **Incorreto:** _A polícia interviu..._ → **Correto:** A polícia **interveio**...
+> - **Incorreto:** _Eles deteram os ladrões._ → **Correto:** Eles **detiveram** os ladrões.
+> - **Incorreto:** _Se ele mantesse a palavra..._ → **Correto:** Se ele **mantivesse** a palavra...
+
