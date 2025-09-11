@@ -1756,3 +1756,119 @@ Ao fazer essa conversão, é crucial atentar para as regras de **colocação pro
     - **Forma Incorreta:** _Alguns pontos não contabilizaram-se na prova._
         - **Análise:** A ênclise (pronome depois do verbo) está incorreta, pois a presença da palavra atrativa "não" torna a próclise obrigatória.
 
+## As Vozes Verbais: A Relação entre Sujeito e Ação
+
+As vozes (ou diáteses) verbais indicam a relação que o sujeito gramatical estabelece com a ação expressa pelo verbo. Essa relação define se o sujeito é quem pratica a ação (agente) ou quem a recebe (paciente). Existem três vozes verbais principais: ativa, passiva e reflexiva.
+
+| Tipo de Voz       | Relação Sujeito-Verbo                               | Exemplo                                          |
+| ----------------- | --------------------------------------------------- | ------------------------------------------------ |
+| **Voz Ativa**     | O sujeito é o **agente**, pratica a ação.           | **[O policial]** deteve os criminosos.           |
+| **Voz Passiva**   | O sujeito é o **paciente**, sofre ou recebe a ação. | **[Os criminosos]** foram detidos pelo policial. |
+| **Voz Reflexiva** | O sujeito é **agente e paciente** ao mesmo tempo.   | **[O menino]** feriu-se com a faca.              |
+
+### Voz Ativa
+
+É a construção mais direta e comum da língua. Nela, o sujeito gramatical é o agente, aquele que executa a ação verbal.
+
+- **Estrutura:** Sujeito Agente + Verbo + Complemento(s)
+- **Exemplos:**
+    - **A cientista** publicou o artigo.
+    - **O time** venceu o campeonato.
+
+### Voz Passiva
+
+Na voz passiva, o foco da frase se desloca do agente para o paciente da ação. O ser que sofre a ação passa a ocupar a posição de sujeito gramatical. A voz passiva pode se apresentar de duas formas:
+
+- **Voz Passiva Analítica:**
+    - **Estrutura:** Sujeito Paciente + Locução Verbal (verbo SER/ESTAR + Particípio do verbo principal) + Agente da Passiva
+    - **Exemplos:**
+        - **Os criminosos** foram detidos **pelo policial**.
+        - **O artigo** foi publicado **pela cientista**.
+
+- **Voz Passiva Sintética (ou Pronominal):**
+    - **Estrutura:** Verbo Transitivo Direto (na 3ª pessoa) + Pronome Apassivador "se" + Sujeito Paciente
+    - **Exemplos:**
+        - **Detiveram-se** os criminosos.
+        - **Publicou-se** o artigo.
+        - **Alugam-se** casas.
+
+### Voz Reflexiva
+
+Na voz reflexiva, o sujeito pratica uma ação que recai sobre si mesmo, sendo, portanto, agente e paciente ao mesmo tempo. A presença de um pronome reflexivo (**me, te, se, nos, vos**) que se refere ao próprio sujeito é a marca desta voz.
+
+- **Exemplos:**
+    - O menino **se** feriu com a faca. (O menino feriu a si mesmo).
+    - Eu **me** olhei no espelho por um longo tempo.
+
+- **Função do Pronome:** Na voz reflexiva, o pronome exerce função sintática de objeto.
+    - _Objeto Direto:_ O menino feriu **a si mesmo** (se).
+    - _Objeto Indireto:_ Eles deram-**se**, após a tragédia, uma segunda chance. (Deram uma segunda chance **a si mesmos**).
+
+#### Voz Reflexiva Recíproca
+
+É um subtipo da voz reflexiva que ocorre com sujeitos múltiplos (plural ou composto). Indica uma ação que é trocada mutuamente entre os elementos do sujeito.
+
+- **Exemplos:**
+    - Os criminosos **se** abraçaram na prisão. (Um abraçou o outro).
+    - Os dois líderes **se** cumprimentaram cordialmente.
+
+### Forma e Conversão das Vozes Verbais
+
+A habilidade de transpor uma frase da voz ativa para a passiva (e vice-versa), ou entre os tipos de voz passiva, é fundamental e exige o reconhecimento das funções sintáticas básicas.
+
+#### Da Voz Ativa para a Voz Passiva Analítica
+
+A conversão da voz ativa para a passiva analítica (ser + particípio) segue um roteiro fixo:
+
+1. O **Objeto Direto** da voz ativa torna-se o **Sujeito Paciente** da voz passiva.
+2. O **Sujeito Agente** da voz ativa torna-se o **Agente da Passiva**, geralmente introduzido pela preposição "por" (ou "de").
+3. O **Verbo** da voz ativa é transformado em uma **locução verbal passiva**, formada pelo verbo auxiliar **SER** (conjugado no mesmo tempo e modo do verbo original) + o **Particípio** do verbo principal.
+
+- **Exemplo de Conversão:**
+    - **Voz Ativa:** O desafiante **derrotou** o campeão.
+    - **Voz Passiva Analítica:** O campeão **foi derrotado** pelo desafiante.
+
+#### Equivalência entre as Vozes Passivas
+
+Para fins de reescrita em provas, a **voz passiva analítica** e a **voz passiva sintética** (VTD + se) são consideradas semanticamente equivalentes. A transposição da analítica para a sintética ocorre da seguinte forma:
+
+1. A locução verbal passiva (**foi derrotado**) é substituída pelo **verbo na 3ª pessoa + o pronome apassivador se**.
+2. O agente da passiva (**pelo desafiante**) é omitido, tornando a ação mais impessoal.
+3. O tempo e o modo do verbo são mantidos.
+
+- **Exemplo:** O campeão **foi derrotado**. ↔ **Derrotou-se** o campeão.
+
+A voz passiva é um importante recurso discursivo para omitir o agente da ação, seja por desconhecimento ou por estratégia. A voz passiva sintética, por não apresentar o agente, pode ser uma reescritura possível para uma frase na voz ativa com sujeito indeterminado.
+
+- **Voz Ativa (sujeito indeterminado):** **Flagraram** o homem comendo Nutella.
+- **Voz Passiva Sintética (equivalente):** **Flagrou-se** o homem comendo Nutella.
+
+### A Impossibilidade de Apassivamento
+
+A regra de ouro da conversão é: a transposição para a voz passiva **só é possível com verbos que apresentam Objeto Direto na voz ativa**. É o objeto direto que se tornará o sujeito da nova frase.
+
+Consequentemente, via de regra, **não admitem transposição para a voz passiva**:
+
+- **Verbos Intransitivos**
+- **Verbos Transitivos Indiretos**
+- **Verbos de Ligação**
+- **Verbos impessoais** (como **haver** no sentido de existir).
+- **Verbos com sentido de posse** (como **ter**).
+
+A tabela a seguir analisa sentenças que não podem ser apassivadas:
+
+| Frase (Sem possibilidade de Voz Passiva)   | Análise da Impossibilidade                                                                                           |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| **Gosto de** pessoas gentis.               | Verbo Transitivo Indireto (não possui Objeto Direto).                                                                |
+| O dólar **caiu** muito ontem.              | Verbo Intransitivo (não possui Objeto Direto).                                                                       |
+| **Choveu** torrencialmente hoje.           | Verbo Intransitivo (impessoal, fenômeno da natureza).                                                                |
+| **Havia** um artista na minha cela.        | Verbo Impessoal (`haver` = existir), não possui sujeito.                                                             |
+| **Tenho** 50 anos. / **Tive** um cachorro. | Verbo `ter` com sentido de posse. A construção "um cachorro foi tido por mim" é semanticamente incoerente.           |
+| **Permaneceríamos** fiéis.                 | Verbo de Ligação.                                                                                                    |
+| Levei um soco.                             | Verbo com sentido passivo, mas de sintaxe ativa, cujo objeto direto ("um soco") não pode se tornar sujeito paciente. |
+
+**Observações Finais:**
+
+- **Exceções:** Verbos como **pagar, perdoar, obedecer e responder**, que podem ser transitivos indiretos, admitem, por força do uso, construções passivas. _Exemplo: A multa **foi paga**. / A pergunta **foi respondida**._
+- **Agente da Passiva:** O agente pode ser introduzido pelas preposições "por" (e suas contrações) ou, mais raramente, "de". _Exemplo: A cidade estava cercada **de/por** inimigos._
+
