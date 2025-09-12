@@ -34,7 +34,7 @@ Este exemplo demonstra a tese deste capítulo em ação: saber quais palavras-ch
 
 Dado o domínio do Google e o fato de que a maioria dos mecanismos de busca opera de forma semelhante do ponto de vista do usuário, utilizaremos o Google como nosso modelo padrão para o estudo das técnicas de busca e pesquisa. Para começar, vamos entender o que é, de fato, o Google.
 
-## Google: A Anatomia do Gigante da Busca
+## Google: O Gigante da Busca
 
 O Google é mais do que uma empresa ou um site; é um verbo, um sinônimo para a ação de pesquisar na internet. Para entender como ele se tornou essa força cultural e tecnológica, é preciso voltar à sua origem. O Google nasceu como um projeto de pesquisa acadêmica em 1996, na Universidade de Stanford, desenvolvido por dois estudantes de doutorado, Larry Page e Sergey Brin.
 
@@ -64,9 +64,7 @@ A interface atual é dominada pela barra de busca e por dois botões principais,
 Após realizar uma busca no modo padrão, o Google exibe uma página de resultados que mistura diferentes tipos de conteúdo. Para refinar essa busca, o usuário pode utilizar as **guias de pesquisa**, localizadas logo abaixo da barra de busca.
 
 <div align="center">
-
-<img width="700px" src="./img/02-guias-do-google.png" alt="Guias de pesquisa do Google, mostrando opções como Todas, Imagens, Notícias, Vídeos, etc.">
-
+<img width="700px" src="./img/02-guias-do-google.png">
 </div>
 
 Cada guia funciona como um filtro poderoso, restringindo os resultados a um tipo específico de conteúdo:
@@ -79,3 +77,65 @@ Cada guia funciona como um filtro poderoso, restringindo os resultados a um tipo
 - **Mais (Livros, Voos, Finanças):** Um menu que agrupa outros buscadores especializados do Google.
 
 Saber utilizar essas guias é o primeiro passo para transformar uma busca genérica em uma pesquisa muito mais focada e eficiente.
+
+### Refinando a Busca: Ferramentas Avançadas e Filtros de Conteúdo
+
+Uma busca simples, com uma ou duas palavras-chave, geralmente é o suficiente para encontrar o que procuramos. No entanto, para pesquisas mais complexas ou específicas, o Google oferece um arsenal de ferramentas que permitem refinar e filtrar os resultados com alta precisão. Vamos explorar as duas principais abordagens: a interface de Pesquisa Avançada e o filtro de segurança SafeSearch.
+
+#### Interface de Pesquisa Avançada
+
+Para usuários que desejam aplicar múltiplos filtros a uma busca sem precisar memorizar operadores de texto complexos, o Google oferece a página de **Pesquisa Avançada**. Ela funciona como um formulário detalhado que traduz suas seleções em uma busca poderosa e específica.
+
+Para acessá-la, basta realizar uma busca inicial, clicar na opção **"Ferramentas"** (localizada abaixo da barra de busca) e, em seguida, selecionar **"Pesquisa avançada"**.
+
+<div align="center">
+<img width="700px" src="./img/02-guia-de-pesquisa-avancada.png">
+</div>
+
+Uma vez na página, o usuário encontrará uma série de campos para detalhar sua pesquisa.
+
+<div align="center">
+<img width="700px" src="./img/02-refinamentos-da-pesquisa-avancada.png">
+</div>
+
+Os principais campos de refinamento de palavras são:
+
+- **todas estas palavras:** A busca padrão, que procura por páginas que contenham todas as palavras digitadas.
+- **esta expressão ou frase exata:** Equivalente a colocar a busca entre aspas (`""`), procurando pela frase exata.
+- **qualquer uma destas palavras:** Equivalente a usar o operador `OR`, buscando páginas que contenham ao menos uma das palavras listadas.
+- **nenhuma destas palavras:** Equivalente a usar o sinal de menos (`-`), para excluir termos dos resultados.
+
+Além disso, a página permite aplicar filtros poderosos, como:
+
+- **idioma e região:** Para encontrar páginas em uma língua ou país específico.
+- **última atualização:** Para filtrar resultados por data (última hora, 24 horas, último ano, etc.).
+- **site ou domínio:** Para restringir a busca a um site específico (ex: `wikipedia.org`) ou a um tipo de domínio (ex: `.gov.br` para sites do governo).
+- **tipo de arquivo:** Um recurso extremamente útil para encontrar documentos específicos, como apresentações (`ppt`), planilhas (`xls`) ou, mais comumente, arquivos **PDF**.
+
+Existe também uma página de **Pesquisa de imagens avançada**, com filtros específicos para o conteúdo visual, como tamanho, cor, tipo de imagem (rosto, foto, clipart) e, crucialmente, **direitos de uso**, que permite encontrar imagens que podem ser legalmente reutilizadas.
+
+<div align="center">
+<img width="700px" src="./img/02-refinamentos-da-pesquisa-avancada-imagens.png">
+</div>
+
+#### Segurança e Controle de Conteúdo: SafeSearch
+
+O **SafeSearch** é a ferramenta do Google projetada para gerenciar e filtrar conteúdo sexualmente explícito, violento ou adulto dos resultados da pesquisa. É um recurso essencial para o uso em ambientes de trabalho, escolas ou por famílias com crianças.
+
+<div align="center">
+<img width="520px" src="./img/02-safesearch.png">
+</div>
+
+O SafeSearch pode ser configurado em três níveis:
+
+1. **Filtrar:** A opção mais restritiva. Ajuda a filtrar imagens, textos e links explícitos.
+2. **Desfocar:** A opção padrão para muitos usuários. Ajuda a desfocar imagens explícitas, mas textos e links ainda podem aparecer nos resultados.
+3. **Desativado:** Mostra todos os resultados mais relevantes para a pesquisa, mesmo que sejam explícitos.
+
+É fundamental compreender que o SafeSearch **só funciona nos resultados da pesquisa do Google**. Ele não é um filtro de conteúdo para a internet como um todo e não impede o acesso a conteúdo explícito através de outros buscadores ou pela navegação direta a um site.
+
+### Além do Google: Buscadores Verticais e Concorrentes
+
+Ainda que o Google seja um buscador **horizontal** – que pesquisa sobre todos os tipos de temas –, existem também os buscadores **verticais**, que são especializados em um nicho específico. Sites como o _Buscapé_ (que pesquisa preços de produtos), o _iCarros_ (que pesquisa veículos) ou o _Google Acadêmico_ (que pesquisa artigos científicos) são exemplos de buscadores verticais.
+
+Por fim, é importante saber que o **Microsoft Bing** é o principal concorrente do Google. Ambas as tecnologias são extremamente similares, e a maioria das técnicas e operadores de busca funcionam de forma idêntica nos dois serviços. Por padrão, tanto o Google quanto o Bing utilizam o operador **E (AND)** implicitamente entre os termos de uma busca, significando que, ao pesquisar por `concurso público federal`, ambos buscarão por páginas que contenham as três palavras.
