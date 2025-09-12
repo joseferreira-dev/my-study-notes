@@ -472,9 +472,7 @@ Ao realizar a busca `cache:orkut.com`, por exemplo, o navegador não tentará ac
 No topo da página, o Google exibe uma barra de informações, como ilustrado na imagem, informando que aquela é uma versão em cache e a data em que a "fotografia" da página foi tirada. Essa barra também oferece um link para a "página atual", caso o usuário queira visitar a versão ao vivo do site.
 
 <div align="center">
-
-<img width="540px" src="./img/02-busca-com-operador-cache.png" alt="Visualização de uma página em cache do Google, com uma barra de informações no topo.">
-
+<img width="700px" src="./img/02-busca-com-operador-cache.png">
 </div>
 
 Esta ferramenta é particularmente útil em algumas situações específicas:
@@ -484,4 +482,84 @@ Esta ferramenta é particularmente útil em algumas situações específicas:
 - **Para verificar mudanças:** Permite comparar a versão atual de uma página com uma versão anterior, para ver o que foi alterado.
 
 É importante ter em mente que nem todas as páginas possuem uma versão em cache, e a data do armazenamento pode variar muito, dependendo da frequência com que o Google rastreia cada site.
+
+### Pesquisas na URL com "inurl:"
+
+O endereço (URL) de uma página web muitas vezes contém palavras-chave que descrevem seu conteúdo. Por exemplo, uma página sobre uma receita de bolo de fubá pode ter uma URL como `www.siteculinario.com.br/receitas/bolo-de-fuba`. O operador **`inurl:`** permite que o usuário pesquise por termos que aparecem especificamente dentro do texto da URL, em vez de no conteúdo da página.
+
+Isso transforma o próprio endereço em um critério de busca, permitindo um filtro muito preciso.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`inurl:palavra`**|Pesquisa por páginas que contenham uma palavra específica em sua URL.|`inurl:stn`|
+
+A busca `inurl:stn`, por exemplo, instrui o Google a retornar apenas as páginas que contenham a sigla "stn" em qualquer parte de seu endereço, seja no domínio ou no caminho do arquivo.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-inurl.png">
+</div>
+
+Este operador é especialmente útil para encontrar tipos específicos de páginas ou conteúdos:
+
+- **Encontrar Tópicos Específicos:** Uma busca por `"segunda guerra mundial" inurl:resumo` tende a encontrar páginas cujo endereço indica se tratar de um resumo sobre o tema.
+- **Localizar Seções de um Site:** Para encontrar apenas artigos da seção de tecnologia de um portal de notícias, pode-se pesquisar: `inteligência artificial site:uol.com.br inurl:tecnologia`.
+- **Encontrar Páginas de Login:** Uma busca por `inurl:login` ou `inurl:admin` pode ajudar a localizar as páginas de acesso de diversos sistemas.
+
+A combinação de `inurl:` com outros operadores, como `site:` e aspas, permite a criação de buscas extremamente específicas e poderosas, tornando-o uma ferramenta valiosa para pesquisas aprofundadas.
+
+### Pesquisando no Título com "intitle:"
+
+O título de uma página da web – aquele texto que aparece na aba do navegador e como o link azul nos resultados da pesquisa – é um dos indicadores mais fortes sobre o seu conteúdo principal. O operador **`intitle:`** permite que a busca seja focada exclusivamente neste campo, retornando apenas as páginas que contenham uma palavra-chave específica em seu título.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`intitle:palavra`**|Permite realizar buscas por palavras contidas nos títulos das páginas.|`intitle:gripe`|
+
+Ao realizar a busca **`intitle:gripe`**, o Google irá filtrar todos os resultados do seu índice e exibir apenas as páginas que, de fato, possuem a palavra "gripe" em seu título, como demonstra a imagem dos resultados da busca.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-intitle.png">
+</div>
+
+Podemos confirmar o funcionamento do operador ao visitar um dos links retornados. A imagem a seguir mostra a página correspondente, onde se pode observar na aba do navegador que o título do documento realmente contém a palavra "Gripe".
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-intitle-pagina.png">
+</div>
+
+Este operador é particularmente útil para:
+
+- **Encontrar guias e tutoriais:** Uma busca por `photoshop intitle:tutorial` tende a retornar resultados mais focados em páginas de instrução.
+- **Pesquisas acadêmicas:** Para encontrar artigos sobre um tema específico, pode-se usar, por exemplo, `"aquecimento global" intitle:relatório`.
+
+> Dica Avançada: `allintitle:`
+> 
+> Existe uma variação ainda mais restritiva deste operador: o `allintitle:`. Enquanto `intitle:receita bolo de fubá busca` por "receita" no título e "bolo de fubá" em qualquer parte da página, a busca `allintitle:receita bolo de fubá` retorna apenas as páginas que contenham todas as três palavras no título.
+
+### Pesquisas no Texto Âncora com "inanchor:"
+
+Para entender o operador `inanchor:`, primeiro precisamos desconstruir um hiperlink. Todo link é composto por duas partes:
+
+1. **A URL de Destino:** O endereço para o qual o link nos leva quando clicamos.
+2. **O Texto Âncora (_Anchor Text_):** O texto visível e clicável que serve como "rótulo" para o link.
+
+Essas duas partes são independentes. Em um caso extremo, é perfeitamente possível criar um link cujo texto âncora seja `www.flamengo.com.br`, mas que, ao ser clicado, leve o usuário para o endereço `www.vasco.com.br`.
+
+O operador **`inanchor:`** permite pesquisar por palavras-chave que aparecem especificamente no **texto âncora** dos links espalhados pela web. Ou seja, ele não busca o termo no conteúdo da página, mas sim no texto que outros sites usaram para criar um link para aquela página.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`inanchor:palavra`**|Pesquisa por páginas que são referenciadas por links com uma palavra específica no texto âncora.|`inanchor:mais`|
+
+Uma busca por `inanchor:mais` retornará páginas que outros sites apontaram usando a palavra "mais" em seus links, como no exemplo da imagem, onde o texto âncora "Cartão Mais!" aponta para um site específico.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-inanchor.png">
+</div>
+
+Assim como o `intitle:`, este operador possui uma variação mais restritiva:
+
+- **`allinanchor:`**: Exige que **todas** as palavras da busca estejam presentes no texto âncora. Por exemplo, `allinanchor:melhor museu` buscará por páginas que são referenciadas por links cujo texto âncora contenha tanto a palavra "melhor" quanto a palavra "museu".
+
+É importante notar que os operadores `inanchor:` e `allinanchor:` são considerados mais técnicos e podem, por vezes, apresentar resultados inconsistentes. Com a evolução dos algoritmos do Google, a ênfase em sinais mais complexos de relevância fez com que a indexação de textos âncora se tornasse menos prioritária, então a ferramenta nem sempre funciona de forma precisa.
 
