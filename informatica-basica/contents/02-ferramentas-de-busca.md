@@ -286,3 +286,34 @@ Este operador é extremamente útil em diversas situações:
 <div align="center">
 <img width="700px" src="./img/02-busca-com-operador-aspas-numeros.png">
 </div>
+
+### Exclusão de Palavras com o Hífen (-)
+
+Muitas vezes, nossas palavras de busca podem ser ambíguas, ou seja, ter múltiplos significados. Isso pode poluir nossos resultados com informações que não são relevantes para nossa intenção de pesquisa. Para resolver esse problema, o Google oferece o operador de **hífen (-)**, que funciona como um comando de exclusão.
+
+Ao colocar um hífen imediatamente antes de uma palavra (sem espaços), estamos instruindo o mecanismo de busca a remover de nossos resultados todas as páginas que contenham aquele termo específico.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`-palavra`**|Exclui de um resultado de pesquisa todas as páginas que contenham a palavra especificada.|`velocidade do jaguar -carro`|
+
+Vamos analisar um exemplo clássico de palavra com múltiplos significados: **Prisma**. Uma busca simples por esse termo pode retornar resultados sobre o objeto geométrico, sobre a refração da luz, ou, mais provavelmente, sobre o popular modelo de carro da Chevrolet.
+
+<div align="center">
+<img width="600px" src="./img/02-busca-sem-operador-hifen.png">
+</div>
+
+Se a intenção era pesquisar pelo objeto óptico, os resultados acima não são úteis. É aqui que o operador de exclusão se torna essencial. Ao refinar a busca para **`prisma -carro -chevrolet`**, estamos dando um comando claro ao Google: "Procure por 'prisma', mas ignore todas as páginas que também mencionem as palavras 'carro' ou 'chevrolet'".
+
+O resultado é uma lista de imagens e sites dramaticamente mais precisa e alinhada com a intenção original da pesquisa.
+
+<div align="center">
+<img width="600px" src="./img/02-busca-com-operador-hifen.png">
+</div>
+
+Este operador é útil em inúmeras situações:
+
+- **Buscas Técnicas:** Ao pesquisar sobre a linguagem de programação `Python`, pode-se usar `python -monty` para excluir referências ao grupo de comédia Monty Python.
+- **Pesquisa de Produtos:** Para encontrar um produto novo, pode-se usar `notebook dell -usado` para remover resultados de sites de classificados.
+- **Buscas Gerais:** Ao procurar por receitas, `receita de torta -doce` pode ajudar a encontrar apenas opções de tortas salgadas.
+
