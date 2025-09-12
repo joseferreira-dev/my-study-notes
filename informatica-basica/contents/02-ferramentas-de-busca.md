@@ -457,3 +457,31 @@ Ao realizar a busca `related:uol.com.br`, o Google entende que o UOL é um grand
 - **Pesquisa Acadêmica:** A busca por `related:scielo.br` pode revelar outras bases de dados de artigos científicos.
 - **Descobrir Ferramentas Alternativas:** Ao pesquisar por `related:canva.com`, o Google pode sugerir outras ferramentas de design online.
 
+### Acessando o Arquivo do Google com "cache:"
+
+Como vimos anteriormente, o Google, ao rastrear a web, armazena uma "fotografia" ou uma cópia temporária da maioria das páginas que visita. Por muitos anos, um link para essa versão em **cache** ficava facilmente acessível nos resultados da pesquisa. Embora esse link tenha sido removido em 2024, ainda é possível acessar essa funcionalidade de forma direta através do operador **`cache:`**.
+
+Este operador instrui o Google a exibir a última versão de uma página que ele armazenou em seus servidores, em vez de direcionar para a página ao vivo.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`cache:enderecodosite.com`**|Permite visualizar a última versão de uma página armazenada pelo Google.|`cache:orkut.com`|
+
+Ao realizar a busca `cache:orkut.com`, por exemplo, o navegador não tentará acessar o site do Orkut (que não existe mais em sua forma original). Em vez disso, ele exibirá a cópia que o Google salvou em uma determinada data.
+
+No topo da página, o Google exibe uma barra de informações, como ilustrado na imagem, informando que aquela é uma versão em cache e a data em que a "fotografia" da página foi tirada. Essa barra também oferece um link para a "página atual", caso o usuário queira visitar a versão ao vivo do site.
+
+<div align="center">
+
+<img width="540px" src="./img/02-busca-com-operador-cache.png" alt="Visualização de uma página em cache do Google, com uma barra de informações no topo.">
+
+</div>
+
+Esta ferramenta é particularmente útil em algumas situações específicas:
+
+- **Quando um site está fora do ar:** Se um site está temporariamente inacessível, a versão em cache pode ser a única maneira de visualizar seu conteúdo.
+- **Para ver conteúdo removido:** Se uma informação foi recentemente apagada de uma página, é possível que ela ainda esteja visível na última versão em cache.
+- **Para verificar mudanças:** Permite comparar a versão atual de uma página com uma versão anterior, para ver o que foi alterado.
+
+É importante ter em mente que nem todas as páginas possuem uma versão em cache, e a data do armazenamento pode variar muito, dependendo da frequência com que o Google rastreia cada site.
+
