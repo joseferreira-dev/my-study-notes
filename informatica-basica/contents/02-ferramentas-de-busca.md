@@ -629,3 +629,51 @@ Este operador também pode ser utilizado para outros tipos de intervalos numéri
 
 É importante observar que a eficácia deste operador pode ser inconsistente. Com a evolução dos algoritmos, o Google se tornou muito melhor em compreender a linguagem natural. Muitas vezes, uma busca como "câmera entre 50 e 100 reais" ou a utilização dos filtros na guia "Shopping" podem produzir resultados mais precisos e confiáveis do que o uso do operador formal.
 
+### Buscando no Corpo do Texto com "intext:"
+
+O operador **`intext:`** é um comando que restringe a busca a palavras-chave que aparecem especificamente no **corpo do texto** de uma página da web, ignorando o título, a URL e os textos âncora de links.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`intext:palavra`**|É utilizado para encontrar páginas que contenham palavras em seu conteúdo principal.|`intext:apple`|
+
+Como observado, este operador tem uma utilidade prática bastante limitada no dia a dia. A razão para isso é que o comportamento padrão do Google, ao realizar uma busca comum, já é o de procurar as palavras-chave no conteúdo do texto das páginas. Portanto, na grande maioria dos casos, uma busca por `apple` e uma busca por `intext:apple` retornarão resultados quase idênticos.
+
+Ele se torna marginalmente útil em situações muito específicas, quando combinado com outros operadores, para forçar o mecanismo a encontrar um termo no corpo do texto e outro em um campo diferente, como o título (ex: `intitle:resenha intext:samsung`).
+
+Assim como outros operadores, ele possui uma variação mais restritiva, o **`allintext:`**, que exige que **todas** as palavras a seguir apareçam no corpo do texto. Embora uma busca padrão também faça isso, o `allintext:` garante que a correspondência seja exclusivamente no conteúdo da página, e não em seu título ou URL, o que pode ser útil para pesquisas técnicas muito específicas.
+
+### Outros Operadores Úteis
+
+Além dos comandos já detalhados, existem outros operadores que podem ser úteis em pesquisas mais específicas.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`AROUND(X)`**|Encontra páginas onde dois ou mais termos aparecem próximos um do outro, com no máximo X palavras de distância entre eles.|`"inteligência artificial" AROUND(5) ética`|
+|**`source:`**|Dentro do Google Notícias, restringe a busca a uma fonte de notícias específica.|`eleições 2026 source:folha_de_s_paulo`|
+
+O operador `AROUND(X)` é particularmente poderoso para encontrar relações contextuais entre termos, sem a necessidade de uma frase exata.
+
+### Operadores Descontinuados (Depreciados)
+
+O algoritmo de busca do Google está em constante evolução. Com o tempo, alguns operadores se tornam obsoletos porque sua funcionalidade é incorporada de forma mais inteligente ao mecanismo de busca padrão. É importante conhecer os operadores que foram **descontinuados** para não contar com eles em suas pesquisas.
+
+|Operador|Utilização (Antiga)|Exemplo|
+|---|---|---|
+|**`~`**|Pesquisava por uma palavra e seus sinônimos.|`~carro` (buscava por carro, automóvel, veículo, etc.)|
+|**`info:`**|Exibia uma página com informações sobre um site (cache, páginas semelhantes, etc.).|`info:unb.br`|
+|**`+`**|Forçava a inclusão de uma palavra que o Google poderia ignorar (como artigos ou preposições).|`Star Wars Episódio +IV`|
+
+A razão para a descontinuação desses operadores é a melhoria do próprio Google. Hoje, a busca padrão já compreende sinônimos automaticamente, tornando o operador `~` redundante. A funcionalidade do `+` foi substituída pelo uso de aspas (`"Star Wars Episódio IV"`) para forçar a inclusão de todos os termos. E as funcionalidades do `info:` foram integradas a outras partes do buscador ou simplesmente removidas.
+
+## Considerações Finais
+
+Neste capítulo, exploramos o universo das ferramentas de busca, partindo de uma premissa fundamental para a era da informação: a habilidade de encontrar conhecimento de forma rápida e precisa superou, em importância, a simples memorização de fatos. Vimos que o verdadeiro poder não está em saber a resposta, mas em saber como encontrá-la. O objetivo foi transformar a busca, uma atividade cotidiana e aparentemente simples, em uma competência técnica e estratégica.
+
+Nossa jornada começou desmistificando a "mágica" por trás do Google. Entendemos o monumental processo de três etapas – **rastreamento**, **indexação** e **classificação** – que permite organizar a biblioteca infinita da web e entregar resultados em uma fração de segundo. Compreendemos que por trás da interface minimalista existe um ecossistema complexo de algoritmos que não apenas encontram palavras, mas interpretam a intenção e o contexto de nossas perguntas.
+
+Avançamos da teoria para a prática ao mergulhar no arsenal de **operadores de busca**. Aprendemos a ir além das palavras-chave soltas, dominando comandos para exigir frases exatas com as **aspas**, excluir o ruído com o **hífen**, ampliar horizontes com o **OR**, preencher lacunas com o **asterisco** e focar nossa pesquisa em **sites**, **títulos** ou **tipos de arquivo** específicos. Cada operador se revelou uma ferramenta para esculpir a busca, transformando uma consulta genérica em uma pergunta de alta precisão, capaz de encontrar a agulha no palheiro digital.
+
+Exploramos também os recursos que o Google oferece para qualificar nossa experiência, como a interface de **Pesquisa Avançada** e o filtro de segurança **SafeSearch**. Vimos a evolução do buscador, que deixou de ser um mero catalogador de links para se tornar um "motor de respostas", entregando informações diretas na própria página de resultados.
+
+Ao final deste percurso, a caixa de busca deixa de ser um simples campo em branco para se tornar um painel de controle. As habilidades aqui desenvolvidas são fundamentais não apenas para o estudo ou o trabalho, mas para o exercício pleno da cidadania, permitindo a verificação de fatos, a pesquisa aprofundada e o acesso a um conhecimento mais rico e confiável. Saber pesquisar é, em essência, saber aprender de forma autônoma e contínua no século XXI.
