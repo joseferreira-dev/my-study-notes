@@ -368,13 +368,13 @@ O quadro a seguir resume e compara as três correntes teóricas.
 
 Como vimos, a concepção de currículo vai muito além dos planos e documentos oficiais. Para analisar a complexidade do que é ensinado e aprendido na escola, os teóricos do currículo desenvolveram uma distinção fundamental entre três dimensões: o currículo formal, o currículo real e o currículo oculto.
 
-### O Currículo Formal (ou Prescrito)
+### Currículo Formal (ou Prescrito)
 
 O **currículo formal** é o currículo oficial, a "carta de boas intenções no papel". Ele é o resultado do planejamento curricular, frequentemente baseado na lógica de Ralph Tyler, e se materializa nos documentos oficiais, nas leis (como a LDB 9394/96), nas propostas curriculares das secretarias de educação e no Projeto Político Pedagógico da escola. Sua influência tecnicista se manifesta na ideia de que a técnica de planejar é mais importante do que uma reflexão profunda sobre os porquês da escolha dos conteúdos.
 
 O grande problema do currículo formal é sua potencial **artificialidade**. O fato de um conteúdo estar prescrito em um documento oficial não garante sua aplicação efetiva no cotidiano da escola. Um exemplo emblemático no Brasil é a legislação que determina o ensino da História e Cultura Afro-Brasileira e Indígena (Leis 10.639/03 e 11.645/08). Embora esta seja uma determinação do currículo formal, muitas escolas não a cumprem adequadamente. Continuam a ensinar a história do Brasil sob uma perspectiva eurocêntrica, tratando os colonizadores portugueses e os bandeirantes como heróis nacionais, enquanto as ricas contribuições e as perspectivas dos povos indígenas e africanos são silenciadas. Neste caso, o currículo formal existe, mas não se efetiva na prática, permanecendo apenas no papel.
 
-### O Currículo Real (ou em Ação)
+### Currículo Real (ou em Ação)
 
 O **currículo real** é aquele que efetivamente acontece na sala de aula. É o currículo formal interpretado, negociado, modificado e, por vezes, resistido por professores e alunos em seu contexto específico. O autor José Carlos Libâneo, uma referência na área, o define da seguinte forma:
 
@@ -382,7 +382,7 @@ O **currículo real** é aquele que efetivamente acontece na sala de aula. É o 
 
 O currículo real, portanto, é o resultado da **autonomia docente**. Dois professores de matemática, por exemplo, podem estar seguindo o mesmo currículo formal ao ensinar equações de segundo grau. Um pode fazê-lo de forma puramente procedimental, com foco na memorização da fórmula de Bhaskara. O outro pode abordar o mesmo conteúdo a partir da resolução de problemas práticos, explicando os porquês da fórmula. Ambos ministram o mesmo conteúdo oficial, mas o currículo real de suas salas de aula é completamente diferente, refletindo suas distintas formações e concepções pedagógicas.
 
-### O Currículo Oculto
+### Currículo Oculto
 
 O **currículo oculto** é a dimensão mais sutil e, muitas vezes, a mais poderosa do currículo. Ele não está descrito em nenhum documento oficial, mas é ensinado através das rotinas, das relações de poder, da organização do espaço e do tempo, e dos valores que permeiam o ambiente escolar. É o conjunto de lições implícitas que moldam atitudes, comportamentos e identidades.
 
@@ -423,10 +423,6 @@ O pensamento avaliativo de Luckesi, que se integra a esta teoria, parte da **cr�
 Dessa forma, o processo de construção do currículo se dá na apropriação dos conteúdos para que o aluno possa refletir criticamente sobre o conhecimento e a realidade, e a avaliação serve como uma ferramenta de diagnóstico e acompanhamento deste processo, e não como um veredito final.
 
 Para ilustrar: em uma aula de literatura para o Ensino Médio, o currículo como apropriação crítica não se contentaria em fazer os alunos memorizarem as características do Romantismo para uma prova (abordagem tradicional). Em vez disso, o professor os levaria a ler e a se apropriar criticamente de um romance como "Senhora", de José de Alencar. A avaliação não seria uma prova de múltipla escolha sobre o enredo, mas talvez um debate ou um ensaio sobre como as relações de gênero e classe social, presentes no livro do século XIX, ainda se manifestam na sociedade atual. O conteúdo (a obra literária) torna-se, assim, uma ferramenta para a leitura crítica da realidade.
-
-Compreendido. Dando sequência, vamos agora explorar o Currículo por Competências e Habilidades, uma das abordagens mais influentes no debate e na formulação das políticas curriculares contemporâneas.
-
----
 
 ### O Currículo por Competências e Habilidades
 
@@ -587,10 +583,6 @@ Para detalhar como essa transformação ocorre, Sacristán descreve o currículo
 O ponto mais importante deste esquema é a compreensão de que cada plano é uma **"cópia imperfeita"** do anterior. A correspondência entre as fases é sempre irregular e fragmentada, pois em cada passagem ocorrem novas interpretações, negociações e resistências.
 
 Essa mesma lógica de transformação se aplica não apenas dentro da escola, mas entre os diferentes níveis do sistema educativo. Sacristán chama isso de **trama institucional**. Uma política curricular definida pelo MEC (nível federal) é interpretada e adaptada pelas Secretarias Estaduais, que por sua vez é reinterpretada pelas Secretarias Municipais, até chegar à escola, que fará sua própria leitura. A não correspondência exata dos planos é, portanto, uma característica inerente à complexa trama institucional da educação.
-
-Compreendido. Vamos agora explorar a perspectiva curricular específica de Vera M. Candau e Antônio F. B. Moreira, que aprofunda a relação entre currículo e cultura a partir de uma ótica multicultural.
-
----
 
 ### O Currículo e a Cultura: A Perspectiva de Candau e Moreira
 
