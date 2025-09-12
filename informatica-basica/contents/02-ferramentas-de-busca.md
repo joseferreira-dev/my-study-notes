@@ -247,3 +247,42 @@ Essa pesquisa consiste em identificar os termos e as frases que o público-alvo 
 
 O desafio é encontrar um equilíbrio, focando em palavras-chave que tenham um volume de busca significativo e, ao mesmo tempo, uma alta relevância para atrair o público certo.
 
+## Operadores de Busca
+
+Dominar a arte da pesquisa vai além de simplesmente digitar palavras em uma caixa de busca. Os mecanismos de busca, como o Google, oferecem um conjunto de **operadores** – símbolos ou palavras especiais – que funcionam como comandos para refinar e direcionar sua pesquisa, permitindo encontrar resultados muito mais precisos.
+
+> **Ponto de Atenção:** É importante notar que a eficácia desses operadores pode variar. Os mecanismos de busca utilizam algoritmos complexos de "melhor esforço" e, dependendo de como as páginas da web estão estruturadas, nem todos os operadores funcionarão perfeitamente em 100% das vezes. Além disso, eles geralmente se aplicam aos resultados orgânicos, podendo não afetar os links patrocinados.
+
+Vamos começar com o operador mais fundamental e um dos mais úteis.
+
+### Busca por Frase Exata com Aspas ("")
+
+Por padrão, quando se digita uma sequência de palavras em um buscador, ele procura por páginas que contenham aquelas palavras, mas não necessariamente na ordem exata em que foram digitadas. Por exemplo, ao pesquisar por `brasília cambalhota vampeta`, o Google retornará páginas que mencionem os três termos, mesmo que de forma separada no texto.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-sem-operador-aspas.png">
+</div>
+
+Para forçar o buscador a procurar por uma correspondência exata de uma frase, utiliza-se o operador de **aspas duplas ("")**.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`"frase"`**|Pesquisa pela frase ou expressão exata, na ordem em que foi digitada.|`"prédio mais alto do mundo"`|
+
+Ao colocar os termos de busca entre aspas, o mecanismo entende que deve encontrar apenas as páginas que contenham aquela sequência exata de palavras. Assim, a busca por `"cambalhota do Vampeta em Brasília"` trará resultados muito mais específicos e relevantes para o evento em questão.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-aspas.png">
+</div>
+
+Este operador é extremamente útil em diversas situações:
+
+- **Encontrar a fonte de uma citação:** Para descobrir o autor de uma frase específica.
+- **Pesquisar letras de música:** Quando se lembra apenas de um trecho exato da canção.
+- **Localizar questões de prova:** Para encontrar o enunciado exato de uma questão de concurso, como ela foi originalmente publicada.
+
+É importante saber que a busca por frase exata **ignora letras maiúsculas/minúsculas e a maioria dos sinais de pontuação** dentro das aspas. Como resultado dessa maior especificidade, uma pesquisa utilizando aspas quase sempre retornará um número significativamente menor de resultados do que a mesma pesquisa sem elas.
+
+<div align="center">
+<img width="700px" src="./img/02-busca-com-operador-aspas-numeros.png">
+</div>
