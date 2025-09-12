@@ -434,3 +434,26 @@ Este operador é extremamente versátil e útil em diversos cenários:
 
 Este operador também pode ser combinado com outros para criar buscas ainda mais poderosas. Por exemplo, a busca **`"edital de abertura" -retificação site:cebraspe.org.br`** procuraria pela frase exata "edital de abertura", excluindo a palavra "retificação", apenas dentro do site do Cebraspe.
 
+### Encontrando Sites Relacionados com "related:"
+
+Às vezes, nosso objetivo não é encontrar uma informação específica, mas sim descobrir novos sites que sejam semelhantes a um que já conhecemos e gostamos. Para essa finalidade, o Google oferece o operador **`related:`**.
+
+Este comando instrui o buscador a encontrar e listar páginas que, segundo seu algoritmo, são relacionadas em conteúdo ou propósito ao site especificado. Ele responde à pergunta: "Quais outros sites são como este?".
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`related:nomedosite.com`**|Pesquisa por sites que são semelhantes a um site específico.|`related:uol.com.br`|
+
+Ao realizar a busca `related:uol.com.br`, o Google entende que o UOL é um grande portal de notícias e conteúdo variado. Portanto, ele retornará uma lista de outros grandes portais brasileiros, como Terra, iG, entre outros.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-related.png">
+</div>
+
+É importante notar que a definição de "relacionado" é determinada pelo algoritmo do Google e, embora geralmente precisa, pode ocasionalmente incluir resultados inesperados. Ainda assim, é uma ferramenta extremamente útil para:
+
+- **Pesquisa de Compras:** Ao usar `related:amazon.com.br`, pode-se descobrir outros grandes sites de e-commerce.
+- **Encontrar Fontes de Notícias:** Com `related:nytimes.com`, é possível encontrar outros jornais internacionais de grande porte.
+- **Pesquisa Acadêmica:** A busca por `related:scielo.br` pode revelar outras bases de dados de artigos científicos.
+- **Descobrir Ferramentas Alternativas:** Ao pesquisar por `related:canva.com`, o Google pode sugerir outras ferramentas de design online.
+
