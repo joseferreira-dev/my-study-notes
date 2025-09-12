@@ -563,3 +563,48 @@ Assim como o `intitle:`, este operador possui uma variação mais restritiva:
 
 É importante notar que os operadores `inanchor:` e `allinanchor:` são considerados mais técnicos e podem, por vezes, apresentar resultados inconsistentes. Com a evolução dos algoritmos do Google, a ênfase em sinais mais complexos de relevância fez com que a indexação de textos âncora se tornasse menos prioritária, então a ferramenta nem sempre funciona de forma precisa.
 
+### Obtendo Definições com "define:"
+
+Muitas vezes, o objetivo de uma pesquisa é simplesmente descobrir o significado de uma palavra ou conceito. Para atender a essa necessidade de forma rápida e direta, o Google oferece o operador **`define:`**, que transforma o buscador em um dicionário instantâneo.
+
+Ao utilizar este comando, o Google exibe, no topo da página de resultados, uma caixa especial com a definição da palavra, sua pronúncia, classificação gramatical e, muitas vezes, sinônimos e exemplos de uso.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`define:`** ou **`define`**|Apresenta a definição de um determinado termo.|`define:estratégia`|
+
+Diferentemente de outros operadores, a sintaxe do `define:` é mais flexível. O uso dos dois-pontos e do espaço é opcional. Na verdade, o algoritmo do Google se tornou tão bom em interpretar a intenção do usuário que buscas como "o que é estratégia" ou "significado de estratégia" geralmente retornam o mesmo resultado.
+
+A busca por **`define:estratégia`** resulta na exibição do painel de dicionário, como mostra a imagem.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-define.png">
+</div>
+
+Este recurso é uma maneira extremamente eficiente de obter definições rápidas e confiáveis para os mais variados termos, desde conceitos técnicos e acadêmicos até gírias e expressões do dia a dia.
+
+### Encontrando Tipos de Arquivo com "filetype:"
+
+A internet não é composta apenas por páginas web (HTML). Ela é um imenso repositório de documentos nos mais variados formatos: PDFs, apresentações de slides, planilhas, imagens, entre outros. O operador **`filetype:`** é a ferramenta ideal para filtrar a busca e encontrar exclusivamente um tipo de arquivo específico.
+
+Este comando instrui o Google a ignorar as páginas web tradicionais e retornar apenas os resultados que correspondam à extensão de arquivo especificada.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`filetype:extensao`**|Permite buscar documentos na web com um formato específico.|`"lei de licitações" filetype:pdf`|
+
+Ao realizar a busca **`"lei de licitações" filetype:pdf`**, por exemplo, o Google irá procurar pelo termo "lei de licitações", mas exibirá apenas links diretos para arquivos no formato PDF, que é o formato padrão para documentos oficiais, artigos acadêmicos e e-books.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-filetype.png">
+</div>
+
+Este operador se torna ainda mais poderoso quando se conhece as extensões de arquivo mais comuns e suas aplicações:
+
+- **`filetype:pdf` (Portable Document Format):** Ideal para encontrar artigos, relatórios, editais de concurso, livros e manuais.
+- **`filetype:ppt` ou `filetype:pptx` (Microsoft PowerPoint):** Excelente para encontrar apresentações de slides sobre um determinado tema, o que pode ser uma ótima fonte para resumos visuais.
+- **`filetype:doc` ou `filetype:docx` (Microsoft Word):** Útil para encontrar modelos de documentos, currículos e relatórios em formato editável.
+- **`filetype:xls` ou `filetype:xlsx` (Microsoft Excel):** Perfeito para buscar planilhas com dados, modelos financeiros ou listas.
+
+A combinação deste operador com outros, como o `site:`, permite criar buscas de altíssima precisão. Por exemplo, a busca **`"relatório anual" site:ibama.gov.br filetype:pdf`** irá procurar pelo termo "relatório anual" apenas dentro do site do IBAMA e mostrará exclusivamente os resultados que são arquivos PDF.
+
