@@ -354,3 +354,33 @@ Este operador é especialmente útil para acompanhar:
 - **Eventos ao vivo:** Como `#Olimpíadas` ou `#RockInRio`.
 - **Movimentos sociais:** Como `#VidasNegrasImportam`.
 - **Comunidades de fãs:** Como `#StarWars` ou discussões sobre programas de TV.
+
+### Preenchendo as Lacunas com Asterisco (\*)
+
+Em muitas situações, sabemos parte do que queremos pesquisar, mas nos falta uma palavra ou uma frase específica. Para esses casos, o Google oferece um poderoso **operador curinga**: o **asterisco (\*)**. Ele funciona como um espaço em branco que o mecanismo de busca se encarrega de preencher, substituindo uma ou mais palavras desconhecidas em uma consulta.
+
+| Operador | Utilização                                                                                    | Exemplo             |
+| -------- | --------------------------------------------------------------------------------------------- | ------------------- |
+| **`*`**  | Funciona como um caractere curinga, substituindo uma ou mais palavras desconhecidas na busca. | `maior * do Brasil` |
+
+Ao pesquisar por `maior * do Brasil`, estamos essencialmente fazendo uma pergunta aberta ao Google: "O que existe que se encaixa no padrão 'maior [qualquer coisa] do Brasil'?". O buscador, então, retorna uma variedade de resultados que preenchem essa lacuna, como "maior torcida do Brasil", "maior cidade do Brasil", "maior prédio do Brasil", entre outros.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-asterisco.png">
+</div>
+
+Uma das utilizações mais populares e eficazes do operador curinga é para encontrar letras de música quando não nos lembramos de um trecho específico. Ao combinar o asterisco com o operador de aspas, podemos buscar pela parte que conhecemos e deixar que o Google descubra a parte que falta.
+
+Por exemplo, para descobrir a palavra que falta no famoso trecho da música "Melô do Marinheiro", dos Paralamas do Sucesso, pode-se pesquisar: `"Entrei de * no navio"`.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-asterisco-musicas.png">
+</div>
+
+Da mesma forma, o asterisco é perfeito para corrigir letras de música que cantamos errado por anos. Para descobrir o que realmente é dito no famoso trecho da música "Como uma Onda", de Lulu Santos, a busca `"Na madrugada rolando um blues * sem parar"` rapidamente revelaria que o correto é "...**tocando B. B. King** sem parar", e não "...trocando de biquini sem parar".
+
+Outros usos práticos incluem:
+
+- **Completar citações ou provérbios:** `“Mais vale um pássaro na mão do que *”`.
+- **Pesquisas abertas por produtos:** `capa de celular para iphone 15 *`, onde o asterisco pode ser preenchido com "transparente", "anti-impacto", "de couro", etc.
+
