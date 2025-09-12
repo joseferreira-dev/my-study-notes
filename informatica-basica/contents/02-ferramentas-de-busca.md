@@ -608,3 +608,24 @@ Este operador se torna ainda mais poderoso quando se conhece as extensões de ar
 
 A combinação deste operador com outros, como o `site:`, permite criar buscas de altíssima precisão. Por exemplo, a busca **`"relatório anual" site:ibama.gov.br filetype:pdf`** irá procurar pelo termo "relatório anual" apenas dentro do site do IBAMA e mostrará exclusivamente os resultados que são arquivos PDF.
 
+### Buscas por Intervalo Numérico com Ponto Duplo (..)
+
+Para pesquisas que envolvem uma faixa numérica – como preços, datas ou medidas – o Google oferece o operador de **ponto duplo (..)**. Este comando permite buscar por um termo associado a qualquer número dentro de um intervalo especificado.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`numero1..numero2`**|Permite pesquisar dentro de um intervalo de números.|`câmera R$50..R$100`|
+
+A principal aplicação deste operador é na busca por produtos dentro de uma faixa de preço. Ao pesquisar por `câmera R$50..R$100`, por exemplo, o Google tentará encontrar páginas sobre câmeras que mencionem valores entre 50 e 100 reais.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-ponto-ponto.png">
+</div>
+
+Este operador também pode ser utilizado para outros tipos de intervalos numéricos, como:
+
+- **Datas (anos):** `filmes de ficção científica 1980..1990`.
+- **Medidas:** `tv 40..50 polegadas`.
+
+É importante observar que a eficácia deste operador pode ser inconsistente. Com a evolução dos algoritmos, o Google se tornou muito melhor em compreender a linguagem natural. Muitas vezes, uma busca como "câmera entre 50 e 100 reais" ou a utilização dos filtros na guia "Shopping" podem produzir resultados mais precisos e confiáveis do que o uso do operador formal.
+
