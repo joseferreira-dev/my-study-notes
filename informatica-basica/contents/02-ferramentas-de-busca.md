@@ -384,3 +384,53 @@ Outros usos práticos incluem:
 - **Completar citações ou provérbios:** `“Mais vale um pássaro na mão do que *”`.
 - **Pesquisas abertas por produtos:** `capa de celular para iphone 15 *`, onde o asterisco pode ser preenchido com "transparente", "anti-impacto", "de couro", etc.
 
+### Ampliando e Combinando Buscas com OR
+
+Enquanto o operador de hífen (-) serve para restringir uma busca, o operador **`OR`** (que significa "OU" em inglês) serve para **ampliá-la**. Por padrão, o Google busca por páginas que contenham todos os termos digitados (um "E" implícito). O operador `OR` modifica essa lógica, instruindo o buscador a encontrar páginas que contenham _pelo menos um_ dos termos especificados.
+
+É crucial notar que, para ser reconhecido como um operador, o termo **`OR`** deve ser escrito em letras **maiúsculas**.
+
+| Operador | Utilização                                                                  | Exemplo               |
+| -------- | --------------------------------------------------------------------------- | --------------------- |
+| **`OR`** | Combina buscas, retornando resultados que contenham qualquer um dos termos. | `maratona OR corrida` |
+
+Ao pesquisar por `maratona OR corrida`, os resultados incluirão páginas que falam apenas sobre maratonas, páginas que falam apenas sobre corridas em geral, e páginas que falam sobre ambos os assuntos, resultando em uma busca muito mais abrangente.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-or.png">
+</div>
+
+Este operador é especialmente útil para pesquisar por sinônimos ou termos relacionados simultaneamente, garantindo que nenhum resultado importante seja perdido. Por exemplo:
+
+- **Sinônimos:** `carro OR automóvel`
+- **Termos Relacionados:** `concurso OR certame`
+- **Variações de Nomes:** `universidade OR faculdade`
+
+> **Dica de Produtividade:** O caractere _pipe_ **`|`** (a barra vertical) pode ser usado como um substituto para o `OR`. A busca `maratona | corrida` produz exatamente o mesmo resultado de `maratona OR corrida`, mas é mais rápido de digitar.
+
+### Pesquisando Dentro de um Site Específico com "site:"
+
+Frequentemente, sabemos que a informação que procuramos está em um site específico, mas a ferramenta de busca interna desse site pode não ser muito eficiente. Em outros casos, queremos usar o poder do algoritmo do Google, mas restringindo os resultados a apenas uma fonte confiável. Para essas situações, existe o operador **`site:`**.
+
+Este operador instrui o Google a limitar a pesquisa a um único site ou domínio, ignorando todo o resto da internet. A sintaxe é simples, mas requer atenção a um detalhe: **não deve haver espaço** entre o comando `site:`, os dois pontos e o endereço do site.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`site:nomedosite.com`**|Restringe a pesquisa a um site ou domínio específico.|`flamengo site:youtube.com`|
+
+Vamos supor que um usuário queira encontrar todas as menções ao seu nome, "diego carvalho", mas apenas dentro do portal do Estratégia Concursos. A busca correta seria: **`diego carvalho site:estrategiaconcursos.com.br`**.
+
+O resultado será uma lista de páginas exclusivamente do domínio `estrategiaconcursos.com.br` que contenham o termo pesquisado, como mostra a imagem.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-site.png">
+</div>
+
+Este operador é extremamente versátil e útil em diversos cenários:
+
+- **Pesquisas em Portais de Notícias:** Para encontrar todas as matérias sobre "inteligência artificial" publicadas apenas no portal G1, a busca seria: `inteligência artificial site:g1.globo.com`.
+- **Buscas em Sites Governamentais:** Para encontrar um edital específico, pode-se usar: `"concurso público unificado" site:gov.br`. Note que o operador também funciona com domínios genéricos, como `.gov.br` (todos os sites do governo federal) ou `.edu.br` (todos os sites de instituições de ensino).
+- **Encontrar Manuais ou Suporte:** Para achar o manual de um produto específico no site do fabricante: `manual liquidificador site:philips.com.br`.
+
+Este operador também pode ser combinado com outros para criar buscas ainda mais poderosas. Por exemplo, a busca **`"edital de abertura" -retificação site:cebraspe.org.br`** procuraria pela frase exata "edital de abertura", excluindo a palavra "retificação", apenas dentro do site do Cebraspe.
+
