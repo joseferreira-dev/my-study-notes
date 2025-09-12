@@ -317,3 +317,40 @@ Este operador é útil em inúmeras situações:
 - **Pesquisa de Produtos:** Para encontrar um produto novo, pode-se usar `notebook dell -usado` para remover resultados de sites de classificados.
 - **Buscas Gerais:** Ao procurar por receitas, `receita de torta -doce` pode ajudar a encontrar apenas opções de tortas salgadas.
 
+### Buscas em Redes Sociais com Arroba (@) e Hashtag (#)
+
+Com a crescente importância das redes sociais como fonte de informação e debate, os mecanismos de busca integraram operadores específicos para facilitar a descoberta de perfis e tópicos populares nessas plataformas.
+
+#### Buscando Perfis e Menções com a Arroba (@)
+
+O símbolo da **arroba (@)** é o padrão universal nas redes sociais para identificar um nome de usuário ou perfil. Ao utilizar este operador no Google, a busca é direcionada para encontrar perfis e menções em plataformas como X (antigo Twitter), Instagram, Facebook, entre outras.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`@perfil`**|Permite buscar perfis e menções em redes sociais.|`@professordiegocarvalho`|
+
+Ao pesquisar por `@professordiegocarvalho`, por exemplo, o Google priorizará em seus resultados os links diretos para os perfis sociais associados a esse nome de usuário, tornando mais fácil encontrar a presença digital de uma pessoa ou marca específica.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-arroba.png">
+</div>
+
+#### Acompanhando Tópicos com a Hashtag (#)
+
+A **hashtag (#)**, ou cerquilha, é utilizada para agrupar e categorizar publicações em torno de um mesmo tema, evento ou movimento. Usar este operador no Google permite encontrar conversas e conteúdos de diversas redes sociais que foram marcados com aquela etiqueta específica.
+
+|Operador|Utilização|Exemplo|
+|---|---|---|
+|**`#tópico`**|Permite pesquisar por hashtags em diversas redes sociais.|`#DesafioDoBaldeDeGelo`|
+
+Diferente da busca com `@`, que foca em encontrar _pessoas_ ou _perfis_, a busca com `#` foca em encontrar _conversas_ ou _tópicos_. Uma pesquisa por `#DesafioDoBaldeDeGelo` (o famoso "Ice Bucket Challenge"), por exemplo, retornará uma mistura de notícias, vídeos e publicações de redes sociais que participaram ou cobriram essa campanha viral.
+
+<div align="center">
+<img width="540px" src="./img/02-busca-com-operador-hashtag.png">
+</div>
+
+Este operador é especialmente útil para acompanhar:
+
+- **Eventos ao vivo:** Como `#Olimpíadas` ou `#RockInRio`.
+- **Movimentos sociais:** Como `#VidasNegrasImportam`.
+- **Comunidades de fãs:** Como `#StarWars` ou discussões sobre programas de TV.
