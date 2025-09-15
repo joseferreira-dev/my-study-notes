@@ -513,7 +513,7 @@ Existem diferentes tipos de junção, dependendo da condição utilizada.
 - **Equijunção (Equi-Join):** É o tipo mais comum de junção, onde a condição de relacionamento utiliza apenas o operador de igualdade (`=`). Geralmente, a condição compara uma chave primária de uma tabela com a chave estrangeira correspondente em outra.
 - **Junção Natural (Natural Join):** É um tipo especial de equijunção onde a condição de igualdade é **implícita**. A junção ocorre automaticamente em todas as colunas que possuem o **mesmo nome** em ambas as tabelas. As colunas de junção aparecem apenas uma vez no resultado. Embora seja conveniente, seu uso na prática pode ser arriscado, pois uma coincidência de nomes de colunas não intencional pode levar a resultados incorretos.
 
-#### Exemplo de Junção
+### Exemplo de Junção
 
 Vamos aplicar a operação de junção em nossas tabelas `PRODUTOS` e `VENDAS` para responder à seguinte pergunta de negócio: "Quais são os detalhes de cada produto vendido, para cada venda realizada?".
 
@@ -537,15 +537,96 @@ O resultado seria uma nova tabela que combina as colunas de ambas, mas apenas pa
 
 Note que o produto "Impressora" (ID 5), que não foi vendido, não aparece no resultado. Este tipo de junção que retorna apenas as correspondências exatas é chamado de **Junção Interna (`INNER JOIN`)**. Veremos mais sobre os diferentes tipos de junção (interna, externa) quando estudarmos SQL.
 
-#### Relação com o SQL
+### Relação com o SQL
 
 A operação de junção da álgebra relacional é a base teórica para a cláusula **`JOIN`** em SQL.
 
-A expressão `PRODUTOS ⋈ PRODUTOS.ID = VENDAS.ID_PRODUTO VENDAS` é equivalente a:
+A expressão PRODUTOS ⋈ <sub>PRODUTOS.ID = VENDAS.ID_PRODUTO</sub> VENDAS é equivalente a:
 
 ```sql
 SELECT *
 FROM PRODUTOS
 JOIN VENDAS ON PRODUTOS.ID = VENDAS.ID_PRODUTO;
 ```
+
+## Divisão (÷)
+
+A **divisão** é, sem dúvida, a operação mais complexa da álgebra relacional. Sua principal finalidade é responder a perguntas que envolvem a condição "para todos". Por exemplo: "Quais alunos estão matriculados em **todos** os cursos de matemática?" ou "Quais fornecedores fornecem **todas** as peças necessárias para um determinado projeto?".
+
+Formalmente, a operação de divisão `R ÷ S` retorna um conjunto de tuplas da relação R que estão associadas a **todas as tuplas** da relação S.
+
+É importante diferenciar a divisão da interseção:
+
+- A **Interseção** retorna as linhas que são comuns a duas tabelas com a mesma estrutura.
+- A **Divisão** encontra linhas em uma tabela (o dividendo) que se relacionam com o conjunto completo de linhas de outra tabela (o divisor).
+
+A notação formal para a operação de divisão é:
+
+R ÷ S
+
+Onde:
+
+- **R** é a relação dividendo.
+- **S** é a relação divisor.
+- **÷** é o símbolo que representa a operação de divisão.
+
+### Exemplo de Divisão
+
+Para entender o processo, vamos utilizar duas novas tabelas. A primeira, `CLIENTES`, associa nomes de clientes a CPFs de contratos que eles possuem. A segunda, `CPF_PROCURADO`, é uma lista de CPFs de contratos específicos que nos interessam.
+
+**Pergunta de Negócio:** "Quais clientes (nomes) possuem contratos associados a **todos** os CPFs da lista de CPFs procurados?"
+
+**Tabela `CLIENTES` (Dividendo)**
+
+<div align="center">
+<img width="240px" src="./img/03-tabela-clientes.png">
+</div>
+
+**Tabela `CPF_PROCURADO` (Divisor)**
+
+<div align="center">
+<img width="180px" src="./img/03-tabela-cpf-procurado.png">
+</div>
+
+A expressão em álgebra relacional para esta consulta seria:
+
+CLIENTES ÷ CPF_PROCURADO
+
+O processo para encontrar o resultado segue duas etapas:
+
+**Definir as Colunas do Resultado:**
+
+As colunas da tabela resultante são obtidas pela diferença entre os atributos da tabela dividendo (CLIENTES) e os atributos da tabela divisor (CPF_PROCURADO).
+
+- Atributos de `CLIENTES`: `{NOME, CPF}`
+- Atributos de `CPF_PROCURADO`: `{CPF}`
+- Atributos do Resultado: {NOME, CPF} - {CPF} = {NOME}
+
+Portanto, a tabela final terá apenas a coluna NOME.
+
+**Encontrar as Linhas do Resultado:**
+
+O SGBD irá analisar cada grupo de linhas da tabela CLIENTES por NOME e verificar se o conjunto de CPFs associado a cada nome contém todo o conjunto de CPFs da tabela CPF_PROCURADO.
+
+- O conjunto de CPFs a ser procurado é `{1234, 9908}`.
+- **Analisando "Daniel":** O conjunto de CPFs associado a Daniel é `{1234, 9908}`. Este conjunto contém todos os CPFs procurados? Sim. Portanto, "Daniel" estará no resultado.
+- **Analisando "Carlos":** O conjunto de CPFs associado a Carlos é `{2233}`. Este conjunto não contém todos os CPFs procurados. Carlos está fora.
+- **Analisando "Diego":** O conjunto de CPFs associado a Diego é `{1234, 9908}`. Este conjunto contém todos os CPFs procurados? Sim. Portanto, "Diego" estará no resultado.
+- **Analisando "Robert":** O conjunto de CPFs associado a Robert é `{3276}`. Este conjunto não contém todos os CPFs procurados. Robert está fora.
+
+O diagrama a seguir ilustra visualmente este processo de correspondência.
+
+<div align="center">
+<img width="580px" src="./img/03-resultado-divisao-processo.png">
+</div>
+
+O resultado final da operação é, portanto, a tabela contendo apenas os nomes "Daniel" e "Diego".
+
+<div align="center">
+<img width="180px" src="./img/03-resultado-divisao.png">
+</div>
+
+### Relação com o SQL
+
+A linguagem SQL **não possui um operador de divisão direto**. A operação é considerada complexa e, na prática, é implementada através de uma combinação de outros comandos. Uma das maneiras comuns de se realizar uma divisão em SQL é usando `GROUP BY` e `COUNT`, ou através de subconsultas com `NOT EXISTS`. A lógica é verificar quais grupos de uma tabela possuem uma contagem de correspondências igual ao número total de itens na outra tabela.
 
