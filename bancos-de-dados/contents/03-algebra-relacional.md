@@ -684,3 +684,53 @@ RESULTADO ← π<sub>NOME​</sub>(PRODUTOS⋈<sub>PRODUTOS.ID=VENDAS_N​OTEBOO
 
 Este conceito de atribuir o resultado de uma consulta a um nome é a base teórica para funcionalidades avançadas em SQL, como **subconsultas**, **CTEs (Common Table Expressions)** e **Views**.
 
+## Conjunto de Operadores Primitivos e Derivados
+
+O conjunto de operações que exploramos ao longo deste capítulo pode ser dividido em duas categorias principais: **operadores primitivos (ou fundamentais)** e **operadores derivados (ou adicionais)**.
+
+### Operadores Primitivos
+
+Os operadores primitivos formam um conjunto mínimo de operações que é **funcionalmente completo**. Isso significa que qualquer consulta que possa ser expressa na álgebra relacional pode ser formulada usando apenas uma combinação desses operadores fundamentais. Eles são os "blocos de construção" a partir dos quais todas as outras operações podem ser construídas.
+
+O conjunto de operadores primitivos é:
+
+- **Seleção (σ)**
+- **Projeção (π)**
+- **União (∪)**
+- **Diferença (-)**
+- **Produto Cartesiano (×)**
+- **Renomeação (ρ)**
+
+### Operadores Derivados
+
+Os operadores derivados são, essencialmente, "atalhos" convenientes. Eles foram definidos para simplificar a escrita de consultas comuns que, de outra forma, exigiriam uma sequência mais longa de operadores primitivos. Todo operador derivado pode ser expresso como uma combinação dos operadores primitivos.
+
+Os principais operadores derivados que estudamos são:
+
+- **Interseção (∩):** A interseção pode ser derivada da operação de diferença. A interseção de duas tabelas (R ∩ S) é igual a "todas as linhas de R, menos as linhas de R que não estão em S".
+    - **Fórmula de Derivação:** R ∩ S = R - (R - S)
+
+- **Junção (⋈):** Como vimos, a junção é conceitualmente um produto cartesiano seguido por uma seleção.
+    - **Fórmula de Derivação (Equijunção):** R ⋈<sub>(R.a = S.b)</sub>S = σ<sub>(R.a = S.b)</sub>(R × S)
+
+- **Divisão (÷):** É a operação mais complexa e sua derivação envolve uma sequência de projeções, produtos cartesianos e diferenças.
+
+- **Atribuição (←):** É considerada uma operação adicional por ser um mecanismo procedural para simplificar a escrita de consultas, e não um operador de manipulação de conjuntos em si.
+
+Compreender essa distinção é importante para a teoria de bancos de dados. A tabela a seguir consolida todos os operadores que vimos, sua sintaxe e sua classificação.
+
+<div align="center">
+<img width="700px" src="./img/03-operadores.png">
+</div>
+
+## Considerações Finais
+
+Neste capítulo, demos um passo fundamental para além da estrutura dos dados e mergulhamos na sua manipulação, explorando a **Álgebra Relacional**, a linguagem formal e poderosa que serve como alicerce teórico para a linguagem SQL. Compreendemos que, por trás de cada consulta executada em um banco de dados, existe uma sequência lógica de operações matemáticas que operam sobre conjuntos de dados.
+
+Iniciamos com os operadores unários, as ferramentas essenciais para extrair informações de uma única tabela. A **Seleção (σ)** nos permitiu fatiar horizontalmente as relações, filtrando as linhas que atendem a critérios específicos, enquanto a **Projeção (π)** nos deu a capacidade de fatiar verticalmente, selecionando apenas as colunas de interesse e, crucialmente, eliminando duplicatas para manter a natureza de conjunto do resultado.
+
+Em seguida, avançamos para as operações binárias, que nos permitem combinar dados de múltiplas tabelas. Exploramos as **operações de conjunto** — **União (∪)**, **Interseção (∩)** e **Diferença (-)** —, reforçando o pré-requisito de compatibilidade de união e entendendo como elas nos permitem agregar, comparar e excluir conjuntos de dados de forma lógica e precisa.
+
+O ponto alto de nossa exploração foi a análise das operações de combinação de colunas. Desvendamos o **Produto Cartesiano (×)** como a combinação bruta de todas as possibilidades e, a partir dele, construímos o entendimento da **Junção (⋈)** como a sua aplicação inteligente e filtrada, sendo esta a principal ferramenta para reconstruir as informações que o processo de normalização tão cuidadosamente separou. Por fim, desvendamos a complexa, mas poderosa, operação de **Divisão (÷)**, compreendendo seu papel em responder a perguntas que envolvem a condição "para todos".
+
+Ao final deste percurso pela Álgebra Relacional, temos em mãos não apenas um conjunto de símbolos e sintaxes, mas uma nova forma de pensar sobre a manipulação de dados. Aprendemos a enxergar uma consulta complexa como uma sequência de passos lógicos e bem definidos. Este conhecimento é a chave para entender como os SGBDs interpretam e otimizam nossas solicitações, e nos prepara de forma sólida para o próximo capítulo, onde traduziremos toda essa teoria para a prática, utilizando a linguagem de consulta mais difundida do mundo: o SQL.
