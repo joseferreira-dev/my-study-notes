@@ -168,3 +168,86 @@ COMMIT;
 
 Até o comando `COMMIT` ser executado, as alterações na tabela `Pedidos` e `Produtos` existem em um estado transitório, invisível para outros usuários. Após o `COMMIT`, elas se tornam permanentes e visíveis para todo o sistema.
 
+### ROLLBACK: Desfazendo Alterações
+
+O comando **`ROLLBACK`** é a contraparte do `COMMIT`. Sua função é **desfazer** todas as alterações de dados (`INSERT`, `UPDATE`, `DELETE`) realizadas dentro de uma transação que ainda não foi confirmada. Ele reverte o banco de dados para o estado em que se encontrava no momento do último `COMMIT` (ou do início da transação), garantindo a **Atomicidade** ao assegurar que uma transação incompleta ou mal-sucedida não deixe "rastros" de alterações parciais.
+
+É fundamental entender que o `ROLLBACK` só pode ser aplicado a uma transação em andamento. Uma vez que o comando `COMMIT` é executado, as alterações se tornam permanentes e o `COMMIT` funciona como um ponto de salvamento definitivo; as alterações "commitadas" não podem mais ser desfeitas com um `ROLLBACK`. Pense nos "saves" de um videogame: o `COMMIT` é como salvar o jogo, e o `ROLLBACK` é como carregar o último save, descartando todo o progresso feito desde então.
+
+A sintaxe do `ROLLBACK` é tão simples quanto a do `COMMIT`:
+
+```sql
+ROLLBACK;
+```
+
+**Exemplo de Transação com `ROLLBACK`:** Imagine um cenário de transferência bancária onde ocorre um erro no meio do processo.
+
+```sql
+START TRANSACTION;
+
+-- Operação 1: Debita R$ 500 da conta de origem (ID 123)
+UPDATE Contas SET saldo = saldo - 500 WHERE id_conta = 123;
+
+-- Operação 2: Tenta creditar na conta de destino (ID 456), mas o ID não existe
+UPDATE Contas SET saldo = saldo + 500 WHERE id_conta = 999; -- Erro, conta inexistente
+
+-- Como a operação 2 falhou, a transação está inconsistente. Desfazemos tudo.
+ROLLBACK;
+```
+
+Ao executar o `ROLLBACK`, a atualização na conta `123` é completamente desfeita. Para o banco de dados, é como se a transação nunca tivesse ocorrido, garantindo que o saldo da conta de origem permaneça intacto e a consistência seja mantida.
+
+### SAVEPOINT: Criando Pontos de Restauração Intermediários
+
+Em transações longas e complexas, desfazer todo o trabalho com um `ROLLBACK` completo pode não ser o ideal. Para um controle mais granular, a TCL oferece o comando **`SAVEPOINT`**.
+
+Um `SAVEPOINT` é um **ponto de salvamento nomeado dentro de uma transação**. Ele permite que se reverta a transação não para o seu início, mas para um ponto intermediário específico, preservando o trabalho realizado antes daquele ponto.
+
+A sintaxe para criar um savepoint é:
+
+```sql
+SAVEPOINT <nome_do_savepoint>;
+```
+
+Para retornar a um savepoint específico, utiliza-se uma variação do `ROLLBACK`:
+
+```sql
+ROLLBACK TO <nome_do_savepoint>;
+```
+
+E para remover um savepoint que não é mais necessário (liberando recursos do sistema):
+
+```sql
+RELEASE SAVEPOINT <nome_do_savepoint>;
+```
+
+**Exemplo Prático:** Considere um processo de matrícula de um aluno em múltiplos cursos.
+
+```sql
+START TRANSACTION;
+
+-- Matrícula no Curso A
+INSERT INTO Matriculas (aluno_id, curso_id) VALUES (101, 'CURSO-A');
+
+-- Cria um ponto de salvamento após a primeira matrícula bem-sucedida
+SAVEPOINT matricula_curso_a;
+
+-- Tenta matricular no Curso B, mas descobre que não há vagas
+-- A operação falha ou a lógica da aplicação decide não prosseguir
+-- INSERT INTO Matriculas (aluno_id, curso_id) VALUES (101, 'CURSO-B'); -- Falha
+
+-- Em vez de desfazer tudo, voltamos apenas ao ponto antes da tentativa no Curso B
+ROLLBACK TO matricula_curso_a;
+
+-- Agora, a matrícula no Curso A ainda está no "rascunho" da transação,
+-- mas a tentativa de matrícula no Curso B foi desfeita.
+-- Podemos tentar matricular em outro curso (Curso C) ou finalizar a transação.
+
+INSERT INTO Matriculas (aluno_id, curso_id) VALUES (101, 'CURSO-C');
+
+-- Se tudo deu certo, confirma todas as matrículas válidas (A e C)
+COMMIT;
+```
+
+Os `SAVEPOINT`s oferecem uma flexibilidade imensa para o tratamento de erros em transações complexas, permitindo a implementação de lógicas de "tentativa e erro" sem a necessidade de abortar todo o processo.
+
