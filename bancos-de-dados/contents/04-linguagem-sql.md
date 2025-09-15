@@ -251,3 +251,203 @@ COMMIT;
 
 Os `SAVEPOINT`s oferecem uma flexibilidade imensa para o tratamento de erros em transações complexas, permitindo a implementação de lógicas de "tentativa e erro" sem a necessidade de abortar todo o processo.
 
+## DDL (Data Definition Language)
+
+A **DDL (Data Definition Language)**, ou Linguagem de Definição de Dados, é o subconjunto da SQL que funciona como o "conjunto de ferramentas de engenharia" do nosso banco de dados. Seus comandos não manipulam os dados em si, mas sim os **objetos** que os contêm e organizam. É com a DDL que criamos, modificamos e excluímos a arquitetura do banco de dados, definindo o _schema_.
+
+Os objetos de banco de dados são todas as estruturas armazenadas no SGBD que são usadas para guardar ou gerenciar os dados. Os principais são as tabelas, os índices (que otimizam as buscas), as visões (_views_, que são consultas salvas), os gatilhos (_triggers_) e os procedimentos armazenados (_stored procedures_).
+
+### CREATE: Construindo os Objetos do Banco de Dados
+
+O comando **`CREATE`** é o ponto de partida da DDL. É utilizado para criar qualquer novo objeto dentro do banco de dados. A sintaxe geral é bastante intuitiva, mas os parâmetros e propriedades específicas variam drasticamente dependendo do tipo de objeto que estamos criando.
+
+A sintaxe básica é:
+
+```sql
+CREATE <TIPO_DO_OBJETO> <nome_do_objeto> (definições);
+```
+
+Vamos explorar a criação dos objetos mais fundamentais.
+
+#### Criando Bancos de Dados (`CREATE DATABASE`)
+
+A criação de um banco de dados (o contêiner para todas as nossas tabelas e outros objetos) é a operação mais simples. Geralmente, precisamos apenas especificar o nome do novo banco de dados.
+
+**Sintaxe:**
+
+```sql
+CREATE DATABASE <nome_do_banco_de_dados>;
+```
+
+**Exemplo Prático:** Para criar um novo banco de dados para um sistema acadêmico, o comando seria:
+
+```sql
+CREATE DATABASE Sistema_Academico;
+```
+
+Este comando instrui o SGBD a alocar os arquivos e as estruturas necessárias no servidor para abrigar um novo banco de dados isolado.
+
+#### Criando Tabelas (`CREATE TABLE`)
+
+A criação de tabelas é, de longe, o comando DDL mais comum e detalhado, e o mais cobrado em avaliações. É aqui que traduzimos nosso modelo lógico para uma estrutura física. Ao criar uma tabela, definimos suas colunas (atributos), o tipo de dado de cada coluna e as restrições (_constraints_) que garantirão a integridade dos dados.
+
+**Sintaxe Genérica:**
+
+```sql
+CREATE TABLE <nome_da_tabela> (
+    <nome_coluna1> <tipo_de_dado> [restrições_da_coluna],
+    <nome_coluna2> <tipo_de_dado> [restrições_da_coluna],
+    ...,
+    [restrições_da_tabela]
+);
+```
+
+Vamos dissecar um exemplo prático para entender cada componente:
+
+**Exemplo Prático:**
+
+```sql
+CREATE TABLE Pedido (
+    IDPedido INT PRIMARY KEY,
+    IDCliente INT,
+    DataPedido DATE,
+    ValorTotal DECIMAL(10, 2),
+    CONSTRAINT FK_Pedido_Cliente FOREIGN KEY (IDCliente) 
+        REFERENCES Cliente(IDCliente)
+);
+```
+
+**Análise do Comando:**
+
+- `CREATE TABLE Pedido`: Inicia a criação de uma tabela chamada `Pedido`.
+- `IDPedido INT PRIMARY KEY`: Cria uma coluna chamada `IDPedido`, do tipo `INT` (inteiro), e a define como a **chave primária** (`PRIMARY KEY`) da tabela. Isso impõe as restrições de unicidade (`UNIQUE`) e não nulidade (`NOT NULL`) a esta coluna.
+- `IDCliente INT`: Cria uma coluna para armazenar o ID do cliente associado ao pedido.
+- `DataPedido DATE`: Cria uma coluna para armazenar a data do pedido.
+- `ValorTotal DECIMAL(10, 2)`: Cria uma coluna para o valor total, usando o tipo `DECIMAL` que é ideal para valores monetários. `(10, 2)` significa que o número pode ter até 10 dígitos no total, com 2 deles reservados para as casas decimais.
+- `CONSTRAINT FK_Pedido_Cliente...`: Esta é uma **restrição de tabela**. `CONSTRAINT` permite nomear uma restrição. `FK_Pedido_Cliente` é o nome que demos. `FOREIGN KEY (IDCliente)` define a coluna `IDCliente` desta tabela como uma **chave estrangeira**. `REFERENCES Cliente(IDCliente)` especifica que esta chave estrangeira se refere à coluna `IDCliente` na tabela `Cliente`, criando o vínculo entre os pedidos e os clientes e garantindo a integridade referencial.
+
+O resultado deste comando é a criação de uma nova tabela vazia no banco de dados, com a seguinte estrutura pronta para receber os dados:
+
+| IDPedido (PK)                      | IDCliente (FK) | DataPedido | ValorTotal |
+| ---------------------------------- | -------------- | ---------- | ---------- |
+| _...dados serão inseridos aqui..._ |                |            |            |
+
+#### Criando Visões (`CREATE VIEW`)
+
+Uma **visão (_view_)** é, essencialmente, uma consulta `SELECT` que é armazenada no banco de dados como um objeto permanente. Ela funciona como uma **tabela virtual**, cujo conteúdo é gerado dinamicamente no momento em que é acessada. As visões são uma ferramenta poderosa para simplificar a complexidade, reutilizar consultas e reforçar a segurança.
+
+**Sintaxe Genérica:**
+
+```sql
+CREATE VIEW <nome_da_view> AS
+<comando_SELECT>;
+```
+
+O corpo de uma visão (`<comando_SELECT>`) pode ser uma consulta de qualquer complexidade, envolvendo múltiplas tabelas, junções, agregações e filtros.
+
+**Exemplo Prático:** Imagine que, em nosso sistema de vendas, os analistas frequentemente precisam ver uma lista de produtos que estão com estoque baixo (menos de 15 unidades). Em vez de escreverem a mesma consulta repetidamente, podemos criar uma visão.
+
+```sql
+CREATE VIEW vw_Produtos_Estoque_Baixo AS
+SELECT
+    ID,
+    NOME,
+    ESTOQUE
+FROM
+    PRODUTOS
+WHERE
+    ESTOQUE < 15;
+```
+
+Uma vez criada, os analistas podem simplesmente executar `SELECT * FROM vw_Produtos_Estoque_Baixo;` como se fosse uma tabela normal, obtendo sempre a lista atualizada de produtos com pouco estoque, sem precisarem conhecer a lógica de filtragem por trás dela.
+
+#### Criando Índices (`CREATE INDEX`)
+
+Um **índice (_index_)** é uma estrutura de dados especial, associada a uma tabela, que tem como único propósito **acelerar a velocidade das operações de recuperação de dados**. Pense em um índice de um livro: em vez de folhear o livro página por página para encontrar um tópico (uma varredura completa da tabela, ou _full table scan_), você vai diretamente ao índice, encontra o tópico e a página correspondente (o endereço do dado no disco) e vai direto para lá.
+
+Quando uma coluna é definida como chave primária, a maioria dos SGBDs cria automaticamente um índice para ela. No entanto, podemos criar índices adicionais em outras colunas que são frequentemente usadas em cláusulas `WHERE` ou `JOIN` para otimizar o desempenho.
+
+**Sintaxe Genérica:**
+
+```sql
+CREATE INDEX <nome_do_indice>
+ON <nome_da_tabela> (<coluna1>, <coluna2>, ...);
+```
+
+**Exemplo Prático:** Em uma tabela `CLIENTES` muito grande, as buscas pelo nome do cliente estão lentas. Para acelerar essas buscas, podemos criar um índice na coluna `NOME`.
+
+```sql
+CREATE INDEX idx_clientes_nome
+ON CLIENTES (NOME);
+```
+
+Agora, quando uma consulta como `SELECT * FROM CLIENTES WHERE NOME = 'José da Silva';` for executada, o SGBD poderá usar o índice para localizar rapidamente os registros, em vez de ler a tabela inteira. A sintaxe pode incluir cláusulas mais avançadas como `INCLUDE` (para adicionar colunas não-chave ao índice, evitando acessos extras à tabela) e `WHERE` (para criar um índice filtrado, que indexa apenas um subconjunto de linhas).
+
+#### Criando Gatilhos (`CREATE TRIGGER`)
+
+Um **gatilho (_trigger_)** é um bloco de código que é executado automaticamente pelo SGBD em resposta a um evento de modificação de dados (`INSERT`, `UPDATE`, `DELETE`) em uma tabela específica.
+
+**Sintaxe Genérica:**
+
+```sql
+CREATE TRIGGER <nome_do_gatilho>
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON <nome_da_tabela>
+FOR EACH ROW -- (Cláusula comum que especifica que o gatilho roda para cada linha afetada)
+BEGIN
+    -- Corpo do gatilho (ações a serem executadas)
+END;
+```
+
+A definição do gatilho exige a especificação do **momento** em que ele dispara (`BEFORE` ou `AFTER` do evento) e qual é o **evento** gatilho.
+
+**Exemplo Prático:** Para criar uma trilha de auditoria simples, podemos criar um gatilho que, antes de qualquer exclusão na tabela `PRODUTOS`, salve uma cópia do registro que será apagado em uma tabela `PRODUTOS_ARQUIVADOS`.
+
+```sql
+CREATE TRIGGER trg_Arquiva_Produto_Antes_Delete
+BEFORE DELETE
+ON PRODUTOS
+FOR EACH ROW
+BEGIN
+    INSERT INTO PRODUTOS_ARQUIVADOS (ID, NOME, PRECO, ESTOQUE, DATA_EXCLUSAO)
+    VALUES (OLD.ID, OLD.NOME, OLD.PRECO, OLD.ESTOQUE, NOW());
+END;
+```
+
+Neste exemplo, `OLD` é uma palavra-chave especial dentro de um gatilho que se refere aos valores da linha antes da alteração (neste caso, antes de ser deletada).
+
+#### Criando Procedimentos Armazenados (`CREATE PROCEDURE`)
+
+Um **procedimento armazenado (_stored procedure_)** é um conjunto de comandos SQL e lógica de controle que é compilado e armazenado no banco de dados. Ele pode receber parâmetros de entrada e retornar valores, encapsulando lógicas de negócio complexas para serem reutilizadas.
+
+**Sintaxe Genérica:**
+
+```sql
+CREATE PROCEDURE <nome_do_procedimento> (
+    <parametro1> <tipo_de_dado>,
+    <parametro2> <tipo_de_dado>,
+    ...
+)
+AS
+BEGIN
+    -- Corpo do procedimento (comandos SQL e lógica)
+END;
+```
+
+**Exemplo Prático:** Vamos criar um procedimento para aplicar um reajuste de preço percentual a todos os produtos de uma determinada categoria.
+
+```sql
+CREATE PROCEDURE sp_Reajustar_Preco_Categoria (
+    p_id_categoria INT,
+    p_percentual_reajuste DECIMAL(5, 2)
+)
+AS
+BEGIN
+    UPDATE PRODUTOS
+    SET PRECO = PRECO * (1 + p_percentual_reajuste / 100)
+    WHERE ID_CATEGORIA = p_id_categoria;
+END;
+```
+
+Uma vez criado, a aplicação pode simplesmente executar `EXEC sp_Reajustar_Preco_Categoria 10, 5.0;` para dar um aumento de 5% em todos os produtos da categoria `10`, sem precisar enviar o código `UPDATE` completo.
+
