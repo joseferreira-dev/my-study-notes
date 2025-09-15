@@ -288,7 +288,7 @@ Como nossas tabelas `PRODUTOS` e `VENDAS` não são compatíveis em união, vamo
 | 20 | Carlos |
 | 30 | Diana |
 
-Tabela **FUNCIONARIOS_TREINAMENTO_LIDERANCA**
+**Tabela FUNCIONARIOS_TREINAMENTO_LIDERANCA**
 
 | ID | NOME |
 | --- | --- |
@@ -324,4 +324,100 @@ SELECT ID, NOME FROM FUNCIONARIOS_TREINAMENTO_LIDERANCA;
 
 - A **Interseção** compara **linhas inteiras** de duas tabelas com a **mesma estrutura** e retorna as linhas que são idênticas em ambas.
 - A **Junção Interna** combina **colunas** de duas tabelas (geralmente com estruturas diferentes) com base em uma **condição de correspondência** em uma ou mais colunas, retornando um novo conjunto de linhas "mais largas".
+
+## Diferença (-)
+
+A **diferença** é a terceira operação de conjunto da álgebra relacional. Assim como a união e a interseção, ela exige que as duas relações sejam **compatíveis em união**.
+
+O resultado da operação de diferença `R - S` é uma nova relação contendo todas as tuplas (linhas) que estão presentes na **primeira relação (R)**, mas que **não estão** presentes na **segunda relação (S)**.
+
+É crucial entender que, ao contrário da união e da interseção, a operação de diferença **não é comutativa**, ou seja, a ordem das tabelas importa. O resultado de `R - S` é completamente diferente do resultado de `S - R`.
+
+<div align="center">
+<img width="180px" src="./img/03-diagrama-diferenca.png">
+</div>
+
+A notação formal para a operação de diferença é:
+
+R − S
+
+Onde:
+
+- **R** e **S** são as duas relações (tabelas) compatíveis em união.
+- **−** é o símbolo que representa a operação de diferença.
+
+### Exemplo de Diferença
+
+Vamos continuar com o cenário da empresa. Temos a lista de todos os `FUNCIONARIOS` e a lista dos `FUNCIONARIOS_PROMOVIDOS`. Queremos descobrir quais funcionários **não foram** promovidos.
+
+**Tabela FUNCIONARIOS**
+
+| ID | NOME |
+| --- | --- |
+| 10 | Beatriz |
+| 20 | Carlos |
+| 30 | Diana |
+| 40 | Eduardo |
+
+Tabela FUNCIONARIOS_PROMOVIDOS
+
+| ID | NOME |
+| --- | --- |
+| 10 | Beatriz |
+| 30 | Diana |
+
+Para obter a lista dos não promovidos, aplicamos a operação de diferença:
+
+FUNCIONARIOS − FUNCIONARIOS_PROMOVIDOS
+
+O resultado será uma nova tabela contendo apenas os funcionários que estão na primeira tabela, mas não na segunda:
+
+|ID|NOME|
+|---|---|
+|20|Carlos|
+|40|Eduardo|
+
+### Relação com o SQL
+
+A operação de diferença da álgebra relacional corresponde ao operador **`EXCEPT`** no padrão SQL (ou **`MINUS`** no SGBD Oracle).
+
+A expressão FUNCIONARIOS - FUNCIONARIOS_PROMOVIDOS é equivalente a:
+
+```sql
+SELECT ID, NOME FROM FUNCIONARIOS
+EXCEPT
+SELECT ID, NOME FROM FUNCIONARIOS_PROMOVIDOS;
+```
+
+### Resolvendo o Problema de "Produtos Não Vendidos"
+
+Considerando as tabelas de exemplo iniciais, podemos nos questionar: "como encontrar os produtos que não foram vendidos?". Como as tabelas `PRODUTOS` e `VENDAS` não são compatíveis em união, não podemos usar o operador de diferença diretamente.
+
+No entanto, podemos resolver este problema combinando os operadores da álgebra relacional que já aprendemos:
+
+**Primeiro, projetamos os IDs de todos os produtos existentes:**
+
+TODOS_PRODUTOS ← π<sub>ID</sub>(PRODUTOS)
+
+O resultado é a relação com os IDs: `{1, 2, 3, 4, 5}`.
+
+**Segundo, projetamos os IDs de todos os produtos que foram vendidos:**
+
+PRODUTOS_VENDIDOS ← π<sub>ID_PRODUTO</sub>(VENDAS)
+
+O resultado é a relação com os IDs: `{1, 2, 4, 3}`.
+
+**Agora, as duas relações resultantes são compatíveis em união!** Podemos aplicar a operação de diferença sobre elas:
+
+IDS_NAO_VENDIDOS ← TODOS_PRODUTOS − PRODUTOS_VENDIDOS
+
+O resultado seria a relação com o ID `{5}`.
+
+Para obter a linha completa do produto "Impressora", como mostrado na imagem abaixo, seria necessário um passo final de junção, que veremos posteriormente.
+
+<div align="center">
+<img width="700px" src="./img/03-resultado-diferenca.png">
+</div>
+
+Em SQL, este problema é geralmente resolvido de forma mais direta com subconsultas (`NOT IN`) ou junções externas (`LEFT JOIN`), que são, na prática, implementações otimizadas dessa lógica fundamental da álgebra relacional.
 
