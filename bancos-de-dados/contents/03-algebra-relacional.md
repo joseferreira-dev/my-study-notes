@@ -421,3 +421,67 @@ Para obter a linha completa do produto "Impressora", como mostrado na imagem aba
 
 Em SQL, este problema é geralmente resolvido de forma mais direta com subconsultas (`NOT IN`) ou junções externas (`LEFT JOIN`), que são, na prática, implementações otimizadas dessa lógica fundamental da álgebra relacional.
 
+## Produto Cartesiano (×)
+
+O **produto cartesiano** é uma operação binária da álgebra relacional que combina **cada tupla** de uma primeira relação com **cada tupla** de uma segunda relação. O resultado é uma nova tabela que contém todas as combinações possíveis de linhas entre as duas tabelas originais.
+
+Esta operação pode ser vista como uma "multiplicação" de tabelas:
+
+- O número de **colunas** da tabela resultante é a **soma** do número de colunas das tabelas originais.
+- O número de **linhas** da tabela resultante é o **produto** do número de linhas das tabelas originais.
+
+A notação formal para a operação de produto cartesiano é:
+
+R × S
+
+Onde:
+
+- **R** e **S** são as duas relações (tabelas).
+- **×** é o símbolo que representa a operação de produto cartesiano.
+
+### Exemplo de Produto Cartesiano
+
+Para ilustrar de forma clara, vamos utilizar duas novas tabelas simples: uma que lista modelos de camisetas e outra que lista as cores disponíveis.
+
+**Tabela `CAMISETAS` (3 linhas)**
+
+<div align="center">
+<img width="340px" src="./img/03-tabela-camisetas.png">
+</div>
+
+**Tabela `CORES` (2 linhas)**
+
+<div align="center">
+<img width="180px" src="./img/03-tabela-cores.png">
+</div>
+
+Se aplicarmos a operação `CAMISETAS × CORES`, o resultado será uma nova tabela com 3 × 2 = 6 linhas e 2 + 1 = 3 colunas. A operação funciona da seguinte forma:
+
+1. Pega a primeira linha de `CAMISETAS` ("Ardidas", "Regata") e combina com cada linha de `CORES`.
+2. Pega a segunda linha de `CAMISETAS` ("Ardidas", "Manga longa") e combina com cada linha de `CORES`.
+3. Pega a terceira linha de `CAMISETAS` ("Naique", "Social") e combina com cada linha de `CORES`.
+
+O resultado final é a tabela com todas as combinações possíveis:
+
+<div align="center">
+<img width="700px" src="./img/03-resultado-produto-cartesiano.png">
+</div>
+
+### O Produto Cartesiano como Base para a Junção
+
+É fundamental entender que o produto cartesiano, por si só, raramente gera um resultado útil, pois ele combina linhas que não têm nenhuma relação lógica entre si. Sua verdadeira importância é teórica: ele é o **bloco de construção fundamental para a operação de Junção (Join)**, que veremos a seguir.
+
+Conceitualmente, uma Junção nada mais é do que um **Produto Cartesiano seguido por uma operação de Seleção**. Primeiro, o sistema gera todas as combinações possíveis de linhas (produto cartesiano) e, em seguida, ele filtra apenas as linhas em que a condição de junção é verdadeira (seleção).
+
+### Relação com o SQL
+
+Em SQL, o produto cartesiano é representado pela cláusula **`CROSS JOIN`**.
+
+A expressão `CAMISETAS × CORES` é equivalente a:
+
+```sql
+SELECT * FROM CAMISETAS CROSS JOIN CORES;
+```
+
+Um erro muito comum entre iniciantes em SQL é esquecer a condição de junção na cláusula `WHERE` ao listar múltiplas tabelas no `FROM` (ex: `SELECT * FROM PRODUTOS, VENDAS;`). Quando isso ocorre, o SGBD executa um produto cartesiano completo. Em tabelas grandes, isso pode gerar bilhões ou trilhões de linhas, consumindo todos os recursos do servidor e travando o sistema. Portanto, embora seja um conceito fundamental, sua aplicação direta deve ser feita com muito cuidado.
+
