@@ -170,3 +170,90 @@ A expressão π<sub>ID_PRODUTO​</sub>(PRODUTOS) é equivalente a:
 SELECT DISTINCT ID_PRODUTO FROM VENDAS;
 ```
 
+## Operações de Conjunto: Combinando Tabelas
+
+Até agora, nossas operações de seleção e projeção foram **unárias**, ou seja, atuaram sobre uma única relação de cada vez. No entanto, o verdadeiro poder da álgebra relacional, e a razão pela qual a normalização é viável, reside em sua capacidade de combinar informações que foram distribuídas em várias tabelas.
+
+As operações que atuam sobre duas relações são chamadas de **operações binárias**. Elas sempre seguem uma lógica "dois a dois": mesmo que uma consulta complexa envolva dezenas de tabelas, o SGBD a decompõe em uma sequência de operações binárias.
+
+As operações binárias mais fundamentais são baseadas na teoria de conjuntos da matemática, que pode ser visualizada através dos Diagramas de Venn.
+
+<div align="center">
+<img width="540px" src="./img/03-diagramas-de-venn.png">
+</div>
+
+### Compatibilidade de União
+
+Para que as operações de conjunto (União, Interseção e Diferença) possam ser aplicadas, as duas relações envolvidas devem ser **compatíveis em união** (_union-compatible_). Isso significa que duas condições rigorosas devem ser atendidas:
+
+1. **Mesmo Grau:** As duas tabelas devem ter o **mesmo número de atributos** (colunas).
+2. **Domínios Compatíveis:** O domínio (tipo de dado) de cada coluna correspondente deve ser o mesmo ou compatível. A primeira coluna da Tabela A deve ser do mesmo tipo da primeira coluna da Tabela B, a segunda com a segunda, e assim por diante.
+
+## União (∪)
+
+A **união** é uma operação binária que combina todas as tuplas (linhas) de duas relações compatíveis em união em uma única tabela resultante. Se uma tupla existir em ambas as tabelas originais, ela aparecerá **apenas uma vez** no resultado, pois, como vimos, uma relação é um conjunto e não permite duplicatas.
+
+<div align="center">
+<img width="180px" src="./img/03-diagrama-uniao.png">
+</div>
+
+A notação formal para a operação de união é:
+
+R ∪ S
+
+Onde:
+
+- **R** e **S** são as duas relações (tabelas) compatíveis em união.
+- **∪** é o símbolo que representa a operação de união.
+
+### Exemplo de União
+
+As tabelas `PRODUTOS` e `VENDAS` do nosso exemplo **não são** compatíveis em união (elas têm número e tipos de colunas diferentes). Portanto, vamos imaginar um novo cenário: uma empresa possui duas filiais e armazena os dados de seus clientes em tabelas separadas, mas com a mesma estrutura.
+
+**Tabela CLIENTES_SP**
+
+| ID | NOME |
+| --- | --- |
+| 1 | Ana |
+| 2 | Bruno |
+
+**Tabela CLIENTES_RJ**
+
+| ID | NOME |
+| --- | --- |
+| 2 | Bruno |
+| 3 | Carla |
+
+Para obter uma lista única de todos os clientes da empresa, aplicamos a operação de união:
+
+CLIENTES_SP ∪ CLIENTES_RJ
+
+O resultado seria uma nova tabela contendo todos os clientes, com a linha duplicada de "Bruno" aparecendo apenas uma vez:
+
+|ID|NOME|
+|---|---|
+|1|Ana|
+|2|Bruno|
+|3|Carla|
+
+### Relação com o SQL
+
+A operação de união da álgebra relacional corresponde diretamente ao operador **`UNION`** em SQL.
+
+A expressão CLIENTES_SP ∪ CLIENTES_RJ é equivalente a:
+
+```sql
+SELECT ID, NOME FROM CLIENTES_SP
+UNION
+SELECT ID, NOME FROM CLIENTES_RJ;
+```
+
+O SQL também oferece o operador **`UNION ALL`**, que funciona de forma semelhante, mas **não elimina as linhas duplicadas**. Ele é mais rápido, pois não precisa verificar a existência de duplicatas, e é útil quando se deseja a junção literal de todos os registros.
+
+### União vs. Junção (Join)
+
+É muito importante não confundir a operação de **União** com a operação de **Junção (Join)**, que veremos mais adiante.
+
+- A **União** "empilha" os dados de duas tabelas que possuem a **mesma estrutura de colunas**, criando um resultado com mais linhas.
+- A **Junção** "combina" os dados de duas tabelas lado a lado com base em uma condição de correspondência, criando um resultado com mais colunas.
+
