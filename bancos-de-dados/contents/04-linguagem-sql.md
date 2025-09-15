@@ -113,3 +113,58 @@ GRANT SELECT ON VENDAS TO joao;
 
 Essa cláusula cria uma cadeia de delegação de permissões, o que pode ser útil em grandes organizações, mas exige um controle cuidadoso para evitar a disseminação descontrolada de privilégios. É importante notar que a cláusula `WITH GRANT OPTION` não pode ser utilizada com o comando `DENY`.
 
+## TCL (Transaction Control Language)
+
+A **TCL (Transaction Control Language)**, ou Linguagem de Controle de Transações, é o subconjunto da SQL que nos permite gerenciar explicitamente as transações dentro do banco de dados. Como vimos nos capítulos anteriores, uma transação é um conjunto de operações que devem ser executadas como uma única unidade lógica e atômica. A TCL é a ferramenta que nos permite definir onde uma transação começa, onde ela termina e qual deve ser o seu desfecho: sucesso permanente ou falha total.
+
+<div align="center">
+<img width="480px" src="./img/04-tcl.png">
+</div>
+
+É através dos comandos TCL que garantimos na prática os princípios de **Atomicidade** e **Durabilidade** do ACID. Eles nos dão o poder de agrupar uma série de comandos DML (`INSERT`, `UPDATE`, `DELETE`) e decidir, ao final, se o conjunto inteiro de alterações deve ser permanentemente salvo no banco de dados ou se deve ser completamente desfeito, como se nunca tivesse acontecido.
+
+A estrutura dos comandos TCL é notavelmente simples. Diferente de um `SELECT` ou `GRANT`, eles geralmente não possuem cláusulas ou parâmetros complexos. São comandos diretos que instruem o SGBD a tomar uma ação definitiva sobre a transação atual. Nos tópicos seguintes, exploraremos cada um desses comandos.
+
+### COMMIT: Tornando as Alterações Permanentes
+
+O comando **`COMMIT`** é o comando de confirmação da TCL. Sua função é **finalizar uma transação com sucesso**, tornando todas as modificações de dados realizadas dentro dela (sejam `INSERT`, `UPDATE` ou `DELETE`) **permanentes** no banco de dados.
+
+Pense em uma transação como um "rascunho" de alterações. Enquanto se está trabalhando, as modificações são visíveis apenas para a sua sessão e ainda podem ser desfeitas. O `COMMIT` é o ato de "salvar o documento final": a partir do momento em que é executado, as alterações se tornam duráveis (garantindo a **Durabilidade** do ACID), visíveis para todos os outros usuários e não podem mais ser desfeitas com um simples comando de reversão. Ele marca a conclusão bem-sucedida da unidade de trabalho atômica, cumprindo o princípio da **Atomicidade**.
+
+Antes de uma transação ser "commitada", suas alterações existem em um estado transitório. Essa invisibilidade temporária para outros usuários é a base do **Isolamento**, um dos pilares do ACID. No entanto, o quão "invisível" essa transação é pode ser configurado. O padrão ANSI SQL define quatro níveis de isolamento, que representam um equilíbrio entre consistência e performance.
+
+#### Níveis de Isolamento
+
+Os níveis de isolamento determinam o grau em que uma transação deve ser isolada das modificações de dados feitas por outras transações concorrentes. Um nível mais alto garante mais consistência, mas pode reduzir a capacidade de múltiplos usuários operarem simultaneamente (concorrência).
+
+<div align="center">
+<img width="700px" src="./img/04-tcl-niveis-de-isolamento.png">
+</div>
+
+- **READ UNCOMMITTED (Leitura Não Confirmada):** Este é o nível de isolamento mais baixo. Uma transação operando neste nível pode ler dados que foram modificados por outras transações, mas que **ainda não foram confirmados** com `COMMIT`. Isso pode levar a **leituras sujas (_dirty reads_)**, onde se age com base em dados que podem ser desfeitos a qualquer momento. Oferece a maior concorrência, mas a menor garantia de consistência.
+- **READ COMMITTED (Leitura Confirmada):** Neste nível, uma transação só pode ler dados que já foram permanentemente salvos por um `COMMIT`. Isso **evita as leituras sujas**. No entanto, ainda pode ocorrer a **leitura não repetível (_non-repeatable read_)**: se uma transação lê o mesmo dado duas vezes, ela pode obter resultados diferentes caso outra transação tenha alterado e "commitado" esse dado no intervalo entre as duas leituras. Este é o nível de isolamento padrão em muitos SGBDs, como Oracle e SQL Server, por oferecer um bom equilíbrio entre consistência e performance.
+- **REPEATABLE READ (Leitura Repetível):** Este nível garante que, se uma transação reler a mesma linha múltiplas vezes, ela sempre obterá os mesmos valores. O SGBD cria um "snapshot" dos dados no início da transação, e a transação continua a ler essa versão consistente, ignorando alterações "commitadas" por outras transações. Isso **evita leituras não repetíveis**. Contudo, ainda pode ocorrer a **leitura fantasma (_phantom read_)**: se a transação repetir uma consulta que retorna um _conjunto_ de linhas (ex: `SELECT COUNT(*)`), ela pode obter um número diferente de linhas caso outra transação tenha inserido (e "commitado") novos registros que satisfaçam a condição da consulta. Este é o nível padrão do MySQL (com o motor InnoDB).
+- **SERIALIZABLE (Serializável):** O nível de isolamento mais alto e restritivo. Ele garante que o resultado da execução de transações concorrentes seja idêntico ao resultado de executá-las em alguma ordem sequencial (uma após a outra). **Evita todos os tipos de anomalias**, incluindo leituras sujas, não repetíveis e fantasmas. Garante a consistência máxima, mas ao custo da menor concorrência, pois o SGBD utiliza mecanismos de bloqueio mais agressivos para serializar as operações.
+
+#### Sintaxe e Uso do `COMMIT`
+
+Como mencionado, a sintaxe do `COMMIT` é extremamente simples. Ele é um comando autocontido. Geralmente, ele é usado ao final de um bloco de operações DML que formam uma unidade lógica de trabalho.
+
+**Exemplo de Transação:**
+
+```sql
+-- Inicia uma transação (em alguns SGBDs, isso é implícito)
+START TRANSACTION;
+
+-- Operação 1: Insere um novo pedido
+INSERT INTO Pedidos (cliente_id, data_pedido) VALUES (101, '2025-09-15');
+
+-- Operação 2: Atualiza o estoque do produto vendido
+UPDATE Produtos SET estoque = estoque - 1 WHERE id_produto = 50;
+
+-- Se ambas as operações foram bem-sucedidas, confirma a transação
+COMMIT;
+```
+
+Até o comando `COMMIT` ser executado, as alterações na tabela `Pedidos` e `Produtos` existem em um estado transitório, invisível para outros usuários. Após o `COMMIT`, elas se tornam permanentes e visíveis para todo o sistema.
+
