@@ -257,3 +257,71 @@ O SQL também oferece o operador **`UNION ALL`**, que funciona de forma semelhan
 - A **União** "empilha" os dados de duas tabelas que possuem a **mesma estrutura de colunas**, criando um resultado com mais linhas.
 - A **Junção** "combina" os dados de duas tabelas lado a lado com base em uma condição de correspondência, criando um resultado com mais colunas.
 
+## Interseção (∩)
+
+A **interseção** é uma operação binária que, assim como a união, opera sobre duas relações (tabelas) que sejam **compatíveis em união** (mesmo número de colunas e tipos de dados compatíveis).
+
+O resultado da interseção é uma nova relação contendo apenas as tuplas (linhas) que existem **em ambas** as tabelas originais. É a representação do que os dois conjuntos de dados têm em comum.
+
+<div align="center">
+<img width="180px" src="./img/03-diagrama-interseccao.png">
+</div>
+
+A notação formal para a operação de interseção é:
+
+R ∩ S
+
+Onde:
+
+- **R** e **S** são as duas relações (tabelas) compatíveis em união.
+- **∩** é o símbolo que representa a operação de interseção.
+
+### Exemplo de Interseção
+
+Como nossas tabelas `PRODUTOS` e `VENDAS` não são compatíveis em união, vamos a um novo cenário. Imagine que uma empresa mantém duas listas de funcionários: uma de `FUNCIONARIOS_PROMOVIDOS` no último semestre e outra de `FUNCIONARIOS_TREINAMENTO_LIDERANCA` que participaram de um curso específico. Ambas as tabelas têm a mesma estrutura.
+
+**Tabela FUNCIONARIOS_PROMOVIDOS**
+
+| ID | NOME |
+| --- | --- |
+| 10 | Beatriz |
+| 20 | Carlos |
+| 30 | Diana |
+
+Tabela **FUNCIONARIOS_TREINAMENTO_LIDERANCA**
+
+| ID | NOME |
+| --- | --- |
+| 20 | Carlos |
+| 40 | Eduardo |
+| 50 | Fernanda |
+
+Para descobrir quais funcionários foram promovidos **E** também participaram do treinamento de liderança, aplicamos a operação de interseção:
+
+FUNCIONARIOS_PROMOVIDOS ∩ FUNCIONARIOS_TREINAMENTO_LIDERANCA
+
+O resultado será uma nova tabela contendo apenas os funcionários que aparecem em ambas as listas:
+
+|ID|NOME|
+|---|---|
+|20|Carlos|
+
+### Relação com o SQL
+
+A operação de interseção da álgebra relacional corresponde diretamente ao operador **`INTERSECT`** em SQL.
+
+A expressão FUNCIONARIOS_PROMOVIDOS ∩ FUNCIONARIOS_TREINAMENTO_LIDERANCA é equivalente a:
+
+```sql
+SELECT ID, NOME FROM FUNCIONARIOS_PROMOVIDOS
+INTERSECT
+SELECT ID, NOME FROM FUNCIONARIOS_TREINAMENTO_LIDERANCA;
+```
+
+### Interseção vs. Junção Interna (Inner Join)
+
+É muito comum confundir a operação de **Interseção** de conjuntos com a operação de **Junção Interna (Inner Join)**.
+
+- A **Interseção** compara **linhas inteiras** de duas tabelas com a **mesma estrutura** e retorna as linhas que são idênticas em ambas.
+- A **Junção Interna** combina **colunas** de duas tabelas (geralmente com estruturas diferentes) com base em uma **condição de correspondência** em uma ou mais colunas, retornando um novo conjunto de linhas "mais largas".
+
