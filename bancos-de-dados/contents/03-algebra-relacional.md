@@ -72,3 +72,101 @@ A expressão σ<sub>VALOR_TOTAL>500</sub>(VENDAS) é equivalente a:
 SELECT * FROM VENDAS WHERE VALOR_TOTAL > 500;
 ```
 
+## Projeção (π): Selecionando as Colunas
+
+Enquanto a operação de seleção atua como um "fatiador horizontal" que filtra as linhas de uma tabela, a **projeção** funciona como um "fatiador vertical". Sua finalidade é selecionar um subconjunto de atributos (colunas) de uma relação, descartando as colunas desnecessárias e gerando uma nova tabela com uma estrutura mais enxuta.
+
+A projeção é extremamente útil para criar visões simplificadas dos dados, mostrando apenas a informação relevante para uma determinada tarefa ou relatório.
+
+A notação formal para a operação de projeção é:
+
+π<sub>[lista_de_atributos]​</sub>(R)
+
+Onde:
+
+- **π** (a letra grega pi) é o símbolo que representa a operação de projeção.
+- **`[lista_de_atributos]`** é a lista de colunas, separadas por vírgula, que desejamos manter no resultado.
+- **(R)** é a relação (a tabela) sobre a qual a operação será executada.
+
+Um conceito fundamental da álgebra relacional é que o resultado de qualquer operação é sempre uma **relação** válida. E, como vimos no início do capítulo, uma relação é um _conjunto_ de tuplas, o que, por definição, significa que **não pode conter linhas duplicadas**.
+
+Portanto, se a operação de projeção resultar em linhas idênticas, as duplicatas são automaticamente eliminadas, restando apenas uma ocorrência de cada linha.
+
+### Exemplos de Projeção
+
+Vamos aplicar a operação de projeção em nossas tabelas de exemplo.
+
+**Exemplo 1: Listar o nome e o estoque de todos os produtos.**
+
+Queremos selecionar apenas as colunas `NOME` e `ESTOQUE` da tabela `PRODUTOS`.
+
+A expressão em álgebra relacional seria:
+
+π<sub>NOME,ESTOQUE​</sub>(PRODUTOS)
+
+O resultado é uma nova tabela contendo apenas as duas colunas especificadas, com todas as linhas da tabela original.
+
+<div align="center">
+<img width="360px" src="./img/03-resultado-projecao.png">
+</div>
+
+**Exemplo 2: Listar os IDs de todos os produtos que foram vendidos (demonstrando a eliminação de duplicatas).**
+
+Queremos saber quais produtos únicos foram vendidos, então vamos projetar apenas a coluna `ID_PRODUTO` da tabela `VENDAS`.
+
+A expressão seria:
+
+π<sub>ID_PRODUTO</sub>​(VENDAS)
+
+Analisando a coluna `ID_PRODUTO` na tabela `VENDAS`, os valores são `(1, 2, 4, 3, 2)`. Como o resultado deve ser uma relação (um conjunto), o valor duplicado `2` é eliminado. O resultado final será:
+
+|ID_PRODUTO|
+|---|
+|1|
+|2|
+|4|
+|3|
+
+### Combinando Seleção e Projeção
+
+O verdadeiro poder da álgebra relacional surge ao combinar operadores. Podemos, por exemplo, primeiro filtrar as linhas com uma seleção e, em seguida, extrair as colunas de interesse do resultado com uma projeção.
+
+**Exemplo 3: Listar o nome e o preço dos produtos que custam mais de R$ 1000.**
+
+**Passo 1 (Seleção):** Primeiro, filtramos a tabela `PRODUTOS` para encontrar apenas as linhas desejadas.
+
+TEMP ← σ<sub>PRECO>1000</sub>(PRODUTOS)
+
+**Passo 2 (Projeção):** Em seguida, projetamos as colunas `NOME` e `PREÇO` da tabela temporária resultante.
+
+RESULTADO ← π<sub>NOME,PRECO</sub>(TEMP)
+
+A expressão completa, aninhando as operações, seria:
+
+π<sub>NOME,PRECO</sub>(σ<sub>PRECO>1000</sub>(PRODUTOS))
+
+O resultado seria a seguinte tabela:
+
+|NOME|PREÇO|
+|---|---|
+|Notebook|2500|
+|Smartphone|1200|
+
+### Relação com o SQL
+
+A operação de projeção da álgebra relacional corresponde diretamente à lista de colunas na cláusula **`SELECT`** do SQL.
+
+A expressão π<sub>NOME,ESTOQUE​</sub>(PRODUTOS) é equivalente a:
+
+```sql
+SELECT NOME, ESTOQUE FROM PRODUTOS;
+```
+
+Contudo, há uma diferença importante: por padrão, o `SELECT` do SQL **não elimina linhas duplicadas**. Para simular o comportamento exato da projeção e garantir um resultado sem duplicatas, é necessário usar a palavra-chave **`DISTINCT`**.
+
+A expressão π<sub>ID_PRODUTO​</sub>(PRODUTOS) é equivalente a:
+
+```sql
+SELECT DISTINCT ID_PRODUTO FROM VENDAS;
+```
+
