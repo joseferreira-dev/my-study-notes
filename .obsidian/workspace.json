@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bancos-de-dados/contents/04-sql.md",
+                "file": "bancos-de-dados/contents/04-linguagem-sql.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-sql"
+              "title": "04-linguagem-sql"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bancos-de-dados/contents/04-sql.md",
+                "file": "bancos-de-dados/contents/04-linguagem-sql.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 04-sql"
+              "title": "Sumário de 04-linguagem-sql"
             }
           }
         ],
@@ -172,7 +172,7 @@
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
     "bancos-de-dados/contents/03-algebra-relacional.md",
-    "bancos-de-dados/contents/04-sql.md",
+    "bancos-de-dados/contents/04-linguagem-sql.md",
     "bancos-de-dados/contents/img/04-sql-subdivisoes.png",
     "bancos-de-dados/contents/img/03-operadores.png",
     "bancos-de-dados/contents/img/03-resultado-divisao.png",
