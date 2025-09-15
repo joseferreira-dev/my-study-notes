@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "informatica-basica/contents/02-ferramentas-de-busca.md",
+                "file": "bancos-de-dados/contents/03-algebra-relacional.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-ferramentas-de-busca"
+              "title": "03-algebra-relacional"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "informatica-basica/contents/02-ferramentas-de-busca.md",
+                "file": "bancos-de-dados/contents/03-algebra-relacional.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 02-ferramentas-de-busca"
+              "title": "Sumário de 03-algebra-relacional"
             }
           }
         ],
@@ -169,8 +169,10 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "f9950e0646dc86e5",
+  "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "informatica-basica/contents/02-ferramentas-de-busca.md",
+    "bancos-de-dados/contents/03-algebra-relacional.md",
     "informatica-basica/contents/img/02-busca-com-operador-ponto-ponto.png",
     "informatica-basica/contents/img/02-busca-com-operador-filetype.png",
     "informatica-basica/contents/img/02-busca-com-operador-define.png",
@@ -181,9 +183,7 @@
     "informatica-basica/contents/img/02-busca-com-operador-cache.png",
     "informatica-basica/contents/img/02-busca-com-operador-related.png",
     "informatica-basica/contents/img/02-busca-com-operador-site.png",
-    "informatica-basica/contents/img/02-busca-com-operador-or.png",
     "conhecimentos-pedagogicos-e-ept/contents/08-curriculo.md",
-    "informatica-basica/contents/02-ferramentas-de-busca.md",
     "lingua-portuguesa/contents/06-classes-de-palavras-iv.md",
     "Sem título.md",
     "seguranca-da-informacao/contents/02-autenticacao-e-seus-mecanismos.md",
