@@ -630,3 +630,57 @@ O resultado final da operação é, portanto, a tabela contendo apenas os nomes 
 
 A linguagem SQL **não possui um operador de divisão direto**. A operação é considerada complexa e, na prática, é implementada através de uma combinação de outros comandos. Uma das maneiras comuns de se realizar uma divisão em SQL é usando `GROUP BY` e `COUNT`, ou através de subconsultas com `NOT EXISTS`. A lógica é verificar quais grupos de uma tabela possuem uma contagem de correspondências igual ao número total de itens na outra tabela.
 
+## Operações Auxiliares
+
+Além das operações fundamentais de seleção, projeção, junção e de conjunto, a álgebra relacional nos fornece operadores auxiliares que são essenciais para organizar e simplificar consultas complexas. Os dois principais são a Renomeação e a Atribuição.
+
+### Renomeação (ρ)
+
+O operador de **renomeação** é uma ferramenta simples, mas extremamente útil, que nos permite alterar o nome de uma relação (tabela) ou de seus atributos (colunas). É representado pela letra grega **ρ (rho)**.
+
+A renomeação é necessária em várias situações:
+
+- **Clareza:** Para dar nomes mais significativos a tabelas ou colunas resultantes de uma operação, tornando a consulta mais legível.
+- **Junções Recorrentes (_Self-Joins_):** Quando precisamos juntar uma tabela com ela mesma (por exemplo, para encontrar funcionários e seus respectivos gerentes na mesma tabela `FUNCIONARIOS`), precisamos criar duas "cópias" lógicas da tabela com nomes diferentes para que a operação de junção possa distingui-las.
+- **Compatibilidade de União:** Para realizar operações de conjunto (união, interseção, diferença) entre duas tabelas que têm a mesma estrutura mas nomes de colunas diferentes. Podemos renomear as colunas de uma tabela para que se tornem compatíveis com a outra.
+
+A sintaxe para a renomeação pode ser usada de duas formas:
+
+**1. Para renomear uma Relação (Tabela):**
+
+ρ<sub>[novo_nome_tabela]</sub>​(R)
+
+Por exemplo, para renomear a tabela EMPREGADOS para FUNCIONARIOS:
+
+ρ<sub>FUNCIONARIOS</sub>​(EMPREGADOS)
+
+**2. Para renomear Atributos (Colunas):**
+
+ρ<sub>[novo_nome_coluna1]/[antigo_nome1],[novo_nome2]/[antigo_nome2],...​</sub>(R)
+
+Exemplificando, em nossa tabela PRODUTOS, para renomear a coluna NOME para NOME_PRODUTO e PRECO para VALOR_UNITARIO:
+
+ρ<sub>NOME_PRODUTO/NOME,VALOR_UNITARIO/PRECO​</sub>(PRODUTOS)
+
+### Atribuição (←)
+
+A operação de **atribuição** nos permite guardar o resultado de uma expressão complexa da álgebra relacional em uma **variável temporária**. Essa variável, que é uma nova relação, pode então ser utilizada em operações subsequentes. É representada pelo símbolo de seta para a esquerda (**←**).
+
+A atribuição é a espinha dorsal da construção de consultas complexas e sequenciais. Em vez de aninhar múltiplas operações em uma única linha, o que pode se tornar ilegível, podemos quebrar o problema em passos lógicos e atribuir o resultado de cada passo a uma relação temporária.
+
+Imagine que queremos encontrar o nome dos clientes que compraram o produto "Notebook". Podemos fazer isso em três passos:
+
+**Passo 1:** Selecionar o ID do "Notebook" na tabela PRODUTOS.
+
+ID_NOTEBOOK ← π<sub>ID</sub>​(σ<sub>NOME=′Notebook′</sub>​(PRODUTOS))
+
+**Passo 2:** Selecionar as vendas que correspondem a esse ID.
+
+VENDAS_NOTEBOOK ← σ<sub>ID_PRODUTO=ID_NOTEBOOK</sub>​(VENDAS)
+
+**Passo 3:** Juntar o resultado com a tabela de produtos para obter o nome.
+
+RESULTADO ← π<sub>NOME​</sub>(PRODUTOS⋈<sub>PRODUTOS.ID=VENDAS_N​OTEBOOK.ID_P​RODUTO​</sub>VENDAS_N​OTEBOOK)
+
+Este conceito de atribuir o resultado de uma consulta a um nome é a base teórica para funcionalidades avançadas em SQL, como **subconsultas**, **CTEs (Common Table Expressions)** e **Views**.
+
