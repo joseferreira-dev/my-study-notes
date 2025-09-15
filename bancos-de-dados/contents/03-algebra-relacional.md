@@ -485,3 +485,67 @@ SELECT * FROM CAMISETAS CROSS JOIN CORES;
 
 Um erro muito comum entre iniciantes em SQL é esquecer a condição de junção na cláusula `WHERE` ao listar múltiplas tabelas no `FROM` (ex: `SELECT * FROM PRODUTOS, VENDAS;`). Quando isso ocorre, o SGBD executa um produto cartesiano completo. Em tabelas grandes, isso pode gerar bilhões ou trilhões de linhas, consumindo todos os recursos do servidor e travando o sistema. Portanto, embora seja um conceito fundamental, sua aplicação direta deve ser feita com muito cuidado.
 
+## Junção (⋈)
+
+A **junção (_join_)** é a operação que nos permite combinar informações de duas ou mais tabelas com base em uma condição de relacionamento entre elas. É a operação fundamental que utilizamos para reconstruir as informações que foram logicamente separadas durante o processo de normalização.
+
+Enquanto o produto cartesiano combina todas as linhas de forma indiscriminada, a junção é uma **combinação inteligente**. Conceitualmente, uma operação de junção é equivalente a realizar um **produto cartesiano completo e, em seguida, aplicar uma operação de seleção** para filtrar apenas as linhas que fazem sentido, ou seja, aquelas em que os valores das colunas relacionadas coincidem.
+
+É crucial não confundir a Junção com as operações de conjunto:
+
+- A **União** empilha linhas de tabelas com a mesma estrutura.
+- A **Junção** combina colunas de tabelas com estruturas diferentes, criando linhas "mais largas" com base em uma condição de correspondência.
+
+A notação geral para a junção é:
+
+R ⋈ <sub>[condição]</sub> S
+
+Onde:
+
+- **R** e **S** são as duas relações (tabelas).
+- **⋈** é o símbolo que representa a operação de junção.
+- **`[condição]`** é o predicado que define como as linhas das duas tabelas devem ser combinadas.
+
+### Tipos de Junção
+
+Existem diferentes tipos de junção, dependendo da condição utilizada.
+
+- **Equijunção (Equi-Join):** É o tipo mais comum de junção, onde a condição de relacionamento utiliza apenas o operador de igualdade (`=`). Geralmente, a condição compara uma chave primária de uma tabela com a chave estrangeira correspondente em outra.
+- **Junção Natural (Natural Join):** É um tipo especial de equijunção onde a condição de igualdade é **implícita**. A junção ocorre automaticamente em todas as colunas que possuem o **mesmo nome** em ambas as tabelas. As colunas de junção aparecem apenas uma vez no resultado. Embora seja conveniente, seu uso na prática pode ser arriscado, pois uma coincidência de nomes de colunas não intencional pode levar a resultados incorretos.
+
+#### Exemplo de Junção
+
+Vamos aplicar a operação de junção em nossas tabelas `PRODUTOS` e `VENDAS` para responder à seguinte pergunta de negócio: "Quais são os detalhes de cada produto vendido, para cada venda realizada?".
+
+Para isso, precisamos combinar cada linha da tabela `VENDAS` com a linha correspondente na tabela `PRODUTOS`. A condição que conecta as duas tabelas é a igualdade entre a chave primária de `PRODUTOS` (`ID`) e a chave estrangeira em `VENDAS` (`ID_PRODUTO`).
+
+A expressão em álgebra relacional para esta equijunção seria:
+
+PRODUTOS ⋈ <sub>PRODUTOS.ID = VENDAS.ID_PRODUTO</sub> ​VENDAS
+
+O resultado seria uma nova tabela que combina as colunas de ambas, mas apenas para as linhas em que o `ID` do produto corresponde ao `ID_PRODUTO` da venda. Como todos os produtos vendidos existem na tabela de produtos, teremos 5 linhas no resultado.
+
+**Resultado da Junção:**
+
+|ID (PRODUTOS)|NOME|PREÇO|ESTOQUE|ID (VENDAS)|ID_PRODUTO|DATA|QUANTIDADE|VALOR_TOTAL|
+|---|---|---|---|---|---|---|---|---|
+|1|Notebook|2500|10|1|1|2024-03-09|2|5000|
+|2|Smartphone|1200|20|2|2|2024-03-10|3|3600|
+|4|Monitor|500|30|3|4|2024-03-10|1|500|
+|3|Tablet|800|15|4|3|2024-03-11|2|1600|
+|2|Smartphone|1200|20|4|2|2024-03-11|1|300|
+
+Note que o produto "Impressora" (ID 5), que não foi vendido, não aparece no resultado. Este tipo de junção que retorna apenas as correspondências exatas é chamado de **Junção Interna (`INNER JOIN`)**. Veremos mais sobre os diferentes tipos de junção (interna, externa) quando estudarmos SQL.
+
+#### Relação com o SQL
+
+A operação de junção da álgebra relacional é a base teórica para a cláusula **`JOIN`** em SQL.
+
+A expressão `PRODUTOS ⋈ PRODUTOS.ID = VENDAS.ID_PRODUTO VENDAS` é equivalente a:
+
+```sql
+SELECT *
+FROM PRODUTOS
+JOIN VENDAS ON PRODUTOS.ID = VENDAS.ID_PRODUTO;
+```
+
