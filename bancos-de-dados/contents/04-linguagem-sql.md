@@ -255,6 +255,10 @@ Os `SAVEPOINT`s oferecem uma flexibilidade imensa para o tratamento de erros em 
 
 A **DDL (Data Definition Language)**, ou Linguagem de Definição de Dados, é o subconjunto da SQL que funciona como o "conjunto de ferramentas de engenharia" do nosso banco de dados. Seus comandos não manipulam os dados em si, mas sim os **objetos** que os contêm e organizam. É com a DDL que criamos, modificamos e excluímos a arquitetura do banco de dados, definindo o _schema_.
 
+<div align="center">
+<img width="360px" src="./img/04-ddl.png">
+</div>
+
 Os objetos de banco de dados são todas as estruturas armazenadas no SGBD que são usadas para guardar ou gerenciar os dados. Os principais são as tabelas, os índices (que otimizam as buscas), as visões (_views_, que são consultas salvas), os gatilhos (_triggers_) e os procedimentos armazenados (_stored procedures_).
 
 ### CREATE: Construindo os Objetos do Banco de Dados
@@ -450,4 +454,213 @@ END;
 ```
 
 Uma vez criado, a aplicação pode simplesmente executar `EXEC sp_Reajustar_Preco_Categoria 10, 5.0;` para dar um aumento de 5% em todos os produtos da categoria `10`, sem precisar enviar o código `UPDATE` completo.
+
+### ALTER: Modificando Objetos Existentes
+
+Uma vez que um objeto de banco de dados é criado, raramente ele permanece inalterado para sempre. As necessidades de um negócio evoluem, novos requisitos surgem, e a estrutura do banco de dados precisa se adaptar a essas mudanças. O comando **`ALTER`** é a ferramenta da DDL que nos permite **modificar a estrutura de um objeto existente** sem a necessidade de excluí-lo e recriá-lo do zero.
+
+O `ALTER` é um comando versátil, e sua sintaxe e as ações disponíveis dependem do tipo de objeto que está sendo modificado (tabela, visão, índice, etc.). A sintaxe genérica é:
+
+```sql
+ALTER <TIPO_DO_OBJETO> <nome_do_objeto> <AÇÃO>;
+```
+
+O poder do comando reside na `<AÇÃO>` especificada, que instrui o SGBD sobre qual tipo de modificação deve ser realizada. As alterações em tabelas são as mais comuns e abrangem uma vasta gama de operações. Vamos analisar um exemplo prático para ilustrar as diversas capacidades do `ALTER TABLE`.
+
+**Exemplo Prático:** Imagine que, após algum tempo de uso, a tabela `Funcionarios` precisa passar por uma série de ajustes estruturais.
+
+```sql
+-- Adicionar a nova coluna Departamento
+ALTER TABLE Funcionarios
+ADD Departamento VARCHAR(100);
+
+-- Modificar a estrutura da coluna Salario para torná-la não nula
+ALTER TABLE Funcionarios
+ALTER COLUMN Salario DECIMAL(10, 2) NOT NULL;
+
+-- Renomear a coluna Cargo para Posicao
+ALTER TABLE Funcionarios
+RENAME COLUMN Cargo TO Posicao;
+
+-- Remover a restrição de chave primária da coluna IDFuncionario
+ALTER TABLE Funcionarios
+DROP CONSTRAINT PK_Funcionarios_IDFuncionario;
+```
+
+**Análise dos Comandos:**
+
+1. **`ADD Departamento VARCHAR(100);`**: Esta ação adiciona uma nova coluna chamada `Departamento` à tabela `Funcionarios`, com o tipo de dado `VARCHAR(100)`.
+2. **`ALTER COLUMN Salario DECIMAL(10, 2) NOT NULL;`**: Esta ação modifica uma coluna existente. Neste caso, estamos alterando a coluna `Salario`, talvez para ajustar seu tipo de dado e, mais importante, para adicionar uma restrição `NOT NULL`, garantindo que todo funcionário deva ter um salário registrado.
+3. **`RENAME COLUMN Cargo TO Posicao;`**: Esta ação renomeia a coluna `Cargo` para `Posicao`, talvez para se adequar a uma nova terminologia da empresa.
+4. **`DROP CONSTRAINT PK_Funcionarios_IDFuncionario;`**: Esta ação remove uma restrição existente da tabela. Neste exemplo, estamos removendo a restrição de chave primária, algo que seria feito com muito cuidado e, geralmente, antes de definir uma nova chave primária.
+
+A tabela a seguir resume algumas das principais ações que podem ser realizadas com o comando `ALTER`, aplicáveis a diferentes tipos de objetos.
+
+| Ação (Sintaxe)        | Descrição                                                                              |
+| --------------------- | -------------------------------------------------------------------------------------- |
+| **`ADD COLUMN`**      | Adiciona uma nova coluna a uma tabela existente.                                       |
+| **`DROP COLUMN`**     | Remove uma coluna de uma tabela existente.                                             |
+| **`ALTER COLUMN`**    | Modifica a estrutura de uma coluna, como seu tipo de dados ou restrições.              |
+| **`ADD CONSTRAINT`**  | Adiciona uma nova restrição a uma tabela (ex: `PRIMARY KEY`, `FOREIGN KEY`, `UNIQUE`). |
+| **`DROP CONSTRAINT`** | Remove uma restrição de uma tabela.                                                    |
+| **`RENAME TO`**       | Renomeia um objeto, como uma tabela.                                                   |
+| **`ADD INDEX`**       | Adiciona um novo índice a uma tabela (sintaxe pode ser `CREATE INDEX`).                |
+| **`DROP INDEX`**      | Remove um índice de uma tabela.                                                        |
+| **`ENABLE TRIGGER`**  | Ativa um gatilho que estava desativado.                                                |
+| **`DISABLE TRIGGER`** | Desativa um gatilho temporariamente sem excluí-lo.                                     |
+
+### DROP: Excluindo Objetos Permanentemente
+
+O comando **`DROP`** é a operação mais destrutiva da DDL. Sua função é **excluir permanentemente um objeto do banco de dados**. Ao contrário de outros comandos de remoção que veremos, o `DROP` não apaga apenas o conteúdo, mas remove toda a estrutura do objeto, incluindo suas definições, índices, restrições e gatilhos associados.
+
+Uma vez que um objeto é "dropado", ele deixa de existir no banco de dados, e a operação, em geral, não pode ser desfeita com um simples `ROLLBACK`. Por isso, deve ser utilizado com extremo cuidado.
+
+A sintaxe base é:
+
+```sql
+DROP <TIPO_DO_OBJETO> <nome_do_objeto>;
+```
+
+**Exemplo Prático:** Após uma migração de sistema, a antiga tabela `clientes_devedores` não é mais necessária. Para removê-la completamente do banco de dados, o comando seria:
+
+```sql
+DROP TABLE clientes_devedores;
+```
+
+Após a execução deste comando, a tabela `clientes_devedores` e todos os dados que ela continha são irrecuperavelmente eliminados.
+
+### TRUNCATE: Removendo Todos os Dados de uma Tabela
+
+O comando **`TRUNCATE`** é uma operação específica para tabelas. Sua função é **remover todas as linhas de uma tabela de forma rápida e eficiente, mas mantendo sua estrutura intacta**.
+
+Depois de executar um `TRUNCATE`, a tabela continuará a existir no banco de dados com todas as suas colunas, índices e restrições, mas estará completamente vazia. É como esvaziar um arquivo, mas manter as gavetas e as pastas no lugar.
+
+A sintaxe do comando é:
+
+```sql
+TRUNCATE TABLE <nome_da_tabela>;
+```
+
+#### Comparando `DROP`, `TRUNCATE` e `DELETE`
+
+É muito comum, especialmente em avaliações, a comparação entre os comandos `DROP`, `TRUNCATE` (ambos DDL) e `DELETE` (que é um comando DML). Embora todos possam resultar na remoção de dados, eles operam de maneiras fundamentalmente diferentes.
+
+|Característica|`DELETE` (DML)|`TRUNCATE` (DDL)|`DROP` (DDL)|
+|---|---|---|---|
+|**O que remove?**|Remove linhas específicas ou todas as linhas, uma por uma.|Remove **todas** as linhas de uma vez.|Remove a tabela inteira (dados **e** estrutura).|
+|**Cláusula `WHERE`**|**Pode** ter uma cláusula `WHERE` para filtrar quais linhas apagar.|**Não pode** ter uma cláusula `WHERE`. Apaga tudo.|Não se aplica.|
+|**Triggers**|Dispara gatilhos `DELETE` para cada linha removida.|**Não** dispara gatilhos `DELETE` (na maioria dos SGBDs).|Não se aplica.|
+|**Performance**|Mais lento para grandes volumes, pois registra cada remoção.|Muito mais rápido, pois desaloca os dados em bloco.|Rápido, remove a definição do objeto.|
+|**`ROLLBACK`**|Pode ser desfeito com `ROLLBACK`, pois é uma operação DML.|Geralmente **não pode** ser desfeito com `ROLLBACK` (é uma operação DDL).|**Não pode** ser desfeito com `ROLLBACK`.|
+
+Resumindo a principal diferença para tabelas:
+
+- **`DROP`**: Apaga a tabela (estrutura e dados). A tabela some.
+- **`TRUNCATE`**: Apaga os dados da tabela. A estrutura fica.
+- **`DELETE`**: Apaga os dados da tabela (todos ou um subconjunto). A estrutura fica.
+
+### RENAME: Renomeando Objetos
+
+O comando **`RENAME`** é uma operação DDL simples cujo objetivo é alterar o nome de um objeto do banco de dados, como uma tabela.
+
+A sintaxe pode variar entre os SGBDs. A forma mais genérica é:
+
+```sql
+RENAME <TIPO_DO_OBJETO> <nome_atual> TO <nome_novo>;
+```
+
+**Exemplo:**
+
+```sql
+RENAME TABLE Clientes TO Consumidores;
+```
+
+É importante notar que, em muitos SGBDs populares como SQL Server e PostgreSQL, a renomeação é realizada como uma ação do comando `ALTER`. Por exemplo:
+
+```sql
+ALTER TABLE Clientes RENAME TO Consumidores;
+```
+
+Independentemente da sintaxe, a função é a mesma: modificar o nome de um objeto existente no _schema_ do banco de dados.
+
+## DML (Data Manipulation Language)
+
+A **DML (Data Manipulation Language)**, ou Linguagem de Manipulação de Dados, é o subconjunto da SQL que utilizamos para interagir diretamente com os dados armazenados nas tabelas. Enquanto a DDL constrói a "casa" (a estrutura do banco de dados), a DML é responsável por "mobiliar", "reformar" e "remover os móveis" (os registros).
+
+<div align="center">
+<img width="360px" src="./img/04-dml.png">
+</div>
+
+Com a DML, realizamos as operações essenciais do CRUD: criar novos registros (`Insert`), atualizar registros existentes (`Update`) e excluir registros (`Delete`). Operamos em um nível de abstração mais baixo que a DDL, focando no conteúdo, e não no contêiner.
+
+Embora muitas classificações incluam o comando `SELECT` dentro da DML, para fins didáticos, manteremos a abordagem em cinco sublinguagens, tratando o `SELECT` em sua própria categoria, a DQL, que veremos mais adiante.
+
+Para os exemplos práticos desta seção, utilizaremos uma tabela simples chamada `Exemplo`, criada com o seguinte comando DDL:
+
+```sql
+CREATE TABLE Exemplo (
+    ID INT PRIMARY KEY,
+    nome VARCHAR(100),
+    sobrenome VARCHAR(100),
+    idade INT,
+    email VARCHAR(255)
+);
+```
+
+Inicialmente, nossa tabela está criada, mas vazia, com a seguinte estrutura:
+
+| ID  | nome | sobrenome | idade | email |
+| --- | ---- | --------- | ----- | ----- |
+|     |      |           |       |       |
+
+Vamos agora populá-la e manipulá-la com os comandos DML.
+
+### INSERT INTO: Adicionando Novos Registros
+
+O comando **`INSERT INTO`** é utilizado para adicionar uma или mais linhas (registros) novas a uma tabela. A operação consiste em especificar a tabela de destino, as colunas que receberão os dados e os valores correspondentes a serem inseridos.
+
+A sintaxe genérica do comando é:
+
+```sql
+INSERT INTO nome_tabela (coluna1, coluna2, ..., colunaN)
+VALUES (valor1, valor2, ..., valorN);
+```
+
+- **`INSERT INTO nome_tabela (...)`**: Especifica a tabela e a lista de colunas que serão preenchidas.
+- **`VALUES (...)`**: Fornece a lista de valores. É crucial que a ordem e o tipo de dado dos valores correspondam exatamente à ordem das colunas listadas.
+
+**Exemplo Prático:** Vamos inserir cinco registros em nossa tabela Exemplo. Note que os valores de texto (strings, como VARCHAR) devem sempre ser colocados entre aspas simples (') ou duplas (").
+
+```sql
+INSERT INTO Exemplo (ID, Nome, Sobrenome, Idade, Email)
+VALUES
+    (1, 'João', 'Silva', 30, 'joao.silva@example.com'),
+    (2, 'Maria', 'Santos', 25, 'maria.santos@example.com'),
+    (3, 'Pedro', 'Almeida', 35, 'pedro.almeida@example.com'),
+    (4, 'Ana', 'Oliveira', 28, 'ana.oliveira@example.com'),
+    (5, 'Carlos', 'Ferreira', 40, 'carlos.ferreira@example.com');
+```
+
+Após a execução bem-sucedida deste comando, a tabela `Exemplo` conterá os seguintes dados:
+
+|ID|nome|sobrenome|idade|email|
+|---|---|---|---|---|
+|1|João|Silva|30|joao.silva@example.com|
+|2|Maria|Santos|25|maria.santos@example.com|
+|3|Pedro|Almeida|35|pedro.almeida@example.com|
+|4|Ana|Oliveira|28|ana.oliveira@example.com|
+|5|Carlos|Ferreira|40|carlos.ferreira@example.com|
+
+#### Variações e Boas Práticas
+
+**Omitindo a Lista de Colunas:** É possível omitir a lista de colunas na instrução `INSERT`, mas **apenas** se você fornecer um valor para **todas as colunas** da tabela, na **exata ordem** em que foram definidas no `CREATE TABLE`.
+
+```sql
+-- Funciona, mas não é recomendado
+INSERT INTO Exemplo VALUES (6, 'Laura', 'Mendes', 32, 'laura.mendes@example.com');
+```
+
+Esta prática **não é recomendada** em código de produção, pois é "quebradiça". Se, no futuro, um DBA alterar a ordem das colunas ou adicionar uma nova coluna à tabela, esta instrução `INSERT` falhará ou, pior, inserirá os dados nos lugares errados.
+
+**Inserindo Valores Nulos ou Padrão:** Se uma coluna permite valores nulos (`NULL`) ou possui um valor padrão (`DEFAULT`) definido, podemos omiti-la da lista de colunas no comando `INSERT`. O SGBD se encarregará de preenchê-la com `NULL` ou com seu valor padrão.
 
