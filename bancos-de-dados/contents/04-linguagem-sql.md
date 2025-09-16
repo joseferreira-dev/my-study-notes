@@ -849,3 +849,60 @@ Existem diferentes formas de especificar as colunas:
 
 A sintaxe do `SELECT` pode se tornar muito mais complexa, incluindo diversas outras cláusulas como `JOIN`, `GROUP BY`, `HAVING` e `ORDER BY`, que exploraremos em detalhe nos próximos capítulos, onde construiremos consultas do básico ao avançado.
 
+#### Exemplo Prático
+
+Vamos retornar à nossa tabela `Exemplo`, que, após as operações de DML, se encontra no seguinte estado:
+
+|ID|nome|sobrenome|idade|email|
+|---|---|---|---|---|
+|1|João|Silva|30|joao.silva@example.com|
+|3|Pedro|Almeida|35|pedro.almeida@example.com|
+|5|Carlos|Fernandes|40|carlos.ferreira@example.com|
+
+**Objetivo da Consulta:** Queremos obter o `ID`, `nome` e `idade` de todas as pessoas cuja idade seja maior ou igual a 35 anos.
+
+Para alcançar este objetivo, a consulta SQL completa seria:
+
+```sql
+SELECT ID, nome, idade
+FROM Exemplo
+WHERE idade >= 35;
+```
+
+Como resultado, teremos a seguinte tabela:
+
+|ID|nome|idade|
+|---|---|---|
+|3|Pedro|35|
+|5|Carlos|40|
+
+Vamos analisar passo a passo como chegamos a este resultado.
+
+Apesar de escrevermos `SELECT` primeiro, o SGBD executa a consulta seguindo uma ordem lógica específica para chegar ao resultado. Vamos seguir esses passos:
+
+**1. `FROM Exemplo`**: A primeira coisa que o SGBD faz é identificar a fonte dos dados. Ele "olha" para a tabela `Exemplo` em sua totalidade:
+
+| ID | nome | sobrenome | idade | email |
+| --- | --- | --- | --- | --- |
+| 1 | João | Silva | 30 | joao.silva@example.com |
+| 3 | Pedro | Almeida | 35 | pedro.almeida@example.com |
+| 5 | Carlos | Fernandes | 40 | carlos.ferreira@example.com |
+
+**2. `WHERE idade >= 35`**: Em seguida, o SGBD aplica o filtro da cláusula `WHERE`. Ele varre cada linha da tabela fonte e mantém apenas aquelas que satisfazem a condição `idade >= 35`. Esta é a operação de **Seleção (σ)**. Como resultado intermediário (linhas filtradas), temos:
+
+| ID | nome | sobrenome | idade | email |
+| --- | --- | --- | --- | --- |
+| 3 | Pedro | Almeida | 35 | pedro.almeida@example.com |
+| 5 | Carlos | Fernandes | 40 | carlos.ferreira@example.com |
+
+**3. `SELECT ID, nome, idade`**: Por último, sobre o conjunto de linhas que passaram pelo filtro, o SGBD aplica a lista de colunas da cláusula `SELECT`. Ele descarta as colunas que não foram solicitadas (`sobrenome` e `email`) e exibe apenas as que foram especificadas. Esta é a operação de **Projeção (π)**.
+
+O resultado final entregue ao usuário é a tabela a seguir:
+
+|ID|nome|idade|
+|---|---|---|
+|3|Pedro|35|
+|5|Carlos|40|
+
+Compreender esta ordem de execução lógica (`FROM` → `WHERE` → `SELECT`) é crucial para a construção de consultas mais complexas, pois ajuda a visualizar como o conjunto de dados é gradualmente refinado até se tornar o resultado final desejado.
+
