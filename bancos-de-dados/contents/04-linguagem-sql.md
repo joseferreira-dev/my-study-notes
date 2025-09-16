@@ -733,3 +733,69 @@ WHERE
     IDFuncionario = 123;
 ```
 
+### DELETE: Removendo Registros
+
+O comando **`DELETE`** é a operação da DML utilizada para **remover uma ou mais linhas (registros)** de uma tabela. Assim como o `UPDATE`, ele é uma operação precisa que, quando combinada com a cláusula `WHERE`, permite direcionar a remoção para dados específicos que atendam a uma condição predeterminada.
+
+A sintaxe base para a deleção é:
+
+```sql
+DELETE FROM nome_tabela
+WHERE condicao;
+```
+
+- **`DELETE FROM nome_tabela`**: Identifica a tabela da qual as linhas serão removidas.
+- **`WHERE condicao`**: Cláusula essencial que filtra e especifica **quais linhas** devem ser excluídas.
+
+#### A Relação com `TRUNCATE` e a Importância do `WHERE`
+
+À primeira vista, o `DELETE` pode parecer similar ao comando DDL `TRUNCATE`, especialmente se a intenção for apagar todos os dados. Um comando `DELETE FROM nome_tabela;` **sem a cláusula `WHERE`** irá, de fato, remover todos os registros da tabela.
+
+No entanto, a diferença interna é crucial:
+
+- **`DELETE`** é uma operação DML que remove as linhas **uma a uma**, registrando cada remoção individualmente no log de transações. Isso a torna mais lenta para grandes volumes de dados, mas permite que a operação seja desfeita com um `ROLLBACK`. Além disso, se a tabela tiver gatilhos de exclusão (_delete triggers_), eles serão disparados para cada linha removida.
+- **`TRUNCATE`** é uma operação DDL que remove os dados de forma massiva, geralmente desalocando as páginas de dados da tabela. É uma operação muito mais rápida, minimamente registrada no log, que não dispara gatilhos e, na maioria dos casos, não pode ser desfeita com `ROLLBACK`.
+
+**Em resumo:** use `DELETE` quando precisar remover um subconjunto de linhas ou quando a lógica de gatilhos for necessária. Use `TRUNCATE` quando precisar esvaziar uma tabela inteira de forma rápida e definitiva.
+
+**Atenção:** Assim como no `UPDATE`, a omissão acidental da cláusula `WHERE` em um comando `DELETE` é um erro grave que resultará na exclusão de **todos os dados** da tabela.
+
+#### Exemplo Prático
+
+Vamos continuar com nossa tabela `Exemplo`, que, após a última alteração, se encontra no seguinte estado:
+
+**Tabela `Exemplo` ANTES da exclusão:**
+
+|ID|nome|sobrenome|idade|email|
+|---|---|---|---|---|
+|1|João|Silva|30|joao.silva@example.com|
+|2|Maria|Santos|25|maria.santos@example.com|
+|3|Pedro|Almeida|35|pedro.almeida@example.com|
+|4|Ana|Oliveira|28|ana.oliveira@example.com|
+|5|Carlos|Fernandes|40|carlos.ferreira@example.com|
+
+Suponha que, por uma nova política da empresa, precisamos remover do cadastro todas as pessoas com menos de 30 anos. A condição na cláusula `WHERE` será `idade < 30`.
+
+**Comando `DELETE`:**
+
+```sql
+DELETE FROM Exemplo
+WHERE idade < 30;
+```
+
+Este comando instrui o SGBD a percorrer a tabela `Exemplo` e apagar todas as linhas em que o valor da coluna `idade` for menor que 30. Neste caso, os registros de Maria (25 anos) e Ana (28 anos) serão removidos.
+
+**Tabela `Exemplo` DEPOIS da exclusão:**
+
+|ID|nome|sobrenome|idade|email|
+|---|---|---|---|---|
+|1|João|Silva|30|joao.silva@example.com|
+|3|Pedro|Almeida|35|pedro.almeida@example.com|
+|5|Carlos|Fernandes|40|carlos.ferreira@example.com|
+
+Se, em outro cenário, quiséssemos apagar todos os registros da tabela usando este comando, a sintaxe seria simplesmente:
+
+```sql
+DELETE FROM Exemplo;
+```
+
