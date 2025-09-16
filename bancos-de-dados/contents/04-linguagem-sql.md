@@ -799,3 +799,53 @@ Se, em outro cenário, quiséssemos apagar todos os registros da tabela usando e
 DELETE FROM Exemplo;
 ```
 
+## DQL (Data Query Language)
+
+A **DQL (Data Query Language)**, ou Linguagem de Consulta de Dados, é a sublinguagem da SQL dedicada exclusivamente a uma tarefa: **recuperar dados** de um banco de dados. Enquanto as outras sublinguagens se preocupam em definir, controlar e modificar, a DQL se concentra em fazer perguntas e obter respostas.
+
+<div align="center">
+<img width="360px" src="./img/04-dql.png">
+</div>
+
+Este subconjunto é composto por um único, mas imensamente poderoso e versátil, comando: o **`SELECT`**. É através do `SELECT` que realizamos as famosas "consultas SQL", que são a principal forma de extrair informações valiosas e insights a partir dos dados brutos armazenados nas tabelas.
+
+### SELECT: O Coração da Consulta SQL
+
+O comando **`SELECT`** é utilizado para recuperar dados de uma ou mais tabelas. Ele permite especificar quais colunas queremos ver e quais linhas queremos incluir, com base em um conjunto de critérios e condições. O resultado de um comando `SELECT` é sempre uma nova tabela temporária, chamada de **conjunto de resultados** (_result set_), que é uma espécie de visão momentânea dos dados que atendem à nossa solicitação.
+
+É fundamental fazer a conexão correta com a Álgebra Relacional que estudamos no capítulo anterior, pois esta é uma fonte recorrente de confusão e de questões em provas:
+
+- O comando `SELECT` em si, ao especificar as colunas, corresponde à operação de **projeção (π)**.
+- A cláusula `WHERE`, que filtra as linhas, corresponde à operação de **seleção (σ)**.
+
+#### A Sintaxe Fundamental do `SELECT`
+
+A estrutura básica de uma consulta `SELECT` é composta por três cláusulas principais. Para facilitar o entendimento, vamos apresentá-las na ordem em que o SGBD logicamente as processa, que é um pouco diferente da ordem em que as escrevemos.
+
+```sql
+SELECT <lista_de_colunas>
+FROM <nome_da_tabela>
+WHERE <condicao_de_filtragem>;
+```
+
+1. **Cláusula `FROM`:** Esta é a primeira parte que o SGBD "lê". A cláusula FROM especifica de qual(is) tabela(s) os dados serão recuperados. É o ponto de partida da consulta.
+	- **Exemplo:** `FROM Exemplo;` indica que nossa fonte de dados é a tabela `Exemplo`.
+
+2. **Cláusula `WHERE`:** Depois de saber de onde vêm os dados, o SGBD aplica a cláusula WHERE para filtrar as linhas. Apenas as linhas que satisfazem a <condicao_de_filtragem> passarão para a próxima etapa. Esta cláusula é a implementação da seleção (σ) da Álgebra Relacional.
+	- **Exemplo:** `WHERE idade > 30;` selecionaria apenas as linhas dos registros cuja idade é maior que 30.
+
+3. **Cláusula `SELECT`:** Por fim, a cláusula SELECT é aplicada ao conjunto de linhas que foi filtrado pela cláusula WHERE. É aqui que especificamos quais colunas (atributos) queremos que apareçam no nosso resultado final. Esta cláusula é a implementação da projeção (π) da Álgebra Relacional.
+
+Existem diferentes formas de especificar as colunas:
+
+- **Todos os atributos (`*`)**: O asterisco (`*`) é um coringa que significa "todas as colunas".
+    - **Exemplo:** `SELECT * FROM Exemplo;` retornaria todas as colunas da tabela `Exemplo`.
+
+- **Atributos específicos**: Podemos listar uma ou mais colunas, separando-as por vírgula.
+    - **Exemplo 1 (uma coluna):** `SELECT nome FROM Exemplo;` retornaria apenas a coluna `nome`.
+    - **Exemplo 2 (múltiplas colunas):** `SELECT nome, idade FROM Exemplo;` retornaria as colunas `nome` e `idade`.
+
+**Cuidado com a Nomenclatura:** Apesar de o comando se chamar `SELECT` (selecionar), sua função principal de escolher colunas corresponde à **projeção** da Álgebra Relacional. A **seleção** da Álgebra Relacional é realizada pela cláusula `WHERE`. Dominar essa distinção é crucial.
+
+A sintaxe do `SELECT` pode se tornar muito mais complexa, incluindo diversas outras cláusulas como `JOIN`, `GROUP BY`, `HAVING` e `ORDER BY`, que exploraremos em detalhe nos próximos capítulos, onde construiremos consultas do básico ao avançado.
+
