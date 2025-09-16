@@ -664,3 +664,72 @@ Esta prática **não é recomendada** em código de produção, pois é "quebrad
 
 **Inserindo Valores Nulos ou Padrão:** Se uma coluna permite valores nulos (`NULL`) ou possui um valor padrão (`DEFAULT`) definido, podemos omiti-la da lista de colunas no comando `INSERT`. O SGBD se encarregará de preenchê-la com `NULL` ou com seu valor padrão.
 
+### UPDATE: Modificando Registros Existentes
+
+Uma vez que os dados estão no banco, é natural que eles precisem ser alterados ao longo do tempo. Clientes mudam de endereço, preços de produtos são reajustados, status de pedidos são atualizados. O comando **`UPDATE`** é a ferramenta da DML responsável por **modificar os dados em registros que já existem** em uma tabela.
+
+Imagine o cenário: um produto, como o tênis "NIKE AIR JORDAN 1 LOW TRAVIS SCOTT OLIVE GREEN", foi cadastrado com o preço de R$ 249,00, quando o valor correto seria R$ 2.490,00. O comando `UPDATE` é a forma precisa de corrigir esse deslize sem a necessidade de apagar e reinserir o registro.
+
+A sintaxe base para o comando é:
+
+```sql
+UPDATE nome_tabela
+SET coluna1 = valor1, coluna2 = valor2, ...
+WHERE condicao;
+```
+
+- **`UPDATE nome_tabela`**: Identifica a tabela que sofrerá a alteração.
+- **`SET coluna1 = valor1, ...`**: Especifica qual(is) coluna(s) deve(m) ser modificada(s) e os novos valores que elas devem receber.
+- **`WHERE condicao`**: Cláusula essencial que filtra e especifica **quais linhas** devem ser atualizadas.
+
+#### A Importância da Cláusula `WHERE`
+
+A cláusula `WHERE` em um comando `UPDATE` funciona como um filtro de segurança. É ela que garante que a alteração será aplicada apenas aos registros corretos. A condição geralmente utiliza a chave primária da tabela para mirar em uma linha específica, mas pode ser qualquer condição que identifique um ou mais registros.
+
+**Atenção:** A omissão da cláusula `WHERE` em um comando `UPDATE` é um dos erros mais perigosos que um iniciante pode cometer. Se a cláusula `WHERE` for omitida, o `UPDATE` será aplicado a **TODAS AS LINHAS DA TABELA**. Um comando como `UPDATE Exemplo SET idade = 40;` (sem `WHERE`) faria com que **todos** os registros da tabela passassem a ter a idade 40, uma alteração que pode ser desastrosa e de difícil reversão.
+
+#### Exemplo Prático
+
+Vamos utilizar nossa tabela `Exemplo`. Suponha que identificamos um erro no cadastro de Carlos: seu sobrenome correto é "Fernandes", e não "Ferreira". Para corrigir apenas este registro, usamos a chave primária (`ID = 5`) na cláusula `WHERE`.
+
+**Tabela `Exemplo` ANTES da alteração:**
+
+|ID|nome|sobrenome|idade|email|
+|---|---|---|---|---|
+|1|João|Silva|30|joao.silva@example.com|
+|2|Maria|Santos|25|maria.santos@example.com|
+|3|Pedro|Almeida|35|pedro.almeida@example.com|
+|4|Ana|Oliveira|28|ana.oliveira@example.com|
+|5|Carlos|Ferreira|40|carlos.ferreira@example.com|
+
+**Comando `UPDATE`:**
+
+```sql
+UPDATE Exemplo
+SET sobrenome = 'Fernandes'
+WHERE ID = 5;
+```
+
+Note que o valor de texto `'Fernandes'` deve estar entre aspas.
+
+**Tabela `Exemplo` DEPOIS da alteração:**
+
+|ID|nome|sobrenome|idade|email|
+|---|---|---|---|---|
+|1|João|Silva|30|joao.silva@example.com|
+|2|Maria|Santos|25|maria.santos@example.com|
+|3|Pedro|Almeida|35|pedro.almeida@example.com|
+|4|Ana|Oliveira|28|ana.oliveira@example.com|
+|5|Carlos|**Fernandes**|40|carlos.ferreira@example.com|
+
+O comando `UPDATE` também pode modificar múltiplas colunas de uma vez e até mesmo usar o valor antigo da coluna para calcular o novo. Por exemplo, para dar um aumento de 10% para um funcionário e atualizar seu email, o comando poderia ser:
+
+```sql
+UPDATE Funcionarios
+SET 
+    salario = salario * 1.10,
+    email = 'novo.email@empresa.com'
+WHERE 
+    IDFuncionario = 123;
+```
+
