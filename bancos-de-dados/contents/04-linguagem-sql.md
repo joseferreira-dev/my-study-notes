@@ -906,3 +906,16 @@ O resultado final entregue ao usuário é a tabela a seguir:
 
 Compreender esta ordem de execução lógica (`FROM` → `WHERE` → `SELECT`) é crucial para a construção de consultas mais complexas, pois ajuda a visualizar como o conjunto de dados é gradualmente refinado até se tornar o resultado final desejado.
 
+## Considerações Finais
+
+Neste capítulo, fizemos a transição fundamental da teoria da Álgebra Relacional para a sua aplicação prática através da **SQL (Structured Query Language)**. Exploramos a SQL não como um comando único, mas como uma linguagem abrangente, composta por subconjuntos especializados que, juntos, nos dão controle total sobre todos os aspectos de um banco de dados relacional.
+
+Iniciamos nossa jornada pela **DDL**, a Linguagem de Definição de Dados, aprendendo a atuar como "arquitetos" do banco de dados. Com os comandos `CREATE`, `ALTER`, `DROP` e `TRUNCATE`, vimos como construir, modificar e remover a própria estrutura que armazena a informação, desde o banco de dados em si até suas tabelas, índices e visões.
+
+Em seguida, passamos a interagir com o conteúdo, utilizando a **DML**, a Linguagem de Manipulação de Dados. Dominamos os comandos essenciais do CRUD — `INSERT`, `UPDATE` e `DELETE` —, aprendendo a popular, corrigir e remover os registros que dão vida às tabelas, sempre atentos à importância crucial da cláusula `WHERE` para garantir a precisão de nossas ações.
+
+O coração de nossa interação com os dados foi revelado com a **DQL**, a Linguagem de Consulta de Dados. Desvendamos a sintaxe fundamental do comando `SELECT`, compreendendo a sua ordem de execução lógica (`FROM` → `WHERE` → `SELECT`) e sua relação direta com as operações de seleção e projeção da Álgebra Relacional.
+
+Por fim, exploramos as linguagens que garantem a segurança e a integridade do nosso ambiente. Com a **DCL**, a Linguagem de Controle de Dados, vimos como `GRANT`, `REVOKE` e `DENY` nos permitem gerenciar as permissões de acesso, funcionando como os "guardiões" da segurança da informação. E com a **TCL**, a Linguagem de Controle de Transações, entendemos como os comandos `COMMIT`, `ROLLBACK` e `SAVEPOINT`, aliados aos níveis de isolamento, nos dão o poder de garantir a atomicidade e a durabilidade das nossas operações, protegendo a integridade dos dados.
+
+Ao concluir este capítulo, temos um panorama completo da linguagem SQL. Compreendemos que ela é uma ferramenta multifacetada, com comandos específicos para cada necessidade, desde a criação da mais simples tabela até o controle da mais complexa transação. Com esta base sólida, estamos agora preparados para, nos próximos capítulos, aprofundar nosso conhecimento, explorando cláusulas avançadas para construir consultas cada vez mais poderosas e sofisticadas.
