@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bancos-de-dados/contents/04-linguagem-sql.md",
+                "file": "plano-de-trabalho.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-linguagem-sql"
+              "title": "plano-de-trabalho"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bancos-de-dados/contents/04-linguagem-sql.md",
+                "file": "plano-de-trabalho.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 04-linguagem-sql"
+              "title": "Sumário de plano-de-trabalho"
             }
           }
         ],
@@ -171,11 +171,12 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "Sem título.md",
+    "plano-de-trabalho.md",
+    "bancos-de-dados/contents/04-linguagem-sql.md",
     "bancos-de-dados/contents/img/04-dql.png",
     "bancos-de-dados/contents/img/04-dml.png",
     "bancos-de-dados/contents/img/04-ddl.png",
-    "Sem título.md",
-    "bancos-de-dados/contents/04-linguagem-sql.md",
     "bancos-de-dados/contents/img/04-tcl-niveis-de-isolamento.png",
     "bancos-de-dados/contents/img/04-tcl.png",
     "bancos-de-dados/contents/img/04-dcl.png",
@@ -184,8 +185,6 @@
     "bancos-de-dados/contents/img/03-operadores.png",
     "bancos-de-dados/contents/img/03-resultado-divisao.png",
     "bancos-de-dados/contents/img/03-resultado-divisao-processo.png",
-    "bancos-de-dados/contents/img/03-tabela-cpf-procurado.png",
-    "Sem título 1.md",
     "informatica-basica/contents/02-ferramentas-de-busca.md",
     "conhecimentos-pedagogicos-e-ept/contents/08-curriculo.md",
     "lingua-portuguesa/contents/06-classes-de-palavras-iv.md",
