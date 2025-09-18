@@ -19,5 +19,65 @@ Apesar de suas abordagens diferentes, foi provado que a Álgebra Relacional, o C
 
 Vamos começar nossa exploração detalhada pelo Cálculo Relacional de Tuplas, o CRT.
 
+## Cálculo Relacional de Tuplas (CRT)
+
+O **Cálculo Relacional de Tuplas (CRT)** é uma abordagem do cálculo relacional onde as fórmulas são construídas em torno de **variáveis de tupla**. Cada variável de tupla, como o nome sugere, é um marcador que representa uma tupla (linha) inteira de uma relação específica. Ela não se refere a um valor individual, mas ao conjunto completo de atributos que compõem aquela linha.
+
+Uma consulta em CRT é especificada através de uma expressão formal que descreve as propriedades das tuplas que desejamos no resultado. A estrutura geral de uma consulta CRT é:
+
+`{ t | P(t) }`
+
+Onde:
+
+- **t** é uma **variável de tupla**.
+- **P(t)** é um **predicado**, que é uma fórmula da lógica de predicados que descreve as condições que a tupla `t` deve satisfazer para ser incluída no resultado.
+
+A expressão inteira pode ser lida como: "Retorne o conjunto de todas as tuplas `t` para as quais o predicado `P(t)` é verdadeiro".
+
+### A Variável de Tupla
+
+O conceito central do CRT é a variável de tupla. Vamos usar uma tabela de exemplo para ilustrar.
+
+**Tabela Estudantes**
+
+| matrícula | nome | idade |
+| --- | --- | --- |
+| 101 | Alice | 20 |
+| 102 | Bob | 22 |
+| 103 | Carol | 20 |
+
+Se definirmos uma variável de tupla `t` para a relação `Estudantes`, `t` pode assumir, uma de cada vez, o valor de cada uma das tuplas da tabela. Quando `t` representa a primeira linha, `t.matrícula` é `101`, `t.nome` é "Alice" e `t.idade` é `20`.
+
+### Construindo uma Consulta em CRT
+
+Vamos construir uma consulta para responder à seguinte pergunta: "Quais são os nomes dos estudantes que têm 20 anos?".
+
+A expressão em CRT para esta consulta seria:
+
+`{ t.nome | t ∈ Estudantes ∧ t.idade = 20 }`
+
+Vamos dissecar cada parte desta expressão:
+
+- **`{ t.nome | ... }`**: Esta é a **cláusula de alvo**. Ela especifica o que queremos no nosso resultado. Neste caso, não queremos a tupla inteira, mas apenas o valor do atributo `nome` da tupla `t`. Isso é análogo à projeção (π) da Álgebra Relacional e à cláusula `SELECT` do SQL.
+- **`t ∈ Estudantes`**: Esta é uma condição que "liga" a variável de tupla `t` à relação `Estudantes`. Lê-se como "`t` é uma tupla que pertence à relação `Estudantes`". Isso é análogo à cláusula `FROM` do SQL.
+- **`∧`**: Este é o operador lógico de conjunção ("E"), que conecta as condições do predicado.
+- **`t.idade = 20`**: Esta é a condição de filtragem. Ela especifica que a tupla `t` só será considerada se o valor de seu atributo `idade` for igual a 20. Isso é análogo à seleção (σ) da Álgebra Relacional e à cláusula `WHERE` do SQL.
+
+A expressão completa é lida como: "Retorne o atributo `nome` de todas as tuplas `t`, tal que `t` pertença à relação `Estudantes` E o atributo `idade` de `t` seja igual a 20".
+
+O resultado desta consulta seria a seguinte relação:
+
+|nome|
+|---|
+|Alice|
+|Carol|
+
+### Sintaxe Alternativa
+
+Existem formas alternativas de escrever a mesma expressão lógica, que podem ser encontradas em diferentes literaturas. Uma sintaxe comum é:
+
+`{ t.nome | Estudantes(t) ∧ t.idade = 20 }`
+
+Nesta notação, `Estudantes(t)` é usado em vez de `t ∈ Estudantes`, mas o significado é idêntico: "`t` é uma tupla da relação `Estudantes`". O resultado da consulta permanece exatamente o mesmo. A escolha da sintaxe é uma questão de convenção, mas a lógica subjacente do predicado não se altera.
 
 
