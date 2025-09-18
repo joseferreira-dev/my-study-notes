@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bancos-de-dados/contents/05-calculo-relacional.md",
+                "file": "bancos-de-dados/contents/06-linguagem-sql-clausulas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-calculo-relacional"
+              "title": "06-linguagem-sql-clausulas"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bancos-de-dados/contents/05-calculo-relacional.md",
+                "file": "bancos-de-dados/contents/06-linguagem-sql-clausulas.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 05-calculo-relacional"
+              "title": "Sumário de 06-linguagem-sql-clausulas"
             }
           }
         ],
@@ -171,8 +171,9 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
-    "bancos-de-dados/contents/04-linguagem-sql-fundamentos.md",
     "bancos-de-dados/contents/05-calculo-relacional.md",
+    "bancos-de-dados/contents/06-linguagem-sql-clausulas.md",
+    "bancos-de-dados/contents/04-linguagem-sql-fundamentos.md",
     "plano-de-trabalho.md",
     "Sem título.md",
     "bancos-de-dados/contents/img/04-dql.png",
@@ -210,7 +211,6 @@
     "engenharia-de-software/contents/21-integracao-entrega-e-implantacao-continuas.md",
     "engenharia-de-software/contents/19-devops.md",
     "engenharia-de-software/contents/18-bdd-ddd-mda-mdd-fdd-dsdm.md",
-    "engenharia-de-software/contents/17-tdd.md",
     "engenharia-de-prompt/contents",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
