@@ -72,12 +72,114 @@ O resultado desta consulta seria a seguinte relação:
 |Alice|
 |Carol|
 
-### Sintaxe Alternativa
-
 Existem formas alternativas de escrever a mesma expressão lógica, que podem ser encontradas em diferentes literaturas. Uma sintaxe comum é:
 
 `{ t.nome | Estudantes(t) ∧ t.idade = 20 }`
 
 Nesta notação, `Estudantes(t)` é usado em vez de `t ∈ Estudantes`, mas o significado é idêntico: "`t` é uma tupla da relação `Estudantes`". O resultado da consulta permanece exatamente o mesmo. A escolha da sintaxe é uma questão de convenção, mas a lógica subjacente do predicado não se altera.
 
+### A Sintaxe e os Operadores do CRT
+
+Como o Cálculo Relacional de Tuplas é derivado da lógica de predicados, ele utiliza uma série de símbolos lógicos para construir suas expressões. Embora uma consulta em CRT pareça complexa à primeira vista, ela se torna mais clara quando compreendemos o papel de cada operador. A familiaridade com esses símbolos é essencial, pois as questões teóricas frequentemente se baseiam neles.
+
+Antes de analisarmos as consultas, é importante consolidar o significado dos principais símbolos da lógica proposicional que encontraremos.
+
+|Símbolo|Nome|Descrição|
+|---|---|---|
+|**∧**, `AND`|Conjunção (E)|Verdadeiro se ambas as proposições forem verdadeiras.|
+|**∨**, `OR`|Disjunção (OU)|Verdadeiro se pelo menos uma das proposições for verdadeira.|
+|**¬**, `~`, `NOT`|Negação (NÃO)|Inverte o valor de verdade da proposição.|
+|**→**|Implicação (Se... Então)|Verdadeiro, exceto quando a primeira proposição é verdadeira e a segunda é falsa.|
+|**↔**|Bicondicional (Se e Somente Se)|Verdadeiro se ambas as proposições forem iguais (ambas verdadeiras ou ambas falsas).|
+|**⊤**|Verdadeiro (Tautologia)|Uma proposição que é sempre verdadeira.|
+|**⊥**|Falso (Contradição)|Uma proposição que é sempre falsa.|
+|**∃**|Quantificador Existencial (Existe)|Afirma que **pelo menos um** elemento no domínio satisfaz a proposição.|
+|**∀**|Quantificador Universal (Para Todo)|Afirma que **todos** os elementos no domínio satisfazem a proposição.|
+
+#### Os Quantificadores: Existencial (∃) e Universal (∀)
+
+Os quantificadores são os elementos que dão grande poder expressivo ao Cálculo Relacional.
+
+- O **Quantificador Existencial (∃)** é usado para verificar se "existe pelo menos um". Em consultas a bancos de dados, ele é a base para expressar **junções**, pois nos permite verificar a existência de uma tupla correspondente em outra tabela que satisfaça uma condição.
+- O **Quantificador Universal (∀)** é usado para verificar uma condição "para todos". É a base para expressar consultas de **divisão**, que buscam tuplas que se relacionam com todo um conjunto de outras tuplas.
+
+### Exemplos de Consultas em CRT com Dados Reais
+
+Para tornar as consultas em CRT mais tangíveis, vamos definir um conjunto de tabelas e dados que utilizaremos em nossos exemplos.
+
+**Tabela EMPREGADO**
+
+| NSS | NOME | SOBRENOME | SALARIO | DATANASCIMENTO | ENDERECO | NUD |
+| --- | --- | --- | --- | --- | --- | --- |
+| 111 | Ana | Souza | 8000 | 1985-03-10 | Rua A, 1 | 10 |
+| 222 | Bruno| Costa | 3200 | 1990-07-22 | Rua B, 2 | 20 |
+| 333 | Carlos| Lima | 4500 | 1988-11-05 | Rua C, 3 | 10 |
+| 444 | Diana| Silva | 2800 | 1995-01-30 | Rua D, 4 | 20 |
+
+**Tabela DEPARTAMENTO**
+
+| NUMERODEP | NOMED | NSSGER |
+| --- | --- | --- |
+| 10 | Informática | 111 |
+| 20 | Marketing | 555 |
+
+**Tabela PROJETO**
+
+| NUMEROP | LOCALIZACAO | NUMD |
+| --- | --- | --- |
+| 101 | São Paulo | 10 |
+| 102 | Rio de Janeiro| 10 |
+| 103 | São Paulo | 20 |
+
+Agora, vamos reanalisar as expressões de CRT, aplicando-as a estas tabelas e observando o resultado.
+
+**Exemplo 1: Seleção Simples**
+
+- **Objetivo:** Encontrar todas as informações dos empregados cujo salário é maior que R$ 3.500.
+- **Expressão CRT:** `{ t | EMPREGADO(t) ∧ t.SALARIO > 3500 }`
+- **Análise Lógica:** A consulta busca por todas as tuplas `t` que pertencem à relação `EMPREGADO` e que, adicionalmente (`∧`), satisfazem a condição de que o valor de seu atributo `SALARIO` seja maior que 3500.
+    1. A variável `t` assume a primeira linha (Ana). `t.SALARIO` é 8000. `8000 > 3500` é verdadeiro. A tupla é incluída.
+    2. A variável `t` assume a segunda linha (Bruno). `t.SALARIO` é 3200. `3200 > 3500` é falso. A tupla é descartada.
+    3. A variável `t` assume a terceira linha (Carlos). `t.SALARIO` é 4500. `4500 > 3500` é verdadeiro. A tupla é incluída.
+    4. A variável `t` assume a quarta linha (Diana). `t.SALARIO` é 2800. `2800 > 3500` é falso. A tupla é descartada.
+
+- **Resultado:**
+
+| NSS | NOME | SOBRENOME | SALARIO | DATANASCIMENTO | ENDERECO | NUD |
+| --- | --- | --- | --- | --- | --- | --- |
+| 111 | Ana | Souza | 8000 | 1985-03-10 | Rua A, 1 | 10 |
+| 333 | Carlos| Lima | 4500 | 1988-11-05 | Rua C, 3 | 10 |
+
+**Exemplo 2: Consulta com Junção (Quantificador Existencial)**
+
+- **Objetivo:** Listar o nome, sobrenome e endereço de todos os empregados que trabalham no departamento de "Informática".
+- **Expressão CRT:** `{ t.NOME, t.SOBRENOME, t.ENDERECO | EMPREGADO(t) ∧ (∃ d) (DEPARTAMENTO(d) ∧ d.NOMED = 'Informática' ∧ d.NUMERODEP = t.NUD) }`
+- **Análise Lógica:** A consulta busca pelos atributos `NOME`, `SOBRENOME` e `ENDERECO` de cada tupla `t` da tabela `EMPREGADO`, mas apenas se a condição após o `∧` for verdadeira. A condição `(∃ d) (...)` exige que **exista pelo menos uma** tupla `d` na tabela `DEPARTAMENTO` que se relacione com a tupla `t` do empregado e que seja do departamento de 'Informática'.
+    1. **Para `t` = Ana (NUD=10):** Existe uma tupla `d` em `DEPARTAMENTO` onde `d.NUMERODEP` é 10? Sim, a primeira linha. Para essa linha, `d.NOMED` é 'Informática'? Sim. A condição é satisfeita. Os dados de Ana são incluídos.
+    2. **Para `t` = Bruno (NUD=20):** Existe uma tupla `d` em `DEPARTAMENTO` onde `d.NUMERODEP` é 20? Sim, a segunda linha. Para essa linha, `d.NOMED` é 'Informática'? Não, é 'Marketing'. A condição falha. Os dados de Bruno são descartados.
+    3. **Para `t` = Carlos (NUD=10):** A mesma lógica de Ana se aplica. A condição é satisfeita. Os dados de Carlos são incluídos.
+    4. **Para `t` = Diana (NUD=20):** A mesma lógica de Bruno se aplica. A condição falha. Os dados de Diana são descartados.
+
+- **Resultado:**
+
+| NOME | SOBRENOME | ENDERECO |
+| --- | --- | --- |
+| Ana | Souza | Rua A, 1 |
+| Carlos| Lima | Rua C, 3 |
+
+**Exemplo 3: Consulta com Múltiplas Junções**
+
+- **Objetivo:** Para cada projeto localizado em ‘São Paulo’, listar o número do projeto, o número de seu departamento, e o sobrenome, a data de nascimento e o endereço do gerente daquele departamento.
+- **Expressão CRT:** `{ p.NUMEROP, p.NUMD, m.SOBRENOME, m.DATANASCIMENTO, m.ENDERECO | PROJETO(p) ∧ EMPREGADO(m) ∧ p.LOCALIZACAO = 'São Paulo' ∧ ((∃ d) (DEPARTAMENTO(d) ∧ p.NUMD = d.NUMERODEP ∧ d.NSSGER = m.NSS)) }`
+- **Análise Lógica:** Esta consulta é mais complexa. Ela busca uma combinação de atributos de uma tupla `p` (de `PROJETO`) e uma tupla `m` (de `EMPREGADO`).
+    1. A consulta começa filtrando as tuplas `p` de `PROJETO` onde `p.LOCALIZACAO = 'São Paulo'`. As tuplas que satisfazem são as com `NUMEROP` 101 e 103.
+    2. Para cada uma dessas tuplas de projeto, a consulta verifica a condição existencial `(∃ d) (...)`.
+    3. **Para `p` = Projeto 101 (NUMD=10):** Existe uma tupla `d` em `DEPARTAMENTO` onde `d.NUMERODEP = 10`? Sim, a primeira (`Informática`, `NSSGER=111`). Agora, a consulta procura uma tupla `m` em `EMPREGADO` onde `m.NSS = 111`. Existe? Sim, a tupla de Ana Souza. A condição inteira é satisfeita para a combinação da tupla do Projeto 101 e da tupla da Empregada Ana. Uma linha é adicionada ao resultado.
+    4. **Para `p` = Projeto 103 (NUMD=20):** Existe uma tupla `d` em `DEPARTAMENTO` onde `d.NUMERODEP = 20`? Sim, a segunda (`Marketing`, `NSSGER=555`). Agora, a consulta procura uma tupla `m` em `EMPREGADO` onde `m.NSS = 555`. Existe? Não, não há nenhum empregado com esse NSS em nossa tabela. A condição falha. Nenhuma linha é adicionada ao resultado para o Projeto 103.
+
+- **Resultado:**
+
+| NUMEROP | NUMD | SOBRENOME | DATANASCIMENTO | ENDERECO |
+| ------- | ---- | --------- | -------------- | -------- |
+| 101     | 10   | Souza     | 1985-03-10     | Rua A, 1 |
 
