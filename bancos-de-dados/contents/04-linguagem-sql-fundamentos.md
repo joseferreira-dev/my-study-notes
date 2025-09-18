@@ -1,4 +1,4 @@
-# Capítulo 4 – Linguagem SQL
+# Capítulo 4 – Linguagem SQL: Fundamentos
 
 Nos capítulos anteriores, construímos uma base teórica sólida, explorando desde a modelagem conceitual até a lógica matemática da Álgebra Relacional. Agora, é hora de traduzir essa teoria em prática. A **SQL (Structured Query Language)**, ou Linguagem de Consulta Estruturada, é a ponte que conecta nossas intenções com os dados armazenados no banco.
 
