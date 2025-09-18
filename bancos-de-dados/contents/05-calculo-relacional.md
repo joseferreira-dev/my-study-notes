@@ -183,3 +183,121 @@ Agora, vamos reanalisar as expressões de CRT, aplicando-as a estas tabelas e ob
 | ------- | ---- | --------- | -------------- | -------- |
 | 101     | 10   | Souza     | 1985-03-10     | Rua A, 1 |
 
+## Cálculo Relacional de Domínio (CRD)
+
+O **Cálculo Relacional de Domínio (CRD)** é a outra grande formalização do cálculo relacional. Assim como o CRT, é uma linguagem de consulta declarativa e não-procedural. A diferença fundamental entre eles reside no tipo de variável que utilizam: enquanto o CRT usa variáveis que representam tuplas inteiras, o CRD utiliza **variáveis de domínio**, que representam **valores individuais** de um atributo.
+
+Em uma consulta CRD, em vez de buscar por "linhas que satisfazem uma condição", nós buscamos por "combinações de valores que satisfazem uma condição". O resultado da consulta é um conjunto de valores (ou combinações de valores) que atendem aos predicados lógicos definidos.
+
+A sintaxe geral de uma consulta CRD é:
+
+`{ <v1, v2, ..., vn> | P(v1, v2, ..., vn) }`
+
+Onde:
+
+- **`<v1, v2, ..., vn>`** é uma lista de variáveis de domínio. É a cláusula de alvo, que define quais valores aparecerão no resultado.
+- **`P(v1, v2, ..., vn)`** é o predicado, uma fórmula que descreve as condições que os valores das variáveis devem satisfazer.
+
+### Exemplo Introdutório de CRD
+
+Vamos usar uma tabela `ALUNOS` para ilustrar o funcionamento do CRD.
+
+**Tabela ALUNOS**
+
+| matricula | nome | idade |
+| --- | --- | --- |
+| 101 | João | 20 |
+| 102 | Maria | 22 |
+| 103 | Pedro | 19 |
+| 104 | Ana | 21 |
+
+**Objetivo:** Recuperar o nome dos alunos com 20 anos ou mais.
+
+**Expressão CRD:** `{ <N> | (∃ M, I) (ALUNOS(M, N, I) ∧ I ≥ 20) }`
+
+Vamos dissecar esta expressão:
+
+- **`{ <N> | ... }`**: A cláusula de alvo. Queremos retornar apenas os valores da variável de domínio `N`.
+- **`(∃ M, I)`**: O quantificador existencial. Afirma que **existem** variáveis `M` e `I`. Elas são necessárias para compor a tupla completa da relação `ALUNOS`, mesmo que não apareçam no resultado final.
+- **`ALUNOS(M, N, I)`**: Este é o predicado de pertencimento. Ele afirma que deve existir uma tupla na relação `ALUNOS` onde os valores dos atributos correspondam às variáveis `M`, `N` e `I`. É aqui que as variáveis são "ligadas" às colunas da tabela. **A ordem é crucial**: `M` é associado à primeira coluna (`matricula`), `N` à segunda (`nome`), e `I` à terceira (`idade`).
+- **`∧ I ≥ 20`**: A condição de filtragem. Ela restringe o resultado, exigindo que o valor da variável `I` (idade) seja maior ou igual a 20.
+
+A expressão completa é lida como: "Retorne o conjunto de todos os valores de `N` para os quais existem valores `M` e `I` tal que existe uma tupla `(M, N, I)` na relação `ALUNOS` E o valor de `I` é maior ou igual a 20".
+
+O resultado seria:
+
+| nome |
+| --- |
+| João |
+| Maria |
+| Ana |
+
+É uma boa prática usar iniciais que correspondam aos nomes dos atributos para facilitar a leitura (como N para nome, I para idade), mas qualquer letra poderia ser usada, desde que a associação posicional em `ALUNOS(M, N, I)` seja mantida.
+
+#### Exemplos Avançados de CRD
+
+Para consultas mais complexas, vamos usar duas novas tabelas.
+
+**Tabela PRODUTOS**
+
+| ID_PRODUTO | NOME | PRECO |
+| --- | --- | --- |
+| 1 | Televisão | 2000 |
+| 2 | Geladeira | 3000 |
+| 3 | Microondas | 500 |
+| 4 | Máquina de Lavar | 2500 |
+
+**Tabela VENDEDORES**
+
+| ID_VENDEDOR| NOME | ID_PRODUTO |
+| --- | --- | --- |
+| 101 | Carlos | 1 |
+| 102 | Fernanda | 2 |
+| 103 | João | 3 |
+| 104 | Maria | 4 |
+
+**Exemplo 1: Junção e Filtragem**
+
+- **Objetivo:** Obter o nome do produto e o nome do vendedor para todos os produtos com preço superior a R$ 1.000.
+- **Expressão CRD:** `{ <Np, Nv> | (∃ P, Pr, V) (PRODUTOS(P, Np, Pr) ∧ VENDEDORES(V, Nv, P) ∧ Pr > 1000) }`
+- **Análise:**
+    - `{ <Np, Nv> }`: O alvo do resultado são os valores das variáveis `Np` (nome do produto) e `Nv` (nome do vendedor).
+    - `(∃ P, Pr, V)`: Declara a existência das variáveis `P` (ID do produto), `Pr` (preço) e `V` (ID do vendedor).
+    - `PRODUTOS(P, Np, Pr)`: Associa as variáveis a uma tupla na tabela `PRODUTOS`.
+    - `∧ VENDEDORES(V, Nv, P)`: Associa as variáveis a uma tupla na tabela `VENDEDORES`. A variável `P` é usada em ambos os predicados, criando a condição de junção implícita (`PRODUTOS.ID_PRODUTO = VENDEDORES.ID_PRODUTO`).
+    - `∧ Pr > 1000`: Filtra o resultado, mantendo apenas as combinações onde o preço (`Pr`) é maior que 1000.
+
+- **Resultado:**
+
+| NOME_PRODUTO | NOME_VENDEDOR |
+| --- | --- |
+| Televisão | Carlos |
+| Geladeira | Fernanda |
+| Máquina de Lavar | Maria |
+
+**Exemplo 2: Junção e Filtro de Texto**
+
+- **Objetivo:** Obter o nome dos produtos que são vendidos por um vendedor cujo nome começa com a letra "C".
+- **Expressão CRD:** `{ <Np> | (∃ P, Pr, V, Nv) (PRODUTOS(P, Np, Pr) ∧ VENDEDORES(V, Nv, P) ∧ Nv LIKE 'C%') }`
+- **Análise:**
+    - `{ <Np> }`: O alvo do resultado é apenas o nome do produto.
+    - A junção entre `PRODUTOS` e `VENDEDORES` é estabelecida da mesma forma que no exemplo anterior.
+    - `∧ Nv LIKE 'C%'`: A condição de filtragem utiliza o operador `LIKE` sobre a variável `Nv` (nome do vendedor) para selecionar apenas aqueles que começam com "C". Apenas o vendedor "Carlos" satisfaz essa condição. Ele vende o produto de ID 1, que é a "Televisão".
+
+- **Resultado:**
+
+| NOME_PRODUTO |
+| --- |
+| Televisão |
+
+## Considerações Finais
+
+Neste capítulo, exploramos a outra grande base teórica das linguagens de consulta para bancos de dados relacionais: o **Cálculo Relacional**. Em contraste direto com a Álgebra Relacional, que possui uma natureza procedural e nos guia através do "como" obter um resultado, o Cálculo Relacional nos introduziu à filosofia **declarativa**, focada em especificar "o que" desejamos como resultado.
+
+Aprofundamos nas duas principais vertentes deste formalismo. Primeiramente, o **Cálculo Relacional de Tuplas (CRT)**, onde aprendemos a construir consultas utilizando variáveis que representam tuplas inteiras, descrevendo as propriedades das linhas que buscamos. Em seguida, exploramos o **Cálculo Relacional de Domínio (CRD)**, que adota uma abordagem mais granular, utilizando variáveis que representam valores individuais dos atributos para definir as combinações que devem compor o resultado.
+
+Ao analisar os exemplos, vimos como conceitos da lógica de predicados, como os quantificadores existencial (∃) e universal (∀), são utilizados para expressar operações complexas como junções e divisões de uma forma puramente descritiva.
+
+A principal lição deste capítulo é a compreensão da dualidade entre as abordagens procedural e declarativa. Ambas as linguagens formais, Álgebra e Cálculo Relacional, são equivalentes em seu poder de expressão — o que pode ser feito em uma, pode ser feito na outra. No entanto, é a filosofia declarativa do Cálculo Relacional que serve como a inspiração direta para a sintaxe e a usabilidade da linguagem SQL, onde descrevemos o resultado que queremos, deixando para o SGBD a tarefa de determinar os passos para alcançá-lo.
+
+Com o estudo da Álgebra e do Cálculo Relacional concluído, temos agora a visão teórica completa que fundamenta as operações de consulta. Estamos prontos para avançar e aplicar este conhecimento para dominar as nuances e as capacidades avançadas da linguagem SQL na prática.
