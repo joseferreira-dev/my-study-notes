@@ -158,3 +158,88 @@ WHERE (Categoria = 'Notebook' OR Categoria = 'Tablet') AND Preco > 1000;
 ```
 
 Agora, o SGBD primeiro encontra todos os produtos que são `'Notebook'` ou `'Tablet'` e, somente sobre esse resultado, aplica o filtro de preço, garantindo o resultado correto.
+
+### Operadores de Comparação
+
+Os operadores de comparação são os elementos centrais de qualquer condição de filtragem, sendo utilizados primariamente na cláusula `WHERE`. A função deles é comparar dois valores — que podem ser o valor de uma coluna e um valor literal, ou os valores de duas colunas — e retornar um resultado booleano (Verdadeiro ou Falso) para cada linha. Apenas as linhas para as quais a expressão resulta em Verdadeiro são incluídas no resultado da consulta.
+
+Os principais operadores de comparação, que seguem a lógica matemática padrão, são:
+
+|Símbolo|Comparação|Exemplo de Uso|
+|---|---|---|
+|**=**|Igual a|`WHERE Cidade = 'São Paulo'`|
+|**`<>`** ou **`!=`**|Diferente de|`WHERE Status <> 'Finalizado'`|
+|**>**|Maior que|`WHERE Preco > 100.00`|
+|**>=**|Maior ou igual a|`WHERE Estoque >= 10`|
+|**<**|Menor que|`WHERE Idade < 18`|
+|**<=**|Menor ou igual a|`WHERE Desconto <= 0.15`|
+
+Outros operadores de comparação importantes, como `LIKE`, `IN` e `BETWEEN`, possuem um funcionamento mais específico e serão abordados em seções dedicadas a eles.
+
+#### Tratamento de Valores Nulos
+
+Um ponto de atenção fundamental, e que é uma fonte comum de erros, é a comparação de valores com `NULL`. Como já vimos, `NULL` representa a ausência de valor, o "desconhecido". Por essa razão, ele não se comporta como os outros valores.
+
+Uma comparação de igualdade como `= NULL` **nunca** resultará em Verdadeiro. A lógica é que não se pode afirmar que um valor desconhecido é "igual" a outro valor desconhecido. A expressão `NULL = NULL` resulta em `UNKNOWN` (Desconhecido), e a cláusula `WHERE` descarta linhas que resultam em `UNKNOWN`.
+
+Para lidar corretamente com valores nulos, o SQL fornece operadores específicos:
+
+- **`IS NULL`**: Retorna verdadeiro se o valor da coluna for nulo.
+- **`IS NOT NULL`**: Retorna verdadeiro se o valor da coluna não for nulo.
+
+**Exemplo Prático:** Para encontrar todos os clientes que ainda não cadastraram um email:
+
+```sql
+-- Forma CORRETA
+SELECT Nome FROM Clientes WHERE Email IS NULL;
+
+-- Forma INCORRETA (não retornará nenhuma linha)
+-- SELECT Nome FROM Clientes WHERE Email = NULL;
+```
+
+### Funções de Agregação
+
+As **funções de agregação** são um tipo especial de função que opera sobre um conjunto de linhas e retorna um **único valor de resumo** para aquele conjunto. Elas são a base para a criação de relatórios, painéis de controle (_dashboards_) e qualquer tipo de análise estatística sobre os dados.
+
+Estas funções são quase sempre utilizadas em conjunto com a cláusula `GROUP BY`, que veremos mais adiante, para calcular resumos para diferentes categorias de dados.
+
+|Função|Descrição|Sintaxe de Exemplo|
+|---|---|---|
+|**`SUM()`**|Soma todos os valores de uma coluna numérica.|`SUM(ValorTotal)`|
+|**`AVG()`**|Calcula a média aritmética dos valores de uma coluna numérica.|`AVG(Preco)`|
+|**`MAX()`**|Retorna o maior valor encontrado em uma coluna.|`MAX(Salario)`|
+|**`MIN()`**|Retorna o menor valor encontrado em uma coluna.|`MIN(DataPedido)`|
+|**`COUNT()`**|Conta o número de linhas em um conjunto.|`COUNT(*)`|
+|**`VAR()`**|Calcula a variância estatística de um conjunto de valores.|`VAR(Nota)`|
+
+**Exemplos Práticos:**
+
+Utilizando uma tabela hipotética de Vendas:
+
+- Para calcular o faturamento total: `SELECT SUM(Valor) FROM Vendas;`
+- Para encontrar a venda mais cara: `SELECT MAX(Valor) FROM Vendas;`
+
+#### As Variações do `COUNT()`
+
+A função `COUNT()` é particularmente versátil e possui três formas principais de uso:
+
+- **`COUNT(*)`**: Conta o **número total de linhas** no conjunto de resultados, sem exceção.
+- **`COUNT(nome_da_coluna)`**: Conta o número de linhas onde a coluna especificada (`nome_da_coluna`) **não possui um valor nulo (`NULL`)**.
+- **`COUNT(DISTINCT nome_da_coluna)`**: Conta o número de **valores distintos (únicos)** e não nulos na coluna especificada.
+
+#### A Diretiva `DISTINCT`
+
+A palavra-chave **`DISTINCT`** pode ser usada dentro de funções de agregação (e também diretamente na cláusula `SELECT`) para instruir o SGBD a **eliminar valores duplicados antes** de realizar a operação.
+
+**Exemplo Prático:**
+
+Imagine que queremos saber quantos clientes únicos realizaram compras em determinado período, e não o número total de vendas (pois um mesmo cliente pode ter comprado várias vezes).
+
+```sql
+SELECT COUNT(DISTINCT ID_Cliente) AS TotalClientesUnicos
+FROM Vendas
+WHERE DataVenda >= '2025-01-01';
+```
+
+Neste caso, o `DISTINCT` garante que cada ID de cliente seja contado apenas uma vez, fornecendo o resultado correto.
+
