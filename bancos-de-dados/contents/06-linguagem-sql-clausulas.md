@@ -1252,3 +1252,88 @@ WHERE NOT EXISTS (
 
 Em muitos SGBDs, `EXISTS` e `NOT EXISTS` são mais performáticos que `IN` e `NOT IN`, especialmente quando a subconsulta retorna um grande volume de dados, pois o `EXISTS` pode parar a execução da subconsulta assim que a primeira correspondência é encontrada.
 
+## Cláusulas Especiais
+
+As cláusulas que veremos a seguir possuem particularidades que as distinguem das cláusulas de filtragem, agrupamento ou subconsulta. Elas nos permitem introduzir lógica condicional diretamente em nossas consultas e lidar com as nuances de ordenação de textos em diferentes idiomas. Embora sua incidência em avaliações seja moderada, dominá-las adiciona uma camada de sofisticação e flexibilidade à sua habilidade com SQL.
+
+### CASE: Lógica Condicional Dentro de uma Consulta
+
+O comando **`CASE`** é uma das expressões mais flexíveis da linguagem SQL. Ele funciona como uma estrutura condicional, muito semelhante a uma cadeia `IF...THEN...ELSE` em outras linguagens de programação. Sua principal finalidade é permitir a criação de uma nova coluna "virtual" no resultado da consulta, cujo valor é determinado com base em um conjunto de condições aplicadas a outras colunas.
+
+Com o `CASE`, podemos traduzir, categorizar, rotular ou transformar dados diretamente na consulta, sem a necessidade de processamento posterior na camada de aplicação.
+
+A sintaxe geral da expressão `CASE` é:
+
+```sql
+CASE
+    WHEN condicao1 THEN resultado1
+    WHEN condicao2 THEN resultado2
+    ...
+    WHEN condicaoN THEN resultadoN
+    ELSE resultado_padrao
+END AS nome_da_nova_coluna
+```
+
+- **`WHEN <condicao>`**: Define uma condição a ser avaliada (ex: `TEMPERATURA > 30`).
+- **`THEN <resultado>`**: Especifica o valor que a nova coluna receberá se a condição `WHEN` correspondente for verdadeira.
+- **`ELSE <resultado_padrao>`**: É uma cláusula opcional que define um valor padrão a ser retornado caso **nenhuma** das condições `WHEN` anteriores seja satisfeita.
+- **`END`**: Marca o fim da expressão `CASE`.
+- **`AS <nome_da_nova_coluna>`**: Atribui um nome (alias) à nova coluna gerada pela expressão.
+
+O SGBD avalia as condições `WHEN` na ordem em que são escritas. Assim que a primeira condição verdadeira é encontrada para uma linha, ele retorna o `THEN` correspondente e para de avaliar as demais condições para aquela linha.
+
+#### Exemplo Prático
+
+Vamos aplicar a expressão `CASE` para categorizar dados de medições de temperatura.
+
+**Tabela `MEDICOES`:**
+
+|DIA|TEMPERATURA|
+|---|---|
+|2024-03-04|32|
+|2024-04-04|33|
+|2024-05-04|25|
+|2024-06-04|14|
+|2024-07-04|12|
+|2024-08-04|18|
+|2024-09-04|22|
+|2024-10-04|25|
+
+**Objetivo:** Criar uma nova coluna chamada `SENSACAO` que categorize a temperatura de acordo com as seguintes regras:
+
+- Acima de 30: 'QUENTE'
+- Entre 15 (inclusive) e 30 (inclusive): 'AGRADÁVEL'
+- Abaixo de 15: 'FRIO'
+
+**Consulta:**
+
+```sql
+SELECT
+    TEMPERATURA,
+    CASE
+        WHEN TEMPERATURA > 30 THEN 'QUENTE'
+        WHEN TEMPERATURA >= 15 THEN 'AGRADÁVEL' -- Não precisa de "AND <= 30"
+        ELSE 'FRIO'
+    END AS SENSACAO
+FROM MEDICOES;
+```
+
+**Análise do Processo (linha por linha):**
+
+- **Linha 1 (TEMPERATURA = 32):** A primeira condição `WHEN TEMPERATURA > 30` é **verdadeira**. A `SENSACAO` será 'QUENTE'. O SGBD para de avaliar as outras condições para esta linha.
+- **Linha 3 (TEMPERATURA = 25):** A primeira condição `> 30` é falsa. O SGBD vai para a próxima: `WHEN TEMPERATURA >= 15`. Esta condição é **verdadeira**. A `SENSACAO` será 'AGRADÁVEL'. Note que não foi preciso escrever `BETWEEN 15 AND 30`, pois a ordem de avaliação garante que qualquer valor que chegue a esta segunda condição já é, por definição, menor ou igual a 30.
+- **Linha 4 (TEMPERATURA = 14):** A primeira condição `> 30` é falsa. A segunda condição `>= 15` também é falsa. Como nenhuma condição `WHEN` foi satisfeita, o SGBD utiliza a cláusula `ELSE`. A `SENSACAO` será 'FRIO'.
+
+**Resultado Final:**
+
+| TEMPERATURA | SENSACAO |
+| --- | --- |
+| 32 | QUENTE |
+| 33 | QUENTE |
+| 25 | AGRADÁVEL |
+| 14 | FRIO |
+| 12 | FRIO |
+| 18 | AGRADÁVEL |
+| 22 | AGRADÁVEL |
+| 25 | AGRADÁVEL |
+
