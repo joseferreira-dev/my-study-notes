@@ -608,3 +608,69 @@ SELECT Nome FROM Clientes WHERE Nome LIKE '[^AEIOU]%';
 
 O `^` dentro dos colchetes nega o conjunto.
 
+## Cláusulas de Agrupamento e Ordenação
+
+Após filtrarmos os dados com a cláusula `WHERE`, muitas vezes precisamos realizar um passo adicional de organização sobre o conjunto de resultados. As **cláusulas de agrupamento e ordenação** nos permitem, respectivamente, agrupar linhas semelhantes para realizar cálculos de resumo e ordenar as linhas do resultado final de acordo com um critério específico. Nesta seção, exploraremos as três cláusulas centrais para essas tarefas: `GROUP BY`, `HAVING` e `ORDER BY`.
+
+### GROUP BY: Agrupando Dados para Análise
+
+A cláusula **`GROUP BY`** é uma das ferramentas mais poderosas para a análise de dados em SQL. Sua função é agrupar linhas que têm o mesmo valor em uma ou mais colunas, formando "pacotes" ou "baldes" de dados. Após a criação desses grupos, podemos aplicar **funções de agregação** (`COUNT`, `SUM`, `AVG`, `MAX`, `MIN`) a cada um deles para calcular um valor de resumo.
+
+O `GROUP BY` transforma uma lista de registros detalhados em uma tabela de sumários, permitindo responder a perguntas como "Qual o faturamento total por dia?" ou "Quantos clientes temos em cada cidade?".
+
+#### O Verdadeiro Propósito do `GROUP BY`
+
+É fundamental entender o propósito correto do `GROUP BY`. Seu objetivo **não é** simplesmente remover duplicatas ou selecionar uma linha aleatória de um grupo. Seu propósito é **sempre** atuar em conjunto com funções de agregação para calcular um resultado de resumo para o grupo inteiro.
+
+Uma regra de ouro da sintaxe do `GROUP BY` é: qualquer coluna que apareça na cláusula `SELECT` deve, obrigatoriamente, ser ou (1) uma das colunas listadas na cláusula `GROUP BY` ou (2) estar dentro de uma função de agregação. Utilizar `SELECT *` com `GROUP BY` é uma sintaxe inválida no padrão SQL e, nos SGBDs que a permitem por razões históricas, produz resultados inconsistentes e imprevisíveis.
+
+#### Como o `GROUP BY` Funciona
+
+O processo lógico é o seguinte:
+
+1. O SGBD seleciona as linhas com base nas cláusulas `FROM` e `WHERE`.
+2. Ele organiza essas linhas em grupos, onde cada grupo contém as linhas que compartilham o mesmo valor na(s) coluna(s) especificadas no `GROUP BY`.
+3. Ele aplica as funções de agregação da cláusula `SELECT` a cada grupo, calculando um valor único para cada um.
+4. O resultado final é uma única linha para cada grupo.
+
+**Exemplo Prático:** Vamos usar nossa tabela `PRODUTOS` para responder à pergunta: "Quantos produtos diferentes temos para cada nível de estoque?".
+
+**Tabela `PRODUTOS` Original:**
+
+|ID|NOME|PRECO|ESTOQUE|
+|---|---|---|---|
+|1|Notebook|2500|15|
+|2|Smartphone|1200|20|
+|3|Tablet|800|15|
+|4|Monitor|500|30|
+|5|Impressora|300|25|
+
+**Consulta com `GROUP BY`:**
+
+```sql
+SELECT
+    ESTOQUE,
+    COUNT(ID) AS Quantidade_de_Produtos
+FROM PRODUTOS
+GROUP BY ESTOQUE;
+```
+
+**Análise do Processo:**
+
+1. O SGBD "olha" para a coluna `ESTOQUE` e cria grupos para cada valor único que encontra: um grupo para o valor `15`, um para `20`, um para `30` e um para `25`.
+2. O grupo `15` contém as linhas do "Notebook" e do "Tablet".
+3. Os outros grupos (`20`, `30`, `25`) contêm apenas uma linha cada.
+4. A função de agregação `COUNT(ID)` é aplicada a cada grupo, contando quantas linhas (ou IDs de produto) existem em cada um.
+5. O resultado final é uma tabela de resumo com uma linha por grupo:
+
+**Resultado:**
+
+|ESTOQUE|Quantidade_de_Produtos|
+|---|---|
+|15|2|
+|20|1|
+|25|1|
+|30|1|
+
+Este resultado nos mostra claramente que temos 2 produtos com 15 unidades em estoque, e 1 produto para cada um dos outros níveis de estoque, uma análise que seria impossível sem o `GROUP BY`.
+
