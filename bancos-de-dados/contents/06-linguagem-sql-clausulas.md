@@ -908,3 +908,91 @@ WHERE ID NOT IN (SELECT DISTINCT ID_PRODUTO FROM VENDAS);
 
 **Análise:** A subconsulta `SELECT DISTINCT ID_PRODUTO FROM VENDAS` primeiro cria uma lista de todos os IDs de produtos que _foram_ vendidos. A consulta externa então seleciona da tabela `PRODUTOS` apenas aqueles cujo `ID` **não está** nessa lista. O resultado seria o produto "Impressora".
 
+### BETWEEN: Verificando Faixas de Valores
+
+O operador **`BETWEEN`** é utilizado na cláusula `WHERE` para verificar se o valor de uma coluna está dentro de uma faixa de valores especificada. Ele funciona como um atalho conveniente e legível para uma condição de "maior ou igual a" (`>=`) combinada com uma de "menor ou igual a" (`<=`).
+
+A principal característica do `BETWEEN` é que o intervalo que ele define é **inclusivo**, ou seja, os valores do limite inferior e do limite superior **estão incluídos** na verificação.
+
+A expressão:
+
+```sql
+WHERE coluna BETWEEN valor1 AND valor2;
+```
+
+É funcionalmente idêntica a:
+
+```sql
+WHERE coluna >= valor1 AND coluna <= valor2;
+```
+
+O `BETWEEN` não se limita a números. Ele pode ser utilizado com qualquer tipo de dado que possua uma ordem lógica, como datas e textos (seguindo a ordem alfabética).
+
+#### Exemplo Prático
+
+Vamos utilizar nossa tabela `VENDAS` para ilustrar o funcionamento do operador.
+
+**Tabela `VENDAS` de Exemplo:**
+
+|ID|ID_PRODUTO (FK)|DATA|QUANTIDADE|VALOR_TOTAL|
+|---|---|---|---|---|
+|1|1|2024-03-09|2|5000|
+|2|2|2024-03-10|3|3600|
+|3|4|2024-03-10|1|500|
+|4|3|2024-03-11|2|1600|
+|5|2|2024-03-11|1|300|
+
+**Objetivo:** Selecionar todas as vendas cujo `VALOR_TOTAL` esteja entre R$ 500 e R$ 4.000 (inclusive).
+
+**Consulta:**
+
+```sql
+SELECT *
+FROM VENDAS
+WHERE VALOR_TOTAL BETWEEN 500 AND 4000;
+```
+
+Análise do Processo:
+
+O SGBD avaliará a condição BETWEEN 500 AND 4000 para cada linha da tabela:
+
+- **Linha 1 (VALOR_TOTAL = 5000):** 5000 não está no intervalo. **Descartada**.
+- **Linha 2 (VALOR_TOTAL = 3600):** 3600 está no intervalo. **Incluída**.
+- **Linha 3 (VALOR_TOTAL = 500):** 500 está no intervalo (pois o limite inferior é inclusivo). **Incluída**.
+- **Linha 4 (VALOR_TOTAL = 1600):** 1600 está no intervalo. **Incluída**.
+- **Linha 5 (VALOR_TOTAL = 300):** 300 não está no intervalo. **Descartada**.
+
+**Resultado Final:**
+
+|ID|ID_PRODUTO (FK)|DATA|QUANTIDADE|VALOR_TOTAL|
+|---|---|---|---|---|
+|2|2|2024-03-10|3|3600|
+|3|4|2024-03-10|1|500|
+|4|3|2024-03-11|2|1600|
+
+#### A Negação com `NOT BETWEEN`
+
+Assim como outros operadores, o `BETWEEN` possui sua forma de negação: **`NOT BETWEEN`**. Ele é utilizado para selecionar linhas cujos valores estão **fora** do intervalo especificado.
+
+A expressão:
+
+```sql
+WHERE coluna NOT BETWEEN valor1 AND valor2;
+```
+
+É funcionalmente idêntica a:
+
+```sql
+WHERE coluna < valor1 OR coluna > valor2;
+```
+
+**Exemplo Prático:** Selecionar as vendas cujo `VALOR_TOTAL` está **fora** da faixa de R$ 500 a R$ 4.000.
+
+```sql
+SELECT *
+FROM VENDAS
+WHERE VALOR_TOTAL NOT BETWEEN 500 AND 4000;
+```
+
+Esta consulta retornaria as vendas com `VALOR_TOTAL` de 5000 e 300.
+
