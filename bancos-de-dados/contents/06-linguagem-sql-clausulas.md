@@ -674,3 +674,78 @@ GROUP BY ESTOQUE;
 
 Este resultado nos mostra claramente que temos 2 produtos com 15 unidades em estoque, e 1 produto para cada um dos outros níveis de estoque, uma análise que seria impossível sem o `GROUP BY`.
 
+### ORDER BY: Ordenando o Resultado Final
+
+Até agora, nossas consultas retornaram os dados em uma ordem que, como já estabelecemos, não é garantida pelo SGBD. Para apresentar os resultados de uma forma significativa e legível — seja em ordem alfabética, do mais recente para o mais antigo, ou do mais barato para o mais caro — utilizamos a cláusula **`ORDER BY`**.
+
+A função da cláusula `ORDER BY` é **ordenar as linhas do conjunto de resultados final** com base nos valores de uma ou mais colunas. Ela é, na ordem de execução lógica de uma consulta `SELECT`, uma das últimas cláusulas a serem aplicadas, atuando sobre o conjunto de dados já filtrado e agrupado.
+
+A sintaxe padrão da cláusula é:
+
+```sql
+SELECT <colunas>
+FROM <tabela>
+[WHERE ...]
+ORDER BY <coluna_ou_expressao> [ASC | DESC];
+```
+
+#### Modos de Ordenação: `ASC` e `DESC`
+
+Podemos especificar a direção da ordenação usando duas palavras-chave:
+
+- **`ASC` (Ascending):** Ordena os resultados em **modo crescente**. Para números, isso significa do menor para o maior (0-9). Para textos, em ordem alfabética (A-Z). Para datas, da mais antiga para a mais recente. **Este é o modo padrão**. Se nenhuma direção for especificada, o SGBD aplicará a ordenação `ASC`.
+- **`DESC` (Descending):** Ordena os resultados em **modo decrescente**, o inverso do `ASC` (9-0, Z-A, do mais recente para o mais antigo).
+
+#### Referenciando a Coluna de Ordenação
+
+Existem duas maneiras de especificar por qual coluna a ordenação deve ser feita:
+
+1. **Pelo Nome da Coluna:** A forma mais clara e recomendada. Ex: `ORDER BY PRECO`.
+2. **Pela Posição da Coluna:** Podemos usar um número que corresponda à posição da coluna na lista do `SELECT`. `ORDER BY 1` ordena pela primeira coluna selecionada, `ORDER BY 2` pela segunda, e assim por diante. Embora seja uma sintaxe válida, ela é menos legível e mais propensa a erros, pois se a ordem das colunas no `SELECT` for alterada, a ordenação também mudará de forma inesperada.
+
+#### Exemplo Prático
+
+Vamos ordenar nossa tabela `PRODUTOS` pela coluna `PRECO`, do valor mais baixo para o mais alto.
+
+**Consulta:**
+
+```sql
+SELECT ID, NOME, PRECO, ESTOQUE 
+FROM PRODUTOS
+ORDER BY PRECO ASC; 
+-- A escrita poderia ser também "ORDER BY 3", pois PRECO é a 3ª coluna no SELECT.
+-- O "ASC" é opcional, pois é o padrão.
+```
+
+**Análise do Processo:**
+
+1. O SGBD primeiro monta o conjunto de resultados completo definido pelo `SELECT * FROM PRODUTOS`.
+2. Em seguida, ele "olha" para a coluna especificada no `ORDER BY`, que é a `PRECO`.
+3. Ele então reorganiza todas as linhas do conjunto de resultados com base nos valores da coluna `PRECO`, em ordem crescente.
+
+**Resultado:**
+
+|ID|NOME|PRECO|ESTOQUE|
+|---|---|---|---|
+|5|Impressora|300|25|
+|4|Monitor|500|30|
+|3|Tablet|800|15|
+|2|Smartphone|1200|20|
+|1|Notebook|2500|15|
+
+Perceba que toda a tabela foi reordenada para que os valores na coluna `PRECO` sigam uma sequência crescente.
+
+#### Ordenação por Múltiplas Colunas
+
+A cláusula `ORDER BY` também permite a ordenação por múltiplas colunas, estabelecendo critérios de desempate. As colunas são listadas separadamente por vírgulas, e a ordenação é aplicada na ordem em que aparecem.
+
+**Exemplo:** Ordenar os produtos por `ESTOQUE` em ordem decrescente. Em caso de empate no estoque, ordenar pelo `NOME` em ordem alfabética.
+
+```sql
+SELECT NOME, PRECO, ESTOQUE
+FROM PRODUTOS
+ORDER BY ESTOQUE DESC, NOME ASC;
+```
+
+Neste caso, "Notebook" e "Tablet", que têm o mesmo estoque (15), seriam desempatados e ordenados alfabeticamente entre si.
+
