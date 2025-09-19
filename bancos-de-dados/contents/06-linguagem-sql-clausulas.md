@@ -1050,7 +1050,6 @@ WHERE <coluna> <operador_comparacao> ALL (<subconsulta>)
 Analisando seu comportamento:
 
 - **`<> ALL` ou `!= ALL` (Diferente de todos):** Esta expressão é funcionalmente **idêntica ao operador `NOT IN`**. Ela será verdadeira se o valor da coluna for diferente de todos os valores na lista da subconsulta.
-    
     - Exemplo: Encontrar os produtos cujo preço é diferente de todos os preços da categoria 'Promoção'.
 
 ```sql
@@ -1058,7 +1057,6 @@ WHERE Preco <> ALL (SELECT Preco FROM Produtos WHERE Categoria = 'Promoção')
 ```
 
 - **`> ALL` (Maior que todos):** Esta expressão será verdadeira se o valor da coluna for maior do que o **maior valor** retornado pela subconsulta.
-    
     - Exemplo: Encontrar o(s) produto(s) que é/são mais caro(s) que todos os outros.
 
 ```sql
@@ -1066,7 +1064,6 @@ WHERE Preco > ALL (SELECT Preco FROM Produtos WHERE ID <> ID_Produto_Atual) (a l
 ```
 
 - **`< ALL` (Menor que todos):** Esta expressão será verdadeira se o valor da coluna for menor do que o **menor valor** retornado pela subconsulta.
-    
     - Exemplo: Encontrar o(s) funcionário(s) que ganha(m) menos que todos os outros.
 
 ```sql
@@ -1185,4 +1182,73 @@ Agora, o SGBD percorre a tabela `alunos` original, linha por linha, e aplica ess
 <div align="center">
 <img width="140px" src="./img/06-all-resultado.png">
 </div>
+
+### EXISTS e NOT EXISTS: Verificando a Existência de Relações
+
+O operador **`EXISTS`** é um operador booleano utilizado na cláusula `WHERE` para verificar se uma subconsulta retorna **pelo menos uma linha**. Ele não se importa com os valores que a subconsulta retorna, apenas se o conjunto de resultados está vazio ou não.
+
+- Se a subconsulta retornar **uma ou mais linhas**, `EXISTS` é avaliado como **`TRUE`**.
+- Se a subconsulta retornar **zero linhas**, `EXISTS` é avaliado como **`FALSE`**.
+
+A principal característica do `EXISTS` é que ele é quase sempre utilizado com uma **subconsulta correlacionada**. Uma subconsulta correlacionada é uma consulta interna que depende de um valor da consulta externa para ser executada. Isso significa que a subconsulta é, conceitualmente, executada repetidamente, uma vez para cada linha que está sendo processada pela consulta externa.
+
+<div align="center">
+<img width="700px" src="./img/06-axists.png">
+</div>
+
+A sintaxe genérica para o `EXISTS` é:
+
+```sql
+SELECT <colunas>
+FROM <Tabela1>
+WHERE EXISTS (<subconsulta_correlacionada>);
+```
+
+Uma vez que o `EXISTS` apenas verifica a existência de linhas, é uma convenção comum e uma boa prática escrever a lista de seleção da subconsulta como `SELECT 1` ou `SELECT *`. O SGBD otimiza a consulta e não se importa com as colunas retornadas, apenas com o fato de uma linha ter sido encontrada.
+
+#### Exemplo Prático
+
+Vamos usar nossas tabelas `PRODUTOS` e `VENDAS` para responder a uma pergunta de negócio comum.
+
+- **Objetivo:** Encontrar todos os produtos que já tiveram pelo menos uma venda registrada.
+- **Consulta:**
+
+```sql
+SELECT ID, NOME
+FROM PRODUTOS P
+WHERE EXISTS (
+	SELECT 1
+	FROM VENDAS V
+	WHERE V.ID_PRODUTO = P.ID -- A correlação entre a consulta externa (P) e a interna (V)
+);
+```
+
+- **Análise do Processo:**
+    1. A consulta externa começa a percorrer a tabela `PRODUTOS`, linha por linha. A primeira linha é a do "Notebook" (`P.ID = 1`).
+    2. Para esta linha, a subconsulta é executada com o valor `P.ID` atual: `SELECT 1 FROM VENDAS V WHERE V.ID_PRODUTO = 1;`.
+    3. O SGBD executa essa subconsulta. Ele encontra uma venda para o produto 1? Sim. Como a subconsulta retornou pelo menos uma linha, o `EXISTS` resulta em `TRUE`. A linha do "Notebook" é incluída no resultado final.
+    4. A consulta externa passa para a próxima linha, "Smartphone" (`P.ID = 2`), e repete o processo. A subconsulta `... WHERE V.ID_PRODUTO = 2;` também retorna linhas, então o `EXISTS` é `TRUE`.
+    5. O processo continua até chegar na "Impressora" (`P.ID = 5`). A subconsulta `... WHERE V.ID_PRODUTO = 5;` é executada e **não retorna nenhuma linha**.
+    6. Como a subconsulta retornou um conjunto vazio, o `EXISTS` resulta em `FALSE`. A linha da "Impressora" é descartada.
+
+#### A Negação com `NOT EXISTS`
+
+O operador **`NOT EXISTS`** funciona de forma exatamente oposta. Ele é avaliado como **`TRUE`** se a subconsulta retornar **zero linhas**. É a ferramenta ideal para encontrar registros em uma tabela que não têm correspondência em outra.
+
+- **Objetivo:** Encontrar todos os produtos que **nunca** foram vendidos (o mesmo problema que resolvemos com `NOT IN`).
+- **Consulta:**
+
+```sql
+SELECT ID, NOME
+FROM PRODUTOS P
+WHERE NOT EXISTS (
+	SELECT 1
+	FROM VENDAS V
+	WHERE V.ID_PRODUTO = P.ID
+);
+```
+
+- **Análise:** O processo é o mesmo, mas a lógica final é invertida. Para a "Impressora" (`P.ID = 5`), a subconsulta retorna zero linhas. A condição `NOT EXISTS` sobre um resultado vazio é avaliada como `TRUE`, e, portanto, a "Impressora" é incluída no resultado final. Para todos os outros produtos, a subconsulta retorna linhas, o `NOT EXISTS` se torna `FALSE`, e eles são descartados.
+
+Em muitos SGBDs, `EXISTS` e `NOT EXISTS` são mais performáticos que `IN` e `NOT IN`, especialmente quando a subconsulta retorna um grande volume de dados, pois o `EXISTS` pode parar a execução da subconsulta assim que a primeira correspondência é encontrada.
 
