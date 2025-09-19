@@ -505,3 +505,106 @@ ORDER BY data_cadastro ASC
 LIMIT 10 OFFSET 4;
 ```
 
+### LIKE: Encontrando Padrões em Textos
+
+Frequentemente, em nossas consultas, não sabemos o valor exato que estamos procurando, mas conhecemos um padrão ou parte dele. Para essas situações, o operador `=` é ineficaz. A linguagem SQL nos fornece o operador **`LIKE`**, projetado especificamente para realizar a **correspondência de padrões (_pattern matching_)** em dados de texto (_strings_).
+
+O `LIKE` é utilizado na cláusula `WHERE` para comparar o valor de uma coluna com um padrão que definimos. A força deste operador vem do uso de **caracteres coringa (_wildcards_)**, que são símbolos especiais que podem substituir um ou mais caracteres em uma busca.
+
+#### Os Caracteres Coringa (Wildcards)
+
+Os dois caracteres coringa padrão do SQL, suportados por praticamente todos os SGBDs, são o percentual (`%`) e o sublinhado (`_`).
+
+#### Percentual (%): Substituindo Múltiplos Caracteres 
+
+O símbolo % representa zero, um ou múltiplos caracteres de qualquer tipo. É o coringa mais flexível e comum.
+
+**Exemplo 1: Começa com...**
+
+Para encontrar todos os nomes que começam com "Juli" (como "Julio", "Juliana" ou "Juliano"):
+
+```sql
+SELECT Nome FROM Clientes WHERE Nome LIKE 'Juli%';
+```
+
+A expressão `'Juli%'` corresponde a qualquer string que comece com "Juli", seguida por qualquer sequência de zero ou mais caracteres.
+
+**Exemplo 2: Termina com...**
+
+Para encontrar todos os emails que terminam com "@gmail.com":
+
+```sql
+SELECT Email FROM Usuarios WHERE Email LIKE '%@gmail.com';
+```
+
+O `%` no início permite que qualquer sequência de caracteres preceda "@gmail.com".
+
+**Exemplo 3: Contém...**
+
+Para encontrar todos os produtos cujo nome contenha a palavra "Digital":
+
+```sql
+SELECT Nome FROM Produtos WHERE Nome LIKE '%Digital%';
+```
+
+Com `%` antes e depois, buscamos a palavra "Digital" em qualquer posição dentro do nome do produto.
+
+#### Sublinhado (\_): Substituindo um Único Caractere
+
+O símbolo _ representa exatamente um único caractere qualquer. Ele é útil para buscas onde sabemos o comprimento da palavra ou queremos ignorar um caractere específico em uma posição conhecida.
+
+**Exemplo 1: Posição específica**
+
+Para encontrar nomes de 4 letras que começam com "An" e terminam com "a" (como "Ana " ou "Anna"):
+
+```sql
+SELECT Nome FROM Clientes WHERE Nome LIKE 'An_a';
+```
+
+O `_` ocupa o lugar do terceiro caractere, que pode ser qualquer um.
+
+**Exemplo 2: Comprimento fixo**
+
+Para encontrar todos os códigos de aeroportos de 3 letras que começam com "S" e terminam com "D":
+
+```sql
+SELECT Codigo FROM Aeroportos WHERE Codigo LIKE 'S_D';
+```
+
+O resultado poderia incluir "SAD", "SBD", "SCD", etc.
+
+#### Colchetes ([]): Especificando um Conjunto (SGBD-Específico)
+
+Alguns SGBDs, notavelmente o Microsoft SQL Server, estendem a funcionalidade do LIKE com o uso de colchetes `[]` para especificar um conjunto ou um intervalo de caracteres válidos para uma única posição. **Atenção:** esta sintaxe não faz parte do padrão ANSI SQL e não funcionará em SGBDs como Oracle ou PostgreSQL, que utilizam expressões regulares para este tipo de busca.
+
+**Exemplo 1: Conjunto de caracteres**
+
+Para encontrar nomes que comecem com "A", "B" ou "C":
+
+```sql
+-- Sintaxe para SQL Server
+SELECT Nome FROM Clientes WHERE Nome LIKE '[ABC]%';
+```
+
+`[ABC]` corresponde a um único caractere que pode ser A, B ou C.
+
+**Exemplo 2: Intervalo de caracteres**
+
+Para encontrar produtos cujo código comece com uma letra de 'A' até 'D':
+
+```sql
+-- Sintaxe para SQL Server
+SELECT Codigo FROM Produtos WHERE Codigo LIKE '[A-D]%';
+```
+
+**Exemplo 3: Negação de conjunto**
+
+Para encontrar nomes que não comecem com uma vogal:
+
+```sql
+-- Sintaxe para SQL Server
+SELECT Nome FROM Clientes WHERE Nome LIKE '[^AEIOU]%';
+```
+
+O `^` dentro dos colchetes nega o conjunto.
+
