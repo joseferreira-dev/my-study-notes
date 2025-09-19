@@ -1337,3 +1337,82 @@ FROM MEDICOES;
 | 22 | AGRADÁVEL |
 | 25 | AGRADÁVEL |
 
+### COLLATE: Definindo Regras de Comparação e Ordenação de Texto
+
+A cláusula **`COLLATE`** é uma cláusula especial que nos permite especificar o conjunto de regras, conhecido como **collation**, que o SGBD deve usar para comparar e ordenar dados de texto (_strings_) em uma operação específica.
+
+Todo banco de dados e, consequentemente, toda coluna de texto, possui uma _collation_ padrão. No entanto, em muitas situações, precisamos anular temporariamente essa regra padrão para realizar uma comparação ou ordenação com critérios diferentes. É para isso que serve a cláusula `COLLATE`.
+
+Seu uso é fundamental ao lidar com dados de baixa qualidade ou inconsistentes. Por exemplo, em uma tabela de clientes, o nome "João" pode ter sido inserido de várias formas: "João", "joao", "JOÃO" ou "Joao". Uma busca padrão por `WHERE nome = 'João'` poderia não encontrar todas essas variações. A cláusula `COLLATE` nos permite instruir o SGBD a ignorar as diferenças de acentuação e de maiúsculas/minúsculas para encontrar todas as correspondências.
+
+#### Entendendo as Partes de um Nome de Collation
+
+Um nome de _collation_ (ex: `Latin1_General_CI_AI`) é composto por várias partes que definem seu comportamento. As mais importantes são:
+
+- **Conjunto de Caracteres:** A primeira parte, como `Latin1_General` ou `UTF8`, define o conjunto de caracteres que a _collation_ suporta. `Latin1` é comum para línguas da Europa Ocidental, enquanto `UTF8` é um padrão universal capaz de representar caracteres da maioria das línguas do mundo.
+- **Sensibilidade a Maiúsculas/Minúsculas (Case Sensitivity):**
+    - **`CI` (Case Insensitive):** **Não** diferencia letras maiúsculas de minúsculas. Para uma consulta com `_CI_`, os valores 'SQL' e 'sql' são considerados **iguais**.
+    - **`CS` (Case Sensitive):** **Diferencia** letras maiúsculas de minúsculas. Para uma consulta com `_CS_`, 'SQL' e 'sql' são considerados **diferentes**.
+- **Sensibilidade a Acentos (Accent Sensitivity):**
+    - **`AI` (Accent Insensitive):** **Não** diferencia letras com e sem acentos. Para uma consulta com `_AI_`, 'João' e 'Joao' são considerados **iguais**.
+    - **`AS` (Accent Sensitive):** **Diferencia** letras com e sem acentos. Para uma consulta com `_AS_`, 'João' e 'Joao' são considerados **diferentes**.
+- **Comparação Binária (`_BIN` ou `_BIN2`):** Uma _collation_ binária realiza a comparação mais estrita e rápida possível, comparando o valor numérico de cada byte que compõe a string. Ela é, por natureza, sempre sensível a maiúsculas, minúsculas, acentos e todos os outros aspectos dos caracteres.
+
+#### Aplicando `COLLATE` em Consultas
+
+A cláusula `COLLATE` pode ser aplicada em diferentes partes de uma consulta para forçar uma regra de comparação específica.
+
+**1. Em Cláusulas de Ordenação (`ORDER BY`):**
+
+- **Objetivo:** Garantir uma ordenação alfabética consistente, independentemente de como os dados estão armazenados.
+- **Exemplo:** Em uma tabela de alunos, queremos ordenar os nomes em ordem alfabética, ignorando diferenças de acentos e maiúsculas/minúsculas para que "ana", "Ana" e "Ána" apareçam juntas.
+
+```sql
+SELECT nome
+FROM alunos
+ORDER BY nome COLLATE Latin1_General_CI_AI;
+```
+
+A cláusula `COLLATE` instrui o SGBD a usar as regras `_CI_` (case-insensitive) e `_AI_` (accent-insensitive) apenas para esta operação de ordenação.
+
+**2. Em Cláusulas de Filtragem (`WHERE`):**
+
+- **Objetivo:** Realizar buscas flexíveis que encontrem correspondências mesmo com inconsistências de digitação.
+- **Exemplo:** Buscar pelo cliente "José" em uma tabela onde ele pode estar cadastrado como "José", "jose" ou "JOSÉ".
+
+```sql
+SELECT *
+FROM Clientes
+WHERE Nome COLLATE Latin1_General_CI_AI = 'José';
+```
+
+Esta consulta encontrará todas as variações do nome "José", pois a comparação `=` será feita de forma insensível a maiúsculas e acentos.
+
+**3. Em Cláusulas de Junção (`JOIN`):**
+
+- **Objetivo:** Permitir a junção entre duas tabelas cujas colunas de texto possuem _collations_ padrão diferentes, o que normalmente geraria um erro.
+- **Exemplo:**
+
+```sql
+SELECT *
+FROM TabelaA A
+JOIN TabelaB B ON A.chave_texto = B.chave_texto COLLATE Latin1_General_CI_AS;
+```
+
+A cláusula `COLLATE` é aplicada a uma das colunas na condição `ON` para resolver o conflito, permitindo que o SGBD compare os valores sob um conjunto de regras comum.
+
+## Considerações Finais
+
+Neste capítulo, aprofundamos nosso conhecimento na linguagem SQL, movendo-nos para além dos comandos básicos para explorar o universo das **cláusulas e operadores** que nos dão o poder de construir consultas verdadeiramente precisas, flexíveis e sofisticadas. Se o capítulo anterior nos apresentou o vocabulário da SQL, este capítulo nos ensinou a sua gramática, permitindo-nos formar sentenças complexas para interrogar e manipular os dados.
+
+Iniciamos pela base de qualquer condição lógica: os **operadores**. Detalhamos os operadores **matemáticos**, para realizar cálculos; os **lógicos**, para combinar condições; os de **comparação**, para filtrar dados; e as **funções de agregação**, para sumarizar grandes conjuntos de informações.
+
+Com essa base, exploramos as cláusulas em si, agrupando-as por sua função. Nas **cláusulas de filtragem**, vimos como o `FROM` estabelece nosso universo de dados e como o `WHERE` atua como o filtro principal, selecionando as linhas que nos interessam. Aprimoramos nossa capacidade de filtragem com os operadores `LIKE`, para busca de padrões em texto, `BETWEEN`, para verificação de intervalos, e `LIMIT` com `OFFSET`, para controlar a quantidade de resultados e implementar a paginação.
+
+Avançamos para as **cláusulas de agrupamento e ordenação**, onde o `GROUP BY`, em conjunto com as funções de agregação, nos permitiu transformar dados brutos em sumários analíticos. Aprendemos a filtrar esses grupos com a cláusula `HAVING` e, por fim, a organizar a apresentação final dos nossos resultados com o `ORDER BY`.
+
+Mergulhamos no poderoso conceito de **subconsultas**, detalhando como os operadores `IN`, `ALL`, `ANY` e `EXISTS` nos permitem criar consultas dinâmicas e aninhadas, onde o resultado de uma consulta serve como critério para outra.
+
+Finalmente, exploramos as **cláusulas especiais**, como o `CASE`, que nos deu a capacidade de embutir lógica condicional diretamente em nossas consultas, e o `COLLATE`, que nos permitiu gerenciar as nuances de comparação e ordenação de textos em diferentes contextos.
+
+Ao final deste capítulo, o panorama da linguagem SQL se torna muito mais completo. Compreendemos que a construção de uma consulta é um processo lógico de montagem, onde cada cláusula tem seu lugar e sua função na ordem de execução. Com domínio sobre essas ferramentas, estamos equipados para extrair, analisar e apresentar dados de formas complexas, transformando o banco de dados em uma fonte rica de respostas e insights. O próximo passo será dominar a arte de conectar as informações espalhadas por múltiplas tabelas, através do estudo aprofundado das junções.
