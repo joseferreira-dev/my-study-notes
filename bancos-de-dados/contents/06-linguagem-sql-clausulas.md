@@ -749,3 +749,70 @@ ORDER BY ESTOQUE DESC, NOME ASC;
 
 Neste caso, "Notebook" e "Tablet", que têm o mesmo estoque (15), seriam desempatados e ordenados alfabeticamente entre si.
 
+### HAVING: Filtrando Grupos
+
+A cláusula **`HAVING`** é uma ferramenta de filtragem que está intrinsecamente ligada à cláusula `GROUP BY`. Enquanto o `WHERE` filtra linhas individuais _antes_ do agrupamento, o `HAVING` é utilizado para filtrar **grupos inteiros** _depois_ que eles já foram formados pelo `GROUP BY` e as funções de agregação já foram calculadas.
+
+Sua sintaxe geral é sempre posterior à cláusula `GROUP BY`:
+
+```sql
+SELECT <coluna(s)>, <funcao_agregacao>
+FROM <tabela>
+[WHERE <condicao_de_linha>]
+GROUP BY <coluna(s)>
+HAVING <condicao_de_grupo>;
+```
+
+#### `WHERE` vs. `HAVING`
+
+A distinção entre `WHERE` e `HAVING` é um conceito fundamental em SQL e uma fonte comum de confusão. A regra é simples e baseada na ordem lógica de execução de uma consulta:
+
+1. **`WHERE` atua primeiro:** Ele filtra as **linhas individuais** da tabela original. A condição no `WHERE` é aplicada a cada registro antes que qualquer agrupamento ocorra. Por essa razão, **não se pode usar funções de agregação (`SUM`, `COUNT`, etc.) na cláusula `WHERE`**.
+2. **`GROUP BY` atua em seguida:** Ele agrupa as linhas que passaram pelo filtro do `WHERE`.
+3. **`HAVING` atua por último:** Ele filtra os **grupos** já formados pelo `GROUP BY`. Como ele opera sobre os grupos já sumarizados, **pode-se (e geralmente se deve) usar funções de agregação na cláusula `HAVING`**.
+
+**Analogia:** Imagine um processo de seleção de candidatos para vagas de emprego.
+
+- **`WHERE`**: É a triagem inicial. "Descartar todos os candidatos que não têm diploma universitário" (filtra indivíduos).
+- **`GROUP BY`**: É a organização dos currículos restantes. "Agrupar os candidatos restantes por área de formação (ex: Engenharia, Direito, etc.)".
+- **`HAVING`**: É a seleção final dos grupos. "Selecionar apenas os grupos (as áreas de formação) que têm mais de 5 candidatos" (filtra grupos).
+
+#### Exemplo Prático
+
+Vamos aplicar este conceito à nossa tabela `VENDAS`.
+
+- **Objetivo:** Identificar os dias em que o faturamento total foi superior a R$ 3.000.
+
+Não podemos usar `WHERE VALOR_TOTAL > 3000` porque isso filtraria as vendas individuais, não a soma do dia. Precisamos primeiro agrupar as vendas por data, somar o valor total de cada dia e, em seguida, filtrar esses totais.
+
+**Consulta:**
+
+```sql
+SELECT
+    DATA,
+    SUM(VALOR_TOTAL) AS Faturamento_Total
+FROM VENDAS
+GROUP BY DATA
+HAVING SUM(VALOR_TOTAL) > 3000;
+```
+
+**Análise do Processo:**
+
+1. **`FROM VENDAS`**: A consulta começa considerando todas as 5 linhas da tabela `VENDAS`.
+2. **`GROUP BY DATA`**: As linhas são agrupadas por data:
+    - Grupo '2024-03-09': (1 linha)
+    - Grupo '2024-03-10': (2 linhas)
+    - Grupo '2024-03-11': (2 linhas)
+3. **Cálculo da Agregação:** A função `SUM(VALOR_TOTAL)` é calculada para cada grupo:
+    - Grupo '2024-03-09': `SUM` = 5000
+    - Grupo '2024-03-10': `SUM` = 3600 + 500 = 4100
+    - Grupo '2024-03-11': `SUM` = 1600 + 300 = 1900
+4. **`HAVING SUM(VALOR_TOTAL) > 3000`**: A condição do `HAVING` é aplicada a esses resultados agregados. Apenas os grupos cujo `SUM` é maior que 3000 são mantidos. O grupo de '2024-03-11' é descartado.
+5. **`SELECT`**: As colunas `DATA` e o resultado da soma são finalmente exibidos.
+
+**Resultado:**
+
+| DATA | Faturamento_Total |
+| --- | --- |
+| 2024-03-09 | 5000 |
+| 2024-03-10 | 4100 |
