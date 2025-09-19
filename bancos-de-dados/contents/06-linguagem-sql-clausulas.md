@@ -996,3 +996,193 @@ WHERE VALOR_TOTAL NOT BETWEEN 500 AND 4000;
 
 Esta consulta retornaria as vendas com `VALOR_TOTAL` de 5000 e 300.
 
+### ALL e ANY: Comparações com Conjuntos de Valores
+
+Os operadores **`ALL`** e **`ANY`** são quantificadores utilizados na cláusula `WHERE` para modificar o comportamento de um operador de comparação (`=`, `!=`, `>`, `<`, etc.). Eles nos permitem comparar um valor de uma linha da consulta principal com o conjunto de valores retornado por uma subconsulta.
+
+Diferente do `IN`, que apenas verifica a existência em uma lista, `ALL` e `ANY` trabalham em conjunto com um operador de comparação para estabelecer uma condição mais complexa.
+
+#### Operador `ANY` (e seu sinônimo `SOME`)
+
+O operador `ANY` avalia uma condição como **verdadeira (`TRUE`)** se a comparação for verdadeira para **pelo menos um** dos valores retornados pela subconsulta. Ele funciona de forma análoga a uma sequência de comparações ligadas por um operador lógico **`OR`**.
+
+A sintaxe genérica é:
+
+```sql
+WHERE <coluna> <operador_comparacao> ANY (<subconsulta>)
+```
+
+Vamos analisar seu comportamento com diferentes operadores de comparação:
+
+- **`= ANY` (Igual a qualquer um):** Esta expressão é funcionalmente **idêntica ao operador `IN`**. Ela será verdadeira se o valor da coluna for igual a pelo menos um dos valores na lista da subconsulta.
+    - **Exemplo:** Encontrar os produtos cujo preço é igual ao de algum produto da categoria 'Promoção'.
+
+```sql
+WHERE Preco = ANY (SELECT Preco FROM Produtos WHERE Categoria = 'Promoção')
+```
+
+- **`> ANY` (Maior que qualquer um):** Esta expressão será verdadeira se o valor da coluna for maior do que o **menor valor** retornado pela subconsulta.
+    
+    - Exemplo: Encontrar os produtos que são mais caros que o produto mais barato do estoque.
+
+```sql
+WHERE Preco > ANY (SELECT Preco FROM Produtos) é o mesmo que WHERE Preco > (SELECT MIN(Preco) FROM Produtos)
+```
+
+- **`< ANY` (Menor que qualquer um):** Esta expressão será verdadeira se o valor da coluna for menor do que o **maior valor** retornado pela subconsulta.
+    
+    - Exemplo: Encontrar os funcionários que ganham menos que o funcionário mais bem pago.
+
+```sql
+WHERE Salario < ANY (SELECT Salario FROM Funcionarios) é o mesmo que WHERE Salario < (SELECT MAX(Salario) FROM Funcionarios)
+```
+
+#### Operador `ALL`
+
+O operador `ALL` avalia uma condição como **verdadeira (`TRUE`)** somente se a comparação for verdadeira para **todos** os valores retornados pela subconsulta. Ele funciona de forma análoga a uma sequência de comparações ligadas por um operador lógico **`AND`**.
+
+A sintaxe genérica é:
+
+```sql
+WHERE <coluna> <operador_comparacao> ALL (<subconsulta>)
+```
+
+Analisando seu comportamento:
+
+- **`<> ALL` ou `!= ALL` (Diferente de todos):** Esta expressão é funcionalmente **idêntica ao operador `NOT IN`**. Ela será verdadeira se o valor da coluna for diferente de todos os valores na lista da subconsulta.
+    
+    - Exemplo: Encontrar os produtos cujo preço é diferente de todos os preços da categoria 'Promoção'.
+
+```sql
+WHERE Preco <> ALL (SELECT Preco FROM Produtos WHERE Categoria = 'Promoção')
+```
+
+- **`> ALL` (Maior que todos):** Esta expressão será verdadeira se o valor da coluna for maior do que o **maior valor** retornado pela subconsulta.
+    
+    - Exemplo: Encontrar o(s) produto(s) que é/são mais caro(s) que todos os outros.
+
+```sql
+WHERE Preco > ALL (SELECT Preco FROM Produtos WHERE ID <> ID_Produto_Atual) (a lógica exata pode ser mais complexa, mas o conceito é este). Uma forma mais simples de obter o mesmo resultado é WHERE Preco > (SELECT MAX(Preco) FROM Produtos).
+```
+
+- **`< ALL` (Menor que todos):** Esta expressão será verdadeira se o valor da coluna for menor do que o **menor valor** retornado pela subconsulta.
+    
+    - Exemplo: Encontrar o(s) funcionário(s) que ganha(m) menos que todos os outros.
+
+```sql
+WHERE Salario < ALL (SELECT Salario FROM Funcionarios WHERE ID <> ID_Funcionario_Atual), que equivale a WHERE Salario < (SELECT MIN(Salario) FROM Funcionarios).
+```
+
+Embora `ANY` e `ALL` sejam operadores poderosos e expressem conceitos importantes da lógica de predicados, na prática, muitas de suas funções podem ser realizadas de forma mais intuitiva e legível utilizando os operadores `IN`, `NOT IN` ou subconsultas com funções de agregação como `MIN()` e `MAX()`.
+
+Com base em suas anotações e no conjunto de imagens, vamos agora detalhar um exemplo prático completo que ilustra o funcionamento do operador `ALL`.
+
+#### Exemplo Prático
+
+Para solidificar o entendimento, vamos analisar uma consulta completa passo a passo.
+
+**Cenário:** Considere a seguinte tabela de `alunos`.
+
+|id_aluno|nome_aluno|idade|
+|---|---|---|
+|1|Pedro|20|
+|2|Maria|22|
+|3|José|21|
+
+**Objetivo:** Queremos encontrar o nome do(s) aluno(s) que seja(m) mais velho(s) que **todos** os alunos da lista de IDs `{1, 3}`.
+
+**Consulta SQL:**
+
+```sql
+SELECT nome_aluno
+FROM alunos
+WHERE idade > ALL (
+    SELECT idade FROM alunos
+    WHERE id_aluno = 1 OR id_aluno = 3
+);
+```
+
+Para entender como o SGBD processa esta instrução, vamos quebrá-la em suas partes lógicas, seguindo a ordem de execução.
+
+**Passo 1: A Execução da Subconsulta**
+
+O SGBD sempre resolve a consulta interna (a subconsulta) primeiro. Ela atua como uma fonte de dados para a consulta principal.
+
+<div align="center">
+<img width="700px" src="./img/06-all-exemplo.png">
+</div>
+
+A subconsulta `SELECT idade FROM alunos WHERE id_aluno = 1 OR id_aluno = 3` gera uma lista temporária contendo as idades de Pedro (20) e José (21).
+
+<div align="center">
+<img width="120px" src="./img/06-all-subconsulta.png">
+</div>
+
+Portanto, a lista de valores contra a qual faremos a comparação é {20, 21}.
+
+**Passo 2: A Interpretação da Consulta Principal**
+
+Com o resultado da subconsulta em mãos, a consulta principal agora pode ser interpretada como:
+
+```sql
+SELECT nome_aluno FROM alunos WHERE idade > ALL ({20, 21});
+```
+
+Lembrando da nossa definição, a condição > ALL significa que a idade do aluno na consulta externa deve ser maior que todos os valores da lista. Isso é logicamente equivalente a:
+
+```sql
+WHERE idade > 20 AND idade > 21
+```
+
+O que, por sua vez, pode ser simplificado para:
+
+```sql
+WHERE idade > 21 --(pois se um número é maior que 21, ele é automaticamente maior que 20).
+```
+
+**Passo 3: A Avaliação Linha a Linha**
+
+Agora, o SGBD percorre a tabela `alunos` original, linha por linha, e aplica essa condição.
+
+- **Analisando Pedro (ID = 1, idade = 20):**
+    A condição é 20 > ALL ({20, 21}).
+    O SGBD verifica: 20 > 20? Falso. A condição falha no primeiro teste, então Pedro é descartado.
+
+    <div align="center">
+    <img width="540px" src="./img/06-all-exemplo-1.png">
+    </div>
+
+- **Analisando Maria (ID = 2, idade = 22):**
+    A condição é 22 > ALL ({20, 21}).
+    O SGBD verifica: 22 > 20? Verdadeiro. A verificação continua.
+    
+    <div align="center">
+    <img width="540px" src="./img/06-all-exemplo-2.png">
+    </div>
+    
+    22 > 21? Verdadeiro. Como a condição foi verdadeira para todos os elementos da lista, Maria é incluída no resultado final.
+    
+    <div align="center">
+    <img width="540px" src="./img/06-all-exemplo-3.png">
+    </div>
+    
+- **Analisando José (ID = 3, idade = 21):**
+    A condição é 21 > ALL ({20, 21}).
+    O SGBD verifica: 21 > 20? Verdadeiro. A verificação continua.
+    
+    <div align="center">
+    <img width="540px" src="./img/06-all-exemplo-4.png">
+    </div>
+    
+    21 > 21? Falso. A condição falha no segundo teste, então José é descartado.
+    
+    <div align="center">
+    <img width="540px" src="./img/06-all-exemplo-5.png">
+    </div>
+
+**Resultado Final:** Após a verificação de todas as linhas, a única que satisfez a rigorosa condição do `ALL` foi a de Maria. Portanto, o resultado final da consulta é:
+
+<div align="center">
+<img width="140px" src="./img/06-all-resultado.png">
+</div>
+
