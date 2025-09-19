@@ -173,3 +173,44 @@ Ao juntar todas as linhas que geramos em nossa análise passo a passo, obtemos a
 </div>
 
 Esta tabela final nos dá uma visão completa do universo de dados: os produtos que foram vendidos (e os detalhes de suas vendas) e também os produtos que não tiveram nenhuma venda registrada, tudo em um único conjunto de resultados.
+
+## INNER JOIN: A Interseção de Dados
+
+O **`INNER JOIN`** (ou simplesmente `JOIN`, na maioria dos SGBDs) é o tipo de junção padrão e mais utilizado. Sua função é retornar apenas as linhas que possuem uma correspondência em **ambas** as tabelas, com base na condição de junção especificada na cláusula `ON`.
+
+Utilizando a teoria dos conjuntos, o `INNER JOIN` funciona como uma **interseção**, selecionando apenas o universo de dados que é comum às duas tabelas.
+
+<div align="center">
+<img width="200px" src="./img/07-inner-join.png">
+</div>
+
+A principal característica que o distingue do `FULL OUTER JOIN` é que o `INNER JOIN` **descarta** qualquer linha de ambas as tabelas que não encontre um par correspondente. Como consequência direta, uma consulta com `INNER JOIN` nunca gerará linhas com valores `NULL` para as colunas das tabelas juntadas, pois apenas as combinações completas são mantidas.
+
+### Exemplo Prático com `INNER JOIN`
+
+Vamos aplicar o `INNER JOIN` às nossas tabelas `PRODUTO` e `VENDAS` para obter uma lista de todos os produtos que foram efetivamente vendidos, juntamente com os detalhes de suas vendas.
+
+**Consulta:**
+
+```sql
+SELECT * FROM PRODUTO P
+INNER JOIN VENDAS V ON P.ID = V.ID_PRODUTO;
+```
+
+**Análise do Processo:**
+
+O SGBD irá percorrer as tabelas e construir um resultado apenas para as linhas onde a condição P.ID = V.ID_PRODUTO for verdadeira.
+
+1. **Produtos com Vendas (IDs 1, 2 e 3):** Os produtos "Camiseta" (ID 1), "Calça Jeans" (ID 2) e "Tênis" (ID 3) possuem correspondências na tabela `VENDAS`. Suas linhas serão combinadas com as respectivas linhas de vendas. Note que "Camiseta" (ID 1), por ter duas vendas, aparecerá duas vezes no resultado final, uma vez para cada correspondência.
+2. **Produto sem Venda (ID 4):** O produto "Meia" (ID 4) existe na tabela `PRODUTO`, mas não há nenhuma linha na tabela `VENDAS` com `ID_PRODUTO = 4`. Como não há correspondência, esta linha da tabela `PRODUTO` é **descartada** e não aparece no resultado.
+
+**Resultado Final:**
+
+A tabela resultante conterá apenas os produtos que foram vendidos, eliminando o produto "Meia" que não tinha correspondência na tabela de vendas.
+
+<div align="center">
+<img width="700px" src="./img/07-inner-join-exemplo.png">
+</div>
+
+Como podemos observar, o resultado é um conjunto de dados "limpo" que mostra apenas as relações existentes entre as duas tabelas, tornando o `INNER JOIN` a ferramenta ideal para a maioria das consultas que buscam combinar informações relacionadas.
+
