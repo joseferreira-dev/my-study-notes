@@ -816,3 +816,95 @@ HAVING SUM(VALOR_TOTAL) > 3000;
 | --- | --- |
 | 2024-03-09 | 5000 |
 | 2024-03-10 | 4100 |
+
+## Cláusulas de Subconsultas (Subqueries)
+
+Até agora, nossas consultas operaram sobre tabelas físicas existentes no banco de dados. No entanto, muitas vezes, a condição de que precisamos para filtrar ou comparar dados não é um valor fixo, mas sim o **resultado de outra consulta**. É para resolver essa necessidade que utilizamos as **subconsultas** (ou _subqueries_).
+
+Uma subconsulta é, literalmente, um comando `SELECT` aninhado dentro de outro comando SQL principal (que pode ser `SELECT`, `INSERT`, `UPDATE` ou `DELETE`). O SGBD sempre executa a subconsulta (a consulta interna) primeiro, e o resultado dela é então utilizado pela consulta externa para completar sua operação. Elas nos permitem construir lógicas de consulta complexas e em múltiplos passos, de forma elegante e contida em uma única instrução.
+
+Vamos explorar as cláusulas que fazem uso extensivo de subconsultas.
+
+### IN e NOT IN: Verificando a Pertença a um Conjunto
+
+O operador **`IN`** é utilizado na cláusula `WHERE` para verificar se o valor de uma coluna pertence a um **conjunto de valores** especificado. Ele funciona como um `OR` lógico otimizado e mais legível.
+
+A sua força máxima é revelada quando o conjunto de valores é gerado dinamicamente por uma subconsulta.
+
+**Sintaxe Genérica:**
+
+```sql
+SELECT <colunas>
+FROM <Tabela1>
+WHERE <coluna_a_verificar> IN (SELECT <coluna_da_lista> FROM <Tabela2>);
+```
+
+#### Exemplo Prático com Subconsulta
+
+Vamos a um exemplo para tornar o conceito mais claro. Imagine que temos duas tabelas, `T1` e `T2`, e queremos selecionar todos os registros de `T1` cujo valor na coluna `A` também exista na coluna `B` da tabela `T2`.
+
+**Tabelas de Exemplo:**
+
+<div align="center">
+<img width="140px" src="./img/06-in-tabelas.png">
+</div>
+
+**Análise do Processo:**
+
+**1. A Subconsulta é Executada Primeiro:**
+
+O SGBD primeiro executa a consulta interna para gerar a lista de valores que será usada na comparação.
+
+```sql
+SELECT B FROM T2;
+```
+
+<div align="center">
+<img width="700px" src="./img/06-in-exemplo-grafico.png">
+</div>
+
+Esta subconsulta retorna um conjunto de resultados: a lista de todos os valores presentes na coluna B da tabela T2, que é (1, 1, 3, 2, 4).
+
+**2. A Consulta Externa é Executada:** Agora, a consulta externa pode ser executada, usando a lista gerada como seu critério de filtro.
+
+```sql
+SELECT A FROM T1
+WHERE A IN (1, 1, 3, 2, 4); -- A lista foi gerada pela subconsulta
+```
+
+**3. A Condição IN é Avaliada para Cada Linha de T1:** O SGBD percorre cada linha da tabela T1 e verifica se o valor da coluna A está na lista.
+
+<div align="center">
+<img width="360px" src="./img/06-in-exemplo-pratico.png">
+</div>
+
+O processo lógico para cada linha é:
+
+- **Linha 1 (A=1):** O valor `1` está na lista `(1, 1, 3, 2, 4)`? **Sim**. A linha é selecionada.
+- **Linha 2 (A=3):** O valor `3` está na lista? **Sim**. A linha é selecionada.
+- **Linha 3 (A=4):** O valor `4` está na lista? **Sim**. A linha é selecionada.
+- **Linha 4 (A=2):** O valor `2` está na lista? **Sim**. A linha é selecionada.
+- **Linha 5 (A=5):** O valor `5` está na lista? **Não**. A linha é descartada.
+
+**Resultado Final:**
+
+O resultado da consulta completa será a lista de valores da coluna A que passaram no teste.
+
+<div align="center">
+<img width="70px" src="./img/06-in-exemplo-resultado.png">
+</div>
+
+#### A Negação com `NOT IN`
+
+O operador **`NOT IN`** funciona de forma idêntica, mas com a lógica invertida. Ele retorna `TRUE` se o valor que está sendo verificado **não** estiver presente na lista.
+
+**Exemplo Prático:** Usando nossas tabelas `PRODUTOS` e `VENDAS`, vamos encontrar todos os produtos que **nunca foram vendidos**.
+
+```sql
+SELECT ID, NOME
+FROM PRODUTOS
+WHERE ID NOT IN (SELECT DISTINCT ID_PRODUTO FROM VENDAS);
+```
+
+**Análise:** A subconsulta `SELECT DISTINCT ID_PRODUTO FROM VENDAS` primeiro cria uma lista de todos os IDs de produtos que _foram_ vendidos. A consulta externa então seleciona da tabela `PRODUTOS` apenas aqueles cujo `ID` **não está** nessa lista. O resultado seria o produto "Impressora".
+
