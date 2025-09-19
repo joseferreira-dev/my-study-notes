@@ -60,7 +60,7 @@ Ele funciona da seguinte maneira:
 - Se uma linha da tabela da esquerda não encontrar uma correspondência na tabela da direita, ela ainda assim será incluída no resultado, e as colunas que viriam da tabela da direita serão preenchidas com valores `NULL`.
 - Da mesma forma, se uma linha da tabela da direita não encontrar uma correspondência na tabela da esquerda, ela também será incluída no resultado, e as colunas da tabela da esquerda serão preenchidas com `NULL`.
 
-### A Sintaxe da Junção
+### Sintaxe da Junção
 
 A estrutura de uma consulta com `JOIN` é uma das mais importantes da linguagem SQL. É crucial entender cada um de seus componentes.
 
@@ -81,7 +81,7 @@ Vamos analisar visualmente a sintaxe aplicada ao nosso exemplo, onde a coluna de
 <img width="700px" src="./IMG/07-full-join-exemplo-visual.png">
 </div>
 
-#### O Comportamento da Junção Completa
+### Comportamento da Junção Completa
 
 Ao executar um `FULL OUTER JOIN`, o SGBD analisa as linhas de ambas as tabelas e pode se deparar com três cenários distintos para formar o resultado final.
 
@@ -95,3 +95,81 @@ Ao executar um `FULL OUTER JOIN`, o SGBD analisa as linhas de ambas as tabelas e
 	Inversamente, quando uma linha da tabela da direita não encontra nenhuma correspondência na esquerda, ela também é mantida, e as colunas da tabela da esquerda são preenchidas com `NULL`. Embora não tenhamos um exemplo direto em nossos dados, imagine que houvesse uma venda registrada com `ID_PRODUTO = 99`, para um produto que já foi excluído da tabela `PRODUTO`. Essa linha de venda apareceria no resultado do FULL JOIN, com as colunas `ID`, `NOME` e `PRECO` preenchidas com `NULL`.
 
 Vamos analisar como cada linha da tabela se encaixa nas situações acima, graficamente.
+
+### Análise Gráfica Passo a Passo
+
+Para entender como a tabela final de um `FULL OUTER JOIN` é montada, vamos simular o processo que o SGBD realiza, analisando cada linha da tabela da esquerda (`PRODUTO`) e buscando suas correspondências na tabela da direita (`VENDAS`).
+
+**Análise para `PRODUTO.ID = 1` (Camiseta)**
+
+O SGBD pega a primeira linha da tabela `PRODUTO` e procura por todas as linhas na tabela `VENDAS` onde `VENDAS.ID_PRODUTO` seja igual a 1.
+
+<div align="center">
+<img width="700px" src="./IMG/07-full-join-exemplo-1.png">
+</div>
+
+Neste caso, ele encontra duas correspondências: a venda com `ID = 1` e a venda com `ID = 3`. Como resultado, a linha do produto "Camiseta" será duplicada na tabela final para se combinar com cada uma das vendas encontradas.
+
+**Linhas Resultantes para `PRODUTO.ID = 1`:**
+
+<div align="center">
+<img width="700px" src="./IMG/07-full-join-exemplo-2.png">
+</div>
+
+**Análise para `PRODUTO.ID = 2` (Calça Jeans)**
+
+O processo se repete para o segundo produto. O SGBD busca por vendas onde `ID_PRODUTO = 2`.
+
+<div align="center">
+<img width="700px" src="./IMG/07-full-join-exemplo-3.png">
+</div>
+
+Ele encontra apenas uma correspondência, a venda com `ID = 2`. Portanto, apenas uma linha será gerada no resultado para este produto.
+
+**Linha Resultante para `PRODUTO.ID = 2`:**
+
+<div align="center">
+<img width="700px" src="./IMG/07-full-join-exemplo-4.png">
+</div>
+
+**Análise para `PRODUTO.ID = 3` (Tênis)**
+
+Novamente, o SGBD busca por vendas onde `ID_PRODUTO = 3`.
+
+<div align="center">
+<img width="700px" src="./IMG/07-full-join-exemplo-5.png">
+</div>
+
+Ele encontra uma única correspondência, a venda com `ID = 4`.
+
+**Linha Resultante para `PRODUTO.ID = 3`:**
+
+<div align="center">
+<img width="700px" src="./IMG/07-full-join-exemplo-6.png">
+</div>
+
+**Análise para `PRODUTO.ID = 4` (Meia)**
+
+Agora chegamos ao caso especial que define a natureza de um `OUTER JOIN`. O SGBD busca por vendas onde `ID_PRODUTO = 4`.
+
+<div align="center">
+<img width="700px" src="./IMG/07-full-join-exemplo-7.png">
+</div>
+
+Ele não encontra nenhuma correspondência. Em um `INNER JOIN`, esta linha seria simplesmente descartada. No entanto, como estamos em um **`FULL OUTER JOIN`**, a regra é preservar todas as linhas de ambas as tabelas. Portanto, a linha do produto "Meia" é mantida, e todas as colunas que deveriam vir da tabela `VENDAS` são preenchidas com o valor **`NULL`**, indicando a ausência de uma correspondência.
+
+**Linha Resultante para `PRODUTO.ID = 4`:**
+
+<div align="center">
+<img width="700px" src="./IMG/07-full-join-exemplo-8.png">
+</div>
+
+#### Resultado Final
+
+Ao juntar todas as linhas que geramos em nossa análise passo a passo, obtemos a tabela de resultado final e completa da operação `FULL OUTER JOIN`.
+
+<div align="center">
+<img width="700px" src="./IMG/07-full-join-exemplo-9.png">
+</div>
+
+Esta tabela final nos dá uma visão completa do universo de dados: os produtos que foram vendidos (e os detalhes de suas vendas) e também os produtos que não tiveram nenhuma venda registrada, tudo em um único conjunto de resultados.
