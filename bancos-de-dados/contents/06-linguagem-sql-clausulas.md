@@ -243,3 +243,175 @@ WHERE DataVenda >= '2025-01-01';
 
 Neste caso, o `DISTINCT` garante que cada ID de cliente seja contado apenas uma vez, fornecendo o resultado correto.
 
+## Cláusulas de Filtragem
+
+As **cláusulas de filtragem** são os componentes estruturais de uma instrução SQL que nos permitem especificar a origem dos nossos dados e aplicar critérios para refinar o resultado. Elas são a base sobre a qual construímos nossas consultas, definindo o universo de dados com o qual vamos trabalhar e, em seguida, aplicando "peneiras" para extrair apenas a informação relevante.
+
+Nesta seção, vamos explorar as três cláusulas mais fundamentais e onipresentes: `FROM`, que estabelece a fonte dos dados; `WHERE`, que filtra as linhas; e `LIMIT`, que restringe a quantidade de resultados. Para ilustrar os exemplos, utilizaremos as mesmas tabelas de `PRODUTOS` e `VENDAS` que já conhecemos.
+
+**Tabela `PRODUTOS`**
+
+|ID|NOME|PRECO|ESTOQUE|
+|---|---|---|---|
+|1|Notebook|2500|15|
+|2|Smartphone|1200|20|
+|3|Tablet|800|15|
+|4|Monitor|500|30|
+|5|Impressora|300|25|
+
+**Tabela `VENDAS`**
+
+|ID|ID_PRODUTO (FK)|DATA|QUANTIDADE|VALOR_TOTAL|
+|---|---|---|---|---|
+|1|1|2024-03-09|2|5000|
+|2|2|2024-03-10|3|3600|
+|3|4|2024-03-10|1|500|
+|4|3|2024-03-11|2|1600|
+|5|2|2024-03-11|1|300|
+
+### FROM: Especificando a Origem dos Dados
+
+A cláusula **`FROM`** é o ponto de partida de quase toda consulta de recuperação de dados. Sua função é especificar de qual(is) tabela(s) a consulta deve extrair as informações. Ela, basicamente, define o "universo" de dados com o qual estamos trabalhando.
+
+#### `FROM` com uma Única Tabela
+
+O uso mais simples e direto da cláusula `FROM` é para especificar uma única tabela como fonte.
+
+```sql
+SELECT *
+FROM PRODUTOS;
+```
+
+Neste caso, o universo da nossa consulta é, exclusivamente, o conteúdo da tabela `PRODUTOS`.
+
+#### `FROM` com Múltiplas Tabelas e o Produto Cartesiano
+
+A cláusula `FROM` também pode listar múltiplas tabelas, separadas por vírgula. Quando fazemos isso, o SGBD realiza um **Produto Cartesiano** entre elas, como vimos na Álgebra Relacional. O resultado é uma tabela intermediária que contém todas as combinações possíveis de linhas entre as tabelas listadas.
+
+**Sempre que listamos duas ou mais tabelas no `FROM` separadas por vírgula (`FROM A, B`), o resultado inicial será um Produto Cartesiano entre elas.**
+
+Essa sintaxe, embora válida, é considerada uma prática antiga e perigosa, pois é muito fácil esquecer de aplicar os filtros necessários (na cláusula `WHERE`) para transformar o produto cartesiano em uma junção útil. A abordagem moderna e recomendada é usar a cláusula `JOIN` explícita, que veremos mais adiante. No entanto, é fundamental entender este comportamento.
+
+#### Simplificando com Apelidos (`ALIAS`)
+
+Ao trabalhar com múltiplas tabelas, ou com tabelas de nomes longos, a sintaxe pode se tornar verbosa e repetitiva. Para simplificar, podemos atribuir um **apelido** (ou **`ALIAS`**) a cada tabela diretamente na cláusula `FROM`. Um alias é um nome temporário que existe apenas no escopo daquela consulta.
+
+A sintaxe para criar um alias é simplesmente colocar o nome do apelido após o nome da tabela (a palavra-chave `AS` é opcional e frequentemente omitida para tabelas).
+
+**Exemplo Prático (Produto Cartesiano):** Vamos selecionar o nome e o preço dos produtos e a quantidade de cada venda, listando as duas tabelas no FROM e usando aliases para simplificar.
+
+```sql
+SELECT P.NOME, P.PRECO, V.QUANTIDADE
+FROM PRODUTOS P, VENDAS V;
+```
+
+- `PRODUTOS P`: Atribui o alias `P` à tabela `PRODUTOS`.
+- `VENDAS V`: Atribui o alias `V` à tabela `VENDAS`.
+- `P.NOME`: Refere-se à coluna `NOME` da tabela `PRODUTOS` (identificada pelo alias `P`).
+
+Como não especificamos nenhuma condição de junção, o SGBD realiza um produto cartesiano. A tabela `PRODUTOS` tem 5 linhas e a tabela `VENDAS` tem 5 linhas. O resultado será uma tabela com 5 x 5 = 25 linhas, combinando cada produto com cada venda, o que não tem um significado prático útil neste caso.
+
+**Resultado Parcial (Produto Cartesiano):**
+
+| NOME | PRECO | QUANTIDADE |
+| --- | --- | --- |
+| Notebook | 2500 | 2 |
+| Notebook | 2500 | 3 |
+| Notebook | 2500 | 1 |
+| Notebook | 2500 | 2 |
+| Notebook | 2500 | 1 |
+| Smartphone | 1200 | 2 |
+| Smartphone | 1200 | 3 |
+| ... | ... | ... |
+| Impressora | 300 | 1 |
+
+Este exemplo ilustra o resultado bruto gerado pela cláusula `FROM` ao lidar com múltiplas tabelas desta forma. A "mágica" de transformar este resultado bruto em uma informação útil acontece na próxima etapa, com a aplicação das cláusulas de junção (que veremos em breve) ou de filtragem, com a cláusula `WHERE`.
+
+### WHERE: Filtrando as Linhas com Precisão
+
+A cláusula **`WHERE`** é, possivelmente, a cláusula mais fundamental e utilizada na linguagem SQL. Sua função é filtrar as **linhas** de uma tabela, permitindo que a consulta ou operação atue apenas sobre um subconjunto de dados que atenda a uma condição específica. Ela é a implementação direta da operação de **seleção (σ)** da Álgebra Relacional.
+
+Pense na cláusula `WHERE` como a tradução da palavra "onde" ou "cujo" em uma frase. Uma solicitação como "Mostre-me os produtos **onde** o estoque é menor que 20" ou "Apague os pedidos **cujo** status é 'Cancelado'" é implementada diretamente com a cláusula `WHERE`.
+
+**Exemplo de Tradução (Linguagem Natural para SQL):**
+
+- **Solicitação:** "Selecione o nome e o preço, da tabela `PRODUTOS`, onde o preço é superior a R$ 1.000."
+- **Tradução SQL:**
+
+```sql
+SELECT NOME, PRECO      -- Selecione o nome e o preço
+FROM PRODUTOS         -- da tabela Produtos
+WHERE PRECO > 1000;     -- onde o preço é superior a 1000.
+```
+
+#### Como Funciona a Cláusula `WHERE`
+
+Quando uma instrução SQL com uma cláusula `WHERE` é executada, o SGBD percorre a(s) tabela(s) especificadas na cláusula `FROM` e avalia a condição do `WHERE` para **cada linha individualmente**.
+
+- Se a condição for avaliada como **VERDADEIRA** para uma determinada linha, essa linha é incluída no conjunto de resultados (para um `SELECT`) ou é marcada para a operação (para um `UPDATE` ou `DELETE`).
+- Se a condição for avaliada como **FALSA** ou **DESCONHECIDA (UNKNOWN)** (no caso de comparações com `NULL`), a linha é descartada e ignorada pela instrução.
+
+A força da cláusula `WHERE` reside em sua capacidade de construir condições complexas utilizando os operadores de comparação e lógicos que estudamos anteriormente.
+
+#### Exemplos Práticos com `WHERE`
+
+Vamos utilizar nossa tabela `PRODUTOS` para ilustrar.
+
+**1. Usando Operadores de Comparação:**
+
+- **Objetivo:** Encontrar todos os produtos com estoque igual ou superior a 20 unidades.
+- **Consulta:**
+
+```sql
+SELECT NOME, ESTOQUE
+FROM PRODUTOS
+WHERE ESTOQUE >= 20;
+```
+
+- **Resultado:**
+
+| NOME | ESTOQUE |
+| --- | --- |
+| Smartphone | 20 |
+| Monitor | 30 |
+| Impressora | 25 |
+
+
+**2. Usando Operadores Lógicos (`AND`, `OR`, `NOT`):**
+
+- **Objetivo:** Encontrar os produtos que custam menos de R$ 1.000 **E** que têm 15 unidades em estoque.
+- **Consulta:**
+
+```sql
+SELECT NOME, PRECO, ESTOQUE
+FROM PRODUTOS
+WHERE PRECO < 1000 AND ESTOQUE = 15;
+```
+
+- Resultado:
+
+| NOME | PRECO | ESTOQUE |
+| --- | --- | --- |
+| Tablet | 800 | 15 |
+
+#### `WHERE` em Comandos DML
+
+É crucial reforçar que a cláusula `WHERE` não é exclusiva do `SELECT`. Sua utilização é igualmente vital nos comandos `UPDATE` e `DELETE` para garantir que as modificações e exclusões afetem apenas os registros desejados, evitando a perda acidental de dados.
+
+- **Exemplo com `UPDATE`:** Aumentar em 10% o preço de todos os produtos com estoque baixo (menor que 20).
+
+```sql
+UPDATE PRODUTOS
+SET PRECO = PRECO * 1.10
+WHERE ESTOQUE < 20;
+```
+
+- **Exemplo com `DELETE`:** Remover todas as vendas que ocorreram antes de '2024-03-10'.
+
+```sql
+DELETE FROM VENDAS
+WHERE DATA < '2024-03-10';
+```
+
+Em todos esses casos, a cláusula `WHERE` atua como o filtro preciso que direciona a ação do comando SQL para o conjunto correto de dados.
+
