@@ -415,3 +415,93 @@ WHERE DATA < '2024-03-10';
 
 Em todos esses casos, a cláusula `WHERE` atua como o filtro preciso que direciona a ação do comando SQL para o conjunto correto de dados.
 
+### LIMIT e OFFSET: Controlando a Quantidade e a Paginação dos Resultados
+
+No universo dos bancos de dados, onde as tabelas podem conter dezenas, milhares ou até milhões de registros, raramente é prático ou performático recuperar todos os dados de uma só vez. Para lidar com essa realidade, a linguagem SQL nos oferece um par de cláusulas poderosas para controlar exatamente qual "fatia" de um conjunto de resultados desejamos obter: **`LIMIT`** e **`OFFSET`**.
+
+#### `LIMIT`: Restringindo a Quantidade de Linhas
+
+A cláusula **`LIMIT`** tem uma função direta e indispensável: restringir o **número máximo de linhas** que uma consulta irá retornar. Ela atua como um portão de controle no final do processo de consulta, permitindo que apenas um número especificado de registros passe para o resultado final.
+
+Um dos pontos mais críticos para o uso correto do `LIMIT` é compreender que o modelo relacional não garante, por padrão, nenhuma ordem específica para as linhas de uma tabela. Se executarmos uma consulta sem uma cláusula de ordenação, o SGBD é livre para retornar as linhas na ordem que julgar mais eficiente, e essa ordem pode mudar a cada execução.
+
+Por essa razão, utilizar `LIMIT` de forma isolada pode levar a resultados **não determinísticos**. Uma consulta como `SELECT * FROM Produtos LIMIT 5;` pode retornar os cinco primeiros produtos cadastrados hoje, e cinco produtos completamente diferentes amanhã.
+
+Para que o `LIMIT` tenha um resultado consistente e significativo, ele deve ser quase sempre utilizado em conjunto com a cláusula **`ORDER BY`**, que veremos em detalhe mais adiante. A cláusula `ORDER BY` primeiro estabelece uma ordem previsível para todo o conjunto de resultados e, só então, o `LIMIT` seleciona o número de linhas desejado a partir do topo dessa lista ordenada.
+
+**Exemplo Prático (Consulta "Top-N"):**
+
+- **Objetivo:** Encontrar os 3 produtos mais caros em nosso catálogo.
+- **Consulta:**
+
+```SQL
+SELECT NOME, PRECO
+FROM PRODUTOS
+ORDER BY PRECO DESC -- 1º Passo: Ordenar
+LIMIT 3;            -- 2º Passo: Limitar
+```
+
+- **Análise do Processo:**
+    1. **Ordenação:** O SGBD primeiro executa o `FROM PRODUTOS ORDER BY PRECO DESC`. Ele cria uma lista interna de todos os produtos, ordenada do preço mais alto para o mais baixo:
+        - Notebook (2500)
+        - Smartphone (1200)
+        - Tablet (800)
+        - Monitor (500)
+        - Impressora (300)
+
+    2. **Limitação:** Em seguida, a cláusula `LIMIT 3` é aplicada sobre essa lista já ordenada. Ela simplesmente "corta" a lista após o terceiro item, retornando apenas os três primeiros, que são garantidamente os mais caros.
+
+#### `OFFSET`: Pulando Linhas para Paginação
+
+Enquanto o `LIMIT` define "quantos pegar", a cláusula **`OFFSET`** define "a partir de onde pegar". Sua função é instruir o SGBD a **pular um determinado número de linhas** do conjunto de resultados (já ordenado) antes de começar a aplicar o `LIMIT`. É a combinação das duas que torna a implementação de sistemas de **paginação** em aplicações uma tarefa simples e eficiente.
+
+A sintaxe combinada é:
+
+```sql
+... ORDER BY <coluna> LIMIT <tamanho_da_pagina> OFFSET <linhas_a_pular>;
+```
+
+O valor do `OFFSET` para uma determinada página é geralmente calculado pela fórmula: `(numero_da_pagina_desejada - 1) * tamanho_da_pagina`.
+
+**Exemplo Prático (Implementando Paginação):**
+
+- **Objetivo:** Paginar nossa tabela `PRODUTOS`, exibindo 2 produtos por página, ordenados por nome.
+- **Conjunto de Dados Ordenado (`ORDER BY NOME ASC`):**
+    1. Impressora
+    2. Monitor
+    3. Notebook
+    4. Smartphone
+    5. Tablet
+- **Para obter a Página 1 (Pular 0, pegar 2):**
+    - `OFFSET` = (1 - 1) * 2 = 0
+    - `SELECT ID, NOME FROM PRODUTOS ORDER BY NOME LIMIT 2 OFFSET 0;`
+    - O SGBD pula 0 linhas e retorna as 2 seguintes: (Impressora, Monitor).
+
+- **Para obter a Página 2 (Pular 2, pegar 2):**
+    - `OFFSET` = (2 - 1) * 2 = 2
+    - `SELECT ID, NOME FROM PRODUTOS ORDER BY NOME LIMIT 2 OFFSET 2;`
+    - O SGBD pula as 2 primeiras linhas (Impressora, Monitor) e retorna as 2 seguintes: (Notebook, Smartphone).
+
+- **Para obter a Página 3 (Pular 4, pegar 2):**
+    - `OFFSET` = (3 - 1) * 2 = 4
+    - `SELECT ID, NOME FROM PRODUTOS ORDER BY NOME LIMIT 2 OFFSET 4;`
+    - O SGBD pula as 4 primeiras linhas e retorna as 2 seguintes (neste caso, resta apenas 1): (Tablet).
+
+#### Variações de Sintaxe e Uso em DML
+
+É importante notar que, embora o conceito seja universal, a sintaxe exata pode variar entre os SGBDs:
+
+- **MySQL/PostgreSQL:** Usam a sintaxe `LIMIT ... OFFSET ...`.
+- **SQL Server:** Utiliza a sintaxe mais verbosa `OFFSET ... ROWS FETCH NEXT ... ROWS ONLY`.
+- **Oracle:** Utiliza a sintaxe `OFFSET ... ROWS FETCH FIRST ... ROWS ONLY`.
+
+Além do uso em `SELECT`, alguns SGBDs (como o MySQL) permitem o uso de `LIMIT` e `OFFSET` com comandos DML. Essa funcionalidade é frequentemente utilizada como uma medida de segurança e controle para executar alterações ou exclusões em lotes ("batches"), evitando sobrecarregar o banco de dados.
+
+- **Exemplo:** Remover 10 usuários, mas pulando os 4 primeiros (removendo do 5º ao 14º).
+
+```sql
+DELETE FROM usuarios
+ORDER BY data_cadastro ASC
+LIMIT 10 OFFSET 4;
+```
+
