@@ -473,3 +473,12 @@ EXCEPT
 SELECT ID_Cliente, Nome FROM Clientes_2025;
 ```
 
+## Considerações Finais
+
+Neste capítulo, desvendamos um dos aspectos mais poderosos e essenciais da linguagem SQL: a capacidade de combinar dados de múltiplas tabelas. Se a normalização, que estudamos anteriormente, é o processo de "desmontar" as informações para garantir a integridade, as **junções (`JOIN`)** e as **operações de conjunto** são as ferramentas que nos permitem "remontar" essas peças de forma inteligente para criar uma visão completa e responder a perguntas de negócio complexas.
+
+Iniciamos nossa jornada com as junções, detalhando os quatro tipos principais. Vimos o **`INNER JOIN`** como a ferramenta de trabalho mais comum, funcionando como uma interseção para nos trazer apenas os dados que possuem uma correspondência direta entre as tabelas. Em seguida, exploramos o universo das junções externas com o **`LEFT JOIN`**, o **`RIGHT JOIN`** e o **`FULL OUTER JOIN`**, compreendendo seu poder em não apenas mostrar o que se conecta, mas também em revelar o que _não_ se conecta, através do uso estratégico de valores `NULL`.
+
+Na segunda parte do capítulo, diferenciamos as junções das **operações de conjunto**. Entendemos que, enquanto as junções combinam colunas para criar linhas mais largas, os operadores **`UNION`**, **`INTERSECT`** e **`EXCEPT`** combinam os resultados de consultas inteiras, empilhando linhas para consolidar, comparar ou diferenciar conjuntos de dados que compartilham a mesma estrutura.
+
+Ao dominar os diferentes tipos de `JOIN` e as operações de conjunto, ganhamos a habilidade de navegar por todo o esquema de um banco de dados relacional. Deixamos de estar confinados a uma única tabela e passamos a poder tecer conexões entre clientes e pedidos, produtos e vendas, médicos e pacientes. Essa é a verdadeira essência do modelo relacional posta em prática. Com este conhecimento, estamos agora equipados para construir consultas robustas e responder a praticamente qualquer pergunta de negócio, não importa quão distribuída a informação esteja.
