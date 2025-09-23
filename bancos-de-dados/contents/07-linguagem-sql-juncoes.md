@@ -214,3 +214,131 @@ A tabela resultante conterá apenas os produtos que foram vendidos, eliminando o
 
 Como podemos observar, o resultado é um conjunto de dados "limpo" que mostra apenas as relações existentes entre as duas tabelas, tornando o `INNER JOIN` a ferramenta ideal para a maioria das consultas que buscam combinar informações relacionadas.
 
+### LEFT JOIN: Priorizando a Tabela da Esquerda
+
+O **`LEFT JOIN`** (ou, mais formalmente, **`LEFT OUTER JOIN`**) é um tipo de junção externa que combina tabelas priorizando a da esquerda. Seu comportamento é o seguinte: a consulta retorna **todas as linhas da tabela da esquerda** (a primeira tabela, declarada na cláusula `FROM`), independentemente de encontrarem ou não uma correspondência na tabela da direita.
+
+<div align="center">
+<img width="360px" src="https://storage.googleapis.com/user-prompt-files/07-left-join.png" alt="Diagrama de Venn mostrando uma junção à esquerda, com todo o círculo esquerdo e a interseção preenchidos.">
+</div>
+
+Quando uma correspondência é encontrada com base na condição da cláusula `ON`, as colunas de ambas as tabelas são combinadas. Quando uma linha da tabela da esquerda **não encontra** uma correspondência na tabela da direita, ela ainda assim é incluída no resultado, e as colunas que viriam da tabela da direita são preenchidas com valores `NULL`.
+
+Este tipo de junção é extremamente útil para consultas que precisam listar todos os itens de um conjunto principal e, opcionalmente, mostrar informações relacionadas de outro conjunto. Por exemplo: "Listar **todos** os clientes e, para aqueles que fizeram pedidos, mostrar os detalhes desses pedidos".
+
+#### Exemplo Prático Detalhado com `LEFT JOIN`
+
+Para focar puramente na mecânica da junção, vamos utilizar um exemplo com duas tabelas genéricas, `T` e `S`.
+
+<div align="center">
+
+<img width="540px" src="https://storage.googleapis.com/user-prompt-files/07-left-join-tabelas.png" alt="Duas tabelas de exemplo, T (tabela da esquerda) e S (tabela da direita).">
+
+</div>
+
+Vamos executar a seguinte consulta para juntar `T` e `S`:
+
+SQL
+
+```
+SELECT *
+FROM T
+LEFT JOIN S ON T.A = S.G;
+```
+
+- **Tabela da esquerda:** `T`
+    
+- **Tabela da direita:** `S`
+    
+- **Colunas de equivalência:** `T.A` e `S.G`
+    
+
+#### Construindo o Resultado: Análise Passo a Passo
+
+O SGBD processará cada linha da tabela da esquerda (`T`) para construir o resultado.
+
+Análise para T.A = 10
+
+O SGBD busca na tabela S por todas as linhas onde S.G = 10.
+
+<div align="center">
+
+<img width="700px" src="https://storage.googleapis.com/user-prompt-files/07-left-join-exemplo-1.png" alt="Diagrama mostrando a correspondência de T.A = 10 com duas linhas na tabela S.">
+
+</div>
+
+Ele encontra duas correspondências. Portanto, a linha de T com A=10 será duplicada para se combinar com cada uma das correspondências encontradas.
+
+<div align="center">
+
+<img width="700px" src="https://storage.googleapis.com/user-prompt-files/07-left-join-exemplo-2.png" alt="Duas linhas na tabela de resultado para a junção de T.A = 10.">
+
+</div>
+
+---
+
+Análise para T.A = 20
+
+O SGBD busca na tabela S por linhas onde S.G = 20.
+
+<div align="center">
+
+<img width="700px" src="https://storage.googleapis.com/user-prompt-files/07-left-join-exemplo-3.png" alt="Diagrama mostrando a ausência de correspondência para T.A = 20 na tabela S.">
+
+</div>
+
+Nenhuma correspondência é encontrada. Como estamos em um LEFT JOIN, a regra é preservar a linha da tabela da esquerda. A linha de T com A=20 é incluída no resultado, e as colunas de S (G, H, I) são preenchidas com NULL.
+
+<div align="center">
+
+<img width="700px" src="https://storage.googleapis.com/user-prompt-files/07-left-join-exemplo-4.png" alt="Uma linha na tabela de resultado para a junção de T.A = 20, com valores NULL.">
+
+</div>
+
+---
+
+Análise para T.A = 50
+
+O SGBD busca na tabela S por linhas onde S.G = 50.
+
+<div align="center">
+
+<img width="700px" src="https://storage.googleapis.com/user-prompt-files/07-left-join-exemplo-5.png" alt="Diagrama mostrando a correspondência de T.A = 50 com três linhas na tabela S.">
+
+</div>
+
+Ele encontra três correspondências. A linha de T com A=50 será triplicada para se combinar com cada uma delas.
+
+<div align="center">
+
+<img width="700px" src="https://storage.googleapis.com/user-prompt-files/07-left-join-exemplo-6.png" alt="Três linhas na tabela de resultado para a junção de T.A = 50.">
+
+</div>
+
+---
+
+Análise para T.A = 70
+
+Por fim, o SGBD busca em S por linhas onde S.G = 70.
+
+<div align="center">
+
+<img width="700px" src="https://storage.googleapis.com/user-prompt-files/07-left-join-exemplo-7.png" alt="Diagrama mostrando a correspondência de T.A = 70 com uma linha na tabela S.">
+
+</div>
+
+Ele encontra uma única correspondência.
+
+---
+
+**O Resultado Final**
+
+Juntando todos os resultados parciais, a tabela final da nossa operação `LEFT JOIN` é a seguinte, contendo uma representação para cada uma das quatro linhas originais da tabela `T`.
+
+<div align="center">
+
+<img width="700px" src="https://storage.googleapis.com/user-prompt-files/07-left-join-exemplo-8.png" alt="Tabela de resultado final e completa da operação LEFT JOIN.">
+
+</div>
+
+Uma das aplicações analíticas mais poderosas do `LEFT JOIN` é encontrar registros que não têm correspondência. Ao executar um `LEFT JOIN` e depois filtrar por `WHERE S.G IS NULL`, isolaríamos a linha de `T.A = 20`, respondendo à pergunta "Quais registros em T não têm par em S?".
