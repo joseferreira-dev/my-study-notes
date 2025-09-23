@@ -373,3 +373,103 @@ Ao final do processo, a tabela resultante contém uma representação para cada 
 </div>
 
 Assim como o `LEFT JOIN` é útil para encontrar registros na tabela da esquerda que não têm par, o `RIGHT JOIN` é a ferramenta perfeita para a pergunta inversa: "Quais registros na tabela S não têm correspondência em T?", que seria respondida adicionando a condição `WHERE T.A IS NULL`.
+
+## Operações de Conjunto: Combinando Resultados de Consultas
+
+Além das junções (`JOIN`), que combinam **colunas** de diferentes tabelas para criar linhas mais "largas", a linguagem SQL oferece as **operações de conjunto**. Estes operadores trabalham de uma forma fundamentalmente diferente: eles combinam as **linhas** de dois ou mais resultados de consultas `SELECT`, criando um único conjunto de resultados mais "alto".
+
+Enquanto as junções conectam dados horizontalmente com base em uma condição de correspondência, as operações de conjunto empilham dados verticalmente. Existem três operações principais, todas baseadas na teoria de conjuntos da matemática:
+
+- **`UNION`**: Une os dois conjuntos.
+- **`INTERSECT`**: Encontra a interseção entre os dois conjuntos.
+- **`EXCEPT`**: Encontra a diferença entre os dois conjuntos.
+
+<div align="center">
+<img width="440px" src="./img/07-operacoes-de-conjunto.png">
+</div>
+
+Para que estas operações funcionem, existem duas regras de ouro que devem ser seguidas:
+
+1. As consultas `SELECT` que estão sendo combinadas devem ter o **mesmo número de colunas**.
+2. Os tipos de dados das colunas correspondentes devem ser **compatíveis** (por exemplo, uma coluna de texto pode ser combinada com outra de texto, uma de número com outra de número, etc.).
+
+### UNION
+
+<div align="center">
+<img width="200px" src="./img/07-union.png">
+</div>
+
+O operador **`UNION`** é utilizado para combinar os conjuntos de resultados de duas ou mais consultas `SELECT` em um único resultado.
+
+**Sintaxe Base:**
+
+```sql
+SELECT <colunas> FROM <tabela1>
+UNION
+SELECT <colunas> FROM <tabela2>;
+```
+
+Por padrão, o `UNION` **elimina automaticamente as linhas duplicadas** do resultado final. Se uma linha idêntica for retornada por ambas as consultas, ela aparecerá apenas uma vez.
+
+Se a intenção for manter todas as linhas, incluindo as duplicatas, deve-se utilizar o operador **`UNION ALL`**. Por não precisar realizar a verificação de duplicatas, o `UNION ALL` é geralmente mais performático e é a escolha preferida quando se sabe que não haverá duplicatas ou quando elas são desejadas no resultado.
+
+**Exemplo Prático:** Obter uma lista de todos os IDs de produtos, tanto os que existem no catálogo (`PRODUTO`) quanto os que foram vendidos (`VENDAS`), sem repetições.
+
+```sql
+SELECT ID FROM PRODUTO
+UNION
+SELECT ID_PRODUTO FROM VENDAS;
+```
+
+### INTERSECT
+
+<div align="center">
+<img width="200px" src="./img/07-intersect.png">
+</div>
+
+O operador **`INTERSECT`** retorna apenas as linhas que estão presentes **em ambos** os conjuntos de resultados das consultas `SELECT`. É a verdadeira interseção de conjuntos.
+
+**Sintaxe Base:**
+
+```sql
+SELECT <colunas> FROM <tabela1>
+INTERSECT
+SELECT <colunas> FROM <tabela2>;
+```
+
+Assim como o `UNION`, o `INTERSECT` também elimina duplicatas por padrão. A variação `INTERSECT ALL` pode ser usada em alguns SGBDs para manter as duplicatas.
+
+**Exemplo Prático:** Em um cenário com uma tabela `Clientes_2024` e `Clientes_2025`, encontrar os clientes que foram ativos em **ambos os anos**.
+
+```sql
+SELECT ID_Cliente, Nome FROM Clientes_2024
+INTERSECT
+SELECT ID_Cliente, Nome FROM Clientes_2025;
+```
+
+### EXCEPT (ou MINUS)
+
+<div align="center">
+<img width="200px" src="./img/07-except.png">
+</div>
+
+O operador **`EXCEPT`** retorna as linhas que estão presentes no resultado da **primeira consulta**, mas **não** no da segunda. Ele realiza uma operação de **diferença de conjuntos**. A ordem das consultas é crucial, pois `A EXCEPT B` é diferente de `B EXCEPT A`.
+
+**Sintaxe Base:**
+
+```sql
+SELECT <colunas> FROM <tabela1>
+EXCEPT
+SELECT <colunas> FROM <tabela2>;
+```
+
+É importante notar que alguns SGBDs, como o Oracle, utilizam a palavra-chave **`MINUS`** em vez de `EXCEPT` para realizar a mesma operação.
+
+**Exemplo Prático:** Utilizando o mesmo cenário anterior, encontrar os clientes que eram ativos em 2024, mas que **deixaram de ser** em 2025.
+
+```sql
+SELECT ID_Cliente, Nome FROM Clientes_2024
+EXCEPT
+SELECT ID_Cliente, Nome FROM Clientes_2025;
+```
+
