@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",
-                "mode": "source",
+                "file": "engenharia-de-software/contents/15-xp.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07-linguagem-sql-juncoes"
+              "title": "15-xp"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",
+                "file": "engenharia-de-software/contents/15-xp.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 07-linguagem-sql-juncoes"
+              "title": "Sumário de 15-xp"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",
     "bancos-de-dados/contents/img/07-operacoes-de-conjunto.png",
     "bancos-de-dados/contents/img/07-except.png",
     "bancos-de-dados/contents/img/07-intersect.png",
@@ -181,9 +182,7 @@
     "bancos-de-dados/contents/img/07-right-join-tabelas.png",
     "bancos-de-dados/contents/img/07-right-join.png",
     "bancos-de-dados/contents/img/07-left-join-exemplo-8.png",
-    "bancos-de-dados/contents/img/07-left-join-exemplo-7.png",
     "bancos-de-dados/contents/06-linguagem-sql-clausulas.md",
-    "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",
     "bancos-de-dados/contents/05-calculo-relacional.md",
     "bancos-de-dados/contents/04-linguagem-sql-fundamentos.md",
     "plano-de-trabalho.md",
