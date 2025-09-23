@@ -310,3 +310,66 @@ Juntando todos os resultados parciais, a tabela final da nossa operação `LEFT 
 
 Uma das aplicações analíticas mais poderosas do `LEFT JOIN` é encontrar registros que não têm correspondência. Ao executar um `LEFT JOIN` e depois filtrar por `WHERE S.G IS NULL`, isolaríamos a linha de `T.A = 20`, respondendo à pergunta "Quais registros em T não têm par em S?".
 
+## RIGHT JOIN: Priorizando a Tabela da Direita
+
+O **`RIGHT JOIN`** (ou, mais formalmente, **`RIGHT OUTER JOIN`**) é o oposto direto do `LEFT JOIN`. Esta junção retorna **todas as linhas da tabela da direita** (a segunda tabela, declarada após a cláusula `JOIN`), independentemente de encontrarem ou não uma correspondência na tabela da esquerda.
+
+<div align="center">
+<img width="200px" src="./img/07-right-join.png">
+</div>
+
+Seu comportamento é o espelho do `LEFT JOIN`:
+
+- Quando uma correspondência é encontrada com base na condição `ON`, as colunas de ambas as tabelas são combinadas.
+- Quando uma linha da tabela da direita **não encontra** uma correspondência na tabela da esquerda, ela ainda assim é incluída no resultado, e as colunas que viriam da tabela da esquerda são preenchidas com valores `NULL`.
+- Linhas da tabela da esquerda que não têm correspondência na tabela da direita são **descartadas**.
+
+É importante notar que qualquer `RIGHT JOIN` pode ser reescrito como um `LEFT JOIN` simplesmente invertendo a ordem das tabelas na consulta. A consulta `FROM T RIGHT JOIN S` é logicamente idêntica a `FROM S LEFT JOIN T`. Por essa razão, muitos desenvolvedores preferem padronizar o uso do `LEFT JOIN` para manter a consistência do código.
+
+### Exemplo Prático com `RIGHT JOIN`
+
+Vamos utilizar as mesmas tabelas `T` e `S` para observar o comportamento inverso.
+
+<div align="center">
+<img width="540px" src="./img/07-right-join-tabelas.png">
+</div>
+
+Executaremos a seguinte consulta:
+
+```sql
+SELECT *
+FROM T
+RIGHT JOIN S ON T.A = S.G;
+```
+
+- **Tabela da esquerda:** `T`
+- **Tabela da direita:** `S`
+- **Coluna de equivalência:** `T.A` e `S.G`
+
+Desta vez, a lógica da junção se concentra em garantir que cada linha da tabela da direita (`S`) esteja presente no resultado.
+
+<div align="center">
+<img width="700px" src="./img/07-right-join-exemplo-1.png">
+</div>
+
+**Análise do Processo:**
+
+O SGBD agora percorre cada linha da tabela S e busca sua correspondência em T.
+
+1. **Linhas de `S` com `G=10`:** As duas primeiras linhas de `S` possuem `G=10`. Ambas encontram uma correspondência na linha de `T` onde `A=10`. O resultado conterá duas linhas combinadas.
+2. **Linhas de `S` com `G=50`:** As três linhas de `S` com `G=50` encontram, cada uma, uma correspondência na linha de `T` onde `A=50`. O resultado conterá três linhas combinadas para este caso.
+3. **Linha de `S` com `G=70`:** A linha de `S` com `G=70` encontra uma correspondência na linha de `T` onde `A=70`, gerando uma linha no resultado.
+
+**O que acontece com a linha T.A = 20?**
+
+Como a análise parte da tabela da direita (S), e nenhuma linha em S possui o valor G=20, a linha da tabela T com A=20 ("Serviços & Gerenciamento Remoto") nunca é correspondida. Como o RIGHT JOIN não tem a obrigação de preservar as linhas sem correspondência da tabela da esquerda, esta linha é simplesmente descartada do resultado final.
+
+**Resultado Final:**
+
+Ao final do processo, a tabela resultante contém uma representação para cada uma das seis linhas originais da tabela `S`, que era a tabela principal nesta junção.
+
+<div align="center">
+<img width="700px" src="./img/07-right-join-exemplo-2.png">
+</div>
+
+Assim como o `LEFT JOIN` é útil para encontrar registros na tabela da esquerda que não têm par, o `RIGHT JOIN` é a ferramenta perfeita para a pergunta inversa: "Quais registros na tabela S não têm correspondência em T?", que seria respondida adicionando a condição `WHERE T.A IS NULL`.
