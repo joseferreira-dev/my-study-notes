@@ -96,7 +96,7 @@ Ao executar um `FULL OUTER JOIN`, o SGBD analisa as linhas de ambas as tabelas e
 
 Vamos analisar como cada linha da tabela se encaixa nas situações acima, graficamente.
 
-### Análise Gráfica Passo a Passo
+### Exemplo Prático
 
 Para entender como a tabela final de um `FULL OUTER JOIN` é montada, vamos simular o processo que o SGBD realiza, analisando cada linha da tabela da esquerda (`PRODUTO`) e buscando suas correspondências na tabela da direita (`VENDAS`).
 
@@ -164,7 +164,7 @@ Ele não encontra nenhuma correspondência. Em um `INNER JOIN`, esta linha seria
 <img width="700px" src="./IMG/07-full-join-exemplo-8.png">
 </div>
 
-#### Resultado Final
+**Resultado Final:**
 
 Ao juntar todas as linhas que geramos em nossa análise passo a passo, obtemos a tabela de resultado final e completa da operação `FULL OUTER JOIN`.
 
@@ -226,7 +226,7 @@ Quando uma correspondência é encontrada com base na condição da cláusula `O
 
 Este tipo de junção é extremamente útil para consultas que precisam listar todos os itens de um conjunto principal e, opcionalmente, mostrar informações relacionadas de outro conjunto. Por exemplo: "Listar **todos** os clientes e, para aqueles que fizeram pedidos, mostrar os detalhes desses pedidos".
 
-### Exemplo Prático Detalhado com `LEFT JOIN`
+### Exemplo Prático com `LEFT JOIN`
 
 Para focar puramente na mecânica da junção, vamos utilizar um exemplo com duas tabelas genéricas, `T` e `S`.
 
