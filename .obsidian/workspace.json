@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "engenharia-de-software/contents/15-xp.md",
-                "mode": "preview",
+                "file": "legislacao/contents/08-lei-12527.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "15-xp"
+              "title": "08-lei-12527"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "engenharia-de-software/contents/15-xp.md",
+                "file": "legislacao/contents/08-lei-12527.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 15-xp"
+              "title": "Sumário de 08-lei-12527"
             }
           }
         ],
@@ -171,6 +171,8 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "engenharia-de-software/contents/15-xp.md",
+    "legislacao/contents/08-lei-12527.md",
     "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",
     "bancos-de-dados/contents/img/07-operacoes-de-conjunto.png",
     "bancos-de-dados/contents/img/07-except.png",
@@ -209,7 +211,6 @@
     "engenharia-de-software/contents/12-modelo-rup.md",
     "engenharia-de-software/contents/11-modelo-orientado-a-aspectos.md",
     "engenharia-de-software/contents/20-refatoracao.md",
-    "engenharia-de-software/contents/21-integracao-entrega-e-implantacao-continuas.md",
     "engenharia-de-prompt/contents",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
