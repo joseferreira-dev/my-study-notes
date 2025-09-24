@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "legislacao/contents/08-lei-12527.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "legislacao/contents/img/lei-12527-alcance.png",
     "engenharia-de-software/contents/15-xp.md",
     "legislacao/contents/08-lei-12527.md",
     "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",
@@ -210,7 +211,6 @@
     "engenharia-de-software/contents/25-gestao-agil-de-projetos.md",
     "engenharia-de-software/contents/12-modelo-rup.md",
     "engenharia-de-software/contents/11-modelo-orientado-a-aspectos.md",
-    "engenharia-de-software/contents/20-refatoracao.md",
     "engenharia-de-prompt/contents",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
