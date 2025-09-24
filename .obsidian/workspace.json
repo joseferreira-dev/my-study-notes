@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "legislacao/contents/08-lei-12527.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "legislacao/contents/img/lei-12527-transparencia-ativa-e-passiva.png",
     "legislacao/contents/img/lei-12527-alcance.png",
     "engenharia-de-software/contents/15-xp.md",
     "legislacao/contents/08-lei-12527.md",
@@ -184,7 +185,6 @@
     "bancos-de-dados/contents/img/07-right-join-exemplo-1.png",
     "bancos-de-dados/contents/img/07-right-join-tabelas.png",
     "bancos-de-dados/contents/img/07-right-join.png",
-    "bancos-de-dados/contents/img/07-left-join-exemplo-8.png",
     "bancos-de-dados/contents/06-linguagem-sql-clausulas.md",
     "bancos-de-dados/contents/05-calculo-relacional.md",
     "bancos-de-dados/contents/04-linguagem-sql-fundamentos.md",
