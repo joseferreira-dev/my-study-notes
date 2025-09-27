@@ -390,3 +390,86 @@ Os requisitos mínimos para a instalação do Windows Server 2012 eram modestos,
 
 Assim como seu predecessor, o Windows Server 2012 recebeu uma versão de atualização chamada **Windows Server 2012 R2**. Esta versão refinou os recursos existentes e adicionou novas funcionalidades, como a **classificação automática de dados em camadas (automated tiering)** nos Espaços de Armazenamento, que move dados acessados com frequência para discos mais rápidos (SSDs) e dados frios para discos mais lentos (HDDs), e a introdução das **máquinas virtuais de Geração 2** no Hyper-V.
 
+### Windows Server 2016
+
+Construído sobre o núcleo do Windows 10, o Windows Server 2016 foi uma versão focada em trazer para o data center local os paradigmas da computação em nuvem, com um foco massivo em segurança, automação e novas formas de implantação de aplicações.
+
+#### Fortalecendo a Segurança da Plataforma
+
+O Server 2016 introduziu um conjunto de tecnologias projetadas para proteger as identidades e o sistema operacional contra ameaças modernas.
+
+- **Credential Guard:** Uma das inovações de segurança mais significativas. Utilizando a **Segurança Baseada em Virtualização (VBS)**, esta tecnologia usa o Hyper-V para criar uma área de memória completamente isolada e protegida, onde os "segredos" do sistema, como os hashes de senha NTLM e os tickets Kerberos, são armazenados. O sistema operacional principal não tem acesso direto a essa área. Isso mitiga de forma eficaz os ataques do tipo _pass-the-hash_, nos quais um invasor que compromete o sistema tenta roubar as credenciais da memória para se mover lateralmente pela rede.
+- **Remote Credential Guard:** Estende a proteção do Credential Guard para sessões de Área de Trabalho Remota (RDP). Em uma conexão RDP padrão, as credenciais do usuário são enviadas e armazenadas em cache no servidor de destino. Se o servidor estiver comprometido, as credenciais podem ser roubadas. Com o Remote Credential Guard, as credenciais permanecem no lado do cliente, e a autenticação ocorre sem expô-las ao servidor, protegendo a identidade do usuário mesmo ao se conectar a uma máquina potencialmente insegura.
+- **Just Enough Administration (JEA):** Uma tecnologia de segurança que implementa o **princípio do menor privilégio** para a administração do sistema. Em vez de conceder a um usuário privilégios de Administrador do Domínio para realizar uma tarefa específica (como reiniciar um serviço), o JEA permite a criação de _endpoints_ de PowerShell restritos. Esses _endpoints_ expõem apenas os comandos estritamente necessários para a função daquele usuário, limitando drasticamente o que ele pode fazer no servidor e reduzindo o risco de danos acidentais ou maliciosos.
+- **Windows Defender:** No Server 2016, o antivírus nativo da Microsoft, Windows Defender, passou a vir instalado e habilitado por padrão. A interface gráfica do usuário, no entanto, não é instalada para minimizar a superfície de ataque e o consumo de recursos, com o gerenciamento sendo feito via PowerShell ou ferramentas centralizadas.
+
+#### Inovações em Gerenciamento e Implantação
+
+- **PowerShell 5.0:** Recebeu melhorias significativas, incluindo aprimoramentos no registro de logs e na transcrição de comandos, o que auxilia enormemente em auditorias e investigações de perícia digital, além de introduzir novas funcionalidades para a criação de scripts mais seguros.
+- **PackageManagement (OneGet):** Esta versão introduziu um gerenciador de pacotes unificado, trazendo uma experiência semelhante à de sistemas Linux para o Windows. Com o PackageManagement, administradores podem descobrir, instalar e inventariar softwares de forma automatizada a partir de diversos repositórios (como a Galeria do PowerShell) usando comandos simples, como `Install-Package`, agilizando a configuração de servidores.
+- **Contêineres Windows e Nano Server:** O Server 2016 foi o primeiro a oferecer suporte nativo a **contêineres**, em parceria com a tecnologia Docker. Isso permitiu que aplicações fossem empacotadas com suas dependências em ambientes leves e isolados. Para suportar essa nova abordagem, foi introduzido o **Nano Server**, uma opção de implantação radicalmente minimalista, sem interface gráfica e com um espaço em disco muito reduzido, otimizado para atuar como host de contêineres e aplicações "nascidas na nuvem".
+
+#### Serviços de Aplicação
+
+- **IIS (Serviços de Informações da Internet) 10.0:** O servidor web da Microsoft foi atualizado para a versão 10.0, trazendo como principal novidade o suporte ao protocolo **HTTP/2**. O HTTP/2 oferece melhorias massivas de desempenho para sites e serviços web através de recursos como a multiplexação de requisições em uma única conexão TCP, resultando em um carregamento de páginas mais rápido e eficiente.
+
+### Windows Server 2019
+
+Construído sobre a mesma base do Windows 10, o Windows Server 2019 foi uma versão de refinamento e maturação, focada em quatro temas principais: **Nuvem Híbrida, Segurança, Plataforma de Aplicações e Infraestrutura Hiperconvergente (HCI)**. Esta versão foi distribuída no modelo **LTSC (Long-Term Servicing Channel)**, garantindo um ciclo de vida de 10 anos com atualizações de segurança, mas sem as atualizações semestrais de recursos, oferecendo a estabilidade e previsibilidade exigidas por ambientes de servidor.
+
+#### Edições e Licenciamento
+
+O Windows Server 2019 continuou o modelo de edições para atender a diferentes escalas de infraestrutura, com o licenciamento sendo baseado no número de núcleos de processador físicos do servidor.
+
+- **Windows Server 2019 Standard:** A edição ideal para ambientes físicos ou com pouca virtualização. Oferece a maioria das funcionalidades do sistema, mas com direitos de virtualização limitados: uma licença Standard, que cobre todos os núcleos do servidor, permite a execução de até **duas máquinas virtuais (VMs)** ou dois contêineres Hyper-V.
+- **Windows Server 2019 Datacenter:** A edição definitiva para data centers e ambientes de nuvem privada altamente virtualizados. Inclui todas as funcionalidades da edição Standard e remove os limites de virtualização, permitindo a execução de um **número ilimitado de VMs** e contêineres. Além disso, oferece recursos exclusivos, como os **Espaços de Armazenamento Diretos (Storage Spaces Direct)** e as **Máquinas Virtuais Protegidas (Shielded VMs)**.
+- **Windows Server 2019 Essentials:** Projetada para pequenas empresas com até 25 usuários e 50 dispositivos. É uma solução simplificada, com uma interface de gerenciamento mais fácil e recursos básicos de servidor, como compartilhamento de arquivos e impressão.
+- **Hyper-V Server 2019:** Não é uma edição do Windows Server, mas sim um produto gratuito e autônomo. Ele contém apenas o necessário para atuar como um host de virtualização (o hipervisor Hyper-V), sem outras funções de servidor e sem interface gráfica. As máquinas virtuais executadas nele precisam ser licenciadas separadamente.
+
+#### Principais Recursos e Inovações
+
+- **Windows Admin Center:** Uma das novidades mais importantes, o Windows Admin Center é uma ferramenta de gerenciamento moderna, centralizada e baseada em navegador web. A partir de uma única interface, um administrador pode gerenciar servidores, clusters, infraestrutura hiperconvergente e até mesmo computadores com Windows 10/11, substituindo a necessidade de abrir múltiplos consoles de gerenciamento (MMC) legados.
+- **Segurança Aprimorada:** O Server 2019 aprofundou as funcionalidades de segurança, introduzindo o **Windows Defender Advanced Threat Protection (ATP)**. O ATP é uma plataforma de segurança unificada que vai além do antivírus tradicional, oferecendo detecção e resposta a ameaças avançadas, investigação de ataques e redução da superfície de ataque do sistema.
+- **Plataforma de Aplicações e Contêineres:** O suporte a contêineres Windows foi aprimorado, com imagens de base menores e maior compatibilidade de aplicações. A principal evolução foi a melhoria na integração com o **Kubernetes**, o orquestrador de contêineres padrão da indústria, facilitando a implantação e o gerenciamento de aplicações modernas e microserviços em ambientes Windows.
+- **Infraestrutura Hiperconvergente (HCI):** O Server 2019 consolidou a plataforma da Microsoft para HCI, que combina computação (Hyper-V), armazenamento (Storage Spaces Direct) e rede (Software-Defined Networking) em uma única solução definida por software, rodando em hardware de servidor padrão.
+- **Melhorias de Armazenamento:**
+    - **Serviço de Migração de Armazenamento (Storage Migration Service):** Uma nova ferramenta que simplifica drasticamente a migração de servidores de arquivos antigos para versões mais novas do Windows Server. O serviço inventaria, transfere os dados e a configuração, e assume a identidade do servidor antigo, tornando o processo transparente para os usuários.
+    - **Storage Replica:** Funcionalidade que permite a replicação de volumes em nível de bloco, de forma síncrona ou assíncrona, entre servidores ou clusters para fins de recuperação de desastres.
+
+### Windows Server 2022
+
+O Windows Server 2022, construído sobre a base sólida do Windows 10 e alinhado com o Windows 11, é a mais recente versão no **LTSC (Long-Term Servicing Channel)**. Esta versão aprofunda as tendências de seus predecessores, focando em três pilares estratégicos: **segurança avançada em múltiplas camadas**, **capacidades de nuvem híbrida com o Azure** e uma **plataforma de aplicações flexível**.
+
+#### Segurança Avançada Multicamadas
+
+A segurança é o tema central do Windows Server 2022, com a introdução do conceito de **Servidor com Núcleo Protegido (Secured-core Server)**. Esta não é uma única funcionalidade, mas uma combinação de hardware, firmware e software do sistema operacional para fornecer proteção profunda contra ameaças complexas.
+
+- **Proteção de Hardware e Firmware:** Utiliza hardware de segurança como o **TPM 2.0 (Trusted Platform Module)** para criar uma raiz de confiança de hardware e o **UEFI Secure Boot** para garantir que apenas softwares e drivers assinados e confiáveis sejam carregados durante a inicialização do sistema, protegendo contra _bootkits_ e _rootkits_.
+- **Segurança Baseada em Virtualização (VBS):** Expande o uso do Hyper-V para criar regiões de memória seguras e isoladas do sistema operacional principal. A VBS é a base para tecnologias como o **Credential Guard** e a **Integridade de Código Protegida por Hipervisor (HVCI)**, que protege o kernel do Windows contra a injeção de código malicioso.
+- **SMB sobre QUIC:** Uma inovação de segurança de rede que permite o acesso a compartilhamentos de arquivos através da Internet de forma segura e criptografada (usando TLS 1.3), **sem a necessidade de uma VPN**. Isso simplifica e protege o acesso a arquivos para trabalhadores remotos e filiais.
+
+#### Integração Híbrida com o Azure
+
+O Server 2022 foi projetado para operar de forma transparente em ambientes que mesclam a infraestrutura local (_on-premises_) com a nuvem da Microsoft.
+
+- **Azure Arc:** Permite que servidores Windows Server 2022, mesmo estando em um data center local, sejam "projetados" e gerenciados através do portal do Azure. Isso cria um painel de gerenciamento unificado ("single pane of glass"), onde administradores podem aplicar políticas, monitorar e proteger seus servidores locais e na nuvem usando as mesmas ferramentas do Azure.
+- **Windows Server 2022 Azure Edition:** Uma edição especial, otimizada para ser executada como uma máquina virtual no Azure ou em clusters do Azure Stack HCI. Ela oferece funcionalidades exclusivas, como:
+    - **Hotpatching:** Permite a instalação de atualizações de segurança críticas **sem a necessidade de reiniciar o servidor**, um recurso revolucionário para maximizar o tempo de atividade (_uptime_) de serviços críticos.
+    - **Azure Automanage:** Um serviço que automatiza as melhores práticas de gerenciamento do ciclo de vida do servidor, incluindo configuração, monitoramento e aplicação de patches.
+
+#### Plataforma de Aplicações, Desempenho e Escalabilidade
+
+- **Contêineres:** O suporte a contêineres Windows foi aprimorado, com a Microsoft produzindo imagens de base significativamente menores. Isso resulta em tempos de inicialização mais rápidos, downloads mais eficientes e a capacidade de executar mais contêineres por servidor. A compatibilidade com o orquestrador Kubernetes também foi aprimorada.
+- **Desempenho e Escalabilidade:** O sistema foi projetado para as cargas de trabalho mais exigentes, com suporte para especificações de hardware massivas, como até **48 TB de memória RAM** e **2048 núcleos lógicos** em até 64 soquetes de processador.
+
+#### Edições e Suporte
+
+O Windows Server 2022 segue uma estrutura de edições clara, com o licenciamento baseado em núcleos físicos:
+
+- **Standard:** A edição padrão para ambientes com pouca ou nenhuma virtualização, incluindo direitos para até 2 VMs.
+- **Datacenter:** A edição para data centers e nuvens privadas, com direitos de virtualização ilimitados e acesso a recursos avançados como Storage Spaces Direct e Máquinas Virtuais Protegidas.
+- **Datacenter: Azure Edition:** A edição focada em nuvem e ambientes híbridos, com todos os recursos da Datacenter mais as funcionalidades exclusivas de integração com o Azure.
+- **Essentials:** A solução para pequenas empresas, com licenciamento simplificado para até 25 usuários e 50 dispositivos.
+
+Como parte do canal LTSC, o Windows Server 2022 recebe um ciclo de vida de suporte de **10 anos**, consistindo em 5 anos de suporte base (_mainstream_) e 5 anos de suporte estendido (_extended_), garantindo uma plataforma estável e segura a longo prazo.
+
