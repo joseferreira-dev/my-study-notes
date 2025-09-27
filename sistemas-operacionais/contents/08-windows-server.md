@@ -704,3 +704,28 @@ Ao clicar com o botão direito em uma pasta, selecionar "Propriedades" e ir na a
 </div>
 
 Neste exemplo, o grupo "Estratégia" recebeu permissão de Leitura/Gravação, enquanto o usuário "aprov" recebeu apenas a permissão de Leitura. A melhor prática, sempre, é atribuir permissões a **grupos**, e não a usuários individuais, para simplificar a administração.
+
+### Ferramentas e Comandos Essenciais de Administração
+
+Embora o Gerenciador de Servidores seja o painel central, a administração diária do Windows Server depende de um conjunto de ferramentas e comandos especializados, muitos dos quais existem há várias versões do sistema operacional e continuam sendo essenciais para a solução de problemas e a configuração do sistema.
+
+#### Gerenciamento de Armazenamento
+
+- **`diskmgmt.msc`:** Este comando abre o console de **Gerenciamento de Disco**. Como detalhado anteriormente, é a principal ferramenta gráfica para todas as tarefas de particionamento, incluindo criar, formatar, excluir, redimensionar (diminuir/estender) volumes e alterar letras de unidade.
+- **`diskpart`:** É a contraparte de linha de comando para o Gerenciamento de Disco. `Diskpart` é um utilitário poderoso que oferece controle total sobre discos, partições e volumes através de um interpretador de comandos interativo ou através de scripts. Ele substituiu a antiga ferramenta `fdisk` do MS-DOS. Seu principal uso em ambientes de servidor é na **automação** de tarefas de configuração de disco e em cenários de recuperação ou instalação a partir do Ambiente de Pré-instalação do Windows (WinPE). Um exemplo de sequência de comandos para preparar um novo disco seria:
+    1. `list disk` (lista os discos físicos)
+    2. `select disk 1` (seleciona o disco desejado)
+    3. `clean` (apaga todas as partições do disco selecionado)
+    4. `create partition primary` (cria uma nova partição primária usando todo o espaço)
+    5. `format fs=ntfs quick` (formata a nova partição com NTFS de forma rápida)
+    6. `assign letter=E` (atribui a letra E: à nova partição)
+- **`chkdsk`:** Abreviação de _Check Disk_, este comando é a ferramenta de linha de comando para verificar a integridade do sistema de arquivos de um volume e corrigir erros.
+    - `chkdsk C:` (verifica a unidade C: em modo somente leitura)
+    - `chkdsk C: /f` (o parâmetro `/f` de _fix_ tenta corrigir os erros encontrados. Se o volume estiver em uso, como a unidade do sistema, a verificação será agendada para a próxima reinicialização).
+    - `chkdsk C: /r` (o parâmetro `/r` de _recover_ localiza setores defeituosos no disco e tenta recuperar as informações legíveis, uma operação muito mais longa que também inclui a funcionalidade do `/f`).
+
+#### Gerenciamento de Sistema e Processos
+
+- **`services.msc`:** Este comando abre o console de **Serviços**. Um serviço é um programa que roda em segundo plano, sem interface de usuário, para fornecer funcionalidades essenciais ao sistema (ex: "Cliente DHCP", "Spooler de Impressão") ou a aplicações. Através deste console, um administrador pode **iniciar, parar, reiniciar e desabilitar** serviços, além de configurar seu **Tipo de Inicialização** (Automático, Manual ou Desativado), o que é uma etapa crucial na otimização e no _hardening_ (reforço da segurança) de um servidor.
+- **`taskmgr`:** Executa o **Gerenciador de Tarefas**, a ferramenta primária para o monitoramento em tempo real do desempenho do sistema (CPU, memória, disco, rede) e para o gerenciamento de processos e aplicativos em execução, como detalhado em seções anteriores.
+
