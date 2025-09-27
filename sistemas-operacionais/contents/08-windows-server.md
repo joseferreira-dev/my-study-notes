@@ -632,3 +632,75 @@ Ambos são adicionados através do assistente "Adicionar Funções e Recursos" n
 - **Servidor WINS:** Um serviço legado (predecessor do DNS) para a resolução de nomes NetBIOS em endereços IP. É mantido por compatibilidade com aplicações e sistemas operacionais mais antigos.
 - **Windows PowerShell ISE (Integrated Scripting Environment):** Um editor gráfico para o PowerShell, que oferece recursos como realce de sintaxe, preenchimento de código (IntelliSense) e depuração, facilitando enormemente o desenvolvimento de scripts de automação.
 
+### Usuários, Grupos e Controle de Acesso
+
+A administração de um Windows Server envolve, fundamentalmente, o controle de quem pode acessar o quê. Este controle é implementado através de um sistema robusto de contas de usuário, grupos e permissões. Antes de operar em um ambiente de domínio, cada servidor possui sua própria base de segurança local, gerenciada através de ferramentas que são a base para a compreensão da administração em maior escala.
+
+#### Gerenciamento de Contas de Usuário Locais
+
+Cada servidor Windows possui um banco de dados de segurança local chamado **SAM (Security Accounts Manager)**, que armazena as contas de usuário e grupos que são válidos **apenas naquele computador específico**.
+
+A interface mais simples para gerenciar a conta de usuário atual é o applet "Contas de Usuário" no **Painel de Controle**.
+
+<div align="center">
+<img width="700px" src="./img/08-painel-de-controle.png">
+</div>
+
+Esta tela oferece uma visão geral e acesso a tarefas comuns para a conta logada, como alterar a senha ou o tipo da conta.
+
+<div align="center">
+<img width="680px" src="./img/08-contas-de-usuarios.png">
+</div>
+
+- **Tipos de Contas e Níveis de Privilégio:** As contas locais, assim como as de domínio, são divididas em tipos com diferentes níveis de poder:
+    - **Administrador:** Possui controle total sobre o servidor local.
+    - **Padrão:** Pode executar programas e gerenciar seus próprios arquivos, mas não pode realizar alterações que afetem o sistema ou outros usuários.
+    - **Convidado:** Uma conta de acesso temporário com permissões extremamente restritas.
+
+Por segurança, o sistema operacional sempre exige a existência de pelo menos uma conta de Administrador ativa.
+
+<div align="center">
+<img width="700px" src="./img/08-alterar-tipo-de-conta.png">
+</div>
+
+- **Criando Novas Contas Locais:** Para adicionar novas contas, utiliza-se a opção "Gerenciar outra conta". Em um servidor, a prática comum é criar contas locais (sem vínculo a uma conta Microsoft) para fins administrativos específicos ou para serviços que precisam rodar com uma identidade particular.
+
+<div align="center">
+<img width="540px" src="./img/08-gerenciar-outra-conta.png">
+</div>
+
+<div align="center">
+<img width="540px" src="./img/08-conta-de-teste.png">
+</div>
+
+- **Logon Automático (`netplwiz`):** O Windows oferece a possibilidade de configurar o logon automático através do comando `netplwiz`. No entanto, é crucial destacar que **esta funcionalidade é altamente desaconselhada em um ambiente de servidor**. Servidores são a espinha dorsal da infraestrutura de TI e devem sempre exigir autenticação forte a cada acesso.
+
+<div align="center">
+<img width="360px" src="./img/08-autorizar-uso-de-senha.png">
+</div>
+
+#### Gerenciamento de Grupos Locais
+
+Assim como em um domínio, a maneira mais eficiente de gerenciar permissões para múltiplos usuários é através de **grupos**. A ferramenta profissional para gerenciar usuários e grupos locais de forma detalhada é o console de **"Gerenciamento do Computador"** (`compmgmt.msc`).
+
+<div align="center">
+<img width="540px" src="./img/08-gerenciamento-do-computador.png">
+</div>
+
+Dentro do snap-in "Usuários e Grupos Locais", um administrador pode criar novos grupos, como o grupo "Estratégia" do exemplo, e adicionar as contas de usuário locais como membros.
+
+<div align="center">
+<img width="700px" src="./img/08-gerenciamento-do-computador-grupos.png">
+</div>
+
+#### Atribuição de Permissões
+
+Com os usuários e grupos devidamente configurados (sejam eles locais ou de domínio), o passo seguinte é atribuir permissões de acesso aos recursos, como pastas e arquivos. Este processo é idêntico ao que vimos no capítulo sobre o Windows Desktop.
+
+Ao clicar com o botão direito em uma pasta, selecionar "Propriedades" e ir na aba "Compartilhamento", o assistente de compartilhamento simplificado permite adicionar usuários e grupos e definir níveis de permissão básicos, como "Leitura" ou "Leitura/Gravação".
+
+<div align="center">
+<img width="580px" src="./img/08-permissoes-de-acesso.png">
+</div>
+
+Neste exemplo, o grupo "Estratégia" recebeu permissão de Leitura/Gravação, enquanto o usuário "aprov" recebeu apenas a permissão de Leitura. A melhor prática, sempre, é atribuir permissões a **grupos**, e não a usuários individuais, para simplificar a administração.
