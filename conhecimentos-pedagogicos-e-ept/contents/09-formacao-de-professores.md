@@ -58,3 +58,29 @@ A ética docente não é um código de regras a ser seguido, mas uma postura que
 
 No contexto atual, a ética na prática docente ganha uma nova e crucial dimensão: o **domínio do conteúdo**. Com o acesso facilitado à informação, não é mais possível que o professor "finja" saber determinado conteúdo. Um aluno pode, com uma rápida busca na internet, verificar a veracidade de uma informação e expor a fragilidade do conhecimento do professor. Portanto, o domínio rigoroso e atualizado do conteúdo que se está ensinando deixou de ser apenas uma questão de competência técnica para se tornar também uma questão de **honestidade intelectual e de respeito** para com os alunos. A ética profissional exige que o professor se comprometa com um estudo constante, garantindo a qualidade e a veracidade do conhecimento que ele media em sala de aula.
 
+## Funções, Saberes e Identidade Profissional
+
+A profissionalização docente, tal como a conhecemos, é um fenômeno moldado pelas grandes transformações sociais, especialmente pelo processo de industrialização no século XX e, mais recentemente, pela transição para a chamada **economia do conhecimento**. Compreender esses dois contextos é essencial para explicar as mudanças ocorridas no trabalho e na identidade do professor.
+
+### A Evolução da Profissão Docente
+
+No século XX, um período marcado pelo desenvolvimento industrial, a necessidade de ampliação da educação para a população estava diretamente ligada à formação de uma mão de obra minimamente instruída, capaz de operar os processos de mecanização. Nesse contexto, a profissão docente estava associada, principalmente, ao ensino da leitura e da escrita, e o acesso ao conhecimento era mediado por livros didáticos e manuais escolares, vistos como os portadores do saber verdadeiro. O papel do professor era, em grande medida, o de aplicar esses manuais de forma fiel.
+
+No século XXI, o cenário é outro. A intensificação da mecanização e da tecnologia deslocou o eixo da economia do lastro material para o mundo virtual e informacional. Isso implica que o conhecimento atrelado a processos tecnológicos e à capacidade de inovação tem, muitas vezes, mais valor do que a fabricação de um produto em si.
+
+Essa mudança coloca o professor em uma posição completamente nova. Sua função não é mais a de treinar alunos para seguirem instruções e operarem máquinas, mas a de **promover a formação de sujeitos capazes de pensar e de encontrar soluções criativas para problemas concretos da realidade**. Isso exige o uso crítico de tecnologias e uma nova forma de pensar a educação, que dialoga com a resolução de problemas.
+
+<div align="center">
+<img width="700px" src="./img/09-esquema-formacao-docente.png">
+</div>
+
+### A Construção da Identidade Docente
+
+Diante dessas novas exigências, a **identidade docente** deixa de ser algo fixo e passa a ser entendida como um processo de construção contínuo. Ela é formada pelo **conjunto de experiências** que o professor vivencia ao longo de sua trajetória profissional, nas complexas interações com alunos, colegas de escola e pais de alunos.
+
+É a partir dessas experiências que o professor fomenta sua motivação, percebe sua eficácia e constrói, dia a dia, pequenas identidades que, somadas, consolidam uma identidade profissional mais sólida. Um professor de alfabetização, por exemplo, constrói sua identidade a partir de múltiplas frentes:
+
+- **Na relação com as famílias**, ele aprende a se comunicar de forma clara e empática para lidar com a ansiedade dos pais em relação ao processo de alfabetização, construindo sua identidade de **mediador**.
+- **Na relação com os colegas**, ele aprende com a troca de experiências que é preciso ter uma abordagem didática eclética para se obter bons resultados, construindo sua identidade de **colaborador** e membro de uma comunidade profissional.
+- **Na relação com os alunos**, ele entende que é preciso ter paciência e saber manejar a afetividade em momentos de indisciplina, construindo sua identidade de **pedagogo** que compreende a criança em sua integralidade.
+
