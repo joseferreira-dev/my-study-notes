@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "legislacao/contents/08-lei-12527.md",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/09-formacao-de-professores.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08-lei-12527"
+              "title": "09-formacao-de-professores"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "legislacao/contents/08-lei-12527.md",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/09-formacao-de-professores.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 08-lei-12527"
+              "title": "Sumário de 09-formacao-de-professores"
             }
           }
         ],
@@ -171,6 +171,8 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "legislacao/contents/08-lei-12527.md",
+    "conhecimentos-pedagogicos-e-ept/contents/09-formacao-de-professores.md",
     "legislacao/contents/img/lei-12527-condutas-ilicitas.png",
     "legislacao/contents/img/lei-12527-competencia-classificacao-de-sigilo.png",
     "legislacao/contents/img/lei-12527-pedido-de-acesso-resumo.png",
@@ -181,9 +183,7 @@
     "legislacao/contents/img/lei-12527-transparencia-ativa.png",
     "legislacao/contents/img/lei-12527-publicidade-vs-sigilo.png",
     "legislacao/contents/img/lei-12527-diretrizes.png",
-    "legislacao/contents/img/lei-12527-transparencia-ativa-e-passiva.png",
     "engenharia-de-software/contents/15-xp.md",
-    "legislacao/contents/08-lei-12527.md",
     "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",
     "bancos-de-dados/contents/06-linguagem-sql-clausulas.md",
     "bancos-de-dados/contents/05-calculo-relacional.md",
