@@ -518,3 +518,87 @@ Após uma busca automática, é comum que o sistema informe que "Os melhores dri
 É importante interpretar essa mensagem corretamente no contexto de um servidor. "Melhor" para o Windows Update geralmente significa o driver mais estável e compatível testado pela Microsoft, mas não necessariamente o mais recente ou o que oferece o melhor desempenho. O driver específico do fabricante pode conter otimizações cruciais para a carga de trabalho do servidor.
 
 Em instalações **Server Core**, que não possuem interface gráfica, o Gerenciamento de Dispositivos não está disponível localmente. Nestes casos, a administração de drivers é realizada via linha de comando (com ferramentas como `PnPUtil.exe`) ou, mais comumente, de forma **remota** a partir de uma estação de trabalho de administração, utilizando o mesmo console de Gerenciamento do Computador conectado ao servidor de destino.
+
+### Gerenciamento de Atualizações e Implantação de Software
+
+Manter os sistemas operacionais e aplicativos de uma rede corporativa atualizados é uma tarefa contínua e de vital importância. Além disso, a necessidade de instalar novos softwares de forma padronizada em dezenas ou milhares de máquinas exige ferramentas de automação e gerenciamento centralizado. O Windows Server oferece um ecossistema de soluções para ambas as necessidades.
+
+#### Atualização Centralizada com WSUS (Windows Server Update Services)
+
+Em uma rede sem gerenciamento central, cada computador se conecta individualmente à Internet para baixar as mesmas atualizações da Microsoft. Isso não apenas consome uma quantidade massiva de banda de internet, como também retira do administrador o controle sobre quais atualizações são aplicadas e quando os computadores são reiniciados. Para resolver esses problemas, a Microsoft oferece o **Windows Server Update Services (WSUS)**.
+
+O WSUS é uma função (_role_) que pode ser instalada no Windows Server, transformando-o em um servidor de atualizações local para toda a rede.
+
+##### Fluxo de Trabalho do WSUS
+
+1. **Sincronização:** O servidor WSUS se conecta aos servidores da Microsoft Update e baixa o **catálogo** de todas as atualizações disponíveis para os produtos e idiomas selecionados pelo administrador (ex: Windows 10, Windows Server 2022, Office 365, em Português e Inglês).
+2. **Aprovação:** As atualizações aparecem no console do WSUS para que o administrador as avalie. Ele pode testar uma atualização em um grupo piloto de computadores e, em seguida, **aprovar** sua instalação para diferentes grupos de computadores na rede (ex: aprovar para "Estações de TI", mas aguardar para aprovar para "Servidores de Produção"). Somente as atualizações aprovadas são efetivamente baixadas para o repositório local do servidor WSUS.
+3. **Distribuição e Instalação:** Os computadores clientes da rede, configurados via **Política de Grupo (GPO)**, deixam de contatar a Microsoft na Internet e passam a verificar as atualizações disponíveis em seu servidor WSUS interno. Eles baixam e instalam apenas as atualizações que foram aprovadas para o grupo ao qual pertencem.
+4. **Relatórios:** Os clientes reportam o status da instalação de cada atualização de volta para o servidor WSUS, permitindo que o administrador monitore o nível de conformidade de toda a rede a partir de um painel central.
+
+##### Benefícios do WSUS
+
+- **Centralização e Controle:** O administrador tem controle granular para aprovar, recusar, agendar e definir prazos para a instalação de atualizações, garantindo que o ambiente permaneça padronizado e estável.
+- **Eficiência de Banda de Internet:** Uma atualização de 1 GB é baixada da Internet **apenas uma vez** para o servidor WSUS e, em seguida, distribuída para centenas de clientes através da rápida rede local (LAN).
+- **Relatórios e Conformidade:** Fornece uma visão centralizada do status de atualização de todos os computadores, uma informação crucial para auditorias de segurança.
+
+#### Implantação de Software em Massa
+
+Instalar um aplicativo manualmente em centenas de computadores é inviável. O ambiente Windows Server oferece diversas estratégias para automatizar e gerenciar a distribuição de software.
+
+##### 1. Política de Grupo (GPO) e Pacotes MSI
+
+Este é o método nativo e integrado ao Active Directory. Ele utiliza as Políticas de Grupo para distribuir pacotes de instalação no formato **MSI (Microsoft Installer)**. Um arquivo MSI é um banco de dados que contém todas as informações e arquivos necessários para que o serviço Windows Installer possa instalar, reparar e remover um software de forma padronizada.
+
+Através de uma GPO de instalação de software, um administrador pode:
+
+- **Atribuir (Assign) um software:** Se atribuído a um **computador**, o software é instalado automaticamente na próxima vez que a máquina for ligada. Se atribuído a um **usuário**, o atalho do programa aparece em seu menu Iniciar, e a instalação ocorre na primeira vez que ele tenta executar o programa.
+- **Publicar (Publish) um software:** Disponível apenas para usuários, esta opção não força a instalação. Em vez disso, o aplicativo aparece na lista de programas disponíveis no Painel de Controle, permitindo que o usuário o instale quando desejar.
+
+##### 2. System Center Configuration Manager (SCCM)
+
+Para ambientes de grande porte que exigem um controle mais robusto, o **SCCM** (atualmente parte do Microsoft Endpoint Configuration Manager) é a solução de gerenciamento padrão da indústria. Ele vai muito além das GPOs, oferecendo:
+
+- **Suporte a Múltiplos Formatos:** Implanta não apenas pacotes MSI, mas também instaladores `.exe`, scripts, pacotes App-V e outros formatos.
+- **Controle Avançado:** Permite o agendamento de instalações dentro de "janelas de manutenção" específicas, a criação de dependências (ex: instalar o .NET Framework antes da aplicação principal) e a segmentação de implantações com base em inventários detalhados de hardware e software.
+- **Relatórios e Autoatendimento:** Oferece relatórios em tempo real sobre o progresso das instalações e um "Centro de Software" onde os usuários podem navegar e instalar aplicativos aprovados por conta própria.
+
+##### 3. Scripts de Automação e Gerenciamento Moderno
+
+- **PowerShell:** Scripts de PowerShell podem ser desenvolvidos para automatizar instalações silenciosas e personalizadas. Esses scripts podem ser distribuídos e executados através de GPOs ou do SCCM.
+- **Microsoft Intune:** É a contrapartida do SCCM baseada em nuvem, parte do Microsoft Endpoint Manager. O Intune é projetado para o **Gerenciamento Moderno**, permitindo a implantação de software e a aplicação de políticas em dispositivos que podem estar em qualquer lugar, dentro ou fora da rede corporativa, incluindo notebooks de trabalhadores remotos e dispositivos móveis.
+
+### Central de Segurança do Windows Defender
+
+A segurança é um pilar fundamental dos sistemas operacionais modernos. Para centralizar e simplificar a gestão das diversas tecnologias de proteção, a Microsoft integrou-as em um único painel de controle chamado **Central de Segurança do Windows Defender** (ou, em versões mais recentes, simplesmente "Segurança do Windows"). Esta suíte de segurança vem ativada por padrão no Windows Server e no Windows Desktop, fornecendo uma camada de proteção essencial contra uma vasta gama de ameaças digitais.
+
+<div align="center">
+<img width="540px" src="./img/08-windows-defender.png">
+</div>
+
+Este painel unificado oferece uma visão geral do estado de segurança do dispositivo e serve como ponto de partida para a configuração de seus componentes principais.
+
+#### Componentes da Suíte de Segurança
+
+- **Proteção contra vírus e ameaças:** Este é o módulo **antivírus e antimalware** do sistema. Ele oferece:
+    - **Proteção em tempo real:** Analisa continuamente os arquivos à medida que são acessados, baixados ou executados, bloqueando ameaças antes que possam infectar o sistema.
+    - **Verificações agendadas e manuais:** Permite que o usuário ou administrador execute verificações completas ou rápidas no sistema em busca de malwares já existentes.
+    - **Atualizações de Definições:** Baixa automaticamente as "assinaturas" de vírus mais recentes para garantir a detecção das novas ameaças.
+    - **Proteção contra Ransomware:** Inclui um recurso chamado "Acesso controlado a pastas", que impede que aplicativos não autorizados modifiquem arquivos em pastas protegidas (como Documentos e Imagens), uma defesa eficaz contra ransomwares.
+
+<div align="center">
+<img width="420px" src="./img/08-historico-de-ameacas.png">
+</div>
+
+- **Firewall e proteção de rede:** Como vimos anteriormente, este módulo controla o tráfego de rede de entrada e saída. A interface na Central de Segurança oferece uma visão simplificada do status do firewall para os perfis de rede (Público, Privado) e permite o acesso a configurações importantes.
+	Uma configuração importante é a notificação que alerta o usuário quando o firewall bloqueia um novo aplicativo que tenta se comunicar com a rede. Isso pode ajudar a identificar um software malicioso tentando "telefonar para casa". Outra opção poderosa é a de "Bloquear todas as conexões de entrada", que oferece um nível máximo de segurança, ideal para uso em redes públicas não confiáveis, pois o comportamento normal de um cliente é iniciar conexões de saída, e não receber conexões de entrada não solicitadas.
+
+<div align="center">
+<img width="540px" src="./img/08-configuracoes-de-notificacoes-do-firewall.png">
+</div>
+
+- **Controle de aplicativos e do navegador:** Este componente é alimentado pela tecnologia **Windows Defender SmartScreen**. Trata-se de um sistema de proteção baseado em reputação. Sempre que um usuário tenta executar um aplicativo baixado da internet ou acessar um site, o SmartScreen verifica sua reputação em um serviço de nuvem da Microsoft. Se o arquivo ou site for conhecido como malicioso ou for de um editor desconhecido, o SmartScreen exibirá um alerta, protegendo o usuário contra phishing, malwares e sites fraudulentos.
+- **Opções da família:** Este é o conjunto de ferramentas de **controle parental** da Microsoft. A partir daqui, é possível gerenciar as contas de membros da família para definir limites de tempo de uso de dispositivos, filtrar o conteúdo da web, restringir a compra de aplicativos e jogos e visualizar relatórios de atividade, promovendo um ambiente digital mais seguro para crianças.
+
+É importante notar que, em ambientes de Windows Server, especialmente em instalações **Server Core** (sem interface gráfica), este painel da Central de Segurança não está presente. No entanto, os motores de proteção subjacentes (o antivírus e o firewall) estão ativos e em execução. A administração, neste caso, é realizada remotamente ou via linha de comando, utilizando o PowerShell ou Políticas de Grupo (GPO) para configurar e monitorar a segurança do servidor.
+
