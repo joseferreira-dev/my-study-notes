@@ -362,3 +362,31 @@ Uma atualização significativa veio com o **Windows Server 2008 R2**. Mais do q
 - **Live Migration** para o Hyper-V, permitindo mover uma máquina virtual em execução de um servidor físico para outro sem interrupção do serviço.
 - **DirectAccess**, uma nova forma de conectividade remota para clientes que funcionava de forma mais transparente que as VPNs tradicionais.
 - A **Lixeira do Active Directory**, que permitia a recuperação de objetos do AD excluídos acidentalmente.
+
+### Windows Server 2012
+
+Lançado como o sucessor do Windows Server 2008 R2 e construído sobre o mesmo núcleo do Windows 8, o Windows Server 2012 representou uma mudança de paradigma na filosofia de servidores da Microsoft. Fortemente influenciado pela ascensão da computação em nuvem, esta versão introduziu melhorias massivas em virtualização, armazenamento, automação e gerenciamento multi-servidor, além de apresentar uma nova interface de usuário, a mesma do Windows 8.
+
+#### A Inovação no Armazenamento: ReFS (Resilient File System)
+
+A novidade mais significativa no Windows Server 2012 foi a introdução de um novo sistema de arquivos, o **ReFS (Resilient File System)**. O ReFS não foi projetado para substituir imediatamente o NTFS (o volume de inicialização do sistema ainda precisava ser NTFS), mas sim para ser um sucessor para volumes de dados, especialmente em cenários que exigem alta disponibilidade e integridade, como servidores de arquivos e armazenamento para máquinas virtuais. Ele foi concebido para superar desafios que o NTFS, projetado décadas antes, não previa, como o gerenciamento de volumes de dados na escala de petabytes e a proteção contra a degradação silenciosa de dados (_bit rot_).
+
+As principais vantagens do ReFS são:
+
+- **Integridade e Auto-recuperação:** O ReFS utiliza _checksums_ (somas de verificação) para os metadados e, opcionalmente, para os dados dos arquivos. Um processo em segundo plano, chamado _scrubber_, periodicamente verifica a integridade de todo o volume. Se uma corrupção for detectada, o ReFS, em conjunto com a tecnologia **Espaços de Armazenamento (Storage Spaces)**, pode reparar o erro automaticamente usando uma cópia espelhada ou de paridade dos dados, sem a necessidade de tirar o volume do ar.
+- **Resiliência a Falhas:** Graças a essa capacidade de auto-recuperação, a necessidade de executar o utilitário `chkdsk` para corrigir corrupções é praticamente eliminada. Em caso de um erro de disco, o ReFS pode isolar a falha, mantendo o restante do volume online e acessível enquanto tenta corrigir o problema.
+- **Escalabilidade Massiva:** O ReFS foi projetado para volumes e arquivos de tamanhos gigantescos, com suporte a nomes e caminhos de arquivo de até 32.768 caracteres, superando em muito os limites do NTFS.
+- **Otimização para Virtualização:** O ReFS introduziu otimizações específicas para o Hyper-V, como a criação quase instantânea de arquivos de disco virtual de tamanho fixo (`.vhdx`) e a mesclagem mais rápida de _checkpoints_ (snapshots) de máquinas virtuais.
+
+#### Outras Características Marcantes
+
+- **Hyper-V 3.0:** A plataforma de virtualização recebeu uma de suas maiores atualizações, introduzindo recursos de classe empresarial como o **Hyper-V Replica**, que permitia a replicação assíncrona de máquinas virtuais para outro servidor para fins de recuperação de desastres, e a **migração de armazenamento ao vivo**, que possibilitava mover os arquivos de uma VM para um novo local de armazenamento sem desligá-la.
+- **Gerenciador de Servidores:** A interface do Gerenciador de Servidores foi completamente redesenhada. A nova versão, baseada em um painel de controle com blocos dinâmicos, foi projetada para o **gerenciamento de múltiplos servidores**. A partir de um único console, um administrador podia adicionar e gerenciar dezenas ou centenas de servidores, refletindo a necessidade de administrar data centers e ambientes de nuvem em escala.
+- **PowerShell 3.0:** A automação foi um foco central, com o PowerShell recebendo milhares de novos _cmdlets_, tornando possível configurar e gerenciar praticamente todos os aspectos do sistema operacional via linha de comando.
+
+#### Requisitos de Sistema e Windows Server 2012 R2
+
+Os requisitos mínimos para a instalação do Windows Server 2012 eram modestos, exigindo um processador de 64 bits de 1.4 GHz, 512 MB de memória RAM e 32 GB de espaço em disco.
+
+Assim como seu predecessor, o Windows Server 2012 recebeu uma versão de atualização chamada **Windows Server 2012 R2**. Esta versão refinou os recursos existentes e adicionou novas funcionalidades, como a **classificação automática de dados em camadas (automated tiering)** nos Espaços de Armazenamento, que move dados acessados com frequência para discos mais rápidos (SSDs) e dados frios para discos mais lentos (HDDs), e a introdução das **máquinas virtuais de Geração 2** no Hyper-V.
+
