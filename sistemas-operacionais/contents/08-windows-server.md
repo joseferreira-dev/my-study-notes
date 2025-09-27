@@ -473,3 +473,48 @@ O Windows Server 2022 segue uma estrutura de edições clara, com o licenciament
 
 Como parte do canal LTSC, o Windows Server 2022 recebe um ciclo de vida de suporte de **10 anos**, consistindo em 5 anos de suporte base (_mainstream_) e 5 anos de suporte estendido (_extended_), garantindo uma plataforma estável e segura a longo prazo.
 
+### Instalação e Configuração de Periféricos e Drivers
+
+A interação entre o sistema operacional e o hardware é mediada por softwares especializados chamados **drivers**. Como vimos, um driver é o componente que "ensina" o Windows a se comunicar e a controlar um periférico específico, desde uma placa de rede até um controlador de armazenamento.
+
+O Windows Server, assim como sua contraparte desktop, utiliza a tecnologia **PnP (Plug and Play)** e possui uma vasta biblioteca de drivers genéricos, o que permite a detecção e a configuração automática de muitos componentes de hardware. No entanto, em um ambiente de servidor, a prática recomendada muitas vezes difere da de um desktop. Enquanto um driver genérico fornecido pelo Windows Update pode ser suficiente para um computador pessoal, em um servidor, a prioridade máxima é a **estabilidade e o desempenho otimizado**. Por isso, administradores de sistemas frequentemente optam por baixar e instalar manualmente os drivers certificados, fornecidos diretamente pelo fabricante do servidor (como Dell, HP, Lenovo) ou do componente (como Intel, Broadcom, NVIDIA), pois estes foram testados exaustivamente para aquela carga de trabalho específica.
+
+#### Gerenciador de Dispositivos
+
+A ferramenta central para o gerenciamento de hardware em um servidor com interface gráfica é o **Gerenciador de Dispositivos**. Acessível através do Gerenciador de Servidores ou do Painel de Controle, ele fornece uma visão completa de todos os dispositivos reconhecidos pelo sistema e o status de seus drivers.
+
+<div align="center">
+<img width="420px" src="./img/08-gerenciador-de-dispositivos.png">
+</div>
+
+Através do Gerenciador de Dispositivos, um administrador pode realizar tarefas críticas:
+
+- **Atualizar driver:** Aplicar uma nova versão de um driver para corrigir bugs, fechar brechas de segurança ou melhorar o desempenho.
+- **Desabilitar dispositivo:** Desativar um componente para solucionar conflitos de hardware ou isolar um problema sem removê-lo fisicamente.
+- **Desinstalar dispositivo:** Remover completamente um dispositivo e seu driver do sistema para forçar uma nova detecção e reinstalação.
+- **Propriedades:** Acessar informações detalhadas, incluindo os IDs de hardware do dispositivo, que são essenciais para localizar manualmente o driver correto no site do fabricante caso o Windows não o encontre.
+
+#### Processo de Atualização de Drivers
+
+Quando se opta por atualizar um driver, o Windows apresenta um assistente com duas opções principais:
+
+<div align="center">
+<img width="540px" src="./img/08-atualizar-drivers.png">
+</div>
+
+1. **Pesquisar automaticamente software de driver atualizado:** O sistema buscará primeiro em seu repositório local e, em seguida, no serviço Windows Update.
+2. **Procurar software de driver no computador:** Esta é a opção utilizada quando o administrador já baixou o pacote de drivers do fabricante e deseja instalá-lo de forma controlada.
+
+Após uma busca automática, é comum que o sistema informe que "Os melhores drivers para seu dispositivo já estão instalados".
+
+<div align="center">
+<img width="540px" src="./img/08-atualizar-drivers-busca.png">
+</div>
+
+<div align="center">
+<img width="540px" src="./img/08-atualizar-drivers-resultado.png">
+</div>
+
+É importante interpretar essa mensagem corretamente no contexto de um servidor. "Melhor" para o Windows Update geralmente significa o driver mais estável e compatível testado pela Microsoft, mas não necessariamente o mais recente ou o que oferece o melhor desempenho. O driver específico do fabricante pode conter otimizações cruciais para a carga de trabalho do servidor.
+
+Em instalações **Server Core**, que não possuem interface gráfica, o Gerenciamento de Dispositivos não está disponível localmente. Nestes casos, a administração de drivers é realizada via linha de comando (com ferramentas como `PnPUtil.exe`) ou, mais comumente, de forma **remota** a partir de uma estação de trabalho de administração, utilizando o mesmo console de Gerenciamento do Computador conectado ao servidor de destino.
