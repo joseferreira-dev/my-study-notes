@@ -1361,3 +1361,94 @@ Existem três níveis de permissão para impressoras:
 - **Gerenciar Documentos:** Permite, além de imprimir, gerenciar a fila de impressão, podendo pausar, reiniciar ou cancelar os trabalhos de _qualquer_ usuário.
 - **Gerenciar Impressora:** O nível mais alto, que permite, além das anteriores, compartilhar a impressora, alterar suas propriedades e gerenciar suas permissões.
 
+## Automação e Gerenciamento Moderno com o PowerShell
+
+Enquanto o Prompt de Comando representa a herança da linha de comando no Windows, o **Windows PowerShell** é a sua evolução moderna. Lançado em 2006, o PowerShell foi projetado desde o início para ser mais do que um simples shell; é uma robusta **plataforma de automação e uma linguagem de script**, que se tornou a principal ferramenta para a administração de sistemas no ecossistema Microsoft.
+
+Construído sobre o **.NET Framework**, a característica mais fundamental do PowerShell é que ele opera com **objetos**, e não com texto puro. Enquanto os comandos do `cmd.exe` retornam linhas de texto que precisam ser "interpretadas", os comandos do PowerShell, chamados de **cmdlets**, retornam objetos ricos em dados, com propriedades e métodos que podem ser manipulados diretamente, permitindo a criação de scripts de automação complexos e confiáveis.
+
+#### Acessando e Utilizando o PowerShell
+
+O PowerShell está integrado em todas as versões modernas do Windows Server e do Windows Desktop. Ele pode ser acessado de várias formas, como através da janela "Executar" (`Win + R`) ou pesquisando no Menu Iniciar.
+
+<div align="center">
+<img width="320px" src="./img/08-acessar-powershell-executar.png">
+</div>
+
+<div align="center">
+<img width="320px" src="./img/08-acessar-powershell-menu.png">
+</div>
+
+Os cmdlets, que são os comandos nativos do PowerShell, seguem uma convenção de nomenclatura padronizada e intuitiva de **`Verbo-Substantivo`**, como `Get-Service` (Obter-Serviço) ou `Stop-Process` (Parar-Processo). Essa padronização torna a linguagem fácil de aprender e prever.
+
+<div align="center">
+<img width="480px" src="./img/08-janela-do-powershell.png">
+</div>
+
+#### Compatibilidade e Aliases
+
+Para facilitar a transição para usuários familiarizados com outras linhas de comando, o PowerShell inclui um poderoso sistema de **aliases**. Um alias é um "apelido" ou um nome alternativo para um cmdlet. Graças a isso, muitos dos comandos tradicionais do Prompt de Comando (`dir`, `cd`, `cls`) e do shell do Linux (`ls`, `pwd`, `rm`) funcionam diretamente no PowerShell.
+
+É importante notar que, embora o comando seja o mesmo, a saída pode ser diferente. O comando `dir` no Prompt de Comando retorna uma lista de texto simples. No PowerShell, `dir` é um alias para o cmdlet `Get-ChildItem`, que retorna uma coleção de objetos de arquivo e diretório, resultando em uma exibição mais estruturada e rica em informações.
+
+<div align="center">
+<img width="700px" src="./img/08-comando-dir.png">
+</div>
+
+O mesmo ocorre com comandos do Linux, como `ls`, que também é um alias para `Get-ChildItem`.
+
+<div align="center">
+<img width="540px" src="./img/08-comando-ls.png">
+</div>
+
+#### Evolução Contínua
+
+O PowerShell evoluiu significativamente desde seu lançamento. A versão 1.0 foi introduzida na era do Windows Server 2008, e versões subsequentes foram integradas ao Windows 7 (v2.0) e Windows Server 2012 (v3.0).
+
+Atualmente, o desenvolvimento continua de forma acelerada. A versão mais recente em abril de 2025 era o **PowerShell 7.5.1**, uma plataforma moderna, de código aberto e multiplataforma (rodando em Windows, Linux e macOS), baseada no .NET 9.0.1. Versões como esta trazem constantes melhorias de desempenho, segurança e novos cmdlets, demonstrando o compromisso contínuo da Microsoft com o PowerShell como a principal ferramenta para a automação e o gerenciamento de infraestruturas de TI.
+
+#### Pipeline de Objetos: O Poder do PowerShell
+
+Um dos conceitos mais importantes e poderosos do PowerShell é o **pipeline**, representado pelo caractere `|`. Assim como em outros shells, como o do Linux, o pipeline é usado para encadear comandos, enviando a saída de um comando como entrada para o comando seguinte. No entanto, a forma como o PowerShell implementa o pipeline é fundamentalmente diferente e muito mais poderosa.
+
+Enquanto shells tradicionais (como o `cmd.exe` do Windows ou o `bash` do Linux) trabalham com um pipeline de **texto**, o PowerShell utiliza um pipeline de **objetos .NET**. Esta é a principal diferença:
+
+- **Pipeline de Texto:** A saída do primeiro comando é uma simples sequência de caracteres. O segundo comando recebe esse texto e precisa "interpretá-lo" ou "parseá-lo" para extrair a informação de que precisa, o que pode ser complexo e propenso a erros.
+- **Pipeline de Objetos:** A saída do primeiro cmdlet é uma coleção de objetos estruturados. O segundo cmdlet recebe esses objetos intactos, com todas as suas propriedades e métodos, permitindo uma manipulação de dados muito mais rica, precisa e confiável, sem a necessidade de interpretar texto.
+
+##### Anatomia de um Comando com Pipeline
+
+Vamos analisar em detalhe o exemplo fornecido para entender o fluxo de trabalho:
+
+```powershell
+Get-Process | Where-Object { $_.CPU -gt 100 }
+```
+
+Este comando é projetado para listar todos os processos que utilizaram mais de 100 segundos de tempo de CPU. Vamos decompor cada parte:
+
+1. **`Get-Process`:** Este cmdlet é executado primeiro. Ele não gera texto, mas sim uma **coleção de objetos** do tipo `System.Diagnostics.Process`. Cada objeto nesta coleção representa um processo em execução e contém dezenas de propriedades (`Name`, `Id`, `CPU`, `WorkingSet`, etc.).
+2. **`|` (Pipeline):** O operador de pipeline pega a coleção de objetos gerada pelo `Get-Process` e a envia, **um objeto de cada vez**, para o próximo cmdlet na linha.
+3. **`Where-Object`:** Este cmdlet atua como um **filtro**. Sua função é receber uma coleção de objetos e deixar passar apenas aqueles que satisfazem uma condição específica.
+4. **`{ $_.CPU -gt 100 }`:** Este é um **bloco de script** (_script block_) que contém a lógica do filtro. O `Where-Object` executa este bloco para cada objeto que recebe do pipeline.
+    - **`$_`:** É uma variável automática especial que representa **"o objeto atual no pipeline"**. A cada iteração, `$_` assume o valor de um dos objetos de processo.
+    - **`.CPU`:** O ponto é usado para acessar uma **propriedade** do objeto atual. Neste caso, a propriedade `CPU`, que contém o tempo total de processador (em segundos) consumido por aquele processo.
+    - **`-gt`:** É o operador de comparação para **"maior que"** (_greater than_). A comparação `$_.CPU -gt 100` resulta em verdadeiro ou falso.
+
+O fluxo lógico do comando é: "Para cada objeto de processo, verifique se o valor de sua propriedade CPU é maior que 100. Se for, deixe o objeto passar. Se não, descarte-o". O resultado final na tela será uma lista apenas com os processos que passaram pelo filtro.
+
+##### Exemplo Avançado: Combinando Múltiplos Cmdlets
+
+A verdadeira força do pipeline se manifesta ao encadear múltiplos comandos. Por exemplo, para encontrar os 5 serviços que estão parados e ordená-los por nome, pode-se usar o seguinte comando:
+
+```powershell
+Get-Service | Where-Object { $_.Status -eq 'Stopped' } | Sort-Object -Property DisplayName | Select-Object -First 5
+```
+
+1. `Get-Service`: Gera uma coleção de objetos de serviço.
+2. `Where-Object`: Filtra a coleção, deixando passar apenas os serviços cujo status (`$_.Status`) seja igual (`-eq`) a 'Stopped'.
+3. `Sort-Object`: Pega os serviços parados e os ordena em ordem alfabética com base em sua propriedade de nome de exibição (`DisplayName`).
+4. `Select-Object`: Pega a lista ordenada e exibe apenas os 5 primeiros (`-First 5`).
+
+Realizar uma operação equivalente em um shell baseado em texto seria muito mais complexo e exigiria ferramentas de interpretação de texto avançadas. Com o pipeline de objetos do PowerShell, a lógica é clara, direta e robusta.
+
+Nas tabelas a seguir veremos os principais cmdlets e suas funções, de acordo com algumas categorias. Não tem como saber todos, mas é importante ter uma noção de seus formatos e uma ideia de suas funções.
