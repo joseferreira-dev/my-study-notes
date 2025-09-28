@@ -934,3 +934,83 @@ As versões mais recentes do Windows permitem desativar componentes específicos
 <img width="420px" src="./img/08-ativar-e-desativar-smb-cifs.png">
 </div>
 
+### WINS (Windows Internet Name Service)
+
+Antes da predominância do DNS em redes locais, a resolução de nomes no ecossistema Windows era primariamente realizada por um protocolo mais antigo chamado **NetBIOS**. O nome NetBIOS é um nome "plano" (não hierárquico), de 15 caracteres, que identifica um computador na rede (ex: `SRV-FINANCEIRO`). Em redes pequenas, os computadores descobriam uns aos outros através de _broadcasts_, um método ineficiente que não funciona através de roteadores.
+
+Para resolver esse problema em redes maiores, a Microsoft criou o **WINS (Windows Internet Name Service)**. O WINS é um serviço de rede que fornece um banco de dados centralizado e dinâmico para o mapeamento de nomes NetBIOS em endereços IP.
+
+#### Funcionamento e Componentes
+
+O WINS opera em um modelo cliente-servidor:
+
+1. **Registro:** Quando um cliente WINS inicia na rede, ele contata o servidor WINS para registrar seu nome NetBIOS e endereço IP.
+2. **Consulta:** Quando um cliente precisa se comunicar com outro computador pelo nome NetBIOS, ele envia uma consulta diretamente ao servidor WINS, em vez de enviar um broadcast para toda a rede.
+3. **Resposta:** O servidor WINS consulta seu banco de dados e retorna o endereço IP correspondente ao nome solicitado, permitindo que a comunicação seja estabelecida.
+
+Os componentes de uma infraestrutura WINS são:
+
+- **Servidor WINS:** O servidor que hospeda o banco de dados centralizado de mapeamentos nome-IP.
+- **Clientes WINS:** Os computadores configurados para registrar e consultar nomes no servidor WINS.
+- **Replicação WINS:** Em redes grandes, múltiplos servidores WINS podem ser implementados. Eles replicam seus bancos de dados entre si (através de parceiros _push_ e _pull_) para fornecer tolerância a falhas e resolução de nomes em diferentes segmentos de rede.
+
+#### WINS vs. DNS: A Evolução da Resolução de Nomes
+
+É crucial entender as diferenças fundamentais entre WINS e DNS, pois elas representam a evolução dos serviços de rede.
+
+|Característica|WINS (Windows Internet Name Service)|DNS (Domain Name System)|
+|---|---|---|
+|**Espaço de Nomes**|Gerencia um espaço de nomes **plano**. O nome `SERVIDOR` deve ser único em toda a rede.|Gerencia um espaço de nomes **hierárquico**. `servidor.vendas.empresa.com` e `servidor.rh.empresa.com` podem coexistir.|
+|**Protocolo de Nomes**|Resolve nomes **NetBIOS**.|Resolve nomes de domínio (**FQDNs**).|
+|**Escopo**|Projetado para **redes locais (LANs)**.|Projetado para a **Internet global** e redes modernas.|
+|**Registro**|Dinâmico. O cliente registra seu próprio nome no servidor.|Pode ser estático (administrador cria os registros) ou dinâmico (clientes se registram, especialmente em ambientes Active Directory).|
+|**Relevância Atual**|**Legado**. Usado apenas para compatibilidade com aplicações ou sistemas operacionais muito antigos que dependem de NetBIOS.|**Padrão atual**. Essencial para o funcionamento da Internet e de todas as redes modernas.|
+
+#### Configuração do WINS no Ambiente Windows
+
+- **Lado do Servidor:** A instalação do WINS é feita no Windows Server através do "Gerenciador de Servidores", adicionando a função **"Servidor WINS"**.
+- **Lado do Cliente:** A configuração dos clientes para usar um servidor WINS é feita nas configurações avançadas do protocolo TCP/IP de seu adaptador de rede. No entanto, o método mais comum em redes gerenciadas era distribuir a configuração do servidor WINS para os clientes automaticamente via **DHCP**. O servidor DHCP pode ser configurado para entregar o endereço IP do servidor WINS juntamente com as outras configurações de rede.
+
+Em resumo, o WINS é uma tecnologia de transição que foi fundamental para o crescimento das redes Windows no passado, mas que hoje foi quase que inteiramente substituída pela superioridade, escalabilidade e padronização do DNS.
+
+### Autenticação em Redes Windows: NTLM vs. Kerberos
+
+A autenticação é o processo que verifica a identidade de um usuário ou computador que tenta acessar um recurso na rede. É a pergunta fundamental: "Você é quem diz ser?". No ecossistema Windows, dois protocolos principais desempenham essa função: o NTLM, um protocolo legado, e o Kerberos, o padrão moderno e mais seguro para ambientes de Active Directory.
+
+#### NTLM (NT LAN Manager)
+
+O NTLM é o protocolo de autenticação clássico das redes Windows, utilizado desde suas primeiras versões. Ele opera com base em um mecanismo de **desafio-resposta** que não necessita de um servidor de autenticação central.
+
+O fluxo de autenticação NTLM ocorre da seguinte forma:
+
+1. O cliente envia uma solicitação de acesso ao servidor, informando o nome de usuário.
+2. O servidor responde com um "desafio", que é um número aleatório e único para aquela sessão.
+3. O cliente recebe o desafio e utiliza o _hash_ da senha do usuário (uma representação criptográfica da senha) para criptografar o desafio, gerando uma "resposta".
+4. O cliente envia essa resposta de volta ao servidor. O servidor, que tem acesso ao hash da senha do usuário (seja localmente ou consultando um Controlador de Domínio), realiza o mesmo cálculo. Se a resposta do cliente corresponder ao seu próprio cálculo, a identidade é confirmada.
+
+Embora funcional, o NTLM possui limitações e vulnerabilidades significativas:
+
+- **Vulnerabilidades de Segurança:** Como o protocolo depende da transmissão de informações baseadas no hash da senha, ele é vulnerável a ataques de retransmissão (_replay attacks_) e, mais criticamente, a ataques **_pass-the-hash_**. Em um ataque _pass-the-hash_, um invasor que obtém o hash da senha de um usuário da memória de um computador comprometido pode reutilizar esse hash para se autenticar em outros servidores como se fosse o usuário, sem nunca precisar saber a senha original em texto plano.
+- **Falta de Recursos Modernos:** O NTLM não suporta criptografia forte e moderna, nem funcionalidades essenciais em ambientes complexos, como a **delegação de autenticação** (permitir que um serviço acesse outro em nome do usuário) ou autenticação multifator (MFA).
+
+Hoje, o NTLM é considerado um protocolo legado. Ele ainda é mantido por questões de compatibilidade e atua como um mecanismo de _fallback_ em cenários onde o Kerberos não pode ser utilizado, como em autenticações dentro de um grupo de trabalho (_workgroup_) ou ao acessar um servidor pelo seu endereço IP em vez do nome DNS.
+
+#### Kerberos
+
+Introduzido como o protocolo de autenticação padrão com o Active Directory no Windows 2000, o **Kerberos** é um sistema muito mais seguro e robusto. Seu nome é uma referência ao cão de três cabeças da mitologia grega, simbolizando seus três participantes: o **cliente**, o **servidor de recursos** e um terceiro confiável, o **Key Distribution Center (KDC)**.
+
+Em um domínio do Active Directory, todo **Controlador de Domínio (DC)** atua como um KDC. O Kerberos opera com base na troca de "tíquetes" criptografados, em um fluxo que evita a transmissão de senhas ou hashes pela rede.
+
+O fluxo de autenticação Kerberos funciona da seguinte maneira:
+
+1. **Autenticação Inicial e Obtenção do TGT:** Quando o usuário faz logon, seu computador solicita ao KDC um **Ticket-Granting Ticket (TGT)**. Essa solicitação inicial é a única vez em que a senha do usuário é utilizada. Se a autenticação for bem-sucedida, o KDC emite o TGT, que funciona como um "cartão de identidade" temporário e seguro para o usuário.
+2. **Solicitação de um Tíquete de Serviço:** Quando o usuário tenta acessar um recurso (como um servidor de arquivos), seu computador apresenta o TGT ao KDC e solicita um **tíquete de serviço** específico para aquele recurso.
+3. **Acesso ao Recurso:** O KDC emite o tíquete de serviço, que é criptografado de forma que apenas o servidor de arquivos de destino consiga lê-lo. O cliente então apresenta este tíquete de serviço ao servidor de arquivos.
+4. **Validação:** O servidor de arquivos decifra o tíquete de serviço, valida a identidade do usuário e concede o acesso.
+
+As principais vantagens do Kerberos são:
+
+- **Segurança Robusta:** Após o logon inicial, a senha ou seus derivados não trafegam mais pela rede. Os tíquetes possuem um tempo de validade, o que os torna inúteis para ataques de retransmissão após sua expiração.
+- **Delegação de Autenticação:** Permite que um serviço intermediário (como um servidor web) utilize a identidade de um usuário para se autenticar em um serviço de back-end (como um banco de dados), mantendo a trilha de auditoria e as permissões do usuário original.
+- **Desempenho:** Após a obtenção do TGT inicial, a solicitação de tíquetes de serviço para diferentes recursos é um processo rápido e eficiente.
+- **Dependências:** O funcionamento correto do Kerberos exige um KDC (Controlador de Domínio) sempre disponível e, crucialmente, que todos os computadores na rede tenham seus relógios sincronizados. Diferenças de tempo superiores a alguns minutos entre um cliente e o KDC farão com que a autenticação falhe, pois os carimbos de data e hora nos tíquetes seriam considerados inválidos.
