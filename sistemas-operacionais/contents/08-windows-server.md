@@ -1300,3 +1300,64 @@ A instalação do Hyper-V é composta por dois elementos principais:
 
 - **Plataforma Hyper-V:** O hypervisor em si, a camada de virtualização de baixo nível.
 - **Ferramentas de Gerenciamento do Hyper-V:** A interface gráfica (console "Gerenciador do Hyper-V") usada para criar, configurar e gerenciar as máquinas virtuais.
+
+## Serviços de Arquivo e de Impressão em Rede
+
+A centralização do armazenamento de arquivos e do gerenciamento de impressão em um servidor dedicado oferece enormes vantagens em termos de organização, segurança, proteção de dados e eficiência administrativa. O Windows Server fornece um conjunto robusto de ferramentas para configurar e gerenciar esses serviços em escala.
+
+### Gerenciamento Avançado com o File Server Resource Manager (FSRM)
+
+O **FSRM (Gerenciador de Recursos de Servidor de Arquivos)** é um serviço de função do Windows Server que oferece um conjunto de ferramentas para que os administradores possam gerenciar e classificar os dados armazenados em seus servidores de arquivos. O FSRM, que deve ser instalado como parte da função de "Serviços de Arquivo e Armazenamento" e opera apenas em volumes formatados com NTFS, é composto por quatro recursos principais.
+
+<div align="center">
+<img width="700px" src="./img/08-recursos-do-fsrm.png">
+</div>
+
+- **Gerenciamento de Cotas:** Permite controlar o espaço em disco utilizado em um volume ou em pastas específicas. As cotas são essenciais para evitar que o espaço de armazenamento do servidor seja consumido de forma descontrolada. Existem dois tipos:
+    - **Cotas Rígidas (_Hard Quotas_):** Impedem que os usuários salvem novos arquivos após o limite ser atingido.
+    - **Cotas Flexíveis (_Soft Quotas_):** Não bloqueiam a gravação de novos arquivos, mas podem ser configuradas para enviar notificações por e-mail ao administrador e ao usuário quando o limite é ultrapassado, servindo como uma ferramenta de monitoramento.
+- **Gerenciamento de Triagens de Arquivo:** Permite criar regras para controlar os **tipos** de arquivos que os usuários podem armazenar em um compartilhamento. É uma ferramenta poderosa para aplicar políticas de uso. Por exemplo, um administrador pode criar uma triagem para proibir o armazenamento de arquivos de mídia pessoal (como `.mp3` e `.mkv`) ou de executáveis (`.exe`) nas pastas de base dos usuários, economizando espaço e aumentando a segurança.
+- **Classificação de Arquivos:** A Infraestrutura de Classificação de Arquivos (FCI) permite a classificação automática de arquivos com base em seu conteúdo ou propriedades. É uma ferramenta vital para a governança de dados e para a conformidade com regulamentações como a LGPD. Um administrador pode, por exemplo, criar uma regra que escaneia o conteúdo dos documentos e aplica uma propriedade "Confidencial" a qualquer arquivo que contenha um número de CPF.
+- **Relatórios de Armazenamento:** Geram relatórios detalhados sobre a utilização do disco, ajudando a identificar arquivos duplicados, arquivos que não são acessados há muito tempo (_stale data_) ou o uso de espaço por tipo de arquivo.
+
+### Proteção e Versionamento com Cópias de Sombra (Shadow Copies)
+
+A **Cópia de Sombra de Volumes (Volume Shadow Copy Service - VSS)** é uma tecnologia do Windows que cria "instantâneos" (_snapshots_) de um volume em um determinado ponto no tempo. Em um servidor de arquivos, o VSS pode ser configurado para criar cópias de sombra de pastas compartilhadas em intervalos regulares (ex: duas vezes ao dia).
+
+A principal vantagem é a **recuperação de arquivos por autoatendimento (_self-service_)** para os usuários. Se um usuário acidentalmente excluir ou sobrescrever um arquivo importante em uma pasta de rede, ele pode simplesmente clicar com o botão direito na pasta, ir para a aba "Versões Anteriores" e restaurar o arquivo a partir de um dos _snapshots_ recentes, sem precisar abrir um chamado para a equipe de TI.
+
+Além disso, as Cópias de Sombra são uma defesa eficaz contra **ransomware**. Se os arquivos de um compartilhamento forem criptografados por um ataque, o administrador pode, em muitos casos, restaurar toda a estrutura de pastas a partir de uma cópia de sombra feita momentos antes do ataque.
+
+A ativação deste recurso é feita através da funcionalidade "Proteção do Sistema", acessível ao pesquisar por "Criar ponto de restauração".
+
+<div align="center">
+<img width="280px" src="./img/08-criar-ponto-de-restauracao.png">
+</div>
+
+<div align="center">
+<img width="420px" src="./img/08-protecao-do-sistema.png">
+</div>
+
+Na janela de configuração, o administrador ativa a proteção para o volume desejado e aloca uma porcentagem do espaço em disco para armazenar as cópias de sombra.
+
+<div align="center">
+<img width="360px" src="./img/08-configurar-protecao-do-sistema.png">
+</div>
+
+### Gerenciamento de Impressão em Rede
+
+Centralizar a impressão em um **servidor de impressão** simplifica o gerenciamento e a implantação de impressoras em toda a organização. O fluxo de impressão em rede ocorre da seguinte forma:
+
+1. Um usuário em uma estação de trabalho envia um trabalho para uma impressora de rede.
+2. O serviço de **spooler** de impressão local do cliente se comunica com o serviço de spooler do servidor de impressão via **RPC (Remote Procedure Call)**.
+3. O trabalho de impressão é transferido para o servidor e colocado na fila (_spool_).
+4. O servidor de impressão gerencia a fila e envia os trabalhos para a impressora física quando ela está disponível.
+
+Uma das maiores vantagens de um servidor de impressão é o **gerenciamento centralizado de drivers**. O administrador instala e atualiza os drivers de impressão (para todas as versões do Windows, 32 e 64 bits) em um único local: o servidor. Quando um cliente se conecta à impressora compartilhada pela primeira vez, o Windows automaticamente baixa e instala o driver correto a partir do servidor, um recurso conhecido como _Point and Print_.
+
+Existem três níveis de permissão para impressoras:
+
+- **Imprimir:** Permite que os usuários enviem trabalhos para a impressora. Por padrão, o grupo "Todos" recebe esta permissão.
+- **Gerenciar Documentos:** Permite, além de imprimir, gerenciar a fila de impressão, podendo pausar, reiniciar ou cancelar os trabalhos de _qualquer_ usuário.
+- **Gerenciar Impressora:** O nível mais alto, que permite, além das anteriores, compartilhar a impressora, alterar suas propriedades e gerenciar suas permissões.
+
