@@ -777,3 +777,109 @@ Ao selecionar a opção **"Obter um endereço IP automaticamente"** e "Obter o e
 <img width="360px" src="./img/08-propriedades-de-protocolo-ipv4.png">
 </div>
 
+### DNS e o Windows DNS Server
+
+A usabilidade da Internet e das redes de computadores depende da capacidade de nos referirmos a recursos através de nomes amigáveis, em vez de endereços numéricos. O **DNS (Domain Name System)** é o serviço de infraestrutura global que torna isso possível, atuando como um sistema de tradução que converte nomes de domínio (como `www.microsoft.com`) em seus respectivos endereços IP (como `20.50.47.110`), que são necessários para a comunicação na rede.
+
+Formalmente, o DNS é definido como um sistema de banco de dados distribuído e hierárquico. "Distribuído" porque nenhuma máquina armazena todos os nomes da Internet; a responsabilidade é delegada através de milhares de servidores. "Hierárquico" porque os nomes são organizados em uma estrutura de árvore. O DNS opera na camada de Aplicação e utiliza a porta **53**, primariamente com o protocolo **UDP** para consultas rápidas e com **TCP** para transferências de dados mais volumosas e confiáveis, como a replicação de zonas entre servidores.
+
+#### Cliente DNS (Resolver)
+
+Todo computador em uma rede TCP/IP atua como um cliente DNS. O componente do sistema operacional responsável por fazer as consultas é chamado de **resolvedor (resolver)**. A configuração do resolvedor, que informa a quais servidores DNS ele deve enviar suas consultas, é tipicamente recebida via DHCP ou pode ser configurada estaticamente. O comando `ipconfig /all` exibe os servidores DNS que o cliente está configurado para usar.
+
+<div align="center">
+<img width="700px" src="./img/08-resultado-comando-ipconfig.png">
+</div>
+
+#### O Processo de Resolução de Nomes
+
+Quando um aplicativo, como um navegador web, precisa acessar um recurso por nome, o resolvedor local inicia o processo:
+
+1. O aplicativo solicita ao resolvedor o endereço IP de um nome de domínio.
+2. O resolvedor envia a consulta ao seu **servidor DNS local** configurado.
+3. Se o servidor local tiver a resposta em sua memória **cache**, ele a devolve imediatamente.
+4. O resolvedor entrega o endereço IP ao aplicativo, que pode então iniciar a conexão.
+
+No entanto, se o servidor DNS local não conhecer a resposta, um processo mais complexo é iniciado, envolvendo dois tipos de consulta:
+
+<div align="center">
+<img width="540px" src="./img/08-consulta-recursiva.png">
+</div>
+
+- **Consulta Recursiva:** É a relação entre o cliente (resolvedor) e seu servidor DNS local. O cliente faz uma única pergunta e delega a responsabilidade total de encontrar a resposta final ao servidor. Os passos 1 e 10 na figura representam a consulta recursiva.
+- **Consulta Iterativa:** É o processo que o servidor DNS local realiza para encontrar a resposta. Ele pergunta a outros servidores DNS na hierarquia da Internet, passo a passo:
+    1. Ele primeiro pergunta a um **servidor raiz** da Internet. O servidor raiz não sabe a resposta completa, mas sabe quem é o responsável pelo domínio de mais alto nível (TLD), como `.edu`, e o indica.
+    2. O servidor local então pergunta ao servidor **TLD `.edu`**. Este, por sua vez, não sabe a resposta completa, mas sabe qual servidor é o responsável pelo domínio de segundo nível (`b.edu`) e o indica.
+    3. Este processo iterativo continua, descendo na hierarquia, até que o servidor local encontre o **servidor de nomes autoritativo** que detém a resposta final e a devolve.
+
+#### Hierarquia e Administração de Domínios
+
+A estrutura hierárquica do DNS é administrada por várias organizações. No topo, a **ICANN (Internet Corporation for Assigned Names and Numbers)** é responsável pela gestão dos domínios de mais alto nível (TLDs). Essa gestão é então delegada a entidades locais para os domínios de código de país (ccTLDs). Para o domínio **`.br`**, o responsável é o **Comitê Gestor da Internet no Brasil (CGI.br)**.
+
+<div align="center">
+<img width="420px" src="./img/08-responsabilidade-por-dominios.png">
+</div>
+
+Qualquer pessoa ou empresa que deseje registrar um domínio `.com.br`, por exemplo, deve fazê-lo através do serviço `registro.br`, fornecendo, entre outras informações, os endereços dos servidores de nomes que serão os autoritativos para aquele novo domínio.
+
+#### A Função de Servidor DNS no Windows Server
+
+Ao instalar a função de **Servidor DNS** em um Windows Server, um administrador pode criar e gerenciar suas próprias **zonas DNS autoritativas**. Isso permite que a organização gerencie a resolução de nomes tanto para sua rede interna (ex: `intranet.empresa.local`) quanto para seus domínios públicos na Internet (ex: `www.empresa.com.br`). Quando o DNS é integrado ao Active Directory, as zonas podem ser armazenadas no próprio banco de dados do AD, permitindo recursos avançados como atualizações dinâmicas seguras, onde os computadores clientes registram e atualizam seus próprios nomes e endereços IP no DNS automaticamente.
+
+#### A Estrutura Hierárquica e a Nomenclatura
+
+A genialidade do DNS reside em sua estrutura hierárquica, que garante que cada nome de domínio seja globalmente único, ao mesmo tempo em que delega a administração de forma distribuída. Cada nome de domínio completo, conhecido como **FQDN (Fully Qualified Domain Name)**, é uma representação textual do caminho desde um host específico até a raiz da árvore DNS.
+
+<div align="center">
+<img width="540px" src="./img/08-estrutura-dns.png">
+</div>
+
+Vamos decompor a hierarquia, lendo um nome de domínio da direita para a esquerda:
+
+1. **Raiz (Root):** O topo absoluto da hierarquia, representado por um ponto (`.`) que geralmente é omitido no uso diário. A raiz é gerenciada por um conjunto de servidores globais altamente seguros.
+2. **Top-Level Domains (TLDs):** Os domínios de primeiro nível, como `.com`, `.org`, `.net` (genéricos) e `.br`, `.pt`, `.de` (geográficos).
+3. **Second-Level Domains (SLDs):** O nome principal registrado por uma organização, como `microsoft` em `microsoft.com` ou `estrategiaconcursos` em `estrategiaconcursos.com.br`.
+4. **Subdomínios (Third-Level Domains e além):** Subdivisões criadas por uma organização para organizar seus serviços. Por exemplo, em `mail.google.com`, `mail` é um subdomínio.
+5. **Nome do Host (Host Name):** O nome específico de um computador ou serviço dentro do domínio. Por convenção, `www` é o nome de host frequentemente usado para servidores web.
+
+<div align="center">
+<img width="360px" src="./img/08-estrutura-dns-exemplo-subdominio.png">
+</div>
+
+#### Zonas, Servidores e o Fluxo de Resolução
+
+O banco de dados do DNS é dividido em **zonas**. Uma zona é uma porção administrável do espaço de nomes. Por exemplo, a organização "Microsoft" gerencia a zona `microsoft.com`. Ela pode, se desejar, delegar a administração de um subdomínio, como `ejemplo.microsoft.com`, para outro conjunto de servidores, criando uma nova zona.
+
+<div align="center">
+<img width="480px" src="./img/08-zonas-nao-superpostas.png">
+</div>
+
+Essa estrutura é mantida por diferentes tipos de servidores DNS:
+
+- **Servidores Autoritativos:** São os servidores que detêm a informação oficial para uma zona. Incluem **Servidores Primários** (que mantêm a cópia mestre da zona) e **Servidores Secundários** (que mantêm cópias somente leitura, sincronizadas a partir do primário via **transferência de zona**). Uma resposta vinda de um servidor autoritativo é uma **resposta autoritativa**.
+- **Servidores Recursivos (ou de Cache):** São os servidores que os clientes consultam. Eles não são autoritativos para a maioria dos domínios, mas realizam o trabalho de consulta iterativa e armazenam as respostas em **cache** para acelerar futuras requisições. Uma resposta vinda do cache é uma **resposta não autoritativa**.
+
+#### Registros de Recursos (RRs): A Base de Dados do DNS
+
+O banco de dados de uma zona é composto por **Registros de Recursos (RRs)**. Cada registro é uma unidade de informação. A ferramenta de linha de comando `nslookup` é usada para consultar esses registros.
+
+<div align="center">
+<img width="360px" src="./img/08-resultado-comando-nslookup.png">
+</div>
+
+Cada tipo de registro serve a um propósito específico, desde mapear nomes para endereços IP até direcionar o tráfego de e-mail e fornecer informações de segurança. A tabela a seguir detalha os registros mais importantes.
+
+|Nome do Item (Tipo)|Significado|Valor que Carrega|Explicação Detalhada da Importância e Uso|
+|---|---|---|---|
+|**SOA**|Início de Autoridade (Start of Authority)|Parâmetros da zona|É o registro mais importante de uma zona DNS, atuando como sua "certidão de nascimento". Ele define qual servidor de nomes é a fonte primária de informações para o domínio, o e-mail do administrador, e temporizadores cruciais que controlam como os servidores secundários devem se sincronizar, garantindo a consistência da replicação.|
+|**A**|Endereço IPv4|Endereço IPv4 de 32 bits|É o registro fundamental e mais comum do DNS. Sua função é traduzir um nome de domínio ou host (ex: `www.exemplo.com`) em um endereço IPv4 (ex: `93.184.216.34`), permitindo que navegadores e outras aplicações iniciem conexões.|
+|**AAAA**|Endereço IPv6|Endereço IPv6 de 128 bits|É o equivalente do registro A para o protocolo IPv6. À medida que a Internet esgota os endereços IPv4, este registro se torna cada vez mais essencial para garantir a conectividade com a infraestrutura moderna da web. Um host pode ter registros A e AAAA para ser acessível por ambas as redes.|
+|**MX**|Troca de Mensagens (Mail Exchange)|Prioridade e nome do servidor de e-mail|Essencial para o funcionamento do e-mail. Este registro informa a outros servidores para qual máquina eles devem enviar as mensagens destinadas a um domínio (ex: `@empresa.com`). O campo de **prioridade** (um número menor é mais prioritário) permite configurar múltiplos servidores, criando um sistema redundante com servidores primários e de backup.|
+|**NS**|Servidor de Nomes (Name Server)|Nome de um servidor de nomes|Este registro é o que "cola" a estrutura distribuída do DNS. Ele delega a autoridade sobre uma zona para um conjunto específico de servidores de nomes. Para que o domínio `exemplo.com.br` funcione, a zona `.com.br` deve ter registros NS apontando para os servidores que contêm os dados da `exemplo.com.br`.|
+|**CNAME**|Nome Canônico (Canonical Name)|Nome de domínio|Cria um "apelido" (_alias_), fazendo com que um nome aponte para outro. É útil para apontar vários serviços (ex: `ftp.empresa.com` e `www.empresa.com`) para um único servidor físico. Se o IP do servidor mudar, apenas o registro A do nome canônico precisa ser atualizado.|
+|**PTR**|Ponteiro (Pointer)|Nome de domínio|Realiza a operação de **DNS Reverso**, mapeando um endereço IP de volta para um nome de domínio. É uma ferramenta de segurança crucial, usada por muitos servidores de e-mail e outros sistemas para verificar a legitimidade de uma conexão, ajudando a filtrar spam e atividades maliciosas.|
+|**SPF**|Estrutura de Política do Transmissor (Sender Policy Framework)|String de texto com a política|Um tipo de registro de texto usado para segurança de e-mail. Permite que o dono de um domínio publique uma lista de servidores autorizados a enviar e-mails em seu nome, dificultando a falsificação de remetentes (_spoofing_) e ataques de _phishing_.|
+|**SRV**|Serviço (Service)|Prioridade, peso, porta e host do serviço|Um registro de descoberta de serviços mais genérico que o MX. É usado por aplicações modernas como VoIP (SIP) e mensagens instantâneas (XMPP) para encontrar não apenas o servidor de um serviço, mas também a **porta** em que ele opera, além de prioridade e peso para balanceamento de carga.|
+|**TXT**|Texto (Text)|String de texto ASCII|Um registro de uso geral para armazenar informações textuais associadas a um domínio. Seus usos mais comuns hoje em dia incluem a **verificação de propriedade de domínio** para serviços de terceiros (como Google Analytics) e a implementação de outras políticas de segurança de e-mail, como DKIM e DMARC.|
+
+Ao instalar a função de **Servidor DNS** no Windows Server, um administrador ganha a capacidade de criar e gerenciar zonas autoritativas para sua organização, integrando-as de forma robusta com o Active Directory para um gerenciamento de nomes seguro e dinâmico.
