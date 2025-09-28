@@ -2,7 +2,7 @@
 
 Após a navegação por diversos modelos e metodologias, a exploração do universo da Engenharia de Software continua. Este capítulo se aprofunda em abordagens específicas que ganharam destaque por suas filosofias e práticas distintas: o **Behaviour-Driven Development (BDD)**, o **Domain-Driven Design (DDD)**, as abordagens **Model-Driven (MDA e MDD)**, o **Feature-Driven Development (FDD)** e o **Dynamic Systems Development Method (DSDM)**. Cada uma delas traz uma perspectiva única para enfrentar os desafios do desenvolvimento de software.
 
-## Behaviour-Driven Development (BDD): O Comportamento no Centro da Estratégia
+## Behaviour-Driven Development (BDD): Desenvolvimento Orientado por Comportamento
 
 Em 2003, Dan North desenvolveu o **Behaviour-Driven Development (BDD)**. Muitos veem o BDD como uma resposta direta aos já conhecidos **Test-Driven Development (TDD)** e **Acceptance Test-Driven Development (ATDD)**. No entanto, o BDD pode ser entendido mais como uma **evolução natural** dessas ideias do que simplesmente como uma resposta. A proposta central do BDD é buscar tornar as práticas dessas outras metodologias mais acessíveis e intuitivas, tanto para iniciantes na área quanto para especialistas.
 
@@ -16,13 +16,13 @@ Com o BDD, fica muito claro como o software deve se comportar. Isso é alcançad
 
 As principais práticas que sustentam o BDD são:
 
-|**PRÁTICAS DO BDD**|
-|---|
-|Envolver as partes interessadas no processo através de **Outside-in Development** (Desenvolvimento de fora para dentro).|
-|Usar exemplos para descrever o comportamento de uma aplicação ou unidades de código.|
-|Automatizar os exemplos para prover um feedback rápido e possivelmente testes de regressão.|
-|Usar “deve” (ou "should" em inglês) na hora de descrever o comportamento ajuda a esclarecer responsabilidades e permitir que funcionalidades sejam questionadas.|
-|Usar simuladores de teste (Mocks, Stubs, Fakes, Dummies, Spies) para auxiliar na colaboração entre módulos e códigos que ainda não foram escritos.|
+| **Práticas do BDD**                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Envolver as partes interessadas no processo através de **Outside-in Development** (Desenvolvimento de fora para dentro).                                         |
+| Usar exemplos para descrever o comportamento de uma aplicação ou unidades de código.                                                                             |
+| Automatizar os exemplos para prover um feedback rápido e possivelmente testes de regressão.                                                                      |
+| Usar “deve” (ou "should" em inglês) na hora de descrever o comportamento ajuda a esclarecer responsabilidades e permitir que funcionalidades sejam questionadas. |
+| Usar simuladores de teste (Mocks, Stubs, Fakes, Dummies, Spies) para auxiliar na colaboração entre módulos e códigos que ainda não foram escritos.               |
 
 A aplicação prática do BDD ocorre através da escrita de cenários, começando pela criação de uma **história de usuário**. Todas elas seguem, mais ou menos, o mesmo padrão conhecido de outras metodologias ágeis:
 
