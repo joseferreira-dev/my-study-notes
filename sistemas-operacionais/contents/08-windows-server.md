@@ -1243,3 +1243,60 @@ Os componentes de um Cluster de Failover são:
 - **Quorum:** É o mecanismo de votação que garante a consistência e evita a condição de **_split-brain_**. Um _split-brain_ ocorre quando uma falha de rede divide o cluster em dois "grupos" que não conseguem se comunicar, mas ambos pensam que estão no controle, o que pode levar a uma corrupção massiva de dados. O Quorum impede isso, garantindo que apenas um grupo de nós (aquele que tiver a maioria dos "votos") possa permanecer ativo. Em clusters com um número par de nós, um **recurso testemunha (_witness_)** (como um disco ou um compartilhamento de arquivos) atua como o voto de desempate.
 - **Serviços e Aplicativos Clusterizados:** São as funções que o cluster está protegendo, como uma instância do SQL Server, uma máquina virtual do Hyper-V, ou um Servidor de Arquivos de Escalabilidade Horizontal (SOFS).
 
+## Remote Desktop e VDI (Virtual Desktop Infrastructure)
+
+O gerenciamento de uma infraestrutura de TI, especialmente em redes de grande porte, seria impraticável se exigisse a presença física do administrador em frente a cada servidor ou estação de trabalho. Para resolver essa necessidade, o Windows oferece tecnologias de acesso remoto e virtualização, que permitem o controle, o gerenciamento e a provisão de ambientes de trabalho de forma centralizada.
+
+### Acesso Remoto com o Remote Desktop
+
+O **Remote Desktop** (ou Área de Trabalho Remota) é um recurso fundamental do Windows que permite a um usuário ou administrador se conectar à área de trabalho gráfica de um computador remoto através da rede, e interagir com ela como se estivesse fisicamente presente. É a ferramenta padrão para a administração remota de servidores e para o suporte técnico a estações de trabalho.
+
+#### Habilitando o Acesso Remoto (Lado do Host)
+
+Para que um computador possa ser acessado remotamente, a funcionalidade deve ser habilitada em suas propriedades de sistema. O caminho tradicional é `Painel de Controle` → `Sistema` → `Configurações Remotas`.
+
+<div align="center">
+<img width="440px" src="./img/08-propriedades-do-sistema.png">
+</div>
+
+Nesta janela, é necessário selecionar "Permitir conexões remotas com este computador". Uma configuração de segurança importante é a opção **"Permitir conexões somente de computadores que estejam executando a Área de Trabalho Remota com Autenticação no Nível da Rede (recomendável)"**. A Autenticação em Nível de Rede (NLA) é um recurso que exige que o usuário se autentique _antes_ que uma sessão completa da área de trabalho seja estabelecida no servidor. Isso oferece uma camada de proteção mais forte contra ataques de negação de serviço e tentativas de login por força bruta.
+
+Por padrão, todos os membros do grupo "Administradores" já têm permissão para se conectar. Para autorizar outros usuários, clica-se em "Selecionar Usuários..." e adiciona-se suas contas à lista.
+
+<div align="center">
+<img width="440px" src="./img/08-usuarios-area-de-trabalho-remota.png">
+</div>
+
+#### Conectando-se ao Host (Lado do Cliente)
+
+Para iniciar a conexão a partir de outra máquina, utiliza-se o cliente **RDC (Remote Desktop Connection)**. Este aplicativo pode ser encontrado no menu Iniciar ou executando o comando `mstsc.exe`.
+
+<div align="center">
+<img width="440px" src="./img/08-conexao-area-de-trabalho-remota.png">
+</div>
+
+Na janela de conexão, basta inserir o nome do computador ou o endereço IP do host remoto e clicar em "Conectar". O sistema então solicitará as credenciais (nome de usuário e senha) de uma conta autorizada no computador de destino para estabelecer a sessão.
+
+### Virtualização de Desktops com VDI e Hyper-V
+
+Enquanto o Remote Desktop fornece acesso a um sistema operacional que está rodando diretamente em um hardware físico, a **VDI (Virtual Desktop Infrastructure)** eleva o conceito de acesso remoto a outro nível. VDI é uma tecnologia que hospeda ambientes de desktop em **máquinas virtuais (VMs)** que rodam em servidores centralizados em um data center.
+
+A principal diferença é que, com VDI, cada usuário se conecta à sua própria VM de desktop (ex: uma máquina virtual com Windows 11), garantindo um ambiente de trabalho totalmente isolado, personalizado e seguro, que pode ser acessado a partir de qualquer dispositivo.
+
+#### O Papel do Hypervisor
+
+A tecnologia que torna a VDI e toda a virtualização possível é o **hypervisor**. O hypervisor é uma camada de software que cria e executa as máquinas virtuais. Ele atua como um intermediário entre o hardware físico do servidor e os sistemas operacionais "convidados" que rodam nas VMs, alocando e gerenciando o acesso a recursos como CPU, memória e disco. Existem dois tipos principais:
+
+- **Tipo 1 (Bare-metal):** Roda diretamente sobre o hardware do host. É o tipo usado em servidores para obter o máximo de desempenho. **O Hyper-V da Microsoft é um hypervisor do Tipo 1.**
+- **Tipo 2 (Hosted):** Roda como uma aplicação dentro de um sistema operacional convencional. É comum em ambientes de desktop para desenvolvimento e teste (ex: VirtualBox, VMware Workstation).
+
+O **Hyper-V** é o recurso de hypervisor nativo do Windows. Ele pode ser instalado como uma Função no Windows Server ou ativado como um Recurso nas edições Pro e Enterprise do Windows Desktop, através do caminho `Painel de Controle` → `Programas e Recursos` → `Ativar ou desativar recursos do Windows`.
+
+<div align="center">
+<img width="440px" src="./img/08-ativacao-hyper-v.png">
+</div>
+
+A instalação do Hyper-V é composta por dois elementos principais:
+
+- **Plataforma Hyper-V:** O hypervisor em si, a camada de virtualização de baixo nível.
+- **Ferramentas de Gerenciamento do Hyper-V:** A interface gráfica (console "Gerenciador do Hyper-V") usada para criar, configurar e gerenciar as máquinas virtuais.
