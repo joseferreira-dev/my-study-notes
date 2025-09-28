@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operacionais/contents/08-windows-server.md",
+                "file": "engenharia-de-software/contents/16-kanban.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08-windows-server"
+              "title": "16-kanban"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sistemas-operacionais/contents/08-windows-server.md",
+                "file": "engenharia-de-software/contents/16-kanban.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 08-windows-server"
+              "title": "Sumário de 16-kanban"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "sistemas-operacionais/contents/08-windows-server.md",
     "sistemas-operacionais/contents/img/08-comando-ls.png",
     "sistemas-operacionais/contents/img/08-comando-dir.png",
     "sistemas-operacionais/contents/img/08-janela-do-powershell.png",
@@ -181,9 +182,7 @@
     "sistemas-operacionais/contents/img/08-criar-ponto-de-restauracao.png",
     "sistemas-operacionais/contents/img/08-recursos-do-fsrm.png",
     "sistemas-operacionais/contents/img/08-ativacao-hyper-v.png",
-    "sistemas-operacionais/contents/img/08-conexao-area-de-trabalho-remota.png",
     "conhecimentos-pedagogicos-e-ept/contents/09-formacao-de-professores.md",
-    "sistemas-operacionais/contents/08-windows-server.md",
     "legislacao/contents/08-lei-12527.md",
     "engenharia-de-software/contents/15-xp.md",
     "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",

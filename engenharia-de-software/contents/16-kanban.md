@@ -122,7 +122,7 @@ O **Trello** é um exemplo frequentemente citado de ferramenta que, com sua inte
 
 Além do Trello, o mercado oferece uma vasta gama de outras ferramentas que suportam o Kanban, algumas mais especializadas e com funcionalidades avançadas de gestão de fluxo e métricas. Exemplos incluem **Jira** (que possui configurações específicas para quadros Kanban), **KanbanFlow**, **Kanbanery**, **LeanKit Kanban**, **Azure DevOps Boards** (anteriormente Visual WIP ou TFS), entre muitas outras. A escolha da ferramenta mais adequada dependerá das necessidades específicas da equipe, da complexidade do fluxo, dos requisitos de integração com outras ferramentas e do orçamento disponível. O importante é que a ferramenta escolhida apoie os princípios e práticas do Kanban, especialmente a visualização do fluxo e a limitação do WIP.
 
-## Considerações Finais sobre o Kanban
+## Considerações Finais
 
 Ao encerrarmos este capítulo dedicado ao Kanban, torna-se claro que sua aparente simplicidade esconde uma abordagem profundamente eficaz para a gestão do trabalho e a promoção da melhoria contínua. Diferenciando-se de metodologias mais prescritivas, o Kanban oferece um caminho flexível e evolucionário para otimizar fluxos de trabalho, aplicável a uma vasta gama de contextos, muito além do desenvolvimento de software.
 
