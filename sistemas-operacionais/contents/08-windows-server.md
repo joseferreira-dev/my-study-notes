@@ -729,3 +729,51 @@ Embora o Gerenciador de Servidores seja o painel central, a administração diá
 - **`services.msc`:** Este comando abre o console de **Serviços**. Um serviço é um programa que roda em segundo plano, sem interface de usuário, para fornecer funcionalidades essenciais ao sistema (ex: "Cliente DHCP", "Spooler de Impressão") ou a aplicações. Através deste console, um administrador pode **iniciar, parar, reiniciar e desabilitar** serviços, além de configurar seu **Tipo de Inicialização** (Automático, Manual ou Desativado), o que é uma etapa crucial na otimização e no _hardening_ (reforço da segurança) de um servidor.
 - **`taskmgr`:** Executa o **Gerenciador de Tarefas**, a ferramenta primária para o monitoramento em tempo real do desempenho do sistema (CPU, memória, disco, rede) e para o gerenciamento de processos e aplicativos em execução, como detalhado em seções anteriores.
 
+## Configuração e Serviços de Rede, Segurança e Disponibilidade
+
+Um Windows Server é uma plataforma versátil, projetada para hospedar uma vasta gama de serviços que são a espinha dorsal de qualquer rede corporativa. Diferente de uma versão desktop, que consome serviços, um servidor os fornece de forma centralizada. A transformação de um servidor genérico em um especialista (como um servidor de arquivos, de impressão ou de autenticação) é realizada através da instalação de **Funções** (_Roles_), um processo gerenciado pelo **Gerenciador de Servidores**.
+
+<div align="center">
+<img width="540px" src="./img/08-adicionar-funcoes-e-funcionalidade.png">
+</div>
+
+### DHCP (Dynamic Host Configuration Protocol)
+
+Em uma rede TCP/IP, cada dispositivo precisa de um endereço IP único para se comunicar. A configuração manual desses endereços (IP estático) é uma tarefa demorada e propensa a erros, como a duplicação de IPs. Para automatizar e centralizar este processo, utiliza-se o **DHCP (Dynamic Host Configuration Protocol)**. A função de servidor DHCP permite que um Windows Server distribua automaticamente as configurações de rede para os clientes (computadores, impressoras, smartphones, etc.).
+
+<div align="center">
+<img width="480px" src="./img/08-dhcp.png">
+</div>
+
+#### Processo de Concessão de Endereço (DORA)
+
+Quando um dispositivo cliente configurado para usar DHCP se conecta à rede, ele inicia um processo de comunicação de quatro etapas, conhecido como **DORA**:
+
+1. **Discover (Descoberta):** O cliente, sem um endereço IP, envia uma mensagem em _broadcast_ (para todos na rede) chamada `DHCPDISCOVER`, basicamente perguntando "Existe algum servidor DHCP aqui?".
+2. **Offer (Oferta):** Os servidores DHCP na rede que recebem a solicitação respondem com uma mensagem `DHCPOFFER`, oferecendo um endereço IP disponível e outras configurações de rede.
+3. **Request (Requisição):** O cliente seleciona uma das ofertas e envia uma mensagem `DHCPREQUEST`, também em broadcast, para informar a todos os servidores qual oferta ele aceitou.
+4. **Acknowledge (Confirmação):** O servidor DHCP cuja oferta foi aceita finaliza o processo enviando uma mensagem `DHCPACK`, confirmando a concessão (_lease_) do endereço IP para o cliente por um período de tempo determinado.
+
+#### Configuração do Servidor DHCP
+
+Para que o servidor possa distribuir as configurações, um administrador precisa definir os parâmetros da rede. É fundamental que **o próprio servidor DHCP tenha um endereço IP estático**, para que os clientes sempre saibam onde encontrá-lo. As principais configurações são:
+
+- **Escopo (Scope):** O intervalo de endereços IP que o servidor está autorizado a distribuir (ex: `192.168.1.100` a `192.168.1.150`). Dentro do escopo, o administrador pode criar **Exclusões** (endereços que não devem ser distribuídos) e **Reservas** (vincular um endereço IP específico ao endereço MAC de um dispositivo, garantindo que ele sempre receba o mesmo IP).
+- **Máscara de Sub-rede:** Define o tamanho da rede local (ex: `255.255.255.0`).
+- **Gateway Padrão:** O endereço IP do roteador, que serve como a "saída" para a Internet.
+- **Servidores DNS:** Os endereços dos servidores que os clientes devem usar para a resolução de nomes de domínio.
+
+#### Configuração do Cliente DHCP
+
+Na máquina cliente (seja Windows Desktop ou Server), a configuração para receber um endereço via DHCP é o padrão. Ela é feita nas propriedades do adaptador de rede, na seção do **Protocolo IP Versão 4 (TCP/IPv4)**.
+
+<div align="center">
+<img width="360px" src="./img/08-propriedades-de-wifi.png">
+</div>
+
+Ao selecionar a opção **"Obter um endereço IP automaticamente"** e "Obter o endereço dos servidores DNS automaticamente", o sistema operacional é instruído a realizar o processo DORA sempre que se conectar à rede, recebendo toda a sua configuração de rede de forma transparente e automática.
+
+<div align="center">
+<img width="360px" src="./img/08-propriedades-de-protocolo-ipv4.png">
+</div>
+
