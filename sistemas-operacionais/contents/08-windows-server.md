@@ -1056,3 +1056,190 @@ A implementação de um servidor RADIUS no Windows Server segue um processo lóg
 3. **Configuração dos Clientes RADIUS:** O administrador cadastra cada dispositivo de acesso à rede (os Pontos de Acesso, servidores VPN, etc.) como um cliente no NPS, configurando seu endereço IP e o segredo compartilhado.
 4. **Criação de Políticas de Rede:** Este é o passo mais importante. O administrador cria as regras que definem as condições de autorização. Uma política consiste em **Condições** (ex: o usuário pertence ao grupo "Vendas"?), **Restrições** (ex: a conexão deve ocorrer entre 9h e 18h?) e **Configurações** (ex: se aprovado, colocar o usuário na VLAN de Vendas).
 
+### Firewall do Windows
+
+O **Firewall do Windows Defender com Segurança Avançada** é um componente de segurança integrado e robusto, que atua como a primeira linha de defesa de um servidor contra ameaças da rede. Trata-se de um firewall _host-based_ (baseado no próprio sistema) e _stateful_ (que monitora o estado das conexões), projetado para controlar todo o tráfego de rede que entra e sai do servidor com base em um conjunto de regras predefinidas.
+
+Enquanto em um desktop o firewall tem um papel primariamente protetivo, em um servidor sua função é dupla: ele não apenas bloqueia tráfego malicioso, mas também **controla e define precisamente quais serviços legítimos o servidor expõe para a rede**, para quem e de que forma.
+
+#### Conceitos Fundamentais do Firewall do Windows Server
+
+- **Inspeção de Pacotes e Políticas:** O firewall inspeciona cada pacote de dados que chega ou sai das interfaces de rede do servidor e o compara com sua lista de regras. Se o pacote corresponder a uma regra de "Permitir", ele passa. Se corresponder a uma regra de "Bloquear" ou a nenhuma regra de "Permitir" (para tráfego de entrada), ele é descartado.
+- **Perfis de Rede:** O firewall aplica diferentes conjuntos de regras com base no perfil da rede à qual está conectado:
+    - **Domínio:** Ativado quando o servidor está conectado a uma rede com um domínio do Active Directory.
+    - **Privado:** Para redes confiáveis que não são de domínio, como uma rede de laboratório ou de gerenciamento separada.
+    - **Público:** O perfil mais restritivo, para redes não confiáveis. Um servidor exposto diretamente à Internet, por exemplo, deve ter seu perfil de rede pública com regras extremamente rígidas.
+- **Logs e Monitoramento:** O firewall pode ser configurado para registrar as conexões permitidas e, mais importante, as bloqueadas. A análise desses logs é uma ferramenta crucial para a auditoria de segurança (identificando tentativas de ataque) e para a solução de problemas de conectividade.
+
+#### Configuração e Gerenciamento de Regras
+
+A interface profissional para a configuração do firewall é o console **"Firewall do Windows Defender com Segurança Avançada"**, que pode ser aberto executando o comando `wf.msc`.
+
+<div align="center">
+<img width="700px" src="./img/08-firewall-criacao-de-regras.png">
+</div>
+
+Neste console, a configuração é dividida principalmente em **Regras de Entrada** e **Regras de Saída**.
+
+- **Regras de Entrada (_Inbound Rules_):** São as mais críticas para a segurança do servidor. Elas definem qual tráfego iniciado por outros computadores tem permissão para chegar aos serviços que rodam no servidor. A política padrão do Windows é **bloquear todas as conexões de entrada que não correspondam a uma regra de permissão explícita**.
+- **Regras de Saída (_Outbound Rules_):** Controlam o tráfego iniciado pelo próprio servidor e destinado a outros computadores. A política padrão é **permitir todas as conexões de saída**. Em ambientes de alta segurança, regras de saída podem ser criadas para impedir que o servidor ou aplicações específicas se comuniquem com destinos não autorizados.
+
+Para criar uma nova regra, clica-se em "Nova Regra..." e um assistente é iniciado, permitindo a criação de regras com base em:
+
+- **Programa:** A regra se aplica a um executável específico (ex: `httpd.exe` para um servidor web Apache). Esta é a abordagem mais segura.
+- **Porta:** A regra abre uma porta de rede específica (ex: permitir tráfego de entrada na porta **TCP 3389** para habilitar a Área de Trabalho Remota).
+- **Pré-definida:** Permite habilitar um conjunto de regras prontas para uma função do Windows Server, como "Compartilhamento de Arquivos e Impressoras".
+
+Após escolher o tipo, o administrador define a **Ação** (Permitir ou Bloquear), os **Perfis** de rede aos quais a regra se aplica, e dá um nome descritivo à regra. Um firewall bem configurado é a base da segurança de qualquer servidor, garantindo que apenas os serviços necessários estejam expostos e que todo o resto do tráfego seja devidamente bloqueado.
+
+### Segurança Baseada em Certificados Digitais e a Infraestrutura de Chave Pública (ICP)
+
+Em um mundo digital, a necessidade de provar identidades, garantir a confidencialidade e assegurar a integridade das comunicações é constante. Os **certificados digitais** são a tecnologia fundamental que atende a essas necessidades. Um certificado digital funciona como um "documento de identidade eletrônico" para um usuário, computador ou serviço. Ele vincula uma identidade a um par de chaves criptográficas (uma pública e uma privada), e essa vinculação é atestada por uma entidade confiável.
+
+Essa estrutura de confiança é gerenciada por uma **Infraestrutura de Chave Pública (ICP)**, ou _Public Key Infrastructure (PKI)_. Uma PKI é o conjunto de hardware, software, políticas e procedimentos necessários para criar, gerenciar, distribuir, usar, armazenar e revogar certificados digitais.
+
+Os certificados digitais são essenciais em diversos cenários de segurança, como:
+
+- **Autenticação Segura de Redes:** Em redes Wi-Fi corporativas que usam o padrão 802.1X (com um servidor RADIUS/NPS), certificados podem ser usados para autenticar os computadores que tentam se conectar, garantindo que apenas máquinas autorizadas pela empresa possam acessar a rede.
+- **Conexões VPN:** Para aumentar a segurança de redes privadas virtuais (VPNs), certificados podem ser exigidos tanto no cliente quanto no servidor para estabelecer uma conexão confiável.
+- **Assinatura Digital:** Garante a autenticidade (quem assinou) e a integridade (o documento não foi alterado) de documentos e e-mails.
+- **Segurança de Servidores Web (SSL/TLS):** Quando você acessa um site `https://`, seu navegador está usando um certificado digital do servidor web para criptografar a comunicação e verificar a identidade do site.
+
+#### Implementando uma PKI com o Active Directory Certificate Services (AD CS)
+
+Para que uma organização possa emitir e gerenciar seus próprios certificados digitais, ela precisa de uma **Autoridade Certificadora (CA - Certificate Authority)**. A CA é a entidade confiável que emite, assina e pode revogar certificados. No Windows Server, essa funcionalidade é fornecida pela função **Active Directory Certificate Services (AD CS)**.
+
+##### Instalação e Configuração da Autoridade Certificadora
+
+1. **Instalação da Função:** O processo começa no "Gerenciador do Servidor", através do assistente "Adicionar funções e recursos". O administrador seleciona a função "Serviços de Certificados do Active Directory" e, dentro dela, o serviço de função "Autoridade de Certificação".
+2. **Configuração da CA:** Após a instalação, um assistente de configuração é iniciado. Nele, são tomadas decisões cruciais sobre a arquitetura da PKI:
+    - **Tipo de CA (Raiz ou Subordinada):** Uma **CA Raiz (Root CA)** é o topo da cadeia de confiança. Seu certificado é autoassinado e serve como a âncora de confiança para toda a PKI. Uma **CA Subordinada (Subordinate CA)** é uma CA cujo certificado é emitido por outra CA (a Raiz ou outra Subordinada), criando uma hierarquia que melhora a segurança e a capacidade de gerenciamento.
+    - **Tipo de Instalação (Standalone ou Enterprise):** Esta é a decisão mais importante.
+        - **CA Standalone:** Não é integrada ao Active Directory. Requer aprovação manual de todas as solicitações de certificado e é usada em cenários offline ou para emitir certificados para dispositivos que não fazem parte do domínio
+        - **CA Enterprise:** É **integrada ao Active Directory**. Esta é a opção mais poderosa e comum em ambientes corporativos. A integração com o AD permite o uso de **Modelos de Certificado** e a **distribuição automática de certificados**, simplificando enormemente a administração.
+
+##### Gerenciamento com Modelos e Distribuição Automática
+
+- **Modelos de Certificado (_Certificate Templates_):** Em uma CA do tipo Enterprise, os certificados não são criados do zero. Eles são baseados em modelos pré-configurados que definem as propriedades do certificado a ser emitido, como seu período de validade, os usos permitidos (ex: "Autenticação de Cliente", "Autenticação de Servidor") e quem tem permissão para solicitá-lo (com base em grupos do AD). O administrador pode duplicar e personalizar esses modelos para atender às necessidades específicas da organização.
+- **Distribuição Automática via GPO:** A grande vantagem de uma CA Enterprise é a capacidade de **auto-inscrição (_auto-enrollment_)**. O administrador pode configurar uma Política de Grupo (GPO) para instruir automaticamente todos os computadores e/ou usuários de uma OU a solicitarem e instalarem um certificado específico da CA. Esse processo é transparente para o usuário e garante que todos os dispositivos e usuários necessários possuam os certificados corretos para acessar a rede ou outros serviços seguros.
+
+### Reforço da Segurança (Hardening) com o CIS Benchmark para Servidores Autônomos
+
+A configuração padrão de um sistema operacional é geralmente otimizada para funcionalidade e compatibilidade, e não para a segurança máxima. O processo de **reforço da segurança (_hardening_)** consiste em modificar a configuração de um sistema para reduzir sua superfície de vulnerabilidade. Isso é feito através da desativação de serviços desnecessários, da remoção de softwares supérfluos e da aplicação de políticas de segurança restritivas.
+
+Para guiar esse processo, organizações como o **CIS (Center for Internet Security)**, uma entidade sem fins lucrativos, desenvolvem e publicam os **CIS Benchmarks**. Estes são guias de configuração detalhados e reconhecidos globalmente, que fornecem um conjunto de recomendações de segurança baseadas em consenso para diversos sistemas e aplicações.
+
+O **CIS Microsoft Windows Server Benchmark** é um desses guias, e possui uma versão específica para servidores **autônomos (_stand-alone_)**, ou seja, aqueles que operam em um modelo de grupo de trabalho, sem a gestão centralizada de um Active Directory. Nestes casos, a aplicação de uma política de segurança robusta de forma local é ainda mais crucial. O benchmark abrange centenas de configurações, divididas em áreas críticas, sendo algumas das principais mostradas abaixo:
+
+1. **Configuração do Sistema Operacional:** Recomendações para a base do sistema, como garantir que o Windows Update esteja configurado para instalar patches (correções) de segurança automaticamente e desativar protocolos de rede antigos e inseguros, como o SMBv1 e o TLS 1.0.
+2. **Configurações de Segurança de Conta:** Foco em proteger as identidades. Inclui a definição de **Políticas de Senha** fortes (ex: comprimento mínimo de 14 caracteres, exigência de complexidade e histórico de senhas) e a configuração de uma **Política de Bloqueio de Conta** (ex: bloquear uma conta por 15 minutos após 5 tentativas de logon falhas para mitigar ataques de força bruta).
+3. **Segurança de Rede:** Medidas para proteger o servidor do tráfego de rede malicioso. O principal foco é a configuração restritiva do **Firewall do Windows**, garantindo que a política padrão seja bloquear todas as conexões de entrada não solicitadas e criar regras de permissão apenas para os serviços estritamente necessários.
+4. **Auditoria e Log de Eventos:** Define quais atividades do sistema devem ser monitoradas. A implementação de **Políticas de Auditoria** robustas garante que eventos críticos, como tentativas de logon (bem-sucedidas e falhas), alterações em grupos de privilégio elevado e acesso a arquivos sensíveis, sejam registrados no Visualizador de Eventos para posterior análise ou investigação forense.
+5. **Configuração de Segurança Local:** Abrange a aplicação do princípio do menor privilégio. Recomenda o uso do **Controle de Acesso Baseado em Função (RBAC)**, garantindo que os usuários tenham apenas as permissões necessárias para suas tarefas, e a correta configuração das **permissões de arquivos e diretórios** (NTFS) para proteger o sistema de arquivos.
+6. **Configurações de Software e Aplicações:** Foco em reduzir a superfície de ataque do software instalado. Inclui a desativação de funcionalidades e componentes do Windows que não são utilizados no servidor e o reforço da segurança de navegadores, caso precisem ser usados.
+7. **Configuração de Segurança Avançada:** Recomendações para habilitar as defesas modernas do sistema, como garantir que a **proteção contra malware** (Windows Defender) esteja ativa e configurada, e que as tecnologias de **proteção de memória e execução**, como o DEP (Prevenção de Execução de Dados), estejam habilitadas para dificultar a ação de códigos maliciosos.
+
+#### Implementação e Boas Práticas
+
+As centenas de recomendações do CIS Benchmark podem ser aplicadas **manualmente**, utilizando ferramentas como o Editor de Política de Grupo Local (`gpedit.msc`), ou de forma **automatizada**, através de scripts em PowerShell, o que garante consistência em múltiplos servidores. Para verificar o nível de conformidade, pode-se usar a ferramenta **CIS-CAT (Configuration Assessment Tool)**, que escaneia o servidor e gera um relatório detalhado sobre as configurações que estão ou não alinhadas com o benchmark.
+
+Em relação às boas práticas na implementação, algumas são:
+
+- **Testar em Ambiente de Desenvolvimento:** Antes de aplicar um perfil de segurança restritivo em um servidor de produção, é vital testá-lo em um ambiente de laboratório para garantir que as novas configurações não causem um impacto negativo na funcionalidade das aplicações.
+- **Documentação e Auditoria:** Todas as alterações devem ser documentadas. A auditoria regular com ferramentas como o CIS-CAT garante que o servidor permaneça em conformidade ao longo do tempo.
+- **Treinamento e Conscientização:** A equipe de TI responsável pelo gerenciamento dos servidores deve ser treinada nas políticas de segurança aplicadas para garantir sua correta manutenção e operação.
+
+### WMI (Windows Management Instrumentation)
+
+O **WMI (Windows Management Instrumentation)** é uma das tecnologias de gerenciamento mais importantes e fundamentais do Windows. Trata-se de uma infraestrutura que fornece uma forma padronizada e unificada para acessar, configurar, gerenciar e monitorar praticamente todos os componentes de um sistema operacional Windows e das aplicações que rodam sobre ele.
+
+Pense no WMI como uma linguagem universal para a administração do sistema. Em vez de usar dezenas de ferramentas diferentes para consultar o hardware, o software instalado, os serviços em execução ou os logs de eventos, o WMI expõe todas essas informações em uma estrutura lógica e orientada a objetos, baseada no padrão da indústria **CIM (Common Information Model)**. Isso permite que administradores e desenvolvedores criem scripts e aplicações que podem consultar e automatizar tarefas de forma consistente, tanto local quanto remotamente.
+
+Os principais casos de uso do WMI incluem:
+
+- **Monitoramento e Diagnóstico:** Softwares de monitoramento utilizam o WMI para consultar remotamente o estado de saúde de servidores, verificando o uso de CPU, o espaço livre em disco, a quantidade de memória disponível e o status de serviços críticos.
+- **Automação de Tarefas Administrativas:** O WMI é o pilar da automação no Windows. Um administrador pode criar um script (em PowerShell ou VBScript) que use o WMI para, por exemplo, listar todos os softwares instalados em 500 computadores da rede e gerar um relatório de inventário.
+- **Gerenciamento Remoto:** Ferramentas de gerenciamento centralizado usam o WMI para executar comandos remotamente, como reiniciar um serviço que parou de responder em um servidor ou desinstalar um software em uma estação de trabalho.
+- **Segurança e Auditoria:** O WMI permite consultar os logs de segurança para identificar atividades suspeitas ou verificar se as configurações de segurança de um sistema estão em conformidade com as políticas da empresa.
+
+#### Interagindo com o WMI via PowerShell
+
+A forma mais comum e poderosa de interagir com o WMI é através do Windows PowerShell. O cmdlet clássico para essa tarefa é o `Get-WmiObject`.
+
+- **Obter informações do sistema:**
+
+```powershell
+Get-WmiObject Win32_ComputerSystem
+```
+
+- **Verificar processos em execução:**
+
+```powershell
+Get-WmiObject Win32_Process | Select-Object Name, ProcessId
+```
+
+- **Consultar serviços do Windows:**
+
+```powershell
+Get-WmiObject Win32_Service | Select-Object Name, State
+```
+
+Em versões mais recentes do PowerShell, o cmdlet `Get-WmiObject` foi sucedido por `Get-CimInstance`, que utiliza um protocolo de comunicação mais moderno (WinRM) e oferece um desempenho melhor, embora a sintaxe seja muito semelhante.
+
+#### Habilitando o Acesso Remoto ao WMI
+
+Para que o WMI possa ser acessado remotamente, é necessário que os serviços de gerenciamento estejam em execução e que o firewall esteja configurado para permitir a comunicação.
+
+1. **Verificar o serviço WMI:** O serviço principal do WMI, chamado "Instrumentação de Gerenciamento do Windows" (`Winmgmt`), deve estar em execução.
+
+```powershell
+Get-Service Winmgmt
+```
+
+2. **Habilitar o Gerenciamento Remoto do Windows (WinRM):** O WinRM é o protocolo moderno para o gerenciamento remoto. O comando a seguir o habilita e configura as exceções necessárias no firewall.
+
+```powershell
+Enable-PSRemoting -Force
+```
+
+3. **Configurar o Firewall para WMI (DCOM):** Para garantir a compatibilidade com ferramentas mais antigas que usam o protocolo DCOM, é necessário habilitar o grupo de regras do WMI no firewall.
+
+```powershell
+netsh advfirewall firewall set rule group="Windows Management Instrumentation (WMI)" new enable=yes
+```
+
+4. **Testar a Conexão Remota:** Após a configuração, a conexão pode ser testada a partir de outra máquina, usando o parâmetro `-ComputerName`.
+
+```powershell
+Get-WmiObject Win32_OperatingSystem -ComputerName NomeDoServidor -Credential Administrador
+```
+
+Este comando tentará se conectar ao `NomeDoServidor`, usando as credenciais fornecidas, e retornará as informações sobre o sistema operacional da máquina remota, confirmando que o acesso via WMI está funcionando.
+
+### Alta Disponibilidade com o Cluster de Failover
+
+A **alta disponibilidade (High Availability - HA)** é a capacidade de um sistema de continuar operando e fornecendo seus serviços sem interrupção, mesmo em caso de falha de um de seus componentes. Em um ambiente de servidor, onde a indisponibilidade de um serviço crítico (como um banco de dados ou um servidor de arquivos) pode causar perdas financeiras e operacionais significativas, a implementação de soluções de HA é essencial.
+
+No Windows Server, a principal tecnologia para fornecer alta disponibilidade para serviços e aplicações _com estado_ (_stateful_) é o **Cluster de Failover (Failover Clustering)**.
+
+#### O que é e Como Funciona um Cluster de Failover
+
+Um Cluster de Failover é um grupo de servidores independentes (chamados de **nós**) que trabalham em conjunto para aumentar a disponibilidade de aplicações e serviços. Os nós do cluster estão conectados por uma rede e monitoram a saúde uns dos outros constantemente. Se um dos nós falhar (seja por um problema de hardware, sistema operacional ou aplicação), outro nó saudável no cluster assume automaticamente suas funções em um processo chamado **failover**. Para o usuário final que está acessando o serviço, a interrupção é mínima, geralmente percebida apenas como uma breve reconexão.
+
+O processo de failover é orquestrado da seguinte forma:
+
+1. **Monitoramento (Heartbeat):** Os nós do cluster enviam continuamente pequenos pacotes de rede entre si, conhecidos como _heartbeat_, através de uma rede dedicada.
+2. **Detecção de Falha:** Se um nó para de receber o _heartbeat_ de outro, ele assume que o nó vizinho falhou.
+3. **Arbitragem e Tomada de Controle:** Os nós restantes utilizam um mecanismo de **Quorum** para determinar se o cluster ainda possui "membros" suficientes para continuar operando de forma saudável. Se sim, um dos nós sobreviventes assume a propriedade dos recursos que estavam no nó falho (como o controle do armazenamento compartilhado e o endereço IP do serviço).
+4. **Reinicialização do Serviço:** O novo nó proprietário inicia o serviço ou aplicação que falhou (por exemplo, coloca o banco de dados online ou reinicia a máquina virtual), restaurando a disponibilidade do serviço para os clientes.
+
+#### Componentes de um Cluster de Failover
+
+Os componentes de um Cluster de Failover são:
+
+- **Nós (Nodes):** Os servidores individuais que compõem o cluster. É uma boa prática que todos os nós tenham configurações de hardware e software semelhantes para garantir um comportamento de failover previsível.
+- **Redes do Cluster:** Um cluster de produção geralmente utiliza múltiplas redes para redundância e desempenho: uma rede para a comunicação dos clientes com o serviço e uma ou mais redes privadas e dedicadas para a comunicação interna do cluster (_heartbeat_ e sincronização).
+- **Armazenamento Compartilhado:** Para que um serviço possa ser movido de um nó para outro, seus dados devem residir em um local de armazenamento que seja acessível por todos os nós do cluster. Isso pode ser um **SAN (Storage Area Network)** tradicional ou, em implementações mais modernas, o **Espaços de Armazenamento Diretos (Storage Spaces Direct)**, que utiliza os discos locais dos próprios nós para criar um armazenamento compartilhado e resiliente.
+- **Quorum:** É o mecanismo de votação que garante a consistência e evita a condição de **_split-brain_**. Um _split-brain_ ocorre quando uma falha de rede divide o cluster em dois "grupos" que não conseguem se comunicar, mas ambos pensam que estão no controle, o que pode levar a uma corrupção massiva de dados. O Quorum impede isso, garantindo que apenas um grupo de nós (aquele que tiver a maioria dos "votos") possa permanecer ativo. Em clusters com um número par de nós, um **recurso testemunha (_witness_)** (como um disco ou um compartilhamento de arquivos) atua como o voto de desempate.
+- **Serviços e Aplicativos Clusterizados:** São as funções que o cluster está protegendo, como uma instância do SQL Server, uma máquina virtual do Hyper-V, ou um Servidor de Arquivos de Escalabilidade Horizontal (SOFS).
+
