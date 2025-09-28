@@ -883,3 +883,54 @@ Cada tipo de registro serve a um propósito específico, desde mapear nomes para
 |**TXT**|Texto (Text)|String de texto ASCII|Um registro de uso geral para armazenar informações textuais associadas a um domínio. Seus usos mais comuns hoje em dia incluem a **verificação de propriedade de domínio** para serviços de terceiros (como Google Analytics) e a implementação de outras políticas de segurança de e-mail, como DKIM e DMARC.|
 
 Ao instalar a função de **Servidor DNS** no Windows Server, um administrador ganha a capacidade de criar e gerenciar zonas autoritativas para sua organização, integrando-as de forma robusta com o Active Directory para um gerenciamento de nomes seguro e dinâmico.
+
+### Interoperabilidade com Sistemas de Arquivos de Rede
+
+Em uma rede corporativa, é comum a coexistência de diferentes sistemas operacionais. Para que um servidor Windows possa compartilhar recursos de forma eficaz com clientes Windows, Linux e macOS (e vice-versa), é necessário o uso de **protocolos de sistema de arquivos de rede**. Estes protocolos permitem que um computador cliente acesse e manipule arquivos em um servidor remoto como se estivessem em seu disco local, abstraindo toda a complexidade da comunicação de rede. Os dois protocolos dominantes neste cenário são o SMB/CIFS e o NFS.
+
+#### SMB/CIFS: O Padrão do Ecossistema Windows
+
+O **SMB (Server Message Block)** é o protocolo nativo do Windows para o compartilhamento de arquivos, impressoras e outros recursos em uma rede local. **CIFS (Common Internet File System)** é o nome de um dialeto mais antigo do SMB; embora os termos sejam frequentemente usados como sinônimos, "SMB" é a designação mais precisa para as versões modernas e seguras do protocolo (SMB 2.x e 3.x).
+
+O SMB opera em um modelo cliente-servidor, onde o cliente envia uma requisição (ex: "ler o arquivo `relatorio.docx`") e o servidor, após verificar as permissões de acesso do usuário, executa a ação e retorna uma resposta. Historicamente, o SMB utilizava o NetBIOS sobre TCP/IP (porta 139) para transporte, mas as versões modernas operam diretamente sobre a porta **TCP 445**, de forma mais eficiente.
+
+##### O Papel do Samba na Interoperabilidade
+
+Embora seja nativo do Windows, o protocolo SMB se tornou um padrão de interoperabilidade graças ao **Samba**, um projeto de software livre que reimplementa o conjunto de serviços e protocolos SMB/CIFS para sistemas operacionais do tipo Unix (como o Linux).
+
+<div align="center">
+<img width="280px" src="./img/08-samba.png">
+</div>
+
+Com o Samba, um servidor Linux pode se integrar perfeitamente a uma rede Windows, desempenhando funções como:
+
+- **Servidor de Arquivos e Impressão:** Compartilhar pastas e impressoras que são totalmente acessíveis por clientes Windows.
+- **Membro de um Domínio Active Directory:** O servidor Linux pode ingressar em um domínio AD, utilizando-o para autenticar seus próprios usuários.
+- **Controlador de Domínio:** Versões avançadas do Samba podem até mesmo atuar como um Controlador de Domínio Active Directory, oferecendo uma alternativa de código aberto ao Windows Server.
+
+#### NFS (Network File System)
+
+O **NFS (Network File System)** é o protocolo de compartilhamento de arquivos tradicional e nativo do mundo Unix e Linux. Assim como o SMB, ele permite que um diretório em um servidor seja "montado" por um cliente, aparecendo como um diretório local.
+
+Para garantir a interoperabilidade total, o Windows Server também oferece suporte ao NFS através da instalação da função **"Servidor para NFS"**, que permite compartilhar pastas com clientes Linux, e do recurso **"Cliente para NFS"**, que permite que o servidor Windows acesse compartilhamentos em servidores Linux.
+
+<div align="center">
+<img width="440px" src="./img/08-samba-exemplo.png">
+</div>
+
+A imagem acima ilustra perfeitamente um servidor de arquivos interoperável, que atende tanto a clientes Windows (via SMB) quanto a clientes Linux/OS X (via NFS) a partir do mesmo repositório de dados.
+
+#### Desativando o SMBv1 por Segurança
+
+As versões mais recentes do Windows permitem desativar componentes específicos do protocolo SMB através da janela "Ativar ou desativar recursos do Windows".
+
+<div align="center">
+<img width="360px" src="./img/08-ativar-e-desativar-recursos.png">
+</div>
+
+É de **extrema importância para a segurança** desabilitar o suporte ao **"SMB 1.0/CIFS"**. Esta é uma versão muito antiga e obsoleta do protocolo, que contém graves vulnerabilidades de segurança que foram exploradas por malwares de grande impacto, como os ransomwares WannaCry e NotPetya. A Microsoft desaprova fortemente seu uso, mantendo-o apenas por compatibilidade com dispositivos legados muito antigos. Em um ambiente seguro, este recurso deve estar sempre desativado.
+
+<div align="center">
+<img width="420px" src="./img/08-ativar-e-desativar-smb-cifs.png">
+</div>
+
