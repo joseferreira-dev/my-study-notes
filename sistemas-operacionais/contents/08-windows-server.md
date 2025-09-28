@@ -1014,3 +1014,45 @@ As principais vantagens do Kerberos são:
 - **Delegação de Autenticação:** Permite que um serviço intermediário (como um servidor web) utilize a identidade de um usuário para se autenticar em um serviço de back-end (como um banco de dados), mantendo a trilha de auditoria e as permissões do usuário original.
 - **Desempenho:** Após a obtenção do TGT inicial, a solicitação de tíquetes de serviço para diferentes recursos é um processo rápido e eficiente.
 - **Dependências:** O funcionamento correto do Kerberos exige um KDC (Controlador de Domínio) sempre disponível e, crucialmente, que todos os computadores na rede tenham seus relógios sincronizados. Diferenças de tempo superiores a alguns minutos entre um cliente e o KDC farão com que a autenticação falhe, pois os carimbos de data e hora nos tíquetes seriam considerados inválidos.
+
+### RADIUS: Autenticação, Autorização e Auditoria Centralizada
+
+Em ambientes de rede que exigem um alto nível de segurança e controle de acesso — como redes Wi-Fi corporativas, conexões VPN ou acesso a switches de rede gerenciáveis —, um simples compartilhamento de senha (como em uma rede Wi-Fi doméstica) não é suficiente. Nestes cenários, é necessário um mecanismo que possa autenticar cada usuário individualmente contra uma base de dados central. O protocolo padrão da indústria para essa finalidade é o **RADIUS (Remote Authentication Dial-In User Service)**.
+
+O RADIUS é um protocolo de rede cliente-servidor que fornece gerenciamento centralizado de **Autenticação, Autorização e Contabilização (AAA)**.
+
+- **Autenticação:** Confirma a identidade do usuário (ex: através de um nome de usuário e senha).
+- **Autorização:** Determina quais recursos ou qual nível de acesso o usuário autenticado terá.
+- **Contabilização (ou Auditoria):** Coleta dados sobre o uso do serviço pelo usuário (ex: tempo de conexão, volume de dados transferidos).
+
+No Windows Server, a funcionalidade de servidor RADIUS é implementada através da função **NPS (Network Policy Server)**.
+
+#### A Arquitetura RADIUS em Ação
+
+Uma implementação RADIUS típica envolve três componentes principais:
+
+1. **O Suplicante (_Supplicant_):** É o dispositivo do usuário final que está tentando se conectar à rede (ex: um notebook tentando acessar o Wi-Fi).
+2. **O Cliente RADIUS (_RADIUS Client_):** Este **não** é o dispositivo do usuário, mas sim o dispositivo de acesso à rede, como um **Ponto de Acesso (Access Point) Wi-Fi**, um **servidor de VPN** ou um **switch**. Ele atua como um intermediário ou um "porteiro". Ele recebe as credenciais do suplicante e as encaminha para o servidor RADIUS para verificação.
+3. **O Servidor RADIUS (_RADIUS Server_):** É o cérebro da operação, o servidor que executa o serviço NPS. Ele recebe a solicitação de autenticação do cliente RADIUS, valida as credenciais contra um banco de dados (como o Active Directory) e envia de volta uma resposta de aceitação ou rejeição.
+
+A comunicação entre o Cliente RADIUS (o Ponto de Acesso) и o Servidor RADIUS (NPS) é protegida por um **"segredo compartilhado"** (_shared secret_), uma senha pré-configurada em ambos os dispositivos que criptografa os pacotes RADIUS, protegendo as credenciais do usuário durante o trânsito na rede interna.
+
+#### Caso de Uso: Autenticação em Wi-Fi Corporativo (802.1X)
+
+O caso de uso mais comum para o RADIUS é a segurança de redes sem fio com o padrão **WPA2/WPA3-Enterprise (802.1X)**. Em vez de uma senha única para todos, cada funcionário usa suas próprias credenciais de domínio (usuário e senha do Active Directory) para se conectar. O fluxo é o seguinte:
+
+1. O funcionário seleciona a rede Wi-Fi corporativa e insere seu nome de usuário e senha.
+2. O Ponto de Acesso (Cliente RADIUS) recebe essas credenciais e as encaminha para o servidor NPS (Servidor RADIUS).
+3. O servidor NPS verifica as credenciais no Active Directory.
+4. O NPS então avalia suas **Políticas de Rede**. Uma política pode, por exemplo, permitir o acesso apenas se o usuário for membro do grupo "Funcionários" e estiver tentando se conectar durante o horário comercial.
+5. Se a autenticação for bem-sucedida e as condições da política forem atendidas, o NPS envia uma mensagem de "Acesso Permitido" ao Ponto de Acesso, que finalmente libera a conexão para o notebook do funcionário.
+
+#### Configuração do NPS no Windows Server
+
+A implementação de um servidor RADIUS no Windows Server segue um processo lógico:
+
+1. **Instalação da Função NPS:** Através do "Gerenciador do Servidor", o administrador adiciona a função "Serviços de Acesso e Política de Rede" e seleciona o serviço de função "Servidor de Política de Rede (NPS)".
+2. **Registro no Active Directory:** Para que o NPS possa autenticar usuários do domínio, ele precisa de permissão para ler as informações das contas de usuário no Active Directory. Isso é feito registrando o servidor no AD através do console do NPS.
+3. **Configuração dos Clientes RADIUS:** O administrador cadastra cada dispositivo de acesso à rede (os Pontos de Acesso, servidores VPN, etc.) como um cliente no NPS, configurando seu endereço IP e o segredo compartilhado.
+4. **Criação de Políticas de Rede:** Este é o passo mais importante. O administrador cria as regras que definem as condições de autorização. Uma política consiste em **Condições** (ex: o usuário pertence ao grupo "Vendas"?), **Restrições** (ex: a conexão deve ocorrer entre 9h e 18h?) e **Configurações** (ex: se aprovado, colocar o usuário na VLAN de Vendas).
+
