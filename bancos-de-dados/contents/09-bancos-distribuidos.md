@@ -257,3 +257,58 @@ A decisão sobre qual algoritmo de junção utilizar é feita pelo otimizador de
 - **Latência e largura de banda da rede:** Em redes lentas ou com alta latência, estratégias que minimizam o número de "idas e vindas", como o Semi-Join, são superiores ao Fetch-as-Needed.
 - **Recursos computacionais:** Algoritmos mais complexos, como a criação de Filtros de Bloom, exigem mais poder de processamento nos nós locais.
 
+## Transações Distribuídas
+
+Uma **transação distribuída** é uma transação que envolve operações em dois ou mais nós distintos de um banco de dados distribuído. Embora suas operações estejam fisicamente separadas, ela deve ser tratada como uma única unidade de execução lógica e atômica, obedecendo às propriedades ACID de forma global.
+
+O desafio fundamental de uma transação distribuída é garantir a **atomicidade**. Como podemos assegurar que a operação seja "tudo ou nada" quando o "tudo" está espalhado por múltiplos servidores que podem falhar de forma independente? Para resolver este problema, foram criados protocolos de confirmação atômica, que coordenam todos os nós para que cheguem a uma decisão unânime: confirmar (`COMMIT`) ou abortar (`ROLLBACK`).
+
+### Protocolo de Confirmação em Duas Fases (2PC)
+
+O **2PC (_Two-Phase Commit_)** é o protocolo clássico para garantir a atomicidade em transações distribuídas. Ele envolve um nó **Coordenador**, que gerencia a transação, e múltiplos nós **Participantes**, que executam partes dela. O processo é dividido em duas fases.
+
+<div align="center">
+<img width="580px" src="./img/09-two-phase-commit.png">
+</div>
+
+**Fase 1 – Preparação (Fase de Votação)**
+
+Nesta fase, o Coordenador verifica se todos os participantes estão aptos a confirmar a transação.
+
+1. O **Coordenador** envia uma mensagem de `PREPARE` para todos os Participantes.
+2. Cada **Participante** executa as operações necessárias, bloqueia os recursos, salva o estado em um armazenamento estável e responde ao Coordenador com seu "voto":
+    - **`PREPARED`**: Se a operação foi bem-sucedida e ele garante que pode confirmar a transação.
+    - **`ABORT`**: Se ocorreu algum erro que o impede de confirmar.
+
+**Fase 2 – Confirmação (Fase de Decisão)**
+
+O Coordenador toma a decisão final com base nos votos.
+
+1. **Se todos os Participantes votaram `PREPARED`**: O Coordenador envia uma mensagem de `COMMIT` para todos. Os participantes, então, tornam as alterações permanentes e liberam os bloqueios.
+2. **Se pelo menos um Participante votou `ABORT`**: O Coordenador envia uma mensagem de `ROLLBACK` para todos. Os participantes desfazem as alterações que haviam preparado e liberam os bloqueios.
+
+O 2PC garante a atomicidade, mas tem um ponto fraco: é um **protocolo bloqueante**. Se o Coordenador falhar entre a primeira e a segunda fase, os Participantes ficam "presos" aguardando a decisão final, com recursos bloqueados.
+
+### Protocolo de Confirmação em Três Fases (3PC)
+
+O **3PC (_Three-Phase Commit_)** surge como uma melhoria ao 2PC, projetado para ser um protocolo **não-bloqueante** e mais resiliente a falhas. Ele adiciona uma fase intermediária para eliminar o estado de incerteza.
+
+<div align="center">
+<img width="480px" src="./img/09-three-phase-commit.png">
+</div>
+
+**Fase 1 – Preparação (Can Commit)**
+
+Similar à do 2PC, o Coordenador envia uma requisição de preparo e os Participantes respondem se podem ou não realizar a transação.
+
+**Fase 2 – Pré-confirmação (Pre-Commit)**
+
+Esta é a fase crucial.
+
+1. Se todos os participantes responderam afirmativamente, o Coordenador envia um comando de `PRE-COMMIT`.
+2. Esta mensagem serve como um "ponto sem retorno", informando a todos que a decisão de confirmar foi tomada. Os Participantes se preparam definitivamente para o commit (bloqueando recursos) e confirmam ao Coordenador que estão prontos.
+
+**Fase 3 – Confirmação (Do Commit)**
+
+Após receber a confirmação da fase anterior de todos os participantes, o Coordenador envia o comando final de COMMIT. Caso ocorra uma falha e o Coordenador não envie o comando final, os Participantes podem usar um timeout. Como eles já sabem, a partir da fase de pré-confirmação, qual seria a decisão, eles podem se comunicar entre si e finalizar a transação (com COMMIT ou ROLLBACK) sem ficarem bloqueados indefinidamente.
+
