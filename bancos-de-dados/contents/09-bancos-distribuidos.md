@@ -468,3 +468,26 @@ A tabela a seguir resume e compara as características dos três principais prot
 |**Paxos**|`f ≤ (N-1)/2`|Omissão (_Fail-stop_)|Assíncrono|Alta|Teórico, base para outros sistemas|
 |**Raft**|`f ≤ (N-1)/2`|Omissão (_Fail-stop_)|Assíncrono (usa _timeouts_)|Média|Prático (etcd, Consul, Kubernetes)|
 |**PBFT**|`f ≤ (N-1)/3`|Bizantina (Maliciosa)|Assíncrono|Muito Alta|Blockchains, sistemas de alta segurança|
+
+## Sistemas Baseados em Cloud
+
+Os sistemas de bancos de dados baseados em nuvem (_cloud_) representam a evolução natural das arquiteturas distribuídas, projetados para atender às demandas de escalabilidade, elasticidade, alta disponibilidade e otimização de custos da era digital. Eles combinam os princípios dos bancos de dados distribuídos com a flexibilidade e o poder das infraestruturas de computação em nuvem (como Amazon Web Services - AWS, Microsoft Azure e Google Cloud Platform - GCP).
+
+Um banco de dados baseado em nuvem é, essencialmente, um SGBD que opera sobre uma plataforma de _cloud computing_. Em vez de ser instalado e gerenciado em servidores físicos locais (_on-premise_), ele é oferecido como um serviço, proporcionando aos usuários acesso remoto ao armazenamento e processamento de dados.
+
+### Database-as-a-Service (DBaaS)
+
+A principal forma como os bancos de dados em nuvem são entregues é através do modelo **Database-as-a-Service (DBaaS)**. Neste modelo, um provedor de nuvem (como a AWS) se encarrega de toda a complexidade da infraestrutura e do gerenciamento. O cliente não precisa se preocupar com a compra de servidores, instalação de software, configuração de redes, aplicação de patches de segurança ou rotinas de backup. Ele simplesmente "aluga" o serviço do banco de dados, paga pelo que usa e foca no desenvolvimento de sua aplicação.
+
+O DBaaS pode ser oferecido dentro dos modelos de serviço de nuvem mais amplos:
+
+- **IaaS (Infrastructure as a Service):** O cliente tem mais controle, podendo instalar e gerenciar seu próprio SGBD em máquinas virtuais alugadas do provedor de nuvem.
+- **PaaS (Platform as a Service):** O modelo mais comum para DBaaS. O provedor oferece a plataforma de banco de dados (ex: Amazon RDS para PostgreSQL, Azure SQL Database) como um serviço totalmente gerenciado. O cliente interage com o banco de dados, mas não gerencia a infraestrutura subjacente.
+- **SaaS (Software as a Service):** Neste caso, o banco de dados é parte de uma aplicação maior que é consumida como um serviço, sem que o cliente tenha acesso direto à camada de banco de dados.
+
+As características que definem os sistemas de banco de dados baseados em nuvem são:
+
+- **Hospedagem em Infraestrutura de Nuvem:** O sistema opera sobre a vasta e resiliente infraestrutura de um provedor de nuvem, que pode ser pública (acessível a todos) ou privada (dedicada a uma única organização).
+- **Distribuição Geográfica e Replicação:** Os provedores de nuvem possuem _data centers_ espalhados por todo o mundo. Isso permite que os dados sejam replicados geograficamente com facilidade, colocando as informações mais perto dos usuários finais (reduzindo a latência) e garantindo a continuidade dos negócios mesmo em caso de desastres regionais.
+- **Elasticidade e Balanceamento Automático:** Esta é uma das maiores vantagens da nuvem. A capacidade de armazenamento e processamento pode ser aumentada ou diminuída sob demanda, de forma automática (_auto-scaling_). O balanceamento de carga entre os nós é, em grande parte, gerenciado pelo próprio provedor, garantindo que a aplicação possa lidar com picos de tráfego sem degradação de performance.
+
