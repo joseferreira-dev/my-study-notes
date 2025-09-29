@@ -155,3 +155,105 @@ A imagem a seguir ilustra a diferença entre as duas abordagens.
 É possível, ainda, aplicar uma **fragmentação mista (ou híbrida)**, onde uma tabela é primeiro fragmentada verticalmente e, em seguida, um ou mais de seus fragmentos verticais são fragmentados horizontalmente.
 
 A escolha da estratégia de fragmentação correta é uma decisão de design crucial, que depende diretamente dos **padrões de consulta** da aplicação. Analisar quais dados são acessados com mais frequência e por quais usuários é fundamental para definir um esquema de fragmentação que otimize o desempenho e atenda às políticas de segurança da organização.
+
+### Replicação: Garantindo a Disponibilidade e a Resiliência
+
+Enquanto a fragmentação é uma estratégia para **dividir** os dados e melhorar o desempenho através do paralelismo, a **replicação** é uma estratégia para **duplicar** os dados, com o objetivo principal de garantir a **alta disponibilidade** e a **tolerância a falhas**.
+
+A replicação consiste em manter múltiplas cópias (ou **réplicas**) dos mesmos dados em nós fisicamente diferentes. Essas duas estratégias, fragmentação e replicação, não são mutuamente exclusivas e, em sistemas complexos, são frequentemente utilizadas em conjunto: um banco de dados pode ser primeiro fragmentado em partes menores, e então cada um desses fragmentos é replicado em múltiplos servidores.
+
+#### As Vantagens da Replicação
+
+Manter cópias dos dados em diferentes locais oferece benefícios cruciais para um sistema distribuído:
+
+- **Aumento da Disponibilidade e Tolerância a Falhas:** Esta é a principal vantagem. Se um nó que contém uma cópia dos dados falhar (por problemas de hardware, rede, etc.), o sistema pode redirecionar as requisições para outra réplica que esteja operacional. Isso evita que uma falha em um único servidor torne os dados indisponíveis, eliminando os pontos únicos de falha. Um sistema como o Apache Cassandra, por exemplo, replica os dados em múltiplos nós para garantir que não haja um ponto único de falha, tornando o sistema altamente resiliente.
+- **Melhora no Desempenho de Leitura (Escalabilidade de Leitura):** A replicação permite que as consultas de leitura sejam distribuídas entre múltiplas réplicas. Um balanceador de carga pode direcionar os usuários para diferentes nós, evitando que um único servidor seja sobrecarregado com requisições de leitura. Além disso, em sistemas geograficamente distribuídos, os dados podem ser replicados para nós mais próximos dos usuários, reduzindo a latência da rede e proporcionando um acesso mais rápido à informação.
+
+#### Arquiteturas e Modos de Replicação
+
+A forma como os dados são copiados e sincronizados pode seguir diferentes arquiteturas e modos.
+
+- **Arquitetura Mestre-Escravo (_Master-Slave_ ou _Primary-Replica_):** A arquitetura de replicação mais comum. Nela, um nó é designado como o **mestre** (primário), e é o único que pode aceitar operações de escrita (`INSERT`, `UPDATE`, `DELETE`). Todas as alterações feitas no mestre são então propagadas para um ou mais nós **escravos** (réplicas). Esta topologia é a base para a estratégia de balanceamento de carga _Read/Write Split_, onde as leituras são direcionadas para as réplicas, e as escritas para o mestre.
+- **Arquitetura Multi-Mestre (_Multi-Master_):** Em uma arquitetura mais complexa, múltiplos nós podem atuar como mestres, aceitando operações de escrita. As alterações feitas em qualquer mestre são replicadas para todos os outros nós do _cluster_. Esta abordagem oferece altíssima disponibilidade para operações de escrita, mas introduz o desafio da **resolução de conflitos** (o que fazer se o mesmo dado for alterado de formas diferentes em dois mestres ao mesmo tempo).
+
+A replicação também pode ser total, onde todos os dados do banco são copiados para outros nós, ou parcial, onde apenas os dados mais críticos ou frequentemente acessados são replicados. A escolha depende dos requisitos de disponibilidade e dos custos de armazenamento e sincronização.
+
+## Execução de Consultas Distribuídas
+
+Em um sistema centralizado, a otimização de consultas foca em encontrar o plano de execução que minimize os acessos a disco (I/O) e o uso de CPU. Em um sistema distribuído, esses fatores continuam importantes, mas são ofuscados por um desafio muito maior: **minimizar a transferência de dados pela rede**. A comunicação entre nós é, de longe, a operação mais lenta e custosa em um BDD.
+
+Portanto, a execução e a otimização de consultas distribuídas requerem estratégias específicas para garantir um desempenho aceitável, mesmo com a dispersão física e lógica dos dados.
+
+### Otimização e Execução de Consultas
+
+O componente responsável por essa tarefa é o **Otimizador de Consultas Distribuído**. Quando ele recebe uma consulta global de um usuário, ele executa um processo sofisticado para encontrar o plano de execução mais eficiente. Esse processo geralmente envolve os seguintes passos:
+
+1. **Transformação da Consulta:** O otimizador pode reescrever a consulta SQL original em uma forma algebricamente equivalente, mas que seja mais adequada para a execução distribuída.
+2. **Localização dos Dados:** O otimizador consulta o **Catálogo Distribuído** para identificar em quais nós os fragmentos e réplicas dos dados necessários estão localizados.
+3. **Geração de Planos de Execução:** O otimizador gera múltiplas estratégias possíveis para executar a consulta. Para uma junção entre uma tabela de `CLIENTES` no Brasil e uma de `PEDIDOS` na Europa, ele pode considerar:
+    - Mover todos os clientes para a Europa e realizar a junção lá.
+    - Mover todos os pedidos para o Brasil e realizar a junção aqui.
+    - Mover ambos para um terceiro nó e processar a junção.
+4. **Estimativa de Custo:** Para cada plano possível, o otimizador estima um custo total, que leva em conta não apenas o processamento local (CPU e I/O), mas, principalmente, o **custo de comunicação** (volume de dados a ser transferido versus a latência da rede).
+5. **Seleção do Plano Final:** O otimizador escolhe o plano de execução com o menor custo estimado, que define explicitamente quais operações devem ser executadas em quais nós e como os dados devem ser movidos entre eles.
+
+### Estratégias de Transferência de Dados: Push vs. Pull
+
+A movimentação de dados entre os nós, um passo crucial em qualquer consulta distribuída, geralmente segue duas estratégias principais:
+
+- **Estratégia Push (Envio de Dados):** Nesta abordagem, o nó que contém os dados toma a iniciativa de **enviá-los** para o nó que irá realizar a operação (como uma junção). A estratégia _push_ é mais eficiente quando o volume de dados a ser enviado é relativamente pequeno em comparação com a tabela de destino.
+    - **Exemplo:** Para juntar uma tabela pequena de `CATEGORIAS` (50 linhas, no Nó A) com uma tabela massiva de `PRODUTOS` (100 milhões de linhas, no Nó B), a estratégia mais eficiente é "empurrar" as 50 linhas de `CATEGORIAS` pela rede até o Nó B e realizar a junção lá.
+- **Estratégia Pull (Requisição de Dados):** Nesta abordagem, o nó que está coordenando a operação **solicita** ou "puxa" os dados de que precisa dos nós remotos, geralmente sob demanda. A estratégia _pull_ é mais eficiente quando a consulta é altamente seletiva e apenas um pequeno subconjunto dos dados remotos é necessário.
+    - **Exemplo:** Uma consulta busca os pedidos de um cliente específico: `SELECT * FROM PEDIDOS WHERE ID_CLIENTE = 123`. Se os pedidos estão em um nó remoto, o nó local não precisa de toda a tabela `PEDIDOS`. Ele pode "puxar" apenas as linhas específicas que correspondem àquele `ID_CLIENTE`.
+
+Uma técnica de otimização avançada chamada **semi-junção (_semi-join_)** combina essas ideias de forma inteligente para minimizar o tráfego de rede, trocando apenas as chaves necessárias entre os nós antes de transferir os dados completos.
+
+### Algoritmos de Junção Distribuída
+
+Quando os dados são fragmentados, especialmente de forma vertical, a necessidade de juntar os fragmentos para reconstruir a informação original é constante. Realizar uma operação de `JOIN` em um ambiente distribuído, no entanto, é uma tarefa desafiadora. O objetivo principal dos algoritmos de junção distribuída é executar essa combinação de forma eficiente, minimizando o principal gargalo de desempenho: a quantidade de dados transferidos pela rede.
+
+É justamente a complexidade e o custo computacional das junções em ambientes distribuídos que levam muitos sistemas NoSQL a favorecerem o _sharding_ (fragmentação horizontal) e a desnormalização, arquiteturas que evitam a necessidade de junções complexas. Contudo, para os sistemas que as suportam, são empregadas técnicas inteligentes para otimizar o processo.
+
+A seguir, vamos explorar algumas das principais técnicas de junção distribuída.
+
+#### Semi-Junção (Semi-Join)
+
+A **semi-junção** é uma das técnicas mais eficazes para reduzir o tráfego de rede. Em vez de mover uma tabela inteira para outro nó, a operação é realizada em fases, transferindo apenas a informação estritamente necessária para a filtragem.
+
+O processo de semi-junção para juntar uma Tabela A (no Nó 1) com uma Tabela B (no Nó 2) ocorre da seguinte forma:
+
+1. **Fase 1 (Projeção e Envio):** O Nó 1 primeiro projeta **apenas** a coluna de junção da Tabela A e envia essa lista de valores, que é relativamente pequena, para o Nó 2.
+2. **Fase 2 (Filtragem Remota):** O Nó 2 recebe a lista de valores da Tabela A e a utiliza para filtrar a sua própria Tabela B, selecionando apenas as linhas que possuem uma correspondência na lista recebida.
+3. **Fase 3 (Envio do Resultado Reduzido):** O Nó 2 envia de volta para o Nó 1 apenas o subconjunto de linhas da Tabela B que passaram no filtro. Este volume de dados é muito menor do que a tabela B inteira.
+4. **Fase 4 (Junção Final Local):** O Nó 1 realiza a junção final entre a sua Tabela A completa e o conjunto reduzido de linhas que recebeu da Tabela B.
+
+**Exemplo:** Para juntar `CLIENTES` (1 milhão de linhas, no Brasil) com `PEDIDOS` (50 milhões de linhas, nos EUA) para encontrar os pedidos dos clientes do estado de 'SP' (100 mil clientes). Em vez de enviar 50 milhões de registros de pedidos para o Brasil, o nó do Brasil envia os 100 mil IDs de clientes de SP para os EUA. O nó dos EUA filtra os pedidos correspondentes e envia de volta apenas os registros relevantes, reduzindo drasticamente o tráfego de rede.
+
+#### Bloom Join
+
+O **Bloom Join** é uma variação otimizada da semi-junção que utiliza uma estrutura de dados probabilística e extremamente compacta chamada **Filtro de Bloom (_Bloom Filter_)**. Um Filtro de Bloom pode testar rapidamente se um elemento _pode pertencer_ a um conjunto ou se ele _definitivamente não pertence_, usando muito pouco espaço.
+
+O processo é semelhante ao da semi-junção, mas ainda mais eficiente em termos de transferência de dados:
+
+1. O Nó 1 cria um Filtro de Bloom a partir dos valores de sua coluna de junção. Este filtro é muito menor do que a lista de valores em si.
+2. O Nó 1 envia este pequeno Filtro de Bloom para o Nó 2.
+3. O Nó 2 utiliza o filtro para pré-selecionar as linhas da Tabela B. Se o filtro indicar que um valor "definitivamente não pertence" ao conjunto do Nó 1, a linha é descartada. Se indicar que "pode pertencer", a linha é mantida.
+4. O Nó 2 envia este conjunto pré-filtrado (que pode conter alguns falsos positivos, mas nunca perderá uma correspondência verdadeira) de volta ao Nó 1 para a junção final.
+
+O Bloom Join é especialmente eficaz quando a taxa de correspondência entre as tabelas é baixa, pois o volume de dados transferido na fase inicial (o filtro) é mínimo.
+
+#### Busca Sob Demanda (Fetch-as-Needed)
+
+Nesta estratégia, mais simples, o nó que está coordenando a junção percorre sua tabela local linha por linha. Para cada linha, ele envia uma requisição individual ao nó remoto para "buscar" a linha correspondente necessária para completar a junção.
+
+Embora seja conceitualmente simples, esta abordagem é geralmente **ineficiente**, pois gera um grande número de pequenas requisições de rede. Em redes com alta latência, onde o custo de iniciar cada comunicação é alto, o desempenho pode ser severamente degradado.
+
+#### Fatores de Escolha
+
+A decisão sobre qual algoritmo de junção utilizar é feita pelo otimizador de consultas distribuído, que considera diversos fatores para escolher a estratégia mais eficiente:
+
+- **Volume de dados:** Para grandes volumes, Semi-Join e Bloom Join são preferíveis ao envio de tabelas completas.
+- **Taxa de correspondência:** Se poucas linhas de uma tabela correspondem à outra, o Bloom Join pode ser particularmente eficaz.
+- **Latência e largura de banda da rede:** Em redes lentas ou com alta latência, estratégias que minimizam o número de "idas e vindas", como o Semi-Join, são superiores ao Fetch-as-Needed.
+- **Recursos computacionais:** Algoritmos mais complexos, como a criação de Filtros de Bloom, exigem mais poder de processamento nos nós locais.
+
