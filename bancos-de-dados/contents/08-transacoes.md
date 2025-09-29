@@ -210,3 +210,41 @@ Agora, imagine uma terceira transação:
 
 **Resultado:** Como o recurso já possui bloqueios compartilhados (de T1 e T2), e um bloqueio exclusivo não é compatível com eles, a Transação T3 **será colocada em espera**. Ela só poderá prosseguir e atualizar o estoque depois que tanto T1 quanto T2 terminarem suas leituras e liberarem seus respectivos bloqueios compartilhados.
 
+### Bloqueios de Atualização (Update Locks - U)
+
+O **bloqueio de atualização**, ou **Update Lock (U)**, é um tipo de bloqueio mais sofisticado, utilizado por alguns SGBDs (notavelmente o Microsoft SQL Server) como uma medida preventiva contra um problema de concorrência comum e perigoso conhecido como **deadlock de conversão**.
+
+Ele atua como um "marcador de intenção". Uma transação adquire um bloqueio de atualização quando pretende **ler** um recurso com a **possível intenção de modificá-lo futuramente**.
+
+#### Deadlock de Conversão
+
+Para entender a necessidade do Update Lock, precisamos primeiro entender o problema que ele resolve. Um _deadlock_ de conversão pode ocorrer no seguinte cenário:
+
+1. A **Transação T1** precisa ler a Linha A. Ela adquire um **Bloqueio Compartilhado (S)** sobre a Linha A.
+2. Simultaneamente, a **Transação T2** também precisa ler a mesma Linha A. Como bloqueios compartilhados são compatíveis, T2 também adquire um **Bloqueio Compartilhado (S)** sobre a Linha A.
+3. Agora, a **Transação T1** decide que precisa **atualizar** a Linha A. Para fazer isso, ela precisa "promover" seu bloqueio de Compartilhado (S) para **Exclusivo (X)**. No entanto, ela não pode, pois a Transação T2 ainda mantém um bloqueio Compartilhado (S) no recurso, e bloqueios S e X são incompatíveis. A Transação T1 entra em estado de espera.
+4. Em seguida, a **Transação T2** também decide que precisa **atualizar** a Linha A. Ela também tenta promover seu bloqueio S para um bloqueio X. No entanto, ela também não pode, pois a Transação T1 já tem um bloqueio S. A Transação T2 também entra em estado de espera.
+
+Neste ponto, temos um impasse clássico (_deadlock_): T1 está esperando T2 liberar seu bloqueio para poder prosseguir, e T2 está esperando T1 liberar o seu. Nenhuma das duas pode avançar, e elas ficariam presas para sempre se o SGBD não interviesse para abortar uma delas.
+
+#### A Solução: com Update Lock (U)
+
+O bloqueio de atualização (U) foi criado para prevenir exatamente este cenário. Ele introduz uma nova regra de compatibilidade:
+
+- Apenas **uma** transação pode manter um bloqueio de atualização (U) sobre um recurso em um determinado momento.
+- Um bloqueio de atualização (U) **é compatível** com bloqueios compartilhados (S). Isso significa que, enquanto uma transação tem um bloqueio U (indicando sua intenção de atualizar), outras transações ainda podem ler o dado (adquirindo bloqueios S).
+- Quando a transação com o bloqueio U decide efetivamente escrever no dado, seu bloqueio é promovido para Exclusivo (X). Como ela era a única com a "intenção" de atualizar, não haverá conflito de conversão.
+
+**Exemplo Prático Detalhado:**
+
+Vamos revisitar o cenário anterior, agora com o Update Lock.
+
+1. A **Transação T1** precisa ler a Linha A com a intenção de, talvez, atualizá-la. Em vez de um bloqueio S, ela solicita e obtém um **Bloqueio de Atualização (U)**.
+2. A **Transação T2** também precisa ler a Linha A com a intenção de atualizá-la. Ela tenta obter um **Bloqueio de Atualização (U)**.
+3. **Conflito!** Como apenas uma transação pode ter um bloqueio U por vez, a solicitação da Transação T2 é **negada**, e ela é colocada em espera.
+4. A **Transação T1** decide agora atualizar a Linha A. O SGBD promove seu bloqueio U para um **Bloqueio Exclusivo (X)**. Como não há outros bloqueios conflitantes (outras transações podem estar lendo com S, mas não tentando atualizar), a promoção é instantânea.
+5. A Transação T1 realiza a escrita e, ao terminar, libera seu bloqueio X.
+6. Agora, a Transação T2, que estava esperando, pode finalmente adquirir seu bloqueio U e prosseguir.
+
+Ao serializar a "intenção de atualizar", o Update Lock impede que o impasse de conversão ocorra, garantindo um fluxo de transações mais ordenado e previsível em cenários de leitura-seguida-de-escrita.
+
