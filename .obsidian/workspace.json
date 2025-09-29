@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "bancos-de-dados/contents/img/09-protocolo-paxos.png",
     "bancos-de-dados/contents/img/09-three-phase-commit.png",
     "bancos-de-dados/contents/img/09-two-phase-commit.png",
     "bancos-de-dados/contents/08-transacoes.md",
@@ -183,7 +184,6 @@
     "bancos-de-dados/contents/img/08-failover-e-failback.png",
     "bancos-de-dados/contents/img/08-funcionamento-de-clusters.png",
     "bancos-de-dados/contents/img/08-formas-de-balanceamento.png",
-    "bancos-de-dados/contents/img/08-two-phase-locking.png",
     "legislacao/contents/09-decreto-11529.md",
     "engenharia-de-software/contents/18-bdd-ddd-mda-mdd-fdd-dsdm.md",
     "engenharia-de-software/contents/17-tdd.md",

@@ -343,3 +343,52 @@ Devido a essa complexidade, em vez de reinventar a roda, os sistemas distribuíd
 - **Raft:** Um algoritmo de consenso projetado especificamente para ser mais fácil de entender e implementar que o Paxos, mantendo o mesmo nível de segurança. É amplamente utilizado em sistemas modernos como etcd (usado pelo Kubernetes), CockroachDB e Consul.
 - **PBFT (_Practical Byzantine Fault Tolerance_):** Um algoritmo projetado para tolerar não apenas falhas de parada, mas também falhas "bizantinas", onde os nós podem se comportar de forma maliciosa ou arbitrária. É a base para muitos sistemas de _blockchain_.
 
+### Paxos
+
+O **Paxos** é uma família de protocolos para resolver o consenso em um sistema distribuído assíncrono e sujeito a falhas não-bizantinas (ou seja, nós que podem parar de funcionar ou perder mensagens, mas que não agem de forma maliciosa). Desenvolvido por Leslie Lamport, o Paxos é famoso por sua robustez teórica e por ser a base de muitos sistemas distribuídos de alta confiabilidade. Contudo, também é notório por sua complexidade de compreensão e implementação.
+
+#### Os Papéis no Protocolo Paxos
+
+O protocolo funciona através da interação de agentes que desempenham três papéis distintos (embora, na prática, um mesmo nó possa desempenhar múltiplos papéis):
+
+- **Proponentes (_Proposers_):** São os nós que iniciam o processo de consenso ao **propor um valor**. Pense neles como os "líderes" de uma rodada de votação.
+- **Aceitadores (_Acceptors_):** São os nós que atuam como a "memória" e o "eleitorado" do sistema. Eles **votam** nas propostas e, coletivamente, decidem qual valor será escolhido. O consenso é alcançado quando uma **maioria qualificada** (um quórum) de Aceitadores concorda com o mesmo valor.
+- **Aprendizes (_Learners_):** São os nós que precisam saber o resultado final da decisão. Eles são informados pelos Aceitadores assim que um valor é escolhido.
+
+#### As Fases do Paxos
+
+O algoritmo básico do Paxos opera em duas fases principais, cada uma com duas etapas de comunicação. O objetivo é garantir que, uma vez que um valor seja escolhido, nenhum valor diferente possa ser escolhido posteriormente.
+
+**Fase 1: Preparação (Prepare/Promise)**
+
+Nesta fase, um Proponente "sonda" o sistema para ver se pode iniciar uma nova proposta.
+
+1. **Prepare:** O Proponente escolhe um **número de proposta `n`** que deve ser único e maior que qualquer número que ele já tenha usado. Ele envia uma mensagem de `Prepare(n)` para a maioria dos Aceitadores.
+2. **Promise:** Cada Aceitador, ao receber a mensagem `Prepare(n)`, a compara com o maior número de proposta que ele já prometeu atender.
+    - Se `n` for maior, o Aceitador responde com uma mensagem de **`Promise(n)`**, prometendo não aceitar nenhuma proposta com um número menor que `n`. Se ele já tiver aceitado um valor em uma proposta anterior, ele inclui esse valor e seu respectivo número na resposta.
+    - Se `n` for menor ou igual a um número que ele já prometeu, o Aceitador ignora a requisição ou envia uma resposta de rejeição.
+
+**Fase 2: Proposição (Accept/Accepted)**
+
+Se o Proponente receber respostas de Promise de uma maioria de Aceitadores, ele pode prosseguir.
+
+3. Accept Request: O Proponente agora envia uma mensagem de Accept(n, v) para os Aceitadores que lhe enviaram a promessa. O valor v que ele envia é:
+	* O valor da proposta de maior número que ele recebeu de volta dos Aceitadores na fase de Promise, caso algum tenha sido retornado.
+	* Ou o seu próprio valor original, se nenhum Aceitador havia aceitado um valor antes.
+
+Esta regra é crucial para garantir que o Paxos sempre converge para um único valor.
+
+4. Accepted: Cada Aceitador, ao receber a mensagem Accept(n, v), a aceita, desde que não tenha, nesse meio tempo, feito uma promessa para uma proposta de número maior. Se aceitar, ele armazena o valor v e informa os Aprendizes.
+
+Uma vez que uma maioria de Aceitadores tenha aceitado o mesmo valor, o consenso foi alcançado para aquela rodada.
+
+<div align="center">
+<img width="540px" src="./img/09-protocolo-paxos.png">
+</div>
+
+O diagrama acima ilustra um cenário comum e desafiador no Paxos, conhecido como **"proponentes concorrentes"**. Ele mostra como um Proponente pode ser interrompido por outro que inicia uma nova rodada com um número de proposta maior, levando a rejeições e novas tentativas. Isso demonstra por que, embora seguro, o Paxos pode ser lento na prática, exigindo múltiplas rodadas de comunicação para chegar a um acordo em ambientes com alta contenção. Suas principais características são:
+
+- **Tolerância a falhas:** O sistema continua a funcionar desde que uma maioria de Aceitadores (`(N/2) + 1`) esteja operacional.
+- **Segurança:** Garante que apenas um único valor possa ser escolhido para uma determinada rodada de consenso.
+- **Base para sistemas modernos:** Apesar de sua complexidade, os princípios do Paxos formam a base teórica para inúmeros sistemas distribuídos de missão crítica e algoritmos de consenso mais recentes.
+
