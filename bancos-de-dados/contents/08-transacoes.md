@@ -169,3 +169,44 @@ A tabela a seguir resume quais anomalias cada nível de isolamento previne. Um `
 - **Repeatable Read:** Um nível mais restritivo que garante que, se uma linha for lida múltiplas vezes dentro da mesma transação, ela sempre retornará os mesmos valores. **Previne Leituras Sujas e Não-Repetíveis**. As leituras fantasmas, no entanto, ainda são possíveis. É o nível padrão no MySQL (com o motor InnoDB).
 - **Serializable:** O nível de isolamento mais alto e seguro. Ele garante que o resultado de transações concorrentes seja idêntico a alguma execução sequencial (em série) dessas mesmas transações. **Previne todas as anomalias**. Oferece a máxima consistência, mas ao custo de uma menor concorrência e, potencialmente, um desempenho mais lento.
 
+## Bloqueios (Locks): Gerenciando o Acesso Concorrente
+
+Os **bloqueios (_locks_)** são os mecanismos fundamentais que um SGBD utiliza para gerenciar o acesso concorrente aos dados e implementar os níveis de isolamento. Eles funcionam como "semáforos" que regulam o acesso a recursos compartilhados (como uma linha, uma página de dados ou uma tabela inteira), garantindo que duas ou mais transações não interfiram negativamente umas nas outras.
+
+Quando uma transação precisa acessar um dado, ela solicita um bloqueio sobre aquele recurso ao SGBD. Se nenhuma outra transação possuir um bloqueio conflitante, o SGBD concede o bloqueio, e a transação pode prosseguir. Se houver um conflito, a transação solicitante é colocada em uma fila de espera até que o bloqueio seja liberado. O controle por bloqueios é a forma mais tradicional e amplamente adotada para garantir as propriedades ACID em ambientes multiusuário.
+
+Existem diferentes tipos e granularidades de bloqueios, mas para nosso estudo, vamos nos concentrar nos três modos de bloqueio mais básicos e essenciais.
+
+### Bloqueios Compartilhados (Shared Locks - S)
+
+Um **bloqueio compartilhado**, também conhecido como **Shared Lock (S)** ou _Read Lock_, é o tipo de bloqueio mais permissivo. Como o nome sugere, ele é utilizado principalmente para operações de **leitura** (`SELECT`).
+
+Sua característica fundamental é a **compatibilidade**: múltiplas transações podem obter e manter um bloqueio compartilhado sobre o mesmo recurso **simultaneamente**. A função primordial deste bloqueio é garantir que, enquanto uma ou mais transações estão lendo um dado, nenhuma outra transação possa modificá-lo, evitando assim as leituras sujas (_dirty reads_) e garantindo uma leitura consistente.
+
+De forma geral, um bloqueio compartilhado (S) tem as seguintes propriedades:
+
+- Permite que múltiplas transações leiam o mesmo dado ao mesmo tempo.
+- **Impede** que qualquer outra transação adquira um bloqueio de escrita (Exclusivo) sobre o dado enquanto ele estiver ativo.
+- **Não impede** que outras transações adquiram novos bloqueios compartilhados (S) sobre o mesmo dado.
+
+**Exemplo Prático Detalhado:**
+
+Imagine um cenário em um site de e-commerce. Temos uma tabela `PRODUTOS` com o seguinte registro:
+
+|ID_PRODUTO|NOME|ESTOQUE|
+|---|---|---|
+|101|Tênis de Corrida|20|
+
+Agora, duas transações concorrentes são iniciadas:
+
+- **Transação T1 (Cliente A):** Inicia uma operação para visualizar a página do "Tênis de Corrida". Para ler o estoque de forma consistente, o SGBD adquire um **Bloqueio Compartilhado (S)** sobre a linha do produto 101.
+- **Transação T2 (Cliente B):** Simultaneamente, o Cliente B também acessa a página do mesmo produto. Para ler o estoque, o SGBD solicita um **Bloqueio Compartilhado (S)** sobre a mesma linha.
+
+**Resultado:** Como os bloqueios compartilhados são compatíveis entre si, o SGBD concede o bloqueio para a Transação T2 sem problemas. Ambas as transações (T1 e T2) podem ler o estoque de `20` ao mesmo tempo, pois nenhuma delas está tentando modificar o dado.
+
+Agora, imagine uma terceira transação:
+
+- **Transação T3 (Estoquista):** O estoquista tenta dar entrada em 5 novas unidades do mesmo tênis, executando um `UPDATE` na linha 101. Para isso, a Transação T3 solicita um **Bloqueio Exclusivo (X)**.
+
+**Resultado:** Como o recurso já possui bloqueios compartilhados (de T1 e T2), e um bloqueio exclusivo não é compatível com eles, a Transação T3 **será colocada em espera**. Ela só poderá prosseguir e atualizar o estoque depois que tanto T1 quanto T2 terminarem suas leituras e liberarem seus respectivos bloqueios compartilhados.
+
