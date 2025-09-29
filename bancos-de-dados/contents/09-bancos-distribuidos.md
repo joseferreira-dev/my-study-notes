@@ -392,3 +392,79 @@ O diagrama acima ilustra um cenário comum e desafiador no Paxos, conhecido como
 - **Segurança:** Garante que apenas um único valor possa ser escolhido para uma determinada rodada de consenso.
 - **Base para sistemas modernos:** Apesar de sua complexidade, os princípios do Paxos formam a base teórica para inúmeros sistemas distribuídos de missão crítica e algoritmos de consenso mais recentes.
 
+### Raft
+
+Em resposta à notória complexidade do Paxos, o protocolo **Raft** foi desenvolvido na Universidade de Stanford com um objetivo principal: ser um algoritmo de consenso igualmente seguro e tolerante a falhas, porém, significativamente **mais fácil de entender e implementar**.
+
+Para alcançar essa simplicidade, o Raft decompõe o problema do consenso em três partes mais gerenciáveis: a eleição de um líder, a replicação do log e a segurança. A ideia central é que, em um sistema Raft, existe sempre um **líder** eleito que é o único responsável por coordenar o sistema.
+
+#### Os Estados dos Nós: Líder, Seguidor e Candidato
+
+Diferente do Paxos, onde os nós têm papéis fixos, no Raft, cada nó do _cluster_ se encontra em um de três **estados** possíveis a qualquer momento:
+
+- **Seguidor (_Follower_):** É o estado passivo e inicial de todos os nós. Os seguidores não iniciam comunicação; eles apenas respondem às mensagens do líder e dos candidatos.
+- **Candidato (_Candidate_):** É um estado transitório. Um seguidor se torna um candidato quando acredita que o líder falhou, iniciando assim um processo de eleição para tentar se tornar o novo líder.
+- **Líder (_Leader_):** Em um dado momento, existe no máximo um líder no _cluster_. O líder é o único nó que interage com os clientes, recebe os comandos, os replica para os seguidores e informa quando uma operação pode ser considerada concluída com segurança.
+
+#### Os Processos Fundamentais do Raft
+
+O funcionamento do Raft é governado por dois processos principais que se alternam:
+
+1. **Eleição de Líder (Leader Election):** Este processo garante que sempre haja um líder para coordenar o sistema.
+	- **Batimentos Cardíacos (_Heartbeats_):** O líder eleito mantém sua autoridade enviando continuamente mensagens de "batimento cardíaco" (_heartbeat_) para todos os seguidores.
+	- **Temporizador de Eleição (_Election Timer_):** Cada seguidor possui um temporizador com uma duração aleatória. Enquanto ele recebe os _heartbeats_ do líder, ele reinicia seu temporizador.
+	- **Início da Eleição:** Se um seguidor passa um determinado tempo sem receber um _heartbeat_ (seu temporizador expira), ele assume que o líder falhou. Neste momento, ele se transforma em um **Candidato**, inicia um novo "mandato" (_term_), vota em si mesmo e envia uma mensagem de `Request Vote` (Pedido de Voto) para todos os outros nós.
+	- **Votação e Novo Líder:** Os outros nós seguidores votarão no primeiro candidato que lhes pedir o voto naquele mandato. Quando um candidato recebe votos de uma **maioria** dos nós do _cluster_, ele se torna o novo **Líder** e imediatamente começa a enviar _heartbeats_ para estabelecer sua autoridade e impedir novas eleições.
+
+<div align="center">
+<img width="700px" src="./img/09-protocolo-raft.png">
+</div>
+
+2. **Replicação de Log (Log Replication):** Uma vez que um líder está estabelecido, ele pode gerenciar os dados do sistema através de um log de operações replicado.
+	- **Recebimento do Comando:** Um cliente envia um comando (ex: `UPDATE x SET valor = 10`) para o líder.
+	- **Apêndice no Log:** O líder adiciona este comando como uma nova entrada em seu próprio log.
+	- **Replicação:** O líder envia a nova entrada de log para todos os seus seguidores através de mensagens de `AppendEntries`.
+	- **Confirmação (_Commit_):** Quando uma **maioria** dos seguidores confirma que recebeu e escreveu a entrada em seus próprios logs, a entrada é considerada **confirmada (_committed_)**.
+	- **Execução e Resposta:** Neste ponto, o líder aplica o comando à sua máquina de estado local (executa a atualização) e pode responder ao cliente com sucesso. O líder também informa aos seguidores, em mensagens futuras, que a entrada foi confirmada, para que eles também a apliquem.
+
+Essa abordagem de "confirmar na maioria" garante que cada operação seja armazenada de forma segura e durável em múltiplos nós antes de ser considerada concluída, mantendo o estado do sistema consistente em todo o _cluster_. Por sua simplicidade e robustez, o Raft se tornou o padrão de fato para consenso em muitos sistemas distribuídos modernos, incluindo componentes cruciais do Kubernetes (via etcd), Consul e bancos de dados como o CockroachDB.
+
+### PBFT (Practical Byzantine Fault Tolerance)
+
+Os protocolos Paxos e Raft são projetados para lidar com falhas de "parada" (_fail-stop_), onde os nós simplesmente travam ou perdem a conexão de rede. No entanto, eles assumem que os nós operantes são honestos. Mas o que acontece se um nó for malicioso ou estiver corrompido, enviando informações falsas ou contraditórias para diferentes partes do sistema? Este tipo de falha é conhecido como **falha bizantina**.
+
+O **PBFT (_Practical Byzantine Fault Tolerance_)** é um algoritmo de consenso projetado especificamente para resolver este problema. Ele é capaz de garantir que um sistema distribuído chegue a um acordo correto mesmo que uma parte de seus nós esteja se comportando de forma maliciosa.
+
+#### Problema dos Generais Bizantinos
+
+A necessidade do PBFT é ilustrada pela clássica alegoria do "Problema dos Generais Bizantinos". Vários generais bizantinos cercam uma cidade inimiga e precisam decidir unanimemente entre "Atacar" ou "Recuar". Eles se comunicam por mensageiros. O desafio é que alguns dos generais podem ser traidores. Um general traidor pode dizer "Atacar" para um general leal e "Recuar" para outro, tentando semear a discórdia e levar os generais leais a uma ação desastrosa. O problema é encontrar um protocolo que garanta que todos os generais leais cheguem à mesma decisão, independentemente das ações dos traidores.
+
+No mundo dos sistemas distribuídos, um "general traidor" é um nó bizantino. O PBFT é a solução para este problema.
+
+#### Funcionamento do PBFT
+
+O PBFT funciona com um nó **primário** (líder) e múltiplos nós **réplica** (seguidores). Para tolerar até `f` nós maliciosos, o sistema precisa de um total de, no mínimo, `3f + 1` nós. O processo de consenso para uma requisição de um cliente ocorre em múltiplas fases de comunicação, como ilustrado no diagrama.
+
+<div align="center">
+<img width="700px" src="./img/09-protocolo-pbft.png">
+</div>
+
+1. **Request:** Um cliente envia uma requisição ao nó primário.
+2. **Pre-Prepare:** O primário atribui um número de sequência à requisição e a envia para todas as réplicas em uma mensagem de `Pre-Prepare`.
+3. **Prepare:** Cada réplica, ao receber o `Pre-Prepare`, valida a mensagem e, se concordar, envia uma mensagem de `Prepare` para **todas as outras réplicas**. Esta comunicação entre as réplicas é a chave: elas verificam umas com as outras o que o primário lhes disse.
+4. **Commit:** Cada réplica aguarda até receber mensagens de `Prepare` de uma supermaioria de outras réplicas que correspondam à mensagem original. Quando isso acontece, a réplica sabe que um número suficiente de nós honestos concorda com a ordem da requisição. Ela então entra na fase de `Commit`, enviando uma mensagem de `Commit` para todas as outras.
+5. **Reply:** Após receber mensagens de `Commit` de uma supermaioria, cada réplica executa a requisição e envia uma resposta diretamente ao cliente. O cliente aguarda `f + 1` respostas idênticas para considerar a operação bem-sucedida.
+
+Se o nó primário falhar ou se mostrar malicioso, as réplicas podem iniciar um protocolo de **mudança de visão (_View-Change_)** para eleger um novo primário e continuar a operação do sistema de forma segura.
+
+#### Resumo Comparativo dos Protocolos de Consenso
+
+Devido à sua complexidade e ao alto custo de comunicação, o PBFT é utilizado em cenários onde a proteção contra atores maliciosos é uma necessidade absoluta, como em **blockchains permissionadas** (privadas), onde um conjunto de organizações conhecidas, mas não totalmente confiáveis, precisa manter um registro compartilhado.
+
+A tabela a seguir resume e compara as características dos três principais protocolos de consenso que discutimos.
+
+|Protocolo|Tolerância a Falhas|Tipo de Falha Suportado|Modelo de Tempo|Complexidade|Principal Aplicação|
+|---|---|---|---|---|---|
+|**Paxos**|`f ≤ (N-1)/2`|Omissão (_Fail-stop_)|Assíncrono|Alta|Teórico, base para outros sistemas|
+|**Raft**|`f ≤ (N-1)/2`|Omissão (_Fail-stop_)|Assíncrono (usa _timeouts_)|Média|Prático (etcd, Consul, Kubernetes)|
+|**PBFT**|`f ≤ (N-1)/3`|Bizantina (Maliciosa)|Assíncrono|Muito Alta|Blockchains, sistemas de alta segurança|
