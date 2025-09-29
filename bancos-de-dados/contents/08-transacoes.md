@@ -542,3 +542,44 @@ O Coordenador coleta todos os votos e toma a decisão final, que é irrevogável
 
 O 2PC garante a atomicidade, mas possui um ponto fraco significativo: ele é um **protocolo bloqueante**. Se o Coordenador falhar após a Fase 1, mas antes de enviar a decisão final na Fase 2, os Participantes ficam "presos" em um estado de incerteza, com recursos bloqueados, sem saber se devem confirmar ou abortar, até que o Coordenador se recupere.
 
+### Three-Phase Commit (3PC)
+
+O **3PC (_Three-Phase Commit_)**, ou Protocolo de Confirmação em Três Fases, é uma evolução do 2PC, projetado especificamente para resolver sua principal desvantagem: o problema do bloqueio. O 3PC é um protocolo **não-bloqueante**, o que significa que ele aumenta a resiliência e a tolerância a falhas, permitindo que os nós participantes cheguem a uma decisão final mesmo que o coordenador falhe durante o processo.
+
+Isso é alcançado através da adição de uma fase intermediária, a "pré-confirmação", que serve como um buffer de segurança. As três fases são: Preparação, Pré-Confirmação e Confirmação.
+
+<div align="center">
+<img width="540px" src="./img/08-three-phase-commit.png">
+</div>
+
+#### Fase 1 – Preparação (Can Commit)
+
+Esta fase é muito semelhante à do 2PC. O objetivo é consultar se todos os participantes estão aptos a realizar a transação.
+
+1. O **Coordenador** envia uma mensagem de **`REQUEST TO PREPARE`** para todos os participantes.
+2. Cada **Participante** verifica se pode executar a transação (validando dados, checando restrições) e responde ao coordenador com uma afirmação (`YES`) ou negação (`NO`). Nesta fase, os recursos ainda não são bloqueados de forma definitiva.
+
+#### Fase 2 – Pré-Confirmação (Pre-Commit)
+
+Esta é a fase adicional que diferencia o 3PC e elimina o bloqueio.
+
+1. Se o Coordenador recebeu `YES` de todos os participantes, ele sabe que a transação pode prosseguir. Ele então envia uma mensagem de **`PREPARE TO COMMIT`** (ou `PRE-COMMIT`) para todos.
+2. Esta mensagem funciona como um "ponto sem retorno". Ela informa a todos os participantes que uma decisão unânime de confirmar foi alcançada.
+3. Cada **Participante**, ao receber a mensagem de `PRE-COMMIT`, bloqueia os recursos necessários, prepara-se para a confirmação final e envia uma mensagem de **`ACKNOWLEDGEMENT`** (confirmação) de volta ao Coordenador. A partir deste momento, o participante sabe que a transação será, eventualmente, confirmada.
+
+#### Fase 3 – Confirmação (Do Commit)
+
+Após receber a confirmação da fase anterior de todos os participantes, o Coordenador finaliza a transação.
+
+1. O **Coordenador** envia a mensagem final de **`COMMIT`** para todos os participantes.
+2. Cada **Participante** torna as alterações permanentes e libera os recursos bloqueados.
+
+#### Como o 3PC Resolve o Problema do Bloqueio?
+
+A genialidade da fase de pré-confirmação está em como ela lida com falhas.
+
+- Se o **Coordenador falhar antes da Fase 2**, os participantes não terão recebido a mensagem de `PRE-COMMIT`. Após um tempo de espera (_timeout_), eles assumirão com segurança que a transação falhou e executarão um `ROLLBACK`.
+- Se o **Coordenador falhar durante ou após a Fase 2**, os participantes já receberam a mensagem de `PRE-COMMIT` e sabem que a decisão final era confirmar. Se um participante não receber o `COMMIT` final do Coordenador, ele pode consultar outros participantes. Se os outros já receberam o `PRE-COMMIT`, eles podem, em conjunto e com segurança, decidir confirmar a transação sem depender da recuperação do Coordenador.
+
+Embora o 3PC seja mais resiliente a falhas, ele também é mais complexo e exige uma rodada extra de comunicação, o que pode aumentar a latência. Por essa razão, o 2PC ainda é amplamente encontrado, e sistemas distribuídos modernos frequentemente utilizam outros algoritmos de consenso, como Paxos ou Raft, para garantir a consistência.
+
