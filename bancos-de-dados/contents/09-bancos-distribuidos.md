@@ -112,3 +112,46 @@ Na arquitetura peer-to-peer, a distinção entre cliente e servidor é eliminada
 
 O controle neste modelo é altamente descentralizado, sem um nó central de coordenação. Os catálogos são, por natureza, distribuídos, e os nós colaboram para rotear consultas e manter a consistência dos dados. Arquiteturas P2P são conhecidas por sua alta resiliência e escalabilidade, sendo a base para muitos sistemas NoSQL modernos, como o Apache Cassandra.
 
+## Estratégias de Distribuição de Dados
+
+Para que um Banco de Dados Distribuído (BDD) seja eficiente, não basta apenas espalhar os servidores pela rede. É preciso ter estratégias claras sobre **como** os dados serão divididos e distribuídos entre esses nós. Os dois mecanismos fundamentais para alcançar a otimização de desempenho, aumentar a disponibilidade e diminuir o impacto de falhas são a **fragmentação** e a **replicação**.
+
+### Fragmentação: Dividindo os Dados
+
+A **fragmentação** é o processo de dividir logicamente as tabelas de um banco de dados em partes menores, chamadas de **fragmentos**, e distribuir esses fragmentos entre os diferentes nós da rede. O SGBD Distribuído mantém o controle de onde cada fragmento está localizado, garantindo a transparência para o usuário, que continua a ver a tabela como uma unidade coesa.
+
+A principal vantagem da fragmentação é o aumento de desempenho e a **localidade dos dados**. Ao dividir os dados, as consultas podem ser executadas em paralelo nos diferentes nós, e os dados podem ser armazenados mais perto dos usuários que mais os acessam, reduzindo a latência da rede.
+
+Existem dois tipos principais de fragmentação:
+
+#### Fragmentação Horizontal (Sharding)
+
+A fragmentação horizontal divide uma tabela "fatiando-a" em conjuntos de **linhas**. Cada fragmento contém um subconjunto das tuplas da tabela original, mas mantém exatamente o mesmo esquema de colunas. Esta abordagem é também amplamente conhecida como _sharding_.
+
+- **Analogia:** Pense em um catálogo telefônico nacional. A fragmentação horizontal seria como dividi-lo em catálogos menores, um para cada estado. A estrutura de informações (nome, telefone, endereço) é a mesma em todos, mas cada um contém um conjunto diferente de pessoas.
+
+A divisão das linhas é feita com base em um critério aplicado aos valores de um atributo. Existem dois tipos:
+
+- **Horizontal Primária:** A fragmentação é baseada em um atributo da própria tabela. Por exemplo, uma tabela global de `CLIENTES` pode ser fragmentada pela coluna `PAIS`, com os dados dos clientes brasileiros em um nó em São Paulo e os dados dos clientes alemães em um nó em Frankfurt.
+- **Horizontal Derivada:** A fragmentação de uma tabela é baseada na fragmentação de outra tabela com a qual ela se relaciona. Por exemplo, uma tabela `PEDIDOS` pode ser fragmentada de forma derivada da tabela `CLIENTES`. Todos os pedidos feitos por clientes brasileiros ficariam no mesmo nó de São Paulo, mantendo os dados relacionados fisicamente próximos.
+
+#### Fragmentação Vertical
+
+A fragmentação vertical divide uma tabela "fatiando-a" em conjuntos de **colunas**. Cada fragmento contém todas as linhas da tabela original, mas apenas um subconjunto de seus atributos. A **chave primária deve ser incluída em todos os fragmentos** para permitir a reconstrução da tupla original quando necessário.
+
+- **Analogia:** Seria como dividir o catálogo telefônico em dois volumes. O primeiro volume contém o nome e o telefone de todos, e o segundo volume contém o nome e o endereço de todos. Para obter a informação completa de uma pessoa, seria preciso consultar os dois volumes.
+
+A fragmentação vertical é útil por razões de desempenho e segurança.
+
+- **Desempenho:** Separam-se as colunas mais frequentemente acessadas das menos acessadas, para que as consultas mais comuns leiam menos dados do disco.
+- **Segurança:** Dados sensíveis (como `Salario`, `CPF`) podem ser armazenados em um fragmento em um nó mais seguro, enquanto dados públicos (como `Nome`, `Cargo`) podem ficar em um nó de acesso mais geral.
+
+A imagem a seguir ilustra a diferença entre as duas abordagens.
+
+<div align="center">
+<img width="700px" src="./img/09-fragmentacao.png">
+</div>
+
+É possível, ainda, aplicar uma **fragmentação mista (ou híbrida)**, onde uma tabela é primeiro fragmentada verticalmente e, em seguida, um ou mais de seus fragmentos verticais são fragmentados horizontalmente.
+
+A escolha da estratégia de fragmentação correta é uma decisão de design crucial, que depende diretamente dos **padrões de consulta** da aplicação. Analisar quais dados são acessados com mais frequência e por quais usuários é fundamental para definir um esquema de fragmentação que otimize o desempenho e atenda às políticas de segurança da organização.
