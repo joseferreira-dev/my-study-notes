@@ -312,3 +312,34 @@ Esta é a fase crucial.
 
 Após receber a confirmação da fase anterior de todos os participantes, o Coordenador envia o comando final de COMMIT. Caso ocorra uma falha e o Coordenador não envie o comando final, os Participantes podem usar um timeout. Como eles já sabem, a partir da fase de pré-confirmação, qual seria a decisão, eles podem se comunicar entre si e finalizar a transação (com COMMIT ou ROLLBACK) sem ficarem bloqueados indefinidamente.
 
+## Consenso Distribuído
+
+O **consenso distribuído** é um dos pilares conceituais e práticos mais importantes em sistemas distribuídos. Ele trata do problema fundamental de como um conjunto de nós independentes, que se comunicam através de uma rede que pode ser lenta ou falha, pode chegar a um **acordo comum e unânime** sobre um determinado valor ou estado.
+
+O consenso é o mecanismo que garante a ordem e a consistência em um ambiente inerentemente caótico. Ele é essencial para a integridade de operações críticas, como:
+
+- **Confirmar ou abortar uma transação distribuída:** Todos os nós devem concordar com o mesmo desfecho.
+- **Eleger um líder:** Em um _cluster_, todos os nós precisam concordar sobre qual deles é o líder atual.
+- **Sincronizar réplicas:** Todos os nós devem concordar sobre a ordem em que as atualizações são aplicadas para manter a consistência.
+- **Manter uma Máquina de Estado Replicada:** Garantir que todos os nós processem as mesmas operações, na mesma ordem, para que suas cópias do estado do sistema permaneçam idênticas.
+
+De forma geral, para que um algoritmo de consenso seja considerado correto, ele deve garantir três propriedades:
+
+- **Acordo (_Agreement_):** Todos os nós que chegam a uma decisão, decidem pelo **mesmo valor**. Não pode haver discordância.
+- **Validade (_Validity_):** O valor que foi acordado deve, obrigatoriamente, ter sido proposto por pelo menos um dos nós. O sistema não pode "inventar" um resultado.
+- **Terminação (_Termination_):** Todos os nós que não falharam devem, eventualmente, chegar a uma decisão. O processo não pode ficar paralisado indefinidamente.
+
+### Teorema da Impossibilidade (FLP)
+
+Alcançar o consenso seria mais simples se as redes fossem perfeitas. No entanto, por natureza, sistemas distribuídos são **assíncronos**: não há garantias rígidas sobre o tempo de entrega de mensagens ou a velocidade de processamento de cada nó. Um nó que não responde pode ter falhado, ou pode estar apenas lento, ou a mensagem pode estar atrasada na rede.
+
+Essa incerteza é formalizada pelo famoso **Teorema da Impossibilidade de FLP** (nomeado a partir de seus autores: Fischer, Lynch e Paterson). Ele prova matematicamente que **não existe um algoritmo determinístico capaz de garantir o consenso em um sistema puramente assíncrono que esteja sujeito a sequer uma única falha de processo**.
+
+Isso não significa que o consenso é impossível na prática. Significa que todos os algoritmos de consenso práticos precisam relaxar uma das condições. Eles geralmente o fazem assumindo algum grau de sincronismo (como o uso de _timeouts_ para detectar suspeitas de falha) ou utilizando mecanismos probabilísticos para garantir a terminação.
+
+Devido a essa complexidade, em vez de reinventar a roda, os sistemas distribuídos modernos implementam protocolos de consenso testados e comprovados. Os três mais influentes na indústria são:
+
+- **Paxos:** Um dos primeiros e mais importantes algoritmos de consenso, conhecido por sua robustez teórica, mas também por sua complexidade de implementação.
+- **Raft:** Um algoritmo de consenso projetado especificamente para ser mais fácil de entender e implementar que o Paxos, mantendo o mesmo nível de segurança. É amplamente utilizado em sistemas modernos como etcd (usado pelo Kubernetes), CockroachDB e Consul.
+- **PBFT (_Practical Byzantine Fault Tolerance_):** Um algoritmo projetado para tolerar não apenas falhas de parada, mas também falhas "bizantinas", onde os nós podem se comportar de forma maliciosa ou arbitrária. É a base para muitos sistemas de _blockchain_.
+
