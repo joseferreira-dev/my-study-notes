@@ -318,3 +318,146 @@ Existem variações do protocolo 2PL que impõem regras ainda mais estritas para
 - **2PL Rigoroso (Rigorous 2PL):** É a variação mais restritiva e a mais comum na prática. No 2PL Rigoroso, uma transação mantém **todos os seus bloqueios**, tanto compartilhados (S) quanto exclusivos (X), até o seu término (`COMMIT` ou `ROLLBACK`). Não há uma fase de encolhimento gradual; todos os bloqueios são liberados de uma só vez no final. A maioria dos SGBDs comerciais implementa o 2PL Rigoroso para o nível de isolamento `SERIALIZABLE`.
 - **2PL Conservador (Conservative 2PL):** Uma variação mais teórica e menos comum, onde a transação deve declarar e **adquirir todos os bloqueios de que precisará antes mesmo de iniciar sua execução**. A principal vantagem é que ela é inerentemente livre de _deadlocks_. A desvantagem é sua impraticabilidade, pois é difícil prever todos os recursos necessários com antecedência, e isso reduz drasticamente a concorrência, pois os recursos ficam bloqueados por muito mais tempo do que o necessário.
 
+## Segurança e Acesso: Gerenciamento de Usuários
+
+O **Gerenciamento de Usuários** em bancos de dados é o conjunto de processos, políticas e mecanismos que controlam quem pode acessar o SGBD e o que cada pessoa pode fazer após o acesso. Em um mundo onde os dados são um dos ativos mais valiosos de uma organização, um gerenciamento de acesso robusto é a primeira e mais importante linha de defesa para assegurar a segurança, a integridade e a privacidade das informações armazenadas.
+
+Os principais objetivos de um bom sistema de gerenciamento de usuários são garantir a segurança dos dados ao impedir acessos não autorizados, facilitar a auditoria e o monitoramento das atividades, permitir a aplicação do **princípio do menor privilégio** (garantindo que os usuários tenham apenas os acessos estritamente necessários para executar suas funções) e assegurar a conformidade com normas regulatórias de proteção de dados, como a LGPD no Brasil.
+
+#### Os Dois Pilares da Segurança: Autenticação e Autorização
+
+Para entender o gerenciamento de usuários, é crucial diferenciar dois conceitos fundamentais:
+
+- **Autenticação ("Quem é você?"):** Este é o processo de **verificar a identidade** de um usuário. É o "portão de entrada" do sistema. Antes que qualquer acesso seja permitido, o usuário deve provar que é quem diz ser. Os métodos de autenticação incluem:
+    - **Credenciais Tradicionais:** O método mais comum de login e senha.
+    - **Autenticação Multifator (MFA/2FA):** Uma camada adicional de segurança que exige uma segunda forma de verificação, como um código gerado por um aplicativo no celular.
+    - **Integração com Diretórios Externos:** Em ambientes corporativos, o SGBD pode ser integrado a sistemas de diretório centralizados como **Active Directory** (Microsoft) ou **LDAP**. Isso permite que os usuários se autentiquem com as mesmas credenciais que já usam na rede da empresa, facilitando o gerenciamento e a implementação de políticas de senha centralizadas.
+- **Autorização ("O que você pode fazer?"):** Este é o processo que ocorre **após** uma autenticação bem-sucedida. A autorização define as **permissões** do usuário, especificando a quais objetos do banco de dados (tabelas, visões, etc.) ele pode acessar e quais operações (`SELECT`, `INSERT`, `UPDATE`, `DELETE`) ele pode executar sobre eles.
+
+#### A Evolução do Controle: Do Usuário ao Papel (RBAC)
+
+Nos primórdios dos bancos de dados, as permissões eram frequentemente gerenciadas "por usuário". Cada indivíduo recebia um conjunto customizado de permissões, o que, em grandes organizações, criava um emaranhado complexo e de difícil manutenção.
+
+Atualmente, o modelo mais adotado e eficiente é o **RBAC (Role-Based Access Control)**, ou Controle de Acesso Baseado em Papéis. A lógica do RBAC é simples e elegante:
+
+1. As permissões não são atribuídas diretamente aos usuários.
+2. Em vez disso, são criados **papéis (_roles_)**, que representam funções de negócio ou grupos de usuários (ex: "Analista_Financeiro", "Vendedor", "Gerente_RH").
+3. As permissões necessárias para cada função são concedidas diretamente ao **papel**.
+4. Por fim, os usuários são atribuídos aos papéis apropriados e **herdam** automaticamente todas as permissões daquele papel.
+
+**Analogia:** O método "por usuário" é como dar a cada funcionário um molho de chaves individuais e customizadas. O RBAC é como criar conjuntos de chaves mestras para cada departamento ("Chaves do Financeiro", "Chaves do Marketing"). Quando um novo funcionário entra para o time de finanças, basta entregar a ele o conjunto de chaves do departamento. Isso simplifica drasticamente a administração, melhora a segurança e facilita a auditoria de acessos.
+
+#### Implementando o Controle de Acesso com SQL
+
+A implementação do gerenciamento de usuários e papéis é realizada através dos comandos da **DCL (Data Control Language)**, que já exploramos.
+
+**Exemplo Prático de RBAC:**
+
+1. **Criar um Papel:** O DBA primeiro cria um papel para uma função de negócio.
+
+```sql
+CREATE ROLE Analista_de_Vendas;
+```
+
+2. **Conceder Permissões ao Papel (`GRANT`):** O DBA concede as permissões necessárias para que um analista de vendas faça seu trabalho.
+
+```sql
+GRANT SELECT ON Clientes TO Analista_de_Vendas;
+GRANT SELECT, INSERT ON Pedidos TO Analista_de_Vendas;
+```
+
+3. **Atribuir Usuários ao Papel:** Quando um novo funcionário, "carlos", entra para a equipe, o DBA simplesmente o atribui ao papel.
+
+```sql
+-- (Supondo que o usuário 'carlos' já foi criado com CREATE USER)
+GRANT Analista_de_Vendas TO carlos;
+```
+
+Agora, o usuário "carlos" herda automaticamente todas as permissões do papel `Analista_de_Vendas`. Se, no futuro, a função de analista precisar de acesso a uma nova tabela, o DBA só precisa conceder a permissão ao papel, e todos os usuários atribuídos a ele receberão o novo acesso instantaneamente.
+
+## Escalabilidade e Performance: Balanceamento de Carga
+
+Em um sistema de banco de dados, o **balanceamento de carga (_load balancing_)** é o processo de distribuir eficientemente as solicitações de acesso e as operações de dados entre múltiplos servidores ou nós. À medida que uma aplicação cresce, um único servidor de banco de dados inevitavelmente atinge seus limites de capacidade (CPU, memória, I/O), tornando-se um gargalo que causa lentidão e pode levar à indisponibilidade.
+
+O balanceamento de carga é a principal ferramenta para implementar a **escalabilidade horizontal**, que consiste em adicionar mais servidores ao sistema para lidar com o aumento da demanda, em vez de apenas tornar um único servidor mais potente (escalabilidade vertical). Essa distribuição de trabalho visa otimizar o uso dos recursos, melhorar o tempo de resposta das consultas, aumentar a resiliência do sistema e garantir uma alta disponibilidade.
+
+### Estratégias Arquiteturais de Balanceamento
+
+Existem diferentes estratégias arquiteturais para distribuir a carga em um sistema de banco de dados, cada uma adequada a um tipo diferente de problema.
+
+- **Balanceamento via Replicação (Read/Write Split):** Esta é a abordagem mais comum. A arquitetura é composta por um nó **primário (master)**, que lida com todas as operações de escrita (`INSERT`, `UPDATE`, `DELETE`), e um ou mais nós **secundários (réplicas)**, que são cópias do nó primário e lidam com as operações de leitura (`SELECT`). Um balanceador de carga direciona as leituras para as diversas réplicas, distribuindo o esforço. Esta estratégia é ideal para aplicações com um volume muito maior de leituras do que de escritas, como portais de notícias, blogs e catálogos de e-commerce.
+- **Balanceamento via Particionamento (Sharding):** Utilizado para lidar com volumes de dados massivos, o particionamento, ou _sharding_, envolve dividir horizontalmente os dados de uma tabela entre diversos nós independentes. Cada nó (ou _shard_) armazena um subconjunto específico dos dados. Por exemplo, em uma base de clientes global, os clientes da América do Sul poderiam estar em um _shard_, os da Europa em outro, e os da Ásia em um terceiro. As requisições são então roteadas diretamente ao nó que contém os dados necessários, distribuindo tanto a carga de armazenamento quanto a de processamento.
+- **Balanceamento de Alta Disponibilidade (Active-Active / Multi-Master):** Nesta arquitetura avançada, múltiplos servidores estão ativos simultaneamente (_multi-master_), e todos são capazes de atender tanto a operações de leitura quanto de escrita. A sincronização dos dados ocorre entre todos os nós. Esta abordagem oferece altíssima disponibilidade para escritas e pode reduzir a latência para usuários geograficamente distribuídos, mas introduz uma grande complexidade no que diz respeito à resolução de conflitos (o que fazer se o mesmo dado for alterado em dois mestres diferentes ao mesmo tempo).
+
+### Algoritmos de Distribuição de Carga
+
+Depois de definir a estratégia arquitetural de um banco de dados distribuído (replicação, particionamento, etc.), o passo seguinte é escolher o **algoritmo** que o balanceador de carga usará para tomar a decisão de roteamento para cada requisição individual. A escolha do algoritmo correto é crucial e depende da natureza da aplicação, da homogeneidade dos servidores e dos objetivos de performance.
+
+O diagrama a seguir ilustra vários dos algoritmas mais comuns utilizados em sistemas de balanceamento de carga.
+
+<div align="center">
+<img width="640px" src="./img/08-formas-de-balanceamento.png">
+</div>
+
+Vamos agora explorar em detalhe cada uma dessas abordagens.
+
+#### 1. Round Robin (Distribuição Cíclica)
+
+Esta é a forma mais simples e direta de balanceamento de carga. As requisições são distribuídas entre os servidores em uma sequência circular e contínua. Se houver três servidores (A, B, C), a primeira requisição vai para A, a segunda para B, a terceira para C, a quarta de volta para A, e assim por diante.
+
+- **Como Funciona:** O balanceador mantém uma lista de servidores e simplesmente passa para o próximo da lista a cada nova requisição.
+- **Analogia:** Um carteiro distribuindo uma carta para cada casa em uma rua, uma após a outra, e recomeçando do início da rua quando termina.
+- **Vantagens:** Extremamente simples de implementar e muito rápido, pois não exige nenhum cálculo ou monitoramento do estado dos servidores.
+- **Desvantagens:** Não leva em conta a capacidade de cada servidor nem sua carga de trabalho atual. Uma requisição pesada pode ser enviada para um servidor que já está sobrecarregado, enquanto outros estão ociosos.
+- **Uso Ideal:** Em ambientes onde os servidores são homogêneos (têm a mesma capacidade) e as requisições têm um custo computacional similar.
+
+#### 2. Sticky Round Robin (Round Robin com Persistência)
+
+Esta é uma variação do Round Robin que tenta resolver o problema de aplicações que precisam de **persistência de sessão** (_session persistence_ ou _stickiness_). A primeira requisição de um usuário é atribuída via Round Robin, mas as requisições subsequentes do **mesmo usuário** são direcionadas para o **mesmo servidor** que o atendeu inicialmente.
+
+- **Como Funciona:** O balanceador de carga rastreia a sessão do usuário (geralmente através de um cookie) e a mapeia para um servidor específico.
+- **Analogia:** Ser atendido sempre pelo mesmo garçom em um restaurante durante sua visita, mesmo que outros garçons estejam livres.
+- **Vantagens:** Essencial para aplicações que armazenam informações da sessão localmente no servidor (como um carrinho de compras).
+- **Desvantagens:** Pode criar um desbalanceamento de carga se alguns usuários gerarem muito mais tráfego que outros.
+- **Uso Ideal:** Aplicações web e sistemas que dependem de estado de sessão (_stateful_).
+
+#### 3. Weighted Round Robin (Round Robin Ponderado)
+
+Esta variação aprimora o Round Robin para ambientes com servidores de capacidades diferentes (heterogêneos). Cada servidor recebe um "peso" (um valor numérico) que reflete sua capacidade de processamento. O balanceador de carga distribui as requisições na mesma sequência circular, mas envia um número de requisições a cada servidor que é proporcional ao seu peso.
+
+- **Como Funciona:** Se o Servidor A tem peso 3 e o Servidor B tem peso 1, a cada ciclo, o Servidor A receberá 3 requisições para cada 1 que o Servidor B receber.
+- **Analogia:** Um gerente de projetos que delega três tarefas para um funcionário sênior para cada uma que delega para um funcionário júnior.
+- **Vantagens:** Permite o uso eficiente de hardware com diferentes capacidades.
+- **Desvantagens:** Assim como o Round Robin simples, é um método estático que não considera a carga em tempo real.
+- **Uso Ideal:** Clusters de servidores com capacidades de hardware variadas.
+
+#### 4. IP Hash
+
+Neste método, o balanceador de carga utiliza o endereço IP de origem do cliente para tomar a decisão de roteamento. Ele aplica um cálculo de _hash_ ao endereço IP, e o resultado desse cálculo determina para qual servidor a requisição será enviada.
+
+- **Como Funciona:** Como o _hash_ de um mesmo IP sempre produz o mesmo resultado, todas as requisições vindas do mesmo cliente serão direcionadas para o mesmo servidor.
+- **Analogia:** Usar o último dígito do seu RG para determinar em qual fila de atendimento você deve ir. Todas as pessoas com o mesmo final de RG irão para a mesma fila.
+- **Vantagens:** É uma forma simples e eficaz de garantir a persistência da sessão sem a necessidade de cookies.
+- **Desvantagens:** Pode causar desbalanceamento se um grande número de clientes estiver vindo do mesmo endereço IP (por exemplo, usuários de uma mesma grande empresa que saem para a internet através de um único endereço).
+- **Uso Ideal:** Ambientes que precisam de persistência de sessão e não podem ou não querem depender de cookies.
+
+#### 5. Least Connections (Menos Conexões)
+
+Este é um dos algoritmos dinâmicos mais populares. Em vez de seguir uma ordem predefinida, o balanceador de carga monitora em tempo real o número de conexões ativas em cada servidor. A nova requisição é sempre enviada para o servidor com o menor número de conexões ativas no momento.
+
+- **Como Funciona:** O balanceador mantém um contador de conexões para cada servidor e escolhe aquele com o menor valor.
+- **Analogia:** Escolher a fila do caixa em um supermercado que tem o menor número de pessoas.
+- **Vantagens:** Adapta-se dinamicamente à carga de trabalho, distribuindo o tráfego de forma muito mais uniforme e eficiente que os métodos estáticos.
+- **Desvantagens:** Assume que todas as conexões têm o mesmo peso, o que pode não ser verdade (uma conexão pode estar executando uma consulta muito mais pesada que outra).
+- **Uso Ideal:** Ambientes onde o volume de conexões é o principal gargalo e a duração das tarefas é relativamente homogênea.
+
+#### 6. Least Time (Menor Tempo de Resposta)
+
+Este é um algoritmo dinâmico ainda mais sofisticado. Ele considera não apenas o número de conexões ativas (como o Least Connections), mas também o tempo médio de resposta de cada servidor. A requisição é enviada para o servidor que está apresentando a melhor performance (menor latência) no momento.
+
+- **Como Funciona:** O balanceador de carga envia "sondagens" de saúde (_health checks_) para os servidores e mede o tempo que levam para responder, combinando essa informação com o número de conexões ativas para tomar a decisão mais inteligente.
+- **Analogia:** Escolher a fila do caixa no supermercado que não só tem menos pessoas, mas também cujo operador de caixa é visivelmente o mais rápido.
+- **Vantagens:** É altamente adaptativo e eficaz em direcionar o tráfego para os servidores mais saudáveis e performáticos, otimizando a experiência do usuário.
+- **Desvantagens:** Requer mais recursos do próprio balanceador de carga para realizar o monitoramento constante da performance.
+- **Uso Ideal:** Ambientes de alta performance onde a latência da resposta é o fator mais crítico.
+
