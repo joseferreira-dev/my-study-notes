@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "legislacao/contents/09-decreto-11529.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -171,6 +171,7 @@
   },
   "active": "fdfc72c1063925fa",
   "lastOpenFiles": [
+    "legislacao/contents/img/decreto-11529-atribuicoes.png",
     "engenharia-de-software/contents/18-bdd-ddd-mda-mdd-fdd-dsdm.md",
     "legislacao/contents/09-decreto-11529.md",
     "engenharia-de-software/contents/17-tdd.md",
@@ -210,7 +211,6 @@
     "seguranca-da-informacao",
     "engenharia-de-software/contents/14-scrum.md",
     "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
-    "lingua-portuguesa/README.md",
     "engenharia-de-prompt/contents",
     "informatica-basica/contents/img",
     "informatica-basica/contents",
