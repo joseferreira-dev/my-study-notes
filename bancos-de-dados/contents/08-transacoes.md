@@ -461,3 +461,46 @@ Este é um algoritmo dinâmico ainda mais sofisticado. Ele considera não apenas
 - **Desvantagens:** Requer mais recursos do próprio balanceador de carga para realizar o monitoramento constante da performance.
 - **Uso Ideal:** Ambientes de alta performance onde a latência da resposta é o fator mais crítico.
 
+## Ambientes de Alta Disponibilidade
+
+Em muitas aplicações modernas, a inatividade do banco de dados não é uma opção. Em sistemas financeiros, de e-commerce, de saúde ou de logística, cada minuto offline pode resultar em perdas financeiras, danos à reputação e interrupção de operações críticas. Para atender a essa exigência, são projetados **Ambientes de Alta Disponibilidade (HA – _High Availability_)**.
+
+O objetivo primordial de uma arquitetura de alta disponibilidade é assegurar que o banco de dados esteja continuamente operacional e acessível, minimizando ao máximo os períodos de inatividade, sejam eles planejados ou não. Isso é alcançado através de um conjunto de estratégias e tecnologias que visam:
+
+- **Minimizar o tempo de indisponibilidade:** Garantir que o banco de dados esteja acessível o mais próximo possível de 100% do tempo.
+- **Aumentar a resiliência:** Desenvolver a capacidade de se recuperar rapidamente de falhas.
+- **Criar redundância:** Eliminar pontos únicos de falha (SPOF – _Single Point of Failure_), garantindo que existam componentes de backup para assumir em caso de problemas.
+- **Garantir a continuidade operacional:** Manter o banco de dados em funcionamento mesmo sob condições adversas.
+
+Para atingir esses objetivos, duas técnicas principais são empregadas em conjunto: o uso de _clusters_ de banco de dados e a replicação de dados.
+
+### Clusters de Banco de Dados
+
+Um _cluster_ de banco de dados é um grupo de dois ou mais servidores que trabalham em conjunto, sendo percebidos externamente como um único sistema. Essa colaboração permite proporcionar continuidade operacional e, em alguns casos, balanceamento de carga. Os _clusters_ geralmente operam em duas configurações principais:
+
+- **Ativo-Passivo (_Active-Passive_):** Nesta configuração, há um servidor primário **ativo** que lida com todas as requisições de leitura e escrita. Em paralelo, um ou mais servidores secundários **passivos** permanecem em estado de espera (_standby_), sendo constantemente sincronizados com o servidor primário. Se o servidor ativo falhar, um mecanismo automático de **failover** promove um dos servidores passivos a novo servidor ativo, assumindo as operações.
+- **Ativo-Ativo (_Active-Active_):** Nesta configuração, múltiplos servidores operam **simultaneamente**, todos capazes de atender a requisições. Um balanceador de carga distribui o tráfego entre eles. Se um dos servidores ativos falhar, ele é simplesmente removido do _cluster_, e o tráfego é redistribuído entre os servidores restantes de forma transparente para o usuário. Esta abordagem oferece tanto alta disponibilidade quanto escalabilidade.
+
+<div align="center">
+<img width="540px" src="./img/08-funcionamento-de-clusters.png">
+</div>
+
+### Replicação de Dados
+
+A **replicação** é o processo de manter cópias sincronizadas dos dados em diferentes servidores (ou nós). É o mecanismo que garante que o servidor passivo em um _cluster_ ativo-passivo esteja pronto para assumir, ou que todos os nós em um _cluster_ ativo-ativo possuam dados consistentes. A replicação pode ocorrer de diferentes formas:
+
+- **Síncrona:** Uma transação no servidor primário só é confirmada (`COMMIT`) após o SGBD receber a confirmação de que o dado foi replicado com sucesso em todos os nós secundários. Oferece a máxima consistência e garante zero perda de dados em caso de falha, mas ao custo de uma maior latência nas operações de escrita.
+- **Assíncrona:** A transação é confirmada no servidor primário imediatamente, e a replicação para os nós secundários ocorre em segundo plano, com um pequeno atraso (_lag_). Oferece altíssima performance de escrita, mas há um risco de perda de dados se o servidor primário falhar antes de a replicação ser concluída.
+- **Semi-síncrona:** Um meio-termo que oferece um equilíbrio entre consistência e performance. A transação no primário aguarda a confirmação de que o dado foi replicado em pelo menos um dos nós secundários antes de ser finalizada.
+
+### Processo de Failover e Failback
+
+Esses dois processos são o coração da funcionalidade de um _cluster_ ativo-passivo:
+
+- **Failover:** É o processo, geralmente automatizado, de **migração** das operações do servidor primário para um servidor secundário quando uma falha é detectada no primário. O servidor secundário, que é uma réplica, é promovido e assume o papel de servidor ativo, garantindo a continuidade do serviço.
+- **Failback:** É o processo, geralmente planejado e manual, de **retornar** as operações ao servidor primário original, depois que ele foi reparado e estabilizado. Durante o _failback_, todas as transações que ocorreram no servidor secundário enquanto ele estava ativo são sincronizadas de volta para o primário antes de ele reassumir suas funções.
+
+<div align="center">
+<img width="480px" src="./img/08-failover-e-failback.png">
+</div>
+
