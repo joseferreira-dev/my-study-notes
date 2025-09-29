@@ -583,3 +583,16 @@ A genialidade da fase de pré-confirmação está em como ela lida com falhas.
 
 Embora o 3PC seja mais resiliente a falhas, ele também é mais complexo e exige uma rodada extra de comunicação, o que pode aumentar a latência. Por essa razão, o 2PC ainda é amplamente encontrado, e sistemas distribuídos modernos frequentemente utilizam outros algoritmos de consenso, como Paxos ou Raft, para garantir a consistência.
 
+## Considerações Finais
+
+Neste capítulo, mergulhamos na sala de máquinas dos sistemas de banco de dados para entender o conceito mais crítico para a sua confiabilidade: a **transação**. Vimos que uma transação é muito mais do que uma simples sequência de comandos; é uma unidade de trabalho lógica, atômica e segura, projetada para proteger a integridade dos dados em todas as circunstâncias.
+
+Iniciamos nossa jornada estabelecendo os quatro pilares que governam o comportamento transacional, os **princípios ACID**. A **Atomicidade** nos deu a garantia do "tudo ou nada"; a **Consistência** assegurou que as regras do banco de dados nunca sejam violadas; o **Isolamento** nos protegeu do caos do acesso concorrente; e a **Durabilidade** nos deu a certeza de que, uma vez confirmada, uma alteração é permanente.
+
+Compreendemos que, para honrar o princípio do Isolamento em um ambiente multiusuário, os SGBDs empregam um sofisticado **Controle de Concorrência**. Detalhamos as anomalias que podem surgir de um controle inadequado — como as Leituras Sujas, Não-Repetíveis e Fantasmas — e exploramos as soluções práticas para preveni-las através dos **Níveis de Isolamento** padronizados pela ANSI SQL.
+
+Aprofundamos nosso conhecimento nos mecanismos práticos que implementam esse controle, dissecando os **Bloqueios (Locks)**. Analisamos os diferentes tipos de bloqueio (Compartilhado, de Atualização e Exclusivo) e o protocolo que rege seu uso para garantir a serializabilidade, o **Bloqueio de Duas Fases (2PL)**.
+
+Expandimos nossa visão para além de um único servidor, explorando os desafios e as soluções para sistemas modernos e de larga escala. Abordamos o **Gerenciamento de Usuários** como pilar da segurança, diferenciando Autenticação de Autorização e destacando a eficiência do modelo **RBAC**. Vimos como estratégias de **Balanceamento de Carga**, **Alta Disponibilidade** (com _clusters_ e _failover_) e protocolos de confirmação distribuída, como o **Two-Phase Commit**, estendem as garantias de performance e atomicidade para ambientes complexos.
+
+Ao final deste capítulo, temos uma apreciação completa do trabalho invisível, porém vital, que um SGBD realiza para garantir que nossos dados permaneçam seguros, consistentes e corretos. Este conhecimento sobre a mecânica interna das transações é o que nos permite projetar aplicações mais robustas, escrever códigos mais seguros e diagnosticar problemas de performance com maior eficácia.
