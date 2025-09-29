@@ -504,3 +504,41 @@ Esses dois processos são o coração da funcionalidade de um _cluster_ ativo-pa
 <img width="480px" src="./img/08-failover-e-failback.png">
 </div>
 
+
+## Atomicidade em Sistemas Distribuídos: Commits Múltiplos
+
+Nos exemplos anteriores, tratamos o `COMMIT` como uma operação única e linear. No entanto, em arquiteturas modernas e de alta consistência, especialmente aquelas que envolvem **transações distribuídas** (operações que afetam múltiplos bancos de dados ou servidores simultaneamente), um simples `COMMIT` não é suficiente para garantir a atomicidade.
+
+O desafio é: como garantir que uma transação que envolve vários sistemas independentes seja "tudo ou nada"? Se a confirmação for bem-sucedida no primeiro sistema, mas falhar no segundo, como garantimos que a primeira seja desfeita para manter a consistência geral?
+
+É para resolver este problema que surgem os **protocolos de confirmação multifásica**. Não se trata de executar múltiplos `COMMIT`s, mas sim de dividir o processo de confirmação em múltiplas fases de verificação e decisão. As duas abordagens principais são o Commit em 2 Fases (2PC) e o Commit em 3 Fases (3PC), protocolos que alteram a sistemática da confirmação para trazer mais consistência e segurança entre os diferentes nós de um sistema.
+
+### Two-Phase Commit (2PC)
+
+O **2PC (_Two-Phase Commit_)**, ou Protocolo de Confirmação em Duas Fases, é um algoritmo distribuído que garante a atomicidade de uma transação. Ele coordena todos os nós participantes para que todos concordem com a mesma decisão final: confirmar (`COMMIT`) ou abortar (`ROLLBACK`) a transação.
+
+O processo envolve dois tipos de atores: um **Coordenador** (o nó que inicia e gerencia a transação) e um ou mais **Participantes** (os outros nós que executam uma parte da transação). Como o nome sugere, o protocolo se desenrola em duas fases bem definidas, ilustradas no diagrama de sequência a seguir.
+
+<div align="center">
+<img width="580px" src="./img/08-two-phase-commit.png">
+</div>
+
+#### Fase 1 – Preparação (ou Votação)
+
+O objetivo desta fase é verificar se todos os participantes estão aptos e dispostos a confirmar a transação.
+
+1. O **Coordenador** envia uma mensagem de **`PREPARE`** para todos os nós participantes.
+2. Cada **Participante**, ao receber a mensagem, realiza todas as operações da transação, bloqueia os recursos necessários e prepara-se para a confirmação. Neste ponto, ele deve garantir que, se receber um comando `COMMIT`, conseguirá executá-lo com sucesso.
+3. Cada participante então "vota", respondendo ao coordenador:
+    - **`PREPARED`** (ou `YES`), se conseguiu se preparar com sucesso.
+    - **`ABORT`** (ou `NO`), se encontrou qualquer problema que o impeça de confirmar a transação.
+
+#### Fase 2 – Confirmação (ou Decisão Final)
+
+O Coordenador coleta todos os votos e toma a decisão final, que é irrevogável.
+
+- **Cenário de Sucesso:** Se **todos** os participantes responderam `PREPARED`, o Coordenador sabe que a transação pode ser concluída com segurança. Ele então envia uma mensagem de **`COMMIT`** para todos os participantes. Cada participante, ao receber a mensagem, torna suas alterações permanentes e libera os recursos bloqueados.
+- **Cenário de Falha:** Se **pelo menos um** participante respondeu `ABORT` (ou se algum não respondeu dentro do tempo limite), o Coordenador sabe que a transação deve ser desfeita. Ele então envia uma mensagem de **`ROLLBACK`** para todos os participantes. Cada um deles desfaz as preparações que havia feito e libera os recursos.
+
+O 2PC garante a atomicidade, mas possui um ponto fraco significativo: ele é um **protocolo bloqueante**. Se o Coordenador falhar após a Fase 1, mas antes de enviar a decisão final na Fase 2, os Participantes ficam "presos" em um estado de incerteza, com recursos bloqueados, sem saber se devem confirmar ou abortar, até que o Coordenador se recupere.
+
