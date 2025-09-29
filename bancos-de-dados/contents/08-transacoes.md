@@ -248,3 +248,73 @@ Vamos revisitar o cenário anterior, agora com o Update Lock.
 
 Ao serializar a "intenção de atualizar", o Update Lock impede que o impasse de conversão ocorra, garantindo um fluxo de transações mais ordenado e previsível em cenários de leitura-seguida-de-escrita.
 
+### Bloqueios Exclusivos (Exclusive Locks - X)
+
+O **bloqueio exclusivo**, ou **Exclusive Lock (X)**, é o tipo de bloqueio mais restritivo e poderoso em um SGBD. Ele é adquirido por uma transação que pretende realizar uma operação de **escrita**, como `UPDATE`, `DELETE` ou `INSERT`.
+
+Sua principal característica é garantir o **acesso único e total** ao recurso para a transação que o detém. Quando uma transação obtém um bloqueio exclusivo sobre uma linha, nenhuma outra transação concorrente pode obter _qualquer_ tipo de bloqueio (seja ele compartilhado, de atualização ou outro exclusivo) sobre o mesmo recurso.
+
+As propriedades de um bloqueio exclusivo (X) são:
+
+- **Exclusividade Total:** A transação que o detém tem controle total sobre o dado.
+- **Incompatibilidade:** Um bloqueio X é incompatível com todos os outros tipos de bloqueio. Se uma transação solicitar um bloqueio X sobre um dado que já tenha qualquer outro bloqueio, ou vice-versa, a transação solicitante será forçada a esperar.
+- **Máxima Proteção:** Ao impedir qualquer outro acesso simultâneo, o bloqueio exclusivo previne todas as anomalias de concorrência relacionadas àquele dado específico, como leituras sujas e atualizações perdidas.
+- **Potencial de Contenção:** Por ser tão restritivo, ele pode se tornar um gargalo de desempenho em ambientes de alta concorrência. Uma transação longa que mantém um bloqueio exclusivo sobre um registro muito acessado pode criar uma "fila" de outras transações esperando, um fenômeno conhecido como contenção de bloqueio (_lock contention_).
+
+**Exemplo Prático Detalhado:**
+
+Vamos revisitar o exemplo da atualização de um saldo bancário para ver o bloqueio exclusivo em ação. Considere uma conta com saldo de R$ 1.000,00.
+
+1. **Início da Transação T1 (Saque):** Uma transação `T1` é iniciada para realizar um saque de R$ 200,00. Para executar o comando `UPDATE Contas SET saldo = 800 WHERE id_conta = 123;`, `T1` solicita e obtém um **Bloqueio Exclusivo (X)** sobre a linha da conta 123.
+2. **Início da Transação T2 (Consulta):** Simultaneamente, uma transação `T2` é iniciada por outro sistema para gerar um extrato, tentando ler o saldo da mesma conta 123. Para isso, `T2` solicita um **Bloqueio Compartilhado (S)**.
+3. **Ocorrência do Conflito:** O SGBD verifica a compatibilidade. O bloqueio `S` solicitado por `T2` é **incompatível** com o bloqueio `X` já mantido por `T1`.
+4. **Estado de Espera:** A Transação `T2` é colocada em uma fila de espera. Ela fica "congelada", aguardando a liberação do recurso.
+5. **Finalização da Transação T1:** A Transação `T1` completa sua operação com sucesso e executa um `COMMIT`. Este comando torna a alteração do saldo para R$ 800,00 permanente e, crucialmente, **libera o Bloqueio Exclusivo (X)**.
+6. **Continuação da Transação T2:** Com o recurso agora livre, o SGBD concede o bloqueio `S` pendente para a Transação `T2`. Ela pode, então, prosseguir com sua leitura e obterá o valor consistente e já atualizado de R$ 800,00.
+
+Este processo garante que a `T2` nunca leia um estado intermediário ou inconsistente dos dados, ilustrando o papel vital do bloqueio exclusivo na manutenção da integridade transacional.
+
+### Matriz de Compatibilidade de Bloqueios
+
+Para resumir a interação entre os três tipos de bloqueios que vimos, podemos usar uma matriz de compatibilidade. Ela mostra se um bloqueio pode ser concedido a uma transação (requisitante) quando outra transação já detém um bloqueio (mantido) sobre o mesmo recurso.
+
+|Lock Mantido|Lock Requisitado: S (Leitura)|Lock Requisitado: U (Atualização)|Lock Requisitado: X (Escrita)|
+|---|---|---|---|
+|**S (Leitura)**|Compatível|Compatível|Incompatível|
+|**U (Atualização)**|Compatível|Incompatível|Incompatível|
+|**X (Escrita)**|Incompatível|Incompatível|Incompatível|
+
+### Protocolo de Bloqueio de Duas Fases (Two-Phase Locking - 2PL)
+
+Os tipos de bloqueios que vimos (Compartilhado, de Atualização e Exclusivo) são as ferramentas. O **Protocolo de Bloqueio de Duas Fases (2PL)** é o conjunto de regras, ou a estratégia, que governa como essas ferramentas devem ser utilizadas para garantir a **serializabilidade** das transações.
+
+O objetivo do 2PL é assegurar que o resultado de transações concorrentes seja o mesmo que se elas tivessem sido executadas em alguma ordem sequencial, uma após a outra. É o principal protocolo utilizado pelos SGBDs para implementar o nível de isolamento `SERIALIZABLE`.
+
+Como o nome sugere, o protocolo divide a vida de uma transação em duas fases distintas e irreversíveis:
+
+#### Fase 1: Crescimento (Growing Phase)
+
+Nesta primeira fase, a transação está livre para **adquirir** todos os bloqueios de que necessita para realizar seu trabalho (sejam eles compartilhados, de atualização ou exclusivos). Durante a fase de crescimento, a regra é clara: a transação pode solicitar novos bloqueios, mas **não pode liberar nenhum bloqueio** que já possua. É uma fase de "acumulação" de permissões.
+
+#### Fase 2: Encolhimento (Shrinking Phase)
+
+A fase de encolhimento começa no exato momento em que a transação libera seu **primeiro bloqueio**. A partir deste ponto, a regra se inverte: a transação pode continuar a **liberar** os bloqueios que detém, mas está estritamente **proibida de adquirir qualquer novo bloqueio**.
+
+Se uma transação, já na fase de encolhimento, descobrir que precisa de um novo bloqueio para completar seu trabalho, o protocolo 2PL é violado. Nesse caso, o SGBD é forçado a abortar (`ROLLBACK`) a transação para preservar a integridade do sistema.
+
+O diagrama a seguir ilustra visualmente a linha do tempo de uma transação sob o protocolo 2PL.
+
+<div align="center">
+<img width="700px" src="./img/08-two-phase-locking.png">
+</div>
+
+Ao impor essa disciplina de adquirir todos os bloqueios necessários antes de começar a liberá-los, o 2PL garante a serializabilidade e previne todas as anomalias de concorrência que estudamos (_dirty read_, _non-repeatable read_ e _phantom read_).
+
+#### Variações do Protocolo 2PL
+
+Existem variações do protocolo 2PL que impõem regras ainda mais estritas para oferecer garantias adicionais.
+
+- **2PL Estrito (Strict 2PL):** Nesta variação, uma transação mantém todos os seus **bloqueios exclusivos (X)** até o seu término (seja por `COMMIT` ou `ROLLBACK`). Ela pode liberar bloqueios compartilhados (S) durante a fase de encolhimento, mas os bloqueios de escrita são retidos até o final. A grande vantagem é que isso evita um problema chamado "rollbacks em cascata", garantindo que nenhuma transação leia um dado modificado por outra que ainda não foi concluída.
+- **2PL Rigoroso (Rigorous 2PL):** É a variação mais restritiva e a mais comum na prática. No 2PL Rigoroso, uma transação mantém **todos os seus bloqueios**, tanto compartilhados (S) quanto exclusivos (X), até o seu término (`COMMIT` ou `ROLLBACK`). Não há uma fase de encolhimento gradual; todos os bloqueios são liberados de uma só vez no final. A maioria dos SGBDs comerciais implementa o 2PL Rigoroso para o nível de isolamento `SERIALIZABLE`.
+- **2PL Conservador (Conservative 2PL):** Uma variação mais teórica e menos comum, onde a transação deve declarar e **adquirir todos os bloqueios de que precisará antes mesmo de iniciar sua execução**. A principal vantagem é que ela é inerentemente livre de _deadlocks_. A desvantagem é sua impraticabilidade, pois é difícil prever todos os recursos necessários com antecedência, e isso reduz drasticamente a concorrência, pois os recursos ficam bloqueados por muito mais tempo do que o necessário.
+
