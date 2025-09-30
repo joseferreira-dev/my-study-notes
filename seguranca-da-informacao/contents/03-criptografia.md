@@ -199,3 +199,60 @@ A segurança de todo o sistema depende inteiramente da qualidade e da imprevisib
 
 Como vimos nos tópicos anteriores, os modos de operação **CFB, OFB e CTR** são, na prática, maneiras de utilizar uma cifra de bloco para que ela se comporte como uma cifra de fluxo, gerando um _keystream_ para ser combinado com o texto plano.
 
+## Identificação de Dados Criptografados
+
+Uma das características desejáveis de um bom algoritmo de criptografia é que seu resultado (o texto cifrado) seja estatisticamente indistinguível de dados puramente aleatórios. Essa propriedade é excelente na perspectiva da segurança, pois dificulta enormemente qualquer tipo de criptoanálise baseada na busca por padrões.
+
+No entanto, essa mesma característica cria um desafio significativo para outras áreas, como a de auditoria de segurança e, principalmente, a de **forense computacional**. Em uma investigação digital, um dos primeiros passos do perito é identificar quais dados em um sistema estão criptografados, pois eles podem conter informações cruciais para o caso. A natureza "aleatória" do texto cifrado, portanto, exige o uso de técnicas específicas para sua detecção.
+
+Os dados criptografados podem ser encontrados em três contextos principais: em arquivos individuais, em volumes virtuais ou em discos inteiros.
+
+### Formas de Armazenamento de Dados Criptografados
+
+#### Criptografia de Arquivos
+
+Neste primeiro e mais comum contexto, a criptografia é aplicada somente ao **conteúdo** de arquivos específicos. Uma característica fundamental deste método é que os **metadados** do arquivo — como nome, tamanho, tipo, data de criação e de modificação — permanecem em texto claro, ou seja, não são cifrados. Para um investigador, isso pode fornecer pistas valiosas mesmo que o conteúdo em si esteja inacessível (ex: um arquivo chamado `Planilha_Sonegação_2025.xlsx`).
+
+Existem duas formas básicas de se gerar esses arquivos criptografados:
+
+1. **Criptografia Nativa de Aplicações:** Muitos programas de produtividade oferecem uma função nativa para proteger arquivos com senha. É o caso de suítes de escritório como Microsoft Office (Word, Excel) e LibreOffice, bem como programas de compactação (ZIP, RAR) e de geração de PDFs. Nesses casos, a senha fornecida pelo usuário é utilizada para derivar uma chave de criptografia que cifra o conteúdo do arquivo.
+2. **Criptografia por Ferramentas Específicas:** Existem também programas cuja única finalidade é criptografar arquivos e pastas. No ambiente Windows, o **EFS (_Encrypting File System_)** é um recurso do sistema de arquivos NTFS que permite ao usuário criptografar arquivos de forma transparente, vinculando a chave de decifragem à sua conta de usuário. Em ambientes Linux, ferramentas como **eCryptFS** e **EncFS** permitem a criação de diretórios criptografados, onde qualquer arquivo salvo é automaticamente cifrado.
+
+##### Técnicas para Identificar Dados Criptografados
+
+Para detectar a presença de arquivos ou dados cifrados em um sistema, os peritos utilizam principalmente duas técnicas:
+
+- **Análise de Entropia:** A entropia, em ciência da computação, é uma medida do grau de aleatoriedade ou desordem de um conjunto de dados. Dados comuns, como textos, imagens ou programas, possuem uma estrutura e padrões repetitivos, resultando em uma entropia relativamente baixa. Por outro lado, dados bem cifrados (assim como dados bem comprimidos) são projetados para terem uma aparência completamente aleatória, apresentando, portanto, uma **entropia muito alta**. Ferramentas forenses podem escanear um disco e calcular a entropia de cada arquivo. Arquivos que apresentam um nível de entropia próximo do máximo teórico são fortes candidatos a estarem criptografados.
+- **Análise de Assinaturas de Arquivo (_File Signatures_):** Muitos formatos de arquivo, inclusive os de contêineres criptografados, começam com uma sequência específica de bytes, conhecida como "número mágico" ou assinatura, que identifica o tipo do arquivo. Ferramentas forenses utilizam bancos de dados com milhares dessas assinaturas para identificar rapidamente o tipo de cada arquivo em um disco, independentemente de sua extensão. Um arquivo criado pelo popular software de criptografia VeraCrypt, por exemplo, pode ser identificado por marcadores específicos em seu cabeçalho, mesmo que o usuário o tenha renomeado com uma extensão `.jpg`.
+
+#### Discos Virtuais Criptografados
+
+Uma abordagem mais abrangente para a proteção de dados é a criação de **discos virtuais criptografados**. Em vez de cifrar arquivos individualmente, este método utiliza um único **arquivo-contêiner** criptografado que, ao ser "montado" com a senha ou chave correta, se apresenta ao sistema operacional como uma nova unidade de disco virtual (por exemplo, uma nova letra de unidade, como `G:` no Windows).
+
+Esse disco virtual possui seu próprio sistema de arquivos e se comporta como um disco rígido ou pendrive comum. Qualquer arquivo salvo dentro dele é automaticamente criptografado em tempo real e armazenado dentro do arquivo-contêiner. Quando o disco virtual é "desmontado", ele desaparece do sistema, e o arquivo-contêiner volta a ser um bloco único de dados cifrados e inacessíveis.
+
+A grande vantagem deste método é a transparência e a segurança. Todo o sistema de arquivos do sistema operacional hospedeiro não é afetado, permanecendo em texto claro. A criptografia fica confinada a esse ambiente virtual isolado. Todas as alterações realizadas no disco virtual são salvas diretamente no arquivo-contêiner, garantindo a confidencialidade e a integridade dos dados em repouso.
+
+Diversas são as aplicações capazes de criar e gerenciar esses arquivos-contêiner:
+
+- **BitLocker To Go (Windows):** Embora mais conhecido pela criptografia de disco inteiro, o BitLocker também permite a criação de discos virtuais criptografados (arquivos VHD).
+- **VeraCrypt:** É o sucessor espiritual do popular, porém descontinuado, **TrueCrypt**. É uma das ferramentas de código aberto mais robustas e confiáveis para a criação de volumes criptografados.
+- **LUKS (_Linux Unified Key Setup_):** É o padrão para criptografia de disco no ecossistema Linux.
+- **Apple Disk Image (macOS):** O Utilitário de Disco nativo do macOS permite a criação de imagens de disco (`.dmg`) protegidas por senha e criptografia.
+
+Para um perito forense, a identificação desses arquivos-contêiner segue a mesma lógica da identificação de arquivos criptografados. Os testes de **entropia** são extremamente eficazes, pois o conteúdo de um contêiner criptografado é indistinguível de dados aleatórios. Além disso, por funcionarem como um disco virtual, esses arquivos geralmente possuem tamanhos consideráveis (na ordem de gigabytes ou mais), o que, combinado com a alta entropia, os torna fortes suspeitos em uma análise de disco.
+
+#### Criptografia de Disco Inteiro (_Full Disk Encryption_)
+
+O cenário é um clássico em filmes e séries de investigação: a polícia recupera o computador de um suspeito, mas, ao tentar acessar seus dados, se depara com uma barreira impenetrável que exige uma senha. Esse obstáculo é o resultado da **Criptografia de Disco Inteiro**, também conhecida como _Full Disk Encryption_ (FDE) ou _Whole Disk Encryption_ (WDE).
+
+Diferentemente dos outros dois contextos que vimos, onde a criptografia é aplicada a arquivos ou volumes virtuais, o FDE cifra **todo o conteúdo de um disco rígido ou SSD**, incluindo o sistema operacional, as aplicações, os arquivos temporários e todos os dados do usuário. É a forma mais completa de proteção para dados em repouso (_at rest_).
+
+O processo de inicialização de um sistema com FDE é o que o diferencia. Para que o computador possa ser ligado, uma pequena parte do disco, conhecida como **partição de _boot_**, permanece sem criptografia. Essa pequena partição contém o código necessário para carregar um ambiente de **autenticação pré-inicialização (_Pre-Boot Authentication_ - PBA)**. É nesse momento, antes mesmo de o sistema operacional principal começar a carregar, que o usuário é solicitado a fornecer sua senha, PIN ou chave de recuperação. Somente após a validação dessa credencial é que a chave para decifrar o restante do disco é liberada, e o sistema operacional pode continuar sua inicialização.
+
+Uma vez que o sistema está em funcionamento, o processo de criptografia e decriptografia é completamente **transparente** para o usuário. Os dados são decifrados em tempo real à medida que são lidos do disco para a memória, e cifrados novamente ao serem gravados de volta no disco, sem impacto perceptível no desempenho.
+
+As mesmas ferramentas que mencionamos anteriormente são capazes de realizar a criptografia de disco inteiro, como o **BitLocker** (Windows), **FileVault** (macOS), **LUKS** (Linux) e **VeraCrypt** (multiplataforma). Os mesmos princípios se aplicam a mídias removíveis, como pendrives e HDs externos, que podem ser completamente criptografados para garantir o transporte seguro de informações.
+
+Para a detecção forense de um disco com FDE, os peritos analisam os primeiros setores do disco. Geralmente, cada software de criptografia deixa um "marcador" ou uma assinatura própria nessa área não cifrada, que permite não apenas identificar a presença da criptografia, mas também qual ferramenta foi utilizada para implementá-la.
+
