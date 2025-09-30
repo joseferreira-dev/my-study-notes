@@ -294,3 +294,92 @@ Este é o "espelho" do ataque anterior e representa um cenário ainda mais poder
 
 Este é o cenário mais poderoso de todos, combinando os dois anteriores. O atacante tem a capacidade de escolher tanto os textos planos para serem cifrados quanto os textos cifrados para serem decifrados. Ele tem controle total sobre as entradas e saídas do sistema criptográfico, permitindo uma análise extremamente aprofundada de seu funcionamento.
 
+### Métodos de Decifragem de Dados
+
+Conforme já mencionamos, a criptoanálise busca explorar fraquezas nos sistemas criptográficos. As técnicas utilizadas para decifrar mensagens variam enormemente, dependendo do contexto, do algoritmo utilizado e, principalmente, de eventuais vulnerabilidades em sua implementação. A seguir, comentaremos algumas abordagens clássicas.
+
+#### Método da Recuperação Direta
+
+Como o próprio nome sugere, o objetivo deste método é obter a senha ou a chave de criptografia de maneira **direta**, explorando falhas de armazenamento ou de implementação, em vez de atacar o algoritmo criptográfico em si. A estratégia é buscar pontos onde a credencial possa ter sido guardada de forma insegura.
+
+O ataque se concentra em encontrar:
+
+- **Algoritmos frágeis:** Implementações criptográficas que são notoriamente fracas ou que foram quebradas.
+- **Repositórios de senhas inseguros:** Locais onde as senhas são armazenadas em texto claro (sem nenhuma forma de proteção) ou com criptografia fraca e reversível.
+- **Chaves de criptografia expostas:** Chaves de criptografia que foram deixadas no código-fonte da aplicação, em arquivos de configuração ou que utilizam valores padrão e conhecidos.
+
+Um exemplo clássico ocorre em aplicações web mais antigas ou mal configuradas. Um atacante que consegue explorar uma vulnerabilidade para ler arquivos do servidor pode, por exemplo, acessar o arquivo de configuração de conexão com o banco de dados. Muitas vezes, esse arquivo contém o nome de usuário e a senha do banco de dados salvos em texto claro. De posse dessas credenciais, o atacante obtém acesso direto a toda a base de dados.
+
+#### Método Pré-Computado (Ataques de Dicionário e _Rainbow Tables_)
+
+Este método se baseia na força bruta, mas de uma maneira mais inteligente e eficiente. Em vez de tentar adivinhar a senha em tempo real, o atacante utiliza uma **lista pré-computada** que correlaciona um grande volume de possíveis textos em claro com seus respectivos resultados criptografados (seja um texto cifrado ou, mais comumente, um _hash_).
+
+A forma mais sofisticada deste ataque utiliza as chamadas **_Rainbow Tables_**. A ideia é criar uma tabela gigantesca que funciona como um "dicionário reverso". O custo computacional para criar essa tabela é imenso, mas, uma vez criada, a "quebra" de uma senha se torna uma simples e rápida operação de busca. O atacante pega o _hash_ da senha roubada de um banco de dados e procura por ele na _Rainbow Table_. Se o encontrar, a tabela revelará a senha em texto claro correspondente.
+
+A eficácia deste método está diretamente ligada ao tamanho das chaves ou à complexidade das senhas. Para algoritmos mais antigos ou senhas curtas, é viável criar uma tabela com todas as combinações possíveis. Para algoritmos modernos e senhas longas e complexas, o custo de criação e armazenamento de uma tabela completa se torna computacionalmente inviável. Nesses casos, os atacantes podem recorrer a bases parciais, que contêm apenas as senhas mais comuns, não havendo garantia de que a senha alvo estará na lista.
+
+É importante mencionar que existem serviços online que comercializam ou disponibilizam acesso a essas bases pré-computadas para diversos algoritmos de criptografia e funções de _hash_.
+
+A principal defesa contra os ataques de _Rainbow Table_ é uma técnica chamada **_salting_**. Antes de gerar o _hash_ de uma senha, o sistema adiciona a ela um valor aleatório e único, o "sal" (_salt_). Como cada usuário terá um "sal" diferente, a mesma senha "123456" resultará em um _hash_ final diferente para cada usuário. Isso torna as _Rainbow Tables_ ineficazes, pois o atacante precisaria gerar uma tabela específica para cada "sal" utilizado, o que é inviável.
+
+#### Método da Força Bruta
+
+O ataque de força bruta é a abordagem mais direta e, conceitualmente, a mais simples para se quebrar uma senha ou uma chave criptográfica. Sua estratégia se baseia na "ignorância" computacional: em vez de buscar uma falha inteligente no sistema, o atacante utiliza um software para testar, sistematicamente, **todas as combinações possíveis** de caracteres até que a senha correta seja encontrada.
+
+Matematicamente, este método é infalível. Dado tempo e poder computacional suficientes, ele inevitavelmente encontrará a senha, pois seu processo exaure todas as possibilidades. Na prática, no entanto, sua viabilidade depende de uma corrida contra o tempo. O fator crítico que determina o sucesso de um ataque de força bruta é o **tamanho e a complexidade da senha**.
+
+A cada caractere adicionado a uma senha, o número de combinações possíveis cresce exponencialmente, e com ele, o tempo necessário para a quebra.
+
+- Uma senha de 6 caracteres, usando apenas letras minúsculas, tem cerca de 308 milhões de combinações.
+- Uma senha de 12 caracteres, usando letras maiúsculas, minúsculas, números e símbolos, tem um número de combinações na casa dos sextilhões, tornando um ataque de força bruta impraticável com a tecnologia atual.
+
+Por essa razão, o método da força bruta é extremamente eficiente contra senhas curtas e simples, mas se torna inútil contra senhas longas e complexas. A principal defesa contra este tipo de ataque é, portanto, a utilização de senhas longas e a implementação, por parte dos sistemas, de políticas de bloqueio de conta após um número limitado de tentativas falhas.
+
+#### Método de Dicionário
+
+O ataque de dicionário é uma otimização do ataque de força bruta e, no contexto atual, uma das técnicas mais utilizadas e eficazes. O procedimento é semelhante, mas, em vez de testar todas as combinações possíveis, o software do atacante testa apenas as senhas contidas em uma **lista pré-definida**, um "dicionário" de senhas prováveis.
+
+A grande vantagem para o atacante é a drástica redução do número de tentativas necessárias. Em vez de testar combinações sem sentido como "x7$z#qP", o ataque se concentra em palavras e combinações que os seres humanos tendem a usar, como:
+
+- **Senhas mais comuns:** Listas com as senhas mais vazadas e utilizadas no mundo, como "123456", "password", "senha123", etc.
+- **Palavras de dicionários:** Palavras reais de diversos idiomas.
+- **Vazamentos de dados:** Senhas obtidas de vazamentos de outros serviços, utilizadas em ataques de _credential stuffing_.
+
+Uma das ferramentas mais conhecidas para a realização deste tipo de ataque é o **"John the Ripper"**.
+
+##### Otimização e Ataques Híbridos
+
+A eficácia do ataque de dicionário pode ser ainda mais otimizada através da personalização e da geração de variações.
+
+- **Dicionários Personalizados:** Em um ataque direcionado, o agressor pode construir um dicionário personalizado para uma vítima específica. Através de engenharia social ou da análise de informações públicas (como perfis em redes sociais), ele pode coletar dados como nomes de familiares, datas de nascimento, nomes de animais de estimação, times de futebol, etc., e gerar combinações prováveis.
+- **Ataques Híbridos:** As ferramentas modernas não se limitam a testar as palavras do dicionário em sua forma pura. Elas aplicam um conjunto de regras de mutação para gerar variações, antecipando as tentativas dos usuários de tornar suas senhas "mais fortes". Essas regras incluem:
+    - Substituir letras por números (ex: `i` por `1`, `e` por `3`, `a` por `@`).
+    - Alterar entre letras maiúsculas e minúsculas.
+    - Adicionar números ou caracteres especiais no início ou no final da palavra.
+    - Inverter a ordem das letras ou sílabas.
+
+Dessa forma, a palavra "senha" no dicionário pode gerar variações como "S3nh@", "Senha123", "ahn_es!", aumentando drasticamente a probabilidade de acerto. A melhor defesa contra ataques de dicionário e híbridos é a criação de **frases-passe (_passphrases_)** longas, únicas e que não contenham palavras óbvias ou informações pessoais.
+
+#### Método Probabilístico
+
+Por fim, temos o método probabilístico, a abordagem mais sofisticada para a quebra de senhas. Em vez de testar palavras prontas (dicionário) ou todas as combinações (força bruta), este método utiliza algoritmos e análises estatísticas para gerar e testar sequências de caracteres que possuem a **maior probabilidade de ocorrência**, com base em um vasto conjunto de dados de senhas já conhecidas.
+
+Este método pode ser dividido em duas abordagens principais: a análise por probabilidade condicional e a análise por gramática especializada.
+
+- **Probabilidade Condicional (Cadeias de Markov):** Esta técnica parte da observação de que, em qualquer idioma ou conjunto de dados, a ocorrência de um caractere não é um evento isolado; ela depende dos caracteres que o antecedem. Por exemplo, em português, a probabilidade de a letra "h" ser antecedida por "c" ou "l" (formando "ch" ou "lh") é muito maior do que ser antecedida por "x". Os algoritmos estatísticos baseados em **Cadeias de Markov** aprendem essas probabilidades condicionais a partir de grandes listas de senhas vazadas e, em seguida, as utilizam para gerar novas senhas candidatas que "parecem" senhas reais, priorizando as combinações mais prováveis.
+- **Gramática Especializada:** Esta abordagem vai além da análise de caracteres e busca identificar os **padrões estruturais** das senhas. O algoritmo analisa um dicionário de senhas bem-sucedido e extrapola um perfil ou "gramática" de como os usuários criam suas senhas. Ele pode concluir, por exemplo, que um padrão comum é `[LetraMaiúscula] + [5 letras minúsculas] + [3 números] + [1 caractere especial]`. A partir dessa conclusão, o software gera novas senhas que seguem essa mesma gramática, combinando-a com fatores personalizados (como nomes e datas) para aumentar ainda mais a probabilidade de acerto.
+
+#### Síntese dos Métodos e a Estratégia Combinada
+
+Cada um dos métodos de decifragem que analisamos possui um cenário onde sua eficiência é maximizada. A imagem a seguir resume os principais métodos de ataque a senhas e chaves.
+
+<div align="center">
+<img width="520px" src="./img/03-metodos-de-decifragem.png">
+</div>
+
+- O **Método da Força Bruta** é mais eficaz contra senhas curtas, pois o universo de combinações é pequeno o suficiente para ser testado exaustivamente.
+- O **Método de Dicionário** (e suas variações híbridas) é ideal para quebrar senhas comuns ou baseadas em palavras, mesmo que elas possuam algumas alterações simples.
+- O **Método Probabilístico** se destaca nos casos mais complexos, onde as senhas não são triviais, mas ainda seguem padrões de criação humanos.
+
+Na prática, as ferramentas de criptoanálise mais poderosas alcançam seus resultados através da **combinação desses métodos**. Um ataque típico pode começar com um rápido teste de dicionário para eliminar as senhas mais fracas. Em seguida, pode aplicar regras híbridas e probabilísticas e, somente em último caso, recorrer a uma força bruta mais restrita, otimizando o processo para decifrar o maior número de senhas na menor parcela de tempo possível.
+
