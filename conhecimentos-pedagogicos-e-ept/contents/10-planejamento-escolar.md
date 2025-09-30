@@ -461,3 +461,26 @@ Quando o planejamento é verdadeiramente coletivo, o papel do professor se trans
 
 Esse sentimento de pertencimento e de corresponsabilidade é o que mais favorece o engajamento do corpo docente. O professor que se sente parte do processo e que "abraça a causa" da escola, consequentemente, fará escolhas mais conscientes e coerentes em seus planejamentos individuais (de ensino e de aula), criando um círculo virtuoso de participação, compromisso e melhoria contínua da qualidade da educação.
 
+## Planejamento na Educação Infantil
+
+O ato de planejar na Educação Infantil é tão fundamental quanto nas demais etapas de ensino, pois garante a intencionalidade e a qualidade das experiências oferecidas às crianças, evitando a pura improvisação. No entanto, sua natureza é diferente. Enquanto no Ensino Fundamental o planejamento se organiza, em grande parte, em torno de conteúdos sistematizados, na Educação Infantil ele se estrutura a partir da organização de **situações e vivências** que favoreçam o aprendizado e o desenvolvimento integral dos pequenos.
+
+Assim como em qualquer outra etapa, o planejamento para esta faixa etária deve partir de uma **concepção de infância** clara e de um ideal de ser humano que se quer formar. A partir daí, o professor deve prever quais competências e habilidades pretende desenvolver, considerando a faixa etária envolvida e organizando os elementos centrais de sua prática.
+
+### Os Eixos do Planejamento na Educação Infantil
+
+Planejar na Educação Infantil é, essencialmente, pensar na organização intencional de quatro eixos que estruturam o cotidiano pedagógico: **o tempo, o espaço, os materiais e os agrupamentos**. É através da manipulação desses quatro eixos que o professor garante os **Direitos de Aprendizagem e Desenvolvimento** (Conviver, Brincar, Participar, Explorar, Expressar, Conhecer-se) e promove os **Campos de Experiência** previstos na Base Nacional Comum Curricular (BNCC).
+
+- **Organização do Tempo:** Refere-se à estruturação da rotina, que deve equilibrar momentos de atividades dirigidas, de livre escolha, de alimentação, de higiene e de descanso, respeitando o ritmo das crianças.
+- **Organização do Espaço:** Diz respeito à forma como o ambiente da sala e da área externa é arranjado. Um bom planejamento do espaço inclui a criação de "cantinhos" ou centros de interesse (canto da leitura, de construção, de faz de conta) que convidem à exploração e à interação.
+- **Organização dos Materiais:** Envolve a seleção e a disponibilização de uma diversidade de materiais, tanto os estruturados (brinquedos industrializados) quanto, e principalmente, os não estruturados (caixas, tecidos, folhas, potes, argila), que oferecem maiores possibilidades para a criatividade e a investigação.
+- **Organização dos Agrupamentos:** O planejamento deve prever momentos que permitam diferentes formas de interação social: atividades individuais, em pequenos grupos e com o grupo todo, permitindo que as crianças aprendam umas com as outras.
+
+### O Brincar e a Intencionalidade Docente
+
+O princípio fundamental que rege toda a prática na Educação Infantil, conforme estabelecido pelas Diretrizes Curriculares Nacionais (DCNEI), é que a aprendizagem e o desenvolvimento ocorrem através das **interações e da brincadeira**. A criança brinca em todo lugar: em casa, no parque, na rua. O que diferencia, então, o brincar na escola? A resposta é: a **intencionalidade docente**.
+
+Na escola, não se "brinca por brincar". A brincadeira tem uma intenção, ela é planejada e faz parte de um projeto pedagógico. Mesmo a chamada "brincadeira livre", na qual o professor não intervém diretamente, deve constar no planejamento com um objetivo claro, como o de promover a autonomia, desenvolver a criatividade ou observar como as crianças interagem e resolvem seus conflitos.
+
+A intencionalidade do professor se manifesta ao planejar e organizar os contextos para o brincar (ao escolher os materiais e arrumar os espaços) e ao atuar como um observador atento durante a brincadeira, registrando os processos das crianças e realizando intervenções pontuais para enriquecer ou aprofundar a experiência. É essa intencionalidade que transforma o brincar no mais poderoso instrumento de aprendizagem da Educação Infantil.
+
