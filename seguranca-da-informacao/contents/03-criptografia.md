@@ -256,3 +256,41 @@ As mesmas ferramentas que mencionamos anteriormente são capazes de realizar a c
 
 Para a detecção forense de um disco com FDE, os peritos analisam os primeiros setores do disco. Geralmente, cada software de criptografia deixa um "marcador" ou uma assinatura própria nessa área não cifrada, que permite não apenas identificar a presença da criptografia, mas também qual ferramenta foi utilizada para implementá-la.
 
+### Criptoanálise
+
+Como já mencionamos, a **criptoanálise** é o contraponto da criptografia. É a ciência focada em analisar sistemas criptográficos com o objetivo de "quebrar" sua segurança e decifrar a informação oculta, geralmente sem o conhecimento da chave secreta. A realização de um ataque de criptoanálise bem-sucedido depende fundamentalmente da quantidade de informações que o atacante tem à sua disposição e de sua capacidade de manipular o sistema.
+
+Com base nesse nível de conhecimento e interação, os ataques criptoanalíticos são classificados em uma hierarquia de poder, do mais fraco ao mais forte. Conhecer esses cinco tipos de ataque é fundamental para entender como a segurança de um algoritmo é avaliada.
+
+#### Ataque de Apenas Texto Cifrado (_Ciphertext-Only_)
+
+Este é o cenário de ataque mais fraco e desafiador para o criptoanalista. Nele, o atacante possui acesso apenas a uma ou mais mensagens cifradas. Ele pode conhecer o algoritmo de criptografia utilizado, mas não tem nenhuma informação sobre o texto plano original correspondente.
+
+- **Objetivo:** A partir do texto cifrado, o atacante tenta descobrir o texto plano original ou, idealmente, a chave de criptografia utilizada.
+- **Exemplo:** Um espião intercepta uma transmissão de rádio militar codificada. Ele não sabe o conteúdo da mensagem, apenas o texto cifrado que foi transmitido. Para quebrar a cifra, ele teria que recorrer a técnicas estatísticas, como a **análise de frequência** que mencionamos para a Cifra de César, ou a um ataque de **força bruta**, testando todas as chaves possíveis até que uma delas produza um texto plano que faça sentido.
+
+#### Ataque de Texto Claro Conhecido (_Known-Plaintext_)
+
+Neste cenário, o atacante possui um nível de conhecimento maior. Além de ter acesso a mensagens cifradas, ele também possui os **pares de texto plano correspondentes**. Ou seja, ele sabe qual era a mensagem original para um determinado texto cifrado.
+
+- **Objetivo:** Utilizar a relação entre o texto plano conhecido e seu resultado cifrado para descobrir a chave de criptografia e, com ela, decifrar outras mensagens.
+- **Exemplo:** Durante a Segunda Guerra Mundial, os Aliados sabiam que toda mensagem de rádio alemã cifrada pela máquina Enigma terminava com a saudação "Heil Hitler". Isso lhes deu um trecho de texto plano conhecido. Ao comparar esse trecho com o final do texto cifrado, eles tinham um ponto de partida valioso para deduzir a configuração diária dos rotores da Enigma.
+
+#### Ataque de Texto Claro Escolhido (_Chosen-Plaintext_)
+
+Este é um tipo de ataque muito mais poderoso. Aqui, o atacante não apenas conhece alguns pares de texto plano/cifrado, mas ele tem a capacidade de **escolher textos planos arbitrários e obter seus correspondentes textos cifrados**. Ele pode, efetivamente, "usar" o sistema de criptografia como uma caixa-preta para gerar amostras.
+
+- **Objetivo:** Escolher textos planos estrategicamente (por exemplo, textos com padrões específicos) para observar como eles são transformados, a fim de extrair informações que revelem a chave.
+- **Exemplo:** Um atacante ganha acesso temporário a um dispositivo de criptografia. Ele pode então alimentar o dispositivo com mensagens de sua escolha (ex: "AAAAA...", "BBBBB...") e analisar os textos cifrados resultantes para identificar padrões ou relações que o ajudem a deduzir a estrutura interna do algoritmo ou a chave em uso.
+
+#### Ataque de Texto Cifrado Escolhido (_Chosen-Ciphertext_)
+
+Este é o "espelho" do ataque anterior e representa um cenário ainda mais poderoso para o atacante. Nele, o atacante pode **escolher textos cifrados arbitrários e obter seus correspondentes textos planos decifrados**. Ele tem acesso a uma "máquina de decifragem" que ele pode alimentar com suas próprias entradas.
+
+- **Objetivo:** Criar textos cifrados com pequenas e sutis alterações e observar como essas alterações se refletem no texto plano resultante, buscando vulnerabilidades que revelem a chave. Este tipo de ataque é particularmente eficaz contra implementações de criptografia que não validam a integridade do texto cifrado antes de decifrá-lo.
+- **Exemplo:** O famoso ataque "Padding Oracle" contra implementações mais antigas do TLS/SSL é um exemplo de ataque de texto cifrado escolhido. O atacante enviava mensagens cifradas ligeiramente modificadas para um servidor. O servidor, ao tentar decifrar, retornava mensagens de erro diferentes dependendo de a modificação ter resultado em um _padding_ (preenchimento) válido ou não. Analisando essas respostas de erro, o atacante conseguia, byte a byte, reconstruir o texto plano original.
+
+#### Ataque de Texto Escolhido (_Chosen-Text_)
+
+Este é o cenário mais poderoso de todos, combinando os dois anteriores. O atacante tem a capacidade de escolher tanto os textos planos para serem cifrados quanto os textos cifrados para serem decifrados. Ele tem controle total sobre as entradas e saídas do sistema criptográfico, permitindo uma análise extremamente aprofundada de seu funcionamento.
+
