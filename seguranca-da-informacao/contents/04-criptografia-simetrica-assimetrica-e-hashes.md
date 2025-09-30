@@ -521,3 +521,112 @@ A análise do OTP nos permite diferenciar dois conceitos fundamentais de seguran
 - **Segurança Incondicional:** É a propriedade do One-Time Pad. Significa que a cifra não pode ser quebrada, não importa quanto poder computacional ou tempo o atacante tenha à sua disposição.
 - **Segurança Computacional:** É a propriedade de todos os outros algoritmos modernos que estudamos (DES, AES, RSA, ECC). Significa que, embora seja teoricamente possível quebrar a cifra (por exemplo, por força bruta), o **custo** para fazê-lo (em tempo e recursos) é tão astronomicamente alto que se torna impraticável. A segurança reside no fato de que o custo para quebrar a cifra é muito superior ao valor da informação protegida, ou o tempo necessário para a quebra é maior que o tempo de vida útil da própria informação.
 
+## Funções de Hash
+
+Além dos algoritmos de criptografia simétrica e assimétrica, que são projetados para serem reversíveis, existe uma terceira categoria de ferramenta criptográfica com um propósito diferente: as **funções de hash**.
+
+Uma função de hash é um algoritmo matemático que recebe uma entrada de dados de qualquer tamanho — seja um único caractere, um texto de várias páginas ou um arquivo de vídeo de gigabytes — e a transforma em uma saída de **tamanho fixo** e aparência aleatória, chamada de **hash** ou **_message digest_**.
+
+A característica mais importante de uma função de hash criptográfica é ser **unidirecional** (_one-way_). Isso significa que, a partir de um resultado de hash, é computacionalmente inviável reverter o processo para descobrir a mensagem original que o gerou.
+
+Por exemplo, ao aplicar o antigo algoritmo de hash MD5 à string de texto `123456`, o resultado é sempre o mesmo:
+
+`e10adc3949ba59abbe56e057f20f883e`
+
+Mesmo que um atacante tenha acesso a esse hash, não existe uma "chave" ou um "algoritmo de decifragem" que possa ser usado para descobrir que a entrada original foi `123456`.
+
+### Propriedades de uma Função de Hash Criptográfica
+
+Para ser considerada segura, uma função de hash deve possuir as seguintes propriedades:
+
+1. **Unidirecionalidade (_Pre-image Resistance_):** Como já mencionado, deve ser impossível encontrar a mensagem original a partir de seu hash.
+2. **Resistência à Colisão Fraca (_Second Pre-image Resistance_):** Dada uma mensagem de entrada, deve ser impossível encontrar uma _outra_ mensagem que produza o mesmo hash.
+3. **Resistência à Colisão Forte (_Collision Resistance_):** Deve ser impossível encontrar _quaisquer dois_ inputs diferentes que resultem no mesmo hash.
+4. **Efeito Avalanche (Difusão):** Uma mudança mínima na mensagem de entrada (alterar um único bit) deve causar uma mudança drástica e imprevisível na saída do hash.
+
+### "Quebrando" um Hash
+
+Se a função é unidirecional, como se pode descobrir a mensagem original? A única maneira é através de ataques de força bruta ou de dicionário. Como a função é conhecida, um atacante pode pegar uma lista de possíveis entradas, aplicar o algoritmo de hash a cada uma e comparar os resultados com o hash alvo, até encontrar uma correspondência.
+
+A tabela a seguir ilustra um ataque de força bruta para descobrir a qual entrada corresponde o hash `e10adc3949ba59abbe56e057f20f883e`:
+
+<div align="center">
+<img width="540px" src="./img/04-funcoes-hash.png">
+</div>
+
+Essa técnica, que busca montar um banco de dados pré-computado de hashes, é a base dos ataques de _Rainbow Table_ que já discutimos.
+
+### Principais Aplicações das Funções de Hash
+
+Se não é possível reverter um hash, qual a sua utilidade? As funções de hash são ferramentas essenciais para garantir a **integridade**, a **autenticidade** e, de forma indireta, a **confidencialidade** dos dados.
+
+- **Verificação de Integridade:** Esta é a sua aplicação mais direta. Imagine que uma empresa precisa enviar um relatório importante para um cliente. Ela pode enviar o arquivo do relatório e, separadamente, o resultado do hash (ex: SHA-256) calculado sobre esse arquivo. Ao receber, o cliente recalcula o hash do arquivo que baixou. Se o hash calculado por ele for idêntico ao hash fornecido pela empresa, ele tem a certeza matemática de que o arquivo não foi corrompido durante a transmissão nem modificado por um terceiro. É por isso que muitos sites de download de software disponibilizam o hash de seus arquivos.
+- **Armazenamento Seguro de Senhas:** Para garantir a confidencialidade e a autenticidade em sistemas de _login_, os servidores **nunca** devem armazenar as senhas dos usuários em texto claro. Em vez disso, eles armazenam apenas o **hash** da senha. Quando um usuário tenta fazer _login_, o sistema calcula o hash da senha que ele digitou e compara esse novo hash com o que está armazenado no banco de dados. Se os hashes forem idênticos, a senha está correta. Dessa forma, mesmo que a base de dados do servidor seja vazada, os atacantes não terão acesso às senhas originais, apenas aos seus hashes.
+- **Assinaturas Digitais:** As funções de hash são um componente indispensável na criação de assinaturas digitais. Como cifrar um documento inteiro com um algoritmo de chave assimétrica (que é lento) seria inviável, o processo utilizado é:
+    1. Calcula-se o hash do documento (um resultado pequeno e de tamanho fixo).
+    2. O emissor, então, cifra **apenas o hash** com sua chave privada.
+    3. O resultado (o hash cifrado) é a assinatura digital, que é anexada ao documento original.
+
+### Colisões e o Ataque de Aniversário
+
+Uma das propriedades fundamentais de uma função de hash é que ela produz uma saída de tamanho fixo para uma entrada de tamanho variável. Isso nos leva a uma consequência matemática inevitável: a existência de **colisões**. Uma colisão ocorre quando duas entradas distintas produzem o mesmo resultado de hash. Como o número de entradas possíveis é infinito e o número de saídas é finito (determinado pelo tamanho do hash), é garantido que colisões existam.
+
+O objetivo de um bom algoritmo de hash não é eliminar as colisões — o que é impossível —, mas torná-las **computacionalmente inviáveis de serem encontradas**. A principal forma de se amenizar esse problema é aumentar o tamanho em bits do _message digest_. Quanto maior a saída do hash, menor a probabilidade de uma colisão ocorrer por acaso.
+
+Nesse contexto, a robustez de um algoritmo é medida por sua resistência a dois tipos de colisão:
+
+1. **Resistência à Colisão Fraca (ou à Segunda Pré-imagem):** Dado uma mensagem `M` e seu hash `h(M)`, deve ser computacionalmente impossível encontrar uma _outra_ mensagem `M'` tal que `h(M') = h(M)`.
+2. **Resistência à Colisão Forte:** Deve ser computacionalmente impossível encontrar _qualquer par_ de mensagens distintas `(M, M')` que produzam o mesmo hash.
+
+Encontrar uma colisão forte é, por natureza, muito mais fácil do que encontrar uma colisão fraca. A técnica mais famosa para otimizar a busca por colisões fortes é o **Ataque de Aniversário**.
+
+#### Ataque de Aniversário
+
+Este tipo de ataque não explora uma falha no algoritmo em si, mas uma propriedade da teoria da probabilidade, conhecida como o **Paradoxo do Aniversário**. O paradoxo se manifesta da seguinte forma:
+
+- **Pergunta 1:** Em uma sala com 30 pessoas, qual a probabilidade de alguém fazer aniversário no mesmo dia que o professor (uma data específica)? A probabilidade é baixa.
+- **Pergunta 2:** Na mesma sala, qual a probabilidade de **quaisquer duas pessoas** fazerem aniversário no mesmo dia? A probabilidade é surpreendentemente alta, superando 70%.
+
+Isso ocorre porque, no primeiro caso, estamos comparando 30 datas com uma única data fixa. No segundo caso, estamos comparando todos os pares possíveis de datas entre as 30 pessoas, um número muito maior de combinações.
+
+Aplicando essa lógica à criptografia, o ataque de aniversário mostra que o esforço computacional para se encontrar uma colisão forte em uma função de hash é muito menor do que se poderia esperar. O esforço necessário não é da ordem de $2^k$ (onde `k` é o tamanho do hash em bits), mas sim da ordem de $2^{k/2}$.
+
+- **Implicação Prática:** Para uma função de hash de 128 bits, como o MD5, isso significa que um atacante não precisa de $2^{128}$ operações para encontrar uma colisão, mas de "apenas" $2^{64}$, um número que já está ao alcance de recursos computacionais modernos. É por causa da viabilidade do ataque de aniversário que algoritmos com saídas de 128 bits (MD5) ou 160 bits (SHA-1) não são mais considerados seguros contra colisões. O padrão atual, como o SHA-256, oferece uma resistência muito maior, pois exigiria cerca de $2^{128}$ operações para se encontrar uma colisão, um número ainda considerado computacionalmente inviável.
+
+### Principais Algoritmos de Funções de Hash
+
+Ao longo da história da computação, diversos algoritmos de hash foram desenvolvidos. Alguns se tornaram padrões da indústria, enquanto outros foram "aposentados" após a descoberta de vulnerabilidades. Vamos analisar os mais importantes.
+
+#### Família MD (_Message Digest_)
+
+Desenvolvida por Ron Rivest, a família de algoritmos _Message Digest_ foi uma das primeiras a ser amplamente adotada.
+
+- **MD4:** Criado em 1990, o MD4 produz um hash de **128 bits** e processa a mensagem em blocos de 512 bits. Ele foi pioneiro em seu design, mas fraquezas significativas foram descobertas rapidamente, levando ao seu abandono em favor de seu sucessor.
+- **MD5:** Lançado em 1992 para substituir o MD4, o MD5 também produz um hash de **128 bits**. Por muitos anos, foi o algoritmo de hash mais popular do mundo, utilizado para a verificação de integridade de arquivos e para o armazenamento de senhas. No entanto, a partir de meados dos anos 2000, graves vulnerabilidades foram demonstradas, e em 2008, pesquisadores conseguiram criar colisões de forma prática. Hoje, o MD5 é considerado **completamente inseguro** para qualquer aplicação que exija resistência a colisões, como assinaturas digitais ou armazenamento de senhas. Seu uso deve ser evitado.
+
+##### O Papel do _Salt_
+
+Um dos principais usos dos hashes é o armazenamento de senhas. Como vimos, a principal fraqueza desse método são os ataques pré-computados (_Rainbow Tables_). Para mitigar esse risco, utiliza-se uma técnica indispensável chamada **_salting_** (salga).
+
+O _salt_ é um valor aleatório e único que é gerado para cada usuário no momento de seu cadastro. Esse "sal" é então concatenado à senha do usuário **antes** de a função de hash ser aplicada. O resultado é que, mesmo que dois usuários escolham a mesma senha "123456", os hashes armazenados no banco de dados serão completamente diferentes, pois cada um foi combinado com um _salt_ único.
+
+- **Exemplo:**
+    - Hash de "senhafraca" (sem _salt_): `855755b706c81373286026a2fc134603`
+    - Hash de "sal_aleatorio_1" + "senhafraca": `01a3d90297598683584109401b10631d`
+    - Hash de "sal_aleatorio_2" + "senhafraca": `b8f4136938a728795e96a41300959453`
+
+O _salt_ não é um segredo; ele é armazenado em texto claro no banco de dados, junto com o hash resultante. Sua função é garantir que cada hash seja único, tornando os ataques de _Rainbow Table_ ineficazes.
+
+#### Família SHA (_Secure Hash Algorithm_)
+
+Desenvolvida pela Agência de Segurança Nacional dos EUA (NSA) e padronizada pelo NIST, a família de algoritmos **SHA** é a sucessora da família MD e o padrão de fato para a maioria das aplicações seguras hoje.
+
+- **SHA-1:** Lançado em 1995, o SHA-1 produz um hash de **160 bits**. Por muitos anos, foi considerado o padrão-ouro e substituiu o MD5. No entanto, assim como seu predecessor, fraquezas teóricas foram descobertas e, em 2017, um ataque prático de colisão foi demonstrado publicamente. Por essa razão, o SHA-1 também é hoje considerado **inseguro e obsoleto** para fins de assinatura digital e outras aplicações de segurança.
+- **SHA-2:** Esta não é uma única função, mas uma **família** de funções de hash com diferentes tamanhos de saída. As mais comuns são:
+    - **SHA-256:** Produz um hash de 256 bits. É o algoritmo utilizado na _blockchain_ do Bitcoin e o mais comum em certificados digitais e assinaturas de software hoje.
+    - **SHA-512:** Produz um hash de 512 bits, oferecendo um nível de segurança ainda maior.
+    - **SHA-224 e SHA-384:** São versões truncadas do SHA-256 e do SHA-512, respectivamente.
+        
+        A família SHA-2 é, atualmente, considerada robusta e segura, sendo a mais amplamente utilizada no mundo.
+- **SHA-3:** Em um processo semelhante ao que levou à criação do AES, o NIST realizou uma competição pública para selecionar um novo padrão de hash, como uma alternativa proativa caso futuras fraquezas fossem encontradas no SHA-2. O algoritmo vencedor, chamado Keccak, foi padronizado como SHA-3. Ele possui um design interno completamente diferente do SHA-2, mas oferece os mesmos tamanhos de saída (224, 256, 384 e 512 bits) e também é considerado **altamente seguro**.
+
