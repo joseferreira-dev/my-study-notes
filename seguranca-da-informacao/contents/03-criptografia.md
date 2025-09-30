@@ -167,3 +167,35 @@ Além do ECB e do CBC, existem outros modos de operação importantes, cada um c
 - **Output Feedback (OFB):** O modo OFB é conceitualmente muito similar ao CFB, pois também opera como uma cifra de fluxo, gerando um _keystream_ que é combinado com o texto claro via XOR. A diferença fundamental é que a **realimentação (_feedback_) é feita pela saída do próprio algoritmo de cifragem**, e não pelo texto cifrado. Isso significa que o _keystream_ é gerado de forma independente do texto claro e do texto cifrado. A principal vantagem dessa abordagem é que **erros de transmissão não se propagam**. Um erro em um bit do texto cifrado afetará apenas o bit correspondente no texto claro, sem corromper os blocos subsequentes.
 - **Counter (CTR):** O modo Contador é um dos mais modernos e eficientes. Assim como o OFB, ele transforma a cifra de bloco em uma cifra de fluxo. No entanto, em vez de usar realimentação, ele gera o _keystream_ cifrando os valores de um **contador**. Para cada bloco de texto claro, um contador é incrementado e cifrado, e o resultado é combinado com o texto claro via XOR. Como a geração do _keystream_ para cada bloco depende apenas do valor do contador (que é previsível) e não do resultado de blocos anteriores, o modo CTR permite um **alto grau de paralelismo**, tanto na cifragem quanto na decifragem. Isso o torna um dos modos de operação de mais alto desempenho.
 
+### Cifragem de Fluxo (_Stream Cipher_)
+
+Diferentemente das cifras de bloco, que operam sobre grupos de dados de tamanho fixo, as **cifras de fluxo** (_stream ciphers_) são projetadas para cifrar a informação de forma contínua, à medida que ela chega. Como o próprio nome remete, a ideia é ser um processo mais dinâmico e ágil, aplicando o algoritmo de cifragem a unidades de dados muito pequenas, como um bit ou um byte de cada vez.
+
+Essa característica torna a cifragem de fluxo ideal para cenários onde os dados são gerados ou transmitidos como um fluxo contínuo e o tempo de latência é crítico. O exemplo mais claro é a transmissão de mídias, como _streaming_ de vídeo ou chamadas de voz sobre IP (VoIP). Nessas aplicações, não é viável esperar que um bloco inteiro de 128 bits de dados de áudio seja acumulado antes de ser cifrado e enviado; a cifragem precisa ocorrer em tempo real para garantir uma comunicação fluida.
+
+#### Mecanismo de Funcionamento: _Keystream_ e a Operação XOR
+
+A maioria das cifras de fluxo opera com base em um princípio simples e elegante. O algoritmo criptográfico utiliza uma chave secreta para gerar uma sequência de dados pseudoaleatórios chamada de **_keystream_** (fluxo de chave). Este _keystream_ tem o mesmo comprimento da mensagem original.
+
+A cifragem, então, ocorre combinando o texto plano com o _keystream_ através da operação **XOR**. O resultado dessa operação é o texto cifrado.
+
+- **Cifragem:** `Texto Cifrado = Texto Plano ⊕ Keystream`
+
+A beleza desse método reside na sua simetria. Para decifrar a mensagem, o destinatário, que possui a mesma chave secreta, utiliza-a para gerar o mesmo _keystream_. Ele então combina o texto cifrado recebido com o _keystream_ novamente via XOR. Como a operação XOR é sua própria inversa (`A ⊕ B ⊕ B = A`), o resultado é o texto plano original.
+
+- **Decifragem:** `Texto Plano = Texto Cifrado ⊕ Keystream`
+
+A segurança de todo o sistema depende inteiramente da qualidade e da imprevisibilidade do _keystream_. Se um atacante conseguir prever o _keystream_, ele poderá decifrar a mensagem com a mesma facilidade que o destinatário legítimo.
+
+#### Vantagens e Desvantagens da Cifragem de Fluxo
+
+- **Vantagens:**
+    - **Velocidade:** Geralmente são muito rápidas e exigem menos recursos computacionais que as cifras de bloco.
+    - **Baixa Latência:** Por operarem em pequenas unidades de dados, são ideais para aplicações em tempo real.
+    - **Sem Necessidade de _Padding_:** Como cifram bit a bit ou byte a byte, não há necessidade de adicionar dados de preenchimento (_padding_) à mensagem, como ocorre nas cifras de bloco.
+- **Desvantagens:**
+    - **Vulnerabilidade à Reutilização da Chave:** A regra de ouro da cifragem de fluxo é: **nunca reutilize o mesmo _keystream_**. Se duas mensagens diferentes forem cifradas com o mesmo _keystream_, um atacante que intercepte ambos os textos cifrados poderá combiná-los via XOR, o que cancela o _keystream_ e revela informações sobre os textos planos originais.
+    - **Falta de Integridade:** As cifras de fluxo, em sua forma pura, não oferecem garantia de integridade. Um atacante pode alterar bits no texto cifrado e essa alteração se refletirá de forma previsível no texto claro decifrado, sem que o destinatário perceba a manipulação. Por essa razão, elas são quase sempre utilizadas em conjunto com um **Código de Autenticação de Mensagem (MAC)** para garantir a integridade.
+
+Como vimos nos tópicos anteriores, os modos de operação **CFB, OFB e CTR** são, na prática, maneiras de utilizar uma cifra de bloco para que ela se comporte como uma cifra de fluxo, gerando um _keystream_ para ser combinado com o texto plano.
+
