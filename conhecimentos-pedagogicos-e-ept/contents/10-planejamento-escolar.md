@@ -236,3 +236,28 @@ Como o exemplo demonstra, um bom plano de ação, para ser eficaz, precisa conte
 - Os **indicadores e instrumentos** para avaliar os resultados do próprio plano.
 
 Ao reunir um conjunto de planos de ação como este, o Projeto Político-Pedagógico se firma como um documento que organiza as ações concretas a serem executadas, sempre levando em conta que a escola é um espaço para a formação de cidadãos críticos e participativos, em um processo de construção democrática e coletiva.
+
+## Planejamento Curricular
+
+Como vimos, a base de nossa discussão sobre planejamento se apoia nas ideias de Libâneo. No entanto, é preciso fazer um adendo importante: o autor não utiliza o termo "Planejamento Curricular" em sua classificação, na qual ele delimita como essenciais o plano da escola, o plano de ensino e o plano de aula. Contudo, outros autores importantes, como Celso Vasconcellos e Cipriano Luckesi, utilizam e definem este conceito. Nesta seção, iremos nos debruçar sobre ele a partir do olhar desses teóricos.
+
+#### Definições de Planejamento Curricular
+
+O planejamento curricular pode ser entendido como o processo de prever e organizar, de forma sistemática e ordenada, a totalidade das experiências de aprendizagem que a escola irá oferecer aos seus estudantes ao longo de sua trajetória. É um nível de planejamento mais amplo que o plano de ensino do professor, mas mais específico que o plano da escola (PPP). Autores de referência o definem da seguinte forma:
+
+Para **Celso Vasconcellos**, o planejamento curricular é:
+
+> [...] processo de tomada de decisões sobre a dinâmica da ação escolar. É previsão sistemática e ordenada de toda a vida escolar do aluno. Portanto, essa modalidade de planejar constitui um instrumento que orienta a ação educativa na escola, pois a preocupação é com a proposta geral das experiências de aprendizagem que a escola deve oferecer ao estudante, através dos diversos componentes curriculares. (VASCONCELLOS, 1995, p. 56).
+
+Já para **Cipriano Luckesi**, trata-se de:
+
+> [...] uma tarefa multidisciplinar que tem por objetivo a organização de um sistema de relações lógicas e psicológicas dentro de um ou vários campos de conhecimento, de tal modo que se favoreça ao máximo o processo ensino-aprendizagem. É, dessa forma, a previsão de todas as atividades que o educando realiza sob a orientação da escola para atingir os fins da educação. (LUCKESI, 2006, p.112).
+
+A partir dessas definições, devemos entender o planejamento curricular como uma forma de antever e estruturar sistematicamente o que será ensinado. Esse planejamento pode ocorrer em diferentes esferas: os documentos curriculares oficiais dos sistemas federal, estaduais e municipais são, em sua essência, produtos de um amplo planejamento curricular.
+
+#### A Complexidade da Escolha Curricular
+
+Como aponta o pesquisador **César Coll**, definir o currículo é uma das tarefas mais complexas da prática educativa. Fazer escolhas sobre o que ensinar e quais são as prioridades é uma tarefa de enorme responsabilidade, que exige clareza quanto aos objetivos da escola e ao ideal de ser humano que se pretende formar.
+
+O planejamento curricular, portanto, não é uma simples organização de conteúdos, mas uma **ação pedagógica intencional e estratégica**, que visa garantir uma formação integral, crítica e emancipatória dos alunos. Envolve decisões coletivas, análise de contextos e clareza sobre os objetivos educacionais, sendo, por isso, fundamental para uma prática docente coerente e transformadora.
+
