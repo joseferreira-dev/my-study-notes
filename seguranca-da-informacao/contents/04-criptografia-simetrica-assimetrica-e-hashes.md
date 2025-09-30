@@ -312,3 +312,52 @@ De uma perspectiva conceitual e simplificada, pode-se traçar um paralelo entre 
 
 Vamos conhecer agora os principais algoritmos que implementam este paradigma.
 
+### Diffie-Hellman (DH): A Troca Segura de Chaves
+
+O algoritmo **Diffie-Hellman (DH)** não é, estritamente falando, um algoritmo de cifragem. Sua finalidade não é cifrar e decifrar mensagens, mas sim resolver o problema mais fundamental da criptografia simétrica: como duas partes, que nunca se comunicaram antes, podem estabelecer uma chave secreta compartilhada através de um canal de comunicação inseguro (como a internet), sem que um interceptador consiga descobrir essa chave?
+
+O DH é um protocolo de **acordo de chaves** (_key agreement_). Ele providencia um meio matemático para que duas partes, como Alice e Bob, possam, de forma independente, chegar ao mesmo segredo compartilhado, sem que esse segredo jamais seja transmitido pela rede. Esse segredo pode então ser usado como a chave para um algoritmo de criptografia simétrica (como o AES) para proteger a comunicação subsequente. Protocolos de segurança robustos, como o **IPSec** (usado em VPNs) e o **TLS/SSL** (que protege a navegação web via HTTPS), utilizam o DH como pilar para o estabelecimento de seus canais seguros.
+
+#### A Analogia das Cores
+
+Antes de mergulharmos na matemática, a maneira mais didática de entender o funcionamento do Diffie-Hellman é através de uma analogia com a mistura de cores.
+
+<div align="center">
+<img width="360px" src="./img/04-dh-operacoes-cores.png">
+</div>
+
+1. **Acordo Público:** Alice e Bob primeiro concordam publicamente com uma cor inicial comum (ex: amarelo). Um interceptador também conhecerá essa cor.
+2. **Segredos Privados:** Cada um escolhe uma cor secreta que apenas eles conhecem. Alice escolhe vermelho e Bob escolhe verde.
+3. **Mistura e Troca Pública:** Alice mistura sua cor secreta (vermelho) com a cor pública (amarelo), resultando em laranja, e envia essa cor para Bob. Bob faz o mesmo, misturando sua cor secreta (verde) com a pública (amarelo), resultando em azul-esverdeado, e envia para Alice. O interceptador agora vê as cores laranja e azul-esverdeado, mas não consegue "separar" as cores secretas originais.
+4. **Criação do Segredo Compartilhado:** Alice pega a cor que recebeu de Bob (azul-esverdeado) e a mistura com sua própria cor secreta (vermelho). Bob faz o mesmo, misturando a cor que recebeu de Alice (laranja) com sua própria cor secreta (verde).
+5. **Resultado:** Ambos chegarão exatamente à mesma cor final (um tom de marrom), que é o segredo compartilhado. O interceptador, mesmo possuindo a cor pública e as duas cores misturadas, não consegue chegar a essa cor final.
+
+##### O Mecanismo Matemático
+
+A robustez do Diffie-Hellman reside na complexidade matemática do **problema do logaritmo discreto**. Em termos simples, é fácil calcular o resultado de uma exponenciação modular ($g^a \pmod p$), mas é computacionalmente inviável encontrar o expoente `a` conhecendo apenas a base `g`, o módulo `p` e o resultado.
+
+<div align="center">
+
+<img width="480px" src="./img/04-dh-operacoes.png">
+
+</div>
+
+O fluxo de operação, conforme ilustrado no diagrama, é o seguinte:
+
+1. **Parâmetros Públicos:** Bob e Alice concordam com dois números públicos: um grande número primo `p` e uma base `g`.
+2. **Chaves Privadas:** Bob escolhe um número secreto `a`, e Alice escolhe um número secreto `b`.
+3. **Cálculo das Chaves Públicas:** Bob calcula sua chave pública $A = g^a \pmod p$ e a envia para Alice. Alice calcula sua chave pública $B = g^b \pmod p$ e a envia para Bob.
+4. **Geração da Chave Compartilhada (K):** Agora, cada um pode calcular a chave secreta compartilhada.
+    - Bob utiliza a chave pública que recebeu de Alice (`B`) e seu próprio número secreto (`a`): $K = B^a \pmod p$.
+    - Alice utiliza a chave pública que recebeu de Bob (`A`) e seu próprio número secreto (`b`): $K = A^b \pmod p$.
+
+Devido às propriedades da matemática modular, ambos chegarão ao mesmo valor de `K`, que se torna a chave simétrica para a sessão, sem que `K` jamais tenha sido transmitido pela rede.
+
+##### Evoluções: ECDH e _Perfect Forward Secrecy_ (PFS)
+
+As versões mais modernas do Diffie-Hellman utilizam a **Criptografia de Curva Elíptica (ECC)**, resultando no protocolo **ECDH**. Ele atinge o mesmo objetivo, mas com chaves muito menores, o que o torna mais rápido e eficiente.
+
+O uso do DH (especialmente o ECDH) é fundamental para uma propriedade de segurança chamada **_Perfect Forward Secrecy_ (PFS)**. No PFS, um novo acordo de chaves DH é realizado para cada nova sessão de comunicação. Isso significa que cada sessão tem uma chave simétrica única e efêmera. Mesmo que um atacante consiga, no futuro, roubar a chave privada de longo prazo de um servidor, ele não conseguirá decifrar as comunicações passadas que foram gravadas, pois cada uma foi protegida por uma chave de sessão diferente, que já foi descartada.
+
+Existem diferentes implementações do Diffie-Hellman, que variam de acordo com a forma como as chaves são utilizadas (anônimas, estáticas ou efêmeras), o que impacta o nível de segurança e autenticação da troca.
+
