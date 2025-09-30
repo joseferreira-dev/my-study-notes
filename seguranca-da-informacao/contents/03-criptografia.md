@@ -448,3 +448,14 @@ O mercado de HSMs é consolidado e dominado por alguns fornecedores especializad
 - **Utimaco**.
 - **Yubico:** Embora mais conhecida por suas chaves de segurança FIDO2, também oferece dispositivos que funcionam como HSMs portáteis.
 
+## Considerações Finais
+
+Neste capítulo, mergulhamos no universo da **Criptografia**, a ciência fundamental que transforma a informação em um segredo, garantindo a confidencialidade e a integridade dos dados no mundo digital. Iniciamos nossa jornada pela sua essência, compreendendo sua etimologia como a "escrita oculta" e distinguindo-a de sua contraparte, a criptoanálise, a arte de quebrar códigos.
+
+Exploramos os métodos clássicos de cifragem — **Substituição**, **Transposição** e a arte de ocultar a existência da mensagem, a **Esteganografia** —, que, embora simples, estabeleceram os princípios para os algoritmos modernos. A partir daí, avançamos para a criptografia contemporânea, detalhando o funcionamento das **cifras de bloco** e a importância crucial de seus **modos de operação**. Vimos como o inseguro modo **ECB** revela padrões e como modos mais robustos, como o **CBC**, o corrigem através do encadeamento. Analisamos também os modos **CFB**, **OFB** e **CTR**, que permitem que uma cifra de bloco opere como uma **cifra de fluxo**, ideal para a transmissão de dados em tempo real.
+
+Do ponto de vista prático e forense, investigamos como os dados criptografados se manifestam em um sistema, seja em **arquivos individuais**, **discos virtuais** ou através da **criptografia de disco inteiro (FDE)**, e como técnicas de **análise de entropia** e de assinaturas são utilizadas para identificá-los. Em seguida, assumimos a perspectiva do atacante, detalhando os métodos de decifragem, desde os ataques de **Força Bruta** e de **Dicionário** até as sofisticadas abordagens **Probabilísticas**.
+
+Por fim, contextualizamos a aplicação da criptografia nas arquiteturas de TI atuais, comparando as abordagens _on-premises_ e em nuvem, e destacamos o papel indispensável do **Hardware Security Module (HSM)** como o "cofre" definitivo para a proteção das chaves criptográficas, o segredo mais crítico de todo o sistema.
+
+Concluímos, portanto, que a criptografia é muito mais do que um simples "embaralhamento" de dados. É um campo complexo e vital, uma batalha contínua entre a criação de cifras seguras e a tentativa de quebrá-las. Dominar seus conceitos é essencial não apenas para proteger a informação, mas para construir a confiança sobre a qual todas as nossas interações digitais se baseiam. Com este alicerce estabelecido, estamos preparados para explorar outras ferramentas e mecanismos de defesa que compõem o arsenal da Segurança da Informação.
