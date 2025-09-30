@@ -420,3 +420,104 @@ Traduzindo a analogia para o fluxo matemático do Diffie-Hellman, o ataque ocorr
 
 Com isso, Mallory estabeleceu duas sessões seguras e pode retransmitir, ler e modificar toda a comunicação. A defesa contra este ataque, como vimos nos modos **estático e efêmero**, é a **autenticação das chaves públicas** através de certificados e assinaturas digitais, que garantem que Alice e Bob tenham certeza da identidade um do outro antes de completarem o acordo de chaves.
 
+### Rivest, Shamir e Adleman (RSA)
+
+Publicado em 1977 por seus criadores Ron Rivest, Adi Shamir e Leonard Adleman, o algoritmo **RSA** é, sem dúvida, o mais famoso e influente da criptografia assimétrica. Baseado nas propostas conceituais do Diffie-Hellman, o RSA foi o primeiro algoritmo a fornecer uma implementação prática e completa para as duas grandes funções da criptografia de chave pública: a **cifragem de dados** para garantir a confidencialidade e a criação de **assinaturas digitais** para garantir a autenticidade e o não-repúdio.
+
+Sua robustez e versatilidade o tornaram a espinha dorsal da segurança na internet por décadas. O RSA é um componente fundamental em protocolos como o **SSL/TLS** (que protege nossa navegação HTTPS) e é a base da **Infraestrutura de Chave Pública (PKI - _Public Key Infrastructure_)**, o ecossistema de certificados digitais que permite verificar a identidade de sites, softwares e pessoas na internet.
+
+#### A Matemática por Trás da Segurança
+
+A segurança do RSA reside na **dificuldade computacional de se fatorar números primos muito grandes**. O algoritmo se baseia em um princípio simples: é fácil para um computador multiplicar dois números primos enormes para obter um terceiro número (o módulo `n`). No entanto, se você tiver apenas o resultado `n`, é extremamente difícil e demorado encontrar os dois números primos originais (`p` e `q`) que o geraram. Toda a segurança do RSA depende dessa "via de mão única" matemática.
+
+Devido ao avanço do poder computacional, o tamanho da chave do RSA precisou aumentar ao longo do tempo. Atualmente, para garantir uma robustez adequada contra ataques, sugere-se a utilização de chaves de **2048 ou 4096 bits**. Chaves menores, como as de 1024 bits, embora ainda utilizadas em alguns sistemas legados, não são mais consideradas seguras para novas aplicações, pois já estão no limiar de serem quebradas por ataques de força bruta. É importante notar que existe um _trade-off_: quanto maior a chave, mais seguro o algoritmo se torna, mas também mais lento e computacionalmente mais exigente ele é.
+
+##### Processo de Geração de Chaves
+
+A geração do par de chaves pública e privada no RSA segue um processo matemático preciso:
+
+1. **Escolha de Primos:** Escolhem-se dois números primos (`p` e `q`) muito grandes e aleatórios.
+2. **Cálculo do Módulo:** Calcula-se o módulo `n`, que fará parte tanto da chave pública quanto da privada, através da multiplicação: `n = p * q`.
+3. **Cálculo do Totiente:** Calcula-se a função totiente de Euler em `n`: `φ(n) = (p-1) * (q-1)`. O resultado indica a quantidade de números inteiros positivos menores que `n` que são primos relativos a `n`.
+4. **Escolha do Expoente Público:** Escolhe-se um inteiro `e` (o expoente de cifragem) que seja maior que 1 e menor que `φ(n)`, e que seja coprimo a `φ(n)` (ou seja, o máximo divisor comum entre `e` e `φ(n)` é 1).
+5. **Cálculo do Expoente Privado:** Calcula-se o expoente `d` (o expoente de decifragem), que deve ser o **inverso multiplicativo modular** de `e` em relação a `φ(n)`. Isso significa que `d` deve satisfazer a equação `(d * e) mod φ(n) = 1`. Esse cálculo é geralmente realizado com o Algoritmo de Euclides Estendido.
+
+Ao final do processo, temos:
+
+- A **Chave Pública**, que é o par **`(n, e)`**.
+- A **Chave Privada**, que é o número **`d`**. Embora apenas `d` seja necessário para a decifragem, os valores `p` e `q` são geralmente mantidos como parte da chave privada para acelerar os cálculos.
+
+##### Cifragem e Decifragem
+
+Com o par de chaves gerado, os processos de cifragem e decifragem são operações de exponenciação modular.
+
+**Para Cifrar:** Para transformar uma mensagem m em um texto cifrado c, utiliza-se a chave pública (n, e) do destinatário:
+
+$c = m^e \pmod n$
+
+**Para Decifrar:** Para recuperar a mensagem m a partir do texto cifrado c, utiliza-se a chave privada d do destinatário:
+
+$m = c^d \pmod n$
+
+Assim como as cifras de bloco simétricas, o RSA opera sobre blocos de dados de tamanho limitado, que devem ser numericamente menores que o módulo `n`.
+
+### ElGamal
+
+Desenvolvido por Taher Elgamal em 1985, o algoritmo **ElGamal** é um sistema de criptografia assimétrica cujo funcionamento e segurança são baseados na mesma fundação matemática do protocolo Diffie-Hellman: a **dificuldade computacional de se calcular logaritmos discretos** em um corpo finito.
+
+Sua principal aplicação se dá em duas áreas cruciais da criptografia moderna: a criação de **assinaturas digitais** (através de uma variante chamada DSA - _Digital Signature Algorithm_) and a **troca segura de chaves** para o estabelecimento de comunicações. Um exemplo notável de sua utilização é sua incorporação em padrões de criptografia de e-mail, como o **PGP (_Pretty Good Privacy_)**.
+
+O sistema ElGamal é composto por três componentes básicos:
+
+1. **Gerador de Chaves:** O algoritmo para a criação do par de chaves pública e privada.
+2. **Algoritmo de Cifragem:** O processo para criptografar a mensagem.
+3. **Algoritmo de Decifragem:** O processo para decifrar a mensagem.
+
+Uma característica interessante do ElGamal é que o texto cifrado resultante é, tipicamente, duas vezes maior que o texto plano original. Além disso, o algoritmo possui uma natureza probabilística, o que significa que cifrar a mesma mensagem várias vezes resultará em textos cifrados diferentes, uma propriedade que aumenta sua segurança contra certos tipos de ataques criptoanalíticos.
+
+### Criptografia de Curva Elíptica (ECC)
+
+A **Criptografia de Curva Elíptica (ECC - _Elliptic Curve Cryptography_)** é uma abordagem moderna e altamente eficiente para a criptografia de chave pública. Em vez de se basear na dificuldade de fatorar números primos grandes (como o RSA), a segurança do ECC está ancorada na complexidade matemática das curvas elípticas sobre corpos finitos.
+
+Sua principal e mais impactante vantagem é a capacidade de oferecer um nível de segurança equivalente ao do RSA, mas com **chaves muito menores**. Essa eficiência tem consequências práticas enormes:
+
+- **Desempenho:** Chaves menores exigem menos poder de processamento para serem geradas e utilizadas.
+- **Largura de Banda:** As chaves e assinaturas são menores, consumindo menos dados na transmissão.
+
+Essa combinação de alta segurança com baixo custo computacional tornou o ECC a escolha padrão para ambientes com recursos limitados, como **dispositivos móveis**, cartões inteligentes (_smart cards_) e o universo da **Internet das Coisas (IoT)**.
+
+O ECC não é um algoritmo único, mas um _framework_ que serve de base para outros protocolos, como:
+
+- **ECDH (_Elliptic Curve Diffie-Hellman_):** Uma versão mais eficiente do Diffie-Hellman para a troca segura de chaves.
+- **ECDSA (_Elliptic Curve Digital Signature Algorithm_):** O padrão para assinaturas digitais baseadas em curvas elípticas, utilizado em criptomoedas como o Bitcoin.
+
+#### Considerações de Segurança do ECC
+
+Apesar de sua robustez, a segurança de uma implementação ECC depende de dois fatores críticos:
+
+1. **A Escolha da Curva:** A segurança do sistema depende fundamentalmente da escolha de uma curva elíptica "bem escolhida", que não possua fraquezas matemáticas conhecidas. O uso de curvas padronizadas e amplamente analisadas pela comunidade criptográfica (como as definidas pelo NIST) é crucial. Curvas fracas ou mal implementadas podem conter vulnerabilidades ou até mesmo _backdoors_.
+2. **A Qualidade da Geração de Números Aleatórios:** A geração da chave privada em um sistema ECC exige uma fonte de números aleatórios de alta qualidade. Uma falha neste processo pode comprometer toda a segurança. O caso mais famoso ocorreu em 2010 com a Sony, que, em sua implementação do ECDSA para o PlayStation 3, utilizou um valor aleatório fixo em vez de um genuinamente aleatório. Essa falha permitiu que _hackers_ calculassem a chave privada mestra do console, quebrando sua segurança.
+
+### One-Time Pad (OTP)
+
+O **One-Time Pad (OTP)**, ou cifra de uso único, é uma técnica de criptografia que ocupa um lugar especial na história da criptologia. Se implementado corretamente, é o **único sistema criptográfico matematicamente provado como incondicionalmente seguro**, ou seja, inquebrável.
+
+Seu funcionamento é, em teoria, muito simples. A cifragem ocorre combinando o texto plano, caractere por caractere (ou bit a bit), com uma chave secreta através da operação XOR.
+
+Para que o OTP atinja a segurança perfeita, três regras estritas e inegociáveis devem ser seguidas:
+
+1. A chave deve ser **verdadeiramente aleatória**.
+2. A chave deve ter, no mínimo, o **mesmo tamanho da mensagem** a ser cifrada.
+3. A chave deve ser utilizada **uma única vez** (_one-time_) e, em seguida, completamente destruída.
+
+A quebra de qualquer uma dessas regras invalida a garantia de segurança incondicional.
+
+Apesar de sua perfeição teórica, o OTP é extremamente impraticável para a maioria das aplicações modernas. O requisito de gerar, distribuir de forma segura e gerenciar uma chave secreta do mesmo tamanho de cada mensagem a ser enviada é um desafio logístico monumental. Seu uso histórico foi restrito a comunicações de altíssimo sigilo, como linhas diretas diplomáticas e militares.
+
+#### Segurança Incondicional vs. Computacional
+
+A análise do OTP nos permite diferenciar dois conceitos fundamentais de segurança:
+
+- **Segurança Incondicional:** É a propriedade do One-Time Pad. Significa que a cifra não pode ser quebrada, não importa quanto poder computacional ou tempo o atacante tenha à sua disposição.
+- **Segurança Computacional:** É a propriedade de todos os outros algoritmos modernos que estudamos (DES, AES, RSA, ECC). Significa que, embora seja teoricamente possível quebrar a cifra (por exemplo, por força bruta), o **custo** para fazê-lo (em tempo e recursos) é tão astronomicamente alto que se torna impraticável. A segurança reside no fato de que o custo para quebrar a cifra é muito superior ao valor da informação protegida, ou o tempo necessário para a quebra é maior que o tempo de vida útil da própria informação.
+
