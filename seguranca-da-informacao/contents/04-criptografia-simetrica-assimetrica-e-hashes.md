@@ -192,3 +192,45 @@ Em cada rodada, o AES aplica uma sequência de quatro transformações matemáti
 
 Esses quatro estágios são repetidos por 10, 12 ou 14 vezes. É importante notar que todos os estágios são projetados para serem reversíveis, o que permite que o processo de decifragem aplique as transformações inversas para recuperar o texto claro original.
 
+#### Outros Algoritmos Simétricos Notáveis
+
+Além do DES e do AES, que foram ou são padrões governamentais, diversos outros algoritmos de criptografia simétrica tiveram grande impacto e continuam sendo relevantes, seja por seu legado histórico ou por sua robustez contínua.
+
+##### Blowfish
+
+O **Blowfish** é uma cifra de bloco simétrica projetada em 1993 pelo renomado criptógrafo Bruce Schneier. Ele foi criado com o objetivo explícito de ser um substituto rápido, gratuito e livre de patentes para o DES. Seus principais alvos de projeto foram:
+
+- Ser extremamente rápido em microprocessadores de 32 bits de propósito geral.
+- Oferecer um tamanho de chave flexível (variando de 32 a 448 bits) para se adaptar a diferentes requisitos de segurança.
+- Ser simples e compacto, facilitando sua implementação e análise.
+
+Arquiteturalmente, o Blowfish utiliza uma **rede de Feistel com 16 rodadas** e opera sobre **blocos de 64 bits**. Sua característica mais inovadora é o uso de **S-boxes dependentes da chave**. Diferente do DES, que possui S-boxes fixas, o Blowfish gera suas tabelas de substituição a partir da própria chave do usuário. Este é um processo de inicialização computacionalmente caro, mas que, uma vez concluído, permite que a cifragem subsequente seja muito veloz.
+
+A principal fraqueza do Blowfish hoje não está em seu design, mas em seu **tamanho de bloco de 64 bits**. Assim como outras cifras com blocos pequenos, ele é vulnerável a **ataques de aniversário** quando utilizado para cifrar grandes volumes de dados (na casa dos gigabytes), o que pode levar a vazamentos de informação. Por essa razão, seu uso é desaconselhado para novas aplicações que lidam com grandes quantidades de dados, tendo sido sucedido por seu "irmão mais novo", o Twofish.
+
+##### Twofish
+
+O **Twofish** foi projetado pela mesma equipe liderada por Bruce Schneier, como um candidato para a competição que selecionou o AES. Ele foi desenhado para ser tão seguro quanto seus concorrentes, mas oferecendo um alto grau de flexibilidade e desempenho em uma variedade de plataformas.
+
+O Twofish opera sobre **blocos de 128 bits** e aceita chaves de **128, 192 ou 256 bits**, as mesmas especificações do AES. Ele também utiliza uma **rede de Feistel com 16 rodadas**, mas adiciona camadas de segurança sofisticadas, como o _whitening_ (uma operação XOR com subchaves antes da primeira e depois da última rodada) e o uso de S-boxes complexas, que também são dependentes da chave.
+
+Livre de patentes e de código aberto, o Twofish é um algoritmo extremamente robusto. Desde sua publicação, **nenhum ataque prático que comprometa a cifra completa foi descoberto**. Seu bloco de 128 bits elimina o risco de colisões que afeta as cifras de 64 bits, garantindo uma longevidade comparável à do próprio AES. Por sua segurança comprovada, ele continua a ser uma alternativa popular ao AES em muitos projetos de código aberto.
+
+##### IDEA (_International Data Encryption Algorithm_)
+
+Desenvolvido na Suíça no início dos anos 1990, o **IDEA** é outra cifra de bloco que ganhou notoriedade por sua força e por seu design inovador. Ele opera sobre **blocos de 64 bits** e utiliza uma **chave de 128 bits**.
+
+Sua estrutura não é uma rede de Feistel. Em vez disso, suas 8,5 rodadas de processamento combinam, de forma engenhosa, operações de três grupos algébricos diferentes: **XOR**, **adição modular** e **multiplicação modular**. Essa mistura de operações lineares e não-lineares foi projetada para oferecer forte resistência contra a criptoanálise diferencial, uma das técnicas de ataque mais poderosas da época.
+
+O IDEA é mais conhecido por ter sido o algoritmo de criptografia utilizado na versão 2.0 do **PGP (_Pretty Good Privacy_)**, um dos softwares de criptografia de e-mail mais famosos da história. Assim como o Blowfish, sua principal limitação hoje é o tamanho de bloco de 64 bits.
+
+##### Síntese Comparativa
+
+A tabela a seguir resume e compara as principais características desses três algoritmos.
+
+|Algoritmo|Tipo/Estrutura|Tamanho do Bloco|Tamanhos de Chave|Número de Rodadas|Estado de Segurança Atual|Uso Típico/Observações|
+|---|---|---|---|---|---|---|
+|**Blowfish**|Cifra de bloco simétrica, rede de Feistel.|64 bits|32 a 448 bits|16|Sem ataques práticos à versão completa; vulnerável a colisões em volumes muito altos por causa do bloco de 64 bits.|_Hashing_ de senhas (bcrypt), softwares legados.|
+|**Twofish**|Cifra de bloco simétrica, rede de Feistel.|128 bits|128, 192 ou 256 bits|16|Nenhum ataque prático conhecido; foi um dos finalistas do processo AES.|Alternativa ao AES em projetos _open-source_, discos criptografados.|
+|**IDEA**|Cifra de bloco simétrica; combina XOR, adição e multiplicação.|64 bits|128 bits|8,5|Considerada segura; a principal limitação é o bloco de 64 bits.|Versões clássicas do PGP, sistemas legados.|
+
