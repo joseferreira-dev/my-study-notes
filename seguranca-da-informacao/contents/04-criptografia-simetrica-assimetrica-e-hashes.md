@@ -84,3 +84,42 @@ O design do DES é um exemplo clássico da aplicação de duas propriedades fund
 
 Por fim, vale reforçar o **Princípio de Kerckhoffs**, que é um pilar da criptografia moderna. Ele estabelece que a segurança de um sistema criptográfico não deve depender do sigilo do algoritmo, mas unicamente do **sigilo da chave**. Os algoritmos, como o DES, devem ser públicos e abertos ao escrutínio da comunidade para que suas fraquezas possam ser encontradas e sua robustez, comprovada.
 
+#### 3DES (_Triple DES_)
+
+Com a crescente inviabilidade do DES frente ao avanço do poder computacional, a comunidade criptográfica precisava de uma solução mais robusta. Em vez de criar um algoritmo inteiramente novo do zero, uma solução engenhosa e de transição foi proposta: aplicar o já conhecido e amplamente analisado algoritmo DES múltiplas vezes. Assim nasceu o **Triple DES (3DES)**.
+
+A ideia, como o nome sugere, é aplicar o DES três vezes consecutivas sobre o mesmo bloco de dados. No entanto, para garantir a segurança e a retrocompatibilidade, o padrão adotado não foi uma simples cifragem tripla, mas sim um processo de **Cifrar-Decifrar-Cifrar (EDE - _Encrypt-Decrypt-Encrypt_)**.
+
+<div align="center">
+<img width="480px" src="./img/04-3des-operacoes.png">
+</div>
+
+O fluxo de operação é o seguinte:
+
+1. O bloco de texto claro é primeiro **cifrado** com uma chave K1.
+2. O resultado dessa cifragem é então **decifrado** com uma segunda chave, K2.
+3. Por fim, o resultado da decifragem é **cifrado** novamente com uma terceira chave, K3.
+
+A escolha de "decifrar" na etapa intermediária foi uma decisão de design inteligente, que permite a retrocompatibilidade com o DES original. Se as três chaves (K1, K2 e K3) forem idênticas, a primeira cifragem é imediatamente anulada pela segunda decifragem, e o resultado final é equivalente a uma única cifragem DES com aquela chave.
+
+##### Opções de Chave e Nível de Segurança
+
+O 3DES oferece duas principais configurações para as chaves, o que impacta diretamente sua robustez:
+
+- **Opção de 3 Chaves:** K1, K2 e K3 são três chaves DES independentes de 56 bits cada. Isso resulta em um tamanho de chave total de 56 x 3 = **168 bits**. No entanto, devido a um tipo de ataque conhecido como "_meet-in-the-middle_", a força de segurança efetiva do 3DES nesta configuração é considerada de **112 bits**, e não os 168 bits nominais.
+- **Opção de 2 Chaves:** Nesta configuração, a primeira e a terceira chaves são idênticas (K1 = K3), e a segunda chave (K2) é diferente. Esta foi uma opção popular para simplificar o gerenciamento das chaves. A força de segurança, neste caso, é de 56 x 2 = **112 bits**.
+
+##### Processo de Decifragem
+
+O processo de decifragem do 3DES é a exata operação inversa da cifragem. Para obter o texto claro a partir do texto cifrado, aplica-se a sequência **Decifrar-Cifrar-Decifrar (DED)**, utilizando as mesmas chaves na ordem inversa.
+
+<div align="center">
+<img width="400px" src="./img/04-3des-decriptacao.png">
+</div>
+
+1. O texto cifrado é primeiro **decifrado** com a chave K3.
+2. O resultado é então **cifrado** com a chave K2.
+3. Finalmente, o resultado é **decifrado** com a chave K1, revelando o texto claro original.
+
+Apesar de ter sido uma solução eficaz para estender a vida útil do DES, o 3DES também é hoje considerado obsoleto para novas aplicações. Seus principais problemas são o **baixo desempenho** (por executar o algoritmo DES três vezes) e o **tamanho de bloco pequeno** (64 bits), herdado do DES original. Ele foi oficialmente substituído pelo AES como o padrão recomendado.
+
