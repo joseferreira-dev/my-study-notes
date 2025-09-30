@@ -123,3 +123,72 @@ O processo de decifragem do 3DES é a exata operação inversa da cifragem. Para
 
 Apesar de ter sido uma solução eficaz para estender a vida útil do DES, o 3DES também é hoje considerado obsoleto para novas aplicações. Seus principais problemas são o **baixo desempenho** (por executar o algoritmo DES três vezes) e o **tamanho de bloco pequeno** (64 bits), herdado do DES original. Ele foi oficialmente substituído pelo AES como o padrão recomendado.
 
+#### Rivest Cipher (RC)
+
+Desenvolvida por Ron Rivest na RSA Security, a família de algoritmos "Rivest Cipher" (RC) representa uma série de cifras simétricas que tiveram um impacto significativo na indústria. Embora compartilhem o mesmo criador, suas versões possuem arquiteturas e finalidades distintas. As que mais aparecem na literatura técnica são a RC4, a RC5 e a RC6.
+
+##### RC4: A Cifra de Fluxo Onipresente
+
+O **RC4** é, de longe, o mais conhecido e historicamente o mais utilizado da família. Sua principal característica é ser uma **cifra de fluxo** (_stream cipher_) orientada a byte. Ele é conhecido por sua extrema simplicidade e alta velocidade de implementação em software.
+
+- **Funcionamento:** O RC4 utiliza uma chave de tamanho variável (de 40 a 2048 bits) para inicializar um "estado" interno, que é uma grande tabela de 256 bytes. A partir desse estado, um algoritmo de geração pseudoaleatória (PRGA) produz um fluxo contínuo de bytes, o _keystream_. Esse _keystream_ é então combinado com o texto claro via XOR para produzir o texto cifrado. A segurança do RC4 reside inteiramente na imprevisibilidade desse _keystream_.
+- **Uso Histórico:** Devido à sua velocidade e simplicidade, o RC4 foi um dos algoritmos de criptografia mais populares do mundo, sendo amplamente utilizado em protocolos como o **SSL/TLS** (para proteger a navegação web) e no padrão de segurança **WEP** (para redes Wi-Fi).
+- **Vulnerabilidades e Obsolescência:** Apesar de sua popularidade, diversas vulnerabilidades e vieses estatísticos foram descobertos no _keystream_ gerado pelo RC4 ao longo dos anos. Essas fraquezas o tornam suscetível a ataques que podem, com o tempo, revelar o texto plano. Por essa razão, o uso do RC4 é hoje **fortemente desaconselhado** e foi removido das versões mais recentes de protocolos seguros como o TLS 1.3.
+
+##### RC5: A Cifra de Bloco Parametrizada
+
+Diferente do RC4, o **RC5** é uma **cifra de bloco** notável por sua simplicidade e, principalmente, por sua alta **flexibilidade**. Ele foi projetado para ser "parametrizado", permitindo que o desenvolvedor ajuste três variáveis fundamentais para adequar o algoritmo a diferentes necessidades de segurança e desempenho:
+
+- **Tamanho de Bloco Variável:** Pode ser configurado para 32, 64 ou 128 bits.
+- **Tamanho de Chave Variável:** Pode variar de 0 a 2048 bits.
+- **Número de Rodadas Variável:** Pode variar de 0 a 255 rodadas de processamento.
+
+Essa capacidade de ajuste permite que o RC5 seja otimizado para diferentes plataformas de _hardware_. Seu design simples se baseia em três rotinas primitivas: adição, operação XOR e rotações de bits dependentes dos dados.
+
+##### RC6: O Sucessor Evoluído
+
+O **RC6** foi desenvolvido como uma evolução direta do RC5, com o objetivo de ser um dos candidatos no processo de seleção do novo Padrão de Criptografia Avançado (**AES**). Mantendo a estrutura básica de seu predecessor, o RC6 introduziu melhorias para aumentar sua segurança e desempenho:
+
+- **Estrutura:** Também é uma cifra de bloco, mas fixa seu tamanho de bloco em 128 bits para atender aos requisitos da competição AES.
+- **Melhorias:** O RC6 adicionou o uso da **multiplicação de inteiros** como uma de suas operações primitivas, o que aumenta significativamente a difusão dos bits por rodada, oferecendo maior segurança em menos rodadas. Além disso, enquanto o RC5 operava sobre duas metades do bloco (dois registradores), o RC6 opera sobre quatro, permitindo um embaralhamento mais complexo a cada rodada.
+
+Embora tenha sido um dos cinco finalistas da competição AES, o algoritmo escolhido para se tornar o novo padrão foi o Rijndael.
+
+#### AES (_Advanced Encryption Standard_): Padrão da Criptografia Moderna
+
+Com a obsolescência do DES e do 3DES, o governo dos Estados Unidos, através do NIST, promoveu uma competição aberta no final da década de 1990 para selecionar um novo algoritmo de criptografia que se tornaria o padrão para o século XXI. O vencedor foi um algoritmo chamado **Rijndael**, que foi então padronizado como o **Advanced Encryption Standard (AES)**.
+
+Hoje, o AES é o algoritmo de criptografia simétrica mais utilizado e confiável do mundo, presente em praticamente todos os protocolos e aplicações que exigem segurança, desde a proteção de transações bancárias e navegação web (TLS/SSL) até a criptografia de arquivos em seu computador e _smartphone_.
+
+Suas principais características são:
+
+- **Tamanho de Bloco Fixo:** O AES opera sobre blocos de dados de **128 bits**.
+- **Tamanhos de Chave Variáveis:** Ele suporta três tamanhos de chave: **128, 192 ou 256 bits**.
+
+A robustez de um algoritmo está diretamente ligada ao tamanho de sua chave. Como referência geral no cenário atual:
+
+- **64 bits (ou menos):** Considerado fraco e inseguro contra ataques de força bruta.
+- **128 bits:** Oferece um nível de segurança forte, adequado para a maioria das aplicações de rotina.
+- **256 bits:** Oferece um nível de segurança altíssimo, recomendado para a proteção de dados extremamente sensíveis e de longo prazo.
+
+##### Estrutura e Rodadas
+
+Uma diferença fundamental em relação ao DES é que o AES **não utiliza uma Rede de Feistel**. Sua arquitetura é baseada em um design conhecido como **Rede de Substituição-Permutação (SPN)**, no qual todo o bloco de dados é processado em cada rodada.
+
+O número de rodadas de processamento no AES não é fixo, mas varia de acordo com o tamanho da chave utilizada, para garantir que a complexidade da chave seja totalmente difundida pelo texto cifrado:
+
+- **Chave de 128 bits:** 10 rodadas
+- **Chave de 192 bits:** 12 rodadas
+- **Chave de 256 bits:** 14 rodadas
+
+##### A Anatomia de uma Rodada do AES
+
+Em cada rodada, o AES aplica uma sequência de quatro transformações matemáticas sobre o bloco de dados. Esses estágios são projetados para prover as propriedades de confusão e difusão de Shannon de forma altamente eficiente.
+
+1. **_SubBytes_** **(Substituição):** Este é um estágio de substituição não-linear. Cada byte do bloco é substituído por outro, de acordo com uma tabela de consulta fixa chamada S-box (a S-box do Rijndael). Esta é a principal fonte de **confusão** do algoritmo.
+2. **_ShiftRows_** **(Permutação):** Neste estágio, os bytes do bloco são organizados em uma matriz 4x4, e as linhas dessa matriz são deslocadas (rotacionadas) ciclicamente por diferentes offsets. Esta operação embaralha os bytes dentro do bloco, sendo uma importante fonte de **difusão**.
+3. **_MixColumns_** **(Substituição/Difusão):** Esta é uma operação de mistura que opera nas colunas da matriz de dados. Utilizando uma complexa aritmética sobre corpos finitos, ela combina os quatro bytes de cada coluna, garantindo que a alteração de um único byte na entrada afete todos os quatro bytes da coluna na saída. Este passo contribui enormemente para a **difusão**.
+4. **_AddRoundKey:_** Neste último estágio, a chave entra em ação. Uma "chave de rodada" única (derivada da chave principal) é combinada com o bloco de dados através de uma simples operação XOR bit a bit.
+
+Esses quatro estágios são repetidos por 10, 12 ou 14 vezes. É importante notar que todos os estágios são projetados para serem reversíveis, o que permite que o processo de decifragem aplique as transformações inversas para recuperar o texto claro original.
+
