@@ -255,3 +255,60 @@ A combinação **ChaCha20-Poly1305** é a implementação AEAD mais popular. Nel
 
 Essa combinação robusta e de alto desempenho se tornou um padrão na internet moderna, sendo adotada em protocolos de segurança críticos como o **TLS 1.3** (ao lado do AES-GCM), **OpenSSH** e na VPN **WireGuard**, consolidando o ChaCha20 como uma das cifras de fluxo de referência para segurança de alto nível em software.
 
+## Criptografia Assimétrica (Chave Pública)
+
+A **Criptografia Assimétrica**, também conhecida como **criptografia de chave pública**, representa uma revolução conceitual que resolveu o maior desafio da criptografia simétrica: o problema da distribuição segura de chaves. Proposta na década de 1970, sua característica fundamental é o uso de um **par de chaves matematicamente interligadas**: uma **chave pública** e uma **chave privada**.
+
+- **Chave Privada:** É mantida em segredo absoluto pelo seu dono. É a sua identidade criptográfica.
+- **Chave Pública:** Como o nome sugere, é distribuída livremente e pode ser de conhecimento de qualquer pessoa.
+
+A genialidade do sistema reside na relação matemática entre as chaves: o que uma chave cifra, somente a sua contraparte no par pode decifrar. É computacionalmente inviável deduzir a chave privada a partir do conhecimento da chave pública. Isso responde à pergunta mais comum sobre o modelo: não é inseguro que a chave pública seja conhecida por todos, pois sua única função é cifrar dados que apenas o dono da chave privada correspondente poderá ler, ou verificar a autenticidade de dados que só poderiam ter sido cifrados por aquela chave privada.
+
+Outro ponto importante é que o processo não se restringe a uma única sequência. Dependendo do objetivo — confidencialidade ou autenticidade —, a ordem de uso das chaves se inverte, o que confere uma enorme flexibilidade ao modelo.
+
+É essa capacidade de operar com chaves distintas que permitiu a troca segura de chaves simétricas pela internet, formando a base da criptografia híbrida e de toda a infraestrutura de certificação digital que sustenta a segurança da web moderna.
+
+### Os Dois Pilares da Criptografia Assimétrica: Confidencialidade e Autenticidade
+
+A utilização do par de chaves permite garantir duas propriedades de segurança distintas, dependendo de qual chave é usada para iniciar o processo. A imagem a seguir ilustra os dois cenários.
+
+<div align="center">
+<img width="520px" src="./img/04-criptografia-assimetrica.png">
+</div>
+
+#### Garantindo a Confidencialidade (Sigilo)
+
+Quando o objetivo é garantir que apenas o destinatário possa ler uma mensagem, o fluxo é o seguinte:
+
+- **Regra:** Cifra-se com a chave **pública do destinatário**. Decifra-se com a chave **privada do destinatário**.
+
+Analisando o primeiro cenário da figura: Regina (a emissora) quer enviar um documento sigiloso para Breno (o receptor).
+
+1. Regina obtém a chave pública de Breno, que é de conhecimento geral.
+2. Ela utiliza essa chave pública para cifrar o documento.
+3. O documento criptografado, agora, só pode ser decifrado pela única chave que forma par com a que o cifrou: a chave privada de Breno.
+4. Como somente Breno possui sua própria chave privada, ele é o único capaz de ler a mensagem. A confidencialidade está garantida.
+
+#### Garantindo a Autenticidade (Autoria / Assinatura Digital)
+
+Quando o objetivo é provar a origem de uma mensagem e garantir que ela não foi alterada, ou seja, garantir a autoria e a integridade, o fluxo se inverte:
+
+- **Regra:** Cifra-se com a chave **privada do emissor**. Decifra-se com a chave **pública do emissor**.
+
+Analisando o segundo cenário da figura: Breno (o emissor) quer enviar um documento de forma que Regina (a receptora) tenha certeza de que foi ele quem o enviou.
+
+1. Breno utiliza sua própria chave privada para cifrar (ou, mais precisamente, "assinar") o documento.
+2. Ele envia o documento criptografado para Regina.
+3. Regina, ou qualquer outra pessoa, pode obter a chave pública de Breno para tentar decifrar o documento.
+4. Se a chave pública de Breno conseguir decifrar a mensagem corretamente, isso serve como uma prova criptográfica irrefutável de que a mensagem só pode ter sido cifrada pela chave privada correspondente. Como só Breno possui sua chave privada, fica garantida a autenticidade da origem. Este é o princípio fundamental por trás da **assinatura digital**.
+
+É crucial entender esses dois fluxos e não os decorar. A lógica por trás de qual chave usar para cada finalidade é a base para a compreensão dos algoritmos de criptografia assimétrica.
+
+De uma perspectiva conceitual e simplificada, pode-se traçar um paralelo entre os paradigmas criptográficos e as cifras clássicas. A criptografia simétrica, ao transformar um dado em outro (como nas S-boxes), ecoa o princípio da **Substituição**. Já a criptografia assimétrica, baseada em complexas funções matemáticas, pode ser analogamente associada à ideia de **Transposição** em um nível muito mais abstrato.
+
+<div align="center">
+<img width="400px" src="./img/04-criptografia-simetrica-e-assimetrica.png">
+</div>
+
+Vamos conhecer agora os principais algoritmos que implementam este paradigma.
+
