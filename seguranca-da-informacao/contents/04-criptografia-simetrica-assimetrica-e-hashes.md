@@ -332,7 +332,7 @@ Antes de mergulharmos na matemática, a maneira mais didática de entender o fun
 4. **Criação do Segredo Compartilhado:** Alice pega a cor que recebeu de Bob (azul-esverdeado) e a mistura com sua própria cor secreta (vermelho). Bob faz o mesmo, misturando a cor que recebeu de Alice (laranja) com sua própria cor secreta (verde).
 5. **Resultado:** Ambos chegarão exatamente à mesma cor final (um tom de marrom), que é o segredo compartilhado. O interceptador, mesmo possuindo a cor pública e as duas cores misturadas, não consegue chegar a essa cor final.
 
-##### O Mecanismo Matemático
+#### O Mecanismo Matemático
 
 A robustez do Diffie-Hellman reside na complexidade matemática do **problema do logaritmo discreto**. Em termos simples, é fácil calcular o resultado de uma exponenciação modular ($g^a \pmod p$), mas é computacionalmente inviável encontrar o expoente `a` conhecendo apenas a base `g`, o módulo `p` e o resultado.
 
@@ -353,11 +353,70 @@ O fluxo de operação, conforme ilustrado no diagrama, é o seguinte:
 
 Devido às propriedades da matemática modular, ambos chegarão ao mesmo valor de `K`, que se torna a chave simétrica para a sessão, sem que `K` jamais tenha sido transmitido pela rede.
 
-##### Evoluções: ECDH e _Perfect Forward Secrecy_ (PFS)
+#### Evoluções: ECDH e _Perfect Forward Secrecy_ (PFS)
 
 As versões mais modernas do Diffie-Hellman utilizam a **Criptografia de Curva Elíptica (ECC)**, resultando no protocolo **ECDH**. Ele atinge o mesmo objetivo, mas com chaves muito menores, o que o torna mais rápido e eficiente.
 
 O uso do DH (especialmente o ECDH) é fundamental para uma propriedade de segurança chamada **_Perfect Forward Secrecy_ (PFS)**. No PFS, um novo acordo de chaves DH é realizado para cada nova sessão de comunicação. Isso significa que cada sessão tem uma chave simétrica única e efêmera. Mesmo que um atacante consiga, no futuro, roubar a chave privada de longo prazo de um servidor, ele não conseguirá decifrar as comunicações passadas que foram gravadas, pois cada uma foi protegida por uma chave de sessão diferente, que já foi descartada.
 
 Existem diferentes implementações do Diffie-Hellman, que variam de acordo com a forma como as chaves são utilizadas (anônimas, estáticas ou efêmeras), o que impacta o nível de segurança e autenticação da troca.
+
+#### Modos de Implementação do Diffie-Hellman
+
+O algoritmo Diffie-Hellman, em sua essência matemática, estabelece um segredo compartilhado, mas **não autentica as partes envolvidas na troca**. Alice e Bob sabem que possuem um segredo em comum, mas não têm como ter certeza de que estão realmente conversando um com o outro. Um atacante poderia se posicionar no meio da comunicação, realizar uma troca de chaves com cada um deles e retransmitir as mensagens, quebrando toda a segurança.
+
+Para resolver isso e adequar o protocolo a diferentes necessidades, existem três modos principais de implementação, que variam na forma como as chaves públicas são tratadas.
+
+- **Diffie-Hellman Anônimo:** Neste modo, as chaves públicas trocadas não são autenticadas. Não há nenhum mecanismo para verificar a quem elas pertencem. Embora isso permita uma comunicação anônima, é o modo **mais inseguro e altamente suscetível a ataques _Man-in-the-Middle_ (MITM)**. Um atacante pode interceptar a troca, apresentar sua própria chave pública para cada uma das partes e se passar por elas, ganhando a capacidade de decifrar e modificar toda a comunicação sem que os participantes percebam. Por essa vulnerabilidade, o DH anônimo não é utilizado em aplicações que exigem segurança.
+- **Diffie-Hellman Estático:** Neste modo, as partes utilizam chaves Diffie-Hellman de longa duração (estáticas). Para garantir a autenticidade, a chave pública de cada participante é geralmente embutida em um **certificado digital**, assinado por uma Autoridade Certificadora (AC) confiável. Ao iniciar a comunicação, as partes trocam seus certificados, verificam as assinaturas e, assim, validam a identidade um do outro antes de proceder com o acordo de chaves. Essa abordagem resolve o problema de autenticação, mas tem uma grande desvantagem: a **ausência de _Perfect Forward Secrecy_ (PFS)**. Como a mesma chave privada estática é usada para derivar as chaves de múltiplas sessões, se essa chave privada for comprometida em algum momento, um atacante que tenha gravado o tráfego de comunicações passadas poderá utilizá-la para decifrar todas elas.
+- **Diffie-Hellman Efêmero (DHE ou ECDHE):** Este é o modo mais seguro e o padrão para a web moderna. Nele, um **novo par de chaves Diffie-Hellman é gerado para cada sessão de comunicação** e descartado logo em seguida (são chaves "efêmeras"). Isso garante a propriedade de **_Perfect Forward Secrecy_ (PFS)**. Mesmo que a chave privada de longo prazo de um servidor seja roubada, as sessões de comunicação passadas permanecem seguras, pois cada uma foi protegida por uma chave de sessão única que já não existe mais. Para resolver o problema da autenticação, o DH efêmero é combinado com uma chave estática: o servidor utiliza sua chave privada de longo prazo (geralmente uma chave RSA ou ECDSA, contida em seu certificado digital) para **assinar digitalmente** sua chave pública DH efêmera. O cliente, ao receber a chave efêmera, pode verificar essa assinatura e ter certeza de que ela foi gerada pelo servidor legítimo.
+
+Fazendo uma comparação entre os modos:
+
+|Modo|Autenticação das Partes|_Perfect Forward Secrecy_ (PFS)|Principal Risco|
+|---|---|---|---|
+|**Anônimo**|Não|Não|Ataques _Man-in-the-Middle_ (MITM)|
+|**Estático**|Sim (via certificados)|Não|Comprometimento da chave privada expõe todas as sessões passadas.|
+|**Efêmero**|Sim (assinando a chave efêmera)|**Sim**|Maior custo computacional por sessão (geração de novas chaves).|
+
+Em resumo, enquanto o método anônimo é inseguro e o estático não protege contra o comprometimento futuro de chaves, o método efêmero se consolidou como a melhor prática por oferecer tanto a autenticação das partes quanto a garantia de que cada sessão de comunicação seja criptograficamente independente das outras.
+
+#### Ataque _Man-in-the-Middle_ (MITM)
+
+Como mencionamos, a principal fraqueza do modo anônimo do Diffie-Hellman é a ausência de autenticação. Ele cria um canal seguro, mas não oferece nenhuma garantia sobre **com quem** esse canal foi estabelecido. Essa brecha permite um dos ataques mais conhecidos e eficazes contra protocolos de comunicação: o **ataque do intermediário**, ou **_Man-in-the-Middle_ (MITM)**.
+
+Neste ataque, um agressor (tradicionalmente chamado de Mallory ou, no diagrama de cores, Edgar) se posiciona secretamente no meio da comunicação entre as duas partes legítimas (Alice e Bob). Ele intercepta todas as mensagens trocadas e estabelece duas sessões seguras separadas: uma com Alice (fingindo ser Bob) e outra com Bob (fingindo ser Alice).
+
+A imagem a seguir, utilizando a didática das cores, ilustra perfeitamente como o ataque funciona:
+
+<div align="center">
+<img width="700px" src="./img/04-dh-mitm.png">
+</div>
+
+Analisando o fluxo:
+
+1. Assata (Alice) e Bobby (Bob) iniciam a troca de chaves. O atacante, Edgar (Mallory), está no meio.
+2. Alice envia sua cor pública misturada (laranja) para Bob, mas Mallory a intercepta.
+3. Bob envia sua cor pública misturada (azul) para Alice, mas Mallory também a intercepta.
+4. Agora, Mallory engana ambos:
+    - Ele envia sua própria cor pública misturada (verde-claro) para Alice. Alice, acreditando ser a cor de Bob, a mistura com sua cor secreta e cria um segredo compartilhado **com Mallory**.
+    - Ele envia sua mesma cor pública misturada (verde-claro) para Bob. Bob, acreditando ser a cor de Alice, a mistura com sua cor secreta e cria um segredo compartilhado **com Mallory**.
+5. O resultado é que Alice e Bob acreditam ter um canal seguro um com o outro, mas, na realidade, ambos estabeleceram canais seguros com o atacante. Mallory pode agora receber as mensagens de Alice, decifrá-las, ler (ou modificar) seu conteúdo, cifrá-las novamente com a chave de Bob e retransmiti-las, e vice-versa, sem que nenhuma das partes perceba a interceptação.
+
+##### Fluxo Matemático do Ataque
+
+Traduzindo a analogia para o fluxo matemático do Diffie-Hellman, o ataque ocorre da seguinte forma:
+
+1. Alice e Bob concordam publicamente em usar um número primo `p` e uma base `g`. Mallory também conhece `p` e `g`.
+2. Alice escolhe sua chave privada `a` e calcula sua chave pública $A = g^a \pmod p$.
+3. Alice envia `A` para Bob, mas Mallory intercepta e armazena `A`.
+4. Bob escolhe sua chave privada `b` e calcula sua chave pública $B = g^b \pmod p$.
+5. Bob envia `B` para Alice, mas Mallory intercepta e armazena `B`.
+6. Mallory agora gera **sua própria** chave privada, `m`, e calcula sua chave pública $M = g^m \pmod p$.
+7. Mallory envia sua chave pública `M` para Alice (que pensa que é a chave de Bob) e também para Bob (que pensa que é a chave de Alice).
+8. Alice calcula o segredo compartilhado: $K_{AM} = M^a \pmod p$. Ela acredita ter um segredo com Bob, mas na verdade tem um segredo com Mallory.
+9. Bob calcula o segredo compartilhado: $K_{BM} = M^b \pmod p$. Ele também acredita ter um segredo com Alice, mas tem um segredo com Mallory.
+10. Mallory, por sua vez, pode calcular ambos os segredos: ele usa a chave pública de Alice (`A`) para calcular $K_{AM} = A^m \pmod p$, e a chave pública de Bob (`B`) para calcular $K_{BM} = B^m \pmod p$.
+
+Com isso, Mallory estabeleceu duas sessões seguras e pode retransmitir, ler e modificar toda a comunicação. A defesa contra este ataque, como vimos nos modos **estático e efêmero**, é a **autenticação das chaves públicas** através de certificados e assinaturas digitais, que garantem que Alice e Bob tenham certeza da identidade um do outro antes de completarem o acordo de chaves.
 
