@@ -234,3 +234,24 @@ A tabela a seguir resume e compara as principais características desses três a
 |**Twofish**|Cifra de bloco simétrica, rede de Feistel.|128 bits|128, 192 ou 256 bits|16|Nenhum ataque prático conhecido; foi um dos finalistas do processo AES.|Alternativa ao AES em projetos _open-source_, discos criptografados.|
 |**IDEA**|Cifra de bloco simétrica; combina XOR, adição e multiplicação.|64 bits|128 bits|8,5|Considerada segura; a principal limitação é o bloco de 64 bits.|Versões clássicas do PGP, sistemas legados.|
 
+#### ChaCha20: Cifra de Fluxo Moderna
+
+Diferente dos algoritmos de bloco como o AES, o **ChaCha20** é uma **cifra de fluxo** (_stream cipher_) de alto desempenho, descendente do algoritmo Salsa20. Ele foi projetado para ser extremamente rápido e seguro em implementações de software, oferecendo uma alternativa robusta ao AES, especialmente em plataformas que não possuem aceleração de hardware para criptografia.
+
+- **Estrutura:** O ChaCha20 opera com uma chave de **256 bits**, um **nonce** (número de uso único) de 96 bits e um contador de 32 bits. Juntos, eles formam o estado inicial de 512 bits (64 bytes) do algoritmo.
+- **Funcionamento:** Para cada bloco de texto claro, o ChaCha20 utiliza seu estado inicial para gerar um bloco de 512 bits de _keystream_. Esse processo é determinístico e envolve **20 rodadas** de operações matemáticas simples e rápidas (adições, XORs e rotações de bits). O _keystream_ resultante é então combinado com o texto claro via XOR para produzir o texto cifrado. O contador é incrementado para cada novo bloco, garantindo que o _keystream_ seja sempre diferente.
+- **Segurança:** A segurança do ChaCha20 repousa na dificuldade de reverter as 20 rodadas de mistura. Até hoje, os ataques criptoanalíticos mais eficazes só conseguiram quebrar versões enfraquecidas do algoritmo, com no máximo 7 ou 8 rodadas. A versão completa, com 20 rodadas, permanece computacionalmente segura e sem vulnerabilidades práticas conhecidas.
+
+No entanto, como toda cifra de fluxo, o ChaCha20 compartilha uma fragilidade fundamental: a **reutilização de um nonce com a mesma chave é catastrófica**. Se isso ocorrer, o mesmo _keystream_ será gerado para duas mensagens diferentes, permitindo que um atacante as combine e extraia informações do texto plano. Por isso, a unicidade do _nonce_ é um requisito de segurança inegociável.
+
+##### ChaCha20-Poly1305: Adicionando Autenticidade e Integridade
+
+O ChaCha20, em sua forma pura, fornece apenas **confidencialidade**. Para atender às necessidades dos protocolos modernos, que exigem também **integridade** e **autenticidade**, ele é quase sempre utilizado em uma construção conhecida como **AEAD (_Authenticated Encryption with Associated Data_)**.
+
+A combinação **ChaCha20-Poly1305** é a implementação AEAD mais popular. Nela, dois algoritmos trabalham em conjunto:
+
+1. **ChaCha20:** Cifra a mensagem, garantindo a confidencialidade.
+2. **Poly1305:** Atua como um **MAC (_Message Authentication Code_)**, gerando uma "etiqueta" de autenticação de 128 bits sobre o texto cifrado. Essa etiqueta garante que a mensagem não foi alterada no caminho (integridade) e que foi gerada por alguém que possui a chave secreta (autenticidade).
+
+Essa combinação robusta e de alto desempenho se tornou um padrão na internet moderna, sendo adotada em protocolos de segurança críticos como o **TLS 1.3** (ao lado do AES-GCM), **OpenSSH** e na VPN **WireGuard**, consolidando o ChaCha20 como uma das cifras de fluxo de referência para segurança de alto nível em software.
+
