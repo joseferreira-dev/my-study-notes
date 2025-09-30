@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4f1b0e249c288eb8",
+        "id": "270bf415f20af94f",
         "type": "tabs",
         "children": [
           {
-            "id": "fdfc72c1063925fa",
+            "id": "4800e3ccb317745a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bancos-de-dados/contents/09-bancos-distribuidos.md",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/10-planejamento-escolar.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09-bancos-distribuidos"
+              "title": "10-planejamento-escolar"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bancos-de-dados/contents/09-bancos-distribuidos.md",
+                "file": "conhecimentos-pedagogicos-e-ept/contents/10-planejamento-escolar.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 09-bancos-distribuidos"
+              "title": "Sumário de 10-planejamento-escolar"
             }
           }
         ],
@@ -169,28 +169,32 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "fdfc72c1063925fa",
+  "active": "4800e3ccb317745a",
   "lastOpenFiles": [
+    "conhecimentos-pedagogicos-e-ept/contents/img/10-planejamento-integrado.png",
+    "conhecimentos-pedagogicos-e-ept/contents/img/10-niveis-de-planejamento.png",
+    "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
+    "conhecimentos-pedagogicos-e-ept/contents/07-relacao-professor-aluno.md",
+    "conhecimentos-pedagogicos-e-ept/contents/09-formacao-de-professores.md",
+    "conhecimentos-pedagogicos-e-ept/contents/10-planejamento-escolar.md",
+    "conhecimentos-pedagogicos-e-ept/contents/08-curriculo.md",
+    "bancos-de-dados/contents/09-bancos-distribuidos.md",
     "bancos-de-dados/contents/img/09-protocolo-pbft.png",
     "bancos-de-dados/contents/img/09-protocolo-raft.png",
     "bancos-de-dados/contents/img/09-protocolo-paxos.png",
     "bancos-de-dados/contents/img/09-three-phase-commit.png",
     "bancos-de-dados/contents/img/09-two-phase-commit.png",
     "bancos-de-dados/contents/08-transacoes.md",
-    "bancos-de-dados/contents/09-bancos-distribuidos.md",
     "bancos-de-dados/contents/img/09-fragmentacao.png",
     "bancos-de-dados/contents/img/09-banco-de-dados-federado.png",
     "bancos-de-dados/contents/img/09-banco-de-dados-distribuido.png",
     "bancos-de-dados/contents/img/08-three-phase-commit.png",
-    "bancos-de-dados/contents/img/08-two-phase-commit.png",
-    "bancos-de-dados/contents/img/08-failover-e-failback.png",
     "legislacao/contents/09-decreto-11529.md",
     "engenharia-de-software/contents/18-bdd-ddd-mda-mdd-fdd-dsdm.md",
     "engenharia-de-software/contents/17-tdd.md",
     "engenharia-de-software/contents/19-devops.md",
     "engenharia-de-software/contents/16-kanban.md",
     "sistemas-operacionais/contents/08-windows-server.md",
-    "conhecimentos-pedagogicos-e-ept/contents/09-formacao-de-professores.md",
     "legislacao/contents/08-lei-12527.md",
     "engenharia-de-software/contents/15-xp.md",
     "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",
@@ -201,14 +205,10 @@
     "Sem título.md",
     "bancos-de-dados/contents/03-algebra-relacional.md",
     "informatica-basica/contents/02-ferramentas-de-busca.md",
-    "conhecimentos-pedagogicos-e-ept/contents/08-curriculo.md",
     "lingua-portuguesa/contents/06-classes-de-palavras-iv.md",
     "seguranca-da-informacao/contents/02-autenticacao-e-seus-mecanismos.md",
-    "seguranca-da-informacao/contents/01-principios-de-seguranca.md",
     "seguranca-da-informacao/contents/img",
     "seguranca-da-informacao/contents/Nova pasta",
-    "seguranca-da-informacao/README.md",
-    "sistemas-de-gerenciamento-de-bancos-de-dados/README.md",
     "seguranca-da-informacao/contents",
     "seguranca-da-informacao",
     "engenharia-de-prompt/contents",
