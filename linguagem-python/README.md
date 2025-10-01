@@ -18,7 +18,3 @@ Python é uma linguagem de programação de alto nível, poderosa e versátil, c
 ## Índice de Conteúdos
 
 Abaixo segue o índice com diversos conteúdos sobre a linguagem. Pode-se considerar esta como uma mini documentação de referência. Vale ressaltar que este material foi elaborado com base na versão 3.12.0 da linguagem.
-
-- [Introdução à Linguagem Python](contents/01-introducao.md)
-- [Variáveis e Tipos de Dados Simples](contents/02-variaveis.md)
-- 
