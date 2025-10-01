@@ -159,3 +159,94 @@ Este grupo final inclui funções para interagir com o usuário, gerar sequênci
     # Mostra todos os métodos que podemos chamar em uma lista.
     ```
 
+## Funções de Ordem Superior: `map` e `filter`
+
+Além das funções que operam diretamente sobre dados, o Python possui um conjunto de **funções de ordem superior** (_higher-order functions_). Este é um conceito originário da programação funcional, onde as funções são tratadas como cidadãs de primeira classe, o que significa que elas podem ser passadas como argumentos para outras funções. As funções `map()` e `filter()` são os exemplos mais proeminentes dessa categoria, permitindo aplicar transformações e filtros a coleções de dados de uma maneira declarativa e eficiente.
+
+### Transformando Sequências com `map()`
+
+A função `map()` é uma ferramenta poderosa para aplicar uma mesma função a **todos os elementos** de um objeto iterável (como uma lista ou tupla), sem a necessidade de escrever um laço `for` explícito. Ela "mapeia" cada elemento de entrada para um novo elemento de saída.
+
+A sintaxe geral é:
+
+```python
+map(funcao_a_aplicar, iteravel)
+```
+
+Um ponto fundamental sobre o `map()` é que ele não retorna uma lista, mas sim um **iterador**. Isso significa que ele opera de forma "preguiçosa" (_lazy evaluation_): os resultados são calculados sob demanda, à medida que são necessários. Essa abordagem é muito eficiente em termos de memória, especialmente ao lidar com sequências de dados muito grandes, pois não é preciso alocar uma nova lista inteira na memória de uma só vez. Para visualizar todos os resultados, é comum converter o iterador retornado em uma lista usando a função `list()`.
+
+Vamos a um exemplo prático. Suponha que temos uma lista de números e queremos obter uma nova lista com o quadrado de cada um.
+
+**1. Usando uma Função Definida:**
+
+```python
+def calcular_quadrado(x):
+    """Retorna o quadrado de um número."""
+    return x ** 2
+
+numeros = [1, 2, 3, 4, 5]
+
+# A função map() aplica 'calcular_quadrado' a cada item da lista 'numeros'
+numeros_ao_quadrado_iterador = map(calcular_quadrado, numeros)
+
+# Convertendo o iterador para uma lista para ver os resultados
+resultado_final = list(numeros_ao_quadrado_iterador)
+print(resultado_final) # Saída: [1, 4, 9, 16, 25]
+```
+
+**2. Usando uma Função Lambda:**
+
+Para operações simples como esta, é muito comum e mais conciso usar uma função lambda, evitando a necessidade de definir uma função separada.
+
+```python
+numeros = [1, 2, 3, 4, 5]
+
+# A mesma operação, agora com uma lambda
+numeros_ao_quadrado_iterador = map(lambda x: x ** 2, numeros)
+
+print(list(numeros_ao_quadrado_iterador)) # Saída: [1, 4, 9, 16, 25]
+```
+
+A função `map()` tem um efeito muito similar ao das _list comprehensions_, que vimos em um capítulo anterior. A escolha entre um e outro é, muitas vezes, uma questão de estilo e legibilidade. Para transformações simples, as _list comprehensions_ são frequentemente consideradas mais "Pythônicas".
+
+```python
+# A mesma operação com list comprehension (resultado idêntico, sintaxe diferente)
+numeros_ao_quadrado_comp = [x ** 2 for x in numeros]
+print(numeros_ao_quadrado_comp) # Saída: [1, 4, 9, 16, 25]
+```
+
+### Selecionando Elementos com `filter()`
+
+Enquanto `map()` transforma cada elemento, a função `filter()` serve para **selecionar** elementos de um iterável. Ela aplica uma função de teste a cada elemento e retorna um iterador contendo apenas aqueles para os quais a função retornou `True`.
+
+A sintaxe geral é:
+
+```python
+filter(funcao_de_teste, iteravel)
+```
+
+A `funcao_de_teste` (também chamada de predicado) deve ser uma função que recebe um elemento e retorna um valor booleano (`True` ou `False`). Se o retorno for `True`, o elemento é incluído no resultado; se for `False`, ele é descartado. Assim como o `map()`, o `filter()` também retorna um iterador "preguiçoso".
+
+Vamos a um exemplo onde queremos filtrar uma lista de números, mantendo apenas os que são pares.
+
+```python
+lista_numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# A função lambda 'lambda x: x % 2 == 0' retorna True para números pares e False para ímpares
+numeros_pares_iterador = filter(lambda x: x % 2 == 0, lista_numeros)
+
+# Convertendo o iterador para uma lista
+resultado_final = list(numeros_pares_iterador)
+print(resultado_final) # Saída: [0, 2, 4, 6, 8]
+```
+
+A função `filter()` percorreu a `lista_numeros`, e para cada número `x`, avaliou `x % 2 == 0`. Apenas os números para os quais essa expressão foi verdadeira foram incluídos no iterador final.
+
+Novamente, a mesma operação pode ser realizada com uma _list comprehension_ com uma cláusula `if`, que muitos desenvolvedores acham mais legível para casos simples.
+
+```python
+# A mesma operação com list comprehension
+numeros_pares_comp = [x for x in lista_numeros if x % 2 == 0]
+print(numeros_pares_comp) # Saída: [0, 2, 4, 6, 8]
+```
+
