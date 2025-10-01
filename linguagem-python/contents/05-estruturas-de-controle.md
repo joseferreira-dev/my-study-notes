@@ -229,3 +229,126 @@ Número 5 encontrado! Encerrando a busca.
 
 O laço para no número 5 e não continua até o 10. É crucial notar que, como o laço foi interrompido pelo `break`, a cláusula `else` **não é executada**. Isso torna a combinação `for...else` uma ferramenta poderosa para lógicas de busca: o bloco `for` procura por algo, e o bloco `else` é executado se a busca terminar sem que o item seja encontrado.
 
+### Laço `while`: Repetindo com Base em uma Condição
+
+Enquanto o laço `for` é perfeito para percorrer sequências com um número definido de elementos, o laço `while` é a ferramenta ideal para situações em que não sabemos de antemão quantas vezes um bloco de código precisa ser executado. O `while` é um laço controlado por **condição**: ele repetirá um bloco de código continuamente **enquanto** uma determinada condição booleana for avaliada como verdadeira.
+
+A estrutura de um laço `while` é direta e se assemelha à de uma estrutura `if`:
+
+```python
+while condicao:
+    # Bloco de código a ser repetido
+    # ...
+    # É crucial que algo dentro deste bloco, em algum momento,
+    # altere a 'condicao' para False, para evitar um laço infinito.
+```
+
+O fluxo de execução é simples:
+
+1. O Python testa a `condicao`.
+2. Se a `condicao` for `True`, todo o bloco de código indentado é executado.
+3. Ao final do bloco, a execução retorna ao topo e a `condicao` é testada novamente.
+4. Esse ciclo se repete até que a `condicao` seja avaliada como `False`. Nesse momento, o laço é encerrado e o programa continua sua execução.
+
+Vamos ver um exemplo prático que simula uma contagem regressiva:
+
+```python
+contador = 5
+
+print("Iniciando contagem regressiva...")
+
+while contador > 0:
+    print(contador)
+    contador = contador - 1 # ou contador -= 1
+
+print("Lançar!")
+```
+
+A saída será:
+
+```
+Iniciando contagem regressiva...
+5
+4
+3
+2
+1
+Lançar!
+```
+
+Neste exemplo, a variável `contador` é inicializada com `5`. A cada iteração, seu valor é impresso e, em seguida, decrementado em uma unidade. Na sexta verificação, `contador` terá o valor `0`. Como a condição `0 > 0` é `False`, o laço é encerrado.
+
+#### Controle de Fluxo no `while`: `else`, `break` e `continue`
+
+O laço `while` suporta as mesmas instruções de controle que vimos no laço `for`, como `break` e a cláusula `else`, que funcionam de maneira idêntica.
+
+- **`else`**: O bloco `else` é executado uma vez quando o laço termina naturalmente (ou seja, quando sua condição se torna `False`).
+- **`break`**: Interrompe o laço imediatamente, independentemente do estado da condição. O bloco `else` não é executado se o laço for encerrado por um `break`.
+
+Além delas, os laços em Python contam com uma terceira instrução de controle: `continue`.
+
+- **`continue`**: A instrução `continue` não encerra o laço, mas **interrompe a iteração atual** e pula imediatamente para a próxima verificação da condição. Qualquer código no bloco que esteja após o `continue` não será executado naquela iteração específica.
+
+Vamos ver um exemplo que imprime apenas os números ímpares de 1 a 10, usando o `continue` para "pular" os números pares.
+
+```python
+numero = 0
+
+while numero < 10:
+    numero += 1
+    
+    # Se o número for par, pula o resto do código e volta para o topo do laço
+    if numero % 2 == 0:
+        continue
+        
+    print(f"Número ímpar encontrado: {numero}")
+```
+
+A saída será:
+
+```
+Número ímpar encontrado: 1
+Número ímpar encontrado: 3
+Número ímpar encontrado: 5
+Número ímpar encontrado: 7
+Número ímpar encontrado: 9
+```
+
+Quando `numero` é par (2, 4, 6, 8, 10), a condição `numero % 2 == 0` é verdadeira, o `continue` é executado, e a instrução `print()` é pulada naquela iteração.
+
+#### Cuidado com Laços Infinitos
+
+A principal responsabilidade ao usar um laço `while` é garantir que a condição de parada seja, em algum momento, alcançada. Se a condição de teste nunca se tornar `False`, o programa entrará em um **laço infinito**, onde o mesmo bloco de código será executado para sempre, travando a aplicação.
+
+```python
+# ATENÇÃO: Exemplo de laço infinito. Não execute sem saber como interromper (Ctrl+C).
+# contador_infinito = 0
+# while contador_infinito < 5:
+#     print("Isso vai repetir para sempre!")
+# A variável 'contador_infinito' nunca é alterada, então a condição sempre será True.
+```
+
+Apesar do risco, laços `while True:` são uma construção comum e útil em certos cenários, como em menus de linha de comando, servidores que precisam "escutar" por conexões continuamente, ou em laços de jogos. Nesses casos, o laço é intencionalmente infinito, mas possui uma lógica interna com uma instrução `break` para garantir que haja uma condição de saída controlada.
+
+```python
+# Exemplo de um laço "infinito" controlado
+while True:
+    comando = input("Digite 'sair' para terminar ou qualquer outra coisa para continuar: ")
+    if comando.lower() == 'sair':
+        print("Encerrando o programa...")
+        break # Garante a condição de saída
+    else:
+        print(f"Você digitou: {comando}")
+```
+
+## Considerações Finais
+
+Neste capítulo, demos um salto fundamental, transitando da simples execução linear de comandos para a criação de programas com lógica e dinamismo. As **estruturas de controle** que exploramos são, em essência, o cérebro de nossos algoritmos, permitindo que eles analisem, decidam e repitam tarefas de forma autônoma.
+
+Iniciamos com as **estruturas condicionais**, o pilar da tomada de decisão no código. Através da cascata `if...elif...else`, aprendemos a direcionar a execução do programa por diferentes caminhos com base em testes lógicos, além de termos visto a sintaxe concisa da expressão condicional para atribuições simples.
+
+Em seguida, mergulhamos no poder da automação com as **estruturas de repetição**. Dissecamos o laço `for` como a ferramenta idiomática e ideal para percorrer cada item de uma sequência, e o laço `while` como a solução robusta para executar um bloco de código enquanto uma condição específica for verdadeira. Vimos também como as instruções `break` e `continue`, em conjunto com a cláusula `else` dos laços, nos dão um controle refinado sobre o comportamento dessas iterações, permitindo interrupções e desvios de fluxo.
+
+A verdadeira maestria emerge da combinação dessas estruturas. As condicionais nos permitem questionar nossos dados, e os laços nos permitem agir sobre eles em escala, processando listas, dicionários e outras coleções com lógicas complexas.
+
+Com a capacidade de ditar o "quando", o "se" e o "quantas vezes" da execução de nosso código, estamos prontos para o próximo nível de abstração e organização. O passo seguinte em nossa jornada será aprender a encapsular essas lógicas em blocos reutilizáveis e nomeados, o que nos introduzirá ao poderoso e indispensável mundo das **funções**.
