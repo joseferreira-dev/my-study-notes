@@ -148,3 +148,71 @@ print(f"Valor B formatado: {valor_b:.3f}")
 
 As f-strings combinam o melhor de dois mundos: a simplicidade de embutir variáveis diretamente no texto e o poder de uma sintaxe de formatação robusta, tornando-as a ferramenta de escolha para a composição de strings no Python moderno.
 
+### Método `.format()`
+
+Antes da introdução das f-strings, o método `str.format()` foi a principal evolução na formatação de strings, introduzido no Python 2.6. Ele representa uma abordagem mais estruturada e poderosa do que o antigo operador `%`, oferecendo maior legibilidade e flexibilidade. Embora as f-strings sejam hoje a escolha preferencial, o método `.format()` ainda é amplamente utilizado e extremamente útil, especialmente em situações onde o gabarito da string precisa ser definido antes que os valores a serem inseridos estejam disponíveis.
+
+A sintaxe do `.format()` também utiliza chaves `{}` como placeholders dentro da string. Após a string, o método é chamado, e os valores a serem substituídos são passados como argumentos para o método.
+
+#### Formatação Posicional
+
+Na sua forma mais simples, os placeholders vazios são substituídos pelos argumentos do método `.format()` na ordem em que são passados.
+
+```python
+nome = 'Alice'
+idade = 30
+
+# Os placeholders {} são preenchidos sequencialmente com 'nome' e 'idade'
+string_formatada = 'Meu nome é {} e tenho {} anos.'.format(nome, idade)
+print(string_formatada)
+# Saída: Meu nome é Alice e tenho 30 anos.
+```
+
+Esta abordagem já é mais clara que a do operador `%`, pois não exige a especificação do tipo de dado no placeholder.
+
+Para um controle maior, podemos numerar os placeholders. Isso nos permite referenciar os argumentos por sua posição (índice), o que é extremamente útil para reordenar a saída ou repetir o mesmo valor várias vezes sem passá-lo novamente como argumento.
+
+```python
+# Usando placeholders numerados {0}, {1}, etc.
+item = "computador"
+preco = 3500.00
+
+# Reutilizando e reordenando os argumentos
+relatorio = 'O item {0} tem o preço de R$ {1:.2f}. Repito, o preço do {0} é {1:.2f}.'.format(item, preco)
+print(relatorio)
+# Saída: O item computador tem o preço de R$ 3500.00. Repito, o preço do computador é 3500.00.
+```
+
+#### Formatação por Nome
+
+Uma das melhorias mais significativas do `.format()` é a capacidade de nomear os placeholders. Isso torna a string muito mais legível, pois o nome dentro da chave descreve o propósito do valor a ser inserido. Os valores são então passados para o método `.format()` como argumentos nomeados.
+
+```python
+# Usando placeholders nomeados
+template = "Prezado(a) {nome_cliente}, sua fatura no valor de R$ {valor} vence no dia {dia_vencimento}."
+
+# Passando os valores pelos nomes correspondentes
+fatura = template.format(nome_cliente="Carlos Silva", valor=150.75, dia_vencimento=10)
+print(fatura)
+# Saída: Prezado(a) Carlos Silva, sua fatura no valor de R$ 150.75 vence no dia 10.
+```
+
+Essa abordagem desacopla a ordem dos argumentos da sua posição na string, resultando em um código mais robusto e de fácil manutenção.
+
+#### Opções de Formatação
+
+Assim como nas f-strings, o método `.format()` suporta a mesma "minilinguagem" de formatação dentro das chaves, separada por dois-pontos. Isso permite um controle detalhado sobre alinhamento, preenchimento e formatação numérica.
+
+Vamos revisitar o exemplo do `pi`:
+
+```python
+pi = 3.14159265
+
+# A sintaxe de formatação {:.2f} é colocada dentro do placeholder
+texto_pi = "O valor de pi com duas casas decimais é {:.2f}.".format(pi)
+print(texto_pi)
+# Saída: O valor de pi com duas casas decimais é 3.14.
+```
+
+O método `.format()` representa um meio-termo poderoso entre a sintaxe antiga do `%` e a moderna das f-strings. Sua capacidade de separar a definição do gabarito da passagem dos valores o mantém relevante em muitos contextos de programação.
+
