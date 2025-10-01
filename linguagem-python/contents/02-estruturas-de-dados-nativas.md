@@ -146,3 +146,264 @@ print(f"Lista C: {lista_c}") # Saída: Lista C: [10, 20, 30, 99]
 
 Neste caso, a `lista_a` permaneceu intacta, pois `lista_c` é um objeto completamente novo.
 
+## Tuplas
+
+Em contraste com a flexibilidade e a mutabilidade das listas, o Python nos oferece uma estrutura de dados chamada **tupla**, cuja principal característica é a **imutabilidade**. Uma tupla é uma coleção **ordenada** de elementos, muito semelhante a uma lista. Ela também pode conter itens de diferentes tipos de dados e seus elementos são acessados por um índice. A diferença fundamental é que, uma vez que uma tupla é criada, ela não pode ser alterada de forma alguma. Não é possível adicionar, remover ou modificar seus elementos.
+
+- **Ordenada:** Os elementos mantêm a sequência em que foram definidos.
+- **Imutável:** Após a criação, seu conteúdo não pode ser modificado.
+- **Heterogênea:** Permite elementos de múltiplos tipos de dados.
+
+Essa característica de imutabilidade não é uma limitação, mas sim uma poderosa ferramenta de design. As tuplas são utilizadas em cenários onde a integridade dos dados é crucial e queremos garantir que uma coleção de valores permaneça constante ao longo da execução do programa. São ideais para representar conjuntos de dados que formam uma entidade única e fixa, como coordenadas (x, y), cores RGB (vermelho, verde, azul) ou registros de banco de dados que não devem ser alterados.
+
+A sintaxe para criar uma tupla utiliza um par de parênteses `()`, com os elementos separados por vírgulas.
+
+```python
+# Tupla contendo apenas números inteiros
+coordenadas = (10, 20)
+
+# Tupla com múltiplos tipos de dados
+dados_produto = (101, "Teclado Mecânico", 350.75, True)
+
+print(coordenadas)      # Saída: (10, 20)
+print(dados_produto)    # Saída: (101, 'Teclado Mecânico', 350.75, True)
+```
+
+Uma curiosidade sintática importante ocorre na criação de uma tupla com um único elemento. Para que o Python não a confunda com uma simples expressão matemática entre parênteses, é necessário incluir uma vírgula ao final.
+
+```python
+nao_e_tupla = (50)
+e_uma_tupla = (50,) # A vírgula final define a tupla
+
+print(type(nao_e_tupla)) # Saída: <class 'int'>
+print(type(e_uma_tupla)) # Saída: <class 'tuple'>
+```
+
+### Acessando Elementos e a Imutabilidade na Prática
+
+O acesso aos elementos de uma tupla funciona exatamente da mesma forma que nas listas, utilizando a indexação baseada em zero.
+
+```python
+dados_produto = (101, "Teclado Mecânico", 350.75, True)
+
+id_produto = dados_produto[0]
+nome_produto = dados_produto[1]
+
+print(f"ID: {id_produto}, Nome: {nome_produto}") # Saída: ID: 101, Nome: Teclado Mecânico
+```
+
+A principal diferença se manifesta quando tentamos realizar uma alteração. Qualquer tentativa de modificar um elemento de uma tupla resultará em um `TypeError`, um erro que o Python gera para indicar uma operação em um tipo inadequado.
+
+```python
+coordenadas = (10, 20)
+
+# A linha a seguir irá gerar um erro, pois tuplas não suportam atribuição de item.
+# coordenadas[0] = 15 # TypeError: 'tuple' object does not support item assignment
+```
+
+Essa proteção garante que a tupla permaneça em seu estado original, tornando o código mais seguro e previsível.
+
+### Métodos Disponíveis
+
+Devido à sua natureza imutável, as tuplas possuem um conjunto muito mais restrito de métodos em comparação com as listas. Elas oferecem apenas métodos que não alteram seu conteúdo, servindo para consulta e análise.
+
+- **`count(valor)`**: Retorna o número de vezes que um determinado `valor` aparece na tupla.
+- **`index(valor)`**: Retorna o índice da **primeira ocorrência** de um `valor` específico. Se o valor não for encontrado, um `ValueError` será gerado.
+
+```python
+historico_temperaturas = (25, 26, 28, 26, 27, 29, 26)
+
+# Contando ocorrências
+ocorrencias_26 = historico_temperaturas.count(26)
+print(f"A temperatura 26ºC ocorreu {ocorrencias_26} vezes.") # Saída: A temperatura 26ºC ocorreu 3 vezes.
+
+# Encontrando o índice de uma ocorrência
+primeira_ocorrencia_28 = historico_temperaturas.index(28)
+print(f"A temperatura 28ºC foi registrada pela primeira vez no índice {primeira_ocorrencia_28}.") # Saída: A temperatura 28ºC foi registrada pela primeira vez no índice 2.
+```
+
+É importante notar que esses dois métodos, `count()` e `index()`, também estão disponíveis e funcionam da mesma maneira para as listas.
+
+### Desempacotamento de Tuplas (Tuple Unpacking)
+
+Uma das funcionalidades mais elegantes e "Pythônicas" associadas às tuplas é o **desempacotamento**. Essa técnica permite atribuir os elementos de uma tupla a múltiplas variáveis de uma só vez, desde que o número de variáveis à esquerda da atribuição seja igual ao número de elementos na tupla.
+
+```python
+# Definindo uma tupla para representar um ponto 2D
+ponto = (150, 75)
+
+# Desempacotando a tupla nas variáveis x e y
+x, y = ponto
+
+print(f"A coordenada x é {x}") # Saída: A coordenada x é 150
+print(f"A coordenada y é {y}") # Saída: A coordenada y é 75
+
+# Exemplo com informações de um usuário
+id_usuario, nome, email = (987, "Beatriz", "bia@email.com")
+
+print(f"Usuário {nome} (ID: {id_usuario}) tem o e-mail: {email}")
+# Saída: Usuário Beatriz (ID: 987) tem o e-mail: bia@email.com
+```
+
+O desempacotamento torna o código mais limpo e legível, evitando a necessidade de acessar cada elemento individualmente pelo seu índice.
+
+## Dicionários
+
+Enquanto listas e tuplas organizam seus dados em uma sequência ordenada, acessível por um índice numérico, os **dicionários** oferecem uma abordagem diferente e mais flexível: eles armazenam os dados em pares de **chave-valor**. Um dicionário é uma coleção **mutável** cujos elementos não são acessados por sua posição, mas por uma chave única associada a cada valor.
+
+Pense em um dicionário de palavras real. Você não procura uma definição pela sua posição na página (índice), mas sim pela palavra (chave) que você deseja encontrar. Dicionários em Python funcionam sob a mesma premissa, permitindo a criação de mapeamentos lógicos entre uma chave e a informação que ela representa.
+
+As características principais de um dicionário são:
+
+- **Mutável:** É possível adicionar, remover e modificar os pares de chave-valor após sua criação.
+- **Mapeado por Chaves:** O acesso aos valores é feito através de chaves, não de índices numéricos.
+- **Chaves Únicas e Imutáveis:** Dentro de um dicionário, cada chave deve ser única. Além disso, as chaves devem ser de um tipo de dado imutável (como strings, números ou tuplas). Isso é necessário para que o Python possa calcular um identificador interno consistente para cada chave.
+- **Valores Heterogêneos:** Os valores associados às chaves podem ser de qualquer tipo de dado, incluindo outras listas, tuplas ou até mesmo outros dicionários.
+
+Uma observação importante sobre a ordem: historicamente, os dicionários em Python eram considerados coleções **não ordenadas**. No entanto, a partir da versão **3.7 do Python**, a ordem de inserção dos elementos passou a ser garantida. Isso significa que, nas versões modernas da linguagem, ao iterar sobre um dicionário, os itens aparecerão na mesma ordem em que foram adicionados.
+
+A sintaxe para criar um dicionário utiliza um par de chaves `{}`. Cada item é um par `chave: valor`, e os pares são separados por vírgulas.
+
+```python
+# Exemplo de um dicionário para armazenar informações de um filme
+filme = {
+    "titulo": "Interestelar",
+    "ano_lancamento": 2014,
+    "diretor": "Christopher Nolan",
+    "generos": ["Ficção Científica", "Drama", "Aventura"],
+    "avaliacao_imdb": 8.7
+}
+
+print(filme)
+```
+
+Neste exemplo, `"titulo"`, `"ano_lancamento"`, `"diretor"`, `"generos"` e `"avaliacao_imdb"` são as chaves, e os dados à direita dos dois-pontos são seus respectivos valores. Note como o valor da chave `"generos"` é uma lista, demonstrando a flexibilidade da estrutura.
+
+### Acessando e Modificando Dados
+
+O poder dos dicionários está na sua capacidade de recuperar dados de forma eficiente através das chaves.
+
+- **Acesso Direto:** A forma mais comum de acessar um valor é utilizando a sintaxe de colchetes `[]` com a chave desejada.
+    
+    ```python
+    print(filme["titulo"])        # Saída: Interestelar
+    print(filme["ano_lancamento"]) # Saída: 2014
+    ```
+    
+    O risco dessa abordagem é que, se a chave não existir no dicionário, o Python levantará um `KeyError`, o que pode interromper a execução do programa.
+    
+- **Método `get()` (Acesso Seguro):** Para um acesso mais seguro, utiliza-se o método `get()`. Ele funciona de forma semelhante, mas se a chave não for encontrada, em vez de gerar um erro, ele retorna `None` (ou um valor padrão que pode ser especificado).
+    
+    ```python
+    # Acessando uma chave existente
+    diretor = filme.get("diretor")
+    print(f"Diretor: {diretor}") # Saída: Diretor: Christopher Nolan
+    
+    # Tentando acessar uma chave que não existe
+    bilheteria = filme.get("bilheteria")
+    print(f"Bilheteria: {bilheteria}") # Saída: Bilheteria: None (sem erro)
+    
+    # Usando get() com um valor padrão
+    bilheteria_padrao = filme.get("bilheteria", "Não informado")
+    print(f"Bilheteria: {bilheteria_padrao}") # Saída: Bilheteria: Não informado
+    ```
+
+Para **adicionar** um novo par de chave-valor ou **atualizar** o valor de uma chave existente, a sintaxe de atribuição com colchetes é utilizada:
+
+```python
+# Atualizando o valor de uma chave existente
+filme["avaliacao_imdb"] = 8.8
+print(filme["avaliacao_imdb"]) # Saída: 8.8
+
+# Adicionando um novo par de chave-valor
+filme["estudio"] = "Warner Bros. Pictures"
+print(filme["estudio"]) # Saída: Warner Bros. Pictures
+```
+
+O Python verifica se a chave já existe. Se sim, atualiza o valor. Se não, cria o novo par.
+
+### Removendo Itens de um Dicionário
+
+Existem várias maneiras de remover pares de chave-valor, cada uma com seu caso de uso.
+
+- **`pop(chave)`**: Remove o item associado à `chave` especificada e **retorna** o valor removido. Se a chave não existir, gera um `KeyError`.
+    
+    ```python
+    ano = filme.pop("ano_lancamento")
+    print(f"O ano removido foi: {ano}") # Saída: O ano removido foi: 2014
+    # print(filme) # O par "ano_lancamento": 2014 não estaria mais no dicionário
+    ```
+    
+- **`del dicionario[chave]`**: A instrução `del` remove o item associado à chave. Não retorna nenhum valor.
+    
+    ```python
+    del filme["diretor"]
+    # print(filme) # O par "diretor": "Christopher Nolan" teria sido removido
+    ```
+    
+- **`popitem()`**: Remove e retorna o último par de chave-valor adicionado ao dicionário (comportamento LIFO - Last-In, First-Out).
+    
+    ```python
+    ultimo_item = filme.popitem()
+    print(f"Último item adicionado e removido: {ultimo_item}") # Saída: ('estudio', 'Warner Bros. Pictures')
+    ```
+    
+- **`clear()`**: Remove **todos** os itens do dicionário, deixando-o vazio.
+    
+    ```python
+    filme.clear()
+    print(filme) # Saída: {}
+    ```
+
+### Dicionários Aninhados
+
+A capacidade dos valores de um dicionário serem eles mesmos outros dicionários permite a criação de estruturas de dados complexas e hierárquicas, conhecidas como dicionários aninhados.
+
+```python
+estudantes = {
+    "aluno_1": {"nome": "Alice", "idade": 25, "curso": "Ciência da Computação"},
+    "aluno_2": {"nome": "Bob", "idade": 30, "curso": "Engenharia"}
+}
+
+# Para acessar um valor aninhado, encadeamos os acessos por chave
+curso_alice = estudantes["aluno_1"]["curso"]
+print(f"O curso de Alice é: {curso_alice}") # Saída: O curso de Alice é: Ciência da Computação
+```
+
+### Métodos Úteis para Iteração
+
+Os dicionários fornecem métodos específicos para acessar suas chaves, valores ou ambos, o que é extremamente útil ao trabalhar com laços de repetição.
+
+- **`keys()`**: Retorna uma visualização de todas as chaves do dicionário.
+- **`values()`**: Retorna uma visualização de todos os valores do dicionário.
+- **`items()`**: Retorna uma visualização de todos os pares de chave-valor como tuplas.
+
+```python
+filme = {
+    "titulo": "Interestelar",
+    "ano_lancamento": 2014,
+    "diretor": "Christopher Nolan"
+}
+
+print("--- Chaves ---")
+for chave in filme.keys():
+    print(chave)
+
+print("\n--- Valores ---")
+for valor in filme.values():
+    print(valor)
+
+print("\n--- Itens (Chave e Valor) ---")
+# A forma mais comum e poderosa de iterar sobre um dicionário
+for chave, valor in filme.items():
+    print(f"{chave.title()}: {valor}")
+```
+
+A saída da última iteração seria:
+
+```
+Titulo: Interestelar
+Ano_Lancamento: 2014
+Diretor: Christopher Nolan
+```
+
