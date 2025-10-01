@@ -1,269 +1,148 @@
-# Capítulo 2: Variáveis e Tipos de Dados Simples
+# Capítulo 2 – Estruturas de Dados Nativas
 
-Aprender a manipular dados é um dos pilares da programação. Seja para registrar informações de um usuário, calcular valores ou controlar a lógica de um sistema, o programador precisa saber como armazenar, modificar e interpretar dados. Neste capítulo, mergulharemos nas estruturas mais fundamentais da linguagem Python: as variáveis e os tipos de dados simples. Aqui, entenderemos como Python lida com a atribuição e manipulação de valores, como nomear corretamente variáveis, como evitar erros comuns e como trabalhar com dois tipos primordiais: strings (textos) e números (inteiros e de ponto flutuante). Todos esses conceitos são essenciais para desenvolver aplicações robustas e bem estruturadas.
+À medida que nossos programas se tornam mais complexos, a necessidade de gerenciar múltiplos dados de forma organizada se torna fundamental. Armazenar cada peça de informação em uma variável individual é impraticável e ineficiente. É para resolver este desafio que as linguagens de programação oferecem **estruturas de dados**, contêineres especializados em armazenar coleções de valores. Elas nos permitem agrupar, acessar e manipular conjuntos de informações de maneira lógica e performática. O Python, em sua filosofia de "baterias inclusas", oferece quatro dessas estruturas de forma nativa, cada uma com suas próprias características e casos de uso ideais: as **Listas**, as **Tuplas**, os **Dicionários** e os **Conjuntos (Sets)**.
 
-## Variáveis e Atribuição de Valores
+Neste capítulo, faremos uma exploração detalhada de cada uma dessas estruturas. Iniciaremos com as listas, a estrutura de coleção mais versátil e onipresente em Python, entendendo como criar, acessar e modificar seus elementos. Investigaremos as nuances de seu comportamento na memória e aprenderemos os métodos essenciais para sua manipulação no dia a dia. Dominar o uso dessas coleções é o que nos permitirá transitar de programas que operam sobre dados singulares para sistemas capazes de processar grandes volumes de informação de forma estruturada.
 
-Em Python, uma variável é uma referência simbólica para um valor armazenado na memória. Quando você atribui um valor a uma variável, está dizendo ao computador: "guarde esse dado com esse nome para que eu possa utilizá-lo depois". A forma mais simples de se fazer isso é utilizando o operador de atribuição `=`.
+## Listas
 
-```python
-nome = "Lucas"
-idade = 29
-altura = 1.78
-```
+As listas são, sem dúvida, a estrutura de dados de coleção mais fundamental e utilizada em Python. Uma lista é uma sequência **ordenada** e **mutável** de elementos. Vamos dissecar o que essas duas características significam:
 
-No exemplo acima, criamos três variáveis: `nome`, `idade` e `altura`. A primeira armazena uma string (sequência de caracteres), a segunda um número inteiro (int) e a terceira um número de ponto flutuante (float). O Python infere automaticamente o tipo de dado com base no valor atribuído. Essa característica faz parte da chamada **tipagem dinâmica** da linguagem, ou seja, não é necessário declarar explicitamente o tipo da variável.
+- **Ordenada:** Os elementos em uma lista mantêm uma ordem específica e definida. O primeiro item que você adiciona será sempre o primeiro item, a menos que você o altere explicitamente. Essa ordem permite o acesso aos elementos através de sua posição, ou **índice**.
+- **Mutável:** Uma vez que uma lista é criada, ela pode ser alterada. É possível adicionar novos elementos, remover elementos existentes e modificar os valores dos itens que já estão na lista.
 
-Internamente, Python trata as variáveis como rótulos que apontam para objetos. Isso significa que uma variável pode, em diferentes momentos, referenciar diferentes tipos de dados. Essa flexibilidade exige atenção, pois mudanças de tipo podem gerar erros sutis em programas mais complexos.
+Uma das grandes vantagens das listas em Python é que elas são **heterogêneas**, ou seja, podem conter elementos de qualquer tipo de dado, inclusive misturando-os em uma mesma lista. É perfeitamente válido ter uma lista que contém números inteiros, strings, booleanos e até mesmo outras listas.
 
-## Atribuição Múltipla
-
-Python permite atribuir valores a múltiplas variáveis ao mesmo tempo, o que torna o código mais conciso e elegante. Essa funcionalidade é particularmente útil para inicializar diversas variáveis de uma vez ou realizar trocas de valores entre variáveis sem o uso de uma variável temporária.
+A sintaxe para criar uma lista é simples e utiliza um par de colchetes `[]`, com os elementos separados por vírgulas.
 
 ```python
-x, y, z = 10, 20, 30
-print(x, y, z)  # Saída: 10 20 30
+# Lista contendo apenas números inteiros (homogênea)
+numeros_primos = [2, 3, 5, 7, 11, 13]
+
+# Lista contendo apenas strings (homogênea)
+nomes_frutas = ["maçã", "banana", "laranja"]
+
+# Lista com múltiplos tipos de dados (heterogênea)
+dados_usuario = ["Carlos", 35, 1.82, True] 
 ```
 
-Você também pode atribuir o mesmo valor a múltiplas variáveis:
+### Acessando Elementos pelo Índice
+
+Como as listas são ordenadas, cada elemento possui uma posição única e numerada, chamada de índice. Conforme vimos no capítulo anterior, a indexação em Python começa em **0**. Portanto, para acessar o primeiro elemento de uma lista, usamos o índice `[0]`, para o segundo, o índice `[1]`, e assim por diante.
+
+Vamos visualizar a estrutura de índices da nossa lista `numeros_primos`:
+
+|Valor|2|3|5|7|11|13|
+|---|---|---|---|---|---|---|
+|Índice|0|1|2|3|4|5|
+
+Para acessar um elemento específico, usamos o nome da variável da lista seguido por colchetes contendo o número do índice desejado. A função `print()` é frequentemente utilizada para exibir esses valores no console e verificar o estado do nosso programa.
 
 ```python
-a = b = c = 100
+lista = [10, 20, 30, 40, 50]
+
+# Acessando e imprimindo elementos individuais
+primeiro_elemento = lista[0]
+terceiro_elemento = lista[2]
+ultimo_elemento = lista[4]
+
+print(f"O primeiro elemento é: {primeiro_elemento}")  # Saída: O primeiro elemento é: 10
+print(f"O terceiro elemento é: {terceiro_elemento}")  # Saída: O terceiro elemento é: 30
+print(f"O último elemento é: {ultimo_elemento}")    # Saída: O último elemento é: 50
+
+# Tentar acessar um índice que não existe resultará em um IndexError
+# print(lista[5]) # Isso geraria um erro, pois o último índice válido é 4
 ```
 
-E uma operação clássica, como a troca de valores entre duas variáveis, pode ser feita de forma direta:
+### Modificando Listas: Métodos Essenciais
+
+A mutabilidade das listas nos permite interagir com elas de diversas formas, adicionando, removendo e alterando seus elementos através de métodos específicos. Um método é uma função que "pertence" a um objeto (neste caso, à lista) e é chamado usando a notação de ponto (`.`).
+
+Vamos considerar a lista `minha_lista = [1, 2, 3, 4]` como base para os exemplos a seguir.
+
+- **`append(elemento)`**: Adiciona um único elemento ao **final** da lista.
+    
+    ```python
+    minha_lista = [1, 2, 3, 4]
+    minha_lista.append(5)
+    print(minha_lista) # Saída: [1, 2, 3, 4, 5]
+    ```
+    
+- **`insert(indice, elemento)`**: Insere um elemento em uma posição específica, "empurrando" os elementos subsequentes para a direita.
+    
+    ```python
+    minha_lista = [1, 2, 3, 4]
+    minha_lista.insert(1, 99) # Insere o valor 99 no índice 1
+    print(minha_lista) # Saída: [1, 99, 2, 3, 4]
+    ```
+    
+- **`remove(valor)`**: Remove a **primeira ocorrência** de um valor específico da lista. Se o valor não existir, um `ValueError` será gerado.
+    
+    ```python
+    minha_lista = [1, 2, 99, 2, 3]
+    minha_lista.remove(2) # Remove o primeiro '2' que encontrar
+    print(minha_lista) # Saída: [1, 99, 2, 3]
+    ```
+    
+- **`pop(indice)`**: Remove e **retorna** o elemento de um índice específico. Se nenhum índice for fornecido, ele remove e retorna o **último** elemento da lista.
+    
+    ```python
+    minha_lista = [10, 20, 30, 40]
+    ultimo = minha_lista.pop() # Remove o último elemento
+    segundo = minha_lista.pop(1) # Remove o elemento no índice 1
+    
+    print(f"Lista após as remoções: {minha_lista}") # Saída: Lista após as remoções: [10, 30]
+    print(f"Elemento removido do final: {ultimo}") # Saída: Elemento removido do final: 40
+    print(f"Elemento removido do índice 1: {segundo}") # Saída: Elemento removido do índice 1: 20
+    ```
+    
+- **`del` (instrução)**: `del` não é um método, mas uma instrução do Python. Pode ser usado para remover um elemento por seu índice.
+    
+    ```python
+    minha_lista = [10, 20, 30, 40]
+    del minha_lista[2] # Remove o elemento no índice 2
+    print(minha_lista) # Saída: [10, 20, 40]
+    ```
+
+### Cópia de Listas: Valor vs. Referência
+
+Um dos conceitos mais importantes e que frequentemente causa confusão para iniciantes é a diferença entre copiar o valor de uma variável e copiar sua referência. Com tipos de dados simples como números ou strings, a atribuição cria uma cópia independente. Com listas (e outros objetos mutáveis), o comportamento é diferente.
+
+Quando você atribui uma lista a uma nova variável, você **não está criando uma nova lista**. Em vez disso, você está criando uma nova **referência** que aponta para o **mesmo objeto** na memória.
+
+Imagine o seguinte cenário:
 
 ```python
-a = 5
-b = 10
-a, b = b, a  # Troca os valores
-print(a, b)  # Saída: 10 5
+# Criamos uma lista original
+lista_a = [10, 20, 30]
+
+# Atribuímos lista_a para lista_b. Ambas agora apontam para o mesmo local na memória.
+lista_b = lista_a
+
+print(f"Lista A: {lista_a}") # Saída: Lista A: [10, 20, 30]
+print(f"Lista B: {lista_b}") # Saída: Lista B: [10, 20, 30]
+
+# Agora, vamos modificar a lista_b
+lista_b.append(99)
+
+print("\n--- Após modificar a Lista B ---")
+print(f"Lista A: {lista_a}") # Saída: Lista A: [10, 20, 30, 99]
+print(f"Lista B: {lista_b}") # Saída: Lista B: [10, 20, 30, 99]
 ```
 
-Esse tipo de atribuição elegante é uma das características que tornam o Python expressivo e fácil de escrever.
+Como se pode observar, a alteração feita em `lista_b` refletiu imediatamente em `lista_a`. Isso ocorreu porque não existem duas listas, mas sim duas "etiquetas" (`lista_a` e `lista_b`) apontando para a mesma lista na memória.
 
-## Nomeando Variáveis: Convenções e Cuidados
-
-Escolher bons nomes para variáveis é essencial para que o código seja legível, compreensível e mantenível. Python impõe algumas regras para nomes válidos:
-
-- Devem começar com uma letra (a-z, A-Z) ou underline (`_`).
-- Podem conter letras, números e underscores, mas não podem conter espaços.
-- Não podem utilizar caracteres especiais (como acentos, ç, %, etc.).
-- Não podem ser iguais a palavras reservadas da linguagem (ex: `class`, `for`, `while`).
-
-Por exemplo:
+Para criar uma cópia verdadeira e independente de uma lista, pode-se usar o método `copy()` ou a técnica de fatiamento `[:]`, que veremos em breve.
 
 ```python
-usuario_id = 105
-nome_completo = "Joana Silva"
-_valido = True  # válido, mas o uso de _ no início tem significado especial em alguns contextos
+lista_a = [10, 20, 30]
+lista_c = lista_a.copy() # Cria uma cópia rasa e independente
+
+lista_c.append(99)
+
+print(f"Lista A: {lista_a}") # Saída: Lista A: [10, 20, 30]
+print(f"Lista C: {lista_c}") # Saída: Lista C: [10, 20, 30, 99]
 ```
 
-Python diferencia letras maiúsculas e minúsculas. Assim, `nome`, `Nome` e `NOME` são variáveis diferentes. Apesar disso, a convenção mais adotada é escrever nomes de variáveis em letras minúsculas, separando palavras com underscores (o chamado `snake_case`).
-
-Evite nomes genéricos como `a`, `b`, `x`, `y`, a menos que o contexto seja claro, como em operações matemáticas simples. Prefira nomes que deixem evidente o propósito da variável.
-
-### Erros Comuns em Nomes de Variáveis
-
-Alguns erros frequentes que devem ser evitados incluem:
-- Usar espaços: `nome completo` (inválido)
-- Começar com número: `1usuario` (inválido)
-- Usar acentos ou cedilha: `função`, `profissão` (inválido ou não recomendado)
-- Reutilizar nomes com finalidades diferentes: isso pode causar confusão ou bugs difíceis de identificar
-
-## Constantes
-
-Embora Python não tenha suporte nativo a constantes (valores que não podem ser modificados após serem definidos), existe uma convenção entre programadores para representar esses valores. Constantes devem ser nomeadas com letras maiúsculas, separadas por underscores:
-
-```python
-PI = 3.14159
-TAXA_CAMBIO = 5.27
-```
-
-Essa convenção indica que o valor **não deve ser alterado**. O Python não impedirá que isso aconteça, mas cabe ao programador respeitar essa restrição.
-
-## Comentários
-
-Comentários são trechos de texto ignorados pelo interpretador que servem para documentar o código. Eles ajudam você e outras pessoas a entenderem a lógica e o funcionamento do programa.
-
-Para comentários de linha única, usa-se o símbolo `#`:
-
-```python
-# Calcula a área de um círculo
-area = PI * (raio ** 2)
-```
-
-Para comentários mais longos ou explicações que envolvem várias linhas, recomenda-se utilizar múltiplas linhas com `#`, embora também seja possível usar aspas triplas (`"""` ou `'''`), que criam strings multilinha — embora não sejam tecnicamente comentários:
-
-```python
-"""
-Este bloco explica a função principal do programa.
-Pode ser usado para documentação.
-"""
-```
-
-Use comentários com moderação: nem em excesso, nem escassamente. O ideal é escrever código claro o suficiente que dispense explicações óbvias, mas que também forneça contexto onde necessário.
-
-## Strings (Textos)
-
-### Declaração de Strings
-
-Strings são utilizadas para representar texto. Em Python, podem ser declaradas usando aspas simples (`'`) ou duplas (`"`). Ambas funcionam da mesma maneira:
-
-```python
-nome = 'Maria'
-saudacao = "Bem-vindo"
-```
-
-Se for necessário incluir aspas dentro da string, use aspas diferentes para delimitação, ou use o caractere de escape (`\`) para evitar erros:
-
-```python
-frase = "Ela disse: 'Olá!'"
-frase2 = 'Ele respondeu: "Tudo bem?"'
-```
-
-### Strings Multilinha
-
-Quando se deseja criar uma string com várias linhas, utiliza-se aspas triplas:
-
-```python
-mensagem = """
-Olá,
-Este é um e-mail automático.
-Obrigado!
-"""
-```
-
-### Métodos de Manipulação de Texto
-
-Strings são objetos que possuem diversos métodos incorporados. Alguns dos mais usados incluem:
-
-- `upper()`: retorna a string com todas as letras em maiúsculo.
-- `lower()`: retorna todas as letras em minúsculo.
-- `title()`: coloca a primeira letra de cada palavra em maiúsculo.
-- `capitalize()`: apenas a primeira letra da primeira palavra em maiúsculo.
-
-```python
-nome = "ana carolina"
-print(nome.upper())      # ANA CAROLINA
-print(nome.lower())      # ana carolina
-print(nome.title())      # Ana Carolina
-print(nome.capitalize()) # Ana carolina
-```
-
-Esses métodos não modificam a string original, pois strings são imutáveis em Python. Para alterar uma string, é necessário reatribuir o valor à variável.
-
-### f-strings (Interpolação de Variáveis)
-
-Para incorporar variáveis dentro de strings, usa-se o recurso das f-strings, que tornam a construção de mensagens muito mais simples:
-
-```python
-nome = "João"
-idade = 30
-print(f"{nome} tem {idade} anos.")
-```
-
-Você pode incluir expressões matemáticas dentro das chaves:
-
-```python
-print(f"Daqui a 10 anos, {nome} terá {idade + 10} anos.")
-```
-
-### Espaços em Branco, Tabs e Quebras de Linha
-
-Caracteres invisíveis, como espaços, tabulações (`\t`) e quebras de linha (`\n`), são úteis para formatar strings:
-
-```python
-print("Nome:\tCarlos\nIdade:\t40")
-```
-
-A saída será:
-
-```
-Nome:   Carlos
-Idade:  40
-```
-
-### Remoção de Espaços e Caracteres
-
-Python oferece métodos específicos para eliminar espaços desnecessários:
-- `strip()`: remove espaços no início e no fim.
-- `lstrip()`: remove à esquerda.
-- `rstrip()`: remove à direita.
-
-```python
-texto = "  exemplo  "
-print(texto.strip())   # "exemplo"
-```
-
-Desde o Python 3.9, é possível usar:
-- `removeprefix()`
-- `removesuffix()`
-
-```python
-arquivo = "dados_relatorio.csv"
-print(arquivo.removesuffix(".csv"))  # dados_relatorio
-```
-
-## Números
-
-Python possui dois tipos principais de números: inteiros (`int`) e ponto flutuante (`float`).
-
-### Inteiros (int)
-
-Usados para representar valores sem casas decimais:
-
-```python
-idade = 25
-ano = 2025
-saldo = -1500
-```
-
-### Operações com Inteiros
-
-```python
-print(7 + 3)   # Soma
-print(7 - 3)   # Subtração
-print(7 * 3)   # Multiplicação
-print(7 // 2)  # Divisão inteira
-print(7 % 2)   # Módulo (resto da divisão)
-print(2 ** 3)  # Exponenciação
-```
-
-### Ponto Flutuante (float)
-
-Usado para representar números com parte decimal:
-
-```python
-peso = 70.5
-altura = 1.75
-```
-
-### Operações com float
-
-```python
-print(5.5 + 2.3)
-print(8.0 / 2)
-```
-
-Misturar `int` com `float` resulta em um `float`:
-
-```python
-print(5 + 1.0)  # 6.0
-```
-
-### Underscores em Números
-
-Para facilitar a leitura de números grandes, pode-se usar underscores:
-
-```python
-populacao = 213_000_000
-prejuizo = 1_500_000.75
-```
-
-Eles não afetam o valor numérico e são ignorados pelo interpretador.
-
----
-
-Este capítulo abordou os fundamentos que sustentam toda e qualquer aplicação escrita em Python. Compreender profundamente variáveis, tipos básicos e manipulação de dados é essencial para explorar estruturas mais complexas e criar programas funcionais, elegantes e eficientes. Nos próximos capítulos, daremos continuidade à construção desse conhecimento, abordando estruturas de controle, coleções e funções.
+Neste caso, a `lista_a` permaneceu intacta, pois `lista_c` é um objeto completamente novo.
 
