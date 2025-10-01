@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "seguranca-da-informacao/contents/04-criptografia-simetrica-assimetrica-e-hashes.md",
+                "file": "linguagem-python/contents/01-introducao.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-criptografia-simetrica-assimetrica-e-hashes"
+              "title": "01-introducao"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "seguranca-da-informacao/contents/04-criptografia-simetrica-assimetrica-e-hashes.md",
+                "file": "linguagem-python/contents/01-introducao.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 04-criptografia-simetrica-assimetrica-e-hashes"
+              "title": "Sumário de 01-introducao"
             }
           }
         ],
@@ -171,6 +171,12 @@
   },
   "active": "af6924f9752dc980",
   "lastOpenFiles": [
+    "linguagem-javascript/contents/01-introducao.md",
+    "linguagem-python/contents/01-introducao.md",
+    "linguagem-python/contents/02-variaveis.md",
+    "engenharia-de-software/contents/24-deployment-pipeline.md",
+    "engenharia-de-software/contents/23-mvp.md",
+    "seguranca-da-informacao/contents/04-criptografia-simetrica-assimetrica-e-hashes.md",
     "seguranca-da-informacao/contents/img/04-funcoes-hash.png",
     "seguranca-da-informacao/contents/img/04-dh-mitm.png",
     "seguranca-da-informacao/contents/img/04-dh-operacoes-cores.png",
@@ -181,8 +187,6 @@
     "seguranca-da-informacao/contents/img/04-3des-operacoes.png",
     "seguranca-da-informacao/contents/img/04-des-etapas.png",
     "seguranca-da-informacao/contents/img/04-des-operacoes.png",
-    "seguranca-da-informacao/contents/img/04-criptografia-simetrica.png",
-    "seguranca-da-informacao/contents/04-criptografia-simetrica-assimetrica-e-hashes.md",
     "seguranca-da-informacao/Sem título.md",
     "seguranca-da-informacao/contents/03-criptografia.md",
     "conhecimentos-pedagogicos-e-ept/contents/10-planejamento-escolar.md",
@@ -203,10 +207,6 @@
     "bancos-de-dados/contents/07-linguagem-sql-juncoes.md",
     "bancos-de-dados/contents/06-linguagem-sql-clausulas.md",
     "bancos-de-dados/contents/05-calculo-relacional.md",
-    "bancos-de-dados/contents/04-linguagem-sql-fundamentos.md",
-    "plano-de-trabalho.md",
-    "Sem título.md",
-    "bancos-de-dados/contents/03-algebra-relacional.md",
     "seguranca-da-informacao/contents/img",
     "seguranca-da-informacao/contents/Nova pasta",
     "seguranca-da-informacao/contents",
