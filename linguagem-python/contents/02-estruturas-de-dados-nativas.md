@@ -407,3 +407,143 @@ Ano_Lancamento: 2014
 Diretor: Christopher Nolan
 ```
 
+## Conjuntos (Sets)
+
+A última das quatro grandes estruturas de dados nativas do Python são os **conjuntos**, ou **sets**. Um conjunto é uma coleção **mutável** e **não ordenada** de elementos **únicos**. A melhor forma de conceituá-lo é pensar em um dicionário que armazena apenas as chaves, sem nenhum valor associado.
+
+Sua principal finalidade é armazenar itens sem duplicatas e realizar operações matemáticas de conjuntos, como união, interseção e diferença, de forma extremamente eficiente.
+
+As características que definem um conjunto são:
+
+- **Mutável:** É possível adicionar e remover elementos de um conjunto após sua criação.
+- **Não Ordenado:** Os elementos dentro de um conjunto não mantêm uma ordem específica. Por isso, não é possível acessá-los por um índice numérico.
+- **Elementos Únicos:** Um conjunto não permite elementos duplicados. Se você tentar adicionar um item que já existe, a operação será simplesmente ignorada, sem gerar erro.
+- **Elementos Imutáveis:** Os itens armazenados em um conjunto devem ser de tipos de dados imutáveis (como números, strings ou tuplas). Listas e dicionários, por serem mutáveis, não podem ser elementos de um conjunto.
+
+### A Unicidade nos Conjuntos
+
+A garantia de unicidade é o pilar dos conjuntos. O Python determina se dois elementos são "iguais" com base em seu valor e seu tipo. Por exemplo, o número inteiro `1` e o número de ponto flutuante `1.0` são considerados o mesmo elemento, pois seu valor numérico é idêntico. O mesmo ocorre com o booleano `True`, que é numericamente equivalente a `1`.
+
+```python
+# A duplicidade é removida automaticamente na criação
+numeros = {1, 2, 3, 2, 1, 1.0, True}
+
+print(numeros) # Saída: {1, 2, 3}
+# O resultado pode aparecer em outra ordem, como {2, 1, 3}
+```
+
+Neste caso, `1`, `1.0` e `True` são tratados como o mesmo elemento, e o conjunto armazena apenas a primeira ocorrência encontrada. No entanto, o inteiro `1` e a string `"1"` são considerados elementos **diferentes**, pois seus tipos são distintos.
+
+```python
+dados_mistos = {1, "1", False, 0}
+print(dados_mistos) # Saída: {0, '1'}
+# False e 0 são tratados como o mesmo elemento. 1 e "1" são diferentes.
+```
+
+### Criando Conjuntos
+
+Existem duas maneiras principais de se criar um conjunto em Python.
+
+- **Usando Chaves `{}`:** Para criar um conjunto com elementos iniciais, utiliza-se a notação de chaves `{}`, semelhante à dos dicionários, mas sem os dois-pontos.
+    
+    ```python
+    conjunto_vogais = {'a', 'e', 'i', 'o', 'u'}
+    ```
+    
+- **Usando a Função `set()`:** A função `set()` pode ser usada para criar um conjunto a partir de qualquer objeto iterável (como uma lista, tupla ou string). Essa é uma forma muito comum de, por exemplo, remover duplicatas de uma lista.
+    
+    ```python
+    lista_com_duplicatas = [10, 20, 30, 10, 20, 40]
+    conjunto_sem_duplicatas = set(lista_com_duplicatas)
+    
+    print(conjunto_sem_duplicatas) # Saída: {40, 10, 20, 30}
+    ```
+
+Uma regra crucial a ser lembrada é que para criar um **conjunto vazio**, é **obrigatório** o uso da função `set()`. Usar um par de chaves vazio `{}` criará um **dicionário vazio**, não um conjunto.
+
+```python
+dicionario_vazio = {}
+conjunto_vazio = set()
+
+print(type(dicionario_vazio)) # Saída: <class 'dict'>
+print(type(conjunto_vazio))   # Saída: <class 'set'>
+```
+
+### Adicionando e Removendo Elementos
+
+Por serem mutáveis, podemos manipular os elementos de um conjunto com métodos específicos.
+
+- **`add(elemento)`**: Adiciona um único elemento ao conjunto. Se o elemento já existir, nada acontece.
+    
+    ```python
+    numeros = {1, 2, 3}
+    numeros.add(4)
+    numeros.add(2) # Ignorado, pois 2 já existe
+    print(numeros) # Saída: {1, 2, 3, 4}
+    ```
+    
+- **`remove(elemento)`**: Remove um elemento específico. Se o elemento não for encontrado, um `KeyError` será gerado.
+- **`discard(elemento)`**: Também remove um elemento específico, mas, se o elemento não for encontrado, **não gera erro**. É uma alternativa mais segura ao `remove()`.
+    
+    ```python
+    numeros = {1, 2, 3, 4}
+    numeros.discard(3)  # Remove o 3
+    numeros.discard(99) # Tenta remover o 99, mas não faz nada, pois não existe
+    # numeros.remove(99) # Esta linha geraria um KeyError
+    print(numeros) # Saída: {1, 2, 4}
+    ```
+    
+- **`pop()`**: Remove e retorna um elemento **arbitrário** do conjunto. Como conjuntos não têm ordem, não há como prever qual elemento será removido.
+- **`clear()`**: Remove todos os elementos do conjunto, deixando-o vazio.
+
+### Operações Matemáticas com Conjuntos
+
+A verdadeira força dos conjuntos se revela na execução de operações matemáticas de forma otimizada.
+
+- **União (`|` ou `union()`):** Retorna um novo conjunto com todos os elementos de ambos os conjuntos.
+    
+    ```python
+    conjunto_a = {1, 2, 3}
+    conjunto_b = {3, 4, 5}
+    uniao = conjunto_a.union(conjunto_b) # ou conjunto_a | conjunto_b
+    print(f"União: {uniao}") # Saída: União: {1, 2, 3, 4, 5}
+    ```
+    
+- **Interseção (`&` ou `intersection()`):** Retorna um novo conjunto contendo apenas os elementos que estão presentes em **ambos** os conjuntos.
+    
+    ```python
+    conjunto_a = {1, 2, 3}
+    conjunto_b = {3, 4, 5}
+    intersecao = conjunto_a.intersection(conjunto_b) # ou conjunto_a & conjunto_b
+    print(f"Interseção: {intersecao}") # Saída: Interseção: {3}
+    ```
+    
+- **Diferença (`-` ou `difference()`):** Retorna um novo conjunto com os elementos que estão no primeiro conjunto, mas **não** no segundo.
+    
+    ```python
+    conjunto_a = {1, 2, 3}
+    conjunto_b = {3, 4, 5}
+    diferenca = conjunto_a.difference(conjunto_b) # ou conjunto_a - conjunto_b
+    print(f"Diferença (A - B): {diferenca}") # Saída: Diferença (A - B): {1, 2}
+    ```
+    
+- **Diferença Simétrica (`^` ou `symmetric_difference()`):** Retorna um novo conjunto com os elementos que estão em um dos conjuntos, mas **não em ambos**.
+    
+    ```python
+    conjunto_a = {1, 2, 3}
+    conjunto_b = {3, 4, 5}
+    dif_simetrica = conjunto_a.symmetric_difference(conjunto_b) # ou conjunto_a ^ conjunto_b
+    print(f"Diferença Simétrica: {dif_simetrica}") # Saída: Diferença Simétrica: {1, 2, 4, 5}
+    ```
+
+## Considerações Finais
+
+Neste capítulo, demos um passo crucial além da manipulação de dados individuais para explorar o universo das **estruturas de dados nativas** do Python. Compreendemos que, para resolver problemas do mundo real, precisamos de ferramentas capazes de organizar, armazenar e gerenciar coleções de informações de forma eficiente, e o Python nos oferece um quarteto poderoso para essa finalidade.
+
+Iniciamos nossa jornada com as **listas**, a estrutura mais versátil e fundamental, aprendendo que sua natureza **ordenada** e **mutável** a torna a escolha ideal para sequências de dados que precisam ser constantemente modificadas. Em seguida, exploramos as **tuplas**, e vimos que sua **imutabilidade** não é uma limitação, mas uma característica de design que proporciona segurança e integridade para dados que não devem ser alterados.
+
+Avançamos para os **dicionários**, que introduziram o poderoso conceito de mapeamento **chave-valor**, permitindo-nos associar e recuperar informações de forma lógica e intuitiva, em vez de depender de índices numéricos. Por fim, desvendamos os **conjuntos (sets)**, a ferramenta otimizada para garantir a **unicidade** dos elementos e para realizar operações matemáticas complexas — como união e interseção — com extrema performance.
+
+Fica claro, portanto, que a escolha da estrutura de dados correta não é trivial, mas sim uma decisão de arquitetura fundamental. A pergunta a ser feita não é "qual é a melhor?", mas "qual é a mais adequada para o meu problema?". A necessidade de ordem, a permissão para modificação, a forma de acesso aos dados e a exigência de unicidade são os critérios que guiarão essa escolha.
+
+Com um domínio sólido sobre como armazenar e organizar coleções de dados, o próximo passo natural é aprender a processá-las em massa. Armados com o conhecimento de listas, tuplas, dicionários e conjuntos, estamos agora prontos para explorar as estruturas de controle que nos permitirão iterar sobre essas coleções, tomar decisões e construir lógicas de programa dinâmicas e complexas.
