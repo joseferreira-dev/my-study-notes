@@ -126,3 +126,18 @@ Erro: Não é possível dividir por zero.
 ```
 
 A cláusula `finally` garante que a mensagem final seja sempre impressa, concluindo a operação de forma consistente.
+
+## Considerações Finais
+
+Neste capítulo, abordamos um dos aspectos mais cruciais da programação defensiva e da criação de software robusto: o **tratamento de exceções**. Compreendemos que erros durante a execução são inevitáveis, mas permitir que eles interrompam abruptamente nossos programas não é uma opção em aplicações profissionais.
+
+Exploramos a estrutura `try...except...else...finally`, o mecanismo completo que o Python nos oferece para antecipar, capturar e gerenciar esses erros de forma elegante. Aprendemos que:
+
+- O bloco `try` nos permite isolar e monitorar operações arriscadas.
+- O bloco `except` atua como uma rede de segurança, nos dando a chance de tratar erros específicos sem que o programa "quebre", permitindo uma recuperação graciosa.
+- A cláusula `else` nos fornece um local limpo para executar o código que depende do sucesso da operação no bloco `try`.
+- A cláusula `finally` nos dá a garantia de que ações de limpeza essenciais, como fechar um arquivo, serão executadas sob quaisquer circunstâncias.
+
+Dominar o tratamento de exceções é o que separa um script frágil de uma aplicação resiliente. É uma mudança de mentalidade, onde passamos a programar não apenas para o "caminho feliz", mas também para as inevitáveis adversidades, garantindo que nosso software se comporte de maneira previsível e segura, mesmo quando confrontado com o inesperado.
+
+Com a capacidade de lidar com erros em mãos, estamos agora mais bem preparados para interagir com recursos externos, onde a probabilidade de falhas é ainda maior. O próximo passo em nossa jornada será explorar a **manipulação de arquivos**, aprendendo a ler e escrever dados em disco, um cenário onde o tratamento de exceções se mostrará uma ferramenta indispensável.
