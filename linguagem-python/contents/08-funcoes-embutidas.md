@@ -250,3 +250,176 @@ numeros_pares_comp = [x for x in lista_numeros if x % 2 == 0]
 print(numeros_pares_comp) # Saída: [0, 2, 4, 6, 8]
 ```
 
+## Ordenando Coleções: `sorted()` vs. `.sort()`
+
+A capacidade de ordenar os elementos de uma coleção — seja em ordem numérica, alfabética ou segundo um critério customizado — é uma necessidade fundamental em programação. O Python nos oferece duas maneiras principais de realizar essa tarefa, uma função embutida (`sorted()`) e um método de lista (`.sort()`). Embora ambas realizem a ordenação, seu comportamento e aplicação são distintos, e a escolha entre elas depende do resultado desejado.
+
+### `sorted()`: Criando uma Nova Lista Ordenada
+
+A função embutida `sorted()` é a ferramenta de ordenação mais flexível do Python. Ela pode receber **qualquer objeto iterável** (como uma lista, tupla, conjunto ou string) e **retorna uma nova lista** contendo todos os elementos do original, devidamente ordenados. A principal característica é que a coleção original permanece **intacta**.
+
+A sintaxe geral é:
+
+```python
+sorted(iteravel, key=None, reverse=False)
+```
+
+- **`iteravel`**: A coleção de dados que será ordenada.
+- **`key`**: Parâmetro opcional que especifica uma função a ser aplicada a cada elemento antes da comparação. A ordenação será baseada nos resultados dessa função. Por exemplo, `key=len` ordenará strings pelo seu comprimento.
+- **`reverse`**: Parâmetro opcional que, se definido como `True`, ordena a lista em ordem decrescente. O padrão é `False` (ordem crescente).
+
+Vamos a um exemplo com uma lista de números:
+
+```python
+numeros = [5, 2, 9, 1, 5, 6]
+
+# Ordenação crescente (padrão)
+lista_ordenada = sorted(numeros)
+print(f"Lista Original: {numeros}")          # Saída: Lista Original: [5, 2, 9, 1, 5, 6]
+print(f"Nova Lista Ordenada: {lista_ordenada}") # Saída: Nova Lista Ordenada: [1, 2, 5, 5, 6, 9]
+
+# Ordenação decrescente
+lista_inversa = sorted(numeros, reverse=True)
+print(f"Nova Lista Inversa: {lista_inversa}") # Saída: Nova Lista Inversa: [9, 6, 5, 5, 2, 1]
+```
+
+O poder do parâmetro `key` se torna evidente ao ordenar coleções mais complexas, como uma lista de strings, com base em um critério que não seja a ordem alfabética.
+
+```python
+palavras = ['maçã', 'banana', 'abacaxi', 'uva']
+
+# Ordenando pelo comprimento de cada palavra
+ordenada_por_tamanho = sorted(palavras, key=len)
+print(ordenada_por_tamanho) # Saída: ['uva', 'maçã', 'banana', 'abacaxi']
+```
+
+### `.sort()`: Ordenando uma Lista _In-Place_
+
+Diferentemente de `sorted()`, o `.sort()` **não é uma função embutida**, mas sim um **método que pertence exclusivamente a objetos do tipo lista**. Sua principal característica é que ele realiza a ordenação **"in-place"**, ou seja, ele **modifica a lista original** diretamente e **não retorna nenhum valor** (tecnicamente, retorna `None`).
+
+Por não criar uma nova lista, o método `.sort()` é ligeiramente mais eficiente em termos de uso de memória. Ele aceita os mesmos parâmetros opcionais `key` e `reverse`.
+
+```python
+numeros = [5, 2, 9, 1, 5, 6]
+print(f"Lista antes do .sort(): {numeros}") # Saída: Lista antes do .sort(): [5, 2, 9, 1, 5, 6]
+
+# Aplicando o método .sort()
+numeros.sort()
+
+print(f"Lista depois do .sort(): {numeros}") # Saída: Lista depois do .sort(): [1, 2, 5, 5, 6, 9]
+
+# Aplicando a ordenação decrescente na mesma lista
+numeros.sort(reverse=True)
+print(f"Lista após .sort(reverse=True): {numeros}") # Saída: Lista após .sort(reverse=True): [9, 6, 5, 5, 2, 1]
+```
+
+Um erro comum entre iniciantes é tentar atribuir o resultado de `.sort()` a uma nova variável, o que resultará em `None`.
+
+```python
+numeros = [3, 1, 2]
+lista_errada = numeros.sort()
+print(lista_errada) # Saída: None
+```
+
+### `sorted()` ou `.sort()`: Qual Usar?
+
+A escolha entre os dois métodos depende do seu objetivo:
+
+|Característica|`sorted()`|`.sort()`|
+|---|---|---|
+|**Tipo**|Função Embutida|Método de Lista|
+|**Aplicabilidade**|Qualquer iterável (lista, tupla, set, etc.)|Apenas em listas|
+|**Retorno**|Retorna uma **nova lista** ordenada.|Retorna `None`.|
+|**Efeito Colateral**|**Não modifica** o objeto original.|**Modifica** a lista original (_in-place_).|
+
+A regra geral é:
+
+- Use `sorted()` quando precisar manter a coleção original intacta ou quando estiver trabalhando com um iterável que não seja uma lista (como uma tupla).
+- Use `.sort()` quando tiver certeza de que não precisa mais da ordem original da lista e desejar realizar a ordenação com a máxima eficiência de memória.
+
+## Invertendo a Ordem de Sequências
+
+Diferentemente da ordenação, que rearranja os elementos com base em seu valor (numérico ou alfabético), a **inversão** simplesmente espelha a ordem de uma sequência, fazendo com que o último elemento se torne o primeiro, o penúltimo se torne o segundo, e assim por diante. É uma operação puramente posicional. O Python nos oferece três maneiras distintas de realizar essa tarefa, cada uma com suas próprias características e casos de uso.
+
+### Fatiamento com Passo Negativo
+
+Já exploramos o fatiamento (`slicing`) com a sintaxe `[inicio:fim]`. No entanto, a sintaxe completa de fatiamento aceita um terceiro parâmetro, o **passo** (_step_): `[inicio:fim:passo]`. O passo determina de quantos em quantos elementos a fatia será construída.
+
+```python
+lista = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Omitindo o início e o fim (pega a lista inteira) e usando um passo de 2
+# Pega o elemento no índice 0, pula 1, pega o do índice 2, pula 1, e assim por diante.
+elementos_pares = lista[::2]
+print(elementos_pares) # Saída: [0, 2, 4, 6, 8]
+```
+
+A grande sacada é que o passo pode ser **negativo**. Um passo de `-1` instrui o Python a percorrer a lista de trás para frente, do último ao primeiro elemento. Ao omitir o início e o fim, aplicamos essa inversão à lista inteira. A sintaxe `[::-1]` tornou-se uma expressão idiomática em Python para inverter qualquer sequência.
+
+Esta operação sempre **cria uma nova lista** (ou string, ou tupla) invertida, sem alterar a original.
+
+```python
+lista_original = [10, 20, 30, 40, 50]
+
+# Usando fatiamento com passo -1 para criar uma cópia invertida
+lista_invertida = lista_original[::-1]
+
+print(f"Lista Original: {lista_original}")     # Saída: Lista Original: [10, 20, 30, 40, 50]
+print(f"Lista Invertida: {lista_invertida}") # Saída: Lista Invertida: [50, 40, 30, 20, 10]
+```
+
+Lembre-se da sintaxe completa do fatiamento: `[a:b:c]`
+
+- `a` = índice de início (inclusivo)
+- `b` = índice de fim (exclusivo)
+- `c` = tamanho e direção do passo
+
+### Função `reversed()`
+
+A função embutida `reversed()` é outra forma de percorrer uma sequência na ordem inversa. Assim como `map()` e `filter()`, `reversed()` **retorna um iterador** "preguiçoso", que gera os elementos um a um, sob demanda, de trás para frente.
+
+Essa abordagem é extremamente eficiente em termos de memória, pois não cria uma nova lista completa de imediato. A coleção original também permanece **intacta**. Para obter uma nova lista com a ordem invertida, basta converter o iterador resultante com a função `list()`.
+
+```python
+minha_tupla = (1, 2, 3, 4, 5)
+
+# A função reversed() retorna um iterador
+iterador_reverso = reversed(minha_tupla)
+
+# Convertendo o iterador para uma lista para materializar a inversão
+lista_invertida = list(iterador_reverso)
+
+print(f"Tupla Original: {minha_tupla}")         # Saída: Tupla Original: (1, 2, 3, 4, 5)
+print(f"Lista Invertida: {lista_invertida}") # Saída: Lista Invertida: [5, 4, 3, 2, 1]
+```
+
+Por retornar um iterador, `reversed()` é a escolha ideal quando você precisa apenas percorrer uma sequência de trás para frente dentro de um laço `for`, sem a necessidade de criar uma nova lista em memória.
+
+```python
+for i in reversed(range(5)): # Itera de 4 a 0
+    print(i, end=" ") # Saída: 4 3 2 1 0
+```
+
+### Método `list.reverse()`
+
+Seguindo o mesmo padrão de `sorted()` vs. `.sort()`, o Python oferece o método `.reverse()`, que é exclusivo de objetos do tipo **lista**. Este método realiza a inversão **"in-place"**, ou seja, ele **modifica a lista original** e, assim como `.sort()`, **retorna `None`**.
+
+Esta é a opção mais eficiente em termos de memória se o seu objetivo é, de fato, alterar a ordem da lista existente, sem a necessidade de preservar a ordem original.
+
+```python
+numeros = [1, 2, 3, 4, 5]
+print(f"Lista antes do .reverse(): {numeros}") # Saída: Lista antes do .reverse(): [1, 2, 3, 4, 5]
+
+# Aplicando o método .reverse()
+resultado = numeros.reverse()
+
+print(f"Lista depois do .reverse(): {numeros}") # Saída: Lista depois do .reverse(): [5, 4, 3, 2, 1]
+print(f"O método .reverse() retornou: {resultado}") # Saída: O método .reverse() retornou: None
+```
+
+A escolha entre os três métodos depende diretamente da sua necessidade:
+
+- Precisa de uma **nova cópia** invertida e quer uma sintaxe concisa? Use o fatiamento `[::-1]`.
+- Precisa **percorrer** a sequência de trás para frente de forma eficiente, sem alocar uma nova lista? Use a função `reversed()`.
+- Precisa **modificar a lista original** permanentemente, economizando memória? Use o método `.reverse()`.
+
