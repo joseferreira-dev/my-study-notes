@@ -210,3 +210,203 @@ print(f"Saldo final: {conta_segura.get_saldo()}") # Saída: Saldo final: 500
 
 Com a classe encapsulada, o atributo `__saldo` está protegido. A única maneira de interagir com ele é através dos métodos `get_saldo()`, `depositar()` e `sacar()`, que contêm a lógica de negócio e as validações necessárias para garantir que o objeto permaneça sempre em um estado consistente e válido. O encapsulamento, portanto, é a base para a criação de objetos confiáveis e robustos.
 
+### Herança: Criando Hierarquias e Reutilizando Código
+
+A **herança** é o pilar que permite que uma classe, chamada de **subclasse** (ou classe filha), adquira os atributos e métodos de outra classe, chamada de **superclasse** (ou classe pai). Este é um dos mecanismos mais poderosos da POO, pois está focado em criar relacionamentos e hierarquias, promovendo o reuso de código e a modelagem de conceitos do mundo real de forma intuitiva.
+
+A ideia central por trás da herança é a relação **"é um"** (_is-a_). Uma classe `Carro` só deve herdar de `Veiculo` porque um carro **é um** tipo de veículo. Um `Gerente` só deve herdar de `Funcionario` porque um gerente **é um** tipo de funcionário. Ao estabelecer essa relação, a subclasse herda automaticamente toda a funcionalidade da superclasse, podendo então **estender** (adicionar novos atributos e métodos) ou **especializar** (modificar o comportamento de métodos herdados) essa funcionalidade.
+
+Isso nos permite trabalhar com dois processos de design complementares:
+
+1. **Generalização:** É o processo de identificar características comuns entre várias classes e abstraí-las para uma superclasse mais genérica. Se temos classes `Carro`, `Moto` e `Caminhao`, podemos observar que todas possuem `marca` e `modelo`, e todas podem `acelerar()`. A criação da classe `Veiculo` para conter esses membros comuns é um ato de generalização.
+2. **Especialização:** É o processo inverso. Partimos de uma classe genérica e criamos subclasses mais específicas que, além de herdarem tudo da superclasse, adicionam seus próprios atributos e comportamentos exclusivos.
+
+#### A Herança na Prática em Python
+
+Em Python, a herança é implementada com uma sintaxe simples: na definição da classe filha, passamos a classe pai entre parênteses.
+
+```python
+class Subclasse(Superclasse):
+```
+
+Vamos expandir nosso exemplo anterior, criando uma hierarquia de veículos.
+
+**A Superclasse (Generalização):**
+
+```python
+# Classe pai, ou superclasse
+class Veiculo:
+    def __init__(self, marca, modelo, ano):
+        self.marca = marca
+        self.modelo = modelo
+        self.ano = ano
+
+    def exibir_dados(self):
+        print(f"Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}")
+
+    def ligar_motor(self):
+        print("Motor do veículo ligado.")
+```
+
+**As Subclasses (Especialização):**
+
+Agora, vamos criar classes Carro e Moto que herdam de Veiculo.
+
+```python
+# Classe filha, ou subclasse
+class Carro(Veiculo):
+    # O Carro terá todos os atributos e métodos de Veiculo
+    pass # A palavra-chave 'pass' indica um bloco vazio
+
+class Moto(Veiculo):
+    # A Moto também herdará tudo de Veiculo
+    pass
+
+# Instanciando objetos das subclasses
+meu_carro = Carro("Ford", "Ka", 2020)
+minha_moto = Moto("Honda", "CB 500", 2022)
+
+# Mesmo sem definir nada em Carro e Moto, elas já possuem a funcionalidade da classe pai
+meu_carro.exibir_dados() # Saída: Marca: Ford, Modelo: Ka, Ano: 2020
+minha_moto.ligar_motor() # Saída: Motor do veículo ligado.
+```
+
+#### Estendendo e Especializando com `super()` e Sobrescrita
+
+O verdadeiro poder da herança se manifesta quando estendemos e especializamos as subclasses.
+
+- **Estender:** Adicionar novos atributos e métodos que são específicos da subclasse.
+- **Sobrescrever (Override):** Fornecer uma nova implementação para um método que já existe na superclasse.
+
+Para isso, utilizamos a função `super()`. A função `super()` nos dá acesso aos métodos da classe pai, permitindo que a gente chame o construtor da superclasse para inicializar os atributos herdados antes de adicionar os novos.
+
+```python
+class Carro(Veiculo):
+    def __init__(self, marca, modelo, ano, numero_portas):
+        # 1. Chama o construtor da classe pai (Veiculo) para inicializar os atributos comuns
+        super().__init__(marca, modelo, ano)
+        
+        # 2. Adiciona o atributo específico da classe Carro
+        self.numero_portas = numero_portas
+
+    # 3. Sobrescrevendo o método da classe pai para um comportamento mais específico
+    def ligar_motor(self):
+        print(f"O motor do {self.modelo} foi ligado.")
+
+class Moto(Veiculo):
+    def __init__(self, marca, modelo, ano, cilindradas):
+        super().__init__(marca, modelo, ano)
+        self.cilindradas = cilindradas
+
+    def ligar_motor(self):
+        print(f"A moto {self.modelo} deu a partida.")
+
+# Instanciando os objetos especializados
+meu_novo_carro = Carro("Toyota", "Corolla", 2023, 4)
+minha_nova_moto = Moto("Yamaha", "MT-07", 2024, 700)
+
+# O método exibir_dados foi herdado e funciona normalmente
+meu_novo_carro.exibir_dados() # Saída: Marca: Toyota, Modelo: Corolla, Ano: 2023
+
+# O método ligar_motor agora executa a versão específica de cada subclasse
+meu_novo_carro.ligar_motor()   # Saída: O motor do Corolla foi ligado.
+minha_nova_moto.ligar_motor() # Saída: A moto MT-07 deu a partida.
+```
+
+A herança, portanto, nos permite criar uma base de código comum e reutilizável na superclasse, enquanto as subclasses se encarregam de implementar os detalhes e as especializações, resultando em um código mais organizado, modular e fácil de estender.
+
+### Polimorfismo: Muitas Formas, Uma Única Interface
+
+A **herança** nos permite criar hierarquias, mas o benefício mais poderoso que surge dessa estrutura é o **polimorfismo**. A palavra vem do grego e significa "muitas formas" (_poly_ = muitas, _morphos_ = forma). Na Programação Orientada a Objetos, o polimorfismo é a capacidade de objetos de classes diferentes responderem à mesma mensagem (a mesma chamada de método) de maneiras específicas e apropriadas para cada um.
+
+Em termos práticos, o polimorfismo nos permite tratar um objeto de uma subclasse como se fosse um objeto de sua superclasse. Isso nos capacita a escrever um código mais genérico e desacoplado, que pode operar sobre uma família de classes sem precisar conhecer os detalhes específicos de cada uma.
+
+Pense em um sistema de áudio com um botão "play". Este botão (a **interface**) envia a mesma mensagem `play()` para diferentes dispositivos. Se o dispositivo for um toca-fitas, ele começará a girar a fita. Se for um CD player, ele começará a girar o disco e a ler com o laser. Se for um serviço de streaming, ele iniciará o buffer da música pela internet. A mensagem é a mesma, mas o comportamento executado é diferente para cada objeto.
+
+#### Polimorfismo na Prática em Python
+
+O polimorfismo em Python se manifesta de forma natural através da herança e da sobrescrita de métodos. Vamos utilizar nossa hierarquia de veículos para demonstrar.
+
+```python
+# Relembrando nossas classes
+class Veiculo:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    def ligar_motor(self):
+        print("Motor do veículo ligado.")
+
+class Carro(Veiculo):
+    def ligar_motor(self): # Método sobrescrito
+        print(f"O motor do carro {self.modelo} foi ligado.")
+
+class Moto(Veiculo):
+    def ligar_motor(self): # Método sobrescrito
+        print(f"A moto {self.modelo} deu a partida.")
+
+# Criando instâncias
+meu_carro = Carro("Toyota", "Corolla")
+minha_moto = Moto("Yamaha", "MT-07")
+
+# --- A mágica do polimorfismo acontece aqui ---
+
+# Criamos uma função que opera sobre a classe genérica 'Veiculo'
+def iniciar_corrida(veiculo):
+    print("\n--- Preparando para iniciar a corrida ---")
+    print(f"Verificando o veículo: {veiculo.marca} {veiculo.modelo}")
+    veiculo.ligar_motor() # A mesma chamada de método para qualquer veículo
+
+# Agora, podemos passar objetos de diferentes subclasses para a mesma função
+iniciar_corrida(meu_carro)
+iniciar_corrida(minha_moto)
+```
+
+A saída será:
+
+```
+--- Preparando para iniciar a corrida ---
+Verificando o veículo: Toyota Corolla
+O motor do carro Corolla foi ligado.
+
+--- Preparando para iniciar a corrida ---
+Verificando o veículo: Yamaha MT-07
+A moto MT-07 deu a partida.
+```
+
+A função `iniciar_corrida` é polimórfica. Ela não precisa saber se está lidando com um `Carro` ou uma `Moto`. Ela simplesmente espera receber um objeto que "é um" `Veiculo` e confia que esse objeto saberá como responder à chamada `ligar_motor()`. O Python, em tempo de execução, se encarrega de chamar a versão correta e especializada do método para cada objeto.
+
+Essa capacidade de escrever funções genéricas que operam sobre uma abstração (a superclasse `Veiculo`) é o que torna o código flexível e extensível. Se amanhã criarmos uma classe `Caminhao(Veiculo)` com seu próprio método `ligar_motor()`, a função `iniciar_corrida` funcionará com ela instantaneamente, sem que uma única linha de código precise ser alterada.
+
+#### Polimorfismo e "Duck Typing"
+
+O Python leva o conceito de polimorfismo um passo adiante com uma filosofia conhecida como **"Duck Typing"** (Tipagem de Pato). A expressão vem do ditado: "Se anda como um pato, nada como um pato e faz quack como um pato, então eu chamo de pato".
+
+Isso significa que, para o Python, o tipo real de um objeto é menos importante do que os métodos que ele implementa. Para que o polimorfismo funcione, as classes nem precisam herdar de uma superclasse comum. Contanto que diferentes objetos possuam um método com o mesmo nome, eles podem ser usados de forma intercambiável na mesma função.
+
+Vamos ver um exemplo com animais que não possuem relação de herança:
+
+```python
+class Pato:
+    def comunicar(self):
+        print("Quack! Quack!")
+
+class Pessoa:
+    def comunicar(self):
+        print("Olá, bom dia!")
+
+# Função polimórfica que não depende de herança
+def fazer_comunicar(ser):
+    ser.comunicar()
+
+# Criando instâncias de classes não relacionadas
+pato = Pato()
+pessoa = Pessoa()
+
+# A mesma função funciona para ambos, pois ambos têm o método .comunicar()
+fazer_comunicar(pato)   # Saída: Quack! Quack!
+fazer_comunicar(pessoa) # Saída: Olá, bom dia!
+```
+
+Essa flexibilidade, onde o comportamento (os métodos que o objeto possui) é mais importante que a herança, é uma das características mais poderosas e distintivas do Python.
+
