@@ -342,3 +342,192 @@ numero_produto = codigo[-8:-3]
 print(numero_produto) # Saída: 00123
 ```
 
+## Métodos Comuns para Análise e Manipulação
+
+Além das operações fundamentais, o Python equipa as strings com um rico conjunto de métodos que nos permitem inspecionar, analisar e transformar seu conteúdo. Esses métodos são funções atreladas ao objeto string e nos permitem realizar tarefas complexas, como buscar substrings, alterar capitalização e substituir caracteres, de forma simples e legível.
+
+### Verificando Pertencimento com `in`
+
+Frequentemente, precisamos verificar se uma sequência de caracteres está contida dentro de outra. Para essa tarefa, o Python oferece o operador de pertencimento `in`, que retorna um valor booleano (`True` ou `False`). A expressão `substring in string` avalia se a `substring` existe em algum ponto da `string` principal.
+
+```python
+frase = "Bem-vindo ao universo Python"
+
+# Verificações de pertencimento (case-sensitive)
+print('Python' in frase) # Saída: True
+print('universo' in frase) # Saída: True
+print('python' in frase) # Saída: False (a verificação diferencia maiúsculas e minúsculas)
+print('Java' in frase)   # Saída: False
+```
+
+O oposto do `in` é o `not in`, que retorna `True` se a substring **não** for encontrada.
+
+```python
+print('Ruby' not in frase) # Saída: True
+```
+
+### Medindo o Comprimento com `len()`
+
+Para descobrir o número de caracteres em uma string, utilizamos a função nativa `len()`. Esta é uma função de propósito geral do Python que retorna o comprimento de qualquer objeto sequencial (como listas, tuplas, dicionários, etc.). No caso de strings, `len()` conta cada caractere, incluindo espaços, pontuações e símbolos.
+
+```python
+saudacao = "Olá, mundo!"
+alfabeto = "abcdefghijklmnopqrstuvwxyz"
+
+print(len(saudacao)) # Saída: 11 (a vírgula e o espaço são contados)
+print(len(alfabeto)) # Saída: 26
+```
+
+### Comparando Strings: Igualdade vs. Identidade
+
+Para verificar se duas strings são logicamente iguais, utilizamos os operadores de comparação que já conhecemos.
+
+- **`==` (Igualdade):** Retorna `True` se as duas strings tiverem exatamente a mesma sequência de caracteres. Esta é a forma correta e universal de comparar strings por seu conteúdo.
+- **`!=` (Diferença):** Retorna `True` se as strings forem diferentes.
+
+Além da igualdade, o Python possui o operador de identidade `is`. É crucial entender a diferença:
+
+- **`is` (Identidade):** Retorna `True` somente se duas variáveis apontarem para o **exatamente mesmo objeto** na memória.
+
+```python
+str1 = "Python"
+str2 = "Python"
+str3 = "Py" + "thon" # Uma string criada dinamicamente
+
+# Comparando por valor (conteúdo)
+print(f"str1 == str2? {str1 == str2}") # Saída: True
+print(f"str1 == str3? {str1 == str3}") # Saída: True
+
+# Comparando por identidade (objeto na memória)
+print(f"str1 is str2? {str1 is str2}") # Saída: True
+print(f"str1 is str3? {str1 is str3}") # Saída: pode ser True ou False
+```
+
+No exemplo acima, o resultado de `str1 is str2` é `True`. Isso ocorre devido a uma otimização do Python chamada _string interning_, onde strings imutáveis e curtas que são idênticas são armazenadas em um único local na memória para economizar espaço. No entanto, o resultado de `str1 is str3` pode variar dependendo da versão do Python e de como a string foi criada.
+
+**A regra fundamental é: para comparar o conteúdo de strings, sempre utilize `==`. O operador `is` deve ser reservado para verificar se duas variáveis se referem ao mesmo objeto na memória, o que é um caso de uso muito mais raro.**
+
+### Substituindo Conteúdo com `.replace()`
+
+Um dos métodos de manipulação mais úteis é o `.replace()`. Ele permite buscar por uma substring dentro de uma string e substituí-la por outra. É importante ressaltar uma característica fundamental do Python: **strings são imutáveis**. Isso significa que o método `.replace()` **não altera a string original**; em vez disso, ele **retorna uma nova string** com as substituições realizadas.
+
+A sintaxe básica é `string.replace(valor_antigo, valor_novo)`.
+
+```python
+frase_original = "Eu gosto de programar em Java."
+
+# O método retorna uma nova string. A original permanece intacta.
+nova_frase = frase_original.replace("Java", "Python")
+
+print(f"Frase Original: {frase_original}") # Saída: Frase Original: Eu gosto de programar em Java.
+print(f"Nova Frase: {nova_frase}")       # Saída: Nova Frase: Eu gosto de programar em Python.
+```
+
+O método `.replace()` também aceita um terceiro argumento opcional, `count`, que especifica o número máximo de substituições a serem feitas, da esquerda para a direita.
+
+```python
+texto_repetido = "um um dois um três"
+
+# Substituindo todas as ocorrências
+print(texto_repetido.replace("um", "ZERO"))
+# Saída: ZERO ZERO dois ZERO três
+
+# Substituindo apenas as duas primeiras ocorrências
+print(texto_repetido.replace("um", "ZERO", 2))
+# Saída: ZERO ZERO dois um três
+```
+
+## Sequências de Escape
+
+Ao trabalhar com strings, nem todos os caracteres que desejamos representar são visíveis ou podem ser digitados diretamente. Como representar uma quebra de linha, uma tabulação ou até mesmo o caractere de aspas dentro de uma string que já é delimitada por aspas? Para resolver esses problemas, o Python utiliza **sequências de escape**.
+
+Uma sequência de escape é uma combinação de caracteres, começando com uma barra invertida (`\`), que tem um significado especial para o interpretador. Em vez de serem lidos literalmente, esses códigos instruem o Python a executar uma ação específica, como mover o cursor para a próxima linha ou inserir um caractere que, de outra forma, entraria em conflito com a sintaxe da string.
+
+A seguir, uma lista das sequências de escape mais comuns e suas funções:
+
+|Sequência|Descrição|Exemplo de Uso|Resultado|
+|---|---|---|---|
+|`\n`|**Nova Linha** (Newline)|`'Linha 1\nLinha 2'`|Linha 1 Linha 2|
+|`\t`|**Tabulação Horizontal** (Tab)|`'Coluna1\tColuna2'`|Coluna1    Coluna2|
+|`\\`|**Barra Invertida**|`'C:\\caminho\\arquivo.txt'`|`C:\caminho\arquivo.txt`|
+|`\'`|**Aspas Simples**|`'Ela disse: \'Olá!\''`|`Ela disse: 'Olá!'`|
+|`\"`|**Aspas Duplas**|`"O livro se chama \"Python Essencial\"."`|`O livro se chama "Python Essencial".`|
+|`\r`|**Retorno de Carro** (Carriage Return)|`'Processando...\rFinalizado!'`|`Finalizado!` (sobrescreve o início)|
+|`\b`|**Retrocesso** (Backspace)|`'123\b4'`|`124` (apaga o `3`)|
+
+Vamos ver exemplos práticos para solidificar esses conceitos.
+
+- **`\n` (Nova Linha):** É a sequência de escape mais utilizada, indispensável para formatar textos em múltiplas linhas.
+    
+    ```python
+    relatorio = "Relatório de Vendas:\n\n- Produto A: 10 unidades\n- Produto B: 5 unidades"
+    print(relatorio)
+    ```
+    
+    A saída será formatada em quatro linhas distintas:
+    
+    ```
+    Relatório de Vendas:
+    
+    - Produto A: 10 unidades
+    - Produto B: 5 unidades
+    ```
+    
+- **`\t` (Tabulação):** Útil para alinhar texto em colunas, criando um espaçamento de tabulação.
+    
+    ```python
+    cabecalho = "Nome\tIdade\tCidade"
+    linha_dados = "Alice\t30\tSão Paulo"
+    print(cabecalho)
+    print(linha_dados)
+    ```
+    
+    A saída será alinhada:
+    
+    ```
+    Nome    Idade   Cidade
+    Alice   30      São Paulo
+    ```
+    
+- **`\\`, `\'` e `\"` (Caracteres Literais):** Essenciais quando precisamos que a barra invertida, as aspas simples ou as aspas duplas façam parte do conteúdo da string, em vez de controlarem sua sintaxe.
+    
+    ```python
+    # Para incluir uma barra invertida literal (comum em caminhos de arquivo no Windows)
+    caminho_arquivo = "C:\\Usuarios\\Admin\\documentos.txt"
+    print(caminho_arquivo) # Saída: C:\Usuarios\Admin\documentos.txt
+    
+    # Para incluir aspas dentro de uma string delimitada pelo mesmo tipo de aspas
+    citacao = 'O famoso ditado diz: \'Penso, logo existo.\''
+    print(citacao) # Saída: O famoso ditado diz: 'Penso, logo existo.'
+    ```
+
+### Strings Raw (Strings "Cruas")
+
+Digitar caminhos de arquivo no Windows, que usam a barra invertida como separador, pode se tornar tedioso pela necessidade de escapar cada barra (`\\`). Para simplificar esses casos, o Python oferece as **strings raw** (cruas).
+
+Ao prefixar uma string com a letra `r` (ou `R`), o Python é instruído a desativar o processamento de sequências de escape. Todos os caracteres dentro de uma string raw são interpretados literalmente, incluindo a barra invertida.
+
+```python
+# Abordagem tradicional com escape
+caminho_normal = "C:\\novo\\diretorio\\planilhas"
+
+# Abordagem com string raw (mais limpa e legível)
+caminho_raw = r"C:\novo\diretorio\planilhas"
+
+print(caminho_normal) # Saída: C:\novo\diretorio\planilhas
+print(caminho_raw)    # Saída: C:\novo\diretorio\planilhas
+```
+
+As strings raw são especialmente úteis ao trabalhar com **expressões regulares**, um tópico avançado de manipulação de texto onde a barra invertida é usada extensivamente.
+
+## Considerações Finais
+
+Neste capítulo, mergulhamos fundo em um dos tipos de dados mais fundamentais e onipresentes da programação: a string. Vimos que trabalhar com texto vai muito além de simplesmente armazenar caracteres; trata-se de uma arte de composição, manipulação e apresentação da informação de forma dinâmica e legível.
+
+Nossa jornada começou com a exploração das diversas técnicas de **formatação**, percorrendo a evolução do Python. Viajamos desde o clássico e funcional operador `%`, passamos pela flexibilidade e clareza do método `.format()` e chegamos à sintaxe moderna, concisa e poderosa das **f-strings**, que hoje representam a abordagem recomendada para a interpolação de expressões em texto.
+
+Compreendemos que as strings, em sua essência, são sequências imutáveis. Essa característica fundamental nos permitiu aplicar conceitos familiares como **concatenação** (`+`), **repetição** (`*`), **indexação** e **fatiamento (slicing)** para extrair e combinar porções de texto com precisão cirúrgica. Expandimos nosso repertório com um arsenal de operadores e métodos para análise, como a verificação de pertencimento com `in`, a medição de comprimento com `len()`, a comparação segura com `==` e a substituição de conteúdo com `.replace()`. Desvendamos também o uso de **sequências de escape** para controlar a formatação do texto e a praticidade das **strings raw** para a representação de caracteres literais.
+
+Um tema central que permeou nossa exploração foi a **imutabilidade**. A compreensão de que toda operação de manipulação — seja uma substituição ou uma concatenação — resulta em uma nova string, sem jamais alterar a original, é a chave para escrever um código Python idiomático, seguro e previsível.
+
+Com um domínio sólido sobre como formatar e manipular o tipo de dado mais comum na comunicação com o usuário e entre sistemas, estamos agora prontos para organizar nossa lógica em blocos de código reutilizáveis e controlar o fluxo de execução de nossos programas, dando vida a algoritmos mais complexos.
