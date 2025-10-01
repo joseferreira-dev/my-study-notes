@@ -230,3 +230,16 @@ O isolamento de memória que permite o paralelismo também cria um desafio: como
         O acesso a esses objetos deve ser controlado com mecanismos de sincronização, como Lock, para evitar condições de corrida.
 - **`Manager` (Gerenciador):** Para compartilhar objetos Python mais complexos (como listas e dicionários), o `multiprocessing` oferece os `Managers`. Um `Manager` controla um processo servidor que hospeda os objetos Python, e permite que outros processos acessem e modifiquem esses objetos de forma transparente através de _proxies_. É a forma mais conveniente de compartilhar estados complexos, embora seja um pouco mais lenta que os outros mecanismos.
 
+## Considerações Finais
+
+Neste capítulo, quebramos a barreira da execução sequencial e exploramos o universo da otimização de desempenho em Python. Compreendemos que, para aproveitar ao máximo o poder dos processadores modernos, é preciso ir além do modelo linear e adotar estratégias que permitam a execução de múltiplas tarefas de forma concorrente ou paralela.
+
+A distinção fundamental entre **concorrência** (gerenciar múltiplas tarefas em um mesmo período, ideal para esperas) e **paralelismo** (executar múltiplas tarefas ao mesmo tempo, ideal para processamento) foi nosso guia.
+
+Exploramos o módulo `threading` como a ferramenta de escolha para a concorrência, perfeita para otimizar programas **limitados por E/S (I/O-bound)**, onde a maior parte do tempo é gasta esperando por redes ou discos. Reconhecemos, no entanto, a limitação imposta pelo **GIL (Global Interpreter Lock)**, que impede o paralelismo real para código Python puro.
+
+Para o paralelismo verdadeiro em tarefas **limitadas pela CPU (CPU-bound)**, desvendamos o módulo `multiprocessing`. Vimos como ele contorna o GIL ao criar processos independentes, cada um com seu próprio interpretador e memória, permitindo que cálculos pesados sejam distribuídos entre múltiplos núcleos. Entendemos também que essa separação introduz a necessidade de mecanismos de **Comunicação Entre Processos (IPC)**, como `Queues` e `Pipes`, para a troca segura de informações.
+
+A principal lição deste capítulo é que a escolha entre `threading` e `multiprocessing` é uma decisão estratégica, ditada pela natureza do problema a ser resolvido. A chave é identificar o gargalo de desempenho do seu programa: ele passa a maior parte do tempo "esperando" ou "calculando"? A resposta a essa pergunta indicará o caminho para a otimização mais eficaz.
+
+Armados com a capacidade de escrever código que não apenas executa, mas o faz de forma otimizada, estamos agora preparados para levar nossas habilidades para o próximo nível: a construção de aplicações completas e a interação com o vasto ecossistema de bibliotecas que o Python oferece para resolver problemas do mundo real.
