@@ -478,3 +478,186 @@ Neste novo design:
 
 A abstração, portanto, nos permite definir interfaces claras e garantir que todas as subclasses que pertencem a uma mesma família de objetos compartilhem um conjunto mínimo de comportamentos, tornando o sistema como um todo mais previsível e robusto. Ela é a base para o design de frameworks e bibliotecas, onde se define uma estrutura geral e se deixa para o usuário final a tarefa de implementar os detalhes específicos.
 
+## Tópicos Avançados em Orientação a Objetos
+
+Além dos quatro pilares, o modelo de POO do Python é enriquecido por uma série de características, como diferentes tipos de atributos e métodos, e convenções que permitem que nossas classes se comportem de maneira mais intuitiva e integrada com a linguagem.
+
+### Atributos de Classe vs. Atributos de Instância
+
+Até agora, focamos nos **atributos de instância**, que são aqueles definidos dentro do `__init__()` com o prefixo `self.`. Esses atributos pertencem a cada objeto individualmente; cada instância da classe tem sua própria cópia desses valores.
+
+No entanto, o Python também permite a criação de **atributos de classe**. Estes são definidos diretamente no escopo da classe, fora de qualquer método, e são **compartilhados por todas as instâncias** daquela classe. Se o valor de um atributo de classe for alterado, essa mudança será refletida em todos os objetos da classe.
+
+Eles são úteis para armazenar dados que são constantes para todas as instâncias ou para manter um estado que é comum a toda a classe.
+
+```python
+class Veiculo:
+    # Atributo de classe: compartilhado por todos os objetos Veiculo
+    total_veiculos_criados = 0
+    
+    def __init__(self, marca, modelo):
+        # Atributos de instância: únicos para cada objeto
+        self.marca = marca
+        self.modelo = modelo
+        
+        # Acessando e modificando o atributo de classe
+        Veiculo.total_veiculos_criados += 1
+
+    def exibir_total_veiculos():
+        print(f"Total de veículos criados: {Veiculo.total_veiculos_criados}")
+
+
+# Criando instâncias
+carro1 = Veiculo("Ford", "Ka")
+carro2 = Veiculo("Toyota", "Corolla")
+moto1 = Veiculo("Honda", "CB 500")
+
+# O atributo de classe pode ser acessado tanto pela classe quanto pela instância
+print(f"Total via classe: {Veiculo.total_veiculos_criados}") # Saída: Total via classe: 3
+print(f"Total via instância carro1: {carro1.total_veiculos_criados}") # Saída: Total via instância carro1: 3
+```
+
+### Tipos de Métodos: Instância, Classe e Estáticos
+
+Assim como os atributos, os métodos também podem ter diferentes escopos e contextos.
+
+- **Métodos de Instância:** São os métodos que vimos até agora. Eles recebem `self` como primeiro argumento e operam sobre o estado de uma instância específica.
+- **Métodos de Classe (`@classmethod`):** Um método de classe é marcado com o decorador `@classmethod` e, em vez de `self`, ele recebe a própria **classe** como seu primeiro argumento (convencionalmente chamado de `cls`). Ele opera sobre a classe como um todo, não sobre uma instância. São frequentemente usados para criar "métodos de fábrica" (_factory methods_), que são construtores alternativos.
+    
+    ```python
+    class Pessoa:
+        def __init__(self, nome, idade):
+            self.nome = nome
+            self.idade = idade
+    
+        @classmethod
+        def a_partir_do_ano_nascimento(cls, nome, ano_nascimento):
+            idade = 2025 - ano_nascimento # Supondo o ano atual como 2025
+            # 'cls' aqui é a classe Pessoa. Isso é o mesmo que chamar Pessoa(nome, idade)
+            return cls(nome, idade)
+    
+    # Criando um objeto da forma tradicional
+    p1 = Pessoa("Ana", 30)
+    
+    # Criando um objeto usando o método de fábrica
+    p2 = Pessoa.a_partir_do_ano_nascimento("Carlos", 1990)
+    
+    print(f"{p2.nome} tem {p2.idade} anos.") # Saída: Carlos tem 35 anos.
+    ```
+    
+- **Métodos Estáticos (`@staticmethod`):** Um método estático é marcado com o decorador `@staticmethod` e não recebe nem a instância (`self`) nem a classe (`cls`) como primeiro argumento. Ele se comporta como uma função normal, mas pertence ao _namespace_ (ao escopo) da classe. É usado para funções utilitárias que têm uma conexão lógica com a classe, mas não dependem de nenhum estado, seja da classe ou da instância.
+    
+    ```python
+    class Matematica:
+        @staticmethod
+        def eh_par(numero):
+            return numero % 2 == 0
+    
+    # Chamamos o método diretamente na classe, sem criar um objeto
+    print(Matematica.eh_par(10)) # Saída: True
+    print(Matematica.eh_par(7))  # Saída: False
+    ```
+
+### Propriedades: A Forma Pythônica de Getters e Setters
+
+Em muitas linguagens, para garantir o encapsulamento, é comum criar métodos `getX()` e `setX()` para cada atributo. O Python oferece uma abordagem mais elegante e "Pythônica" para isso, através do decorador `@property`.
+
+Uma _property_ permite transformar um método de uma classe em um atributo "virtual". Isso nos dá o melhor de dois mundos: a sintaxe simples de acesso a um atributo e o poder de executar uma lógica (como validação ou cálculo) por trás dos panos.
+
+A convenção é a seguinte:
+
+1. Começamos com um atributo "privado" (ex: `_preco`).
+2. Criamos um método com o mesmo nome do atributo público que desejamos expor (ex: `preco`), e o decoramos com `@property`. Este será nosso "getter".
+3. Para criar um "setter", criamos outro método com o mesmo nome e o decoramos com `@preco.setter`.
+
+```python
+class Produto:
+    def __init__(self, nome, preco):
+        self.nome = nome
+        # O setter é chamado aqui na inicialização
+        self.preco = preco
+
+    @property
+    def preco(self):
+        # Este é o GETTER: chamado quando lemos o atributo
+        print("Acessando o getter de 'preco'...")
+        return self._preco # Note o '_' no nome do atributo real
+
+    @preco.setter
+    def preco(self, novo_preco):
+        # Este é o SETTER: chamado quando atribuímos um valor
+        print("Acessando o setter de 'preco'...")
+        if novo_preco >= 0:
+            self._preco = novo_preco # Armazena no atributo real
+        else:
+            print("Erro: O preço não pode ser negativo.")
+
+# Criando um objeto
+tv = Produto("TV 4K", 2500) # O setter é chamado aqui
+
+# Acessando o atributo (chama o getter por baixo dos panos)
+print(f"O preço da TV é R$ {tv.preco}")
+
+# Modificando o atributo (chama o setter por baixo dos panos)
+tv.preco = 2300 # O setter é chamado, validando o valor
+tv.preco = -100 # O setter é chamado, e a validação impede a alteração
+
+print(f"O preço final da TV é R$ {tv.preco}")
+```
+
+### Métodos Mágicos (Dunder Methods)
+
+Os métodos que começam e terminam com dois sublinhados, como `__init__`, são chamados de "métodos mágicos" ou "_dunder methods_" (de _Double Underscore_). Eles não são feitos para serem chamados diretamente, mas sim para serem invocados pelo Python em resposta a uma determinada operação ou sintaxe. Eles nos permitem emular o comportamento de tipos nativos.
+
+- **`__str__(self)`**: Retorna uma representação em string "amigável" do objeto. É o método chamado pela função `print()`.
+- **`__repr__(self)`**: Retorna uma representação em string "oficial" e inequívoca do objeto, que idealmente deveria permitir recriar o objeto. É útil para depuração.
+- **`__len__(self)`**: Permite que a função `len()` seja usada em nosso objeto.
+- **`__eq__(self, other)`**: Define o comportamento do operador de igualdade `==`.
+
+
+```python
+class Livro:
+    def __init__(self, titulo, autor, paginas):
+        self.titulo = titulo
+        self.autor = autor
+        self.paginas = paginas
+
+    # Representação para usuários finais (print)
+    def __str__(self):
+        return f'"{self.titulo}" por {self.autor}'
+
+    # Representação para desenvolvedores
+    def __repr__(self):
+        return f"Livro(titulo='{self.titulo}', autor='{self.autor}', paginas={self.paginas})"
+
+    # Define o que significa um livro ser igual a outro
+    def __eq__(self, other):
+        return self.titulo == other.titulo and self.autor == other.autor
+
+livro1 = Livro("O Senhor dos Anéis", "J.R.R. Tolkien", 1200)
+livro2 = Livro("O Senhor dos Anéis", "J.R.R. Tolkien", 1200)
+livro3 = Livro("O Hobbit", "J.R.R. Tolkien", 300)
+
+print(livro1)         # Chama __str__ -> "O Senhor dos Anéis" por J.R.R. Tolkien
+print(repr(livro1))   # Chama __repr__ -> Livro(titulo='O Senhor dos Anéis', ...)
+
+print(livro1 == livro2) # Chama __eq__ -> True
+print(livro1 == livro3) # Chama __eq__ -> False
+```
+
+## Considerações Finais
+
+Neste capítulo, realizamos a transição mais importante na jornada de um desenvolvedor Python: a passagem do pensamento procedural para o paradigma da **Programação Orientada a Objetos**. Deixamos de apenas escrever sequências de instruções para começar a modelar o mundo através de conceitos, criando um software que é um reflexo mais fiel e organizado dos problemas que buscamos resolver.
+
+Partimos dos fundamentos, distinguindo a **Classe** — o projeto, o molde abstrato — do **Objeto** — a instância concreta e viva que interage em nosso programa. Vimos como os objetos unificam seus dados (**atributos**) e suas operações (**méthods**) em uma única entidade coesa, formando os blocos de construção de qualquer sistema orientado a objetos.
+
+Em seguida, mergulhamos nos quatro pilares que sustentam este paradigma, compreendendo como eles trabalham em conjunto para produzir um código robusto, flexível e de fácil manutenção:
+
+- O **Encapsulamento** nos ensinou a proteger a integridade de nossos objetos, escondendo seu estado interno e fornecendo acesso controlado através de convenções de nomenclatura e métodos públicos.
+- A **Herança** nos permitiu criar hierarquias de classes, promovendo o reuso de código e estabelecendo relações "é um" que tornam nosso modelo de software mais intuitivo e organizado.
+- O **Polimorfismo**, potencializado pela filosofia de "Duck Typing" do Python, nos deu a flexibilidade de tratar objetos de diferentes tipos de maneira uniforme, permitindo-nos escrever um código genérico e extensível.
+- A **Abstração**, através das Classes Base Abstratas, nos guiou a focar no essencial, definindo contratos claros que garantem a consistência do comportamento entre as classes de uma mesma família.
+
+Fomos além, explorando as nuances "Pythônicas" da POO, como a distinção entre atributos de classe e de instância, os diferentes tipos de métodos (`@classmethod`, `@staticmethod`), o poder das `@property` para criar interfaces limpas e a magia dos _dunder methods_ para integrar nossos objetos à sintaxe da linguagem.
+
+Dominar a Orientação a Objetos é, portanto, mais do que aprender uma sintaxe; é adotar uma nova filosofia de design de software. Com as ferramentas para construir nossos próprios tipos de objetos em mãos, nosso foco agora se volta para a arquitetura. Como combinamos esses objetos para criar sistemas coesos e fáceis de manter? O próximo capítulo nos apresentará os **princípios de design S.O.L.I.D.**, um conjunto de diretrizes que nos ajudarão a aplicar os conceitos da POO para construir software de alta qualidade.
