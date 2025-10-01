@@ -216,3 +216,129 @@ print(texto_pi)
 
 O método `.format()` representa um meio-termo poderoso entre a sintaxe antiga do `%` e a moderna das f-strings. Sua capacidade de separar a definição do gabarito da passagem dos valores o mantém relevante em muitos contextos de programação.
 
+## Operações Fundamentais com Strings
+
+Além da formatação, a verdadeira flexibilidade no trabalho com texto vem da capacidade de combinar, repetir e extrair partes de strings. O Python trata as strings como **sequências**, o que significa que elas compartilham muitas das mesmas operações que vimos em listas e tuplas, como a indexação e o fatiamento, tornando a manipulação de texto uma tarefa consistente e intuitiva.
+
+### Concatenação
+
+A concatenação é a operação de juntar duas ou mais strings para formar uma nova. Em Python, o operador de adição (`+`) é sobrecarregado para realizar essa tarefa. Quando usado entre duas strings, ele as une em uma única cadeia de caracteres.
+
+```python
+# Concatenação de strings
+primeiro_nome = "Carlos"
+sobrenome = "Drummond"
+espaco = " "
+
+# Unindo as partes para formar o nome completo
+nome_completo = primeiro_nome + espaco + sobrenome
+print(nome_completo) # Saída: Carlos Drummond
+```
+
+É importante lembrar da tipagem forte do Python: o operador `+` só funciona entre strings. Tentar concatenar uma string com um número diretamente resultará em um `TypeError`. A conversão do número para string deve ser feita explicitamente com a função `str()`.
+
+```python
+prefixo = "ID do Produto: "
+id_produto = 5043
+
+# A linha abaixo causaria um erro: print(prefixo + id_produto)
+# Correto: converter o número para string antes de concatenar
+identificador_final = prefixo + str(id_produto)
+print(identificador_final) # Saída: ID do Produto: 5043
+```
+
+### Repetição
+
+De forma análoga à concatenação, o operador de multiplicação (`*`) também possui um comportamento especial com strings. Quando uma string é multiplicada por um número inteiro `n`, o resultado é uma nova string que contém a original repetida `n` vezes. Esta é uma forma rápida e legível de criar strings repetitivas, como separadores ou preenchimentos.
+
+```python
+# Repetição de strings
+separador = "-=" * 20
+titulo = " RELATÓRIO FINAL "
+linha_simples = "_" * len(titulo) # Repete o '_' pelo número de caracteres do título
+
+print(separador)
+print(titulo)
+print(linha_simples)
+```
+
+A saída seria:
+
+```
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ RELATÓRIO FINAL 
+_________________
+```
+
+### Indexação e Fatiamento (Slicing)
+
+Como as strings são sequências de caracteres, cada caractere ocupa uma posição específica, ou **índice**. Assim como nas listas, a indexação em strings começa em **0**. Isso nos permite acessar qualquer caractere individualmente. É crucial lembrar que os espaços em branco e outros símbolos também contam como caracteres e possuem seus próprios índices.
+
+```python
+frase = "Python é legal"
+# P  y  t  h  o  n     é     l  e  g  a  l
+# 0  1  2  3  4  5  6  7  8  9 10 11 12 13
+
+# Acessando caracteres individuais
+print(frase[0])  # Saída: P
+print(frase[7])  # Saída: é
+print(frase[6])  # Saída:  (espaço em branco)
+```
+
+#### Indexação Negativa
+
+O Python também oferece uma forma conveniente de acessar elementos a partir do **final** da string, utilizando índices negativos. O índice `-1` se refere ao último caractere, `-2` ao penúltimo, e assim por diante.
+
+```python
+frase = "Python é legal"
+#  P   y   t   h   o   n       é       l   e   g   a   l
+#-14 -13 -12 -11 -10  -9  -8  -7  -6  -5  -4  -3  -2  -1
+
+# Acessando de trás para frente
+print(frase[-1]) # Saída: l (o último caractere)
+print(frase[-5]) # Saída: e
+```
+
+#### Fatiamento (Slicing)
+
+Frequentemente, precisamos extrair não apenas um caractere, mas uma subsequência de caracteres — uma "fatia" da string original. O fatiamento é realizado com a sintaxe `[inicio:fim]`.
+
+Seguindo a convenção do Python, o intervalo é **semiaberto**: o caractere no índice `inicio` é **incluído**, mas o caractere no índice `fim` é **excluído**.
+
+```python
+texto = "Linguagem de Programação"
+
+# Extraindo a palavra "Linguagem"
+# Começa no índice 0 e vai até o 8 (o caractere no índice 9, ' ', não é incluído)
+palavra1 = texto[0:9]
+print(palavra1) # Saída: Linguagem
+
+# Extraindo a palavra "Programação"
+# Começa no índice 13 e vai até o final
+palavra2 = texto[13:25]
+print(palavra2) # Saída: Programação
+```
+
+O Python oferece alguns atalhos para o fatiamento:
+
+- `[:fim]`: Se o início for omitido, a fatia começa do índice 0.
+- `[inicio:]`: Se o fim for omitido, a fatia vai até o último caractere.
+- `[:]`: Se ambos forem omitidos, uma cópia da string inteira é criada.
+
+```python
+texto = "Linguagem de Programação"
+
+print(texto[:9])   # Saída: Linguagem (do início até o índice 8)
+print(texto[13:])  # Saída: Programação (do índice 13 até o final)
+```
+
+O fatiamento também funciona perfeitamente com índices negativos, permitindo combinações poderosas.
+
+```python
+codigo = "BR-PROD-00123-SP"
+
+# Extrair apenas o número do produto (os 5 caracteres antes dos últimos 3)
+numero_produto = codigo[-8:-3]
+print(numero_produto) # Saída: 00123
+```
+
