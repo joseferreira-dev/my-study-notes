@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-python/contents/10-tratamento-de-excecoes.md",
+                "file": "linguagem-python/contents/11-concorrencia-e-paralelismo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10-tratamento-de-excecoes"
+              "title": "11-concorrencia-e-paralelismo"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-python/contents/10-tratamento-de-excecoes.md",
+                "file": "linguagem-python/contents/11-concorrencia-e-paralelismo.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 10-tratamento-de-excecoes"
+              "title": "Sumário de 11-concorrencia-e-paralelismo"
             }
           }
         ],
@@ -171,8 +171,12 @@
   },
   "active": "af6924f9752dc980",
   "lastOpenFiles": [
-    "linguagem-python/contents/09-orientacao-a-objetos.md",
     "linguagem-python/contents/10-tratamento-de-excecoes.md",
+    "linguagem-python/contents/11-concorrencia-e-paralelismo.md",
+    "linguagem-python/contents/img/11-execucao-serial-e-paralela.png",
+    "linguagem-python/contents/img",
+    "linguagem-python/contents/Nova pasta",
+    "linguagem-python/contents/09-orientacao-a-objetos.md",
     "Sem título.md",
     "linguagem-python/contents/08-funcoes-embutidas.md",
     "linguagem-python/contents/07-funcoes.md",
@@ -196,7 +200,6 @@
     "seguranca-da-informacao/contents/img/04-3des-decriptacao.png",
     "seguranca-da-informacao/contents/img/04-3des-operacoes.png",
     "seguranca-da-informacao/contents/img/04-des-etapas.png",
-    "seguranca-da-informacao/contents/img/04-des-operacoes.png",
     "seguranca-da-informacao/Sem título.md",
     "seguranca-da-informacao/contents/03-criptografia.md",
     "conhecimentos-pedagogicos-e-ept/contents/10-planejamento-escolar.md",
@@ -206,7 +209,6 @@
     "conhecimentos-pedagogicos-e-ept/contents/08-curriculo.md",
     "bancos-de-dados/contents/09-bancos-distribuidos.md",
     "bancos-de-dados/contents/08-transacoes.md",
-    "legislacao/contents/09-decreto-11529.md",
     "seguranca-da-informacao/contents/img",
     "seguranca-da-informacao/contents/Nova pasta",
     "seguranca-da-informacao/contents",
@@ -215,8 +217,6 @@
     "informatica-basica/contents/img",
     "informatica-basica/contents",
     "informatica-basica",
-    "lingua-portuguesa/contents/img",
-    "lingua-portuguesa/contents/Nova pasta",
     "Sem título.canvas"
   ]
 }
