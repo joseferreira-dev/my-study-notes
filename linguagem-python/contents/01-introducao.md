@@ -83,3 +83,103 @@ Um **paradigma de programação** é um modelo ou um estilo fundamental de como 
     
     Observe a diferença: em vez de um laço e um `if`, declaramos que o resultado `pares` é a lista original após a aplicação de um filtro. A lógica do que constitui um número par é encapsulada em uma pequena função anônima.
 
+## Variáveis e o Sistema de Tipos do Python
+
+Para que um programa possa executar qualquer tarefa útil, ele precisa de uma forma de armazenar e manipular dados na memória. Esses "contêineres" para dados são o que chamamos de **variáveis**. No entanto, a forma como uma linguagem de programação gerencia esses contêineres e os dados dentro deles — seu **sistema de tipos** — é uma de suas características mais definidoras. O Python faz escolhas de design muito específicas que o tornam, ao mesmo tempo, flexível e seguro.
+
+A tipagem define como a linguagem lida com os tipos de dados, como números e textos. O sistema do Python é caracterizado por duas qualidades principais: é uma linguagem de **tipagem forte** e **dinâmica**.
+
+- **Tipagem Forte:** Significa que o Python impõe uma disciplina rigorosa sobre como operações entre diferentes tipos de dados podem ser realizadas. A linguagem não tentará "adivinhar" uma conversão que possa levar a um resultado inesperado. Se você tentar realizar uma operação entre tipos incompatíveis, como somar um número a um texto, Python não converterá o número para texto automaticamente; em vez disso, ele levantará um erro. Essa característica evita uma classe inteira de bugs sutis e torna o comportamento do programa mais previsível e explícito.
+    
+    ```python
+    # Exemplo de Tipagem Forte
+    numero = 10
+    texto = "5"
+    
+    # print(numero + texto) 
+    # A linha acima resultaria em um TypeError: unsupported operand type(s) for +: 'int' and 'str'
+    # Python se recusa a adivinhar se a intenção era somar (15) ou concatenar ("105").
+    # A operação deve ser explícita:
+    print(str(numero) + texto) # Saída: "105" (concatenação explícita)
+    print(numero + int(texto)) # Saída: 15 (soma explícita)
+    ```
+    
+- **Tipagem Dinâmica:** Significa que não é necessário declarar explicitamente o tipo de uma variável ao criá-la. O próprio interpretador Python infere o tipo do dado com base no valor que lhe é atribuído no momento da execução. Essa característica confere uma grande flexibilidade e agilidade ao desenvolvimento. Além disso, uma mesma variável pode, ao longo de sua vida, apontar para dados de tipos completamente diferentes.
+    
+    ```python
+    # Exemplo de Tipagem Dinâmica
+    dado = 100
+    print(type(dado)) # Saída: <class 'int'>
+    
+    dado = "cem"
+    print(type(dado)) # Saída: <class 'str'>
+    
+    dado = True
+    print(type(dado)) # Saída: <class 'bool'>
+    ```
+    
+    Neste exemplo, a variável `dado` primeiro armazena um inteiro, depois uma string e, por fim, um booleano. O tipo é associado ao valor, não à variável em si, e o Python gerencia essa mudança de forma transparente.
+
+### Declarando e Atribuindo Variáveis
+
+A criação de variáveis em Python é intencionalmente simples, seguindo a filosofia de legibilidade da linguagem. Basta definir um nome para a variável, usar o operador de atribuição (`=`) e fornecer o valor.
+
+```python
+# Declaração e inicialização de variáveis
+idade = 25                    # Inteiro (int)
+nome_completo = "Alice Souza" # String (str)
+altura = 1.75                 # Ponto flutuante (float)
+usuario_ativo = True          # Booleano (bool)
+```
+
+#### Convenção para Constantes
+
+Muitas linguagens de programação possuem um conceito de **constante**, que é uma variável cujo valor, uma vez definido, não pode ser alterado. O Python, em sua sintaxe, não possui uma palavra-chave para criar constantes verdadeiras. No entanto, existe uma convenção forte e universalmente seguida pela comunidade de desenvolvedores: **variáveis cujos nomes são escritos inteiramente em letras maiúsculas devem ser tratadas como constantes e seu valor não deve ser alterado**.
+
+Embora o interpretador não impeça a alteração, essa convenção serve como um sinal claro para outros programadores (e para você mesmo no futuro) de que aquele valor tem um significado fixo e importante dentro do programa.
+
+```python
+# "Constantes" por convenção
+PI = 3.14159
+VELOCIDADE_DA_LUZ_METROS_POR_SEGUNDO = 299792458
+TIMEOUT_PADRAO = 30
+```
+
+### Principais Tipos de Dados Nativos
+
+O Python vem com um conjunto rico de tipos de dados já embutidos, prontos para representar as mais diversas formas de informação. Os mais fundamentais são:
+
+- **`str` (String):** Representa cadeias de caracteres, ou seja, texto. Strings em Python são imutáveis e podem ser delimitadas por aspas simples (`'`), duplas (`"`) ou triplas (`'''` ou `"""` para múltiplas linhas). Exemplo: `"Olá, mundo!"`.
+- **`int` (Inteiro):** Representa números inteiros, positivos ou negativos, sem parte decimal. Exemplo: `42`, `-150`.
+- **`float` (Ponto Flutuante):** Representa números reais, que possuem uma parte decimal. Exemplo: `3.14`, `-0.001`.
+- **`bool` (Booleano):** Representa os valores lógicos de verdadeiro e falso. Só pode conter um de dois valores: `True` ou `False`. É a base para a tomada de decisões no código.
+- **`complex` (Complexo):** Representa números complexos, que possuem uma parte real e uma imaginária (indicada por `j`). Exemplo: `1 + 2j`.
+- **`range` (Intervalo):** Representa uma sequência imutável de números inteiros. É comumente usado para gerar sequências em laços. Por exemplo, `range(5)` representa a sequência de 0 a 4 (0, 1, 2, 3, 4). O intervalo é aberto no final, ou seja, o último número não é incluído.
+- **`NoneType` (None):** Este tipo possui um único valor: `None`. Ele é usado para representar a ausência de um valor, de forma similar ao `null` em outras linguagens.
+
+### Regras para Nomenclatura de Variáveis
+
+Para garantir que o código seja válido e legível, o Python estabelece algumas regras e convenções para nomear variáveis:
+
+- **Caracteres Válidos:** Os nomes devem começar com uma letra (a-z, A-Z) ou um sublinhado (`_`). Os caracteres subsequentes podem ser letras, números (0-9) ou sublinhados.
+- **Sensibilidade a Maiúsculas:** Python é _case-sensitive_. Isso significa que `nome`, `Nome` e `NOME` são consideradas três variáveis completamente distintas.
+- **Palavras Reservadas:** Nomes de variáveis não podem ser iguais a nenhuma das palavras reservadas da linguagem, que têm um significado especial (como `if`, `for`, `while`, `def`, `class`, etc.).
+- **Espaços e Caracteres Especiais:** Nomes não podem conter espaços ou outros caracteres especiais (como `!`, `@`, `#`, `$`, `%`, etc.). A convenção para nomes compostos é usar o sublinhado, um estilo conhecido como **snake_case** (ex: `taxa_de_juros`).
+- **Tamanho:** Nomes de variáveis podem ter, teoricamente, qualquer tamanho, não havendo um limite prático de caracteres.
+
+A seguir, alguns exemplos de nomes de variáveis válidos e inválidos:
+
+```python
+# Nomes VÁLIDOS
+minha_variavel = "Correto"
+_valor_inicial = 10
+usuario1 = "Ana"
+taxaJurosAnual = 5 # (camelCase, válido mas não convencional em Python para variáveis)
+
+# Nomes INVÁLIDOS
+# 1variavel = "Erro"         # Começa com número
+# minha-variavel = "Erro"    # Contém hífen (caractere especial)
+# meu nome = "Erro"          # Contém espaço
+# for = "Erro"               # É uma palavra reservada
+```
+
