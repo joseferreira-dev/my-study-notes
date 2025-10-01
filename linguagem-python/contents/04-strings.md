@@ -72,3 +72,79 @@ Essa sintaxe também permite o uso de modificadores para um controle mais fino s
 
 Embora funcional e ainda encontrada em muitos códigos legados, a formatação com o operador `%` é considerada obsoleta. Ela pode se tornar confusa e propensa a erros quando há muitos placeholders, e é menos flexível que as abordagens mais modernas que o Python oferece.
 
+### F-Strings
+
+Introduzidas no Python 3.6, as **f-strings** (ou _formatted string literals_) revolucionaram a maneira de formatar strings na linguagem. Elas oferecem uma sintaxe mais concisa, mais legível e, em geral, mais performática do que as abordagens anteriores. Hoje, são consideradas a forma padrão e recomendada para a maioria das tarefas de formatação.
+
+A sintaxe de uma f-string é imediatamente reconhecível: a string é prefixada com a letra `f` (ou `F`), e qualquer variável ou expressão a ser inserida é colocada diretamente dentro de um par de chaves `{}`.
+
+Vamos revisitar nosso exemplo anterior, agora utilizando uma f-string:
+
+```python
+nome = 'Alice'
+idade = 30
+
+# Usando uma f-string para embutir as variáveis diretamente
+string_formatada = f'Nome: {nome}, Idade: {idade}'
+print(string_formatada)
+# Saída: Nome: Alice, Idade: 30
+```
+
+A clareza é instantânea. Não há necessidade de placeholders ou de uma tupla de valores no final. As variáveis são inseridas exatamente onde aparecem, tornando a intenção do código muito mais explícita.
+
+#### Expressões Embutidas
+
+A grande vantagem das f-strings é que elas não se limitam a substituir variáveis. É possível embutir **qualquer expressão Python válida** dentro das chaves, e o resultado será calculado e inserido na string. Isso abre um leque de possibilidades, permitindo a execução de operações matemáticas, chamadas de função e muito mais, diretamente no local da formatação.
+
+```python
+a = 10
+b = 5
+
+# Realizando operações matemáticas dentro da f-string
+print(f'A soma de {a} e {b} é {a + b}.')
+# Saída: A soma de 10 e 5 é 15.
+
+print(f'O dobro de {a} é {a * 2}.')
+# Saída: O dobro de 10 é 20.
+
+# Usando chamadas de função e métodos
+nome = "carolina"
+print(f"Olá, {nome.title()}! O seu nome tem {len(nome)} letras.")
+# Saída: Olá, Carolina! O seu nome tem 8 letras.
+```
+
+#### Opções de Formatação Avançada
+
+Assim como a sintaxe antiga, as f-strings oferecem um "minilinguagem" de formatação que permite um controle preciso sobre a aparência do valor inserido. Essa especificação é adicionada dentro das chaves, após o nome da variável, separada por dois-pontos (`:`).
+
+Vamos nos concentrar na formatação de números de ponto flutuante, que é uma das mais utilizadas. A sintaxe `{variavel:.<precisao>f}` permite controlar o número de casas decimais.
+
+```python
+pi = 3.14159265
+
+# Formatando pi com diferentes níveis de precisão
+print(f"Pi com 2 casas decimais: {pi:.2f}") # Saída: Pi com 2 casas decimais: 3.14
+print(f"Pi com 4 casas decimais: {pi:.4f}") # Saída: Pi com 4 casas decimais: 3.1416
+```
+
+É crucial entender que a formatação realiza um **arredondamento** matemático padrão, não um simples truncamento (corte). Se o próximo dígito for 5 ou maior, o último dígito exibido será arredondado para cima.
+
+Vejamos um exemplo claro dessa regra em ação:
+
+```python
+valor_a = 33.43948
+valor_b = 33.43962
+
+# Arredondando para 3 casas decimais
+print(f"Valor A formatado: {valor_a:.3f}")
+# O 4º dígito (4) é menor que 5, então não há arredondamento para cima.
+# Saída: Valor A formatado: 33.439
+
+print(f"Valor B formatado: {valor_b:.3f}")
+# O 4º dígito (6) é maior que 5, então o último dígito (9) é arredondado para cima,
+# o que causa um efeito cascata.
+# Saída: Valor B formatado: 33.440
+```
+
+As f-strings combinam o melhor de dois mundos: a simplicidade de embutir variáveis diretamente no texto e o poder de uma sintaxe de formatação robusta, tornando-as a ferramenta de escolha para a composição de strings no Python moderno.
+
