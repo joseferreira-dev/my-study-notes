@@ -143,3 +143,90 @@ Para evitar esses problemas, o módulo `threading` oferece vários mecanismos de
 - **Eventos:** Um mecanismo simples de comunicação, onde uma thread pode sinalizar um "evento" para outras threads, que podem estar esperando por ele.
 - **Barreiras:** Sincroniza um número fixo de threads em um ponto específico do código. Todas as threads devem chegar à barreira antes que qualquer uma delas possa continuar.
 
+## Paralelismo Real com o Módulo `multiprocessing`
+
+Enquanto o `threading` nos oferece uma solução elegante para a **concorrência** em tarefas de E/S, ele é fundamentalmente limitado pelo GIL em tarefas que exigem uso intensivo da CPU. Para superar essa barreira e alcançar o **paralelismo real**, o Python nos oferece o módulo `multiprocessing`.
+
+A abordagem do `multiprocessing` é radicalmente diferente: em vez de criar _threads_ dentro de um mesmo processo, ele cria **processos completamente novos e independentes**. Cada um desses processos obtém seu próprio interpretador Python e seu próprio espaço de memória isolado. Como consequência, cada processo é executado em um núcleo de CPU diferente (se disponível) e não é afetado pelo GIL. Isso torna o `multiprocessing` a ferramenta definitiva para acelerar tarefas computacionalmente pesadas (_CPU-bound_), como cálculos matemáticos complexos, processamento de imagens ou simulações.
+
+A arquitetura do `multiprocessing` se baseia em três componentes principais:
+
+- **Processos:** A criação e o gerenciamento de processos paralelos através da classe `Process`.
+- **Comunicação entre Processos (IPC):** Um conjunto de ferramentas para permitir que processos, que não compartilham memória, troquem informações de forma segura.
+- **Sincronização:** Mecanismos para coordenar a execução e o acesso a recursos compartilhados entre diferentes processos.
+
+### `multiprocessing` na Prática
+
+A criação de um processo é sintaticamente muito similar à criação de uma thread. No entanto, há um detalhe crucial que é indispensável ao usar `multiprocessing`.
+
+#### Guarda `if __name__ == '__main__':`
+
+Todo script que utiliza o módulo `multiprocessing` deve ter seu código principal protegido dentro de um bloco `if __name__ == '__main__':`. Esta verificação garante que o código de criação dos processos seja executado apenas quando o script é rodado diretamente, e não quando ele é importado como um módulo.
+
+Isso é essencial porque, em alguns sistemas operacionais (como o Windows), a criação de um novo processo envolve a importação do script original. Sem essa "guarda", o novo processo tentaria, por sua vez, criar novos processos, levando a um ciclo infinito de recriação que quebraria o programa.
+
+#### Exemplo Básico de `multiprocessing`
+
+Vamos adaptar nosso exemplo anterior para usar processos em vez de threads.
+
+```python
+import multiprocessing
+import time
+
+def tarefa(nome):
+    """Uma função simples que simula uma tarefa demorada."""
+    print(f"Processo {nome}: iniciando.")
+    # Simula um cálculo pesado que usa 100% da CPU por 2 segundos
+    inicio = time.time()
+    while time.time() - inicio < 2:
+        pass 
+    print(f"Processo {nome}: terminando.")
+
+# A guarda é essencial para o funcionamento correto do multiprocessing
+if __name__ == '__main__':
+    print("--- Iniciando execução com multiprocessing ---")
+    inicio_paralelo = time.time()
+
+    # 1. Criando os objetos Process
+    p1 = multiprocessing.Process(target=tarefa, args=("A",))
+    p2 = multiprocessing.Process(target=tarefa, args=("B",))
+
+    # 2. Iniciando a execução dos processos
+    p1.start()
+    p2.start()
+
+    # 3. Esperando que ambos os processos terminem
+    p1.join()
+    p2.join()
+
+    fim_paralelo = time.time()
+    print("--- Finalizando a execução principal ---")
+    print(f"Execução paralela levou {fim_paralelo - inicio_paralelo:.2f} segundos.")
+```
+
+A saída será similar a:
+
+```
+--- Iniciando execução com multiprocessing ---
+Processo A: iniciando.
+Processo B: iniciando.
+Processo A: terminando.
+Processo B: terminando.
+--- Finalizando a execução principal ---
+Execução paralela levou 2.01 segundos.
+```
+
+Assim como no `threading`, os métodos `.start()` e `.join()` têm a mesma função: o primeiro inicia o processo e o segundo faz o programa principal esperar por sua conclusão. O resultado demonstra o paralelismo real: mesmo simulando uma tarefa que ocupa a CPU, as duas tarefas são executadas ao mesmo tempo em núcleos diferentes, e o tempo total é o da tarefa mais longa.
+
+### Comunicação Entre Processos (IPC)
+
+O isolamento de memória que permite o paralelismo também cria um desafio: como os processos podem trocar informações? Para isso, o `multiprocessing` oferece várias ferramentas de **Comunicação Entre Processos** (_Inter-Process Communication_ - IPC).
+
+- **`Queue` (Fila):** É a forma mais comum e flexível de comunicação. Uma `Queue` é uma estrutura de dados segura para processos, onde um ou mais processos podem adicionar itens (`.put()`) e um ou mais processos podem remover itens (`.get()`). Funciona como uma esteira de produção, garantindo que os dados sejam trocados de forma ordenada e sincronizada.
+- **`Pipe` (Tubo):** Cria um canal de comunicação bidirecional entre **dois** processos. Um `Pipe` retorna dois objetos de conexão, um para cada "ponta" do tubo. O que é enviado por uma ponta (`.send()`) pode ser recebido pela outra (`.recv()`). É mais simples que uma `Queue`, mas limitado a dois processos.
+- **Memória Compartilhada (`Value` e `Array`):** Para casos mais específicos, o `multiprocessing` permite criar uma área de memória compartilhada que pode ser acessada por diferentes processos.
+    - `Value`: Permite compartilhar uma única variável (como um número inteiro ou de ponto flutuante).
+    - Array: Permite compartilhar um array de valores de um tipo primitivo.
+        O acesso a esses objetos deve ser controlado com mecanismos de sincronização, como Lock, para evitar condições de corrida.
+- **`Manager` (Gerenciador):** Para compartilhar objetos Python mais complexos (como listas e dicionários), o `multiprocessing` oferece os `Managers`. Um `Manager` controla um processo servidor que hospeda os objetos Python, e permite que outros processos acessem e modifiquem esses objetos de forma transparente através de _proxies_. É a forma mais conveniente de compartilhar estados complexos, embora seja um pouco mais lenta que os outros mecanismos.
+
