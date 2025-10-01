@@ -410,3 +410,71 @@ fazer_comunicar(pessoa) # Saída: Olá, bom dia!
 
 Essa flexibilidade, onde o comportamento (os métodos que o objeto possui) é mais importante que a herança, é uma das características mais poderosas e distintivas do Python.
 
+### Abstração: Focando no Essencial
+
+O último pilar, a **abstração**, é o processo de identificar as características e comportamentos essenciais de um objeto, expondo apenas uma visão simplificada e de alto nível, enquanto se oculta a complexidade dos detalhes de implementação. É o ato de criar um modelo que foca no **"o que"** um objeto faz, em vez de no **"como"** ele faz.
+
+Pense em usar um controle remoto de televisão. A interface que você usa é uma abstração. Ela oferece botões simples como `ligar()`, `aumentar_volume()` e `trocar_canal()`. Você não precisa conhecer a complexidade dos circuitos eletrônicos, da transmissão de sinais infravermelhos ou do processamento de vídeo para operar a TV. Toda essa complexidade interna está oculta, e apenas uma interface de alto nível é exposta. Isso é abstração.
+
+Na programação, a abstração nos permite criar modelos de objetos que são mais fáceis de entender, usar e gerenciar. Ao projetar uma classe, decidimos quais atributos e métodos serão públicos (parte da interface do objeto) e quais serão detalhes de implementação internos (que devem ser encapsulados).
+
+#### Abstração na Prática em Python: Classes Abstratas
+
+Em Python, o principal mecanismo para implementar a abstração formalmente é através de **Classes Base Abstratas** (_Abstract Base Classes_ - ABCs), fornecidas pelo módulo `abc`. Uma classe abstrata é uma classe que não pode ser instanciada diretamente. Seu propósito é servir como um **contrato** ou um modelo para suas subclasses.
+
+Uma classe abstrata pode conter **métodos abstratos**, que são métodos declarados, mas sem nenhuma implementação. Ao fazer isso, a classe abstrata estabelece uma regra: qualquer subclasse concreta que herdar dela será **obrigada** a fornecer uma implementação para aqueles métodos.
+
+Vamos refatorar nossa hierarquia de veículos para usar a abstração formalmente.
+
+```python
+# Importamos as ferramentas necessárias do módulo abc
+from abc import ABC, abstractmethod
+
+# A classe Veiculo agora é uma Classe Base Abstrata
+class Veiculo(ABC):
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    # Este é um método concreto, compartilhado por todas as subclasses
+    def exibir_dados(self):
+        print(f"Veículo: {self.marca} {self.modelo}")
+
+    # Este é um método abstrato. Ele define o contrato.
+    @abstractmethod
+    def ligar_motor(self):
+        pass # Métodos abstratos não têm implementação na classe pai
+
+# As subclasses agora devem cumprir o contrato
+class Carro(Veiculo):
+    def ligar_motor(self): # Implementação obrigatória do método abstrato
+        print(f"O motor do carro {self.modelo} foi ligado.")
+
+class Moto(Veiculo):
+    def ligar_motor(self): # Implementação obrigatória do método abstrato
+        print(f"A moto {self.modelo} deu a partida.")
+
+# Tentativa de instanciar a classe abstrata diretamente geraria um erro
+# veiculo_generico = Veiculo("Genérico", "G1") # TypeError: Can't instantiate abstract class Veiculo with abstract method ligar_motor
+
+# Instanciamos as classes concretas que cumprem o contrato
+meu_carro = Carro("Toyota", "Corolla")
+minha_moto = Moto("Yamaha", "MT-07")
+
+# A abstração funciona em conjunto com o polimorfismo
+def iniciar_veiculo(veiculo: Veiculo):
+    veiculo.ligar_motor()
+
+iniciar_veiculo(meu_carro) # Saída: O motor do carro Corolla foi ligado.
+iniciar_veiculo(minha_moto) # Saída: A moto MT-07 deu a partida.
+```
+
+Neste novo design:
+
+1. `Veiculo(ABC)` se torna um conceito abstrato, um contrato.
+2. O decorador `@abstractmethod` marca `ligar_motor` como um método que _deve_ ser implementado por qualquer classe filha.
+3. Tentar criar um objeto `Veiculo` diretamente agora causa um erro, pois ele é um modelo incompleto.
+4. As classes `Carro` e `Moto` são concretas porque elas fornecem a implementação para o contrato `ligar_motor`.
+
+A abstração, portanto, nos permite definir interfaces claras e garantir que todas as subclasses que pertencem a uma mesma família de objetos compartilhem um conjunto mínimo de comportamentos, tornando o sistema como um todo mais previsível e robusto. Ela é a base para o design de frameworks e bibliotecas, onde se define uma estrutura geral e se deixa para o usuário final a tarefa de implementar os detalhes específicos.
+
