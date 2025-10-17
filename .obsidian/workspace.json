@@ -11,14 +11,10 @@
             "id": "af6924f9752dc980",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linguagem-python/contents/11-concorrencia-e-paralelismo.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "11-concorrencia-e-paralelismo"
+              "title": "Nova aba"
             }
           }
         ]
@@ -142,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-python/contents/11-concorrencia-e-paralelismo.md",
+                "file": "Instruções do Projeto.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 11-concorrencia-e-paralelismo"
+              "title": "Sumário de Instruções do Projeto"
             }
           }
         ],
@@ -169,28 +165,37 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "af6924f9752dc980",
+  "active": "f9950e0646dc86e5",
   "lastOpenFiles": [
-    "linguagem-python/contents/10-tratamento-de-excecoes.md",
-    "linguagem-python/contents/11-concorrencia-e-paralelismo.md",
+    "Slides.md",
+    "Roteiro da Aula.md",
+    "Temas do Projeto.md",
+    "plano-de-trabalho.md",
+    "Instruções do Projeto.md",
+    "README.md",
+    "engenharia-de-prompt/prompt-de-geracao-de-triagem.md",
+    "engenharia-de-prompt/prompt-de-protocolo.md",
+    "engenharia-de-software/contents/20-refatoracao.md",
+    "engenharia-de-software/contents/19-devops.md",
+    "engenharia-de-software/contents/21-integracao-entrega-e-implantacao-continuas.md",
+    "engenharia-de-software/contents/06-modelo-iterativo-e-evolutivo.md",
+    "bancos-de-dados/contents/09-bancos-distribuidos.md",
+    "bancos-de-dados/old-contents/05-estrutura-interna-e-ambiente-do-sgbd.md",
+    "bancos-de-dados/old-contents/04-modelos-de-dados-e-arquitetura-em-tres-esquemas.md",
+    "bancos-de-dados/old-contents/03-classificacao.md",
+    "bancos-de-dados/old-contents/02-evolucao-historica.md",
+    "bancos-de-dados/old-contents/21-bancos-de-dados-orientados-a-objetos.md",
+    "bancos-de-dados/old-contents/20-seguranca-em-bancos-de-dados.md",
+    "bancos-de-dados/old-contents/19-organizacao-de-arquivos-tecnicas-de-armazenamento-e-metodos-de-acesso.md",
+    "bancos-de-dados/old-contents/18-bancos-de-dados-paralelos-e-distribuidos.md",
+    "bancos-de-dados/old-contents/17-deteccao-de-problemas-e-otimizacao.md",
+    "bancos-de-dados/old-contents/16-alta-disponibilidade-replicacao-e-balanceamento-de-carga.md",
+    "bancos-de-dados/old-contents/15-processamento-de-transacoes.md",
+    "bancos-de-dados/old-contents/13-modelo-relacional-normalizacao.md",
+    "bancos-de-dados/old-contents/12-modelo-relacional-algebra-relacional.md",
     "linguagem-python/contents/img/11-execucao-serial-e-paralela.png",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
-    "linguagem-python/contents/09-orientacao-a-objetos.md",
-    "Sem título.md",
-    "linguagem-python/contents/08-funcoes-embutidas.md",
-    "linguagem-python/contents/07-funcoes.md",
-    "linguagem-python/contents/06-list-comprehensions.md",
-    "linguagem-python/contents/05-estruturas-de-controle.md",
-    "linguagem-python/contents/04-strings.md",
-    "linguagem-python/contents/03-estruturas-de-dados-importadas.md",
-    "linguagem-python/contents/02-estruturas-de-dados-nativas.md",
-    "linguagem-python/README.md",
-    "linguagem-python/contents/01-introducao.md",
-    "linguagem-javascript/contents/01-introducao.md",
-    "engenharia-de-software/contents/24-deployment-pipeline.md",
-    "engenharia-de-software/contents/23-mvp.md",
-    "seguranca-da-informacao/contents/04-criptografia-simetrica-assimetrica-e-hashes.md",
     "seguranca-da-informacao/contents/img/04-funcoes-hash.png",
     "seguranca-da-informacao/contents/img/04-dh-mitm.png",
     "seguranca-da-informacao/contents/img/04-dh-operacoes-cores.png",
@@ -200,15 +205,6 @@
     "seguranca-da-informacao/contents/img/04-3des-decriptacao.png",
     "seguranca-da-informacao/contents/img/04-3des-operacoes.png",
     "seguranca-da-informacao/contents/img/04-des-etapas.png",
-    "seguranca-da-informacao/Sem título.md",
-    "seguranca-da-informacao/contents/03-criptografia.md",
-    "conhecimentos-pedagogicos-e-ept/contents/10-planejamento-escolar.md",
-    "conhecimentos-pedagogicos-e-ept/contents/06-avaliacao-educacional.md",
-    "conhecimentos-pedagogicos-e-ept/contents/07-relacao-professor-aluno.md",
-    "conhecimentos-pedagogicos-e-ept/contents/09-formacao-de-professores.md",
-    "conhecimentos-pedagogicos-e-ept/contents/08-curriculo.md",
-    "bancos-de-dados/contents/09-bancos-distribuidos.md",
-    "bancos-de-dados/contents/08-transacoes.md",
     "seguranca-da-informacao/contents/img",
     "seguranca-da-informacao/contents/Nova pasta",
     "seguranca-da-informacao/contents",
