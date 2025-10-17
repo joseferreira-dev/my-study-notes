@@ -57,7 +57,6 @@ A IA geraria um protocolo completo e, na seção de estratégia de busca, aprese
 | **Contexto**   | "aquaculture", "fish farming", "fish tank", "mariculture"                                                                   | "aquicultura", "piscicultura", "tanque de peixes", "maricultura"                                                                                        |
 | **Tecnologia** | "artificial intelligence", "machine learning", "deep learning", "computer vision", "statistical models", "image processing" | "inteligência artificial", "aprendizado de máquina", "aprendizagem profunda", "visão computacional", "modelos estatísticos", "processamento de imagens" |
 
-
 - **2.2. _Strings_ de Busca Otimizadas:**
     - **Base Genérica (Inglês):** `("biometrics" OR "biometry" OR "biomass estimation" OR "weight estimation") AND ("aquaculture" OR "fish farming") AND ("artificial intelligence" OR "machine learning" OR "computer vision" OR "statistical models")`
     - **Base Genérica (Português):** `("biometria" OR "estimativa de biomassa") AND ("aquicultura" OR "piscicultura") AND ("inteligência artificial" OR "aprendizado de máquina" OR "visão computacional" OR "modelos estatísticos")`
