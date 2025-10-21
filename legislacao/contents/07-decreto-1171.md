@@ -26,7 +26,7 @@ O estabelecimento de um código de ética para o exercício das funções públi
 
 O Código de Ética reforça essa premissa. Embora detalhe deveres e proibições, ele reconhece que nem todas as situações possíveis podem ser previstas em um documento. Assim, este decreto fornece **diretrizes gerais** que orientam os servidores em suas decisões cotidianas, assegurando um padrão de conduta que priorize sempre o interesse público sobre o privado. A promoção de uma consciência ética efetiva requer, portanto, mais do que o estabelecimento de diretrizes; necessita de uma cultura organizacional que valorize e reforce constantemente esses princípios, por meio de treinamentos, diálogo aberto e sistemas que incentivem e recompensem os comportamentos éticos.
 
-## O Âmbito de Aplicação do Decreto nº 1.171/1994
+## Âmbito de Aplicação do Decreto nº 1.171/1994
 
 Um ponto fundamental para o estudo do Código de Ética é compreender exatamente a quem ele se aplica. Por ser um Decreto expedido pelo Presidente da República, sua abrangência está adstrita a uma esfera e a um Poder específico.
 
@@ -62,7 +62,7 @@ O esquema a seguir sintetiza o âmbito de aplicação do Decreto nº 1.171/1994:
 
 A total separação entre o Código de Ética e a lei disciplinar fica evidente na forma de adesão do servidor a cada uma delas. O servidor adere à lei por uma simples conformidade exterior, impessoal e coercitiva, imposta pelo Estado, pois a lei se impõe por si só. Em contrapartida, no que diz respeito ao Código de Ética, a obrigatoriedade moral inclui a liberdade de escolha e de ação do próprio sujeito, até para discordar das normas que porventura entenda injustas e lutar por sua adequação aos princípios da Justiça. A norma ética busca uma adesão interna, baseada na convicção e na consciência do agente, enquanto a norma disciplinar se impõe pela força da sanção.
 
-## A Organização do Código de Ética
+## Organização do Código de Ética
 
 O Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal, aprovado pelo Decreto nº 1.171/1994, contempla essencialmente duas partes. A primeira é de **ordem substancial**, tratando dos princípios e regras de conduta (o que fazer e o que não fazer), e a segunda é de **ordem formal**, dispondo sobre a criação e o funcionamento das Comissões de Ética, que são os órgãos responsáveis por sua aplicação.
 
@@ -124,7 +124,7 @@ Além disso, a comissão tem a importante atribuição de fornecer, aos organism
 
 Isso significa que a conduta ética do servidor tem um impacto direto em sua progressão funcional, sendo um dos critérios a serem considerados na promoção por merecimento.
 
-### A Penalidade de Censura: A Única Sanção Aplicável
+### Penalidade de Censura: A Única Sanção Aplicável
 
 Este é um dos pontos mais importantes sobre a competência das Comissões de Ética. Diferentemente das comissões de processo administrativo disciplinar (PAD), que podem aplicar diversas sanções previstas na Lei nº 8.112/1990, a Comissão de Ética tem sua competência punitiva restrita a uma única penalidade.
 
@@ -146,7 +146,7 @@ As Comissões de Ética são integradas por **três membros titulares e três su
 <img width="440px" src="./img/decreto-1171-comissao-composicao.png">
 </div>
 
-- **O Mandato Não Coincidente:** A exigência de que os mandatos de três anos sejam **não coincidentes** é um mecanismo para garantir a continuidade e a preservação da memória institucional. Isso significa que os membros são renovados de forma escalonada, evitando que toda a comissão seja substituída de uma só vez, o que poderia interromper os trabalhos em andamento. O esquema a seguir ilustra um ciclo de mandatos não coincidentes.
+- **Mandato Não Coincidente:** A exigência de que os mandatos de três anos sejam **não coincidentes** é um mecanismo para garantir a continuidade e a preservação da memória institucional. Isso significa que os membros são renovados de forma escalonada, evitando que toda a comissão seja substituída de uma só vez, o que poderia interromper os trabalhos em andamento. O esquema a seguir ilustra um ciclo de mandatos não coincidentes.
 
 <div align="center">
 <img width="520px" src="./img/decreto-1171-comissao-mandatos.png">
@@ -187,9 +187,9 @@ Essas regras estão intimamente relacionadas com os deveres e proibições encon
 
 As regras deontológicas são as seguintes:
 
-> I - A dignidade, o decoro, o zelo, a eficácia e a consciência dos princípios morais são primados maiores que devem nortear o servidor público, seja no exercício do cargo ou função, ou fora dele, já que refletirá o exercício da vocação do próprio poder estatal. Seus atos, comportamentos e atitudes serão direcionados para a preservação da honra и da tradição dos serviços públicos.
+> I - A dignidade, o decoro, o zelo, a eficácia e a consciência dos princípios morais são primados maiores que devem nortear o servidor público, seja no exercício do cargo ou função, ou fora dele, já que refletirá o exercício da vocação do próprio poder estatal. Seus atos, comportamentos e atitudes serão direcionados para a preservação da honra e da tradição dos serviços públicos.
 > 
-> II - O servidor público não poderá jamais desprezar o elemento ético de sua conduta. Assim, не terá que decidir somente entre o legal e o ilegal, o justo e o injusto, o conveniente e o inconveniente, o oportuno e o inoportuno, mas principalmente entre o honesto e o desonesto.
+> II - O servidor público não poderá jamais desprezar o elemento ético de sua conduta. Assim, não terá que decidir somente entre o legal e o ilegal, o justo e o injusto, o conveniente e o inconveniente, o oportuno e o inoportuno, mas principalmente entre o honesto e o desonesto.
 > 
 > III - A moralidade da Administração Pública não se limita à distinção entre o bem e o mal, devendo ser acrescida da ideia de que o fim é sempre o bem comum. O equilíbrio entre a legalidade e a finalidade, na conduta do servidor público, é que poderá consolidar a moralidade do ato administrativo.
 > 
@@ -257,7 +257,7 @@ Este princípio ético fundamental encontra respaldo direto nos princípios cons
 
 ##### A Moralidade Administrativa e a Busca pelo Bem Comum (Inciso III)
 
-> **III -** A moralidade da Administração Pública не se limita à distinção entre o bem e o mal, devendo ser acrescida da ideia de que **o fim é sempre o bem comum**. O equilíbrio entre a legalidade e a finalidade, na conduta do servidor público, é que poderá consolidar a moralidade do ato administrativo.
+> **III -** A moralidade da Administração Pública não se limita à distinção entre o bem e o mal, devendo ser acrescida da ideia de que **o fim é sempre o bem comum**. O equilíbrio entre a legalidade e a finalidade, na conduta do servidor público, é que poderá consolidar a moralidade do ato administrativo.
 
 Este inciso aprofunda o conceito de moralidade administrativa, já previsto no art. 37 da Constituição. Ele estabelece que a moralidade de um ato público não se mede pela moral pessoal do agente, mas sim por sua conformidade com o bem comum. A verdadeira moralidade administrativa reside no **equilíbrio entre a legalidade e a finalidade**.
 
@@ -464,10 +464,8 @@ A seguir, analisaremos cada um desses deveres fundamentais.
 
 A Seção II do Código de Ética traduz os princípios e as regras deontológicas em deveres concretos, estabelecendo as condutas positivas que são esperadas de todo agente público no exercício de suas funções.
 
-##### O Dever de Desempenho Tempestivo (Alínea "a")
+##### Dever de Desempenho Tempestivo (Alínea "a")
 
-> XIV - São deveres fundamentais do servidor público:
-> 
 > a) desempenhar, a tempo, as atribuições do cargo, função ou emprego público de que seja titular;
 
 Este primeiro dever estabelece a obrigação de **tempestividade**, ou seja, de cumprir as atribuições dentro dos prazos devidos. A menção expressa a "cargo, função ou emprego público" reforça a tese da aplicação ampla do Código de Ética, abrangendo as diferentes formas de vínculo com a Administração Pública. Para fins de clareza, é importante distinguir esses termos:
@@ -482,7 +480,7 @@ Este primeiro dever estabelece a obrigação de **tempestividade**, ou seja, de 
 - **Emprego Público:** É o vínculo de trabalho regido pela Consolidação das Leis do Trabalho (CLT), típico das entidades da Administração Pública Indireta que exploram atividade econômica, como as **Empresas Públicas** e as **Sociedades de Economia Mista**. O ingresso também se dá por concurso público.
 - **Função Pública:** Refere-se a um conjunto de atribuições exercidas por uma pessoa física junto à Administração. Pode se manifestar, por exemplo, na **função de confiança**, que é exercida exclusivamente por servidor ocupante de cargo efetivo para atribuições de direção, chefia e assessoramento, ou em funções exercidas por particulares em colaboração com o Estado, como os mesários em uma eleição.
 
-##### O Dever de Eficiência e Presteza (Alínea "b")
+##### Dever de Eficiência e Presteza (Alínea "b")
 
 > **b)** exercer suas atribuições com **rapidez, perfeição e rendimento**, pondo fim ou procurando prioritariamente resolver situações procrastinatórias, principalmente diante de filas ou de qualquer outra espécie de atraso na prestação dos serviços pelo setor em que exerça suas atribuições, com o fim de evitar dano moral ao usuário;
 
@@ -492,7 +490,7 @@ Este dever é a manifestação ética do princípio constitucional da **eficiên
 <img width="700px" src="./img/decreto-1171-situacao-procrastinatoria.png">
 </div>
 
-##### O Dever de Integridade e Foco no Bem Comum (Alínea "c")
+##### Dever de Integridade e Foco no Bem Comum (Alínea "c")
 
 > **c)** ser **probo, reto, leal e justo**, demonstrando toda a integridade do seu caráter, escolhendo sempre, quando estiver diante de duas opções a **melhor e a mais vantajosa para o bem comum**;
 
@@ -508,13 +506,13 @@ A parte final deste dever é de extrema importância. Ela estabelece o critério
 <img width="600px" src="./img/decreto-1171-escolha-bem-comum.png">
 </div>
 
-##### O Dever de Prestação de Contas (Alínea "d")
+##### Dever de Prestação de Contas (Alínea "d")
 
 > **d)** jamais retardar qualquer **prestação de contas**, condição essencial da gestão dos bens, direitos e serviços da coletividade a seu cargo;
 
 A prestação de contas (_accountability_) é um direito do cidadão e um dever intransferível do agente público. Este inciso estabelece que retardar, dificultar ou impedir a prestação de contas é uma grave falta ética, pois atenta diretamente contra o princípio da **publicidade** e da **transparência**. A lógica é simples: espera-se uma atitude íntegra e leal do servidor e, se sua conduta é pautada por esses valores, não há motivos para se recusar a prestar contas de seus atos à sociedade e às instâncias de controle.
 
-##### O Dever de Cuidado e Comunicação com o Público (Alínea "e")
+##### Dever de Cuidado e Comunicação com o Público (Alínea "e")
 
 > **e)** tratar cuidadosamente os usuários dos serviços **aperfeiçoando o processo de comunicação** e contato com o público;
 
@@ -522,7 +520,7 @@ Este dever, aparentemente simples, aborda uma das maiores fontes de insatisfaç�
 
 O dever de tratar cuidadosamente o usuário implica em uma postura de **presteza e diligência**. Mesmo que a demanda do cidadão não seja da competência direta daquele servidor, ele tem o dever ético de, no mínimo, orientá-lo corretamente, indicando o setor ou a pessoa adequada para resolver o problema. O servidor deve atuar como um facilitador, e não como um obstáculo, no acesso do cidadão aos seus direitos.
 
-##### A Consciência Ética e a Finalidade do Serviço (Alínea "f")
+##### Consciência Ética e a Finalidade do Serviço (Alínea "f")
 
 > **f)** ter **consciência** de que seu trabalho é regido por princípios éticos que se materializam na adequada prestação dos serviços públicos;
 
@@ -534,7 +532,7 @@ Este item complementa o anterior, reforçando que a atuação do servidor não �
 > 
 > É uma pegadinha clássica de concursos afirmar que o objetivo seria "atender aos desejos de cada cidadão". A Administração Pública rege-se pelo princípio da impessoalidade e da isonomia, não podendo satisfazer vontades individuais que contrariem o interesse coletivo ou a lei.
 
-##### O Dever de Urbanidade e a Vedação ao Preconceito (Alínea "g")
+##### Dever de Urbanidade e a Vedação ao Preconceito (Alínea "g")
 
 > **g)** ser **cortês, ter urbanidade, disponibilidade e atenção**, respeitando a capacidade e as limitações individuais de todos os usuários do serviço público, **sem qualquer espécie de preconceito ou distinção** de raça, sexo, nacionalidade, cor, idade, religião, cunho político e posição social, abstendo-se, dessa forma, de causar-lhes dano moral;
 
@@ -544,7 +542,7 @@ A segunda parte, "respeitando a capacidade e as limitações individuais", exige
 
 A parte final veda expressamente qualquer forma de preconceito ou distinção, listando uma série de marcadores sociais. O tratamento discriminatório, além de ser uma grave falta ética, pode configurar crime.
 
-##### O Respeito Crítico à Hierarquia (Alínea "h")
+##### Respeito Crítico à Hierarquia (Alínea "h")
 
 > **h)** ter **respeito à hierarquia**, porém **sem nenhum temor de representar** contra qualquer comprometimento indevido da estrutura em que se funda o Poder Estatal;
 
@@ -564,7 +562,7 @@ Caso o servidor presencie ou receba uma ordem que configure um "comprometimento 
 
 O servidor deve, portanto, respeitar a hierarquia, mas sem temor de denunciar as irregularidades, utilizando os canais institucionais corretos para fazê-lo.
 
-##### O Dever de Resistência e Denúncia (Alínea "i")
+##### Dever de Resistência e Denúncia (Alínea "i")
 
 > **i)** **resistir a todas as pressões** de superiores hierárquicos, de contratantes, interessados e outros que visem obter quaisquer favores, benesses ou vantagens indevidas em decorrência de ações imorais, ilegais ou aéticas e **denunciá-las**;
 
@@ -572,7 +570,7 @@ Este dever impõe ao servidor uma postura ativa e corajosa diante de tentativas 
 
 A conduta ética exigida é dupla: primeiro, **resistir**, ou seja, não ceder à pressão e não praticar o ato solicitado. Segundo, e de igual importância, **denunciar** a tentativa de pressão aos canais competentes. A simples recusa, sem a denúncia, permite que o agente corruptor continue a atuar, buscando pressionar outros servidores. A denúncia é o que permite à Administração identificar e punir os responsáveis, protegendo a integridade da instituição.
 
-##### A Ética no Exercício do Direito de Greve (Alínea "j")
+##### Ética no Exercício do Direito de Greve (Alínea "j")
 
 > **j)** zelar, no exercício do **direito de greve**, pelas exigências específicas da **defesa da vida e da segurança coletiva**;
 
@@ -582,13 +580,13 @@ Contudo, ele impõe um limite ético a esse direito: a necessidade de zelar pela
 
 - **Exemplo:** Em uma greve de servidores da saúde de um hospital público, é dever ético e legal da categoria manter um efetivo mínimo para garantir o atendimento de emergências, o cuidado de pacientes internados em UTIs e a realização de procedimentos inadiáveis. Da mesma forma, em uma greve de policiais, a segurança pública não pode ser completamente interrompida.
 
-##### O Dever de Assiduidade (Alínea "l")
+##### Dever de Assiduidade (Alínea "l")
 
 > **l)** ser **assíduo e frequente** ao serviço, na certeza de que sua ausência provoca danos ao trabalho ordenado, refletindo negativamente em todo o sistema;
 
 Este dever ético corresponde diretamente ao dever funcional de assiduidade e pontualidade previsto na Lei nº 8.112/1990. Ser assíduo é ser presente, pontual e aplicado ao serviço. O código reforça que a ausência injustificada provoca um dano duplo: um dano direto ao trabalho, que deixa de ser realizado, e um dano sistêmico, pois reflete negativamente na imagem de toda a instituição e sobrecarrega os demais colegas de equipe.
 
-##### O Dever de Representação e Colaboração com a Fiscalização (Alíneas "m" e "s")
+##### Dever de Representação e Colaboração com a Fiscalização (Alíneas "m" e "s")
 
 > **m)** **comunicar imediatamente a seus superiores** todo e qualquer ato ou fato contrário ao interesse público, exigindo as providências cabíveis;
 > 
@@ -600,25 +598,25 @@ O dever de **comunicar** um fato contrário ao interesse público é reforçado 
 
 O dever de **facilitar a fiscalização** significa que o servidor deve colaborar ativamente com as instâncias de controle, sejam elas internas (auditoria interna, corregedoria) ou externas (Tribunal de Contas da União, Controladoria-Geral da União, Ministério Público), fornecendo as informações e os documentos solicitados com presteza e transparência.
 
-##### O Dever de Cuidado com o Ambiente de Trabalho (Alínea "n")
+##### Dever de Cuidado com o Ambiente de Trabalho (Alínea "n")
 
 > **n)** manter **limpo e em perfeita ordem o local de trabalho**, seguindo os métodos mais adequados à sua organização e distribuição;
 
 Este dever, aparentemente simples, está diretamente ligado ao princípio da **eficiência**. Um local de trabalho organizado, com documentos e processos em ordem, otimiza o tempo, reduz a chance de erros e extravios, e melhora a qualidade do serviço prestado.
 
-##### O Dever de Aperfeiçoamento Profissional (Alínea "o")
+##### Dever de Aperfeiçoamento Profissional (Alínea "o")
 
 > **o)** **participar dos movimentos e estudos** que se relacionem com a melhoria do exercício de suas funções, tendo por escopo a realização do bem comum;
 
 Este é o dever de **capacitação contínua**. A ética profissional exige que o servidor busque constantemente o aperfeiçoamento de suas competências. A Administração tem a obrigação de oferecer oportunidades de capacitação, e o servidor tem o dever ético de participar ativamente dessas oportunidades, com o objetivo de aplicar os novos conhecimentos para a melhoria do serviço público.
 
-##### O Dever de Apresentação Pessoal (Alínea "p")
+##### Dever de Apresentação Pessoal (Alínea "p")
 
 > **p)** apresentar-se ao trabalho com **vestimentas adequadas** ao exercício da função;
 
 Este dever está relacionado ao **decoro** e à imagem da instituição. A adequação das vestimentas não se refere a luxo ou a um padrão estético específico, mas sim à compatibilidade com a formalidade e a natureza do ambiente de trabalho. Uma apresentação pessoal cuidada é uma forma de comunicação não verbal que transmite profissionalismo e respeito ao cidadão e à função pública exercida.
 
-##### O Dever de Atualização e Cumprimento das Normas (Alíneas "q" e "r")
+##### Dever de Atualização e Cumprimento das Normas (Alíneas "q" e "r")
 
 > **q)** manter-se **atualizado** com as instruções, as normas de serviço e a legislação pertinente ao órgão onde exerce suas funções;
 > 
@@ -638,13 +636,13 @@ O dever de **cumprir as tarefas** estabelece o padrão de qualidade esperado par
 - **Segurança:** De forma a garantir a validade jurídica do ato e a segurança para a Administração e para o cidadão.
 - **Rapidez:** Em observância ao princípio da eficiência, evitando a morosidade.
 
-##### O Dever de Moderação e a Vedação ao Desvio de Finalidade (Alíneas "t" e "u")
+##### Dever de Moderação e a Vedação ao Desvio de Finalidade (Alíneas "t" e "u")
 
 > **t)** exercer com **estrita moderação as prerrogativas funcionais** que lhe sejam atribuídas, abstendo-se de fazê-lo contrariamente aos legítimos interesses dos usuários do serviço público e dos jurisdicionados administrativos;
 > 
 > **u)** **abster-se, de forma absoluta, de exercer sua função, poder ou autoridade com finalidade estranha ao interesse público**, mesmo que observando as formalidades legais e não cometendo qualquer violação expressa à lei;
 
-Estes incisos tratam de um dos temas mais sensíveis da ética pública: o **abuso de poder**. O servidor público detém prerrogativas que o cidadão comum не possui. O dever ético impõe que essas prerrogativas sejam usadas com "estrita moderação" e exclusivamente para o cumprimento do interesse público.
+Estes incisos tratam de um dos temas mais sensíveis da ética pública: o **abuso de poder**. O servidor público detém prerrogativas que o cidadão comum não possui. O dever ético impõe que essas prerrogativas sejam usadas com "estrita moderação" e exclusivamente para o cumprimento do interesse público.
 
 A prática de usar o cargo para obter vantagens ou se impor em situações privadas, conhecida popularmente como **"carteirada"**, é uma violação direta deste dever. Como afirma o ditado, o poder tende a corromper, e a ética exige uma vigilância constante para que o cargo não "suba à cabeça".
 
@@ -662,7 +660,7 @@ A alínea "u" é particularmente importante, pois consagra a vedação ao **desv
 > 
 > **Art. 319 do Código Penal:** Retardar ou deixar de praticar, indevidamente, ato de ofício, ou praticá-lo contra disposição expressa de lei, para **satisfazer interesse ou sentimento pessoal**.
 
-##### O Dever de Disseminação do Código de Ética (Alínea "v")
+##### Dever de Disseminação do Código de Ética (Alínea "v")
 
 > **v)** **divulgar e informar** a todos os integrantes da sua classe sobre a existência deste Código de Ética, estimulando o seu integral cumprimento.
 
@@ -716,8 +714,6 @@ A Seção III do Código de Ética detalha as condutas que são expressamente pr
 
 ##### A Vedação ao Uso do Cargo para Obtenção de Favorecimento (Alínea "a")
 
-> XV - É vedado ao servidor público:
-> 
 > a) o uso do cargo ou função, facilidades, amizades, tempo, posição e influências, para obter qualquer favorecimento, para si ou para outrem;
 
 Esta é uma das vedações mais importantes, pois atinge o cerne de uma prática culturalmente conhecida como o "jeitinho brasileiro". A norma proíbe de forma taxativa que o servidor utilize qualquer aspecto de sua posição pública — seja o cargo em si, o tempo de trabalho, as informações a que tem acesso ou a influência que possui — para obter vantagens indevidas.
@@ -730,15 +726,16 @@ O "favorecimento" aqui deve ser entendido em seu sentido mais amplo. Ele abrange
 
 A conduta de se valer do cargo para obter vantagens indevidas é tão grave que ela é reprimida em três esferas distintas do ordenamento jurídico:
 
-1. **A Falta Ética (Decreto nº 1.171/1994):** É a violação direta desta alínea, sujeitando o servidor à penalidade de **censura**, aplicada pela Comissão de Ética.
-2. **A Infração Administrativa (Lei nº 8.112/1990):** A mesma conduta é tipificada como uma proibição no Estatuto dos Servidores, sujeita a uma penalidade muito mais severa.
+1. **Falta Ética (Decreto nº 1.171/1994):** É a violação direta desta alínea, sujeitando o servidor à penalidade de **censura**, aplicada pela Comissão de Ética.
+2. **Infração Administrativa (Lei nº 8.112/1990):** A mesma conduta é tipificada como uma proibição no Estatuto dos Servidores, sujeita a uma penalidade muito mais severa.
+
     > Art. 117. Ao servidor é proibido:
     > 
     > IX - valer-se do cargo para lograr proveito pessoal ou de outrem, em detrimento da dignidade da função pública;
 
     A violação desta proibição é punível com a pena de **DEMISSÃO**.
 
-3. **O Crime de Corrupção Passiva (Código Penal):** Em muitos casos, o uso do cargo para obter vantagens pode configurar o crime de corrupção passiva.
+3. **Crime de Corrupção Passiva (Código Penal):** Em muitos casos, o uso do cargo para obter vantagens pode configurar o crime de corrupção passiva.
 
     > Art. 317 - Solicitar ou receber, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida, ou aceitar promessa de tal vantagem:
     > 
@@ -746,7 +743,7 @@ A conduta de se valer do cargo para obter vantagens indevidas é tão grave que 
 
     No crime de corrupção passiva, ocorre uma espécie de "negociação" da função pública. O sujeito ativo do crime é o funcionário público, e o sujeito passivo (a vítima) é o Estado. A mera **solicitação** da vantagem indevida, mesmo que não seja paga, já é suficiente para configurar o crime.
 
-##### A Vedação a Atos Contra a Honra (Alínea "b")
+##### Vedação a Atos Contra a Honra (Alínea "b")
 
 > **b)** **prejudicar deliberadamente a reputação** de outros servidores ou de cidadãos que deles dependam;
 
@@ -756,7 +753,7 @@ Tal conduta pode, a depender do caso, configurar um dos **crimes contra a honra*
 
 Esta regra ética dialoga com a proibição prevista na Lei nº 8.112/1990, que veda ao servidor "promover manifestação de apreço ou desapreço no recinto da repartição" (art. 117, V).
 
-##### A Vedação à Conivência (Alínea "c")
+##### Vedação à Conivência (Alínea "c")
 
 > **c)** ser, em função de seu espírito de solidariedade, **conivente com erro ou infração** a este Código de Ética ou ao Código de Ética de sua profissão;
 
@@ -766,19 +763,19 @@ A conduta omissiva de não relatar uma infração cometida por um subordinado po
 
 > **Art. 320 do Código Penal** - Deixar o funcionário, por indulgência, de responsabilizar subordinado que cometeu infração no exercício do cargo ou, quando lhe falte competência, não levar o fato ao conhecimento da autoridade competente.
 
-##### A Vedação à Procrastinação Dolosa (Alínea "d")
+##### Vedação à Procrastinação Dolosa (Alínea "d")
 
 > **d)** usar de **artifícios para procrastinar ou dificultar** o exercício regular de direito por qualquer pessoa, causando-lhe dano moral ou material;
 
 Mais uma vez, o Código de Ética condena a procrastinação. Contudo, aqui a conduta é mais grave do que a simples demora por ineficiência (tratada no dever da alínea "b"). Esta vedação se refere ao uso de **"artifícios"**, ou seja, de manobras intencionais para atrasar ou impedir que um cidadão exerça um direito. Trata-se de uma conduta dolosa e de má-fé, que pode configurar também o crime de **prevaricação** (art. 319 do Código Penal).
 
-##### O Dever de Utilizar os Avanços Técnicos e Científicos (Alínea "e")
+##### Dever de Utilizar os Avanços Técnicos e Científicos (Alínea "e")
 
 > **e)** **deixar de utilizar os avanços técnicos e científicos** ao seu alcance ou do seu conhecimento para atendimento do seu mister;
 
 Embora listada entre as vedações, esta norma estabelece, na prática, um dever positivo. O servidor tem a obrigação ética de se manter atualizado e de empregar as melhores e mais modernas ferramentas técnicas e científicas disponíveis para a execução de seu trabalho. A recusa injustificada em adotar uma nova tecnologia que tornaria o serviço mais eficiente e de melhor qualidade para o cidadão é, portanto, uma conduta antiética.
 
-##### A Vedação à Parcialidade (Alínea "f")
+##### Vedação à Parcialidade (Alínea "f")
 
 > **f)** permitir que **perseguições, simpatias, antipatias, caprichos, paixões ou interesses de ordem pessoal interfiram** no trato com o público, com os jurisdicionados administrativos ou com colegas hierarquicamente superiores ou inferiores;
 
@@ -786,11 +783,11 @@ Este é o cerne do princípio da **impessoalidade**. O servidor, no exercício d
 
 Caso a imparcialidade do servidor para atuar em um determinado processo esteja comprometida por razões de ordem pessoal, ele tem o dever de se declarar **suspeito** (instituto da **suspeição**), solicitando seu afastamento daquele caso específico, que será então redistribuído a outro colega.
 
-##### A Vedação ao Recebimento de Vantagens Indevidas (Alínea "g")
+##### Vedação ao Recebimento de Vantagens Indevidas (Alínea "g")
 
 > **g)** **pleitear, solicitar, provocar, sugerir ou receber** qualquer tipo de ajuda financeira, gratificação, prêmio, comissão, doação ou vantagem de qualquer espécie, para si, familiares ou qualquer pessoa, para o cumprimento da sua missão ou para influenciar outro servidor para o mesmo fim;
 
-Esta é a vedação mais explícita contra os atos de **corrupção**. A norma utiliza uma série de verbos (`pleitear, solicitar, receber`, etc.) para abranger todas as formas de conduta, desde a mais ativa (exigir a vantagem) até a mais passiva (simplesmente aceitar a oferta).
+Esta é a vedação mais explícita contra os atos de **corrupção**. A norma utiliza uma série de verbos (pleitear, solicitar, receber, etc.) para abranger todas as formas de conduta, desde a mais ativa (exigir a vantagem) até a mais passiva (simplesmente aceitar a oferta).
 
 Esta conduta também é vedada expressamente na Lei nº 8.112/1990 e configura o crime de **corrupção passiva** (art. 317 do Código Penal), sendo uma das infrações mais graves que um servidor pode cometer.
 
@@ -798,7 +795,7 @@ Esta conduta também é vedada expressamente na Lei nº 8.112/1990 e configura o
 > 
 > XII - receber propina, comissão, presente ou vantagem de qualquer espécie, em razão de suas atribuições;
 
-##### A Vedação à Falsificação de Documentos (Alínea "h")
+##### Vedação à Falsificação de Documentos (Alínea "h")
 
 > **h)** **alterar ou deturpar o teor de documentos** que deva encaminhar para providências;
 
@@ -812,7 +809,7 @@ Esta vedação protege a **fé pública** e a integridade dos documentos oficiai
 > 
 > A pena é aumentada de sexta parte se o crime for cometido por funcionário público que se prevalece do cargo.
 
-##### A Vedação à Ludibriação do Cidadão (Alínea "i")
+##### Vedação à Ludibriação do Cidadão (Alínea "i")
 
 > **i)** **iludir ou tentar iludir** qualquer pessoa que necessite do atendimento em serviços públicos;
 
@@ -820,7 +817,7 @@ Esta vedação protege a **fé pública** e a integridade dos documentos oficiai
 
 Essa conduta pode configurar **ato de improbidade administrativa** que atenta contra os princípios da administração pública, conforme o art. 11 da Lei nº 8.429/1992.
 
-##### A Vedação ao Desvio de Pessoal para Fins Particulares (Alínea "j")
+##### Vedação ao Desvio de Pessoal para Fins Particulares (Alínea "j")
 
 > **j)** **desviar servidor público para atendimento a interesse particular**;
 
@@ -845,7 +842,7 @@ Esta conduta é tão grave que também recebe uma **tríplice reprimenda** no or
     > 
     > XIII - permitir que se utilize (...) o trabalho de servidor público (...) em obra ou serviço particular.
 
-##### A Vedação à Retirada Indevida de Bens Públicos (Alínea "l")
+##### Vedação à Retirada Indevida de Bens Públicos (Alínea "l")
 
 > **l)** **retirar da repartição pública, sem estar legalmente autorizado**, qualquer documento, livro ou bem pertencente ao patrimônio público;
 
@@ -853,7 +850,7 @@ Esta vedação visa a proteger o patrimônio público. A ressalva "sem estar leg
 
 A retirada indevida de um bem público, mesmo que de pequeno valor como uma simples resma de papel, pode configurar o crime de **Peculato**, previsto no art. 312 do Código Penal, que consiste na apropriação, por parte do funcionário público, de bem de que tem a posse em razão do cargo.
 
-##### A Vedação ao Uso de Informação Privilegiada (Alínea "m")
+##### Vedação ao Uso de Informação Privilegiada (Alínea "m")
 
 > **m)** fazer uso de **informações privilegiadas** obtidas no âmbito interno de seu serviço, em benefício próprio, de parentes, de amigos ou de terceiros;
 
@@ -863,7 +860,7 @@ A **informação privilegiada**, neste contexto, é todo conhecimento sigiloso o
 
 - **Exemplo:** Imagine que um servidor do Banco Central participe de reuniões que decidem pelo aumento da taxa básica de juros (Selic), informação que só será divulgada ao mercado no dia seguinte. Se este servidor utilizar essa informação para realizar investimentos pessoais ou avisar amigos e parentes para que o façam, ele estará cometendo a infração ética, além de um possível ato de improbidade e crime.
 
-##### A Vedação à Embriaguez (Alínea "n")
+##### Vedação à Embriaguez (Alínea "n")
 
 > **n)** apresentar-se **embriagado no serviço ou fora dele habitualmente**;
 
@@ -874,7 +871,7 @@ Esta vedação possui uma dupla faceta, abrangendo tanto a conduta no ambiente d
 
 É importante notar que o alcoolismo crônico é hoje compreendido como uma doença, o que pode levar a um tratamento de saúde e licença médica. Contudo, essa condição não isenta o servidor de ser responsabilizado por seus atos, especialmente se ele se recusar a buscar tratamento.
 
-##### A Vedação à Colaboração com Instituições Imorais (Alínea "o")
+##### Vedação à Colaboração com Instituições Imorais (Alínea "o")
 
 > **o)** dar o seu **concurso a qualquer instituição que atente contra a moral**, a honestidade ou a dignidade da pessoa humana;
 
@@ -882,7 +879,7 @@ O servidor público, ao escolher a carreira pública, opta por uma vida pautada 
 
 - **Exemplo:** Seria uma grave falta ética um servidor público participar ativamente de uma organização que promova discursos de ódio ou que se organize para praticar atos de violência contra grupos minoritários, pois tais atividades atentam violentamente contra a moral e a dignidade da pessoa humana.
 
-##### A Vedação a Atividades de Cunho Duvidoso (Alínea "p")
+##### Vedação a Atividades de Cunho Duvidoso (Alínea "p")
 
 > **p)** exercer **atividade profissional aética ou ligar o seu nome a empreendimentos de cunho duvidoso**.
 
