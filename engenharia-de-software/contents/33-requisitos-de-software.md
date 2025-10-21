@@ -70,15 +70,15 @@ De todas as formas de classificar requisitos, a mais tradicional, importante e f
 
 **Requisitos Funcionais (RFs):** Descrevem **o que o sistema deve fazer**. São declarações sobre os serviços, as ações e as funcionalidades que o sistema deve fornecer para atingir seus objetivos. Eles definem como o sistema deve reagir a entradas específicas e como deve se comportar em determinadas situações.
 
-|**Requisitos Funcionais**|
-| --- |
-| Declarações de serviços que o sistema deve fornecer. |
-| Como o sistema deve reagir a entradas específicas. |
-| Como o sistema deve se comportar em determinadas situações. |
-| Podem estabelecer explicitamente o que o sistema **não deve** fazer. |
-| Podem ser descritos inicialmente como requisitos de usuário (abstratos). |
+| **Requisitos Funcionais**                                                       |
+| ------------------------------------------------------------------------------- |
+| Declarações de serviços que o sistema deve fornecer.                            |
+| Como o sistema deve reagir a entradas específicas.                              |
+| Como o sistema deve se comportar em determinadas situações.                     |
+| Podem estabelecer explicitamente o que o sistema **não deve** fazer.            |
+| Podem ser descritos inicialmente como requisitos de usuário (abstratos).        |
 | Para a implementação, devem ser detalhados com entradas, saídas, exceções, etc. |
-| Em princípio, sua especificação deve ser **completa** e **consistente**. |
+| Em princípio, sua especificação deve ser **completa** e **consistente**.        |
 
 **Problemas Comuns:** A especificação de requisitos funcionais pode ser desafiadora. É comum encontrar **ambiguidade** (permitindo múltiplas interpretações), **incompletude** (não descrevendo toda a funcionalidade) e **inconsistência** (entrando em contradição com outros requisitos).
 

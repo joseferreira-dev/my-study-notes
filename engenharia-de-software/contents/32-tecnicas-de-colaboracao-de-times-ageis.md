@@ -125,17 +125,17 @@ Pense no PI Planning como um "all-hands" de planejamento, onde o alinhamento, o 
 
 O evento é meticulosamente estruturado para maximizar a colaboração e os resultados.
 
-|**Etapas**|**Descrição**|
-|---|---|
-|**Preparação**|Antes do evento, a liderança de negócio prepara a visão e as principais _features_ a serem consideradas. As equipes revisam seus backlogs e se preparam para o planejamento.|
-|**Dia 1: O Contexto e o Rascunho do Plano**|
-|Reunião de abertura|A liderança apresenta o contexto de negócio: a visão do programa, o estado atual do portfólio e os objetivos estratégicos para o próximo PI. Os Product Managers detalham as _features_ de maior prioridade.|
-|Planejamento detalhado|As equipes se separam em suas áreas (_breakout sessions_) para planejar suas iterações. Elas estimam a capacidade, decompõem _features_ em histórias, identificam dependências com outras equipes e rascunham seus objetivos para o PI.|
-|**Dia 2: O Refinamento e o Compromisso**|
-|Revisão e Ajuste|As equipes refinam seus planos com base no feedback recebido e nas negociações de dependências feitas com outras equipes.|
-|Cerimônia de PI Planning|As dependências são visualizadas em um "Program Board", tornando o fluxo de trabalho entre as equipes transparente. Riscos são identificados e categorizados (Resolvido, Assumido, Mitigado).|
-|Voto de Confiança|No final, cada equipe vota (em uma escala de 1 a 5) em seu nível de confiança para alcançar os objetivos do PI que planejaram. Se a confiança for baixa, os planos são retrabalhados.|
-|Retrospectiva|O evento termina com uma breve retrospectiva para identificar melhorias para o próximo PI Planning.|
+| **Etapas**                                  | **Descrição**                                                                                                                                                                                                                           |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Preparação**                              | Antes do evento, a liderança de negócio prepara a visão e as principais _features_ a serem consideradas. As equipes revisam seus backlogs e se preparam para o planejamento.                                                            |
+| **Dia 1: O Contexto e o Rascunho do Plano** |                                                                                                                                                                                                                                         |
+| Reunião de abertura                         | A liderança apresenta o contexto de negócio: a visão do programa, o estado atual do portfólio e os objetivos estratégicos para o próximo PI. Os Product Managers detalham as _features_ de maior prioridade.                            |
+| Planejamento detalhado                      | As equipes se separam em suas áreas (_breakout sessions_) para planejar suas iterações. Elas estimam a capacidade, decompõem _features_ em histórias, identificam dependências com outras equipes e rascunham seus objetivos para o PI. |
+| **Dia 2: O Refinamento e o Compromisso**    |                                                                                                                                                                                                                                         |
+| Revisão e Ajuste                            | As equipes refinam seus planos com base no feedback recebido e nas negociações de dependências feitas com outras equipes.                                                                                                               |
+| Cerimônia de PI Planning                    | As dependências são visualizadas em um "Program Board", tornando o fluxo de trabalho entre as equipes transparente. Riscos são identificados e categorizados (Resolvido, Assumido, Mitigado).                                           |
+| Voto de Confiança                           | No final, cada equipe vota (em uma escala de 1 a 5) em seu nível de confiança para alcançar os objetivos do PI que planejaram. Se a confiança for baixa, os planos são retrabalhados.                                                   |
+| Retrospectiva                               | O evento termina com uma breve retrospectiva para identificar melhorias para o próximo PI Planning.                                                                                                                                     |
 
 |**Benefícios**|**Descrição**|
 |---|---|
