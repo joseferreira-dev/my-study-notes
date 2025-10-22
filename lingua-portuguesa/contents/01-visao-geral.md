@@ -822,7 +822,7 @@ São formas de tratamento ou reverência, empregadas para se dirigir a pessoas d
 > • Usa-se Sua (Excelência, Senhoria, etc.) para falar sobre a autoridade.
 > 	_Exemplo:_ "Todos aguardam a decisão de Sua Excelência, o Ministro."
 
-##### Colocação Pronominal: O Lugar Certo do Pronome
+##### Colocação Pronominal
 
 A colocação pronominal é o conjunto de regras que determina a posição correta dos pronomes oblíquos átonos — **me, te, se, o, a, lhe, nos, vos, os, as, lhes** — em relação ao verbo. Embora na linguagem coloquial do dia a dia essas regras sejam frequentemente flexibilizadas, na norma padrão elas são estritas.
 
@@ -868,7 +868,7 @@ Este é o segundo ponto mais cobrado em provas. Certas palavras, chamadas de **f
 |**Pronomes Interrogativos**<br>(quem, qual, que, quando, como, por que, etc.)|**Quem te** contou essa história?<br>Gostaria de saber **quando se** inicia a prova.|
 |**Frases com "em" + gerúndio**|Em **se** tratando de legislação, ele é um expert.|
 
-###### A Posição Padrão: Ênclise
+###### Posição Padrão: Ênclise
 
 A ênclise (pronome após o verbo) é considerada a posição padrão do pronome no português formal, sendo utilizada sempre que não houver um fator de próclise. É a colocação de rigor quando o verbo inicia a oração ou quando o verbo está no imperativo afirmativo ou no gerúndio (sem a preposição "em").
 
@@ -877,7 +877,7 @@ A ênclise (pronome após o verbo) é considerada a posição padrão do pronome
     - **Entreguem-nos** os documentos, por favor. (Verbo no imperativo afirmativo).
     - Saiu da sala, fazendo-**se** de desentendido. (Verbo no gerúndio).
 
-###### O Uso Formal: Mesóclise
+###### Uso Formal: Mesóclise
 
 A mesóclise (pronome no meio do verbo) ocorre exclusivamente com verbos no **Futuro do Presente** ou no **Futuro do Pretérito**, e somente quando não há palavra atrativa que force a próclise. É uma construção de uso extremamente formal, mais comum na linguagem jurídica, literária ou bíblica.
 
@@ -1056,7 +1056,7 @@ O verbo é a classe de palavra mais complexa e central da língua portuguesa. É
 - _Exemplo de flexão:_ _Eu **estudo** agora._ (1ª pessoa do singular, presente).
 - _Exemplo de flexão:_ _Nós **estudávamos** antigamente._ (1ª pessoa do plural, pretérito).
 
-##### A Estrutura do Verbo
+##### Estrutura do Verbo
 
 Para entender como os verbos são conjugados, é útil conhecer sua estrutura básica. Um verbo-modelo, como "cantar", é formado por:
 
@@ -1074,7 +1074,7 @@ A maioria dos verbos da língua é **regular**, o que significa que eles seguem 
 
 Existem, no entanto, os verbos **irregulares**, que sofrem alterações em seu radical ou em suas desinências durante a conjugação (ex: _fazer_ -> eu **faç**o, ele **fez**). Estes exigem um estudo individualizado.
 
-##### As Formas Nominais do Verbo
+##### Formas Nominais do Verbo
 
 Além de serem conjugados, os verbos possuem três formas que não expressam tempo ou modo diretamente e podem assumir funções de nomes (substantivo, adjetivo) ou de advérbio. São elas:
 
@@ -1096,7 +1096,7 @@ Os **tempos compostos** são um tipo específico de locução verbal, formados p
 
 - _Exemplo:_ Quando cheguei, eles já **tinham saído**.
 
-##### Os Modos Verbais
+##### Modos Verbais
 
 Os modos verbais indicam a atitude de quem fala em relação ao fato que enuncia.
 
@@ -1338,7 +1338,7 @@ Este tempo verbal descreve uma ação eventual ou hipotética que pode ocorrer n
     - Ex.: Se eu _quiser_ falar com Deus, tenho que ficar a sós.
     - Ex.: Daremos o prêmio a quem _atingir_ a meta primeiro.
 
-##### As Vozes Verbais: A Relação entre Sujeito e Verbo
+##### Vozes Verbais: A Relação entre Sujeito e Verbo
 
 As vozes (ou diáteses) verbais são um aspecto da morfossintaxe que indica a relação entre o sujeito da oração e a ação expressa pelo verbo. Basicamente, elas definem se o sujeito _pratica_ ou _recebe_ a ação.
 
@@ -1372,7 +1372,7 @@ A conversão da voz ativa para a passiva é um tópico recorrente em provas. O p
 
 Após identificarmos as "peças" que compõem a nossa língua no estudo da Morfologia, chegamos à **Sintaxe**. Se a Morfologia é o estudo do que as palavras _são_ (substantivos, verbos, adjetivos, etc.), a Sintaxe é o estudo do que as palavras _fazem_ dentro de uma frase e de como elas se relacionam para construir um sentido lógico. A Sintaxe, portanto, analisa a função de cada termo na engrenagem da oração, revelando a arquitetura do pensamento. O foco da análise sintática não é a palavra isolada, mas sim a oração e o período.
 
-### Os Alicerces da Análise: Frase, Oração e Período
+### Frase, Oração e Período
 
 Antes de analisar as funções, é crucial dominar a distinção entre três conceitos básicos que formam a matéria-prima da Sintaxe.
 
@@ -1403,7 +1403,7 @@ Antes de analisar as funções, é crucial dominar a distinção entre três con
 |**Oração**|Enunciado com verbo.|O dia **está** lindo.|
 |**Período**|Frase com uma ou mais orações.|O dia **está** lindo e **vamos** aproveitar.|
 
-### O Coração da Análise Sintática: A Ordem Direta
+### Ordem Direta
 
 A base de toda análise sintática é o **verbo**. É a partir dele que identificamos os demais termos da oração. De modo geral, uma declaração sobre o mundo segue uma organização lógica e intuitiva, que na gramática chamamos de **ordem direta** ou **ordem canônica** da frase. Essa ordem pode ser representada pelo mnemônico **SuVeCA**:
 
@@ -1421,7 +1421,7 @@ De forma didática, podemos pensar nas funções primárias da seguinte maneira:
 - **Complemento:** É o alvo da ação verbal, o elemento que completa o sentido de um verbo que não é autossuficiente.
 - **Adjuntos:** São os "detalhamentos" da cena. Os **adjuntos adverbiais** detalham as circunstâncias da ação (tempo, lugar, modo, causa, etc.), enquanto os **adjuntos adnominais** e o **aposto** detalham os substantivos.
 
-### Os Termos da Oração: Um Mapa das Funções Sintáticas
+### Termos da Oração
 
 Os termos que compõem uma oração são classificados em três grandes grupos, de acordo com sua importância para a estrutura frasal.
 
@@ -1440,7 +1440,7 @@ Os termos que compõem uma oração são classificados em três grandes grupos, 
     - **Aposto.**
     - **Vocativo** (termo à parte, que não se liga a nenhum outro na oração, servindo apenas para chamar ou interpelar).
 
-### Análise Sintática: As Funções dos Termos na Oração
+### Funções dos Termos na Oração
 
 Após compreendermos a estrutura geral da oração (Sujeito - Verbo - Complementos), podemos agora nos aprofundar na função específica de cada termo. A seguir, apresentamos uma visão geral e essencial de cada função sintática.
 
@@ -1565,12 +1565,11 @@ A presença ou ausência do predicativo define a classificação do predicado:
 - _Exemplo:_ **Maria**, venha cá, por favor!
 - _Exemplo:_ Atenção, **senhores passageiros**, para o anúncio.
 
-
 ### Pontuação
 
 A pontuação é muito mais do que um sistema de pausas na escrita. É um conjunto de sinais gráficos que organiza o texto, desfaz ambiguidades e confere ritmo, clareza e ênfase às ideias. Um bom uso da pontuação reflete um profundo entendimento da estrutura sintática da língua, pois a regra fundamental por trás de seu emprego está ligada à organização dos termos na oração.
 
-#### A Ordem Direta e a Ausência de Vírgula
+#### Ordem Direta e a Ausência de Vírgula
 
 Como vimos, a estrutura básica e natural da oração em Língua Portuguesa segue a **ordem direta**, que pode ser resumida pelo mnemônico **SuVeCA**:
 
@@ -1639,13 +1638,7 @@ As aspas são usadas principalmente para:
     - _Exemplo (Ironia):_ Ele se dizia um **"especialista"**, mas não sabia o básico.
     - _Exemplo (Estrangeirismo):_ O **"feedback"** do cliente foi muito positivo.
 
-Com certeza. Recebi as anotações sobre Concordância, um dos pilares da Sintaxe e tema recorrente em qualquer prova de concurso. A analogia inicial é excelente e servirá como base para uma explicação aprofundada. Irei expandir o conteúdo, detalhando os mecanismos da concordância nominal e verbal e dando ênfase especial ao caso do verbo "haver", como solicitado.
-
-Este é mais um tópico para o nosso Capítulo 1.
-
----
-
-### Concordância: A Harmonia da Frase
+### Concordância
 
 Na vida cotidiana, "concordar" significa compartilhar uma mesma ideia ou opinião. Na gramática, o princípio é surpreendentemente semelhante. A **concordância** é o mecanismo pelo qual as palavras se ajustam umas às outras, compartilhando as mesmas "marcas" ou "ideias" gramaticais, como gênero (masculino/feminino), número (singular/plural) e pessoa (1ª, 2ª, 3ª). É o princípio que garante a harmonia lógica e estrutural da frase, fazendo com que os termos relacionados "conversem" entre si.
 
@@ -1684,7 +1677,7 @@ O sujeito da oração é "As minhas duas amigas inglesas". O núcleo desse sujei
 
 Essa conexão direta entre o sujeito e a forma do verbo é a concordância verbal.
 
-##### Caso Clássico de Prova: A Impessoalidade do Verbo Haver
+##### A Impessoalidade do Verbo Haver
 
 Uma das regras de concordância verbal mais cobradas em concursos envolve os **verbos impessoais**, que são aqueles que formam orações sem sujeito (sujeito inexistente). A consequência direta disso é que, **por não terem um sujeito com o qual concordar, os verbos impessoais devem permanecer sempre na 3ª pessoa do singular.**
 
@@ -1711,7 +1704,7 @@ Outros verbos que também são impessoais e seguem a mesma regra de permanecer n
 - _Exemplo:_ **Faz** cinco anos que moro aqui.
 - _Exemplo:_ **Choveu** muito durante a madrugada.
 
-### Regência: A Relação de Dependência entre as Palavras
+### Regência: Relação de Dependência entre as Palavras
 
 O termo "reger", em seu sentido original, remete a "comandar", "governar", "exigir". Em gramática, a **Regência** é precisamente o estudo dessa relação de comando e dependência entre as palavras. Ela analisa como um termo principal (o **termo regente**) "rege" um termo complementar (o **termo regido**), exigindo ou não a presença de uma preposição específica para estabelecer uma conexão lógica e gramaticalmente correta.
 
@@ -1827,7 +1820,7 @@ Certos verbos da língua portuguesa mudam de regência (e de significado) depend
 
 O estudo da regência é contínuo. A melhor abordagem é focar nos casos que mais causam dúvidas e que são recorrentes em provas, complementando sempre o aprendizado com a resolução de questões e a consulta a bons dicionários de regência.
 
-### Crase: A Fusão que Define a Norma Padrão
+### Crase
 
 A crase é, em sua essência, um fenômeno fonético que consiste na fusão de dois sons vocálicos idênticos (`a + a = à`). Na escrita, essa fusão é marcada pelo acento grave (\`). Embora possa parecer um detalhe, o uso correto da crase é um dos indicadores mais claros de domínio da norma padrão, pois exige um conhecimento apurado de Regência Verbal e Nominal, além da morfologia das palavras.
 
@@ -1913,7 +1906,7 @@ Existem três situações principais em que a norma padrão permite tanto o uso 
 
 Após explorarmos a forma das palavras (Morfologia) e a função que elas desempenham na frase (Sintaxe), chegamos à **Semântica**, o ramo da Linguística que se dedica ao estudo do **significado**. A Semântica investiga o sentido das palavras, das expressões e das frases, e como esses sentidos são construídos e interpretados em diferentes contextos. Em provas de concurso, o conhecimento de Semântica é cobrado diretamente em questões de vocabulário (sinônimos, antônimos, parônimos) e, indiretamente, em todas as questões de compreensão e interpretação de textos.
 
-### O Duplo Sentido das Palavras: Denotação e Conotação
+### Duplo Sentido das Palavras: Denotação e Conotação
 
 Uma mesma palavra pode operar em duas dimensões de significado, a depender da intenção comunicativa.
 
@@ -2026,26 +2019,26 @@ Reconhecer o tipo de texto (gênero textual) é o primeiro passo para uma leitur
 
 A seguir, um roteiro prático para abordar textos em provas, maximizando a compreensão e a eficiência.
 
-**Passo 1: A Leitura Panorâmica**
+**Passo 1: Leitura Panorâmica**
 
 Faça uma primeira leitura do texto de forma contínua, sem interrupções, para obter uma visão geral do tema, do tipo de texto e da ideia central que o autor parece defender ou expor.
 
-**Passo 2: O Mapeamento do Texto**
+**Passo 2: Mapeamento do Texto**
 
 Em uma segunda leitura, mais focada, sublinhe ou destaque os elementos-chave:
 
 - **Palavras-Chave:** Conceitos que se repetem e são centrais para o tema.
 - **Conectivos:** As conjunções e locuções (`mas`, `portanto`, `embora`, `à medida que`) são as "placas de trânsito" do texto. Elas revelam a arquitetura lógica do pensamento do autor (oposição, conclusão, concessão, etc.).
 
-**Passo 3: A Análise das Questões**
+**Passo 3: Análise das Questões**
 
 Antes de responder, leia com atenção os enunciados das questões. Saber o que está sendo perguntado permite que você retorne ao texto de forma direcionada, buscando informações específicas e otimizando seu tempo.
 
-**Passo 4: A Busca e Confirmação no Texto**
+**Passo 4: Busca e Confirmação no Texto**
 
 Para cada questão, volte ao trecho específico do texto que a fundamenta. Não confie apenas na memória da primeira leitura. Confirme a informação, comparando a alternativa com o que está escrito.
 
-**Passo 5: A Eliminação de Alternativas (Distratores)**
+**Passo 5: Eliminação de Alternativas (Distratores)**
 
 Em questões de múltipla escolha, as bancas criam "distratores" para induzir ao erro. Aprenda a identificá-los:
 
@@ -2054,7 +2047,7 @@ Em questões de múltipla escolha, as bancas criam "distratores" para induzir ao
 - **Contradição:** A alternativa afirma o oposto do que foi dito no texto.
 - **Generalização Inadequada:** Tenha cuidado com palavras categóricas como **"sempre", "nunca", "jamais", "todos", "ninguém", "exclusivamente"**. Raramente um texto (especialmente argumentativo) suporta uma afirmação tão absoluta.
 
-**Passo 6: A Análise da Intenção Autoral**
+**Passo 6: Análise da Intenção Autoral**
 
 Sempre se pergunte: "Por que o autor escreveu isso? O que ele queria me fazer pensar ou sentir?". Identificar o tom (irônico, crítico, neutro, etc.) e o propósito (informar, convencer, emocionar) é fundamental para resolver as questões mais sutis de interpretação.
 
