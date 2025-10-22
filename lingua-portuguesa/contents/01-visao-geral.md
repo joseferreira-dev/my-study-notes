@@ -163,7 +163,7 @@ A distinção entre ditongo e hiato é uma fonte comum de dúvidas. Compare:
 Adicionalmente, os sons vocálicos podem ser orais ou nasais, o que também classifica os encontros:
 
 - **Encontro Oral:** O som é liberado majoritariamente pela boca. Exemplos: _pai, céu, série, poeta_.
-- **Encontro Nasal:** Parte do som é liberado pelo nariz. Na escrita, a nasalização é marcada pelo til (~) ou pelas letras M e N após a vogal. Exemplos: _m**ãe** (ditongo nasal); p**ão** (ditongo nasal); sag-**uão** (tritongo nasal).
+- **Encontro Nasal:** Parte do som é liberado pelo nariz. Na escrita, a nasalização é marcada pelo til (~) ou pelas letras M e N após a vogal. Exemplos: m**ãe** (ditongo nasal); p**ão** (ditongo nasal); sag-**uão** (tritongo nasal).
 
 ### Tonicidade e Classificação das Palavras
 
@@ -203,11 +203,11 @@ O acento diferencial é utilizado para distinguir graficamente palavras que poss
     - **Têm / Vêm** (com acento circunflexo) são as formas da 3ª pessoa do plural dos verbos "ter" e "vir" no presente do indicativo.
         - _Exemplos:_ Eles **têm** muitos amigos. / Elas **vêm** de longe.
 
-### Acentuação Gráfica: As Regras de Ouro
+### Regras de Acentuação Gráfica
 
 A acentuação gráfica é, sem dúvida, um dos tópicos de ortografia mais cobrados em provas. As regras podem parecer numerosas, mas seguem uma lógica que combina a **posição da sílaba tônica** (proparoxítona, paroxítona, oxítona) com a **terminação da palavra**. Dominar essa lógica é mais eficiente do que a simples memorização.
 
-#### A Regra Soberana: Proparoxítonas
+#### Regra das Proparoxítonas
 
 Esta é a regra mais simples e absoluta da acentuação. Toda palavra proparoxítona, ou seja, aquela cuja sílaba tônica é a antepenúltima, é obrigatoriamente acentuada. Não há exceções nem dependência da letra em que a palavra termina.
 
@@ -221,7 +221,7 @@ Esta é a regra mais simples e absoluta da acentuação. Toda palavra proparoxí
     - re-**lâm**-pa-go
     - **trân**-si-to
 
-#### A Regra dos Finais Fortes: Monossílabos Tônicos e Oxítonas
+#### Regra dos Finais Fortes: Monossílabos Tônicos e Oxítonas
 
 Estas duas classes de palavras compartilham regras de acentuação muito semelhantes, baseadas em suas terminações.
 
@@ -239,7 +239,7 @@ Estas duas classes de palavras compartilham regras de acentuação muito semelha
 	- **Ditongos Abertos -éi(s), -éu(s), -ói(s)**
 	    - _Exemplos:_ pa-**péis**, fi-**éis**, cha-**péu**, he-**rói**, Ni-te-**rói**.
 
-#### A Regra da Exceção: Paroxítonas
+#### Regra da Exceção: Paroxítonas
 
 As paroxítonas formam o maior grupo de palavras da língua e, por isso, sua regra de acentuação é definida por exclusão. A lógica é a seguinte: enquanto as oxítonas são acentuadas quando terminam em **-a, -e, -o, -em, -ens**, as paroxítonas são acentuadas quando **NÃO** terminam assim.
 
@@ -262,7 +262,7 @@ Consequentemente, **acentuam-se todas as paroxítonas que possuem as demais term
 |**-um, -uns**|ál-b**um**, fó-r**um**, ál-b**uns**|
 |**Ditongo Oral**|his-tó-r**ia**, má-g**oa**, cá-r**ie**|
 
-### O Uso do Hífen: Unindo e Separando Ideias
+### Uso do Hífen: Unindo e Separando Ideias
 
 O emprego do hífen é um dos pontos mais complexos da ortografia, especialmente após o Acordo Ortográfico. Para fins de concurso, a regra mais fundamental e cobrada é a que envolve prefixos.
 
@@ -462,7 +462,7 @@ Utilizam-se para se referir a um substantivo de forma vaga, genérica, ou para i
 - _Exemplo:_ _Preciso comprar **um** livro de Português._ (Refere-se a um livro qualquer, não especificado).
 - _Exemplo:_ _**Umas** candidatas pareciam nervosas antes da prova._ (Refere-se a um grupo não determinado de candidatas).
 
-##### O Poder de Substantivação do Artigo
+##### Substantivação com o Uso de Artigos
 
 Uma das funções mais notáveis do artigo é sua capacidade de transformar qualquer palavra de outra classe gramatical em um substantivo. Esse processo é chamado de **substantivação**. Ao ser precedida por um artigo (ou outro determinante), a palavra deixa de exercer sua função original para atuar como um nome.
 
@@ -562,14 +562,13 @@ Uma característica sintática importante do advérbio e das locuções adverbia
 
 Em termos de pontuação, é importante notar que, quando o advérbio (especialmente se for longo) ou a locução adverbial estão deslocados para o início da frase, é comum que venham separados por vírgula.
 
-
 #### Preposição
 
 A preposição é uma classe de palavra **invariável** que atua como um conectivo, estabelecendo uma ligação entre dois termos de uma frase. Ao fazer essa ponte, a preposição não apenas une as palavras, mas também estabelece uma relação de sentido e, muitas vezes, de dependência entre elas. O primeiro termo (antecedente ou regente) tem seu sentido explicado ou completado pelo segundo termo (consequente ou regido), que é introduzido pela preposição.
 
 A definição de "conectivo" pode gerar confusão com a das conjunções. Para evitar esse problema em provas, uma das estratégias mais eficazes é memorizar a lista das preposições essenciais.
 
-> **Ferramenta Estratégica: As Preposições Essenciais**
+> **Preposições Essenciais**
 > 
 > Conhecer esta lista é fundamental. Ao identificar uma destas palavras em uma questão, a chance de ser uma preposição é altíssima. As preposições essenciais são:
 > 
@@ -579,13 +578,13 @@ A definição de "conectivo" pode gerar confusão com a das conjunções. Para e
 
 A preposição atua em duas frentes principais na estrutura da frase: como uma exigência gramatical (regência) e como um elemento portador de significado (valor semântico).
 
-1. **A Exigência Gramatical (Regência):** Muitos verbos, nomes (substantivos, adjetivos) e advérbios, por sua própria natureza, exigem a presença de uma preposição específica para se conectarem a seus complementos. Esse fenômeno é o objeto de estudo da Regência Verbal e Nominal. Nesses casos, a preposição é uma peça gramaticalmente obrigatória.
+1. **Exigência Gramatical (Regência):** Muitos verbos, nomes (substantivos, adjetivos) e advérbios, por sua própria natureza, exigem a presença de uma preposição específica para se conectarem a seus complementos. Esse fenômeno é o objeto de estudo da Regência Verbal e Nominal. Nesses casos, a preposição é uma peça gramaticalmente obrigatória.
 	- _Exemplo:_ Quem gosta, gosta **de** algo. → Gosto **de** livros de ficção.
 	- _Exemplo:_ Quem concorda, concorda **com** algo ou alguém. → Concordo **com** seu ponto de vista.
 	- _Exemplo:_ Algo ou alguém que é apto, é apto **a** ou **para** algo. → Estou apto **a** assumir o cargo.
 	- _Exemplo:_ Quem se refere, se refere **a** algo. → O professor se referiu **ao** novo edital.
 
-2. **O Valor Semântico (Circunstância):** Além de sua função estrutural, as preposições são carregadas de sentido. Elas introduzem termos que, mesmo não sendo sintaticamente obrigatórios, acrescentam informações e detalham circunstâncias, como lugar, tempo, modo, causa, finalidade, companhia, matéria, posse, entre outras. As bancas examinadoras frequentemente pedem que se identifique o "valor semântico" ou a "relação de sentido" que a preposição estabelece. Para identificar esse valor, o método mais seguro é analisar o sentido do termo inteiro que a preposição introduz, e não a preposição isoladamente.
+2. **Valor Semântico (Circunstância):** Além de sua função estrutural, as preposições são carregadas de sentido. Elas introduzem termos que, mesmo não sendo sintaticamente obrigatórios, acrescentam informações e detalham circunstâncias, como lugar, tempo, modo, causa, finalidade, companhia, matéria, posse, entre outras. As bancas examinadoras frequentemente pedem que se identifique o "valor semântico" ou a "relação de sentido" que a preposição estabelece. Para identificar esse valor, o método mais seguro é analisar o sentido do termo inteiro que a preposição introduz, e não a preposição isoladamente.
 	- _Exemplo:_ _Comprei uma estante **de carvalho**._
 	    - O que a expressão "de carvalho" indica sobre a estante? Indica a **matéria** de que é feita. Portanto, o valor semântico da preposição "de", neste contexto, é de **matéria**.
 	- _Exemplo:_ _Ele viajou **para Recife**._
@@ -651,7 +650,7 @@ A classificação das interjeições é feita com base na emoção ou sentimento
 |**Aplauso ou Aprovação**|Bravo!, Bis!, Apoiado!|
 |**Silêncio**|Silêncio!, Psiu!, Shh!|
 
-##### O Uso da Interjeição no Contexto das Provas
+##### Uso da Interjeição no Contexto das Provas
 
 As interjeições são um recurso expressivo muito mais frequente na linguagem oral e em textos que buscam simular a oralidade. Por essa razão, seu aparecimento em provas de concurso está frequentemente ligado à interpretação de textos.
 

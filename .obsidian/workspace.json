@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "legislacao/contents/07-decreto-1171.md",
+                "file": "lingua-portuguesa/contents/01-visao-geral.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07-decreto-1171"
+              "title": "01-visao-geral"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "legislacao/contents/07-decreto-1171.md",
+                "file": "lingua-portuguesa/contents/01-visao-geral.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 07-decreto-1171"
+              "title": "Sumário de 01-visao-geral"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "af6924f9752dc980",
   "lastOpenFiles": [
+    "legislacao/contents/07-decreto-1171.md",
     "Sem título.md",
     "README.md",
     "engenharia-de-software/contents/33-requisitos-de-software.md",
@@ -196,7 +197,6 @@
     "engenharia-de-software/contents/08-modelo-espiral.md",
     "engenharia-de-software/contents/07-modelo-prototipo.md",
     "engenharia-de-software/contents/06-modelo-iterativo-e-evolutivo.md",
-    "engenharia-de-software/contents/05-modelo-rad.md",
     "linguagem-python/contents/img/11-execucao-serial-e-paralela.png",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
