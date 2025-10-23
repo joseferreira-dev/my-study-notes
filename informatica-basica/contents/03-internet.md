@@ -981,3 +981,65 @@ O fluxo da mensagem é o seguinte:
 <img width="620px" src="./img/03-protocolo-smtp-2.png">
 </div>
 
+##### POP (Post Office Protocol)
+
+Enquanto o SMTP é o protocolo de _envio_, o **POP (Post Office Protocol)** é um protocolo da camada de aplicação projetado especificamente para **recuperar** e-mails de um servidor de e-mail. A versão mais comum e amplamente utilizada é a **POP3** (Post Office Protocol Version 3).
+
+Historicamente, o POP3 foi essencial para o uso do e-mail em uma era de acesso à internet limitado (como conexões _dial-up_) e, principalmente, com limitações severas de armazenamento nos servidores. O protocolo foi criado com base em um modo de funcionamento padrão, muitas vezes chamado de _Delete/Download_: um cliente de e-mail (como o Microsoft Outlook) se conecta ao servidor, baixa **todas** as novas mensagens para a máquina local (para o computador do usuário) e, em regra, **deleta as mensagens do servidor**.
+
+Este modo de operação tinha duas vantagens claras na época:
+
+1. **Liberava espaço no servidor**, o que era crucial, já que as caixas postais tinham limites muito pequenos.
+2. Permitia que o usuário se desconectasse da internet e lesse todos os seus e-mails **offline**, redigindo as respostas para enviá-las na próxima vez que se conectasse.
+
+Embora este seja o modo clássico, os clientes de e-mail que usam POP3 também podem ser configurados para um modo _Keep/Notification_, onde o cliente baixa as mensagens, mas **mantém uma cópia no servidor**. Isso oferecia maior flexibilidade e uma forma de _backup_, mas podia esgotar rapidamente o limite de armazenamento do servidor se não fosse gerenciado.
+
+O POP3 suporta criptografia (via SSL/TLS, geralmente na porta 995) e autenticação através de usuário e senha (porta padrão 110).
+
+###### As Limitações do POP3
+
+O grande problema do POP3 no mundo moderno é a falta de sincronização. Como as mensagens são baixadas para um dispositivo local, qualquer alteração feita ali (marcar como lida, mover para uma pasta, responder) fica restrita àquele dispositivo. Se o usuário acessar o e-mail de um segundo dispositivo (como um smartphone), ele não verá as mensagens já lidas ou as pastas criadas no primeiro. Isso o torna ideal para usuários que acessam e-mail de um único dispositivo, mas problemático para o uso em múltiplos dispositivos.
+
+##### IMAP (Internet Message Access Protocol)
+
+O **IMAP (Internet Message Access Protocol)** é o protocolo de acesso a e-mails mais moderno e flexível, projetado para solucionar as limitações do POP3. A principal diferença filosófica é que o IMAP foi criado para **acessar, gerenciar e sincronizar** e-mails que estão **armazenados permanentemente no servidor**.
+
+Com o IMAP, o cliente de e-mail (Outlook, Apple Mail, etc.) funciona como um "terminal remoto" para a caixa de correio que existe no servidor. As mensagens geralmente permanecem no servidor, permitindo que o usuário acesse seus e-mails de múltiplos dispositivos (computador, _smartphone_, _tablet_) e mantenha tudo sincronizado.
+
+A principal característica do IMAP é a **sincronização de estado**. Se uma mensagem é lida no _smartphone_, ela aparecerá como lida também no computador. Se uma mensagem é excluída no computador, ela desaparecerá do _smartphone_.
+
+O IMAP oferece funcionalidades muito mais avançadas que o POP3:
+
+- Um usuário pode verificar apenas o **cabeçalho** de um e-mail (remetente, assunto) antes de decidir se quer baixá-lo.
+- Um usuário pode **baixar parcialmente** um e-mail (por exemplo, apenas o texto, ignorando um anexo pesado), o que é útil se a largura de banda for limitada.
+- Um usuário pode **procurar** pelo conteúdo de e-mails diretamente no servidor, antes de baixá-los.
+- Um usuário pode **criar, eliminar ou renomear caixas de correio (pastas)** no servidor de e-mail, e essa estrutura de pastas será replicada em todos os dispositivos.
+
+###### IMAP vs. Webmail
+
+Muitas vezes, o IMAP é equivocadamente associado a webmails (como o Gmail.com ou Outlook.com), devido ao caráter de repositório central que ambos oferecem (acesso de qualquer lugar, pastas no servidor). No entanto, é crucial entender a diferença:
+
+- **Webmail** é um _site_ (uma aplicação web) que se acessa via navegador. O protocolo de comunicação entre o navegador do usuário e o servidor de webmail é o **HTTP/HTTPS**.
+- **IMAP** é um _protocolo_ de correio eletrônico usado por _clientes de e-mail_ (softwares instalados) para se comunicar com o servidor de e-mail.
+
+Embora o _efeito_ para o usuário seja parecido (mobilidade e sincronização), as tecnologias de acesso são completamente diferentes.
+
+Assim como o POP3, o IMAP possui uma versão segura chamada **IMAPS (IMAP Secure)**, que utiliza criptografia SSL/TLS. A porta padrão do IMAP é a **143**, e a porta segura do IMAPS é a **993**.
+
+##### Comparativo: POP3 vs. IMAP
+
+A tabela a seguir consolida as diferenças funcionais entre os dois protocolos de recebimento de e-mail.
+
+| **POP3**                                                | **IMAP**                                            |
+| ------------------------------------------------------- | --------------------------------------------------- |
+| Post Office Protocol (Version 3)                        | Internet Message Access Protocol                    |
+| Não recomendado para acesso em múltiplos dispositivos   | Recomendado para acesso em múltiplos dispositivos   |
+| Não permite criar e organizar pastas no servidor        | Permite criar e organizar pastas no servidor        |
+| Não permite verificar o cabeçalho antes de baixá-lo     | Permite verificar o cabeçalho antes de baixá-lo     |
+| Modificações em um dispositivo não refletidas em outros | Modificações em um dispositivo refletidas em outros |
+| Não permite baixar parcialmente um e-mail               | Permite baixar parcialmente um e-mail               |
+| Por padrão, mensagens de e-mail são lidas offline       | Por padrão, mensagens de e-mail são lidas online    |
+| Não permite múltiplas caixas postais                    | Permite múltiplas caixas postais                    |
+| Porta 110                                               | Porta 143                                           |
+| Porta Segura (SSL/TLS): 995                             | Porta Segura (SSL/TLS): 993                         |
+
