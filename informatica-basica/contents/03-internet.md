@@ -374,3 +374,80 @@ A tabela a seguir consolida as diferenças entre as três camadas da web, e a an
 | Conteúdo Comercial  | Amplamente usado para negócios, educação, entretenimento e informações públicas. | Inclui recursos protegidos por senha, como e-mails, serviços bancários online e redes corporativas. | Muitas vezes associada a atividades ilegais e conteúdo obscuro. |
 | Exemplos            | Sites de notícias, blogs, redes sociais, sites de compras online.                | E-mails privados, intranets corporativas, bancos de dados de bibliotecas.                           | Sites de venda de drogas, mercados negros, fóruns de hackers.   |
 
+## Internet das Coisas (IoT)
+
+A sociedade contemporânea está no meio de um profundo processo de **transformação digital**, no qual empresas e indivíduos integram tecnologias inovadoras para otimizar operações, resolver problemas complexos e agregar valor. Esse movimento envolve uma reestruturação cultural e operacional, onde a tecnologia deixa de ser uma ferramenta de suporte para se tornar o pilar central do sucesso, da agilidade e da resiliência.
+
+A pandemia de COVID-19, em particular, atuou como um catalisador poderoso para essa transformação. Empresas foram compelidas a adotar o trabalho remoto em massa, e setores inteiros tiveram que reconfigurar suas operações para atender a novas demandas de distanciamento social e logística. A digitalização deixou de ser uma opção e tornou-se uma necessidade de sobrevivência, consolidando-se como um pilar para o futuro.
+
+Dentro desse cenário de conectividade global em rápida expansão, uma tecnologia se destaca como a próxima grande revolução: a **Internet das Coisas**, ou **IoT** (_Internet of Things_).
+
+### Definindo a Internet das Coisas
+
+A Internet das Coisas refere-se à rede de dispositivos físicos e objetos do cotidiano ("coisas") que são equipados com sensores, software e outras tecnologias com o propósito de **coletar e trocar dados** com outros dispositivos e sistemas através da internet.
+
+Por décadas, a internet foi uma rede de computadores, e mais recentemente, de _smartphones_. A IoT expande essa fronteira para incluir, literalmente, qualquer objeto. Itens que já se tornaram comuns, como câmeras de segurança, _Smart TVs_ e consoles de videogame, são exemplos iniciais de IoT. Em países mais desenvolvidos, essa rede já inclui geladeiras que monitoram o estoque de alimentos e máquinas de lavar que podem ser acionadas remotamente.
+
+A ideia central não é apenas conectar por conectar, mas tornar esses dispositivos mais eficientes e inteligentes em suas funções, permitindo que eles interajam com o ambiente e entre si. A IoT tem aplicações que vão muito além das residências, sendo um motor de eficiência em setores como agricultura (sensores de umidade do solo), pecuária (monitoramento de rebanhos), hospitais (sensores de sinais vitais de pacientes), escolas e, principalmente, na indústria (manutenção preditiva de máquinas).
+
+Com o avanço das redes de alta velocidade, como o **5G**, a conectividade entre esses objetos se tornará ainda mais robusta e onipresente, acelerando a transformação digital e ampliando as possibilidades de uso em todos os contextos.
+
+### Componentes de um Ecossistema IoT
+
+A Internet das Coisas não é uma tecnologia única, mas sim um ecossistema complexo formado por quatro componentes principais que trabalham em conjunto.
+
+|**Componentes**|**Descrição**|
+|---|---|
+|Dispositivos|São os elementos físicos que compõem a IoT, como sensores, atuadores e outros dispositivos conectados, como câmeras, medidores inteligentes, veículos e eletrodomésticos. Eles coletam dados do mundo real e podem executar ações com base nesses dados.|
+|Tecnologias de Comunicação|São os meios pelos quais os dispositivos IoT se comunicam entre si e com a nuvem. Isso pode incluir Wi-Fi, Bluetooth, 3G/4G/5G, Zigbee, LoRa, entre outros. As redes de comunicação são responsáveis pela transferência de dados dos dispositivos para a nuvem e vice-versa.|
+|Sensores e Atuadores|Os sensores coletam informações do ambiente, como temperatura, umidade, localização, movimento e muito mais. Os atuadores são responsáveis por tomar ações, como ligar ou desligar um dispositivo. Eles são os olhos e as mãos da IoT.|
+|Nuvem (Cloud)|A nuvem é onde os dados coletados pelos dispositivos IoT são processados, armazenados e disponibilizados para acesso. Plataformas de nuvem fornecem recursos de computação, armazenamento e análise de dados em grande escala, tornando possível o processamento de grandes volumes de informações.|
+
+Para ilustrar: imagine uma casa inteligente com monitoramento de segurança, controle de temperatura e gerenciamento de iluminação.
+
+- **Sensores** (temperatura, movimento, fumaça) e **Dispositivos** (câmeras, lâmpadas, aparelhos de ar-condicionado) coletam dados.
+- Esses dados são enviados via **Tecnologias de Comunicação** (como Wi-Fi ou Zigbee) para um sistema central.
+- Esse sistema, rodando em um serviço de **Nuvem**, processa as informações (ex: "o sensor de temperatura indica 28°C" e "o sensor de presença indica que há alguém na sala").
+- O sistema na nuvem então envia um comando para um **Atuador** (o motor do ar-condicionado) para que ele ligue e resfrie o ambiente.
+
+O usuário pode, então, acessar esse sistema em nuvem de qualquer lugar do mundo através de um aplicativo em seu celular.
+
+### Tecnologias Essenciais para a IoT
+
+Para que essa malha de bilhões de dispositivos funcione, duas tecnologias de base são essenciais: endereçamento e comunicação.
+
+**1. O Papel do IPv6:**
+
+O protocolo de internet que usamos por décadas, o IPv4, tinha um limite de cerca de 4,3 bilhões de endereços. Esse número, que parecia gigantesco nos anos 80, esgotou-se. Para a IoT ser viável, onde cada lâmpada, sensor e geladeira precisa de um endereço único na internet, era necessário um sistema muito maior. É aqui que entra o IPv6, a nova versão do protocolo, que oferece um número de endereços tão absurdamente gigantesco (trilhões de trilhões) que, na prática, é ilimitado para o futuro previsível, garantindo que a quantidade de dispositivos e sensores não seja um problema.
+
+**2. Tecnologias de Comunicação:**
+
+A comunicação é o pilar da IoT. Diferentes dispositivos têm diferentes necessidades de energia e alcance, por isso, várias tecnologias coexistem:
+
+|**Tecnologias de Comunicação**|**Descrição**|
+|---|---|
+|Wi-Fi (802.11)|Trata-se de uma das tecnologias de comunicação sem fio mais amplamente utilizadas e oferece alta largura de banda. É adequado para dispositivos que têm acesso a redes locais de alta velocidade e energia suficiente (ex: Smart TVs, câmeras de segurança).|
+|Bluetooth (802.15)|Trata-se de uma tecnologia de comunicação sem fio de curto alcance, adequada para dispositivos pessoais, como fones de ouvido sem fio e dispositivos vestíveis (wearables). O Bluetooth Low Energy (BLE) é uma variante de baixo consumo de energia.|
+|ZigBee|Trata-se de um padrão de comunicação sem fio de baixa potência projetado para redes de sensores e dispositivos IoT em ambientes domésticos e industriais (ex: lâmpadas e interruptores inteligentes).|
+
+É importante notar que muitas aplicações de IoT, especialmente em agricultura ou cidades inteligentes, precisam de **longo alcance** e **baixo consumo de energia** (pois os dispositivos podem ficar anos no campo, funcionando a bateria). Para isso, foram criadas redes do tipo **LPWAN (Low-Power Wide Area Network)**, como o **LoRaWAN**. A ideia é permitir comunicações de longa distância com uma taxa de transmissão de dados baixa (enviando apenas um pequeno pacote de dados, como "o portão abriu" ou "a temperatura é 22°C").
+
+### Riscos, Vantagens e Desvantagens
+
+A conexão de tudo à internet traz uma nova superfície de ataque para a segurança e a privacidade. Dispositivos de IoT, muitas vezes fabricados com baixo custo e pouca preocupação com segurança, podem ser vulneráveis a ataques. Os riscos incluem:
+
+- **Privacidade:** Um dispositivo vulnerável (como uma câmera ou babá eletrônica) pode permitir acesso não autorizado, permitindo que invasores espionem residências.
+- **Escalonamento de Ataques:** Um invasor pode usar um dispositivo IoT vulnerável (como uma geladeira) para ganhar acesso à rede Wi-Fi local e, a partir daí, atacar computadores e outros dispositivos mais críticos na mesma rede.
+- **Botnets:** Dispositivos IoT inseguros podem ser infectados e transformados em "escravos" (zumbis) de uma rede _botnet_. Milhares desses dispositivos podem ser usados em conjunto para realizar ataques de negação de serviço (DDoS) em larga escala contra sites ou serviços governamentais.
+
+A tabela a seguir resume o equilíbrio entre os benefícios e os desafios da IoT:
+
+|**Vantagens**|**Desvantagens**|
+|---|---|
+|Varejistas podem fornecer bônus de fidelidade para clientes preferenciais.|A dependência de compras online pode custar empregos.|
+|As cidades podem avaliar as necessidades futuras de transporte.|Os varejistas podem saber tudo o que você está comprando.|
+|Indivíduos podem reduzir os custos de energia e dos sistemas de aquecimento residenciais.|Os indivíduos podem receber mais e-mails de spam.|
+|Fabricantes podem reduzir a inatividade prevendo as necessidades de manutenção dos equipamentos.|Uma falha da rede pode ser catastrófica.|
+|Os governos podem monitorar o ambiente.|As empresas que criam dispositivos vestíveis têm muitas informações pessoais sobre os usuários.|
+
+A Internet das Coisas pode, portanto, ser definida como uma tecnologia que permite que uma malha de dispositivos – como dispositivos móveis, _wearables_ (tecnologias para vestir), sensores, aparelhos eletrônicos de consumo e domésticos, dispositivos automotivos e ambientais – possa ser integrada para acessar aplicativos e informações ou para a interação com pessoas, redes sociais, governos e empresas.
