@@ -860,4 +860,55 @@ Por isso, quando se digita `http://www.exemplo.com.br` no navegador, o navegador
 
 No entanto, se tentarmos acessar o mesmo servidor em uma porta errada—por exemplo, `http://www.exemplo.com.br:21` (Porta 21 é o padrão do FTP, Transferência de Arquivos)—a conexão falhará. O navegador (falando "HTTP") estará "batendo na porta" errada, onde espera-se um serviço de FTP. Isso geralmente resulta em um erro, como `ERR_UNSAFE_PORT` ou simplesmente uma falha de conexão, pois o navegador entende que está tentando usar a porta errada para aquele serviço.
 
+#### UDP (User Datagram Protocol)
+
+O segundo protocolo fundamental da Camada de Transporte é o **UDP (User Datagram Protocol)**, ou Protocolo de Datagrama do Usuário. Ele é, em essência, o oposto filosófico do TCP. O UDP é um protocolo **sem conexão** e **não confiável**, que oferece um serviço de entrega de "melhor esforço".
+
+Assim como o TCP, ele utiliza **portas** para comunicação, permitindo que os dados sejam entregues ao processo correto dentro da máquina de destino. No entanto, as semelhanças terminam aí. O UDP é um protocolo minimalista que praticamente não adiciona nenhum controle adicional aos serviços de entrega já oferecidos pelo protocolo IP (Camada de Rede). Sua principal contribuição é, de fato, implementar a comunicação entre _processos_ (usando portas), em vez da comunicação entre _hosts_ (que o IP já faz).
+
+Ao contrário do TCP, o UDP:
+
+- **Não estabelece conexão:** Não há um "aperto de mão" inicial. Os dados são simplesmente enviados assim que a aplicação os entrega, sem aviso prévio.
+- **Não é confiável:** Ele não possui mecanismos de confirmação, retransmissão ou sequenciamento.
+    - Não há garantia de que os pacotes chegarão ao destino.
+    - Não há garantia de que os pacotes chegarão na ordem correta.
+    - Pacotes perdidos **não são retransmitidos**.
+- **Não tem controle de fluxo:** O UDP não gerencia a velocidade da transmissão, podendo sobrecarregar o receptor ou a rede.
+- **Verificação de erros limitada:** Ele realiza uma verificação básica de erros (um _checksum_) nos dados recebidos, mas não faz nada para corrigi-los; pacotes corrompidos são simplesmente descartados.
+
+##### As Vantagens do UDP: Velocidade e Baixo _Overhead_
+
+Se o UDP é tão "simples" e "não confiável", por que um processo iria querer usá-lo? A resposta está na velocidade. Com as desvantagens vêm vantagens significativas.
+
+Por não ter que estabelecer uma conexão, numerar segmentos, esperar confirmações ou gerenciar retransmissões, o UDP é extremamente leve e rápido. Ele tem um **baixo _overhead_** (tráfego adicional), pois seus cabeçalhos são muito menores e a interação entre emissor e receptor é mínima.
+
+Se um processo quiser enviar uma pequena mensagem e não se preocupar muito com a confiabilidade total de cada pacote, o UDP é a escolha ideal.
+
+##### Casos de Uso: Onde a Velocidade Supera a Confiabilidade
+
+Existem contextos específicos onde a perda eventual de um pacote é tolerável, mas o atraso (latência) não é. Nesses cenários, o UDP brilha.
+
+- **Aplicações em Tempo Real (_Real-Time_):** O principal caso de uso é a transmissão de áudio e vídeo, como em **VoIP** (Voz sobre IP, ex: ligações no WhatsApp) ou _streaming_ de vídeo ao vivo (ex: transmissões esportivas ou videoconferências).
+    - Nessas aplicações, se um ou dois pacotes de dados se perderem, o impacto é mínimo: talvez uma fração de segundo de áudio falhe ou um _frame_ do vídeo congele momentaneamente.
+    - Não faz nenhum sentido tentar reenviar esses pacotes perdidos, como o TCP faria. A informação (o áudio ou vídeo daquele instante) chegaria atrasada e seria inútil, pois o fluxo da conversa ou transmissão já teria continuado. Nesses serviços, a **velocidade** e o fluxo contínuo (baixa latência) são muito mais importantes do que a perfeição de cada pacote.
+- **Jogos Online:** Muitos jogos utilizam o UDP para enviar informações de posição e ação dos jogadores, onde a velocidade da resposta é crítica e a perda de um único pacote de atualização de posição é rapidamente corrigida pelo pacote seguinte.
+- **DNS (Domain Name System):** O serviço que "traduz" nomes de sites (como `www.google.com`) em endereços IP. A consulta DNS é uma mensagem muito pequena. É muito mais eficiente enviá-la via UDP do que construir uma conexão TCP completa. Se o pacote de consulta ou resposta se perder, a aplicação simplesmente pergunta de novo.
+
+#### Comparativo: TCP vs. UDP
+
+O TCP e o UDP oferecem, portanto, um _trade-off_ (uma troca) fundamental na Camada de Transporte. A escolha entre um e outro depende inteiramente da necessidade da aplicação.
+
+- O **TCP** tolera **atrasos** (para retransmitir pacotes), mas não tolera **perdas**. É ideal para e-mails, navegação web (HTTP) e transferência de arquivos (FTP), onde cada _bit_ deve chegar perfeitamente.
+- O **UDP** tolera **perdas** (de pacotes), mas não tolera **atrasos**. É ideal para _streaming_, VoIP e jogos, onde um fluxo rápido e constante é mais importante que a perfeição.
+
+A tabela a seguir resume as principais diferenças:
+
+| **TCP**                                      | **UDP**                                    |
+| -------------------------------------------- | ------------------------------------------ |
+| É comparativamente mais lento que o UDP      | É comparativamente mais rápido que o TCP   |
+| Entregas confiáveis                          | Entregas não confiáveis (melhor esforço)   |
+| Orientado à conexão                          | Não orientado à conexão                    |
+| Dados perdidos são retransmitidos            | Dados perdidos não são retransmitidos      |
+| Tolera atrasos, mas não tolera perdas        | Tolera perdas, mas não tolera atrasos      |
+| Bastante utilizada em e-mail, navegação, etc | Bastante utilizada em VoIP, streaming, etc |
 
