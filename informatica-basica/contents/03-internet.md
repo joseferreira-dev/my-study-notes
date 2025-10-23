@@ -1043,3 +1043,39 @@ A tabela a seguir consolida as diferenças funcionais entre os dois protocolos d
 | Porta 110                                               | Porta 143                                           |
 | Porta Segura (SSL/TLS): 995                             | Porta Segura (SSL/TLS): 993                         |
 
+##### WebMail
+
+Além dos clientes de e-mail dedicados (softwares instalados localmente, como o Microsoft Outlook ou o Mozilla Thunderbird), existe uma forma de acesso ao correio eletrônico extremamente popular: o **Webmail**.
+
+Um webmail é um serviço de e-mail que pode ser acessado e utilizado inteiramente através de um **navegador da web** (como Chrome, Firefox ou Edge). Exemplos onipresentes incluem o Gmail (Google), o Outlook.com (Microsoft) e o Yahoo Mail.
+
+Do ponto de vista técnico, um webmail é um sistema web, ou seja, uma aplicação complexa (um "site") que fica hospedada em um **Servidor Web**. Quando um usuário acessa `www.gmail.com`, ele está, na verdade, acessando uma interface gráfica construída em HTML, CSS e JavaScript, que seu navegador renderiza.
+
+Essa interface web funciona "por trás dos panos" como um cliente de e-mail. É como se o _software_ cliente de e-mail, em vez de estar instalado na máquina do usuário, estivesse hospedado em um servidor web, e o usuário o acessasse remotamente através do navegador.
+
+Isso introduz o protocolo **HTTP/HTTPS** na cadeia de comunicação. O fluxo de uma mensagem enviada e recebida inteiramente por webmails é o mais complexo, pois envolve todos os protocolos:
+
+<div align="center">
+<img width="700px" src="./img/03-webmail.png">
+</div>
+
+Vamos analisar o fluxo completo da imagem acima, do remetente ao destinatário:
+
+1. **Remetente (HTTP):** O remetente, em seu computador, abre um navegador e se conecta ao seu Servidor Web (ex: `gmail.com`). A comunicação entre o navegador do remetente e o Servidor Web é feita via **HTTP** (ou, mais comumente, **HTTPS** para segurança). O usuário escreve o e-mail nessa interface web.
+2. **Interface (SMTP):** Ao clicar em "Enviar", o Servidor Web é instruído a enviar a mensagem. Ele, então, atua como um cliente interno e entrega a mensagem ao Servidor de Correio (o servidor de saída do Gmail) usando o protocolo **SMTP**.
+3. **Trânsito (SMTP):** O Servidor de Correio de origem (Gmail) localiza o servidor do destinatário (ex: Yahoo) e transfere a mensagem para ele, também via **SMTP**.
+4. **Interface (POP/IMAP):** O Servidor de Correio de destino (Yahoo) armazena a mensagem na caixa postal do destinatário. Para que o destinatário veja essa mensagem em seu webmail (`yahoo.com`), o Servidor Web do Yahoo precisa primeiro "buscar" essa mensagem no Servidor de Correio do Yahoo. Ele faz isso usando um protocolo de recebimento, **POP ou IMAP**. Como a imagem corretamente aponta, o **IMAP é o preferencial**, pois ele permite que o webmail apenas "espelhe" o conteúdo da caixa postal (incluindo pastas e status de "lido/não lido"), o que é essencial para a experiência de webmail.
+5. **Destinatário (HTTP):** Finalmente, o Servidor Web do Yahoo formata a mensagem recebida (via IMAP) em HTML e a envia para o navegador do destinatário, que está acessando o site, usando o protocolo **HTTP/HTTPS**.
+
+É importante notar que muitas literaturas não primam por esse rigor técnico. Elas frequentemente omitem a existência do "Servidor Web" e tratam ambos (Servidor Web e Servidor de Correio) como uma única entidade chamada "Servidor de Correio Eletrônico". Isso é uma simplificação, pois para o provedor (como o Google), ambos os serviços rodam em sua infraestrutura, sendo transparentes para o usuário.
+
+A popularidade do webmail se deve às suas características vantajosas:
+
+| **Características de WebMail**    | **Descrição**                                                                                                                                                        |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Acessibilidade                    | Webmails podem ser acessados de qualquer dispositivo com uma conexão à internet e um navegador web, oferecendo grande conveniência e mobilidade.                     |
+| Não Requer Instalação de Software | Ao contrário dos clientes de e-mail que requerem instalação, como Microsoft Outlook ou Mozilla Thunderbird, o webmail opera inteiramente no navegador.               |
+| Armazenamento na Nuvem            | As mensagens de e-mail são armazenadas no servidor do provedor de e-mail, não no dispositivo local. Isso facilita o acesso a e-mails de diferentes dispositivos.     |
+| Interface do Usuário              | Webmails geralmente têm interfaces de usuário ricas, semelhantes a aplicações desktop, com recursos como arrastar e soltar, pastas, e ferramentas de busca avançada. |
+| Segurança e Manutenção            | A segurança e a atualização de software são gerenciadas pelo provedor do serviço, reduzindo a necessidade de manutenção por parte do usuário.                        |
+| Integração com Outros Serviços    | Muitos webmails são integrados com outros serviços online, como calendários, gerenciamento de contatos, armazenamento em nuvem e aplicações de escritório.           |
