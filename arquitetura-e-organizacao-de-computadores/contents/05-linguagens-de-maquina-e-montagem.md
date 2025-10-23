@@ -6,7 +6,7 @@ Enquanto linguagens de alto nível como Python, Java ou C++ priorizam a legibili
 
 A linguagem de máquina é composta por **códigos binários** que representam instruções diretamente compreendidas pela Unidade de Controle do processador. Já a linguagem de montagem é uma versão simbólica dessas instruções binárias, utilizando **mnemônicos** e **identificadores de registradores** para facilitar o entendimento humano.
 
-### Linguagem de Máquina
+## Linguagem de Máquina
 
 A linguagem de máquina é a única linguagem diretamente compreendida pela Unidade Central de Processamento (CPU). Trata-se de uma sequência de **bits** (valores binários 0 e 1) que especificam operações a serem realizadas pelo processador. Por exemplo, em um processador hipotético, a instrução binária `0001 0010 0011` poderia significar “somar os valores dos registradores 2 e 3 e armazenar o resultado no registrador 1”.
 
@@ -37,11 +37,11 @@ Os opcodes são representados por abreviações, conhecidas por mnemônicos, os 
 
 Operandos também são representados simbolicamente, como por exemplo a instrução `ADD R, X`, que pode significar a soma do valor contido na localização `X` com o conteúdo do registrador `R`.
 
-Cada família de processadores (como Intel, AMD, ARM) possui um **conjunto de instruções** próprio, conhecido como **ISA – Instruction Set Architecture**. Essas instruções variam em formato e tamanho dependendo da arquitetura do processador. Por isso, dizemos que a linguagem de máquina é **específica de cada arquitetura**. 
+Cada família de processadores (como Intel, AMD, ARM) possui um **conjunto de instruções** próprio, conhecido como **ISA (Instruction Set Architecture)**. Essas instruções variam em formato e tamanho dependendo da arquitetura do processador. Por isso, dizemos que a linguagem de máquina é **específica de cada arquitetura**. 
 
 É difícil para humanos escreverem ou depurarem programas usando diretamente linguagem de máquina. Por isso, desenvolveu-se uma representação mais amigável: **a linguagem de montagem**.
 
-#### Modos de Endereçamento
+### Modos de Endereçamento
 
 O(s) campo(s) de endereço são relativamente pequenos. Para tornar possível referenciar um grande intervalo de locais da memória principal (ou memória virtual, em alguns sistemas), uma variedade de técnicas de endereçamento foi empregada. Vamos analisar as técnicas ou modos de endereçamento mais comuns adotando a seguinte notação:
 
@@ -110,13 +110,13 @@ Esse modo de endereçamento requer que a instrução tenha dois campos de endere
 
 **Endereçamento de pilha**: itens são adicionados e retirados do topo da pilha, sendo que há um ponteiro cujo valor é o endereço do topo. O ponteiro da pilha é mantido em um registrador. O modo de endereçamento de pilha é uma forma de endereçamento implícito, sendo que as instruções de máquina não necessitam incluir uma referência de memória, devem apenas operar no topo da pilha.
 
-### Linguagem de Montagem (Assembly)
+## Linguagem de Montagem (Assembly)
 
 A linguagem de montagem, também conhecida como Assembly, é uma **representação simbólica** da linguagem de máquina. Em vez de trabalhar com códigos binários, o programador usa **mnemônicos** para representar instruções e **nomes simbólicos** para representar registradores e endereços de memória. Fazendo-se uma comparação:
 
-|Linguagem de Máquina|Assembly|Significado|
-|---|---|---|
-|`10110000 01100001`|`MOV AL, 61h`|Move o valor 61h para o registrador AL|
+| Linguagem de Máquina | Assembly      | Significado                            |
+| -------------------- | ------------- | -------------------------------------- |
+| `10110000 01100001`  | `MOV AL, 61h` | Move o valor 61h para o registrador AL |
 
 Ao utilizar uma linguagem de montagem, o programador consegue operar com mais clareza e controle do que com linguagens de alto nível, ao mesmo tempo em que mantém uma proximidade com o funcionamento real do hardware.
 
@@ -138,15 +138,15 @@ MOV BX, 0003h   ; armazena o valor hexadecimal 0003 em BX
 ADD AX, BX      ; soma AX + BX → AX = 0008h
 ```
 
-#### Montadores (Assemblers)
+### Montadores (Assemblers)
 
-O código escrito em assembly não pode ser executado diretamente pela CPU. Ele precisa ser traduzido para linguagem de máquina. Esse processo é feito por um programa chamado **montador**, ou **assembler**.
+O código escrito em Assembly não pode ser executado diretamente pela CPU. Ele precisa ser traduzido para linguagem de máquina. Esse processo é feito por um programa chamado **montador**, ou **assembler**.
 
 O assembler converte cada instrução simbólica em seu equivalente binário (código de máquina). Por exemplo, a instrução `MOV AL, 02h` será traduzida para `10110000 00000010`. Isso é diferente de compiladores (que traduzem linguagens de alto nível para baixo nível) ou interpretadores (que executam diretamente instruções de alto nível).
 
 Montadores também permitem o uso de **diretivas**, como `ORG`, `END`, `DATA`, entre outras, que ajudam a organizar o código.
 
-#### Estrutura de um Programa em Assembly
+### Estrutura de um Programa em Assembly
 
 Em geral, cada instrução da linguagem de montagem é traduzida em uma instrução de máquina pelo montador **(1:1)**. É uma linguagem **dependente do hardware**, ou seja, há uma linguagem de montagem diferente para cada tipo de processador. Um programador experiente em Assembly para a arquitetura RISC terá que aprender muita coisa para programar em Assembly para CISC, por exemplo. Os quatro elementos da linguagem de montagem são:
 
@@ -237,7 +237,7 @@ _start:
     int 0x80
 ```
 
-#### Vantagens e Desvantagens do Assembly 
+### Vantagens e Desvantagens do Assembly 
 
 As principais vantagens da Linguagem de Montagem são:
 
@@ -246,14 +246,7 @@ As principais vantagens da Linguagem de Montagem são:
 - Ideal para sistemas embarcados e drivers
 - Possibilidade de otimizações específicas
 
-Quanto as desvantagens:
-
-- Curva de aprendizado acentuada
-- Excelente desempenho em aplicações críticas
-- Ideal para sistemas embarcados e drivers
-- Possibilidade de otimizações específicas
-
-Apesar de ser rara em aplicações modernas, a linguagem assembly ainda é utilizada em contextos como:
+Quanto as desvantagens, a principal delas é a curva de aprendizado acentuada, principalmente em comparação com linguagens de programação de alto nível. Apesar de ser rara em aplicações modernas, a linguagem Assembly ainda é utilizada em contextos como:
 
 - Desenvolvimento de **sistemas operacionais**;
 - Criação de **firmwares** e **sistemas embarcados**;
@@ -261,7 +254,7 @@ Apesar de ser rara em aplicações modernas, a linguagem assembly ainda é utili
 - **Depuração e engenharia reversa**;
 - Escrita de **rotinas críticas** em bibliotecas matemáticas.
 
-### Considerações Finais
+## Considerações Finais
 
 Este capítulo nos levou ao coração da execução computacional, revelando a mecânica por trás de cada operação de software. Ao dissecarmos a **linguagem de máquina**, entendemos como o hardware interpreta comandos em sua forma mais pura: sequências binárias de opcodes e operandos. Vimos que, embora poderosa, essa linguagem é impraticável para o desenvolvimento humano. É nesse ponto que a **linguagem de montagem (Assembly)** demonstra seu valor inestimável, servindo como a camada de abstração mais fina e essencial, que traduz a lógica binária para mnemônicos compreensíveis, nos dando controle absoluto sobre o processador.
 
