@@ -1129,3 +1129,119 @@ O mesmo conceito se aplica à conexão da sua casa com a Internet. Os Provedores
 
 Em resumo, o DHCP é um protocolo de bastidores essencial que simplifica drasticamente o gerenciamento de redes de qualquer tamanho, automatizando um processo que antes era manual, trabalhoso e sujeito a erros.
 
+#### DNS (Domain Name System)
+
+Nós sabemos que os computadores e servidores na Internet são identificados e localizados utilizando seus endereços IP (por exemplo: `192.168.10.15` ou `216.58.211.14`). No entanto, para seres humanos, é muito mais fácil decorar nomes do que longas sequências numéricas.
+
+Já imaginaram se, para acessar todos os sites que usamos diariamente, tivéssemos que decorar os endereços IP de cada um deles? Seria completamente inviável. Para resolver esse problema fundamental da usabilidade da Internet, foi criado o **DNS (Domain Name System)**, ou Sistema de Nomes de Domínio.
+
+O DNS é um protocolo da camada de aplicação que funciona como a "agenda de contatos" ou a "lista telefônica" da Internet. Sua principal responsabilidade é **traduzir** (um processo também chamado de **resolver**) nomes de domínio legíveis por humanos (como `www.google.com`) para os endereços IP numéricos (como `216.58.211.14`) que os computadores realmente usam para se comunicar.
+
+##### Funcionamento
+
+Toda página web está armazenada em algum servidor, e todo servidor conectado à Internet precisa ter um endereço lógico exclusivo (um IP) para ser acessado. O servidor que armazena o Google, por exemplo, possui endereços IP como `216.58.211.14`. Se digitarmos esse número na barra de endereços do navegador, a página do Google abrirá.
+
+O DNS é o sistema cliente/servidor que automatiza essa tradução. O que é mais fácil de decorar: `216.58.211.14` ou `Google.com`? Obviamente, o nome. Esses nomes são chamados de **endereços léxicos**, pois são formados por palavras de um idioma, em vez de números.
+
+Assim como na agenda telefônica de um _smartphone_, onde procuramos o nome de um contato e o celular disca o número armazenado, o DNS funciona da mesma forma:
+
+1. O usuário digita `www.google.com` no navegador.
+2. O navegador (atuando como um cliente DNS) pergunta a um **Servidor DNS**: "Qual é o endereço IP de `www.google.com`?".
+3. O Servidor DNS (ou um conjunto deles) procura em seus registros e responde: "O IP é `216.58.211.14`".
+4. O navegador, agora com o endereço IP correto, estabelece a conexão com o servidor do Google usando esse número.
+
+Esse processo de "consulta e resposta" também funciona ao contrário (tradução reversa), embora seja menos comum. O sistema DNS é estruturado de maneira **hierárquica**, com vários níveis de servidores (raiz, TLD, autoritativo) que colaboram para encontrar a resposta correta.
+
+Para tornar o processo mais rápido e reduzir o tráfego na rede, os servidores DNS e os sistemas operacionais armazenam as respostas recentes em um **cache**. Assim, se o usuário acessar o Google novamente, o computador não precisa perguntar à Internet qual é o IP; ele simplesmente usa a resposta que já está salva em sua memória temporária.
+
+Para proteger contra-ataques (como o "envenenamento de cache DNS", onde um invasor tenta enganar o servidor para que ele forneça um IP falso), foram criadas extensões de segurança, como o **DNSSEC**.
+
+Em resumo, o DNS é um protocolo de bastidores absolutamente essencial para a navegação na Internet, permitindo que utilizemos nomes de URLs fáceis de lembrar, em vez de endereços IP numéricos.
+
+A tabela a seguir mostra um exemplo dessa correspondência:
+
+| **URL**                                   | **Endereço IP** |
+| ----------------------------------------- | --------------- |
+| [www.google.com](https://www.google.com/) | 216.58.211.14   |
+
+##### Estrutura de Endereçamento da Web (URL)
+
+Antes de prosseguirmos para a hierarquia do DNS, é essencial dissecar um componente fundamental que o DNS ajuda a gerenciar: a **URL (Uniform Resource Locator)**, ou Localizador Uniforme de Recursos.
+
+A URL nada mais é do que o **endereço** de um recurso em uma rede de computadores. Na Internet, todo e qualquer recurso (seja uma página web, um arquivo de imagem, um vídeo, um documento, um servidor, uma impressora, etc.) deve possuir um endereço único para que possa ser localizado. A URL oferece uma maneira uniforme e padronizada de nomear e encontrar esses recursos.
+
+Uma URL é formada por uma estrutura hierárquica. Em sua sintaxe mais comum, ela é organizada da seguinte forma:
+
+| **URL (Sintaxe Abstrata)**                        |
+| ------------------------------------------------- |
+| `PROTOCOLO://IP-OU-DOMÍNIO:PORTA/CAMINHO/RECURSO` |
+
+Cada componente desse "endereço virtual" tem uma função específica para localizar o recurso:
+
+| **Componentes** | **Descrição**                                                                                                                            |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Protocolo**   | Também chamado de esquema, trata-se do protocolo de camada de aplicação utilizado para acessar o recurso (ex: HTTP, HTTPS, FTP).         |
+| **IP**          | O número de IP do Servidor (_Host_) que hospeda o recurso.                                                                               |
+| **Domínio**     | O nome de domínio do Servidor (_Host_) que hospeda o recurso (ex: `google.com`). É aqui que o DNS atua, traduzindo esse nome para um IP. |
+| **Porta**       | O ponto lógico no servidor que permite a conexão com um processo ou serviço específico.                                                  |
+| **Caminho**     | A estrutura de diretórios (pastas e subpastas) dentro do servidor que armazena o recurso.                                                |
+| **Recurso**     | O componente físico ou lógico (o arquivo em si) que está sendo solicitado (ex: `pagina.html`, `imagem.jpg`).                             |
+
+Os componentes de um endereço funcionam de forma hierárquica para ajudar a encontrar o recurso desejado. A melhor analogia é um endereço postal. Vamos pensar em um endereço fictício, como os de Brasília: `SQN 115 Bloco A Apt 208 – Asa Norte – Brasília/DF`.
+
+Para encontrar esse endereço, é preciso seguir uma hierarquia: ir até o **Distrito Federal** (o domínio de nível mais alto), localizar **Brasília**, se deslocar até a **Asa Norte** (o subdomínio), seguir até a **SQN 115** (o caminho), procurar o **Bloco A** (o subcaminho) e chegar no **Apt 208** (o recurso final).
+
+A URL é o endereço virtual de um recurso em uma rede e funciona da mesma maneira. Ela informa ao navegador que, para encontrar o recurso desejado, ele deve usar um determinado **protocolo** (o "idioma"), informar o **domínio** (para o DNS traduzir em um IP e encontrar o "prédio" servidor), conectar-se a uma **porta** específica (o "apartamento" ou serviço), seguir um **caminho** nos diretórios do servidor (os "corredores") até finalmente encontrar o **recurso** (o "documento").
+
+Vamos analisar um exemplo prático:
+
+**`HTTPS://WWW.CURSO.COM.BR/APP/DASHBOARD/CURSOS/AULAS/AULA1.PDF`**
+
+| **Componentes** | **Descrição**                                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **Protocolo**   | `https` (Hypertext Transfer Protocol Secure)                                                                                     |
+| **Domínio**     | `curso.com.br` (o `www` é um prefixo de subdomínio comum, muitas vezes omitido)                                                  |
+| **Porta**       | `443`. Apesar de ter sido omitida na URL, esta é a porta padrão para o protocolo HTTPS, e o navegador a utiliza automaticamente. |
+| **Caminho**     | `/app/dashboard/cursos/aulas` (a estrutura de pastas no servidor)                                                                |
+| **Recurso**     | `Aula1.pdf` (o arquivo final que está sendo solicitado)                                                                          |
+
+É comum haver confusão entre os termos URL e Domínio. O **domínio** (`curso.com.br`) é apenas _uma parte_ da **URL**. Observe que, se modificarmos o nome do recurso na URL anterior para `Aula2.pdf`, teremos uma URL completamente nova e diferente, mas o domínio permanecerá exatamente o mesmo.
+
+A sintaxe apresentada anteriormente é a mais comum, mas não é a única. Por isso dizemos que ela é "abstrata". A sintaxe completa de uma URL pode conter outros componentes opcionais, embora mais raros:
+
+| **URL (Sintaxe Completa)**                                                        |
+| --------------------------------------------------------------------------------- |
+| `PROTOCOLO://NOME-DE-USUÁRIO@IP-OU-DOMÍNIO:PORTA/CAMINHO/RECURSO?QUERY#FRAGMENTO` |
+
+Dos componentes apresentados, apenas dois são estritamente obrigatórios para formar uma URL válida: **Protocolo** e **Domínio/IP**. Os componentes Porta, Caminho e Recurso são bastante comuns, mas opcionais (se omitidos, o servidor geralmente retorna um recurso padrão, como a página inicial).
+
+Na sintaxe completa, vemos três componentes opcionais adicionais:
+
+| **Componentes Extras** | **Descrição**                                                                       |
+| ---------------------- | ----------------------------------------------------------------------------------- |
+| **Query/Querystring**  | Utilizado para passar parâmetros adicionais para o servidor em formato chave-valor. |
+| **Fragmento**          | Utilizado para navegar diretamente para uma seção específica de uma página da web.  |
+| **Nome de Usuário**    | Utilizado em contextos em que é necessária a autenticação para acessar os recursos. |
+
+###### Query String (Consulta)
+
+A _Query String_ permite passar parâmetros adicionais para o servidor. Ela é iniciada por um ponto de interrogação (`?`) e é seguida por um ou mais pares de `chave=valor`. Se houver múltiplos pares, eles são separados por um "E comercial" (`&`).
+
+Isso é muito usado para enviar dados de formulários, aplicar filtros em uma pesquisa, ou indicar informações de paginação. Por exemplo, em uma busca no Google por "tecnologia", a URL resultante pode ser:
+
+`https://www.google.com/search?q=tecnologia&source=hp`
+
+Aqui, a _query string_ (`q=tecnologia&source=hp`) está passando dois parâmetros para o servidor do Google: `q` (de _query_, ou consulta) com o valor `tecnologia`, e `source` (origem) com o valor `hp`.
+
+**Nota:** URLs não permitem acentuação gráfica ou espaços. Caracteres reservados são convertidos usando a "codificação de URL". Por exemplo, um espaço em branco é codificado como `%20`.
+
+###### Fragmento (Âncora)
+
+O fragmento (ou âncora) é uma parte da URL que segue o caractere cerquilha (`#`) e é usada para identificar e direcionar o navegador para uma parte específica _dentro_ de um documento que já foi carregado.
+
+O detalhe técnico mais importante do fragmento é que ele **não é enviado ao servidor** durante a solicitação HTTP. Ele é processado exclusivamente pelo navegador (cliente). Por exemplo, em uma página longa da Wikipedia, clicar em um item do sumário leva a uma URL como:
+
+`https://pt.wikipedia.org/wiki/Internet#História`
+
+O navegador carrega a página "Internet" e, em seguida, "pula" (rola a tela) automaticamente para a seção da página que está marcada com o fragmento "História".
+
