@@ -96,7 +96,7 @@ O **cliente**, por sua vez, é qualquer dispositivo (como um desktop, smartphone
 
 A figura acima ilustra a hierarquia clara do modelo: múltiplos clientes se conectam a um servidor central, que é o detentor e provedor dos recursos. Essa centralização traz vantagens como gerenciamento simplificado, maior segurança (pois o controle de acesso é centralizado) e escalabilidade (para melhorar o serviço, basta aprimorar o servidor). Contudo, também apresenta desvantagens, como o custo elevado de um servidor dedicado e a existência de um **ponto único de falha** – se o servidor parar de funcionar, o serviço se torna indisponível para todos os clientes.
 
-### O Modelo Par-a-Par (Peer-to-Peer - P2P)
+### Modelo Par-a-Par (Peer-to-Peer)
 
 Em oposição direta à estrutura hierárquica do modelo cliente-servidor, a arquitetura par-a-par (P2P) é fundamentada na **descentralização e na igualdade**. Nesse tipo de rede, não existe a figura de um servidor central dedicado. Todos os computadores conectados, chamados de **pares** (ou _peers_, em inglês), possuem status e capacidades equivalentes.
 
@@ -211,7 +211,7 @@ A topologia em malha é caracterizada por um alto nível de interconexão, utili
 Também conhecida como topologia hierárquica, a topologia em árvore é essencialmente uma **combinação de múltiplas topologias em estrela**. Ela conecta os nós centrais de diferentes redes em estrela, criando uma estrutura hierárquica. É um modelo altamente escalável e organizado, muito utilizado em grandes redes corporativas. Por exemplo, um switch principal (core) pode se conectar a switches de distribuição em diferentes andares de um prédio, e cada switch de distribuição se conecta a switches de acesso que atendem os computadores dos usuários.
 
 <div align="center">
-<img width="320px" src="./img/01-topologia-estrela.png">
+<img width="360px" src="./img/01-topologia-arvore.png">
 </div>
 
 #### Resumindo
@@ -253,13 +253,13 @@ Após explorarmos os modelos de interação e as topologias, outra forma fundame
 <img width="700px" src="./img/01-classificacao-por-abrangencia-tabela.png">
 </div>
 
-### PAN (Personal Area Network) – A Rede de Área Pessoal
+### PAN (Personal Area Network): Rede de Área Pessoal
 
 A menor e mais próxima de nós é a PAN. Como o próprio nome sugere, ela é uma rede de área **pessoal**, projetada para a comunicação entre dispositivos que estão ao alcance imediato de um indivíduo, geralmente em um raio de poucos metros.
 
 O objetivo de uma PAN não é conectar um escritório inteiro, mas sim o ecossistema de tecnologia de uma única pessoa. O exemplo mais emblemático de uma PAN sem fio (ou **WPAN**, _Wireless Personal Area Network_) é o **Bluetooth**. Quando você conecta seu smartphone a um fone de ouvido sem fio, a um smartwatch, ao sistema multimídia do seu carro ou a um teclado sem fio, você está criando uma PAN. Da mesma forma, uma conexão física via cabo **USB** entre um computador e um HD externo ou uma impressora também pode ser considerada uma forma de PAN com fio.
 
-### LAN (Local Area Network) – A Rede de Área Local
+### LAN (Local Area Network): Rede de Área Local
 
 Subindo um degrau na escala, encontramos a **LAN**, ou rede local. Esta é, de longe, a categoria de rede mais comum e com a qual interagimos diariamente. Uma LAN interliga computadores e outros dispositivos dentro de uma área geograficamente limitada, como uma residência, um andar de um prédio de escritórios, um laboratório de informática ou uma pequena empresa.
 
@@ -273,13 +273,13 @@ As LANs modernas possuem características bem definidas:
 
 É importante esclarecer uma confusão comum: _Wi-Fi_ e _Wireless_ não são sinônimos. Wireless (sem fio) é o gênero, um termo amplo para qualquer comunicação sem um meio físico guiado. O Wi-Fi é uma _espécie_ dentro desse gênero, uma tecnologia específica para criar WLANs. O Bluetooth, por exemplo, também é wireless, mas é usado para WPANs.
 
-### MAN (Metropolitan Area Network) – A Rede de Área Metropolitana
+### MAN (Metropolitan Area Network): Rede de Área Metropolitana
 
 Uma **MAN** cobre uma área geográfica maior que uma LAN, como um bairro, uma cidade inteira ou um grande campus universitário. Frequentemente, uma MAN funciona como uma rede de alta velocidade que interconecta múltiplas LANs de diferentes localidades dentro da mesma cidade.
 
 Enquanto uma LAN é tipicamente privada, uma MAN pode ser propriedade de uma grande organização (como uma prefeitura ou universidade) ou, mais comumente, de uma empresa de telecomunicações que oferece o serviço de conectividade para outras empresas e para o público. A tecnologia mais utilizada para construir essas redes é a fibra óptica, e muitas vezes elas são chamadas de redes **Metro Ethernet**, pois estendem a familiar e eficiente tecnologia Ethernet para uma escala metropolitana, alcançando altas taxas de transmissão.
 
-### WAN (Wide Area Network) – A Rede de Área de Longa Distância
+### WAN (Wide Area Network): Rede de Área de Longa Distância
 
 No topo da escala de abrangência estão as **WANs**. Elas cobrem vastas áreas geográficas, como um país, um continente ou até o planeta inteiro. Uma WAN não é uma rede única, mas sim uma **rede de redes**, interligando múltiplas LANs e MANs que podem estar separadas por centenas ou milhares de quilômetros. A **Internet** é o exemplo máximo e mais conhecido de uma WAN global.
 
