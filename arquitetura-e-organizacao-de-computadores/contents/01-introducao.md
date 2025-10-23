@@ -9,12 +9,12 @@ Desde suas origens, os computadores foram concebidos como máquinas capazes de c
 Para entender essa transformação, é crucial distinguir os termos **dado** e **informação**. Embora comumente usados como sinônimos, em contextos técnicos, eles possuem significados distintos. **Dado** é a matéria-prima do processamento 3: valores brutos, não processados, coletados de uma ou mais fontes, como sensores, um teclado ou arquivos4. Já a **informação** é o produto final, o resultado do processamento; ou seja, é o dado estruturado, interpretado e contextualizado, pronto para uso em tomadas de decisão ou para alimentar novos processos computacionais5.
 
 <div align="center">
-  <img width="520px" src="./img/01-entrada-processamento-saida.png">
+<img width="520px" src="./img/01-entrada-processamento-saida.png">
 </div>
 
 Por exemplo, imagine que um usuário digite o número "42" em um teclado. Esse número, isoladamente, é um dado. Ele não possui significado intrínseco. No entanto, após passar por cálculos no sistema — digamos, ser somado a outro número dentro de uma planilha, ser interpretado como a idade de um cliente em um cadastro, ou ser formatado como parte de um relatório financeiro — ele se torna uma informação com valor semântico e contextual. A essência do funcionamento de um computador, portanto, está nesse ciclo de entrada (coleta de dados), processamento (manipulação) e saída (apresentação da informação).
 
-## Arquitetura e Organização: Dois Olhares Complementares
+## Arquitetura e Organização
 
 Ao estudar como um computador funciona, é essencial compreender que existem dois pontos de vista distintos, porém complementares: o da **organização** e o da **arquitetura** do computador.
 
@@ -40,9 +40,7 @@ Os computadores modernos são herdeiros diretos de projetos pioneiros do século
 Antes dessa proposta, os computadores eram máquinas limitadas, que precisavam ser reconfiguradas fisicamente para cada nova tarefa. Von Neumann revolucionou o campo ao propor uma estrutura onde **dados e instruções (programas) seriam armazenados na mesma memória**. Essa memória única seria acessada pela Unidade Central de Processamento (CPU), que, por sua vez, conteria uma unidade de controle e uma unidade lógica e aritmética. Essa ideia transformou os computadores em máquinas de propósito geral, flexíveis e programáveis. Vale ressaltar que a memória secundária (como HDs) não costuma aparecer em diagramas clássicos do modelo, que geralmente mostram apenas "Memória" de forma genérica.
 
 <div align="center">
-
 <img width="520px" src="./img/01-arquitetura-von-neumann.png">
-
 </div>
 
 Apesar de sua genialidade e simplicidade, o compartilhamento de um único barramento (caminho de comunicação) entre a CPU e a memória para buscar tanto dados quanto instruções introduz um gargalo de desempenho conhecido como **von Neumann bottleneck**. Como o processador não pode ler uma instrução e ler/escrever um dado ao mesmo tempo, essas operações se tornam sequenciais, limitando a velocidade máxima do sistema.
@@ -52,9 +50,7 @@ Como uma solução para este gargalo, surgiu a **Arquitetura de Harvard**. Origi
 Essa separação permite que a CPU acesse dados e instruções de forma simultânea. Por exemplo, enquanto uma instrução de soma está sendo executada (acessando a memória de dados para obter os operandos), o processador já pode buscar a próxima instrução na memória de programa. Isso resulta em um desempenho superior, pois paraleliza operações que seriam sequenciais em um modelo Von Neumann.
 
 <div align="center">
-
 <img width="640px" src="./img/01-arquitetura-harvard.png">
-
 </div>
 
 Hoje, a Arquitetura de Harvard é amplamente utilizada em processadores de sinais digitais (DSPs) e microcontroladores. Um exemplo prático é um forno de micro-ondas: ele precisa responder rapidamente aos comandos do painel (dados de entrada) enquanto executa com precisão o programa de controle de tempo e potência (instruções). Além disso, os princípios de Harvard são adotados em computadores modernos de forma híbrida: embora a memória RAM principal siga o modelo Von Neumann, as **memórias cache** internas ao processador (L1, L2, L3) são frequentemente divididas em cache de instruções e cache de dados, aplicando o conceito de Harvard para acelerar o acesso.
@@ -64,9 +60,7 @@ Hoje, a Arquitetura de Harvard é amplamente utilizada em processadores de sinai
 Independentemente da arquitetura adotada, todos os computadores, desde supercomputadores até dispositivos embarcados, executam quatro funções básicas e interdependentes:
 
 <div align="center">
-
 <img width="520px" src="./img/01-funcoes-basicas.png">
-
 </div>
 
 - **Processamento de dados**: É a função central, realizada pela **CPU (Unidade Central de Processamento)**. A CPU é o cérebro do computador, contendo internamente a **Unidade Lógica e Aritmética (ULA)**, que realiza operações matemáticas (soma, subtração) e lógicas (E, OU, NÃO), e a **Unidade de Controle (UC)**, que interpreta as instruções do programa e orquestra as ações de todos os outros componentes. A CPU também possui **registradores**, que são pequenas e ultrarrápidas memórias para armazenamento temporário de dados e instruções em uso.
@@ -76,14 +70,12 @@ Independentemente da arquitetura adotada, todos os computadores, desde supercomp
 - **Transferência de dados**: É a movimentação de informações entre o computador e o mundo exterior ou entre seus componentes internos. Isso é feito por meio de dispositivos de Entrada e Saída (E/S) e seus sistemas de interconexão. Essa função abrange desde a leitura de um caractere do teclado até a transmissão de um arquivo por uma rede de computadores.
 - **Controle**: Esta função é gerenciada pela Unidade de Controle (UC) dentro da CPU. Ela é responsável por gerenciar os recursos do computador e garantir que as instruções sejam executadas na sequência correta, coordenando as outras três funções. A UC envia sinais de controle para a memória, a ULA e os dispositivos de E/S, ditando o fluxo de dados e operações em todo o sistema.
 
-## Barramentos: O Sistema Nervoso do Computador
+## Barramentos
 
 Para que as funções de processamento, armazenamento e transferência ocorram de forma integrada, os componentes do computador precisam se comunicar. Essa comunicação acontece através dos **barramentos**, um conjunto de vias elétricas que interligam a CPU, a memória e os controladores dos dispositivos periféricos, formando o "sistema nervoso" do computador.
 
 <div align="center">
-
 <img width="420px" src="./img/01-barramento.png">
-
 </div>
 
 O barramento do sistema é tipicamente dividido em três tipos funcionais:
