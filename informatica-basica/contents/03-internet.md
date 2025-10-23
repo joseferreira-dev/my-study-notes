@@ -499,3 +499,91 @@ As principais tecnologias de acesso ao longo da história são:
 |**Satélite**|Satélite permite o acesso à internet em áreas remotas, transmitindo dados via satélites em órbita. Apesar de ser uma solução para locais onde outras tecnologias não chegam, tem maior latência e menor velocidade em comparação a soluções terrestres, sendo influenciada por condições climáticas.|
 |**Telefonia Móvel**|A Telefonia Móvel usa redes celulares 3G, 4G ou 5G para fornecer acesso à internet. A cobertura depende da infraestrutura de torres de telefonia, e a velocidade varia conforme a geração da rede. É amplamente utilizada devido à sua mobilidade, permitindo conexões em qualquer lugar com sinal disponível.|
 
+## Protocolos de Comunicação
+
+Para que uma rede de computadores funcione—seja ela uma pequena LAN em um escritório ou a vasta Internet global—seus componentes precisam de um conjunto de regras. **Protocolos de comunicação** são exatamente isso: conjuntos de regras, padrões e convenções que especificam em detalhes como os dispositivos em uma rede devem se comunicar.
+
+Sem protocolos, a comunicação seria um caos. Imagine dois dispositivos tentando enviar dados ao mesmo tempo, ou um dispositivo enviando dados em um formato que o outro não consegue entender. Os protocolos resolvem isso e desempenham um papel fundamental na garantia de que diferentes dispositivos de rede, com _hardware_ e _software_ diversos (fabricantes diferentes, sistemas operacionais diferentes), possam se comunicar e trocar informações de maneira consistente e confiável.
+
+Essas regras definem todos os aspectos da comunicação, incluindo:
+
+- **Formatos dos Dados:** Como a informação é "empacotada" para a transmissão (a estrutura de um pacote ou _frame_).
+- **Sequência de Mensagens:** A ordem em que as mensagens devem ser enviadas e recebidas.
+- **Detecção e Correção de Erros:** Como verificar se um dado foi corrompido durante a transmissão e o que fazer para corrigi-lo.
+- **Controle de Acesso:** Quem pode transmitir dados e quando, para evitar que múltiplos dispositivos "falem" ao mesmo tempo e causem colisões.
+
+Diferentes especialistas usam analogias para simplificar esse conceito:
+
+- **Andrew Tanenbaum**, um renomado autor da área, define um protocolo como um **acordo** que estabelece como a comunicação ocorrerá.
+- **Behrouz Forouzan**, outro autor de destaque, o descreve como um **conjunto de regras** que controlam a troca de dados.
+- Uma terceira analogia, talvez a mais intuitiva, é a de **idiomas**. Em uma rede, os protocolos organizam e representam os dados, assim como as gramáticas e estruturas dos idiomas facilitam a comunicação entre pessoas.
+
+Se duas pessoas que não falam o mesmo idioma tentarem conversar, elas não se entenderão. Da mesma forma, se um computador (cliente) tentar se comunicar com um servidor usando um protocolo, e o servidor estiver esperando um protocolo diferente, a comunicação falhará. Os dispositivos de rede, portanto, precisam "falar a mesma língua" para trocar informações, independentemente de suas diferenças de _hardware_ ou _software_.
+
+O exemplo mais importante desse conceito é o conjunto de protocolos **TCP/IP** (_Transmission Control Protocol/Internet Protocol_). Este não é um único protocolo, mas uma "família" (ou suíte) de protocolos que define o padrão de comunicação de toda a Internet.
+
+É o TCP/IP que permite que dispositivos em redes completamente diferentes se comuniquem de forma eficaz. Independentemente do sistema operacional (Windows, macOS, Android, iOS) ou da arquitetura do dispositivo (um _smartphone_ Samsung, um _notebook_ Dell, um servidor HP), se ele estiver conectado à Internet, ele está obrigatoriamente utilizando a suíte de protocolos TCP/IP. Ela fornece as regras universais necessárias para garantir a comunicação global entre máquinas de todas as plataformas.
+
+### Modelo OSI/ISO
+
+Para gerenciar a complexidade de diferentes _hardwares_ e _softwares_ que precisam "falar a mesma língua" em uma rede, a comunidade de engenharia precisou criar um padrão. O **Modelo OSI (Open Systems Interconnection)**, ou Interconexão de Sistemas Abertos, é o modelo de referência mais famoso para entender como os protocolos de rede funcionam e interagem. Ele foi desenvolvido pela **ISO (International Organization for Standardization)**.
+
+O Modelo OSI não é um protocolo em si, nem uma arquitetura de rede prática, mas sim um **modelo conceitual e didático**. Sua função é dividir o complexo processo de comunicação em uma rede de computadores em sete camadas lógicas e hierárquicas, onde cada camada tem um propósito específico. Ele serve como um guia universal para o desenvolvimento e a compreensão dos protocolos.
+
+Nós já sabemos que uma rede é uma combinação de _hardware_ e _software_ que envia dados de uma localidade para outra. O processo de enviar um simples e-mail para um amigo do outro lado do mundo, por exemplo, parece instantâneo, mas envolve uma complexidade imensa.
+
+Falando especificamente do _software_, essa atividade pode ser dividida em várias tarefas menores, cada uma realizada por uma "camada" de _software_ diferente. A analogia do serviço postal é perfeita para entender essa divisão de tarefas. O processo de enviar uma carta a um amigo seria extremamente complexo se não houvesse um serviço organizado dos correios.
+
+<div align="center">
+<img width="560px" src="./img/03-modelo-osi-comunicacao.png">
+</div>
+
+Na analogia acima:
+
+- **Camadas mais altas:** O remetente (usuário) escreve a carta (os dados), coloca em um envelope (formatação) e a deposita na caixa do correio (início da sessão). Isso é análogo às camadas superiores do Modelo OSI, que lidam com a aplicação e os dados do usuário.
+- **Camadas intermediárias:** A carta é transportada da caixa do correio para a agência local. Essa agência (roteador) decide qual a melhor rota para a carta seguir até a agência de destino. Isso é análogo às camadas de transporte e rede.
+- **Camadas mais baixas:** A carta é entregue fisicamente por um carteiro da agência de origem até a agência de destino (o meio físico, como caminhões ou aviões). Isso é análogo às camadas de enlace e física.
+
+No destino, o processo se inverte: o carteiro local entrega na agência, a agência encaminha para a caixa postal e o destinatário abre o envelope e lê a carta.
+
+#### Lógica das Camadas
+
+A comunicação em redes é organizada em camadas, onde cada uma realiza uma tarefa específica e **usa os serviços da camada imediatamente inferior**. Isso permite que o processo de transmissão de dados seja dividido em etapas menores e mais fáceis de gerenciar.
+
+As camadas se comunicam entre si através de **interfaces**, que especificam quais serviços a camada inferior deve fornecer à camada superior. Esse design **modular** é a grande vantagem do modelo:
+
+1. **Abstração de Complexidade:** Cada camada só precisa saber como interagir com a camada acima e abaixo dela. Ela não precisa se preocupar com os detalhes de como as outras camadas funcionam.
+2. **Interoperabilidade:** Permite que dispositivos de diferentes fabricantes funcionem em conjunto. Um fabricante pode criar uma placa de rede (Camadas 1 e 2) sem se preocupar com qual navegador de internet (Camada 7) o usuário utilizará, desde que ambos sigam o padrão.
+3. **Manutenção e Desenvolvimento:** Uma camada pode ser alterada ou substituída (por exemplo, trocar o Wi-Fi por um cabo Ethernet) sem afetar as outras camadas, desde que as funções principais sejam mantidas.
+
+A seguir, estão as sete camadas do Modelo OSI, da mais alta (próxima ao usuário) para a mais baixa (próxima ao meio físico).
+
+|**Número**|**Camada**|**Descrição**|**Protocolos**|
+|---|---|---|---|
+|7|Aplicação|Camada responsável por habilitar o usuário, seja ele humano ou software, a estabelecer a comunicação entre aplicações e a acessar a rede.|HTTP, SMTP, FTP, SSH, TELNET, SNMP, POP3, IMAP, DNS|
+|6|Apresentação|Camada responsável por definir o formato para troca de dados entre computadores, como se fosse um tradutor.|AFP, ICA, LPP, NCP, NDR, TOX, XDR, PAD.|
+|5|Sessão|Camada responsável por permitir que duas ou mais aplicações em computadores diferentes possam abrir, usar e fechar uma conexão, chamada sessão.|NETBIOS.|
+|4|Transporte|Camada responsável por organizar dados em segmentos e que eles cheguem ao destino livre de erros (sem perdas, sem duplicações e na ordem correta).|TCP, UDP, NETBEUI.|
+|3|Rede|Camada responsável pelo endereçamento, roteamento e entrega de pacotes individuais de dados desde sua origem até o seu destino, provavelmente através de várias redes.|IP, ICMP, ARP RARP, NAT.|
+|2|Enlace|Camada responsável por organizar os dados em frames (ou quadros) e por estabelecer uma conexão nó-a-nó entre dois dispositivos físicos que compartilham o mesmo meio físico.|Ethernet, Token Ring, Bluetooth, Wi-Fi.|
+|1|Física|Camada responsável por definir as especificações elétricas e físicas da conexão de dados.|USB, DSL.|
+
+#### Um Modelo Teórico, Não Prático
+
+É fundamental reforçar que o Modelo OSI é uma **abstração teórica**. Sendo rigoroso, esse modelo não é propriamente dito uma arquitetura de rede, pois não especifica os serviços e protocolos exatos que devem ser utilizados em cada camada. Ele tem uma função muito mais **didática** do que pragmática.
+
+Na prática, a arquitetura de rede utilizada atualmente no mundo real é a **pilha de protocolos TCP/IP**, que é mais simples e será vista mais adiante. No entanto, o Modelo OSI continua sendo a ferramenta de referência fundamental para que estudantes e profissionais de rede possam classificar os protocolos e entender onde cada função se encaixa no processo de comunicação. Não é incomum "encaixar" protocolos do mundo real (como o IP) em sua camada correspondente do Modelo OSI (Camada 3) para fins de estudo.
+
+<div align="center">
+<img width="700px" src="./img/03-modelo-osi-camadas.png">
+</div>
+
+A imagem acima ilustra o processo de comunicação. No remetente (esquerda), os dados descem as camadas. A cada camada que os dados passam, um novo "cabeçalho" (com informações de controle) é adicionado, em um processo chamado **encapsulamento**. A unidade de dados muda de nome em cada etapa:
+
+- **Mensagem** (Camadas 7, 6, 5)
+- **Segmento** (Camada 4)
+- **Pacote** (Camada 3)
+- **Quadro** (Camada 2)
+- **Bits** (Camada 1), que são transmitidos pelo meio físico.
+
+No destinatário (direita), ocorre o processo inverso: os dados sobem as camadas, e cada camada lê e remove o seu respectivo cabeçalho, em um processo chamado **desencapsulamento**, até que a mensagem original seja entregue à aplicação.
