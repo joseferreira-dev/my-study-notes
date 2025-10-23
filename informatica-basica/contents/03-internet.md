@@ -451,3 +451,51 @@ A tabela a seguir resume o equilíbrio entre os benefícios e os desafios da IoT
 |Os governos podem monitorar o ambiente.|As empresas que criam dispositivos vestíveis têm muitas informações pessoais sobre os usuários.|
 
 A Internet das Coisas pode, portanto, ser definida como uma tecnologia que permite que uma malha de dispositivos – como dispositivos móveis, _wearables_ (tecnologias para vestir), sensores, aparelhos eletrônicos de consumo e domésticos, dispositivos automotivos e ambientais – possa ser integrada para acessar aplicativos e informações ou para a interação com pessoas, redes sociais, governos e empresas.
+
+## Tecnologias de Acesso à Internet
+
+Para que um usuário final consiga acessar os serviços da Internet, como a World Wide Web, é necessária uma complexa infraestrutura de conexão. As **Tecnologias de Acesso à Internet** referem-se aos diversos métodos utilizados para conectar dispositivos, como computadores e smartphones, à rede global.
+
+Até o início dos anos 90, a Internet era um ambiente restrito, frequentado principalmente por pesquisadores, acadêmicos e militares. O advento da Web transformou esse cenário, tornando a informação acessível e interessante para milhões de pessoas. Esse crescimento explosivo só foi possível graças ao surgimento dos **Provedores de Serviços de Internet (ISPs - _Internet Service Providers_)**, empresas que começaram a "vender" o acesso à rede para o público geral, transformando a Internet em um serviço de utilidade pública, semelhante à telefonia.
+
+### Backbone e a Hierarquia de ISPs
+
+Para entender como seu computador se conecta a um servidor do outro lado do mundo, é preciso visualizar a Internet como uma estrutura hierárquica. No topo dessa estrutura está o **Backbone** (espinha dorsal).
+
+O _Backbone_ é a infraestrutura de rede de altíssima velocidade que forma o núcleo da Internet. Ele é composto por uma malha global de cabos de fibra óptica (terrestres e submarinos), satélites e ondas de rádio, interligando países e continentes. Estima-se que os cabos submarinos sozinhos sejam responsáveis por mais de 80% de toda a comunicação global.
+
+Esses _backbones_ são construídos e administrados pelos **Provedores de Serviço de Internet (ISPs)**, que se organizam em uma hierarquia de três níveis.
+
+|**Níveis**|**Descrição**|
+|---|---|
+|**ISP Nível 1**|São os provedores de acesso à internet de nível mais alto na hierarquia. Eles não precisam comprar acesso à internet de outros provedores, pois possuem uma rede global de alta capacidade e trocam tráfego diretamente uns com os outros. Exemplos de provedores de Nível 1 incluem AT&T, Verizon, NTT Communications e CenturyLink. Eles têm uma presença global e fornecem acesso à internet em escala internacional. Imagine ISPs de Nível 1 como rodovias federais, como a Rodovia Presidente Dutra (BR-116). Essas rodovias cruzam continentes e países sem precisar pagar pedágio a outras estradas menores. Os provedores de Nível 1 constroem e mantêm essas "rodovias da internet" e interconectam-se diretamente para permitir um tráfego rápido e eficiente.|
+|**ISP Nível 2**|Estes são provedores de acesso à internet que não possuem redes globais como os Nível 1, mas ainda têm uma rede significativa em uma área geográfica específica. Eles geralmente compram acesso à internet de Nível 1 ISPs e podem vender serviços a ISPs de nível inferior ou a empresas e consumidores diretos. Exemplos de provedores de Nível 2 incluem Cogent, Orange, Charter, Deutsche Telekom, entre outros. ISPs de Nível 2 podem ser comparados a rodovias estaduais. Eles atendem a áreas geográficas maiores, como estados ou regiões inteiras. Essas rodovias estaduais se conectam às autoestradas globais (Nível 1) e podem cobrar pedágio por permitir que o tráfego flua entre essas grandes autoestradas e áreas locais.|
+|**ISP Nível 3**|São provedores regionais ou locais que não possuem redes globais. Eles compram acesso à internet de provedores de Nível 1 ou 2 para fornecer conectividade a empresas e consumidores em áreas geográficas específicas. Esses ISPs podem se concentrar em uma única cidade, região ou país. Alguns provedores de Nível 3 podem ser ISPs de acesso final, que fornecem serviços diretamente a residências e empresas locais. ISPs de Nível 3 são como as estradas locais e ruas em cidades. Eles atendem áreas geográficas muito específicas, como uma cidade ou bairro. Essas estradas locais se conectam às rodovias regionais (Nível 2) ou diretamente às autoestradas globais (Nível 1) e permitem que o tráfego alcance destinos locais.|
+
+ISPs Locais normalmente se enquadram como ISPs de Nível 3. Eles são responsáveis por fornecer conectividade à Internet para áreas locais específicas e são mais próximos dos usuários finais.
+
+<div align="center">
+<img width="620px" src="./img/03-niveis-de-provedores.png">
+</div>
+
+Dito isso, os enlaces que conectam as redes de acesso residenciais aos ISP Nível 3 ou Locais podem ser de diferentes tecnologias. Todo computador que se conecta à internet, seja via cabo ou Wi-Fi, precisa de uma placa de rede (também chamada de NIC - Network Interface Card), que pode ser uma placa de rede Ethernet (para conexões cabeadas) ou uma placa de rede Wi-Fi (para conexões sem fio).
+
+### Métodos de Acesso
+
+O enlace que conecta a residência ou empresa do usuário final ao seu provedor local (ISP de Nível 3) pode ser feito usando diversas tecnologias. Para que qualquer computador se conecte, ele precisa de uma **placa de rede** (NIC - _Network Interface Card_), que pode ser uma placa **Ethernet** (para conexões cabeadas) ou **Wi-Fi** (para conexões sem fio).
+
+Além da placa de rede, é necessário um dispositivo que "traduza" o sinal. O **modem** (_modulador-demodulador_) é o equipamento que converte os sinais digitais do computador em sinais analógicos (ou ópticos) adequados para transmissão pela infraestrutura do provedor (seja ela linha telefônica, cabo coaxial, fibra, etc.) e vice-versa. Em redes domésticas modernas, é comum que o modem e o roteador Wi-Fi estejam integrados em um único aparelho.
+
+As principais tecnologias de acesso ao longo da história são:
+
+|**Tecnologias de Acesso**|**Descrição**|
+|---|---|
+|**DIAL-UP** (Discada)|Dial-Up é uma conexão à internet via linha telefônica convencional, onde a transmissão de dados é feita utilizando o tom de discagem. A velocidade é baixa, geralmente até 56 Kbps, e a linha telefônica fica ocupada durante o uso, sendo uma tecnologia obsoleta em comparação com as alternativas atuais.|
+|**ADSL**|ADSL (Asymmetric Digital Subscriber Line) usa a linha telefônica comum para transmitir dados em alta velocidade, sem interromper as chamadas telefônicas. A velocidade de download é maior que a de upload, ideal para uso doméstico, com velocidades típicas de até 24 Mbps dependendo da qualidade da linha e da distância da central.|
+|**HFC** (Cabo)|HFC (Hybrid Fiber-Coaxial) combina fibra óptica e cabos coaxiais para transmitir dados. A fibra é usada até uma certa distância, sendo complementada por cabos coaxiais até o usuário final. Comum em serviços de TV a cabo, permite velocidades de internet rápidas, dependendo da infraestrutura local.|
+|**Fibra Óptica (FTTH)**|FTTH (Fiber to the Home) é uma tecnologia que utiliza fibra óptica diretamente até a residência do usuário, proporcionando conexões de alta velocidade, estáveis e com baixa latência. É uma das tecnologias mais avançadas para acesso à internet, suportando velocidades simétricas de upload e download.|
+|**PLC**|PLC (Power Line Communication) usa a rede elétrica para transmitir dados de internet. É uma solução que permite a distribuição de sinal de internet por meio da infraestrutura de energia, sendo útil em áreas com baixa cobertura de outras tecnologias. A velocidade pode variar conforme a rede elétrica local.|
+|**Rádio** (Via Rádio)|A tecnologia de rádio transmite sinal de internet sem fio por meio de torres de rádio, sendo uma opção para áreas rurais ou de difícil acesso. A velocidade e a estabilidade da conexão dependem da proximidade com a torre e das condições climáticas, sendo uma alternativa viável onde não há cabeamento.|
+|**Satélite**|Satélite permite o acesso à internet em áreas remotas, transmitindo dados via satélites em órbita. Apesar de ser uma solução para locais onde outras tecnologias não chegam, tem maior latência e menor velocidade em comparação a soluções terrestres, sendo influenciada por condições climáticas.|
+|**Telefonia Móvel**|A Telefonia Móvel usa redes celulares 3G, 4G ou 5G para fornecer acesso à internet. A cobertura depende da infraestrutura de torres de telefonia, e a velocidade varia conforme a geração da rede. É amplamente utilizada devido à sua mobilidade, permitindo conexões em qualquer lugar com sinal disponível.|
+
