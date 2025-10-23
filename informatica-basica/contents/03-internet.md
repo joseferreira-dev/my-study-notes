@@ -1245,3 +1245,52 @@ O detalhe técnico mais importante do fragmento é que ele **não é enviado ao 
 
 O navegador carrega a página "Internet" e, em seguida, "pula" (rola a tela) automaticamente para a seção da página que está marcada com o fragmento "História".
 
+##### Hierarquia
+
+O **domínio** é o principal componente legível por humanos de uma URL e, como vimos, é o componente que o DNS se propõe a traduzir. É por isso que, em termos simples, dizemos que o DNS "resolve" um Nome/Domínio em um Endereço IP e vice-versa.
+
+Para gerenciar os bilhões de nomes de domínio existentes na Internet de forma eficiente, o DNS foi projetado com uma estrutura **hierárquica** e **distribuída**.
+
+- **Hierárquica:** A estrutura de nomes se assemelha a uma árvore invertida. A hierarquia é lida da direita para a esquerda. Por exemplo, em `www.google.com.br`, a raiz da hierarquia é o `.br`, abaixo dele está o `.com` (formando `.com.br`), e abaixo dele está o `google`.
+- **Distribuída:** Não existe um único supercomputador no mundo que contenha a "agenda telefônica" inteira. Isso seria um ponto de falha catastrófico e um gargalo de tráfego. Em vez disso, o sistema é distribuído: a responsabilidade por cada "ramo" da árvore é delegada a diferentes **Servidores de Domínio** espalhados pelo globo, organizados em níveis.
+
+<div align="center">
+<img width="700px" src="./img/03-dns-hierarquia.png">
+</div>
+
+Para evitar ambiguidades e garantir que cada endereço aponte para um único lugar, os nomes atribuídos às máquinas devem ser cuidadosamente selecionados a partir de um **espaço de nomes** – que nada mais é que um conjunto organizado de possíveis nomes, onde cada nome deve ser exclusivo.
+
+A entidade que controla o registro e a manutenção de domínios em nível global, no topo dessa hierarquia, é chamada de **ICANN** (_Internet Corporation for Assigned Names and Numbers_).
+
+A ICANN gerencia os chamados **TLDs (Top-Level Domains)**, ou Domínios de Nível Superior. Eles são o último segmento de um domínio (o que vem após o último ponto). Existem duas categorias principais de TLDs:
+
+1. **gTLD (generic Top-Level Domain):** Domínios genéricos, como `.com`, `.org`, `.net`, `.gov`, `.edu`.
+2. **ccTLD (country-code Top-Level Domain):** Domínios de código de país, que são delegados a entidades nacionais.
+
+É a ICANN que define, por exemplo, que o domínio `.br` pertence ao Brasil; o domínio `.pt` pertence a Portugal; o domínio `.jp` pertence ao Japão; e o domínio `.es` pertence à Espanha.
+
+Já em nível nacional, existe outra entidade responsável pelo registro e manutenção dos domínios brasileiros (o ccTLD `.br`). No Brasil, essa entidade é o **Registro.br** (parte do Comitê Gestor da Internet no Brasil, o CGI.br). Caso algum dia seja necessário adquirir e registrar um domínio próprio terminado em `.br`, o processo provavelmente será feito através do site:
+
+`WWW.REGISTRO.BR`
+
+É crucial entender que "registrar um domínio" e "hospedar um site" são coisas diferentes. O registro (feito no Registro.br) é apenas a compra do "direito de usar o endereço". A hospedagem é o aluguel de espaço em um servidor (que pode estar em qualquer lugar do mundo) para armazenar os arquivos do site. Isso significa que um site com final `.br` está _registrado_ no Brasil, mas não necessariamente _hospedado_ fisicamente no Brasil.
+
+###### Subcategorias de Domínios .br
+
+O Registro.br não permite o registro direto sob o `.br` (como `meusite.br`). Em vez disso, ele organiza os domínios em subcategorias, muitas das quais refletem a natureza da entidade que está fazendo o registro. Se uma entidade exerce uma atividade comercial, ela poderá ter um domínio `.com.br`; se possui uma organização não-governamental sem fins lucrativos, poderá ter um domínio `.org.br`.
+
+Algumas categorias possuem restrições adicionais, sendo direcionadas a setores específicos e exigindo a comprovação por meio do envio de documentos para validar o registro (por exemplo, `.gov.br` para o governo, `.jus.br` para o judiciário, ou `.edu.br` para instituições de ensino superior).
+
+As imagens a seguir detalham as principais categorias de domínios `.br` disponíveis:
+
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+<img width="340px" src="./img/03-dns-hierarquia-subcategorias-1.png">
+<div align="center">
+</div>
+<div style="display: flex; flex-direction: column">
+<img width="340px" src="./img/03-dns-hierarquia-subcategorias-2.png">
+<img width="340px" src="./img/03-dns-hierarquia-subcategorias-3.png">
+</div>
+</div>
+
+Existem algumas regras que devem ser observadas em um nome de domínio registrado no Registro.br: (1) deve possuir entre 2 e 26 caracteres, não incluindo a categoria. Logo, o domínio `www.x.com.br` é inválido porque possui apenas 1 caractere; (2) deve ser composta por caracteres alfanuméricos. Logo, o domínio `www.123.com.br` é inválido porque não contém letras; (3) não pode começar ou terminar com hífen, mas pode ter acentuação e cedilha desde 2008.
