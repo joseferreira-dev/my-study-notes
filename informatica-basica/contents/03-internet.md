@@ -629,3 +629,184 @@ Seguindo essa lógica, temos que:
 - Um servidor que fornece serviços de tradução de domínios (protocolo DNS) pode ser chamado de **Servidor DNS**.
 - Um servidor que fornece serviços de transferência de arquivos (protocolo FTP) pode ser chamado de **Servidor FTP**.
 
+### Protocolos da Camada de Rede
+
+Como visto no modelo TCP/IP, a camada de Internet (ou Camada de Rede, no modelo OSI) é a responsável pela comunicação entre redes distintas. O protocolo que define o funcionamento dessa camada e que dá nome a toda a arquitetura é o Protocolo de Internet.
+
+#### IP (Internet Protocol)
+
+O **IP (Internet Protocol)** é a base fundamental de toda a comunicação na Internet. Ele é um protocolo—um conjunto de regras e convenções—cujo propósito principal é permitir a comunicação **entre redes** (daí o nome _Inter-net_). Sua função é o **roteamento** de pacotes de dados, ou seja, encontrar o caminho para que um pacote saia de um dispositivo de origem e chegue a um dispositivo de destino, mesmo que eles estejam em redes, cidades ou continentes diferentes.
+
+Para que isso seja possível, o IP estabelece um sistema de **endereçamento lógico**. Todo dispositivo conectado à Internet (como um computador, _smartphone_ ou roteador) recebe um **endereço IP** exclusivo. Esse endereço é usado para duas coisas: identificar quem está enviando dados (origem) e quem deve recebê-los (destino).
+
+Esse endereço lógico funciona de forma análoga a um CEP (Código de Endereçamento Postal). Assim como um carteiro precisa de um CEP e um número para encontrar uma casa específica em uma cidade, os roteadores da Internet precisam do endereço IP para encaminhar os dados para a máquina correta.
+
+Esses endereços são:
+
+- **Universais:** O sistema de endereçamento tem de ser aceito e compreendido por qualquer _host_ (máquina) que queira se conectar à Internet.
+- **Exclusivos:** Cada endereço define uma única conexão com a Internet. Dois dispositivos na mesma rede não podem ter o mesmo endereço IP ao mesmo tempo.
+
+##### Processo de Envio e Roteamento
+
+Quando um dispositivo de origem (ex: um computador) deseja enviar dados (ex: acessar um site), ele divide esses dados em pequenos blocos, chamados **pacotes**. O protocolo IP então "embrulha" cada um desses pacotes, adicionando um cabeçalho que contém, entre outras coisas, o endereço IP do remetente e o endereço IP do destinatário.
+
+Esses pacotes são então enviados pela rede. O **roteamento** é o processo pelo qual os pacotes são direcionados do remetente ao destinatário. Isso é feito por dispositivos intermediários chamados **roteadores**. Cada roteador que recebe um pacote analisa o endereço IP de destino e, consultando sua própria "tabela de roteamento" (similar a um mapa de trânsito), decide qual é o melhor "próximo salto" para onde o pacote deve ser encaminhado, aproximando-o cada vez mais do seu destino final.
+
+##### Características do IP
+
+É crucial entender que o Protocolo IP, por si só, é um protocolo **sem conexão**, **não confiável** e de **melhor esforço** (_best-effort_).
+
+- **Sem Conexão (_Connectionless_):** O IP não estabelece uma conexão prévia contínua entre o remetente e o destinatário, como uma chamada telefônica. Ele simplesmente "dispara" os pacotes na rede, tratando cada um de forma independente.
+- **Não Confiável e de Melhor Esforço:** Isso significa que o IP fará o seu melhor para entregar os pacotes, mas **não oferece nenhuma garantia**.
+    - O IP não garante que os pacotes **chegarão** ao destino (eles podem ser perdidos no meio do caminho se houver um congestionamento na rede).
+    - O IP não garante que os pacotes chegarão na **ordem correta** (pacotes diferentes podem pegar rotas diferentes, e o pacote 2 pode chegar antes do pacote 1).
+    - O IP não garante que os pacotes chegarão **sem erros** (os dados podem ser corrompidos durante a transmissão).
+
+Essa aparente falha é, na verdade, uma virtude. Ao não se preocupar com garantias, o IP se torna extremamente simples, rápido e eficiente. A responsabilidade de garantir a confiabilidade (ou seja, verificar se todos os pacotes chegaram, colocá-los na ordem correta e pedir a retransmissão dos que se perderam) é delegada a um protocolo de camada superior, o **TCP** (Protocolo de Controle de Transmissão), que veremos mais adiante.
+
+O sistema de endereçamento do protocolo IP depende de sua versão. Atualmente, coexistem duas versões na Internet: O **IPv4 (Versão 4)**, que é o formato mais antigo e ainda dominante, e o **IPv6 (Versão 6)**, a nova geração criada para solucionar a escassez de endereços do IPv4.
+
+##### IPv4 (IP Versão 4)
+
+O **IPv4 (IP Versão 4)** é a primeira versão do Protocolo de Internet a ser amplamente adotada e ainda hoje forma a base da maior parte do tráfego da Internet. Sua estrutura de endereçamento é definida por um comprimento total de **32 bits**.
+
+Para facilitar o gerenciamento, esses 32 bits são geralmente divididos em 4 grupos de 8 bits cada. Um grupo de 8 bits é conhecido como um **octeto** (ou 1 byte).
+
+Portanto, um endereço IPv4, em sua forma binária pura, é uma sequência de 32 zeros e uns, organizada em quatro octetos, como no exemplo abaixo:
+
+|**ENDEREÇO IP COM NOTAÇÃO DE OCTETOS BINÁRIOS**|
+|---|
+|`10101010 01010101 11100111 10111101`|
+
+Utilizar endereços longos de 32 bits no sistema binário é extremamente impraticável para seres humanos. A chance de cometer um erro ao ler ou digitar uma sequência tão longa de 0s e 1s é muito alta. Para resolver isso, foi criada a **notação decimal pontuada**.
+
+Nessa notação, cada um dos quatro octetos é convertido do sistema binário para o sistema decimal (base 10). Um octeto (8 bits) pode representar valores decimais que vão de **0** (`00000000` em binário) até **255** (`11111111` em binário). Por isso, em um endereço IP válido, nunca será encontrado um número menor que 0 ou maior que 255 em qualquer um dos octetos.
+
+Convertendo o exemplo binário anterior para a notação decimal pontuada, obtemos um formato muito mais legível:
+
+|**ENDEREÇO IP COM NOTAÇÃO DECIMAL PONTUADA**|
+|---|
+|`170.85.231.189`|
+
+###### Como Descobrir o Próprio Endereço IPv4 (Windows)
+
+É possível verificar facilmente qual o endereço IPv4 que um computador está utilizando em uma rede local. No sistema operacional Windows, isso pode ser feito através do _Prompt_ de Comando.
+
+O primeiro passo é abrir a janela "Executar". Isso pode ser feito pressionando simultaneamente as teclas de atalho **Windows + R**.
+
+<div align="center">
+<img width="360px" src="./img/03-janela-de-executar.png">
+</div>
+
+Na caixa "Abrir", digita-se o comando **`cmd`** (abreviação de _command_) e pressiona-se OK.
+
+<div align="center">
+<img width="360px" src="./img/03-janela-de-executar-cmd.png">
+</div>
+
+Isso abrirá o _Prompt_ de Comando do Windows, uma interface de linha de comando com fundo preto.
+
+<div align="center">
+<img width="480px" src="./img/03-cmd.png">
+</div>
+
+Dentro do _Prompt_ de Comando, digita-se o comando **`ipconfig`** (_IP Configuration_) e pressiona-se a tecla ENTER.
+
+<div align="center">
+<img width="480px" src="./img/03-cmd-ipconfig.png">
+</div>
+
+O sistema exibirá diversas informações sobre as conexões de rede do computador. O resultado será semelhante ao da imagem abaixo:
+
+<div align="center">
+<img width="600px" src="./img/03-cmd-ipconfig-resultado.png">
+</div>
+
+Na imagem, o endereço IPv4 do computador na rede local é `192.168.0.17`. É crucial destacar que este é um endereço **IP privado**, válido apenas dentro da rede local (a LAN). Ele não é o endereço visível para o resto da Internet. O endereço visível para a Internet, conhecido como **IP público**, é fornecido pelo provedor de acesso e, geralmente, pertence ao roteador da residência ou empresa.
+
+##### IPv6 (IP Versão 6)
+
+O IPv4 foi implementado oficialmente em 1983, em uma época em que a Internet ainda estava em sua infância, conectando um número limitado de instituições acadêmicas e militares. Nenhum engenheiro de redes da época poderia ter imaginado que, em poucas décadas, uma quantidade tão absurda de equipamentos no mundo—computadores pessoais, _smartphones_, _tablets_, relógios e até eletrodomésticos—estaria acessando a Internet.
+
+Com essa explosão de dispositivos, o limite de 32 bits (cerca de 4,3 bilhões) de endereços do IPv4 começou a se mostrar um problema grave. Estávamos avançando em velocidade máxima em direção ao esgotamento total de endereços IP. Tornou-se evidente que os endereços não são um recurso infinito; são recursos escassos como qualquer outro.
+
+Na época em que a escassez se tornou um problema claro (nos anos 90), surgiram soluções de curto prazo para tentar mitigar o problema (como o NAT, que veremos adiante). No entanto, a escassez de endereços não era o único problema do IPv4. Havia outras deficiências, como a falta de tratamento específico para a transmissão de áudio e vídeo em tempo real (Qualidade de Serviço) e a ausência de criptografia e autenticação de dados de forma nativa para algumas aplicações.
+
+Tudo isso serviu de motivação para a criação de uma nova versão do Protocolo IP: o **IPv6 (Versão 6)**.
+
+A nova versão resolve o problema de esgotamento de forma definitiva, expandindo o espaço de endereçamento para **128 bits**. Isso significa que temos até $2^{128}$ endereços possíveis, um número que na prática é inexaurível. Estamos falando de **340 undecilhões de endereços**, ou:
+
+`340.282.366.920.938.000.000.000.000.000.000.000.000`
+
+###### Notação Hexadecimal
+
+No IPv4, optou-se por uma representação decimal pontuada (quatro números de 0 a 255) para facilitar a leitura dos 32 bits. Se tentássemos fazer o mesmo com o IPv6, teríamos uma sequência imensa de números decimais, tornando-o impraticável.
+
+Dessa forma, optou-se por utilizar a **representação hexadecimal**. Esse sistema numérico usa 16 símbolos para representar valores: os números de 0 a 9 e as letras de A a F.
+
+A estrutura de um endereço IPv6 é a seguinte: os 128 bits são divididos em **8 grupos (ou seções)**, cada um contendo 16 bits. Cada seção de 16 bits é então representada por **4 dígitos hexadecimais**, e as seções são separadas por **dois-pontos (:)**.
+
+<div align="center">
+<img width="700px" src="./img/03-ipv6-endereco.png">
+</div>
+
+Além da vastidão de endereços, o IPv6 traz outras melhorias, como o abandono do conceito de "classes" de rede e a eliminação do endereço de _broadcast_ (utilizando formas mais eficientes de _multicast_).
+
+###### Regras de Abreviação
+
+Mesmo com a notação hexadecimal, um endereço IPv6 completo ainda é longo e complexo de digitar. Para simplificar, existem duas regras principais de abreviação:
+
+**1. Omissão de Zeros Não Significativos (Zeros à Esquerda)**
+
+Dentro de qualquer seção de quatro dígitos, os zeros à esquerda (não significativos) podem ser omitidos.
+
+- Uma seção `0074` pode ser abreviada para `74`.
+- Uma seção `000F` pode ser abreviada para `F`.
+- Uma seção `0000` pode ser abreviada para `0`.
+- Uma seção `3210` não pode ser abreviada, pois não há zeros à esquerda.
+
+| **ENDEREÇO ORIGINAL**                     |
+| ----------------------------------------- |
+| `FDEC:0074:0000:0000:0000:B0FF:0000:FFF0` |
+
+| **ENDEREÇO ABREVIADO (Regra 1)** |
+| -------------------------------- |
+| `FDEC:74:0:0:0:B0FF:0:FFF0`      |
+
+**2. Compressão de Seções Consecutivas de Zeros**
+
+Se existirem seções consecutivas formadas somente por zeros, elas podem ser eliminadas e substituídas por um dois-pontos duplo (::).
+
+Aplicando isso ao exemplo anterior, a sequência `:0:0:0:` pode ser comprimida:
+
+| **ENDEREÇO MAIS ABREVIADO (Regra 2)** |
+| ------------------------------------- |
+| `FDEC:74::B0FF:0:FFF0`                |
+
+Essa abreviação com dois-pontos duplos é permitida apenas **uma vez por endereço**. Se for usada mais de uma vez (Ex: `2001:C00::5400::9`), seria impossível para um computador saber quantos zeros foram comprimidos em cada `::`, tornando o endereço ambíguo.
+
+Se houver duas ocorrências de seções de zeros, apenas uma delas pode ser abreviada. A reexpansão do endereço é simples: o dispositivo alinha as partes não abreviadas e insere quantos zeros forem necessários no lugar do `::` até que o endereço tenha 8 seções completas.
+
+| **ENDEREÇO ORIGINAL**                     |
+| ----------------------------------------- |
+| `2001:0C00:0000:0000:5400:0000:0000:0009` |
+
+| **ENDEREÇO ABREVIADO (Regra 1)** |
+| -------------------------------- |
+| `2001:C00:0:0:5400:0:0:9`        |
+
+| **ENDEREÇO MAIS ABREVIADO (Válido)**             |
+| ------------------------------------------------ |
+| `2001:C00::5400:0:0:9` OU `2001:C00:0:0:5400::9` |
+
+| **ENDEREÇO ABREVIADO (Inválido)** |
+| --------------------------------- |
+| `2001:C00::5400::9`               |
+
+É interessante notar que o IPv6, assim como o IPv4, também permite o endereçamento local (privado), isto é, endereços usados em redes internas que não são roteáveis na Internet pública.
+
+Por fim, é crucial entender que o IPv6 **não pode se comunicar diretamente com o IPv4**. Eles são protocolos incompatíveis. A Internet de hoje opera em um modo de "pilha dupla" (_dual-stack_), onde a maioria dos sistemas e roteadores entende ambos os protocolos simultaneamente, utilizando estratégias de transição e tradução para que eles possam coexistir.
+
+
+
+
