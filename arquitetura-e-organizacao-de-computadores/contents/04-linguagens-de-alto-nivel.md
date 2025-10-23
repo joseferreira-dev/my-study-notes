@@ -2,7 +2,7 @@
 
 No capítulo anterior, exploramos o modelo de máquina multinível, uma hierarquia de abstrações que vai do hardware físico até as interfaces com o usuário. Agora, vamos nos aprofundar no topo dessa estrutura: o **Nível 5**, o domínio das linguagens orientadas a problemas. Este capítulo é dedicado a entender como as ideias humanas se transformam em soluções computacionais. Investigaremos o que é um **algoritmo**, a espinha dorsal de qualquer programa, e como as **linguagens de programação de alto nível** servem como ferramentas poderosas para expressar essa lógica de forma clara e produtiva, abstraindo a complexidade dos níveis inferiores da máquina.
 
-## O Pensamento Algorítmico: da Ideia ao Código
+## Pensamento Algorítmico: da Ideia ao Código
 
 Quando falamos em computadores, tendemos a pensar imediatamente em tecnologia avançada, circuitos, chips e softwares sofisticados. No entanto, por trás de toda essa complexidade está um conceito fundamental, simples e poderoso: o algoritmo. A programação e, por consequência, o funcionamento dos computadores, baseia-se na construção de algoritmos — passos bem definidos para resolver problemas.
 
@@ -79,12 +79,12 @@ Além da representação textual por meio de pseudocódigo ou linguagens de prog
 Entre os símbolos mais utilizados estão:
 
 <div align="center">
-  <img width="640px" src="./img/04-fluxograma.png">
+<img width="640px" src="./img/04-fluxograma.png">
 </div>
 
 Com esses elementos, é possível representar visualmente a lógica de um algoritmo de forma intuitiva. Esse tipo de representação é especialmente útil no ensino da lógica de programação, facilitando a compreensão dos passos executados pelo computador.
 
-## Da Lógica ao Código: Linguagens de Programação
+## Linguagens de Programação
 
 Um algoritmo é apenas um plano lógico. Para que o computador possa executá-lo, é necessário traduzi-lo para uma linguagem que ele entenda. Surge então o conceito de **linguagem de programação**: um conjunto de regras sintáticas e semânticas utilizadas para descrever algoritmos de forma precisa.
 
@@ -134,7 +134,7 @@ Em relação a ser dinâmica ou estaticamente tipada:
 - **Estática**: os tipos são definidos em tempo de compilação. Ex: C, Java.
 - **Dinâmica**: os tipos são definidos em tempo de execução. Ex: Python, Ruby e Perl.
 
-## Teste de Mesa: A Arte de Simular um Programa
+## Teste de Mesa
 
 O teste de mesa é uma técnica que permite simular a execução de um algoritmo, passo a passo, anotando os valores das variáveis à medida que as instruções são executadas. É uma ferramenta útil para identificar erros lógicos ou para compreender o funcionamento de algoritmos desconhecidos.
 
@@ -151,11 +151,11 @@ escreva("A diferença dos dois números é ", diferenca, "\n")
 
 O teste de mesa fazendo o companhamento de múltiplas execuções do código seria:
 
-|a|b|soma|diferenca|
-|---|---|---|---|
-|4|3|7|1|
-|20|10|30|10|
-|10|15|25|-5|
+| a   | b   | soma | diferenca |
+| --- | --- | ---- | --------- |
+| 4   | 3   | 7    | 1         |
+| 20  | 10  | 30   | 10        |
+| 10  | 15  | 25   | -5        |
 
 Esse tipo de análise é bastante utilizado no ensino de lógica de programação e em ambientes de depuração, sendo uma forma simples e eficaz de verificar o comportamento esperado do código.
 

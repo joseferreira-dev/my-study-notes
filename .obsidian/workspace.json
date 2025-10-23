@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/04-linguagens-de-alto-nivel.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03-hardware-software"
+              "title": "04-linguagens-de-alto-nivel"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/04-linguagens-de-alto-nivel.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 03-hardware-software"
+              "title": "Sumário de 04-linguagens-de-alto-nivel"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "af6924f9752dc980",
   "lastOpenFiles": [
+    "arquitetura-e-organizacao-de-computadores/contents/03-hardware-software.md",
     "arquitetura-e-organizacao-de-computadores/contents/02-arquitetura-de-processadores.md",
     "arquitetura-e-organizacao-de-computadores/contents/01-introducao.md",
     "lingua-portuguesa/contents/01-visao-geral.md",
@@ -196,7 +197,6 @@
     "engenharia-de-software/contents/12-modelo-rup.md",
     "engenharia-de-software/contents/11-modelo-orientado-a-aspectos.md",
     "engenharia-de-software/contents/10-modelo-baseado-em-componentes.md",
-    "engenharia-de-software/contents/09-metodos-formais.md",
     "linguagem-python/contents/img/11-execucao-serial-e-paralela.png",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
