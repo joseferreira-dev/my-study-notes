@@ -587,3 +587,45 @@ A imagem acima ilustra o processo de comunicação. No remetente (esquerda), os 
 - **Bits** (Camada 1), que são transmitidos pelo meio físico.
 
 No destinatário (direita), ocorre o processo inverso: os dados sobem as camadas, e cada camada lê e remove o seu respectivo cabeçalho, em um processo chamado **desencapsulamento**, até que a mensagem original seja entregue à aplicação.
+
+### Arquitetura TCP/IP
+
+Enquanto o Modelo OSI serve como um mapa de referência conceitual, a **Arquitetura TCP/IP (Transmission Control Protocol / Internet Protocol)** é o conjunto de protocolos prático e funcional que forma a base de toda a Internet e da maioria das redes locais modernas. Ela não é apenas uma teoria; é o conjunto de regras e especificações que os dispositivos _realmente_ usam para se comunicar, independentemente de seu fabricante ou sistema operacional.
+
+Como vimos, o Modelo OSI é uma ferramenta didática valiosa para entender as _funções_ da comunicação em um cenário ideal. No entanto, ele não é uma tecnologia, um software ou um conjunto de protocolos que se possa instalar. Na prática, o que é utilizado é a **Pilha TCP/IP**.
+
+Historicamente, a arquitetura TCP/IP foi desenvolvida _antes_ do Modelo OSI, durante os anos 1970, como parte do projeto ARPANET. Ela nasceu da necessidade prática de interconectar redes diferentes de maneira uniforme. Por ter sido criada em um ambiente de engenharia e experimentação, sua estrutura é mais condensada e pragmática do que as sete camadas rigidamente definidas do OSI. Por ser o conjunto padrão de protocolos da Internet, qualquer dispositivo que queira se conectar à rede global deve, obrigatoriamente, implementá-la.
+
+#### Estrutura de Camadas TCP/IP vs. OSI
+
+Uma das principais fontes de confusão ao estudar redes é que as camadas da arquitetura TCP/IP não correspondem exatamente às do Modelo OSI. Além disso, diferentes autores e documentos de referência (como as RFCs, ou _Request for Comments_) modelam a pilha TCP/IP com três, quatro ou cinco camadas.
+
+A imagem a seguir ilustra as comparações mais comuns:
+
+<div align="center">
+
+<img width="520px" src="./img/03-arquitetura-tcp-ip.png" alt="Comparativo entre os modelos de camadas OSI, a arquitetura TCP/IP de 4 camadas e o modelo TCP/IP Híbrido de 5 camadas.">
+
+</div>
+
+Vamos analisar essa comparação:
+
+- **Modelo OSI (7 Camadas):** O modelo teórico completo (Física, Enlace, Rede, Transporte, Sessão, Apresentação, Aplicação).
+- **Arquitetura TCP/IP (4 Camadas):** Este é o modelo mais tradicional, baseado na documentação oficial (como a RFC 1122). Ele é mais enxuto e agrupa funções:
+    - **Camada de Aplicação:** Condensa as funções das camadas de Aplicação, Apresentação e Sessão do OSI. No TCP/IP, a aplicação lida diretamente com a formatação dos dados (apresentação) e o gerenciamento da conexão (sessão).
+    - **Camada de Transporte:** Corresponde diretamente à camada de Transporte do OSI, focada na comunicação fim-a-fim (usando os protocolos TCP ou UDP).
+    - **Camada de Internet:** Corresponde à camada de Rede do OSI. É aqui que o protocolo IP atua, cuidando do endereçamento e roteamento dos pacotes.
+    - **Camada de Acesso à Rede (ou Enlace):** Condensa as camadas de Enlace e Física do OSI. Ela lida tanto com a organização dos dados em _frames_ quanto com a transmissão física (elétrica/óptica/rádio) dos _bits_ no meio físico.
+- **TCP/IP Híbrido (5 Camadas):** Muitos autores e cursos (como o de Andrew Tanenbaum) preferem usar um modelo híbrido de 5 camadas. Ele é funcionalmente idêntico ao TCP/IP, mas separa a camada de "Acesso à Rede" de volta em **Enlace** e **Física**. Isso é feito por razões didáticas, pois as funções de _software_ (enlace) e _hardware_ (física) são bastante distintas e merecem estudo separado.
+
+#### Convenção de Nomenclatura de Servidores
+
+Na prática, os protocolos da camada de Aplicação são os serviços que utilizamos. É uma convenção comum no jargão de TI referir-se a um servidor (a máquina física ou o _software_ especializado) pelo nome do protocolo principal que ele implementa ou fornece. Isso facilita a identificação rápida do propósito daquele servidor na rede.
+
+Seguindo essa lógica, temos que:
+
+- Um servidor que fornece serviços de apresentação de páginas web (protocolo HTTP) pode ser chamado de **Servidor HTTP** (ex: Apache, Nginx).
+- Um servidor que fornece serviços de envio de e-mails (protocolo SMTP) pode ser chamado de **Servidor SMTP**.
+- Um servidor que fornece serviços de tradução de domínios (protocolo DNS) pode ser chamado de **Servidor DNS**.
+- Um servidor que fornece serviços de transferência de arquivos (protocolo FTP) pode ser chamado de **Servidor FTP**.
+
