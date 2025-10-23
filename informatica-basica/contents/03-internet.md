@@ -1079,3 +1079,53 @@ A popularidade do webmail se deve às suas características vantajosas:
 | Interface do Usuário              | Webmails geralmente têm interfaces de usuário ricas, semelhantes a aplicações desktop, com recursos como arrastar e soltar, pastas, e ferramentas de busca avançada. |
 | Segurança e Manutenção            | A segurança e a atualização de software são gerenciadas pelo provedor do serviço, reduzindo a necessidade de manutenção por parte do usuário.                        |
 | Integração com Outros Serviços    | Muitos webmails são integrados com outros serviços online, como calendários, gerenciamento de contatos, armazenamento em nuvem e aplicações de escritório.           |
+
+#### DHCP (Dynamic Host Configuration Protocol)
+
+Um dos desafios fundamentais em qualquer rede TCP/IP é garantir que cada dispositivo conectado tenha um endereço IP único e válido. Além do IP, o dispositivo precisa de outras informações para se comunicar com o resto da rede e com a Internet:
+
+1. **Endereço IP:** A identificação única do dispositivo na rede.
+2. **Máscara de Sub-rede:** Define o tamanho da rede local e quais IPs pertencem a ela.
+3. **Gateway Padrão:** O endereço do roteador, que é a "porta de saída" da rede local para a Internet.
+4. **Servidores DNS:** Os endereços dos "tradutores" que convertem nomes de sites em endereços IP.
+
+Antes do DHCP, esse processo era totalmente **manual**. Em uma empresa, um administrador de rede precisava ir fisicamente a cada computador, ou instruir o usuário, a inserir manualmente esses quatro conjuntos de números. Esse método era não apenas trabalhoso, mas extremamente propenso a erros. Um simples dígito errado ou a atribuição de um mesmo IP a dois dispositivos (conflito de IP) poderia derrubar a comunicação de parte da rede.
+
+O **DHCP (Dynamic Host Configuration Protocol)**, ou Protocolo de Configuração Dinâmica de Host, é o protocolo da camada de aplicação que resolve esse problema de forma elegante e automática.
+
+###### Modelo Cliente-Servidor do DHCP
+
+O DHCP funciona em um modelo cliente-servidor, que geralmente ocorre no roteador da rede (em redes domésticas) ou em um servidor dedicado (em redes corporativas).
+
+1. **Cliente DHCP:** Quando um dispositivo (um _notebook_, _smartphone_, etc.) se conecta à rede (seja por cabo ou Wi-Fi), ele ainda não tem um endereço IP. A primeira coisa que ele faz é enviar uma mensagem de _broadcast_ (um "grito" para toda a rede local) perguntando: "Existe algum Servidor DHCP aí que possa me arranjar uma configuração de rede?".
+2. **Servidor DHCP:** O servidor DHCP na rede "ouve" esse pedido. Ele possui um "pool" (um intervalo) de endereços IP que está autorizado a distribuir. O servidor, então, responde diretamente ao cliente, oferecendo-lhe um endereço IP e todas as outras configurações necessárias (máscara, gateway e DNS).
+3. **Cliente DHCP:** O cliente aceita a oferta e configura automaticamente sua placa de rede com essas informações.
+
+Todo esse processo, chamado **DORA** (_Discover, Offer, Request, Acknowledge_), leva uma fração de segundo e é completamente transparente para o usuário.
+
+###### Endereço Lógico (IP) vs. Endereço Físico (MAC)
+
+É importante reforçar a diferença entre o endereço IP (lógico) e o endereço MAC (físico).
+
+- **Endereço MAC:** É um identificador único, gravado permanentemente na fábrica da placa de rede (_hardware_). Ele não muda.
+- **Endereço IP:** É um identificador lógico (uma configuração de _software_). Ele é flexível e pode ser alterado, o que permite que um dispositivo se conecte a diferentes redes.
+
+O DHCP é o protocolo que gerencia a atribuição desses endereços IP lógicos e flexíveis.
+
+###### Modos de Alocação do DHCP
+
+O DHCP pode atribuir endereços de três formas:
+
+1. **Alocação Dinâmica:** É o método mais comum. O servidor "empresta" um endereço IP ao dispositivo por um período de tempo limitado (chamado de _lease_ ou "locação"). Quando o dispositivo se desconecta ou o _lease_ expira, o endereço IP retorna ao _pool_ e pode ser reutilizado por outro dispositivo. Isso é ideal para redes com alta rotatividade, como um Wi-Fi de aeroporto ou a rede doméstica.
+2. **Alocação Automática:** O servidor DHCP atribui um endereço IP ao dispositivo na primeira vez que ele se conecta e o vincula permanentemente a ele.
+3. **Alocação Estática (ou Reserva):** O administrador da rede configura o servidor DHCP para que ele _sempre_ atribua o mesmo endereço IP a um dispositivo específico (identificado pelo seu endereço MAC). Isso é extremamente útil para servidores internos, impressoras de rede ou câmeras de segurança, que precisam ser encontrados sempre no mesmo endereço, mas ainda permite que a configuração seja gerenciada de forma centralizada pelo DHCP.
+
+###### IP Estático vs. Dinâmico (Visão do Provedor de Internet)
+
+O mesmo conceito se aplica à conexão da sua casa com a Internet. Os Provedores de Internet (ISPs) também usam o DHCP para gerenciar os endereços IP _públicos_ que atribuem aos seus clientes.
+
+- **IP Dinâmico:** É o padrão para a maioria dos usuários domésticos. O endereço IP público do seu roteador (aquele que a Internet "vê") é atribuído dinamicamente pelo DHCP do provedor e pode mudar a cada nova conexão ou de tempos em tempos. Isso oferece uma camada extra de segurança (dificultando o rastreamento) e é eficiente para o provedor.
+- **IP Estático:** É um serviço geralmente pago, voltado para empresas. Se uma empresa hospeda seu próprio servidor de site ou de e-mail, ela precisa de um IP público fixo, para que o domínio (ex: `www.minhaempresa.com.br`) sempre aponte para o endereço correto.
+
+Em resumo, o DHCP é um protocolo de bastidores essencial que simplifica drasticamente o gerenciamento de redes de qualquer tamanho, automatizando um processo que antes era manual, trabalhoso e sujeito a erros.
+
