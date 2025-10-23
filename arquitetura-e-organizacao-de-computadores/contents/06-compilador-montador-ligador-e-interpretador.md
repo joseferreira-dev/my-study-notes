@@ -13,7 +13,7 @@ Esse processo de tradução pode ocorrer por meio de **compilação** ou **inter
 Esse caminho, que pode parecer complexo, é essencial para garantir que programas de alto nível possam ser executados com desempenho e confiabilidade. A figura a seguir resume esse percurso:
 
 <div align="center">
-  <img width="580px" src="./img/06-codigo-fonte-ate-executavel.png">
+<img width="580px" src="./img/06-codigo-fonte-ate-executavel.png">
 </div>
 
 Cada uma dessas etapas será discutida em detalhes nas próximas seções.
@@ -23,7 +23,7 @@ Cada uma dessas etapas será discutida em detalhes nas próximas seções.
 O **compilador** é o principal responsável por converter o código escrito em uma linguagem de alto nível em um formato que o processador possa entender — geralmente, código de máquina ou código Assembly. Essa tradução ocorre **antes da execução**, e o resultado final é um arquivo executável.
 
 <div align="center">
-  <img width="160px" src="./img/06-compilador.png">
+<img width="160px" src="./img/06-compilador.png">
 </div>
 
 A compilação pode ser dividida em **duas grandes fases**: **análise** (compreensão do código-fonte, em vermelho) e **síntese** (geração de código, em verde). Cada fase envolve várias etapas internas, que veremos a seguir.
@@ -58,7 +58,7 @@ Na sequência, o **analisador sintático** (ou **parser**) recebe a sequência d
 Por exemplo, ao analisar a expressão `1 + 2 * 3`, o parser identifica que a multiplicação tem prioridade sobre a adição, construindo a seguinte estrutura:
 
 <div align="center">
-  <img width="320px" src="./img/06-arvore-de-derivacao.png">
+<img width="320px" src="./img/06-arvore-de-derivacao.png">
 </div>
 
 A análise sintática cuida exclusivamente da **forma** das sentenças.
