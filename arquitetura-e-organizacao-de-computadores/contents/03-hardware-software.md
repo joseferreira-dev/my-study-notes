@@ -26,13 +26,13 @@ O modelo de máquina multinível permite que diferentes profissionais (como enge
 Abaixo podemos ver uma estrutura em níveis de uma forma genérica.
 
 <div align="center">
-  <img width="620px" src="./img/03-maquina-multinivel.png">
+<img width="620px" src="./img/03-maquina-multinivel.png">
 </div>
 
 A seguir, podemos ver a estrutura em níveis de máquinas contemporâneas e, na sequência, uma breve descrição dos principais níveis, do mais baixo (hardware) ao mais alto (aplicações).
 
 <div align="center">
-  <img width="680px" src="./img/03-maquina-contemporanea.png">
+<img width="680px" src="./img/03-maquina-contemporanea.png">
 </div>
 
 ### Nível 0 – Nível Lógico Digital
