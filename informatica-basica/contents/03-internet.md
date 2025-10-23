@@ -62,3 +62,128 @@ A maioria dos serviços da Internet, incluindo a World Wide Web e o Correio Elet
 
 Essa separação de papéis é crucial, pois permite que os servidores centralizem e gerenciem os dados de forma segura e eficiente (como armazenar todas as páginas de um site ou todos os e-mails de uma conta), enquanto os clientes precisam apenas da capacidade de acessar esses recursos remotamente. Isso garante a escalabilidade e o compartilhamento de recursos que definem a Internet moderna.
 
+## Conceitos Básicos
+
+A Internet, em sua essência, é a maior e mais conhecida rede de computadores do mundo. Portanto, para compreender verdadeiramente a Internet, é fundamental primeiro entender o que é uma **rede de computadores**.
+
+Uma definição formal descreve uma rede como:
+
+> “Um conjunto de terminais, equipamentos, meios de transmissão e comutação que interligados possibilitam a prestação de serviços”.
+
+Uma definição mais simples e direta afirma que uma rede é um conjunto de dispositivos (normalmente conhecidos como **nós**) conectados por **links de comunicação**. Em uma rede moderna, um "nó" não é apenas um computador de mesa. Pode ser um notebook, uma impressora, um smartphone, um tablet, um _smartwatch_, uma Smart TV, uma câmera de segurança ou qualquer outro dispositivo capaz de enviar e receber dados que esteja conectado a outros nós da rede.
+
+As primeiras redes de computadores surgiram dentro de organizações fechadas, como laboratórios de pesquisa e grandes empresas. O objetivo inicial era duplo:
+
+1. **Facilitar a Troca de Informações:** Antes das redes, a transferência de dados entre computadores era um processo físico e manual. Envolvia pessoas carregando pilhas de cartões perfurados ou rolos de fitas magnéticas de um lado para o outro. Uma rede interna permitia que essa troca de informações fosse feita de forma digital, o que era drasticamente mais rápido e confiável.
+2. **Compartilhar Recursos Físicos:** O segundo benefício, de enorme impacto econômico, foi o compartilhamento de recursos de _hardware_. Equipamentos como impressoras de grande porte e, principalmente, dispositivos de armazenamento de dados, eram extremamente caros. Em vez de cada computador possuir sua própria impressora, uma rede permitia que um departamento inteiro compartilhasse uma única impressora de rede. Da mesma forma, um grande e caro dispositivo de armazenamento poderia ser centralizado e acessado por todos.
+
+Em essência, o objetivo fundamental de uma rede de computadores pode ser resumido em três pilares: o **compartilhamento de recursos** (sejam eles equipamentos, programas ou dados) e a **comunicação** entre pessoas (através da troca de mensagens de texto, áudio ou vídeo).
+
+### Classificação quanto à Abrangência Geográfica
+
+A forma mais comum de classificar as redes de computadores é pela sua dimensão, ou seja, a área geográfica que elas cobrem. Sob essa ótica, as redes são tradicionalmente divididas em PAN, LAN, MAN e WAN.
+
+#### PAN (Personal Area Network)
+
+A **Rede de Área Pessoal** é definida como uma rede projetada para conectar e transmitir dados entre dispositivos que estão localizados no espaço imediato de uma pessoa. Ela abrange uma área muito pequena, geralmente limitada a alguns metros.
+
+Com frequência, essa rede não utiliza fios, sendo chamada de **WPAN (Wireless Personal Area Network)**. A tecnologia mais emblemática deste tipo de rede é o **Bluetooth**.
+
+Exemplos clássicos de uma PAN estão presentes no cotidiano: a conexão entre um smartphone e uma caixa de som portátil na beira da piscina é uma PAN. Da mesma forma, um corredor que utiliza um fone de ouvido sem fio conectado a um smartphone para ouvir música durante a atividade física está criando e utilizando uma PAN. Outros exemplos incluem teclados, mouses e impressoras sem fio conectados a um computador via Bluetooth.
+
+É importante notar que, em algumas classificações acadêmicas ou em questões de prova, a PAN pode não ser tratada como uma categoria padrão ao lado de LAN, MAN e WAN, mas sua existência prática é inegável.
+
+| **Características** | **Descrição**                                                                  |
+| ------------------- | ------------------------------------------------------------------------------ |
+| Definição           | Rede pessoal que cobre uma área pequena, geralmente cerca de alguns metros.    |
+| Cobertura           | Alguns centímetros a poucos metros.                                            |
+| Finalidade          | Conectar dispositivos pessoais de curto alcance.                               |
+| Velocidade          | Geralmente de alta velocidade devido à proximidade dos dispositivos.           |
+| Tecnologias         | Em geral, Bluetooth, Wi-Fi, USB.                                               |
+| Segurança           | Geralmente mais segura devido à proximidade física.                            |
+| Complexidade        | Menos complexa devido à simplicidade da conexão.                               |
+| Isolamento          | Fácil de isolar problemas devido à proximidade.                                |
+| Aplicações          | Conexão de dispositivos pessoais (Ex: fones de ouvido sem fio, teclados, etc). |
+
+### LAN (Local Area Network)
+
+A **Rede de Área Local**, ou **LAN**, é o tipo de rede mais comum no cotidiano. Ela é definida por sua abrangência geográfica limitada, conectando dispositivos dentro de uma área restrita, como uma residência, um único andar de um prédio, um escritório ou um laboratório escolar. O exemplo clássico de uma LAN no passado eram as _Lan Houses_, locais que interligavam diversos computadores para jogos em rede e acesso à internet.
+
+Hoje, a rede de uma residência é um exemplo perfeito de LAN: ela conecta computadores, notebooks, Smart TVs, consoles de videogame e smartphones a um único roteador central, permitindo que todos acessem a internet e compartilhem recursos entre si, como uma impressora.
+
+Em um ambiente corporativo, uma LAN permite a troca de informações, a comunicação eficaz entre os funcionários e o compartilhamento de recursos caros, como servidores de arquivos e impressoras de alta capacidade.
+
+Tecnicamente, as LANs são caracterizadas por oferecerem **altas velocidades de transmissão**, pois as distâncias são curtas. Elas podem ser implementadas com cabos (principalmente com a tecnologia **Ethernet**) ou sem fios (criando uma **WLAN**, ou Rede Local Sem Fio, mais conhecida pelo nome comercial **Wi-Fi**). A topologia moderna mais comum é a "estrela", onde todos os dispositivos se conectam a um equipamento central, como um _switch_ ou um roteador. Devido ao seu ambiente controlado, as LANs geralmente apresentam uma baixa ocorrência de erros na transmissão de dados.
+
+|**Características**|**Descrição**|
+|---|---|
+|Definição|Rede local que abrange uma área geográfica limitada (Ex: edifício ou campus).|
+|Cobertura|De algumas centenas de metros a alguns quilômetros.|
+|Finalidade|Facilitar a comunicação dentro de uma organização local.|
+|Velocidade|Alta velocidade dentro da rede local.|
+|Tecnologias|Em geral, Ethernet e Wi-Fi.|
+|Segurança|Pode ser configurada com medidas de segurança, como firewalls.|
+|Complexidade|De complexidade moderada, dependendo do tamanho da rede.|
+|Isolamento|Problemas podem ser isolados com relativa facilidade.|
+|Aplicações|Uso em escritórios, escolas e redes corporativas locais.|
+
+### MAN (Metropolitan Area Network)
+
+A **Rede de Área Metropolitana**, ou **MAN**, representa um passo intermediário entre a LAN e a WAN (que veremos a seguir). Como o nome sugere, ela é projetada para cobrir uma área geográfica do tamanho de uma cidade ou uma grande metrópole.
+
+Uma MAN não é, tipicamente, uma rede única construída do zero; ela é, na maioria das vezes, o resultado da **interligação de várias LANs** pertencentes a uma mesma organização, mas que estão fisicamente separadas por quilômetros.
+
+Considere uma empresa que possui sua sede (matriz) no centro da cidade e dezenas de filiais espalhadas por diferentes bairros. Cada um desses locais possui sua própria LAN. Para que todos os funcionários possam acessar os mesmos sistemas internos como se estivessem no mesmo prédio, a empresa contrata links de alta velocidade (geralmente de fibra óptica, fornecidos por uma operadora de telecomunicações) para conectar todas essas LANs. A rede resultante, que abrange toda a cidade, é uma MAN. Outro exemplo seria um campus universitário cujas faculdades e centros de pesquisa estão localizados em diferentes pontos da cidade.
+
+|**Características**|**Descrição**|
+|---|---|
+|Definição|Rede metropolitana que abrange uma cidade ou uma área metropolitana.|
+|Cobertura|Algumas dezenas de quilômetros.|
+|Finalidade|Conectar redes locais dentro de uma área metropolitana.|
+|Velocidade|Velocidade variável, dependendo da infraestrutura da rede.|
+|Tecnologias|Em geral, Ethernet e fibra óptica.|
+|Segurança|Maior risco devido à extensão geográfica, exigindo segurança adicional.|
+|Complexidade|Moderadamente complexa por conta da complexidade da infraestrutura.|
+|Isolamento|Pode ser desafiador isolar problemas devido à extensão geográfica.|
+|Aplicações|Integração de redes locais em uma área metropolitana.|
+
+### WAN (Wide Area Network)
+
+A **Rede de Área Extensa**, ou **WAN**, é a classificação para redes que cobrem grandes áreas geográficas, sem restrições de distância. Uma WAN é utilizada para conectar e transmitir dados entre dispositivos localizados em diferentes cidades, estados, países ou até continentes.
+
+Na prática, uma WAN é uma "rede de redes", conectando múltiplas LANs e MANs. Quando uma empresa possui filiais em Brasília e Goiânia e as interliga, ela está criando uma rede privada do tipo WAN. O exemplo do Programa Antártico Brasileiro (PROANTAR), que envia dados de suas pesquisas na Antártida para o Brasil, ilustra perfeitamente o alcance de uma WAN, que neste caso utiliza links de satélite.
+
+Contudo, o exemplo mais clássico, abrangente e definitivo de uma WAN é a própria **Internet**. Ela é uma rede mundial pública que interconecta milhões de redes (LANs, MANs e outras WANs), permitindo a comunicação em escala global.
+
+Por dependerem de infraestruturas de longa distância (como cabos de fibra óptica submarinos, satélites e redes de operadoras), as WANs são as redes mais complexas e, historicamente, apresentavam velocidades de conexão mais baixas que as LANs, embora os avanços em fibra óptica tenham reduzido significativamente essa diferença.
+
+|**Características**|**Descrição**|
+|---|---|
+|Definição|Rede de grande área que pode abranger cidades, países ou até continentes.|
+|Cobertura|Centenas a milhares de quilômetros.|
+|Finalidade|Conectar redes em diferentes locais geograficamente distantes.|
+|Velocidade|Geralmente menor velocidade devido a longas distâncias.|
+|Tecnologias|Frame Relay, MPLS, Internet.|
+|Segurança|Requer medidas rigorosas devido ao alcance e à exposição a ameaças.|
+|Complexidade|Em geral, complexa devido à escala global e aos diferentes tipos de tecnologia.|
+|Isolamento|Requer ferramentas avançadas para isolar problemas em redes extensas.|
+|Aplicações|Comunicação em escala regional, nacional ou global.|
+
+### Resumo da Classificação Geográfica
+
+A tabela a seguir consolida as diferenças de abrangência entre os tipos de rede discutidos.
+
+|**Tipo**|**Sigla**|**Descrição**|**Distância**|
+|---|---|---|---|
+|Personal Area Network|PAN|Rede de computadores pessoal (celular, tablet, notebook, etc).|De alguns centímetros a alguns poucos metros.|
+|Local Area Network|LAN|Rede de computadores de lares, escritórios, prédios, entre outros.|De algumas centenas de metros a alguns quilômetros.|
+|Metropolitan Area Network|MAN|Rede de computadores entre uma matriz e filiais em uma cidade.|Cerca de algumas dezenas de quilômetros.|
+|Wide Area Network|WAN|Rede de computadores entre cidades, países ou até continentes.|De algumas dezenas a milhares de quilômetros.|
+
+É importante notar que todas essas classificações possuem uma correspondente direta quando a tecnologia de transmissão de dados principal não utiliza cabos (_wireless_). Nesses casos, o prefixo "W" é adicionado à sigla:
+
+- **WPAN (Wireless Personal Area Network):** A rede Bluetooth.
+- **WLAN (Wireless Local Area Network):** A rede Wi-Fi.
+- **WMAN (Wireless Metropolitan Area Network):** Tecnologias como o WiMAX, que buscaram oferecer cobertura de internet sem fio em larga escala para cidades.
+- **WWAN (Wireless Wide Area Network):** A tecnologia de dados móveis que usamos em nossos smartphones (como as redes **3G, 4G e 5G**).
+
