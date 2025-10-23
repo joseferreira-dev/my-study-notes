@@ -912,3 +912,27 @@ A tabela a seguir resume as principais diferenças:
 | Tolera atrasos, mas não tolera perdas        | Tolera perdas, mas não tolera atrasos      |
 | Bastante utilizada em e-mail, navegação, etc | Bastante utilizada em VoIP, streaming, etc |
 
+### Protocolos da Camada de Aplicação
+
+A Camada de Aplicação é a camada superior nos modelos OSI e TCP/IP. Ela é a interface direta com o usuário (seja ele humano ou _software_) e fornece os protocolos que permitem o funcionamento dos serviços de rede que utilizamos todos os dias, como a navegação na web (HTTP) ou a troca de mensagens. Começaremos explorando um dos serviços mais antigos e fundamentais da Internet: o correio eletrônico.
+
+#### Protocolos de E-Mail
+
+O **Correio Eletrônico (E-Mail)** é uma forma de comunicação digital que permite aos usuários enviar e receber mensagens através de redes eletrônicas. Sendo um dos serviços mais antigos e robustos da rede, o correio eletrônico é baseado na arquitetura cliente/servidor. Esta arquitetura é composta por máquinas responsáveis por oferecer serviços (por essa razão, são chamadas de **servidores**) e máquinas responsáveis por consumir esses serviços (por essa razão, são chamadas de **clientes**).
+
+Para compreender o fluxo de uma mensagem, é essencial diferenciar os quatro componentes-chave desse ecossistema:
+
+- **Cliente de E-mail:** Trata-se de uma aplicação instalada em uma máquina local que permite enviar/receber e-mails (Ex: Mozilla Thunderbird, Microsoft Outlook, Apple Mail).
+- **Servidor de E-mail:** Trata-se de uma máquina especializada (um _software_ rodando em um computador potente e sempre conectado) que recebe e-mails de um cliente de e-mail ou de um webmail, e os envia para o servidor de e-mail de destino. Ele atua como uma "agência de correios" digital.
+- **Provedor de E-mail:** Trata-se de uma empresa ou serviço que hospeda e disponibiliza serviços de e-mail para outras empresas ou usuários finais (Ex: Google (Gmail), Microsoft (Outlook), Yahoo, Uol, etc).
+- **Webmail:** Trata-se de uma aplicação hospedada em um servidor remoto que permite enviar/receber e-mails através de um navegador web. Ao contrário do "Cliente de E-mail", o webmail não requer instalação local, pois a aplicação em si (a interface) é acessada via HTTP (Ex: Outlook.com, Gmail.com, Yahoo.com, Uol.com, etc).
+
+Para que a comunicação entre clientes, webmails e servidores funcione de maneira padronizada, são utilizados três protocolos principais: **SMTP**, **POP** e **IMAP**. Cada um tem uma função muito específica no processo de envio e recebimento de mensagens.
+
+A tabela a seguir resume a função de cada um, e seus detalhes serão explorados na sequência.
+
+| **Protocolos de E-Mail** | **Descrição**                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **SMTP**                 | Protocolo utilizado basicamente para **enviar** e-mails. Ele transfere mensagens de e-mail de um cliente para um servidor ou entre servidores. Funciona bem para a entrega de mensagens, mas não para recuperá-las.                                                                                                                                                         |
+| **POP**                  | Protocolo projetado para **recuperar** e-mails de um servidor. Quando você o utiliza, os e-mails são baixados para o seu dispositivo e geralmente são excluídos do servidor. Isso é útil para acessar e-mails offline, mas pode ser limitante se você usar vários dispositivos, pois as mensagens estão disponíveis apenas no dispositivo onde foram baixadas inicialmente. |
+| **IMAP**                 | Também usado para **recuperar** e-mails de um servidor, mas – diferentemente do anterior – ele mantém as mensagens no servidor. Isso permite que você acesse seus e-mails de vários dispositivos, mantendo tudo sincronizado. As mudanças feitas em um dispositivo (como ler ou excluir uma mensagem) são refletidas em todos os outros dispositivos.                       |
