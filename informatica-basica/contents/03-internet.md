@@ -807,6 +807,57 @@ Se houver duas ocorrências de seções de zeros, apenas uma delas pode ser abre
 
 Por fim, é crucial entender que o IPv6 **não pode se comunicar diretamente com o IPv4**. Eles são protocolos incompatíveis. A Internet de hoje opera em um modo de "pilha dupla" (_dual-stack_), onde a maioria dos sistemas e roteadores entende ambos os protocolos simultaneamente, utilizando estratégias de transição e tradução para que eles possam coexistir.
 
+### Protocolos da Camada de Transporte
 
+Enquanto a Camada de Rede (com o Protocolo IP) é responsável por levar um pacote de uma rede de origem a uma rede de destino, a **Camada de Transporte** tem uma função diferente: ela é responsável pela comunicação lógica **fim-a-fim** (_end-to-end_), ou seja, entre os _processos_ (aplicações) específicos que estão rodando nas máquinas de origem e destino.
+
+Ela pega os dados da Camada de Aplicação e os prepara para serem enviados, adicionando um cabeçalho de transporte, e os entrega à Camada de Rede. É nesta camada que a confiabilidade da comunicação é (ou não) garantida. Os dois principais protocolos desta camada são o TCP e o UDP.
+
+#### TCP (Transmission Control Protocol)
+
+O **TCP (Protocolo de Controle de Transmissão)** é um dos principais protocolos da suíte TCP/IP e o principal responsável pela **confiabilidade** na Internet. Ele é classificado como um protocolo **confiável** e **orientado à conexão**.
+
+Sua função é criar uma camada de segurança e robustez sobre o protocolo IP. Como vimos, o IP é um protocolo "não confiável" e de "melhor esforço"—ele não garante que os pacotes chegarão, nem que chegarão na ordem correta. O TCP resolve todos esses problemas.
+
+- **Orientado à Conexão:** Diferente do IP, que apenas "dispara" pacotes, o TCP primeiro estabelece uma conexão formal entre o remetente e o destinatário (um processo conhecido como _three-way handshake_ ou "aperto de mão triplo") antes de qualquer dado ser transferido.
+- **Confiável:** O TCP garante que os dados cheguem ao destino corretamente, na ordem certa, e sem corrupção.
+
+Para garantir essa confiabilidade, o TCP divide os dados em segmentos menores e executa uma série de funções:
+
+1. **Sequenciamento:** Ele numera cada segmento para que eles possam ser reordenados corretamente no destino, mesmo que cheguem fora de ordem.
+2. **Confirmação (ACKs):** O receptor envia confirmações ("Avisos de Recebimento", ou ACKs) de volta ao remetente para cada segmento recebido com sucesso.
+3. **Retransmissão:** Se o remetente não receber a confirmação de um segmento dentro de um determinado tempo, ele assume que o segmento foi perdido ou corrompido e o **retransmite** automaticamente.
+4. **Soma de Verificação (_Checksum_):** Utiliza um cálculo de verificação para detectar se os dados foram corrompidos durante a transmissão.
+5. **Controle de Fluxo:** Gerencia a velocidade da transmissão para evitar que um remetente rápido sobrecarregue (congestione) um receptor mais lento ou a própria rede.
+
+Devido a essas características, o TCP prioriza a **integridade e a correção dos dados** acima da velocidade. Ele é amplamente utilizado em aplicações onde a entrega garantida de cada _bit_ de dados é crucial, como navegadores web (HTTP/HTTPS), transferência de arquivos (FTP) e correio eletrônico (SMTP, IMAP).
+
+##### Necessidade de Portas
+
+O TCP resolve um problema que o IP não consegue: como entregar dados ao processo correto dentro da máquina de destino.
+
+A melhor analogia para entender a relação entre IP e TCP (e suas portas) é a de um serviço de entrega em um prédio residencial.
+
+- O **Endereço IP** é como o endereço do prédio (ex: "Rua Exemplo, 123"). O protocolo IP é o carteiro que consegue levar o pacote até a portaria do prédio.
+- No entanto, um computador (o "prédio") possui dezenas de **processos** (aplicações) rodando ao mesmo tempo: um navegador, um cliente de e-mail, um _streaming_ de música, um jogo online. Estes são os "moradores" ou "apartamentos" do prédio.
+- Quando o pacote de dados chega ao computador (ao "prédio") usando o endereço IP, o sistema precisa saber para qual desses processos ("apartamentos") o pacote se destina.
+
+É aqui que entram as **Portas**. O número da porta é como o número do apartamento. Ele informa ao sistema operacional qual processo específico é o dono daquele pacote.
+
+Um processo é, portanto, uma instância de uma aplicação em execução. O número da **porta de destino** é necessário para a entrega correta, e o número da **porta de origem** é usado para que o destinatário saiba para onde enviar a resposta.
+
+Esses números de porta são apenas números que variam de **0 a 65535**. Isso significa que, em tese, um único servidor com um único endereço IP poderia ter até 65.536 serviços diferentes ativos simultaneamente. A combinação específica de um Protocolo (TCP), um Endereço IP e um Número de Porta é chamada de **Socket**.
+
+##### Portas Padrão (Well-Known Ports)
+
+Para que a comunicação funcione globalmente, existe um padrão. Como um navegador no seu computador sabe em qual "porta" o servidor web do outro lado do mundo está "escutando"?
+
+Uma organização chamada **IANA (Internet Assigned Number Authority)** é responsável por definir e controlar as portas padrão (ou "portas bem-conhecidas", _well-known ports_), que são reservadas para serviços específicos.
+
+Por exemplo, quando se está acessando uma página web, o protocolo padrão é o **HTTP**. A IANA definiu que a porta padrão para o HTTP é a **porta 80**.
+
+Por isso, quando se digita `http://www.exemplo.com.br` no navegador, o navegador automaticamente envia a requisição para o endereço IP daquele servidor, na porta 80. Se fizermos o teste e digitarmos explicitamente `http://www.exemplo.com.br:80`, a página abrirá normalmente, pois estamos apenas explicitando a porta padrão.
+
+No entanto, se tentarmos acessar o mesmo servidor em uma porta errada—por exemplo, `http://www.exemplo.com.br:21` (Porta 21 é o padrão do FTP, Transferência de Arquivos)—a conexão falhará. O navegador (falando "HTTP") estará "batendo na porta" errada, onde espera-se um serviço de FTP. Isso geralmente resulta em um erro, como `ERR_UNSAFE_PORT` ou simplesmente uma falha de conexão, pois o navegador entende que está tentando usar a porta errada para aquele serviço.
 
 
