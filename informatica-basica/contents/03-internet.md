@@ -936,3 +936,48 @@ A tabela a seguir resume a função de cada um, e seus detalhes serão explorado
 | **SMTP**                 | Protocolo utilizado basicamente para **enviar** e-mails. Ele transfere mensagens de e-mail de um cliente para um servidor ou entre servidores. Funciona bem para a entrega de mensagens, mas não para recuperá-las.                                                                                                                                                         |
 | **POP**                  | Protocolo projetado para **recuperar** e-mails de um servidor. Quando você o utiliza, os e-mails são baixados para o seu dispositivo e geralmente são excluídos do servidor. Isso é útil para acessar e-mails offline, mas pode ser limitante se você usar vários dispositivos, pois as mensagens estão disponíveis apenas no dispositivo onde foram baixadas inicialmente. |
 | **IMAP**                 | Também usado para **recuperar** e-mails de um servidor, mas – diferentemente do anterior – ele mantém as mensagens no servidor. Isso permite que você acesse seus e-mails de vários dispositivos, mantendo tudo sincronizado. As mudanças feitas em um dispositivo (como ler ou excluir uma mensagem) são refletidas em todos os outros dispositivos.                       |
+
+##### SMTP (Simple Mail Transfer Protocol)
+
+O **SMTP (Simple Mail Transfer Protocol)**, ou Protocolo Simples de Transferência de Correio, é o protocolo da camada de aplicação que serve como o "carteiro" da Internet. Sua função é responsável pelo **envio** de mensagens de e-mail. Ele é o padrão universal para transferir mensagens de um cliente de e-mail (como o Outlook ou Thunderbird) para um servidor de e-mail e, crucialmente, também é o protocolo usado para a comunicação **entre servidores de e-mail**.
+
+O SMTP é eficaz para _enviar_ e _encaminhar_ mensagens, mas não para recuperá-las ou armazená-las na caixa de entrada do usuário final. Para isso, ele é interoperável com outros protocolos de e-mail (Ex: POP3 e IMAP) para uma funcionalidade de e-mail completa. Em seu uso moderno, o SMTP também inclui mecanismos de autenticação (como o SMTP-AUTH) para aumentar a segurança, ajudando a prevenir o abuso do sistema de e-mail, como o envio de _spam_.
+
+Para entender os cenários de uso do SMTP, é fundamental reforçar o conceito da **Caixa Postal**. O serviço de correio eletrônico é fundamentalmente **assíncrono**, ou seja, a comunicação não exige uma sincronia para ocorrer.
+
+Um exemplo de serviço síncrono é um chat em tempo real ou um telefonema: quando um fala, o outro deve estar disponível no mesmo momento para que possa responder à mensagem; caso contrário, a conversa não fluirá. Um serviço assíncrono, por outro lado, permite que o destinatário leia e responda quando bem entender.
+
+O e-mail funciona exatamente assim: o remetente e o destinatário não se comunicam de forma direta. A mensagem é enviada e fica armazenada em uma **Caixa Postal** digital no servidor de e-mail do destinatário, aguardando que ele decida acessá-la.
+
+Vejamos os dois cenários de utilização do SMTP:
+
+**a) Cenário 1: Troca de e-mails em um mesmo provedor**
+
+Vamos supor que Diego deseja enviar um e-mail para Renato e ambos possuem uma conta no mesmo provedor (ex: `diego@gmail.com` e `renato@gmail.com`). Como o domínio (`@gmail.com`) é o mesmo, ambos utilizam o mesmo servidor de e-mail.
+
+1. Quando Diego clica em "Enviar", seu cliente de e-mail usa o protocolo **SMTP** para transferir a mensagem para o servidor de e-mail do Gmail.
+2. O servidor do Gmail recebe a mensagem, analisa o destinatário (`renato@gmail.com`) e identifica que se trata de uma conta local (hospedada nesse mesmo servidor).
+3. O servidor, então, simplesmente deposita a mensagem na caixa postal de Renato, que está armazenada em sua própria infraestrutura.
+4. Quando Renato quiser ler o e-mail, seu cliente de e-mail (ou webmail) usará um protocolo de _recebimento_ (**POP ou IMAP**) para acessar o servidor do Gmail e recuperar a mensagem de sua caixa postal.
+
+<div align="center">
+<img width="340px" src="./img/03-protocolo-smtp-1.png">
+</div>
+
+**b) Cenário 2: Troca de e-mails em provedores diferentes**
+
+Este cenário é o mais completo e ilustra o papel duplo do SMTP. Suponha agora que o e-mail de Diego é `diego@gmail.com` e o e-mail de Renato é `renato@yahoo.com`. Temos domínios diferentes e, portanto, servidores de e-mail diferentes.
+
+O fluxo da mensagem é o seguinte:
+
+1. Diego escreve e envia um e-mail para Renato. O cliente de e-mail de Diego usa **SMTP** para transferir a mensagem para o seu servidor de correio de origem (o servidor de saída do Gmail).
+2. O servidor de correio de origem (Gmail) analisa o endereço e identifica o domínio de destino: `@yahoo.com`.
+3. Como o domínio não é local, o servidor do Gmail (agora atuando como um _cliente SMTP_) localiza na Internet o servidor de e-mail responsável pelo domínio `yahoo.com` (o servidor de entrada do Yahoo).
+4. O servidor do Gmail usa **SMTP** novamente para transferir a mensagem, através da Internet, para o servidor do Yahoo. (Esta é a comunicação **servidor-para-servidor**).
+5. O servidor de correio de destino (Yahoo) recebe a mensagem, identifica o usuário (`renato`) e deposita a mensagem em sua respectiva caixa postal.
+6. Quando Renato quiser ler, ele utiliza seu programa cliente de e-mail ou webmail para – por meio do **POP3 ou IMAP** – se conectar ao servidor do Yahoo e recuperar a mensagem.
+
+<div align="center">
+<img width="620px" src="./img/03-protocolo-smtp-2.png">
+</div>
+
