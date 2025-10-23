@@ -2,7 +2,7 @@
 
 A arquitetura de um processador define a forma como ele interpreta e executa instruções, sendo um dos aspectos mais fundamentais para o desempenho e a eficiência de sistemas computacionais. Ao longo da história da computação, uma polêmica comum girou em torno de qual seria a melhor abordagem de projeto. Muitos, por exemplo, defendiam que os computadores "Macs" eram mais rápidos por terem chips com uma filosofia de projeto específica. Essa discussão nos leva diretamente às duas arquiteturas que se destacaram: a **CISC (Complex Instruction Set Computer)** e a **RISC (Reduced Instruction Set Computer)**. Cada uma dessas abordagens traz consigo uma filosofia distinta, com vantagens e desvantagens específicas. Compreender essas diferenças é essencial para entender como os processadores modernos funcionam e como evoluíram ao longo do tempo.
 
-## Arquitetura CISC: Complexidade a Serviço da Versatilidade
+## Arquitetura CISC
 
 A arquitetura **CISC (Complex Instruction Set Computer)**, ou Computador com um Conjunto Complexo, de Instruções surgiu com o objetivo de aproximar as instruções de máquina do nível de linguagens de alto nível. Um processador CISC é capaz de executar várias centenas de instruções complexas diferentes, sendo extremamente versátil. A ideia é que cada instrução seja projetada para executar uma tarefa complexa, muitas vezes correspondendo diretamente a uma instrução escrita em linguagens como C ou Pascal. Isso torna a codificação de programas mais compacta, uma vez que uma única instrução de máquina pode realizar múltiplas operações.
 
@@ -32,7 +32,7 @@ ADD AX, [BX+SI]
 
 Essa instrução, comum em arquiteturas CISC, soma o conteúdo da posição de memória referenciada por `BX+SI` ao registrador `AX`. Ela realiza, em uma única linha, múltiplas micro-operações: cálculo do endereço de memória, acesso à memória, leitura do operando e, finalmente, a soma. Embora seja compacta, essa instrução pode levar vários ciclos para ser executada.
 
-## Arquitetura RISC: Simplicidade com Alto Desempenho
+## Arquitetura RISC
 
 Em oposição ao modelo CISC, alguns fabricantes decidiram seguir o caminho contrário, criando o padrão **RISC (Reduced Instruction Set Computer)**, ou Computador com um Conjunto Reduzido de Instruções. A filosofia é simplificar drasticamente o conjunto de instruções e delegar a complexidade para o compilador. A ideia central é que a maior parte dos programas utiliza apenas uma fração pequena do vasto conjunto de instruções disponíveis em processadores CISC, tornando o excesso um desperdício.
 
@@ -80,7 +80,7 @@ Ao analisar essa tabela, a classificação se torna evidente:
 
 A conclusão é que os processadores **MIPS R4000** e **RS/6000** possuem arquitetura **RISC**, e os processadores **VAX11/780** e **Intel 486** possuem arquitetura **CISC**.
 
-## Processadores Híbridos: O Melhor dos Dois Mundos
+## Processadores Híbridos
 
 Na prática, a distinção rigorosa entre RISC e CISC tornou-se cada vez menos rígida. A busca incessante por desempenho levou os fabricantes a incorporar o melhor de cada filosofia, dando origem aos **processadores híbridos**.
 

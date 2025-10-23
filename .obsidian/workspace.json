@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lingua-portuguesa/contents/01-visao-geral.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/02-arquitetura-de-processadores.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-visao-geral"
+              "title": "02-arquitetura-de-processadores"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lingua-portuguesa/contents/01-visao-geral.md",
+                "file": "arquitetura-e-organizacao-de-computadores/contents/02-arquitetura-de-processadores.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 01-visao-geral"
+              "title": "Sumário de 02-arquitetura-de-processadores"
             }
           }
         ],
@@ -171,6 +171,8 @@
   },
   "active": "af6924f9752dc980",
   "lastOpenFiles": [
+    "arquitetura-e-organizacao-de-computadores/contents/01-introducao.md",
+    "lingua-portuguesa/contents/01-visao-geral.md",
     "legislacao/contents/07-decreto-1171.md",
     "Sem título.md",
     "README.md",
@@ -195,8 +197,6 @@
     "engenharia-de-software/contents/10-modelo-baseado-em-componentes.md",
     "engenharia-de-software/contents/09-metodos-formais.md",
     "engenharia-de-software/contents/08-modelo-espiral.md",
-    "engenharia-de-software/contents/07-modelo-prototipo.md",
-    "engenharia-de-software/contents/06-modelo-iterativo-e-evolutivo.md",
     "linguagem-python/contents/img/11-execucao-serial-e-paralela.png",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
