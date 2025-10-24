@@ -6,8 +6,6 @@ Dois modelos sequenciais clássicos ganharam notoriedade ao longo das últimas d
 
 ## Modelo em Cascata: Origem, Fundamentos e Evolução
 
-### Histórico e Nomenclaturas
-
 O Modelo em Cascata foi descrito pela primeira vez em 1970 por **Winston W. Royce**, em um artigo que, curiosamente, criticava a rigidez de uma abordagem puramente sequencial. Ainda assim, essa estrutura linear foi popularizada e adotada por muitos profissionais da época, sendo chamada de diversos nomes: **Modelo Clássico, Sequencial, Linear, Tradicional, Rígido, Top-Down, Monolítico**, ou, em sua versão original, **Waterfall Model**.
 
 <div align="center">
@@ -30,13 +28,13 @@ Uma das principais dificuldades ao estudar o Modelo em Cascata está na diversid
 ||Teste|
 ||Operação|
 
-|Roger Pressman (4ª ed)|Roger Pressman (6ª ed)|
-| --- | --- |
-|Modelagem e engenharia do sistema/informação|Comunicação|
-|Análise de requisitos de software|Planejamento|
-|Projeto|Modelagem|
-|Geração de código|Construção|
-|Teste e manutenção|Implantação|
+| Roger Pressman (4ª ed)                       | Roger Pressman (6ª ed) |
+| -------------------------------------------- | ---------------------- |
+| Modelagem e engenharia do sistema/informação | Comunicação            |
+| Análise de requisitos de software            | Planejamento           |
+| Projeto                                      | Modelagem              |
+| Geração de código                            | Construção             |
+| Teste e manutenção                           | Implantação            |
 
 Essa divergência não é um problema técnico, mas uma questão de interpretação e ênfase. Cada autor propõe uma segmentação que melhor se adapta à sua visão pedagógica ou ao enfoque da obra. O importante é compreender que, independentemente da nomenclatura, o **modelo baseia-se em uma sequência rígida de etapas, nas quais o produto de uma fase serve de entrada para a próxima**.
 
