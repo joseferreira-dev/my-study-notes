@@ -1380,3 +1380,125 @@ Por outro lado, quando o certificado é validado com sucesso, o navegador exibe 
 </div>
 
 Como a imagem ilustra, ao clicar no cadeado, é informado que "A conexão é segura" e que o "Certificado (é) válido". Isso não é uma garantia absoluta contra todos os tipos de fraude, mas é a garantia de que a _comunicação_ com aquele servidor específico está criptografada e que o servidor foi autenticado por uma entidade confiável.
+
+#### FTP (File Transfer Protocol)
+
+O **FTP (File Transfer Protocol)**, ou Protocolo de Transferência de Arquivos, é um protocolo da camada de aplicação baseado no modelo cliente/servidor, cujo objetivo principal e dedicado é a **transferência de arquivos** entre sistemas.
+
+Trata-se de um dos protocolos mais antigos da Internet, projetado especificamente para permitir que um "Cliente FTP" (um _software_ na máquina do usuário) possa se conectar a um "Servidor FTP" (um repositório de arquivos remoto) para realizar duas operações básicas:
+
+- **Download:** A cópia de arquivos _do_ servidor _para_ o cliente.
+- **Upload:** A cópia de arquivos _do_ cliente _para_ o servidor.
+
+O FTP é um protocolo robusto que pode transferir uma variedade de tipos de dados (incluindo arquivos binários e de texto) e oferece comandos para a manipulação de diretórios, permitindo ao usuário listar, renomear, mover ou apagar arquivos e pastas no servidor remoto. O acesso geralmente requer autenticação (nome de usuário e senha), embora, historicamente, tenha sido muito utilizado no modo de **acesso anônimo**, onde o público podia baixar arquivos de servidores abertos (como repositórios de _software_ ou universidades) sem precisar de uma conta.
+
+##### Arquitetura de Conexão Dupla do FTP
+
+Uma característica técnica que distingue o FTP de muitos outros protocolos (como o HTTP) é o uso de **duas conexões TCP** separadas entre o cliente e o servidor para gerenciar uma sessão:
+
+1. **Conexão de Controle (Porta 21):** A primeira conexão é estabelecida na porta TCP 21 (por padrão). Ela é persistente e usada exclusivamente para a troca de informações de controle. É por este canal que o cliente envia comandos (ex: `USER`, `PASS` para autenticar; `LIST` para listar arquivos; `GET` para solicitar um download) e o servidor envia suas respostas (ex: `230 Login successful`).
+2. **Conexão de Dados (Porta 20):** A segunda conexão é temporária e aberta (geralmente na porta TCP 20, no modo ativo) apenas quando um arquivo está, de fato, sendo transferido. Os dados do arquivo em si viajam por esta conexão separada, que é fechada assim que a transferência termina.
+
+Essa divisão ocorre para tornar o protocolo mais eficiente. A troca de comandos (controle) é leve e rápida, enquanto a transferência de dados (que pode ser pesada e demorada) ocorre em um canal dedicado, permitindo que o usuário, por exemplo, navegue por outros diretórios usando a conexão de controle _enquanto_ um arquivo está sendo baixado pela conexão de dados.
+
+##### Contexto da Transferência de Dados: Download e Upload
+
+Para entender o propósito do FTP, é útil revisitar os conceitos fundamentais de _download_ e _upload_, que são centrais para o uso da Internet.
+
+Quase toda a Internet funciona por meio da arquitetura ou modelo chamado **Cliente/Servidor**. De forma simplificada, isso significa que ela é baseada em um conjunto de computadores que exercem a função de clientes ou servidores.
+
+- Os computadores **servidores** são aqueles que fornecem um serviço (armazenam um site, um vídeo, um arquivo).
+- Os computadores **clientes** são aqueles que consomem um serviço (o seu _notebook_, sua _Smart TV_, seu _smartphone_).
+
+Quando um usuário liga sua televisão em um domingo à noite para assistir a um filme, ele acessa a página da Netflix, escolhe um título e começa a assisti-lo. Nesse momento, a televisão funciona como um **cliente** que está consumindo um serviço. Esse serviço é disponibilizado pelos **servidores** da Netflix, que hospedam ou armazenam os filmes. Quase tudo na internet segue essa lógica: o acesso ao servidor do Estratégia para ver uma videoaula; o acesso ao servidor do Spotify para ouvir uma música; o acesso ao servidor do Google para fazer uma busca.
+
+Dentro desse modelo, surgem os termos **download** e **upload**. Ambos são utilizados para referenciar a transmissão de dados de um dispositivo para outro:
+
+- **Download (Baixar):** Refere-se à obtenção de conteúdo da Internet. Do ponto de vista do cliente (seu dispositivo), é a operação de _receber_ dados de um servidor.
+- **Upload (Enviar/Carregar):** Refere-se à operação inversa, o envio de conteúdo _do_ seu dispositivo _para_ um servidor.
+
+##### O FTP na Transferência de Arquivos Moderna
+
+O objetivo principal do FTP é, portanto, ser a ferramenta para _uploads_ e _downloads_. No entanto, é um erro comum presumir que _toda_ transferência de arquivos na internet ocorre por meio do FTP.
+
+Diversos outros protocolos, embora tenham objetivos principais diferentes, também permitem enviar arquivos como uma função alternativa:
+
+- É possível transferir arquivos por e-mail? Sim, em anexo. Nesse caso, o protocolo de envio é o **SMTP** (com extensões como o MIME).
+- É possível transferir arquivos por uma página web? Sim. Quando se faz o _download_ de uma videoaula ou de um PDF em um site, o protocolo utilizado é, na vasta maioria das vezes, o **HTTP/HTTPS**.
+
+Em suma: o HTTP é utilizado primariamente para a transferência de hipertexto, mas é perfeitamente capaz de ser usado para a transferência de arquivos; o SMTP é usado para a transferência de e-mails, mas pode ser usado para transferir arquivos (anexos). O FTP, por sua vez, foi _criado_ especificamente para isso.
+
+A grande verdade é que o FTP tem sido cada vez menos utilizado pelo usuário comum, principalmente após a popularização massiva do **armazenamento em nuvem** (_Cloud Storage_). Hoje, se um usuário precisa enviar um arquivo grande para outra pessoa, ele não configura mais um Cliente/Servidor FTP. Em vez disso, ele simplesmente faz o _upload_ do arquivo para um serviço em nuvem (como Google Drive, Dropbox ou WeTransfer) e envia o link para o destinatário—um processo que, "por baixo dos panos", usa o protocolo HTTPS.
+
+Apesar de estar em desuso pelo público geral (embora ainda seja muito usado em _back-end_ por desenvolvedores para atualizar arquivos de sites), o FTP continua sendo um protocolo fundamental e bastante cobrado em avaliações de tecnologia.
+
+### Serviço VoIP (Voice over Internet Protocol)
+
+O **VoIP (Voice over Internet Protocol)**, ou Voz sobre Protocolo de Internet, é uma tecnologia da camada de aplicação que permite a transmissão de voz e comunicações multimídia (como chamadas telefônicas, videotelefonia e sessões de conferência) através da Internet ou de outras redes baseadas em protocolos IP.
+
+Essencialmente, o VoIP transforma os sinais de voz analógicos (o som da sua voz) em pacotes de dados digitais. Esses pacotes podem então ser enviados pela Internet como qualquer outro tipo de dado, como um e-mail ou uma página web.
+
+#### VoIP vs. Telefonia Convencional (PSTN)
+
+Essa tecnologia representa uma mudança fundamental em relação à telefonia tradicional. A rede telefônica convencional, conhecida como **PSTN (Public Switched Telephone Network)**, opera com base na **comutação por circuito**. Como vimos, esse método estabelece um caminho físico contínuo e dedicado entre os dois interlocutores durante toda a chamada.
+
+O VoIP, por outro lado, utiliza a **comutação por pacotes**, a mesma da Internet. A voz é digitalizada, quebrada em pequenos pacotes (geralmente contendo entre 10 e 30 milissegundos de áudio) e enviada pela rede. Isso torna o uso da largura de banda muito mais eficiente, pois o canal só é usado quando há dados (voz) para enviar, e a mesma infraestrutura pode ser compartilhada por diversos outros serviços simultaneamente.
+
+#### A Relação do VoIP com TCP e UDP
+
+Para o _transporte_ dos pacotes de voz em si, o VoIP geralmente utiliza o protocolo **UDP** (User Datagram Protocol), e não o TCP. A razão para isso está no _trade-off_ entre confiabilidade e velocidade:
+
+- O **TCP** é confiável. Se um pacote se perde, ele para a comunicação e solicita a retransmissão. Em uma conversa de áudio em tempo real, esse comportamento causaria pausas e atrasos longos, tornando a conversa inviável. Uma palavra que chega 3 segundos atrasada é inútil.
+- O **UDP** não é confiável, mas é extremamente rápido (baixa latência). Ele envia os pacotes sem garantia de entrega. Em uma chamada de voz, é aceitável que ocorram pequenas perdas de pacotes (o que pode soar como um pequeno corte ou uma falha de milissegundo), desde que o fluxo principal da conversa continue sem atrasos. O VoIP tolera perdas, mas não tolera atrasos.
+
+#### VoIP: Um Serviço Orientado à Conexão?
+
+Aqui surge uma aparente contradição: se o VoIP usa UDP (um protocolo _sem conexão_) para os dados, por que ele é considerado um _serviço orientado à conexão_?
+
+A resposta é que o VoIP utiliza _outros_ protocolos da camada de aplicação (como **SIP** ou **H.323**) para **gerenciar a chamada**. Embora os pacotes de voz em si viajem por UDP, há um protocolo de sinalização que:
+
+1. **Estabelece a conexão:** Ele "chama" o outro lado, faz o telefone tocar e negocia os parâmetros da chamada.
+2. **Coordena a chamada:** Mantém a sessão ativa.
+3. **Encerra a chamada:** Desconecta os dois lados quando um deles desliga.
+
+Portanto, embora o _transporte de dados_ de voz não seja orientado à conexão (para ser rápido), o _serviço_ de telefonia como um todo é, pois há um estabelecimento de sessão antes da comunicação de fato começar.
+
+#### Vantagens e Desvantagens do VoIP
+
+O foco do VoIP está na eficiência e na flexibilidade da transmissão de dados.
+
+|**VANTAGENS DO VOIP**|
+|---|
+|Permite fazer e receber ligações telefônicas tanto em uma rede local (LAN/Interna) quanto em uma rede pública (WAN/Externa).|
+|Permite fazer e receber ligações para telefones fixos ou telefones celulares da telefonia convencional ou da telefonia digital por meio da utilização de um conjunto de dispositivos (adaptadores, gateways, etc).|
+|Permite compartilhar o canal de comunicação de dados com outros serviços, podendo transmitir – além da voz – vídeos, imagens, entre outros.|
+|Permite uma instalação extremamente escalável, podendo expandir com facilidade sem a necessidade de novas linhas dedicadas e aproveitando a infraestrutura de Redes IP (Em geral, há duas alternativas: (1) substituir o telefone convencional por um **telefone IP** conectado por meio de um conector RJ-45; (2) ou utilizar um **ATA (Adaptador de Terminal Analógico)**, que converte um sinal analógico em um sinal digital e vice-versa).|
+
+No entanto, a maior vantagem percebida pelo usuário final é a drástica **redução de custos**. Na telefonia convencional (PSTN), a cobrança é complexa, baseada em tempo de ligação, tipo (fixo ou móvel), distância (local, interurbana, internacional), operadora e até horários (diurno/noturno).
+
+No VoIP, a comunicação é tratada como dados. Se a chamada ocorre entre dois dispositivos na Internet, o único custo é o da conexão de banda larga, independentemente da distância. Isso pode reduzir os custos de ligações, especialmente as internacionais, em até 70% ou mais.
+
+Apesar dos benefícios, o serviço tem suas limitações, a maioria derivada de sua dependência da rede de dados.
+
+|**DESVANTAGENS DO VOIP**|
+|---|
+|Pode oscilar e perder a qualidade da ligação caso não esteja disponível uma conexão eficiente com a Internet.|
+|Menos confiável que a telefonia convencional em relação a quedas de energia (telefones PSTN tradicionais recebem energia da própria linha telefônica; VoIP depende do modem/roteador, que precisa de energia elétrica local).|
+|Podem ocorrer problemas de latência (atraso na voz), _jitter_ (variação no atraso) e cortes na comunicação, além de perdas de dados.|
+|Apresenta menor disponibilidade do canal de comunicação, uma vez que não possui um canal dedicado e compete por largura de banda com outros serviços (como _streaming_ de vídeo ou _downloads_).|
+
+## Considerações Finais
+
+Neste capítulo, dissecamos o termo "Internet", transformando-o de um conceito abstrato do cotidiano em uma arquitetura tangível, composta por infraestrutura física, regras lógicas e um vasto ecossistema de serviços. A jornada nos levou das origens militares da ARPANET, baseada na robustez da comutação por pacotes, até as aplicações de ponta que definem a sociedade moderna, como a Internet das Coisas e a Computação em Nuvem.
+
+O pilar central desta jornada foi a compreensão dos **protocolos**, o verdadeiro "idioma universal" que permite que bilhões de dispositivos, de fabricantes e sistemas operacionais distintos, conversem entre si de forma coesa. Entendemos que a Internet funciona sobre a **Pilha TCP/IP**, uma arquitetura pragmática que, embora inspirada no **Modelo OSI** teórico, define na prática como os dados são gerenciados.
+
+Exploramos a divisão fundamental de responsabilidades:
+
+1. Na **Camada de Rede**, encontramos o **Protocolo IP** (tanto IPv4 quanto IPv6), o grande responsável pelo endereçamento lógico e pelo roteamento de pacotes, atuando como o "serviço postal" global que se preocupa em "melhor esforço" para encontrar o caminho correto entre redes distintas.
+2. Na **Camada de Transporte**, descobrimos o _trade-off_ crucial entre confiabilidade e velocidade, materializado no **TCP**—o protocolo robusto, orientado à conexão e obcecado pela integridade dos dados, ideal para a web e e-mails—e no **UDP**—o protocolo ágil, rápido e leve, que tolera perdas em favor da baixa latência, sendo perfeito para _streaming_ e VoIP.
+3. Na **Camada de Aplicação**, vimos como esses protocolos de base dão vida aos serviços que utilizamos: o **DNS** atuando como a agenda telefônica da web; o **DHCP** automatizando a configuração das redes; o **HTTP/HTTPS** gerenciando as requisições e respostas que constroem a Web; e os protocolos de e-mail (**SMTP**, **POP**, **IMAP**) orquestrando o complexo fluxo de envio e recebimento de mensagens.
+
+Também desmistificamos a geografia da rede, desde a conexão pessoal de uma **PAN** (Bluetooth) e a rede doméstica de uma **LAN** (Wi-Fi), até a conectividade global de uma **WAN**, sustentada pela hierarquia de _Backbones_ e **ISPs**. Mapeamos, ainda, as camadas de visibilidade da web, diferenciando a **Surface Web** (indexada) da vasta **Deep Web** (não indexada) e de seu segmento focado no anonimato, a **Dark Web**.
+
+Ao final deste capítulo, a Internet deixa de ser uma "nuvem" mágica e se revela como um sistema de engenharia complexo e fascinante, construído camada por camada, onde cada protocolo tem uma função específica para garantir que, ao digitar um simples nome de domínio, um universo de dados possa ser entregue de forma confiável de um servidor em outro continente até a tela em nossas mãos, em uma fração de segundo.
