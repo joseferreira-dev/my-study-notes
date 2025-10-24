@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "engenharia-de-software/contents/02-modelos-sequenciais.md",
+                "file": "engenharia-de-software/contents/03-modelos-iterativos-e-incrementais.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-modelos-sequenciais"
+              "title": "03-modelos-iterativos-e-incrementais"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "engenharia-de-software/contents/02-modelos-sequenciais.md",
+                "file": "engenharia-de-software/contents/03-modelos-iterativos-e-incrementais.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 02-modelos-sequenciais"
+              "title": "Sumário de 03-modelos-iterativos-e-incrementais"
             }
           }
         ],
@@ -171,7 +171,14 @@
   },
   "active": "af6924f9752dc980",
   "lastOpenFiles": [
-    "engenharia-de-software/contents/03-modelos-cascata-e-v.md",
+    "engenharia-de-software/contents/img/03-modelo-pressman.png",
+    "engenharia-de-software/contents/img/03-modelo-sommerville.png",
+    "engenharia-de-software/contents/img/03-modelo-iterativo-e-incremental-monalisa.png",
+    "engenharia-de-software/contents/img/03-modelo-iterativo.png",
+    "engenharia-de-software/contents/img/03-modelo-incremental.png",
+    "engenharia-de-software/contents/img/03-modelo-iterativo-e-incremental.png",
+    "engenharia-de-software/contents/04-modelo-iterativo-e-incremental.md",
+    "engenharia-de-software/contents/03-modelos-iterativos-e-incrementais.md",
     "engenharia-de-software/contents/02-modelos-sequenciais.md",
     "engenharia-de-software/contents/07-modelo-prototipo.md",
     "engenharia-de-software/contents/06-modelo-iterativo-e-evolutivo.md",
@@ -179,7 +186,6 @@
     "engenharia-de-software/contents/12-modelo-rup.md",
     "engenharia-de-software/contents/11-modelo-orientado-a-aspectos.md",
     "engenharia-de-software/contents/10-modelo-baseado-em-componentes.md",
-    "engenharia-de-software/contents/04-modelo-iterativo-e-incremental.md",
     "engenharia-de-software/contents/09-metodos-formais.md",
     "engenharia-de-software/contents/08-modelo-espiral.md",
     "engenharia-de-software/contents/01-fundamentos.md",
@@ -197,16 +203,10 @@
     "informatica-basica/contents/img/03-http.png",
     "informatica-basica/contents/img/03-dns-hierarquia.png",
     "informatica-basica/contents/img/03-dns-hierarquia-subcategorias-3.png",
-    "informatica-basica/contents/img/03-dns-hierarquia-subcategorias-2.png",
-    "informatica-basica/contents/img/03-dns-hierarquia-subcategorias-1.png",
-    "informatica-basica/contents/img/03-webmail.png",
-    "informatica-basica/contents/img/03-protocolo-smtp-2.png",
-    "informatica-basica/contents/img/03-protocolo-smtp-1.png",
     "informatica-basica/contents/01-navegadores.md",
     "informatica-basica/contents/02-ferramentas-de-busca.md",
     "redes-de-computadores/contents/01-conceitos-basicos.md",
     "arquitetura-e-organizacao-de-computadores/contents/06-compilador-montador-ligador-e-interpretador.md",
-    "arquitetura-e-organizacao-de-computadores/contents/04-linguagens-de-alto-nivel.md",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
     "seguranca-da-informacao/contents/img",
