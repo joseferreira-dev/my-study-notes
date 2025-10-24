@@ -1294,3 +1294,89 @@ As imagens a seguir detalham as principais categorias de domínios `.br` dispon�
 </div>
 
 Existem algumas regras que devem ser observadas em um nome de domínio registrado no Registro.br: (1) deve possuir entre 2 e 26 caracteres, não incluindo a categoria. Logo, o domínio `www.x.com.br` é inválido porque possui apenas 1 caractere; (2) deve ser composta por caracteres alfanuméricos. Logo, o domínio `www.123.com.br` é inválido porque não contém letras; (3) não pode começar ou terminar com hífen, mas pode ter acentuação e cedilha desde 2008.
+
+### Protocolos Web
+
+Os protocolos web são um subconjunto da camada de aplicação especificamente projetados para o funcionamento da World Wide Web. Eles gerenciam como os navegadores requisitam informações e como os servidores as entregam.
+
+#### HTTP (HyperText Transfer Protocol)
+
+O **HTTP (HyperText Transfer Protocol)**, ou Protocolo de Transferência de Hipertexto, é o protocolo da camada de aplicação que serve como o alicerce fundamental da World Wide Web. É o "idioma" ou conjunto de regras que os programas de navegação (_browsers_, como o Chrome ou Firefox) utilizam para acessar dados na web.
+
+Ele é responsável pela transferência, formatação e apresentação de páginas web com conteúdo multimídia—o que inclui não apenas textos (hipertextos), mas também imagens, áudio, vídeos, _scripts_ e folhas de estilo—entre um servidor e um cliente na Internet. Sua função é utilizada para carregar páginas, enviar dados de formulários, realizar transações online e obter praticamente qualquer recurso disponível em um site.
+
+O HTTP é um protocolo cliente/servidor que funciona em um modelo simples de **requisição-resposta** (_request-response_). O cliente (o navegador web) é sempre quem inicia a comunicação.
+
+1. **Solicitação (Request):** O cliente envia uma mensagem de solicitação ao servidor. Por exemplo, ao digitar uma URL no navegador, o cliente está, na prática, enviando uma solicitação HTTP para o servidor daquele domínio.
+2. **Resposta (Response):** O servidor web, que armazena os arquivos da página (o servidor que hospeda ou armazena o site), processa a solicitação. Se o recurso for encontrado e o acesso for permitido, o servidor envia uma mensagem de resposta de volta ao cliente, contendo o recurso solicitado (como o código HTML da página).
+
+<div align="center">
+<img width="560px" src="./img/03-http.png">
+</div>
+
+A imagem anterior ilustra essa transação. Toda página web está armazenada em um servidor web. Logo, quando se acessa qualquer página pelo navegador, está-se fazendo uma solicitação ao servidor para acessar aquela página. Se o acesso for bem-sucedido, o servidor devolve como resposta a página desejada.
+
+##### Códigos de Status HTTP
+
+Uma parte crucial da "Resposta" do servidor é o **código de status HTTP**. Este é um número de três dígitos que informa ao cliente o resultado de sua solicitação, antes mesmo de enviar o conteúdo principal. Esses códigos são divididos em cinco categorias:
+
+| **Código** | **Categoria**    | **Significado**                                                                                                                                                                                                                       |
+| ---------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1XX**    | Informação       | **100 (Continue)**: O servidor recebeu o início da requisição e concorda em continuar.                                                                                                                                                |
+| **2XX**    | Sucesso          | **200 (OK)**: A requisição foi bem-sucedida. Este é o código esperado para uma página carregada com sucesso. **204 (No Content)**: A requisição foi bem-sucedida, mas a página está sem conteúdo.                                     |
+| **3XX**    | Redirecionamento | **301 (Moved Permanently)**: A página foi movida permanentemente para uma nova URL. **304 (Not Modified)**: A página em cache no navegador ainda é válida e não precisa ser baixada novamente.                                        |
+| **4XX**    | Erro do Cliente  | **403 (Forbidden)**: Acesso proibido. O servidor entendeu a requisição, mas se recusa a autorizá-la. **404 (Not Found)**: O erro mais famoso; a página ou recurso não foi encontrado no servidor.                                     |
+| **5XX**    | Erro do Servidor | **500 (Internal Server Error)**: Houve um erro interno no servidor (um bug no código do site, por exemplo). **503 (Service Unavailable)**: O servidor não consegue atender à requisição no momento (sobrecarregado ou em manutenção). |
+
+Esses códigos são diagnósticos vitais. Quando grandes plataformas como WhatsApp, Instagram e Facebook caíram por um dia inteiro, por exemplo, os usuários que tentavam acessar essas páginas viam um **Erro 5XX**. Este código significa que o problema não está sendo ocasionado por uma falha no computador ou na internet do usuário (que seria um erro 4XX), mas sim em uma falha nos próprios servidores. Na prática, ele ocorre quando o servidor (computador central) não consegue completar a solicitação do usuário e, por isso, não tem como exibir a informação desejada.
+
+Por fim, é importante não confundir HTTP com HTML:
+
+- **HTTP** é o **protocolo** (as regras) para _transferir_ ou _acessar_ o hipertexto.
+- **HTML** é a **linguagem** (o código) usada para _criar_ as páginas web.
+
+#### HTTPS (HyperText Transfer Protocol Secure)
+
+O protocolo HTTP, em sua forma original, tem uma vulnerabilidade crítica para o mundo moderno: ele não possui segurança. Os dados de uma requisição e de uma resposta HTTP trafegam em **texto claro** (_plain text_), ou seja, sem qualquer tipo ofuscamento ou criptografia.
+
+O **HTTPS (HyperText Transfer Protocol Secure)** é a solução para esse problema. Ele não é um protocolo inteiramente novo, mas sim uma implementação do HTTP sobre uma camada adicional de segurança que utiliza outro protocolo chamado **SSL/TLS** (_Secure Sockets Layer_ / _Transport Layer Security_).
+
+O HTTPS tem, portanto, a mesma finalidade do HTTP: transferir, formatar e apresentar páginas web. No entanto, ele o faz de forma segura, adicionando três garantias fundamentais à comunicação:
+
+1. **Criptografia (Confidencialidade):** Garante que os dados trocados entre o cliente (navegador) e o servidor sejam embaralhados e permaneçam ilegíveis caso sejam interceptados por um terceiro.
+2. **Autenticação:** Garante que o usuário está se comunicando com o servidor _correto_ e legítimo, e não com um impostor.
+3. **Integridade:** Verifica se os dados enviados (como os de um formulário) não foram alterados ou corrompidos durante a transferência.
+
+Essa camada adicional de segurança (SSL/TLS) utiliza propriedades criptográficas para assegurar a confidencialidade e a integridade da comunicação.
+
+**Cenário 1: A Importância da Criptografia (Confidencialidade)**
+
+Imagine um usuário em um _Coffee Shop_, conectado ao Wi-Fi público com seu _notebook_. Ele decide comprar um presente online em um site que utiliza apenas o HTTP (sem o "S"). Uma pessoa mal-intencionada, na mesa ao lado, pode utilizar ferramentas simples de "sniffing" (interceptação de rede) para "ouvir" o tráfego do Wi-Fi. Como a conexão é HTTP, os dados trafegam em claro. Quando o usuário digitar os dados do seu cartão de crédito e clicar em "Enviar", o invasor poderá interceptar essa transação e ler os números do cartão.
+
+Por meio da utilização do HTTPS, a conexão entre o navegador e o servidor é criptografada. Mesmo que o invasor intercepte o pacote de dados, ele verá apenas um conjunto ilegível de caracteres, pois não possui a chave para decifrá-los.
+
+**Cenário 2: A Importância do Certificado Digital (Autenticação)**
+
+Imaginemos outro cenário, desta vez um ataque de _phishing_. O usuário procura no Google um site para comprar um presente. Entre os links, ele lê rápido e, por engano, acessa o domínio `www.amason.com` em vez de `www.amazon.com`. Esse primeiro site é uma cópia idêntica do original, mas foi feito por um _hacker_ para enganar o usuário e roubar os dados do seu cartão de crédito. E agora?
+
+Nesse momento, o protocolo HTTPS inicia sua segunda função vital: a **autenticação**.
+
+1. O navegador, ao tentar se conectar ao site, solicita ao servidor um documento de identidade: o **Certificado Digital**.
+2. Esse certificado é um documento eletrônico que serve para validar que um site é realmente quem diz ser (ou seja, que o servidor `amazon.com` pertence de fato à empresa Amazon).
+3. Um site legítimo, como o `amazon.com`, obtém esse certificado de uma **Autoridade Certificadora (CA)**, que é uma entidade terceira registrada e confiável (como um "cartório digital"). O site precisa provar à CA que ele é o dono legítimo daquele domínio.
+4. Ao receber o certificado do site, o navegador (que possui uma lista interna de CAs confiáveis) confere a assinatura digital desse certificado. É como se o navegador "fosse a vários cartórios" para conferir se aquela assinatura é legítima.
+5. No caso do site falso (`amason.com`), o _hacker_ não consegue obter um certificado legítimo para o domínio `amazon.com`. Ele pode até ter um certificado, mas será para o domínio `amason.com` ou um certificado autoassinado (que não é confiável). O navegador detecta essa discrepância ou a falta de confiança.
+
+Quando isso acontece, o navegador bloqueia ativamente a conexão e exibe uma mensagem de alerta grave, como a da imagem abaixo, informando que o "Certificado de servidor [é] inválido". Isso geralmente significa que o certificado não foi encontrado, expirou, foi revogado ou, o mais perigoso, não corresponde ao site que se está tentando acessar.
+
+<div align="center">
+<img width="700px" src="./img/03-https-certificado-invalido.png">
+</div>
+
+Por outro lado, quando o certificado é validado com sucesso, o navegador exibe os indicadores de segurança. Ao entrar em um site de _Internet Banking_, por exemplo, o usuário visualizará o endereço começando com `https://` e um ícone de **cadeado fechado** ao lado esquerdo da barra de endereço.
+
+<div align="center">
+<img width="700px" src="./img/03-https-conexao-segura.png">
+</div>
+
+Como a imagem ilustra, ao clicar no cadeado, é informado que "A conexão é segura" e que o "Certificado (é) válido". Isso não é uma garantia absoluta contra todos os tipos de fraude, mas é a garantia de que a _comunicação_ com aquele servidor específico está criptografada e que o servidor foi autenticado por uma entidade confiável.
