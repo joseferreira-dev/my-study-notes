@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "legislacao/contents/01-lei-8112.md",
+                "file": "bancos-de-dados/contents/01-fundamentos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-lei-8112"
+              "title": "01-fundamentos"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "legislacao/contents/01-lei-8112.md",
+                "file": "bancos-de-dados/contents/01-fundamentos.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 01-lei-8112"
+              "title": "Sumário de 01-fundamentos"
             }
           }
         ],
@@ -170,7 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 329.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,6 +185,7 @@
   },
   "active": "af6924f9752dc980",
   "lastOpenFiles": [
+    "legislacao/contents/01-lei-8112.md",
     "bancos-de-dados/contents/01-fundamentos.md",
     "engenharia-de-software/contents/05-rup.md",
     "engenharia-de-software/contents/12-modelo-rup.md",
@@ -220,7 +221,6 @@
     "informatica-basica/contents/01-navegadores.md",
     "informatica-basica/contents/02-ferramentas-de-busca.md",
     "redes-de-computadores/contents/01-conceitos-basicos.md",
-    "arquitetura-e-organizacao-de-computadores/contents/06-compilador-montador-ligador-e-interpretador.md",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
     "seguranca-da-informacao/contents/img",

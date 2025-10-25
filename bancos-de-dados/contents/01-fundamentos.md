@@ -15,11 +15,11 @@ Um conjunto de dados é tecnicamente chamado de _data_, enquanto uma unidade ún
 
 Neste exemplo, o dado `37` foi contextualizado (temperatura, local, unidade de medida) para se tornar uma informação útil. O principal objetivo de um banco de dados é justamente organizar dados brutos de forma que possam ser facilmente transformados em informações valiosas.
 
-## As Múltiplas Faces dos Dados: Formas de Classificação
+## Formas de Classificação
 
 Para que possamos trabalhar com os dados de maneira eficaz, precisamos primeiro classificá-los. Existem diversas formas de categorizar os dados, mas três delas são essenciais para o nosso estudo: a classificação quanto à sua **natureza** (o tipo de valor que representam), quanto à sua **estrutura** (a forma como são organizados) e quanto ao seu **nível de acesso** (as restrições de segurança impostas a eles).
 
-### Classificação Quanto à Natureza (Tipo)
+### Quanto à Natureza (Tipo)
 
 A primeira e mais comum forma de classificação diz respeito ao tipo de informação que o dado carrega. Aqui, a divisão se dá em duas grandes categorias: dados qualitativos e dados quantitativos.
 
@@ -51,7 +51,7 @@ A imagem a seguir ilustra essa hierarquia de classificação.
 <img width="700px" src="./img/01-dados-subdivisoes.png">
 </div>
 
-### Classificação Quanto ao Nível de Acesso
+### Quanto ao Nível de Acesso
 
 Em qualquer organização, nem todos os dados podem ser acessados por todas as pessoas. A segurança e a confidencialidade da informação são cruciais, e por isso os dados são classificados em níveis de restrição. A abordagem mais comum divide os dados em quatro categorias, formando uma escala crescente de sensibilidade.
 
@@ -68,7 +68,7 @@ Em qualquer organização, nem todos os dados podem ser acessados por todas as p
 <img width="700px" src="./img/01-dados-niveis-de-restricao.png">
 </div>
 
-### Classificação Quanto à Estrutura
+### Quanto à Estrutura
 
 Finalmente, podemos classificar os dados pela forma como são organizados e preparados para o processamento por sistemas computacionais.
 
@@ -81,7 +81,7 @@ Existe ainda uma categoria intermediária, a de **dados semiestruturados**, que 
 
 Como veremos ao longo desta apostila, os **dados estruturados** são o domínio principal dos bancos de dados relacionais (como MySQL, PostgreSQL), enquanto os **dados não estruturados** e **semiestruturados** são frequentemente gerenciados por bancos de dados NoSQL (como MongoDB, Cassandra).
 
-## Dados Abertos: Transparência e Cidadania
+## Dados Abertos
 
 Até agora, classificamos os dados por sua natureza, estrutura e nível de acesso dentro de uma organização. No entanto, existe uma categoria de dados cuja importância reside justamente na quebra de barreiras de acesso: os **Dados Abertos**. Este é um movimento global que defende que certos dados devem estar livremente disponíveis para que todos possam acessá-los, reutilizá-los e redistribuí-los, sem restrições.
 
@@ -99,7 +99,7 @@ Os efeitos dos dados abertos governamentais sobre as políticas públicas são v
 - **Transparência:** A disponibilização de informações do setor público de forma aberta e acessível eleva o nível de transparência a um novo patamar. Não se trata mais apenas de publicar um resumo das contas públicas, mas de fornecer os dados detalhados que permitem a qualquer interessado auditar e verificar as informações por conta própria, usando as ferramentas que julgar mais adequadas.
 - **Responsabilidade (Accountability):** Com acesso aos dados corretos, a sociedade pode construir diferentes visões sobre o desempenho do governo. É possível verificar se as metas de uma política pública foram cumpridas, comparar o desempenho de diferentes municípios em uma mesma área e, consequentemente, cobrar de forma mais eficaz a responsabilidade dos gestores públicos.
 
-### A Política de Dados Abertos no Brasil
+### Política de Dados Abertos no Brasil
 
 No âmbito federal, a gestão da Política de Dados Abertos é uma atribuição coordenada pela **Controladoria-Geral da União (CGU)**, por meio da **Infraestrutura Nacional de Dados Abertos (INDA)**, que é o portal centralizado para a busca e o acesso a esses dados.
 
@@ -109,13 +109,13 @@ O primeiro são os **objetivos** da política, que incluem reforçar a cultura d
 
 O segundo ponto, e talvez o mais importante para o nosso contexto, são as **definições** que o decreto estabelece, criando um vocabulário comum e preciso para o tema.
 
-|Conceito|Descrição|
-|---|---|
-|**Dado**|Sequência de símbolos ou valores, representados em qualquer meio, produzidos como resultado de um processo natural ou artificial.|
-|**Dado Acessível ao Público**|Qualquer dado gerado ou acumulado pelo Governo que não esteja sob sigilo ou sob restrição de acesso nos termos da Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação).|
-|**Dados Abertos**|Dados acessíveis ao público, representados em meio digital, estruturados em **formato aberto**, **processáveis por máquina**, referenciados na internet e disponibilizados sob **licença aberta** que permita sua livre utilização, consumo ou cruzamento, limitando-se a creditar a autoria ou a fonte.|
-|**Formato Aberto**|Formato de arquivo não proprietário, cuja especificação esteja documentada publicamente e seja de livre conhecimento e implementação, livre de patentes ou qualquer outra restrição legal quanto à sua utilização.|
-|**Plano de Dados Abertos (PDA)**|Documento orientador para as ações de implementação e promoção de abertura de dados de cada órgão ou entidade da administração pública federal, obedecidos os padrões mínimos de qualidade, de forma a facilitar o entendimento e a reutilização das informações.|
+| Conceito                         | Descrição                                                                                                                                                                                                                                                                                                |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Dado**                         | Sequência de símbolos ou valores, representados em qualquer meio, produzidos como resultado de um processo natural ou artificial.                                                                                                                                                                        |
+| **Dado Acessível ao Público**    | Qualquer dado gerado ou acumulado pelo Governo que não esteja sob sigilo ou sob restrição de acesso nos termos da Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação).                                                                                                                 |
+| **Dados Abertos**                | Dados acessíveis ao público, representados em meio digital, estruturados em **formato aberto**, **processáveis por máquina**, referenciados na internet e disponibilizados sob **licença aberta** que permita sua livre utilização, consumo ou cruzamento, limitando-se a creditar a autoria ou a fonte. |
+| **Formato Aberto**               | Formato de arquivo não proprietário, cuja especificação esteja documentada publicamente e seja de livre conhecimento e implementação, livre de patentes ou qualquer outra restrição legal quanto à sua utilização.                                                                                       |
+| **Plano de Dados Abertos (PDA)** | Documento orientador para as ações de implementação e promoção de abertura de dados de cada órgão ou entidade da administração pública federal, obedecidos os padrões mínimos de qualidade, de forma a facilitar o entendimento e a reutilização das informações.                                        |
 
 ### Os 8 Princípios dos Dados Abertos
 
@@ -149,7 +149,7 @@ Vamos detalhar cada um desses estágios.
 Como já vimos, os dados são a matéria-prima. São fatos brutos, símbolos, números e registros sem um contexto imediato. Neste nível, os elementos são discretos e não organizados. Eles simplesmente existem.
 
 - **Exemplo de Negócios:** Em um sistema de vendas, uma lista de registros como `["01/08/2025", "Cliente A", "Produto X", 10, "R$ 50,00"]` e `["01/08/2025", "Cliente B", "Produto Y", 5, "R$ 200,00"]` representa os dados brutos. São apenas os fatos registrados pelas transações.
-- **Atividade Associada:** Os dados são tipicamente gerados e armazenados por **sistemas de gestão empresarial (ERPs)**, sistemas de ponto de venda (PDV), CRMs e outras ferramentas operacionais que registram as atividades do dia a dia.
+- **Atividade Associada:** Os dados são tipicamente gerados e armazenados por **sistemas de gestão empresarial (ERPs), sistemas de ponto de venda (PDV), CRMs e outras ferramentas** operacionais que registram as atividades do dia a dia.
 
 #### Informação (Adicionando Contexto)
 
@@ -188,7 +188,7 @@ O esquema a seguir resume a interação entre os níveis da pirâmide, as transf
 <img width="700px" src="./img/01-piramide-do-conhecimento-atividades.png">
 </div>
 
-## A Estrutura dos Dados: Tipos e Domínios
+## Estrutura dos Dados: Tipos e Domínios
 
 Quando lidamos com dados em um ambiente estruturado, como o que encontraremos nos bancos de dados, a organização é a chave para a consistência e a confiabilidade. Não basta apenas armazenar os dados; é preciso garantir que eles sejam do tipo correto e que obedeçam a certas regras. Para isso, definimos **restrições de domínio** para os dados, mais conhecidas no dia a dia como **tipos de dados**.
 
@@ -258,7 +258,7 @@ Ao planejar a arquitetura de dados de uma empresa, é raro que exista apenas um 
 
 Nesse ambiente, cada banco de dados no servidor é criado para atender a um propósito específico, agrupando dados por afinidade de assunto. Uma empresa pode, por exemplo, ter um banco de dados para o setor de **Recursos Humanos** (com dados de funcionários, salários, férias), outro para o **Financeiro** (contas a pagar e a receber, faturamento) e um terceiro para o **Marketing** (dados de clientes, campanhas, resultados).
 
-### Uma Analogia: O Arquivo Organizado
+### Uma Analogia: Arquivo Organizado
 
 Para visualizar essa estrutura, a melhor analogia é a de um armário de arquivos físico:
 
@@ -275,13 +275,13 @@ Esses dados são intercambiáveis. Podemos pegar a "ficha" de um funcionário e 
 
 É fundamental reforçar: **um banco de dados deve ser organizado e ter um propósito específico**. Isso, porém, não significa que conterá sempre e apenas dados estruturados. Embora a organização seja um pilar, existem modelos de banco de dados projetados para lidar com dados não estruturados, como veremos mais à frente.
 
-### Organização e Flexibilidade: O Papel do Esquema
+### Organização e Flexibilidade
 
 Apesar de precisarem de organização, os bancos de dados não são estruturas completamente rígidas. Sua organização é definida por um **esquema** (_schema_), que funciona como a "planta baixa" ou o "blueprint" do banco de dados. O esquema descreve a estrutura, os tipos de dados de cada campo e as relações entre suas diferentes partes.
 
 Contudo, esses esquemas são flexíveis e podem ser modificados ao longo do tempo para se adaptar a novas necessidades do negócio. Essa flexibilidade é garantida por regras de independência de dados. Como será detalhado em um capítulo futuro, a arquitetura de um banco de dados é geralmente separada em três níveis (externo, conceitual e interno), permitindo que um nível seja alterado sem impactar drasticamente os outros.
 
-### As Operações Fundamentais: CRUD
+### Operações Fundamentais: CRUD
 
 Para que toda essa estrutura de armazenamento seja útil, precisamos de uma forma de interagir com os dados: inserindo novos registros, consultando os existentes, modificando-os quando necessário e removendo-os quando não são mais úteis.
 
@@ -297,12 +297,12 @@ Essas quatro operações básicas de manipulação de dados são a base de prati
     - _Exemplo:_ Desligar um funcionário da empresa. Seu registro é permanentemente **removido** da tabela de funcionários ativos.
 
 <div align="center">
-<img width="420px" src="./img/01-banco-de-dados-crud.png">
+<img width="400px" src="./img/01-banco-de-dados-crud.png">
 </div>
 
 Toda e qualquer interação mais complexa com um banco de dados, desde a emissão de um relatório de vendas até a finalização de uma compra em um site de e-commerce, é, em sua essência, uma combinação sofisticada dessas quatro operações fundamentais.
 
-### Paradigmas de Bancos de Dados: Diferentes Formas de Organizar a Informação
+### Paradigmas de Bancos de Dados
 
 Não existe um único tipo de banco de dados que seja a solução perfeita para todos os problemas. A escolha da tecnologia correta depende fundamentalmente da natureza dos dados a serem armazenados e das operações que serão realizadas sobre eles. Um sistema para processar transações financeiras em tempo real, por exemplo, tem necessidades muito diferentes de um sistema projetado para analisar terabytes de dados de redes sociais.
 
@@ -409,7 +409,7 @@ O SGBD utiliza mecanismos de **controle de concorrência** (como o isolamento en
 | **Suporte a Múltiplas Visões**     | Permite que diferentes usuários tenham visões personalizadas e seguras dos mesmos dados.                              |
 | **Suporte a Múltiplas Transações** | Garante que múltiplos usuários possam acessar e modificar os dados simultaneamente de forma segura e consistente.     |
 
-### A Garantia da Integridade: Transações e as Propriedades ACID
+### Garantia da Integridade: Transações e as Propriedades ACID
 
 Na seção anterior, mencionamos que uma das características essenciais de um banco de dados é o suporte a múltiplas transações concorrentes. Mas o que é, exatamente, uma **transação**?
 
@@ -484,7 +484,7 @@ O conceito de metadado é universal e não se restringe a bancos de dados. Todo 
 
 Esses metadados podem estar embutidos no próprio arquivo ou, como é o caso dos sistemas de banco de dados, podem ser armazenados de forma centralizada em uma estrutura própria.
 
-#### O Dicionário de Dados
+#### Dicionário de Dados
 
 Em um ambiente de banco de dados, o conjunto de metadados que descreve toda a estrutura, organização, restrições e conteúdo dos dados armazenados é organizado em um componente especial chamado **Dicionário de Dados** (ou, em muitos contextos, **Catálogo do Sistema**).
 
@@ -514,7 +514,7 @@ Os metadados podem ser classificados de acordo com a função que desempenham. S
 - **Metadados Administrativos:** Fornecem informações relacionadas ao gerenciamento, ao uso e à preservação dos dados. Estão ligados a aspectos de segurança, controle e ciclo de vida da informação.
     - **Exemplos em um banco de dados:** As permissões de acesso que definem quais usuários podem ler ou modificar determinados dados (`GRANT SELECT ON...`), o histórico de alterações de um registro (logs de auditoria), as políticas de retenção (por quanto tempo um dado deve ser mantido) e as informações sobre o último backup realizado.
 
-### A Arquitetura de Três Níveis: Organizando a Abstração
+### Arquitetura de Três Níveis
 
 Em 1975, o comitê ANSI/SPARC propôs um modelo conceitual que se tornou a base para a arquitetura da grande maioria dos Sistemas de Gerenciamento de Banco de Dados (SGBDs) modernos. Conhecida como **arquitetura de três esquemas** ou **arquitetura de três níveis**, ela estrutura o sistema de banco de dados em camadas distintas de **abstração**.
 
@@ -525,7 +525,7 @@ A abstração, neste contexto, refere-se ao nível de detalhe com que os dados s
 
 O principal objetivo dessa arquitetura é separar a visão que os usuários têm dos dados da maneira como esses dados são fisicamente armazenados no disco. Isso é alcançado através de três níveis ou esquemas:
 
-#### O Nível Externo (A Visão do Usuário)
+#### Nível Externo (Visão do Usuário)
 
 Este é o nível de **mais alta abstração** e o mais próximo dos usuários finais e das aplicações. Ele não representa o banco de dados inteiro, mas sim **visões personalizadas** dos dados, que mostram a cada usuário apenas a porção do banco de dados que é relevante para suas tarefas e permissões. Um mesmo banco de dados pode ter múltiplas e variadas visões externas.
 
@@ -536,13 +536,13 @@ Este é o nível de **mais alta abstração** e o mais próximo dos usuários fi
 
 Essas visões ocultam toda a complexidade da estrutura interna, oferecendo uma interação simplificada e segura.
 
-#### O Nível Conceitual (O Coração do Banco de Dados)
+#### Nível Conceitual (Coração do Banco de Dados)
 
 Este é o nível intermediário, que descreve a **estrutura lógica global de todo o banco de dados**. Ele funciona como um mapa unificado que representa todas as entidades (como Alunos, Professores, Disciplinas), os atributos de cada uma delas e os relacionamentos que existem entre elas.
 
 O esquema conceitual é independente tanto do hardware de armazenamento quanto das visões específicas dos usuários. É neste nível que o Administrador do Banco de Dados (DBA) trabalha para modelar e definir a estrutura de dados da organização como um todo, utilizando modelos como o Entidade-Relacionamento (ER) ou o Relacional.
 
-#### O Nível Interno (A Realidade Física)
+#### Nível Interno (Realidade Física)
 
 Este é o nível de **mais baixa abstração**, também chamado de nível físico. Ele descreve **como os dados são fisicamente armazenados** nos dispositivos de armazenamento (discos rígidos, SSDs). Este esquema lida com os detalhes de baixo nível, como:
 
@@ -556,7 +556,7 @@ Este nível é de responsabilidade exclusiva do SGBD e é completamente transpar
 <img width="700px" src="./img/01-banco-de-dados-niveis.png">
 </div>
 
-### O Poder da Independência: Lógica e Física
+### Independência Lógica e Física
 
 A grande vantagem da arquitetura de três níveis é que ela proporciona **independência de dados**. Isso significa que é possível modificar a definição de um esquema em um nível sem afetar o esquema no nível superior. Existem dois tipos principais de independência:
 
@@ -577,11 +577,11 @@ Notoriamente, esse processo é classificado em três grandes etapas, ou **três 
 
 A correspondência se dá da seguinte forma:
 
-|ARQUITETURA ANSI/SPARC|MODELO DE PROJETO|
-|---|---|
-|Nível Externo|**Modelo Conceitual**|
-|Nível Conceitual|**Modelo Lógico**|
-|Nível Interno|**Modelo Físico**|
+| ARQUITETURA ANSI/SPARC | MODELO DE PROJETO     |
+| ---------------------- | --------------------- |
+| Nível Externo          | **Modelo Conceitual** |
+| Nível Conceitual       | **Modelo Lógico**     |
+| Nível Interno          | **Modelo Físico**     |
 
 Vamos analisar cada um desses modelos de projeto.
 
@@ -623,29 +623,29 @@ Nesta fase, são tomadas decisões puramente técnicas, como:
 
 O modelo físico é, portanto, totalmente dependente da plataforma. Um modelo físico projetado para um servidor Oracle em um ambiente Linux será diferente de um projetado para o Microsoft SQL Server em um ambiente Windows. É o projeto executivo final que guia a criação e a configuração do banco de dados no mundo real.
 
-### Resumindo as Etapas do Projeto: Uma Análise Comparativa
+### Resumindo as Etapas do Projeto
 
-A distinção entre os modelos conceitual, lógico и físico pode, por vezes, parecer sutil, mas é fundamental para um projeto de banco de dados bem-sucedido. Para facilitar a identificação das suas diferenças e papéis, vamos analisar suas características de forma comparativa.
+A distinção entre os modelos conceitual, lógico e físico pode, por vezes, parecer sutil, mas é fundamental para um projeto de banco de dados bem-sucedido. Para facilitar a identificação das suas diferenças e papéis, vamos analisar suas características de forma comparativa.
 
 A tabela a seguir resume os principais aspectos de cada modelo de projeto:
 
-|Característica|Modelo Conceitual|Modelo Lógico|Modelo Físico|
-|---|---|---|---|
-|**Objetivo**|Representar os dados e suas relações de forma abstrata, compreensível para usuários e desenvolvedores.|Detalhar a estrutura dos dados com base no paradigma escolhido (ex: relacional).|Implementar o modelo lógico em um SGBD específico, considerando restrições físicas e técnicas.|
-|**Detalhamento**|Alto nível, focado nos requisitos de negócio, sem preocupações com implementação.|Médio nível, define tabelas, atributos, tipos de dados e relacionamentos (chaves).|Baixo nível, inclui tabelas físicas, índices, partições e configurações de armazenamento.|
-|**Elementos Principais**|Entidades, atributos e relacionamentos.|Tabelas, colunas, chaves primárias, chaves estrangeiras, normalização.|Arquivos, índices, estruturas de armazenamento, alocação de memória e otimizações.|
-|**Foco**|Compreensão dos dados e das regras de negócio.|Organização lógica dos dados para implementação em um SGBD.|Eficiência no acesso e armazenamento físico dos dados no hardware.|
-|**Ferramentas**|Diagramas ER (Modelo Entidade-Relacionamento).|Diagramas de esquemas relacionais, ferramentas CASE.|Scripts SQL (DDL), comandos de criação de índices, especificações de armazenamento do SGBD.|
+| Característica           | Modelo Conceitual                                                                                      | Modelo Lógico                                                                      | Modelo Físico                                                                                  |
+| ------------------------ | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Objetivo**             | Representar os dados e suas relações de forma abstrata, compreensível para usuários e desenvolvedores. | Detalhar a estrutura dos dados com base no paradigma escolhido (ex: relacional).   | Implementar o modelo lógico em um SGBD específico, considerando restrições físicas e técnicas. |
+| **Detalhamento**         | Alto nível, focado nos requisitos de negócio, sem preocupações com implementação.                      | Médio nível, define tabelas, atributos, tipos de dados e relacionamentos (chaves). | Baixo nível, inclui tabelas físicas, índices, partições e configurações de armazenamento.      |
+| **Elementos Principais** | Entidades, atributos e relacionamentos.                                                                | Tabelas, colunas, chaves primárias, chaves estrangeiras, normalização.             | Arquivos, índices, estruturas de armazenamento, alocação de memória e otimizações.             |
+| **Foco**                 | Compreensão dos dados e das regras de negócio.                                                         | Organização lógica dos dados para implementação em um SGBD.                        | Eficiência no acesso e armazenamento físico dos dados no hardware.                             |
+| **Ferramentas**          | Diagramas ER (Modelo Entidade-Relacionamento).                                                         | Diagramas de esquemas relacionais, ferramentas CASE.                               | Scripts SQL (DDL), comandos de criação de índices, especificações de armazenamento do SGBD.    |
 
-#### A Dependência Tecnológica em Cada Etapa
+#### Dependência Tecnológica em Cada Etapa
 
 Outra forma crucial de diferenciar os modelos é analisar o quanto cada um depende das escolhas tecnológicas — especificamente, a dependência em relação ao **paradigma** do banco de dados (relacional, orientado a objetos, etc.) e ao **SGBD** (o software específico, como MySQL, Oracle, etc.).
 
-|Modelo|Dependência do Paradigma|Dependência do SGBD|
-|---|---|---|
-|**Conceitual**|Independente|Independente|
-|**Lógico**|**Dependente**|Independente|
-|**Físico**|**Dependente**|**Dependente**|
+| Modelo         | Dependência do Paradigma | Dependência do SGBD |
+| -------------- | ------------------------ | ------------------- |
+| **Conceitual** | Independente             | Independente        |
+| **Lógico**     | **Dependente**           | Independente        |
+| **Físico**     | **Dependente**           | **Dependente**      |
 
 - **No Modelo Conceitual,** a independência é total. A discussão é sobre as regras de negócio. Uma "Fatura" se relaciona com um "Cliente" independentemente de o sistema final usar um banco de dados relacional, NoSQL ou qualquer outra tecnologia.
 - **No Modelo Lógico,** a primeira grande decisão técnica é tomada: escolhe-se o **paradigma**. Se o paradigma relacional for escolhido, o projeto passa a ser definido em termos de tabelas, colunas e chaves estrangeiras. No entanto, essa estrutura relacional ainda é genérica o suficiente para ser implementada em diversos SGBDs relacionais (MySQL, PostgreSQL, etc.).
@@ -656,7 +656,7 @@ Outra forma crucial de diferenciar os modelos é analisar o quanto cada um depen
 O esquema a seguir ilustra perfeitamente a progressão entre os modelos, mostrando como um simples requisito de negócio vai ganhando cada vez mais detalhes técnicos até estar pronto para a implementação.
 
 <div align="center">
-<img width="640px" src="./img/01-banco-de-dados-esquema-abstracao.png">
+<img width="700px" src="./img/01-banco-de-dados-esquema-abstracao.png">
 </div>
 
 Analisando o esquema:
@@ -665,9 +665,9 @@ Analisando o esquema:
 - **No Modelo Lógico,** o detalhamento aumenta significativamente. As entidades viraram tabelas com colunas definidas (`FirstName`, `ProductName`). Mais importante, os relacionamentos foram materializados através das chaves estrangeiras (`CustomerID(FK)`, `ProductID(FK)`) na tabela `Orders`, definindo a estrutura relacional.
 - **No Modelo Físico,** chegamos ao nível de implementação. Vemos os nomes exatos das tabelas (como `tbl_Customer`), os nomes das colunas (muitas vezes abreviados, como `FNAME` e `P_NAME`), e, crucialmente, os **tipos de dados** específicos para cada coluna (`INTEGER`, `VARCHAR`). Este é o projeto final que será traduzido em código SQL para criar o banco de dados.
 
-## Sistemas Gestores de Bancos de Dados (SGBDs)
+## Sistemas Gerenciador de Bancos de Dados (SGBDs)
 
-Ao longo deste capítulo, falamos sobre o banco de dados como uma coleção organizada de dados. No entanto, para que essa coleção seja verdadeiramente útil, segura e eficiente, precisamos de um software especializado para gerenciá-la. Esse software é o **SGBD (Sistema Gestor de Banco de Dados)**, ou DBMS (_DataBase Management System_), em inglês.
+Ao longo deste capítulo, falamos sobre o banco de dados como uma coleção organizada de dados. No entanto, para que essa coleção seja verdadeiramente útil, segura e eficiente, precisamos de um software especializado para gerenciá-la. Esse software é o **SGBD (Sistema Gerenciador de Banco de Dados)**, ou DBMS (_DataBase Management System_), em inglês.
 
 O SGBD atua como uma camada intermediária entre o banco de dados físico (os arquivos armazenados em disco) e os usuários ou aplicações. Ele é o motor que permite criar, manipular, consultar e administrar os dados de forma abstrata, sem que o usuário precise ter qualquer conhecimento sobre a complexa estrutura de armazenamento físico. Usando uma analogia, se o banco de dados é uma vasta biblioteca, o SGBD é toda a equipe de bibliotecários junto com o sistema de catalogação, que organiza os livros, controla os empréstimos e ajuda os visitantes a encontrar exatamente o que procuram.
 
@@ -675,18 +675,18 @@ O SGBD atua como uma camada intermediária entre o banco de dados físico (os ar
 
 Quando estudarmos a linguagem SQL, estaremos, na prática, enviando comandos para um SGBD. Ele interpreta esses comandos e faz a ponte entre a nossa intenção e os dados armazenados.
 
-#### Principais SGBDs do Mercado
+### Principais SGBDs do Mercado
 
 O mercado oferece uma vasta gama de SGBDs, cada um com suas próprias forças e casos de uso ideais. Os mais proeminentes no paradigma relacional são:
 
-- **MySQL:** Um SGBD relacional de código aberto extremamente popular, especialmente em aplicações web (é o "M" da famosa pilha de tecnologia "LAMP" - Linux, Apache, MySQL, PHP). É conhecido por sua performance, simplicidade e facilidade de uso. Será este o SGBD que utilizaremos em nossos exemplos práticos com SQL.
+- **MySQL:** Um SGBD relacional de código aberto extremamente popular, especialmente em aplicações web (é o "M" da famosa pilha de tecnologia "LAMP" - Linux, Apache, MySQL, PHP). É conhecido por sua performance, simplicidade e facilidade de uso.
 - **Microsoft SQL Server:** O SGBD relacional desenvolvido pela Microsoft, amplamente utilizado em ambientes corporativos que operam com o ecossistema Windows. Destaca-se por sua forte integração com outras tecnologias da Microsoft, como a plataforma .NET e o serviço de nuvem Azure.
 - **PostgreSQL:** Um SGBD relacional de código aberto com uma forte reputação de robustez, extensibilidade e conformidade com os padrões SQL. É frequentemente escolhido para aplicações críticas que exigem alta confiabilidade e a capacidade de lidar com tipos de dados complexos.
 - **Oracle Database:** Um dos SGBDs relacionais líderes no mercado corporativo. É conhecido por sua escalabilidade, segurança e um conjunto vasto de recursos avançados, sendo a escolha comum para grandes empresas que gerenciam volumes massivos de dados críticos.
 
-#### Papéis e o Administrador do Banco de Dados (DBA)
+### Papéis e o Administrador do Banco de Dados (DBA)
 
-Um SGBD também é responsável por gerenciar a segurança e o acesso aos dados através da definição de **papéis** (_roles_). Um papel é um conjunto de permissões e privilégios que pode ser atribuído a um ou mais usuários. Em vez de conceder permissões individuais a cada novo funcionário, pode-se criar um papel "Analista_de_Marketing", por exemplo, e atribuí-lo a todos os membros da equipe, simplificando a gestão de acessos.
+Um SGBD também é responsável por gerenciar a segurança e o acesso aos dados através da definição de **papéis** (_roles_). Um papel é um conjunto de permissões e privilégios que pode ser atribuído a um ou mais usuários. Em vez de conceder permissões individuais a cada novo funcionário, pode-se criar um papel `Analista_de_Marketing`, por exemplo, e atribuí-lo a todos os membros da equipe, simplificando a gestão de acessos.
 
 Nesse contexto hierárquico, uma figura se destaca como central: o **Administrador do Banco de Dados**, ou **DBA** (_DataBase Administrator_). O DBA é o profissional responsável por gerenciar e manter todo o sistema de banco de dados, garantindo que ele esteja disponível, seguro e performático. Suas responsabilidades incluem:
 
@@ -696,7 +696,7 @@ Nesse contexto hierárquico, uma figura se destaca como central: o **Administrad
 - **Performance e Otimização:** Monitorar o desempenho das consultas e realizar ajustes (como a criação de índices) para garantir a rapidez do sistema.
 - **Backup e Recuperação:** Definir e executar rotinas de backup para garantir que os dados possam ser restaurados em caso de falha.
 
-#### A Arquitetura de um SGBD
+### Arquitetura de um SGBD
 
 Internamente, um SGBD é um sistema complexo, composto por diversos módulos que trabalham em conjunto para processar as solicitações. Os componentes típicos são:
 
@@ -732,7 +732,7 @@ Imagine um cenário simples em um site de e-commerce: há apenas uma unidade de 
 
 Sem um controle de concorrência, o sistema poderia ler o estoque "1" para ambos os clientes, processar as duas vendas e gerar uma grande inconsistência: duas pessoas compraram um produto que só tinha uma unidade. É para evitar esse tipo de caos que o controle de concorrência é indispensável.
 
-#### Os Desafios da Concorrência: Problemas Comuns
+##### Problemas Comuns de Concorrência
 
 Quando múltiplas transações operam sem um controle adequado, podem ocorrer vários problemas que corrompem a integridade dos dados. Os quatro mais clássicos são:
 
@@ -745,7 +745,7 @@ Quando múltiplas transações operam sem um controle adequado, podem ocorrer v�
 - **Leitura Fantasma (Phantom Read):** É semelhante à leitura não repetível, mas ocorre quando uma transação executa a mesma **consulta de intervalo** duas vezes e obtém um conjunto diferente de linhas porque outra transação inseriu ou excluiu registros que satisfazem essa consulta.
     - **Exemplo:** A Transação 1 executa uma consulta para contar quantos funcionários há no departamento de "Vendas" e obtém o resultado `15`. Em seguida, a Transação 2 adiciona um novo funcionário a esse departamento e confirma. Se a Transação 1 executar a mesma contagem novamente, obterá o resultado `16`. Uma nova linha "fantasma" apareceu.
 
-#### Estratégias de Controle: Como o SGBD Garante a Ordem
+##### Estratégias de Controle
 
 Para evitar esses problemas, os SGBDs implementam diversas estratégias de controle de concorrência.
 
@@ -872,7 +872,7 @@ O esquema a seguir ilustra perfeitamente essa dinâmica entre os dois processos.
 
 É importante não confundir estes processos com o **rollback**. Enquanto failover/failback são estratégias de **disponibilidade** (manter o serviço no ar trocando de servidor), o rollback (neste contexto de recuperação de desastres) é uma estratégia de **recuperação** que retorna um _único servidor_ a um estado estável anterior, geralmente restaurando um backup. O rollback é usado em casos de corrupção de dados, por exemplo, mas tipicamente envolve uma janela de indisponibilidade maior e a perda de todas as transações ocorridas entre o momento do backup e a falha.
 
-#### Escalabilidade e Performance: Balanceamento de Carga
+#### Balanceamento de Carga
 
 Enquanto o mecanismo de _failover_ garante que um sistema permaneça **disponível** em caso de falhas, o **balanceamento de carga** (_load balancing_) garante que o sistema tenha um bom **desempenho** sob tráfego intenso. As duas estratégias são pilares para a construção de sistemas robustos e confiáveis.
 
