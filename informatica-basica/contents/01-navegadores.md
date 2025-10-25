@@ -2,7 +2,7 @@
 
 Vivemos em uma era digital na qual a internet deixou de ser uma ferramenta para se tornar uma extensão de nossas vidas. Um estudo recente da Hootsuite revelou um dado impressionante: o Brasil figura entre os três países do mundo nos quais a população passa, em média, mais de nove horas diárias conectada. Desse tempo, mais de três horas e meia são dedicadas apenas às redes sociais. Esses números mostram o quão profundamente a navegação na web está integrada ao nosso trabalho, estudo, lazer e comunicação. Diante dessa imersão digital, surge uma questão fundamental: quais são as ferramentas e os mecanismos que tornam essa navegação possível? A resposta começa com um software essencial que utilizamos todos os dias, muitas vezes sem refletir sobre sua complexidade e importância: o navegador web.
 
-## O Navegador Web: A Sua Janela para a Internet
+## Navegador Web
 
 Para navegar pelo vasto oceano de informações que é a internet, precisamos de um veículo apropriado. Esse veículo é o **Navegador Web**, também conhecido pelo termo em inglês **Web Browser**. A própria palavra em inglês já nos dá uma pista sobre sua função: o verbo "to browse" pode ser traduzido como "folhear", "explorar" ou "procurar", que é exatamente o que fazemos quando estamos online. O navegador, portanto, é o software cliente que nos fornece as ferramentas para acessar e interagir com os incontáveis serviços e conteúdos disponíveis na internet.
 
@@ -26,7 +26,7 @@ Analisando a tabela, podemos extrair três pilares que definem um navegador:
 
 De forma mais simples e direta, podemos pensar em um navegador como uma **ferramenta para a visualização e o consumo de conteúdo web**. Ele é a nossa janela para o mundo digital, o programa que traduz códigos e dados complexos em páginas visualmente ricas e interativas com as quais podemos nos engajar.
 
-### A Arquitetura da Internet: Clientes e Servidores
+### Arquitetura da Internet: Clientes e Servidores
 
 Para entender profundamente como um navegador funciona, é indispensável compreender a lógica fundamental sobre a qual toda a internet foi construída: a **Arquitetura Cliente/Servidor**. Esse modelo organiza a comunicação na rede dividindo as tarefas entre dois tipos de atores: aqueles que consomem ou solicitam serviços (os **clientes**) e aqueles que oferecem ou fornecem esses serviços (os **servidores**).
 
@@ -42,7 +42,7 @@ O fluxo dessa interação é a base de toda a navegação, como ilustra o esquem
 
 Seguindo a imagem, o processo se inicia no **Cliente Web** (nosso navegador), que faz uma solicitação por um conteúdo. Essa solicitação viaja através da **Internet** até encontrar o **Servidor Web** correto, que processa o pedido e envia o conteúdo de volta para o cliente. Para que essa explicação faça sentido completo, precisamos entender melhor os outros dois elementos da imagem: o que é exatamente o "conteúdo web" e o que faz um "servidor web".
 
-### Desvendando a World Wide Web (WWW)
+### World Wide Web (WWW)
 
 É comum usarmos os termos "Internet" e "Web" como sinônimos, mas eles se referem a coisas diferentes. A **Internet** é a infraestrutura global – a imensa rede de cabos de fibra óptica, satélites, roteadores e computadores interconectados que permite a troca de dados em escala planetária. A **World Wide Web** (que pode ser traduzida como "Teia de Alcance Mundial"), ou simplesmente **Web**, é um dos muitos serviços que rodam **sobre** a infraestrutura da Internet. Ela é um gigantesco sistema de informações que funciona interligando documentos por meio de links.
 
@@ -65,7 +65,7 @@ Contudo, uma página moderna é muito mais do que apenas texto. A **hipermídia*
 
 Quando você acessa a página de um produto em uma loja virtual, você está consumindo hipermídia: vê as fotos (**imagens**), assiste ao vídeo de demonstração (**vídeo**), lê a descrição e os comentários (**hipertexto**) e clica em um botão para comprar (**hiperlink**).
 
-### A Linguagem e o Protocolo da Web
+### Linguagem e o Protocolo da Web
 
 Já entendemos o que é uma página web e quem a acessa. Faltam duas peças no quebra-cabeça: como essas páginas são construídas e como elas viajam do servidor até o nosso navegador?
 
@@ -77,21 +77,21 @@ Uma curiosidade interessante é por que o protocolo se chama "de transferência 
 
 Hoje, você frequentemente verá o endereço de sites começando com **HTTPS**. O "S" adicional significa **Secure** (Seguro). O HTTPS é uma versão criptografada do HTTP, que garante que os dados trocados entre seu navegador e o servidor sejam protegidos e confidenciais, impedindo que interceptadores consigam ler as informações. É por isso que ele é obrigatório em sites de bancos, lojas virtuais e qualquer página que lide com informações sensíveis.
 
-### O Ecossistema em Ação: Juntando as Peças
+### Ecossistema em Ação: Juntando as Peças
 
 Com todos os conceitos apresentados, podemos agora descrever o processo completo de navegação. Imagine que você deseja acessar o site do seu portal de notícias favorito. O fluxo de ações que acontece em poucos segundos é o seguinte:
 
-1. **A Solicitação (Cliente):** Você digita o endereço do site na barra do seu **navegador web** (o cliente) e pressiona "Enter".
-2. **A Mensagem (Protocolo):** Seu navegador cria uma "mensagem" seguindo as regras do protocolo **HTTP/HTTPS**, solicitando a página principal do portal.
-3. **A Viagem (Internet):** Essa solicitação viaja pela infraestrutura da **Internet**, sendo encaminhada por diversos equipamentos até chegar ao seu destino.
-4. **O Destino (Servidor):** A solicitação chega ao **servidor web** do portal de notícias. Um servidor web é um computador potente e sempre conectado, cujo software é especializado em receber requisições HTTP e encontrar os arquivos correspondentes.
-5. **A Resposta (Conteúdo):** O servidor localiza o arquivo da página principal, que está escrito em **HTML**, e o prepara para envio.
-6. **O Retorno (Protocolo):** O servidor envia o arquivo HTML de volta para o seu navegador, dentro de uma resposta HTTP.
-7. **A "Tradução" (Cliente):** Seu navegador recebe o código HTML. Ele então o interpreta, como um tradutor, e renderiza a página visual que você vê na tela, com seus textos formatados, imagens, vídeos e links clicáveis – ou seja, todo o conteúdo **hipermídia**.
+1. **Solicitação (Cliente):** Você digita o endereço do site na barra do seu **navegador web** (o cliente) e pressiona "Enter".
+2. **Mensagem (Protocolo):** Seu navegador cria uma "mensagem" seguindo as regras do protocolo **HTTP/HTTPS**, solicitando a página principal do portal.
+3. **Viagem (Internet):** Essa solicitação viaja pela infraestrutura da **Internet**, sendo encaminhada por diversos equipamentos até chegar ao seu destino.
+4. **Destino (Servidor):** A solicitação chega ao **servidor web** do portal de notícias. Um servidor web é um computador potente e sempre conectado, cujo software é especializado em receber requisições HTTP e encontrar os arquivos correspondentes.
+5. **Resposta (Conteúdo):** O servidor localiza o arquivo da página principal, que está escrito em **HTML**, e o prepara para envio.
+6. **Retorno (Protocolo):** O servidor envia o arquivo HTML de volta para o seu navegador, dentro de uma resposta HTTP.
+7. **"Tradução" (Cliente):** Seu navegador recebe o código HTML. Ele então o interpreta, como um tradutor, e renderiza a página visual que você vê na tela, com seus textos formatados, imagens, vídeos e links clicáveis – ou seja, todo o conteúdo **hipermídia**.
 
 Esse ciclo de requisição e resposta é a base de toda a sua experiência na World Wide Web.
 
-### Os Principais Navegadores do Mercado
+### Principais Navegadores do Mercado
 
 Desde o surgimento da web comercial, dezenas de navegadores foram criados. Atualmente, o mercado é dominado por um pequeno grupo de softwares, cada um com suas características. Os mais conhecidos e utilizados são:
 
@@ -103,13 +103,13 @@ Desde o surgimento da web comercial, dezenas de navegadores foram criados. Atual
 
 Além desses, existem muitos outros, como o **Shiira**, o **Konqueror** (comum em ambientes Linux), entre outros que atendem a nichos específicos de usuários. A escolha de um navegador, no fim, depende das preferências pessoais de cada usuário em relação à interface, desempenho, recursos e políticas de privacidade.
 
-## Localizando Conteúdo: A Anatomia da URL e o Papel do DNS
+## Anatomia da URL e o Papel do DNS
 
 Já estabelecemos que o navegador é a nossa ferramenta para acessar conteúdos na web, que estão armazenados em servidores espalhados pelo mundo. Mas como o navegador sabe exatamente onde encontrar uma página ou um arquivo específico em meio a bilhões de servidores e trilhões de documentos? A resposta está em um sistema de endereçamento padronizado e universal: a **URL (Uniform Resource Locator)**, ou Localizador Uniforme de Recursos.
 
 Todo e qualquer recurso disponível na internet – seja uma página de texto, uma imagem, um vídeo, um arquivo para download ou até mesmo um dispositivo como uma impressora em rede – possui uma URL única. Ela é o "endereço virtual" que informa ao navegador o caminho exato para encontrar o que se procura. Ao digitar ou clicar em uma URL, estamos fornecendo ao navegador as coordenadas precisas para que ele possa fazer a solicitação ao servidor correto e trazer o recurso até a nossa tela.
 
-### A Estrutura de um Endereço Web
+### Estrutura de um Endereço Web
 
 Embora possam parecer complexas, as URLs seguem uma estrutura lógica e padronizada. Em sua forma mais comum, ela é composta pelos seguintes elementos:
 
@@ -119,25 +119,25 @@ Embora possam parecer complexas, as URLs seguem uma estrutura lógica e padroniz
 
 É importante notar que, no uso cotidiano, raramente precisamos digitar todos esses componentes. Partes como a porta, o caminho e o nome do recurso são frequentemente opcionais ou preenchidas automaticamente pelo navegador. Vamos dissecar cada um desses componentes usando uma analogia com um endereço físico. Pense no endereço fictício de um apartamento em Brasília: `SQN 115 Bloco A, Apt 208 – Asa Norte – Brasília/DF`.
 
-|Componentes da URL|Descrição|Analogia com Endereço Físico|
-|---|---|---|
-|**Protocolo**|Define o conjunto de regras ou o "idioma" que será usado para a comunicação. Os mais comuns são `http` e `https`|É o **meio de transporte** que se usa para chegar. Você vai de carro, de ônibus, a pé? Cada um tem suas regras.|
-|**Domínio ou IP**|É o nome ou o número de identificação único do servidor onde o recurso está hospedado. É o endereço principal do "terreno digital".|É a **cidade e o bairro** do endereço: `Asa Norte – Brasília/DF`. Informa a localização geral do destino.|
-|**Porta**|Um ponto de comunicação lógico no servidor. Cada serviço (web, e-mail, etc.) opera em uma porta diferente para não haver conflito.|É a **entrada específica** do prédio. Pode ser a portaria principal, a entrada de serviço ou a garagem.|
-|**Caminho**|A estrutura de pastas e subpastas dentro do servidor que organiza os arquivos.|É o **endereço dentro do bairro**: `SQN 115 Bloco A`. Indica a rua e o prédio específico.|
-|**Recurso**|O arquivo final que se deseja acessar.|É o **local exato** dentro do prédio: `Apt 208`. É o destino final da sua jornada.|
+| Componentes da URL | Descrição                                                                                                                           | Analogia com Endereço Físico                                                                                    |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Protocolo**      | Define o conjunto de regras ou o "idioma" que será usado para a comunicação. Os mais comuns são `http` e `https`                    | É o **meio de transporte** que se usa para chegar. Você vai de carro, de ônibus, a pé? Cada um tem suas regras. |
+| **Domínio ou IP**  | É o nome ou o número de identificação único do servidor onde o recurso está hospedado. É o endereço principal do "terreno digital". | É a **cidade e o bairro** do endereço: `Asa Norte – Brasília/DF`. Informa a localização geral do destino.       |
+| **Porta**          | Um ponto de comunicação lógico no servidor. Cada serviço (web, e-mail, etc.) opera em uma porta diferente para não haver conflito.  | É a **entrada específica** do prédio. Pode ser a portaria principal, a entrada de serviço ou a garagem.         |
+| **Caminho**        | A estrutura de pastas e subpastas dentro do servidor que organiza os arquivos.                                                      | É o **endereço dentro do bairro**: `SQN 115 Bloco A`. Indica a rua e o prédio específico.                       |
+| **Recurso**        | O arquivo final que se deseja acessar.                                                                                              | É o **local exato** dentro do prédio: `Apt 208`. É o destino final da sua jornada.                              |
 
 Vamos analisar uma URL real para solidificar o conceito:
 
 `https://www.cursodeinformatica.com.br/app/dashboard/cursos/aulas/aula1.pdf`
 
-|Componentes|Descrição|
-|---|---|
-|**Protocolo**|`https` - O navegador usará o Protocolo de Transferência de Hipertexto Seguro.|
-|**Domínio**|`cursodeinformatica.com.br` - O servidor que hospeda o recurso. O `www` é um subdomínio comum, mas muitas vezes pode ser omitido.|
-|**Porta**|`443` - Embora não esteja visível na URL, esta é a porta padrão para o protocolo `https` e é usada automaticamente pelo navegador.|
-|**Caminho**|`/app/dashboard/cursos/aulas/` - A sequência de "pastas" dentro do servidor para chegar ao arquivo.|
-|**Recurso**|`aula1.pdf` - O arquivo específico que estamos solicitando.|
+| Componentes   | Descrição                                                                                                                          |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Protocolo** | `https` - O navegador usará o Protocolo de Transferência de Hipertexto Seguro.                                                     |
+| **Domínio**   | `cursodeinformatica.com.br` - O servidor que hospeda o recurso. O `www` é um subdomínio comum, mas muitas vezes pode ser omitido.  |
+| **Porta**     | `443` - Embora não esteja visível na URL, esta é a porta padrão para o protocolo `https` e é usada automaticamente pelo navegador. |
+| **Caminho**   | `/app/dashboard/cursos/aulas/` - A sequência de "pastas" dentro do servidor para chegar ao arquivo.                                |
+| **Recurso**   | `aula1.pdf` - O arquivo específico que estamos solicitando.                                                                        |
 
 É comum confundir URL com Domínio. O **domínio** é apenas uma parte da URL, a que identifica o site (`cursodeinformatica.com.br`). Se alterarmos o recurso para `aula2.pdf`, teremos uma nova URL, mas o domínio permanecerá o mesmo.
 
@@ -145,21 +145,21 @@ Vamos analisar uma URL real para solidificar o conceito:
 
 A estrutura que vimos é a mais comum, mas a sintaxe completa de uma URL pode incluir outros componentes opcionais, embora mais raros, que permitem interações mais complexas.
 
-|URL (SINTAXE COMPLETA)|
-|---|
-|`protocolo://nome-de-usuário@domínio:porta/caminho/recurso?query#fragmento`|
+| URL (SINTAXE COMPLETA)                                                      |
+| --------------------------------------------------------------------------- |
+| `protocolo://nome-de-usuário@domínio:porta/caminho/recurso?query#fragmento` |
 
-|Componentes Extras|Descrição|Exemplo de Uso|
-|---|---|---|
-|**Query / queryString**|Utilizada para passar parâmetros adicionais para o servidor em formato de "chave=valor". Inicia com `?` e múltiplos parâmetros são separados por `&`.|Ao pesquisar "apostila de informática" em um buscador, a URL pode conter `.../search?q=apostila+de+informatica`.|
-|**Fragmento**|Utilizado para navegar diretamente para uma seção específica de uma página, identificada por uma "âncora". Inicia com `#`.|Em um longo artigo da Wikipédia sobre o Brasil, uma URL terminada em `#História` levará o navegador diretamente para a seção "História".|
-|**Nome de usuário**|Utilizado em contextos que exigem autenticação para acessar o recurso, passando as credenciais diretamente na URL. Hoje é um método raro e inseguro.|Acessar um servidor de arquivos privado: `ftp://usuario@meuservidor.com`.|
+| Componentes Extras      | Descrição                                                                                                                                             | Exemplo de Uso                                                                                                                           |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Query / queryString** | Utilizada para passar parâmetros adicionais para o servidor em formato de "chave=valor". Inicia com `?` e múltiplos parâmetros são separados por `&`. | Ao pesquisar "apostila de informática" em um buscador, a URL pode conter `.../search?q=apostila+de+informatica`.                         |
+| **Fragmento**           | Utilizado para navegar diretamente para uma seção específica de uma página, identificada por uma "âncora". Inicia com `#`.                            | Em um longo artigo da Wikipédia sobre o Brasil, uma URL terminada em `#História` levará o navegador diretamente para a seção "História". |
+| **Nome de usuário**     | Utilizado em contextos que exigem autenticação para acessar o recurso, passando as credenciais diretamente na URL. Hoje é um método raro e inseguro.  | Acessar um servidor de arquivos privado: `ftp://usuario@meuservidor.com`.                                                                |
 
-> **Ponto de Atenção: A Codificação de URLs**
+> **Ponto de Atenção: Codificação de URLs**
 > 
 > As URLs possuem um conjunto restrito de caracteres permitidos. Caracteres especiais, acentos e espaços não são aceitos diretamente. Para contornar isso, existe a "codificação de URL", que converte esses caracteres em uma representação segura. O exemplo mais famoso é o espaço em branco, que é codificado como `%20`.
 
-### O DNS: A Lista Telefônica da Internet
+### DNS (Domain Name System)
 
 Nós, humanos, somos bons em memorizar nomes, como `google.com` ou `registro.br`. Os computadores, no entanto, se comunicam na rede usando endereços numéricos, chamados de **endereços IP** (Internet Protocol), como `172.217.29.206`. Como a ponte entre esses dois mundos é feita? A resposta é o **DNS (Domain Name System)**, ou Sistema de Nomes de Domínio.
 
@@ -183,7 +183,7 @@ O Registro.br também organiza os domínios `.br` em subcategorias, que ajudam a
 - **.edu.br:** Para instituições de ensino e pesquisa credenciadas.
 - E muitas outras categorias, algumas com restrições que exigem comprovação documental para o registro.
 
-### Um Protocolo Histórico: O FTP
+### FTP (File Transfer Protocol)
 
 Para finalizar nossa exploração dos componentes da internet, vale mencionar rapidamente o **FTP (File Transfer Protocol)**, ou Protocolo de Transferência de Arquivos. Como o nome indica, sua função principal é permitir a transferência de arquivos (upload e download) entre computadores em uma rede. Por muitos anos, o FTP foi o método padrão para enviar os arquivos de um site para o servidor de hospedagem ou para baixar programas e documentos.
 
@@ -205,11 +205,11 @@ Pode parecer difícil de imaginar hoje, mas houve uma época em que essa funcion
 
 Hoje, é comum que usuários mantenham dezenas de abas abertas ao mesmo tempo, seja para trabalho, estudo ou lazer. O limite máximo de abas que um navegador pode abrir não é fixo, sendo determinado principalmente pela quantidade de recursos computacionais disponíveis no dispositivo (memória RAM e capacidade de processamento). No entanto, em um computador moderno, é possível abrir mais de cinquenta abas com facilidade.
 
-### Organizando o Caos: Ferramentas de Gerenciamento de Abas
+### Ferramentas de Gerenciamento de Abas
 
 Com a possibilidade de abrir tantas páginas simultaneamente, a barra de guias pode rapidamente se transformar em um ambiente caótico e difícil de gerenciar. Para solucionar esse problema, os navegadores desenvolveram ferramentas que ajudam a organizar e a priorizar o acesso às abas mais importantes.
 
-#### Fixando Guias: Seus Favoritos Sempre à Mão
+#### Fixando Guias
 
 Para aquelas páginas que utilizamos com altíssima frequência ao longo do dia – como o e-mail, o calendário ou uma ferramenta de trabalho –, existe a funcionalidade de **fixar a guia**. Ao fixar uma guia, o navegador a posiciona permanentemente no lado esquerdo da barra de abas, em um formato reduzido que exibe apenas o ícone do site (o _favicon_).
 
@@ -219,7 +219,7 @@ Para aquelas páginas que utilizamos com altíssima frequência ao longo do dia 
 
 Essa ação traz duas vantagens: economiza um espaço precioso na barra de guias e garante que seus sites mais importantes estejam sempre no mesmo lugar, fáceis de encontrar, não importa quantas outras abas sejam abertas. Para utilizar o recurso, basta clicar com o botão direito do mouse sobre a aba desejada e escolher a opção "Fixar Guia".
 
-#### Agrupando Guias: Criando Contextos de Trabalho
+#### Agrupando Guias
 
 Uma funcionalidade mais recente, presente em navegadores como o Google Chrome e o Microsoft Edge, é o **agrupamento de guias**. Esse recurso é uma solução poderosa para quem trabalha com múltiplos projetos ou assuntos ao mesmo tempo. Ele permite que o usuário organize diversas abas relacionadas sob um mesmo grupo nomeado e colorido.
 
@@ -257,26 +257,26 @@ Logo abaixo da barra de abas, encontramos a área mais interativa do navegador, 
 <img width="700px" src="./img/01-barra-de-navegacao.png">
 </div>
 
-#### Os Controles de Navegação (Área Vermelha)
+#### Controles de Navegação
 
-Esta é a parte da interface que agrupa os botões e atalhos essenciais para o controle do nosso fluxo de navegação. Eles funcionam de maneira análoga a virar as páginas de um livro ou usar os controles de um player de vídeo, permitindo-nos mover para frente e para trás em nosso histórico. Os principais botões são:
+Esta é a parte da interface que agrupa os botões e atalhos essenciais para o controle do nosso fluxo de navegação (área vermelha nas imagens acima). Eles funcionam de maneira análoga a virar as páginas de um livro ou usar os controles de um player de vídeo, permitindo-nos mover para frente e para trás em nosso histórico. Os principais botões são:
 
 - **Voltar (Seta para a esquerda):** Este botão nos leva de volta à página que visitamos imediatamente antes da atual, dentro da mesma aba. Ele só fica ativo se já tivermos navegado por pelo menos duas páginas naquela guia.
 - **Avançar (Seta para a direita):** Este botão é o oposto do "Voltar". Ele só se torna clicável após termos recuado em nosso histórico e nos permite avançar novamente para a página que estávamos visitando.
 - **Atualizar/Recarregar (Ícone circular):** Clicar neste botão força o navegador a solicitar e baixar novamente todo o conteúdo da página atual do servidor. Isso é útil em diversas situações: para visualizar informações que mudam constantemente (como o placar de um jogo ou a cotação de uma ação), para corrigir uma página que carregou com erros ou para verificar se há novo conteúdo em um site de notícias.
 - **Página Inicial (Ícone de casa):** Leva o usuário diretamente para a página definida como inicial nas configurações do navegador. Muitos usuários configuram seu portal de notícias ou buscador favorito como página inicial para acesso rápido.
 
-#### A Barra de Endereços (Área Amarela)
+#### Barra de Endereços
 
-Este é o campo onde inserimos o endereço (a URL) da página que desejamos visitar. Funciona como o "GPS" da web: ao fornecer o endereço exato de um recurso, o navegador sabe exatamente para qual servidor deve enviar a solicitação. Se quisermos acessar o site do Google, é nesta barra que digitamos `www.google.com`.
+Este é o campo onde inserimos o endereço (a URL) da página que desejamos visitar (área amarela nas imagens). Funciona como o "GPS" da web: ao fornecer o endereço exato de um recurso, o navegador sabe exatamente para qual servidor deve enviar a solicitação. Se quisermos acessar o site do Google, é nesta barra que digitamos `www.google.com`.
 
 Além de ser um campo de entrada, a barra de endereços nos navegadores modernos também serve como um importante painel de informações, exibindo ícones que indicam o estado de segurança da conexão (como o cadeado que representa uma conexão HTTPS segura) e oferecendo atalhos para adicionar a página aos favoritos.
 
-#### A Barra de Pesquisa (Área Azul)
+#### Barra de Pesquisa
 
-Em navegadores mais antigos, como o Internet Explorer (mostrado na imagem), era comum haver uma barra de pesquisa separada. Sua função era exclusivamente a de permitir que o usuário realizasse buscas na internet utilizando um mecanismo de pesquisa pré-configurado (Google, Bing, Yahoo!, etc.), sem precisar primeiro acessar o site do buscador.
+Em navegadores mais antigos, como o Internet Explorer (mostrado nas imagem), era comum haver uma barra de pesquisa separada (área azul). Sua função era exclusivamente a de permitir que o usuário realizasse buscas na internet utilizando um mecanismo de pesquisa pré-configurado (Google, Bing, Yahoo!, etc.), sem precisar primeiro acessar o site do buscador.
 
-#### A Fusão Inteligente: A "Omnibox" Moderna
+#### "Omnibox" Moderna
 
 A principal evolução nesta área da interface foi a fusão da Barra de Endereços com a Barra de Pesquisa. Navegadores como Google Chrome, Mozilla Firefox e Microsoft Edge adotaram um campo unificado e inteligente, muitas vezes chamado de **"Omnibox"** ou "Barra Impressionante".
 
@@ -329,13 +329,13 @@ A Barra de Favoritos é um elemento gráfico, geralmente uma barra horizontal, l
 <img width="700px" src="./img/01-barra-de-favoritos.png">
 </div>
 
-#### Como Adicionar e Gerenciar Favoritos
+#### Adicionar e Gerenciar Favoritos
 
 O processo para salvar uma página na Barra de Favoritos é intencionalmente simples e muito similar em todos os navegadores. Geralmente, o ícone que representa a ação de "favoritar" uma página é uma **estrela (☆)**, localizada dentro ou ao final da barra de endereços.
 
 Ao visitar uma página que se deseja salvar, basta clicar neste ícone. Uma pequena janela se abrirá, permitindo que o usuário edite o nome do atalho (para que fique mais curto e claro) e, o mais importante, escolha em qual local o favorito será salvo. A opção padrão é adicioná-lo diretamente à Barra de Favoritos.
 
-#### O Poder da Organização: O Uso de Pastas
+#### Pastas de Favoritos
 
 A verdadeira força da Barra de Favoritos reside em sua capacidade de organização. Em vez de simplesmente adicionar dezenas de atalhos soltos, o que tornaria a barra poluída e confusa, é possível criar **pastas** para agrupar os links por tema ou contexto. Essas pastas podem, inclusive, conter outras subpastas, criando uma estrutura hierárquica que facilita enormemente a localização dos sites.
 
@@ -413,12 +413,12 @@ Quando se clica em um link para baixar um arquivo, o navegador inicia o processo
 
 Para visualizar e interagir com os arquivos que estão sendo baixados ou que já foram transferidos, os navegadores oferecem uma tela ou painel de gerenciamento. O acesso a essa área é padronizado na grande maioria dos navegadores através de um atalho de teclado universal: **Ctrl + J**.
 
-|Navegador|Atalho|Descrição|
-|---|---|---|
-|Google Chrome|Ctrl + J|Acessa a página com o histórico de arquivos baixados.|
-|Mozilla Firefox|Ctrl + J|Abre o painel com o histórico de arquivos baixados.|
-|Internet Explorer|Ctrl + J|Abre a janela de exibição de downloads.|
-|Microsoft Edge|Ctrl + J|Acessa a página com o histórico de arquivos baixados.|
+| Navegador         | Atalho   | Descrição                                             |
+| ----------------- | -------- | ----------------------------------------------------- |
+| Google Chrome     | Ctrl + J | Acessa a página com o histórico de arquivos baixados. |
+| Mozilla Firefox   | Ctrl + J | Abre o painel com o histórico de arquivos baixados.   |
+| Internet Explorer | Ctrl + J | Abre a janela de exibição de downloads.               |
+| Microsoft Edge    | Ctrl + J | Acessa a página com o histórico de arquivos baixados. |
 
 Dentro dessa interface de gerenciamento, o usuário pode realizar uma série de ações que lhe dão total controle sobre as transferências de arquivos:
 
@@ -440,12 +440,12 @@ Enquanto navegamos pela internet, saltando de um link para outro, o navegador at
 
 Para acessar o histórico, os principais navegadores também utilizam um atalho de teclado universal, o **Ctrl + H**. Ao acionar esse comando, o navegador exibe uma página ou um painel dedicado que lista os sites visitados, geralmente organizados por data (Hoje, Ontem, Semana Passada, etc.), exibindo o título da página, seu endereço (URL) e a hora da visita.
 
-|Navegador|Atalho|Descrição|
-|---|---|---|
-|Google Chrome|Ctrl + H|Exibe a página de histórico com os sites visitados.|
-|Mozilla Firefox|Ctrl + H|Abre a barra lateral ou a janela da biblioteca com o histórico.|
-|Internet Explorer|Ctrl + H|Abre o painel de histórico.|
-|Microsoft Edge|Ctrl + H|Exibe a página de histórico com os sites visitados.|
+| Navegador         | Atalho   | Descrição                                                       |
+| ----------------- | -------- | --------------------------------------------------------------- |
+| Google Chrome     | Ctrl + H | Exibe a página de histórico com os sites visitados.             |
+| Mozilla Firefox   | Ctrl + H | Abre a barra lateral ou a janela da biblioteca com o histórico. |
+| Internet Explorer | Ctrl + H | Abre o painel de histórico.                                     |
+| Microsoft Edge    | Ctrl + H | Exibe a página de histórico com os sites visitados.             |
 
 <div align="center">
 <img width="700px" src="./img/01-historico-de-navegacao.png">
@@ -501,12 +501,12 @@ Cada navegador dá um nome específico para essa funcionalidade: o **Google Chro
 
 A forma mais rápida de abrir uma nova janela de navegação privada é através de um atalho de teclado, que varia ligeiramente entre os navegadores.
 
-|Navegador|Atalho|Descrição|
-|---|---|---|
-|Google Chrome|Ctrl + Shift + N|Abre uma nova janela no modo de Navegação Anônima.|
-|Microsoft Edge|Ctrl + Shift + N|Abre uma nova janela de Navegação InPrivate.|
-|Mozilla Firefox|Ctrl + Shift + P|Abre uma nova janela de Navegação Privada.|
-|Internet Explorer|Ctrl + Shift + P|Abre uma nova janela de Navegação InPrivate.|
+| Navegador         | Atalho           | Descrição                                          |
+| ----------------- | ---------------- | -------------------------------------------------- |
+| Google Chrome     | Ctrl + Shift + N | Abre uma nova janela no modo de Navegação Anônima. |
+| Microsoft Edge    | Ctrl + Shift + N | Abre uma nova janela de Navegação InPrivate.       |
+| Mozilla Firefox   | Ctrl + Shift + P | Abre uma nova janela de Navegação Privada.         |
+| Internet Explorer | Ctrl + Shift + P | Abre uma nova janela de Navegação InPrivate.       |
 
 ### Impressão de Páginas
 
@@ -514,12 +514,12 @@ Apesar de vivermos em um mundo cada vez mais digital, a necessidade de ter uma c
 
 O acesso à janela de impressão é universalmente padronizado pelo atalho de teclado **Ctrl + P** (onde "P" vem do inglês _Print_, que significa Imprimir).
 
-|Navegador|Atalho|Descrição|
-|---|---|---|
-|Google Chrome|Ctrl + P|Abre a caixa de diálogo de impressão da página atual.|
-|Mozilla Firefox|Ctrl + P|Abre a caixa de diálogo de impressão da página atual.|
-|Internet Explorer|Ctrl + P|Abre a caixa de diálogo de impressão da página atual.|
-|Microsoft Edge|Ctrl + P|Abre a caixa de diálogo de impressão da página atual.|
+| Navegador         | Atalho   | Descrição                                             |
+| ----------------- | -------- | ----------------------------------------------------- |
+| Google Chrome     | Ctrl + P | Abre a caixa de diálogo de impressão da página atual. |
+| Mozilla Firefox   | Ctrl + P | Abre a caixa de diálogo de impressão da página atual. |
+| Internet Explorer | Ctrl + P | Abre a caixa de diálogo de impressão da página atual. |
+| Microsoft Edge    | Ctrl + P | Abre a caixa de diálogo de impressão da página atual. |
 
 Ao acionar esse comando, o navegador exibe uma janela de pré-visualização e um painel de configurações, permitindo um controle detalhado sobre o resultado final da impressão.
 
@@ -548,12 +548,12 @@ A melhor forma de compreender o efeito deste modo é experimentá-lo. Ao visitar
 
 Em provas e no uso diário, o mais importante é conhecer o atalho de teclado que ativa e desativa essa função. Felizmente, ele é universal na maioria dos sistemas.
 
-|Navegador|Atalho|Descrição|
-|---|---|---|
-|Google Chrome|F11|Ativa ou desativa o Modo Tela Cheia.|
-|Mozilla Firefox|F11|Ativa ou desativa o Modo Tela Cheia.|
-|Internet Explorer|F11|Ativa ou desativa o Modo Tela Cheia.|
-|Microsoft Edge|F11|Ativa ou desativa o Modo Tela Cheia.|
+| Navegador         | Atalho | Descrição                            |
+| ----------------- | ------ | ------------------------------------ |
+| Google Chrome     | F11    | Ativa ou desativa o Modo Tela Cheia. |
+| Mozilla Firefox   | F11    | Ativa ou desativa o Modo Tela Cheia. |
+| Internet Explorer | F11    | Ativa ou desativa o Modo Tela Cheia. |
+| Microsoft Edge    | F11    | Ativa ou desativa o Modo Tela Cheia. |
 
 A tecla **F11** é o padrão para ativar e desativar o Modo Tela Cheia em praticamente todos os navegadores para os sistemas operacionais Windows e Linux. Em dispositivos macOS, o atalho equivalente costuma ser **Cmd + Shift + F**.
 
@@ -591,11 +591,11 @@ Esse rastreamento é feito por meio de _scripts_ e _cookies_ de terceiros, que m
 
 Existem duas abordagens principais que os navegadores utilizam para combater o rastreamento: uma passiva e uma ativa.
 
-##### A Abordagem Passiva: _Do Not Track_ (Não Rastrear)
+##### Abordagem Passiva: _Do Not Track_ (Não Rastrear)
 
 A funcionalidade **_Do Not Track_ (DNT)**, ou "Não Rastrear", é um mecanismo passivo. Quando ativada, o navegador envia um sinal, uma espécie de "pedido", a cada site visitado, informando que o usuário não deseja ser rastreado. No entanto, esta é apenas uma solicitação; não há nenhuma obrigação técnica para que os sites a respeitem. Na prática, embora a opção esteja disponível em todos os principais navegadores, a grande maioria dos sites e redes de publicidade ignora esse pedido, tornando a eficácia do DNT bastante limitada.
 
-##### A Abordagem Ativa: Proteção Contra Rastreamento
+##### Abordagem Ativa: Proteção Contra Rastreamento
 
 Muito mais eficaz é a **Proteção Contra Rastreamento**. Em vez de apenas pedir para não ser rastreado, o navegador atua de forma **ativa**, utilizando listas de domínios conhecidos por realizar rastreamento e bloqueando qualquer conteúdo vindo deles. Se um site de notícias tenta carregar um _script_ de uma rede de publicidade que está nessa lista, o navegador simplesmente impede que esse _script_ seja executado, protegendo a privacidade do usuário.
 
@@ -607,7 +607,7 @@ Navegadores com foco em privacidade, como o Mozilla Firefox, oferecem uma sinali
 <img width="360px" src="./img/01-protecao-contra-rastreamento.png">
 </div>
 
-#### O Cenário da Privacidade nos Navegadores
+#### Cenário da Privacidade nos Navegadores
 
 O nível de proteção oferecido por padrão varia significativamente entre os navegadores. O Mozilla Firefox, por exemplo, é conhecido por suas configurações de privacidade robustas, que vêm ativadas por padrão. Essa proteção inclui o bloqueio de diversos tipos de rastreadores:
 
@@ -632,7 +632,7 @@ Cookies são pequenos arquivos de texto que um site, através de seu servidor we
 
 Imagine a seguinte situação: ao planejar uma viagem, uma pessoa acessa um site de reservas de hotéis internacional e, ao ser questionada sobre seu idioma, seleciona "Português". Nesse momento, o site cria um cookie contendo essa preferência e o envia para o navegador. No dia seguinte, ao retornar ao mesmo site, o navegador reenvia o cookie para o servidor. O site lê a informação e, sem precisar perguntar novamente, já exibe todo o conteúdo em português. Essa é a principal função dos cookies: melhorar e agilizar a experiência do usuário.
 
-#### As Duas Faces dos Cookies: Conveniência vs. Rastreamento
+#### Cookies: Conveniência vs. Rastreamento
 
 Embora sua função primária seja a conveniência, os cookies se tornaram uma ferramenta de dupla face. É fundamental distinguir os cookies do próprio site que se está visitando (de primeiro nível) daqueles que pertencem a outros domínios (de terceiros).
 
@@ -655,7 +655,7 @@ Ao se utilizar a **navegação anônima ou privada**, o navegador opera exclusiv
 Ao navegar, é comum que sites complexos utilizem dezenas ou até centenas de cookies, tanto próprios quanto de terceiros, para funcionar.
 
 <div align="center">
-<img width="420px" src="./img/01-cookies.png">
+<img width="400px" src="./img/01-cookies.png">
 </div>
 
 A imagem acima, que ilustra a quantidade de cookies em uso em um grande portal de notícias, pode assustar, mas em um site confiável, esse número é normal e reflete a complexidade dos serviços integrados (análises de audiência, publicidade, vídeos, etc.).
@@ -728,7 +728,7 @@ Os dois exemplos mais clássicos que dominaram a internet por quase duas década
 
 Apesar de sua importância histórica, os plug-ins caíram em desuso e hoje são considerados uma tecnologia obsoleta. Isso ocorreu por dois motivos principais: eles frequentemente apresentavam falhas de segurança e consumiam muitos recursos do computador. Com a evolução de tecnologias web nativas como o HTML5, os navegadores passaram a ser capazes de reproduzir vídeos, animações e aplicações complexas diretamente, sem a necessidade desses componentes externos. Como resultado, os navegadores modernos removeram ativamente o suporte aos plug-ins.
 
-#### Extensões (As Ferramentas de Hoje)
+#### Extensões (Ferramentas Atuais)
 
 As **Extensões** são as sucessoras modernas dos plug-ins no que diz respeito a adicionar novas funcionalidades. A grande e fundamental diferença é que as extensões são pequenos códigos integrados diretamente ao navegador e distribuídos de forma segura através de uma loja oficial, mantida pelo próprio desenvolvedor do navegador (como a Chrome Web Store, os Complementos para Firefox ou os Microsoft Edge Add-ons).
 
@@ -739,11 +739,11 @@ Enquanto os plug-ins atuavam para exibir conteúdo _dentro_ da página, as exten
 - **Ferramentas de Produtividade:** Extensões que permitem acelerar a velocidade de videoaulas, traduzir textos, criar listas de tarefas ou consultar rapidamente o significado de uma palavra em um dicionário.
 - **Personalização:** Ferramentas que alteram o comportamento de sites, como o modo escuro para redes sociais.
 
-#### Temas (Mudando o Visual)
+#### Temas
 
 Diferentemente das extensões, os **Temas** são complementos puramente estéticos. Sua única função é alterar a aparência do navegador, personalizando suas cores, a imagem de fundo da página "Nova Guia" e o design dos botões. Eles não adicionam nenhuma nova funcionalidade, servindo apenas para deixar a interface do navegador com um estilo que agrade mais ao usuário.
 
-#### Complementos: O Termo Abrangente
+#### Complementos
 
 Para organizar esses diferentes tipos de "adicionais", alguns navegadores utilizam um termo genérico. O **Mozilla Firefox**, por exemplo, chama de **Complementos** (ou _Add-ons_) o conjunto que engloba as **Extensões**, os **Temas** e, historicamente, os **Plug-ins**. Pode-se entender, portanto, que "Complemento" é a categoria mais ampla, que descreve tudo aquilo que pode ser adicionado ao navegador para expandir suas capacidades ou alterar sua aparência.
 
@@ -776,7 +776,7 @@ A proteção se estende aos arquivos baixados da internet. O navegador verifica 
 
 O filtro **SmartScreen** da Microsoft adiciona uma camada extra de proteção baseada em **reputação**. Além de bloquear arquivos conhecidos como perigosos, ele também pode alertar sobre arquivos que são desconhecidos ou que foram baixados poucas vezes pela comunidade de usuários. Esse aviso, como o exibido na imagem, sinaliza um risco potencial, pois programas novos e não verificados podem ser uma ameaça.
 
-#### Proteção Avançada: O Combate ao Cross-Site Scripting (XSS)
+#### Proteção Avançada: Combate ao Cross-Site Scripting (XSS)
 
 Além de bloquear sites e arquivos, os navegadores também tentam proteger os usuários de ataques mais sofisticados, como o **Cross-Site Scripting (XSS)**. Nesse tipo de ataque, um criminoso consegue injetar um código (_script_) malicioso em um site legítimo, mas vulnerável. Quando um usuário visita essa página comprometida, o _script_ malicioso é executado em seu navegador.
 
@@ -794,7 +794,7 @@ Imagine um estudante pesquisando para um trabalho. Ele pode criar um grupo chama
 <img width="700px" src="./img/01-agrupamento-de-abas.png">
 </div>
 
-#### A Vantagem da Organização: Expandir e Recolher
+#### Expandir e Recolher
 
 A principal vantagem do agrupamento é a capacidade de "sanfonar" os grupos. Com um único clique no nome do grupo, todas as abas contidas nele são recolhidas, liberando um enorme espaço na barra de navegação e permitindo que o usuário foque apenas no grupo de tarefas que lhe interessa no momento. A imagem a seguir demonstra o ganho visual e organizacional quando os grupos estão retraídos.
 
@@ -802,7 +802,7 @@ A principal vantagem do agrupamento é a capacidade de "sanfonar" os grupos. Com
 <img width="700px" src="./img/01-agrupamento-de-abas-restraidas.png">
 </div>
 
-#### Como Agrupar e Gerenciar as Abas
+#### Agrupar e Gerenciar as Abas
 
 O processo para criar e gerenciar grupos é bastante intuitivo nos navegadores que oferecem o recurso, como o Google Chrome e o Microsoft Edge:
 
@@ -825,11 +825,7 @@ A imagem a seguir sintetiza a disponibilidade nativa do recurso nos principais n
 <img width="700px" src="./img/01-agrupamento-de-abas-navegadores.png">
 </div>
 
-Com certeza! Suas anotações contam a história da evolução do Microsoft Edge de forma muito clara. Vou usar essa linha do tempo para construir uma seção detalhada sobre o navegador padrão da Microsoft, explicando suas duas grandes fases e o que cada uma representa.
-
----
-
-## Os Navegadores em Detalhe
+## Principais Navegadores em Detalhe
 
 Após explorarmos as funcionalidades e os conceitos gerais que se aplicam a todos os navegadores, vamos agora dedicar um tempo para conhecer as características e o contexto histórico dos principais programas de navegação do mercado. Começaremos pelo navegador da Microsoft, o Edge.
 
@@ -837,24 +833,24 @@ Após explorarmos as funcionalidades e os conceitos gerais que se aplicam a todo
 
 O Microsoft Edge nasceu da necessidade da Microsoft de se modernizar e superar a reputação negativa de seu antigo navegador, o Internet Explorer, que por anos sofreu com problemas de segurança, lentidão e incompatibilidade com os novos padrões da web. A história do Edge pode ser dividida em duas gerações distintas, marcadas por uma mudança radical de tecnologia e estratégia.
 
-#### A Primeira Geração: O Edge Original (2015-2019)
+#### Primeira Geração: Edge Original (2015-2019)
 
 Anunciado em 2015, o Microsoft Edge original foi lançado como o navegador padrão do Windows 10. Ele representou um corte definitivo com o passado: abandonou tecnologias legadas e problemáticas como o ActiveX e trouxe uma interface mais limpa e recursos modernos, como a integração com a assistente virtual Cortana e um leitor de PDFs nativo.
 
 <div align="center">
-<img width="280px" src="./img/01-edge-logo-antiga.png">
+<img width="200px" src="./img/01-edge-logo-antiga.png">
 </div>
 
 Apesar dos avanços em relação ao seu antecessor, esta primeira versão do Edge não conseguiu conquistar o público. Seu principal desafio era o uso de um motor de renderização próprio (o EdgeHTML). Embora fosse moderno, muitos sites não eram otimizados para ele, o que causava falhas de compatibilidade e afastava os usuários, que migravam para concorrentes como o Google Chrome.
 
-#### A Segunda Geração: O Edge "Chromium" (A partir de 2020)
+#### Segunda Geração: Edge "Chromium" (A partir de 2020)
 
 Percebendo as dificuldades, a Microsoft tomou uma decisão estratégica drástica em 2019: abandonar seu motor próprio e reconstruir o Edge do zero, utilizando como base o **Chromium**. O Chromium é um projeto de navegador de código aberto mantido pelo Google, que serve como a fundação para o próprio Google Chrome. Em outras palavras, desde o seu relançamento no início de 2020, o Microsoft Edge e o Google Chrome compartilham a mesma tecnologia de base, o que os torna, de certa forma, "primos".
 
 Essa mudança foi marcada por um novo logotipo e trouxe consequências imensamente positivas para o navegador.
 
 <div align="center">
-<img width="280px" src="./img/01-edge-logo-nova.png">
+<img width="200px" src="./img/01-edge-logo-nova.png">
 </div>
 
 As principais vantagens da nova versão são:
@@ -901,7 +897,7 @@ A tabela a seguir lista os principais endereços internos para as configuraçõe
 
 Essa prática de utilizar um protocolo interno para acessar configurações não é exclusiva do Edge. Por compartilhar a mesma base tecnológica (Chromium), o Google Chrome possui um sistema praticamente idêntico, utilizando o protocolo `chrome://` (por exemplo, `chrome://settings`). O Mozilla Firefox, por sua vez, utiliza um esquema semelhante, o `about:` (por exemplo, `about:preferences` para as configurações e `about:config` para ajustes avançados). Esse método se consolidou como um padrão para oferecer aos usuários um acesso rápido e direto às funcionalidades internas do navegador.
 
-#### Gerenciando suas Chaves Digitais: O Cofre de Senhas do Edge
+#### Gerenciador de Senhas
 
 Na internet atual, a segurança de nossas contas online depende da criação de senhas fortes e, idealmente, únicas para cada serviço que utilizamos. No entanto, lembrar de dezenas de senhas complexas é uma tarefa humanamente impossível. Para resolver esse dilema, o Microsoft Edge, assim como outros navegadores modernos, integra um **Gerenciador de Senhas** – uma espécie de cofre digital que armazena, protege e preenche suas credenciais de login automaticamente.
 
@@ -911,24 +907,22 @@ Quando o usuário insere um nome de usuário e senha em um site pela primeira ve
 
 A ferramenta oferece um conjunto de funcionalidades projetadas para tornar o acesso a contas online mais seguro e conveniente.
 
-|Característica|Descrição|
-|---|---|
-|**Armazenamento Seguro**|As senhas são guardadas localmente de forma criptografada, protegendo-as contra acessos não autorizados no dispositivo.|
-|**Preenchimento Automático**|Em visitas futuras a um site para o qual a senha foi salva, o Edge preenche automaticamente os campos de login, agilizando o acesso com um único clique.|
-|**Sincronização entre Dispositivos**|Ao conectar-se com uma Conta Microsoft no Edge, as senhas salvas são sincronizadas de forma segura na nuvem, ficando disponíveis em todos os seus dispositivos (computador, celular, tablet).|
-|**Sugestão de Senhas Fortes**|Ao criar uma nova conta, o Edge pode gerar e sugerir uma senha longa, complexa e aleatória (ex: `Jk#8-pX!qZ$vR7n`), que é muito mais segura do que senhas criadas por humanos.|
-|**Verificação de Segurança (Monitor de Senhas)**|O navegador pode verificar ativamente suas senhas salvas, comparando-as com um vasto banco de dados de credenciais que foram expostas em vazamentos de dados conhecidos, alertando o usuário caso uma de suas senhas esteja comprometida.|
+| Característica                                   | Descrição                                                                                                                                                                                                                                 |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Armazenamento Seguro**                         | As senhas são guardadas localmente de forma criptografada, protegendo-as contra acessos não autorizados no dispositivo.                                                                                                                   |
+| **Preenchimento Automático**                     | Em visitas futuras a um site para o qual a senha foi salva, o Edge preenche automaticamente os campos de login, agilizando o acesso com um único clique.                                                                                  |
+| **Sincronização entre Dispositivos**             | Ao conectar-se com uma Conta Microsoft no Edge, as senhas salvas são sincronizadas de forma segura na nuvem, ficando disponíveis em todos os seus dispositivos (computador, celular, tablet).                                             |
+| **Sugestão de Senhas Fortes**                    | Ao criar uma nova conta, o Edge pode gerar e sugerir uma senha longa, complexa e aleatória (ex: `Jk#8-pX!qZ$vR7n`), que é muito mais segura do que senhas criadas por humanos.                                                            |
+| **Verificação de Segurança (Monitor de Senhas)** | O navegador pode verificar ativamente suas senhas salvas, comparando-as com um vasto banco de dados de credenciais que foram expostas em vazamentos de dados conhecidos, alertando o usuário caso uma de suas senhas esteja comprometida. |
 
 A funcionalidade de **Verificação de Segurança**, também chamada de "Monitor de Senhas", é um recurso proativo de grande importância. Ela não espera que um problema aconteça; em vez disso, monitora constantemente se alguma de suas senhas salvas apareceu em listas de credenciais vazadas na internet. Caso isso ocorra, o Edge o notificará e o orientará a alterar a senha daquele serviço imediatamente para proteger sua conta.
 
-##### Personalizando o Controle: Como Gerenciar as Configurações de Senha
+##### Como Gerenciar as Configurações de Senha
 
 O Edge oferece ao usuário controle total sobre o funcionamento do gerenciador. Através da página de configurações de senhas (acessível pelo endereço `edge://settings/passwords`), é possível ajustar todas as opções.
 
 <div align="center">
-
-<img width="700px" src="./img/01-edge-senhas.png" alt="Janela de configurações de senhas do Microsoft Edge, mostrando opções como 'Oferecer para salvar senhas' e 'Verificar se há senhas vazadas'.">
-
+<img width="700px" src="./img/01-edge-senhas.png">
 </div>
 
 Como a imagem ilustra, o usuário pode habilitar ou desabilitar cada uma das funcionalidades, como a oferta para salvar senhas, o preenchimento automático e a sugestão de senhas fortes.
@@ -942,16 +936,14 @@ Para desativar a oferta de salvamento de senhas, o caminho é:
 3. No menu lateral, selecionar **Perfis** e, em seguida, **Senhas**.
 4. Desativar a opção **"Oferecer para salvar senhas"**.
 
-#### Proteção de Privacidade Ativa: A Prevenção de Rastreamento do Edge
+#### Prevenção de Rastreamento do Edge
 
 Como vimos anteriormente, o rastreamento online é uma prática comum na qual sites, redes de publicidade e empresas de análise de dados coletam informações sobre seus hábitos de navegação para criar perfis de usuário e exibir anúncios personalizados. O Microsoft Edge possui uma ferramenta nativa e poderosa para combater essa prática: a **Prevenção de Rastreamento**.
 
 Diferente de uma simples solicitação passiva (como o _Do Not Track_), esta é uma funcionalidade **ativa** que bloqueia automaticamente rastreadores conhecidos com base em listas mantidas pela Microsoft. Ela oferece ao usuário um controle granular sobre sua privacidade, permitindo escolher entre três níveis de proteção.
 
 <div align="center">
-
-<img width="700px" src="./img/01-edge-rastreamento.png" alt="Janela de configurações da Prevenção de Rastreamento no Microsoft Edge, mostrando os três níveis de proteção: Básico, Balanceado e Estrito.">
-
+<img width="700px" src="./img/01-edge-rastreamento.png">
 </div>
 
 Essa tela de configuração, acessível pelo endereço `edge://settings/privacy/trackingPrevention`, permite ao usuário definir o quão agressivo o navegador deve ser ao bloquear esses rastreadores.
@@ -960,13 +952,13 @@ Essa tela de configuração, acessível pelo endereço `edge://settings/privacy/
 
 A ferramenta classifica os rastreadores e os bloqueia de acordo com o nível de proteção que o usuário escolhe.
 
-|Nível|Descrição|Indicado para quem...|
-|---|---|---|
-|**Básico**|Bloqueia apenas rastreadores maliciosos conhecidos (como os de _criptomineração_ ou _fingerprinting_). Permite a maioria dos outros rastreadores para que os anúncios permaneçam personalizados e os sites funcionem como esperado.|...deseja a proteção mínima contra as ameaças mais graves, mas não se importa com anúncios personalizados e quer garantir a máxima compatibilidade com todos os sites.|
-|**Balanceado (Recomendado)**|Bloqueia rastreadores de sites que o usuário nunca visitou diretamente. O conteúdo e os anúncios serão menos personalizados. É o equilíbrio ideal entre privacidade e funcionalidade.|...quer uma navegação significativamente mais privada, bloqueando rastreadores desconhecidos, mas sem o risco de quebrar a funcionalidade de sites legítimos.|
-|**Restrito**|Bloqueia a grande maioria dos rastreadores de terceiros em todos os sites. Os anúncios terão personalização mínima ou nenhuma. **Atenção:** esta opção pode fazer com que partes de alguns sites não funcionem corretamente.|...deseja o nível máximo de privacidade, mesmo que isso signifique que alguns vídeos, botões de login de redes sociais ou seções de comentários em sites possam não carregar.|
+| Nível                        | Descrição                                                                                                                                                                                                                           | Indicado para quem...                                                                                                                                                         |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Básico**                   | Bloqueia apenas rastreadores maliciosos conhecidos (como os de _criptomineração_ ou _fingerprinting_). Permite a maioria dos outros rastreadores para que os anúncios permaneçam personalizados e os sites funcionem como esperado. | ...deseja a proteção mínima contra as ameaças mais graves, mas não se importa com anúncios personalizados e quer garantir a máxima compatibilidade com todos os sites.        |
+| **Balanceado (Recomendado)** | Bloqueia rastreadores de sites que o usuário nunca visitou diretamente. O conteúdo e os anúncios serão menos personalizados. É o equilíbrio ideal entre privacidade e funcionalidade.                                               | ...quer uma navegação significativamente mais privada, bloqueando rastreadores desconhecidos, mas sem o risco de quebrar a funcionalidade de sites legítimos.                 |
+| **Restrito**                 | Bloqueia a grande maioria dos rastreadores de terceiros em todos os sites. Os anúncios terão personalização mínima ou nenhuma. **Atenção:** esta opção pode fazer com que partes de alguns sites não funcionem corretamente.        | ...deseja o nível máximo de privacidade, mesmo que isso signifique que alguns vídeos, botões de login de redes sociais ou seções de comentários em sites possam não carregar. |
 
-##### A Balança da Privacidade: Vantagens e Desvantagens
+##### Vantagens e Desvantagens da Prevenção de Rastreamento
 
 A ativação da Prevenção de Rastreamento traz benefícios claros, mas também pode ter alguns efeitos colaterais, especialmente no nível mais restrito.
 
@@ -1040,10 +1032,6 @@ A lista acima apresenta os atalhos mais comuns e úteis para o dia a dia. Para u
 
 `https://support.microsoft.com/pt-br/microsoft-edge/atalhos-de-teclado-no-microsoft-edge-50d3edab-3d42-b75e-538a-37c2c2f21915`
 
-Com certeza! As anotações sobre o Google Chrome destacam perfeitamente o contexto de seu lançamento e as razões de seu sucesso. Vou expandir esses pontos para criar uma seção detalhada, contrastando a inovação do Chrome com os problemas da era anterior da navegação.
-
----
-
 ### Google Chrome
 
 Lançado em 2 de setembro de 2008, o Google Chrome não foi apenas mais um navegador a entrar no mercado; ele representou uma verdadeira revolução que mudou as expectativas dos usuários sobre como deveria ser a experiência de navegar na internet. Em uma época dominada pelo Internet Explorer, que sofria com lentidão, instabilidade e sérios problemas de segurança, o Chrome chegou com uma proposta radicalmente diferente, focada em três pilares: velocidade, simplicidade e segurança.
@@ -1051,10 +1039,10 @@ Lançado em 2 de setembro de 2008, o Google Chrome não foi apenas mais um naveg
 O sucesso foi avassalador. Em poucos anos, ele se tornou o navegador mais utilizado do mundo, uma posição de liderança que mantém até hoje.
 
 <div align="center">
-<img width="280px" src="./img/01-chrome-logo.png">
+<img width="200px" src="./img/01-chrome-logo.png">
 </div>
 
-#### O Contraste com o Passado: Minimalismo vs. Poluição Visual
+#### Minimalismo vs. Poluição Visual
 
 Um dos maiores impactos do Google Chrome foi em sua filosofia de design. A interface era extremamente **minimalista**: ao abrir o navegador, o usuário encontrava apenas o essencial para a navegação – a barra de abas, a barra de navegação/endereços e a barra de favoritos (que ainda podia ser ocultada).
 
@@ -1105,18 +1093,18 @@ Nesta tela, o usuário pode ver com qual conta está sincronizado e acessar opç
 - **Gerenciar o que é sincronizado:** Permite escolher individualmente quais categorias de dados serão compartilhadas (por exemplo, sincronizar favoritos e senhas, mas não o histórico).
 - **Opções de criptografia:** Para aumentar a segurança, todos os dados são criptografados. É possível, inclusive, configurar uma "frase secreta de sincronização", que adiciona uma camada extra de criptografia que nem mesmo o Google pode acessar.
 
-##### Segurança Integrada: A Verificação de Senhas
+##### Segurança Integrada: Verificação de Senhas
 
 Integrada à funcionalidade de sincronização de senhas, o Google Chrome oferece uma ferramenta proativa de segurança. O navegador é capaz de verificar as senhas salvas e alertar o usuário caso alguma delas seja considerada fraca, esteja sendo reutilizada em múltiplos sites ou, o mais importante, tenha sido comprometida em algum vazamento de dados conhecido na internet. Ao identificar uma senha vulnerável, o Chrome recomenda a sua alteração imediata para proteger a segurança da conta.
 
-#### Segurança Reforçada: A Arquitetura "Sandbox" (Caixa de Areia)
+#### Segurança Reforçada: Arquitetura "Sandbox" (Caixa de Areia)
 
 Imagine uma criança brincando em uma caixa de areia em um parquinho. Tudo o que ela faz ali dentro – construir castelos, cavar buracos, espalhar areia – fica contido dentro das bordas daquela caixa, sem afetar o resto do parquinho. Esse é o princípio exato por trás da arquitetura de segurança do Google Chrome, conhecida como **Sandbox** (Caixa de Areia).
 
 Essa funcionalidade foi desenvolvida para isolar os processos do navegador, aumentando tanto a estabilidade quanto a segurança da navegação. A lógica por trás dela se baseia em um pilar fundamental: no Chrome, cada aba ou aplicativo web que você abre é executado como um processo separado e independente no seu computador.
 
 <div align="center">
-<img width="640px" src="./img/01-gerenciador-de-tarefas.png">
+<img width="700px" src="./img/01-gerenciador-de-tarefas.png">
 </div>
 
 A imagem acima, uma captura do Gerenciador de Tarefas do Windows, ilustra perfeitamente essa arquitetura. Note que, embora haja apenas uma janela do navegador aberta, existem dezenas de processos "Google Chrome" em execução – um para o navegador principal, um para a placa de vídeo, e um para cada aba e extensão ativa.
@@ -1161,7 +1149,7 @@ A tabela a seguir apresenta os principais endereços internos para as configura�
 | `chrome://extensions`              | Permite acessar a página de gerenciamento de extensões.                                                |
 | `chrome://version` ou `about:`     | Permite acessar a página com informações detalhadas sobre a versão do navegador.                       |
 
-#### Gerenciando suas Chaves Digitais: O Cofre de Senhas do Google Chrome
+#### Gerenciador de Senhas
 
 A regra fundamental para a segurança online é utilizar senhas fortes e, principalmente, exclusivas para cada conta. No entanto, gerenciar dezenas de senhas complexas é um desafio para a memória humana. Para solucionar esse problema, o Google Chrome integra um robusto **Gerenciador de Senhas**, que funciona como um cofre digital seguro, vinculado diretamente à Conta do Google do usuário.
 
@@ -1181,12 +1169,12 @@ O gerenciador do Chrome atua em diversas frentes para proteger as contas do usu�
 | **Acesso e Gerenciamento**           | O usuário tem controle total para visualizar, editar e remover senhas salvas a qualquer momento através das configurações do navegador.                                                                                    |
 | **Segurança Adicional**              | Para acessar suas senhas no Chrome, pode ser necessário confirmar sua identidade, especialmente ao visualizar senhas no gerenciador de senhas. Isso adiciona uma camada extra de segurança para proteger suas informações. |
 
-##### O "Check-up de Senha": Uma Verificação de Segurança Proativa
+##### Check-up de Senha
 
 Uma das funcionalidades mais poderosas do gerenciador é o **Check-up de Senha**. Trata-se de uma ferramenta de auditoria de segurança que analisa todas as suas senhas salvas e as classifica em três categorias de risco, como ilustrado na imagem abaixo.
 
 <div align="center">
-<img width="680px" src="./img/01-chrome-check-up-senhas.png">
+<img width="700px" src="./img/01-chrome-check-up-senhas.png">
 </div>
 
 A verificação, que é feita de forma segura e com os dados criptografados para proteger a privacidade do usuário, apresenta os seguintes alertas:
@@ -1197,7 +1185,7 @@ A verificação, que é feita de forma segura e com os dados criptografados para
 
 Essa ferramenta transforma o gerenciador de senhas de um simples "cofre" em um assistente de segurança ativo, ajudando o usuário a manter suas contas online protegidas de forma contínua.
 
-#### Atalhos de Teclado no Google Chrome
+#### Atalhos de Teclado
 
 Uma das maneiras mais eficazes de agilizar a navegação e se tornar um usuário mais produtivo é dominar os atalhos de teclado. O Google Chrome oferece uma vasta gama de comandos que permitem executar ações rapidamente, sem a necessidade de usar o mouse. Muitos desses atalhos são padronizados e funcionam de forma similar em outros navegadores, especialmente naqueles que também são baseados na tecnologia Chromium, como o Microsoft Edge.
 
@@ -1207,40 +1195,40 @@ A seguir, apresentamos uma lista dos atalhos mais úteis, organizados por catego
 
 Essenciais para quem trabalha com múltiplas páginas, estes atalhos facilitam a organização do seu espaço de trabalho digital.
 
-|Atalho|Descrição|
-|---|---|
-|`CTRL + T`|Abre uma nova aba (guia).|
-|`CTRL + N`|Abre uma nova janela do navegador.|
-|`CTRL + W`|Fecha a aba (guia) atual.|
-|`CTRL + SHIFT + T`|Reabre a última aba que foi fechada. Um atalho extremamente útil para recuperar uma página fechada por engano. (Observação: não funciona no Modo de Navegação Anônima, pois este não guarda histórico).|
-|`CTRL + TAB`|Alterna para a próxima aba à direita, permitindo navegar rapidamente entre as guias abertas.|
-|`CTRL + SHIFT + N`|Abre uma nova janela no modo de Navegação Anônima.|
+| Atalho             | Descrição                                                                                                                                                                                               |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CTRL + T`         | Abre uma nova aba (guia).                                                                                                                                                                               |
+| `CTRL + N`         | Abre uma nova janela do navegador.                                                                                                                                                                      |
+| `CTRL + W`         | Fecha a aba (guia) atual.                                                                                                                                                                               |
+| `CTRL + SHIFT + T` | Reabre a última aba que foi fechada. Um atalho extremamente útil para recuperar uma página fechada por engano. (Observação: não funciona no Modo de Navegação Anônima, pois este não guarda histórico). |
+| `CTRL + TAB`       | Alterna para a próxima aba à direita, permitindo navegar rapidamente entre as guias abertas.                                                                                                            |
+| `CTRL + SHIFT + N` | Abre uma nova janela no modo de Navegação Anônima.                                                                                                                                                      |
 
 ##### Navegação e Pesquisa
 
 Comandos para controlar seu fluxo de navegação e interagir de forma eficiente com a barra de endereços.
 
-|Atalho|Descrição|
-|---|---|
-|`F5` ou `CTRL + R`|Atualiza (recarrega) a página atual.|
-|`ALT + HOME`|Navega diretamente para a página inicial configurada no navegador.|
-|`CTRL + E` ou `CTRL + K`|Coloca o cursor diretamente na barra de endereços para iniciar uma nova pesquisa.|
-|`F6`|Move o foco do cursor para a barra de endereços, selecionando a URL atual para que você possa digitar um novo endereço ou pesquisa.|
-|`CTRL + ENTER`|Completa um endereço na barra de endereços, adicionando `www.` ao início e `.com` ao final do texto digitado (Ex: digitar "google" e pressionar `CTRL+ENTER` leva a `www.google.com`).|
+| Atalho                   | Descrição                                                                                                                                                                              |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `F5` ou `CTRL + R`       | Atualiza (recarrega) a página atual.                                                                                                                                                   |
+| `ALT + HOME`             | Navega diretamente para a página inicial configurada no navegador.                                                                                                                     |
+| `CTRL + E` ou `CTRL + K` | Coloca o cursor diretamente na barra de endereços para iniciar uma nova pesquisa.                                                                                                      |
+| `F6`                     | Move o foco do cursor para a barra de endereços, selecionando a URL atual para que você possa digitar um novo endereço ou pesquisa.                                                    |
+| `CTRL + ENTER`           | Completa um endereço na barra de endereços, adicionando `www.` ao início e `.com` ao final do texto digitado (Ex: digitar "google" e pressionar `CTRL+ENTER` leva a `www.google.com`). |
 
 ##### Acesso a Ferramentas e Funcionalidades
 
 Atalhos para acessar rapidamente os painéis e as ferramentas mais importantes do navegador.
 
-|Atalho|Descrição|
-|---|---|
-|`CTRL + H`|Abre a página do Histórico de navegação.|
-|`CTRL + J`|Abre a página de Downloads.|
-|`CTRL + D`|Adiciona a página atual aos Favoritos.|
-|`CTRL + F`|Abre a ferramenta "Localizar" para pesquisar por palavras na página atual.|
-|`CTRL + G`|Navega para a próxima correspondência da busca feita com a ferramenta "Localizar".|
-|`CTRL + P`|Abre a caixa de diálogo para imprimir a página atual.|
-|`F11`|Ativa ou desativa o modo de visualização em Tela Cheia.|
+| Atalho     | Descrição                                                                          |
+| ---------- | ---------------------------------------------------------------------------------- |
+| `CTRL + H` | Abre a página do Histórico de navegação.                                           |
+| `CTRL + J` | Abre a página de Downloads.                                                        |
+| `CTRL + D` | Adiciona a página atual aos Favoritos.                                             |
+| `CTRL + F` | Abre a ferramenta "Localizar" para pesquisar por palavras na página atual.         |
+| `CTRL + G` | Navega para a próxima correspondência da busca feita com a ferramenta "Localizar". |
+| `CTRL + P` | Abre a caixa de diálogo para imprimir a página atual.                              |
+| `F11`      | Ativa ou desativa o modo de visualização em Tela Cheia.                            |
 
 ##### Gerenciamento de Dados e Ajuda
 
@@ -1258,10 +1246,10 @@ Esta lista cobre os principais atalhos para o uso cotidiano. Para uma referênci
 Lançado oficialmente em 2004, o Mozilla Firefox surgiu em um cenário onde a internet era dominada de forma quase absoluta pelo Internet Explorer. Naquela época, o navegador da Microsoft, que vinha pré-instalado no Windows e não podia ser removido, era visto por muitos usuários como lento, limitado e, principalmente, vulnerável a ataques. O Firefox chegou como a primeira grande alternativa viável, trazendo uma filosofia e uma proposta de navegação completamente diferentes.
 
 <div align="center">
-<img width="280px" src="./img/01-firefox-logo.png">
+<img width="200px" src="./img/01-firefox-logo.png">
 </div>
 
-#### A Filosofia do Código Aberto
+#### Filosofia do Código Aberto
 
 A diferença mais fundamental entre o Firefox e o Internet Explorer reside em sua natureza. O Firefox é um software de **código aberto** (_open source_), enquanto o IE é de **código proprietário**. Mas o que isso significa?
 
@@ -1270,7 +1258,7 @@ A diferença mais fundamental entre o Firefox e o Internet Explorer reside em su
 
 Essa abertura permitiu que o Firefox fosse construído com a ajuda de uma vasta comunidade global de colaboradores voluntários. Estima-se que cerca de 40% do código original do navegador foi escrito por essa comunidade, que trabalhava para corrigir falhas e implementar novos recursos, os quais eram então avaliados e incorporados ao produto final pela Fundação Mozilla.
 
-#### As Vantagens que Impulsionaram sua Popularidade
+#### Vantagens que Impulsionaram sua Popularidade
 
 Além de sua filosofia colaborativa, o Firefox conquistou os usuários por oferecer vantagens práticas e inovadoras para a época:
 
@@ -1303,14 +1291,14 @@ O grande destaque do Firefox Sync é o seu compromisso com a privacidade. O serv
 
 O resultado é um nível de segurança em que ninguém mais pode acessar suas informações – **nem mesmo a própria Mozilla**. Esse foco em privacidade é um dos pilares da fundação e um dos principais atrativos do navegador para usuários preocupados com a segurança de seus dados.
 
-#### A Senha Principal do Firefox
+#### Senha Principal
 
 Enquanto o gerenciador de senhas padrão salva suas credenciais de forma criptografada, o Mozilla Firefox oferece uma camada extra e opcional de segurança para proteger esses dados localmente: a **Senha Principal** (antigamente conhecida como Senha Mestra).
 
 Por padrão, esta funcionalidade vem desativada para priorizar a conveniência. No entanto, o usuário pode ativá-la a qualquer momento nas configurações de privacidade e segurança do navegador.
 
 <div align="center">
-<img width="540px" src="./img/01-firefox-senha-principal.png">
+<img width="500px" src="./img/01-firefox-senha-principal.png">
 </div>
 
 ##### Como Funciona e Para Que Serve?
@@ -1332,22 +1320,20 @@ De forma análoga ao que vimos nos navegadores baseados em Chromium, o Mozilla F
 Isso permite que o usuário acesse qualquer painel de configuração de forma rápida, sem a necessidade de navegar pelos menus gráficos. Por exemplo, para chegar à tela principal de configurações, em vez de clicar no menu de três traços e depois em "Opções" ou "Configurações", basta digitar **`about:preferences`** na barra de endereços.
 
 <div align="center">
-
-<img width="700px" src="./img/01-firefox-configuracao-por-url.png" alt="Janela de configurações do Mozilla Firefox, mostrando o menu lateral e o endereço about:preferences na barra de endereços.">
-
+<img width="700px" src="./img/01-firefox-configuracao-por-url.png">
 </div>
 
 Como a imagem ilustra, ao acessar `about:preferences`, a página principal de configurações é carregada. No menu à esquerda, vemos as diferentes seções, como "Geral", "Início", "Pesquisa" e "Privacidade e segurança". É possível navegar diretamente para cada uma dessas seções utilizando um **fragmento** na URL (o caractere `#`), que direciona o navegador para uma parte específica da página.
 
 A tabela a seguir lista os atalhos diretos para as principais seções de configuração:
 
-|Endereço (URL Interna)|Descrição|
-|---|---|
-|`about:preferences`|Permite acessar a página principal de configurações, geralmente abrindo na seção "Geral".|
-|`about:preferences#home`|Permite acessar a página de configurações de Início (página inicial, novas janelas e abas).|
-|`about:preferences#search`|Permite acessar a página de configurações do mecanismo de pesquisa padrão.|
-|`about:preferences#privacy`|Permite acessar a página de configurações de Privacidade e segurança, onde se gerencia a proteção contra rastreamento.|
-|`about:preferences#sync`|Permite acessar a página de configurações de sincronização da Conta Firefox.|
+| Endereço (URL Interna)      | Descrição                                                                                                              |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `about:preferences`         | Permite acessar a página principal de configurações, geralmente abrindo na seção "Geral".                              |
+| `about:preferences#home`    | Permite acessar a página de configurações de Início (página inicial, novas janelas e abas).                            |
+| `about:preferences#search`  | Permite acessar a página de configurações do mecanismo de pesquisa padrão.                                             |
+| `about:preferences#privacy` | Permite acessar a página de configurações de Privacidade e segurança, onde se gerencia a proteção contra rastreamento. |
+| `about:preferences#sync`    | Permite acessar a página de configurações de sincronização da Conta Firefox.                                           |
 
 Além das preferências, o Firefox possui diversas outras páginas `about:` úteis para acessar ferramentas e informações:
 
@@ -1356,7 +1342,7 @@ Além das preferências, o Firefox possui diversas outras páginas `about:` úte
 - **`about:support`**: Exibe informações de diagnóstico para a solução de problemas.
 - **`about:about`**: Mostra uma lista com todas as páginas `about:` disponíveis no navegador.
 
-#### Atalhos de Teclado no Mozilla Firefox
+#### Atalhos de Teclado
 
 Assim como seus concorrentes, o Mozilla Firefox oferece um conjunto completo de atalhos de teclado para agilizar a navegação e o acesso às suas principais funcionalidades. Dominar esses comandos é uma forma eficaz de otimizar o tempo e tornar a experiência de uso mais fluida.
 
@@ -1366,46 +1352,46 @@ Embora muitos atalhos sejam padronizados entre os navegadores (como `Ctrl+T` par
 
 Comandos essenciais para organizar seu espaço de trabalho digital, especialmente ao lidar com múltiplas páginas.
 
-|Atalho|Descrição|
-|---|---|
-|`CTRL + T`|Abre uma nova aba (guia).|
-|`CTRL + N`|Abre uma nova janela do navegador.|
-|`CTRL + W`|Fecha a aba (guia) atual.|
-|`CTRL + TAB`|Alterna para a próxima aba à direita.|
-|`CTRL + SHIFT + P`|Abre uma nova janela no modo de Navegação Privada (diferente do atalho do Chrome/Edge).|
+| Atalho             | Descrição                                                                               |
+| ------------------ | --------------------------------------------------------------------------------------- |
+| `CTRL + T`         | Abre uma nova aba (guia).                                                               |
+| `CTRL + N`         | Abre uma nova janela do navegador.                                                      |
+| `CTRL + W`         | Fecha a aba (guia) atual.                                                               |
+| `CTRL + TAB`       | Alterna para a próxima aba à direita.                                                   |
+| `CTRL + SHIFT + P` | Abre uma nova janela no modo de Navegação Privada (diferente do atalho do Chrome/Edge). |
 
 ##### Navegação e Pesquisa
 
 Atalhos para controlar o fluxo de navegação e interagir de forma rápida com a barra de endereços.
 
-|Atalho|Descrição|
-|---|---|
-|`F5` ou `CTRL + R`|Atualiza (recarrega) a página atual.|
-|`ALT + HOME`|Navega diretamente para a página inicial configurada.|
-|`CTRL + E` ou `CTRL + K`|Coloca o cursor diretamente na barra de endereços para iniciar uma nova pesquisa.|
-|`F6`|Move o foco do cursor para a barra de endereços, selecionando a URL atual.|
-|`CTRL + ENTER`|Completa um endereço na barra de endereços, adicionando `www.` ao início e `.com` ao final do texto digitado.|
+| Atalho                   | Descrição                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `F5` ou `CTRL + R`       | Atualiza (recarrega) a página atual.                                                                          |
+| `ALT + HOME`             | Navega diretamente para a página inicial configurada.                                                         |
+| `CTRL + E` ou `CTRL + K` | Coloca o cursor diretamente na barra de endereços para iniciar uma nova pesquisa.                             |
+| `F6`                     | Move o foco do cursor para a barra de endereços, selecionando a URL atual.                                    |
+| `CTRL + ENTER`           | Completa um endereço na barra de endereços, adicionando `www.` ao início e `.com` ao final do texto digitado. |
 
 ##### Acesso a Ferramentas e Funcionalidades
 
 Comandos para acessar rapidamente os painéis e as ferramentas mais importantes do navegador.
 
-|Atalho|Descrição|
-|---|---|
-|`CTRL + H`|Abre a **barra lateral** de Histórico de navegação.|
-|`CTRL + J`|Abre o painel de Downloads (No sistema operacional Linux, o atalho alternativo é **`CTRL + SHIFT + Y`**).|
-|`CTRL + D`|Adiciona a página atual aos Favoritos.|
-|`CTRL + F`|Abre a ferramenta "Localizar" na parte inferior da tela para pesquisar na página.|
-|`CTRL + G`|Navega para a próxima correspondência da busca feita com a ferramenta "Localizar".|
-|`CTRL + P`|Abre a caixa de diálogo para imprimir a página atual.|
-|`F11`|Ativa ou desativa o modo de visualização em Tela Cheia.|
+| Atalho     | Descrição                                                                                                 |
+| ---------- | --------------------------------------------------------------------------------------------------------- |
+| `CTRL + H` | Abre a **barra lateral** de Histórico de navegação.                                                       |
+| `CTRL + J` | Abre o painel de Downloads (No sistema operacional Linux, o atalho alternativo é **`CTRL + SHIFT + Y`**). |
+| `CTRL + D` | Adiciona a página atual aos Favoritos.                                                                    |
+| `CTRL + F` | Abre a ferramenta "Localizar" na parte inferior da tela para pesquisar na página.                         |
+| `CTRL + G` | Navega para a próxima correspondência da busca feita com a ferramenta "Localizar".                        |
+| `CTRL + P` | Abre a caixa de diálogo para imprimir a página atual.                                                     |
+| `F11`      | Ativa ou desativa o modo de visualização em Tela Cheia.                                                   |
 
 ##### Gerenciamento de Dados e Ajuda
 
-|Atalho|Descrição|
-|---|---|
-|`CTRL + SHIFT + DEL`|Abre a janela para "Limpar histórico recente" (histórico, cookies, cache, etc.).|
-|`F1`|Abre a página de Ajuda e Suporte da Mozilla em uma nova aba.|
+| Atalho               | Descrição                                                                        |
+| -------------------- | -------------------------------------------------------------------------------- |
+| `CTRL + SHIFT + DEL` | Abre a janela para "Limpar histórico recente" (histórico, cookies, cache, etc.). |
+| `F1`                 | Abre a página de Ajuda e Suporte da Mozilla em uma nova aba.                     |
 
 A lista acima contém os principais atalhos para o uso diário. Para uma referência completa com todos os comandos de teclado disponíveis no Mozilla Firefox, é possível consultar a página de suporte oficial da Mozilla:
 

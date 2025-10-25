@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bancos-de-dados/contents/01-fundamentos.md",
+                "file": "informatica-basica/contents/01-navegadores.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-fundamentos"
+              "title": "01-navegadores"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bancos-de-dados/contents/01-fundamentos.md",
+                "file": "informatica-basica/contents/01-navegadores.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 01-fundamentos"
+              "title": "Sumário de 01-navegadores"
             }
           }
         ],
@@ -185,8 +185,9 @@
   },
   "active": "af6924f9752dc980",
   "lastOpenFiles": [
-    "legislacao/contents/01-lei-8112.md",
+    "lingua-portuguesa/contents/02-ortografia.md",
     "bancos-de-dados/contents/01-fundamentos.md",
+    "legislacao/contents/01-lei-8112.md",
     "engenharia-de-software/contents/05-rup.md",
     "engenharia-de-software/contents/12-modelo-rup.md",
     "engenharia-de-software/contents/04-rad.md",
@@ -220,7 +221,6 @@
     "informatica-basica/contents/img/03-dns-hierarquia.png",
     "informatica-basica/contents/01-navegadores.md",
     "informatica-basica/contents/02-ferramentas-de-busca.md",
-    "redes-de-computadores/contents/01-conceitos-basicos.md",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
     "seguranca-da-informacao/contents/img",
