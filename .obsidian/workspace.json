@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "informatica-basica/contents/01-navegadores.md",
+                "file": "redes-de-computadores/contents/02-meios-de-transmissao-de-sinais.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-navegadores"
+              "title": "02-meios-de-transmissao-de-sinais"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "informatica-basica/contents/01-navegadores.md",
+                "file": "redes-de-computadores/contents/02-meios-de-transmissao-de-sinais.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 01-navegadores"
+              "title": "Sumário de 02-meios-de-transmissao-de-sinais"
             }
           }
         ],
@@ -185,6 +185,7 @@
   },
   "active": "af6924f9752dc980",
   "lastOpenFiles": [
+    "informatica-basica/contents/01-navegadores.md",
     "lingua-portuguesa/contents/02-ortografia.md",
     "bancos-de-dados/contents/01-fundamentos.md",
     "legislacao/contents/01-lei-8112.md",
@@ -219,7 +220,6 @@
     "informatica-basica/contents/img/03-https-certificado-invalido.png",
     "informatica-basica/contents/img/03-http.png",
     "informatica-basica/contents/img/03-dns-hierarquia.png",
-    "informatica-basica/contents/01-navegadores.md",
     "informatica-basica/contents/02-ferramentas-de-busca.md",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",

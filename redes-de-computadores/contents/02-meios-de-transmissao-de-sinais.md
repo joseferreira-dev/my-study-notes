@@ -10,7 +10,7 @@ Este capítulo explorará os dois tipos fundamentais de sinais, a forma como sã
 
 Toda informação a ser transmitida precisa ser representada por um sinal. Um **sinal** é a representação física e quantificável da informação, variando ao longo do tempo para carregar os dados. A forma como essa variação ocorre define as duas categorias primordiais de sinais.
 
-### Sinais Analógicos: O Contínuo Fluir da Informação
+### Sinais Analógicos
 
 Um sinal analógico é caracterizado por sua natureza **contínua**. Isso significa que, ao longo de um intervalo de tempo, o sinal pode assumir uma infinidade de valores dentro de sua faixa de variação. Não há "saltos" ou interrupções; a transição entre um valor e outro é suave e fluida.
 
@@ -22,7 +22,7 @@ Muitos fenômenos do mundo real são intrinsecamente analógicos. A nossa voz, p
 
 A principal desvantagem dos sinais analógicos é sua vulnerabilidade ao **ruído**. Como qualquer variação de intensidade é considerada parte da informação, qualquer interferência (eletromagnética, por exemplo) que se some ao sinal durante a transmissão é difícil de ser removida e degrada a qualidade da informação original.
 
-### Sinais Digitais: A Precisão dos Passos Discretos
+### Sinais Digitais
 
 Em contraste, um sinal digital é **descontínuo** ou **discreto**. Em vez de variar suavemente, ele opera com um conjunto finito e predefinido de valores. A transição entre um valor e outro ocorre em "saltos" ou "degraus".
 
@@ -32,7 +32,7 @@ Toda a informação processada por computadores é, em sua essência, digital. P
 
 - **Vantagem Principal:** A grande força dos sinais digitais é sua robustez e imunidade ao ruído. Se um sinal de +5 volts (representando '1') sofre uma pequena interferência e chega ao receptor como +4,5 volts, o receptor ainda pode facilmente discernir que o valor pretendido era '1'. Ele pode então regenerar o sinal original perfeitamente, eliminando o ruído acumulado no caminho. Essa capacidade de regeneração sem perdas é o que permite a transmissão de dados digitais por longas distâncias com altíssima fidelidade.
 
-## Representando Sinais: O Mundo das Ondas
+## Representando Sinais
 
 Seja um sinal analógico ou digital, uma forma poderosa de representá-lo e analisá-lo é através de **ondas**. Uma onda é uma perturbação que se propaga no tempo e no espaço. Para entender como as informações são codificadas em um sinal, precisamos conhecer os parâmetros fundamentais de uma onda periódica (uma onda que se repete em ciclos regulares).
 
@@ -65,7 +65,7 @@ Embora existam infinitas formas de onda, algumas são fundamentais para o estudo
 
 De posse desses conceitos básicos sobre a natureza dos sinais e sua representação em ondas, podemos agora avaliar as possíveis formas de degradação que um sinal pode sofrer ao viajar por um meio de transmissão.
 
-## A Realidade da Transmissão: Degradação e Perda de Sinal
+## Degradação e Perda de Sinal
 
 Em um mundo ideal, o sinal enviado pelo transmissor chegaria ao receptor de forma idêntica, perfeita e instantânea. No entanto, na prática, todo sinal que viaja por um meio de transmissão, seja ele um cabo de cobre, uma fibra de vidro ou o próprio ar, está sujeito a imperfeições que o degradam e distorcem. Pense em gritar para um amigo do outro lado de um salão lotado: sua voz chegará mais fraca (atenuação), será misturada com o barulho das outras conversas (ruído) e poderá ecoar nas paredes (reflexão).
 
@@ -75,7 +75,7 @@ Compreender essas formas de degradação é fundamental para o projeto de sistem
 <img width="480px" src="./img/02-formas-de-degradacao-de-sinal.png">
 </div>
 
-### Atenuação: A Perda de Força do Sinal
+### Atenuação
 
 A **atenuação** é a redução gradativa da força, ou amplitude, de um sinal à medida que ele se propaga pelo meio. Essa perda de energia é um fenômeno natural e inevitável, causado principalmente pela resistência do próprio meio, que absorve parte da energia do sinal e a converte em calor. A atenuação aumenta com a distância: quanto mais longe o sinal precisa viajar, mais fraco ele se torna.
 
@@ -86,7 +86,7 @@ Se um sinal for atenuado a ponto de sua amplitude se tornar muito próxima à do
 
 A atenuação não é uniforme para todas as frequências; alguns meios atenuam certas frequências mais do que outras, um fator crucial no projeto de sistemas de comunicação.
 
-### Ruído: A Intervenção de Sinais Indesejados
+### Ruído
 
 O **ruído** consiste em qualquer energia elétrica, luminosa ou eletromagnética indesejada que se soma ao sinal original, deformando-o. Enquanto a atenuação enfraquece o sinal, o ruído o "suja". Existem diversas fontes de ruído, tanto internas quanto externas ao sistema:
 
@@ -95,13 +95,13 @@ O **ruído** consiste em qualquer energia elétrica, luminosa ou eletromagnétic
 - **Diafonia (Crosstalk):** Também conhecido como "linha cruzada", é um tipo de interferência causado pelo acoplamento de um sinal de um cabo para um cabo adjacente. É o que acontece quando se ouve uma conversa fantasma de outra linha em uma ligação telefônica antiga. É uma grande preocupação em cabos de rede com múltiplos pares de fios.
 - **Ruído de Impulso:** São picos de energia irregulares e de curta duração, geralmente causados por fontes externas como raios, motores elétricos ou chaves de alta potência. É uma causa significativa de erros em transmissões digitais.
 
-### Reflexão ou Eco: O Sinal que Bate e Volta
+### Reflexão ou Eco
 
 A **reflexão** é um fenômeno que ocorre quando um sinal, ao viajar pelo meio, encontra uma mudança abrupta em suas características, fazendo com que parte da energia do sinal seja "rebatida" de volta na direção da origem. Esse sinal refletido, também chamado de **eco**, viaja na contramão e pode interferir com os sinais que vêm logo atrás dele, causando distorção.
 
 A principal causa da reflexão é a falta de "casamento de impedância" entre os componentes da rede. Impedância é, de forma simplificada, a oposição que um meio oferece à passagem de um sinal. Se um sinal viajando por um cabo de uma certa impedância encontra um conector ou outro cabo com uma impedância diferente, ocorrerá uma reflexão. A solução é garantir que todos os componentes de um link de comunicação — cabos, conectores e os próprios dispositivos — possuam a mesma impedância característica.
 
-### O Estudo do Meio: Minimizando a Degradação na Prática
+### Minimizando a Degradação na Prática
 
 Para projetar sistemas de comunicação eficientes, os engenheiros estudam exaustivamente as propriedades dos meios de transmissão para entender como minimizar os efeitos da degradação. O objetivo é encontrar as "janelas" de operação ideais — faixas de frequência ou comprimentos de onda onde a atenuação e o ruído são menores.
 
@@ -119,7 +119,7 @@ Analisando o gráfico, percebe-se que a atenuação não é constante. Existem "
 
 Nota-se que a terceira janela é a que apresenta o menor nível de atenuação de todas, tornando-a a faixa preferencial para sistemas de comunicação óptica de longa distância, pois permite que o sinal viaje por muito mais quilômetros antes de precisar de um repetidor.
 
-## Da Voz ao Bit, do Bit à Onda: Digitalização e Codificação de Linha
+## Digitalização e Codificação de Linha
 
 Já estabelecemos que os computadores operam em um mundo digital, baseado em bits (0s e 1s), enquanto muitos fenômenos do mundo real, como a voz humana, são analógicos. Para que um sinal analógico possa ser processado, armazenado e transmitido com a robustez de um sistema digital, ele precisa primeiro ser convertido em uma sequência de bits. Esse processo é chamado de **digitalização**.
 
@@ -147,17 +147,17 @@ A etapa final é a **codificação**. Nela, um código binário único é atribu
 
 O resultado final deste processo de três passos é uma sequência de bits — um fluxo de dados digitais que representa, de forma aproximada, o sinal analógico original.
 
-### Codificação de Linha: Representando Bits no Meio Físico
+### Codificação de Linha
 
 Com o fluxo de bits em mãos, o desafio agora é transmiti-lo fisicamente. A **codificação de linha** (ou _line coding_) é o conjunto de regras usado para converter essa sequência de 0s e 1s em um sinal elétrico real que viajará pelo cabo. A escolha do esquema de codificação é importante para resolver vários desafios práticos, como a sincronização entre transmissor e receptor e a eficiência no uso do meio.
 
 A seguir, alguns esquemas de codificação importantes.
 
-|Tipo de Codificação|Identificação do bit 0|Identificação do bit 1|
-|---|---|---|
-|**NRZI (Non-Return-to-Zero Inverted)**|Sem transição de voltagem no início do intervalo do bit.|Ocorre uma transição de voltagem (de alto para baixo ou de baixo para alto) no início do intervalo do bit.|
-|**Manchester**|Transição do nível alto para o baixo no _meio_ do intervalo do bit.|Transição do nível baixo para o alto no _meio_ do intervalo do bit.|
-|**Manchester Diferencial**|Ocorre uma transição de voltagem no _início_ do intervalo do bit.|Sem transição de voltagem no _início_ do intervalo do bit. (Ambos ainda possuem uma transição no meio para sincronismo).|
+| Tipo de Codificação                    | Identificação do bit 0                                              | Identificação do bit 1                                                                                                   |
+| -------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **NRZI (Non-Return-to-Zero Inverted)** | Sem transição de voltagem no início do intervalo do bit.            | Ocorre uma transição de voltagem (de alto para baixo ou de baixo para alto) no início do intervalo do bit.               |
+| **Manchester**                         | Transição do nível alto para o baixo no _meio_ do intervalo do bit. | Transição do nível baixo para o alto no _meio_ do intervalo do bit.                                                      |
+| **Manchester Diferencial**             | Ocorre uma transição de voltagem no _início_ do intervalo do bit.   | Sem transição de voltagem no _início_ do intervalo do bit. (Ambos ainda possuem uma transição no meio para sincronismo). |
 
 Vamos detalhar os mais relevantes:
 
@@ -165,11 +165,11 @@ Vamos detalhar os mais relevantes:
 - **Manchester:** Este esquema resolve o problema da sincronização de forma engenhosa. Cada bit, seja 0 ou 1, possui uma transição de voltagem exatamente no meio de seu intervalo de tempo. Para um bit '0', a transição é de um nível de voltagem alto para um baixo; para um bit '1', a transição é de baixo para alto. Essa transição constante no meio de cada bit permite que o receptor ajuste continuamente seu relógio, garantindo um sincronismo perfeito. A desvantagem é a baixa eficiência, pois exige o dobro da largura de banda de esquemas mais simples para transmitir a mesma quantidade de dados. É um esquema de codificação clássico e de grande importância histórica, tendo sido utilizado no padrão original da Ethernet.
 - **Manchester Diferencial:** Uma variação do Manchester que combina a transição no meio do bit (para sincronismo) com a codificação na transição do início do bit (típica de esquemas diferenciais). Um '0' é representado pela presença de uma transição no início do intervalo, enquanto um '1' é representado pela ausência dessa transição inicial. Todos os bits continuam tendo a transição no meio do caminho para manter o relógio sincronizado.
 
-## O Espectro da Comunicação: Banda, Capacidade e Multiplexação
+## Banda, Capacidade e Multiplexação
 
 Todo meio de transmissão, seja ele um cabo ou o ar, possui características físicas que limitam a quantidade de informação que pode ser transportada. Assim como um cano possui um diâmetro que restringe o fluxo de água, um meio de comunicação possui uma "largura" que limita o fluxo de dados. Nesta seção, vamos explorar o que é essa largura (a banda), como calcular a capacidade máxima de um canal e como as redes utilizam técnicas inteligentes para "alargar a estrada" e permitir que múltiplos sinais viajem simultaneamente.
 
-### Banda Base vs. Banda Passante: A Forma Original e a Adaptada
+### Banda Base vs. Banda Passante
 
 A forma como um sinal ocupa o espectro de frequências de um meio dá origem a duas modalidades de transmissão:
 
@@ -209,7 +209,7 @@ A frequência de operação de um sinal de rádio também determina a forma como
 - **Ondas Celestes ou Ionosféricas (Sky Waves):** Na faixa de 2 a 30 MHz, as ondas de rádio podem ser refletidas pela ionosfera (uma camada eletricamente carregada na alta atmosfera) de volta para a Terra. Esse fenômeno de "ricochete" permite a comunicação de rádio de ondas curtas entre pontos muito distantes no globo, superando o horizonte.
 - **Ondas Diretas (Line-of-Sight Waves):** Para frequências acima de 30 MHz, as ondas se comportam de forma muito parecida com a luz, viajando em linhas retas. Para que a comunicação ocorra, as antenas do transmissor e do receptor precisam ter visibilidade direta uma da outra, sem grandes obstáculos no caminho. Enlaces de micro-ondas, rádio FM, TV e comunicação via satélite são exemplos que utilizam a propagação por linha de visada.
 
-### Multiplexação: Otimizando o Meio de Transmissão
+### Multiplexação
 
 A **multiplexação** é a técnica que permite a transmissão de múltiplos sinais de diferentes fontes por um único meio de comunicação, de forma simultânea e sem interferência. Ela otimiza o uso do meio, aumentando drasticamente a sua eficiência. As principais formas de multiplexação são:
 
@@ -234,7 +234,7 @@ A seguir, vamos explorar em detalhe os principais tipos de meios, começando pel
 
 ### Meios de Transmissão Guiados
 
-Os meios de transmissão são os caminhos físicos através dos quais os sinais de dados viajam de um ponto a outro em uma rede. Eles podem ser divididos em duas grandes famílias: meios guiados e meios não guiados. Os meios guiados, como o nome sugere, utilizam um cabo físico para confinar e guiar a energia eletromagnética do sinal. Nesta seção, abordaremos os principais tipos de cabos utilizados em redes de computadores.
+Os meios guiados, como o nome sugere, utilizam um cabo físico para confinar e guiar a energia eletromagnética do sinal. Nesta seção, abordaremos os principais tipos de cabos utilizados em redes de computadores.
 
 #### Cabo Coaxial
 
@@ -261,7 +261,7 @@ Essa construção coaxial faz com que o campo eletromagnético fique confinado n
 
 Em comparação com o cabo de par trançado, o cabo coaxial geralmente permite transmissões por **distâncias superiores** sem a necessidade de um repetidor. No entanto, ele é **mais caro e significativamente menos flexível**, tornando sua instalação em dutos e paredes mais trabalhosa.
 
-O cabo coaxial suporta uma **largura de banda maior** que os cabos de par trançado mais simples, o que o torna ideal para aplicações de banda passante (broadband), como a transmissão simultânea de centenas de canais de TV. Contudo, o sinal sofre com a **atenuação** em distâncias longas, especialmente em altas frequências.
+O cabo coaxial suporta uma **largura de banda maior** que os cabos de par trançado mais simples, o que o torna ideal para aplicações de banda passante (_broadband_), como a transmissão simultânea de centenas de canais de TV. Contudo, o sinal sofre com a **atenuação** em distâncias longas, especialmente em altas frequências.
 
 ##### Tipos de Cabo Coaxial em Redes
 
@@ -286,9 +286,7 @@ Como o nome indica, o cabo é constituído por múltiplos pares de fios de cobre
 <img width="580px" src="./img/02-cabo-par-trancado.png">
 </div>
 
-##### O Segredo da Torção
-
-A característica mais engenhosa deste cabo é justamente a torção dos pares. Quando uma corrente elétrica passa por um fio, ela gera um campo eletromagnético ao seu redor. Em um ambiente com vários cabos próximos, esses campos podem induzir sinais indesejados (ruído) nos fios vizinhos, um fenômeno conhecido como interferência ou diafonia (_crosstalk_).
+É justamente a torção dos pares a característica mais engenhosa deste cabo. Quando uma corrente elétrica passa por um fio, ela gera um campo eletromagnético ao seu redor. Em um ambiente com vários cabos próximos, esses campos podem induzir sinais indesejados (ruído) nos fios vizinhos, um fenômeno conhecido como interferência ou diafonia (_crosstalk_).
 
 Ao trançar os dois fios de um mesmo par, os campos eletromagnéticos gerados por eles tendem a se cancelar mutuamente. Da mesma forma, qualquer interferência externa que atinja o par de fios tende a afetar ambos os fios de maneira quase idêntica. O receptor, ao medir a _diferença_ de sinal entre os dois fios do par (transmissão diferencial), consegue anular grande parte desse ruído comum, recuperando o sinal original com muito mais clareza. Portanto, a torção é um método simples, mas extremamente eficaz, para reduzir o ruído e a interferência externa.
 
@@ -306,18 +304,18 @@ A evolução das categorias reflete a crescente demanda por velocidade nas redes
 
 A tabela abaixo apresenta uma comparação entre as principais categorias, suas capacidades e aplicações típicas.
 
-|Categoria|Taxa Máxima de Transmissão|Frequência Máxima|Aplicação Típica|
-|---|---|---|---|
-|**CAT 1**|Até 1 Mbps|1 MHz|Voz analógica (telefonia antiga).|
-|**CAT 2**|4 Mbps||Redes IBM Token Ring.|
-|**CAT 3**|10/16 Mbps|16 MHz|Padrão para redes Ethernet 10BASE-T.|
-|**CAT 4**|16/20 Mbps|20 MHz|Redes Token Ring de 16 Mbps.|
-|**CAT 5**|100 Mbps (1 Gbps com 4 pares)|Até 100 MHz|Largamente substituído pelo CAT 5e; usado em Fast Ethernet (100BASE-TX) e no início do Gigabit Ethernet (1000BASE-T).|
-|**CAT 5e**|1 Gbps (suporta até 10 Gbps em protótipos)|Até 125 MHz|Padrão dominante por muitos anos para Gigabit Ethernet (1000BASE-T).|
-|**CAT 6**|10 Gbps (até 55 metros)|Até 250 MHz|Padrão comum para novas instalações, suporta 10 Gigabit Ethernet em distâncias menores (10GBASE-T).|
-|**CAT 6A**|10 Gbps (até 100 metros)|Até 500 MHz|Padrão recomendado para novas instalações que exigem 10 Gigabit Ethernet (10GBASE-T) na distância máxima.|
-|**CAT 7**|10 Gbps (e superior)|600-700 MHz|Utilizado para 10 Gigabit Ethernet e futuras aplicações, como vídeo de alta definição. Requer blindagem individual dos pares.|
-|**CAT 8**|25 a 40 Gbps|Até 2 GHz|Uso específico em datacenters para interconexões de alta velocidade entre servidores e switches, com distância limitada a 30 metros.|
+| Categoria  | Taxa Máxima de Transmissão                 | Frequência Máxima | Aplicação Típica                                                                                                                     |
+| ---------- | ------------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **CAT 1**  | Até 1 Mbps                                 | 1 MHz             | Voz analógica (telefonia antiga).                                                                                                    |
+| **CAT 2**  | 4 Mbps                                     |                   | Redes IBM Token Ring.                                                                                                                |
+| **CAT 3**  | 10/16 Mbps                                 | 16 MHz            | Padrão para redes Ethernet 10BASE-T.                                                                                                 |
+| **CAT 4**  | 16/20 Mbps                                 | 20 MHz            | Redes Token Ring de 16 Mbps.                                                                                                         |
+| **CAT 5**  | 100 Mbps (1 Gbps com 4 pares)              | Até 100 MHz       | Largamente substituído pelo CAT 5e; usado em Fast Ethernet (100BASE-TX) e no início do Gigabit Ethernet (1000BASE-T).                |
+| **CAT 5e** | 1 Gbps (suporta até 10 Gbps em protótipos) | Até 125 MHz       | Padrão dominante por muitos anos para Gigabit Ethernet (1000BASE-T).                                                                 |
+| **CAT 6**  | 10 Gbps (até 55 metros)                    | Até 250 MHz       | Padrão comum para novas instalações, suporta 10 Gigabit Ethernet em distâncias menores (10GBASE-T).                                  |
+| **CAT 6A** | 10 Gbps (até 100 metros)                   | Até 500 MHz       | Padrão recomendado para novas instalações que exigem 10 Gigabit Ethernet (10GBASE-T) na distância máxima.                            |
+| **CAT 7**  | 10 Gbps (e superior)                       | 600-700 MHz       | Utilizado para 10 Gigabit Ethernet e futuras aplicações, como vídeo de alta definição. Requer blindagem individual dos pares.        |
+| **CAT 8**  | 25 a 40 Gbps                               | Até 2 GHz         | Uso específico em datacenters para interconexões de alta velocidade entre servidores e switches, com distância limitada a 30 metros. |
 
 ##### Tipos de Blindagem
 
@@ -520,7 +518,7 @@ Desenvolvido com o padrão Gigabit Ethernet em mente e projetado para o futuro, 
 
 Para resolver a limitação de distância do CAT6 em redes de 10 Gbps, foi desenvolvido o CAT6a. Este cabo é projetado para operar em frequências de até 500 MHz e possui uma construção mais robusta, geralmente com mais isolamento e torções mais justas para combater não apenas o _crosstalk_ interno, mas também o "crosstalk exógeno" (_alien crosstalk_), que é a interferência vinda de cabos adjacentes. Com essas melhorias, o CAT6a suporta transmissões de 10 Gbps na distância padrão completa de 100 metros.
 
-#### Cabo UTP Cat. 7/7a
+#### Cabo UTP CAT7/7a
 
 As categorias 7 e 7a representam um avanço significativo, criadas para aplicações de altíssima velocidade em ambientes que exigem proteção máxima contra interferência. Uma característica fundamental é que os cabos CAT7/7a **exigem blindagem**, sendo tipicamente do tipo S/FTP (cada par é blindado com fita metálica, e há uma blindagem de malha geral em torno de todos os pares).
 
@@ -695,13 +693,13 @@ A norma de cabeamento estruturado reconhece e especifica o uso de diferentes tip
 4. **Fibra Óptica Monomodo de 8,5/125 µm:**
     - Para dados, alcança as maiores distâncias, com recomendação de até 3.000 metros (3 km) dentro deste contexto normativo.
 
-#### O Papel Central do Patch Panel
+#### Papel Central do Patch Panel
 
 O **Patch Panel** é um componente passivo (não interfere eletricamente no sinal) de extrema importância no cabeamento estruturado. Ele funciona como um grande painel de conexões que atua como um intermediário entre o cabeamento fixo da infraestrutura e os equipamentos ativos da rede (switches).
 
 Sua função é organizar e centralizar os cabos que vêm das tomadas de parede das áreas de trabalho. Esses cabos permanentes são terminados na parte traseira do patch panel. Na parte frontal, temos portas RJ-45 que são, então, conectadas aos switches por meio de cabos de manobra curtos (_patch cords_). Essa configuração oferece uma enorme flexibilidade: para mudar um ponto de rede de uma porta de switch para outra, basta mover o _patch cord_ na frente do painel, sem nunca precisar mexer no cabo permanente que está dentro da parede. Isso protege a infraestrutura principal e facilita enormemente a administração da rede.
 
-#### A Anatomia do Canal de Cabeamento Horizontal
+#### Anatomia do Canal de Cabeamento Horizontal
 
 A norma define com precisão o "canal horizontal", que é o caminho completo do sinal desde o switch na Sala de Telecomunicações até o computador do usuário na Área de Trabalho. Este canal, cuja distância total não deve exceder 100 metros, é estruturado em três segmentos principais:
 
