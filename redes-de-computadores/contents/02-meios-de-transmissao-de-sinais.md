@@ -618,8 +618,6 @@ Este é o ponto de interface entre a infraestrutura de cabeamento interna do edi
 
 Este subsistema, é responsável por interligar edifícios distintos dentro de um mesmo campus ou complexo. Ele conecta a Entrada do Prédio de uma edificação à Sala de Equipamentos de outra, por exemplo. Devido às distâncias e à necessidade de alta velocidade, a interligação externa é quase sempre implementada com cabos de fibra óptica de alta capacidade, geralmente passados por dutos subterrâneos.
 
-Com certeza. Este é um excelente ponto para aprofundar, pois a hierarquia dos distribuidores é o que dá a lógica organizacional ao sistema de cabeamento estruturado. Vamos detalhar essa estrutura.
-
 #### Distribuidores e Interligações
 
 Para que o sistema de cabeamento estruturado seja organizado e gerenciável, ele é montado sobre uma **arquitetura hierárquica** de pontos de conexão. Esses pontos são chamados de **distribuidores**. Um distribuidor é uma área física, geralmente um rack ou gabinete, onde os cabos de uma determinada seção da rede são terminados, organizados e interconectados (geralmente através de patch panels e switches).
@@ -711,7 +709,7 @@ Além disso, a norma estabelece diretrizes para a densidade de pontos de rede, r
 
 #### Glossário e Conceitos Adicionais em Cabeamento Estruturado
 
-Para finalizar nosso estudo sobre cabeamento, é útil definir formalmente alguns termos e conceitos técnicos, muitos dos quais são encontrados nas normas e na literatura especializada.
+Para finalizar nosso estudo sobre cabeamento, é útil definir formalmente alguns termos e conceitos técnicos que mencionamos anteriormente, muitos dos quais são encontrados nas normas e na literatura especializada.
 
 ##### Componentes e Sistemas Suportados
 
