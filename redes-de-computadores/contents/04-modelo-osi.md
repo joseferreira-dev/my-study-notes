@@ -4,7 +4,7 @@ Nos capítulos anteriores, exploramos os componentes físicos da comunicação: 
 
 Este capítulo é dedicado ao modelo de referência que serve como a base conceitual para o funcionamento da grande maioria das redes que conhecemos hoje: o **Modelo OSI (Open Systems Interconnection)**, desenvolvido pela **ISO (International Organization for Standardization)**. Mas antes de detalharmos as sete camadas deste modelo, é crucial entendermos os problemas que ele foi projetado para resolver.
 
-### A Necessidade de um Padrão: O Problema da Incompatibilidade
+## Problema da Incompatibilidade
 
 Uma comunicação, para ser bem-sucedida, exige que ambas as partes concordem com um conjunto de regras. Sem um entendimento mútuo, a troca de informações falha. Podemos ilustrar isso com uma analogia cultural:
 
@@ -14,7 +14,7 @@ No início das redes de computadores, o cenário era muito parecido. Cada grande
 
 Para resolver isso, a indústria percebeu a necessidade de **protocolos de rede**: um conjunto formal de regras, procedimentos e formatos que definem como a comunicação deve ocorrer entre dois ou mais sistemas computacionais, garantindo que eles "falem a mesma língua".
 
-### A Necessidade de Organização: O Problema da Complexidade
+## Problema da Complexidade
 
 A simples criação de protocolos, no entanto, não resolvia todo o problema. A tarefa de conectar dois computadores é imensamente complexa e envolve desafios em muitos níveis: desde a representação dos bits como sinais elétricos até a formatação dos dados para uma aplicação específica.
 
@@ -24,7 +24,7 @@ Se um único e massivo protocolo tentasse lidar com todas essas tarefas, teríam
 
 Um sistema monolítico é extremamente difícil de gerenciar, atualizar e solucionar. Uma pequena mudança em uma função de baixo nível (como alterar o tipo de cabo) poderia exigir a reescrita de todo o software de rede. Era necessária uma forma de dividir essa complexidade em partes menores e independentes.
 
-### A Solução: Um Modelo em Camadas
+## Solução: Modelo em Camadas
 
 Para resolver tanto o problema da incompatibilidade quanto o da complexidade, a ISO desenvolveu o Modelo de Referência OSI. Proposto em 1983, ele oferece um modelo conceitual que estrutura a comunicação de rede em **sete camadas** de abstração.
 
@@ -38,11 +38,11 @@ Os princípios de um modelo em camadas são:
 
 Dessa forma, os protocolos podem ser desenvolvidos para atuar em uma camada específica, sem se preocupar com as funções das outras. Isso promove a modularidade, facilita a evolução tecnológica (pode-se trocar a tecnologia da Camada 1 sem afetar a Camada 3, por exemplo) e simplifica o aprendizado e o desenvolvimento de redes.
 
-### Os Princípios e a Mecânica do Modelo OSI
+## Princípios e a Mecânica do Modelo OSI
 
 O Modelo OSI não é apenas uma lista de camadas; ele é fundamentado em uma filosofia de design que visa a organização, a flexibilidade e, acima de tudo, a interoperabilidade. Para entendê-lo, precisamos primeiro conhecer seus três conceitos principais.
 
-#### Os Três Pilares: Serviços, Interfaces e Protocolos
+### Três Pilares: Serviços, Interfaces e Protocolos
 
 O funcionamento da arquitetura em camadas do OSI é definido por três conceitos fundamentais:
 
@@ -52,12 +52,12 @@ O funcionamento da arquitetura em camadas do OSI é definido por três conceitos
 
 Essa separação é crucial: ela permite que o protocolo de uma camada seja alterado ou atualizado sem que as outras camadas sejam afetadas, contanto que os serviços prestados à camada superior permaneçam os mesmos.
 
-#### As Sete Camadas: Uma Visão Geral
+### As Sete Camadas
 
 O Modelo OSI organiza a comunicação em sete camadas empilhadas, onde cada uma tem uma função específica e bem definida.
 
 <div align="center">
-<img width="220px" src="./img/04-modelo-osi-camadas.png">
+<img width="240px" src="./img/04-modelo-osi-camadas.png">
 </div>
 
 É comum agrupar as camadas em dois conjuntos:
@@ -65,12 +65,12 @@ O Modelo OSI organiza a comunicação em sete camadas empilhadas, onde cada uma 
 - **Camadas de Host (ou Camadas Superiores):** As quatro camadas superiores (Aplicação, Apresentação, Sessão e Transporte) são geralmente chamadas de camadas de host. Elas lidam com questões relacionadas à aplicação e aos dados do usuário, sendo normalmente implementadas em software no sistema operacional do dispositivo final.
 - **Camadas de Meio (ou Camadas Inferiores):** As três camadas inferiores (Rede, Enlace e Física) são as camadas de meio. Elas são responsáveis por gerenciar a transmissão dos dados através da rede. Sua implementação envolve uma combinação de software (no sistema operacional e firmware dos dispositivos) e hardware (placas de rede, switches, roteadores).
 
-#### Processo de Comunicação: Encapsulamento e PDUs
+### Processo de Comunicação
 
 A comunicação entre as camadas segue um processo fundamental chamado **encapsulamento**. Quando um usuário envia dados (como um e-mail), a informação começa na Camada de Aplicação e desce pela pilha de camadas. Em cada camada, a informação recebida da camada superior é tratada como um bloco de dados, e a camada atual adiciona seu próprio cabeçalho (_header_) de controle.
 
 <div align="center">
-<img width="520px" src="./img/04-modelo-osi-blocos-de-dados.png">
+<img width="500px" src="./img/04-modelo-osi-blocos-de-dados.png">
 </div>
 
 Esse processo é como colocar uma carta em envelopes sucessivos. A carta original (dados) é colocada em um envelope (cabeçalho da Camada 4). Esse envelope é colocado em um envelope maior (cabeçalho da Camada 3), e assim por diante. Na máquina de destino, ocorre o processo inverso, o **desencapsulamento**, onde cada camada remove seu respectivo cabeçalho e passa os dados para a camada superior.
@@ -86,7 +86,7 @@ O bloco de dados de cada camada, composto pelo cabeçalho da camada e pelos dado
 - **Camada 2 (Enlace):** A PDU é chamada de **Quadro** (_Frame_).
 - **Camada 1 (Física):** A PDU é convertida em **Bits** para transmissão.
 
-#### Os Princípios por Trás das Camadas
+### Princípios por Trás das Camadas
 
 A escolha de sete camadas e a definição das funções de cada uma não foram decisões arbitrárias. O processo de design do Modelo OSI foi guiado por um conjunto de treze princípios de engenharia, que visavam criar uma arquitetura que fosse ao mesmo tempo robusta, flexível e lógica. Compreender esses princípios ajuda a entender o porquê de o modelo ser estruturado da forma que é.
 

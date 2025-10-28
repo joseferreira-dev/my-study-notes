@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "redes-de-computadores/contents/03-equipamentos-de-rede.md",
+                "file": "redes-de-computadores/contents/04-modelo-osi.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03-equipamentos-de-rede"
+              "title": "04-modelo-osi"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "redes-de-computadores/contents/03-equipamentos-de-rede.md",
+                "file": "redes-de-computadores/contents/04-modelo-osi.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 03-equipamentos-de-rede"
+              "title": "Sumário de 04-modelo-osi"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "ae51e09d68f1648d",
   "lastOpenFiles": [
+    "redes-de-computadores/contents/03-equipamentos-de-rede.md",
     "redes-de-computadores/contents/04-modelo-osi.md",
     "engenharia-de-software/contents/09-modelos-especificos.md",
     "engenharia-de-software/contents/09-metodos-formais.md",
@@ -202,7 +203,6 @@
     "engenharia-de-software/contents/img/03-modelo-iterativo-e-incremental.png",
     "engenharia-de-software/contents/20-refatoracao.md",
     "engenharia-de-software/contents/19-devops.md",
-    "engenharia-de-software/contents/18-bdd-ddd-mda-mdd-fdd-dsdm.md",
     "informatica-basica/contents/img/03-https-conexao-segura.png",
     "informatica-basica/contents/img/03-https-certificado-invalido.png",
     "informatica-basica/contents/img/03-http.png",
