@@ -65,7 +65,7 @@ Neste exemplo, a prototipagem foi usada tanto para refinar os requisitos funcion
 O desenvolvimento de protótipos, por ser uma atividade exploratória e iterativa, segue um processo cíclico com etapas bem definidas, embora a formalidade e o detalhamento possam variar significativamente dependendo dos objetivos do protótipo e do modelo de processo geral em que ele está inserido. Uma estrutura comum para este processo, focada na clareza dos objetivos e na avaliação contínua, é apresentada a seguir.
 
 <div align="center">
-<img width="700px" src="07-processo-de-prototipagem.png">
+<img width="700px" src="./img/07-processo-de-prototipagem.png">
 </div>
 
 Analisando cada etapa:
@@ -79,7 +79,7 @@ Analisando cada etapa:
 **Roger Pressman** oferece uma visão ligeiramente diferente, mas complementar, desse ciclo iterativo, enfatizando a comunicação inicial e o projeto rápido:
 
 <div align="center">
-<img width="420px" src="07-processo-de-prototipagem-pressman.png">
+<img width="420px" src="./img/07-processo-de-prototipagem-pressman.png">
 </div>
 
 Nesta visão, o ciclo começa com a **Comunicação** para entender os objetivos. Segue para um **Projeto Rápido** e **Modelagem** focados apenas no que será prototipado. A **Construção do protótipo** leva à **Entrega e Realimentação (Feedback)**, que por sua vez alimenta a próxima rodada de **Comunicação**, reiniciando o ciclo de refinamento. Ambas as visões (Sommerville e Pressman) destacam a natureza iterativa e centrada no feedback do processo de prototipagem.
