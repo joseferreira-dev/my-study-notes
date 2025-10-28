@@ -25,7 +25,7 @@ Cada placa de rede fabricada no mundo possui um identificador único, gravado em
 
 Este endereço é a "impressão digital" do dispositivo na rede, garantindo que cada equipamento tenha uma identidade exclusiva em um nível local. Suas características são:
 
-- **Formato:** O endereço MAC é composto por 48 bits, que são universalmente representados como 12 dígitos hexadecimais, geralmente agrupados em seis duplas separadas por dois-pontos ou hífens. Por exemplo: **24:6E:2A:91:41:D1**.
+- **Formato:** O endereço MAC é composto por 48 bits, que são universalmente representados como 12 dígitos hexadecimais, geralmente agrupados em seis duplas separadas por dois-pontos ou hífens. Por exemplo: `24:6E:2A:91:41:D1`.
 - **Estrutura:** O endereço é dividido em duas metades de 24 bits cada:
     1. **OUI (Organizationally Unique Identifier):** A primeira metade (no exemplo, `24:6E:2A`) identifica o fabricante da placa. Esse bloco é atribuído a cada empresa pelo IEEE (Institute of Electrical and Electronics Engineers), o que permite identificar quem fabricou o dispositivo a partir do seu endereço MAC.
     2. **Identificador Único:** A segunda metade (no exemplo, `91:41:D1`) é um número de série único atribuído pela própria fabricante, garantindo que não existam duas placas de sua fabricação com o mesmo endereço completo.
@@ -47,7 +47,7 @@ Trata-se de um dispositivo com apenas duas portas (uma de entrada e uma de saíd
 O **hub**, também chamado de concentrador, pode ser entendido como uma evolução do repetidor. Em vez de apenas duas portas, um hub possui múltiplas portas, permitindo que vários dispositivos sejam interconectados em um ponto central. Ele foi o dispositivo central nas primeiras redes com topologia física em estrela.
 
 <div align="center">
-<img width="420px" src="./img/03-hub.png">
+<img width="400px" src="./img/03-hub.png">
 </div>
 
 No entanto, a lógica de funcionamento de um hub é a mesma de um repetidor: quando um sinal de dados chega em uma de suas portas, o hub o regenera e o **retransmite para todas as outras portas simultaneamente**, sem exceção. Ele não tem a capacidade de identificar para qual dispositivo a mensagem se destina; ele simplesmente a envia para todos.
@@ -81,12 +81,12 @@ Devido à ineficiência causada pela criação de um único domínio de colisão
 O **switch**, ou comutador, é o sucessor direto do hub. Fisicamente, ele pode parecer semelhante, atuando como um ponto de conexão central para os dispositivos de uma rede em uma topologia em estrela. No entanto, sua forma de operar é radicalmente diferente e muito mais inteligente, resolvendo o principal problema do hub: o domínio de colisão único.
 
 <div align="center">
-<img width="540px" src="./img/03-switch.png">
+<img width="500px" src="./img/03-switch.png">
 </div>
 
 Enquanto o hub opera na Camada 1 (Física), o switch é um dispositivo de **Camada 2 (Enlace)** do Modelo OSI. Isso significa que ele tem a capacidade de "ler" e interpretar o endereço físico, ou **endereço MAC**, contido em cada quadro de dados que trafega pela rede. Essa habilidade é a chave para sua eficiência.
 
-### O Fim das Colisões: A Comutação de Quadros
+### Comutação de Quadros
 
 A grande inovação do switch é sua capacidade de criar um caminho de comunicação temporário e exclusivo entre a porta de origem e a porta de destino para cada quadro transmitido. Ele não retransmite os dados para todas as portas como um hub; em vez disso, ele **comuta** (encaminha) o quadro apenas para a porta específica onde o dispositivo de destino está conectado.
 
@@ -117,7 +117,7 @@ O switch é capaz de gerenciar os três tipos básicos de tráfego em uma rede:
 - **Broadcast:** Uma comunicação de um para todos. O switch encaminha o quadro para todas as portas, exceto a de origem.
 - **Multicast:** Uma comunicação de um para um grupo. O switch encaminha o quadro para um subconjunto de portas que fazem parte de um grupo multicast específico.
 
-### Além da Camada 2: Switches Multicamada
+### Switches Multicamada
 
 A tecnologia dos switches evoluiu para incorporar funcionalidades de camadas superiores, criando dispositivos híbridos de alta performance:
 
@@ -145,7 +145,7 @@ A bridge analisa o tráfego e toma uma decisão inteligente:
 3. Se o MAC de destino estiver no **mesmo segmento** que o MAC de origem, a bridge entende que a comunicação é local e **descarta (filtra) o quadro**, impedindo que ele cruze para o outro segmento desnecessariamente.
 4. Se o MAC de destino estiver no **segmento oposto**, a bridge **encaminha o quadro** para sua outra porta.
 
-Essa filtragem inteligente era sua grande vantagem sobre os hubs e repetidores. Ao conter o tráfego local dentro de cada segmento, a bridge reduzia drasticamente o congestionamento geral na rede e melhorava o desempenho. É crucial notar, como destacado nas anotações, que a bridge segrega o tráfego entre **enlaces** ou segmentos de uma mesma rede, e não entre redes distintas (o que exigiria roteamento, uma função de Camada 3).
+Essa filtragem inteligente era sua grande vantagem sobre os hubs e repetidores. Ao conter o tráfego local dentro de cada segmento, a bridge reduzia drasticamente o congestionamento geral na rede e melhorava o desempenho. É crucial notar que a bridge segrega o tráfego entre **enlaces** ou segmentos de uma mesma rede, e não entre redes distintas (o que exigiria roteamento, uma função de Camada 3).
 
 <div align="center">
 <img width="540px" src="./img/03-bridge-esquema.png">
@@ -155,10 +155,10 @@ Essa filtragem inteligente era sua grande vantagem sobre os hubs e repetidores. 
 
 Assim como um switch, a bridge segmenta domínios de colisão, mas não domínios de broadcast:
 
-- **Domínios de Colisão:** A bridge **divide o domínio de colisão**. Cada uma de suas portas representa um domínio de colisão separado. Isso significa que, na figura acima, uma colisão no segmento de A e B não afetaria o segmento de C e D.
-- **Domínios de Broadcast:** A bridge **não divide o domínio de broadcast**. Se o computador A enviar uma mensagem de broadcast, a bridge a encaminhará para o outro segmento, garantindo que ela chegue a todos os dispositivos (B, C e D).
+- **Domínios de Colisão:** A bridge **divide o domínio de colisão**. Cada uma de suas portas representa um domínio de colisão separado. Isso significa que, na figura acima, uma colisão no segmento de baixo não afetaria o segmento de cima.
+- **Domínios de Broadcast:** A bridge **não divide o domínio de broadcast**. Se o computador enviar uma mensagem de broadcast, a bridge a encaminhará para o outro segmento, garantindo que ela chegue a todos os dispositivos.
 
-### O Desafio da Heterogeneidade
+### Desafio da Heterogeneidade
 
 Originalmente, uma das grandes promessas da bridge era a capacidade de interligar tipos diferentes de redes locais, como conectar uma rede Ethernet a uma rede Token Ring. No entanto, como aponta o autor Andrew S. Tanenbaum, isso se provou problemático na prática. As diferenças intrínsecas entre os padrões de rede — como o tamanho máximo dos quadros, as taxas de transmissão e os formatos de cabeçalho — tornavam a "tradução" entre eles complexa e ineficiente.
 
@@ -169,17 +169,17 @@ Por essa razão, as bridges (e, por extensão, os switches) se tornaram eficazes
 Enquanto os switches são os mestres da comunicação _dentro_ de uma rede local, os **roteadores** são os dispositivos responsáveis por conectar redes distintas, permitindo a comunicação _entre_ elas. O roteador é um equipamento nativo da **Camada 3 (Camada de Rede)** do Modelo OSI e é a peça fundamental que possibilita a existência da própria Internet, que nada mais é do que uma imensa interconexão de redes autônomas.
 
 <div align="center">
-<img width="420px" src="./img/03-roteador.png">
+<img width="400px" src="./img/03-roteador.png">
 </div>
 
 Se um switch utiliza o endereço físico (MAC) para encaminhar quadros dentro de uma LAN, o roteador opera com base no **endereçamento lógico (endereço IP)**. Cada dispositivo em uma rede TCP/IP possui um endereço IP, que funciona como seu endereço postal, identificando não apenas o dispositivo, mas também a rede à qual ele pertence.
 
-#### A Tomada de Decisão: A Tabela de Roteamento
+### Tabela de Roteamento
 
 A principal função de um roteador é tomar decisões de encaminhamento. Ele faz isso consultando sua **tabela de roteamento**, uma espécie de mapa que contém informações sobre as redes conhecidas e os melhores caminhos para alcançá-las. Quando um pacote de dados chega a uma porta do roteador, ele analisa o endereço IP de destino do pacote, consulta sua tabela de roteamento e determina por qual de suas portas o pacote deve ser enviado para continuar sua jornada.
 
 <div align="center">
-<img width="480px" src="./img/03-roteador-tabela-de-roteamento.png">
+<img width="500px" src="./img/03-roteador-tabela-de-roteamento.png">
 </div>
 
 Essa tabela pode ser construída de duas maneiras:
@@ -187,21 +187,21 @@ Essa tabela pode ser construída de duas maneiras:
 - **Roteamento Estático:** O administrador da rede insere manualmente as rotas na tabela. É um método seguro e previsível, mas inflexível e impraticável para redes grandes e dinâmicas.
 - **Roteamento Dinâmico:** Os roteadores se comunicam entre si utilizando **protocolos de roteamento**. Através desses protocolos, eles trocam informações sobre as redes que conseguem alcançar, permitindo que construam e atualizem suas tabelas de roteamento automaticamente. Essa troca de informações permite que os roteadores descubram o melhor caminho (geralmente o mais rápido ou com menor custo) para um destino e se adaptem a falhas na rede, recalculando rotas alternativas. Exemplos de protocolos de roteamento incluem RIP, OSPF, EIGRP e BGP.
 
-#### Segmentação de Domínios
+### Segmentação de Domínios
 
 O roteador é o dispositivo definitivo para a segmentação de redes. Diferente do switch, que por padrão não divide domínios de broadcast, o roteador cria uma barreira tanto para colisões quanto para broadcasts:
 
 - **Segmentação de Domínios de Colisão e Broadcast:** Cada porta (interface) de um roteador está conectada a uma rede diferente. Por design, um roteador **não encaminha mensagens de broadcast** de uma interface para outra. Isso significa que **cada porta de um roteador representa um domínio de broadcast separado**, assim como um domínio de colisão isolado. Essa capacidade é crucial para o desempenho e a segurança de redes grandes, pois impede que "tempestades de broadcast" (_broadcast storms_) em uma rede afetem as demais.
 
 <div align="center">
-<img width="540px" src="./img/03-roteador-esquema.png">
+<img width="600px" src="./img/03-roteador-esquema.png">
 </div>
 
-#### Interconectando Tecnologias Distintas
+### Interconectando Tecnologias Distintas
 
 Outra capacidade fundamental do roteador é sua habilidade de interconectar redes que utilizam tecnologias de Camada 2 diferentes. Como ele opera na Camada 3, ele é agnóstico à tecnologia de enlace subjacente. Um roteador pode receber um pacote de dados encapsulado em um quadro Ethernet em uma de suas portas, desencapsular o pacote IP, e então reencapsulá-lo em um outro tipo de quadro (como de uma tecnologia WAN) para enviá-lo por outra porta.
 
-#### Arquitetura Interna de um Roteador
+### Arquitetura Interna de um Roteador
 
 Um roteador, em sua essência, é um computador especializado. Sua arquitetura interna é composta por quatro componentes principais:
 
@@ -219,7 +219,7 @@ O termo "gateway" é um dos mais amplos em redes. Em seu uso mais comum, "Defaul
 Enquanto um roteador conecta redes diferentes que falam o mesmo "idioma" principal (o protocolo IP), um gateway conecta redes que falam "idiomas" completamente distintos. Para realizar essa tradução, um gateway precisa entender a comunicação em todas as suas camadas, até a **Camada 7 (Aplicação)** do Modelo OSI, pois ele precisa converter não apenas os endereços, mas a própria essência dos dados e dos comandos da aplicação.
 
 <div align="center">
-<img width="480px" src="./img/03-gateway.png">
+<img width="500px" src="./img/03-gateway.png">
 </div>
 
 A função básica de um gateway é, portanto, converter os pacotes de uma arquitetura de rede para outra. Por serem construídos para tarefas muito específicas, eles geralmente possuem nomes relacionados à sua aplicação.
@@ -230,7 +230,7 @@ Alguns exemplos práticos de Gateways são:
 - **Gateway de E-mail:** Um servidor de e-mail pode atuar como um gateway ao receber mensagens de um sistema de e-mail (ex: um servidor Microsoft Exchange interno) e convertê-las para o protocolo SMTP padrão da internet para enviá-las a destinatários externos.
 - **IoT Gateway:** Em ambientes de Internet das Coisas (IoT), muitos sensores e dispositivos utilizam protocolos de baixa potência e curto alcance (como Zigbee, Z-Wave ou LoRaWAN) que não são compatíveis com a internet. O IoT Gateway coleta os dados desses dispositivos e os traduz para o protocolo IP, permitindo que as informações sejam enviadas para um servidor na nuvem.
 
-## Visão Integrada: A Interação entre os Equipamentos de Rede
+## Interação entre os Equipamentos de Rede
 
 Até agora, analisamos cada equipamento de forma isolada. A melhor maneira de entender o papel de cada um é observá-los trabalhando em conjunto em uma infraestrutura de rede típica, como a representada na figura a seguir.
 
@@ -243,38 +243,38 @@ Este diagrama ilustra uma rede de pequeno a médio porte, dividida em quatro red
 - **LAN 1 (Segmento de Servidores):** Esta é uma área crítica da rede, abrigando o servidor web e o servidor de e-mail. A escolha de um **Switch** como dispositivo central aqui é fundamental. Ele garante que a comunicação entre os servidores e o resto da rede seja de alta performance, criando conexões dedicadas e sem colisões. Quando um usuário da LAN 3 acessa o site da empresa, o roteador envia a requisição para o switch, que a encaminha de forma inteligente apenas para a porta do servidor web, sem sobrecarregar o servidor de e-mail com tráfego irrelevante.
 - **LAN 2 (Segmento com Hub):** Esta rede utiliza um **Hub**, um dispositivo mais antigo. Todos os computadores conectados a ele compartilham o mesmo barramento lógico e, portanto, estão no mesmo domínio de colisão. Isso significa que apenas um PC pode transmitir por vez, a largura de banda é compartilhada e o desempenho é inferior ao da LAN 1.
 - **LAN 4 (Segmento Híbrido):** Este segmento demonstra como diferentes dispositivos podem ser combinados. O **Repetidor** é utilizado para estender a distância do cabo, regenerando o sinal para alcançar a "Estação de Trabalho" mais distante. A **Bridge**, por sua vez, é usada para segmentar a LAN 4 em duas partes. Ela cria dois domínios de colisão separados, de modo que o tráfego entre os PCs na parte superior não interfere no tráfego da parte inferior, melhorando o desempenho de ambos os sub-segmentos.
-- **O Roteador (O Coração da Rede):** O **Roteador** é o dispositivo central que torna a comunicação entre todas as LANs possível. Ele interconecta as LANs 1, 2, 3 e 4, que são redes distintas. Ele é o responsável por criar múltiplos domínios de broadcast, um para cada uma de suas interfaces. Além disso, é o roteador que fornece a conexão vital para a **Internet**, atuando como o gateway para toda a rede interna.
+- **Roteador (Coração da Rede):** O **Roteador** é o dispositivo central que torna a comunicação entre todas as LANs possível. Ele interconecta as LANs 1, 2, 3 e 4, que são redes distintas. Ele é o responsável por criar múltiplos domínios de broadcast, um para cada uma de suas interfaces. Além disso, é o roteador que fornece a conexão vital para a **Internet**, atuando como o gateway para toda a rede interna.
 
-### Mapeando a Inteligência: Equipamentos e as Camadas OSI
+## Equipamentos e as Camadas OSI
 
 A "inteligência" de um equipamento de rede é definida pela camada mais alta do modelo OSI em que ele opera. Cada camada adiciona uma nova capacidade de interpretação e tomada de decisão, como podemos ver no diagrama a seguir.
 
 <div align="center">
-<img width="480px" src="./img/03-equipamentos-e-camadas.png">
+<img width="500px" src="./img/03-equipamentos-e-camadas.png">
 </div>
 
 - **Camada 1 (Física):** **Hubs e Repetidores** operam aqui. Eles não entendem endereços, apenas sinais elétricos (bits). Sua função é regenerar e/ou distribuir esses sinais.
 - **Camada 2 (Enlace):** **Bridges e Switches** atuam nesta camada. Eles são capazes de ler os endereços MAC dos quadros, permitindo-lhes tomar decisões inteligentes de encaminhamento dentro de uma mesma rede local.
-- **Camada 3 (Rede):** Os **Roteadores** são os dispositivos nativos desta camada. Eles operam com base em endereços lógicos (IP) para encaminhar pacotes entre redes diferentes, escolhendo o melhor caminho.
+- **Camada 3 (Rede):** Os **Roteadores (Routers)** são os dispositivos nativos desta camada. Eles operam com base em endereços lógicos (IP) para encaminhar pacotes entre redes diferentes, escolhendo o melhor caminho.
 - **Camadas Superiores:** Dispositivos mais avançados como **Switches Multicamada** e **Gateways** podem operar em camadas ainda mais altas, inspecionando informações de transporte (Camada 4) ou até mesmo dados de aplicação (Camada 7) para tomar decisões.
 
-#### Resumo dos Domínios de Colisão e Broadcast
+## Resumo dos Domínios de Colisão e Broadcast
 
 A camada em que um dispositivo opera determina como ele lida com os domínios da rede. A regra geral é:
 
 - **Hub ou Repetidor:** Cria um único domínio de colisão e um único domínio de broadcast.
-- **Switch ou Bridge:** Cria um domínio de colisão para cada uma de suas portas (N portas = N domínios de colisão), mas por padrão, cria apenas um domínio de broadcast.
-- **Roteador:** Cria um domínio de colisão e um domínio de broadcast para cada uma de suas interfaces (N portas = N domínios de colisão e N domínios de broadcast).
+- **Switch ou Bridge:** Cria um domínio de colisão para cada uma de suas portas (nº portas =nº domínios de colisão), mas por padrão, cria apenas um domínio de broadcast.
+- **Roteador:** Cria um domínio de colisão e um domínio de broadcast para cada uma de suas interfaces (nº portas = nº domínios de colisão e nº domínios de broadcast).
 
 A tabela a seguir consolida essa informação crucial:
 
-|Equipamento|Domínios de Colisão|Domínios de Broadcast|
-|---|---|---|
-|**Hub ou Repetidor**|1|1|
-|**Switch ou Bridge**|N (Nº de Portas)|1|
-|**Roteador**|N (Nº de Portas)|N (Nº de Portas)|
+| Equipamento          | Domínios de Colisão | Domínios de Broadcast |
+| -------------------- | ------------------- | --------------------- |
+| **Hub ou Repetidor** | 1                   | 1                     |
+| **Switch ou Bridge** | N (nº de Portas)    | 1                     |
+| **Roteador**         | N (nº de Portas)    | N (nº de Portas)      |
 
-#### O Fluxo da Comunicação pelas Camadas
+## Fluxo da Comunicação pelas Camadas
 
 Um ponto fundamental a se entender é que os dispositivos finais da comunicação (como os PCs) implementam todas as sete camadas do modelo OSI, enquanto os dispositivos intermediários (como os roteadores) implementam apenas as camadas necessárias para sua função. A figura abaixo ilustra o fluxo de uma comunicação que atravessa múltiplos roteadores.
 
