@@ -142,7 +142,7 @@ A **Camada de Enlace de Dados (Data Link Layer)**, ou simplesmente Camada de Enl
 
 Para alcançar esse objetivo, a Camada de Enlace assume duas responsabilidades cruciais: organizar o fluxo de bits em unidades lógicas (os quadros) e implementar mecanismos de controle para lidar com os erros que inevitavelmente ocorrem no meio físico.
 
-É fundamental entender a distinção mencionada em suas anotações: a camada **não torna o meio físico livre de erros**, o que é impossível. Em vez disso, ela implementa técnicas para **detectar** e, em alguns casos, **corrigir** os erros, de modo que, da perspectiva da Camada de Rede, a comunicação aparenta ser confiável. Ela atua como um gerente de qualidade, inspecionando a "linha de montagem" de bits para garantir a integridade do produto final.
+É fundamental entender que a camada **não torna o meio físico livre de erros**, o que é impossível. Em vez disso, ela implementa técnicas para **detectar** e, em alguns casos, **corrigir** os erros, de modo que, da perspectiva da Camada de Rede, a comunicação aparenta ser confiável. Ela atua como um gerente de qualidade, inspecionando a "linha de montagem" de bits para garantir a integridade do produto final.
 
 #### Enquadramento (Framing)
 
@@ -161,7 +161,7 @@ Além de estruturar os bits em quadros, a Camada de Enlace introduz mecanismos p
 - **Controle de Fluxo:** A camada também pode implementar mecanismos para evitar que um remetente rápido sobrecarregue um receptor lento com dados. O receptor pode enviar sinais de controle para "pausar" e "retomar" a transmissão, garantindo um fluxo de dados gerenciável.
 - **Sequenciamento:** Os quadros são numerados para garantir que sejam processados na ordem correta no destino e para permitir a identificação de quadros perdidos.
 
-#### Comutação: As Estratégias para Encaminhar Dados
+#### Comutação
 
 Um conceito fundamental, intimamente ligado à operação dos dispositivos da Camada de Enlace e superiores, é o de **comutação** (_switching_). Em seu sentido mais amplo, comutação é o processo pelo qual um equipamento intermediário recebe dados em uma porta de entrada e os encaminha para uma ou mais portas de saída, de modo a levá-los para mais perto de seu destino final. A estratégia utilizada para realizar essa comutação define a natureza da rede. Existem duas abordagens principais: a comutação de circuitos e a comutação por pacotes.
 
@@ -223,12 +223,12 @@ A tabela a seguir resume as principais diferenças entre as duas técnicas:
 A Camada de Enlace, na prática, lida com duas classes de problemas distintas: as questões lógicas da comunicação (como o controle de erros e fluxo) e as questões de acesso ao meio físico (como o endereçamento físico e as regras para transmitir em um meio compartilhado). Para organizar melhor essas responsabilidades, o comitê IEEE 802, que padroniza as redes locais (LANs), dividiu a Camada de Enlace em duas subcamadas: a **LLC** na parte superior e a **MAC** na parte inferior.
 
 <div align="center">
-<img width="420px" src="./img/04-osi-camada-de-enlace-subcamadas.png">
+<img width="500px" src="./img/04-osi-camada-de-enlace-subcamadas.png">
 </div>
 
 Essa divisão é engenhosa porque permite que a subcamada superior (LLC), que lida com a lógica, seja independente da tecnologia física. Assim, a mesma lógica da LLC pode operar sobre diferentes tecnologias de acesso ao meio, como Ethernet, Wi-Fi ou outras.
 
-##### A Subcamada de Controle do Enlace Lógico (LLC - Logical Link Control)
+##### Subcamada de Controle do Enlace Lógico (LLC - Logical Link Control)
 
 A subcamada LLC atua como a **interface entre a Camada de Rede e a Camada de Enlace**. Sua principal função é estabelecer e controlar as relações lógicas entre os dispositivos em uma rede. Ela recebe os pacotes da Camada de Rede e se encarrega de adicionar informações de controle para garantir uma transmissão ordenada. Suas responsabilidades incluem:
 
@@ -241,7 +241,7 @@ O serviço oferecido pela LLC pode ser de três tipos:
 2. **Tipo 2:** Serviço **orientado à conexão e com confirmação de entrega**. Neste modelo, uma conexão lógica é estabelecida entre os dispositivos antes da troca de dados, e cada quadro é numerado e confirmado. Garante a entrega ordenada e sem erros dos quadros.
 3. **Tipo 3:** Serviço **não orientado à conexão, mas com confirmação de entrega**. Um modelo híbrido, onde cada quadro é confirmado individualmente, mas sem o estabelecimento de uma conexão formal.
 
-##### A Subcamada de Controle de Acesso ao Meio (MAC - Media Access Control)
+##### Subcamada de Controle de Acesso ao Meio (MAC - Media Access Control)
 
 A subcamada MAC é a parte inferior da Camada de Enlace e atua como a **interface com a Camada Física**. Ela é responsável por todas as tarefas que dependem diretamente do meio de transmissão e da topologia da rede. Suas principais responsabilidades são:
 
@@ -270,7 +270,7 @@ O coração da Camada de Rede é o processo de roteamento. Cada roteador constr�
 
 A construção dessas tabelas pode ser feita de forma estática (configurada manualmente pelo administrador) ou, mais comumente, de forma dinâmica, através de **protocolos de roteamento**. Esses protocolos permitem que os roteadores troquem informações entre si, aprendendo sobre a topologia da rede e calculando os melhores caminhos com base em diversas métricas, como a distância (número de saltos), a largura de banda do link, o atraso e o nível de congestionamento.
 
-#### Da Rede Privada à Rede Global: Intranet, Extranet e Internet
+#### Intranet, Extranet e Internet
 
 A capacidade da Camada de Rede de interconectar redes distintas é o que permite a criação de diferentes escopos de rede:
 
@@ -291,7 +291,7 @@ Um computador pode executar diversas aplicações de rede simultaneamente: um na
 - **Multiplexação:** No host de origem, a Camada de Transporte coleta os dados de diferentes aplicações (processos), segmenta-os e adiciona a cada segmento um cabeçalho contendo o número da porta de origem e de destino. A porta de destino identifica qual aplicação no computador de destino deve receber os dados.
 - **Demultiplexação:** No host de destino, a Camada de Transporte examina o número da porta de destino no cabeçalho de cada segmento recebido e entrega os dados para o soquete da aplicação correta.
 
-#### Os Dois Modelos de Serviço: Confiabilidade vs. Velocidade
+#### Modelos de Serviço: Confiabilidade vs. Velocidade
 
 A principal característica da Camada de Transporte é que ela oferece dois modelos de serviço distintos, implementados através de dois protocolos principais, para atender às diferentes necessidades das aplicações:
 
@@ -302,7 +302,7 @@ A principal característica da Camada de Transporte é que ela oferece dois mode
     - É o protocolo de escolha para aplicações onde a integridade dos dados é crucial, como navegação web (HTTP/S), envio de e-mails (SMTP) e transferência de arquivos (FTP).
 - **Serviço Não Orientado à Conexão (Rápido):** Representado pelo **UDP (User Datagram Protocol)**, este serviço prioriza a velocidade e a baixa latência em detrimento da confiabilidade. Ele simplesmente envia os datagramas sem estabelecer uma conexão prévia e **sem qualquer mecanismo de confirmação, ordenação ou controle de erros**. É um modelo "enviar e esquecer". É ideal para aplicações de tempo real, onde um pacote perdido ou atrasado é menos problemático do que esperar por uma retransmissão. Exemplos incluem streaming de vídeo, jogos online, e chamadas de Voz sobre IP (VoIP).
 
-#### Otimização de Pacotes: O Papel do MSS
+#### Otimização de Pacotes
 
 Para otimizar a transmissão, a Camada de Transporte utiliza um parâmetro chamado **MSS (Maximum Segment Size)**. O MSS define o tamanho máximo de dados que um segmento pode conter. Seu valor é calculado com base no MTU (Maximum Transmission Unit) da Camada de Enlace, subtraindo-se o tamanho dos cabeçalhos IP e TCP.
 
