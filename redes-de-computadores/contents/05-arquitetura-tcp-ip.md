@@ -4,7 +4,7 @@ No capítulo anterior, dissecamos o Modelo OSI, um mapa conceitual abrangente e 
 
 É fundamental iniciar este estudo com a clareza de que os conceitos dos modelos OSI e TCP/IP, por diversas vezes, se sobrepõem e se complementam. Enquanto o OSI é o modelo de referência teórico ideal, o TCP/IP é a suíte de protocolos funcional que se provou mais prática e resiliente, tornando-se o padrão global.
 
-### Origens e Filosofia do Modelo TCP/IP
+## Origens e Filosofia do Modelo TCP/IP
 
 A arquitetura TCP/IP não nasceu de um comitê de padronização, mas de uma necessidade prática. Seu desenvolvimento começou na década de 1970, com o patrocínio da **ARPA (Advanced Research Projects Agency)**, uma agência do Departamento de Defesa dos Estados Unidos. O objetivo era criar uma rede de longa distância robusta e resiliente, a **ARPANET**, que pudesse sobreviver a falhas parciais (uma preocupação estratégica durante a Guerra Fria) e interconectar diferentes sistemas de computadores em centros de pesquisa.
 
@@ -13,7 +13,7 @@ Essa origem militar e acadêmica moldou a filosofia do TCP/IP, que se diferencia
 - **Pragmatismo e Resiliência:** O modelo foi construído com o objetivo de funcionar em um ambiente heterogêneo e pouco confiável. A inteligência da rede foi deliberadamente movida para as pontas (os hosts), enquanto o núcleo da rede foi mantido o mais simples possível, com a única tarefa de encaminhar pacotes da melhor forma que puder.
 - **Modelo Aberto e Evolutivo:** Os protocolos não foram impostos, mas desenvolvidos de forma colaborativa e documentados em publicações chamadas **RFCs (Request for Comments)**. Esse processo aberto permitiu uma rápida evolução e adaptação.
 
-### A Arquitetura de 4 Camadas do TCP/IP
+## Arquitetura de 4 Camadas do TCP/IP
 
 Diferentemente do modelo OSI com suas sete camadas, a arquitetura de protocolos TCP/IP, conforme definida em suas RFCs originais (como a RFC 793), é estruturada em **quatro camadas** mais amplas.
 
@@ -26,15 +26,11 @@ Ainda que o modelo formal possua quatro camadas, é importante notar que, por ra
 
 A grande força do modelo TCP/IP reside em sua flexibilidade, especialmente na camada de Acesso à Rede. Ao não ditar uma tecnologia específica, ele permitiu a interconexão de redes completamente heterogêneas, de diferentes fabricantes e tecnologias, formando a base para a rede global e diversa que é a Internet hoje.
 
-Com certeza. Esta seção é crucial para conectar o modelo teórico do OSI com a arquitetura prática do TCP/IP. Vamos detalhar as semelhanças, diferenças e a terminologia correta, utilizando suas anotações e a imagem fornecida.
-
----
-
-### Comparando os Modelos: OSI vs. TCP/IP
+## Comparando os Modelos: OSI vs. TCP/IP
 
 Embora o Modelo OSI seja a referência teórica fundamental, a arquitetura de protocolos que prevaleceu e se tornou o padrão de fato da Internet é a TCP/IP. É essencial entender como esses dois modelos se relacionam, pois muitas das funcionalidades descritas nas camadas OSI são implementadas por protocolos da pilha TCP/IP.
 
-#### Mapeamento de Camadas e Protocolos
+### Mapeamento de Camadas e Protocolos
 
 A melhor forma de visualizar a relação entre os modelos é através de um mapeamento direto de suas camadas, que também nos permite posicionar os principais protocolos que compõem a arquitetura TCP/IP. Embora os protocolos específicos sejam detalhados em capítulos futuros, o diagrama a seguir oferece um quadro resumo de grande importância.
 
@@ -49,7 +45,7 @@ Analisando a imagem, podemos extrair várias conclusões importantes:
 - **Camada de Transporte:** Alinhada com a camada de Transporte do OSI, ela oferece os dois principais serviços de comunicação fim a fim através do **TCP** e do **UDP**.
 - **Camada de Aplicação:** Esta camada do TCP/IP engloba as responsabilidades das camadas de Sessão, Apresentação e Aplicação do OSI. É aqui que reside a vasta maioria dos protocolos que os usuários e as aplicações interagem diretamente, como **HTTP**, **FTP**, **SMTP**, **DNS**, entre outros.
 
-#### Uma Questão de Nomenclatura: Arquitetura vs. Protocolos
+### Nomenclatura: Arquitetura vs. Protocolos
 
 Um ponto de confusão recorrente, inclusive em materiais técnicos, é o uso do termo "TCP/IP". É crucial fazer a seguinte distinção:
 
@@ -64,14 +60,14 @@ Portanto, a frase "O protocolo TCP/IP faz o roteamento..." está tecnicamente in
 > 
 > "O protocolo IP, que faz parte da arquitetura TCP/IP, é responsável pelo roteamento..."
 
-#### As Principais Diferenças Estruturais
+### Principais Diferenças Estruturais
 
 Como o diagrama ilustra, as duas grandes diferenças na estrutura dos modelos são:
 
 1. **Consolidação das Camadas Inferiores:** O modelo TCP/IP não se preocupa com os detalhes da transmissão física e do enlace local. Ele abstrai essas funções em uma única **Camada de Acesso à Rede**, assumindo que alguma tecnologia existente cumprirá esse papel.
 2. **Consolidação das Camadas Superiores:** O TCP/IP agrupa as funções de gerenciamento de diálogo (Sessão), formatação de dados (Apresentação) e os serviços de rede (Aplicação) em uma única **Camada de Aplicação**. Na prática, a própria aplicação final é responsável por gerenciar esses aspectos.
 
-#### Variações de Nomenclatura das Camadas
+### Variações de Nomenclatura
 
 Para complementar, é comum encontrar diferentes nomes para as camadas do modelo TCP/IP em diversas bibliografias. A tabela abaixo resume as nomenclaturas mais comuns:
 
