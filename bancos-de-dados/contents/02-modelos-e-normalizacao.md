@@ -1244,4 +1244,3 @@ Com o modelo conceitual em mãos, avançamos para o processo de refinar a estrut
 Por fim, abordamos o tratamento de **valores nulos**, um aspecto prático e onipresente que introduz a complexidade da lógica de três valores, fundamental para a correta manipulação e consulta de dados no mundo real.
 
 Ao concluir este capítulo, temos um entendimento coeso de como transformar uma necessidade de negócio em um modelo conceitual robusto e, em seguida, refinar esse modelo em um conjunto de tabelas bem estruturadas, normalizadas e prontas para a implementação. Estes são os alicerces indispensáveis sobre os quais construiremos nosso conhecimento prático na linguagem SQL, o tema do nosso próximo encontro.
-
