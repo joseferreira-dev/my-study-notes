@@ -23,11 +23,11 @@ Neste exemplo, a relação (tabela) armazena dados sobre a entidade "Cliente". `
 
 Conforme vimos no capítulo anterior, cada atributo possui um **domínio**, que é o conjunto de valores permitidos para ele. Ao criar a tabela, definimos o tipo de dado para cada coluna (ex: `CPF` como `CHAR(14)`, `Nome` como `VARCHAR(100)`), restringindo assim seu domínio e garantindo a integridade dos dados. Essa definição é realizada através de comandos na **SQL (Structured Query Language)**, a linguagem padrão para a criação e manipulação de bancos de dados relacionais.
 
-### As Propriedades de uma Relação
+### Propriedades de uma Relação
 
 A simplicidade visual de uma tabela esconde um rigoroso fundamento matemático baseado na teoria dos conjuntos. É essa base que confere ao modelo relacional sua consistência. Segundo a teoria, popularizada por autores como C.J. Date, toda relação deve obedecer a um conjunto de propriedades fundamentais:
 
-- **Tuplas não são ordenadas de cima para baixo:** Uma relação é um _conjunto_ de tuplas. Na teoria dos conjuntos, os elementos não possuem uma ordem intrínseca. Portanto, a ordem em que as linhas são exibidas em uma consulta não tem significado, a menos que uma ordenação seja explicitamente solicitada (com o comando `ORDER BY` em SQL).
+- **Tuplas não são ordenadas de cima para baixo:** Uma relação é um _conjunto_ de tuplas. Na teoria dos conjuntos, os elementos não possuem uma ordem intrínseca. Portanto, a ordem em que as linhas são exibidas em uma consulta não tem significado, a menos que uma ordenação seja explicitamente solicitada (com o comando `ORDER BY` em SQL, por exemplo).
 - **Atributos não são ordenados da esquerda para a direita:** Da mesma forma, a ordem das colunas é irrelevante para o modelo. Os atributos são referenciados por seus nomes, não por sua posição.
 - **Cada tupla deve ser única:** Como uma relação é um conjunto, ela não pode conter elementos duplicados. Isso significa que não podem existir duas linhas em uma tabela que sejam exatamente idênticas em todos os seus valores. Na prática, essa unicidade é garantida por uma **chave primária**.
 - **Os valores dos atributos são atômicos:** Esta é uma das propriedades mais importantes. Cada "célula" da tabela (a intersecção de uma linha e uma coluna) deve conter um único e indivisível valor. Não é permitido, por exemplo, armazenar uma lista de telefones em um único campo `telefone`. Cada telefone deveria ser um registro separado em outra tabela.
@@ -59,7 +59,7 @@ Existem diferentes abordagens para escolher uma chave primária:
 
 - **Chave Natural:** É um atributo que já existe naturalmente nos dados e que identifica a entidade de forma única. Exemplos incluem o `CPF` para uma pessoa, o `ISBN` para um livro ou o `Chassi` para um veículo.
 - **Chave Artificial (ou Surrogate):** É um código, geralmente um número inteiro sequencial, criado artificialmente pelo SGBD com o único propósito de servir como chave primária (ex: `id_cliente`). Esta é a abordagem mais comum e recomendada, pois garante unicidade, é imutável, curta e otimizada para o desempenho das consultas.
-- **Chave Composta:** Em alguns casos, uma única coluna não é suficiente para garantir a unicidade. Uma chave primária composta é formada por duas ou more colunas. Por exemplo, em uma tabela de `Itens_de_Pedido`, a chave primária poderia ser a combinação de (`id_pedido`, `id_produto`).
+- **Chave Composta:** Em alguns casos, uma única coluna não é suficiente para garantir a unicidade. Uma chave primária composta é formada por duas ou mais colunas. Por exemplo, em uma tabela de `Itens_de_Pedido`, a chave primária poderia ser a combinação de (`id_pedido`, `id_produto`).
 
 ##### Chaves Candidatas
 
@@ -84,7 +84,7 @@ No exemplo acima, temos duas tabelas. A coluna `codigo` é a chave primária da 
 
 A definição formal e a esmagadora boa prática do modelo relacional ditam que uma chave estrangeira deve sempre referenciar uma **chave candidata** (geralmente a chave primária) da tabela pai. Embora alguns SGBDs possam permitir tecnicamente a criação de uma referência a uma coluna não-única, essa é uma prática que viola a integridade referencial e deve ser evitada a todo custo, pois leva a ambiguidades e inconsistências nos dados.
 
-### As Regras de Codd
+### Regras de Codd
 
 Na década de 1980, com a crescente popularidade do modelo relacional, muitos fornecedores de software começaram a rotular seus produtos como "relacionais" sem, de fato, aderir aos princípios fundamentais do modelo. Em resposta, Edgar F. Codd, o "pai" do modelo relacional, publicou um conjunto de 12 regras (que na verdade são 13, começando pela regra 0) para estabelecer um padrão claro e rigoroso.
 
@@ -351,7 +351,7 @@ Os relacionamentos são classificados de acordo com o número de entidades que p
 - **Relacionamento Ternário:** É um relacionamento de grau 3, que associa ocorrências de **três** entidades simultaneamente. São menos comuns, mas necessários quando uma associação só faz sentido com a presença de três partes.
     - **Exemplo:** Em um sistema de logística, um `FORNECEDOR` fornece uma `PEÇA` para um `PROJETO`. O relacionamento `Fornece` é ternário, pois a informação completa exige saber quem forneceu, o que foi fornecido e para qual projeto.
 
-#### Entidades Associativas: Quando o Relacionamento tem Atributos
+#### Entidades Associativas
 
 Via de regra, relacionamentos apenas indicam a existência de um vínculo. No entanto, em alguns casos, especialmente em relacionamentos de muitos-para-muitos (N:M), o próprio relacionamento pode ter atributos que o descrevem.
 
@@ -404,7 +404,7 @@ Para interpretar o diagrama, seguimos um método passo a passo:
     - Finalize com o nome da entidade de destino: "...`Professores`."
     - **Frase completa:** "Um curso é ministrado por no mínimo 1 e no máximo n professores."
 
-#### Os Componentes da Cardinalidade: Participação e Grau
+#### Componentes da Cardinalidade
 
 O par (mínimo, máximo) nos revela duas informações cruciais sobre o relacionamento:
 
@@ -481,7 +481,7 @@ Os principais componentes da notação são:
 
 Embora mais complexa, a notação IDEF1X carrega mais informações semânticas sobre a estrutura do banco de dados, sendo muito precisa para detalhar as regras de dependência entre as entidades.
 
-### Criando Hierarquias: Generalização e Especialização
+### Generalização e Especialização
 
 A generalização e a especialização são conceitos de modelagem que nos permitem representar relacionamentos do tipo **"é um tipo de"**, criando hierarquias entre entidades. Essa abordagem, inspirada nos princípios da orientação a objetos, ajuda a organizar o modelo, reduzir a redundância e representar as regras de negócio de forma mais precisa.
 
@@ -494,7 +494,7 @@ Em ambos os casos, as subclasses **herdam** todos os atributos e relacionamentos
 <img width="480px" src="./img/02-generalizacao-e-especializacao.png">
 </div>
 
-#### As Regras da Hierarquia: Restrições de Especialização
+#### Restrições de Especialização
 
 Para que a hierarquia represente corretamente as regras de negócio, precisamos definir duas restrições independentes: a de **disjunção** (ou exclusividade) e a de **completude** (ou totalidade).
 
@@ -533,7 +533,7 @@ Esta restrição responde à pergunta: "Toda ocorrência da superclasse deve, ob
 
 Em algumas notações, como a que usa o triângulo, as restrições são combinadas em um par de letras (exclusividade, completude):
 
-||**Total (t)**|**Parcial (p)**|
+|-|**Total (t)**|**Parcial (p)**|
 |---|---|---|
 |**Exclusiva (x)**|**xt**|**xp**|
 |**Compartilhada (c)**|**ct**|**cp**|
@@ -661,7 +661,7 @@ A redundância, que é a repetição desnecessária da mesma informação em mú
 
 ### Decompondo as Tabelas
 
-A normalização resolve esses problemas através da decomposição. Vamos usar o exemplo de um atributo "Localização" que armazena a cidade e o estado juntos (ex: "Santos - São Paulo", "Campinas - São Paulo").
+A normalização resolve esses problemas através da decomposição. Vamos usar o exemplo de um atributo `LOCALIZACAO` que armazena a cidade e o estado juntos (ex: "Santos - São Paulo", "Campinas - São Paulo").
 
 **Antes da Normalização (com redundância):**
 
@@ -677,14 +677,14 @@ O nome do estado "São Paulo" se repete. Para alterar o nome do estado, teríamo
 
 Criamos uma tabela separada para `ESTADOS` e referenciamos seu ID na tabela de `CLIENTES`, que agora também separa `CIDADE`.
 
-Tabela ESTADOS:
+Tabela `ESTADOS`:
 
 | ID_ESTADO (PK) | NOME_ESTADO |
 | --- | --- |
 | 1 | São Paulo |
 | 2 | Rio de Janeiro |
 
-Tabela CLIENTES:
+Tabela `CLIENTES`:
 
 | ID_CLIENTE (PK) | NOME_CLIENTE | CIDADE | ID_ESTADO (FK) |
 |:--- | --- | --- | --- |
@@ -974,7 +974,7 @@ Para resolver isso, decompomos a tabela:
     - Esta tabela está na 3FN? Sim. Não há dependências transitivas.
     - **Esta tabela está na FNBC?** Sim. Para a única dependência funcional que ela possui, o determinante `{id_aluno, id_curso}` é uma superchave (é a chave primária da tabela).
 
-Portanto, o exemplo das imagens, após ser corretamente normalizado até a 3FN, resulta em um conjunto de tabelas que também satisfazem as regras da Forma Normal de Boyce-Codd.
+Portanto, o exemplo, após ser corretamente normalizado até a 3FN, resulta em um conjunto de tabelas que também satisfazem as regras da Forma Normal de Boyce-Codd.
 
 <div align="center">
 <img width="700px" src="./img/02-forma-normal-boyce-codd-3.png">
@@ -1081,7 +1081,7 @@ Com essa decomposição, a redundância é eliminada. Para adicionar o hobby "Na
 
 Embora os cenários que violam a 4FN sejam menos comuns que os das formas normais anteriores, identificá-los e corrigi-los é essencial para criar um modelo de dados verdadeiramente robusto e livre de redundâncias.
 
-#### Quinta Forma Normal (5FN): Eliminando Dependências de Junção
+#### Quinta Forma Normal (5FN)
 
 Chegamos à etapa final da normalização clássica: a **Quinta Forma Normal (5FN)**, também conhecida como **Project-Join Normal Form (PJ/NF)**. Esta é a forma normal mais avançada e teórica, projetada para lidar com um tipo raro e sutil de redundância que as formas anteriores não conseguem resolver.
 
@@ -1155,7 +1155,7 @@ As novas tabelas estão agora na **Quinta Forma Normal**.
 
 É importante reforçar, como mencionado nas anotações, que a 4FN e a 5FN lidam com cenários de modelagem muito específicos. Na grande maioria dos projetos de banco de dados do mundo real, um design que atinge a Terceira Forma Normal (3FN) ou a FNBC já é considerado totalmente normalizado, robusto e livre das anomalias de dados mais prejudiciais.
 
-#### Resumo das Formas Normais: Um Guia de Referência Rápida
+#### Resumo das Formas Normais
 
 O processo de normalização, com suas regras e terminologias técnicas, pode parecer complexo. No entanto, o objetivo de cada Forma Normal é claro e distinto, com cada etapa construindo sobre a anterior para refinar o design do banco de dados.
 
@@ -1186,7 +1186,7 @@ Um valor nulo representa a **ausência de um valor**. É crucial entender que `N
 
 Essa distinção é fundamental. Por exemplo, se calculássemos a média de comissões de todos os funcionários, um valor `0` entraria no cálculo e diminuiria a média, enquanto um valor `NULL` seria simplesmente ignorado, levando a um resultado correto.
 
-### A Lógica de Três Valores (Lógica Ternária)
+### Lógica de Três Valores (Lógica Ternária)
 
 A natureza "desconhecida" do `NULL` introduz uma complexidade na lógica booleana. A lógica tradicional, com a qual estamos acostumados, é binária: uma afirmação só pode ser **Verdadeira (`TRUE`)** ou **Falsa (`FALSE`)**. No entanto, como o SGBD avalia uma comparação como `Salario > 5000` quando o `Salario` é `NULL`? A resposta não é nem verdadeira, nem falsa.
 
