@@ -585,3 +585,162 @@ Ao se afirmar que o endereço IP não muda, é preciso ter em mente uma exceçã
 
 Entretanto, para fins de entendimento do roteamento padrão, os endereços IP públicos possuem um significado e visibilidade global na Internet.
 
+### Modelo Hierárquico de Comutação (Switching)
+
+O protocolo Ethernet e os switches são os blocos de construção fundamentais das redes locais. No entanto, em uma rede de médio ou grande porte (como um campus universitário ou um edifício corporativo), simplesmente conectar dezenas de switches de forma aleatória (uma topologia "plana" ou _flat_) rapidamente se torna um pesadelo de gerenciamento, desempenho e confiabilidade.
+
+Para resolver isso, os projetistas de rede utilizam um **modelo hierárquico** de três camadas para organizar os switches. É um tipo de conexão e um design de rede que, embora envolva equipamentos que operam em camadas diferentes (L2 e L3), está intrinsecamente ligado ao funcionamento da camada de enlace.
+
+O principal objetivo desse modelo é dividir a infraestrutura de comutação (switching) em camadas lógicas, atribuindo funções e funcionalidades específicas para cada camada. Com esse arranjo, a rede se torna mais previsível, mais fácil de gerenciar e muito mais simples de expandir (escalabilidade), garantindo um desempenho otimizado.
+
+Esse modelo é um _design_ conceitual e pode ser dividido em **até** três camadas:
+
+1. **Camada de Acesso (Access)**
+2. **Camada de Distribuição (Distribution)**
+3. **Camada de Núcleo (Core)**
+
+Atenção para o "ATÉ" 3 camadas. A implementação real depende do porte da organização:
+
+- **Rede Pequena:** Pode ter apenas a **Camada de Acesso**, com um único switch (ou alguns switches não hierárquicos) conectando os dispositivos e um roteador para a Internet.
+- **Rede Média:** Frequentemente utiliza um design de **"Núcleo Colapsado" (Collapsed Core)**, onde as funções das camadas de Distribuição e Núcleo são executadas por um mesmo conjunto de switches de alta capacidade.
+- **Rede Grande:** (Ex: Hospitais, Universidades, grandes corporações) Implementa todas as três camadas de forma distinta para obter o máximo de desempenho e resiliência.
+
+Vamos avaliar as características e responsabilidades de cada uma dessas camadas.
+
+#### Camada de Acesso
+
+É a camada mais próxima dos dispositivos finais ou terminais de usuários. É a "borda" da rede. Os dispositivos terminais (computadores, impressoras, telefones IP, câmeras, Access Points Wi-Fi) terão sua conexão física à rede por intermédio dos **switches de Acesso**.
+
+A principal função desta camada é fornecer conectividade de porta aos dispositivos. Suas responsabilidades incluem:
+
+- **Conectividade de Dispositivos:** Fornecer alta densidade de portas (switches de 24 ou 48 portas) para os usuários.
+- **Controle de Acesso e Segurança:** É a "porta de entrada" da rede, e é aqui que os controles de acesso são implementados. É nesta camada que se define quais dispositivos possuem permissão para se comunicar.
+- **Marcação de VLANs (TAGs):** Quando se utilizam Redes Locais Virtuais (VLANs), os switches de acesso são responsáveis por "marcar" (rotular) os quadros que chegam de um dispositivo, associando-os à VLAN correta (ex: "VLAN 10 - Vendas", "VLAN 20 - Engenharia").
+- **Autenticação de Porta (IEEE 802.1X):** Pode-se implementar critérios de autenticação rigorosos, onde um dispositivo só obtém acesso à rede _após_ fornecer credenciais válidas (usuário/senha ou certificado digital), um recurso conhecido como 802.1X.
+- **Power over Ethernet (PoE):** É tipicamente na camada de acesso que se encontram os switches com capacidade PoE para alimentar telefones, câmeras e APs.
+
+#### Camada de Distribuição
+
+A camada de Distribuição atua como a "gerência intermediária" da rede. Ela agrega todo o tráfego gerado pelos múltiplos switches da camada de acesso e serve como o ponto de controle e separação da rede.
+
+Enquanto a camada de acesso cria as VLANs, é na camada de Distribuição que a **separação efetiva e a comunicação entre elas** (roteamento inter-VLANs) são realizadas. Para isso, esta camada utiliza **Switches de Camada 3 (Multilayer Switches)**.
+
+Suas responsabilidades principais são:
+
+- **Agregação de Tráfego:** Funciona como um ponto de agregação para todos os switches de acesso de um prédio ou andar, geralmente conectada a eles por links de alta velocidade (como fibra óptica ou agregação de links).
+- **Roteamento Inter-VLANs:** É a função mais crítica. Um switch de acesso (Camada 2) não pode encaminhar tráfego da "VLAN 10" para a "VLAN 20". O tráfego deve subir até o switch de Distribuição (Camada 3), que o roteará para a VLAN de destino.
+- **Implementação de Políticas:** É o local ideal para implementar políticas de controle de tráfego, como **Listas de Controle de Acesso (ACLs)** – que filtram o tráfego (ex: "proibir a VLAN 10 de acessar os servidores da VLAN 20") – e **Qualidade de Serviço (QoS)**, que prioriza tráfegos sensíveis (como voz) sobre outros.
+- **Redundância:** Em termos de desempenho, capacidade e confiabilidade, esses equipamentos devem ser mais robustos que os de acesso, pois sua falha isolaria grupos inteiros de usuários. Eles são o ponto de redundância da rede.
+
+#### Camada de Núcleo (Core)
+
+A camada de Núcleo (ou _Core_) é o coração da rede. É a "espinha dorsal" (_backbone_) de altíssima velocidade. Em uma rede grande, o núcleo não se conecta diretamente a dispositivos de acesso; ele conecta apenas os dispositivos da camada de Distribuição entre si.
+
+Sua única e exclusiva função é **comutar (encaminhar) pacotes o mais rápido possível**.
+
+- **Foco na Velocidade:** O núcleo concentra todo e qualquer tráfego da rede proveniente das camadas de distribuição. Para tanto, necessita de recursos extremos de capacidade, disponibilidade e confiabilidade.
+- **Sem Processamento Complexo:** Idealmente, um switch de núcleo _não_ deve realizar tarefas que consomem processamento, como ACLs, roteamento inter-VLANs ou inspeção de pacotes. Essas tarefas são deixadas para a camada de Distribuição. O núcleo deve se preocupar apenas com a comutação em velocidade de hardware.
+- **Alta Disponibilidade:** A falha do núcleo significa a falha de toda a rede corporativa. Por isso, esta camada é construída com equipamentos de chassis modulares, fontes de alimentação redundantes, ventiladores _hot-swap_ e múltiplos links de fibra óptica de altíssima velocidade.
+ 
+### Protocolo HDLC (High-Level Data Link Control)
+
+Embora o Ethernet domine o mundo das LANs, ele não é o único protocolo da Camada de Enlace. Para comunicações em Redes de Longa Distância (WANs), especialmente em links seriais ponto-a-ponto, outros protocolos foram historicamente importantes.
+
+O **HDLC (High-Level Data Link Control)** é um protocolo clássico da Camada 2 (Enlace) do modelo OSI. Ele é derivado do protocolo **SDLC (Synchronous Data Link Control)**, que foi amplamente utilizado antigamente em mainframes da IBM, e serviu de base para muitos outros protocolos.
+
+Diferente do Ethernet, que foi projetado para meios de acesso múltiplo (broadcast) e uma comunicação não confiável (best-effort), o HDLC foi projetado para ser um protocolo de enlace **confiável** e **orientado a bits**, primariamente para links síncronos ponto-a-ponto (como os links seriais que conectavam roteadores em cidades diferentes).
+
+Suas principais características são:
+
+- **Orientado a Bits:** Utiliza um quadro (frame) com um delimitador especial (o _flag_ `01111110`). Para garantir que esse padrão não apareça acidentalmente nos dados, ele utiliza a técnica de _bit stuffing_ (inserção de bits), que estudamos no Capítulo 4.
+- **Mecanismo de Confirmação:** O HDLC é um protocolo _confiável_. Ele possui um campo de controle que é utilizado para troca de mensagens de confirmação (ACK) e não confirmação (NACK), garantindo que os quadros sejam entregues. Assim como o quadro Ethernet, também possui um campo de _checksum_ (FCS) para a detecção de erros.
+- **Três Tipos de Quadros:** O HDLC define três tipos de quadros para gerenciar a comunicação:
+    1. **Quadros de Informação (I-Frames):** Carregam os dados do usuário (o payload da camada superior) e também incluem números de sequência para controle de fluxo e erro.
+    2. **Quadros de Supervisão (S-Frames):** Usados para controle de fluxo e erro. Não carregam dados do usuário, mas enviam mensagens como "Recebido OK" (ACK), "Recebido com Erro" (NACK), "Receptor Pronto" (RR) ou "Receptor Não Pronto" (RNR).
+    3. **Quadros Não Numerados (U-Frames):** Usados para gerenciamento do link, como estabelecer (conectar) ou encerrar (desconectar) a conexão de enlace.
+- **Janela Deslizante (Sliding Window):** Para tornar a confirmação eficiente, o HDLC utiliza o conceito de **janela deslizante**. Isso permite, de forma variável, o envio de múltiplos quadros (por padrão, até 7 quadros I-Frames) antes que o transmissor precise parar e esperar por uma confirmação do primeiro quadro. Isso é muito mais rápido do que um sistema "stop-and-wait" (envia 1, espera ACK, envia 2, espera ACK), sendo fundamental para links de longa distância com alta latência.
+
+## Link Aggregation Control Protocol (LACP) - 802.3ad / 802.1AX
+
+À medida que as redes locais (LANs) evoluíram, a demanda por desempenho entre os dispositivos centrais da rede, como switches e servidores, aumentou exponencialmente. Um único link de 1 Gbps, ou mesmo 10 Gbps, pode rapidamente se tornar um gargalo. Além disso, um link único entre dois switches de núcleo representa um ponto crítico de falha: se esse cabo ou porta falhar, a rede inteira pode ser segmentada.
+
+Para solucionar essas duas questões — **largura de banda** e **redundância** — convergiu-se para a ideia de agregar várias ligações físicas Ethernet em uma única porta lógica. Esse conceito é chamado de **Agregação de Link (Link Aggregation)** ou, em algumas implementações de fabricantes, **Port-Channel**.
+
+Inicialmente, a agregação era feita de forma **estática** (ou modo "On"), onde um administrador de rede configurava manualmente um grupo de portas em ambos os lados para serem tratadas como um conjunto. Embora isso aumentasse a largura de banda, essa abordagem não possuía inteligência. Se um dos links físicos do grupo falhasse, os switches não percebiam isso dinamicamente e continuavam a enviar tráfego para o link "morto", resultando em perda de pacotes (um "buraco negro" de tráfego).
+
+Para resolver isso, a indústria precisava de um protocolo dinâmico que pudesse negociar, monitorar e manter ativamente esses grupos de links. Esse protocolo padronizado é o **LACP (Link Aggregation Control Protocol)**, introduzido pela IEEE inicialmente como **802.3ad** (no ano 2000) e hoje mantido no padrão **IEEE 802.1AX**.
+
+<div align="center">
+<img width="700px" src="./img/06-protocolo-lacp.png">
+</div>
+
+A imagem acima ilustra perfeitamente o conceito. Em vez de ter quatro links de 1 Gbps separados entre dois switches (o que criaria um loop de rede, exigindo que o Spanning Tree Protocol bloqueasse três deles), o LACP é usado para "amarrar" logicamente os quatro links. O resultado é um único **Link Aggregation Group (LAG)** que a rede enxerga como um único enlace lógico de 4 Gbps, com o benefício adicional de que, se um dos cabos falhar, o tráfego continua fluindo pelos outros três.
+
+### Benefícios e Terminologia do LACP
+
+A implementação do LACP traz três benefícios principais:
+
+1. **Aumento da Largura de Banda:** Na prática, obtém-se um somatório das capacidades dos links. Por exemplo, a agregação de dois links de 10 GbE resulta em um backbone lógico de 20 Gb/s.
+2. **Alta Disponibilidade (Resiliência):** Este é um benefício crucial para a continuidade dos negócios. Se um cabo ou uma porta física do LAG falhar, o LACP detecta a falha imediatamente e o tráfego migra automaticamente para os links restantes do grupo, muitas vezes sem perda de pacotes perceptível.
+3. **Balanceamento de Carga (Load Balancing):** O tráfego não é simplesmente "dividido" aleatoriamente. Para evitar que os quadros de uma mesma sessão cheguem fora de ordem, o switch utiliza um algoritmo (hash) para distribuir os _fluxos_ de tráfego entre os links físicos. Esse algoritmo pode ser baseado nos endereços MAC, nos endereços IP ou até mesmo nas portas TCP/UDP, garantindo uma distribuição eficiente das diferentes "conversas" da rede.
+
+Para entender o funcionamento do LACP, é importante validar alguns termos-chave definidos pelo padrão:
+
+|**Termo**|**Significado**|
+|---|---|
+|**Link Aggregation Group (LAG)**|O conjunto de links físicos paralelos que são tratados como uma única interface lógica.|
+|**Aggregator**|A entidade lógica (a interface virtual) que representa o LAG para a pilha MAC do dispositivo.|
+|**Actor / Partner**|Cada um dos dois dispositivos em cada ponta do LAG (seja um switch, servidor, etc.).|
+|**LACPDU**|A **Unidade de Dados de Protocolo LACP**. É o pacote de controle encapsulado que os _Actors_ usam para negociar, verificar e manter o estado do LAG com seus _Partners_. Possui 110 bytes e é enviado em intervalos regulares: a cada 30 segundos (padrão `LONG`) ou a cada 1 segundo (padrão `FAST` ou `LACP RATE FAST`).|
+|**Collecting / Distributing**|Os estados operacionais que indicam que uma porta está pronta, sincronizada e já pode receber (Collecting) e enviar (Distributing) tráfego de dados pelo LAG.|
+
+Como um protocolo da Camada de Enlace, o LACP detecta falhas por meio da supervisão ativa em cada porta. Cada dispositivo envia LACPDUs em todos os links ativos do LAG. Caso um nó pare de receber os LACPDUs do seu parceiro em um link específico, ele assume que aquele link falhou, o remove do grupo e redistribui o tráfego pelos links restantes, evitando assim pontos de falha.
+
+O LACPDU também carrega campos relevantes para a negociação:
+
+- **System ID:** Composto por uma prioridade e o endereço MAC do dispositivo. Identifica unicamente cada _Actor_ e influencia qual deles "comanda" a agregação.
+- **Port ID:** Composto por uma prioridade e o número da porta. Usado para priorizar quais links devem entrar no LAG, caso haja mais links compatíveis do que o máximo permitido pelo grupo.
+- **State Flags:** Uma série de bits que comunicam o estado da porta (se está Ativa ou Passiva, se está Coletando, Distribuindo, Sincronizada, etc.).
+
+### Modos de Operação do LACP
+
+Durante a configuração de um LAG, o administrador deve definir o modo de operação do LACP em cada ponta. O modo define se o dispositivo irá iniciar ativamente a negociação ou apenas aguardar passivamente.
+
+|**Modo**|**Descrição**|**Uso típico**|
+|---|---|---|
+|**Active (Ativo)**|A porta envia LACPDUs ativamente e tenta formar um LAG com o outro lado. Inicia a negociação.|Switches de núcleo (Core) ou Distribuição.|
+|**Passive (Passivo)**|A porta não inicia a negociação, mas responde caso receba um LACPDU de um parceiro Ativo.|Dispositivos na borda da rede, como servidores.|
+|**On (Estático)**|Desliga o LACP. A porta é forçada a fazer parte do LAG sem qualquer negociação.|Usado quando um dos dispositivos não suporta LACP ou em configurações manuais. **(Não recomendado)**|
+
+Para que um LAG LACP seja formado com sucesso, a configuração deve ser compatível:
+
+- **Active + Active:** Funciona. Ambos os lados iniciam a negociação e formam o LAG.
+- **Active + Passive:** Funciona. Este é o modo de configuração mais comum e recomendado.
+- **Passive + Passive:** **Falha.** Ambos os lados ficam esperando o outro iniciar a negociação, e o LAG nunca é formado.
+- **On + On:** Funciona (como agregação estática), mas **sem os benefícios** de detecção de falha do LACP.
+- **Active/Passive + On:** **Falha (Causa Problemas)**. Deve-se evitar misturar agregação estática ("On") com LACP. O lado "Active" enviará LACPDUs, mas o lado "On" irá ignorá-los. O lado "Active" nunca receberá uma resposta, assumirá que o link está com problemas e não o adicionará ao LAG, causando "flapping" (alteração de status constante), mensagens de log e perda de pacotes.
+
+### Comparação de Métodos de Agregação
+
+Para fins de comparação técnica, é importante contrastar o LACP (um padrão aberto) com protocolos proprietários, como o PAgP da Cisco, e a agregação estática.
+
+|**Critério**|**LACP (IEEE 802.1AX)**|**PAgP (Proprietário Cisco)**|**Agregação Estática ("On")**|
+|---|---|---|---|
+|**Padrão Aberto?**|**Sim**|Não|Não é um protocolo|
+|**Auto-detecção de Falha de Link/Config?**|**Sim**|Sim (Somente entre dispositivos Cisco)|**Não**|
+|**Configuração entre Fornecedores?**|**Alta** (Interoperável)|Baixa (Somente Cisco)|Média (Manual)|
+|**Reagrega Automaticamente?**|**Sim**|Sim|**Não**|
+
+Portanto, o LACP é hoje a espinha dorsal para a agregação de links Ethernet. Ele viabiliza a escalabilidade de largura de banda e a resiliência da rede de uma forma muito mais inteligente do que simplesmente usar links redundantes, que seriam bloqueados pelo Spanning Tree Protocol (STP). Ao tratar múltiplos links como uma entidade única, o LACP permite o uso de 100% da capacidade de todos os links, eliminando a necessidade de bloqueio de portas para prevenção de loops.
+
+## Considerações Finais
+
+Neste capítulo, mergulhamos fundo nas tecnologias e protocolos que dão vida à Camada de Acesso à Rede, a fundação sobre a qual todo o tráfego da Internet se apoia localmente. Afastando-nos dos modelos conceituais, exploramos os "cavalos de batalha" que operam em nossos cabos e no ar, sendo o **Protocolo Ethernet (IEEE 802.3)** a estrela indiscutível.
+
+Vimos a impressionante evolução do Ethernet, desde suas origens como um meio compartilhado, lento (10 Mbps) e propenso a colisões, governado pelo **CSMA/CD**, até se tornar a arquitetura de rede local dominante, gigabit, e totalmente comutada (switched) que conhecemos hoje. Acompanhamos sua escalada de velocidade do **Fast Ethernet** ao **Gigabit Ethernet** e além, e vimos como a introdução do modo **Full-Duplex** e dos switches tornou o CSMA/CD obsoleto, substituindo-o por mecanismos como o **Controle de Fluxo (802.3x)**.
+
+Dissecamos a anatomia do **endereçamento físico (Endereço MAC)**, entendendo sua estrutura de 48 bits, seu papel na identificação única dos dispositivos e sua função crucial na diferenciação de tráfego Unicast, Broadcast e Multicast. Analisamos o **quadro Ethernet** em detalhes, desde os campos de sincronização (Preâmbulo e SFD) até seus componentes lógicos vitais: os endereços MAC de destino e origem, o campo _Type_ (que identifica o protocolo da camada superior) e o _FCS_ (que utiliza o **CRC-32** para garantir a integridade dos dados).
+
+Exploramos o "cérebro" do switch, comparando os métodos de comutação — do confiável **Store-and-Forward**, que verifica erros, ao veloz **Cut-Through**, que prioriza a latência. Esclarecemos um dos conceitos mais importantes da rede: a diferença fundamental entre os **endereços IP** (globais e imutáveis na jornada) e os **endereços MAC** (locais e reescritos a cada salto de roteador).
+
+Por fim, vimos como o Ethernet não é apenas um protocolo, mas um ecossistema. Aprendemos como redes de grande porte são organizadas usando o **Modelo Hierárquico de Switches** (Acesso, Distribuição e Núcleo) e como protocolos auxiliares, como o **LACP (802.3ad)**, criam links redundantes e de alta capacidade, enquanto o **PoE (802.af)** fornece energia e dados pelo mesmo cabo.
