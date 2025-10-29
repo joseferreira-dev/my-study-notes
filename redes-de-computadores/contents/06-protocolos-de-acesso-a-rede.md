@@ -238,3 +238,163 @@ Analisando a tabela, podemos extrair uma regra de bolso muito útil. O destaque 
 - Se este dígito for **ímpar** (1, 3, 5, 7, 9, B, D, F), o bit I/G correspondente é 1, e trata-se de um endereço de **Multicast (Grupo)**.
 
 Como o endereço de broadcast (`FF:FF:FF:FF:FF:FF`) possui 'F' (um número ímpar) como seu segundo dígito, ele se encaixa corretamente na regra como um tipo de endereço de grupo. É importante reforçar que, ao avaliar se um dígito hexadecimal é par ou ímpar, vamos além do 9, onde: A = 10 (par), B = 11 (ímpar), C = 12 (par), D = 13 (ímpar), E = 14 (par) e F = 15 (ímpar).
+
+## Protocolo Ethernet
+
+Se existe um protocolo que define a rede local (LAN) moderna, é o **Ethernet**. É o principal e mais onipresente protocolo utilizado em redes locais cabeadas. Como as LANs representam a vasta maioria das redes com as quais interagimos diariamente, pode-se afirmar que o protocolo Ethernet está presente em boa parte de todas as redes operacionais atualmente.
+
+Sua história começa nos laboratórios da Xerox, no Vale do Silício, na década de 1970. O padrão original, conhecido como **Ethernet DIX** (em referência às três empresas que colaboraram em sua segunda versão: Digital, Intel e Xerox), estabeleceu as bases para a comunicação em redes locais. Pouco tempo depois, o **IEEE** (Institute of Electrical and Electronics Engineers) adaptou e padronizou esse protocolo sob a nomenclatura **IEEE 802.3**.
+
+Justamente por essa condição, onde o 802.3 é uma padronização formal do conceito original do Ethernet DIX, diversos textos e até mesmo profissionais da área acabam tratando os dois como idênticos. Na prática, as diferenças originais eram mínimas (principalmente em um campo do cabeçalho do quadro, chamado "Tipo" no Ethernet DIX e "Comprimento" no IEEE 802.3) e, com o tempo, os padrões convergiram, tornando-se interoperáveis para todos os fins práticos.
+
+### Ethernet no Contexto da Família IEEE 802
+
+O IEEE 802.3 (Ethernet) é parte de uma família maior de padrões, que inclui outros protocolos de acesso muito conhecidos, como o **IEEE 802.11 (WLAN ou Wi-Fi)** e o histórico IEEE 802.5 (Token Ring). Um ponto fundamental a se ressaltar é que a grande diferença entre esses protocolos reside na parte inferior da Camada de Acesso à Rede, ou seja, na Camada Física e na subcamada **MAC (Media Access Control)** da Camada de Enlace.
+
+Como vimos anteriormente, a Camada de Enlace é dividida em duas subcamadas:
+
+- **MAC (Controle de Acesso ao Meio):** Define o endereçamento físico (endereço MAC) e as regras de acesso ao meio (ex: CSMA/CD para 802.3, CSMA/CA para 802.11).
+- **LLC (Controle do Enlace Lógico):** Atua como a interface com a camada superior (a Camada de Rede).
+
+Ambos os padrões, 802.3 e 802.11, utilizam a mesma subcamada LLC (padronizada como IEEE 802.2). Portanto, sob a ótica da Camada de Rede, não há nenhuma informação sobre qual meio físico está sendo utilizado. O protocolo IP simplesmente entrega um pacote para a subcamada LLC, e esta o encaminha para a subcamada MAC apropriada (seja ela Ethernet ou Wi-Fi), que se encarregará de formatar o quadro e acessar o meio físico.
+
+### Padrão Ethernet Clássico (10 Mbps)
+
+A rede Ethernet padrão, em suas primeiras implementações, foi definida para a interligação de dispositivos em uma LAN a taxas de transmissão de **10 Mbps**, operando no formato **Half-Duplex**.
+
+Nessa era inicial, utilizava-se o **Hub** como equipamento central de interconexão. Como vimos no Capítulo 3, o hub é um dispositivo de Camada 1 que não realiza processamento inteligente de quadros. Com isso, tínhamos uma estrutura de rede com topologia _física_ em estrela (se usando cabos 10BaseT) ou _física_ em barramento (se usando cabos 10Base2/5), mas que, em ambos os casos, resultava em uma topologia _lógica_ em **barramento**.
+
+Esse barramento lógico gerava tráfego em **difusão (broadcast)** para todos os dispositivos da rede; qualquer sinal enviado por um nó era replicado para todos os outros. Nesse contexto, o controle de acesso ao meio era totalmente descentralizado e residia nos próprios dispositivos, que se valiam do protocolo **CSMA/CD (Carrier Sense Multiple Access with Collision Detection)** para "ouvir" o meio, detectar colisões e coordenar o acesso, evitando que dois dispositivos transmitissem ao mesmo tempo.
+
+Os padrões do Ethernet clássico são nomeados de acordo com sua velocidade, tipo de transmissão e meio físico:
+
+- **10Base5:** Utilizava o cabo coaxial grosso (Thicknet), permitindo segmentos de até 500 metros.
+- **10Base2:** Utilizava o cabo coaxial fino (Thinnet), uma alternativa mais barata e flexível, com segmentos de até 185 metros.
+- **10BaseT:** O padrão que se tornou dominante, utilizando cabo de par trançado (Twisted Pair).
+
+### Padrão Fast Ethernet (100 Mbps)
+
+Com a crescente demanda por velocidade, o padrão Ethernet evoluiu para o **Fast Ethernet**, que se consolidou rapidamente como a tecnologia padrão em redes LAN por muitos anos. O Fast Ethernet eleva a taxa de transmissão para **100 Mbps**.
+
+Originalmente, ele também foi projetado para operar em modo **Half-Duplex** (ainda dependendo de hubs e CSMA/CD), mas sua grande vantagem foi o suporte ao modo **Full-Duplex**.
+
+- **Operação Full-Duplex:** Ao utilizar um **Switch** (dispositivo de Camada 2) em vez de um Hub, cada porta do switch se torna um domínio de colisão isolado. Isso elimina a possibilidade de colisões entre os dispositivos conectados às portas do switch.
+    - Uma consequência direta disso é que o **CSMA/CD não é mais necessário** e é desabilitado. O dispositivo pode transmitir e receber dados simultaneamente.
+    - Isso nos leva a uma interpretação comum em materiais técnicos e provas: quando um enlace opera em modo Full-Duplex, o Fast Ethernet é capaz de suportar um _throughput_ (vazão) agregado de **200 Mbps** (100 Mbps para enviar e 100 Mbps para receber, ao mesmo tempo). Tal analogia também vale para o padrão Ethernet clássico (10 Mbps), que em Full-Duplex alcança uma vazão agregada de 20 Mbps.
+
+Para facilitar a migração, o Fast Ethernet manteve o mesmo formato de quadro (frame), o mesmo MTU (Maximum Transmission Unit) e os mesmos mecanismos de endereçamento MAC do Ethernet clássico.
+
+Os padrões mais comuns do Fast Ethernet são:
+
+- **100Base-TX:** O sucessor direto do 10BaseT, utiliza cabo de par trançado (Categoria 5 ou superior). Assim como o 10BaseT, os dados são transmitidos usando **apenas dois dos quatro pares** de fios do cabo (um par para transmissão e outro para recepção).
+- **100Base-FX:** Padrão para transmissão em fibra óptica, permitindo distâncias muito maiores.
+
+#### Fim da Regra 5-4-3
+
+Na era do Ethernet clássico (10 Mbps) com hubs/repetidores, a "Regra 5-4-3" era usada para limitar o diâmetro da rede e garantir que o CSMA/CD funcionasse. Com o Fast Ethernet, os bits são 10 vezes mais rápidos, encurtando o tempo disponível para a detecção de colisões. Isso tornou a Regra 5-4-3 obsoleta.
+
+Para redes Fast Ethernet que ainda utilizavam repetidores (hubs), novas e mais restritas regras de topologia foram criadas, baseadas em duas classes de repetidores:
+
+- **Repetidor Classe I:** Um repetidor Classe I é capaz de interligar segmentos de diferentes tipos físicos (por exemplo, 100Base-TX com 100Base-FX). Por realizar essa "tradução" de sinais, ele introduz um atraso maior. Em uma rede Fast Ethernet, só era permitido **um** repetidor Classe I. A distância máxima entre dois computadores seria de aproximadamente 200 metros (considerando segmentos de 100 metros).
+- **Repetidor Classe II:** Este repetidor é mais rápido, pois só pode interligar segmentos do **mesmo tipo** (ex: 100Base-TX com 100Base-TX). Por ter um atraso menor, a regra permitia **até dois** repetidores Classe II em série. Para garantir a integridade do sinal, a distância do cabo _entre_ os dois repetidores era limitada a, no máximo, 5 metros.
+
+### Padrão Gigabit Ethernet (1000 Mbps)
+
+Se o Fast Ethernet consolidou o uso de switches, o **Gigabit Ethernet** representa o próximo salto lógico de desempenho, tornando-se rapidamente o padrão para novas instalações e infraestruturas de backbones locais. Atualmente, o padrão Gigabit Ethernet está se tornando cada vez mais presente nas redes de usuários finais e muito em breve assumirá o posto que hoje é das redes Fast Ethernet.
+
+A concepção básica do Gigabit Ethernet buscou manter a compatibilidade com seus predecessores, mas introduziu uma mudança fundamental na topologia:
+
+- **Abandono do Barramento Lógico:** A concepção original do padrão ainda previa a interconexão de duas ou mais estações. Entretanto, para qualquer cenário com três ou mais estações, o padrão Gigabit Ethernet determina que se deve utilizar, no mínimo, um **switch L2** através da topologia em estrela. Ele **não suporta mais a topologia em barramento**, nem a nível físico (como o 10Base2) nem a nível lógico (como o uso de hubs). O hub, um dispositivo de domínio de colisão compartilhado, é obsoleto neste padrão.
+
+As redes Gigabit Ethernet operam com taxas de transmissão na casa de **1000 Mbps**, ou **1 Gbps**. O modo **Full-Duplex** é o método de operação padrão e esperado. O modo Half-Duplex também é suportado (para interoperabilidade com dispositivos legados, como "hubs Gigabit", que foram raros), mas é muito pouco utilizado na prática.
+
+- **Controle de Acesso:** Quando operando em modo Full-Duplex (o cenário padrão com switches), não há possibilidade de colisões, e o mecanismo CSMA/CD é desativado. Em seu lugar, utiliza-se o **Flow Control (Controle de Fluxo)**, um padrão (IEEE 802.3x) que permite ao switch ou a um dispositivo final enviar um sinal de "pausa" para o transmissor, caso seu buffer de recepção esteja cheio, evitando a perda de quadros.
+- **Vazão Agregada:** No mesmo sentido do Fast Ethernet, quando o Gigabit Ethernet opera em modo Full-Duplex, sua vazão (throughput) agregada pode ser considerada de **2 Gbps** (1 Gbps para transmissão e 1 Gbps para recepção simultâneos).
+
+O padrão também manteve o formato dos quadros 802.3, garantindo plena compatibilidade com os padrões mais antigos. Isso significa que um quadro Ethernet pode atravessar um segmento Fast Ethernet e um segmento Gigabit Ethernet sem precisar ser modificado.
+
+#### Padrões de Cabeamento e Codificação
+
+Para alcançar a velocidade de 1000 Mbps, o padrão precisou de técnicas de cabeamento e codificação mais avançadas.
+
+**Cabeamento de Par Trançado:**
+
+O padrão mais comum para Gigabit Ethernet em cabo de cobre é o **1000Base-T**.
+
+- Este padrão depende de cabos de par trançado Categoria 5 (CAT 5), no mínimo. No entanto, para garantir a integridade do sinal, recomenda-se fortemente o uso de cabos **CAT 5e** ou **CAT 6**.
+- A grande mudança do 1000Base-T em relação ao 100Base-TX é que ele **utiliza todos os 4 pares de fios** do cabo par trançado. Mais do que isso, ele utiliza os 4 pares de forma **bidirecional e simultânea** (Full-Duplex em cada par), o que exige um processamento de sinal muito sofisticado para cancelar a interferência e o eco gerados dentro do próprio cabo.
+
+Embora o 1000Base-T seja o padrão universal, existe também o **1000Base-TX**, que especifica o uso de **apenas 2 pares** para alcançar 1 Gbps. No entanto, este padrão exige, no mínimo, cabeamento **CAT 6** e não teve grande adoção de mercado em comparação com a flexibilidade do 1000Base-T.
+
+**Padrões de Fibra Óptica e Outros:**
+
+- **1000Base-SX:** Para fibra óptica multimodo (curto alcance, "Short Wavelength").
+- **1000Base-LX:** Para fibra óptica monomodo (longo alcance, "Long Wavelength").
+- **1000Base-CX:** Um padrão de curto alcance (até 25m) usando cabos de cobre blindados (STP).
+
+**Codificação de Sinal:**
+
+A codificação Manchester, usada no Ethernet 10BaseT, não é eficiente o suficiente para taxas de gigabit. O Fast Ethernet (100Base-TX) já havia evoluído para a codificação 4B/5B (onde 4 bits de dados são representados por 5 bits no meio, para garantir transições de clock e evitar longas sequências de zeros).
+
+O Gigabit Ethernet foi além, adotando esquemas ainda mais eficientes. O padrão **8B/10B** foi adotado para as variantes de fibra (1000Base-SX/LX), uma tecnologia robusta vinda de outras redes de alta velocidade, como a _Fibre Channel_ (usada em redes de armazenamento). Já o padrão 1000Base-T (cobre) usa um esquema de codificação ainda mais complexo chamado PAM-5 (Pulse Amplitude Modulation 5-level).
+
+#### Otimizações de Desempenho
+
+Com o aumento da velocidade, os gargalos da rede mudam. Em 1 Gbps, o tempo de transmissão do quadro no meio é muito pequeno, mas o processamento de cada quadro (pela CPU do dispositivo e pelos switches) pode se tornar o novo gargalo.
+
+Para otimizar isso, o padrão Gigabit Ethernet introduziu o suporte a **"Jumbo Frames"** (quadros gigantes).
+
+- Um quadro Ethernet padrão (802.3) tem um MTU (Maximum Transmission Unit), ou seja, um _payload_ (carga útil) máximo de **1500 bytes**. Esse valor foi definido na década de 1980 por motivos de custo de processamento, tempo de ocupação do meio (para o CSMA/CD funcionar) e o tempo de retransmissão em caso de perdas em meios pouco confiáveis.
+- Os Jumbo Frames são quadros que permitem um payload maior que 1500 bytes, tipicamente chegando a **9000 bytes**.
+
+O benefício é a **eficiência de processamento**. Para transmitir 9000 bytes de dados, um dispositivo precisaria processar e enviar 6 quadros padrão (6 cabeçalhos, 6 checksums). Com jumbo frames, ele processa e envia apenas 1 quadro. Isso reduz drasticamente a carga sobre a CPU do servidor e dos switches. Em redes de 1 Gbps (ou mais rápidas), o tempo extra de ocupação do meio é desprezível.
+
+Um detalhe crucial é que **todos os equipamentos de rede envolvidos na comunicação** (as placas de rede dos servidores, os switches e os roteadores no caminho) devem estar configurados para suportar o mesmo tamanho de jumbo frame. Se um único dispositivo no caminho não o suportar, a comunicação falhará ou exigirá fragmentação (o que anula o benefício).
+
+Na mesma linha de se aumentar a produtividade, implementou-se ainda o recurso de **rajada de quadros (frame burst)**. Esse recurso busca aumentar a quantidade de quadros que podem ser emitidos em sequência por um dispositivo dentro de um mesmo bloco de sinalização, otimizando o uso do meio em operações de grande volume de dados.
+
+#### 10 Gbps Ethernet
+
+A evolução não parou no Gigabit. Padrões de **10 Gbps** e até **100 Gbps** já são amplamente utilizados em ambientes específicos que exigem altíssima vazão, como redes de backbone, interconexão de datacenters e redes de armazenamento (SANs - Storage Area Networks).
+
+As redes de 10 Gbps (10GbE) são ainda mais restritivas, abandonando de vez qualquer resquício do Ethernet clássico:
+
+- Não é mais possível o uso de hubs ou repetidores.
+- Suportam **apenas o modo Full-Duplex**.
+- O mecanismo **CSMA/CD não é mais utilizado** de forma alguma, pois o conceito de meio compartilhado e colisões é totalmente eliminado.
+- Para cabos de pares trançados (padrão 10G-BaseT), utiliza-se no mínimo cabos CAT 6 (para distâncias curtas) ou, preferencialmente, cabos **CAT 6a** (aumentado) ou CAT 7 para garantir o desempenho nos 100 metros.
+
+### Recursos Auxiliares do Padrão Ethernet
+
+Além da velocidade, a família de protocolos Ethernet evoluiu para incluir recursos de gerenciamento e eficiência que são cruciais nas redes modernas.
+
+#### Auto-Negociação (Autonegotiation)
+
+Este é um recurso fundamental para a interoperabilidade. A auto-negociação retrata a capacidade das placas de rede e dos equipamentos (como switches) em "conversarem" e negociarem automaticamente entre si qual a maior velocidade e qual o melhor modo de operação suportados por ambos.
+
+Tal procedimento ocorre no exato momento em que um cabo é conectado (na inicialização do link). Por exemplo, ao conectar um laptop moderno (com placa de 1 Gbps) a uma porta de um switch mais antigo (com portas de 100 Mbps), os dois dispositivos negociam e fecham o link em **100 Mbps Full-Duplex**, a melhor configuração comum a ambos.
+
+#### Power over Ethernet (PoE) – Padrão 802.af
+
+Um dos padrões auxiliares mais utilizados é o **Power over Ethernet (PoE)**, formalizado pelo **IEEE 802.af** (e suas evoluções, como 802.at/PoE+ e 802.bt/PoE++).
+
+Esse padrão permite que seja transmitida **energia elétrica** através dos mesmos cabos de par trançado que transportam os dados. Isso elimina a necessidade de os equipamentos de rede terem uma fonte de alimentação separada ou estarem próximos a uma tomada.
+
+É um recurso muito utilizado em:
+
+- **Access Points (APs)** de redes sem fio;
+- **Câmeras de vigilância** IP;
+- **Telefones IP** (VoIP);
+- Switches remotos ou pequenos sensores.
+
+Assim, pode-se instalar uma câmera de segurança no teto de um galpão interligando-a com apenas um cabo Ethernet que fornece tanto a conexão de dados quanto a energia, simplificando drasticamente a instalação. Outros termos utilizados para descrever tal recurso são **Power over LAN (PoL)** ou **Inline Power**.
+
+#### Green Ethernet – Padrão 802.az
+
+Com a proliferação de dispositivos de rede, o consumo de energia tornou-se uma preocupação. O padrão **IEEE 802.az**, também conhecido como **Green Ethernet** ou Ethernet de Eficiência Energética, surgiu com o objetivo de reduzir o consumo de energia dos equipamentos.
+
+O Green Ethernet trabalha de duas formas principais:
+
+1. **Detecção de Link Inativo:** Ele detecta portas do switch que estão conectadas a um dispositivo desligado (como um PC que não está ativo). A porta entra em um modo de "sleep" (stand-by) de baixo consumo, em vez de continuar operando com potência total.
+2. **Ajuste de Potência por Comprimento de Cabo:** O padrão detecta a extensão real do cabo de rede. Sinais enviados por cabos curtos (ex: 5 metros) exigem menos potência para chegar à outra ponta do que sinais enviados por cabos longos (ex: 80 metros). O switch ajusta a potência de transmissão da porta para o mínimo necessário, economizando energia.
+
