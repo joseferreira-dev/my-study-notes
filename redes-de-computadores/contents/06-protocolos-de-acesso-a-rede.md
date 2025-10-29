@@ -474,3 +474,114 @@ Para evitar essa perda de pacotes, foi criado o mecanismo de **Controle de Fluxo
 - Este quadro PAUSE instrui o transmissor a interromper temporariamente o envio de dados por um curto período de tempo.
 - Isso dá ao receptor tempo para processar sua fila (buffer) e se preparar para receber mais dados, evitando a perda de pacotes e a consequente necessidade de retransmissão pela camada de transporte (TCP). O Ethernet PAUSE funciona apenas em enlaces Ethernet Full-Duplex.
 
+### Métodos de Comutação (Switching) Ethernet
+
+Quando um switch, o dispositivo central da rede Ethernet moderna, recebe um quadro em uma de suas portas, sua principal tarefa é decidir para qual porta de saída esse quadro deve ser encaminhado. No entanto, _como_ ele executa essa tarefa é uma questão fundamental de design que envolve uma troca clássica entre velocidade e confiabilidade.
+
+Existem diferentes métodos de encaminhamento, ou modos de operação, que um switch pode utilizar.
+
+#### Store-and-Forward (Armazena e Encaminha)
+
+Como o próprio nome sugere, o modo **Store-and-Forward** é o método mais completo e seguro. O switch que opera neste modo deve **receber e armazenar o quadro inteiro** em um buffer de memória antes de tomar qualquer decisão de encaminhamento.
+
+Somente após o último bit do quadro (o FCS) ser recebido, o switch realiza duas verificações cruciais:
+
+1. **Verificação de Erros (CRC):** O switch calcula o CRC-32 sobre o quadro recebido e compara o resultado com o campo FCS do quadro. Se os valores não baterem, o quadro está corrompido e é **imediatamente descartado**.
+2. **Verificação de Tamanho:** O switch verifica se o quadro atende aos padrões de tamanho. Se for menor que 64 bytes ("runt frame") ou maior que 1518 bytes ("giant frame"), ele também é descartado.
+
+Somente se o quadro passar em ambas as verificações (estiver íntegro e com o tamanho correto), o switch irá analisar o endereço MAC de destino e encaminhá-lo para a porta de saída correta.
+
+- **Vantagem:** Este método assegura a mais alta confiabilidade. Ao filtrar erros e quadros malformados na origem, ele impede que "lixo" de rede (quadros corrompidos) se propague e consuma largura de banda desnecessariamente.
+- **Desvantagem:** É o método mais lento, pois introduz uma **latência (atraso)** que depende do tamanho do quadro. O switch deve esperar o quadro inteiro chegar antes de começar a retransmiti-lo, o que é especialmente perceptível em quadros grandes de 1518 bytes.
+
+A figura a seguir ilustra o processo de latência do Store-and-Forward.
+
+<div align="center">
+<img width="400px" src="./img/06-ethernet-store-and-forward.png">
+</div>
+
+Na imagem, o dispositivo A envia um quadro. O dispositivo B (um switch) deve _receber toda a informação_ antes de poder _começar a enviar_ o mesmo quadro para o dispositivo C. Esse processo se repete em cada "salto", criando um atraso cumulativo.
+
+#### Cut-Through (Encaminhamento Direto)
+
+Com o objetivo de diminuir drasticamente a latência causada pelo método anterior, foi criado o modo **Cut-Through** (às vezes chamado de _Fast Forward_).
+
+Neste método, o switch adota uma abordagem minimalista e focada na velocidade. Assim que um quadro começa a chegar em uma porta, o switch lê **apenas os 6 primeiros bytes** do cabeçalho, que correspondem ao **endereço MAC de destino**.
+
+Imediatamente após ler o MAC de destino, o switch consulta sua tabela de endereços e, se souber a porta de saída, começa a "transmitir" os bits do quadro para a porta de saída _enquanto o restante do quadro ainda está sendo recebido_ na porta de entrada.
+
+- **Vantagem:** Latência extremamente baixa. O atraso é mínimo e constante, independentemente do tamanho do quadro, pois a decisão de encaminhamento é tomada nos primeiros 6 bytes.
+- **Desvantagem:** Nenhuma confiabilidade. O switch não armazena o quadro e, portanto, **não verifica o CRC** nem o tamanho. Se o quadro estiver corrompido, o switch o encaminhará da mesma forma, propagando o erro pela rede.
+
+#### Fragment Free (Livre de Fragmentos)
+
+O método **Fragment Free** é um meio-termo inteligente entre a velocidade do Cut-Through e a confiabilidade do Store-and-Forward.
+
+O switch que utiliza este método faz a leitura dos **primeiros 64 bytes** do quadro antes de encaminhá-lo. Por que 64 bytes? Como vimos, 64 bytes é o tamanho _mínimo_ de um quadro Ethernet válido.
+
+A lógica é baseada em uma observação estatística: a grande maioria dos erros em redes Ethernet, especialmente os causados por colisões (um resquício de redes mais antigas, mas ainda um problema), resulta em quadros malformados com _menos_ de 64 bytes (os "runt frames" ou fragmentos de colisão).
+
+Ao esperar pelos primeiros 64 bytes, o switch garante que o quadro não é um fragmento de colisão. Se os 64 primeiros bytes chegaram intactos, é estatisticamente provável que o restante do quadro também esteja correto, e o switch o encaminha sem esperar pelo CRC.
+
+- **Vantagem:** Gera uma latência baixa (embora maior que o Cut-Through) e filtra a causa mais comum de erros na rede (fragmentos de colisão).
+- **Desvantagem:** Ainda pode encaminhar quadros que tenham erros no final do payload ou um CRC inválido, desde que tenham mais de 64 bytes.
+
+#### Adaptative Cut-Through (Comutação Adaptativa)
+
+Este é um método híbrido, utilizado por switches mais modernos, que permite a utilização dos métodos anteriores de forma adaptativa. A configuração pode ser manual (definida pelo administrador de rede) ou automática.
+
+Em um cenário automático, o switch monitora a taxa de erro em suas portas.
+
+- Inicialmente, ele pode operar em modo **Cut-Through** para priorizar a velocidade.
+- No entanto, se o switch detectar que uma porta está começando a encaminhar muitos quadros com erros (o que ele pode perceber por estatísticas de erro em outras portas), ele pode "promover" automaticamente aquela porta para o modo **Store-and-Forward**.
+- Isso permite que o switch isole a fonte de problemas e pare de propagar os quadros corrompidos, adaptando-se dinamicamente à saúde da rede.
+
+A figura a seguir mostra as parcelas do quadro que cada um dos três principais métodos precisa analisar antes de agir.
+
+<div align="center">
+<img width="700px" src="./img/06-ethernet-adaptative.png">
+</div>
+
+### Papel dos Endereços IP e MAC no Encaminhamento
+
+Um dos conceitos mais importantes em redes com comutação por pacotes é entender a diferença de papéis entre os endereços da Camada 2 (MAC) e da Camada 3 (IP) durante uma comunicação.
+
+Quando um quadro precisa sair de uma origem A (um computador) para um destino D (um servidor em outra rede), passando por dois nós intermediários B e C (roteadores), a dinâmica dos endereços é a seguinte:
+
+Na **Camada de Rede (Camada 3)**, os endereços IP de origem e destino são globais para aquela comunicação. Eles identificam os pontos finais da jornada.
+
+- **IP de Origem:** IP de A
+- IP de Destino: IP de D
+
+Estes dois endereços IP permanecerão constantes no cabeçalho do pacote durante toda a viagem de A para D.
+
+Na **Camada de Enlace (Camada 2)**, os endereços MAC são locais, identificando apenas o remetente e o destinatário em um _enlace específico_ (um segmento de rede). O quadro é destruído e reconstruído em cada salto (roteador).
+
+Vamos acompanhar o quadro:
+
+1. Enlace A → B (Primeira Rede Local): O computador A precisa enviar o pacote para seu gateway, o Roteador B. Ele cria um quadro Ethernet:
+    - **Endereço MAC de Origem:** MAC de A
+    - **Endereço MAC de Destino:** MAC de B
+
+2. No Roteador B: O Roteador B recebe o quadro. Ele "desencapsula" o quadro, descarta o cabeçalho Ethernet de A→B e pega o pacote IP que estava dentro. Ele analisa o IP de Destino (IP de D) e consulta sua tabela de roteamento. A tabela informa que, para chegar a D, o próximo salto é o Roteador C.
+
+3. Enlace B → C (Rede Intermediária): O Roteador B agora cria um quadro Ethernet totalmente novo para enviar o pacote no próximo enlace:
+    - **Endereço MAC de Origem:** MAC de B
+    - **Endereço MAC de Destino:** MAC de C
+
+4. No Roteador C: O processo se repete. O Roteador C descarta o quadro B→C, analisa o pacote IP e sua tabela de roteamento. Ele descobre que o destino D está em uma rede diretamente conectada a ele.
+
+5. Enlace C → D (Rede Local de Destino): O Roteador C cria o quadro Ethernet final para a entrega:
+    - **Endereço MAC de Origem:** MAC de C
+    - **Endereço MAC de Destino:** MAC de D
+
+Percebe-se que o endereço físico, ou MAC, possui significado **apenas local**, isto é, dentro da respectiva LAN ou enlace. Por esse motivo, à medida que o pacote trafega por diferentes segmentos de rede, o quadro (e seus endereços MAC) precisa ser modificado e recriado em cada salto.
+
+Ao contrário do endereço físico, o endereço IP possui significado global (ou de ponta a ponta), não sendo alterado entre a origem e o destino final.
+
+#### Uma Exceção Importante
+
+Ao se afirmar que o endereço IP não muda, é preciso ter em mente uma exceção muito comum: o **NAT (Network Address Translation)**. Como veremos em um módulo específico, o NAT é uma técnica que _permite_ que um equipamento intermediário (geralmente o roteador de borda da rede) modifique o endereço IP de origem (e, às vezes, o de destino) dos pacotes.
+
+Entretanto, para fins de entendimento do roteamento padrão, os endereços IP públicos possuem um significado e visibilidade global na Internet.
+
