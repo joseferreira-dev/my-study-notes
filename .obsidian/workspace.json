@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "redes-de-computadores/contents/06-protocolos-de-acesso-a-rede.md",
+                "file": "legislacao/contents/legislacao-cremepe.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "06-protocolos-de-acesso-a-rede"
+              "title": "legislacao-cremepe"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "redes-de-computadores/contents/06-protocolos-de-acesso-a-rede.md",
+                "file": "legislacao/contents/legislacao-cremepe.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 06-protocolos-de-acesso-a-rede"
+              "title": "Sumário de legislacao-cremepe"
             }
           }
         ],
@@ -156,7 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 329.5
+    "width": 325.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,14 +171,21 @@
   },
   "active": "ae51e09d68f1648d",
   "lastOpenFiles": [
-    "redes-de-computadores/contents/img/06-protocolo-lacp.png",
-    "redes-de-computadores/contents/img/06-ethernet-adaptative.png",
-    "redes-de-computadores/contents/img/06-ethernet-store-and-forward.png",
-    "redes-de-computadores/contents/img/06-ethernet-cabecalho-com-marcacao.png",
-    "redes-de-computadores/contents/img/06-ethernet-cabecalho.png",
-    "redes-de-computadores/contents/img/06-mac-outros-grupos.png",
-    "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-atas.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-vice-corregedor.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-corregedor.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-1-tesoureiro.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-2-secretario.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-1-secretario.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-secretario-geral.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-vice-presidente.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-diretoria-competencia.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-diretoria.png",
+    "legislacao/contents/img/cremepe-lei-3268-regimento-cameras-tecnicas.png",
+    "legislacao/contents/09-decreto-11529.md",
+    "legislacao/contents/legislacao-cremepe.md",
     "redes-de-computadores/contents/06-protocolos-de-acesso-a-rede.md",
+    "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
     "redes-de-computadores/contents/03-equipamentos-de-rede.md",
     "redes-de-computadores/contents/04-modelo-osi.md",
     "engenharia-de-software/contents/09-modelos-especificos.md",
@@ -200,13 +207,6 @@
     "redes-de-computadores/contents/02-meios-de-transmissao-de-sinais.md",
     "informatica-basica/contents/01-navegadores.md",
     "lingua-portuguesa/contents/02-ortografia.md",
-    "bancos-de-dados/contents/01-fundamentos.md",
-    "legislacao/contents/01-lei-8112.md",
-    "engenharia-de-software/contents/img/03-modelo-pressman.png",
-    "engenharia-de-software/contents/img/03-modelo-sommerville.png",
-    "engenharia-de-software/contents/img/03-modelo-iterativo-e-incremental-monalisa.png",
-    "engenharia-de-software/contents/img/03-modelo-iterativo.png",
-    "engenharia-de-software/contents/img/03-modelo-incremental.png",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
     "seguranca-da-informacao/contents/img",
