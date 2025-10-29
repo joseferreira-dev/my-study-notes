@@ -398,3 +398,79 @@ O Green Ethernet trabalha de duas formas principais:
 1. **Detecção de Link Inativo:** Ele detecta portas do switch que estão conectadas a um dispositivo desligado (como um PC que não está ativo). A porta entra em um modo de "sleep" (stand-by) de baixo consumo, em vez de continuar operando com potência total.
 2. **Ajuste de Potência por Comprimento de Cabo:** O padrão detecta a extensão real do cabo de rede. Sinais enviados por cabos curtos (ex: 5 metros) exigem menos potência para chegar à outra ponta do que sinais enviados por cabos longos (ex: 80 metros). O switch ajusta a potência de transmissão da porta para o mínimo necessário, economizando energia.
 
+### Evolução dos Padrões (Histórico)
+
+Conforme já vimos, o padrão Ethernet não é uma tecnologia estática. Ele evoluiu drasticamente ao longo das décadas, adaptando-se continuamente às novas realidades e necessidades do mercado para o tráfego de dados. A tabela a seguir apresenta um histórico dos principais marcos dessa evolução, padronizados pelo comitê IEEE 802.3. Ressalta-se que alguns desses padrões, como o 802.1p e o 802.1q, que adicionam recursos de priorização e redes virtuais, serão trabalhados em detalhe posteriormente.
+
+|**Padrão**|**Ano**|**Característica**|
+|---|---|---|
+|802.3a|1985|10Base-2 Thin Ethernet (Cabo Coaxial Fino)|
+|802.3i|1990|10Base-T – Par Trançado|
+|802.3u|1995|100Base-T Fast Ethernet e Auto Negociação|
+|802.3x|1997|Padrão Full-Duplex e Controle de Fluxo|
+|802.3z|1998|1000Base-SX, LX e CX (Gigabit Ethernet)|
+|802.3ab|1998|1000BASE-T (1Gbps sobre par trançado)|
+|802.3ac|1999|Tamanho máximo do frame estendido para 1522 bytes, permitindo o uso das TAGs do 802.1Q (VLANs) e 802.1p (QoS)|
+|802.3ad|2000|Link Aggregation – Agregação de Link (juntar várias portas para formar um link de maior velocidade)|
+|802.3ae|2003|10Gbps Ethernet over Fiber (10BASE-SR, -LR, ER, SW, LW, EW)|
+|802.3af|2004|Power over Ethernet (PoE)|
+|802.3an|2006|10GBASE-T (10Gbps sobre par trançado)|
+|802.3az|2010|Energy-Efficient Ethernet ("Green Ethernet")|
+|802.3at|2009|PoE+ (Potência aumentada para PoE)|
+|802.3bt|2018|PoE++ (Potência ainda maior para PoE)|
+
+### Quadro Ethernet (Frame Header)
+
+Para que o protocolo Ethernet possa realizar suas funções de endereçamento e detecção de erros, ele encapsula os dados da camada superior (como um pacote IP) dentro de uma estrutura bem definida chamada **quadro (frame)**.
+
+É importante notar que o "quadro" Ethernet completo, do ponto de vista da Camada Física, inclui campos de sincronização que precedem o quadro lógico da Camada de Enlace. A figura a seguir apresenta a estrutura completa, desde os bits de sincronização até a verificação de erros.
+
+<div align="center">
+<img width="600px" src="./img/06-ethernet-cabecalho-com-marcacao.png">
+</div>
+
+Analisando a figura, podemos dissecar o quadro campo a campo, na ordem em que ele é transmitido:
+
+- **Preâmbulo (Preamble) (7 bytes ou octetos):** O quadro não começa imediatamente com o endereço. Antes, é enviado um preâmbulo de 7 bytes, composto por uma sequência alternada de bits `10101010...`. A função desse preâmbulo não é transportar dados, mas sim "acordar" a interface de rede do receptor e permitir que seu relógio interno (clock) se sincronize perfeitamente com o do transmissor, garantindo que os bits seguintes sejam lidos no tempo correto.
+- **SFD (Start Frame Delimiter) (1 byte ou octeto):** Seguindo o preâmbulo, este campo de 1 byte (com o padrão `10101011`) atua como o delimitador de início de quadro. A sequência `11` no final quebra o padrão do preâmbulo e sinaliza para o receptor: "A sincronização terminou, o quadro de dados começa _agora_."
+- **Endereço de Destino (Destination Address) (6 bytes):** Este é o primeiro campo do quadro lógico. É o endereço MAC (48 bits) da interface de rede para a qual o quadro se destina.
+- **Endereço de Origem (Source Address) (6 bytes):** O endereço MAC (48 bits) da interface de rede que está enviando o quadro. É fundamental notar essa ordem: em um quadro Ethernet, o endereço de destino _sempre_ vem antes do endereço de origem.
+- **Tipo (Type / Ethertype) (2 bytes):** Este campo é crucial para a interoperabilidade entre as camadas. Ele atua como um "demultiplexador", indicando para o sistema operacional do receptor qual protocolo da camada superior (Camada de Rede) deve receber os dados deste quadro. Como um computador pode estar rodando múltiplos protocolos (IPv4, IPv6, ARP) simultaneamente, é este campo que informa, por exemplo, que o payload contém um pacote IPv4 (usando o código `0x0800`), ou um pacote IPv6 (código `0x86DD`), ou uma mensagem ARP (código `0x0806`).
+- **Dados (Data / Payload) (46 a 1500 bytes):** Esta é a carga útil, os dados reais que estão sendo transportados. Geralmente, é um pacote IP vindo da Camada de Rede.
+- **FCS (Frame Check Sequence) (4 bytes):** Este é o _trailer_ (cauda) do quadro, não um cabeçalho. É um campo de 4 bytes (32 bits) que contém um valor de **Verificação de Redundância Cíclica (CRC)**. O transmissor calcula o CRC-32 com base em todos os campos do quadro (de Destino a Dados) e insere o resultado aqui. O receptor realiza _exatamente o mesmo cálculo_ sobre o quadro recebido. Se o resultado do receptor não for idêntico ao valor no FCS, o receptor sabe que o quadro foi corrompido durante a transmissão e o **descarta silenciosamente**. O Ethernet não tenta corrigir o erro nem notifica o transmissor; ele confia que um protocolo de camada superior (como o TCP) perceberá a perda e solicitará a retransmissão.
+
+### Tamanho do Quadro, Padding e MTU
+
+A imagem a seguir foca nos campos lógicos da Camada de Enlace e suas restrições de tamanho, que são fundamentais para o funcionamento da rede:
+
+<div align="center">
+<img width="600px" src="./img/06-ethernet-cabecalho.png">
+</div>
+
+Analisando esta estrutura, podemos definir os limites de tamanho de um quadro Ethernet padrão:
+
+- **Overhead do Quadro:** Os campos de cabeçalho e trailer somam 18 bytes:
+    - 6 bytes (Destino) + 6 bytes (Origem) + 2 bytes (Tipo/Tamanho) + 4 bytes (CRC/FCS) = **18 bytes**.
+- **Payload Máximo (MTU):** O padrão Ethernet define que o tamanho máximo do campo de dados (payload) é de **1500 bytes**. Este limite é conhecido como **MTU (Maximum Transmission Unit)** e se tornou o valor de referência para a Internet.
+- **Tamanho Máximo do Quadro:** Consequentemente, o tamanho máximo de um quadro Ethernet é 1500 bytes (payload) + 18 bytes (overhead) = **1518 bytes**. (Os 8 bytes de Preamble/SFD não entram nessa conta, pois são considerados sobrecarga da Camada Física).
+- **Payload Mínimo e Padding:** O padrão Ethernet também define um tamanho _mínimo_ para o campo de dados: **46 bytes**. Se a camada superior fornecer um pacote menor que 46 bytes (por exemplo, uma pequena mensagem de controle ou um pacote TCP ACK), a placa de rede irá adicionar automaticamente dados de preenchimento ("padding", geralmente bits '0') para "engordar" o payload até que ele atinja os 46 bytes necessários.
+- **Tamanho Mínimo do Quadro:** Esse padding garante que o tamanho total mínimo de um quadro Ethernet seja sempre 46 bytes (payload mínimo) + 18 bytes (overhead) = **64 bytes** (ou 512 bits).
+
+Esse tamanho mínimo de 64 bytes não é um número arbitrário. Ele é um legado crucial da era do **CSMA/CD** e das redes Half-Duplex (baseadas em hubs ou cabos coaxiais).
+
+Em um meio compartilhado, uma estação precisava ser capaz de detectar uma **colisão** antes de terminar de enviar seu quadro. O tempo que um sinal leva para viajar do ponto mais distante da rede e voltar (o _round-trip delay_) é chamado de _slot time_. O quadro mínimo de 64 bytes foi calculado para ser longo o suficiente para que seu tempo de transmissão fosse maior que o _slot time_ da rede.
+
+Se um quadro fosse menor (ex: 30 bytes), uma estação poderia terminar de enviá-lo _antes_ que o sinal de colisão, vindo do outro extremo da rede, chegasse de volta a ela. Isso resultaria em uma "colisão tardia" não detectada, corrompendo os dados sem que o transmissor soubesse. O _padding_ (preenchimento) foi a solução para garantir que todo quadro "ocupasse" o meio por tempo suficiente para que o CSMA/CD funcionasse corretamente.
+
+### Controle de Fluxo (Flow Control)
+
+Nos ambientes de rede modernos, que operam em modo **Full-Duplex** com switches, o CSMA/CD é desativado, pois as colisões não podem mais ocorrer. No entanto, um novo problema surge: o **congestionamento**.
+
+Um servidor de alta velocidade pode enviar dados para um computador cliente mais lento, ou vários computadores podem enviar dados simultaneamente para uma única porta do switch (ex: acessando um servidor). Nesses casos, o buffer (memória de fila) do dispositivo receptor pode ficar cheio, forçando-o a descartar quadros.
+
+Para evitar essa perda de pacotes, foi criado o mecanismo de **Controle de Fluxo (Flow Control)**, padronizado pelo **IEEE 802.3x**.
+
+- O Controle de Fluxo permite que um dispositivo receptor (como um switch ou um computador) que esteja com seus buffers cheios envie um quadro especial chamado **PAUSE frame** de volta ao transmissor.
+- Este quadro PAUSE instrui o transmissor a interromper temporariamente o envio de dados por um curto período de tempo.
+- Isso dá ao receptor tempo para processar sua fila (buffer) e se preparar para receber mais dados, evitando a perda de pacotes e a consequente necessidade de retransmissão pela camada de transporte (TCP). O Ethernet PAUSE funciona apenas em enlaces Ethernet Full-Duplex.
+
