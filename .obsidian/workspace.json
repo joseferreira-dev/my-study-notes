@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
+                "file": "redes-de-computadores/contents/06-protocolos-de-acesso-a-rede.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-arquitetura-tcp-ip"
+              "title": "06-protocolos-de-acesso-a-rede"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
+                "file": "redes-de-computadores/contents/06-protocolos-de-acesso-a-rede.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 05-arquitetura-tcp-ip"
+              "title": "Sumário de 06-protocolos-de-acesso-a-rede"
             }
           }
         ],
@@ -171,8 +171,10 @@
   },
   "active": "ae51e09d68f1648d",
   "lastOpenFiles": [
-    "redes-de-computadores/contents/04-modelo-osi.md",
+    "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
+    "redes-de-computadores/contents/06-protocolos-de-acesso-a-rede.md",
     "redes-de-computadores/contents/03-equipamentos-de-rede.md",
+    "redes-de-computadores/contents/04-modelo-osi.md",
     "engenharia-de-software/contents/09-modelos-especificos.md",
     "engenharia-de-software/contents/09-metodos-formais.md",
     "engenharia-de-software/contents/01-fundamentos.md",
@@ -201,8 +203,6 @@
     "engenharia-de-software/contents/img/03-modelo-iterativo.png",
     "engenharia-de-software/contents/img/03-modelo-incremental.png",
     "engenharia-de-software/contents/img/03-modelo-iterativo-e-incremental.png",
-    "engenharia-de-software/contents/20-refatoracao.md",
-    "engenharia-de-software/contents/19-devops.md",
     "informatica-basica/contents/img/03-https-conexao-segura.png",
     "informatica-basica/contents/img/03-https-certificado-invalido.png",
     "informatica-basica/contents/img/03-http.png",
