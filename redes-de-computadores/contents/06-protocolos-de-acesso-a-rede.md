@@ -170,3 +170,71 @@ Este conceito nos leva a duas regras fundamentais:
 
 2. **Regra de Correção:** Para ser capaz de corrigir até $t$ erros, um código precisa ter uma Distância de Hamming de, no mínimo, **$2t + 1$**.
     - _Exemplo:_ Para criar um código que possa corrigir 1 bit de erro ($t=1$), precisamos de uma Distância de Hamming de pelo menos $2(1) + 1 = 3$. Isso significa que as palavras-código válidas devem ser "distantes" o suficiente umas das outras para que, mesmo que um bit seja alterado, a palavra corrompida ainda esteja "mais perto" da palavra original do que de qualquer outra palavra-código válida.
+
+## Endereçamento da Camada de Acesso à Rede
+
+Após estabelecermos mecanismos para verificar a integridade de um quadro de dados, a próxima questão fundamental é: como identificar o remetente e o destinatário desse quadro? Em uma rede local, onde dezenas ou centenas de dispositivos podem compartilhar o mesmo meio, é essencial que exista um sistema de endereçamento que permita a um quadro ser entregue _exclusivamente_ ao seu destino correto.
+
+Todo dispositivo que se conecta a uma rede, seja um computador, impressora, smartphone ou servidor, precisa de uma interface de rede (como uma Placa de Rede ou NIC). A Camada de Acesso à Rede atribui a cada uma dessas interfaces um identificador único para a comunicação no enlace local. Esse endereço é conhecido como **Endereço MAC (Media Access Control)**, ou, de forma mais popular, endereço físico.
+
+### Estrutura do Endereço MAC
+
+Na grande maioria das tecnologias de rede modernas, incluindo Ethernet e Wi-Fi, os endereços MAC são compostos por **6 bytes (48 bits)**. Essa extensão permite um número astronômico de endereços únicos: $2^{48}$, ou mais de 281 trilhões de combinações, garantindo que, na teoria, nunca existam dois dispositivos no mundo com o mesmo endereço.
+
+Esses endereços são tipicamente representados no formato hexadecimal, com os bytes separados por dois-pontos ou hífens. Por exemplo: `47:3E:2A:B2:11:24`.
+
+Este endereço é, em geral, gravado permanentemente na memória ROM da interface de rede pelo fabricante, e é por isso que também é conhecido como "endereço de hardware" ou "endereço queimado" (_burned-in address_). Sua estrutura de 48 bits é dividida em duas metades:
+
+1. **OUI (Organizationally Unique Identifier):** Os primeiros 3 bytes (24 bits) do endereço identificam o fabricante da placa. Este bloco é distribuído e controlado por uma autoridade central, o **IEEE (Institute of Electrical and Electronics Engineers)**. Ao consultar o OUI, é possível saber quem fabricou o dispositivo.
+2. **Identificador de Interface (Número de Série):** Os últimos 3 bytes (24 bits) são um número sequencial único atribuído pela própria fabricante.
+
+Usando o exemplo anterior, `47:3E:2A:B2:11:24`:
+
+- O OUI é `47:3E:2A` (identifica o fabricante).
+- O Número de Série é `B2:11:24` (identifica a placa específica daquele fabricante).
+
+### Endereço MAC vs. Endereço IP
+
+É crucial entender a diferença de papéis entre o endereço MAC (Camada 2) e o endereço IP (Camada 3).
+
+- Um **Endereço IP** é um endereço _lógico_. Ele é temporário (geralmente atribuído dinamicamente) e hierárquico, identificando a rede à qual um dispositivo está conectado. Pense nele como o **CEP e o endereço de uma casa**: ele muda se você se mudar para outra cidade.
+- Um **Endereço MAC** é um endereço _físico_. Ele é (em tese) permanente e único, identificando a interface de hardware. Pense nele como o **CPF ou o chassi do carro**: ele é fixo e acompanha o dispositivo, não importa em qual rede ele se conecte.
+
+Quando os dispositivos estão dentro de uma **mesma rede local** (ou seja, no mesmo domínio de broadcast), a comunicação e o encaminhamento de quadros são baseados _exclusivamente_ no endereço MAC. O switch, que é o "carteiro do bairro", só precisa olhar o endereço MAC de destino para saber em qual porta entregar o quadro.
+
+Mas então, fica a pergunta: e quando um pacote vem de uma rede diferente, com outro endereço IP? Se o switch só entende MAC, como ele sabe para quem entregar?
+
+Aqui entra a colaboração entre as camadas. O roteador, que faz a fronteira entre as redes, usa um protocolo auxiliar chamado **ARP (Address Resolution Protocol)**, que atua na camada de rede. O ARP basicamente "pergunta" (via broadcast) na rede local: "Quem possui o endereço IP `192.168.1.50`?" O dispositivo que possui esse IP responde à requisição, informando: "Sou eu, e o meu endereço MAC é `47:3E:2A:B2:11:24`." De posse dessa informação, o roteador pode então encapsular o pacote IP dentro de um quadro de Camada 2 com o MAC de destino correto, e o switch local pode finalmente fazer a entrega. (Veremos o ARP em detalhe em capítulos futuros).
+
+### Tipos de Endereçamento MAC
+
+O endereço MAC não é usado apenas para comunicação de um dispositivo para outro. Ele define três tipos de tráfego na rede local:
+
+1. **Unicast:** É a comunicação "um-para-um". O quadro possui o MAC de origem do remetente e o MAC de destino do destinatário específico. Esta é a forma mais comum de comunicação.
+2. **Broadcast:** É a comunicação "um-para-todos". O quadro é enviado para um endereço MAC especial de broadcast, que é, por padrão, **`FF:FF:FF:FF:FF:FF`**. Este endereço é uma sequência de 48 bits '1'. Por convenção, todas as interfaces de rede em um domínio de broadcast são obrigadas a "escutar" e processar quadros enviados para este endereço. É o "grito" da rede, usado por protocolos como o ARP (para descobrir um MAC) e o DHCP (para solicitar um endereço IP).
+3. **Multicast:** É a comunicação "um-para-muitos". O quadro é enviado para um endereço MAC de grupo especial, que representa um subconjunto de dispositivos na rede (mas não todos). Dispositivos que desejam receber essa informação (como um stream de vídeo, por exemplo) "assinam" esse grupo. Isso é muito mais eficiente do que enviar um broadcast (que sobrecarregaria todos) ou múltiplas cópias unicast (que desperdiçaria banda).
+
+#### Decodificando os Bits de Controle (I/G e U/L)
+
+O endereço MAC não é apenas um número de série; os primeiros bits do endereço contêm informações de controle importantes que definem o tipo de endereço. O primeiro byte (os dois primeiros dígitos hexadecimais) contém dois "flags" (bits de controle):
+
+- **Bit I/G (Individual / Group):** É o primeiro bit (o bit menos significativo) do primeiro byte. Ele define se o endereço é para um dispositivo individual ou para um grupo.
+    - **I/G = 0:** Endereço **Individual (Unicast)**.
+    - **I/G = 1:** Endereço de **Grupo (Multicast ou Broadcast)**.
+
+- **Bit U/L (Universal / Local):** É o segundo bit (o segundo menos significativo) do primeiro byte. Ele define se o endereço é globalmente único (de fábrica) ou se foi atribuído manualmente.
+    - **U/L = 0:** Endereço **Universalmente Administrado**. Este é o endereço padrão "queimado de fábrica", contendo o OUI do fabricante.
+    - **U/L = 1:** Endereço **Localmente Administrado**. Permite que um administrador de rede sobrescreva manualmente o MAC de um dispositivo (por exemplo, em máquinas virtuais ou para políticas de rede), usando um endereço que garantidamente não conflitará com nenhum endereço de fábrica.
+
+A tabela a seguir, baseada nas especificações do IEEE, ilustra como esses bits de controle, refletidos no _segundo dígito hexadecimal_ do endereço MAC, definem a natureza do tráfego.
+
+<div align="center">
+<img width="500px" src="./img/06-mac-outros-grupos.png">
+</div>
+
+Analisando a tabela, podemos extrair uma regra de bolso muito útil. O destaque fica por conta do **segundo dígito hexadecimal** do endereço MAC (representado na tabela por 0, 1, 2, 3, 4, etc.).
+
+- Se este dígito for **par** (0, 2, 4, 6, 8, A, C, E), o bit I/G correspondente é 0, e trata-se de um endereço **Unicast (Individual)**.
+- Se este dígito for **ímpar** (1, 3, 5, 7, 9, B, D, F), o bit I/G correspondente é 1, e trata-se de um endereço de **Multicast (Grupo)**.
+
+Como o endereço de broadcast (`FF:FF:FF:FF:FF:FF`) possui 'F' (um número ímpar) como seu segundo dígito, ele se encaixa corretamente na regra como um tipo de endereço de grupo. É importante reforçar que, ao avaliar se um dígito hexadecimal é par ou ímpar, vamos além do 9, onde: A = 10 (par), B = 11 (ímpar), C = 12 (par), D = 13 (ímpar), E = 14 (par) e F = 15 (ímpar).
