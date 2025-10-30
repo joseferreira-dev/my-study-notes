@@ -1108,3 +1108,63 @@ O gráfico acima posiciona as principais tecnologias sem fio. Vemos que o **ZigB
 
 Esse perfil (baixa taxa, baixa potência) torna o ZigBee a tecnologia ideal para **Redes de Sensores** e **Internet das Coisas (IoT)**. Ele é usado em aplicações onde a bateria precisa durar meses ou anos e a quantidade de dados enviada é minúscula, como em lâmpadas inteligentes, interruptores, termostatos e sensores industriais.
 
+### IEEE 802.16 (WMAN e WiMAX)
+
+Enquanto os padrões 802.11 (WLAN) e 802.15 (WPAN) focam em cobrir áreas locais (um escritório) e pessoais (uma sala), o padrão **IEEE 802.16** foi projetado para um escopo muito maior: a **WMAN (Wireless Metropolitan Area Network)**, ou Rede de Área Metropolitana Sem Fio.
+
+Seu objetivo é fornecer acesso banda larga sem fio em uma escala de cidade. Para isso, este padrão utiliza faixas de frequência mais altas quando comparado com os demais padrões, operando tipicamente em faixas licenciadas que variam de 10 GHz a 66 GHz (embora algumas variantes usem faixas mais baixas, como 2.5 GHz ou 3.5 GHz).
+
+A topologia do 802.16 opera como uma rede de infraestrutura, semelhante à telefonia celular, em que se tem um ponto de acesso centralizado chamado **Estação Rádio Base (ERB)**, ou Ponto de Acesso, que cobre uma área de vários quilômetros. Essas estações suportam formas avançadas de multiplexação de dados, como TDM (Multiplexação por Divisão de Tempo) e FDM (Multiplexação por Divisão de Frequência), com o objetivo de permitir taxas elevadas, bem como um alcance considerável.
+
+O nome comercial mais conhecido para o padrão 802.16 é **WiMAX (Worldwide Interoperability for Microwave Access)**. O WiMAX foi concebido para ser uma alternativa de "última milha" para o ADSL e o cabo, capaz de entregar internet banda larga com taxas de transferência comparáveis.
+
+Possui variações de padrões, incluindo:
+
+- **802.16d (WiMAX Fixo):** Focado no acesso fixo, onde uma antena é instalada no telhado de uma casa ou empresa para se comunicar com a ERB. Implementou técnicas avançadas como MIMO para melhorar o sinal.
+- **802.16e (WiMAX Móvel):** Esta evolução buscou atender às necessidades de mobilidade, permitindo que os usuários mantivessem a conexão mesmo em movimento a velocidades acima de 100km/h, competindo diretamente com as redes de telefonia celular 3G e 4G.
+
+Em termos de infraestrutura, o WiMAX possui características tanto das redes Wi-Fi (usando técnicas de modulação como OFDM) quanto das redes de telefonia celular (com sua arquitetura baseada em torres e cobertura metropolitana).
+
+### LoRa e LoRaWAN (IoT e Longo Alcance)
+
+No extremo oposto do espectro de desempenho do WiMAX (que foca em alta velocidade), encontramos tecnologias projetadas especificamente para a **Internet das Coisas (IoT)**, onde a prioridade máxima não é a velocidade, mas sim o **longo alcance** e o **baixíssimo consumo de energia**.
+
+O protocolo **LoRa (Long Range)** é uma tecnologia de comunicação sem fio de longo alcance, projetada para permitir a comunicação de baixa potência entre dispositivos IoT. Esse protocolo é conhecido por sua capacidade de fornecer comunicação de longo alcance com excelente penetração em ambientes urbanos (prédios) e rurais (campos abertos). Ele opera em frequências de rádio não licenciadas (bandas ISM, como 915 MHz nas Américas), o que facilita sua implementação.
+
+É fundamental esclarecer a diferença entre LoRa e LoRaWAN:
+
+- **LoRa:** É a tecnologia da **camada física (PHY)**, a modulação de rádio proprietária (baseada em _chirp spread spectrum_) que permite o longo alcance e a baixa potência. É "como o idioma é falado".
+- **LoRaWAN (LoRa Wide Area Network):** É o **protocolo de rede** (MAC e Camada de Rede). Ele define a arquitetura do sistema, a segurança e como os dispositivos LoRa se comunicam uns com os outros e com a internet. É "como as regras de gramática e sintaxe do idioma LoRa".
+
+A arquitetura LoRaWAN é tipicamente uma topologia em estrela: dispositivos LoRa (sensores ou atuadores) se comunicam com uma estação base ou **Gateway LoRa**. Essa estação base, por sua vez, está conectada à Internet (via Ethernet, Wi-Fi ou celular) e atua como uma ponte, transferindo os dados entre os dispositivos LoRa e os servidores na nuvem (o Network Server e o Application Server).
+
+Esta tecnologia se destaca por um conjunto de vantagens ideais para a IoT:
+
+- **Longo Alcance:** Pode atingir alcances de até 10 km ou mais em áreas rurais e de 2 a 4 km em áreas urbanas, onde há mais interferências e obstáculos.
+- **Baixo Consumo de Energia:** Ideal para dispositivos alimentados por bateria, pois as transmissões são rápidas e eficientes, permitindo que os sensores "durmam" por meses ou até anos com uma única bateria.
+- **Escalabilidade:** Pode ser usado em redes com milhares de dispositivos conectados a um único gateway.
+- **Segurança:** Possui mecanismos de segurança nativos para criptografia (AES-128) e autenticação de dados em múltiplas camadas.
+- **Flexibilidade:** Suporta diferentes taxas de transmissão de dados (Data Rates - DR). Um dispositivo mais próximo do gateway pode ser configurado para transmitir mais rápido (usando menos tempo no ar), enquanto um dispositivo no limite do alcance transmite mais devagar (garantindo a integridade do sinal).
+
+Essa tecnologia é amplamente utilizada em aplicações de IoT, como:
+
+- **Cidades Inteligentes:** Iluminação pública inteligente, gestão de tráfego, medição de vagas de estacionamento e leitura remota de medidores de água, luz e gás.
+- **Agricultura de Precisão:** Monitoramento de irrigação, umidade do solo, rastreamento de gado e saúde das plantações.
+- **Monitoramento Ambiental:** Sensoriamento de temperatura, umidade, pressão atmosférica e qualidade do ar.
+- **Rastreamento de Ativos:** Localização de veículos, frotas, contêineres e cargas.
+
+## Considerações Finais
+
+Neste capítulo, fizemos uma transição fundamental, saindo do mundo fisicamente confinado e controlado dos cabos Ethernet para o ambiente aberto, compartilhado e imprevisível das **redes sem fio**. Vimos que essa mudança de meio de transmissão (do cobre para o ar) introduz um conjunto inteiramente novo e complexo de desafios, que exigiram o desenvolvimento de protocolos fundamentalmente diferentes.
+
+Iniciamos pela principal preocupação do meio sem fio: a **segurança**. Como o sinal está acessível a qualquer um no alcance, exploramos a crucial arquitetura de autenticação **802.1X**, que fornece um controle de acesso robusto para redes corporativas (Enterprise) através do **EAP** e de servidores **RADIUS**. Acompanhamos a longa "corrida armamentista" da criptografia, desde o falho **WEP** (com suas chaves estáticas e IVs curtos), passando pela solução provisória **WPA** (que introduziu o TKIP e o 4-Way Handshake) e pelo padrão-ouro **WPA2** (que trouxe a criptografia AES/CCMP), até chegarmos ao moderno **WPA3**. Vimos como o WPA3 resolve as falhas do WPA2 com o **SAE (Dragonfly)** no modo Personal (evitando ataques de dicionário offline) e como ele finalmente tornou as redes públicas seguras com o **OWE (Enhanced Open)**.
+
+Em seguida, mergulhamos na arquitetura do **IEEE 802.11 (Wi-Fi)**. Entendemos seus blocos de construção, o **BSS** (seja no modo Infraestrutura com APs ou no modo Ad-Hoc) e o **ESS**, que permite a mobilidade e o _roaming_ entre múltiplos Pontos de Acesso. Dissecamos o complexo **quadro 802.11**, entendendo como seu campo _Frame Control_ e seu esquema de **quatro endereços** gerenciam a comunicação entre clientes, APs e o sistema de distribuição (a rede cabeada).
+
+Vimos como o 802.11 resolveu o problema do acesso ao meio. Como o "ouvir enquanto fala" (LWT) do Ethernet é impossível no rádio, o **CSMA/CD** foi substituído pelo **CSMA/CA** (Prevenção de Colisão). Analisamos seus mecanismos para evitar o "problema do terminal escondido", como os quadros **RTS/CTS** e o temporizador **NAV**, e como a prioridade de acesso é gerenciada pelos intervalos **IFS** (SIFS, PIFS, DIFS).
+
+Exploramos a incrível evolução da velocidade do Wi-Fi, desde o 802.11b/g até o **Wi-Fi 6 (802.11ax)**. Vimos que essa velocidade foi impulsionada por avanços na camada física, como as modulações **OFDM** e **OFDMA**, e as tecnologias de antena **MIMO** e **MU-MIMO**, que multiplicaram a capacidade do canal. Também vimos como o **802.11e** introduziu QoS (Qualidade de Serviço) para priorizar tráfego sensível como voz e vídeo.
+
+Por fim, expandimos nosso horizonte para além do Wi-Fi, entendendo que diferentes aplicações exigem diferentes tecnologias sem fio. Vimos o **IEEE 802.15**, que define as Redes de Área Pessoal (WPANs), como o **Bluetooth** (com suas Piconets/Scatternets) e o **ZigBee** (focado em IoT de baixa potência). Também abordamos tecnologias de maior alcance, como o **IEEE 802.16 (WiMAX)** para acesso metropolitano, e o **LoRa/LoRaWAN**, focado em IoT de longuíssimo alcance e baixo consumo.
+
+Com um entendimento sólido da complexidade da Camada de Enlace — tanto no mundo cabeado quanto no sem fio — estamos agora prontos para, finalmente, subir na pilha de protocolos. No próximo capítulo, entraremos no domínio da Camada de Internet, onde o Protocolo IP unifica todas essas redes de acesso distintas em uma única rede global.
