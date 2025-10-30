@@ -164,3 +164,73 @@ A estrutura do cabeçalho TRILL, como visto acima, se assemelha muito a um cabe�
 
 Ao contrário do 802.1Q, que apenas _insere uma etiqueta_ de identificação, o TRILL _encapsula_ o quadro Ethernet inteiro para transportá-lo através de uma rede inteligente de Camada 2 que não depende de bloqueio de portas.
 
+## Redes Overlay
+
+À medida que as tecnologias de Camada 2 evoluíram, com o 802.1Q (VLANs) e o 802.1aq (TRILL), um conceito mais amplo começou a ganhar força, impulsionado principalmente pela ascensão dos _data centers_ e da computação em nuvem: as **Redes Overlay**.
+
+Uma rede overlay é, em essência, uma rede lógica e virtual construída sobre uma rede física já existente (a rede "underlay"). Ela é usada para viabilizar aplicações e serviços de forma flexível, proporcionando uma camada adicional de abstração.
+
+Neste modelo, os nós da rede overlay (que podem ser servidores, máquinas virtuais ou switches) são conectados por "laços" ou túneis virtuais. Esses túneis virtuais podem, na prática, atravessar dezenas de laços físicos (cabos, switches, roteadores) na rede subjacente.
+
+### Usos Comuns de Redes Overlay
+
+Embora o termo pareça moderno, o conceito é bastante antigo. Redes overlay são frequentemente usadas em:
+
+- **Redes Privadas Virtuais (VPNs):** Quando um funcionário em _home office_ se conecta à rede da empresa, ele estabelece uma VPN. Logicamente, o computador do funcionário passa a pertencer à rede interna da empresa, mas fisicamente, o tráfego é encapsulado e viaja "por cima" da rede física da Internet pública.
+- **Redes de Distribuição de Conteúdo (CDNs):** Serviços de streaming (como Netflix ou YouTube) operam uma rede overlay de servidores de cache. Quando um usuário assiste a um vídeo, ele o recebe de um servidor (nó da overlay) que está fisicamente próximo a ele (ex: em seu provedor de internet), e não da sede principal da empresa.
+- **Redes P2P (Peer-to-Peer):** Aplicações de compartilhamento de arquivos criam uma rede overlay onde os "pares" se conectam diretamente, independentemente da topologia física da Internet que os separa.
+
+Até mesmo a própria Internet, em seu início, pode ser vista como um exemplo clássico de rede overlay, pois utilizava a rede de telefone existente como sua infraestrutura física subjacente para funcionar. A grande vantagem dessas redes é a capacidade de criar topologias lógicas que podem melhorar o desempenho, a segurança e a confiabilidade, sem a necessidade de modificar a rede física base.
+
+### VXLAN
+
+A tecnologia overlay mais relevante no contexto das redes locais modernas é a **VXLAN (Virtual Extensible LAN)**. A VXLAN é uma tecnologia de virtualização de rede projetada especificamente para superar as limitações de escalabilidade das VLANs tradicionais.
+
+A rápida adoção da virtualização de servidores (com a criação de milhares de Máquinas Virtuais - VMs) impulsionou a necessidade de uma rede igualmente ágil. Os operadores de _data centers_ e provedores de nuvem precisavam de uma forma de segmentar logicamente suas redes para milhares de "locatários" (clientes) diferentes, garantindo privacidade e segurança.
+
+#### Problema que a VXLAN Resolve
+
+As VLANs tradicionais, baseadas no padrão 802.1Q, apresentam duas limitações severas para a computação em nuvem:
+
+1. **Limite de Escala:** O campo VID de 12 bits do 802.1Q permite um máximo de **4.094 VLANs**. Para um provedor de nuvem como a Amazon ou o Google, que precisa hospedar dezenas de milhares de clientes (locatários), esse número é insuficiente.
+2. **Limite de Camada 2:** As VLANs são um conceito de Camada 2. O tráfego de uma VLAN não pode cruzar um roteador (Camada 3). Se um pacote etiquetado com VLAN chega a um roteador, essa informação de VLAN é removida. Isso significa que os segmentos de VLAN ficam "presos" dentro de um data center ou de uma rede local. Isso é um grande problema para casos de uso como a **migração de Máquinas Virtuais (VM Migration)**, que exige que a VM possa se mover de um servidor físico para outro (potencialmente em outro data center) sem precisar mudar seu endereço IP ou sua rede lógica.
+
+#### Funcionamento da VXLAN
+
+A VXLAN resolve esses dois problemas criando uma rede overlay de Camada 2 que "viaja" sobre uma rede de Camada 3.
+
+1. **Encapsulamento (L2 sobre L4):** A VXLAN **encapsula** o quadro Ethernet original de Camada 2 (da Máquina Virtual) dentro de um pacote **UDP** de Camada 4. Este pacote UDP, por sua vez, é colocado dentro de um pacote IP de Camada 3.
+2. **Identificador de Rede (VNI):** Em vez de uma "TAG" de 12 bits, a VXLAN utiliza um identificador de segmento de **24 bits**, chamado **VNI (VXLAN Network Identifier)**. Isso permite a criação de, teoricamente, até **16 milhões de segmentos de rede** (VXLANs) diferentes em um mesmo domínio administrativo.
+3. **Os Pontos de Túnel (VTEP):** Os dispositivos que realizam o encapsulamento e o desencapsulamento são chamados de **VTEP (VXLAN Tunnel Endpoint)**. O VTEP é tipicamente o software hypervisor no servidor (onde a VM está) ou o switch físico no topo do rack (Top-of-Rack switch).
+
+Com esse mecanismo, a VXLAN oferece uma segmentação de rede na escala massiva exigida pelos provedores de nuvem.
+
+Mais importante ainda, ela resolve o problema de mobilidade. Como o quadro L2 original está "escondido" dentro de um pacote IP/UDP, ele pode agora ser roteado através de qualquer rede de Camada 3 (como a rede interna do data center ou a própria Internet).
+
+Na linha do que mencionamos, onde cada VXLAN pode assumir um identificador de segmentação, a imagem abaixo busca representar essa estrutura virtualizada a partir de múltiplas máquinas virtuais em diferentes servidores e ambientes.
+
+<div align="center">
+<img width="700px" src="./img/08-vlan-vxlan.png">
+</div>
+
+Na imagem, vemos dois servidores físicos, cada um hospedando múltiplas Máquinas Virtuais (VMs). Essas VMs pertencem a redes lógicas diferentes, identificadas por seus **VNIs**.
+
+- Os servidores estão em locais físicos diferentes, conectados por uma **Rede IP** (a rede "underlay").
+- Uma VM no Servidor 1 (por exemplo, VNI 74) precisa se comunicar com uma VM no Servidor 2 que está na _mesma_ rede lógica (VNI 74).
+- O **VTEP** no Servidor 1 (com seu próprio endereço IP1) recebe o quadro L2 da VM, o encapsula em um pacote UDP/IP e o endereça ao VTEP do Servidor 2.
+- Este pacote viaja pela Rede IP através do túnel "VXLAN 74".
+- O VTEP do Servidor 2 recebe o pacote, o desencapsula e entrega o quadro L2 original para a VM de destino.
+
+O resultado é que, no que diz respeito aos servidores e VMs, eles fazem parte da mesma rede de Camada 2 (o mesmo domínio de broadcast, BD). Para a rede IP física, tratava-se apenas de tráfego UDP normal entre os IPs dos dois VTEPs. Isso permite que um segmento de rede VXLAN se estenda até onde a rede roteada de Camada 3 puder alcançar.
+
+## Considerações Finais
+
+Neste capítulo, exploramos uma das tecnologias mais fundamentais e transformadoras da Camada de Enlace: as **Redes Locais Virtuais (VLANs)**. Partimos do problema de uma rede "plana" (flat network), onde a ausência de segmentação leva a tempestades de broadcast, ineficiência de recursos e graves falhas de segurança. Vimos como a VLAN é a solução clássica para "fatiar" um switch físico em múltiplos domínios de broadcast lógicos e isolados.
+
+Estabelecemos que as VLANs se comportam como sub-redes independentes, exigindo um dispositivo de Camada 3 (como um roteador ou switch L3) para permitir a comunicação _entre_ elas. Detalhamos como essa segmentação é implementada na prática: através de **portas de acesso** (access ports) para dispositivos finais e **portas Trunk** para a interconexão de switches.
+
+O mecanismo-chave que viabiliza os trunks, o protocolo **IEEE 802.1Q**, foi dissecado. Entendemos como a inserção de uma **TAG** de 4 bytes no cabeçalho Ethernet permite ao switch identificar a qual VLAN um quadro pertence. Vimos também como essa TAG nos oferece um benefício adicional através do padrão **IEEE 802.1p**, que utiliza 3 bits de prioridade para aplicar Qualidade de Serviço (QoS) diretamente na Camada 2.
+
+Por fim, olhamos para o futuro e para as limitações impostas pelo próprio modelo de VLANs. Abordamos o **TRILL (802.1aq)** como uma alternativa moderna ao Spanning Tree, que utiliza roteamento em Camada 2 para permitir o uso de todos os links redundantes sem bloqueios. Mais importante, mergulhamos nas **Redes Overlay** e na **VXLAN**, a tecnologia que define a segmentação em _data centers_ e na computação em nuvem. Compreendemos como a VXLAN supera as duas grandes limitações do 802.1Q: o **limite de escala** (saltando de 4.094 VLANs para 16 milhões de VNIs) e o **limite de fronteira** (encapsulando quadros L2 em pacotes IP/UDP, permitindo que redes virtuais se estendam por qualquer rede de Camada 3, através de múltiplos data centers).
+
+Com o domínio completo da segmentação em Camada 2, desde uma simples sala de escritório até uma nuvem global, estamos agora prontos para subir na pilha. No próximo capítulo, focaremos no protocolo que torna toda essa comunicação inter-redes (e as próprias VXLANs) possível: o Protocolo de Internet (IP).
