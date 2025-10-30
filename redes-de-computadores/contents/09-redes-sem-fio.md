@@ -271,3 +271,164 @@ Entendendo os Cenários:
     - `End 3 (DA)` é o **Destino final** na rede cabeada.
     - `End 4 (SA)` é a **Fonte original** (o cliente que originou o quadro).
 
+### Evolução dos Padrões 802.11
+
+O padrão IEEE 802.11 não é uma especificação única e estática. Assim como o Ethernet evoluiu de 10 Mbps para 100 Gbps, o padrão Wi-Fi é uma família de emendas (amendments) que foram sendo lançadas ao longo dos anos. Cada nova emenda buscou, principalmente, aumentar a taxa de transmissão de dados (throughput) e melhorar a confiabilidade, seja utilizando novas faixas de frequência, modulações mais eficientes ou tecnologias de antena mais inteligentes.
+
+A tabela a seguir é muito importante e resume os principais padrões "físicos" da família 802.11 e suas características centrais:
+
+| **Padrão**   | **Banda (GHz)** | **Comprimento do Canal** | **Modulação**   | **Tecnologias de Antena**   | **Taxa de Referência (Mbits/s)** | **Observações**               |
+| ------------ | --------------- | ------------------------ | --------------- | --------------------------- | -------------------------------- | ----------------------------- |
+| **802.11a**  | 5               | 20 MHz                   | **OFDM**        | N/A                         | 54                               | Incompatível com o 802.11b    |
+| **802.11b**  | 2,4             | 20 MHz                   | **DSSS**        | N/A                         | 11                               | -                             |
+| **802.11g**  | 2,4             | 20 MHz                   | DSSS e **OFDM** | N/A                         | 54                               | Evolução do 802.11b           |
+| **802.11n**  | 2,4 e 5         | 20 e 40 MHz              | OFDM            | **MIMO** (até 4 antenas)    | 600                              | Primeiro padrão a usar MIMO   |
+| **802.11ac** | 5               | 40, 80 e 160 MHz         | OFDM            | **MU-MIMO** (até 8 antenas) | 7000 (aprox. 7 Gbps)             | Também conhecido como Wi-Fi 5 |
+| **802.11ax** | 2,4, 5 e 6      | 20, 40, 80, 160 MHz      | **OFDMA**       | **MU-MIMO** (8 antenas)     | 9600 (aprox. 9.6 Gbps)           | Também conhecido como Wi-Fi 6 |
+
+Para entender por que esses padrões são diferentes, precisamos analisar as tecnologias-chave que eles introduziram: a **modulação** (como o sinal é codificado no rádio) e a **tecnologia de antena**.
+
+#### Tecnologias de Modulação e Espectro
+
+O rádio é um ambiente "poluído", cheio de interferências. As técnicas de "Espalhamento Espectral" (Spread Spectrum) foram criadas para tornar a comunicação sem fio robusta contra essas interferências.
+
+- **FHSS (Frequency Hopping Spread Spectrum):** Literalmente, "Espalhamento Espectral com Salto de Frequência". Esta foi uma das técnicas originais usadas no primeiro padrão 802.11. Basicamente, a partir de um sincronismo e controle entre emissor e receptor, o transmissor "salta" de um canal de frequência para outro em uma sequência pseudo-aleatória e pré-definida, permanecendo em cada canal por um curtíssimo período. Isso torna o sinal muito resiliente; se uma frequência específica estiver sofrendo interferência, o sinal só será afetado por uma pequena fração de segundo antes de saltar para uma frequência limpa.
+    
+    <div align="center">
+    <img width="500px" src="./img/09-fhss.png">
+    </div>
+    
+    A figura acima traz essa representação, em que as estações mudam as frequências (F1, F2, F3, F4) para transmissão em períodos de tempo determinados, seguindo padrões de salto diferentes para evitar colisões entre si.
+- **DSSS (Direct Sequence Spread Spectrum):** "Espalhamento Espectral de Sequência Direta". Esta foi a técnica que tornou o Wi-Fi popular com o padrão **802.11b**. Em vez de "saltar" no tempo, o DSSS "espalha" o sinal por uma faixa de frequência larga _simultaneamente_. Ele faz isso pegando o fluxo de bits original e multiplicando-o por uma sequência de "chips" muito mais rápida (o código de espalhamento). O resultado é um sinal de baixa potência, mas muito largo, que se parece com ruído de fundo para qualquer receptor que não conheça o código de espalhamento. O padrão 802.11b utiliza uma técnica sucessora chamada **HR-DSSS (High Rate–DSSS)**, que permitiu que ele chegasse a taxas de 11 Mbps (um grande salto para a época).
+- **OFDM (Orthogonal Frequency-Division Multiplexing):** "Multiplexação por Divisão de Frequência Ortogonal". Esta é a técnica de modulação que permitiu o salto para altas velocidades, sendo a base dos padrões **802.11a, g, n, e ac**. Em vez de usar um único sinal largo (como o DSSS), o OFDM divide o canal de 20MHz em dezenas de sub-portadoras (sub-canais) estreitas e independentes. Ele então transmite uma pequena parte dos dados em cada sub-portadora, em paralelo. A grande vantagem é a resiliência: se uma interferência atingir uma frequência específica, ela corromperá apenas algumas das 52 sub-portadoras, e não o sinal inteiro. Os dados perdidos são facilmente recuperados pelos códigos de correção de erro, permitindo taxas de transmissão muito mais altas e estáveis, como 54 Mbps.
+- **MIMO (Multiple-Input Multiple-Output):** Introduzida pelo **802.11n**, esta não é uma técnica de modulação, mas de _antena_. Antes do 802.11n, os rádios usavam uma antena para transmitir e uma para receber. O MIMO utiliza múltiplas antenas para enviar e receber múltiplos fluxos de dados (chamados _spatial streams_) _ao mesmo tempo, no mesmo canal_. Isso multiplica a velocidade. Um rádio 802.11g tinha uma taxa de 54 Mbps. Um rádio 802.11n com 3 antenas (3x3 MIMO) poderia, teoricamente, atingir mais de 450 Mbps. O **MU-MIMO** (Multi-User MIMO), introduzido pelo 802.11ac, aprimorou isso, permitindo que um AP use suas múltiplas antenas para falar com _múltiplos dispositivos diferentes_ (ex: um celular e um notebook) exatamente ao mesmo tempo.
+
+#### Evolução e Comparação dos Padrões
+
+- **802.11a vs. 802.11b:** O padrão 802.11b não é considerado uma continuação do 802.11a, pois eles foram desenvolvidos em paralelo e são incompatíveis. O **802.11a** (54 Mbps com OFDM na banda de 5 GHz) era tecnicamente superior, mais rápido e operava em uma banda de frequência "limpa" (sem interferência de micro-ondas ou telefones sem fio). No entanto, o **802.11b** (11 Mbps com DSSS na banda de 2.4 GHz) "venceu" a adoção inicial do mercado. O motivo é que, embora a taxa de transmissão fosse menor, o sinal de 2.4 GHz tem um alcance muito maior (a nota menciona na ordem de 7 vezes mais) e os chips eram mais baratos de produzir.
+- **802.11g:** Este sim foi um aperfeiçoamento e o sucessor direto do 802.11b. Ele foi o "melhor dos dois mundos": pegou a velocidade de 54 Mbps e a modulação OFDM do padrão "a", mas a implementou na banda de 2.4 GHz. Isso o tornou rápido e, ao mesmo tempo, manteve o grande alcance e a retrocompatibilidade com todos os dispositivos 802.11b existentes.
+
+### Canais de Frequência e Sobreposição
+
+A tecnologia de redes sem fio utiliza-se de canais de transmissão que refletem as subfaixas de frequência em que as informações são trafegadas. Os padrões 802.11 operam em faixas de frequência licenciadas (ISM - Industrial, Scientific and Medical), principalmente 2.4 GHz e 5 GHz.
+
+- A banda de **2.4 GHz** (usada por 802.11b/g/n) vai de 2.4 GHz a 2.485 GHz.
+- A banda de **5 GHz** (usada por 802.11a/n/ac) é muito mais larga, indo de 5.0 GHz a 5.8 GHz.
+
+O problema central da banda de 2.4 GHz é a **sobreposição de canais (channel overlap)**. A banda é dividida em 14 canais (embora no Brasil e na maior parte das Américas, apenas os canais 1 a 11 sejam permitidos). Cada canal tem uma largura de 22 MHz, mas o centro de um canal está a apenas 5 MHz de distância do próximo.
+
+A tabela a seguir detalha os canais da banda de 2.4 GHz:
+
+|**Canal**|**Frequência Nominal**|**Frequência Prática (largura de 22MHz)**|
+|---|---|---|
+|**1**|**2.412 GHz**|**2.401 a 2.423 GHz**|
+|2|2.417 GHz|2.405 a 2.428 GHz|
+|3|2.422 GHz|2.411 a 2.433 GHz|
+|4|2.427 GHz|2.416 a 2.438 GHz|
+|5|2.432 GHz|2.421 a 2.443 GHz|
+|**6**|**2.437 GHz**|**2.426 a 2.448 GHz**|
+|7|2.442 GHz|2.431 a 2.453 GHz|
+|8|2.447 GHz|2.436 a 2.458 GHz|
+|9|2.452 GHz|2.441 a 2.463 GHz|
+|10|2.457 GHz|2.446 a 2.468 GHz|
+|**11**|**2.462 GHz**|**2.451 a 2.473 GHz**|
+|12|2.467 GHz|2.456 a 2.478 GHz|
+|13|2.472 GHz|2.461 a 2.483 GHz|
+|14|2.482 GHz|2.466 a 2.485 GHz|
+
+Quando várias redes sem fio sobrepõem suas áreas de cobertura (a "Selva de Wi-Fis" de Kurose), se elas utilizarem canais sobrepostos (ex: Canal 1 e Canal 2), elas irão interferir uma na outra, degradando o desempenho de ambas. Diz-se que não há sobreposição apenas entre canais que se distanciam por pelo menos 4 canais.
+
+A boa prática para diminuir a interferência é alocar cada AP em subfaixas (canais) não sobrepostas. Na banda de 2.4 GHz, existem apenas **três** canais que não se sobrepõem: **1, 6 e 11**.
+
+O diagrama de frequência abaixo ilustra isso perfeitamente.
+
+<div align="center">
+<img width="600px" src="./img/09-diagrama-de-frequencia.png">
+</div>
+
+Vejam que na imagem é representado muito bem, em linha mais escura, a marcação dos canais 1, 6 e 11, demonstrando que não há sobreposição entre eles. Qualquer instalação profissional de Wi-Fi na banda de 2.4GHz deve usar _apenas_ esses três canais.
+
+### Outros Padrões e Recursos Relevantes
+
+- **802.11z (TDLS - Tunneled Direct Link Setup):** Este padrão surgiu para otimizar a comunicação _dentro_ de uma WLAN. Em uma rede de infraestrutura normal, se o notebook A quer enviar um arquivo para o notebook B (ambos conectados no mesmo AP), o tráfego sobe do A para o AP, e então desce do AP para o B. O 802.11z permite a criação de um **túnel direto** entre os dois dispositivos, sem depender do Access Point para retransmitir os dados.
+- **Wi-Fi Direct:** É importante mencionar que a implementação do TDLS é diferente do recurso conhecido como **Wi-Fi Direct**. Este último tem o foco no estabelecimento de forma rápida de um link de comunicação entre dois dispositivos (ex: um smartphone e uma Smart TV) _independentemente_ de uma estrutura de rede sem fio (AP) existente.
+
+### Tecnologias OFDM e MIMO
+
+Dando seguimento, vamos agora entender as principais tecnologias que permitiram a grande evolução em velocidade e eficiência dos padrões de redes sem fio. Se observarmos novamente a tabela de padrões, veremos que duas tecnologias se tornam referência nos padrões mais modernos: OFDM e MIMO.
+
+#### Orthogonal Frequency Division Multiplexing (OFDM)
+
+Uma das principais tecnologias que apoiam a expansão das capacidades e a otimização do uso do meio de transmissão é o **OFDM (Multiplexação por Divisão de Frequência Ortogonal)**.
+
+Para entender a importância do OFDM, precisamos primeiro olhar para o método tradicional, o **FDM (Frequency Division Multiplexing)**. No FDM, para que múltiplos sinais (canais) sejam transmitidos na mesma faixa de frequência sem que um interfira no outro, é preciso inserir "bandas de guarda" (guard bands) — espaços vazios — entre eles.
+
+A imagem abaixo, na parte (a), ilustra o FDM. Vemos que para a mesma faixa de frequência (Available bandwidth), buscou-se evitar a sobreposição, o que limita a quantidade de canais (f1 a f4) e desperdiça espectro.
+
+<div align="center">
+<img width="500px" src="./img/09-ofdm.png">
+</div>
+
+Já na parte (b) da imagem, temos o **OFDM**. E aí surge a pergunta: mas os canais (f1 a f6) estão claramente se sobrepondo, isso não vai gerar interferência?
+
+A resposta é **não**, e essa é a "mágica" do OFDM. O "O" de Ortogonal se refere a uma característica matemática e de cálculo em domínio de frequência. As subportadoras (os canais) são projetadas de tal forma que o _pico_ de amplitude de um canal coincide perfeitamente com o ponto de amplitude _zero_ (o ponto nulo) de todos os outros canais sobrepostos.
+
+O resultado é que, embora os sinais se sobreponham, eles não geram interferência entre si no momento da decodificação. Isso permite "empacotar" muito mais subportadoras (f1 a f6, no exemplo) na mesma largura de banda que o FDM usava para menos canais, aumentando drasticamente a eficiência espectral e a taxa de transmissão total. Esta é a tecnologia que permitiu o salto do 802.11b (11 Mbps) para o 802.11a/g (54 Mbps) e continua sendo a base de todos os padrões modernos.
+
+#### Multiple In, Multiple Out (MIMO)
+
+Se o OFDM tornou o "caminho" (o canal) mais eficiente, a tecnologia **MIMO (Multiple In, Multiple Out)**, introduzida a partir do padrão **802.11n**, foi responsável por criar múltiplos "caminhos" onde antes só existia um.
+
+Basicamente, o MIMO explora a capacidade de se obter múltiplas entradas (recepção) e múltiplas saídas (transmissão) por intermédio do uso de **várias antenas** no transmissor e no receptor.
+
+<div align="center">
+<img width="300px" src="./img/09-mimo-ponto-de-acesso.png">
+</div>
+
+A imagem acima mostra um Ponto de Acesso com múltiplas antenas, uma característica visual de um dispositivo com capacidade MIMO.
+
+A tecnologia MIMO é baseada no conceito de **fluxos espaciais (spatial streams)** distintos por caminhos diferentes. Em ambientes internos, o sinal de rádio ricocheteia em paredes, móveis e pessoas, criando múltiplos caminhos (um fenômeno chamado _multipath_). Antes do MIMO, o _multipath_ era um problema que causava interferência. O MIMO transforma esse problema em solução.
+
+<div align="center">
+<img width="500px" src="./img/09-mimo.png">
+</div>
+
+Como a imagem acima ilustra, um transmissor com múltiplas antenas pode enviar **fluxos de dados diferentes** de cada uma de suas antenas _ao mesmo tempo e na mesma frequência_. Esses sinais viajam por caminhos diferentes (as linhas pontilhadas) e chegam "misturados" nas antenas do receptor. O receptor, que também possui múltiplas antenas e um processador de sinal avançado, consegue desvendar essa mistura de sinais, separar os fluxos e remontar os dados originais, contribuindo para uma vazão final muito maior.
+
+Um ponto que merece ser citado é que há uma relação de antenas e capacidades de fluxos, que respeita a estrutura `NxM:S`:
+
+- **N** é a quantidade de Antenas de Transmissão.
+- **M** é a quantidade de Antenas de Recepção.
+- **S** é a quantidade de Fluxos Espaciais (Spatial Streams).
+
+Um dispositivo 2x2:2 pode, teoricamente, duplicar a taxa de dados. Um 4x4:4 pode quadruplicar. O padrão 802.11n, por exemplo, suportava até 4 fluxos.
+
+### Camada de Acesso ao Meio 802.11 (MAC e LLC)
+
+É importante reforçar, como já vimos, que a camada de enlace é dividida em duas subcamadas.
+
+<div align="center">
+<img width="500px" src="./img/09-llc-e-mac.png">
+</div>
+
+A figura acima nos dá essa visão clara:
+
+1. **Subcamada Superior (LLC - Logical Link Control):** Padronizada como **802.2**, ela é **idêntica** quando comparamos os padrões 802.3 (Ethernet), 802.5 (Token Ring) e 802.11 (Wi-Fi). A LLC atua como a interface de tradução universal para as camadas superiores. A Camada de Rede (IP) entrega um pacote para a LLC, e ela não precisa saber (nem se importa) se o meio físico é um cabo de cobre ou o ar.
+2. **Subcamada Inferior (MAC - Media Access Control):** Aqui temos a diferença. A subcamada MAC é específica para o meio. O MAC 802.3 lida com CSMA/CD e quadros com dois endereços. O MAC 802.11 lida com CSMA/CA, gerenciamento de energia, BSS/ESS, e quadros com até quatro endereços.
+3. **Camada Física (PHY):** Abaixo do MAC, o 802.11 possui múltiplas camadas físicas (FHSS, DSSS, OFDM, etc.) que o MAC 802.11 sabe como gerenciar.
+
+Nesse contexto, toda a parte de relação com o meio e ocupação de canais (como CSMA/CA, OFDM, MIMO) se dá a partir da camada MAC e da camada PHY, uma vez que a LLC é a mesma para ambos e trata de outros aspectos de organização da informação.
+
+### Gerenciamento de Potência (Power Management)
+
+Uma característica vital do padrão 802.11, especialmente para dispositivos móveis operados por bateria, é o **gerenciamento de potência**.
+
+O protocolo 802.11 permite que os dispositivos operem em dois estados:
+
+1. **Modo Ativo (Active Mode):** O rádio da estação está totalmente ligado. Ela pode transmitir ou receber informações a qualquer momento. Isso implica em um maior consumo de potência.
+2. **Modo de Dormência (Power-Save Mode ou Stand-by):** Para economizar bateria, a estação "avisa" ao Access Point que está entrando em modo de dormência. Neste modo, o rádio principal é desligado. A estação apenas "acorda" em intervalos muito curtos e pré-definidos para verificar se há mensagens para ela.
+
+Quando o Access Point recebe um quadro destinado a um dispositivo que está em _power-save_, o nó central (AP) não o transmite. Ele **armazena a informação em um buffer** e aguarda. Quando a estação "acorda" brevemente, ela ouve um quadro especial do AP (o _Beacon Frame_) que contém um mapa (TIM - Traffic Indication Map). Se a estação vir seu ID nesse mapa, ela entende que o AP tem dados para ela, entra no Modo Ativo e solicita o envio dos quadros armazenados.
+
+Percebam que esse gerenciamento de potência do _dispositivo cliente_ é diferente do conceito de aumento ou diminuição da _potência de transmissão_ do sinal emitido pelo nó central (AP), que é usado para ajustar a área de cobertura (o alcance) do sinal.
+
