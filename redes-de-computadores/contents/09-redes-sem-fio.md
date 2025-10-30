@@ -847,3 +847,60 @@ Um breve resumo dos protocolos de criptografia que vimos até aqui:
 | **WPA**                    | RC4 (Fluxo)                   | **TKIP** (Chaves dinâmicas temporais)    |
 | **WPA2**                   | **AES** (Bloco)               | **CCMP** (Obrigatório) + TKIP (Opcional) |
 
+### WPA3: A Nova Geração de Segurança
+
+Já em um caráter mais recente, estamos convivendo com a tecnologia de segurança **WPA3**, lançada pela Wi-Fi Alliance em 2018. Ela surgiu seguindo a mesma lógica de evolução dos recursos de segurança, mas com um objetivo muito claro: corrigir as vulnerabilidades fundamentais que ainda existiam no WPA2.
+
+O surgimento do WPA3 foi diretamente motivado pela descoberta do ataque **KRACK (Key Reinstallation Attack)**. Este notório ataque explorou uma vulnerabilidade no próprio _fluxo_ do 4-Way Handshake do WPA2, permitindo que um atacante (em condições específicas) enganasse um cliente para reinstalar uma chave já em uso, forçando-o a usar nonces (números aleatórios) repetidos e, com isso, quebrar a criptografia da sessão.
+
+O WPA3 endereça essa e outras vulnerabilidades, introduzindo um novo padrão de segurança.
+
+#### Substituição do PSK pelo SAE
+
+A mudança mais significativa do WPA3 está no modo **Personal**. O WPA3 substitui a chave pré-compartilhada (PSK) do WPA2 pelo **SAE (Simultaneous Authentication of Equals)**, um protocolo de troca de chaves também conhecido como "Dragonfly".
+
+Esta substituição resolve duas falhas graves do WPA2-Personal:
+
+1. **Defesa contra Ataques de Dicionário Offline:** Como vimos, o WPA2-PSK era vulnerável a ataques de dicionário offline. Um atacante podia capturar passivamente o 4-Way Handshake no ar e, em seguida, usar um computador potente para testar milhões de senhas por segundo contra o handshake capturado, sem nunca interagir com o AP.
+    O SAE torna esse ataque impossível. O handshake do SAE requer que tanto o cliente quanto o AP participem ativamente da negociação usando a senha desde o primeiro passo. Para um atacante testar uma única senha, ele precisa iniciar uma interação direta com o AP. O AP pode, então, detectar múltiplas tentativas de falha (como qualquer sistema de login) e bloquear o atacante. Isso transforma um ataque offline (rápido e indetectável) em um ataque online (lento, custoso e fácil de detectar).
+2. **Proteção contra KRACK:** O protocolo de handshake do SAE é inerentemente resistente a ataques de reinstalação de chaves.
+
+#### Proteção de Dados Históricos (Forward Secrecy)
+
+Um outro recurso de segurança crucial que o SAE introduz é a **"Forward Secrecy"** (Sigilo Adiante).
+
+- No WPA2-PSK, se um atacante gravou _um ano_ de tráfego criptografado da sua rede e, _hoje_, ele finalmente descobre sua senha, ele pode usar essa senha para descriptografar _todo_ o tráfego histórico que ele guardou.
+- No WPA3-SAE, a senha só é usada para autenticar o handshake. As chaves de criptografia reais são geradas dinamicamente (chaves efêmeras) e não podem ser recalculadas a partir da senha.
+- Isso significa que, caso um hacker consiga violar a senha, ele não consegue descriptografar os dados que já foram trocados. Sua invasão será limitada do tráfego recente para frente.
+
+#### Aumento da Complexidade Criptográfica
+
+O WPA3 também eleva o padrão mínimo de criptografia, aumentando a robustez contra ataques de força bruta:
+
+- **WPA3-Personal:** Utiliza chaves de 128 bits e o protocolo SAE.
+- **WPA3-Enterprise:** Oferece dois modos:
+    - Um modo padrão de 128 bits (baseado em AES-CCMP).
+    - Um modo opcional de **192 bits** para ambientes de altíssima segurança (como governamentais ou financeiros), que exige:
+        - Autenticação EAP-TLS com criptografia de curva elíptica (ECDH e ECDSA-384).
+        - Criptografia da sessão com GCMP-256.
+        - Hashing com HMAC-SHA384.
+
+### Três Pilares do WPA3
+
+Trazendo uma outra abordagem ou perspectiva dos tipos de segurança aplicados às redes sem fio, podemos resumir os modos de segurança em dois grandes grupos:
+
+1. **Personal (ou PSK - Pre-Shared Key):** Método que usa uma senha ou frase secreta compartilhada entre todos os dispositivos. É comumente usado em redes domésticas ou pequenas empresas.
+2. **Enterprise:** Método mais seguro e complexo que requer um servidor de autenticação central (como o **RADIUS**) e o protocolo **EAP (Extensible Authentication Protocol)**. Ele fornece autenticação individualizada para cada usuário (com login e senha ou certificados).
+
+Com base nesses modelos, o padrão WPA3 introduziu três "frentes" de segurança, cada uma resolvendo um problema específico:
+
+1. **WPA3-Personal:** Substitui o PSK pelo **SAE**, como já vimos, para proteger redes domésticas contra ataques de dicionário e fornecer _forward secrecy_.
+2. **WPA3-Enterprise:** Aprimora o modo 802.1X, tornando obrigatório o uso de protocolos EAP mais seguros e introduzindo a suíte opcional de 192 bits para segurança máxima.
+3. **Wi-Fi Enhanced Open (OWE):** Esta é uma nova frente que resolve um problema histórico: a insegurança de redes Wi-Fi "abertas".
+
+Em redes abertas tradicionais (como em cafés, aeroportos ou praças), a conexão não exige senha. A consequência direta disso é que _não há criptografia_, e todo o tráfego enviado pelo ar é em texto claro, podendo ser facilmente "cheirado" (sniffado) por qualquer pessoa mal-intencionada no mesmo local.
+
+O **Wi-Fi Enhanced Open**, baseado na tecnologia **OWE (Opportunistic Wireless Encryption)**, resolve isso. Ele permite que os usuários se conectem _sem_ autenticação (sem senha), mas, nos bastidores, o dispositivo do cliente e o Access Point negociam chaves de criptografia efêmeras e individualizadas.
+
+O resultado é o melhor dos dois mundos para redes públicas: a facilidade de conexão de uma rede aberta, mas com a **confidencialidade** (criptografia) de uma rede segura. Cada usuário na rede aberta tem seu tráfego criptografado individualmente, impedindo que outros usuários no mesmo café possam espionar sua atividade.
+
