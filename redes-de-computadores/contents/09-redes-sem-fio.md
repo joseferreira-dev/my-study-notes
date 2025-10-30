@@ -432,3 +432,46 @@ Quando o Access Point recebe um quadro destinado a um dispositivo que está em _
 
 Percebam que esse gerenciamento de potência do _dispositivo cliente_ é diferente do conceito de aumento ou diminuição da _potência de transmissão_ do sinal emitido pelo nó central (AP), que é usado para ajustar a área de cobertura (o alcance) do sinal.
 
+### 802.11e: Qualidade de Serviço (QoS) para Wi-Fi
+
+Os padrões 802.11 originais (a/b/g) tratavam todo o tráfego de forma igualitária, usando o método de acesso CSMA/CA, que é essencialmente "o primeiro a conseguir, transmite". Isso funciona bem para dados que não são sensíveis ao tempo, como e-mails ou navegação na web (o que é chamado de tráfego de _melhor esforço_ ou _best-effort_).
+
+No entanto, com o surgimento de aplicações em tempo real, como Voz sobre IP (VoIP) e streaming de vídeo, esse modelo se mostrou inadequado. Um quadro de voz, que é pequeno e sensível a atrasos (latência), tinha que competir pelo meio de transmissão da mesma forma que um grande download de arquivo.
+
+Para resolver isso, foi criado o padrão **802.11e**, que congrega um conjunto de aprimoramentos de **Qualidade de Serviço (QoS)**, aplicando-os diretamente na subcamada MAC.
+
+A principal implementação do 802.11e é o **EDCA (Enhanced Distributed Channel Access)**. O EDCA determina que os tráfegos de maior prioridade têm mais possibilidade de emissão de pacotes do que os tráfegos de prioridades inferiores. Em vez de uma única fila de "melhor esforço", o EDCA cria quatro **Categorias de Acesso (ACs)**, permitindo a propagação de diferentes classes de tráfego e a otimização da rede.
+
+Conforme a prioridade, o tráfego é classificado em uma das seguintes categorias:
+
+- **AC_VO (Voz):** A mais alta prioridade. Reservada para tráfego de voz, que é extremamente sensível a atrasos.
+- **AC_VI (Vídeo):** Segunda prioridade. Para tráfego de vídeo, que é sensível a atrasos e jitter (variação no atraso).
+- **AC_BE (Best Effort / Melhor Esforço):** A categoria padrão, para tráfego normal, como e-mails e navegação web.
+- **AC_BK (Background / Segundo Plano):** A prioridade mais baixa. Usada para tráfego que não tem pressa, como downloads de arquivos grandes, impressões em rede ou backups.
+
+O 802.11e tem uma característica de inovação a partir da combinação dos padrões de acesso originais, o **DCF** (Distributed Coordination Function, o CSMA/CA padrão) e o **PCF** (Point Coordination Function, um método antigo baseado em polling do AP), formando o **HCF (Hybrid Coordination Function)**. O HCF, por sua vez, pode operar em duas versões:
+
+- **EDCA (Enhanced Distributed Channel Access):** O método de acesso ao canal DCF aprimorado, baseado em contenção e prioridades (o mais utilizado).
+- **HCCA (HCF Controlled Channel Access):** Um método mais complexo, controlado e centralizado pelo AP.
+
+#### 802.11ax (Wi-Fi 6)
+
+Naturalmente, as redes de computadores seguem suas evoluções contínuas. No que tange a redes sem fio, a geração mais recente que consolidou o uso massivo da tecnologia é o **Wi-Fi 6**.
+
+O Wi-Fi 6, também conhecido como **IEEE 802.11ax**, é a mais recente evolução da tecnologia sem fio, projetada não apenas para ser mais rápida, mas fundamentalmente para melhorar a **eficiência** e a **capacidade** da rede em ambientes de alta densidade (com muitos dispositivos conectados simultaneamente), como aeroportos, estádios e escritórios modernos.
+
+Ele opera nas faixas de **2,4GHz e 5GHz**, mantendo total compatibilidade com as versões anteriores (802.11a/b/g/n/ac). Na banda de 2,4 GHz, que é mais congestionada, ele opera primariamente com canais de 20 MHz e 40 MHz. Já na banda de 5 GHz, ele pode usar larguras de banda de 20 MHz, 40 MHz, 80 MHz e até **160 MHz**, o que contribui para suas altíssimas velocidades.
+
+Uma de suas melhorias na camada física foi a introdução da modulação **1024-QAM** (Modulação de Amplitude em Quadratura). Enquanto o 802.11ac (Wi-Fi 5) usava 256-QAM (capaz de codificar 8 bits por símbolo), o 1024-QAM consegue "empacotar" 10 bits por símbolo. Isso gera, por si só, uma eficiência na ordem de 25% a 35% a mais de capacidade de transmissão de dados no mesmo espectro.
+
+Vamos conhecer um pouco sobre as principais características e evoluções que o Wi-Fi 6 introduziu:
+
+1. **Melhoria da Velocidade (OFDMA e MU-MIMO):** O Wi-Fi 6 oferece velocidades teóricas máximas de até 9,6 Gbps (quase três vezes mais rápido que o Wi-Fi 5). Essa velocidade não vem apenas do 1024-QAM, mas principalmente de duas tecnologias:
+    - **OFDMA (Orthogonal Frequency-Division Multiple Access):** Esta é a _principal_ inovação do Wi-Fi 6. Todos os padrões anteriores (Wi-Fi 5/4) usavam OFDM, que dedicava um canal inteiro para transmitir dados para _um_ dispositivo por vez (como um caminhão de entregas indo para uma única casa, mesmo que meio vazio). O OFDMA permite que o AP divida o canal em dezenas de "unidades de recurso" (RUs) menores e as aloque para _múltiplos dispositivos_ (ex: 10 dispositivos) simultaneamente, na _mesma transmissão_. É o mesmo caminhão, mas agora entregando pacotes para 10 casas diferentes na mesma viagem.
+    - **MU-MIMO (Multi-User MIMO):** O Wi-Fi 5 já usava o MU-MIMO, mas o Wi-Fi 6 o aprimora, permitindo que mais dispositivos (até 8) se comuniquem simultaneamente com o roteador e, crucialmente, agora ele funciona tanto no _downlink_ (do AP para o cliente) quanto no _uplink_ (do cliente para o AP).
+2. **Redução da Latência:** A latência (o tempo de resposta) é drasticamente reduzida. Isso é um resultado direto do OFDMA. Em vez de um dispositivo ter que esperar o canal ficar totalmente livre para enviar um pequeno pacote (como um comando de jogo online), ele agora pode "pegar carona" em uma transmissão OFDMA maior, enviando seus dados em uma pequena Unidade de Recurso. Isso melhora drasticamente a experiência do usuário em jogos on-line e videoconferências em tempo real.
+3. **Melhoria da Eficiência Energética (TWT):** O Wi-Fi 6 consome menos energia, o que é vital para dispositivos móveis e IoT. Ele introduz a tecnologia **TWT (Target Wake Time)**. Com o TWT, o AP pode "agendar" horários específicos para que os dispositivos acordem e transmitam dados (ex: "Celular X, durma agora e acorde em 300 milissegundos para verificar se há dados"). Isso permite que os dispositivos permaneçam em um modo de baixa energia por muito mais tempo, prolongando significativamente a vida útil da bateria.
+4. **Melhoria da Cobertura e Coexistência (BSS Coloring):** O Wi-Fi 6 oferece melhor desempenho em ambientes congestionados. Ele usa a tecnologia **BSS Coloring**. Em um prédio de apartamentos, por exemplo, o AP de um usuário ouve o tráfego do AP do vizinho no mesmo canal. Em padrões antigos, ele interpretaria isso como uma colisão e esperaria o vizinho terminar. Com o BSS Coloring, cada quadro é "colorido" (um número no cabeçalho) com o ID da sua rede (BSS). O AP vê o tráfego do vizinho, percebe que é de "outra cor" e, se o sinal for fraco o suficiente, ele o ignora e transmite ao mesmo tempo, reduzindo a interferência e melhorando a qualidade do sinal.
+5. **Maior Capacidade de Rede:** Este é o resultado da soma de OFDMA, MU-MIMO e BSS Coloring. O Wi-Fi 6 pode lidar com muito mais dispositivos conectados simultaneamente sem degradar o desempenho da rede.
+6. **Maior Segurança (WPA3):** O Wi-Fi 6 também torna a rede mais segura. A certificação Wi-Fi 6 _exige_ o uso do protocolo **WPA3**, que é mais seguro do que o WPA2 usado pela geração anterior. O WPA3 usa criptografia mais forte e métodos de troca de chaves mais robustos (como o SAE - Simultaneous Authentication of Equals), tornando a rede mais difícil de ser interceptada por hackers.
+
