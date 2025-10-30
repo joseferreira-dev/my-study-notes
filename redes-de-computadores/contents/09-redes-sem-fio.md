@@ -569,3 +569,106 @@ Neste diagrama, podemos analisar o fluxo completo:
 6. A **Estação 2** recebe os dados, espera um **SIFS**, e envia a confirmação final **ACK**.
 7. Somente após o término de todo esse processo é que o meio fica livre, os NAVs expiram, e outras estações podem começar a esperar um novo DIFS para competir pelo meio.
 
+## Aspectos de Segurança em Redes Sem Fio
+
+Abordaremos alguns aspectos de segurança de forma objetiva neste capítulo, com o intuito de termos informações suficientes para respondermos às questões de redes sem fio, pois muitas delas juntam os aspectos de segurança com características de redes.
+
+### SSID: Identificação da Rede
+
+Basicamente, cada rede sem fio possui uma identificação que a distingue das demais, permitindo a associação entre os dispositivos e os pontos de acesso. Essa identificação, que é o "nome" da rede (como `NET_CASA_5G` ou `WIFI_CORPORATIVO`), é chamada de **SSID (Service Set Identifier)**.
+
+O SSID é configurado no Access Point (Ponto de Acesso). Antes da associação de qualquer cliente, o Access Point deve enviar quadros de sinalização (chamados _Beacon Frames_) periodicamente, informando o SSID da rede e seu endereço MAC (o BSSID). Assim, os dispositivos (notebooks, celulares) que estão na área de cobertura podem "escutar" esses beacons, identificar a rede e exibi-la na lista de redes disponíveis para o usuário.
+
+Entretanto, este recurso de "anunciar" o SSID pode ser desabilitado no AP, tornando a rede **oculta**. Neste caso, os _Beacon Frames_ ainda são enviados (para sincronismo), mas o campo SSID vai vazio. Ou seja, caso um usuário deseje se conectar a essa rede, ela não aparecerá na lista, e ele deverá informar manualmente o SSID exato. (Isso é uma medida de "segurança por obscuridade", mas não impede que um atacante, usando ferramentas de análise, descubra o SSID).
+
+Após a definição da rede à qual o usuário deseja se conectar (seja pela lista ou manualmente), inicia-se o processo de autenticação, caso a rede seja fechada ou privada.
+
+### Segurança em LANs Sem Fio
+
+Como as redes 802.11 utilizam um meio compartilhado e aberto — o ar — em que todos os dispositivos dentro do alcance de um sinal são capazes de capturar este tráfego, as técnicas de segurança e autenticação são fundamentais. Elas são a única forma de garantir:
+
+1. **Autenticidade:** Garantir que apenas usuários autorizados possam entrar na rede.
+2. **Confidencialidade:** Criptografar os dados para que, se forem interceptados, não possam ser lidos.
+3. **Integridade:** Garantir que os dados não foram alterados no caminho.
+
+As principais técnicas de autenticação e criptografia dos dados são os protocolos **WEP (Wired Equivalent Privacy)**, **WPA (Wi-Fi Protected Access)**, **WPA2** e **WPA3**.
+
+<div align="center">
+<img width="450px" src="./img/09-tecnicas-de-autenticacao.png">
+</div>
+
+Essa evolução representa uma "corrida armamentista" de segurança. O primeiro e o segundo (WEP e WPA) já foram "quebrados", ou seja, são considerados inseguros e passíveis de interceptação do tráfego por um usuário malicioso. Já o WPA2, que foi o padrão-ouro por mais de uma década, possui uma vulnerabilidade em condições específicas (o ataque _KRACK_), o que, ensejou, inclusive, a criação do padrão mais recente, o WPA3.
+
+### WEP (Wired Equivalent Privacy)
+
+O WEP foi o primeiro protocolo padrão de segurança para redes sem fio, lançado em 1997. Seu nome ("Privacidade Equivalente a uma Rede Cabeada") reflete seu objetivo: tornar a rede sem fio tão segura quanto conectar um cabo Ethernet. Infelizmente, ele falhou drasticamente nisso.
+
+O WEP utiliza o algoritmo de criptografia de fluxo **RC4**. Para criptografar, ele combina uma chave secreta estática (a "senha" do WEP, compartilhada por todos os dispositivos) com um **Vetor de Inicialização (IV)**, que é um valor de 24 bits gerado para cada pacote.
+
+- No WEP original, a chave total tinha 64 bits: 40 bits da chave secreta (digitada pelo usuário) + 24 bits do IV.
+- Posteriormente, surgiu o WEP de 128 bits: 104 bits da chave secreta + os mesmos 24 bits do IV.
+
+Entretanto, diversas vulnerabilidades graves foram encontradas no WEP, sendo a principal delas o uso de **chaves estáticas** (a mesma chave para todos) e o tamanho perigosamente pequeno do **IV (24 bits)**.
+
+Nesse cenário de falha do WEP, mas antes da finalização do WPA2, surgiu como um "curativo" o **TKIP (Temporal Key Integrity Protocol)**. O TKIP foi a base do _WPA_. Seu propósito era corrigir as falhas do WEP, mas ainda sendo compatível com o hardware antigo (que só entendia RC4). O TKIP passou a utilizar de forma fixa chaves de 128 bits, com um IV maior de 48 bits, e, o mais importante, introduziu a _troca de chaves por pacote_ (chaves temporais), eliminando a chave estática.
+
+Após o TKIP como alternativa de criptografia, foi consolidada a utilização do conjunto **802.1X/EAP** (que vimos na seção anterior) como o padrão para _autenticação_ em redes corporativas.
+
+#### Modos de Autenticação WEP
+
+Ainda sobre o WEP, é importante termos no radar o seu funcionamento básico. Ele possui dois algoritmos: o **KSA (Key Scheduler Algorithm)**, responsável por gerar a chave pseudoaleatória a ser usada, e o **PRGA (Pseudo Random Generation Algorithm)**, que efetivamente encripta a mensagem. O PRGA é dividido em duas fases: Autenticação e Encriptação/Decriptação.
+
+A seguir, temos a visão dos dois modos de _autenticação_ do WEP: Conexão Aberta e Conexão por Chave Compartilhada.
+
+<div align="center">
+<img width="700px" src="./img/09-wep-conexao-aberta-e-por-senha.png">
+</div>
+
+1. **Open System (Sistema Aberto):** Na primeira imagem (esquerda), temos o WEP Open System. É uma rede "aberta" que não solicita credenciais do suplicante ao Access Point. O suplicante envia uma "Requisição de Conexão" e o Ponto de Acesso responde com "Resposta de Conexão" (sucesso). Na prática, temos uma ausência de autenticação. É importante destacar que, após essa autenticação nula, a comunicação pode (e geralmente é) criptografada normalmente, usando a chave WEP estática (conforme a etapa do PRGA).
+2. **Shared Key (Chave Compartilhada):** Já o segundo modo (direita) é o WEP Shared Key, onde temos o modelo de chave ou senha compartilhada. Aqui, há um processo de desafio-resposta em quatro etapas:
+    1. O Suplicante envia a "Requisição de Conexão".
+    2. O Ponto de Acesso responde com um "Envio de Desafio" (um texto aleatório em claro).
+    3. O Suplicante criptografa esse desafio com a chave WEP e o envia na "Resposta do Desafio".
+    4. O AP decriptografa a resposta com sua chave. Se o resultado for igual ao desafio original, ele envia a "Resposta de Conexão" (sucesso).
+        A mesma chave usada nesse desafio será utilizada posteriormente no processo de criptografia das informações.
+
+**Paradoxo da Segurança WEP:** Embora a "Shared Key" pareça uma autenticação real, dadas as características e vulnerabilidades do WEP, na prática, esse processo é **mais frágil**. Um atacante pode capturar o desafio (texto claro) e a resposta (texto cifrado), e usar essa informação para descobrir o fluxo de chave RC4 e, eventualmente, a chave WEP estática. Por esse motivo, se o foco era em aumentar a privacidade (confidencialidade) dos dados, era paradoxalmente mais recomendável usar o Open System (que não expunha a chave no desafio) e apenas criptografar o tráfego.
+
+#### Fluxo de Criptografia WEP
+
+Avançando para o processo de criptografia (a segunda fase do PRGA), podemos ver o fluxo de envio dos dados no regime de encriptação (esquerda) e decriptação (direita).
+
+<div align="center">
+<img width="700px" src="./img/09-wep-regime-encriptacao-e-decriptacao.png">
+</div>
+
+O intuito não é entrar em detalhes da sua implementação, mas tão somente entender as etapas e os recursos utilizados:
+
+**Na Encriptação (esquerda):**
+
+1. A **Mensagem** (dados) passa por uma função **Hash** (especificamente, um CRC-32) para gerar um Valor de Verificação de Integridade (ICV).
+2. A Mensagem e seu Hash (ICV) são combinados.
+3. O **Vetor de Inicialização (IV)** (24 bits) é combinado (concatenado) com a **Chave Secreta** (estática).
+4. Essa chave combinada (IV+Key) é usada como semente (input) para o algoritmo de criptografia de fluxo **RC4**.
+5. O RC4 gera um fluxo de chave (keystream).
+6. O fluxo de chave é combinado (via operação XOR) com o (Mensagem + Hash).
+7. O resultado é o **Texto Cifrado**, que é transmitido pela rede (junto com o IV em texto claro).
+
+**Na Decriptação (direita):**
+
+1. O receptor pega o **Vetor de Inicialização** (que veio em texto claro) e o combina com a mesma **Chave Secreta**.
+2. Ele usa essa chave combinada como input no mesmo algoritmo **RC4**, o que gera _exatamente o mesmo_ fluxo de chave.
+3. Ele combina (XOR) o **Texto Cifrado** recebido com o fluxo de chave gerado.
+4. O resultado é a **Mensagem** original mais o **Hash** (ICV) original.
+5. Para verificar a integridade, o receptor calcula um _novo_ Hash sobre a Mensagem recebida.
+6. O **Comparador** verifica se o novo Hash gerado é igual ao Hash que foi recebido (o ICV). Se ambos forem iguais, temos a garantia do princípio da integridade.
+
+#### Vulnerabilidades Fatais do WEP
+
+Como já falamos, o WEP possui vulnerabilidades críticas que o tornam obsoleto. Entre elas, podemos citar:
+
+1. **Ataque de Força Bruta (Chave Pequena):** O tamanho efetivo da chave (40 ou 104 bits) é considerado pequeno para os padrões modernos. O poder computacional atual possibilita a quebra da chave por força bruta.
+2. **Reutilização do Vetor de Inicialização (IV):** Esta é a falha mais grave. O IV tem apenas 24 bits, o que gera cerca de 16,7 milhões de combinações. Em uma rede movimentada, esse número se esgota rapidamente (em horas ou até minutos) e os IVs começam a se repetir (reutilização). Um atacante que captura dois pacotes que usaram o _mesmo IV_ pode usar análise estatística para quebrar a criptografia.
+3. **Possibilidade de Manipulação do CRC32:** O CRC32 (usado como Hash/ICV) é uma verificação de integridade, mas não de autenticidade, e possui uma natureza linear. Isso permite que um atacante manipule bits específicos no texto cifrado e, ao mesmo tempo, "corrija" o CRC32 cifrado para que a alteração passe despercebida pelo receptor. Isso representa uma quebra total do princípio da integridade.
+4. **Softwares de Quebra:** Ferramentas como **airSnort** e **WepCrack** automatizaram esses ataques, permitindo que qualquer pessoa com um notebook e o software correto pudesse "quebrar" uma rede WEP em questão de minutos.
+
