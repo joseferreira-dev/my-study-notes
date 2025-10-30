@@ -755,3 +755,95 @@ O MIC foi criado para combater a fragilidade do WEP que permitia a manipulação
 
 Como a imagem ilustra, o algoritmo "Michael" pega os endereços MAC (origem e destino), a mensagem e a chave de integridade (TMK) como entrada. A saída é o valor do MIC. Como um atacante não possui a TMK, ele não pode alterar a mensagem e gerar um novo MIC válido, garantindo a integridade dos dados. Este processo é totalmente independente do Vetor de Inicialização.
 
+### WPA2 (Wi-Fi Protected Access II)
+
+Seguindo a nossa discussão, o WPA foi uma solução provisória, um "curativo" de segurança. A verdadeira e robusta solução de longo prazo foi a ratificação completa do padrão **IEEE 802.11i**, que se tornou comercialmente conhecido como **WPA2**.
+
+O WPA2 é a implementação que complementa todas as especificações do 802.11i, apresentando-se como uma garantia de segurança muito mais forte. A principal e mais importante mudança do WPA2 é o abandono do algoritmo de criptografia RC4, que o WPA foi forçado a usar por questões de retrocompatibilidade.
+
+O protocolo WPA2 utiliza a cifra de bloco **AES (Advanced Encryption Standard)**, o mesmo padrão de criptografia de nível militar usado por governos e bancos, que é muito mais seguro e robusto que a cifra de fluxo RC4.
+
+Embora a criptografia subjacente tenha mudado, o WPA2 manteve a mesma arquitetura de autenticação que tornou o WPA bem-sucedido:
+
+- Ele implementa a mesma técnica de **4-Way Handshake** (as 4 trocas de mensagem para autenticação) para gerar chaves de sessão dinâmicas.
+- Ele implementa as mesmas duas versões de autenticação: **WPA2-Personal** (usando uma chave pré-compartilhada ou PSK) e **WPA2-Enterprise** (usando 802.1X e um servidor RADIUS).
+
+A seguir, temos a representação do 4-Way Handshake, que é idêntico em sua lógica tanto no WPA quanto no WPA2:
+
+<div align="center">
+<img width="400px" src="./img/09-wap2-vias.png">
+</div>
+
+Como visto no processo do WPA, alguns termos são fundamentais:
+
+- **NONCE:** Diz respeito a um número aleatório gerado pelo nó e usado apenas uma vez (_Number used Once_) nesse ciclo criptográfico. Temos o **ANonce** (gerado pelo AP) e o **SNonce** (gerado pelo Suplicante).
+- **PMK (Pair-wise Master Key):** Esta é a "chave mestra" da sessão.
+    - No modo _Enterprise_, a PMK é gerada pelo servidor RADIUS após a autenticação 802.1X bem-sucedida.
+    - No modo _Personal_, a PMK é também chamada de **PSK (Pre-Shared Key)**. A PSK não é _exatamente_ a senha que o usuário digita; ela é um valor derivado da combinação da senha da rede sem fio (de 8 a 63 caracteres) com o nome da rede (o SSID), através de um processo de hash.
+
+Para completar os elementos, os endereços MAC tanto do AP quanto do Suplicante também são utilizados como "sal" (salt) no processo de cálculo da PTK (Pairwise Transient Key), garantindo que a chave de sessão seja única para aquele par de dispositivos.
+
+#### CCMP: O Sucessor do TKIP
+
+O WPA2 utiliza duas técnicas de segurança para confidencialidade e integridade: **TKIP** (para retrocompatibilidade com dispositivos WPA) e **CCMP**, sendo o **CCMP obrigatório**.
+
+O **CCMP (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol)** é o protocolo de criptografia usado pelo WPA2. Ele é totalmente independente do funcionamento do WEP, justamente pelo fato de não usar o algoritmo RC4. Ao invés disto, a mensagem é codificada com o uso do **AES**.
+
+O CCMP é, na verdade, a combinação de duas técnicas de criptografia baseadas em AES:
+
+1. **AES-CTR (Counter Mode):** Usado para a **confidencialidade** (criptografia) dos dados.
+2. **CBC-MAC:** Usado para a **integridade e autenticação** (o MIC, ou "Message Authentication Code"). O termo "Encadeamento de blocos de Cifras" (Cipher Block Chaining) refere-se a essa técnica.
+
+O conceito de chaves temporárias e código de integridade de mensagem introduzido pelo WPA continuou a ser usado, só que funcionando de maneira diferente. A primeira grande diferença se encontra na PTK:
+
+- Enquanto a PTK do **WPA (TKIP)** possui 512 bits...
+- A PTK do **WPA2 (CCMP)** dispõe de apenas **384 bits**.
+
+A razão para essa redução é a eficiência do AES. O CCMP não precisa da **TMK (Temporal MIC Key)**, que era uma chave separada no WPA. O CCMP usa a **TEK (Temporal Encryption Key)** tanto para a encriptação (no AES-CTR) quanto para o cálculo do MIC (no CBC-MAC), "alimentando" o algoritmo AES em todos os passos e eliminando a necessidade de uma chave de MIC separada.
+
+#### Processo de Criptografia CCMP
+
+O processo de encriptação (e, analogamente, de decriptação) do CCMP é muito mais robusto que o do WEP ou TKIP. Ele utiliza o "Número de Pacote" (o IV, ou vetor de inicialização, que também serve como um contador) para garantir que cada pacote seja criptografado de forma única, impedindo ataques de repetição (_replay attacks_).
+
+A figura abaixo ilustra o fluxo de dados no CCMP:
+
+<div align="center">
+<img width="400px" src="./img/09-wap2-processo.png">
+</div>
+
+O processo, embora pareça complexo, pode ser dividido em duas partes:
+
+1. **Cálculo do MIC (Autenticação e Integridade):**
+    - O CCMP usa o **CBC-MAC**. De forma simplificada, ele pega o cabeçalho (que inclui o Número de Pacote para proteção) e o primeiro bloco da mensagem, aplica uma operação XOR e criptografa o resultado com AES (usando a TEK).
+    - O resultado (bloco cifrado) é então combinado (XOR) com o _próximo_ bloco da mensagem, e o processo se repete, criando um "encadeamento".
+    - Quando todos os pedaços da mensagem tiverem passado por este processo, o resultado final é uma "assinatura" (o MIC) que autentica tanto o cabeçalho quanto a mensagem.
+2. **Encriptação da Mensagem (Confidencialidade):**
+    - O CCMP usa o **AES-CTR (Counter Mode)**. Para cada pedaço da mensagem, ele pega um "Nonce" (um vetor com parâmetros, incluindo o Número de Pacote), o incrementa e o _criptografa_ com AES (TEK).
+    - O resultado é um "bloco de fluxo de chave" (keystream).
+    - Esse keystream é combinado (XOR) com o pedaço da mensagem em texto claro, gerando o pedaço encriptado correspondente.
+    - Como este tipo de operação é invertível (basta aplicar o XOR novamente com o mesmo keystream), o processo de decriptação no receptor é idêntico. O receptor também recalcula o MIC e o compara com o MIC recebido para garantir a integridade.
+
+#### Vulnerabilidade do WPA2 (Ataque de Dicionário)
+
+Apesar de sua enorme robustez, o WPA2 (especificamente o WPA2-Personal/PSK) possui uma vulnerabilidade teórica que pode ser explorada em determinados contextos: o **ataque de dicionário offline** sobre o 4-Way Handshake.
+
+- Como vimos, a senha (PSK/PMK) _nunca_ é enviada pelo ar.
+- No entanto, as mensagens 1, 2, 3 e 4 do handshake (que contêm os Nonces e os MICs) _são_ enviadas pelo ar e podem ser capturadas por um atacante.
+- Um atacante pode, então, tentar adivinhar a senha _offline_. Para cada senha em seu "dicionário", ele a usa (junto com o SSID) para gerar a PMK.
+- Com essa PMK _tentativa_ e os Nonces _capturados_, ele simula o cálculo da PTK e, em seguida, calcula o MIC da mensagem (ex: Mensagem 2).
+- Se o MIC que ele calculou for _idêntico_ ao MIC que ele capturou no ar, o atacante descobriu a senha.
+
+Neste tipo de ataque, não há necessidade de interação direta com o AP (é um ataque passivo, pós-captura), o que dificulta um monitoramento ou ação por parte do AP. A única defesa contra isso é o uso de uma senha (PSK) longa, complexa e que não esteja em dicionários.
+
+Vale ressaltar que os métodos WEP, WPA e WPA2 foram desenvolvidos para tratar os princípios de integridade e confidencialidade, ainda que utilizem protocolos e tecnologias auxiliares para esse fim.
+
+#### Resumo de Protocolos de Criptografia
+
+Um breve resumo dos protocolos de criptografia que vimos até aqui:
+
+| **Protocolo de Segurança** | **Algoritmo de Criptografia** | **Protocolo de Chave/Integridade**       |
+| -------------------------- | ----------------------------- | ---------------------------------------- |
+| **WEP**                    | RC4 (Fluxo)                   | Chave fixa (estática)                    |
+| **WPA**                    | RC4 (Fluxo)                   | **TKIP** (Chaves dinâmicas temporais)    |
+| **WPA2**                   | **AES** (Bloco)               | **CCMP** (Obrigatório) + TKIP (Opcional) |
+
