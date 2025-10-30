@@ -475,3 +475,97 @@ Vamos conhecer um pouco sobre as principais características e evoluções que o
 5. **Maior Capacidade de Rede:** Este é o resultado da soma de OFDMA, MU-MIMO e BSS Coloring. O Wi-Fi 6 pode lidar com muito mais dispositivos conectados simultaneamente sem degradar o desempenho da rede.
 6. **Maior Segurança (WPA3):** O Wi-Fi 6 também torna a rede mais segura. A certificação Wi-Fi 6 _exige_ o uso do protocolo **WPA3**, que é mais seguro do que o WPA2 usado pela geração anterior. O WPA3 usa criptografia mais forte e métodos de troca de chaves mais robustos (como o SAE - Simultaneous Authentication of Equals), tornando a rede mais difícil de ser interceptada por hackers.
 
+### Funções de Coordenação de Acesso (DCF e PCF)
+
+No coração da subcamada MAC 802.11 estão os métodos que definem "quem pode falar" e "quando". O padrão 802.11 define dois modos de operação para coordenar o acesso ao meio:
+
+1. **DCF (Distributed Coordination Function):** Função de Coordenação Distribuída.
+2. **PCF (Point Coordination Function):** Função de Coordenação de Ponto.
+
+#### Distributed Coordination Function (DCF) e o CSMA/CA
+
+O **DCF** é o modo de operação padrão, fundamental e mais utilizado do 802.11. É um método de acesso baseado em contenção (_contention-based_), o que significa que todas as estações competem pelo direito de transmitir.
+
+É um modo independente de um controle central, semelhante em filosofia ao padrão Ethernet. Entretanto, o método de acesso ao meio utilizado pelo DCF é o **CSMA/CA**, que é fundamentalmente diferente do **CSMA/CD** usado pelo Ethernet.
+
+##### Por que não CSMA/CD (Detecção de Colisão)?
+
+O CSMA/CD, conforme vimos, é um método de _detecção_ de colisão. O nó que deseja transmitir verifica se o meio está livre e, caso esteja, começa a transmitir. Enquanto ele está transmitindo, ele utiliza a tecnologia LWT (Listen While Talk), ou seja, ele monitora o meio _enquanto_ está transmitindo. Se ele detectar um sinal diferente do que está enviando, ele confirma uma colisão, dispara um sinal (JAM) e reinicia o processo.
+
+Este método é impossível de ser implementado em redes sem fio por duas razões principais:
+
+1. **Inviabilidade do "Listen While Talk":** Em um rádio, o sinal de transmissão de uma estação é milhões de vezes mais potente do que qualquer sinal que ela possa receber. A própria transmissão "encegueceria" o receptor da estação, tornando impossível para ela "ouvir" uma colisão (um sinal muito mais fraco) ao mesmo tempo em que grita (transmite).
+2. **Problema do Terminal Escondido:** O CSMA/CD assume que, se uma colisão ocorrer, todos os nós na rede a detectarão. Em redes sem fio, isso não é verdade.
+
+<div align="center">
+<img width="200px" src="./img/09-terminal-escondido.png">
+</div>
+
+A imagem acima ilustra o cenário clássico do **terminal escondido**. Nela, a estação **B** (um Access Point, por exemplo) está no centro e consegue "enxergar" (receber sinal) tanto da estação **A** quanto da estação **C**. No entanto, devido a um obstáculo (como uma montanha ou prédio), **A e C não se enxergam**.
+
+Se A e C quiserem transmitir para B ao mesmo tempo:
+
+1. A "escuta" o meio (Carrier Sense) e não ouve nada (pois não ouve C). Assume que o meio está livre e começa a transmitir.
+2. C faz exatamente a mesma coisa.
+3. Os dois sinais colidem em B, e os dados são corrompidos.
+4. Como A e C não se ouvem, nenhum deles jamais saberá que a colisão ocorreu. O CSMA/CD falha completamente.
+
+##### CSMA/CA (Prevenção de Colisão)
+
+Já o CSMA/CA, sucessor do CSMA/CD para meios sem fio, possui o recurso de **evitar** a colisão (_Collision Avoidance_). Ele faz isso através de um mecanismo de "reserva" do meio.
+
+O DCF pode atuar de duas formas:
+
+1. **Método Básico (Detecção de Colisão Indireta):** O emissor simplesmente verifica a disponibilidade do meio. Caso esteja livre por um período específico (veremos o DIFS adiante), ele envia a informação. Como ele não é capaz de escutar o meio enquanto envia, ele aguarda um quadro de confirmação **ACK (Acknowledgment)** do receptor. Se o ACK não chegar no tempo esperado, o emissor _assume_ que uma colisão (ou interferência) ocorreu, aguarda um tempo aleatório e tenta retransmitir.
+2. **Método RTS/CTS (Prevenção Ativa):** Este é o método mais complexo e robusto, usado para evitar o problema do terminal escondido. Ele envolve uma sinalização prévia:
+    - **RTS (Request to Send):** O nó "A", objetivando transmitir para "B", envia um pequeno pacote de controle **RTS** (Requisição para Enviar), indicando que pretende ocupar o meio e por quanto tempo.
+    - **CTS (Clear to Send):** O nó "B", ao receber o RTS, responde com um pacote **CTS** (Livre para Enviar), indicando que pode começar a transmissão.
+    - **A "Mágica" do CTS:** O nó "C" (o terminal escondido) não ouviu o RTS de A, mas ele **ouve o CTS de B**. O CTS funciona como um sinal de "SILÊNCIO" para todas as estações ao alcance de B.
+    - **NAV (Network Allocation Vector):** Os quadros RTS e CTS contêm um campo de "Duração". Quando o nó "C" (e qualquer outra estação vizinha) ouve o RTS ou o CTS, ele lê esse valor de duração e o armazena em um temporizador interno chamado **NAV (Vetor de Alocação de Rede)**. O NAV é, essencialmente, um controle interno que diz: "O meio estará ocupado pelos próximos _X_ microssegundos, não tente transmitir".
+    - **DATA e ACK:** O nó "A" recebe o CTS, envia seus dados (DATA) e, após finalizar, aguarda um pacote **ACK (Confirmação)** de "B". Se o ACK não chegar, o processo é reiniciado.
+
+Lembremos que todo esse procedimento de controle (DCF) ocorre diretamente entre os dispositivos (distribuído), não havendo um controle central.
+
+#### Point Coordination Function (PCF)
+
+Já no modo **PCF**, há um controle **centralizado**. Este modo é opcional e só funciona em redes de infraestrutura (com Access Point).
+
+No modo PCF, o Access Point atua como um "mestre" ou "moderador" da rede, sendo responsável por fazer a alocação do meio aos dispositivos que desejam transmitir. Ele utiliza um mecanismo de **Polling (Sondagem)**, onde o AP "pergunta" a cada estação, uma por uma, se ela tem dados para enviar. Assumindo esse controle centralizado, o problema de colisão na rede é eliminado (cria-se um período _livre de contenção_).
+
+#### Coexistência (DCF e PCF) e Prioridade (IFS)
+
+Um ponto extremamente importante de se mencionar é que os dois modelos, DCF (distribuído) e PCF (centralizado), podem atuar juntos dentro de uma mesma célula de rede sem fio.
+
+Como o PCF (centralizado) consegue "ganhar" o acesso ao meio contra todas as estações DCF (distribuídas)? A resposta está na definição de **intervalos de tempo obrigatórios** (InterFrame Spacing - IFS).
+
+O padrão 802.11 define 4 intervalos de prioridade. Um tempo de espera mais curto significa uma prioridade mais alta. Esses intervalos são disparados de forma simultânea e contados paralelamente após o meio ficar livre.
+
+<div align="center">
+<img width="600px" src="./img/09-pcf-intervalos.png">
+</div>
+
+Do mais curto (maior prioridade) para o mais longo (menor prioridade):
+
+1. **SIFS (Short InterFrame Spacing):** O intervalo mais curto de todos. É a **maior prioridade**. É usado apenas para quadros de controle que são uma resposta imediata a uma transmissão, como um **ACK**, um **CTS** ou o próximo fragmento de um pacote. Isso garante que uma transação (RTS -> CTS -> DATA -> ACK) nunca seja interrompida por outra estação.
+2. **PIFS (PCF InterFrame Spacing):** O segundo intervalo mais curto. É a prioridade usada pelo **Access Point** para iniciar o modo **PCF (Polling)**. Como o PIFS é _mais curto_ que o DIFS, o AP (no modo PCF) sempre terá a chance de falar antes de qualquer estação normal (no modo DCF).
+3. **DIFS (DCF InterFrame Spacing):** O intervalo padrão para o modo **DCF**. Após o meio ficar livre, _qualquer estação_ que queira iniciar uma _nova_ transmissão (enviar um RTS ou um quadro de dados) deve esperar, no mínimo, o tempo de um DIFS. Se o meio permanecer livre durante esse tempo, a estação pode começar sua tentativa de transmissão.
+4. **EIFS (Extended InterFrame Spacing):** O intervalo de menor prioridade. É um tempo de espera longo, usado por estações que receberam um pacote corrompido ou defeituoso. É uma "penalidade" para garantir que a estação que detectou um erro espere tempo suficiente antes de tentar informar o fato, para não colidir com um ACK ou CTS que ela possa não ter entendido.
+
+#### Cenário de Transmissão Completo
+
+Após visualizarmos as formas de operação, os tipos de quadros e os intervalos, apresentamos um diagrama de quadros que indica um cenário de transmissão DCF ao longo do tempo:
+
+<div align="center">
+<img width="500px" src="./img/09-cenarios-de-transmissao.png">
+</div>
+
+Neste diagrama, podemos analisar o fluxo completo:
+
+1. A **Estação 1** deseja transmitir. Ela espera o meio ficar livre por um período **DIFS** (iniciando o modo DCF).
+2. Ao final do DIFS, ela transmite seu quadro **RTS**.
+3. A **Estação 2** (o receptor) espera apenas um **SIFS** (o intervalo de maior prioridade) e responde com o **CTS**.
+4. As **Estações 3 e 4** ouvem o CTS (ou o RTS) e ativam seus temporizadores **NAV**, permanecendo em silêncio pelo tempo indicado no quadro.
+5. A **Estação 1** recebe o CTS, espera um **SIFS**, e envia seus **DATA** (dados).
+6. A **Estação 2** recebe os dados, espera um **SIFS**, e envia a confirmação final **ACK**.
+7. Somente após o término de todo esse processo é que o meio fica livre, os NAVs expiram, e outras estações podem começar a esperar um novo DIFS para competir pelo meio.
+
