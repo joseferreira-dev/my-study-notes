@@ -165,3 +165,106 @@ Quando a rede está convergida, ela permanece estável. Mas o que acontece se um
 
 O propósito desse TC é instruir todos os switches a **reduzirem o tempo de envelhecimento de suas tabelas MAC** (do padrão de 300 segundos para o valor do Forward Delay, 15 segundos). Isso "limpa" rapidamente as entradas de MAC antigas, forçando os switches a reaprenderem a localização dos hosts, que agora podem estar acessíveis por um novo caminho.
 
+## Rapid Spanning Tree Protocol (RSTP)
+
+O protocolo STP (802.1d) foi um pilar fundamental para a estabilidade das redes locais, resolvendo o problema catastrófico dos loops de Camada 2. No entanto, sua principal desvantagem é o **lento tempo de convergência**. Em uma rede moderna, esperar **até 50 segundos** para que um link redundante assuma após uma falha, ou para que um computador possa acessar a rede após ser conectado, é inaceitável. Aplicações em tempo real, como Voz sobre IP (VoIP) ou videoconferências, seriam interrompidas, e a experiência do usuário seria severamente degradada.
+
+Devido à grande complexidade das redes atuais e às mudanças constantes na topologia (dispositivos móveis se conectando, links sendo adicionados), eram necessários rearranjos constantes da árvore, implicando na necessidade de rodar o algoritmo e aguardar o tempo de convergência diversas vezes.
+
+Por esse motivo, o IEEE desenvolveu o **Rapid Spanning Tree Protocol (RSTP)**, padronizado como **IEEE 802.1w**. O RSTP não é um protocolo novo, mas sim uma **evolução** direta do STP, otimizado para uma convergência radicalmente mais rápida, muitas vezes em menos de um segundo.
+
+### Simplificação dos Estados da Porta
+
+A primeira grande mudança do RSTP foi simplificar os cinco estados de porta do STP (Disabled, Blocking, Listening, Learning, Forwarding) em apenas três.
+
+<div align="center">
+<img width="200px" src="./img/07-rstp.png">
+</div>
+
+1. **Discarding (Descarte):** Este novo estado unifica três estados do STP (Disabled, Blocking e Listening). A lógica é simples: em todos esses três estados antigos, a porta está inoperante do ponto de vista do tráfego de dados. Ela não encaminha quadros de dados e (exceto no estado Disabled) apenas processa BPDUs. O RSTP simplifica isso: se uma porta não está encaminhando dados, ela está no estado de _Discarding_.
+2. **Learning (Aprendizado):** Este estado é mantido idêntico ao do STP. É um estado transitório onde a porta ainda não encaminha dados (para evitar loops), mas já começa a aprender os endereços MAC das fontes dos quadros recebidos para popular sua tabela MAC.
+3. **Forwarding (Encaminhamento):** Também idêntico ao STP. A porta está totalmente operacional, encaminhando dados e aprendendo MACs.
+
+O mapeamento entre os protocolos pode ser resumido na tabela a seguir:
+
+|**Estado Operacional**|**Estado STP (802.1d)**|**Estado RSTP (802.1w)**|**Encaminha Quadros de Dados?**|**Aprende Endereços MAC?**|
+|---|---|---|---|---|
+|Desabilitado|Disabled|Discarding|Não|Não|
+|Habilitado (Bloqueado)|Blocking|Discarding|Não|Não|
+|Habilitado (Convergindo)|Listening|Discarding|Não|Não|
+|Habilitado (Convergindo)|Learning|Learning|Não|**Sim**|
+|Habilitado (Ativo)|Forwarding|Forwarding|**Sim**|**Sim**|
+
+### Novas Funções (Roles) para Portas
+
+A verdadeira "mágica" da convergência rápida do RSTP vem da introdução de novas funções (roles) para as portas, que vão além das simples Root Port e Designated Port. O RSTP pré-calcula caminhos alternativos.
+
+- **Porta Raiz (Root Port):** Mesma funcionalidade do STP. É a porta no switch não-raiz com o menor custo de caminho para a Root Bridge. Está no estado _Forwarding_.
+- **Porta Designada (Designated Port):** Mesma funcionalidade do STP. É a porta que "serve" um segmento, enviando e recebendo tráfego para ele. Está no estado _Forwarding_.
+- **Porta Alternativa (Alternate Port):** Esta é uma grande inovação. Uma porta Alternativa é uma porta que _também_ tem um caminho para a Root Bridge, mas que _não_ é a Root Port (pois seu custo é maior). É um caminho redundante. O STP clássico simplesmente colocaria essa porta em _Blocking_. O RSTP a rotula como _Alternate_ e a mantém em _Discarding_.
+    - **Benefício:** Se a Root Port falhar, o switch não precisa esperar 50 segundos. Ele sabe que a Porta Alternativa é o "Plano B" e pode transicioná-la _imediatamente_ para _Forwarding_, resultando em uma convergência quase instantânea.
+- **Porta de Backup (Backup Port):** Esta é uma porta redundante para uma _Porta Designada_, geralmente encontrada em cenários com hubs (meios compartilhados), onde um switch pode ter dois links para o mesmo segmento. Se a Porta Designada falhar, a Porta de Backup (que estava em _Discarding_) assume seu lugar.
+
+### Portas de Borda (Edge Ports)
+
+Uma das melhorias mais significativas do RSTP para o usuário final foi a introdução do conceito de **Portas de Borda (Edge Ports)**.
+
+<div align="center">
+<img width="300px" src="./img/07-rstp-bordas-da-rede.png">
+</div>
+
+- **Problema no STP:** No STP clássico, quando um computador é conectado a uma porta do switch, o switch não sabe se é um computador (que não causa loops) ou outro switch (que pode causar um loop). Por segurança, ele _sempre_ assume o pior caso e força a porta a passar pelos 30 segundos dos estados _Listening_ e _Learning_. Isso causa a frustrante espera de 30-50 segundos para que um PC possa usar a rede.
+- **Solução no RSTP:** O RSTP permite que o administrador de rede configure manualmente as portas que se conectam a estações finais (computadores, impressoras, servidores) como **Edge Ports**.
+    - Uma Edge Port, por definição, não está ligada a outra bridge (switch) e, portanto, _nunca_ poderá criar um loop na rede.
+    - Quando um dispositivo é conectado a uma Edge Port, o switch _pula_ os estados de Discarding e Learning (os antigos Listening e Learning) e transiciona a porta **imediatamente** para o estado de _Forwarding_.
+
+As portas que _não_ são de borda (**Non-Edge Ports**) são aquelas que se conectam a outros switches. Essas portas, sim, devem passar pelo processo completo de negociação do RSTP para garantir uma topologia livre de loops. Essas portas Non-Edge são ainda subdivididas:
+
+- **Segmento Ponto-a-Ponto (Point-to-Point):** Um link Full-Duplex que conecta um switch a exatamente um outro switch. O RSTP usa um mecanismo rápido de "proposta e acordo" (proposal/agreement) para convergir esses links em menos de um segundo, sem usar os antigos temporizadores.
+- **Segmento Compartilhado (Shared):** Um link Half-Duplex, tipicamente conectado a um hub. Nesses segmentos, o RSTP perde sua vantagem de velocidade e reverte ao comportamento mais lento e timer-based do STP 802.1d para garantir a compatibilidade e evitar colisões.
+
+## MSTP (Multiple Spanning Tree Protocol)
+
+O RSTP resolveu o problema da _velocidade_ de convergência, mas ainda herdou um problema de _eficiência_ do STP: ambos os protocolos criam **uma única Spanning Tree** para toda a rede (para todas as VLANs).
+
+Imagine uma rede com dois links redundantes (Link A e Link B) e duas VLANs (Vendas e Engenharia). O STP/RSTP elegerá _um_ desses links como o caminho ativo e _bloqueará_ o outro (seja como Blocking ou Alternate) para _todas as VLANs_. Isso significa que o Link B, perfeitamente funcional, ficará ocioso, desperdiçando metade da largura de banda da rede.
+
+O **MSTP (Multiple Spanning Tree Protocol)**, padronizado como **IEEE 802.1s**, foi criado para resolver esse problema, permitindo o balanceamento de carga real em Camada 2.
+
+O MSTP permite que o administrador agrupe múltiplas VLANs em **"Instâncias" (MSTIs)**. Em vez de rodar uma única árvore para todas as VLANs, o MSTP roda uma instância separada do RSTP para cada _grupo_ de VLANs.
+
+- **Exemplo:**
+    - **Instância 1:** Agrupa as VLANs 10, 20, 30.
+    - **Instância 2:** Agrupa as VLANs 40, 50, 60.
+
+O administrador pode então configurar o MSTP para que a **Instância 1** use o **Link A** como caminho principal (e bloqueie o Link B) e a **Instância 2** use o **Link B** como principal (e bloqueie o Link A). O resultado é que _ambos os links_ são utilizados ativamente, cada um por um conjunto diferente de VLANs, alcançando um balanceamento de carga e o uso completo da infraestrutura.
+
+<div align="center">
+<img width="400px" src="./img/07-mstp.png">
+</div>
+
+O MSTP organiza os switches em **Regiões (MST Regions)**, como visto na figura. Uma região é um grupo de switches que compartilha a mesma configuração de instâncias e VLANs. Para o mundo exterior (outras regiões ou switches rodando RSTP), a região inteira do MSTP é vista como uma única "bridge" gigante, conectada por uma árvore comum (CST - Common Spanning Tree), garantindo a interoperabilidade.
+
+## Shortest Path Bridging (SPB)
+
+Embora o MSTP tenha otimizado o uso de links, ele ainda é complexo de configurar e se baseia na mesma premissa do STP: _bloquear_ portas para evitar loops. A evolução mais recente no controle de loops de Camada 2 abandona completamente essa ideia.
+
+O **Shortest Path Bridging (SPB)**, padronizado como **IEEE 802.1aq**, não é uma evolução do Spanning Tree; é um **substituto**.
+
+O SPB foi desenvolvido para operar em redes com topologia em **Malha (Mesh)**, onde existem múltiplos caminhos. Em vez de bloquear links, o SPB adota uma abordagem de "roteamento" em Camada 2. Ele usa um protocolo de estado de enlace (similar ao IS-IS, usado em roteamento de Camada 3) para "aprender" toda a topologia da rede.
+
+Com esse mapa completo, ele calcula o **caminho mais curto (shortest path)** para todos os destinos, permitindo o **balanceamento de carga real através de todos os caminhos possíveis**, sem bloquear nenhum link (a menos que seja absolutamente necessário).
+
+O SPB é significativamente mais eficiente, possui um tempo de convergência ainda mais rápido que o RSTP e aumenta a largura de banda efetiva da rede, pois todos os links podem ser usados simultaneamente.
+
+## Considerações Finais
+
+Neste capítulo, abordamos um dos desafios mais críticos e fundamentais da arquitetura de redes locais comutadas: o paradoxo da **redundância**. Vimos que, embora os links físicos redundantes sejam essenciais para a alta disponibilidade e resiliência da rede, eles são inerentemente perigosos para a lógica de encaminhamento da Camada 2, criando **loops** que resultam em **tempestades de broadcast** e instabilidade total da rede.
+
+Exploramos a solução clássica para esse problema, o **Spanning Tree Protocol (STP - 802.1d)**. Entendemos seu elegante algoritmo, que "desenha" uma árvore lógica sobre a topologia física, elegendo uma **Root Bridge** como referência e, em seguida, definindo os papéis de cada porta (**Root Port**, **Designated Port**) para construir um único caminho livre de loops. O preço dessa estabilidade, como vimos, é o bloqueio de portas redundantes e um tempo de convergência muito lento, que pode chegar a 50 segundos.
+
+Em seguida, acompanhamos a evolução desse protocolo para atender às demandas das redes modernas. Vimos como o **RSTP (802.1w)** revolucionou a convergência, reduzindo o tempo de falha para milissegundos ao introduzir novos papéis de porta, como a **Porta Alternativa**, e o conceito vital de **Edge Port**, que permite a conexão imediata de dispositivos finais.
+
+Avançamos para o **MSTP (802.1s)**, que resolveu o problema da eficiência. Em vez de bloquear links e desperdiçar largura de banda, o MSTP permite o **balanceamento de carga** em redes com múltiplas VLANs, criando diferentes instâncias de Spanning Tree que utilizam caminhos redundantes distintos. Por fim, vislumbramos o futuro com o **SPB (802.1aq)**, um protocolo que abandona a ideia de bloqueio e adota uma forma de "roteamento" em Camada 2 para utilizar todos os caminhos disponíveis em topologias de malha.
+
+Ao dominar os mecanismos que garantem uma topologia de Camada 2 estável e livre de loops, concluímos nossa exploração profunda da Camada de Acesso à Rede. Com a fundação de nossas redes locais agora sólida, rápida e resiliente, estamos prontos para subir na pilha de protocolos e focar no próximo grande desafio: como interconectar todas essas redes locais distintas para formar uma rede global. No próximo capítulo, entraremos no domínio da Camada de Internet e do Protocolo IP.
