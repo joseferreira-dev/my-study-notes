@@ -904,3 +904,52 @@ O **Wi-Fi Enhanced Open**, baseado na tecnologia **OWE (Opportunistic Wireless E
 
 O resultado é o melhor dos dois mundos para redes públicas: a facilidade de conexão de uma rede aberta, mas com a **confidencialidade** (criptografia) de uma rede segura. Cada usuário na rede aberta tem seu tráfego criptografado individualmente, impedindo que outros usuários no mesmo café possam espionar sua atividade.
 
+#### WPA3-Personal (SAE/Dragonfly)
+
+No modo Personal (doméstico ou de pequeno escritório), o WPA3 substitui definitivamente o antigo e vulnerável PSK (Pre-Shared Key) do WPA2 pelo protocolo **SAE (Simultaneous Authentication of Equals)**.
+
+O SAE é um protocolo de autenticação e acordo de chaves (um PAKE - _Password-Authenticated Key Exchange_) muito mais avançado, também conhecido pelo nome de seu protocolo de rascunho, "Dragonfly". Sua principal função é realizar um acordo de chaves efêmeras (temporárias), tipicamente usando criptografia de curva elíptica (ECDH - _Elliptic-curve Diffie-Hellman_), de uma forma que está "amarrada" à senha (passphrase) da rede, **sem jamais transmitir a senha pelo ar**.
+
+Este mecanismo, por si só, resolve as duas maiores falhas do WPA2-Personal:
+
+1. **Imunidade a Ataques de Dicionário Offline:** Como o _handshake_ do SAE exige que ambos os lados participem ativamente usando a senha para gerar as chaves da troca, torna-se computacionalmente inviável para um atacante capturar passivamente o tráfego e tentar adivinhar a senha offline. O atacante é forçado a interagir _online_ com o Ponto de Acesso (AP) para cada tentativa de senha, permitindo que o AP detecte e bloqueie ataques de força bruta.
+2. **Sigilo Adiante (Forward Secrecy):** A senha é usada para autenticar a troca, mas as chaves de criptografia de dados são geradas dinamicamente (efêmeras). Isso significa que, mesmo que a senha principal seja comprometida no futuro, um atacante não pode usá-la para descriptografar o tráfego que ele possa ter gravado no passado.
+
+Na prática, cada associação de cliente executa o SAE para derivar um segredo mestre compartilhado (a PMK). Em seguida, o 4-Way Handshake (similar ao do WPA2, mas agora seguro contra KRACK) é executado para instalar as chaves de tráfego (tipicamente AES-CCMP-128).
+
+##### PMF (Protected Management Frames)
+
+Uma segunda grande melhoria, que o WPA3 torna **obrigatória**, é o **PMF (Protected Management Frames)**, padronizado no **IEEE 802.11w**.
+
+O PMF é a proteção criptográfica dos quadros de gerenciamento do Wi-Fi (como os quadros de Desautenticação e Desassociação). Em redes WPA2, esses quadros não eram criptografados, permitindo um ataque clássico de _deauth spoofing_, onde um atacante falsifica um quadro de desautenticação e o envia para um cliente (fingindo ser o AP), "expulsando" o cliente da rede.
+
+O PMF impede esses ataques, pois agora os quadros de gerenciamento são protegidos com integridade e autenticidade (usando algoritmos como BIP-CMAC). Isso evita que um atacante possa falsificar esses quadros e perturbar a conexão dos clientes.
+
+Em ambientes residenciais, o WPA3-Personal preserva a simplicidade do modelo "uma senha para todos", mas com um salto gigantesco de segurança. Ainda assim, a robustez da rede depende da qualidade da senha escolhida, pois senhas fracas (como "12345678") continuam sujeitas a ataques de força bruta online (embora sejam muito mais lentos e detectáveis).
+
+Para compatibilidade durante a migração, muitos controladores oferecem um _transition mode_ (modo de transição), que permite que um mesmo SSID aceite conexões WPA2 e WPA3 simultaneamente. No entanto, esse arranjo não é ideal, pois amplia a superfície de ataque, permitindo que um atacante force um cliente WPA3 a se conectar usando o WPA2 mais fraco (ataque de _downgrade_). A orientação é usar o modo de transição apenas como uma ponte temporária, com prazo para a desativação do WPA2.
+
+#### WPA3-Enterprise (802.1X/EAP)
+
+No modo Enterprise, o Wi-Fi abandona senhas compartilhadas e passa a autenticar cada dispositivo ou usuário individualmente. O WPA3-Enterprise continua usando a mesma arquitetura robusta do WPA2-Enterprise: a autenticação é feita via **802.1X/EAP** contra uma infraestrutura centralizada de **AAA/RADIUS**.
+
+O WPA3-Enterprise estabelece a identidade individual do usuário ou dispositivo e permite a aplicação de políticas granulares (como atribuição dinâmica de VLANs ou Listas de Controle de Acesso) antes que o 4-Way Handshake instale as chaves de dados. Assim como no modo Personal, o **PMF (802.11w) é obrigatório**.
+
+A principal evolução aqui é o endurecimento dos requisitos criptográficos. O WPA3-Enterprise define dois perfis de segurança:
+
+1. **Perfil Padrão (Baseline):** Usa criptografia forte AES-CCMP-128, similar ao WPA2, mas com a proteção PMF obrigatória.
+2. **Perfil de 192 bits (192-bit Security Suite):** Para ambientes de altíssima segurança (governo, finanças, saúde), o WPA3-Enterprise oferece um modo opcional que eleva todos os parâmetros criptográficos, exigindo:
+    - **AKM (Autenticação e Gerenciamento de Chave)** usando hashes mais fortes (HMAC-SHA384).
+    - **Criptografia de Curva Elíptica** mais forte (curvas P-384) para a troca de chaves.
+    - **Criptografia de Dados** usando **AES-GCMP-256** (em vez do CCMP-128).
+
+> **O que é AKM?**
+> 
+> AKM (Authentication and Key Management) é o componente do padrão de segurança (RSN/802.11i) que define como a estação e o AP se autenticam e como as chaves de sessão (PMK, PTK) são derivadas e instaladas para o 4-Way Handshake. Em outras palavras, o AKM especifica o método de autenticação (ex: PSK, 802.1X/EAP, SAE) e os esquemas de gerenciamento de chaves, determinando a segurança efetiva do enlace.
+
+Na prática, o método EAP recomendado para WPA3-Enterprise continua sendo o **EAP-TLS**, que elimina totalmente o uso de senhas em favor de certificados digitais no lado do cliente, viabilizando controle de acesso por identidade, verificação de postura (se o dispositivo está atualizado e seguro) e segmentação dinâmica da rede.
+
+O sucesso operacional de uma implementação Enterprise depende de uma Infraestrutura de Chave Pública (**PKI**) bem gerenciada para a emissão e revogação dos certificados, e de um processo de _onboarding_ seguro para registrar novos dispositivos (seja via SCEP/EST, MDM ou outros métodos).
+
+Em termos de arquitetura de rede, a distinção é direta: o WPA3-Enterprise provê autenticação de identidade forte, autorização granular, é escalável e auditável, enquanto o WPA3-Personal prioriza a simplicidade com segurança robusta.
+
