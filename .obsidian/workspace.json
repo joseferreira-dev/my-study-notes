@@ -13,26 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "redes-de-computadores/contents/07-protocolos-stp-e-rstp.md",
+                "file": "redes-de-computadores/contents/08-vlans.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07-protocolos-stp-e-rstp"
-            }
-          },
-          {
-            "id": "eecb7d7adffd6505",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "legislacao/contents/legislacao-cremepe.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "legislacao-cremepe"
+              "title": "08-vlans"
             }
           }
         ]
@@ -156,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "redes-de-computadores/contents/07-protocolos-stp-e-rstp.md",
+                "file": "redes-de-computadores/contents/08-vlans.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 07-protocolos-stp-e-rstp"
+              "title": "Sumário de 08-vlans"
             }
           }
         ],
@@ -185,21 +171,23 @@
   },
   "active": "ae51e09d68f1648d",
   "lastOpenFiles": [
-    "legislacao/contents/legislacao-cremepe.md",
+    "redes-de-computadores/contents/img/08-vlan-8021p.png",
+    "redes-de-computadores/contents/img/08-vlan-trill.png",
+    "redes-de-computadores/contents/img/08-vlan-tag.png",
     "redes-de-computadores/contents/07-protocolos-stp-e-rstp.md",
+    "redes-de-computadores/contents/08-vlans.md",
+    "legislacao/contents/legislacao-cremepe.md",
+    "redes-de-computadores/contents/img/08-vlan-comunicacao-completa.png",
+    "redes-de-computadores/contents/img/08-vlan-configuracao.png",
     "redes-de-computadores/contents/img/07-mstp.png",
     "redes-de-computadores/contents/img/07-rstp-bordas-da-rede.png",
     "redes-de-computadores/contents/img/07-rstp.png",
     "redes-de-computadores/contents/img/07-stp-notificacoes-tc.png",
     "redes-de-computadores/contents/img/07-stp-notificacoes-tca-e-tcn.png",
     "redes-de-computadores/contents/img/07-stp-rede-convergida.png",
-    "redes-de-computadores/contents/img/07-stp-bridge-id.png",
-    "redes-de-computadores/contents/img/07-stp-links-redundantes.png",
-    "redes-de-computadores/contents/img/07-stp.png",
     "redes-de-computadores/contents/06-protocolos-de-acesso-a-rede.md",
     "informatica-basica/contents/04-intranet-e-extranet.md",
     "informatica-basica/contents/03-internet.md",
-    "legislacao/contents/img/cremepe-lei-3268-regimento-atas.png",
     "legislacao/contents/09-decreto-11529.md",
     "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
     "redes-de-computadores/contents/03-equipamentos-de-rede.md",
@@ -219,7 +207,6 @@
     "engenharia-de-software/contents/05-rup.md",
     "bancos-de-dados/contents/02-modelos-e-normalizacao.md",
     "bancos-de-dados/contents/02-resumo.md",
-    "bancos-de-dados/contents/03-algebra-relacional.md",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
     "seguranca-da-informacao/contents/img",

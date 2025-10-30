@@ -2451,13 +2451,3 @@ O resto é tudo procedimento:
 > 
 > Art. 87. O presente Regimento deverá ser aprovado pelo CFM e entrará em vigor na data de sua publicação.
 
-
-
-
-
-
-
-
-
-
-
