@@ -672,3 +672,86 @@ Como já falamos, o WEP possui vulnerabilidades críticas que o tornam obsoleto.
 3. **Possibilidade de Manipulação do CRC32:** O CRC32 (usado como Hash/ICV) é uma verificação de integridade, mas não de autenticidade, e possui uma natureza linear. Isso permite que um atacante manipule bits específicos no texto cifrado e, ao mesmo tempo, "corrija" o CRC32 cifrado para que a alteração passe despercebida pelo receptor. Isso representa uma quebra total do princípio da integridade.
 4. **Softwares de Quebra:** Ferramentas como **airSnort** e **WepCrack** automatizaram esses ataques, permitindo que qualquer pessoa com um notebook e o software correto pudesse "quebrar" uma rede WEP em questão de minutos.
 
+### WPA (Wi-Fi Protected Access)
+
+As vulnerabilidades catastróficas do WEP não eram apenas teóricas; elas eram ativamente exploradas, tornando as redes sem fio inseguras. A indústria precisava de uma solução rápida. O padrão IEEE **802.11i** estava sendo desenvolvido para ser a solução de segurança robusta e de longo prazo, mas ainda não estava finalizado.
+
+Como uma medida provisória para corrigir as falhas do WEP, a Wi-Fi Alliance criou o **WPA (Wi-Fi Protected Access)**. O WPA foi lançado como um novo algoritmo, baseado em um rascunho (draft) da especificação IEEE 802.11i. Ele não implementava todos os recursos do 802.11i (que se tornaria o WPA2), mas sim um subconjunto focado em corrigir as falhas mais graves do WEP.
+
+O grande trunfo do WPA foi ser projetado para rodar no _mesmo hardware_ que usava o WEP, permitindo uma atualização de segurança via software (firmware) sem a necessidade de trocar os Access Points e placas de rede.
+
+O WPA introduziu três avanços cruciais sobre o WEP:
+
+1. **Confidencialidade (Criptografia):** Substituiu a chave estática do WEP pelo **TKIP (Temporal Key Integrity Protocol)**. O TKIP ainda usava o algoritmo RC4 (para manter a compatibilidade com o hardware WEP), mas gerava **chaves dinâmicas por pacote**.
+2. **Verificação de Integridade:** Substituiu o fraco CRC-32 do WEP pelo **MIC (Message Integrity Check)**, um mecanismo muito mais robusto que impede a manipulação de pacotes.
+3. **Autenticação:** Integrou formalmente o padrão **802.1X/EAP** para autenticação em nível empresarial, abandonando o inseguro WEP Shared Key.
+
+Além disso, o WPA aumentou o tamanho do Vetor de Inicialização (IV) de 24 bits para **48 bits**, eliminando a vulnerabilidade de reutilização do IV que assolava o WEP.
+
+#### WPA Personal vs. WPA Enterprise
+
+O WPA também introduziu a divisão de modos de segurança que usamos até hoje:
+
+- **WPA-Personal (ou WPA-PSK):** Este é o modelo que utilizamos em ambientes domésticos e pequenos escritórios. Ele utiliza uma **PSK (Pre-Shared Key)**, ou seja, uma "senha" padrão (com 8 a 63 caracteres) que é configurada no Access Point e em todos os dispositivos clientes para acesso à rede sem fio.
+- **WPA-Enterprise (ou WPA-EAP):** Este modo não usa uma senha compartilhada. Ele implementa a arquitetura **802.1X** completa, onde cada usuário possui credenciais únicas (como login e senha de rede) que são validadas por um servidor central (RADIUS). As chaves de criptografia são geradas dinamicamente e são específicas para cada usuário e cada sessão. Como o próprio nome sugere, é o modo utilizado em ambientes empresariais.
+
+Ambas as versões (Personal e Enterprise) podem ser utilizadas tanto para o WPA quanto para seu sucessor, o WPA2.
+
+> **Uma Nota sobre o WPS (Wi-Fi Protected Setup):**
+> 
+> Para simplificar o processo de conexão em redes WPA-Personal, foi criado um método alternativo conhecido como WPS. Em vez de digitar a senha longa, o WPS permite que um usuário se conecte pressionando um botão no roteador ou digitando um PIN de 8 dígitos. Embora tenha sido criado para fortalecer e simplificar o processo, o WPS trouxe uma grande falha de segurança consigo (especificamente no processo de recuperação do PIN), tornando-o vulnerável a ataques de força bruta, sendo hoje uma prática recomendada desabilitá-lo.
+
+#### Handshake do WPA-PSK (4-Way Handshake)
+
+Vamos focar no funcionamento do WPA-Personal (PSK). A parte de conexão é superficialmente parecida com a do WEP Shared Key, mas provê uma segurança imensamente superior ao **não transmitir pelo ar** nem a chave mestra (PMK), nem a chave de sessão (PTK).
+
+Este processo, conhecido como "4-Way Handshake" (negociação de 4 vias), ocorre _após_ o suplicante se associar ao Ponto de Acesso. Ele envolve dois atores: o Suplicante e o Ponto de Acesso.
+
+A chave pré-compartilhada (a "senha" do Wi-Fi) é usada como a **PMK (Primary Master Key)**. O objetivo do handshake não é trocar a PMK (pois ambos já a possuem), mas sim _provar_ que ambos a possuem (sem revelá-la) e, a partir dela, gerar um novo conjunto de chaves dinâmicas para a sessão.
+
+O fluxo é o seguinte:
+
+<div align="center">
+<img width="400px" src="./img/09-wap-fluxo.png">
+</div>
+
+1. O Ponto de Acesso (AP) envia para o Suplicante um número aleatório chamado **ANonce** ("Nonce do Autenticador").
+2. O Suplicante, ao receber o ANonce, gera seu próprio número aleatório, o **SNonce** ("Nonce do Suplicante").
+3. O Suplicante agora possui todos os ingredientes: a **PMK** (que ele já sabia), o **ANonce** (que ele recebeu) e o **SNonce** (que ele gerou). Ele combina esses valores e calcula a chave principal desta sessão: a **PTK (Pairwise Transient Key)**.
+4. O Suplicante envia uma mensagem ao AP contendo o **SNonce** (em texto claro) e um **MIC** (calculado usando a chave KCK, que é parte da PTK). Este MIC funciona como uma assinatura da mensagem, provando ao AP que o Suplicante possui a PMK.
+5. O AP recebe o SNonce. Agora, ele também possui a PMK, o ANonce e o SNonce. Ele calcula a _sua própria_ cópia da **PTK** e a usa para verificar o MIC enviado pelo Suplicante. Se o MIC for válido, o Suplicante está autenticado.
+6. O AP então envia a **GTK (Group Temporal Key)** para o Suplicante. A GTK é a chave que será usada para criptografar o tráfego de broadcast/multicast da rede. Esta mensagem (Msg) é criptografada usando a chave KEK (parte da PTK) e assinada com um MIC (usando a KCK).
+7. O Suplicante recebe a mensagem, valida o MIC e usa sua KEK para descriptografar a GTK.
+8. O Suplicante envia um **ACK** final, e a porta é aberta para o tráfego de dados.
+
+#### Hierarquia de Chaves do WPA/WPA2
+
+Como vimos no fluxo, o WPA não usa uma única chave, mas uma hierarquia delas. A **PMK** (a senha ou o resultado do 802.1X) nunca é usada diretamente para criptografar dados. Ela é usada apenas para gerar a **PTK (Pairwise Transient Key)**, que é a chave da sessão.
+
+A PTK (geralmente de 512 bits) é, por sua vez, "fatiada" em várias chaves menores com propósitos específicos:
+
+- **KCK (Key Confirmation Key):** Usada para calcular o **MIC** nas mensagens do handshake. Sua função é _autenticar_ e provar a posse da PMK.
+- **KEK (Key Encryption Key):** Usada para _criptografar_ outras chaves (como a GTK) quando elas precisam ser transportadas com segurança durante o handshake.
+- **TEK (Temporal Encryption Key):** Esta é a chave (ex: 128 bits) que será efetivamente usada pelo algoritmo de criptografia (TKIP/RC4 no WPA, AES no WPA2) para criptografar os dados do usuário.
+- **TMK (Temporal MIC Key):** Chave usada para gerar o MIC (assinatura) nos pacotes de _dados_ reais. (Nota: Em muitas implementações, esta função é combinada ou derivada da KCK).
+
+#### Criptografia: TKIP (Temporal Key Integrity Protocol)
+
+Para manter a compatibilidade com o hardware WEP, o WPA utilizou o algoritmo de criptografia RC4, mas o "envolveu" com o **TKIP**. O TKIP conserta as falhas do WEP:
+
+1. Ele usa uma chave base de 128 bits (a TEK).
+2. Ele combina essa TEK com o IV de 48 bits e o endereço MAC do transmissor, usando uma função de _hash_ (Fase 1 e Fase 2, como descrito nas anotações), para gerar a chave RC4 final de 128 bits (104 bits de chave + 24 bits de IV para o RC4).
+3. O resultado é que **cada pacote é criptografado com uma chave RC4 única e dinamicamente gerada**, eliminando a vulnerabilidade de chave estática e reutilização de IV do WEP.
+
+#### Integridade: MIC (Message Integrity Check)
+
+O TKIP também introduziu um mecanismo de integridade robusto para substituir o CRC-32 do WEP, chamado **MIC**, ou apelidado de "Michael".
+
+<div align="center">
+<img width="300px" src="./img/09-wap-mic.png">
+</div>
+
+O MIC foi criado para combater a fragilidade do WEP que permitia a manipulação do CRC-32. O MIC é uma "assinatura" criptográfica (um _hash_ com chave) calculada sobre a mensagem, usando uma chave secreta (a TMK, derivada da PTK).
+
+Como a imagem ilustra, o algoritmo "Michael" pega os endereços MAC (origem e destino), a mensagem e a chave de integridade (TMK) como entrada. A saída é o valor do MIC. Como um atacante não possui a TMK, ele não pode alterar a mensagem e gerar um novo MIC válido, garantindo a integridade dos dados. Este processo é totalmente independente do Vetor de Inicialização.
+
