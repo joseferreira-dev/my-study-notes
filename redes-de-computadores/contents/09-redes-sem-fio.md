@@ -996,6 +996,15 @@ Os dispositivos compatíveis com OWE serão instruídos (através de um _Informa
 
 Em ambientes de rede modernos, especialmente com a introdução da faixa de **6 GHz (Wi-Fi 6E)**, os padrões WPA2 e abertos tradicionais são desabilitados, e o uso de **WPA3 ou Enhanced Open (OWE) é obrigatório**.
 
+##### Análise da Comparação: SAE vs. OWE
+
+A escolha entre **SAE (WPA3-Personal)** e **OWE (Enhanced Open)** é uma das decisões de arquitetura mais importantes em redes modernas que não utilizam um servidor RADIUS.
+
+- **SAE (Dragonfly)** foi projetado para **autenticação baseada em senha**. Ele substitui o PSK do WPA2 por um PAKE (Password-Authenticated Key Exchange) robusto. Sua maior vitória é a resistência à captura offline, pois força um atacante a realizar tentativas de senha _on-line_, interagindo com o AP a cada tentativa. Além disso, provê _forward secrecy_. É a escolha ideal para residências e pequenas empresas. Sua principal limitação é que a segurança ainda depende de uma senha forte; senhas fracas continuam vulneráveis a ataques de força bruta on-line.
+- **OWE (Enhanced Open)** foi projetado para **privacidade sem senha**. Ele não substitui o SAE ou o 802.1X, pois não _autentica_ o usuário ou o dispositivo. Seu objetivo é consertar as redes "abertas" clássicas, que eram vulneráveis à escuta passiva (_sniffing_). O OWE eleva muito a barra contra observadores no mesmo salão, pois cada cliente criptografa seu tráfego individualmente.
+
+No entanto, como o OWE não valida a identidade do Ponto de Acesso, ele continua vulnerável a ataques ativos de **Evil Twin (Gêmeo Maligno)**. Um atacante pode enganar um cliente para que ele se conecte a um AP falso. Para mitigar isso, são necessárias camadas adicionais de segurança, como: (a) detecção de APs falsos (Rogue AP Detection) no controlador da rede, (b) divulgação institucional clara do SSID correto e (c) o uso de VPNs ou TLS pelas aplicações dos usuários.
+
 ##### Comparativo Detalhado dos Modos WPA3
 
 Compreendidos os três pilares do WPA3 (Personal/SAE, Enterprise/802.1X e Enhanced Open/OWE), é crucial consolidar as diferenças de arquitetura, os casos de uso e as garantias de segurança que cada um oferece. Cada modo foi projetado para resolver um problema de segurança específico, e a escolha incorreta pode levar a uma falsa sensação de segurança ou a uma complexa sobrecarga de gerenciamento.
@@ -1021,12 +1030,81 @@ A tabela a seguir apresenta um comparativo detalhado das três frentes de segura
 | **Limitações chave**                              | Não autentica → vulnerável a APs falsos                                              | Senha fraca ainda permite brute force on-line                             | Maior complexidade operacional (PKI, RADIUS, EAP)                              |
 | **Boas práticas**                                 | Anunciar "Enhanced Open", usar OWE-Transition na migração, monitorar rogues          | Senhas longas; evitar transition prolongado; habilitar H2E                | Preferir EAP-TLS; PKI bem gerida; segmentação (VLAN/ACL)                       |
 
-##### Análise da Comparação: SAE vs. OWE
+## Outros Padrões de Redes Sem Fio
 
-A escolha entre **SAE (WPA3-Personal)** e **OWE (Enhanced Open)** é uma das decisões de arquitetura mais importantes em redes modernas que não utilizam um servidor RADIUS.
+Embora o padrão 802.11 (Wi-Fi) domine o cenário das Redes Locais Sem Fio (WLANs), ele não é a única tecnologia de comunicação sem fio. O IEEE define um conjunto de outros padrões para diferentes necessidades, mais notavelmente para a **WPAN (Wireless Personal Area Network)**, ou Rede de Área Pessoal Sem Fio.
 
-- **SAE (Dragonfly)** foi projetado para **autenticação baseada em senha**. Ele substitui o PSK do WPA2 por um PAKE (Password-Authenticated Key Exchange) robusto. Sua maior vitória é a resistência à captura offline, pois força um atacante a realizar tentativas de senha _on-line_, interagindo com o AP a cada tentativa. Além disso, provê _forward secrecy_. É a escolha ideal para residências e pequenas empresas. Sua principal limitação é que a segurança ainda depende de uma senha forte; senhas fracas continuam vulneráveis a ataques de força bruta on-line.
-- **OWE (Enhanced Open)** foi projetado para **privacidade sem senha**. Ele não substitui o SAE ou o 802.1X, pois não _autentica_ o usuário ou o dispositivo. Seu objetivo é consertar as redes "abertas" clássicas, que eram vulneráveis à escuta passiva (_sniffing_). O OWE eleva muito a barra contra observadores no mesmo salão, pois cada cliente criptografa seu tráfego individualmente.
+Enquanto uma WLAN (Wi-Fi) é projetada para cobrir uma casa ou um escritório, uma WPAN é projetada para um alcance muito menor, tipicamente a "bolha" de conectividade em torno de um único indivíduo (ex: conectar um fone de ouvido a um celular, ou um mouse a um computador).
 
-No entanto, como o OWE não valida a identidade do Ponto de Acesso, ele continua vulnerável a ataques ativos de **Evil Twin (Gêmeo Maligno)**. Um atacante pode enganar um cliente para que ele se conecte a um AP falso. Para mitigar isso, são necessárias camadas adicionais de segurança, como: (a) detecção de APs falsos (Rogue AP Detection) no controlador da rede, (b) divulgação institucional clara do SSID correto e (c) o uso de VPNs ou TLS pelas aplicações dos usuários.
+### IEEE 802.15: Padrão das WPANs
+
+O padrão IEEE 802.15 é o guarda-chuva que define os mecanismos para as Redes de Área Pessoal Sem Fio (WPAN). Uma peculiaridade desse padrão é que ele é dividido em vários "grupos de trabalho" (Task Groups - TG), que definem formas de implementação distintas para atender a necessidades diversas, sendo trabalhados como extensões do padrão.
+
+O padrão IEEE 802.15 pode ser dividido em dois grandes grupos de taxas de transmissão:
+
+- **TG4 (Low Rate WPAN):** Focado em baixíssimas taxas de transferência (variando de 20 Kbps a 250 Kbps) e baixo consumo de energia. O padrão 802.15.4 (ZigBee) é o principal exemplo.
+- **TG3 (High Rate WPAN):** Focado em taxas de transferência mais altas para WPAN (variando de 11 Mbps a 55 Mbps).
+
+Um dos subgrupos mais famosos e universalmente adotados é o padrão **802.15.1**, que define a forma de utilização da tecnologia **Bluetooth** para o enlace.
+
+#### Bluetooth (Padrão 802.15.1)
+
+O Bluetooth foi projetado desde o início com características muito específicas: **baixo custo**, **pouco alcance** (tipicamente 10 metros), **baixa potência** (essencial para dispositivos a bateria) e **baixas taxas de transferência** (em suas versões clássicas), mas com enorme **facilidade de utilização e implementação**.
+
+Ele opera na faixa de frequência de **2,4 GHz**, a mesma do Wi-Fi 802.11b/g/n, o que pode gerar interferência. Para gerenciar o acesso ao meio, ele utiliza uma técnica de multiplexação por divisão no tempo **(TDM)** e saltos de frequência (**FHSS**), como vimos anteriormente.
+
+##### Arquitetura Bluetooth: Piconet
+
+O Bluetooth não depende de uma infraestrutura e um ponto central para o seu funcionamento (como um AP Wi-Fi). Seus dispositivos são organizados em pequenas redes **ad-hoc** chamadas **Piconets**. Esse arranjo traz a sua caracterização como redes do tipo Pessoal (PAN).
+
+Para organizar a transmissão de dados e a ocupação do meio, cada Piconet designa um equipamento como **"Mestre" (Master)**. Todos os demais dispositivos são chamados de **"Escravos" (Slaves)**.
+
+- O dispositivo **Mestre** é aquele que _inicia_ a conexão e define o relógio (clock) e o padrão de salto de frequência (FHSS) que todos os escravos deverão seguir.
+- Os dispositivos **Escravos** apenas "escutam" o mestre e só podem transmitir quando solicitados por ele, dentro do esquema TDM.
+
+<div align="center">
+<img width="450px" src="./img/09-bluetooth-piconet.png">
+</div>
+
+Como a imagem acima ilustra, uma Piconet pode ser uma simples conexão 1-para-1 (como um celular e um fone) ou uma conexão 1-para-muitos (como um computador conectado a um mouse, teclado e impressora).
+
+Um detalhe importante é que uma Piconet é formada por **até 7 nós escravos _ativos_**, além do nó mestre. Essa limitação existe porque o cabeçalho do pacote Bluetooth usa um endereço de 3 bits para identificar os escravos ativos (2³ = 8, sendo um endereço reservado e os outros 7 para os escravos).
+
+Para suportar mais dispositivos, uma Piconet pode ter até **255 nós escravos _estacionados_ (parked)**. Esses nós possuem um endereço de 8 bits, não participam ativamente do tráfego, mas permanecem sincronizados com o mestre e podem ser "acordados" rapidamente.
+
+##### Interconexão de Piconets: Scatternet
+
+A sobreposição de mais de uma Piconet pode gerar redes mais complexas, do tipo **Scatternet**, conforme ilustrado abaixo.
+
+<div align="center">
+<img width="400px" src="./img/09-bluetooth-scatternet.png">
+</div>
+
+Uma Scatternet é uma coleção de Piconets interconectadas. A regra fundamental de interconexão é que o ponto de sobreposição (o "nó ponte") deve ser um nó do tipo **Escravo** em pelo menos uma das redes (ou em ambas). Um dispositivo pode ser Mestre em apenas uma Piconet, mas pode ser Escravo em múltiplas Piconets simultaneamente.
+
+O nó que atua como ponte (ex: um smartphone que é Mestre para um fone de ouvido, mas ao mesmo tempo é Escravo de um notebook) depende de multiplexação no tempo para conseguir participar de ambas as redes, alternando sua comunicação entre as duas.
+
+##### Estados de Baixa Energia (Power Modes)
+
+Como o Bluetooth foi projetado para dispositivos a bateria, o gerenciamento de energia é crucial. Um nó escravo que não está ativamente transmitindo pode entrar em um dos três estados de baixa energia:
+
+- **Sniff:** O modo de economia mais "leve". O escravo dorme, mas acorda em intervalos pré-definidos (ex: a cada 100ms) para "cheirar" (sniff) se o mestre tem algo para ele. É usado por mouses e teclados, que precisam de resposta rápida, mas não contínua. Consome menos energia que o estado `Hold`.
+- **Hold:** O dispositivo permanece inativo (dormindo) por um período de tempo maior e pré-negociado com o Mestre, sem precisar "cheirar" o meio. É útil quando não se espera tráfego por um período conhecido.
+- **Park:** É o modo de menor custo de energia. O nó escravo abandona seu endereço ativo de 3 bits e recebe um endereço de 8 bits (o endereço de "estacionado"). Ele se dessincroniza parcialmente, não participando de nenhum tráfego, mas permanece "inserido" na rede, podendo ser reativado pelo Mestre (embora com uma latência maior que o modo Sniff).
+
+#### ZigBee (Padrão 802.15.4)
+
+Um outro padrão da família WPAN que eventualmente aparece é o **ZigBee**. O ZigBee é um protocolo de comunicação que utiliza a estrutura de camada física e MAC definida no padrão **IEEE 802.15.4**.
+
+O foco do ZigBee não é a velocidade, mas sim o desenvolvimento de uma rede sem fio **confiável**, **auto-organizável (mesh)**, de **baixíssima potência** e **baixas taxas de transmissão**.
+
+A sua taxa de operação é enquadrada _abaixo_ do Bluetooth, como podemos ver na imagem a seguir, com um alcance que pode ser semelhante ou até maior (dependendo da potência).
+
+<div align="center">
+<img width="500px" src="./img/09-taxa-de-transmissao.png">
+</div>
+
+O gráfico acima posiciona as principais tecnologias sem fio. Vemos que o **ZigBee** se situa no canto inferior esquerdo (taxa lenta, alcance curto/médio). O **Bluetooth** oferece uma taxa de transmissão mais rápida, com alcance similar. O **Wi-Fi** oferece taxas e alcances muito superiores a ambos. E o **UWB (Ultra-Wideband)** oferece taxas altíssimas, mas com alcance muito curto.
+
+Esse perfil (baixa taxa, baixa potência) torna o ZigBee a tecnologia ideal para **Redes de Sensores** e **Internet das Coisas (IoT)**. Ele é usado em aplicações onde a bateria precisa durar meses ou anos e a quantidade de dados enviada é minúscula, como em lâmpadas inteligentes, interruptores, termostatos e sensores industriais.
 
