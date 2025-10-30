@@ -885,7 +885,7 @@ O WPA3 também eleva o padrão mínimo de criptografia, aumentando a robustez co
         - Criptografia da sessão com GCMP-256.
         - Hashing com HMAC-SHA384.
 
-### Três Pilares do WPA3
+#### Três Pilares do WPA3
 
 Trazendo uma outra abordagem ou perspectiva dos tipos de segurança aplicados às redes sem fio, podemos resumir os modos de segurança em dois grandes grupos:
 
@@ -904,7 +904,7 @@ O **Wi-Fi Enhanced Open**, baseado na tecnologia **OWE (Opportunistic Wireless E
 
 O resultado é o melhor dos dois mundos para redes públicas: a facilidade de conexão de uma rede aberta, mas com a **confidencialidade** (criptografia) de uma rede segura. Cada usuário na rede aberta tem seu tráfego criptografado individualmente, impedindo que outros usuários no mesmo café possam espionar sua atividade.
 
-#### WPA3-Personal (SAE/Dragonfly)
+##### WPA3-Personal (SAE/Dragonfly)
 
 No modo Personal (doméstico ou de pequeno escritório), o WPA3 substitui definitivamente o antigo e vulnerável PSK (Pre-Shared Key) do WPA2 pelo protocolo **SAE (Simultaneous Authentication of Equals)**.
 
@@ -917,7 +917,7 @@ Este mecanismo, por si só, resolve as duas maiores falhas do WPA2-Personal:
 
 Na prática, cada associação de cliente executa o SAE para derivar um segredo mestre compartilhado (a PMK). Em seguida, o 4-Way Handshake (similar ao do WPA2, mas agora seguro contra KRACK) é executado para instalar as chaves de tráfego (tipicamente AES-CCMP-128).
 
-##### PMF (Protected Management Frames)
+###### PMF (Protected Management Frames)
 
 Uma segunda grande melhoria, que o WPA3 torna **obrigatória**, é o **PMF (Protected Management Frames)**, padronizado no **IEEE 802.11w**.
 
@@ -929,7 +929,7 @@ Em ambientes residenciais, o WPA3-Personal preserva a simplicidade do modelo "um
 
 Para compatibilidade durante a migração, muitos controladores oferecem um _transition mode_ (modo de transição), que permite que um mesmo SSID aceite conexões WPA2 e WPA3 simultaneamente. No entanto, esse arranjo não é ideal, pois amplia a superfície de ataque, permitindo que um atacante force um cliente WPA3 a se conectar usando o WPA2 mais fraco (ataque de _downgrade_). A orientação é usar o modo de transição apenas como uma ponte temporária, com prazo para a desativação do WPA2.
 
-#### WPA3-Enterprise (802.1X/EAP)
+##### WPA3-Enterprise (802.1X/EAP)
 
 No modo Enterprise, o Wi-Fi abandona senhas compartilhadas e passa a autenticar cada dispositivo ou usuário individualmente. O WPA3-Enterprise continua usando a mesma arquitetura robusta do WPA2-Enterprise: a autenticação é feita via **802.1X/EAP** contra uma infraestrutura centralizada de **AAA/RADIUS**.
 
@@ -952,4 +952,81 @@ Na prática, o método EAP recomendado para WPA3-Enterprise continua sendo o **E
 O sucesso operacional de uma implementação Enterprise depende de uma Infraestrutura de Chave Pública (**PKI**) bem gerenciada para a emissão e revogação dos certificados, e de um processo de _onboarding_ seguro para registrar novos dispositivos (seja via SCEP/EST, MDM ou outros métodos).
 
 Em termos de arquitetura de rede, a distinção é direta: o WPA3-Enterprise provê autenticação de identidade forte, autorização granular, é escalável e auditável, enquanto o WPA3-Personal prioriza a simplicidade com segurança robusta.
+
+##### OWE (Enhanced Open) - Criptografia para Redes Abertas
+
+Finalmente, o WPA3 aborda o "terceiro pilar" da segurança Wi-Fi, um problema que existia desde o início da tecnologia: as **redes abertas**. Historicamente, uma rede "aberta" (como em um café, aeroporto ou praça) não exigia senha, mas isso significava que ela também não oferecia **nenhuma criptografia**. Todo o tráfego era enviado em texto claro, permitindo que qualquer pessoa no mesmo local pudesse "farejar" (_sniffar_) o tráfego e capturar senhas, cookies de sessão e outras informações sensíveis (um ataque conhecido como _side-jacking_).
+
+O WPA3 introduz o **Wi-Fi Enhanced Open**, que utiliza a tecnologia **OWE (Opportunistic Wireless Encryption)**. O objetivo do OWE é genial em sua simplicidade: manter a experiência de usuário de uma rede aberta (sem necessidade de digitar senha), mas, ao mesmo tempo, fornecer criptografia robusta e individualizada para cada usuário.
+
+<div align="center">
+<img width="400px" src="./img/09-wap3-owe.png">
+</div>
+
+Como visto na imagem de configuração de um Access Point moderno, "OWE" agora aparece como uma opção de proteção, distinta dos modos PSK.
+
+###### Fluxo de Conexão OWE
+
+Para entender como o OWE funciona, é preciso saber o que ele _não_ faz: ele não autentica o usuário. A autenticação ainda é "Open System". Em vez disso, o OWE insere de forma "oportunista" um acordo de chaves durante o processo de associação.
+
+O fluxo ocorre da seguinte maneira:
+
+1. **Descoberta:** O dispositivo cliente (suplicante) envia quadros de sonda (_probe request_) e o AP responde (_probe response_), ou o cliente simplesmente ouve os _beacons_ do AP. Nesses quadros, o AP anuncia que o SSID suporta OWE.
+2. **Autenticação (Aberta):** O cliente realiza a autenticação "Open System" com o AP, que, como vimos no WEP, é uma formalidade que não valida identidade.
+3. **Associação (A "Mágica" do OWE):** Durante o processo de _associação_ (Association), o cliente e o AP executam um **Elliptic-Curve Diffie-Hellman Ephemeral (ECDHE)**. Esta é uma troca de chaves criptográficas que permite que ambos os lados derivem um segredo compartilhado (uma PMK) sem nunca enviá-lo pelo ar.
+4. **4-Way Handshake:** Após a associação bem-sucedida e com uma PMK agora estabelecida, a pilha 802.11 executa o 4-Way Handshake (assim como no WPA2/WPA3) para instalar as chaves de tráfego (PTK e GTK).
+
+O resultado é que cada usuário conectado à rede "aberta" tem seu tráfego de dados **totalmente criptografado** por uma chave única e individualizada entre seu dispositivo e o Ponto de Acesso. Outros clientes no mesmo café podem até capturar os quadros do ar, mas não podem decifrá-los, resolvendo o problema da escuta passiva (_passive sniffing_).
+
+###### Limitações Importantes: Criptografia vs. Autenticação
+
+Um ponto crucial deve ser entendido: OWE **criptografa**, mas **não autentica** a rede. Como o acordo de chaves ECDHE é "não autenticado" (o cliente não tem como verificar se o AP é quem diz ser), o OWE não protege contra ataques ativos, como o **Evil Twin (Gêmeo Maligno)**. Um atacante ainda pode criar um AP falso com o mesmo SSID (ex: "WIFI_AEROPORTO_OWE") e atrair vítimas. O cliente irá se conectar ao AP do atacante e estabelecerá uma sessão OWE _criptografada com o atacante_. O atacante fica, então, em uma posição de _Man-in-the-Middle_ (MitM), capaz de decifrar todo o tráfego antes de re-criptografá-lo e enviá-lo para a rede real.
+
+###### Casos de Uso e Boas Práticas
+
+- **Usar OWE em:** Redes públicas de convidados (aeroportos, hotéis, igrejas, campi de visitantes) onde o objetivo é fornecer **privacidade** contra _sniffing_ sem a fricção de gerenciar senhas.
+- **Não usar OWE em:** Cenários que exigem **autorização e identidade** (rede corporativa, laboratórios, etc.). Nesses casos, WPA3-Personal (SAE) ou WPA3-Enterprise (802.1X) são as únicas escolhas corretas.
+
+Para implementar o OWE em um ambiente que ainda possui dispositivos antigos (que não entendem OWE), os administradores podem usar o **"OWE Transition Mode"**. Esta prática recomendada envolve a criação de _dois_ SSIDs emparelhados:
+
+1. Um SSID "Aberto" tradicional (ex: "WIFI_CONVIDADO"), visível para dispositivos antigos.
+2. Um SSID "OWE" (ex: "WIFI_CONVIDADO_OWE"), que pode ser oculto.
+
+Os dispositivos compatíveis com OWE serão instruídos (através de um _Information Element_ no beacon) a ignorar o SSID aberto e se conectar automaticamente ao SSID OWE, obtendo a criptografia. Dispositivos legados verão apenas o SSID aberto.
+
+Em ambientes de rede modernos, especialmente com a introdução da faixa de **6 GHz (Wi-Fi 6E)**, os padrões WPA2 e abertos tradicionais são desabilitados, e o uso de **WPA3 ou Enhanced Open (OWE) é obrigatório**.
+
+##### Comparativo Detalhado dos Modos WPA3
+
+Compreendidos os três pilares do WPA3 (Personal/SAE, Enterprise/802.1X e Enhanced Open/OWE), é crucial consolidar as diferenças de arquitetura, os casos de uso e as garantias de segurança que cada um oferece. Cada modo foi projetado para resolver um problema de segurança específico, e a escolha incorreta pode levar a uma falsa sensação de segurança ou a uma complexa sobrecarga de gerenciamento.
+
+A tabela a seguir apresenta um comparativo detalhado das três frentes de segurança do WPA3.
+
+| **Critério**                                      | **WPA3 Enhanced Open (OWE)**                                                         | **WPA3-Personal (SAE/Dragonfly)**                                         | **WPA3-Enterprise (802.1X/EAP)**                                               |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Objetivo principal**                            | Privacidade em rede aberta (sem senha), cifrando cada cliente de forma individual    | Acesso com senha compartilhada com autenticação forte e _forward secrecy_ | Identidade individual (usuário/dispositivo), políticas e auditoria corporativa |
+| **Autenticação**                                  | Nenhuma (Open System + ECDHE oportunista)                                            | SAE (PAKE) com senha                                                      | 802.1X/EAP (ex.: EAP-TLS, PEAP, TTLS) via RADIUS/AAA                           |
+| **Confidencialidade de dados**                    | Sim (chave por estação via ECDHE → 4-Way Handshake)                                  | Sim (chaves efêmeras derivadas do SAE → 4-Way Handshake)                  | Sim (chaves pós-EAP → 4-Way Handshake)                                         |
+| **Integridade de quadros de gerenciamento (PMF)** | **Obrigatório**                                                                      | **Obrigatório**                                                           | **Obrigatório**                                                                |
+| **Comprovação de identidade do AP/cliente**       | Não                                                                                  | AP/cliente implícitos pela senha (sem certificados)                       | Sim (por EAP/certificados/credenciais)                                         |
+| **Quando usar**                                   | Visitantes/guests em locais públicos (hotel, aeroporto, campus), sem gerenciar senha | Residências e SMB que querem senha única, sem complexidade de PKI         | Empresas/órgãos que exigem controle por usuário/dispositivo, RBAC, auditoria   |
+| **Protege contra sniffing local**                 | **Sim** (cada STA tem cifra própria)                                                 | **Sim**                                                                   | **Sim**                                                                        |
+| **Protege contra evil twin**                      | **Não** (sem autenticação)                                                           | Parcial: suscetível a downgrade/rogue sem boas práticas                   | **Sim** (quando EAP/TLS e validação de servidores são corretos)                |
+| **Resistência a ataque offline à senha**          | N/A (não há senha)                                                                   | **Alta** (SAE força tentativas on-line)                                   | **Alta** (idealmente EAP-TLS sem senha)                                        |
+| **Onboarding/gestão**                             | Simples (sem credenciais)                                                            | Simples (uma senha forte para todos)                                      | Exige PKI/RADIUS e processos de _enrollment_ (MDM, SCEP/EST)                   |
+| **Cifras típicas**                                | CCMP/GCMP após ECDHE; curva elíptica (ex.: P-256)                                    | CCMP/GCMP com chaves do SAE (ECDH)                                        | Baseline: AES CCMP-128; Suíte 192-bit: AES-GCMP-256, SHA-384, P-384            |
+| **Suporte em 6 GHz (Wi-Fi 6E/7)**                 | Presente (Enhanced Open)                                                             | Presente (SAE)                                                            | Presente (Enterprise); WPA2 não é permitido em 6 GHz                           |
+| **Compatibilidade com legado**                    | "OWE Transition Mode" com SSID aberto emparelhado                                    | "Transition mode" (WPA2+WPA3) — evitar por longo prazo                    | SSID dedicado; pode coexistir com WPA2-Enterprise em migração                  |
+| **Captive portal**                                | Suportado após associação (L7)                                                       | Suportado após associação                                                 | Usado com parcimônia; políticas preferem NAC por identidade                    |
+| **Limitações chave**                              | Não autentica → vulnerável a APs falsos                                              | Senha fraca ainda permite brute force on-line                             | Maior complexidade operacional (PKI, RADIUS, EAP)                              |
+| **Boas práticas**                                 | Anunciar "Enhanced Open", usar OWE-Transition na migração, monitorar rogues          | Senhas longas; evitar transition prolongado; habilitar H2E                | Preferir EAP-TLS; PKI bem gerida; segmentação (VLAN/ACL)                       |
+
+##### Análise da Comparação: SAE vs. OWE
+
+A escolha entre **SAE (WPA3-Personal)** e **OWE (Enhanced Open)** é uma das decisões de arquitetura mais importantes em redes modernas que não utilizam um servidor RADIUS.
+
+- **SAE (Dragonfly)** foi projetado para **autenticação baseada em senha**. Ele substitui o PSK do WPA2 por um PAKE (Password-Authenticated Key Exchange) robusto. Sua maior vitória é a resistência à captura offline, pois força um atacante a realizar tentativas de senha _on-line_, interagindo com o AP a cada tentativa. Além disso, provê _forward secrecy_. É a escolha ideal para residências e pequenas empresas. Sua principal limitação é que a segurança ainda depende de uma senha forte; senhas fracas continuam vulneráveis a ataques de força bruta on-line.
+- **OWE (Enhanced Open)** foi projetado para **privacidade sem senha**. Ele não substitui o SAE ou o 802.1X, pois não _autentica_ o usuário ou o dispositivo. Seu objetivo é consertar as redes "abertas" clássicas, que eram vulneráveis à escuta passiva (_sniffing_). O OWE eleva muito a barra contra observadores no mesmo salão, pois cada cliente criptografa seu tráfego individualmente.
+
+No entanto, como o OWE não valida a identidade do Ponto de Acesso, ele continua vulnerável a ataques ativos de **Evil Twin (Gêmeo Maligno)**. Um atacante pode enganar um cliente para que ele se conecte a um AP falso. Para mitigar isso, são necessárias camadas adicionais de segurança, como: (a) detecção de APs falsos (Rogue AP Detection) no controlador da rede, (b) divulgação institucional clara do SSID correto e (c) o uso de VPNs ou TLS pelas aplicações dos usuários.
 
