@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "redes-de-computadores/contents/09-redes-sem-fio.md",
-                "mode": "source",
+                "file": "legislacao/contents/legislacao-cremepe.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09-redes-sem-fio"
+              "title": "legislacao-cremepe"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "redes-de-computadores/contents/09-redes-sem-fio.md",
+                "file": "legislacao/contents/legislacao-cremepe.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 09-redes-sem-fio"
+              "title": "Sumário de legislacao-cremepe"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "ae51e09d68f1648d",
   "lastOpenFiles": [
+    "redes-de-computadores/contents/09-redes-sem-fio.md",
     "redes-de-computadores/contents/img/09-taxa-de-transmissao.png",
     "redes-de-computadores/contents/img/09-bluetooth-scatternet.png",
     "redes-de-computadores/contents/img/09-bluetooth-piconet.png",
@@ -181,9 +182,7 @@
     "redes-de-computadores/contents/img/09-wap-mic.png",
     "redes-de-computadores/contents/img/09-wep-regime-encriptacao-e-decriptacao.png",
     "redes-de-computadores/contents/img/09-wep-conexao-aberta-e-por-senha.png",
-    "redes-de-computadores/contents/img/09-tecnicas-de-autenticacao.png",
     "redes-de-computadores/contents/08-vlans.md",
-    "redes-de-computadores/contents/09-redes-sem-fio.md",
     "redes-de-computadores/contents/07-protocolos-stp-e-rstp.md",
     "legislacao/contents/legislacao-cremepe.md",
     "redes-de-computadores/contents/06-protocolos-de-acesso-a-rede.md",

@@ -266,7 +266,9 @@ Assim, acredito que a norma se refira as letras C, D e E.
 
 O Efeito suspensivo suspende a aplicação da penalidade até a apreciação do recurso.
 
-> § 5º Além do recurso previsto no parágrafo anterior, não caberá qualquer outro de natureza administrativa, salvo aos interessados a via judiciária para as ações que forem devidas. § 6º As denúncias contra membros dos Conselhos Regionais só serão recebidas quando devidamente assinadas e acompanhadas da indicação de elementos comprobatórios do alegado.
+> § 5º Além do recurso previsto no parágrafo anterior, não caberá qualquer outro de natureza administrativa, salvo aos interessados a via judiciária para as ações que forem devidas.
+> 
+> § 6º As denúncias contra membros dos Conselhos Regionais só serão recebidas quando devidamente assinadas e acompanhadas da indicação de elementos comprobatórios do alegado.
 
 ### Da Assembleia Geral
 
@@ -2088,7 +2090,7 @@ Constituem a assembleia geral de cada Conselho Regional os **médicos inscritos*
 
 > Art. 6º A Assembleia Geral tem por finalidade deliberar sobre todos os atos relativos ao CREMEPE e tomar as decisões que julgar convenientes à defesa de seus interesses.
 > 
-> § 1 º - A Assembleia Geral será convocada, ordinariamente, pelo Presidente do CREMEPE e realizar-se-á até o dia 31 de maio, através de publicação no Diário Oficial do Estado e em jornal de grande circulação, com antecedência mínima de IO (dez) dias.
+> § 1 º - A Assembleia Geral será convocada, ordinariamente, pelo Presidente do CREMEPE e realizar-se-á até o dia 31 de maio, através de publicação no Diário Oficial do Estado e em jornal de grande circulação, com antecedência mínima de 10 (dez) dias.
 > § 2 º - Para efeito de eleição de Conselheiro efetivo e respectivo suplente para o CFM, a Assembleia Geral para tal fim deverá ser determinada por Resolução do Conselho Federal de Medicina.
 > 
 > Art. 7 º A Assembleia Geral é constituída dos médicos inscritos que se acham em pleno gozo de seus direitos e tenha em Pernambuco a sede principal de sua atividade profissional.
@@ -2116,7 +2118,7 @@ O artigo seguinte trata das competências da Assembleia:
 
 ### Do Plenário
 
-O Plenário é composto de membros efetivos elou membros suplentes efetivados, eleitos pela Assembleia Geral e tem por finalidade apreciar e decidir sobre os assuntos relacionados às competências do CREMEPE.
+O Plenário é composto de membros efetivos e/ou membros suplentes efetivados, eleitos pela Assembleia Geral e tem por finalidade apreciar e decidir sobre os assuntos relacionados às competências do CREMEPE.
 
 > Parágrafo único. O número de membros do Conselho é fixado de acordo com que estabelece a legislação vigente.
 
@@ -2221,7 +2223,7 @@ São atribuições das Câmaras Técnicas de Especialidades:
 <img width="700px" src="./img/cremepe-lei-3268-regimento-cameras-tecnicas.png">
 </div>
 
-Já as **Câmaras Temáticas** têm por finalidade debater temas específicos do interesse da coletividade, podendo ser formadas por médicos, Conselheiros ou não, elou membros da sociedade que tenham interesse no tema a ser debatido.
+Já as **Câmaras Temáticas** têm por finalidade debater temas específicos do interesse da coletividade, podendo ser formadas por médicos, Conselheiros ou não, e/ou membros da sociedade que tenham interesse no tema a ser debatido.
 
 Os membros das Câmaras Temáticas serão indicados pelo Presidente do CREMEPE mediante Portaria.
 
