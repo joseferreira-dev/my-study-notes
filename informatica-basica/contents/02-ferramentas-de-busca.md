@@ -11,7 +11,7 @@ A mensagem central para o profissional e o estudante do século XXI é clara: ho
 As principais ferramentas para essa tarefa são os **mecanismos de busca** ou **ferramentas de busca**, sites projetados para vasculhar a imensidão da World Wide Web e nos trazer as respostas mais relevantes para nossas perguntas.
 
 <div align="center">
-<img width="420px" src="./img/02-ferramentas-de-busca.png">
+<img width="400px" src="./img/02-ferramentas-de-busca.png">
 </div>
 
 Existem diversos mecanismos de busca disponíveis, cada um com seus próprios algoritmos e características. Entre os mais utilizados globalmente, podemos destacar o **Google**, o **Microsoft Bing**, o **Yahoo!**, o **Yandex** (popular na Rússia), o **Baidu** (dominante na China) e o **DuckDuckGo** (com foco em privacidade).
@@ -19,7 +19,7 @@ Existem diversos mecanismos de busca disponíveis, cada um com seus próprios al
 Apesar da variedade de opções, o mercado de buscas é um dos mais concentrados do mundo digital, com um domínio avassalador do Google.
 
 <div align="center">
-<img width="640px" src="./img/02-ferramentas-de-busca-popularidade.png">
+<img width="600px" src="./img/02-ferramentas-de-busca-popularidade.png">
 </div>
 
 Como o gráfico ilustra, o Google detém uma fatia de mercado de aproximadamente 90%, o que o torna a porta de entrada para a internet para a esmagadora maioria dos usuários. Essa liderança faz com que suas ferramentas e métodos de pesquisa se tornem o padrão de fato para a indústria.
@@ -27,31 +27,31 @@ Como o gráfico ilustra, o Google detém uma fatia de mercado de aproximadamente
 Para ilustrar o poder de uma busca bem-feita, o próprio processo de encontrar a informação acima serve como um exemplo prático. Ao realizar uma pesquisa com os termos em inglês "market share google" ("fatia de mercado do google"), o buscador rapidamente retorna resultados precisos de fontes especializadas no assunto.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-market-share.png">
+<img width="600px" src="./img/02-busca-market-share.png">
 </div>
 
 Este exemplo demonstra a tese deste capítulo em ação: saber quais palavras-chave utilizar para encontrar uma informação confiável é uma habilidade poderosa.
 
 Dado o domínio do Google e o fato de que a maioria dos mecanismos de busca opera de forma semelhante do ponto de vista do usuário, utilizaremos o Google como nosso modelo padrão para o estudo das técnicas de busca e pesquisa. Para começar, vamos entender o que é, de fato, o Google.
 
-## Google: O Gigante da Busca
+## Google
 
 O Google é mais do que uma empresa ou um site; é um verbo, um sinônimo para a ação de pesquisar na internet. Para entender como ele se tornou essa força cultural e tecnológica, é preciso voltar à sua origem. O Google nasceu como um projeto de pesquisa acadêmica em 1996, na Universidade de Stanford, desenvolvido por dois estudantes de doutorado, Larry Page e Sergey Brin.
 
 Inicialmente batizado de "BackRub", o projeto tinha como objetivo criar um sistema mais eficiente para organizar e pesquisar as páginas da crescente World Wide Web. Em 1997, o nome foi alterado para Google – uma brincadeira com o termo matemático "googol", que representa o número 1 seguido por 100 zeros, refletindo a missão de organizar a quantidade aparentemente infinita de informações na internet.
 
 <div align="center">
-<img width="420px" src="./img/02-google-em-1998.png">
+<img width="400px" src="./img/02-google-em-1998.png">
 </div>
 
 A imagem acima mostra a aparência do site em 1998. Apesar da simplicidade, um detalhe chama a atenção: a nota de que seu índice já continha "cerca de 25 milhões de páginas". Para se ter uma ideia da escala de crescimento, em 2016, esse número já ultrapassava a marca de **130 trilhões** de páginas indexadas.
 
-### A Interface: Simplicidade como Filosofia
+### Interface: Simplicidade como Filosofia
 
 Desde o início, a marca registrada do Google é sua interface **extremamente limpa e minimalista**. Enquanto outros portais da época eram repletos de notícias, links e anúncios, a página inicial do Google focava em uma única tarefa: a busca. Essa filosofia de design persiste até hoje.
 
 <div align="center">
-<img width="640px" src="./img/02-google-atualmente.png">
+<img width="700px" src="./img/02-google-atualmente.png">
 </div>
 
 A interface atual é dominada pela barra de busca e por dois botões principais, cada um representando um modo de pesquisa distinto:
@@ -59,7 +59,7 @@ A interface atual é dominada pela barra de busca e por dois botões principais,
 1. **Pesquisa Google:** Este é o modo padrão e mais utilizado. Ao clicar neste botão (ou simplesmente pressionar Enter), o Google processa os termos digitados e retorna uma **página de resultados** com uma lista de links, imagens, vídeos e outras informações que seu algoritmo considera mais relevantes para a busca.
 2. **Estou com Sorte:** Este botão oferece um atalho para quem busca uma resposta direta. Em vez de mostrar a lista de resultados, ele leva o usuário diretamente para a página que o Google considera a **mais relevante** de todas – ou seja, o primeiro resultado da busca padrão. A ideia é que, para buscas muito específicas (como "site oficial da Receita Federal"), o usuário "tenha sorte" e chegue ao destino correto na primeira tentativa, economizando tempo.
 
-### Filtrando os Resultados: As Guias de Pesquisa
+### Filtrando os Resultados
 
 Após realizar uma busca no modo padrão, o Google exibe uma página de resultados que mistura diferentes tipos de conteúdo. Para refinar essa busca, o usuário pode utilizar as **guias de pesquisa**, localizadas logo abaixo da barra de busca.
 
@@ -78,7 +78,7 @@ Cada guia funciona como um filtro poderoso, restringindo os resultados a um tipo
 
 Saber utilizar essas guias é o primeiro passo para transformar uma busca genérica em uma pesquisa muito mais focada e eficiente.
 
-### Refinando a Busca: Ferramentas Avançadas e Filtros de Conteúdo
+### Ferramentas Avançadas e Filtros de Conteúdo
 
 Uma busca simples, com uma ou duas palavras-chave, geralmente é o suficiente para encontrar o que procuramos. No entanto, para pesquisas mais complexas ou específicas, o Google oferece um arsenal de ferramentas que permitem refinar e filtrar os resultados com alta precisão. Vamos explorar as duas principais abordagens: a interface de Pesquisa Avançada e o filtro de segurança SafeSearch.
 
@@ -118,12 +118,12 @@ Existe também uma página de **Pesquisa de imagens avançada**, com filtros esp
 <img width="700px" src="./img/02-refinamentos-da-pesquisa-avancada-imagens.png">
 </div>
 
-#### Segurança e Controle de Conteúdo: SafeSearch
+#### SafeSearch: Segurança e Controle de Conteúdo
 
 O **SafeSearch** é a ferramenta do Google projetada para gerenciar e filtrar conteúdo sexualmente explícito, violento ou adulto dos resultados da pesquisa. É um recurso essencial para o uso em ambientes de trabalho, escolas ou por famílias com crianças.
 
 <div align="center">
-<img width="520px" src="./img/02-safesearch.png">
+<img width="600px" src="./img/02-safesearch.png">
 </div>
 
 O SafeSearch pode ser configurado em três níveis:
@@ -134,23 +134,23 @@ O SafeSearch pode ser configurado em três níveis:
 
 É fundamental compreender que o SafeSearch **só funciona nos resultados da pesquisa do Google**. Ele não é um filtro de conteúdo para a internet como um todo e não impede o acesso a conteúdo explícito através de outros buscadores ou pela navegação direta a um site.
 
-### Além do Google: Buscadores Verticais e Concorrentes
+### Buscadores Verticais e Concorrentes
 
 Ainda que o Google seja um buscador **horizontal** – que pesquisa sobre todos os tipos de temas –, existem também os buscadores **verticais**, que são especializados em um nicho específico. Sites como o _Buscapé_ (que pesquisa preços de produtos), o _iCarros_ (que pesquisa veículos) ou o _Google Acadêmico_ (que pesquisa artigos científicos) são exemplos de buscadores verticais.
 
 Por fim, é importante saber que o **Microsoft Bing** é o principal concorrente do Google. Ambas as tecnologias são extremamente similares, e a maioria das técnicas e operadores de busca funcionam de forma idêntica nos dois serviços. Por padrão, tanto o Google quanto o Bing utilizam o operador **E (AND)** implicitamente entre os termos de uma busca, significando que, ao pesquisar por `concurso público federal`, ambos buscarão por páginas que contenham as três palavras.
 
-## Por Trás da Magia: Como a Busca Funciona
+## Como a Busca Funciona
 
 Como uma ferramenta de busca consegue vasculhar trilhões de páginas na internet e entregar uma resposta relevante em uma fração de segundo? O processo, embora extremamente complexo, pode ser compreendido em três grandes etapas: rastreamento, indexação e classificação.
 
-### Rastreamento (_Crawling_): Descobrindo a Web
+### Rastreamento (_Crawling_)
 
 A World Wide Web pode ser comparada a uma biblioteca pública de tamanho infinito, que não para de crescer, com bilhões de livros sendo adicionados a todo momento e sem um sistema de catálogo central. Para descobrir o que existe nessa biblioteca, o Google utiliza um exército de robôs de software, conhecidos como **rastreadores** (_crawlers_ ou _spiders_).
 
 Esses rastreadores são programas automatizados que navegam pela web de forma autônoma. Eles começam com uma lista de páginas conhecidas e, a partir delas, seguem cada link que encontram, saltando de página em página, 24 horas por dia. Ao fazer isso, eles descobrem novas páginas, atualizações em páginas existentes e links quebrados, trazendo constantemente dados sobre o que encontram de volta para os servidores do Google.
 
-### Indexação (_Indexing_): Organizando a Biblioteca
+### Indexação (_Indexing_)
 
 Apenas descobrir as páginas não é o suficiente. Para que a busca seja rápida, essa imensa quantidade de informação precisa ser organizada. É aqui que entra a etapa de **indexação**.
 
@@ -160,7 +160,7 @@ Esse índice funciona de maneira análoga ao índice remissivo no final de um li
 
 É fundamental entender este ponto: quando você faz uma busca, o Google **não está pesquisando na internet em tempo real**. Ele está pesquisando neste índice pré-organizado, o que explica a velocidade impressionante com que os resultados são retornados.
 
-### Classificação (_Ranking_): Encontrando a Melhor Resposta
+### Classificação (_Ranking_)
 
 Uma vez que o Google encontra no índice todas as páginas que correspondem às palavras da sua busca, o desafio final é decidir qual delas mostrar primeiro. Essa é a etapa de **classificação**, realizada por uma complexa série de **algoritmos de pesquisa**.
 
@@ -174,7 +174,7 @@ Um dos aspectos mais sofisticados desses algoritmos é a **análise semântica d
 
 Como a imagem ilustra, o algoritmo entende que a palavra "trocar" na busca "Como **trocar** uma lâmpada" significa _substituir_, em "Os correios **trocam** moeda" significa _permutar_, e em "Vou me **trocar**" significa _vestir-se_. Essa capacidade de interpretar a **intenção** do usuário, e não apenas as palavras-chave, é o que permite ao Google entregar resultados cada vez mais úteis e precisos, organizados no formato mais adequado para cada tipo de pesquisa.
 
-### A Busca por Respostas, Não Apenas Links
+### Busca por Respostas, Não Apenas Links
 
 Larry Page, um dos cofundadores do Google, uma vez descreveu o mecanismo de pesquisa perfeito como algo que "entende exatamente o que você quer e retorna exatamente o que você precisa". Essa filosofia é o motor por trás da constante evolução do Google: a busca por fornecer respostas rápidas e úteis, apresentadas no formato mais prático para o usuário.
 
@@ -200,7 +200,7 @@ O Google processa trilhões de pesquisas a cada ano e, surpreendentemente, **cer
 
 Além da busca simples, o Google oferece recursos e opera sob princípios que aprimoram a experiência do usuário e determinam a ordem em que os resultados são exibidos. Compreender esses elementos nos ajuda a pesquisar de forma mais crítica e a entender por que vemos o que vemos.
 
-### O "Cache" do Google: Uma Viagem ao Passado da Web (Recurso Descontinuado)
+### "Cache" do Google (Recurso Descontinuado)
 
 Por muitos anos, o Google ofereceu uma funcionalidade chamada "Cache". Tratava-se de uma cópia de uma página da web, armazenada nos servidores do Google no momento em que seus rastreadores a visitaram. Esse recurso era extremamente útil por permitir que os usuários acessassem uma versão "salva" de uma página, mesmo que o site original estivesse temporariamente fora do ar.
 
@@ -219,10 +219,10 @@ Ao realizar uma busca, o objetivo do Google é apresentar os resultados mais rel
 Isso é comum em pesquisas que retornam muitas páginas com conteúdo repetido ou muito parecido. Ao final da página de resultados, o Google geralmente exibe uma mensagem informando sobre a omissão.
 
 <div align="center">
-<img width="580px" src="./img/02-omissao-de-resultados.png">
+<img width="600px" src="./img/02-omissao-de-resultados.png">
 </div>
 
-O usuário, no entanto, mantém o controle total. Caso deseje realizar uma pesquisa exaustiva e ver absolutamente todos os resultados encontrados, basta clicar no link oferecido para "repetir a pesquisa incluindo os resultados omitidos". Essa funcionalidade, embora simples, já foi objeto de questões em concursos públicos.
+O usuário, no entanto, mantém o controle total. Caso deseje realizar uma pesquisa exaustiva e ver absolutamente todos os resultados encontrados, basta clicar no link oferecido para "repetir a pesquisa incluindo os resultados omitidos".
 
 ### PageRank e SEO: Classificação de Resultados
 
@@ -253,14 +253,13 @@ Dominar a arte da pesquisa vai além de simplesmente digitar palavras em uma cai
 
 > **Ponto de Atenção:** É importante notar que a eficácia desses operadores pode variar. Os mecanismos de busca utilizam algoritmos complexos de "melhor esforço" e, dependendo de como as páginas da web estão estruturadas, nem todos os operadores funcionarão perfeitamente em 100% das vezes. Além disso, eles geralmente se aplicam aos resultados orgânicos, podendo não afetar os links patrocinados.
 
-Vamos começar com o operador mais fundamental e um dos mais úteis.
 
 ### Busca por Frase Exata com Aspas ("")
 
 Por padrão, quando se digita uma sequência de palavras em um buscador, ele procura por páginas que contenham aquelas palavras, mas não necessariamente na ordem exata em que foram digitadas. Por exemplo, ao pesquisar por `brasília cambalhota vampeta`, o Google retornará páginas que mencionem os três termos, mesmo que de forma separada no texto.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-sem-operador-aspas.png">
+<img width="500px" src="./img/02-busca-sem-operador-aspas.png">
 </div>
 
 Para forçar o buscador a procurar por uma correspondência exata de uma frase, utiliza-se o operador de **aspas duplas ("")**.
@@ -272,7 +271,7 @@ Para forçar o buscador a procurar por uma correspondência exata de uma frase, 
 Ao colocar os termos de busca entre aspas, o mecanismo entende que deve encontrar apenas as páginas que contenham aquela sequência exata de palavras. Assim, a busca por `"cambalhota do Vampeta em Brasília"` trará resultados muito mais específicos e relevantes para o evento em questão.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-aspas.png">
+<img width="500px" src="./img/02-busca-com-operador-aspas.png">
 </div>
 
 Este operador é extremamente útil em diversas situações:
@@ -332,7 +331,7 @@ O símbolo da **arroba (@)** é o padrão universal nas redes sociais para ident
 Ao pesquisar por `@professordiegocarvalho`, por exemplo, o Google priorizará em seus resultados os links diretos para os perfis sociais associados a esse nome de usuário, tornando mais fácil encontrar a presença digital de uma pessoa ou marca específica.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-arroba.png">
+<img width="500px" src="./img/02-busca-com-operador-arroba.png">
 </div>
 
 #### Acompanhando Tópicos com a Hashtag (#)
@@ -346,7 +345,7 @@ A **hashtag (#)**, ou cerquilha, é utilizada para agrupar e categorizar publica
 Diferente da busca com `@`, que foca em encontrar _pessoas_ ou _perfis_, a busca com `#` foca em encontrar _conversas_ ou _tópicos_. Uma pesquisa por `#DesafioDoBaldeDeGelo` (o famoso "Ice Bucket Challenge"), por exemplo, retornará uma mistura de notícias, vídeos e publicações de redes sociais que participaram ou cobriram essa campanha viral.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-hashtag.png">
+<img width="500px" src="./img/02-busca-com-operador-hashtag.png">
 </div>
 
 Este operador é especialmente útil para acompanhar:
@@ -366,7 +365,7 @@ Em muitas situações, sabemos parte do que queremos pesquisar, mas nos falta um
 Ao pesquisar por `maior * do Brasil`, estamos essencialmente fazendo uma pergunta aberta ao Google: "O que existe que se encaixa no padrão 'maior [qualquer coisa] do Brasil'?". O buscador, então, retorna uma variedade de resultados que preenchem essa lacuna, como "maior torcida do Brasil", "maior cidade do Brasil", "maior prédio do Brasil", entre outros.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-asterisco.png">
+<img width="500px" src="./img/02-busca-com-operador-asterisco.png">
 </div>
 
 Uma das utilizações mais populares e eficazes do operador curinga é para encontrar letras de música quando não nos lembramos de um trecho específico. Ao combinar o asterisco com o operador de aspas, podemos buscar pela parte que conhecemos e deixar que o Google descubra a parte que falta.
@@ -374,7 +373,7 @@ Uma das utilizações mais populares e eficazes do operador curinga é para enco
 Por exemplo, para descobrir a palavra que falta no famoso trecho da música "Melô do Marinheiro", dos Paralamas do Sucesso, pode-se pesquisar: `"Entrei de * no navio"`.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-asterisco-musicas.png">
+<img width="500px" src="./img/02-busca-com-operador-asterisco-musicas.png">
 </div>
 
 Da mesma forma, o asterisco é perfeito para corrigir letras de música que cantamos errado por anos. Para descobrir o que realmente é dito no famoso trecho da música "Como uma Onda", de Lulu Santos, a busca `"Na madrugada rolando um blues * sem parar"` rapidamente revelaria que o correto é "...**tocando B. B. King** sem parar", e não "...trocando de biquini sem parar".
@@ -397,7 +396,7 @@ Enquanto o operador de hífen (-) serve para restringir uma busca, o operador **
 Ao pesquisar por `maratona OR corrida`, os resultados incluirão páginas que falam apenas sobre maratonas, páginas que falam apenas sobre corridas em geral, e páginas que falam sobre ambos os assuntos, resultando em uma busca muito mais abrangente.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-or.png">
+<img width="500px" src="./img/02-busca-com-operador-or.png">
 </div>
 
 Este operador é especialmente útil para pesquisar por sinônimos ou termos relacionados simultaneamente, garantindo que nenhum resultado importante seja perdido. Por exemplo:
@@ -418,12 +417,12 @@ Este operador instrui o Google a limitar a pesquisa a um único site ou domínio
 |---|---|---|
 |**`site:nomedosite.com`**|Restringe a pesquisa a um site ou domínio específico.|`flamengo site:youtube.com`|
 
-Vamos supor que um usuário queira encontrar todas as menções ao seu nome, "diego carvalho", mas apenas dentro do portal do Estratégia Concursos. A busca correta seria: **`diego carvalho site:estrategiaconcursos.com.br`**.
+Vamos supor que um usuário queira encontrar todas as menções ao seu nome, "diego carvalho", mas apenas dentro do portal do Estratégia Concursos. A busca correta seria: **`site:estrategiaconcursos.com.br diego carvalho`**.
 
 O resultado será uma lista de páginas exclusivamente do domínio `estrategiaconcursos.com.br` que contenham o termo pesquisado, como mostra a imagem.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-site.png">
+<img width="500px" src="./img/02-busca-com-operador-site.png">
 </div>
 
 Este operador é extremamente versátil e útil em diversos cenários:
@@ -447,7 +446,7 @@ Este comando instrui o buscador a encontrar e listar páginas que, segundo seu a
 Ao realizar a busca `related:uol.com.br`, o Google entende que o UOL é um grande portal de notícias e conteúdo variado. Portanto, ele retornará uma lista de outros grandes portais brasileiros, como Terra, iG, entre outros.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-related.png">
+<img width="500px" src="./img/02-busca-com-operador-related.png">
 </div>
 
 É importante notar que a definição de "relacionado" é determinada pelo algoritmo do Google e, embora geralmente precisa, pode ocasionalmente incluir resultados inesperados. Ainda assim, é uma ferramenta extremamente útil para:
@@ -496,7 +495,7 @@ Isso transforma o próprio endereço em um critério de busca, permitindo um fil
 A busca `inurl:stn`, por exemplo, instrui o Google a retornar apenas as páginas que contenham a sigla "stn" em qualquer parte de seu endereço, seja no domínio ou no caminho do arquivo.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-inurl.png">
+<img width="500px" src="./img/02-busca-com-operador-inurl.png">
 </div>
 
 Este operador é especialmente útil para encontrar tipos específicos de páginas ou conteúdos:
@@ -518,13 +517,13 @@ O título de uma página da web – aquele texto que aparece na aba do navegador
 Ao realizar a busca **`intitle:gripe`**, o Google irá filtrar todos os resultados do seu índice e exibir apenas as páginas que, de fato, possuem a palavra "gripe" em seu título, como demonstra a imagem dos resultados da busca.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-intitle.png">
+<img width="500px" src="./img/02-busca-com-operador-intitle.png">
 </div>
 
 Podemos confirmar o funcionamento do operador ao visitar um dos links retornados. A imagem a seguir mostra a página correspondente, onde se pode observar na aba do navegador que o título do documento realmente contém a palavra "Gripe".
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-intitle-pagina.png">
+<img width="500px" src="./img/02-busca-com-operador-intitle-pagina.png">
 </div>
 
 Este operador é particularmente útil para:
@@ -534,14 +533,14 @@ Este operador é particularmente útil para:
 
 > Dica Avançada: `allintitle:`
 > 
-> Existe uma variação ainda mais restritiva deste operador: o `allintitle:`. Enquanto `intitle:receita bolo de fubá busca` por "receita" no título e "bolo de fubá" em qualquer parte da página, a busca `allintitle:receita bolo de fubá` retorna apenas as páginas que contenham todas as três palavras no título.
+> Existe uma variação ainda mais restritiva deste operador: o `allintitle:`. Enquanto `intitle:receita bolo de fubá` busca por "receita" no título e "bolo de fubá" em qualquer parte da página, a busca `allintitle:receita bolo de fubá` retorna apenas as páginas que contenham todas as três palavras no título.
 
 ### Pesquisas no Texto Âncora com "inanchor:"
 
 Para entender o operador `inanchor:`, primeiro precisamos desconstruir um hiperlink. Todo link é composto por duas partes:
 
-1. **A URL de Destino:** O endereço para o qual o link nos leva quando clicamos.
-2. **O Texto Âncora (_Anchor Text_):** O texto visível e clicável que serve como "rótulo" para o link.
+1. **URL de Destino:** O endereço para o qual o link nos leva quando clicamos.
+2. **Texto Âncora (_Anchor Text_):** O texto visível e clicável que serve como "rótulo" para o link.
 
 Essas duas partes são independentes. Em um caso extremo, é perfeitamente possível criar um link cujo texto âncora seja `www.flamengo.com.br`, mas que, ao ser clicado, leve o usuário para o endereço `www.vasco.com.br`.
 
@@ -554,7 +553,7 @@ O operador **`inanchor:`** permite pesquisar por palavras-chave que aparecem esp
 Uma busca por `inanchor:mais` retornará páginas que outros sites apontaram usando a palavra "mais" em seus links, como no exemplo da imagem, onde o texto âncora "Cartão Mais!" aponta para um site específico.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-inanchor.png">
+<img width="500px" src="./img/02-busca-com-operador-inanchor.png">
 </div>
 
 Assim como o `intitle:`, este operador possui uma variação mais restritiva:
@@ -578,7 +577,7 @@ Diferentemente de outros operadores, a sintaxe do `define:` é mais flexível. O
 A busca por **`define:estratégia`** resulta na exibição do painel de dicionário, como mostra a imagem.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-define.png">
+<img width="500px" src="./img/02-busca-com-operador-define.png">
 </div>
 
 Este recurso é uma maneira extremamente eficiente de obter definições rápidas e confiáveis para os mais variados termos, desde conceitos técnicos e acadêmicos até gírias e expressões do dia a dia.
@@ -596,7 +595,7 @@ Este comando instrui o Google a ignorar as páginas web tradicionais e retornar 
 Ao realizar a busca **`"lei de licitações" filetype:pdf`**, por exemplo, o Google irá procurar pelo termo "lei de licitações", mas exibirá apenas links diretos para arquivos no formato PDF, que é o formato padrão para documentos oficiais, artigos acadêmicos e e-books.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-filetype.png">
+<img width="500px" src="./img/02-busca-com-operador-filetype.png">
 </div>
 
 Este operador se torna ainda mais poderoso quando se conhece as extensões de arquivo mais comuns e suas aplicações:
@@ -619,7 +618,7 @@ Para pesquisas que envolvem uma faixa numérica – como preços, datas ou medid
 A principal aplicação deste operador é na busca por produtos dentro de uma faixa de preço. Ao pesquisar por `câmera R$50..R$100`, por exemplo, o Google tentará encontrar páginas sobre câmeras que mencionem valores entre 50 e 100 reais.
 
 <div align="center">
-<img width="540px" src="./img/02-busca-com-operador-ponto-ponto.png">
+<img width="500px" src="./img/02-busca-com-operador-ponto-ponto.png">
 </div>
 
 Este operador também pode ser utilizado para outros tipos de intervalos numéricos, como:
