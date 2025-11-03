@@ -1,7 +1,6 @@
-# Capítulo 4 – Merge Sort, Quick Sort e Heap Sort
+# Capítulo 4 – Merge Sort, Quick Sort, Heap Sort e Shell Sort
 
-**Merge Sort**, **Quick Sort** e **Heap Sort** são algoritmos de ordenação mais avançados que oferecem melhor desempenho em comparação aos métodos simples. **Merge Sort** é um algoritmo baseado em divisão e conquista, que divide a lista em sublistas menores, ordena cada sublista e as mescla para formar a lista ordenada final. Este método garante uma complexidade de tempo `O(n log n)`, tornando-o eficiente para grandes conjuntos de dados. **Quick Sort**, também é um algoritmo de divisão e conquista, seleciona um elemento "pivô" e reorganiza a lista de modo que todos os elementos menores que o pivô fiquem antes dele, e todos os maiores, depois. A complexidade média é `O(n log n)`, mas pode atingir `O(n²)` no pior caso se o pivô for mal escolhido. **Heap Sort** utiliza uma estrutura de dados chamada heap para ordenar os elementos. Ele constrói um heap a partir dos dados e extrai repetidamente o maior elemento, reconstruindo o heap até que todos os elementos estejam ordenados. Heap Sort também oferece complexidade `O(n log n)`, mas não é estável.
-
+**Merge Sort**, **Quick Sort**, **Heap Sort** e **Shell Sort** são algoritmos de ordenação mais avançados que oferecem melhor desempenho em comparação aos métodos simples. **Merge Sort** é um algoritmo baseado em divisão e conquista, que divide a lista em sublistas menores, ordena cada sublista e as mescla para formar a lista ordenada final. Este método garante uma complexidade de tempo `O(n log n)`, tornando-o eficiente para grandes conjuntos de dados. **Quick Sort**, também é um algoritmo de divisão e conquista, seleciona um elemento "pivô" e reorganiza a lista de modo que todos os elementos menores que o pivô fiquem antes dele, e todos os maiores, depois. A complexidade média é `O(n log n)`, mas pode atingir `O(n²)` no pior caso se o pivô for mal escolhido. **Heap Sort** utiliza uma estrutura de dados chamada heap para ordenar os elementos. Ele constrói um heap a partir dos dados e extrai repetidamente o maior elemento, reconstruindo o heap até que todos os elementos estejam ordenados. Heap Sort também oferece complexidade `O(n log n)`, mas não é estável. **Shell Sort** é uma generalização do Insertion Sort que compara e troca elementos que estão a uma certa distância (gap) entre si, diminuindo o gap gradualmente até que ele se torne 1. Isso permite que o Shell Sort seja mais eficiente que o Insertion Sort, especialmente em listas maiores.
 ## Merge Sort
 
 O algoritmo de ordenação Merge Sort é um método eficiente e baseado na abordagem dividir para conquistar. Ele funciona dividindo a lista em sublistas menores, ordenando essas sublistas e, em seguida, mesclando-as de volta em uma lista ordenada. A divisão continua até que cada sublista contenha apenas um elemento, que por definição está ordenado.
@@ -118,3 +117,45 @@ Algumas das principais características do Heap Sort são:
 - **Estabilidade**: Não é um algoritmo estável, pois pode alterar a ordem relativa de elementos iguais durante a troca.
 
 O Heap Sort é um algoritmo de ordenação eficiente e robusto com complexidade de tempo garantida de `O(n log n)` e uso de memória `O(1)`. Normalmente é 2 a 3 vezes mais lento que o Quick Sort bem implementado. A razão da lentidão é a falta de localidade de referência. Também não é muito eficiente ao trabalhar com dados altamente complexos. Embora não seja estável por padrão e possa ser mais lento que outros algoritmos `O(n log n)` na prática, é uma excelente escolha quando a memória é uma preocupação ou quando uma complexidade de tempo garantida é necessária.
+
+## Shell Sort
+
+O algoritmo de ordenação Shell Sort é uma generalização do Insertion Sort que melhora a eficiência ao lidar com listas grandes. Ele faz isso permitindo a troca de elementos que estão distantes uns dos outros, em vez de adjacentes. O algoritmo é nomeado após seu inventor, Donald Shell, que o descreveu pela primeira vez em 1959.
+
+O passo a passo para a sua realização é o seguinte:
+
+1. **Escolha dos Gaps**
+   - O algoritmo começa escolhendo uma sequência de gaps, que são intervalos entre os elementos a serem comparados e trocados. Uma sequência comum é dividir o tamanho da lista por 2 repetidamente até chegar a 1.
+2. **Ordenação com Insertion Sort**
+   - Para cada gap, a lista é dividida em sublistas, onde cada sublista é ordenada usando Insertion Sort.
+   - O processo é repetido com gaps menores até que o gap seja 1. No final, a lista estará quase ordenada, permitindo que uma última passagem de Insertion Sort finalize a ordenação.
+
+Vamos realizar um exemplo prático ordenando a lista `[5, 3, 8, 4, 2, 6, 1, 7]` usando o Shell Sort:
+
+1. **Gap 4**:
+   - Sublistas formadas: `[5, 2]`, `[3, 6]`, `[8, 1]`, `[4, 7]`
+   - Ordenando as sublistas:
+      - `[5, 2]` -> `[2, 5]`
+      - `[3, 6]` -> `[3, 6]`
+      - `[8, 1]` -> `[8, 1]`
+      - `[4, 7]` -> `[4, 7]`
+   - Lista após gap 4: `[2, 3, 1, 4, 5, 6, 8, 7]`
+2. **Gap 2**:
+   - Sublistas formadas: `[2, 1, 5, 8]`, `[3, 4, 6, 7]`
+   - Ordenando as sublistas:
+      - `[2, 1, 5, 8]` -> `[1, 2, 5, 8]`
+      - `[3, 4, 6, 7]` -> `[3, 4, 6, 7]`
+   - Lista após gap 2: `[1, 2, 3, 4, 5, 6, 8, 7]`
+3. **Gap 1 (Final Insertion Sort)**:
+   - Sublista completa: `[1, 2, 3, 4, 5, 6, 8, 7]`
+   - Ordenando com Insertion Sort:
+      - Troca `8` com `7`: `[1, 2, 3, 4, 5, 6, 7, 8]`
+   - Lista final ordenada: `[1, 2, 3, 4, 5, 6, 7, 8]`
+
+Algumas das principais características do Shell Sort são:
+
+- **Complexidade de Tempo**: Dependente da sequência de gaps escolhida. A complexidade do pior caso para a sequência de Shell original é `O(n²)`, mas com sequências melhores, como a de Hibbard ou Sedgewick, pode ser melhorada para <code>O(n<sup>3/2</sup>)</code> ou `O(n log²n)`. No caso é geralmente <code>O(n<sup>3/2</sup>)</code> com sequências de gaps comuns. E no melhor caso é `O(n log n)`.
+- **Complexidade de Espaço**: `O(1)`, pois é um algoritmo in-place.
+- **Estabilidade**: Não é estável, pois pode alterar a ordem relativa de elementos iguais.
+
+O Shell Sort é uma melhoria significativa em relação ao Insertion Sort, especialmente para listas de tamanho moderado. Sua eficiência depende fortemente da escolha da sequência de gaps. Embora não seja o algoritmo de ordenação mais eficiente para listas muito grandes, é uma boa escolha para listas de tamanho médio onde simplicidade e facilidade de implementação são importantes. Para listas muito grandes, algoritmos como Quick Sort, Merge Sort e Heap Sort são mais eficientes.

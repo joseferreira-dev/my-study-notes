@@ -1,49 +1,6 @@
 # Capítulo 5 – Shell Sort, Comb Sort e Tim Sort
 
 **Shell Sort**, **Comb Sort** e **Tim Sort** são algoritmos de ordenação que introduzem técnicas avançadas para melhorar a eficiência em comparação aos métodos mais básicos. **Shell Sort** é uma generalização do Insertion Sort que compara e troca elementos que estão a uma certa distância (gap) entre si, diminuindo o gap gradualmente até que ele se torne 1. Isso permite que o Shell Sort seja mais eficiente que o Insertion Sort, especialmente em listas maiores. **Comb Sort** é uma melhoria do Bubble Sort, que também usa um gap para comparar e trocar elementos, começando com um gap maior e diminuindo gradualmente até 1. Comb Sort resolve alguns dos problemas de ineficiência do Bubble Sort, lidando melhor com "tartarugas" (valores pequenos perto do final da lista). **Tim Sort** é um algoritmo híbrido que combina Insertion Sort e Merge Sort, projetado para aproveitar runs (sublistas ordenadas) existentes na lista original, garantindo uma complexidade `O(n log n)` no pior caso e excelente desempenho em muitos casos práticos. Tim Sort é usado em implementações de ordenação padrão em linguagens como Python e Java devido à sua eficiência e estabilidade.
-
-## Shell Sort
-
-O algoritmo de ordenação Shell Sort é uma generalização do Insertion Sort que melhora a eficiência ao lidar com listas grandes. Ele faz isso permitindo a troca de elementos que estão distantes uns dos outros, em vez de adjacentes. O algoritmo é nomeado após seu inventor, Donald Shell, que o descreveu pela primeira vez em 1959.
-
-O passo a passo para a sua realização é o seguinte:
-
-1. **Escolha dos Gaps**
-   - O algoritmo começa escolhendo uma sequência de gaps, que são intervalos entre os elementos a serem comparados e trocados. Uma sequência comum é dividir o tamanho da lista por 2 repetidamente até chegar a 1.
-2. **Ordenação com Insertion Sort**
-   - Para cada gap, a lista é dividida em sublistas, onde cada sublista é ordenada usando Insertion Sort.
-   - O processo é repetido com gaps menores até que o gap seja 1. No final, a lista estará quase ordenada, permitindo que uma última passagem de Insertion Sort finalize a ordenação.
-
-Vamos realizar um exemplo prático ordenando a lista `[5, 3, 8, 4, 2, 6, 1, 7]` usando o Shell Sort:
-
-1. **Gap 4**:
-   - Sublistas formadas: `[5, 2]`, `[3, 6]`, `[8, 1]`, `[4, 7]`
-   - Ordenando as sublistas:
-      - `[5, 2]` -> `[2, 5]`
-      - `[3, 6]` -> `[3, 6]`
-      - `[8, 1]` -> `[8, 1]`
-      - `[4, 7]` -> `[4, 7]`
-   - Lista após gap 4: `[2, 3, 1, 4, 5, 6, 8, 7]`
-2. **Gap 2**:
-   - Sublistas formadas: `[2, 1, 5, 8]`, `[3, 4, 6, 7]`
-   - Ordenando as sublistas:
-      - `[2, 1, 5, 8]` -> `[1, 2, 5, 8]`
-      - `[3, 4, 6, 7]` -> `[3, 4, 6, 7]`
-   - Lista após gap 2: `[1, 2, 3, 4, 5, 6, 8, 7]`
-3. **Gap 1 (Final Insertion Sort)**:
-   - Sublista completa: `[1, 2, 3, 4, 5, 6, 8, 7]`
-   - Ordenando com Insertion Sort:
-      - Troca `8` com `7`: `[1, 2, 3, 4, 5, 6, 7, 8]`
-   - Lista final ordenada: `[1, 2, 3, 4, 5, 6, 7, 8]`
-
-Algumas das principais características do Shell Sort são:
-
-- **Complexidade de Tempo**: Dependente da sequência de gaps escolhida. A complexidade do pior caso para a sequência de Shell original é `O(n²)`, mas com sequências melhores, como a de Hibbard ou Sedgewick, pode ser melhorada para <code>O(n<sup>3/2</sup>)</code> ou `O(n log²n)`. No caso é geralmente <code>O(n<sup>3/2</sup>)</code> com sequências de gaps comuns. E no melhor caso é `O(n log n)`.
-- **Complexidade de Espaço**: `O(1)`, pois é um algoritmo in-place.
-- **Estabilidade**: Não é estável, pois pode alterar a ordem relativa de elementos iguais.
-
-O Shell Sort é uma melhoria significativa em relação ao Insertion Sort, especialmente para listas de tamanho moderado. Sua eficiência depende fortemente da escolha da sequência de gaps. Embora não seja o algoritmo de ordenação mais eficiente para listas muito grandes, é uma boa escolha para listas de tamanho médio onde simplicidade e facilidade de implementação são importantes. Para listas muito grandes, algoritmos como Quick Sort, Merge Sort e Heap Sort são mais eficientes.
-
 ## Comb Sort
 
 O algoritmo de ordenação Comb Sort é uma melhoria sobre o Bubble Sort. Ele foi introduzido por Wlodzimierz Dobosiewicz em 1980 e popularizado por Stephen Lacey e Richard Box em um artigo publicado em 1991. O Comb Sort combate uma das principais limitações do Bubble Sort: o fato de que ele compara apenas elementos adjacentes. Comb Sort compara elementos que estão a uma certa "distância" uns dos outros, o que ajuda a eliminar "tartarugas" (elementos pequenos perto do final da lista) mais rapidamente.
