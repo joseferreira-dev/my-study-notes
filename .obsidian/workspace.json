@@ -13,15 +13,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algoritmos-busca-ordenacao/contents/11-grafos.md",
+                "file": "algoritmos-busca-ordenacao/contents/12-outras-estruturas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "11-grafos"
+              "title": "12-outras-estruturas"
+            }
+          },
+          {
+            "id": "e37b58c80563a412",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "algoritmos-busca-ordenacao/contents/img/12-hashtable.png"
+              },
+              "icon": "lucide-image",
+              "title": "12-hashtable"
+            }
+          },
+          {
+            "id": "a56ca23e87b74e83",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "algoritmos-busca-ordenacao/contents/banner-estruturas-de-dados.png"
+              },
+              "icon": "lucide-image",
+              "title": "banner-estruturas-de-dados"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -142,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algoritmos-busca-ordenacao/contents/11-grafos.md",
+                "file": "estruturas-de-dados/README.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 11-grafos"
+              "title": "Sumário de README"
             }
           }
         ],
@@ -169,10 +194,15 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "d4a7a2ccf075c628",
+  "active": "f9950e0646dc86e5",
   "lastOpenFiles": [
-    "estruturas-de-dados/contents/06-grafos.md",
+    "algoritmos-busca-ordenacao/contents/banner-estruturas-de-dados.png",
+    "algoritmos-busca-ordenacao/contents/12-outras-estruturas.md",
+    "estruturas-de-dados/contents/07-outras-estruturas.md",
+    "algoritmos-busca-ordenacao/contents/img/12-heap.png",
+    "algoritmos-busca-ordenacao/contents/img/12-hashtable.png",
     "algoritmos-busca-ordenacao/contents/11-grafos.md",
+    "estruturas-de-dados/contents/06-grafos.md",
     "algoritmos-busca-ordenacao/contents/img/11-graph-07.png",
     "algoritmos-busca-ordenacao/contents/img/11-graph-06.png",
     "algoritmos-busca-ordenacao/contents/img/11-graph-05.png",
@@ -181,8 +211,6 @@
     "algoritmos-busca-ordenacao/contents/img/11-graph-02.png",
     "algoritmos-busca-ordenacao/contents/img/11-graph-01.png",
     "algoritmos-busca-ordenacao/contents/img/11-graph-08.png",
-    "algoritmos-busca-ordenacao/contents/img/10-graph-07.png",
-    "algoritmos-busca-ordenacao/contents/img/10-graph-06.png",
     "algoritmos-busca-ordenacao/contents/10-arvores.md",
     "estruturas-de-dados/contents/05-arvores.md",
     "algoritmos-busca-ordenacao/contents/09-pilhas-filas-deques.md",
@@ -204,8 +232,6 @@
     "legislacao/contents/01-lei-8112.md",
     "informatica-basica/contents/02-ferramentas-de-busca.md",
     "informatica-basica/contents/01-navegadores.md",
-    "legislacao/contents/legislacao-cremepe.md",
-    "redes-de-computadores/contents/09-redes-sem-fio.md",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
     "seguranca-da-informacao/contents/img",
