@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algoritmos-busca-ordenacao/contents/10-arvores.md",
+                "file": "algoritmos-busca-ordenacao/contents/11-grafos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10-arvores"
+              "title": "11-grafos"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algoritmos-busca-ordenacao/contents/10-arvores.md",
+                "file": "algoritmos-busca-ordenacao/contents/11-grafos.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 10-arvores"
+              "title": "Sumário de 11-grafos"
             }
           }
         ],
@@ -171,18 +171,20 @@
   },
   "active": "d4a7a2ccf075c628",
   "lastOpenFiles": [
-    "estruturas-de-dados/contents/05-arvores.md",
+    "estruturas-de-dados/contents/06-grafos.md",
+    "algoritmos-busca-ordenacao/contents/11-grafos.md",
+    "algoritmos-busca-ordenacao/contents/img/11-graph-07.png",
+    "algoritmos-busca-ordenacao/contents/img/11-graph-06.png",
+    "algoritmos-busca-ordenacao/contents/img/11-graph-05.png",
+    "algoritmos-busca-ordenacao/contents/img/11-graph-04.png",
+    "algoritmos-busca-ordenacao/contents/img/11-graph-03.png",
+    "algoritmos-busca-ordenacao/contents/img/11-graph-02.png",
+    "algoritmos-busca-ordenacao/contents/img/11-graph-01.png",
+    "algoritmos-busca-ordenacao/contents/img/11-graph-08.png",
+    "algoritmos-busca-ordenacao/contents/img/10-graph-07.png",
+    "algoritmos-busca-ordenacao/contents/img/10-graph-06.png",
     "algoritmos-busca-ordenacao/contents/10-arvores.md",
-    "algoritmos-busca-ordenacao/contents/img/10-tree.png",
-    "algoritmos-busca-ordenacao/contents/img/10-rotate-04.png",
-    "algoritmos-busca-ordenacao/contents/img/10-rotate-03.png",
-    "algoritmos-busca-ordenacao/contents/img/10-rotate-02.png",
-    "algoritmos-busca-ordenacao/contents/img/10-rotate-01.png",
-    "algoritmos-busca-ordenacao/contents/img/10-red-black-tree.png",
-    "algoritmos-busca-ordenacao/contents/img/10-pre-ordem-02.png",
-    "algoritmos-busca-ordenacao/contents/img/10-pre-ordem-01.png",
-    "algoritmos-busca-ordenacao/contents/img/10-pos-ordem-02.png",
-    "algoritmos-busca-ordenacao/contents/img/10-pos-ordem-01.png",
+    "estruturas-de-dados/contents/05-arvores.md",
     "algoritmos-busca-ordenacao/contents/09-pilhas-filas-deques.md",
     "estruturas-de-dados/contents/04-pilhas-e-filas.md",
     "algoritmos-busca-ordenacao/contents/08-listas-encadeadas.md",
@@ -204,8 +206,6 @@
     "informatica-basica/contents/01-navegadores.md",
     "legislacao/contents/legislacao-cremepe.md",
     "redes-de-computadores/contents/09-redes-sem-fio.md",
-    "redes-de-computadores/contents/08-vlans.md",
-    "redes-de-computadores/contents/07-protocolos-stp-e-rstp.md",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
     "seguranca-da-informacao/contents/img",
