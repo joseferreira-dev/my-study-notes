@@ -4,49 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "87636dccd1f15014",
+        "id": "5c7310d2225c38be",
         "type": "tabs",
         "children": [
           {
-            "id": "d4a7a2ccf075c628",
+            "id": "84dc1ec37b0ca9b2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algoritmos-busca-ordenacao/contents/12-outras-estruturas.md",
+                "file": "algoritmos-e-estruturas-de-dados/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "12-outras-estruturas"
-            }
-          },
-          {
-            "id": "e37b58c80563a412",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "algoritmos-busca-ordenacao/contents/img/12-hashtable.png"
-              },
-              "icon": "lucide-image",
-              "title": "12-hashtable"
-            }
-          },
-          {
-            "id": "a56ca23e87b74e83",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "algoritmos-busca-ordenacao/contents/banner-estruturas-de-dados.png"
-              },
-              "icon": "lucide-image",
-              "title": "banner-estruturas-de-dados"
+              "title": "README"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -167,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "estruturas-de-dados/README.md",
+                "file": "algoritmos-e-estruturas-de-dados/README.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -194,54 +169,54 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "f9950e0646dc86e5",
+  "active": "84dc1ec37b0ca9b2",
   "lastOpenFiles": [
-    "algoritmos-busca-ordenacao/contents/banner-estruturas-de-dados.png",
-    "algoritmos-busca-ordenacao/contents/12-outras-estruturas.md",
-    "estruturas-de-dados/contents/07-outras-estruturas.md",
-    "algoritmos-busca-ordenacao/contents/img/12-heap.png",
-    "algoritmos-busca-ordenacao/contents/img/12-hashtable.png",
-    "algoritmos-busca-ordenacao/contents/11-grafos.md",
-    "estruturas-de-dados/contents/06-grafos.md",
-    "algoritmos-busca-ordenacao/contents/img/11-graph-07.png",
-    "algoritmos-busca-ordenacao/contents/img/11-graph-06.png",
-    "algoritmos-busca-ordenacao/contents/img/11-graph-05.png",
-    "algoritmos-busca-ordenacao/contents/img/11-graph-04.png",
-    "algoritmos-busca-ordenacao/contents/img/11-graph-03.png",
-    "algoritmos-busca-ordenacao/contents/img/11-graph-02.png",
-    "algoritmos-busca-ordenacao/contents/img/11-graph-01.png",
-    "algoritmos-busca-ordenacao/contents/img/11-graph-08.png",
-    "algoritmos-busca-ordenacao/contents/10-arvores.md",
-    "estruturas-de-dados/contents/05-arvores.md",
-    "algoritmos-busca-ordenacao/contents/09-pilhas-filas-deques.md",
-    "estruturas-de-dados/contents/04-pilhas-e-filas.md",
-    "algoritmos-busca-ordenacao/contents/08-listas-encadeadas.md",
-    "estruturas-de-dados/contents/03-listas.md",
-    "algoritmos-busca-ordenacao/contents/07-vetores-e-matrizes.md",
-    "estruturas-de-dados/contents/02-vetores-e-matrizes.md",
-    "algoritmos-busca-ordenacao/contents/06-estruturas-de-dados.md",
-    "estruturas-de-dados/contents/01-conceitos-fundamentais.md",
-    "algoritmos-busca-ordenacao/contents/01-introducao-algoritmos.md",
-    "algoritmos-busca-ordenacao/contents/05-algoritmos-de-busca.md",
-    "algoritmos-busca-ordenacao/contents/04-principais-algoritmos-ordenacao-2.md",
-    "algoritmos-busca-ordenacao/contents/03-principais-algoritmos-ordenacao-1.md",
-    "algoritmos-busca-ordenacao/contents/04-merge-quick-heap-shell-sort.md",
-    "algoritmos-busca-ordenacao/contents/02-algoritmos-de-ordenacao.md",
-    "algoritmos-busca-ordenacao/contents/03-bubble-insertion-selection-sort.md",
-    "algoritmos-busca-ordenacao/contents/01-introducao-algoritmos-ordenacao.md",
-    "legislacao/contents/01-lei-8112.md",
-    "informatica-basica/contents/02-ferramentas-de-busca.md",
-    "informatica-basica/contents/01-navegadores.md",
+    "estruturas-de-dados/README.md",
+    "algoritmos-e-estruturas-de-dados/contents/img/12-heap.png",
+    "algoritmos-e-estruturas-de-dados/contents/img/12-hashtable.png",
+    "algoritmos-e-estruturas-de-dados/contents/img/11-graph-08.png",
+    "algoritmos-e-estruturas-de-dados/contents/img/11-graph-07.png",
+    "algoritmos-e-estruturas-de-dados/contents/img/11-graph-06.png",
+    "algoritmos-e-estruturas-de-dados/contents/img/11-graph-05.png",
+    "algoritmos-e-estruturas-de-dados/contents/img/11-graph-04.png",
+    "algoritmos-e-estruturas-de-dados/contents/img/11-graph-03.png",
+    "algoritmos-e-estruturas-de-dados/contents/img/11-graph-02.png",
+    "algoritmos-e-estruturas-de-dados/contents/img/11-graph-01.png",
+    "algoritmos-e-estruturas-de-dados/contents/img",
+    "algoritmos-e-estruturas-de-dados/contents/12-outras-estruturas.md",
+    "algoritmos-e-estruturas-de-dados/contents/11-grafos.md",
+    "algoritmos-e-estruturas-de-dados/contents/09-pilhas-filas-deques.md",
+    "algoritmos-e-estruturas-de-dados/contents/10-arvores.md",
+    "algoritmos-e-estruturas-de-dados/contents/08-listas-encadeadas.md",
+    "algoritmos-e-estruturas-de-dados/contents/06-estruturas-de-dados.md",
+    "algoritmos-e-estruturas-de-dados/contents/07-vetores-e-matrizes.md",
+    "algoritmos-e-estruturas-de-dados/contents/05-algoritmos-de-busca.md",
+    "algoritmos-e-estruturas-de-dados/contents/03-principais-algoritmos-ordenacao-1.md",
+    "algoritmos-e-estruturas-de-dados/contents/04-principais-algoritmos-ordenacao-2.md",
+    "algoritmos-e-estruturas-de-dados/contents/02-algoritmos-de-ordenacao.md",
+    "algoritmos-e-estruturas-de-dados/contents/01-introducao-algoritmos.md",
+    "algoritmos-e-estruturas-de-dados/README.md",
+    "algoritmos-e-estruturas-de-dados/contents",
+    "algoritmos-e-estruturas-de-dados",
+    "algoritmos/contents/04-principais-algoritmos-ordenacao-2.md",
+    "algoritmos/contents/img",
+    "algoritmos/contents/12-outras-estruturas.md",
+    "algoritmos/contents/11-grafos.md",
+    "algoritmos/contents/10-arvores.md",
+    "algoritmos/contents/09-pilhas-filas-deques.md",
+    "algoritmos/contents/08-listas-encadeadas.md",
+    "algoritmos/contents/07-vetores-e-matrizes.md",
+    "algoritmos/contents/06-estruturas-de-dados.md",
+    "algoritmos/contents/05-algoritmos-de-busca.md",
+    "algoritmos/contents/03-principais-algoritmos-ordenacao-1.md",
+    "algoritmos/contents/02-algoritmos-de-ordenacao.md",
+    "algoritmos/contents/01-introducao-algoritmos.md",
+    "algoritmos/contents",
+    "algoritmos",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
     "seguranca-da-informacao/contents/img",
     "seguranca-da-informacao/contents/Nova pasta",
-    "seguranca-da-informacao/contents",
-    "seguranca-da-informacao",
-    "engenharia-de-prompt/contents",
-    "informatica-basica/contents/img",
-    "informatica-basica/contents",
-    "informatica-basica",
     "Sem título.canvas"
   ]
 }
