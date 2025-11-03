@@ -185,6 +185,26 @@ Complexidade de Tempo:
 - Melhor caso: `O(1)` – Acesso direto.
 - Pior caso: `O(n)` – Todos os elementos colidem (cenário raro, mas possível).
 
+## Complexidade de Algoritmos de Busca
+
+A tabela a seguir resume as principais características dos algoritmos de busca, incluindo suas complexidades, estruturas onde são aplicados, e se é necessário que os dados estejam ordenados.
+
+|**Algoritmo**|**Melhor Caso**|**Caso Médio**|**Pior Caso**|**Estrutura**|**Ordenação Necessária**|**Notas**|
+|---|---|---|---|---|---|---|
+|Busca Sequencial|O(1)|O(n)|O(n)|Vetor, Lista|Não|Simples, funciona para dados desordenados|
+|Busca Binária|O(1)|O(log n)|O(log n)|Vetor|Sim|Estrutura ordenada é obrigatória|
+|Busca DFS|O(1)|O(V + E)|O(V + E)|Grafo, Árvore|Não|Boa para explorar profundamente; V = vértices, E = arestas|
+|Busca BFS|O(1)|O(V + E)|O(V + E)|Grafo, Árvore|Não|Ideal para encontrar caminho mais curto em termos de passos|
+|Busca A*|Depende da heurística|Depende|Exponencial|Grafo com custos|Não|Muito eficiente com heurísticas admissíveis e consistentes|
+|Hash|O(1)|O(1)|O(n)|Tabela Hash|Não|Desempenho depende da função hash e do tratamento de colisões|
+
+📌 Notas:
+
+- A busca em hash é extremamente eficiente se a função hash for bem projetada e houver um bom tratamento de colisões (como encadeamento ou endereçamento aberto).
+- A busca binária, embora muito eficiente, só pode ser aplicada em dados previamente ordenados.
+- Nos algoritmos de grafos, tanto DFS quanto BFS possuem a mesma complexidade, mas são utilizados em contextos diferentes, de acordo com o objetivo da busca.
+- A eficiência do algoritmo A* está diretamente ligada à qualidade da heurística. Quando a heurística é bem ajustada, o A* pode encontrar caminhos ótimos rapidamente; caso contrário, seu desempenho pode degradar exponencialmente.
+
 ## Considerações Finais
 
 Ao longo deste capítulo, estudamos diversos algoritmos de busca, cada um com suas características, vantagens, limitações e aplicações específicas. Fica evidente que não existe um algoritmo universalmente melhor, mas sim algoritmos mais adequados para determinados tipos de problemas e estruturas de dados.

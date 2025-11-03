@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algoritmos-busca-ordenacao/contents/04-principais-algoritmos-ordenacao-2.md",
-                "mode": "preview",
+                "file": "algoritmos-busca-ordenacao/contents/05-algoritmos-de-busca.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-principais-algoritmos-ordenacao-2"
+              "title": "05-algoritmos-de-busca"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algoritmos-busca-ordenacao/contents/04-principais-algoritmos-ordenacao-2.md",
+                "file": "algoritmos-busca-ordenacao/contents/05-algoritmos-de-busca.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 04-principais-algoritmos-ordenacao-2"
+              "title": "Sumário de 05-algoritmos-de-busca"
             }
           }
         ],
@@ -171,14 +171,15 @@
   },
   "active": "d4a7a2ccf075c628",
   "lastOpenFiles": [
-    "algoritmos-busca-ordenacao/contents/03-principais-algoritmos-ordenacao-1.md",
+    "algoritmos-busca-ordenacao/contents/07-algoritmos-de-busca.md",
+    "algoritmos-busca-ordenacao/contents/05-algoritmos-de-busca.md",
+    "algoritmos-busca-ordenacao/contents/08-resumo.md",
     "algoritmos-busca-ordenacao/contents/04-principais-algoritmos-ordenacao-2.md",
+    "algoritmos-busca-ordenacao/contents/03-principais-algoritmos-ordenacao-1.md",
     "algoritmos-busca-ordenacao/contents/06-counting-radix-bucket-sort.md",
-    "algoritmos-busca-ordenacao/contents/05-shell-comb-tim-sort.md",
     "algoritmos-busca-ordenacao/contents/04-merge-quick-heap-shell-sort.md",
     "algoritmos-busca-ordenacao/contents/02-algoritmos-de-ordenacao.md",
     "algoritmos-busca-ordenacao/contents/03-bubble-insertion-selection-sort.md",
-    "algoritmos-busca-ordenacao/contents/07-algoritmos-de-busca.md",
     "algoritmos-busca-ordenacao/contents/01-introducao-algoritmos.md",
     "algoritmos-busca-ordenacao/contents/01-introducao-algoritmos-ordenacao.md",
     "estruturas-de-dados/contents/01-conceitos-fundamentais.md",
@@ -206,7 +207,6 @@
     "redes-de-computadores/contents/05-arquitetura-tcp-ip.md",
     "redes-de-computadores/contents/03-equipamentos-de-rede.md",
     "redes-de-computadores/contents/04-modelo-osi.md",
-    "engenharia-de-software/contents/09-modelos-especificos.md",
     "linguagem-python/contents/img",
     "linguagem-python/contents/Nova pasta",
     "seguranca-da-informacao/contents/img",
