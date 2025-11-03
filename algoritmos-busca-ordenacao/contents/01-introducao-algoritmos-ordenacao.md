@@ -1,14 +1,12 @@
 # Capítulo 1 – Introdução e Complexidade de Algoritmos
 
-## Por que Estudar a Complexidade de Algoritmos?
-
 Quando desenvolvemos soluções computacionais, é fundamental compreender que nem todos os algoritmos resolvem um problema com a mesma eficiência. O estudo da **complexidade de algoritmos** serve exatamente para isso: medir o custo computacional associado à execução de um algoritmo, seja em termos de **tempo**, **espaço** ou outros recursos computacionais.
 
 De forma mais ampla, a complexidade permite classificar problemas de acordo com sua **dificuldade inerente**, fornecendo ferramentas para comparar diferentes algoritmos destinados a resolver o mesmo problema. Esse conhecimento é essencial não apenas para escolher o algoritmo mais eficiente, mas também para entender os limites do que é computacionalmente viável.
 
 Ao longo desta apostila, analisaremos detalhadamente algoritmos de ordenação e de busca. Contudo, antes de mergulharmos nesses tópicos, é indispensável que compreendamos como funciona a análise de complexidade, pois ela será frequentemente utilizada nas discussões que se seguirão.
 
-## A Busca por uma Métrica Justa
+## Busca por uma Métrica Justa
 
 A princípio, pode parecer natural medir a eficiência de um algoritmo pelo **tempo absoluto de execução**. No entanto, essa abordagem não é adequada, pois o tempo depende de uma série de fatores externos:
 
@@ -40,13 +38,13 @@ Por exemplo, magine um jogo de baralho. Suponha que, no início da partida, voc�
 
 Essa analogia ilustra bem como a disposição inicial dos dados influencia o desempenho dos algoritmos, principalmente nos de ordenação e busca.
 
-## A importância da Análise Assintótica
+## Análise Assintótica
 
 Para estudar o comportamento dos algoritmos de forma geral e independente de implementações específicas, utilizamos a chamada **Análise Assintótica**. Ela busca compreender como o tempo de execução (ou o uso de memória) de um algoritmo cresce à medida que o tamanho da entrada aumenta.
 
 A análise assintótica abstrai detalhes irrelevantes, como constantes e fatores menores, focando no comportamento dominante conforme o problema escala.
 
-## Notação Big-O e Outras Notações Assintóticas
+## Notação Big-O
 
 A **Notação Big-O (O)** é uma ferramenta matemática utilizada para descrever a **cota superior do tempo de execução** de um algoritmo. Ela indica, de forma simplificada, como a quantidade de operações cresce com o tamanho da entrada.
 
@@ -77,25 +75,25 @@ Na verdade, a **base do logaritmo é irrelevante na análise assintótica**, des
 
 Portanto, **O(log₂ n)**, **O(log₁₀ n)** ou **O(ln n)** representam a mesma classe de complexidade.
 
-## Classes de Complexidade mais Comuns
+## Classes de Complexidade
 
 A seguir, apresentamos as classes de complexidade mais frequentes na análise de algoritmos, organizadas da menor para a maior taxa de crescimento:
 
-|Notação|Nome|
-|---|---|
-|O(1)|Constante|
-|O(log n)|Logarítmica|
-|O((log n)ᶜ)|Polilogarítmica|
-|O(n)|Linear|
-|O(n log n)|Linearítmica|
-|O(n²)|Quadrática|
-|O(n³)|Cúbica|
-|O(nᶜ)|Polinomial|
-|O(cⁿ)|Exponencial|
-|O(n!)|Fatorial|
+| Notação     | Nome            |
+| ----------- | --------------- |
+| O(1)        | Constante       |
+| O(log n)    | Logarítmica     |
+| O((log n)ᶜ) | Polilogarítmica |
+| O(n)        | Linear          |
+| O(n log n)  | Linearítmica    |
+| O(n²)       | Quadrática      |
+| O(n³)       | Cúbica          |
+| O(nᶜ)       | Polinomial      |
+| O(cⁿ)       | Exponencial     |
+| O(n!)       | Fatorial        |
 
 <div align="center">
-  <img width="640px" src="./img/01-classes-de-complexidade.png">
+  <img width="700px" src="./img/01-classes-de-complexidade.png">
 </div>
 
 Conforme podemos ver na imagem, se desejamos ordenar uma lista de elementos. Se o algoritmo possui complexidade **O(n log n)**, significa que ele será muito mais eficiente que um algoritmo **O(n²)** à medida que a quantidade de dados cresce.
