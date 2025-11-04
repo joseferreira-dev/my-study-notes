@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algoritmos-e-estruturas-de-dados/contents/12-outras-estruturas.md",
+                "file": "legislacao/contents/10-lei-8027.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "12-outras-estruturas"
+              "title": "10-lei-8027"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algoritmos-e-estruturas-de-dados/contents/12-outras-estruturas.md",
+                "file": "legislacao/contents/10-lei-8027.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 12-outras-estruturas"
+              "title": "Sumário de 10-lei-8027"
             }
           }
         ],
@@ -171,6 +171,8 @@
   },
   "active": "84dc1ec37b0ca9b2",
   "lastOpenFiles": [
+    "algoritmos-e-estruturas-de-dados/contents/12-outras-estruturas.md",
+    "legislacao/contents/10-lei-8027.md",
     "algoritmos-e-estruturas-de-dados/contents/11-grafos.md",
     "algoritmos-e-estruturas-de-dados/contents/10-arvores.md",
     "algoritmos-e-estruturas-de-dados/contents/09-pilhas-filas-deques.md",
@@ -195,7 +197,6 @@
     "algoritmos-e-estruturas-de-dados/contents/img/11-graph-02.png",
     "algoritmos-e-estruturas-de-dados/contents/img/11-graph-01.png",
     "algoritmos-e-estruturas-de-dados/contents/img",
-    "algoritmos-e-estruturas-de-dados/contents/12-outras-estruturas.md",
     "algoritmos-e-estruturas-de-dados/contents",
     "algoritmos-e-estruturas-de-dados",
     "algoritmos/contents/04-principais-algoritmos-ordenacao-2.md",
@@ -210,7 +211,6 @@
     "algoritmos/contents/05-algoritmos-de-busca.md",
     "algoritmos/contents/03-principais-algoritmos-ordenacao-1.md",
     "algoritmos/contents/02-algoritmos-de-ordenacao.md",
-    "algoritmos/contents/01-introducao-algoritmos.md",
     "algoritmos/contents",
     "algoritmos",
     "linguagem-python/contents/img",
