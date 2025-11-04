@@ -228,7 +228,7 @@ SELECT * FROM BANDA WHERE PAIS = 'Inglaterra';
 
 O SGBD não precisa ler a tabela. Ele apenas pega o vetor de bits da linha "Inglaterra": `[1, 0, 0, 1, 0, 0, 0, 1, 0, 1]`. Os bits 1 estão nas posições 1, 4, 8, 10. O SGBD vai diretamente a esses ROWIDs e retorna os dados.
 
-Consulta Composta (OR):
+Consulta Composta (`OR`):
 
 ```sql
 SELECT * FROM BANDA WHERE PAIS = 'Inglaterra' OR PAIS = 'EUA';
@@ -243,7 +243,7 @@ OR [1, 0, 0, 1, 0, 0, 0, 1, 0, 1] (Inglaterra)
 =  [1, 1, 1, 1, 0, 1, 0, 1, 1, 1] (Resultado)
 ```
 
-O SGBD agora busca os ROWIDs 1, 2, 3, 4, 6, 8, 9, 10.
+O SGBD agora busca os ROWIDs `1, 2, 3, 4, 6, 8, 9, 10`.
 
 Bitmaps também podem ser combinados para múltiplas colunas. São ideais para ambientes de _Data Warehouse_ (OLAP), que têm muitas leituras e poucas escritas, mas são ruins para sistemas OLTP (como um e-commerce), pois cada `INSERT` ou `UPDATE` exigiria o recálculo de múltiplos vetores de bits.
 
