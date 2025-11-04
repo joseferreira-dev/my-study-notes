@@ -128,7 +128,7 @@ fim_procedimento
 
 _(Nota: Manter um ponteiro separado para a `cauda` (tail) pode tornar esta operação $O(1)$)._
 
-**Remoção no Meio ou Fim (Complexidade: $O(n)$):** Esta é a operação mais custosa. Para remover um nó X, não basta ter um ponteiro para X; precisamos de um ponteiro para o nó anterior a X, para que possamos "remendar" a lista (anterior.proximo = X.proximo). Encontrar o nó anterior exige uma travessia $O(n)$.
+**Remoção no Meio ou Fim (Complexidade: $O(n)$):** Esta é a operação mais custosa. Para remover um nó X, não basta ter um ponteiro para X; precisamos de um ponteiro para o nó anterior a X, para que possamos "remendar" a lista (`anterior.proximo = X.proximo`). Encontrar o nó anterior exige uma travessia $O(n)$.
 
 ## Listas Duplamente Encadeadas (Doubly Linked Lists)
 
