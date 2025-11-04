@@ -58,11 +58,11 @@ A busca binária funciona eliminando _metade_ do universo de busca a cada compar
 
 1. O algoritmo define três "ponteiros": `inicio` (para o índice 0), `fim` (para o índice `n-1`) e `meio`.
 2. Enquanto inicio for menor ou igual a fim:
-    a. Calcula-se o índice meio ( (inicio + fim) / 2 ).
-    b. O elemento vetor[meio] é comparado com o valor buscado.
-    c. Caso 1 (Encontrou): Se vetor[meio] for igual ao valor, a busca termina com sucesso, retornando meio.
-    d. Caso 2 (Valor é menor): Se o valor buscado for menor que vetor[meio], significa que o item só pode estar na metade esquerda. O algoritmo descarta a metade direita, atualizando fim = meio - 1.
-    e. Caso 3 (Valor é maior): Se o valor buscado for maior que vetor[meio], o item só pode estar na metade direita. O algoritmo descarta a metade esquerda, atualizando inicio = meio + 1.
+    1. Calcula-se o índice meio (`(inicio + fim) / 2`).
+    2. O elemento `vetor[meio]` é comparado com o valor buscado.
+    3. Caso 1 (Encontrou): Se `vetor[meio]` for igual ao valor, a busca termina com sucesso, retornando meio.
+    4. Caso 2 (Valor é menor): Se o valor buscado for menor que `vetor[meio]`, significa que o item só pode estar na metade esquerda. O algoritmo descarta a metade direita, atualizando `fim = meio - 1`.
+    5. Caso 3 (Valor é maior): Se o valor buscado for maior que `vetor[meio]`, o item só pode estar na metade direita. O algoritmo descarta a metade esquerda, atualizando `inicio = meio + 1`.
 3. Se o loop terminar (ou seja, `inicio` ultrapassar `fim`), significa que o elemento não está na lista.
 
 A eficiência da busca binária é extraordinária. Em uma lista de 1 milhão de elementos ($2^{20}$), ela encontra qualquer item em, no máximo, 20 comparações. Em uma lista de 1 bilhão ($2^{30}$), em no máximo 30. Isso é uma melhoria exponencial sobre os 1 bilhão de comparações do pior caso da busca sequencial.
