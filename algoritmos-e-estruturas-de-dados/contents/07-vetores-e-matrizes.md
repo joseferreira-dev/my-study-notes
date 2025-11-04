@@ -16,7 +16,7 @@ Um **vetor**, tecnicamente conhecido como **array unidimensional**, é a estrutu
 
 Na imagem acima, temos um vetor de inteiros com capacidade para 6 elementos. Os valores `2`, `7`, `3` e `1` foram armazenados nas posições (índices) `0`, `1`, `2` e `3`, respectivamente. As posições `4` e `5` estão alocadas, mas ainda não foram preenchidas com dados úteis.
 
-### Eficiência do Acesso O(1)
+### Eficiência do Acesso
 
 A principal vantagem dos vetores, decorrente de sua alocação contígua, é o **acesso direto em tempo constante**, ou **$O(1)$**. Isso significa que o tempo para acessar qualquer elemento é o mesmo, não importa se é o primeiro, o do meio ou o último.
 
@@ -24,7 +24,7 @@ Isso não é mágica; é matemática simples de hardware. Quando se requisita `v
 
 $Endereço(vetor[i]) = EndereçoBase + (i \times TamanhoDoElemento)$
 
-Por exemplo, para encontrar `vetor[3]` (o elemento "1" da imagem):
+Por exemplo, para encontrar `vetor[3]` (o elemento "1" da imagem acima):
 
 - `EndereçoBase`: Onde o vetor começa (ex: `1000`).
 - `i`: O índice desejado (`3`).
@@ -49,7 +49,7 @@ Percorrer todos os elementos, seja para ler, modificar ou processar, é a opera�
 
 - **Complexidade:** **$O(n)$**
 
-**Pseudocódigo (Travessia):**
+**Pseudocódigo:**
 
 ```
 função PercorrerVetor(vetor)
@@ -64,7 +64,7 @@ fim_função
 
 É aqui que a fraqueza do vetor estático aparece. Como a memória é contígua, não podemos simplesmente "criar" um novo espaço no meio.
 
-- **Inserção no final:** Se o vetor ainda tiver espaço (como nas posições 4 e 5 da imagem), a inserção no final é $O(1)$, pois basta atribuir o valor à posição `vetor[tamanho_atual]`.
+- **Inserção no final:** Se o vetor ainda tiver espaço (como nas posições 4 e 5 do exemplo inicial), a inserção no final é $O(1)$, pois basta atribuir o valor à posição `vetor[tamanho_atual]`.
 - **Inserção no início ou meio:** Para inserir um elemento no índice `i`, é preciso "abrir espaço". Isso exige deslocar _todos_ os elementos de `i` até $n-1$ uma posição para a direita, antes de inserir o novo valor.
 - **Remoção no início ou meio:** Similarmente, para remover um elemento do índice `i`, é preciso "fechar o buraco", deslocando _todos_ os elementos de `i+1` até $n-1$ uma posição para a esquerda.
 
@@ -88,13 +88,13 @@ função InserirEm(vetor, tamanho_atual, indice, valor)
 fim_função
 ```
 
-## Implementação de Vetores (Exemplos)
+## Implementação de Vetores
 
 Embora o conceito de "vetor" seja universal, sua implementação e terminologia variam entre as linguagens.
 
 **C (Vetor Estático Puro):** Em C, um array é exatamente o que descrevemos: um bloco de memória estático e contíguo.
 
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -179,7 +179,7 @@ Esta estrutura resolve a limitação do tamanho fixo da seguinte forma:
 
 1. **Internamente:** Ela usa um vetor estático.
 2. **Capacidade vs. Tamanho:** Ela gerencia duas variáveis: `tamanho` (quantos elementos realmente existem) e `capacidade` (o tamanho do vetor interno).
-3. Redimensionamento: Quando o usuário tenta adicionar um item (ex: push ou append) e o tamanho é igual à capacidade, a estrutura executa uma operação de redimensionamento:
+3. Redimensionamento: Quando o usuário tenta adicionar um item (ex: `push` ou `append`) e o tamanho é igual à capacidade, a estrutura executa uma operação de redimensionamento:
     - Aloca um novo vetor interno, maior (geralmente o dobro do tamanho).
     - Copia todos os $n$ elementos do vetor antigo para o novo.
     - Libera a memória do vetor antigo.
