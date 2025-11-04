@@ -161,9 +161,11 @@ public class PilhaHeapExemplo {
     public static void main(String[] args) {
         int x = 10; // 'x' (primitivo) é armazenado na Stack.
         Pessoa p = new Pessoa("João"); // 'p' (referência) é armazenado na Stack.
-                                     // O objeto 'new Pessoa("João")' é criado no Heap.
+                                       // O objeto 'new Pessoa("João")' é criado
+                                       // no Heap.
     }
 }
+
 class Pessoa {
     String nome;
     Pessoa(String nome) { this.nome = nome; }
@@ -173,9 +175,12 @@ class Pessoa {
 **Exemplo em Python:**
 
 ```python
-x = 10             # 'x' é uma referência na Stack para um objeto '10' no Heap.*
+x = 10                       # 'x' é uma referência na Stack para um
+							 # objeto '10' no Heap.*
+							 
 pessoa = {"nome": "Carlos"}  # 'pessoa' é uma referência na Stack.
-                           # O dicionário '{"nome": "Carlos"}' é um objeto no Heap.
+                             # O dicionário '{"nome": "Carlos"}' é um
+                             # objeto no Heap.
 ```
 
 \*Nota: Em Python, tudo é objeto, então até mesmo `10` é um objeto no Heap, e `x` é uma referência na Stack para ele.
@@ -187,8 +192,8 @@ pessoa = {"nome": "Carlos"}  # 'pessoa' é uma referência na Stack.
 #include <string.h>
 
 int main() {
-    int y = 20; // 'y' é alocado diretamente na Stack.
-    char *nome = malloc(20 * sizeof(char));  // 'nome' (ponteiro) está na Stack.
+    int y = 20;  // 'y' é alocado diretamente na Stack.
+    char *nome = malloc(20 * sizeof(char)); // 'nome' (ponteiro) está na Stack.
                                             // 'malloc' aloca 20 bytes no Heap.
     strcpy(nome, "Ana");
     free(nome);  // Desalocação manual obrigatória do espaço no Heap.
