@@ -110,7 +110,7 @@ Muitas vezes, os dados não estão em uma lista simples, mas sim em estruturas c
 
 A Busca em Profundidade é uma estratégia de travessia que explora o "mais fundo" possível antes de voltar atrás. É como explorar um labirinto seguindo sempre a primeira parede à sua direita: você mergulha em um caminho até bater em um beco sem saída, e só então você retrocede (faz _backtracking_) para tentar o próximo caminho disponível.
 
-A DFS utiliza uma **pilha** (Pilha - LIFO: Último a Entrar, Primeiro a Sair) para gerenciar os nós a visitar. Na implementação recursiva, a própria pilha de chamadas de função do sistema faz esse papel.
+A DFS utiliza uma **pilha** (LIFO) para gerenciar os nós a visitar. Na implementação recursiva, a própria pilha de chamadas de função do sistema faz esse papel.
 
 **Como Funciona:**
 
@@ -154,7 +154,7 @@ DFS(no_raiz)
 
 A Busca em Largura adota a estratégia oposta. Em vez de "mergulhar", ela explora de forma "larga", nível por nível. É como jogar uma pedra em um lago: a busca se expande em ondas concêntricas a partir do ponto inicial. Ela visita o nó inicial, depois _todos_ os seus vizinhos diretos (nível 1), depois _todos_ os vizinhos dos vizinhos (nível 2), e assim por diante.
 
-Para conseguir essa ordem, a BFS utiliza uma **fila** (Fila - FIFO: Primeiro a Entrar, Primeiro a Sair).
+Para conseguir essa ordem, a BFS utiliza uma **fila** (FIFO).
 
 **Como Funciona:**
 
@@ -163,8 +163,8 @@ Para conseguir essa ordem, a BFS utiliza uma **fila** (Fila - FIFO: Primeiro a E
     1. Desenfileira um nó (remove da frente da fila).
     2. Processa esse nó.
     3. Para cada vizinho não visitado desse nó:
-	    a. Marca o vizinho como "visitado".
-	    b. Enfileira o vizinho (adiciona ao fim da fila).
+	    1. Marca o vizinho como "visitado".
+	    2. Enfileira o vizinho (adiciona ao fim da fila).
 
 A propriedade mais importante da BFS é que ela **garante encontrar o caminho mais curto** (em termos de número de arestas ou níveis) entre o nó inicial e qualquer outro nó. Isso a torna ideal para problemas como encontrar a rota mais curta em um mapa (com custos iguais) ou encontrar o "grau de separação" em uma rede social. Sua desvantagem é o **alto consumo de memória**, pois a fila pode ter que armazenar todos os nós de um nível inteiro, o que pode ser massivo em grafos com alta ramificação.
 

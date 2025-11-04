@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algoritmos-e-estruturas-de-dados/contents/05-algoritmos-de-busca.md",
+                "file": "algoritmos-e-estruturas-de-dados/contents/06-estruturas-de-dados.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-algoritmos-de-busca"
+              "title": "06-estruturas-de-dados"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algoritmos-e-estruturas-de-dados/contents/05-algoritmos-de-busca.md",
+                "file": "algoritmos-e-estruturas-de-dados/contents/06-estruturas-de-dados.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 05-algoritmos-de-busca"
+              "title": "Sumário de 06-estruturas-de-dados"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "84dc1ec37b0ca9b2",
   "lastOpenFiles": [
+    "algoritmos-e-estruturas-de-dados/contents/05-algoritmos-de-busca.md",
     "algoritmos-e-estruturas-de-dados/contents/04-principais-algoritmos-ordenacao-2.md",
     "algoritmos-e-estruturas-de-dados/contents/03-principais-algoritmos-ordenacao-1.md",
     "algoritmos-e-estruturas-de-dados/contents/02-algoritmos-de-ordenacao.md",
@@ -195,7 +196,6 @@
     "algoritmos-e-estruturas-de-dados/contents/08-listas-encadeadas.md",
     "algoritmos-e-estruturas-de-dados/contents/06-estruturas-de-dados.md",
     "algoritmos-e-estruturas-de-dados/contents/07-vetores-e-matrizes.md",
-    "algoritmos-e-estruturas-de-dados/contents/05-algoritmos-de-busca.md",
     "algoritmos-e-estruturas-de-dados/contents",
     "algoritmos-e-estruturas-de-dados",
     "algoritmos/contents/04-principais-algoritmos-ordenacao-2.md",
