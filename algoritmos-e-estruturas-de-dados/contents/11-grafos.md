@@ -18,7 +18,7 @@ Para discutir grafos, precisamos de um vocabulário comum. A imagem a seguir apr
 - **Aresta (ou Arco):** É a conexão entre dois vértices. Nas árvores, as arestas são coadjuvantes que definem a hierarquia; em grafos, elas são protagonistas, podendo ter direção e valor.
     - **Peso:** Um valor associado a uma aresta, representando um "custo". No grafo (C), os pesos são as distâncias entre as cidades.
     - **Laço (Loop):** Uma aresta que conecta um vértice a ele mesmo, como visto no vértice `D` do grafo (B). Isso só é comum em grafos direcionados.
-- **Vértice Adjacente (Vizinho):** Um vértice é adjacente a outro se houver uma aresta direta conectando-os. No grafo (A), os adjacentes de `E` são `A`, `B`, `D` e `F`. No grafo (B), os adjacentes de `A` são `B` e `C` (mas `A` _não_ é adjacente de `B`).
+- **Vértice Adjacente (Vizinho):** Um vértice é adjacente a outro se houver uma aresta direta conectando-os. No grafo (A), os adjacentes de `E` são `A` e `F`. No grafo (B), os adjacentes de `A` são `B` e `C` (mas `A` _não_ é adjacente de `B` e `C`).
 - **Grau (Valência) de um Vértice:** A quantidade de arestas conectadas a um vértice.
     - Em grafos **não direcionados** (como A), o grau de `A` é 3.
     - Em grafos **direcionados** (como B), diferenciamos:
@@ -39,11 +39,11 @@ Os grafos são classificados com base nas propriedades de suas arestas e vértic
 - **Grafo Ponderado (C):** As arestas possuem pesos (custos) associados a elas. Essencial para problemas de otimização, como encontrar a rota mais curta em um mapa.
 - **Grafo Não Ponderado (A, B):** As arestas servem apenas para indicar conexão, sem custo.
 - **Grafo Simples (A, C):** Um grafo não direcionado, sem laços e sem arestas paralelas (múltiplas arestas entre os mesmos dois vértices). O grafo (B) não é simples por ser direcionado e ter um laço.
-- **Grafo Conexo (A, C):** Um grafo onde existe um caminho de qualquer vértice para qualquer outro vértice. O grafo (B) é **desconexo**, pois do vértice `C` (ou `D`) não se consegue alcançar `A`.
+- **Grafo Conexo (A, C):** Um grafo onde existe um caminho de qualquer vértice para qualquer outro vértice. O grafo (B) é **desconexo**, pois do vértice `C` não se consegue alcançar `A`.
 - **Grafo Cíclico (A, B, C):** Um grafo que contém pelo menos um ciclo, ou seja, um caminho que começa e termina no mesmo vértice sem repetir arestas. `A-B-E-D-C-A` é um ciclo em (A). `D-D` é um ciclo em (B).
 - **Grafo Acíclico (DAG):** Um grafo que não possui ciclos. Um **Grafo Direcionado Acíclico (DAG)** é uma estrutura muito importante, usada para modelar dependências (ex: `B` deve ser feito antes de `A`).
 - **Grafo Completo (C):** Um grafo onde cada vértice está conectado a _todos_ os outros vértices.
-- **Grafo Regular (A, C):** Um grafo onde _todos_ os vértices têm o mesmo grau. (Em (A), todos têm grau 3; em (C), todos têm grau 4). Note que todo grafo completo é também regular.
+- **Grafo Regular (A, C):** Um grafo onde _todos_ os vértices têm o mesmo grau. (Em (A), todos têm grau 2; em (C), todos têm grau 4). Note que todo grafo completo é também regular.
 - **Árvore:** Uma árvore é um tipo especial de grafo: é um grafo conexo, acíclico e não direcionado.
 
 ## Representações Computacionais de Grafos
@@ -109,7 +109,7 @@ A escolha da representação correta depende da densidade do grafo (denso vs. es
 |**Verificar Adjacência (A, B)?**|$O(1)$|$O(Grau(A))$|$O(E)$|
 |**Listar Vizinhos de A**|$O(V)$|$O(Grau(A))$|$O(E)$|
 
-_(Assumindo que $O(1)$ é para adicionar ao início da lista encadeada)._
+\*(Assumindo que $O(1)$ é para adicionar ao início da lista encadeada).
 
 **Conclusão:** Para **grafos densos** (muitas arestas), a **Matriz de Adjacência** é boa pela verificação $O(1)$. Para **grafos esparsos** (poucas arestas), a **Lista de Adjacência** é quase sempre a melhor escolha, sendo a mais usada na prática.
 
