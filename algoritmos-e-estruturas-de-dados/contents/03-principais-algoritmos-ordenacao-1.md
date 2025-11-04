@@ -17,7 +17,7 @@ O Bubble Sort é talvez o algoritmo de ordenação mais simples e intuitivo de s
 3. Se o elemento atual for maior que o próximo, eles são trocados.
 4. O algoritmo avança para o próximo par (agora `vetor[i+1]` e `vetor[i+2]`) e repete o processo.
 5. **Fim da Passagem:** Ao final da primeira passagem completa pela lista, o **maior** elemento estará garantidamente na **última** posição.
-6. **Iteração:** O processo é repetido para o restante da lista (da posição 0 até $n-2$), depois da 0 até $n-3$, e assim por diante, até que a lista inteira esteja ordenada.
+6. **Iteração:** O processo é repetido para o restante da lista (da posição $0$ até $n-2$), depois da $0$ até $n-3$, e assim por diante, até que a lista inteira esteja ordenada.
 
 **Exemplo Prático: Ordenando `[5, 3, 8, 4, 2]`**
 
@@ -25,28 +25,28 @@ Observe como o maior elemento de cada passagem "flutua" para o final:
 
 **Passagem 1 (n = 5):**
 
-- `[**5**, **3**, 8, 4, 2]` -> `(5 > 3)` Troca. -> `[3, 5, 8, 4, 2]`
-- `[3, **5**, **8**, 4, 2]` -> `(5 < 8)` Não troca. -> `[3, 5, 8, 4, 2]`
-- `[3, 5, **8**, **4**, 2]` -> `(8 > 4)` Troca. -> `[3, 5, 4, 8, 2]`
-- `[3, 5, 4, **8**, **2**]` -> `(8 > 2)` Troca. -> `[3, 5, 4, 2, **8**]`
+- `['5', '3', 8, 4, 2]` -> `(5 > 3)` Troca. -> `[3, 5, 8, 4, 2]`
+- `[3, '5', '8' 4, 2]` -> `(5 < 8)` Não troca. -> `[3, 5, 8, 4, 2]`
+- `[3, 5, '8', '4', 2]` -> `(8 > 4)` Troca. -> `[3, 5, 4, 8, 2]`
+- `[3, 5, 4, '8', '2']` -> `(8 > 2)` Troca. -> `[3, 5, 4, 2, '8']`
 - _Fim da Passagem 1. O `8` está na posição correta._
 
 **Passagem 2 (n = 4):**
 
-- `[**3**, **5**, 4, 2, 8]` -> `(3 < 5)` Não troca. -> `[3, 5, 4, 2, 8]`
-- `[3, **5**, **4**, 2, 8]` -> `(5 > 4)` Troca. -> `[3, 4, 5, 2, 8]`
-- `[3, 4, **5**, **2**, 8]` -> `(5 > 2)` Troca. -> `[3, 4, 2, **5**, 8]`
+- `['3', '5', 4, 2, 8]` -> `(3 < 5)` Não troca. -> `[3, 5, 4, 2, 8]`
+- `[3, '5', '4', 2, 8]` -> `(5 > 4)` Troca. -> `[3, 4, 5, 2, 8]`
+- `[3, 4, '5', '2', 8]` -> `(5 > 2)` Troca. -> `[3, 4, 2, '5', 8]`
 - _Fim da Passagem 2. O `5` está na posição correta._
 
 **Passagem 3 (n = 3):**
 
-- `[**3**, **4**, 2, 5, 8]` -> `(3 < 4)` Não troca. -> `[3, 4, 2, 5, 8]`
-- `[3, **4**, **2**, 5, 8]` -> `(4 > 2)` Troca. -> `[3, 2, **4**, 5, 8]`
+- `['3', '4', 2, 5, 8]` -> `(3 < 4)` Não troca. -> `[3, 4, 2, 5, 8]`
+- `[3, '4', '2', 5, 8]` -> `(4 > 2)` Troca. -> `[3, 2, '4', 5, 8]`
 - _Fim da Passagem 3. O `4` está na posição correta._
 
 **Passagem 4 (n = 2):**
 
-- `[**3**, **2**, 4, 5, 8]` -> `(3 > 2)` Troca. -> `[2, **3**, 4, 5, 8]`
+- `['3', '2', 4, 5, 8]` -> `(3 > 2)` Troca. -> `[2, '3', 4, 5, 8]`
 - _Fim da Passagem 4. O `3` está na posição correta._
 
 A lista final é `[2, 3, 4, 5, 8]`.
@@ -101,13 +101,13 @@ O Insertion Sort é outro algoritmo intuitivo, cuja lógica simula a forma como 
 - Sublista ordenada: `[5]`. Chave = `3`.
 - Compara `3` com `5`. `(3 < 5)`.
 - Desloca `5` para a direita: `[5, 5, 8, 4, 2]`
-- Insere `3` no "buraco": `[**3**, **5**, 8, 4, 2]`
+- Insere `3` no "buraco": `['3', '5', 8, 4, 2]`
 
 **Passagem 2 (Elemento `8`):**
 
 - Sublista ordenada: `[3, 5]`. Chave = `8`.
 - Compara `8` com `5`. `(8 > 5)`. A posição correta foi encontrada.
-- Insere `8` (ele já está lá): `[3, 5, **8**, 4, 2]`
+- Insere `8` (ele já está lá): `[3, 5, '8', 4, 2]`
 
 **Passagem 3 (Elemento `4`):**
 
@@ -115,7 +115,7 @@ O Insertion Sort é outro algoritmo intuitivo, cuja lógica simula a forma como 
 - Compara `4` com `8`. `(4 < 8)`. Desloca `8`: `[3, 5, 8, 8, 2]`
 - Compara `4` com `5`. `(4 < 5)`. Desloca `5`: `[3, 5, 5, 8, 2]`
 - Compara `4` com `3`. `(4 > 3)`. Posição encontrada.
-- Insere `4` no "buraco": `[3, **4**, **5**, 8, 2]`
+- Insere `4` no "buraco": `[3, '4', '5', 8, 2]`
 
 **Passagem 4 (Elemento `2`):**
 
@@ -125,7 +125,7 @@ O Insertion Sort é outro algoritmo intuitivo, cuja lógica simula a forma como 
 - Compara `2` com `4`. `(2 < 4)`. Desloca `4`: `[3, 4, 4, 5, 8]`
 - Compara `2` com `3`. `(2 < 3)`. Desloca `3`: `[3, 3, 4, 5, 8]`
 - Chegou ao início.
-- Insere `2` no "buraco": `[**2**, **3**, 4, 5, 8]`
+- Insere `2` no "buraco": `['2', '3', 4, 5, 8]`
 
 Lista final: `[2, 3, 4, 5, 8]`.
 
@@ -176,7 +176,7 @@ O Selection Sort é o terceiro algoritmo simples, e sua lógica é baseada em "s
 - Lista: `[5, 3, 8, 4, 2]`
 - Varre `[5, 3, 8, 4, 2]`. Menor elemento é `2`, no índice 4.
 - Troca `vetor[0]` (que é 5) com `vetor[4]` (que é 2).
-- Lista: `[**2**, 3, 8, 4, 5]`
+- Lista: `['2', 3, 8, 4, 5]`
 - _Parte ordenada: `[2]`_
 
 **Passagem 2 (i = 1):**
@@ -184,7 +184,7 @@ O Selection Sort é o terceiro algoritmo simples, e sua lógica é baseada em "s
 - Lista: `[2, 3, 8, 4, 5]`
 - Varre `[3, 8, 4, 5]`. Menor elemento é `3`, no índice 1.
 - Troca `vetor[1]` (que é 3) com `vetor[1]` (que é 3). (Nenhuma mudança real).
-- Lista: `[2, **3**, 8, 4, 5]`
+- Lista: `[2, '3', 8, 4, 5]`
 - _Parte ordenada: `[2, 3]`_
 
 **Passagem 3 (i = 2):**
@@ -192,7 +192,7 @@ O Selection Sort é o terceiro algoritmo simples, e sua lógica é baseada em "s
 - Lista: `[2, 3, 8, 4, 5]`
 - Varre `[8, 4, 5]`. Menor elemento é `4`, no índice 3.
 - Troca `vetor[2]` (que é 8) com `vetor[3]` (que é 4).
-- Lista: `[2, 3, **4**, 8, 5]`
+- Lista: `[2, 3, '4', 8, 5]`
 - _Parte ordenada: `[2, 3, 4]`_
 
 **Passagem 4 (i = 3):**
@@ -200,7 +200,7 @@ O Selection Sort é o terceiro algoritmo simples, e sua lógica é baseada em "s
 - Lista: `[2, 3, 4, 8, 5]`
 - Varre `[8, 5]`. Menor elemento é `5`, no índice 4.
 - Troca `vetor[3]` (que é 8) com `vetor[4]` (que é 5).
-- Lista: `[2, 3, 4, **5**, 8]`
+- Lista: `[2, 3, 4, '5', 8]`
 - _Parte ordenada: `[2, 3, 4, 5]`_
 
 A última passagem (i=4) é desnecessária, pois o último elemento (`8`) já estará na posição correta. Lista final: `[2, 3, 4, 5, 8]`.
@@ -248,7 +248,7 @@ Muitos desses algoritmos se baseiam na estratégia de **"Dividir para Conquistar
 
 ### Merge Sort (Ordenação por Mesclagem)
 
-O Merge Sort é a personificação clássica da estratégia de "Dividir para Conquistar". Sua ideia central é: é trivial ordenar uma lista de um elemento. Portanto, o algoritmo divide recursivamente a lista ao meio, e ao meio, e ao meio, até que restem apenas listas de um elemento. Em seguida, ele "conquista" combinando (mesclando) essas pequenas listas de volta, de forma ordenada, até que a lista inteira esteja ordenada.
+O Merge Sort é a personificação clássica da estratégia de "Dividir para Conquistar". Sua ideia central é a de que é trivial ordenar uma lista de um elemento. Portanto, o algoritmo divide recursivamente a lista ao meio, e ao meio, e ao meio, até que restem apenas listas de um elemento. Em seguida, ele "conquista" combinando (mesclando) essas pequenas listas de volta, de forma ordenada, até que a lista inteira esteja ordenada.
 
 O verdadeiro trabalho do Merge Sort está na função de mesclagem. Ela pega duas listas já ordenadas e as combina em uma única lista ordenada.
 
@@ -342,7 +342,7 @@ Após essa partição, o algoritmo é chamado recursivamente para a sublista à 
 
 A escolha do pivô é crucial. Vamos usar a estratégia de "pivô no meio" (arredondado).
 
-Lista: [5, 3, 8, 4, 2]. Pivô = vetor[2] (o 8).
+Lista: `[5, 3, 8, 4, 2]`. Pivô = `vetor[2]` (o 8).
 
 **Passagem 1 (Particionamento):**
 
@@ -423,12 +423,12 @@ Para ordenação, usamos um Max-Heap. A beleza do Heap Sort é que podemos repre
 O algoritmo tem duas fases:
 
 1. **Construção do Heap (Build Max-Heap):** O algoritmo primeiro reorganiza o vetor de entrada para que ele satisfaça a propriedade de um Max-Heap. Após esta fase, `vetor[0]` será garantidamente o _maior elemento_ da lista.
-2. Ordenação (Extração):
-    a. Troca-se o maior elemento (vetor[0]) com o último elemento do heap (vetor[n-1]).
-    b. O maior elemento está agora em sua posição final correta. "Removemos" ele do heap (apenas diminuindo o contador de tamanho n).
-    c. A troca quebrou a propriedade do heap na raiz (vetor[0]). O algoritmo aplica uma operação heapify (ou sift-down) na raiz para restaurar a ordem.
-    d. Após o heapify, o novo vetor[0] é o segundo maior elemento.
-    e. Repete-se (a, b, c, d) até que o heap esteja vazio (e a lista ordenada).
+2. **Ordenação (Extração):**
+    1. Troca-se o maior elemento (`vetor[0]`) com o último elemento do heap (`vetor[n-1]`).
+    2. O maior elemento está agora em sua posição final correta. "Removemos" ele do heap (apenas diminuindo o contador de tamanho `n`).
+    3. A troca quebrou a propriedade do heap na raiz (`vetor[0]`). O algoritmo aplica uma operação heapify (ou sift-down) na raiz para restaurar a ordem.
+    4. Após o heapify, o novo `vetor[0]` é o segundo maior elemento.
+    5. Repete-se os passos anteriores até que o heap esteja vazio (e a lista ordenada).
 
 **Exemplo Prático: Ordenando `[5, 3, 8, 4, 2]`**
 
@@ -440,23 +440,23 @@ O algoritmo tem duas fases:
 
 - **Passo 1:**
     - Heap: `[8, 5, 2, 4, 3]` (Tamanho 5)
-    - Troca `8` (índice 0) com `3` (índice 4): `[3, 5, 2, 4, **8**]`
-    - `Heapify` em `[3, 5, 2, 4]` (Tamanho 4). Resultado: `[5, 4, 2, 3, **8**]`
+    - Troca `8` (índice 0) com `3` (índice 4): `[3, 5, 2, 4, '8']`
+    - `Heapify` em `[3, 5, 2, 4]` (Tamanho 4). Resultado: `[5, 4, 2, 3, '8']`
 
 - **Passo 2:**
     - Heap: `[5, 4, 2, 3]` (Tamanho 4)
-    - Troca `5` (índice 0) com `3` (índice 3): `[3, 4, 2, **5**, 8]`
-    - `Heapify` em `[3, 4, 2]` (Tamanho 3). Resultado: `[4, 3, 2, **5**, 8]`
+    - Troca `5` (índice 0) com `3` (índice 3): `[3, 4, 2, '5', 8]`
+    - `Heapify` em `[3, 4, 2]` (Tamanho 3). Resultado: `[4, 3, 2, '5', 8]`
 
 - **Passo 3:**
     - Heap: `[4, 3, 2]` (Tamanho 3)
-    - Troca `4` (índice 0) com `2` (índice 2): `[2, 3, **4**, 5, 8]`
-    - `Heapify` em `[2, 3]` (Tamanho 2). Resultado: `[3, 2, **4**, 5, 8]`
+    - Troca `4` (índice 0) com `2` (índice 2): `[2, 3, '4', 5, 8]`
+    - `Heapify` em `[2, 3]` (Tamanho 2). Resultado: `[3, 2, '4', 5, 8]`
 
 - **Passo 4:**
     - Heap: `[3, 2]` (Tamanho 2)
-    - Troca `3` (índice 0) com `2` (índice 1): `[2, **3**, 4, 5, 8]`
-    - `Heapify` em `[2]` (Tamanho 1). Resultado: `[2, **3**, 4, 5, 8]`
+    - Troca `3` (índice 0) com `2` (índice 1): `[2, '3', 4, 5, 8]`
+    - `Heapify` em `[2]` (Tamanho 1). Resultado: `[2, '3', 4, 5, 8]`
 
 - O heap tem tamanho 1. Fim. Lista final: `[2, 3, 4, 5, 8]`.
 
