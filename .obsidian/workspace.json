@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "legislacao/contents/10-lei-8027.md",
+                "file": "legislacao/contents/11-lei-9784.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10-lei-8027"
+              "title": "11-lei-9784"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "legislacao/contents/10-lei-8027.md",
+                "file": "legislacao/contents/11-lei-9784.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 10-lei-8027"
+              "title": "Sumário de 11-lei-9784"
             }
           }
         ],
@@ -171,8 +171,10 @@
   },
   "active": "84dc1ec37b0ca9b2",
   "lastOpenFiles": [
-    "algoritmos-e-estruturas-de-dados/contents/12-outras-estruturas.md",
+    "legislacao/contents/img/lei-9784-aplicacao.png",
     "legislacao/contents/10-lei-8027.md",
+    "legislacao/contents/11-lei-9784.md",
+    "algoritmos-e-estruturas-de-dados/contents/12-outras-estruturas.md",
     "algoritmos-e-estruturas-de-dados/contents/11-grafos.md",
     "algoritmos-e-estruturas-de-dados/contents/10-arvores.md",
     "algoritmos-e-estruturas-de-dados/contents/09-pilhas-filas-deques.md",
@@ -209,8 +211,6 @@
     "algoritmos/contents/07-vetores-e-matrizes.md",
     "algoritmos/contents/06-estruturas-de-dados.md",
     "algoritmos/contents/05-algoritmos-de-busca.md",
-    "algoritmos/contents/03-principais-algoritmos-ordenacao-1.md",
-    "algoritmos/contents/02-algoritmos-de-ordenacao.md",
     "algoritmos/contents",
     "algoritmos",
     "linguagem-python/contents/img",
