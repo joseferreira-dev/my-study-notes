@@ -199,7 +199,7 @@ função Search(no, valor)
 fim_função
 ```
 
-**Inserir (Insert):** A inserção segue a mesma lógica da busca. O algoritmo desce pela árvore como se estivesse buscando o valor. Quando chega a um nó NULL (um "beco sem saída"), ele insere o novo nó naquela posição.
+**Inserir (Insert):** A inserção segue a mesma lógica da busca. O algoritmo desce pela árvore como se estivesse buscando o valor. Quando chega a um nó `NULL` (um "beco sem saída"), ele insere o novo nó naquela posição.
 
 **Pseudocódigo (Inserção em BST):**
 
@@ -228,11 +228,11 @@ fim_função
 - **Caso 3: Nó a ser removido tem 2 filhos.** Este é o caso complexo. Não podemos simplesmente removê-lo. A estratégia é:
     1. Encontrar o **sucessor em-ordem** do nó (o menor nó da subárvore direita).
     2. Copiar o valor do sucessor para o nó que queremos "remover".
-    3. Agora, recursivamente, remover o nó sucessor (que, por definição, terá no máximo 1 filho, caindo no Caso 1 or 2).
+    3. Agora, recursivamente, remover o nó sucessor (que, por definição, terá no máximo 1 filho, caindo no Caso 1 ou 2).
 
 ### Complexidade da BST
 
-- **Caso Médio (Árvore Balanceada):** Em uma árvore razoavelmente "cheia" (balanceada), cada comparação elimina metade dos nós restantes. A altura da árvore é $log n$. Portanto, as operações de `search`, `insert` e `delete` têm complexidade de tempo **$O(\log n)$**.
+- **Caso Médio (Árvore Balanceada):** Em uma árvore razoavelmente "cheia" (balanceada), cada comparação elimina metade dos nós restantes. A altura da árvore é $\log n$. Portanto, as operações de `search`, `insert` e `delete` têm complexidade de tempo **$O(\log n)$**.
 - **Pior Caso (Árvore Desbalanceada):** Se os dados forem inseridos em ordem (ex: 1, 2, 3, 4, 5), a árvore degenera em uma lista encadeada. A altura da árvore se torna $n$. A complexidade de todas as operações degrada para **$O(n)$**.
 
 ## Árvores Autobalanceadas
@@ -245,15 +245,15 @@ As árvores AVL (Adelson-Velskii e Landis) são árvores binárias de busca auto
 
 > Para _qualquer_ nó na árvore, a **diferença de altura** entre sua subárvore esquerda e sua subárvore direita pode ser no máximo **1**.
 
-Esse valor (altura_esquerda - altura_direita) é chamado de **Fator de Balanceamento (FB)**. Em uma AVL, o FB de todos os nós deve ser -1, 0 ou 1.
+Esse valor (`altura_esquerda - altura_direita`) é chamado de **Fator de Balanceamento (FB)**. Em uma AVL, o FB de todos os nós deve ser `-1`, `0` ou `1`.
 
 <div align="center">
 <img width="600px" src="./img/10-avl-tree.png">
 </div>
 
-Na imagem, **(a)** e **(d)** são árvores AVL válidas. Em **(b)** e **(c)**, o nó `+` (e em (c) o nó `@`) viola a regra, pois a diferença de altura entre suas subárvores é maior que 1.
+Na imagem, **(a)** e **(d)** são árvores AVL válidas. Em **(b)** e **(c)**, o nó `+` (e em (c) o nó `&`) viola a regra, pois a diferença de altura entre suas subárvores é maior que 1.
 
-Quando uma inserção ou exclusão quebra essa regra (cria um FB de -2 ou +2), a árvore executa **rotações** para se reorganizar e restaurar o balanceamento.
+Quando uma inserção ou exclusão quebra essa regra (cria um FB de `-2` ou `+2`), a árvore executa **rotações** para se reorganizar e restaurar o balanceamento.
 
 ### Rotações em Árvores AVL
 
@@ -261,7 +261,7 @@ As rotações são movimentos locais de nós para rebalancear a árvore.
 
 #### Rotação Simples à Esquerda (Desbalanceamento Direita-Direita)
 
-Usada quando um nó fica desbalanceado para a direita (FB = -2) e seu filho direito também está pesado à direita (FB = -1).
+Usada quando um nó fica desbalanceado para a direita (FB = `-2`) e seu filho direito também está pesado à direita (FB = `-1`).
 
 - **Passos:** O filho direito (`&` em (1)) se torna o novo pai. O nó original (`@`) se torna o filho esquerdo do novo pai. A subárvore esquerda do filho (`#`) é movida para se tornar a subárvore direita do nó original (`@`).
 - **Resultado:** A árvore está balanceada e a ordem em-ordem é preservada.
@@ -272,7 +272,7 @@ Usada quando um nó fica desbalanceado para a direita (FB = -2) e seu filho dire
 
 #### Rotação Simples à Direita (Desbalanceamento Esquerda-Esquerda)
 
-O oposto da anterior. Usada quando um nó fica desbalanceado para a esquerda (FB = +2) e seu filho esquerdo também está pesado à esquerda (FB = +1).
+O oposto da anterior. Usada quando um nó fica desbalanceado para a esquerda (FB = `+2`) e seu filho esquerdo também está pesado à esquerda (FB = `+1`).
 
 - **Passos:** O filho esquerdo (`&` em (1)) se torna o novo pai. O nó original (`$`) se torna o filho direito do novo pai. A subárvore direita do filho (`@`) é movida para se tornar a subárvore esquerda do nó original (`$`).
 - **Resultado:** A árvore está balanceada e a ordem em-ordem é preservada.
@@ -283,7 +283,7 @@ O oposto da anterior. Usada quando um nó fica desbalanceado para a esquerda (FB
 
 #### Rotação Dupla Direita-Esquerda (RL)
 
-Usada quando o nó está desbalanceado para a direita (FB = -2), mas seu filho direito está desbalanceado para a esquerda (FB = +1), formando uma "quina".
+Usada quando o nó está desbalanceado para a direita (FB = `-2`), mas seu filho direito está desbalanceado para a esquerda (FB = `+1`), formando uma "quina".
 
 - **Passos:**
     1. Primeiro, aplica-se uma Rotação Simples à Direita na subárvore direita (`&` em (1)).
