@@ -2,7 +2,7 @@
 
 O domínio da ortografia é uma das competências mais visíveis e cobradas em qualquer avaliação de Língua Portuguesa. Escrever corretamente, no entanto, vai muito além de memorizar regras; envolve a compreensão da relação entre os sons da fala e sua representação na escrita. Este capítulo se aprofundará no sistema ortográfico vigente, abordando as regras de acentuação e as principais alterações trazidas pelo Novo Acordo Ortográfico. O objetivo é construir um conhecimento sólido que permita não apenas aplicar as regras de forma mecânica, mas entender a lógica por trás delas, garantindo segurança e precisão na escrita formal exigida em concursos públicos.
 
-## Acentuação Gráfica: A Diferença entre o Som e a Escrita
+## Acentuação Gráfica: Diferença entre o Som e a Escrita
 
 Antes de mergulharmos nas regras de acentuação, é fundamental esclarecer alguns conceitos preliminares que formam a base desse estudo. A norma padrão não se preocupa apenas com a escrita, mas também com a pronúncia adequada das palavras.
 
