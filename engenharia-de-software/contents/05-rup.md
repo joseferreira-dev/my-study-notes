@@ -99,7 +99,7 @@ Para compreender a riqueza e a complexidade do Rational Unified Process (RUP), �
 A representação gráfica mais famosa do RUP, conhecida como **"Gráfico de Baleias" (_Whale Chart_)** ou Diagrama de Fases e Disciplinas, combina as perspectivas **estática** e **dinâmica** em uma única imagem.
 
 <div align="center">
-<img width="600px" src="./img/12-grafico-de-baleias.png">
+<img width="600px" src="./img/05-grafico-de-baleias.png">
 </div>
 
 Este gráfico é uma representação **abstrata** e de **alto nível**. Ele não mostra atividades específicas, mas sim a _intensidade_ relativa do esforço dedicado a cada _disciplina_ ao longo das _fases_ do projeto. As "baleias" (curvas) indicam onde o foco principal se concentra em cada momento.
@@ -224,7 +224,7 @@ O RUP estrutura o ciclo de vida do desenvolvimento de software em **quatro fases
 A distribuição de esforço e o foco do trabalho variam significativamente entre as fases, como ilustrado abaixo.
 
 <div align="center">
-<img width="500px" src="./img/12-fases-esforco-vs-programacao.png">
+<img width="500px" src="./img/05-fases-esforco-vs-programacao.png">
 </div>
 
 Dentro de cada fase (com exceção, tipicamente, da Iniciação, que pode ter apenas uma), ocorrem **uma ou mais iterações**, que são os ciclos onde o trabalho técnico de desenvolvimento incremental acontece. A seguir, exploraremos os objetivos, atividades principais e artefatos relevantes de cada uma das quatro fases do RUP.
@@ -238,7 +238,7 @@ O foco é responder à pergunta: "O projeto vale a pena ser feito?". Nesta fase,
 O esforço nesta fase é relativamente baixo (cerca de 5% do total), concentrado principalmente nas disciplinas de Modelagem de Negócios (se aplicável) e, sobretudo, Requisitos, com alguma atividade inicial de Gerenciamento de Projeto e Análise/Design para esboçar a arquitetura.
 
 <div align="center">
-<img width="450px" src="./img/12-esforco-fase-iniciacao.png">
+<img width="450px" src="./img/05-esforco-fase-iniciacao.png">
 </div>
 
 Se, ao final da fase de Iniciação, o caso de negócio não for convincente, os riscos forem considerados muito altos ou não houver acordo sobre o escopo, o projeto pode ser **cancelado ou significativamente redefinido** antes que grandes investimentos sejam feitos.
@@ -268,7 +268,7 @@ O foco é responder à pergunta: "Como vamos construir isso de forma estável e 
 O esforço na Elaboração é consideravelmente maior (cerca de 20% do total), com um pico nas disciplinas de Requisitos e Análise e Design (incluindo arquitetura), mas também com atividades significativas de Implementação e Teste para construir e validar o protótipo arquitetural.
 
 <div align="center">
-<img width="450px" src="./img/12-esforco-fase-elaboracao.png">
+<img width="450px" src="./img/05-esforco-fase-elaboracao.png">
 </div>
 
 A conclusão bem-sucedida da Elaboração, marcada pelo marco da **Arquitetura Estabilizada**, é o ponto de maior criticidade do RUP. Se a arquitetura definida aqui for falha, todo o trabalho subsequente na fase de Construção estará comprometido.
@@ -301,7 +301,7 @@ O foco é responder à pergunta: "Vamos construir o sistema de forma eficiente?"
 Esta é a fase mais longa e que consome a maior parte do esforço do projeto (cerca de 65% do total). O pico de trabalho ocorre nas disciplinas de Implementação e Teste, embora atividades de Análise e Design continuem (para detalhar funcionalidades específicas de cada iteração) e a disciplina de Implantação comece a ganhar relevância (preparando manuais, treinamentos).
 
 <div align="center">
-<img width="450px" src="./img/12-esforco-fase-contrucao.png">
+<img width="450px" src="./img/05-esforco-fase-contrucao.png">
 </div>
 
 **Atividades Básicas da Construção**:
@@ -328,7 +328,7 @@ O foco é responder à pergunta: "Como garantir que os usuários possam e queira
 O esforço nesta fase é menor (cerca de 10% do total), concentrado principalmente nas disciplinas de Implantação e Teste (testes beta, correção de bugs de última hora), com atividades residuais nas outras disciplinas para ajustes finais.
 
 <div align="center">
-<img width="450px" src="./img/12-esforco-fase-transicao.png">
+<img width="450px" src="./img/05-esforco-fase-transicao.png">
 </div>
 
 **Atividades Básicas da Transição**:
@@ -363,7 +363,7 @@ Além disso, o RUP é um framework altamente configurável. Existem variações 
 É a interação entre Fases, Iterações e Disciplinas que define o fluxo de trabalho completo do RUP. A figura a seguir (uma variação do Gráfico de Baleias) ilustra como as iterações se encaixam dentro das fases e como as disciplinas são aplicadas em cada iteração. Uma passagem completa pelas quatro fases constitui um **ciclo de desenvolvimento**. Dentro desse ciclo, ocorrem múltiplas **iterações** (tipicamente de 3 a 9 no total, com duração de 2 a 6 semanas cada), e em cada iteração, as **nove disciplinas** são trabalhadas com intensidades variáveis.
 
 <div align="center">
-<img width="700px" src="./img/12-fases-e-iteracao.png">
+<img width="700px" src="./img/05-fases-e-iteracao.png">
 </div>
 
 É importante notar que a disciplina de **Modelagem de Negócios é opcional** e pode ser omitida dependendo do projeto.
@@ -444,7 +444,7 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 **Artefatos Principais:** Modelo de Casos de Uso de Negócios, Modelo de Objetos de Negócios, Glossário de Negócios, Regras de Negócios, Visão do Negócio. São artefatos que **capturam o contexto de negócios**, servindo como base para a definição dos requisitos do sistema.
 
 <div align="center">
-<img width="500px" src="./img/12-disciplina-modelagem-de-negocios.png">
+<img width="500px" src="./img/05-disciplina-modelagem-de-negocios.png">
 </div>
 
 ### Requisitos (_Requirements_)
@@ -458,10 +458,10 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 **Artefatos Principais:** Modelo de Casos de Uso (do sistema), Especificação de Caso de Uso (detalhada), Especificações Suplementares, Protótipo da Interface do Usuário, Glossário (complementar ao de negócios), Documento de Visão (refinado). São artefatos que **capturam e apresentam informações usadas para definir os recursos necessários do sistema**.
 
 <div align="center">
-<img width="550px" src="./img/12-disciplina-requisitos.png">
+<img width="550px" src="./img/05-disciplina-requisitos.png">
 </div>
 
-### 3. Análise e Design (_Analysis & Design_)
+### Análise e Design (_Analysis & Design_)
 
 **Finalidade:** Transformar os requisitos (o "quê") em uma **especificação detalhada de como o sistema será construído** (o "como"). Esta disciplina abrange tanto o design de **alto nível (arquitetura)** quanto o design de **baixo nível (detalhes dos componentes)**. Ela define a estrutura do software, as responsabilidades de cada componente, as interfaces entre eles e como eles colaborarão para realizar os casos de uso. O foco é criar uma solução que seja robusta, manutenível, escalável e que atenda aos requisitos não funcionais.
 
@@ -469,17 +469,13 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 
 **Papéis Principais:** Arquiteto de Software, Designer, Designer de Banco de Dados.
 
-**Artefatos Principais:** Documento de Arquitetura de Software, Modelo de Análise (foco no domínio do problema), Modelo de Design (foco na solução técnica, incluindo classes de design, subsistemas, pacotes), Modelo de Dados, Realização de Casos de Uso (mostra como os objetos de design implementam um caso de uso), Interface (Figura 13).
+**Artefatos Principais:** Documento de Arquitetura de Software, Modelo de Análise (foco no domínio do problema), Modelo de Design (foco na solução técnica, incluindo classes de design, subsistemas, pacotes), Modelo de Dados, Realização de Casos de Uso (mostra como os objetos de design implementam um caso de uso), Interface. São artefatos que **capturam e apresentam informações relacionadas à solução dos problemas propostos**.
 
 <div align="center">
-
-<img width="540px" src="12-disciplina-analise-e-projeto.png" alt="Papéis (Arquiteto de Software, Designer, Designer de BD) e Artefatos (Doc. Arquitetura, Modelo de Análise, Modelo de Design, Modelo de Dados, Realização de Casos de Uso, Classe de Análise/Design, Subsistema/Pacote de Design, etc.) da disciplina Análise e Design.">
-
-<figcaption>Figura 13: Papéis e Artefatos da Análise e Design</figcaption>
-
+<img width="500px" src="./img/05-disciplina-analise-e-projeto.png">
 </div>
 
-### 4. Implementação (_Implementation_)
+### Implementação (_Implementation_)
 
 **Finalidade:** Traduzir o modelo de design em **código executável**, organizar o código em subsistemas e componentes, realizar **testes de unidade** em cada componente desenvolvido e **integrar** os componentes para formar _builds_ executáveis do sistema ou de partes dele.
 
@@ -487,17 +483,13 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 
 **Papéis Principais:** Implementador (Desenvolvedor), Integrador, Arquiteto de Software (para definir o modelo de implementação).
 
-**Artefatos Principais:** Código-Fonte, Componente, Subsistema de Implementação, Build, Plano de Integração do Build, Modelo de Implementação (descreve como os elementos do design são mapeados para arquivos e diretórios) (Figura 14).
+**Artefatos Principais:** Código-Fonte, Componente, Subsistema de Implementação, Build, Plano de Integração do Build, Modelo de Implementação (descreve como os elementos do design são mapeados para arquivos e diretórios). São artefatos que **capturam e apresentam a realização da solução proposta** no conjunto de Análise e Design.
 
 <div align="center">
-
-<img width="420px" src="12-disciplina-implementacao.png" alt="Papéis (Implementador, Integrador, Arquiteto) e Artefatos (Componente, Subsistema de Implementação, Plano de Integração, Build, Modelo de Implementação) da disciplina Implementação.">
-
-<figcaption>Figura 14: Papéis e Artefatos da Implementação</figcaption>
-
+<img width="400px" src="./img/05-disciplina-implementacao.png">
 </div>
 
-### 5. Teste (_Test_)
+### Teste (_Test_)
 
 **Finalidade:** **Verificar a interação entre os objetos, a correta integração de todos os componentes do software e se todos os requisitos foram implementados corretamente**. A disciplina de Teste no RUP é iterativa e busca **avaliar a qualidade** do produto continuamente ao longo do ciclo de vida, identificando e documentando defeitos o mais cedo possível.
 
@@ -505,17 +497,13 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 
 **Papéis Principais:** Gerente de Testes, Analista de Teste, Designer de Teste, Testador, Implementador (para testes de unidade).
 
-**Artefatos Principais:** Plano de Teste, Caso de Teste, Script de Teste, Log de Testes, Lista de Ideias de Teste, Modelo de Análise de Carga de Trabalho, Dados de Teste, Resultados do Teste, Componente de Teste (Figura 15).
+**Artefatos Principais:** Plano de Teste, Caso de Teste, Script de Teste, Log de Testes, Lista de Ideias de Teste, Modelo de Análise de Carga de Trabalho, Dados de Teste, Resultados do Teste, Componente de Teste. São os artefatos **produtos das atividades de teste e avaliação** agrupados por papel de responsabilidade.
 
 <div align="center">
-
-<img width="540px" src="12-disciplina-teste.png" alt="Papéis (Gerente, Analista, Designer, Testador, Implementador) e Artefatos (Plano, Caso, Script, Log, Lista de Ideias, Modelo de Carga, Dados, Resultados, Componente de Teste, etc.) da disciplina Teste.">
-
-<figcaption>Figura 15: Papéis e Artefatos da disciplina de Teste</figcaption>
-
+<img width="500px" src="./img/05-disciplina-teste.png">
 </div>
 
-### 6. Implantação (_Deployment_)
+### Implantação (_Deployment_)
 
 **Finalidade:** Gerenciar as atividades relacionadas à **entrega do software aos seus usuários finais**. Isso inclui a produção das _releases_ (versões) do software, o empacotamento, a distribuição, a instalação, e também o fornecimento de ajuda e assistência aos usuários (manuais, treinamento).
 
@@ -523,17 +511,13 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 
 **Papéis Principais:** Gerente de Implantação, Implementador (para criar artefatos de instalação), Desenvolvedor do Curso (treinamento), Redator Técnico (documentação), Gerente de Configuração.
 
-**Artefatos Principais:** Plano de Implantação, Materiais de Treinamento, Material de Suporte ao Usuário, Notas de Release, Artefatos de Instalação, Produto (a _release_ em si), Unidade de Implantação (Figura 16).
+**Artefatos Principais:** Plano de Implantação, Materiais de Treinamento, Material de Suporte ao Usuário, Notas de Release, Artefatos de Instalação, Produto (a _release_ em si), Unidade de Implantação. São artefatos que **capturam e apresentam informações relacionadas à transição do sistema para o ambiente de produção**.
 
 <div align="center">
-
-<img width="540px" src="12-disciplina-implantacao.png" alt="Papéis (Gerente de Implantação, Implementador, Desenvolvedor de Curso, Redator Técnico, Ger. Configuração, Artista Gráfico) e Artefatos (Plano, Lista de Materiais, Notas de Release, Produto, Artefatos de Instalação, Materiais de Treinamento, Material de Suporte, etc.) da disciplina Implantação.">
-
-<figcaption>Figura 16: Papéis e Artefatos da Implantação</figcaption>
-
+<img width="450px" src="./img/05-disciplina-implantacao.png">
 </div>
 
-### 7. Gerenciamento de Configuração e Mudança (_Configuration & Change Management_)
+### Gerenciamento de Configuração e Mudança (_Configuration & Change Management_)
 
 **Finalidade:** Gerenciar a **integridade dos artefatos do projeto** e controlar as **mudanças** realizadas neles ao longo do tempo. Esta disciplina é crucial para evitar o caos em projetos iterativos, garantindo que as diferentes versões do software e da documentação sejam rastreáveis, consistentes e que as mudanças sejam avaliadas e implementadas de forma controlada.
 
@@ -541,17 +525,13 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 
 **Papéis Principais:** Gerente de Configuração, Gerente de Controle de Mudança, Integrador, Todos os Papéis (responsáveis por seguir o processo de mudança).
 
-**Artefatos Principais:** Plano de Gerenciamento de Configuração, Repositório do Projeto (onde os artefatos são versionados), Solicitação de Mudança, Registro da Auditoria de Configuração, Espaço de Trabalho (desenvolvimento, integração) (Figura 17).
+**Artefatos Principais:** Plano de Gerenciamento de Configuração, Repositório do Projeto (onde os artefatos são versionados), Solicitação de Mudança, Registro da Auditoria de Configuração, Espaço de Trabalho (desenvolvimento, integração). São artefatos que **capturam e apresentam informações relacionadas à disciplina de gerenciamento de configuração e mudança**. 
 
 <div align="center">
-
-<img width="420px" src="12-disciplina-generenciamento-de-configuracao.png" alt="Papéis (Gerente de Configuração, Gerente de Controle de Mudança, Integrador, Todos os Papéis) e Artefatos (Plano, Repositório, Registro Auditoria, Solicitação de Mudança, Espaço de Trabalho) da disciplina Gerenciamento de Configuração e Mudança.">
-
-<figcaption>Figura 17: Papéis e Artefatos do Gerenciamento de Configuração e Mudança</figcaption>
-
+<img width="350px" src="./img/05-disciplina-generenciamento-de-configuracao.png">
 </div>
 
-### 8. Gerenciamento de Projeto (_Project Management_)
+### Gerenciamento de Projeto (_Project Management_)
 
 **Finalidade:** Planejar, executar, monitorar e controlar o projeto de desenvolvimento de software, balanceando os objetivos concorrentes (escopo, prazo, custo, qualidade), gerenciando riscos e coordenando o trabalho da equipe. No contexto do RUP, o gerenciamento de projeto tem um forte foco no **planejamento iterativo**, no **gerenciamento de riscos** e na **medição do progresso** através de marcos e métricas. É importante notar que esta disciplina no RUP foca nos aspectos _técnicos_ do gerenciamento, diferentemente de frameworks mais amplos como o PMBOK, que cobrem também áreas como gerenciamento de recursos humanos, aquisições, etc.
 
@@ -559,17 +539,13 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 
 **Papéis Principais:** Gerente de Projeto, Revisor do Projeto.
 
-**Artefatos Principais:** Plano de Desenvolvimento de Software, Caso de Negócio, Plano de Iteração, Avaliação de Status, Lista de Problemas, Ordem de Trabalho, Plano de Gerenciamento de Riscos, Lista de Riscos, Plano de Aceitação do Produto, Plano de Métricas, Métricas de Projeto, Plano de Garantia de Qualidade, Avaliação de Iteração, Registro de Revisão (Figura 18).
+**Artefatos Principais:** Plano de Desenvolvimento de Software, Caso de Negócio, Plano de Iteração, Avaliação de Status, Lista de Problemas, Ordem de Trabalho, Plano de Gerenciamento de Riscos, Lista de Riscos, Plano de Aceitação do Produto, Plano de Métricas, Métricas de Projeto, Plano de Garantia de Qualidade, Avaliação de Iteração, Registro de Revisão. São artefatos que **capturam os artefatos associados ao planejamento e à execução do projeto e do processo**. 
 
 <div align="center">
-
-<img width="540px" src="12-disciplina-generenciamento-de-projetos.png" alt="Papéis (Gerente de Projeto, Revisor) e Artefatos (Plano de Desenvolvimento, Caso de Negócio, Planos de Iteração/Riscos/Métricas/Aceitação/Qualidade/Resolução Problemas, Listas de Riscos/Problemas, Avaliação Status/Iteração, Ordem Trabalho, Métricas, Registro Revisão) da disciplina Gerenciamento de Projeto.">
-
-<figcaption>Figura 18: Papéis e Artefatos do Gerenciamento de Projeto</figcaption>
-
+<img width="500px" src="./img/05-disciplina-generenciamento-de-projetos.png">
 </div>
 
-### 9. Ambiente (_Environment_)
+### Ambiente (_Environment_)
 
 **Finalidade:** Estabelecer e manter o **ambiente de desenvolvimento** necessário para suportar a equipe do projeto. Isso inclui não apenas as **ferramentas** de software (compiladores, IDEs, ferramentas CASE, SCM, teste), mas também a definição do **processo** customizado a ser seguido (baseado no RUP adaptado) e o desenvolvimento de **diretrizes e templates** para garantir a consistência do trabalho.
 
@@ -577,14 +553,10 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 
 **Papéis Principais:** Engenheiro de Processo, Analista do Processo de Negócios, Analista de Sistemas, Designer de Teste, Especialista em Ferramentas, Arquiteto de Software, Designer de Interface de Usuário, Redator Técnico, Administrador de Sistema.
 
-**Artefatos Principais:** Caso de Desenvolvimento (descreve o processo customizado para o projeto), Guias (Modelagem de Negócios, Casos de Uso, Teste, Ferramentas, Design, Programação, UI, Estilo), Ferramentas, Infraestrutura de Desenvolvimento, Templates Específicos do Projeto (Figura 19).
+**Artefatos Principais:** Caso de Desenvolvimento (descreve o processo customizado para o projeto), Guias (Modelagem de Negócios, Casos de Uso, Teste, Ferramentas, Design, Programação, UI, Estilo), Ferramentas, Infraestrutura de Desenvolvimento, Templates Específicos do Projeto. São artefatos usados como **instruções durante o desenvolvimento, a fim de garantir a consistência dos artefatos**.
 
 <div align="center">
-
-<img width="540px" src="12-disciplina-ambiente.png" alt="Papéis (Eng. Processo, Analistas, Designers, Arquiteto, Redator, Especialista Ferramentas, Admin. Sistema) e Artefatos (Caso Desenvolvimento, Avaliação Organização, Templates, Guias Diversas, Ferramentas, Infraestrutura) da disciplina Ambiente.">
-
-<figcaption>Figura 19: Papéis e Artefatos da disciplina de Ambiente</figcaption>
-
+<img width="500px" src="./img/05-disciplina-ambiente.png">
 </div>
 
 ## Considerações Finais
@@ -596,40 +568,25 @@ Compreendemos que o RUP organiza o ciclo de vida do software em **quatro fases p
 Além disso, estudamos as **nove disciplinas fundamentais** do RUP, divididas entre **seis disciplinas de engenharia** (Modelagem de Negócios, Requisitos, Análise e Projeto, Implementação, Teste e Implantação) e **três disciplinas de apoio** (Gerenciamento de Configuração e Mudança, Gerenciamento de Projetos e Ambiente). Cada disciplina envolve atividades, papéis e artefatos que se complementam e contribuem para a execução eficaz do projeto.
 
 <div align="center">
-
-<img width="540px" src="12-disciplinas.jpg" alt="Diagrama circular mostrando as 9 disciplinas do RUP interligadas e atividades centrais de gerenciamento.">
-
-<figcaption>Figura 20: As Nove Disciplinas do RUP</figcaption>
-
+<img width="700px" src="./img/05-diagrama-disciplinas.png">
 </div>
 
-Uma passagem pelas quatro fases se chama **ciclo de desenvolvimento**, e uma passagem pelas atividades das nove disciplinas dentro de um ciclo menor se chama **Iteração**. Pode haver mais de uma iteração por fase, especialmente na Elaboração e na Construção (Figura 9). Além disso:
+Uma passagem pelas quatro fases se chama **ciclo de desenvolvimento**, e uma passagem pelas atividades das nove disciplinas dentro de um ciclo menor se chama **Iteração**. Pode haver mais de uma iteração por fase, especialmente na Elaboração e na Construção. Além disso:
 
 - Cada iteração dura, em média, **de 2 a 6 semanas**.
-    
 - Um projeto típico possui **de 3 a 9 iterações** ao longo de todas as fases.
-    
 - A disciplina **Modelagem de Negócios** é **opcional**.
-    
 
 <div align="center">
-
-<img width="720px" src="12-fases-e-iteracao.png" alt="Diagrama mostrando as 4 fases (Iniciação, Elaboração, Construção, Transição) e múltiplas iterações dentro delas. Cada iteração mostra um fluxo sequencial simplificado das disciplinas (MN, R, AD, I, T, IM).">
-
-<figcaption>Figura 9 (Revisitada): Relação entre Fases, Iterações e Disciplinas no RUP</figcaption>
-
+<img width="700px" src="./img/05-fases-e-iteracao.png">
 </div>
 
 O RUP integra **boas práticas de engenharia de software**, como o gerenciamento de requisitos, o desenvolvimento baseado em componentes reutilizáveis, a validação contínua da qualidade e a gestão efetiva de mudanças. O modelo também valoriza a colaboração entre os membros da equipe e as partes interessadas, oferecendo uma estrutura clara de responsabilidades e entregas.
 
 O RUP, por sua natureza robusta e bem documentada, é especialmente indicado para projetos complexos, que exigem alto grau de controle, rastreabilidade e confiabilidade. No entanto, também exige um certo nível de maturidade da equipe, bem como um investimento inicial na definição de processos, ferramentas e treinamento.
 
-A seguir, apresentamos uma **figura de resumo geral** com os principais elementos estudados neste capítulo, incluindo as fases, disciplinas, princípios e características do RUP, como forma de consolidar os conhecimentos adquiridos (Figura 21).
+A seguir, apresentamos uma **figura de resumo geral** com os principais elementos estudados neste capítulo, incluindo as fases, disciplinas, princípios e características do RUP, como forma de consolidar os conhecimentos adquiridos.
 
 <div align="center">
-
-<img width="720px" src="12-resumo-geral.jpg" alt="Mapa mental resumindo os principais conceitos do RUP: definição, perspectivas, princípios, fases e disciplinas.">
-
-<figcaption>Figura 21: Resumo Geral do RUP</figcaption>
-
+<img width="700px" src="./img/05-resumo-geral.png">
 </div>
