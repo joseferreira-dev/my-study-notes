@@ -183,22 +183,22 @@ Artefatos são os **produtos tangíveis** gerados ou utilizados ao longo do proc
 
 Os artefatos são usados como **entradas e saídas das atividades**, compondo o núcleo da documentação e do controle do projeto.
 
-|**Artefato**|**Descrição**|
-|---|---|
-|Documento de Visão|Apresenta uma visão geral do projeto para os stakeholders.|
-|Casos de Negócio|Avalia a viabilidade do projeto do ponto de vista do investimento.|
-|Plano de Desenvolvimento de Software|Contém todas as informações necessárias para o gerenciamento do projeto.|
-|Modelo de Casos de Uso|Define as funcionalidades do sistema sob o ponto de vista do usuário.|
-|Glossário|Padroniza e define os termos usados ao longo do projeto.|
-|Protótipos|Usados para explorar e reduzir riscos.|
-|Lista de Riscos|Lista priorizada de riscos e estratégias de mitigação.|
-|Documento de Arquitetura de Software|Visão geral dos aspectos arquiteturais do sistema.|
-|Modelo de Projeto|Representa as classes e componentes que implementam os casos de uso.|
-|Modelo de Dados|Subconjunto do modelo de implementação que descreve a representação lógica e física dos dados.|
-|Conjunto de Testes|Agrupamento de testes para verificar a estabilidade de versões.|
-|Notas de Release|Documentam mudanças, correções e novidades de cada release.|
-|Artefatos de Instalação|Instruções e componentes necessários para instalar o software.|
-|Materiais de Treinamento|Documentos usados para treinar usuários finais e equipes.|
+| **Artefato**                         | **Descrição**                                                                                  |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| Documento de Visão                   | Apresenta uma visão geral do projeto para os stakeholders.                                     |
+| Casos de Negócio                     | Avalia a viabilidade do projeto do ponto de vista do investimento.                             |
+| Plano de Desenvolvimento de Software | Contém todas as informações necessárias para o gerenciamento do projeto.                       |
+| Modelo de Casos de Uso               | Define as funcionalidades do sistema sob o ponto de vista do usuário.                          |
+| Glossário                            | Padroniza e define os termos usados ao longo do projeto.                                       |
+| Protótipos                           | Usados para explorar e reduzir riscos.                                                         |
+| Lista de Riscos                      | Lista priorizada de riscos e estratégias de mitigação.                                         |
+| Documento de Arquitetura de Software | Visão geral dos aspectos arquiteturais do sistema.                                             |
+| Modelo de Projeto                    | Representa as classes e componentes que implementam os casos de uso.                           |
+| Modelo de Dados                      | Subconjunto do modelo de implementação que descreve a representação lógica e física dos dados. |
+| Conjunto de Testes                   | Agrupamento de testes para verificar a estabilidade de versões.                                |
+| Notas de Release                     | Documentam mudanças, correções e novidades de cada release.                                    |
+| Artefatos de Instalação              | Instruções e componentes necessários para instalar o software.                                 |
+| Materiais de Treinamento             | Documentos usados para treinar usuários finais e equipes.                                      |
 
 ### Fluxo de Trabalho (Workflow)
 

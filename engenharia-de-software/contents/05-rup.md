@@ -2,7 +2,7 @@
 
 Após explorarmos os modelos sequenciais e a introdução aos conceitos iterativos e incrementais, adentramos agora um dos frameworks de processo mais influentes e estruturados da Engenharia de Software: o **Rational Unified Process (RUP)**. Nascido da colaboração de grandes nomes da área e consolidado sob a égide da Rational Software Corporation (posteriormente adquirida pela IBM), o RUP representa uma tentativa abrangente de sistematizar as melhores práticas de desenvolvimento, especialmente no contexto da orientação a objetos. Ele se estabelece como um modelo **iterativo e incremental**, projetado para guiar equipes na produção de software de alta qualidade, gerenciando riscos de forma proativa e mantendo um foco constante na arquitetura do sistema e nas necessidades dos usuários, expressas através de casos de uso. Embora frequentemente associado a processos mais formais e, por vezes, considerado "pesado", o RUP é, em sua essência, um framework adaptável, cujo objetivo é fornecer um roteiro robusto, porém configurável, para lidar com a complexidade inerente ao desenvolvimento de software moderno.
 
-## Contexto Histórico: A Origem do RUP
+## Contexto Histórico: Origem do RUP
 
 Para compreender a relevância e as características do RUP, é útil revisitar seu contexto de origem. O início da década de 1990 foi um período de grande efervescência na Engenharia de Software. A **orientação a objetos** ganhava força como paradigma dominante para a construção de sistemas complexos, e, com ela, crescia a necessidade de processos de desenvolvimento que pudessem suportar essa nova forma de pensar e modelar software. Foi nesse cenário que a **Rational Software Corporation**, uma empresa sediada na Califórnia, emergiu como um centro de inovação crucial.
 
@@ -28,7 +28,7 @@ A missão central declarada do RUP é clara e ambiciosa: **garantir a produção
 
 Antes de prosseguir, é crucial reforçar a natureza do RUP como um **framework adaptável**. Ele fornece um conjunto rico e abrangente de melhores práticas, processos detalhados, papéis, atividades e modelos de artefatos. No entanto, **não se espera que todos esses elementos sejam utilizados em todos os projetos**. A intenção é que cada organização ou equipe de projeto **selecione e configure** os componentes do RUP que são mais relevantes e adequados à sua realidade específica – tamanho do projeto, complexidade do domínio, criticidade do sistema, experiência da equipe, cultura organizacional, etc.
 
-A analogia com a instalação de um pacote de software como o Microsoft Office é bastante útil: ao instalar o Office, o usuário tem a opção de escolher quais aplicativos (Word, Excel, PowerPoint, Access, Outlook) deseja instalar, selecionando apenas aqueles que realmente utilizará. Da mesma forma, ao adotar o RUP, uma equipe pode escolher quais disciplinas enfatizar, quais artefatos produzir, quais papéis formalizar e qual nível de detalhe aplicar em cada atividade, customizando o framework para seu contexto.
+Considerando uma analogia com a instalação de um pacote de software como o Microsoft Office: ao instalar o Office, o usuário tem a opção de escolher quais aplicativos (Word, Excel, PowerPoint, Access, Outlook) deseja instalar, selecionando apenas aqueles que realmente utilizará. Da mesma forma, ao adotar o RUP, uma equipe pode escolher quais disciplinas enfatizar, quais artefatos produzir, quais papéis formalizar e qual nível de detalhe aplicar em cada atividade, customizando o framework para seu contexto.
 
 Essa capacidade de configuração é fundamental para desmistificar a classificação frequente do RUP como uma **metodologia "pesada" (_heavyweight_)**. O termo "pesado", neste contexto, refere-se à sua **estrutura formal, à potencial grande quantidade de artefatos (documentos e modelos) que podem ser gerados, à definição explícita de múltiplos papéis e à cerimônia (formalismo) associada a muitas de suas atividades**, especialmente quando comparado às metodologias ágeis. Essa percepção é válida se o RUP for implementado em sua totalidade, sem nenhuma adaptação ("out-of-the-box").
 
@@ -43,7 +43,7 @@ Como já estabelecido, o RUP é fundamentalmente **iterativo** e **incremental**
 
 No RUP, esses conceitos se materializam na estrutura de fases e iterações. O projeto avança através de quatro fases principais (Iniciação, Elaboração, Construção, Transição), e dentro de cada fase (exceto talvez a primeira), ocorrem uma ou mais iterações de duração fixa (tipicamente de 2 a 6 semanas). Cada iteração produz um incremento testado e potencialmente entregável do software.
 
-É crucial fazer uma distinção importante aqui: **embora o RUP seja iterativo e incremental, ele não é considerado um framework ágil** no sentido estrito do Manifesto Ágil. Os métodos ágeis (Scrum, XP, Kanban, etc.) também são iterativos e incrementais, mas eles geralmente possuem ciclos ainda mais curtos, menor ênfase em documentação formal upfront, maior flexibilidade para mudanças _durante_ as iterações e uma estrutura de papéis e cerimônias mais simplificada. O RUP, mesmo quando adaptado para ser mais leve, tende a manter um nível maior de estrutura, planejamento e formalismo do que as metodologias ágeis puras. Portanto, a regra é: **todos os métodos ágeis são iterativos e incrementais, mas nem todo método iterativo e incremental (como o RUP) é ágil**. O RUP pertence a uma categoria própria, buscando um equilíbrio entre a disciplina dos processos tradicionais e a adaptabilidade das abordagens mais modernas.
+É crucial fazer uma distinção importante aqui: **embora o RUP seja iterativo e incremental, ele não é considerado um framework ágil** no sentido estrito do Manifesto Ágil. Os métodos ágeis (Scrum, XP, Kanban, etc.) também são iterativos e incrementais, mas eles geralmente possuem ciclos ainda mais curtos, menor ênfase em documentação formal, maior flexibilidade para mudanças _durante_ as iterações e uma estrutura de papéis e cerimônias mais simplificada. O RUP, mesmo quando adaptado para ser mais leve, tende a manter um nível maior de estrutura, planejamento e formalismo do que as metodologias ágeis puras. Portanto, a regra é: **todos os métodos ágeis são iterativos e incrementais, mas nem todo método iterativo e incremental (como o RUP) é ágil**. O RUP pertence a uma categoria própria, buscando um equilíbrio entre a disciplina dos processos tradicionais e a adaptabilidade das abordagens mais modernas.
 
 ### Centrado na Arquitetura
 
@@ -51,7 +51,7 @@ Um dos pilares que diferencia o RUP é seu forte **foco na arquitetura de softwa
 
 O RUP reconhece que a arquitetura tem um impacto profundo na qualidade do sistema (desempenho, segurança, manutenibilidade, escalabilidade) e na eficiência do processo de desenvolvimento. Por isso, a **definição, validação e estabilização de uma arquitetura executável** são objetivos primários das fases iniciais do projeto (especialmente a fase de Elaboração). A ideia é construir uma **linha de base arquitetural (_architectural baseline_)** sólida o quanto antes, que servirá como guia e restrição para o desenvolvimento dos incrementos subsequentes.
 
-A analogia com a construção de um prédio é novamente útil: antes de começar a subir as paredes dos apartamentos (implementar funcionalidades), é preciso ter o projeto estrutural (a arquitetura) definido e validado. Pode-se depois modificar o acabamento, as janelas ou a disposição interna dos cômodos (refinar funcionalidades), but the main structure (columns, beams, foundations) must be robust and stable from the start. No RUP, essa arquitetura inicial não é apenas um diagrama no papel; ela é frequentemente implementada e testada como um protótipo executável para validar las decisiones técnicas más críticas.
+É como a construção de um prédio: antes de começar a subir as paredes dos apartamentos (implementar funcionalidades), é preciso ter o projeto estrutural (a arquitetura) definido e validado. Pode-se depois modificar o acabamento, as janelas ou a disposição interna dos cômodos (refinar funcionalidades), mas a estrutura principal (colunas, vigas, fundações) deve ser robusta e estável desde o início. No RUP, essa arquitetura inicial não é apenas um diagrama no papel; ela é frequentemente implementada e testada como um protótipo executável para validar as decisões técnicas mais críticas.
 
 Contudo, "centrado na arquitetura" não significa que a arquitetura seja definida rigidamente no início e nunca mais possa mudar. O RUP prevê que a arquitetura também **evolui iterativamente**, mas as mudanças significativas são concentradas nas fases iniciais, e as fases posteriores focam em construir sobre essa base, realizando apenas refinamentos ou extensões planejadas. A arquitetura deve ser **resiliente** e **flexível** o suficiente para acomodar os incrementos funcionais que serão adicionados em cada iteração, antecipando, na medida do possível, as necessidades futuras de evolução do sistema.
 
@@ -76,25 +76,17 @@ Por fim, mas não menos importante, o RUP nasceu e se consolidou no auge da popu
 O RUP não foi criado em um vácuo teórico. Ele surgiu como uma **resposta direta a um conjunto de problemas crônicos e recorrentes** observados em projetos de software que utilizavam abordagens mais antigas ou menos estruturadas. Compreender esses problemas ajuda a valorizar as soluções propostas pelo RUP:
 
 - **Requisitos Mal Compreendidos ou Ignorados:** Projetos frequentemente falhavam porque o que era construído não correspondia às reais necessidades dos usuários. (RUP responde com Gerenciamento de Requisitos e Casos de Uso).
-    
 - **Incapacidade de Lidar com Requisitos Instáveis:** Processos tradicionais assumiam requisitos fixos, mas a realidade mostrava que eles mudavam constantemente. (RUP responde com Desenvolvimento Iterativo e Gerenciamento de Mudanças).
-    
 - **Integração Dolorosa e Tardía ("Big Bang Integration"):** Módulos desenvolvidos separadamente por muito tempo frequentemente apresentavam problemas graves de compatibilidade quando eram finalmente juntados no final do projeto. (RUP responde com Iterações curtas e Integração Contínua).
-    
 - **Manutenção Difícil e Cara:** Software mal estruturado ou pouco documentado tornava-se um pesadelo para corrigir ou evoluir. (RUP responde com Foco na Arquitetura e Modelagem Visual).
-    
 - **Descoberta Tardia de Falhas Críticas:** Erros fundamentais só eram encontrados nas fases finais, quando a correção era extremamente cara. (RUP responde com Planejamento por Riscos e Verificação Contínua da Qualidade).
-    
 - **Baixa Qualidade Percebida pelo Usuário:** A falta de envolvimento do usuário resultava em interfaces pouco intuitivas. (RUP responde com Casos de Uso e Feedback Iterativo).
-    
 - **Problemas de Desempenho Ignorados:** O desempenho era frequentemente tratado como uma reflexão tardia. (RUP responde com Foco na Arquitetura e Testes de Desempenho).
-    
-- **Falta de Coordenação e Comunicação:** Equipes trabalhando em silos geravam retrabalho e inconsistências. (RUP responde com Papéis definidos e Artefatos padronizados).
-    
+- **Falta de Coordenação e Comunicação:** Equipes trabalhando separadamente geravam retrabalho e inconsistências. (RUP responde com Papéis definidos e Artefatos padronizados).
 
 O RUP, portanto, pode ser visto como um compêndio de soluções e melhores práticas projetado especificamente para mitigar esses problemas clássicos do desenvolvimento de software.
 
-## As Perspectivas do RUP: Entendendo a Estrutura Multidimensional
+## As Perspectivas do RUP
 
 Para compreender a riqueza e a complexidade do Rational Unified Process (RUP), é útil analisá-lo sob diferentes ângulos ou perspectivas. Tradicionalmente, o RUP é descrito através de duas perspectivas principais que se complementam: a dinâmica e a estática. Alguns autores adicionam uma terceira perspectiva prática, focada nas melhores práticas. Essas perspectivas oferecem visões diferentes, mas interligadas, sobre como o processo é organizado e executado.
 
@@ -104,68 +96,50 @@ Para compreender a riqueza e a complexidade do Rational Unified Process (RUP), �
 |**Estática**|Os **componentes** lógicos do processo|Disciplinas, Atividades, Papéis, Artefatos|Vertical (Componentes)|
 |**Prática**|As **diretrizes** para a execução eficaz|Melhores Práticas|(Implícita na aplicação)|
 
-A representação gráfica mais famosa do RUP, conhecida como **"Gráfico de Baleias" (_Whale Chart_)** ou Diagrama de Fases e Disciplinas, combina as perspectivas **estática** e **dinâmica** em uma única imagem (Figura 3).
+A representação gráfica mais famosa do RUP, conhecida como **"Gráfico de Baleias" (_Whale Chart_)** ou Diagrama de Fases e Disciplinas, combina as perspectivas **estática** e **dinâmica** em uma única imagem.
 
 <div align="center">
-
-<img width="640px" src="12-grafico-de-baleias.png" alt="Gráfico de Baleias do RUP, mostrando as Fases (Iniciação, Elaboração, Construção, Transição) no eixo horizontal superior, as Iterações no eixo horizontal inferior, e as Disciplinas (Modelagem de Negócios, Requisitos, Análise e Design, Implementação, Teste, Implantação, Ger. Configuração, Ger. Projeto, Ambiente) no eixo vertical esquerdo. Curvas coloridas indicam a intensidade de cada disciplina em cada fase.">
-
-<figcaption>Figura 3: O Gráfico de Baleias - Perspectivas Dinâmica e Estática do RUP</figcaption>
-
+<img width="600px" src="./img/12-grafico-de-baleias.png">
 </div>
 
 Este gráfico é uma representação **abstrata** e de **alto nível**. Ele não mostra atividades específicas, mas sim a _intensidade_ relativa do esforço dedicado a cada _disciplina_ ao longo das _fases_ do projeto. As "baleias" (curvas) indicam onde o foco principal se concentra em cada momento.
 
-### Perspectiva Dinâmica: A Evolução no Tempo
+### Perspectiva Dinâmica
 
 A perspectiva dinâmica aborda os aspectos do RUP que **evoluem ao longo do tempo**, marcando a progressão do projeto. No Gráfico de Baleias, é representada pelos elementos no eixo horizontal:
 
 - **Fases:** Na parte **superior** (Iniciação, Elaboração, Construção, Transição). São **discretas e sequenciais**, representando marcos maiores focados em objetivos de negócio.
-    
 - **Iterações:** Na parte **inferior** (ex: Inicial, Elab. nº 1...). São os **ciclos curtos de desenvolvimento** _dentro_ das fases, resultando em incrementos. O número de iterações por fase é **variável**.
-    
 - **Marcos (_Milestones_):** As **linhas pontilhadas verticais** que separam as fases. São pontos de controle críticos para tomar decisões sobre o projeto.
-    
 
 A perspectiva dinâmica fornece a visão **macro** do cronograma, permitindo **gerenciar e controlar o progresso**.
 
-### Perspectiva Estática: Os Componentes do Processo
+### Perspectiva Estática
 
 A perspectiva estática descreve os **componentes lógicos e estruturais** do processo RUP, _independentemente do momento_ em que ocorrem. No Gráfico de Baleias, é representada pelo eixo vertical:
 
 - **Disciplinas:** Grandes áreas de preocupação ou conjuntos de atividades relacionadas (Modelagem de Negócios, Requisitos, etc.).
-    
 - **Atividades:** Tarefas específicas dentro de uma disciplina.
-    
 - **Papéis:** Responsabilidades assumidas por membros da equipe.
-    
 - **Artefatos:** Produtos de trabalho criados ou modificados.
-    
 - **Fluxos de Trabalho (_Workflows_):** Sequências lógicas de atividades.
-    
 
 É fundamental corrigir o equívoco de que certas disciplinas só ocorrem em certas fases. O gráfico mostra a **intensidade**, não a presença ou ausência. **Todas as disciplinas ocorrem, em maior ou menor grau, durante todas as fases**, mas o **foco** varia drasticamente.
 
-### Perspectiva Prática: As Diretrizes para o Sucesso
+### Perspectiva Prática
 
 Esta perspectiva foca nas **melhores práticas ou princípios-chave** que guiam a aplicação eficaz do framework. As seis práticas mais citadas são:
 
 1. Desenvolver o software iterativamente.
-    
 2. Gerenciar requisitos de forma sistemática.
-    
 3. Utilizar uma arquitetura baseada em componentes.
-    
 4. Modelar o software visualmente (usando UML).
-    
 5. Verificar continuamente a qualidade do software.
-    
 6. Controlar as mudanças no software de forma gerenciada.
-    
 
 Essas práticas funcionam como **diretrizes estratégicas** para manter o foco na entrega de valor, qualidade, adaptabilidade e comunicação.
 
-## Conceitos Fundamentais do RUP: Os Blocos de Construção do Processo
+## Conceitos Fundamentais do RUP
 
 Antes de mergulharmos nas fases e disciplinas que estruturam o RUP, é essencial compreendermos alguns **conceitos estruturantes** que servem como os blocos de construção fundamentais de todo o framework.
 
@@ -175,7 +149,7 @@ Dentro do contexto do RUP, um **processo** é formalmente definido como a descri
 
 ### Papel (_Role_)
 
-Um **papel** no RUP não se refere a um cargo ou a uma pessoa específica, but rather to an **abstract function** within the process. Cada papel define um conjunto coeso de **habilidades, competências e, principalmente, responsabilidades**.
+Um **papel** no RUP não se refere a um cargo ou a uma pessoa específica, mas sim a uma **função abstrata** dentro do processo. Cada papel define um conjunto coeso de **habilidades, competências e, principalmente, responsabilidades**.
 
 > **Ponto Crucial:** **Um papel não é sinônimo de pessoa!** Uma única pessoa pode desempenhar **múltiplos papéis**, e um mesmo papel pode ser desempenhado por **várias pessoas**.
 
@@ -189,167 +163,212 @@ Uma **atividade** representa uma **unidade de trabalho granular com um propósit
 
 Os **artefatos** são os **produtos tangíveis** que são criados, modificados ou utilizados ao longo do processo RUP. Eles representam a materialização do trabalho e servem como meio de comunicação e controle. Podem ser documentos, modelos, código-fonte, executáveis, planos, etc.
 
-> ➕ Os artefatos também são frequentemente chamados de **Produtos de Trabalho (_Work Products_)**.
+> Os artefatos também são frequentemente chamados de **Produtos de Trabalho (_Work Products_)**.
 
-|**Artefato**|**Disciplina Principal Associada**|
-|---|---|
-|Documento de Visão|Requisitos|
-|Caso de Negócio|Modelagem de Negócios|
-|Plano de Desenvolvimento de Software|Gerenciamento de Projeto|
-|Modelo de Casos de Uso|Requisitos|
-|Glossário|(Transversal)|
-|Protótipos|Análise e Design / Requisitos|
-|Lista de Riscos|Gerenciamento de Projeto|
-|Documento de Arquitetura de Software|Análise e Design|
-|Modelo de Projeto|Análise e Design|
-|Modelo de Dados|Análise e Design|
-|Código-Fonte|Implementação|
-|Build|Implementação|
-|Plano de Testes|Teste|
-|Casos de Teste|Teste|
-|Notas de Release|Implantação|
-|Artefatos de Instalação|Implantação|
-|Materiais de Treinamento|Implantação|
+| **Artefato**                         | **Disciplina Principal Associada** | **Descrição**                                                                                  |
+| ------------------------------------ | ---------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Documento de Visão                   | Requisitos                         | Apresenta uma visão geral do projeto para os stakeholders.                                     |
+| Caso de Negócio                      | Modelagem de Negócios              | Avalia a viabilidade do projeto do ponto de vista do investimento.                             |
+| Plano de Desenvolvimento de Software | Gerenciamento de Projeto           | Contém todas as informações necessárias para o gerenciamento do projeto.                       |
+| Modelo de Casos de Uso               | Requisitos                         | Define as funcionalidades do sistema sob o ponto de vista do usuário.                          |
+| Glossário                            | (Transversal)                      | Padroniza e define os termos usados ao longo do projeto.                                       |
+| Protótipos                           | Análise e Design / Requisitos      | Usados para explorar e reduzir riscos.                                                         |
+| Lista de Riscos                      | Gerenciamento de Projeto           | Lista priorizada de riscos e estratégias de mitigação.                                         |
+| Documento de Arquitetura de Software | Análise e Design                   | Visão geral dos aspectos arquiteturais do sistema.                                             |
+| Modelo de Projeto                    | Análise e Design                   | Representa as classes e componentes que implementam os casos de uso.                           |
+| Modelo de Dados                      | Análise e Design                   | Subconjunto do modelo de implementação que descreve a representação lógica e física dos dados. |
+| Código-Fonte                         | Implementação                      | O código fonte do produto de software propriamente dito.                                       |
+| Build                                | Implementação                      | Uma versão do software pronta.                                                                 |
+| Plano de Testes                      | Teste                              | Planejamento de testes para verificar a estabilidade de versões.                               |
+| Casos de Teste                       | Teste                              | Casos de uso a serem implementados como teste.                                                 |
+| Notas de Release                     | Implantação                        | Documentam mudanças, correções e novidades de cada release.                                    |
+| Artefatos de Instalação              | Implantação                        | Instruções e componentes necessários para instalar o software.                                 |
+| Materiais de Treinamento             | Implantação                        | Documentos usados para treinar usuários finais e equipes.                                      |
 
 ### Fluxo de Trabalho (_Workflow_)
 
 Um **fluxo de trabalho** no RUP representa a **sequência lógica de atividades** inter-relacionadas, geralmente realizadas por diferentes papéis, para atingir um objetivo específico dentro de uma **disciplina**.
 
-## Os Princípios-Chave do RUP (Melhores Práticas)
+## Princípios-Chave do RUP (Melhores Práticas)
 
 O RUP é orientado por **seis princípios-chave ou melhores práticas** que guiam a condução do processo.
 
-### 1. Adaptar o Processo
+### Adaptar o Processo
 
 Reforça a natureza do RUP como um **framework flexível**. O processo **deve ser adaptado** ao contexto específico do projeto (tamanho, criticidade, equipe). A chave é **adequar o processo ao problema**, tornando-o eficaz sem ser burocrático.
 
-### 2. Balancear as Prioridades dos Interessados (_Stakeholders_)
+### Balancear as Prioridades dos Interessados (_Stakeholders_)
 
 O processo deve **identificar, compreender e balancear ativamente** as prioridades concorrentes dos múltiplos stakeholders (usuários, gerentes, desenvolvedores, etc.). É preciso negociar e buscar compromissos, considerando custo, prazo, escopo, qualidade, etc. Evitar customização excessiva e buscar soluções padronizadas é uma boa prática.
 
-### 3. Colaboração entre Times
+### Colaboração entre Times
 
 Enfatiza a importância da **colaboração eficaz entre os diferentes times e papéis**. O sucesso depende da **comunicação clara, compartilhamento de informações e trabalho conjunto**. O RUP promove isso através de papéis definidos, artefatos compartilhados, processo iterativo e modelagem visual. A **harmonia e o alinhamento** são fundamentais.
 
-### 4. Demonstrar o Valor da Iteratividade
+### Demonstrar o Valor da Iteratividade
 
 O processo deve **demonstrar valor tangível e progressivo** aos stakeholders ao longo do tempo. As iterações devem produzir resultados visíveis e utilizáveis que permitam validar o progresso, obter feedback e ajustar o curso. Isso gerencia expectativas, reduz riscos, aumenta a confiança e facilita a adaptação.
 
-### 5. Elevar o Nível de Abstração
+### Elevar o Nível de Abstração
 
 Para lidar com a complexidade, é essencial **elevar o nível de abstração**, focando nos conceitos essenciais e ocultando detalhes de baixo nível. Isso é alcançado através de Modelagem Visual (UML), Reutilização de Componentes, Padrões de Projeto, Foco na Arquitetura, etc. Facilita o entendimento, a comunicação e a manutenção.
 
-### 6. Foco Contínuo na Qualidade
+### Foco Contínuo na Qualidade
 
 A qualidade deve ser uma **preocupação central e contínua**, incorporada em todas as fases e atividades, e é **responsabilidade compartilhada por todos**. Manifesta-se em práticas como definição de critérios de qualidade, revisões técnicas, testes em múltiplos níveis, automação de testes e gerenciamento de defeitos. O objetivo é **identificar e corrigir defeitos o mais cedo possível**.
 
-## Fases do RUP: A Dimensão Temporal do Projeto
+## Fases do RUP
 
 O RUP estrutura o ciclo de vida do desenvolvimento de software em **quatro fases sequenciais e bem definidas**: Iniciação (ou Concepção), Elaboração, Construção e Transição. É crucial entender que, diferentemente do modelo cascata onde as fases se alinham estritamente às atividades técnicas (requisitos, projeto, codificação, etc.), as fases do RUP estão mais relacionadas à **maturidade do negócio, aos objetivos estratégicos e aos marcos de decisão do projeto**. Elas representam estágios lógicos na evolução do produto e do entendimento sobre ele.
 
-A distribuição de esforço e o foco do trabalho variam significativamente entre as fases, como ilustrado na Figura 4.
+A distribuição de esforço e o foco do trabalho variam significativamente entre as fases, como ilustrado abaixo.
 
 <div align="center">
-
-<img width="480px" src="12-fases-esforco-vs-programacao.png" alt="Tabela e gráfico de barras mostrando a distribuição percentual aproximada de esforço e programação nas quatro fases do RUP: Iniciação (~5% esforço, 10% prog), Elaboração (20% esforço, 30% prog), Construção (65% esforço, 50% prog), Transição (10% esforço, 10% prog).">
-
-<figcaption>Figura 4: Distribuição de Esforço e Programação por Fase no RUP</figcaption>
-
+<img width="500px" src="./img/12-fases-esforco-vs-programacao.png">
 </div>
 
 Dentro de cada fase (com exceção, tipicamente, da Iniciação, que pode ter apenas uma), ocorrem **uma ou mais iterações**, que são os ciclos onde o trabalho técnico de desenvolvimento incremental acontece. A seguir, exploraremos os objetivos, atividades principais e artefatos relevantes de cada uma das quatro fases do RUP.
 
 ### Fase de Iniciação (ou Concepção)
 
-**Objetivo Principal:** **Estabelecer o escopo inicial do projeto e determinar sua viabilidade.** O foco é responder à pergunta: "O projeto vale a pena ser feito?". Nesta fase, busca-se um acordo entre todos os stakeholders sobre os objetivos gerais, o escopo de alto nível e as principais restrições. Realiza-se uma análise preliminar dos riscos, custos e benefícios para construir um **caso de negócio (business case)** que justifique o investimento. Identificam-se os atores principais e os casos de uso mais críticos (geralmente 10-20% do total) para dar uma ideia da complexidade e do esforço envolvido.
+**Objetivo Principal:** **Estabelecer o escopo inicial do projeto e determinar sua viabilidade.**
 
-O esforço nesta fase é relativamente baixo (cerca de 5% do total), concentrado principalmente nas disciplinas de Modelagem de Negócios (se aplicável) e, sobretudo, Requisitos, com alguma atividade inicial de Gerenciamento de Projeto e Análise/Design para esboçar a arquitetura (Figura 5).
+O foco é responder à pergunta: "O projeto vale a pena ser feito?". Nesta fase, busca-se um acordo entre todos os stakeholders sobre os objetivos gerais, o escopo de alto nível e as principais restrições. Realiza-se uma análise preliminar dos riscos, custos e benefícios para construir um **caso de negócio (business case)** que justifique o investimento. Identificam-se os atores principais e os casos de uso mais críticos (geralmente 10-20% do total) para dar uma ideia da complexidade e do esforço envolvido.
+
+O esforço nesta fase é relativamente baixo (cerca de 5% do total), concentrado principalmente nas disciplinas de Modelagem de Negócios (se aplicável) e, sobretudo, Requisitos, com alguma atividade inicial de Gerenciamento de Projeto e Análise/Design para esboçar a arquitetura.
 
 <div align="center">
-
-<img width="480px" src="12-esforco-fase-iniciacao.png" alt="Gráfico de pizza mostrando a distribuição de esforço na Fase de Iniciação: grande parte em Requisitos, seguido por Análise e Design, Implementação e Testes (pequenas fatias).">
-
-<figcaption>Figura 5: Esforço por Disciplina na Fase de Iniciação</figcaption>
-
+<img width="450px" src="./img/12-esforco-fase-iniciacao.png">
 </div>
 
 Se, ao final da fase de Iniciação, o caso de negócio não for convincente, os riscos forem considerados muito altos ou não houver acordo sobre o escopo, o projeto pode ser **cancelado ou significativamente redefinido** antes que grandes investimentos sejam feitos.
 
-Atividades Básicas: Formular escopo, preparar caso de negócio, esboçar arquitetura, preparar ambiente.
+**Atividades Básicas**:
 
-Artefatos Relevantes: Documento de Visão, Caso de Negócio (inicial), Plano de Desenvolvimento de Software (inicial), Modelo de Casos de Uso (alto nível), Glossário (inicial), Lista de Riscos (inicial).
+- Formular o escopo do projeto;
+- Planejar e preparar um caso de negócio;
+- Esboçar uma arquitetura inicial do sistema;
+- Preparar o ambiente para o projeto.
+
+**Artefatos Relevantes**:
+
+- Documento de Visão;
+- Casos de Negócio;
+- Plano de Desenvolvimento de Software;
+- Modelo de Casos de Uso (inicial);
+- Lista de Riscos;
+- Glossário de termos.
 
 ### Fase de Elaboração
 
-**Objetivo Principal:** **Analisar o domínio do problema em profundidade, estabelecer uma linha de base arquitetural robusta e eliminar os principais riscos do projeto.** O foco é responder à pergunta: "Como vamos construir isso de forma estável e escalável?". Nesta fase, a maioria dos casos de uso é detalhada, a arquitetura do sistema é projetada, implementada (como um protótipo executável) e validada para garantir que ela pode suportar os requisitos funcionais e não funcionais (desempenho, segurança, etc.). Os riscos técnicos mais significativos são abordados e mitigados. O plano do projeto é refinado com estimativas mais precisas para a fase de Construção.
+**Objetivo Principal:** **Analisar o domínio do problema em profundidade, estabelecer uma linha de base arquitetural robusta e eliminar os principais riscos do projeto.**
 
-O esforço na Elaboração é consideravelmente maior (cerca de 20% do total), com um pico nas disciplinas de Requisitos e Análise e Design (incluindo arquitetura), mas também com atividades significativas de Implementação e Teste para construir e validar o protótipo arquitetural (Figura 6).
+O foco é responder à pergunta: "Como vamos construir isso de forma estável e escalável?". Nesta fase, a maioria dos casos de uso é detalhada, a arquitetura do sistema é projetada, implementada (como um protótipo executável) e validada para garantir que ela pode suportar os requisitos funcionais e não funcionais (desempenho, segurança, etc.). Os riscos técnicos mais significativos são abordados e mitigados. O plano do projeto é refinado com estimativas mais precisas para a fase de Construção.
+
+O esforço na Elaboração é consideravelmente maior (cerca de 20% do total), com um pico nas disciplinas de Requisitos e Análise e Design (incluindo arquitetura), mas também com atividades significativas de Implementação e Teste para construir e validar o protótipo arquitetural.
 
 <div align="center">
-
-<img width="480px" src="12-esforco-fase-elaboracao.png" alt="Gráfico de pizza mostrando a distribuição de esforço na Fase de Elaboração: grande parte dividida entre Requisitos e Análise e Design, seguido por Implementação e Testes.">
-
-<figcaption>Figura 6: Esforço por Disciplina na Fase de Elaboração</figcaption>
-
+<img width="450px" src="./img/12-esforco-fase-elaboracao.png">
 </div>
 
 A conclusão bem-sucedida da Elaboração, marcada pelo marco da **Arquitetura Estabilizada**, é o ponto de maior criticidade do RUP. Se a arquitetura definida aqui for falha, todo o trabalho subsequente na fase de Construção estará comprometido.
 
-Atividades Básicas: Definir e validar arquitetura, refinar Visão, criar planos de iteração detalhados, refinar casos de uso críticos, mitigar riscos principais.
+**Atividades Básicas**:
 
-Artefatos Relevantes: Documento de Arquitetura de Software (baseline), Modelo de Casos de Uso (detalhado), Modelo de Projeto (inicial), Modelo de Dados (inicial), Protótipo Arquitetural Executável, Lista de Riscos (atualizada), Plano de Desenvolvimento de Software (refinado).
+- Definir, validar e estabelecer a baseline da arquitetura;
+- Refinar o Documento de Visão com base nos requisitos;
+- Criar planos de iteração detalhados para a fase de construção;
+- Refinar os casos de uso mais críticos;
+- Identificar e planejar estratégias para mitigar os riscos principais.
+
+**Artefatos Relevantes**:
+
+- Protótipos;
+- Lista de Riscos (atualizada);
+- Documento de Arquitetura de Software;
+- Modelo de Casos de Uso (detalhado);
+- Modelo de Projeto;
+- Modelo de Dados;
+- Protótipo Arquitetural Executável;
+- Plano de Desenvolvimento de Software (refinado).
 
 ### Fase de Construção
 
-**Objetivo Principal:** **Desenvolver incrementalmente o restante das funcionalidades do sistema e construir um produto completo e de alta qualidade.** O foco é responder à pergunta: "Vamos construir o sistema de forma eficiente?". Esta é a fase onde a maior parte do código é escrita, testada e integrada, com base na arquitetura definida na Elaboração. O desenvolvimento ocorre em múltiplas iterações, cada uma produzindo um incremento funcional que é rigorosamente testado. O objetivo é chegar a uma **versão beta** funcional, pronta para ser testada pelos usuários finais (ou um grupo piloto).
+**Objetivo Principal:** **Desenvolver incrementalmente o restante das funcionalidades do sistema e construir um produto completo e de alta qualidade.**
 
-Esta é a fase mais longa e que consome a maior parte do esforço do projeto (cerca de 65% do total). O pico de trabalho ocorre nas disciplinas de Implementação e Teste, embora atividades de Análise e Design continuem (para detalhar funcionalidades específicas de cada iteração) e a disciplina de Implantação comece a ganhar relevância (preparando manuais, treinamentos) (Figura 7).
+O foco é responder à pergunta: "Vamos construir o sistema de forma eficiente?". Esta é a fase onde a maior parte do código é escrita, testada e integrada, com base na arquitetura definida na Elaboração. O desenvolvimento ocorre em múltiplas iterações, cada uma produzindo um incremento funcional que é rigorosamente testado. O objetivo é chegar a uma **versão beta** funcional, pronta para ser testada pelos usuários finais (ou um grupo piloto).
+
+Esta é a fase mais longa e que consome a maior parte do esforço do projeto (cerca de 65% do total). O pico de trabalho ocorre nas disciplinas de Implementação e Teste, embora atividades de Análise e Design continuem (para detalhar funcionalidades específicas de cada iteração) e a disciplina de Implantação comece a ganhar relevância (preparando manuais, treinamentos).
 
 <div align="center">
-
-<img width="480px" src="12-esforco-fase-contrucao.png" alt="Gráfico de pizza mostrando a distribuição de esforço na Fase de Construção: grande parte em Implementação, seguido por Testes, Análise e Design, Implantação e Requisitos (menores fatias).">
-
-<figcaption>Figura 7: Esforço por Disciplina na Fase de Construção</figcaption>
-
+<img width="450px" src="./img/12-esforco-fase-contrucao.png">
 </div>
 
-Atividades Básicas: Gerenciar recursos, implementar componentes, realizar testes (unidade, integração, sistema), produzir builds intermediárias.
+**Atividades Básicas da Construção**:
 
-Artefatos Relevantes: Software completo (versão beta), Casos de Teste (completos), Manuais de Usuário (rascunho), Notas de Release (para builds internas).
+- Gerenciar recursos e otimizar o controle do processo de desenvolvimento;
+- Implementar os componentes de software;
+- Realizar testes baseados nos critérios de aceitação;
+- Produzir versões (builds) intermediárias do sistema com casos de uso implementados.
+
+**Artefatos Relevantes**:
+
+- Sistema executável (ou builds parciais);
+- Bibliotecas e componentes desenvolvidos;
+- Conjunto de testes automatizados;
+- Materiais de treinamento e suporte ao usuário;
+- Notas de Release (para builds internas).
 
 ### Fase de Transição
 
-**Objetivo Principal:** **Entregar o sistema finalizado aos usuários finais e garantir que ele seja efetivamente utilizado no ambiente de produção.** O foco é responder à pergunta: "Como garantir que os usuários possam e queiram usar o sistema?". Esta fase envolve a **implantação** do software no ambiente real, a migração de dados de sistemas antigos (se necessário), o treinamento dos usuários, a realização de testes de aceitação finais (beta testing) e a coleta de feedback para realizar ajustes finos. O objetivo é garantir uma transição suave do ambiente de desenvolvimento para o ambiente operacional.
+**Objetivo Principal:** **Entregar o sistema finalizado aos usuários finais e garantir que ele seja efetivamente utilizado no ambiente de produção.**
 
-O esforço nesta fase é menor (cerca de 10% do total), concentrado principalmente nas disciplinas de Implantação e Teste (testes beta, correção de bugs de última hora), com atividades residuais nas outras disciplinas para ajustes finais (Figura 8).
+O foco é responder à pergunta: "Como garantir que os usuários possam e queiram usar o sistema?". Esta fase envolve a **implantação** do software no ambiente real, a migração de dados de sistemas antigos (se necessário), o treinamento dos usuários, a realização de testes de aceitação finais (testes beta) e a coleta de feedback para realizar ajustes finos. O objetivo é garantir uma transição suave do ambiente de desenvolvimento para o ambiente operacional.
+
+O esforço nesta fase é menor (cerca de 10% do total), concentrado principalmente nas disciplinas de Implantação e Teste (testes beta, correção de bugs de última hora), com atividades residuais nas outras disciplinas para ajustes finais.
 
 <div align="center">
-
-<img width="480px" src="12-esforco-fase-transicao.png" alt="Gráfico de pizza mostrando a distribuição de esforço na Fase de Transição: maioria esmagadora em Implantação, seguido por Testes, Implementação, Análise e Design e Requisitos (pequenas fatias).">
-
-<figcaption>Figura 8: Esforço por Disciplina na Fase de Transição</figcaption>
-
+<img width="450px" src="./img/12-esforco-fase-transicao.png">
 </div>
 
-Atividades Básicas: Executar planos de implantação, finalizar documentação e material de suporte, testar em ambiente real, criar release final, coletar feedback, realizar ajustes, disponibilizar produto.
+**Atividades Básicas da Transição**:
 
-Artefatos Relevantes: Produto final entregue (release), Notas de Release (finais), Materiais de Treinamento (finais), Manuais de Usuário (finais), Artefatos de Instalação.
+- Executar os planos de implantação do sistema;
+- Finalizar a documentação e o material de suporte ao usuário;
+- Testar o produto em ambiente real (validação final);
+- Criar o release definitivo do produto;
+- Coletar e analisar o feedback dos usuários;
+- Realizar ajustes no sistema conforme necessário;
+- Disponibilizar o produto para os usuários finais.
+
+**Artefatos Relevantes**:
+
+- Notas de Release;
+- Produto final entregue (release);
+- Artefatos de Instalação;
+- Materiais de Treinamento (finais);
+- Manuais de Usuário (finais);
+- Documentação final do sistema.
+
+### Observações Importantes
+
+É importante destacar que os **artefatos do RUP estão associados às disciplinas, e não diretamente às fases**. Por esse motivo, pode haver confusão sobre "a qual fase pertence determinado artefato". Na realidade, muitos artefatos **são utilizados ou refinados em várias fases**, pois acompanham a evolução do projeto.
+
+Por exemplo, o **manual de treinamento** e o **manual de suporte do usuário** são planejados na Elaboração, mas finalizados apenas na Construção. Ambos pertencem à disciplina de **Implantação**, que pode atravessar diversas fases do ciclo de vida.
+
+Além disso, o RUP é um framework altamente configurável. Existem variações do RUP voltadas para diferentes contextos, como o **RUP for Small Projects**, que adapta o processo para projetos de menor porte, reduzindo a complexidade e o número de artefatos.
 
 ### Fases, Iterações e Disciplinas em Conjunto
 
-É a interação entre Fases, Iterações e Disciplinas que define o fluxo de trabalho completo do RUP. A Figura 9 (uma variação do Gráfico de Baleias) ilustra como as iterações se encaixam dentro das fases e como as disciplinas são aplicadas em cada iteração. Uma passagem completa pelas quatro fases constitui um **ciclo de desenvolvimento**. Dentro desse ciclo, ocorrem múltiplas **iterações** (tipicamente de 3 a 9 no total, com duração de 2 a 6 semanas cada), e em cada iteração, as **nove disciplinas** são trabalhadas com intensidades variáveis.
+É a interação entre Fases, Iterações e Disciplinas que define o fluxo de trabalho completo do RUP. A figura a seguir (uma variação do Gráfico de Baleias) ilustra como as iterações se encaixam dentro das fases e como as disciplinas são aplicadas em cada iteração. Uma passagem completa pelas quatro fases constitui um **ciclo de desenvolvimento**. Dentro desse ciclo, ocorrem múltiplas **iterações** (tipicamente de 3 a 9 no total, com duração de 2 a 6 semanas cada), e em cada iteração, as **nove disciplinas** são trabalhadas com intensidades variáveis.
 
 <div align="center">
-
-<img width="720px" src="12-fases-e-iteracao.png" alt="Diagrama mostrando as 4 fases (Iniciação, Elaboração, Construção, Transição) e múltiplas iterações dentro delas. Cada iteração mostra um fluxo sequencial simplificado das disciplinas (MN, R, AD, I, T, IM).">
-
-<figcaption>Figura 9: Relação entre Fases, Iterações e Disciplinas no RUP</figcaption>
-
+<img width="700px" src="./img/12-fases-e-iteracao.png">
 </div>
 
 É importante notar que a disciplina de **Modelagem de Negócios é opcional** e pode ser omitida dependendo do projeto.
 
-## Marcos de Projeto: Os Portões de Decisão
+## Marcos de Projeto
 
 Cada uma das quatro fases do RUP culmina em um **marco (_milestone_)** principal. Esses marcos não são apenas pontos de verificação de progresso; são **portões de decisão críticos** onde os stakeholders avaliam os resultados da fase concluída e decidem formalmente se o projeto deve prosseguir para a próxima fase, ser ajustado ou até mesmo cancelado. Eles fornecem evidências objetivas e tangíveis de que os objetivos da fase foram alcançados.
 
@@ -364,48 +383,35 @@ O marco da **Arquitetura Estabilizada (LCA)** ao final da Elaboração é freque
 
 O marco da **Capacidade Operacional Inicial (IOC)** ao final da Construção geralmente corresponde à entrega de uma **versão beta** do sistema, pronta para testes de aceitação mais amplos. O **Release do Produto (PR)** marca a entrega oficial da versão 1.0 (ou da versão planejada) para o mercado ou para os usuários finais.
 
-## Gerenciamento de Riscos no RUP: Uma Abordagem Proativa
+## Gerenciamento de Riscos no RUP
 
-Como já destacado no princípio "Planejado por Riscos", o gerenciamento de riscos é uma atividade **contínua e transversal** a todo o projeto RUP, embora esteja formalmente ancorada na disciplina de **Gerenciamento de Projeto**. A responsabilidade principal recai sobre o Gerente de Projeto, mas toda a equipe deve participar da identificação e mitigação.
+Como já destacado, o gerenciamento de riscos é uma atividade **contínua e transversal** a todo o projeto RUP, embora esteja formalmente ancorada na disciplina de **Gerenciamento de Projeto**. A responsabilidade principal recai sobre o Gerente de Projeto, mas toda a equipe deve participar da identificação e mitigação.
 
 O processo envolve:
 
 1. **Identificação de Riscos:** Mapear potenciais problemas que podem impactar o projeto (técnicos, de negócio, de recursos, etc.).
-    
 2. **Análise de Riscos:** Avaliar a probabilidade de ocorrência e o impacto potencial de cada risco identificado.
-    
 3. **Priorização de Riscos:** Classificar os riscos com base em sua severidade (probabilidade x impacto).
-    
 4. **Planejamento de Respostas:** Definir estratégias para lidar com os riscos mais críticos.
-    
 5. **Monitoramento e Controle:** Acompanhar os riscos ao longo do projeto e a eficácia das ações de mitigação.
-    
 
 As **principais estratégias** para responder a um risco identificado são:
 
 - **Prevenção (ou Evitar):** Modificar o plano do projeto para eliminar completamente a causa do risco ou sua possibilidade de ocorrência. Exemplo: Substituir uma tecnologia nova e arriscada por uma mais madura e conhecida.
-    
 - **Transferência:** Repassar o risco (ou seu impacto) para um terceiro. Exemplo: Contratar um seguro ou terceirizar o desenvolvimento de um componente de altíssimo risco para uma empresa especializada.
-    
 - **Mitigação:** Tomar ações proativas para reduzir a probabilidade de ocorrência do risco ou diminuir seu impacto caso ele se concretize. Exemplo: Realizar protótipos e provas de conceito nas primeiras iterações para validar uma abordagem técnica complexa. (Esta é a estratégia mais alinhada com a filosofia iterativa do RUP).
-    
 - **Aceitação:** Reconhecer o risco e decidir não tomar nenhuma ação proativa imediata, seja porque o custo da mitigação é muito alto ou porque o risco é considerado baixo. A aceitação pode ser:
-    
     - **Passiva:** Simplesmente aceitar as consequências se o risco ocorrer.
-        
     - **Ativa:** Aceitar o risco, mas desenvolver um **Plano de Contingência** – um conjunto de ações a serem tomadas _se e quando_ o risco se materializar, para minimizar os danos. Exemplo: Ter um servidor de backup pronto para ser ativado caso o servidor principal falhe.
-        
 
 É importante também distinguir:
 
 - **Riscos Diretos:** Aqueles sobre os quais a equipe do projeto tem algum controle ou capacidade de influenciar (ex: qualidade do código, clareza dos requisitos).
-    
 - **Riscos Indiretos:** Aqueles que estão fora do controle da equipe (ex: mudança na legislação, falência de um fornecedor chave).
-    
 
 Os tipos comuns de risco em projetos de software incluem: Riscos de Recursos (falta de pessoal qualificado), Riscos de Negócio (mudança de mercado), Riscos Técnicos (complexidade tecnológica) e Riscos de Programação (estimativas erradas).
 
-## Disciplinas do RUP: As Áreas de Foco Funcional
+## Disciplinas do RUP
 
 Após explorarmos os fundamentos, as perspectivas, os princípios e as fases do Rational Unified Process (RUP), chegamos a um de seus elementos estruturais mais importantes: as **disciplinas**. As disciplinas representam os **grandes agrupamentos de atividades logicamente relacionadas** dentro do processo unificado. Elas não são fases sequenciais, mas sim **áreas de foco ou especialização** que são trabalhadas de forma concorrente ao longo das iterações e fases do projeto. Cada disciplina define um conjunto coeso de atividades, os papéis responsáveis por executá-las e os artefatos que são produzidos ou consumidos como resultado.
 
@@ -419,15 +425,15 @@ O RUP define **nove disciplinas principais**, que são tradicionalmente dividida
     5. Teste (_Test_)
     6. Implantação (_Deployment_)
 - **Três Disciplinas de Apoio (ou Suporte):** Fornecem a infraestrutura, o controle e o gerenciamento necessários para que as disciplinas de engenharia possam ocorrer de forma eficaz.
-    7. Gerenciamento de Configuração e Mudança (Configuration & Change Management)
-    8. Gerenciamento de Projeto (Project Management)
-    9. Ambiente (Environment)
+    7. Gerenciamento de Configuração e Mudança (_Configuration & Change Management_)
+    8. Gerenciamento de Projeto (_Project Management_)
+    9. Ambiente (_Environment_)
 
-Como vimos no Gráfico de Baleias (Figura 3), a intensidade com que cada disciplina é trabalhada varia significativamente ao longo das fases do projeto. Por exemplo, a disciplina de Requisitos tem seu pico de esforço nas fases de Iniciação e Elaboração, enquanto a Implementação domina a fase de Construção. No entanto, é fundamental reiterar que **todas as disciplinas estão, em algum grau, ativas durante quase todo o ciclo de vida**, refletindo a natureza iterativa e concorrente do RUP.
+Como vimos no Gráfico de Baleias, a intensidade com que cada disciplina é trabalhada varia significativamente ao longo das fases do projeto. Por exemplo, a disciplina de Requisitos tem seu pico de esforço nas fases de Iniciação e Elaboração, enquanto a Implementação domina a fase de Construção. No entanto, é fundamental reiterar que **todas as disciplinas estão, em algum grau, ativas durante quase todo o ciclo de vida**, refletindo a natureza iterativa e concorrente do RUP.
 
 A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando suas finalidades, principais atividades, artefatos produzidos e papéis envolvidos, utilizando as ilustrações fornecidas para visualizar os elementos chave de cada uma.
 
-### 1. Modelagem de Negócios (_Business Modeling_)
+### Modelagem de Negócios (_Business Modeling_)
 
 **Finalidade:** Compreender a estrutura, a dinâmica e os processos da organização (ou da área de negócio específica) onde o sistema de software será implantado. O objetivo não é modelar a organização inteira, mas sim o **contexto relevante** para o sistema, identificando problemas atuais, oportunidades de melhoria e garantindo que a solução de software esteja alinhada às metas e operações do negócio. Esta disciplina ajuda a estabelecer uma linguagem comum entre os stakeholders do negócio e a equipe técnica. É importante notar que esta disciplina é **opcional** e pode ser omitida se o contexto de negócio já for bem compreendido ou se o projeto tiver um escopo puramente técnico.
 
@@ -435,17 +441,13 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 
 **Papéis Principais:** Analista do Processo de Negócios, Designer de Negócios.
 
-**Artefatos Principais:** Modelo de Casos de Uso de Negócios, Modelo de Objetos de Negócios, Glossário de Negócios, Regras de Negócios, Visão do Negócio (Figura 11).
+**Artefatos Principais:** Modelo de Casos de Uso de Negócios, Modelo de Objetos de Negócios, Glossário de Negócios, Regras de Negócios, Visão do Negócio. São artefatos que **capturam o contexto de negócios**, servindo como base para a definição dos requisitos do sistema.
 
 <div align="center">
-
-<img width="540px" src="12-disciplina-modelagem-de-negocios.png" alt="Papéis (Analista de Processo de Negócios, Designer de Negócios) e Artefatos (Glossário, Regras, Modelos de Casos de Uso e Objetos de Negócios, Visão, Caso de Uso de Negócios, Ator de Negócio, etc.) da disciplina Modelagem de Negócios.">
-
-<figcaption>Figura 11: Papéis e Artefatos da Modelagem de Negócios</figcaption>
-
+<img width="500px" src="./img/12-disciplina-modelagem-de-negocios.png">
 </div>
 
-### 2. Requisitos (_Requirements_)
+### Requisitos (_Requirements_)
 
 **Finalidade:** Elicitar, analisar, especificar, validar e gerenciar os **requisitos do sistema de software**. Esta disciplina foca em definir **o que** o sistema deve fazer, do ponto de vista do usuário e dos stakeholders, estabelecendo as funcionalidades, características e restrições que guiarão todo o desenvolvimento. O RUP utiliza fortemente a técnica de **Casos de Uso** para capturar os requisitos funcionais.
 
@@ -453,14 +455,10 @@ A seguir, abordaremos cada uma dessas nove disciplinas em detalhes, destacando s
 
 **Papéis Principais:** Analista de Sistemas, Especificador de Requisitos, Designer de Interface de Usuário.
 
-**Artefatos Principais:** Modelo de Casos de Uso (do sistema), Especificação de Caso de Uso (detalhada), Especificações Suplementares, Protótipo da Interface do Usuário, Glossário (complementar ao de negócios), Documento de Visão (refinado) (Figura 12).
+**Artefatos Principais:** Modelo de Casos de Uso (do sistema), Especificação de Caso de Uso (detalhada), Especificações Suplementares, Protótipo da Interface do Usuário, Glossário (complementar ao de negócios), Documento de Visão (refinado). São artefatos que **capturam e apresentam informações usadas para definir os recursos necessários do sistema**.
 
 <div align="center">
-
-<img width="540px" src="12-disciplina-requisitos.png" alt="Papéis (Analista de Sistemas, Especificador de Requisitos, Designer de UI) e Artefatos (Plano de Ger. Requisitos, Glossário, Visão, Modelo de Caso de Uso, Especificações Suplementares, Caso de Uso, Ator, Protótipo UI, etc.) da disciplina Requisitos.">
-
-<figcaption>Figura 12: Papéis e Artefatos da disciplina de Requisitos</figcaption>
-
+<img width="550px" src="./img/12-disciplina-requisitos.png">
 </div>
 
 ### 3. Análise e Design (_Analysis & Design_)
