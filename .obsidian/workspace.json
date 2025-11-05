@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "engenharia-de-software/contents/05-rup.md",
+                "file": "engenharia-de-software/contents/13-metodologias-ageis.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-rup"
+              "title": "13-metodologias-ageis"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "engenharia-de-software/contents/05-rup.md",
+                "file": "engenharia-de-software/contents/13-metodologias-ageis.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 05-rup"
+              "title": "Sumário de 13-metodologias-ageis"
             }
           }
         ],
@@ -171,9 +171,14 @@
   },
   "active": "84dc1ec37b0ca9b2",
   "lastOpenFiles": [
-    "engenharia-de-software/contents/img/05-diagrama-disciplinas.png",
-    "engenharia-de-software/contents/12-modelo-rup.md",
+    "engenharia-de-software/contents/12-old.md",
+    "engenharia-de-software/contents/10-old.md",
+    "engenharia-de-software/contents/09-modelos-especificos.md",
+    "engenharia-de-software/contents/08-modelo-em-espiral.md",
+    "engenharia-de-software/contents/07-modelo-de-prototipagem.md",
+    "engenharia-de-software/contents/06-modelos-iterativos-e-evolutivos.md",
     "engenharia-de-software/contents/05-rup.md",
+    "engenharia-de-software/contents/img/05-diagrama-disciplinas.png",
     "engenharia-de-software/contents/img/05-disciplina-ambiente.png",
     "engenharia-de-software/contents/img/05-disciplina-generenciamento-de-projetos.png",
     "engenharia-de-software/contents/img/05-disciplina-generenciamento-de-configuracao.png",
@@ -183,13 +188,10 @@
     "engenharia-de-software/contents/img/05-disciplina-analise-e-projeto.png",
     "engenharia-de-software/contents/img/05-disciplina-requisitos.png",
     "engenharia-de-software/contents/img/05-disciplina-modelagem-de-negocios.png",
-    "engenharia-de-software/contents/img/05-disciplinas.png",
     "engenharia-de-software/contents/01-fundamentos.md",
     "engenharia-de-software/contents/03-modelos-iterativos-e-incrementais.md",
     "engenharia-de-software/contents/02-modelos-sequenciais.md",
-    "engenharia-de-software/contents/11-modelo-orientado-a-aspectos.md",
-    "engenharia-de-software/contents/10-modelo-baseado-em-componentes.md",
-    "engenharia-de-software/contents/09-modelos-especificos.md",
+    "engenharia-de-software/contents/11-old.md",
     "lingua-portuguesa/contents/02-ortografia.md",
     "legislacao/contents/11-lei-9784.md",
     "legislacao/contents/10-lei-8027.md",
@@ -205,8 +207,6 @@
     "algoritmos-e-estruturas-de-dados/contents/03-principais-algoritmos-ordenacao-1.md",
     "algoritmos-e-estruturas-de-dados/contents/02-algoritmos-de-ordenacao.md",
     "algoritmos-e-estruturas-de-dados/contents/01-introducao-algoritmos.md",
-    "algoritmos-e-estruturas-de-dados/README.md",
-    "estruturas-de-dados/README.md",
     "algoritmos-e-estruturas-de-dados/contents/img",
     "algoritmos-e-estruturas-de-dados/contents",
     "algoritmos-e-estruturas-de-dados",
