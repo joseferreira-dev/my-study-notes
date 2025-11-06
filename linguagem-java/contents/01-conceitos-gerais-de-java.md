@@ -2,7 +2,7 @@
 
 Antes de mergulharmos nas profundezas da sintaxe e dos recursos avançados, é fundamental construir uma base sólida sobre o que é o Java, sua história e, mais importante, sua arquitetura fundamental. Compreender os conceitos que definem o Java não é apenas um requisito acadêmico; é o que diferencia um desenvolvedor que apenas "escreve código" de um profissional que entende como e por que suas aplicações funcionam da maneira que o fazem.
 
-## O Que é Java? A Promessa do "Escreva Uma Vez, Rode em Qualquer Lugar"
+## O Que é Java?
 
 Java é uma linguagem de programação de alto nível, robusta e orientada a objetos, concebida pela Sun Microsystems no início da década de 1990 e lançada oficialmente ao mundo em 1995. Em uma era dominada por linguagens como C e C++, que exigiam recompilação de código para cada sistema operacional diferente, a equipe da Sun, liderada por James Gosling, tinha uma visão revolucionária. O objetivo era criar uma linguagem que pudesse ser executada em uma vasta gama de dispositivos — de computadores de mesa a eletrodomésticos e sistemas embarcados — sem a necessidade de qualquer modificação no código-fonte.
 
@@ -18,7 +18,7 @@ Sua versatilidade permite que seja aplicado em uma multiplicidade de domínios, 
 - **Jogos:** Embora não seja a escolha predominante para jogos de ponta (AAA), o Java foi a base para fenômenos como _Minecraft_ e é amplamente utilizado em jogos independentes e para dispositivos móveis.
 - **Sistemas Embarcados e Big Data:** Sua robustez e ecossistema de bibliotecas o tornam uma escolha viável para sistemas embarcados, dispositivos de IoT (Internet das Coisas) e para ferramentas de processamento de grandes volumes de dados, como Hadoop e Spark.
 
-## Java como Plataforma: O Ecossistema JDK, JRE e JVM
+## Plataforma Java: Ecossistema JDK, JRE e JVM
 
 É um erro comum pensar no Java apenas como uma linguagem de programação. Na realidade, Java é uma **plataforma de desenvolvimento completa**. Essa plataforma é um ecossistema coeso composto por três componentes fundamentais que trabalham em conjunto para permitir o desenvolvimento e a execução de aplicações. São eles: o Java Development Kit (JDK), o Java Runtime Environment (JRE) e a Java Virtual Machine (JVM).
 
@@ -61,7 +61,7 @@ O JDK é o kit de desenvolvimento Java. Como o nome sugere, este é o pacote com
 
 Portanto, para desenvolver em Java, você precisa do JDK. Para apenas executar uma aplicação Java, o JRE é suficiente.
 
-## Anatomia de um Programa Básico: "Olá, Mundo!"
+## Anatomia de um Programa Básico
 
 A sintaxe do Java, especialmente para quem vem de linguagens com menos "cerimônia" como Python ou JavaScript, pode parecer um pouco verbosa e complexa em um primeiro contato. No entanto, cada parte dessa estrutura tem um propósito claro. Vamos analisar o programa mais fundamental, o "Olá, Mundo!":
 
@@ -87,7 +87,7 @@ Este pequeno bloco de código, que deve ser salvo em um arquivo chamado `OlaMund
     - `out`: É um campo estático dentro da classe `System`. Este campo é um objeto do tipo `PrintStream`, que representa o fluxo de saída padrão (geralmente, o console).
     - `println()`: É um método do objeto `out`. O nome é uma abreviação de "print line" (imprimir linha). Ele exibe o texto passado como argumento e, em seguida, move o cursor para a próxima linha.
 
-## Características Fundamentais: Tipagem Estática e Forte
+## Características Fundamentais:
 
 Conforme o exemplo de código sugere, Java é uma linguagem que leva a sério a forma como os dados são definidos e manipulados. Isso se manifesta em duas características cruciais: a tipagem estática e a tipagem forte.
 
@@ -132,7 +132,7 @@ int precoInteiro = (int) preco; // Agora, precoInteiro valerá 99 (a parte decim
 
 Essa característica evita ambiguidades e garante que o desenvolvedor esteja ciente das consequências de misturar diferentes tipos de dados, contribuindo para a previsibilidade e a robustez do programa.
 
-## Do Código-Fonte ao Bytecode: Organização de Arquivos e Pacotes
+## Organização de Arquivos e Pacotes
 
 Com a compreensão das características fundamentais da linguagem estabelecida, o próximo passo é entender como o código que escrevemos é fisicamente organizado, desde um único arquivo até a estrutura completa de um projeto profissional. O Java impõe uma organização rigorosa que, embora possa parecer burocrática a princípio, é essencial para a manutenibilidade, a escalabilidade e o funcionamento correto do compilador e da Máquina Virtual.
 
@@ -141,7 +141,7 @@ Tudo começa com dois tipos de arquivos principais, que representam os dois esta
 - **Arquivo `.java`**: Este é o arquivo de código-fonte. É um arquivo de texto simples que contém o código escrito por um ser humano, seguindo a sintaxe da linguagem Java. É neste arquivo que definimos nossas classes, métodos e toda a lógica da aplicação.
 - **Arquivo `.class`**: Este é o arquivo de bytecode, o resultado do processo de compilação. Ele não contém código legível por humanos, mas sim as instruções intermediárias, independentes de plataforma, que serão executadas pela JVM. É a portabilidade deste arquivo que materializa a promessa "Write Once, Run Anywhere".
 
-### O Fluxo de Compilação e Execução
+### Fluxo de Compilação e Execução
 
 O ciclo de vida de um programa Java, do desenvolvimento à execução, segue um fluxo claro e bem definido, mediado pelas ferramentas do JDK:
 
@@ -168,7 +168,7 @@ A convenção mais difundida para nomear pacotes é utilizar o domínio da inter
 
 Crucialmente, a estrutura de pacotes no código **deve** ser refletida na estrutura de diretórios no sistema de arquivos. Uma classe no pacote `com.meuprojeto.modelo` deve, obrigatoriamente, estar localizada no diretório `com/meuprojeto/modelo/` dentro do diretório raiz do código-fonte.
 
-### A Estrutura Padrão de um Projeto Java
+### Estrutura Padrão de um Projeto Java
 
 A combinação desses conceitos resulta em uma estrutura de diretórios padrão, adotada pela maioria dos projetos e ferramentas de automação (como Maven e Gradle). Compreender essa estrutura é fundamental para navegar e contribuir com projetos Java existentes.
 
@@ -204,11 +204,11 @@ Analisando cada componente:
 - **`docs/`**: Destinado à documentação do projeto, tipicamente gerada pela ferramenta `javadoc`, que cria um site HTML a partir de comentários especiais no código-fonte.
 - **`README.md`**: Um arquivo de texto que serve como a "porta de entrada" do projeto, fornecendo uma descrição geral, instruções de como compilar e executar o projeto, e outras informações relevantes para um novo desenvolvedor.
 
-## A Sintaxe Fundamental: Escrevendo as Primeiras Instruções
+## Sintaxe Fundamental
 
 Com a estrutura de arquivos e pacotes em mente, podemos agora focar no conteúdo de um arquivo `.java`. A sintaxe da linguagem define o conjunto de regras para escrever código válido que o compilador consegue entender. O Java, herdando parte de sua sintaxe do C/C++, possui uma estrutura bem definida e regrada, onde cada símbolo e palavra-chave tem um lugar e um propósito específico.
 
-### O Contêiner Obrigatório: A Classe
+### Contêiner Obrigatório: Classe
 
 A regra mais fundamental do Java é que **toda linha de código executável deve estar dentro de uma classe**. A classe atua como um contêiner, um projeto que agrupa dados (variáveis) e comportamentos (métodos) relacionados.
 
@@ -218,7 +218,7 @@ Existe uma regra de ouro que conecta a classe ao sistema de arquivos: **o nome d
 
 Portanto, um código definido dentro de uma classe `public class Main` deve, obrigatoriamente, ser salvo em um arquivo chamado `Main.java`.
 
-### O Ponto de Entrada: O Método `main`
+### Ponto de Entrada: Método `main`
 
 Dentro da classe, a JVM precisa saber por onde começar a execução do programa. Esse ponto de partida é, por padrão, um método especial chamado `main`. Qualquer código colocado dentro do corpo deste método será executado quando o programa for iniciado. Sua estrutura é rígida e deve ser declarada exatamente como a seguir:
 
