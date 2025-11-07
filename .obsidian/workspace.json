@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-java/contents/04-strings.md",
+                "file": "linguagem-java/contents/06-estruturas-de-repeticao.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-strings"
+              "title": "06-estruturas-de-repeticao"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-java/contents/04-strings.md",
+                "file": "linguagem-java/contents/06-estruturas-de-repeticao.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 04-strings"
+              "title": "Sumário de 06-estruturas-de-repeticao"
             }
           }
         ],
@@ -171,6 +171,8 @@
   },
   "active": "84dc1ec37b0ca9b2",
   "lastOpenFiles": [
+    "linguagem-java/contents/05-estruturas-condicionais.md",
+    "linguagem-java/contents/04-strings.md",
     "linguagem-java/contents/03-operadores.md",
     "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
     "linguagem-java/contents/01-conceitos-gerais-de-java.md",
@@ -179,8 +181,6 @@
     "linguagem-java/contents/08-excecoes.md",
     "linguagem-java/contents/07-estruturas-de-dados.md",
     "linguagem-java/contents/06-estruturas-de-repeticao.md",
-    "linguagem-java/contents/05-estruturas-condicionais.md",
-    "linguagem-java/contents/04-strings.md",
     "legislacao/contents/08-lei-12527.md",
     "Sem título.md",
     "legislacao/contents/12-lei-8429.md",

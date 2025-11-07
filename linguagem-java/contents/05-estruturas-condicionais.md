@@ -143,7 +143,7 @@ Enquanto a estrutura `if-else if-else` é extremamente flexível e pode lidar co
 
 Para esses casos, o Java fornece uma estrutura de controle alternativa e mais expressiva: o `switch`. Ele otimiza a legibilidade do código ao centralizar a variável a ser testada e listar os possíveis casos de forma clara e organizada.
 
-### A Estrutura `switch` Tradicional (Pré-Java 14)
+### Estrutura `switch` Tradicional (Pré-Java 14)
 
 A sintaxe clássica do `switch`, presente na linguagem desde suas primeiras versões, funciona como um painel de distribuição. A expressão dentro dos parênteses do `switch` é avaliada uma única vez, e seu resultado é comparado com o valor de cada `case`.
 
@@ -170,7 +170,7 @@ Analisando cada componente:
 - **`break`**: Esta instrução é crucial. Ela interrompe a execução dentro do `switch` e transfere o controle para a primeira instrução após o seu término.
 - **`default`**: Este bloco é opcional e funciona de maneira análoga ao `else` final. Ele é executado se o valor da `expressao` não corresponder a nenhum dos `case` especificados. É uma boa prática sempre incluí-lo para tratar casos inesperados.
 
-#### A Importância do `break` e o "Fall-Through"
+#### Importância do `break` e o "Fall-Through"
 
 Um dos comportamentos mais importantes (e perigosos) do `switch` tradicional é o **fall-through** (queda). Se uma instrução `break` for omitida de um `case`, a execução não irá parar; ela "cairá" e continuará executando o código do(s) próximo(s) `case`(s) até encontrar um `break` ou o final do `switch`.
 
@@ -206,7 +206,7 @@ Terça
 
 Como o `case 2` não tem um `break`, a execução "caiu" e executou também o código do `case 3`.
 
-### A Evolução do `switch` (A Partir do Java 14)
+### Evolução do `switch` (A Partir do Java 14)
 
 Reconhecendo que a sintaxe tradicional, especialmente a necessidade do `break` e o comportamento de fall-through, era uma fonte comum de erros, o Java introduziu uma sintaxe modernizada e mais poderosa para o `switch`, que se tornou um recurso padrão a partir do Java 17.
 
