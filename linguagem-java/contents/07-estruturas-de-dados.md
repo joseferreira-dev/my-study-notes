@@ -118,7 +118,7 @@ Embora os arrays sejam eficientes e fundamentais, sua principal limitação — 
 
 Dentro do JCF, a estrutura mais utilizada e intuitiva é a **Lista**. Uma `List` em Java é uma coleção ordenada de elementos, que permite o armazenamento de itens duplicados e mantém um controle preciso sobre a posição de cada elemento através de um índice. Ela é a evolução natural do array, adicionando a capacidade de crescimento dinâmico e um rico conjunto de métodos para manipulação de dados.
 
-### Interface `List<E>`: O Contrato das Listas
+### Interface `List<E>`
 
 Todo o comportamento fundamental das listas em Java está definido na interface `java.util.List<E>`. Uma interface, em Java, funciona como um "contrato" que especifica um conjunto de métodos que uma classe deve implementar. Isso significa que, independentemente da implementação específica que escolhermos (`ArrayList`, `LinkedList`, etc.), teremos a garantia de que um conjunto padronizado de operações estará disponível.
 
@@ -140,7 +140,7 @@ List<String> nomes = new ArrayList<>();
 
 Essa abordagem torna o código mais flexível, pois, se no futuro decidirmos que a implementação `LinkedList` é mais adequada para o nosso caso de uso, basta alterar a linha da instanciação, sem a necessidade de modificar o restante do código que utiliza a variável `nomes`.
 
-### As Principais Implementações
+### Principais Implementações
 
 O JCF oferece diversas implementações da interface `List`, cada uma otimizada para um tipo diferente de operação. A escolha da implementação correta é uma decisão de arquitetura que impacta diretamente a performance da aplicação.
 
@@ -152,7 +152,7 @@ O JCF oferece diversas implementações da interface `List`, cada uma otimizada 
 | **`CopyOnWriteArrayList`** | Array com "cópia na escrita" | Leitura concorrente sem bloqueio (muito rápida e segura).                                             | Extremamente custosa para operações de escrita (cópia todo o array a cada modificação). | Ambientes concorrentes com leitura massiva e escrita muito rara.                          |
 | **`List.of()`**            | Lista imutável (Java 9+)     | Leve, segura contra modificações, excelente para constantes.                                          | Não permite adições, remoções, modificações ou elementos `null`.                        | Definição de coleções de dados fixas e constantes.                                        |
 
-#### `ArrayList<E>`: O Padrão para Acesso Rápido
+#### `ArrayList<E>`: Padrão para Acesso Rápido
 
 O `ArrayList` é a implementação de lista mais utilizada em Java. Internamente, ele utiliza um **array dinâmico** para armazenar seus elementos. Isso significa que ele oferece acesso extremamente rápido aos elementos por meio de seu índice, pois a localização do elemento na memória pode ser calculada diretamente. No entanto, quando um elemento é adicionado ou removido do meio da lista, todos os elementos subsequentes precisam ser deslocados, tornando essas operações mais lentas.
 
@@ -210,7 +210,7 @@ public class ExemploLinkedList {
 }
 ```
 
-### `Stack<E>`: A Estrutura de Pilha (LIFO)
+#### `Stack<E>`: Estrutura de Pilha (LIFO)
 
 O `Stack` é uma implementação de lista que adere a um princípio de funcionamento específico: **LIFO (Last-In, First-Out)**. A melhor analogia é uma pilha de pratos: o último prato que você coloca no topo da pilha é, necessariamente, o primeiro que você retira. O `Stack` é projetado para modelar exatamente esse comportamento.
 
@@ -341,7 +341,7 @@ Diferentemente das listas, que são coleções lineares de elementos individuais
 
 A melhor analogia para um mapa é um dicionário: a chave é a "palavra" que se deseja procurar, e o valor é a "definição" associada a essa palavra. Cada chave dentro de um mapa deve ser única, garantindo um caminho direto e inequívoco para se recuperar o valor correspondente.
 
-### A Interface `Map<K, V>`: O Dicionário de Dados do Java
+### Interface `Map<K, V>`: Dicionário de Dados do Java
 
 O comportamento dos mapas em Java é definido pela interface `java.util.Map<K, V>`. Note os dois parâmetros genéricos:
 
@@ -377,7 +377,7 @@ Assim como nas listas, a boa prática é "programar para a interface":
 Map<Integer, String> usuarios = new HashMap<>();
 ```
 
-### As Principais Implementações de `Map`
+### Principais Implementações de `Map`
 
 A escolha da implementação de `Map` correta depende crucialmente dos requisitos de ordenação, performance e segurança em ambientes concorrentes.
 
@@ -390,7 +390,7 @@ A escolha da implementação de `Map` correta depende crucialmente dos requisito
 | **`ConcurrentHashMap`** | Tabela de Hash Segmentada                | Não garante nenhuma ordem.                             | Não (nem chave, nem valor).                     | Alternativa moderna e performática ao `Hashtable` para ambientes concorrentes.   |
 | **`EnumMap`**           | Array                                    | Ordenado pela ordem natural do `enum`.                 | Chave não pode ser `null`.                      | Quando as chaves são de um tipo `enum`. Extremamente rápido.                     |
 
-#### `HashMap<K, V>`: O Padrão para Performance
+#### `HashMap<K, V>`: Padrão para Performance
 
 O `HashMap` é a implementação de mapa mais utilizada. Ele armazena seus dados em uma **tabela de hash**, o que permite operações de inserção (`put`), busca (`get`) e remoção (`remove`) com uma performance média de tempo constante, **O(1)**. Isso o torna extremamente rápido. O preço dessa velocidade é que ele **não garante nenhuma ordem** ao iterar sobre seus elementos.
 
@@ -477,7 +477,7 @@ public class ExemploTreeMap {
 }
 ```
 
-### `Hashtable<K, V>`: A Implementação Legada e Sincronizada
+### `Hashtable<K, V>`: Implementação Legada e Sincronizada
 
 O `Hashtable` é uma das estruturas de dados originais do Java, presente desde a versão 1.0. Ele é, em funcionalidade, muito similar ao `HashMap`, pois também utiliza uma tabela de hash interna para armazenar pares de chave-valor. No entanto, possui duas diferenças cruciais:
 
@@ -602,7 +602,7 @@ Após explorarmos as listas, que se baseiam em ordem e posição, e os mapas, qu
 
 Um `Set` é uma coleção que modela o conceito de um conjunto matemático: ele armazena um grupo de elementos **sem permitir duplicatas**. Sua principal finalidade não é manter uma ordem ou associar dados, mas sim garantir a unicidade de cada item que ele contém.
 
-### Interface `Set<E>`: A Coleção de Elementos Únicos
+### Interface `Set<E>`: Coleção de Elementos Únicos
 
 O contrato para todas as implementações de conjuntos em Java é definido pela interface `java.util.Set<E>`. Ela herda diretamente da interface `Collection`, o que significa que possui métodos familiares como `add`, `remove`, `contains`, `size` e `isEmpty`.
 
@@ -621,7 +621,7 @@ A unicidade de um objeto dentro de um `Set` (especialmente em implementações b
 3. Se nenhum elemento igual for encontrado, o novo elemento é inserido. O método `add()` retorna `true`.
 4. Se um elemento igual já existir, a inserção é ignorada. O método `add()` retorna `false`.
 
-### As Principais Implementações de `Set`
+### Principais Implementações de `Set`
 
 Assim como `List` e `Map`, a interface `Set` possui diversas implementações concretas, cada uma com diferentes características de performance e ordenação. A estrutura interna dessas implementações é, na verdade, baseada nas implementações de `Map` que já vimos.
 
@@ -633,7 +633,7 @@ Assim como `List` e `Map`, a interface `Set` possui diversas implementações co
 | **`EnumSet`**             | Bit Vector                                                   | Não                   | Mantém a ordem natural do `enum`.                              | Quando os elementos do conjunto são de um tipo `enum`.                                  |
 | **`CopyOnWriteArraySet`** | Array com "cópia na escrita" (usa um `CopyOnWriteArrayList`) | Não                   | Mantém a ordem de inserção.                                    | Ambientes concorrentes com leitura massiva e escrita muito rara.                        |
 
-#### `HashSet<E>`: O Padrão para Unicidade e Performance
+#### `HashSet<E>`: Padrão para Unicidade e Performance
 
 O `HashSet` é a implementação de `Set` mais comum e de propósito geral. Internamente, ele é implementado utilizando um `HashMap`, onde os elementos do `Set` são armazenados como as chaves do mapa. Essa estrutura lhe confere uma performance excelente, com operações de `add`, `remove` e `contains` executadas, em média, em tempo constante **O(1)**. O preço dessa velocidade é que a ordem de iteração dos elementos não é garantida.
 
@@ -804,7 +804,7 @@ A tabela abaixo serve como um resumo rápido para referência:
 |Elementos baseados em `enum`|**`EnumSet`**|Usa um bit vector interno, extremamente rápido e leve.|
 |Leitura concorrente massiva|**`CopyOnWriteArraySet`**|Leituras sem bloqueio, escritas criam cópias.|
 
-## `Iterator`: Um Passeio Padronizado pelas Coleções
+## `Iterator`: Passeio Padronizado pelas Coleções
 
 Até agora, vimos diversas implementações de coleções (`ArrayList`, `LinkedList`, `HashSet`, `TreeSet`, etc.), cada uma com sua própria estrutura interna. Uma pergunta natural que surge é: existe uma forma padronizada de percorrer os elementos de qualquer uma dessas coleções, sem precisar conhecer seus detalhes internos?
 
@@ -847,7 +847,7 @@ public class ExemploIterator {
 
 Essa abordagem é universal. O mesmo código de laço `while` funcionaria perfeitamente se a variável `nomes` fosse um `LinkedList` ou um `HashSet`, pois o `Iterator` se encarrega de lidar com a lógica de travessia específica de cada estrutura.
 
-### O Poder do `Iterator`: Remoção Segura Durante a Iteração
+### Remoção Segura Durante a Iteração
 
 A principal e mais importante razão para se usar um `Iterator` explicitamente é a necessidade de **remover elementos de uma coleção enquanto se está iterando sobre ela**.
 
@@ -874,7 +874,7 @@ try {
 
 A única forma segura de realizar essa operação é utilizando o método `remove()` do próprio `Iterator`. Este método notifica a coleção e o iterador sobre a remoção, mantendo o estado de ambos consistente.
 
-**A forma correta e segura:**
+**Forma correta e segura:**
 
 ```java
 List<Integer> numeros = new ArrayList<>();
@@ -896,7 +896,7 @@ System.out.println("Lista após a remoção dos menores que 10: " + numeros);
 // Saída: Lista após a remoção dos menores que 10: [10, 20]
 ```
 
-### Por Trás dos Panos: O Laço `for-each`
+### Laço `for-each`
 
 É útil saber que o laço `for-each`, que temos utilizado para percorrer coleções, é, na verdade, "açúcar sintático" sobre a interface `Iterator`. Quando o compilador Java encontra um laço `for-each`, ele o traduz para um código que utiliza um `Iterator` nos bastidores.
 
@@ -920,13 +920,13 @@ while (it.hasNext()) {
 
 Essa compreensão nos ajuda a entender por que o `for-each` é tão conveniente para leituras, mas por que precisamos recorrer ao `Iterator` explícito quando a remoção de elementos se faz necessária.
 
-## Um Guia para a Iteração em Coleções
+## Guia para a Iteração em Coleções
 
 Uma das operações mais comuns e fundamentais ao se trabalhar com estruturas de dados como `List`, `Set` e `Map` é a **iteração** — o ato de percorrer cada elemento da coleção para inspecioná-lo, processá-lo ou utilizá-lo em alguma lógica. O Java oferece diferentes mecanismos para realizar essa tarefa, cada um com suas próprias vantagens e casos de uso ideais. Compreender qual método de iteração escolher é crucial para escrever um código que seja não apenas funcional, mas também limpo, eficiente e seguro.
 
 Nesta seção, vamos consolidar e comparar as três principais formas de se iterar sobre coleções em Java: o laço `for` tradicional com índice, o laço `for-each` moderno e o uso explícito de um `Iterator`.
 
-### Laço `for` Tradicional (com Índice)
+### Laço `for` Tradicional
 
 Esta é a forma clássica de iteração, herdada das primeiras versões da linguagem. Ela se baseia no uso de um contador (geralmente `i`) para acessar cada elemento de uma coleção ordenada (como `List` ou `array`) através de seu índice.
 
@@ -958,7 +958,7 @@ public class ExemploForTradicional {
 }
 ```
 
-### Laço `for-each` (Enhanced `for`)
+### Laço `for-each`
 
 Introduzido no Java 5, o `for-each` é a forma moderna e preferencial de se iterar sobre coleções. Ele abstrai completamente o gerenciamento de índices, tornando o código mais limpo, mais legível e menos suscetível a erros. Ele funciona com qualquer classe que implemente a interface `Iterable` (o que inclui todas as coleções padrão do JCF).
 
@@ -1036,7 +1036,7 @@ public class ExemploIteratorRemocao {
 |**Limitações**|Verboso, propenso a erros, não funciona em Sets.|Sem acesso ao índice, não permite remoção segura.|Mais verboso que o `for-each`.|
 |**Aplicações**|`List`, `array`|Qualquer `Iterable` (`List`, `Set`, `Queue`...)|Qualquer `Iterable`|
 
-## `Enum`: Um Tipo Especial para Constantes
+## `Enum`: Tipo Especial para Constantes
 
 Além das estruturas de dados tradicionais, como listas e mapas, o Java oferece um tipo de referência especial, poderoso e seguro para representar um conjunto fixo de constantes: o **`enum`**, abreviação de **enumeração**.
 
