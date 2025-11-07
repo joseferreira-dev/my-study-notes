@@ -12,15 +12,15 @@ Por outro lado, existe um **grande fio que une** todas essas práticas de ensino
 
 Para definir a Didática de forma precisa, é necessário situá-la em seu devido lugar, compreendendo sua relação com dois outros conceitos mais amplos que a englobam: a Educação e a Pedagogia. Esses três campos se relacionam de forma concêntrica, indo do mais geral ao mais específico.
 
-#### Educação: O Fenômeno Social Amplo
+#### Educação: Fenômeno Social Amplo
 
 A **Educação** é o conceito mais abrangente. Como já discutido em capítulos anteriores, ela se refere ao amplo e permanente processo social de transmissão e assimilação de saberes, valores, costumes e tradições que caracterizam uma cultura. A educação acontece em todos os lugares: na família, na igreja, na mídia, nos movimentos sociais e, claro, na escola. Ela pode ser formal e institucionalizada, como no sistema de ensino brasileiro, ou pode ocorrer de maneira difusa e não formal, como no exemplo da sociedade angolana, que precisou reorganizar seus processos educativos em associações de bairro e ONGs após a devastação causada pela Guerra Civil. A educação é, portanto, o próprio tecido formador da sociedade.
 
-#### Pedagogia: A Ciência da Educação
+#### Pedagogia: Ciência da Educação
 
 A **Pedagogia** é o campo de estudo que toma a Educação como seu objeto de investigação. Se a educação é o fenômeno, a pedagogia é a ciência que reflete criticamente sobre ele. Ela não é uma "arte" baseada apenas na intuição ou no talento, mas um campo científico robusto, que se fundamenta em diversas outras áreas do conhecimento, como a Filosofia, a Sociologia e a Psicologia, para compreender as finalidades, os contextos e as práticas educativas. O papel da Pedagogia é construir um olhar teórico e investigativo sobre o fenômeno educacional em todas as suas manifestações, buscando melhorá-lo de forma intencional.
 
-#### Didática: O Núcleo do Ato Pedagógico
+#### Didática: Núcleo do Ato Pedagógico
 
 Finalmente, chegamos à **Didática**. Ela é um ramo específico da Pedagogia, sendo seu núcleo mais operacional. Se a Pedagogia se pergunta "por que" e "para quem" educar, a Didática se concentra na pergunta "como" ensinar. Ela é a teoria que investiga o **processo de ensino-aprendizagem**, buscando articular de forma coerente os objetivos educacionais, os conteúdos a serem ensinados, as estratégias e métodos de ensino e os processos de avaliação. A Didática é, portanto, a ponte que liga a teoria pedagógica à prática docente, o campo de estudo que se dedica a tornar o ato de ensinar uma ação planejada, intencional, metódica e mais eficaz.
 
@@ -30,7 +30,7 @@ Em suma, esses três conceitos se organizam de forma integrada: a Didática é a
 <img width="360px" src="./img/05-didatica-pedagogia-educacao.png">
 </div>
 
-### A Natureza da Didática: Para Além da Técnica
+### Natureza da Didática: Além da Técnica
 
 Com base na discussão anterior, que situou a Didática como o núcleo da Pedagogia, podemos agora estabelecer uma definição mais formal e completa:
 
@@ -42,15 +42,15 @@ Em suma, a didática busca responder à pergunta fundamental de todo educador: "
 <img width="700px" src="./img/05-tres-esferas.png">
 </div>
 
-#### A Coerência Indispensável: O Exemplo de Paulo Freire
+#### Coerência Indispensável: Exemplo de Paulo Freire
 
 A constatação de que a Didática está contida na Pedagogia, que por sua vez está imersa na Educação, nos leva a uma conclusão lógica e fundamental: é impossível separar essas três esferas. Uma prática didática só tem sentido e fundamento quando está alinhada a uma teoria pedagógica e a uma visão de educação e de mundo.
 
 O trabalho de Paulo Freire é um exemplo paradigmático dessa coerência. Sua obra pode ser compreendida nesses três níveis articulados:
 
-- **A Visão de Educação:** É uma educação humanista e crítica, que entende o ser humano como um sujeito histórico e tem como finalidade a sua "humanização" e libertação.
-- **A Teoria Pedagógica:** É a **Pedagogia do Oprimido**, que teoriza sobre as relações de opressão e propõe a conscientização como caminho para a superação.
-- **A Didática/Método:** É o **Método Paulo Freire**, com os Círculos de Cultura e as palavras geradoras, que materializa na prática de alfabetização os princípios da pedagogia e a visão de educação.
+- **Visão de Educação:** É uma educação humanista e crítica, que entende o ser humano como um sujeito histórico e tem como finalidade a sua "humanização" e libertação.
+- **Teoria Pedagógica:** É a **Pedagogia do Oprimido**, que teoriza sobre as relações de opressão e propõe a conscientização como caminho para a superação.
+- **Didática/Método:** É o **Método Paulo Freire**, com os Círculos de Cultura e as palavras geradoras, que materializa na prática de alfabetização os princípios da pedagogia e a visão de educação.
 
 <div align="center">
 <img width="540px" src="./img/05-metodo-paulo-freire.png">
@@ -59,13 +59,13 @@ O trabalho de Paulo Freire é um exemplo paradigmático dessa coerência. Sua ob
 
 Neste exemplo, a didática não é um conjunto de técnicas neutras. Cada passo do método — a investigação do universo vocabular dos alunos, a problematização da realidade, o diálogo — está impregnado da concepção pedagógica e da finalidade educacional que o sustentam.
 
-#### O Risco da Fragmentação: A Didática como "Técnica Infalível"
+#### Didática como "Técnica Infalível"
 
 Quando essa coerência se quebra e a didática é separada da pedagogia e da educação, ela corre o risco de se transformar em um "conjunto de técnicas sem pé nem cabeça". Essa é uma **visão instrumentalista ou tecnicista da didática**, que a reduz a um amontoado de procedimentos e receitas de ensino, desprovidos de diálogo com a realidade, com o estudante e com um propósito educativo mais amplo.
 
 Essa visão se manifesta nas frequentes promessas de "técnicas infalíveis" que encontramos no mercado educacional: o melhor método de alfabetização, a melhor forma de ensinar matemática, a didática definitiva para a leitura. Tais propostas partem do pressuposto equivocado de que a técnica, por si só, é capaz de garantir a aprendizagem.
 
-#### O Objetivo Final: A Aprendizagem Significativa
+#### Aprendizagem Significativa
 
 Isso não é verdade porque o objetivo final da didática não é apenas "ensinar", mas sim promover a "aprendizagem". E a aprendizagem genuína não ocorre pela simples aplicação de uma técnica, mas pela combinação entre o conteúdo ensinado e a realidade de cada estudante. É o que o teórico David Ausubel denominou **aprendizagem significativa**.
 
@@ -79,17 +79,17 @@ A aprendizagem significativa acontece quando um novo conhecimento se conecta de 
 
 Embora exista um consenso sobre a Didática como o campo que estuda o processo de ensino-aprendizagem, diferentes autores trazem olhares e ênfases particulares que enriquecem nossa compreensão. Iniciaremos esta análise com a contribuição de José Carlos Libâneo, um dos pioneiros na sistematização do pensamento pedagógico contemporâneo no Brasil.
 
-### A Perspectiva de José Carlos Libâneo
+### Perspectiva de José Carlos Libâneo
 
 Libâneo define a Didática de maneira ampla, buscando sempre conectá-la a um contexto teórico, político e social mais vasto. Para ele, não é possível compreender a Didática (o específico) sem antes entender seu lugar dentro da Pedagogia (o geral) e da Educação (o fenômeno mais amplo).
 
 Essa relação de aninhamento pode ser compreendida como uma pirâmide invertida, onde as decisões mais amplas, de nível social e político, vão se afunilando e condicionando as práticas mais específicas que ocorrem na sala de aula, como a instrução e o ensino.
 
 <div align="center">
-<img width="540px" src="./img/05-libaneo-didatica-piramide.png">
+<img width="500px" src="./img/05-libaneo-didatica-piramide.png">
 </div>
 
-#### A Distinção entre Pedagogia e Didática
+#### Distinção entre Pedagogia e Didática
 
 A chave para entender a proposta de Libâneo está na clara distinção que ele estabelece entre os papéis da Pedagogia e da Didática.
 
@@ -99,7 +99,7 @@ A **Didática**, por sua vez, é a disciplina que opera dentro desse quadro gera
 
 Um exemplo prático pode ser encontrado na alfabetização. A **pedagogia** de uma escola pode definir que a alfabetização deve ocorrer a partir do trabalho com textos significativos, e não apenas com a memorização de letras e sílabas. Essa é a diretriz geral. A **didática** entra em cena quando o professor, em sua sala de aula, decide _quais_ textos irá utilizar (uma parlenda, uma notícia de jornal, uma receita), _como_ irá explorá-los com os alunos e _que_ atividades específicas irá propor. O professor não poderia, neste caso, abandonar o trabalho com textos e focar apenas na repetição mecânica de sílabas, pois isso iria contra a proposta pedagógica mais ampla da escola.
 
-#### As Definições Formais de Libâneo
+#### Definições Formais de Libâneo
 
 O próprio autor formaliza essa distinção. Para ele, a **Pedagogia** é a ciência que busca intervir no processo de assimilação dos saberes humanos, "orientando-o para finalidades sociais e políticas e criando um conjunto de condições metodológicas e organizativas para viabilizá-lo no âmbito da escola".
 
@@ -109,7 +109,7 @@ Já a **Didática** é definida como:
 
 Em síntese, a distinção se dá no nível de abrangência. A Pedagogia trabalha com os **objetivos educativos** da escola como um todo, estabelecendo seus princípios e finalidades. A Didática, por sua vez, trabalha com os **objetivos de ensino** dentro da sala de aula, traduzindo os princípios pedagógicos em ações e procedimentos concretos para garantir a aprendizagem dos alunos.
 
-#### A Didática em Ação: Ensino e Instrução
+#### Didática em Ação: Ensino e Instrução
 
 Ainda dentro da concepção de José Carlos Libâneo, a Didática se desdobra em dois conceitos fundamentais que, embora distintos, são inseparáveis na prática pedagógica: o **ensino** e a **instrução**. Compreender a diferença e a relação entre eles é essencial para uma análise mais precisa do ato didático.
 
@@ -126,14 +126,14 @@ Embora sejam conceitualmente diferentes, ensino e instrução são faces da mesm
 Libâneo define o processo de ensino como um "recorte" da Didática, ou seja, seu objeto de estudo central. Este processo, por sua vez, engloba tanto a ação de ensinar quanto o processo de aprender (a instrução).
 
 <div align="center">
-<img width="480px" src="./img/05-libaneo-didatica-ensino-instrucao.png">
+<img width="500px" src="./img/05-libaneo-didatica-ensino-instrucao.png">
 </div>
 
 Para tornar essa relação mais concreta, podemos pensar em uma aula expositiva. O ato do professor de planejar a aula, organizar os tópicos em uma sequência lógica, preparar os exemplos e apresentar o conteúdo de forma clara é a dimensão do **ensino**. O processo que ocorre no aluno de ouvir, relacionar as novas informações com seus conhecimentos prévios, tirar dúvidas e, finalmente, assimilar e compreender o conteúdo, é a dimensão da **instrução**. Ambos acontecem de forma articulada dentro de um único ato didático.
 
 Portanto, quando falamos em **planejamento de aulas**, **definição de objetivos**, **seleção de métodos** e **avaliação**, estamos nos referindo primariamente à dimensão do **ensino**. Quando falamos na **capacidade do estudante de aprender**, na **assimilação de conteúdos** e nos **resultados da aprendizagem**, estamos nos referindo à dimensão da **instrução**. A Didática, como campo de estudo, se ocupa de investigar como a primeira dimensão (ensino) pode ser otimizada para garantir a efetividade da segunda (instrução), tendo sempre como objetivo final a aprendizagem do estudante.
 
-### A Perspectiva de Vera Maria Candau
+### Perspectiva de Vera Maria Candau
 
 Assim como Libâneo, Vera Maria Candau é uma das pioneiras na renovação do pensamento didático no Brasil. Sua obra surge da necessidade de superar uma visão antiga e empobrecida da didática, que a reduzia a um mero conjunto de técnicas e "receitas prontas" sobre o que fazer em sala de aula. Candau propõe uma revisão crítica do campo, buscando resgatar sua complexidade e sua importância fundamental para uma prática pedagógica transformadora.
 
@@ -155,7 +155,7 @@ A razão fundamental deste fracasso, segundo a análise crítica, é a **desvinc
 
 #### Didática Fundamental
 
-Em contraposição à visão reducionista da Didática Instrumental, Vera Candau propõe uma reconstrução do campo, que ela denomina **Didática Fundamental**. Esta nova abordagem não nega a importância da técnica, mas a resgata de seu isolamento, inserindo-a em um quadro de análise mais amplo e complexo. A premissa central da Didática Fundamental é a de que o processo de ensino-aprendizagem é, por natureza, **multidimensional**.
+Em contraposição à visão reducionista da Didática Instrumental, Candau propõe uma reconstrução do campo, que ela denomina **Didática Fundamental**. Esta nova abordagem não nega a importância da técnica, mas a resgata de seu isolamento, inserindo-a em um quadro de análise mais amplo e complexo. A premissa central da Didática Fundamental é a de que o processo de ensino-aprendizagem é, por natureza, **multidimensional**.
 
 Ignorar essa multidimensionalidade é a falha primária do modelo puramente técnico. A Didática Fundamental, portanto, busca superar as "receitas prontas" ao propor uma reflexão constante sobre as diferentes dimensões que constituem o ato de ensinar. Nas palavras da própria autora:
 
@@ -165,9 +165,9 @@ Dessa forma, a proposta de reconstrução da didática se assenta sobre a articu
 
 Tratando de cada uma das três dimensões em detalhes:
 
-1. **A Dimensão Técnica:** Esta dimensão se refere ao "como fazer" pedagógico, à competência instrumental do professor. Ela engloba a **organização e a sistematização** do processo de ensino, incluindo o planejamento, a seleção de conteúdos, a definição clara dos objetivos de aprendizagem, a escolha de métodos e recursos, e a construção de instrumentos avaliativos. Um plano de ensino para o bimestre ou o roteiro de uma aula são exemplos de materializações da dimensão técnica. Na Didática Fundamental, a técnica não é descartada, mas vista como um conjunto de ferramentas que o professor precisa dominar para poder fazer escolhas conscientes e fundamentadas.
-2. **A Dimensão Humana:** Esta dimensão foca no "quem com quem" do processo educativo, ou seja, nas relações interpessoais que constituem o ato de ensinar e aprender. Ela leva em consideração os **aspectos afetivos, emocionais e relacionais**, tanto individuais quanto do grupo. O crescimento pessoal dos envolvidos, a criação de um clima de confiança e acolhimento, a mediação de conflitos e a construção de um vínculo positivo entre professor e alunos e dos alunos entre si são o cerne desta dimensão. Um exemplo prático é a preocupação do professor em criar dinâmicas para acolher alunos novos, garantindo sua integração e bem-estar no grupo.
-3. **A Dimensão Política:** Esta dimensão se refere ao "para quê" do ato educativo. Ela reconhece que toda prática pedagógica está situada em um **contexto social, político e cultural** específico e que, portanto, não existe educação neutra. A dimensão política envolve a intencionalidade da ação docente, a consciência de seu compromisso com um determinado projeto de sociedade e a articulação entre o trabalho em sala de aula e os objetivos educacionais mais amplos da escola e da comunidade. Diferentemente da Didática Instrumental, que busca uma técnica universal, a Didática Fundamental reitera que os procedimentos de ensino devem sempre ser escolhidos e orientados em função de um propósito e de um contexto.
+1. **Dimensão Técnica:** Esta dimensão se refere ao "como fazer" pedagógico, à competência instrumental do professor. Ela engloba a **organização e a sistematização** do processo de ensino, incluindo o planejamento, a seleção de conteúdos, a definição clara dos objetivos de aprendizagem, a escolha de métodos e recursos, e a construção de instrumentos avaliativos. Um plano de ensino para o bimestre ou o roteiro de uma aula são exemplos de materializações da dimensão técnica. Na Didática Fundamental, a técnica não é descartada, mas vista como um conjunto de ferramentas que o professor precisa dominar para poder fazer escolhas conscientes e fundamentadas.
+2. **Dimensão Humana:** Esta dimensão foca no "quem com quem" do processo educativo, ou seja, nas relações interpessoais que constituem o ato de ensinar e aprender. Ela leva em consideração os **aspectos afetivos, emocionais e relacionais**, tanto individuais quanto do grupo. O crescimento pessoal dos envolvidos, a criação de um clima de confiança e acolhimento, a mediação de conflitos e a construção de um vínculo positivo entre professor e alunos e dos alunos entre si são o cerne desta dimensão. Um exemplo prático é a preocupação do professor em criar dinâmicas para acolher alunos novos, garantindo sua integração e bem-estar no grupo.
+3. **Dimensão Política:** Esta dimensão se refere ao "para quê" do ato educativo. Ela reconhece que toda prática pedagógica está situada em um **contexto social, político e cultural** específico e que, portanto, não existe educação neutra. A dimensão política envolve a intencionalidade da ação docente, a consciência de seu compromisso com um determinado projeto de sociedade e a articulação entre o trabalho em sala de aula e os objetivos educacionais mais amplos da escola e da comunidade. Diferentemente da Didática Instrumental, que busca uma técnica universal, a Didática Fundamental reitera que os procedimentos de ensino devem sempre ser escolhidos e orientados em função de um propósito e de um contexto.
 
 É fundamental observar que, na proposta da Didática Fundamental, estas três dimensões não são separadas ou sequenciais. Elas formam uma unidade articulada e indissociável. Toda ação didática em sala de aula pressupõe, ao mesmo tempo, uma escolha técnica, uma interação humana e um posicionamento político. Ignorar qualquer uma delas é empobrecer e mutilar o ato pedagógico.
 
@@ -175,7 +175,7 @@ Tratando de cada uma das três dimensões em detalhes:
 <img width="700px" src="./img/05-candau-didatica-fundamental.png">
 </div>
 
-#### A Superação da Didática Instrumental pela Didática Fundamental
+#### Superação da Didática Instrumental pela Didática Fundamental
 
 A análise crítica da Didática Instrumental nos leva à conclusão de que uma visão de ensino reduzida a um conjunto de técnicas é insustentável e inadequada para os desafios do mundo atual. A proposta de Vera Candau é, portanto, a de **superar** essa visão fragmentada, assumindo a **Didática Fundamental** como o paradigma para a prática pedagógica. Isso significa reconhecer que toda ação educativa em sala de aula deve ser, de forma consciente e intencional, contextualizada nas esferas técnica, humana e política.
 
@@ -189,7 +189,7 @@ A força da Didática Fundamental está, portanto, no equilíbrio e na articula�
 
 Em síntese, a multidimensionalidade da Didática Fundamental se materializa em uma prática docente que compreende que, para o bom andamento da sala de aula, é preciso articular um sólido domínio das técnicas de ensino, a construção de boas relações afetivas e cognitivas com os alunos, e um vínculo permanente com a comunidade local e com um projeto de sociedade mais justo.
 
-### A Perspectiva de Cipriano Luckesi
+### Perspectiva de Cipriano Luckesi
 
 Cipriano Luckesi, embora não se defina como um autor da Didática Geral, mas sim como um especialista em áreas como avaliação e planejamento, contribui para o campo com uma análise profunda sobre o papel da Didática na **formação do educador**. Sua perspectiva nos convida a pensar sobre o compromisso ético e político que sustenta a prática docente.
 
@@ -210,10 +210,10 @@ Essa formação sólida não é algo que se adquire apenas na universidade, mas 
 A Didática, portanto, transcende a dimensão instrumental. Ela é a expressão do compromisso do educador. Uma prática didática bem fundamentada, que nasce de uma formação sólida e de um planejamento reflexivo, é o que possibilita que os estudantes tenham a melhor aprendizagem possível. O resultado é a formação de cidadãos mais conscientes e a contribuição efetiva do educador para um futuro mais digno para as novas gerações, consolidando seu papel como sujeito da história.
 
 <div align="center">
-<img width="440px" src="./img/05-luckesi-didatica-formacao-do-educador.png">
+<img width="400px" src="./img/05-luckesi-didatica-formacao-do-educador.png">
 </div>
 
-#### A Construção do Sujeito: A Importância da Formação Continuada
+#### Construção do Sujeito: Importância da Formação Continuada
 
 A constituição do educador como um "sujeito da história", comprometido com um projeto de transformação, não é um processo solitário. Pelo contrário, essa "formação sólida" que Luckesi defende é construída de forma contínua e, idealmente, **coletiva**, no dia a dia da profissão. O caminho mais potente para isso é a **formação permanente ou continuada**, realizada no contexto da própria comunidade escolar.
 
@@ -221,16 +221,16 @@ Nesse processo, cria-se uma cultura de colaboração, na qual todos os profissio
 
 É crucial, neste ponto, diferenciar a formação continuada da formação inicial.
 
-- **A Formação Inicial** é aquela realizada nos cursos de graduação (licenciaturas, pedagogia), que habilita o profissional para o exercício da docência. Seus parâmetros gerais estão previstos na Lei de Diretrizes e Bases da Educação Nacional (LDB 9.394/96), em seu Título VI, "Dos Profissionais da Educação". Contudo, essa formação, por mais qualificada que seja, tem se mostrado **insuficiente** para dar conta de todos os desafios da complexa realidade escolar. Muitas vezes, há uma lacuna entre a teoria estudada na universidade e a prática vivida na sala de aula, e os conhecimentos se desatualizam rapidamente diante das novas demandas sociais e tecnológicas.
-- **A Formação Continuada** é todo o processo de aperfeiçoamento que ocorre ao longo da trajetória profissional do educador. Ela pode se dar de diferentes formas: através de cursos de curta ou longa duração (como especializações e mestrados) ou, de maneira muito significativa, dentro da própria escola. As **reuniões pedagógicas**, por exemplo, quando bem planejadas, deixam de ser meros encontros para informes burocráticos e se tornam espaços potentes de formação, nos quais os educadores podem estudar e debater coletivamente os temas em que sentem maiores dificuldades, como os desafios da alfabetização, novas metodologias para o ensino de matemática ou estratégias para lidar com a indisciplina dos alunos.
+- **Formação Inicial** é aquela realizada nos cursos de graduação (licenciaturas, pedagogia), que habilita o profissional para o exercício da docência. Seus parâmetros gerais estão previstos na Lei de Diretrizes e Bases da Educação Nacional (LDB 9.394/96), em seu Título VI, "Dos Profissionais da Educação". Contudo, essa formação, por mais qualificada que seja, tem se mostrado **insuficiente** para dar conta de todos os desafios da complexa realidade escolar. Muitas vezes, há uma lacuna entre a teoria estudada na universidade e a prática vivida na sala de aula, e os conhecimentos se desatualizam rapidamente diante das novas demandas sociais e tecnológicas.
+- **Formação Continuada** é todo o processo de aperfeiçoamento que ocorre ao longo da trajetória profissional do educador. Ela pode se dar de diferentes formas: através de cursos de curta ou longa duração (como especializações e mestrados) ou, de maneira muito significativa, dentro da própria escola. As **reuniões pedagógicas**, por exemplo, quando bem planejadas, deixam de ser meros encontros para informes burocráticos e se tornam espaços potentes de formação, nos quais os educadores podem estudar e debater coletivamente os temas em que sentem maiores dificuldades, como os desafios da alfabetização, novas metodologias para o ensino de matemática ou estratégias para lidar com a indisciplina dos alunos.
 
 Portanto, enquanto a formação inicial apenas habilita o docente para o início do trabalho, a formação continuada é o que verdadeiramente consolida sua prática e o amadurece como profissional. Ela exige motivação e um compromisso pessoal com o estudo constante, mas também depende de um ambiente de trabalho que valorize e promova esses espaços de capacitação coletiva. É neste movimento contínuo de reflexão e aprimoramento que o educador constrói a "formação sólida" necessária para refinar sua didática e atuar como um sujeito consciente de sua história.
 
-### A Perspectiva de Philippe Perrenoud
+### Perspectiva de Philippe Perrenoud
 
 O sociólogo Philippe Perrenoud, professor da Universidade de Genebra, oferece uma perspectiva que amplia o conceito de Didática, sustentando que ela não pode ser reduzida apenas ao trabalho técnico em sala de aula. Para ele, uma reflexão sobre a didática é inseparável de uma reflexão sobre a **formação docente**, tanto a inicial quanto a continuada. Sua análise se volta para a complexidade da ação do professor e para as competências que lhe permitem ser um profissional eficaz e reflexivo.
 
-#### O Contexto: A Resistência à Precarização Docente
+#### Resistência à Precarização Docente
 
 A proposta de Perrenoud surge de um diagnóstico da difícil situação vivida por muitos professores, marcada por políticas públicas insuficientes, baixos salários e uma crescente desvalorização profissional. Este cenário de "penúria" muitas vezes leva à desilusão, ao abandono da profissão ou a uma prática burocrática e sem engajamento.
 
@@ -257,21 +257,21 @@ Seu inventário de competências não é uma lista de intenções, mas um mapa d
 9. **Enfrentar os deveres e os dilemas éticos da profissão.**
 10. **Administrar sua própria formação contínua.**
 
-#### A Síntese: As Três Grandes Áreas da Ação Docente
+#### As Três Grandes Áreas da Ação Docente
 
 Embora a lista seja extensa, a lógica por trás dela pode ser sintetizada em três grandes áreas pedagógicas que definem a atuação de um professor competente. Um excelente professor não atua apenas na sala de aula, mas se entende como um profissional que interage em diferentes esferas:
 
-1. **A Ação com os Alunos:** É o núcleo do trabalho didático, que envolve o planejamento e a gestão da aprendizagem em sala de aula (competências 1, 2, 3 e 4).
-2. **A Ação na Escola:** Refere-se à colaboração com os pares e à participação na vida da instituição (competências 5 e 6), entendendo que a educação é um projeto coletivo.
-3. **A Ação com a Comunidade e a Sociedade:** Diz respeito à interação com as famílias e à inserção no mundo contemporâneo (competências 7 e 8), além da reflexão sobre a própria prática e seu aprimoramento constante (competências 9 e 10).
+1. **Ação com os Alunos:** É o núcleo do trabalho didático, que envolve o planejamento e a gestão da aprendizagem em sala de aula (competências 1, 2, 3 e 4).
+2. **Ação na Escola:** Refere-se à colaboração com os pares e à participação na vida da instituição (competências 5 e 6), entendendo que a educação é um projeto coletivo.
+3. **Ação com a Comunidade e a Sociedade:** Diz respeito à interação com as famílias e à inserção no mundo contemporâneo (competências 7 e 8), além da reflexão sobre a própria prática e seu aprimoramento constante (competências 9 e 10).
 
 <div align="center">
-<img width="440px" src="./img/05-perrenoud-didatica-areas-pedagogicas.png">
+<img width="450px" src="./img/05-perrenoud-didatica-areas-pedagogicas.png">
 </div>
 
 A proposta de Perrenoud dialoga diretamente com as reflexões dos outros autores. Sua décima competência, "Administrar sua própria formação contínua", ecoa a visão de **Luckesi** sobre o educador como "sujeito" de sua própria formação. Da mesma forma, seu referencial de competências complexas oferece um caminho prático para a superação da "Didática Instrumental", alinhando-se à busca por uma "Didática Fundamental" e multidimensional, como propõe **Vera Candau**.
 
-#### A Competência Chave: Organizar e Dirigir Situações de Aprendizagem
+#### Organizar e Dirigir Situações de Aprendizagem
 
 A primeira das dez competências listadas por Perrenoud — **organizar e dirigir situações de aprendizagem** — pode parecer óbvia, afinal, não é isso que os professores sempre fizeram? No entanto, o autor utiliza esses termos para propor uma ruptura radical com o modelo da Pedagogia Tradicional.
 
@@ -294,25 +294,25 @@ A tabela a seguir sintetiza as diferenças radicais entre a aula tradicional e a
 |Cada estudante se senta individualmente.|Os estudantes podem trabalhar em grupos.|
 |Alguns aprendem, muitos não conseguem acompanhar.|O professor acompanha o desenvolvimento de cada aluno e diferencia as atividades, permitindo que a maioria consiga aprender.|
 
-## A Didática e a Formação de Professores
+## Didática e a Formação de Professores
 
 Uma reflexão sobre a Didática estaria incompleta sem analisar seu papel central na **formação de professores**. Embora a legislação educacional, como a LDB 9.394/96, estabeleça os parâmetros legais para a formação, a Didática se aprofunda na dimensão da **prática docente**, buscando preparar o professor para os desafios concretos da sala de aula, seja durante sua formação inicial na universidade ou em sua formação continuada na escola.
 
 A constituição de um professor competente e reflexivo se assenta sobre três áreas de formação distintas, porém, inseparáveis no dia a dia da sala de aula.
 
-#### A Formação Teórico-Científica
+#### Formação Teórico-Científica
 
 Este pilar refere-se ao **domínio profundo dos saberes específicos** da disciplina que o professor irá ensinar. É o "o quê" do ensino. Não basta ter um conhecimento superficial do conteúdo; é preciso ter uma formação sólida na área. Um professor de matemática, por exemplo, ao ensinar sobre funções de 1º grau, precisa não apenas saber aplicar a fórmula, mas compreender profundamente o conceito de função, suas origens históricas e suas múltiplas aplicações na sociedade. Este saber robusto é a base que dá segurança ao professor e permite que ele vá além do livro didático, respondendo às dúvidas dos alunos com clareza e criando novas abordagens para o conteúdo.
 
-#### A Formação Didática
+#### Formação Didática
 
 De nada adianta um vasto conhecimento teórico-científico se o professor não souber como torná-lo compreensível e significativo para seus alunos. A **formação didática** é o pilar do "como" ensinar. Ela está ligada ao domínio de metodologias, tanto gerais quanto específicas, para a transposição do saber acadêmico em saber escolar. Um professor de história, por exemplo, necessita de uma formação didática que o capacite a organizar o ensino de temas complexos e "espinhosos", como a Revolução Francesa ou a Independência do Brasil, de uma maneira que estimule a análise crítica dos alunos, em vez da simples memorização de fatos. É a busca constante pela maneira mais adequada de mediar o encontro entre o aluno e o conhecimento.
 
-#### A Formação Prática
+#### Formação Prática
 
 A **formação prática** é o saber que emerge da **experiência**, da vivência cotidiana na sala de aula. É um conhecimento insubstituível, pois lida com a imprevisibilidade e a complexidade das interações humanas. Por mais que um professor estude teorias sobre gestão de sala de aula, é somente a prática que desenvolve a sensibilidade, o "tato" para tomar decisões rápidas e adequadas em situações difíceis, como em turmas com casos de indisciplina ou ao lidar com as necessidades específicas de alunos com deficiência. A experiência, aliada à reflexão, desenvolve as competências para "saber fazer, saber agir e saber atuar" nos momentos concretos do dia a dia escolar, transformando o professor em um profissional reflexivo.
 
-### A Indissociabilidade dos Saberes e a Práxis Docente
+### Indissociabilidade dos Saberes e a Práxis Docente
 
 É fundamental compreender que estas três formações não são etapas ou caixas separadas; elas são **indissociáveis** e se alimentam mutuamente na constituição da práxis docente. Um profissional completo é aquele que consegue articular de forma dinâmica estes três saberes:
 
@@ -330,7 +330,7 @@ Essa visão integrada da formação docente dialoga diretamente com os autores q
 
 Após a jornada pelas teorias e conceitos que fundamentam a Didática, este é o momento de nos aproximarmos de sua dimensão mais concreta: a sala de aula. As discussões a seguir abordam termos e situações vividas no cotidiano do professor. O foco passa da teoria mais ampla para a aplicação prática dos princípios didáticos.
 
-### O Conceito de Método de Ensino
+### Conceito de Método de Ensino
 
 O **método de ensino** pode ser compreendido como um "recorte" da Didática, ou seja, a sua aplicação a uma situação de aprendizagem específica. É o caminho, o conjunto de procedimentos e ações planejadas pelo professor para que os alunos atinjam determinados objetivos de aprendizagem em relação a um conteúdo específico.
 
@@ -340,7 +340,7 @@ Um método pode ser específico de uma **disciplina** (um método para ensinar a
 
 A natureza do conteúdo e os objetivos alteram profundamente o método. Na **matemática**, por exemplo, o método frequentemente envolve a apresentação de problemas e a demonstração de procedimentos para que os alunos desenvolvam a capacidade de encontrar soluções. Já em **história**, o método pode se concentrar na análise de diferentes fontes e interpretações de um mesmo fato, para que os alunos desenvolvam uma visão crítica dos acontecimentos do passado.
 
-#### A Diferença Crucial: Método e Técnica
+#### Diferença entre Método e Técnica
 
 É fundamental não confundir método de ensino com **técnica de ensino**. A técnica é um componente _dentro_ do método; é um procedimento específico, um recurso ou uma ferramenta utilizada em um determinado momento da aula. O método é a estratégia mais ampla que organiza e dá sentido ao uso das diferentes técnicas.
 
@@ -350,7 +350,7 @@ Percebe-se, assim, que a técnica (silabação) só ganha seu sentido pedagógic
 
 Por fim, é importante notar que, em muitos textos e contextos, os termos "método" e "metodologia" são utilizados como sinônimos para se referir a essa organização da prática de ensino.
 
-### A Classificação dos Métodos de Ensino
+### Classificação dos Métodos de Ensino
 
 A Didática se materializa na sala de aula através dos **métodos de ensino**. Segundo a classificação de José Carlos Libâneo, podemos organizar as principais metodologias em grupos, de acordo com a natureza da atividade e da interação entre professor e alunos. É importante compreender que estes métodos não são excludentes; um professor competente raramente utiliza um único método, mas os combina e articula de acordo com os objetivos da aula, o conteúdo a ser trabalhado e as características da turma.
 
@@ -392,7 +392,7 @@ O **estudo do meio** é o exemplo mais clássico: uma visita a um espaço fora d
 | --------------------------------- | ---------------------------------------------------------- | ----------------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------- |
 | Aula explicativa e sistematizada. | Resolução de atividade sem orientação direta do professor. | Bate-papo e debate sobre a matéria. | Grupos de 3 a 5 alunos. Atividade cooperativa. | Complementares aos outros métodos. Ajudam no entendimento do conteúdo. |
 
-### A Ação Didática: A Síntese da Prática Docente
+### Ação Didática: Síntese da Prática Docente
 
 A expressão **"ação didática"** é utilizada para se referir à manifestação concreta da prática do professor em sala de aula. É o momento em que as escolhas, os saberes e os valores do educador se transformam em uma atitude, um gesto, uma intervenção ou um procedimento visível no processo de ensino-aprendizagem.
 
@@ -400,11 +400,11 @@ Pode-se definir a ação didática da seguinte forma:
 
 > Ação didática é a unidade elementar da prática docente, na qual o professor mobiliza seus conhecimentos e competências para conduzir o processo de ensino e facilitar a aprendizagem dos alunos em uma situação específica.
 
-É fundamental compreender que a ação didática não é um ato isolado ou puramente técnico. Ela está sempre conectada às escolhas mais amplas do professor e, portanto, reflete a sua concepção de didática. Retomando a perspectiva de Vera Candau, toda ação didática é multidimensional, articulando simultaneamente as três esferas:
+É fundamental compreender que a ação didática não é um ato isolado ou puramente técnico. Ela está sempre conectada às escolhas mais amplas do professor e, portanto, reflete a sua concepção de didática. Retomando a perspectiva de Candau, toda ação didática é multidimensional, articulando simultaneamente as três esferas:
 
-- **A Dimensão Técnica:** Refere-se à escolha do procedimento, à organização do tempo, ao uso de um recurso. É o "como fazer".
-- **A Dimensão Humana:** Refere-se à qualidade da interação, ao tom de voz, à sensibilidade para perceber as necessidades dos alunos. É o "com quem se faz".
-- **A Dimensão Política:** Refere-se à intencionalidade da ação, ao objetivo maior que se busca alcançar, ao compromisso com a aprendizagem de todos. É o "para quê se faz".
+- **Dimensão Técnica:** Refere-se à escolha do procedimento, à organização do tempo, ao uso de um recurso. É o "como fazer".
+- **Dimensão Humana:** Refere-se à qualidade da interação, ao tom de voz, à sensibilidade para perceber as necessidades dos alunos. É o "com quem se faz".
+- **Dimensão Política:** Refere-se à intencionalidade da ação, ao objetivo maior que se busca alcançar, ao compromisso com a aprendizagem de todos. É o "para quê se faz".
 
 Para ilustrar, imagine a seguinte situação: durante a correção de um exercício no quadro, um professor percebe que, embora a maioria da turma esteja acompanhando, um pequeno grupo de alunos no fundo da sala parece confuso e disperso. Diante disso, ele pode tomar diferentes ações didáticas.
 
@@ -420,13 +420,13 @@ Nesta única e simples ação, as três dimensões estão presentes:
 
 Compreender o conceito de "ação didática" nos ajuda, portanto, a enxergar a prática docente não como uma sequência de tarefas, mas como uma teia de decisões complexas, onde cada gesto carrega consigo uma visão de mundo e um compromisso com a aprendizagem.
 
-### A Organização Didática do Trabalho Pedagógico
+### Organização Didática do Trabalho Pedagógico
 
 A expressão **"organização didática"** (ou didático-pedagógica) refere-se ao conjunto de ações realizadas pelo professor para preparar, arranjar e estruturar o ambiente, os materiais, o tempo e as interações, a fim de viabilizar a execução de seu planejamento de aula e facilitar a aprendizagem dos alunos. É o momento em que a intenção pedagógica se transforma em um cenário concreto para a aprendizagem.
 
 É uma ação que parte do docente, que, como um arquiteto da situação de aprendizagem, estabelece cada elemento em seu lugar, tanto no espaço físico quanto nas regras de convivência, para que os objetivos educacionais possam ser alcançados.
 
-#### O Espaço que Ensina
+#### Organização do Espaço
 
 A organização didática mais visível é a do espaço físico. A forma como as carteiras e o mobiliário são dispostos na sala de aula não é neutra; ela comunica uma mensagem sobre a metodologia que será utilizada e sobre o tipo de interação que é esperada.
 
@@ -438,13 +438,13 @@ A organização didática mais visível é a do espaço físico. A forma como as
 
 A organização didática vai além da simples arrumação das carteiras. Ela envolve a preparação de todos os elementos que darão suporte à ação pedagógica. Tomemos como exemplo a preparação de uma aula com trabalho em grupo:
 
-1. **A Organização do Espaço e dos Materiais:** O professor precisa, de fato, arrumar as carteiras em grupos, pensar em critérios justos para a formação desses grupos e garantir que todos os materiais necessários (textos, canetas, cartolinas, etc.) estejam disponíveis e acessíveis a cada equipe.
-2. **A Organização do Tempo:** É preciso prever e comunicar à turma a duração de cada etapa da atividade: o tempo para a leitura e discussão interna, o tempo para a produção do material de síntese e o tempo para a socialização dos resultados.
-3. **A Organização das Interações (os "Combinados"):** Para que o trabalho seja produtivo, o professor precisa estabelecer "combinados" claros com a turma. São as regras de convivência e de trabalho para aquela atividade específica, como: definir papéis dentro do grupo (um relator, um escriba), estabelecer como se dará a participação de todos e como será feita a apresentação para a turma.
+1. **Organização do Espaço e dos Materiais:** O professor precisa, de fato, arrumar as carteiras em grupos, pensar em critérios justos para a formação desses grupos e garantir que todos os materiais necessários (textos, canetas, cartolinas, etc.) estejam disponíveis e acessíveis a cada equipe.
+2. **Organização do Tempo:** É preciso prever e comunicar à turma a duração de cada etapa da atividade: o tempo para a leitura e discussão interna, o tempo para a produção do material de síntese e o tempo para a socialização dos resultados.
+3. **Organização das Interações (os "Combinados"):** Para que o trabalho seja produtivo, o professor precisa estabelecer "combinados" claros com a turma. São as regras de convivência e de trabalho para aquela atividade específica, como: definir papéis dentro do grupo (um relator, um escriba), estabelecer como se dará a participação de todos e como será feita a apresentação para a turma.
 
 Portanto, a organização didática é um componente central da **dimensão técnica** da Didática Fundamental de Candau e uma aplicação direta da competência de "organizar e dirigir situações de aprendizagem" de Perrenoud. É a etapa que cria a estrutura e as condições para que o ato de ensinar e aprender possa acontecer de forma fluida e intencional.
 
-### A Sequência Didática: Planejando o Percurso da Aprendizagem
+### Sequência Didática: Planejando o Percurso da Aprendizagem
 
 O termo **sequência didática** é amplamente utilizado no vocabulário educacional contemporâneo e, embora existam definições com nuances diferentes entre os autores, há um consenso sobre seus princípios fundamentais. Em geral, a concepção de sequência didática está alinhada a uma visão **construtivista** ou **socio-construtivista** do processo de ensino-aprendizagem.
 
@@ -454,7 +454,7 @@ Esta visão entende que a aprendizagem é um processo ativo, que se dá através
 
 Nesse processo, o papel do professor é essencial. É ele quem planeja e propõe a sequência, mas essa não é uma estrutura inflexível. Ela deve ser aberta às contribuições dos estudantes, que podem sugerir temas de interesse ou problemas sociais que gostariam de investigar. O professor atua como um mediador, que ajuda a delimitar os temas, a adequar as atividades ao currículo e a garantir que o percurso da aprendizagem seja coerente e desafiador.
 
-#### Um Exemplo Prático de Sequência Didática
+#### Exemplo Prático de Sequência Didática
 
 Para que o conceito fique menos abstrato, a tabela a seguir descreve um exemplo de sequência didática na área de leitura e escrita para uma turma de 4º ano do ensino fundamental, organizada em torno de um tema central.
 
@@ -476,7 +476,7 @@ Em segundo lugar, ela possui um **encadeamento lógico e progressivo**. As ativi
 
 Essa forma de trabalho se contrapõe diretamente à rotina de muitas salas de aula, que infelizmente se baseiam em "atividades soltas" — folhas de exercícios de treino de leitura e escrita sem nenhuma conexão temática entre si. Tal prática fragmentada dificulta o envolvimento do aluno e empobrece o sentido da aprendizagem. A sequência didática, ao contrário, chega para ajudar o professor a organizar atividades com mais significado, transformando o aprendizado em uma jornada investigativa, coerente e engajadora.
 
-### A Transposição Didática: Transformando o Saber Sábio em Saber Escolar
+### Transposição Didática: Transformando o Saber
 
 A expressão **"transposição didática"** é um conceito cada vez mais presente nos debates educacionais. O interesse por essa ideia surge de uma necessidade fundamental da prática docente: a busca por ensinar de forma clara e eficaz para todos os alunos, superando a antiga noção de que "professor bom é aquele que ensina difícil". É neste ponto que a reflexão sobre a transposição didática se torna indispensável.
 
@@ -484,15 +484,15 @@ O conceito, originalmente desenvolvido pelo pesquisador francês Yves Chevallard
 
 > A transposição didática é o processo de adaptação, transformação e simplificação de um conhecimento complexo, produzido no campo científico (o "saber sábio"), para que ele se torne um objeto de ensino e aprendizagem no contexto escolar (o "saber escolar").
 
-#### O Percurso do Saber
+#### Percurso do Saber
 
 Esse processo não é um ato único, mas uma cadeia de transformações. Podemos identificar, de forma simplificada, três estágios principais do saber:
 
-1. **O Saber Sábio:** É o conhecimento em seu estado "bruto", tal como é produzido por pesquisadores, cientistas e especialistas em suas respectivas áreas. É um saber denso, complexo, muitas vezes hermético e publicado em artigos científicos, teses e livros especializados.
-2. **O Saber a Ensinar:** É a primeira grande transformação. O saber sábio é selecionado, recortado, reorganizado e simplificado por autores de livros didáticos e por especialistas que elaboram os currículos oficiais. Ele se torna um conteúdo programático, um objeto a ser ensinado.
-3. **O Saber Ensinado:** É a transformação final, realizada pelo professor em sua sala de aula. É o saber que efetivamente é trabalhado com os alunos, mediado pela didática do professor, pelos exemplos que ele usa e pelas interações que ocorrem.
+1. **Saber Sábio:** É o conhecimento em seu estado "bruto", tal como é produzido por pesquisadores, cientistas e especialistas em suas respectivas áreas. É um saber denso, complexo, muitas vezes hermético e publicado em artigos científicos, teses e livros especializados.
+2. **Saber a Ensinar:** É a primeira grande transformação. O saber sábio é selecionado, recortado, reorganizado e simplificado por autores de livros didáticos e por especialistas que elaboram os currículos oficiais. Ele se torna um conteúdo programático, um objeto a ser ensinado.
+3. **Saber Ensinado:** É a transformação final, realizada pelo professor em sua sala de aula. É o saber que efetivamente é trabalhado com os alunos, mediado pela didática do professor, pelos exemplos que ele usa e pelas interações que ocorrem.
 
-#### A Prática da Transposição e seus Desafios
+#### Prática da Transposição e seus Desafios
 
 A necessidade dessa transformação é evidente. Um professor de Sociologia no ensino médio que precisa ensinar o conceito marxista de **"mais-valia"**, por exemplo, não pode simplesmente entregar aos seus alunos um capítulo da obra "O Capital", de Karl Marx. O "saber sábio", em sua forma original, seria inacessível para a maioria dos estudantes.
 
@@ -517,23 +517,23 @@ Um bom material didático vai muito além de ser um simples repositório de info
 - **Motivar e Engajar:** Recursos como vídeos, jogos ou infográficos podem despertar a curiosidade e o interesse dos alunos de uma forma que um texto puro talvez não consiga.
 - **Concretizar o Abstrato:** Um mapa, um modelo 3D, um gráfico ou uma simulação computacional podem tornar conceitos complexos e abstratos muito mais concretos e compreensíveis.
 
-#### A Perspectiva Crítica sobre os Materiais
+#### Perspectiva Crítica sobre os Materiais
 
 É fundamental compreender que os materiais didáticos **não são neutros**. Todo material carrega consigo uma visão de mundo, valores e uma seleção de conteúdos que privilegia certas perspectivas em detrimento de outras. A escolha de um livro didático, por exemplo, é uma decisão com profundas implicações pedagógicas e políticas.
 
 Portanto, o papel do educador crítico não é o de ser um mero "aplicador" de materiais, mas sim o de um **analista e mediador**. Isso implica em utilizar os recursos disponíveis, mas também em questioná-los junto com os alunos: Quem produziu este material? Com qual intenção? Quais vozes estão representadas e quais foram silenciadas? Essa postura transforma o próprio material didático em um objeto de estudo, desenvolvendo a capacidade crítica dos estudantes e enriquecendo o processo de aprendizagem.
 
-## O Marco Fundador da Didática: A "Didática Magna" de Comenius
+## A "Didática Magna" de Comenius
 
 Como já abordamos anteriormente, ao discutir a evolução das tendências pedagógicas, a figura de Jean Amós Comenius (1592-1670), ou Comênio, é absolutamente central. Ele é amplamente considerado o primeiro pensador a sistematizar um grande tratado sobre a arte e a ciência do ensino, sendo por isso aclamado como o "pai da Didática". Sua obra mais famosa, a **"Didática Magna"**, é um esforço monumental para descrever, do aspecto mais geral aos detalhes do cotidiano, um método universal para a educação.
 
-### O Ideal Pansófico: "Ensinar Tudo a Todos"
+### Ideal Pansófico: "Ensinar Tudo a Todos"
 
 A pedra fundamental de todo o pensamento didático de Comenius é seu ideal pansófico, resumido no lema **"ensinar tudo a todos"** (_omnes omnia docere_). Numa época em que a educação era um privilégio restrito, ele defendia um método que pudesse garantir a todos os seres humanos, sem distinção, o acesso ao conhecimento. Para ele, como um cristão protestante, essa universalização do ensino era um imperativo da fé, pois permitiria que todas as pessoas tivessem acesso direto às escrituras sagradas e, assim, se aproximassem de Deus. A Didática, portanto, nasce com um propósito profundamente humanista e democrático.
 
 O argumento central que sustenta essa possibilidade é a sua famosa metáfora da natureza: todo ser humano nasce com as "sementes" do saber, da virtude e da religião. O papel do professor, como um jardineiro, não é o de forçar o crescimento, mas o de cultivar e criar as condições adequadas para que o conhecimento do aluno possa germinar e desabrochar.
 
-### O Método: A Ruptura com a Escolástica e a Educação pelos Sentidos
+### Ruptura com a Escolástica e a Educação pelos Sentidos
 
 Para alcançar seu ambicioso objetivo, Comenius precisava de um método que fosse eficaz e universal. Ele o encontrou em sua crítica ao ensino escolástico, que dominava sua época. Ele via o método escolástico como essencialmente **verbalista, abstrato e excessivamente mnemônico**, ou seja, um ensino baseado em palavras vazias, desconectado da realidade e focado na pura memorização, o que o tornava difícil e ineficiente.
 
@@ -541,19 +541,19 @@ Em oposição, a abordagem didática de Comenius defendia o **acesso direto aos 
 
 Essa inovação metodológica deu origem à ideia da **cartilha** moderna. Sua outra grande obra, **"_Orbis Sensualium Pictus_"** (O Mundo das Coisas Sensíveis em Imagens), é considerada o primeiro livro didático ilustrado da história. Antes dele, as crianças aprendiam a ler e a escrever arduamente, decorando lições e palavras sem nenhuma referência concreta ao seu significado. O _Orbis Pictus_ foi um avanço revolucionário ao associar cada palavra a uma imagem correspondente, permitindo que a criança estabelecesse uma conexão direta entre o símbolo escrito e a coisa representada no mundo. Este princípio didático fundamental — o de ancorar a aprendizagem em referências concretas e sensoriais — perdura até os dias de hoje e continua sendo a base de inúmeros materiais educativos.
 
-## A Didática e a Democratização do Ensino
+## Didática e a Democratização do Ensino
 
 É comum, no debate educacional, que as causas do **fracasso escolar** — a repetência, a desmotivação, a defasagem de aprendizagem e a evasão — sejam atribuídas a fatores externos à escola. Frequentemente, a responsabilidade é depositada nos alunos ("não se esforçam"), em suas famílias ("não dão apoio") ou na precária infraestrutura das escolas. Embora estes sejam, sem dúvida, aspectos relevantes que condicionam o trabalho pedagógico, uma análise crítica da Didática nos convida a olhar também para dentro dos processos da sala de aula.
 
 A verdade é que existe uma relação íntima e inegável entre a prática didática e o sucesso ou o fracasso dos estudantes. Muitas vezes, a desistência ou a desmotivação de um aluno não é fruto de uma incapacidade sua, mas sim a resposta a um processo de ensino que não dialoga com sua realidade, que não respeita seu ritmo e que não lhe oferece caminhos para uma aprendizagem significativa. Nesta perspectiva, podemos afirmar que **a didática e o fracasso escolar são, muitas vezes, duas faces da mesma moeda**.
 
-#### O Fracasso Escolar como Obstáculo à Democracia
+#### Fracasso Escolar como Obstáculo à Democracia
 
 O fracasso escolar não é apenas um problema pedagógico; é um problema político. A verdadeira **democratização do ensino** não se resume a garantir a matrícula e o acesso de todos à escola. A dimensão mais profunda da democratização é garantir a **permanência com sucesso**, ou seja, o direito de todos os alunos de se apropriarem efetivamente dos saberes elementares e do conhecimento científico e cultural que são essenciais para a formação do cidadão.
 
 Quando um aluno é levado a abandonar a escola, ele está sendo privado do acesso a essas ferramentas culturais, o que limita sua capacidade de participar plenamente da vida social, de compreender o mundo de forma crítica e de lutar por seus direitos. Portanto, uma prática didática que produz exclusão e fracasso é, em sua essência, uma prática antidemocrática.
 
-#### A Didática como Fator de Inclusão ou Exclusão
+#### Didática como Fator de Inclusão ou Exclusão
 
 As escolhas didáticas do professor em sala de aula são, portanto, profundamente consequentes. Elas podem atuar como poderosos mecanismos de inclusão ou de exclusão.
 
@@ -564,7 +564,7 @@ Imagine uma aula sobre leitura e interpretação de texto. Um professor que simp
 
 Conclui-se, portanto, que o trabalho didático do professor é uma ação de grande responsabilidade política. A busca por uma didática comprometida com a aprendizagem de todos é um dos caminhos mais concretos e eficazes para a construção de uma escola mais justa e, consequentemente, de uma sociedade mais democrática.
 
-## A Taxonomia de Bloom
+## Taxonomia de Bloom
 
 A **Taxonomia de Bloom** é um sistema de classificação de objetivos educacionais criado na década de 1950 por uma comissão de psicólogos e pesquisadores liderada por Benjamin Bloom. Sua origem se deu a partir da necessidade de criar uma linguagem comum e uma hierarquia clara para os objetivos de aprendizagem, superando as formulações vagas que muitas vezes orientavam o planejamento e a avaliação educacional.
 
@@ -577,24 +577,24 @@ Esta teoria possui uma dupla finalidade, que a torna uma ferramenta poderosa tan
 
 Para organizar os processos educacionais, a Taxonomia de Bloom os divide em três grandes **domínios**, que representam diferentes áreas do desenvolvimento humano e da aprendizagem. Esses domínios servem como um guia para que os professores possam pensar e atuar sobre as diferentes facetas da formação de seus alunos.
 
-|Domínio Cognitivo|Domínio Afetivo|Domínio Psicomotor|
-|---|---|---|
-|Ênfase nos processos de conhecimento, no saber e nas habilidades intelectuais.|Ênfase na construção dos afetos, nos sentimentos, valores e atitudes.|Ênfase nas competências e habilidades físicas e psicomotoras.|
+| Domínio Cognitivo                                                              | Domínio Afetivo                                                       | Domínio Psicomotor                                            |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------- |
+| Ênfase nos processos de conhecimento, no saber e nas habilidades intelectuais. | Ênfase na construção dos afetos, nos sentimentos, valores e atitudes. | Ênfase nas competências e habilidades físicas e psicomotoras. |
 
 Ao longo dos anos, o desenvolvimento teórico e a aplicação prática desses domínios não foram uniformes. O **domínio cognitivo** foi o que recebeu maior destaque e foi mais detalhadamente elaborado, tornando-se a parte mais conhecida e utilizada da taxonomia. Por essa razão, focaremos nossa análise mais aprofundada neste domínio, abordando em seguida os aspectos fundamentais dos domínios afetivo e psicomotor.
 
-### O Domínio Cognitivo: Dos Processos Simples aos Complexos
+### Domínio Cognitivo
 
 O uso do termo "taxonomia" é aqui sinônimo de "classificação". A grande contribuição de Benjamin Bloom e seus colaboradores foi criar uma forma de organizar e hierarquizar os objetivos de aprendizagem, alinhando as competências cognitivas que se desejava desenvolver nos alunos com as atividades propostas.
 
 A lógica fundamental da taxonomia do domínio cognitivo é a **hierarquia de complexidade**. Ela parte do princípio de que existem diferentes níveis de processamento mental, e que os mais simples são pré-requisitos para os mais complexos. Dito de outra forma, um aluno precisa primeiro conhecer um fato para depois poder compreendê-lo; precisa compreendê-lo para poder aplicá-lo; e assim sucessivamente.
 
-#### A Taxonomia Original (1956)
+#### Taxonomia Original (1956)
 
 A primeira versão da taxonomia organizava o domínio cognitivo em seis grandes categorias, que iam do mais simples ao mais complexo.
 
 <div align="center">
-<img width="540px" src="./img/05-bloom-cognitivo-niveis-de-complexidade.png">
+<img width="500px" src="./img/05-bloom-cognitivo-niveis-de-complexidade.png">
 </div>
 
 1. **Conhecimento:** Habilidade de lembrar e reproduzir informações, fatos e conceitos. (Verbos: _definir, listar, nomear_).
@@ -604,7 +604,7 @@ A primeira versão da taxonomia organizava o domínio cognitivo em seis grandes 
 5. **Síntese:** Habilidade de juntar partes para criar um novo todo. (Verbos: _criar, inventar, compor_).
 6. **Avaliação:** Capacidade de justificar uma decisão ou posicionamento. (Verbos: _avaliar, julgar, defender_).
 
-#### A Taxonomia Revisada (2001)
+#### Taxonomia Revisada (2001)
 
 No início do século XXI, um grupo de pesquisadores liderado por Lorin Anderson e David Krathwohl (ex-alunos de Bloom) publicou uma atualização da taxonomia para adequá-la aos novos tempos. As principais mudanças foram:
 
@@ -612,24 +612,24 @@ No início do século XXI, um grupo de pesquisadores liderado por Lorin Anderson
 - A reorganização do topo da pirâmide: "Avaliação" passou a ser o penúltimo nível e "Síntese" foi renomeada como **"Criar"**, tornando-se o nível mais elevado do processo cognitivo.
 
 <div align="center">
-<img width="540px" src="./img/05-bloom-cognitivo-niveis-de-complexidade-atualizada.png">
+<img width="500px" src="./img/05-bloom-cognitivo-niveis-de-complexidade-atualizada.png">
 </div>
 
-#### As Dimensões do Conhecimento e do Processo Cognitivo
+#### Dimensões do Conhecimento e do Processo Cognitivo
 
 A mudança mais significativa da versão revisada foi a introdução de um **quadro bidimensional**. A pirâmide representa apenas uma das dimensões: a **Dimensão do Processo Cognitivo** (Lembrar, Entender, etc.). A nova versão adiciona a **Dimensão do Conhecimento**, que se refere ao _tipo_ de conhecimento que está sendo trabalhado (Factual, Conceitual, Procedimental ou Metacognitivo).
 
 Um objetivo de aprendizagem bem formulado, portanto, articula as duas dimensões. É o que se tenta ilustrar no exemplo de plano de aula a seguir:
 
-**Plano de Aula - UNIDADE DIDÁTICA: HISTÓRIA DO DESCOBRIMENTO DO BRASIL**
+**Plano de Aula - Unidade didática: História do Descobrimento do Brasil**
 
-|OBJETIVOS ESPECÍFICOS|CONTEÚDOS|AULAS|DESENVOLVIMENTO METODOLÓGICO|
-|---|---|---|---|
-|Compreender as razões da Coroa Portuguesa para a expansão comercial.|Mercantilismo.|120 minutos|Verificar o conhecimento prévio dos alunos sobre a história de Portugal no século XV.<br>Analisar com os alunos documentos da internet sobre mercantilismo.|
+| Objetivos Específicos                                                | Conteúdos      | Aulas       | Desenvolvimento Metodológico                                                                                                                                |
+| -------------------------------------------------------------------- | -------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Compreender as razões da Coroa Portuguesa para a expansão comercial. | Mercantilismo. | 120 minutos | Verificar o conhecimento prévio dos alunos sobre a história de Portugal no século XV.<br>Analisar com os alunos documentos da internet sobre mercantilismo. |
 
 Neste exemplo, o conteúdo "Mercantilismo" pertence à **Dimensão do Conhecimento** (é um conhecimento do tipo conceitual). As ações propostas no desenvolvimento metodológico, como "Verificar o conhecimento prévio" e "Analisar documentos", mobilizam diferentes níveis da **Dimensão do Processo Cognitivo** (respectivamente, os níveis de "Lembrar/Entender" e o de "Analisar"). A taxonomia, portanto, serve como uma ferramenta poderosa para o professor planejar de forma consciente não apenas "o que" ensinar, mas também "que tipo de pensamento" ele deseja desenvolver em seus alunos.
 
-### O Domínio Afetivo: A Dimensão dos Valores e Atitudes
+### Domínio Afetivo
 
 Além do domínio cognitivo, a equipe de Bloom propôs uma taxonomia para o **domínio afetivo**. Esta classificação busca organizar os objetivos de aprendizagem que estão relacionados a sentimentos, emoções, atitudes, valores e interesses dos estudantes. Sua criação parte do reconhecimento de que a aprendizagem não é um processo puramente intelectual; o engajamento afetivo do aluno é uma condição fundamental para um aprendizado profundo e duradouro.
 
@@ -654,7 +654,7 @@ A crítica mais contundente, no entanto, é de ordem ética e política. Ao prop
 
 Nesse uso, a subjetividade é reduzida a um inventário de comportamentos esperados que podem ser medidos e avaliados numericamente. Essa abordagem revela uma forte **influência positivista**, na qual se tenta aplicar uma lógica objetiva e mensurável a um fenômeno profundamente subjetivo. Em uma educação democrática, o objetivo não é formatar os afetos dos alunos segundo um padrão ideal, mas criar condições para que eles desenvolvam seus próprios valores de forma autônoma e crítica.
 
-### O Domínio Psicomotor: A Dimensão da Ação Física
+### Domínio Psicomotor
 
 O terceiro grande domínio da aprendizagem é o **psicomotor**, que se refere ao desenvolvimento de habilidades físicas, à manipulação de objetos e à coordenação neuromuscular. É o domínio do "saber fazer" no sentido corporal e prático.
 
@@ -675,7 +675,7 @@ A hierarquia deste domínio descreve o percurso de uma pessoa ao aprender uma no
 
 Este domínio, embora menos discutido na pedagogia geral, é de fundamental importância em áreas como a Educação Física, as Artes (dança, música, artes plásticas), a Educação Infantil (no desenvolvimento da coordenação motora fina) e, de forma central, na Educação Profissional e Tecnológica (EPT), que se baseia no aprendizado de habilidades práticas e manuais.
 
-## O Conhecimento Pedagógico do Conteúdo (PCK)
+## Conhecimento Pedagógico do Conteúdo (PCK)
 
 O conceito de **Conhecimento Pedagógico do Conteúdo**, mais conhecido pela sigla em inglês **PCK (Pedagogical Content Knowledge)**, foi desenvolvido pelo pesquisador norte-americano Lee Shulman em meados da década de 1980. Ele surge para nomear e descrever um tipo de saber que é exclusivo dos professores: o conhecimento de como ensinar um determinado conteúdo de forma compreensível para um grupo específico de alunos.
 
@@ -685,7 +685,7 @@ A premissa central de Shulman é a de que saber um conteúdo e saber ensinar ess
 <img width="700px" src="./img/05-pck-ideia-principal.png">
 </div>
 
-### As Ações do PCK: Transformar e Representar
+### Ações do PCK: Transformar e Representar
 
 Esse conhecimento específico do professor se manifesta em duas ações didáticas fundamentais:
 
@@ -696,13 +696,13 @@ Esse conhecimento específico do professor se manifesta em duas ações didátic
 <img width="700px" src="./img/05-pck-transformar-organizar-e-formular.png">
 </div>
 
-### Os Componentes do PCK
+### Componentes do PCK
 
 O PCK não é um tipo de saber simples, mas sim um "amálgama", uma fusão complexa que ocorre na mente do professor a partir da intersecção de três grandes corpos de conhecimento:
 
-- **O Saber Disciplinar (Conhecimento do Conteúdo):** É o domínio profundo da matéria que se ensina.
-- **O Saber Pedagógico (Conhecimento Pedagógico Geral):** É o conhecimento sobre as teorias de aprendizagem, métodos de ensino, gestão de sala de aula e avaliação, que são comuns a todas as disciplinas.
-- **O Saber de Contexto (Conhecimento do Contexto):** É o conhecimento sobre a realidade específica dos alunos, da escola e da comunidade.
+- **Saber Disciplinar (Conhecimento do Conteúdo):** É o domínio profundo da matéria que se ensina.
+- **Saber Pedagógico (Conhecimento Pedagógico Geral):** É o conhecimento sobre as teorias de aprendizagem, métodos de ensino, gestão de sala de aula e avaliação, que são comuns a todas as disciplinas.
+- **Saber de Contexto (Conhecimento do Contexto):** É o conhecimento sobre a realidade específica dos alunos, da escola e da comunidade.
 
 <div align="center">
 <img width="700px" src="./img/05-pck-teoria.png">
@@ -716,7 +716,7 @@ Existem diferentes modelos que detalham essa intersecção de saberes. A seguir,
 
 Embora haja um consenso de que o PCK nasce da articulação entre o saber disciplinar, o saber pedagógico e o saber de contexto, existem diferentes modelos teóricos para explicar _como_ essa articulação acontece. Abordaremos aqui dois modelos principais: o integrativo e o transformativo.
 
-#### O Modelo Integrativo
+#### Modelo Integrativo
 
 O modelo integrativo é a forma mais comum e didática de se representar o PCK. Ele compreende o Conhecimento Pedagógico do Conteúdo como a **área de intersecção** entre os três grandes corpos de conhecimento do professor. Neste modelo, cada saber (disciplinar, pedagógico e de contexto) é visto como um conjunto distinto que, ao se sobrepor, cria uma nova área central, que é o próprio PCK.
 
@@ -726,7 +726,7 @@ O modelo integrativo é a forma mais comum e didática de se representar o PCK. 
 
 Podemos pensar neste modelo como uma receita com três ingredientes principais. Embora eles se misturem para criar o resultado final, ainda podemos identificar e analisar cada ingrediente separadamente. Da mesma forma, o modelo integrativo é muito útil para a **análise e a formação de professores**, pois nos permite diagnosticar se um docente precisa desenvolver mais seu conhecimento de conteúdo, suas estratégias pedagógicas ou sua compreensão do contexto dos alunos.
 
-#### O Modelo Transformativo
+#### Modelo Transformativo
 
 O modelo transformativo oferece uma visão mais complexa e que talvez descreva melhor a natureza da expertise docente. Nesta perspectiva, o PCK não é apenas a intersecção, mas sim uma **síntese**, uma **transformação** dos saberes originais em um tipo de conhecimento completamente novo e específico da profissão.
 
@@ -736,7 +736,7 @@ Usando a mesma analogia, se o modelo integrativo são os ingredientes da receita
 
 Ambos os modelos são úteis. O modelo integrativo nos ajuda a entender os **componentes** que formam o PCK, enquanto o modelo transformativo nos ajuda a compreender a **natureza** do conhecimento de um professor que atingiu a excelência em sua prática.
 
-### As Consequências do PCK na Formação e na Prática Docente
+### Consequências do PCK na Formação e na Prática Docente
 
 A teoria do Conhecimento Pedagógico do Conteúdo (PCK), como vimos, oferece uma poderosa estrutura para se pensar sobre o que faz um professor ser um bom professor. A partir dos estudos seminais de Lee Shulman, uma série de pesquisadores se dedicou a aprofundar e detalhar este conceito. Entre eles, destaca-se **Pamela Grossman**, que propôs um modelo que desdobra a base de conhecimento para o ensino em quatro componentes centrais e interligados.
 
@@ -776,7 +776,7 @@ Este é o componente central e sintetizador, que distingue o professor do mero e
 
 A teoria do PCK, como vimos, oferece um modelo poderoso para se pensar sobre o que constitui o saber de um bom professor. Para traduzir essa teoria em uma ferramenta prática para o planejamento e a formação docente, pesquisadores como John Loughran e seus colaboradores desenvolveram instrumentos específicos, sendo os mais conhecidos o **CoRe** e os **PaPeRs**.
 
-#### O CoRe como Ferramenta de Planejamento Reflexivo
+#### CoRe como Ferramenta de Planejamento Reflexivo
 
 O **CoRe (Content Representation ou Representação do Conteúdo)** é um dispositivo de reflexão estruturada, projetado para auxiliar o professor no planejamento do ensino de um tópico ou de uma "grande ideia" de sua disciplina. Em vez de ser um simples roteiro de aula, o CoRe funciona como um conjunto de perguntas-guia que provocam o professor a articular seus diferentes saberes (de conteúdo, pedagógico e de contexto), ou seja, a mobilizar e a organizar seu PCK.
 
@@ -793,7 +793,7 @@ As oito questões que estruturam o CoRe são:
 
 Como se pode perceber, as perguntas do CoRe forçam o professor a ir além do "o quê" ensinar, levando-o a refletir sobre o "porquê", o "para quem" e o "como" ensinar e avaliar, tornando o planejamento um ato muito mais profundo e intencional.
 
-#### Os PaPeRs como Repertórios da Prática Docente
+#### PaPeRs como Repertórios da Prática Docente
 
 Enquanto o CoRe é uma ferramenta para o planejamento _antes_ da ação, os **PaPeRs (Pedagogical and Professional-experience Repertoires ou Repertórios de Experiência Pedagógica e Profissional)** são um instrumento para **documentar e refletir _sobre_ a ação**.
 
