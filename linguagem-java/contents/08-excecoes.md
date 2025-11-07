@@ -6,7 +6,7 @@ Até agora, construímos programas que seguem um fluxo de execução bem definid
 
 O sistema de exceções do Java não é um simples mecanismo de "relatório de erros"; é uma estrutura sofisticada e orientada a objetos que permite separar a lógica de tratamento de erros da lógica principal do programa, tornando o código mais limpo, legível e, acima de tudo, mais resiliente.
 
-## A Hierarquia de Erros do Java: `Throwable`, `Error` e `Exception`
+## Hierarquia de Erros do Java: `Throwable`, `Error` e `Exception`
 
 Em Java, todo evento que pode ser "lançado" (_thrown_) e "capturado" (_caught_) é um objeto que herda, direta ou indiretamente, da classe `java.lang.Throwable`. Esta classe é a raiz de toda a hierarquia de erros e se divide em duas subcategorias principais: `Error` e `Exception`.
 
@@ -22,7 +22,7 @@ A classe `Exception`, por sua vez, se ramifica em duas categorias distintas, cuj
     - Declarar que ele "propaga" a exceção para quem o chamou, usando a palavra-chave `throws` na sua assinatura.
 2. **Exceções Não Verificadas (Unchecked)**: São exceções que herdam da classe `RuntimeException`. Elas geralmente representam **erros de lógica ou de programação**, como acessar um objeto nulo (`NullPointerException`) ou um índice de array inválido (`ArrayIndexOutOfBoundsException`). O compilador **não exige** que essas exceções sejam tratadas, pois, em teoria, elas deveriam ser prevenidas através de uma codificação correta (ex: verificar se um objeto é nulo antes de usá-lo).
 
-## O Mecanismo de Tratamento: `try`, `catch` e `finally`
+## Tratamento com `try`, `catch` e `finally`
 
 Java fornece um bloco estruturado para lidar com as exceções, permitindo isolar o código "perigoso" e definir as ações a serem tomadas caso um problema ocorra.
 
@@ -76,7 +76,7 @@ public class TratamentoExcecao {
 }
 ```
 
-## Assumindo o Controle: `throw` e `throws`
+## Declarando Exceções com `throw` e `throws`
 
 Além de capturar exceções geradas pelo sistema, podemos também criar e declarar nossas próprias exceções.
 
