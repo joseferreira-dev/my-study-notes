@@ -14,12 +14,12 @@ Os tipos primitivos são os tipos de dados mais básicos e nativos da linguagem.
 
 Estes tipos são usados para representar números inteiros, sem parte fracionária. A escolha entre eles depende do tamanho do número que se pretende armazenar e da necessidade de otimizar o uso de memória.
 
-|Tipo|Tamanho|Intervalo de Valores|Exemplo de Declaração|
-|---|---|---|---|
-|`byte`|8 bits|-128 a 127|`byte b = 10;`|
-|`short`|16 bits|-32.768 a 32.767|`short s = 3000;`|
-|`int`|32 bits|-2<sup>31</sup> a 2<sup>31</sup>-1|`int i = 123456;`|
-|`long`|64 bits|-2<sup>63</sup> a 2<sup>63</sup>-1|`long l = 12345678900L;`|
+| Tipo    | Tamanho | Intervalo de Valores               | Exemplo de Declaração    |
+| ------- | ------- | ---------------------------------- | ------------------------ |
+| `byte`  | 8 bits  | -128 a 127                         | `byte b = 10;`           |
+| `short` | 16 bits | -32.768 a 32.767                   | `short s = 3000;`        |
+| `int`   | 32 bits | -2<sup>31</sup> a 2<sup>31</sup>-1 | `int i = 123456;`        |
+| `long`  | 64 bits | -2<sup>63</sup> a 2<sup>63</sup>-1 | `long l = 12345678900L;` |
 
 - **`int`**: É o tipo de dado inteiro padrão e o mais utilizado em Java. A menos que haja uma razão específica para economizar memória (`byte`, `short`) ou a necessidade de armazenar um número extremamente grande (`long`), o `int` é a escolha ideal para representar contadores, índices e outros valores inteiros de uso geral.
 - **`long`**: Deve ser utilizado quando o valor a ser armazenado ultrapassa o limite de um `int` (aproximadamente 2 bilhões). É comum em aplicações que lidam com identificadores únicos de bancos de dados (IDs) ou medições de tempo em milissegundos. Note que, ao declarar um literal `long`, é obrigatório adicionar o sufixo `L` no final do número. Isso informa ao compilador para tratar o número como um `long`, evitando um erro de compilação caso o número seja grande demais para um `int`.
@@ -123,7 +123,7 @@ Integer numeroWrapper = 100;
 int numeroPrimitivo = numeroWrapper;
 ```
 
-## Variáveis: Os Contêineres de Dados
+## Variáveis: Contêineres de Dados
 
 Após entendermos os diferentes tipos de dados que Java nos oferece, o próximo passo lógico é aprender a utilizá-los. Para isso, usamos **variáveis**. Uma variável pode ser entendida como um **contêiner nomeado**, localizado na memória, que armazena um valor de um tipo específico. É através do nome da variável que conseguimos acessar, ler e modificar o dado que ela contém.
 
@@ -290,13 +290,13 @@ public class ExemploConstante {
 
 O uso de `final` aumenta a segurança e a clareza do código, deixando explícito que certos valores são fixos e não devem ser alterados durante a execução do programa.
 
-## Uma Introdução aos Generics
+## Introdução aos Generics
 
 Até agora, lidamos com tipos de dados concretos e bem definidos: um `int` é sempre um inteiro, uma `String` é sempre uma sequência de caracteres, e um objeto `Pessoa` é sempre uma `Pessoa`. No entanto, à medida que as aplicações crescem em complexidade, surge uma necessidade comum: escrever código que seja reutilizável para diferentes tipos de dados, mas sem sacrificar a segurança da tipagem que o Java oferece.
 
 É para resolver este desafio que, a partir do Java 5, foi introduzido um dos recursos mais poderosos e transformadores da linguagem: os **Generics**, ou **tipos genéricos**.
 
-### O Problema: O Dilema da Reusabilidade e da Segurança
+### Dilema da Reusabilidade e da Segurança
 
 Imagine que precisamos criar uma classe simples, `Caixa`, que possa armazenar um objeto qualquer. Antes da introdução dos Generics, a única forma de fazer isso de maneira genérica era utilizando o tipo `Object`, a classe-mãe de todos os objetos em Java.
 
@@ -347,7 +347,7 @@ Esta abordagem tem duas grandes desvantagens:
 
 Este tipo de erro, que só aparece quando o programa já está rodando, era uma fonte comum de instabilidade em aplicações Java.
 
-### A Solução: Classes, Interfaces e Métodos Genéricos
+### Classes, Interfaces e Métodos Genéricos
 
 Os Generics resolvem este problema permitindo que se crie componentes que são parametrizados por tipo. Em outras palavras, podemos definir uma classe, interface ou método que opera com um "tipo placeholder" que será substituído por um tipo real quando o componente for utilizado.
 
@@ -387,7 +387,6 @@ System.out.println("Conteúdo: " + itemRecuperado);
 // caixaDeTexto.guardar(123);
 // Erro: O método guardar(String) na classe Caixa<String>
 // não é aplicável para os argumentos (int).
-
 
 // O mesmo componente, reutilizado para outro tipo.
 Caixa<Integer> caixaDeNumero = new Caixa<>();
