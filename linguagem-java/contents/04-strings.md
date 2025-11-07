@@ -4,7 +4,7 @@ Após dominarmos os operadores para manipular dados primitivos, voltamos nossa a
 
 Qualquer texto em uma aplicação — desde o nome de um usuário, uma mensagem de erro, o conteúdo de um arquivo ou um endereço web — é manipulado através de objetos `String`. Por ser tão central, a classe `String` possui características e comportamentos únicos que são essenciais para um desenvolvimento eficiente e seguro.
 
-## As Características Fundamentais da Classe `String`
+## Características da Classe `String`
 
 A classe `String`, que pertence ao pacote `java.lang` (e, portanto, está sempre disponível sem a necessidade de uma importação explícita), é definida com algumas propriedades muito importantes:
 
@@ -129,6 +129,8 @@ Como vimos, o operador `==` não é confiável para comparar o conteúdo de stri
 
 ### Busca de Caracteres e Substrings
 
+Estes métodos permitem fazer buscas por elementos dentro de uma string.
+
 - **`indexOf(String str)`**: Retorna o índice da primeira ocorrência de uma substring. Se a substring não for encontrada, retorna `-1`.
     
     ```java
@@ -191,7 +193,7 @@ Lembre-se: estes métodos não alteram a string original; eles retornam uma nova
     // itens será um array: ["maçã", "banana", "leite", "pão"]
     ```
 
-### O Desafio da Performance: `StringBuilder` e `StringBuffer`
+### Performance com `StringBuilder` e `StringBuffer`
 
 A imutabilidade da `String` é uma grande vantagem, mas pode se tornar um problema de performance em cenários que exigem muitas modificações de texto, como montar uma string longa dentro de um laço de repetição.
 
