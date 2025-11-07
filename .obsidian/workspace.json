@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
+                "file": "legislacao/contents/13-lei-13709.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05-didatica"
+              "title": "13-lei-13709"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
+                "file": "legislacao/contents/13-lei-13709.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 05-didatica"
+              "title": "Sumário de 13-lei-13709"
             }
           }
         ],
@@ -171,6 +171,8 @@
   },
   "active": "84dc1ec37b0ca9b2",
   "lastOpenFiles": [
+    "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
+    "legislacao/contents/13-lei-13709.md",
     "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
     "linguagem-java/contents/08-excecoes.md",
     "linguagem-java/contents/07-estruturas-de-dados.md",
@@ -205,8 +207,6 @@
     "engenharia-de-software/contents/01-fundamentos.md",
     "engenharia-de-software/contents/03-modelos-iterativos-e-incrementais.md",
     "engenharia-de-software/contents/02-modelos-sequenciais.md",
-    "engenharia-de-software/contents/11-old.md",
-    "lingua-portuguesa/contents/02-ortografia.md",
     "algoritmos-e-estruturas-de-dados/contents/img",
     "algoritmos-e-estruturas-de-dados/contents",
     "algoritmos-e-estruturas-de-dados",
