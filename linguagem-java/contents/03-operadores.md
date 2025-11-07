@@ -113,7 +113,7 @@ boolean podeDirigir = idade >= 18;  // true
 boolean ehAlto = altura > 1.80;     // false
 ```
 
-#### Uma Observação Crucial: `==` vs. `.equals()`
+#### Observação Crucial: `==` vs. `.equals()`
 
 Como mencionado anteriormente, é fundamental reforçar a distinção de como o operador `==` funciona com tipos primitivos e tipos por referência.
 

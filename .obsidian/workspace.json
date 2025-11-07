@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
+                "file": "linguagem-java/contents/03-operadores.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-tipos-de-dados-e-variaveis"
+              "title": "03-operadores"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
+                "file": "linguagem-java/contents/03-operadores.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 02-tipos-de-dados-e-variaveis"
+              "title": "Sumário de 03-operadores"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "84dc1ec37b0ca9b2",
   "lastOpenFiles": [
+    "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
     "linguagem-java/contents/01-conceitos-gerais-de-java.md",
     "linguagem-java/contents/10-principios-solid.md",
     "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
@@ -180,7 +181,6 @@
     "linguagem-java/contents/05-estruturas-condicionais.md",
     "linguagem-java/contents/04-strings.md",
     "linguagem-java/contents/03-operadores.md",
-    "linguagem-java/contents/02-tipos-de-dados-e-variaveis.md",
     "legislacao/contents/08-lei-12527.md",
     "Sem título.md",
     "legislacao/contents/12-lei-8429.md",
