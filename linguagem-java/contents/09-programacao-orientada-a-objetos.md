@@ -10,7 +10,7 @@ Antes de mergulharmos na Orientação a Objetos, é crucial entender o que é um
 
 Pense nos paradigmas como diferentes escolas de pensamento na arquitetura. Um arquiteto modernista seguirá princípios de minimalismo e funcionalidade, enquanto um arquiteto clássico seguirá princípios de simetria e ornamentação. Ambos constroem edifícios, mas suas abordagens, ferramentas e resultados são fundamentalmente diferentes. Na programação, o paradigma que adotamos define a arquitetura do nosso software.
 
-## A Mudança de Perspectiva: Procedural vs. Orientado a Objetos
+## Procedural vs. Orientado a Objetos
 
 Até agora, o estilo de programação que utilizamos, de forma implícita, se assemelha ao **paradigma procedural**. Nesse modelo, o foco está em uma sequência de passos, em um conjunto de procedimentos (funções ou métodos) que atuam sobre blocos de dados. Os dados e as operações que os manipulam são, em grande parte, entidades separadas.
 
@@ -19,9 +19,7 @@ A **Programação Orientada a Objetos (POO)** propõe uma mudança radical nessa
 O objetivo da POO é modelar entidades do mundo real ou conceitual (um `Cliente`, uma `NotaFiscal`, uma `ConexaoDeBancoDeDados`) como objetos autônomos e autossuficientes.
 
 <div align="center">
-
 <img width="700px" src="./img/09-programacao-tradicional-vs-poo.png">
-
 </div>
 
 A imagem acima ilustra perfeitamente essa transição. Na programação tradicional (à esquerda), temos os dados de um lado e um conjunto de funções separadas que operam sobre esses dados. Na Programação Orientada a Objetos (à direita), os dados e as operações são unificados dentro de classes e objetos. Um objeto `Cliente`, por exemplo, não é apenas um conjunto de dados (como nome, CPF); ele também contém os comportamentos (métodos) relacionados a ele, como `validarCPF()` ou `calcularLimiteDeCredito()`.
@@ -33,7 +31,7 @@ Essa unificação traz enormes vantagens, especialmente em sistemas complexos:
 - **Reusabilidade**: Um objeto bem construído, como uma classe para manipular datas, pode ser facilmente reutilizado em múltiplos projetos.
 - **Escalabilidade**: Sistemas grandes se tornam mais fáceis de gerenciar, pois são construídos pela composição e interação desses blocos de construção autônomos.
 
-## Os Componentes Fundamentais da POO
+## Componentes Fundamentais da POO
 
 Para começar a pensar de forma orientada a objetos, precisamos nos familiarizar com seu vocabulário fundamental. A POO se baseia em alguns conceitos-chave que trabalharemos em detalhe:
 
@@ -50,7 +48,7 @@ No coração da Programação Orientada a Objetos está o conceito de **Classe**
 
 Pense em uma classe como a planta de um carro projetada por uma montadora. A planta (`classe Carro`) define que todo carro terá atributos como `cor`, `marca` e `modelo`, e comportamentos como `acelerar()` e `frear()`. Com base nessa única planta, a fábrica pode produzir milhares de **objetos** carro, cada um com suas próprias características (um Corsa vermelho, um Onix preto, etc.), mas todos compartilhando a mesma estrutura e as mesmas funcionalidades definidas pela classe.
 
-### A Anatomia de uma Classe
+### Anatomia de uma Classe
 
 Uma classe em Java é um contêiner que agrupa três tipos principais de membros:
 
@@ -58,11 +56,11 @@ Uma classe em Java é um contêiner que agrupa três tipos principais de membros
 2. **Métodos**: São as funções declaradas dentro da classe. Eles representam o **comportamento**, as ações ou as operações que um objeto daquela classe pode realizar.
 3. **Construtores**: São blocos de código especiais, com o mesmo nome da classe, responsáveis por **inicializar** um novo objeto quando ele é criado.
 
-### Modificadores de Acesso: Controlando a Visibilidade
+### Modificadores de Acesso
 
 Antes de explorarmos os diferentes tipos de classes, é essencial entender como o Java controla a visibilidade de suas estruturas. Os **modificadores de acesso** são palavras-chave que definem de onde uma classe ou seus membros podem ser acessados.
 
-#### Visibilidade de Classes (Nível Superior)
+#### Visibilidade de Classes
 
 Uma classe declarada diretamente dentro de um arquivo `.java` (uma classe de nível superior) só pode ter dois níveis de acesso:
 
@@ -92,7 +90,7 @@ Uma classe abstrata, declarada com a palavra-chave `abstract`, é uma classe que
 
 Uma classe abstrata pode conter **métodos abstratos** — métodos que são declarados, mas não possuem implementação (corpo). Ao fazer isso, a classe abstrata estabelece um "contrato", forçando qualquer subclasse concreta a fornecer uma implementação para aqueles métodos.
 
-#### O Conceito de `static`
+#### Conceito de `static`
 
 A palavra-chave `static` em Java, quando aplicada a **membros** de uma classe (atributos ou métodos), significa que aquele membro pertence à **classe em si**, e não a uma instância (objeto) individual. Métodos estáticos são frequentemente usados para criar funções utilitárias que não dependem do estado de um objeto específico, como `Math.sqrt()` (raiz quadrada) ou o próprio método `main` que usamos para iniciar nossos programas.
 
@@ -341,7 +339,7 @@ public class Garagem {
 |**Tempo de Vida**|Existe enquanto o objeto existir na memória.|É criada quando o método/bloco é executado e destruída quando a execução termina.|
 |**Valor Padrão**|**Sim**. Se não for inicializado, recebe um valor padrão (`0`, `false`, `null`, etc.).|**Não**. Deve ser obrigatoriamente inicializada antes do primeiro uso, caso contrário, ocorre um erro de compilação.|
 
-### A Importância do Encapsulamento
+### Importância do Encapsulamento
 
 O acesso direto aos atributos, como fizemos em `carro.cor = "Branco"`, é funcional para exemplos simples, mas é considerado uma má prática em projetos de software robustos. A Programação Orientada a Objetos preza por um princípio chamado **encapsulamento**, que veremos em detalhes mais à frente.
 
@@ -383,7 +381,7 @@ Enquanto os atributos definem _o que um objeto é_ (seu estado), os **métodos**
 
 No contexto da Programação Orientada a Objetos, um método é o equivalente a uma função ou procedimento em outros paradigmas. Se os atributos de um carro são os substantivos (cor, marca), os métodos são os verbos: `acelerar()`, `frear()`, `ligarFarol()`. Eles são a forma como interagimos com os objetos e como os objetos interagem entre si.
 
-### A Anatomia de um Método
+### Anatomia de um Método
 
 Todo método em Java possui uma estrutura bem definida, conhecida como **assinatura do método**, que informa ao compilador tudo o que ele precisa saber sobre como o método funciona.
 
@@ -411,7 +409,7 @@ public class Calculadora {
 }
 ```
 
-### Modificadores: Controlando Acesso e Comportamento
+### Modificadores
 
 Os modificadores são essenciais para a aplicação dos princípios da POO. Eles se dividem em duas categorias principais.
 
@@ -447,7 +445,7 @@ O tipo de retorno define o que o método "entrega de volta" para o código que o
     }
     ```
     
-- **O Tipo `void`**: Indica que o método realiza uma ação, mas **não retorna nenhum valor**. Ele "faz algo", mas não "calcula algo".
+- **Tipo `void`**: Indica que o método realiza uma ação, mas **não retorna nenhum valor**. Ele "faz algo", mas não "calcula algo".
     
     ```java
     public void imprimirRelatorio(String relatorio) {
@@ -460,7 +458,7 @@ O tipo de retorno define o que o método "entrega de volta" para o código que o
     
     Embora não possa retornar um valor, um método `void` pode usar `return;` sem nada na frente para encerrar sua execução prematuramente.
 
-### O Método `main` e seus Argumentos
+### Método `main` e seus Argumentos
 
 Como já vimos, o método `main` é o ponto de entrada de toda aplicação Java. Sua assinatura é rígida e merece uma análise detalhada: `public static void main(String[] args)`.
 
@@ -496,7 +494,7 @@ Se executarmos este programa no terminal, podemos ver o parâmetro `args` em aç
 - Execução: `java Cumprimentador "Carlos Silva"`
     - Saída: `Olá, Carlos Silva!`
 
-## Os Pilares da Programação Orientada a Objetos
+## Pilares da Programação Orientada a Objetos
 
 Com a compreensão do que são classes e objetos, estamos prontos para explorar os princípios fundamentais que dão à Programação Orientada a Objetos seu poder e sua elegância. Estes princípios não são apenas recursos da linguagem, mas conceitos de design que, quando aplicados corretamente, nos permitem construir software robusto, flexível e de fácil manutenção.
 
@@ -509,7 +507,7 @@ Esses conceitos são conhecidos como os **Pilares da POO**. Tradicionalmente, s�
 
 Além deles, o Java oferece mecanismos poderosos como as **Interfaces**, que são uma ferramenta crucial para a implementação desses pilares, especialmente a abstração e o polimorfismo. Vamos explorar cada um desses conceitos em detalhe, pois são eles que trazem a verdadeira funcionalidade e a organização para a nossa programação.
 
-### Abstração: Focando no Essencial
+### Abstração
 
 A **abstração** é o processo de identificar as características e comportamentos essenciais de um objeto e expor apenas essa visão simplificada, ignorando os detalhes de implementação irrelevantes ou complexos. É o ato de criar um modelo que representa a essência de uma entidade, focando no "o quê" um objeto faz, em vez de no "como" ele faz.
 
@@ -519,7 +517,7 @@ Na programação, a abstração nos permite criar modelos de objetos que são ma
 
 A analogia com os gráficos de um jogo de computador é perfeita. Uma árvore renderizada em primeiro plano precisa de muitos detalhes (texturas de alta resolução, milhares de polígonos para as folhas), representando uma implementação concreta e detalhada. No entanto, uma árvore na paisagem distante pode ser representada com muito menos polígonos e uma textura mais simples. Ambas são "árvores" e cumprem seu papel no jogo, mas a versão distante é uma **abstração** da versão detalhada, contendo apenas as informações essenciais para ser reconhecida como uma árvore à distância, economizando recursos computacionais.
 
-#### A Abstração em Código Java
+#### Abstração em Código Java
 
 Em Java, a abstração é implementada principalmente através de dois mecanismos: **classes abstratas** e **interfaces**.
 
@@ -561,7 +559,7 @@ Em Java, a abstração é implementada principalmente através de dois mecanismo
     
     Neste exemplo, a interface `Ligavel` abstrai o conceito de "algo que pode ser ligado ou desligado". Qualquer classe, seja `Lampada`, `Televisao` ou `Computador`, pode "assinar" esse contrato, garantindo que possuirá os métodos `ligar()`, `desligar()` e `estaLigado()`, mesmo que a forma como cada uma implementa essa lógica seja completamente diferente.
 
-### Encapsulamento: Protegendo a Integridade do Objeto
+### Encapsulamento
 
 O **encapsulamento** é o segundo grande pilar da Programação Orientada a Objetos. Ele pode ser entendido como o ato de **agrupar os dados (atributos) e os comportamentos (métodos) que os manipulam dentro de uma única unidade (o objeto)**, ao mesmo tempo em que se **oculta a complexidade interna e se protege os dados do acesso externo direto**.
 
@@ -578,7 +576,7 @@ O encapsulamento é alcançado através de uma prática de codificação simples
     - **Métodos Getters**: Um método "getter" é usado para **ler** o valor de um atributo privado. Por convenção, seu nome começa com `get` seguido do nome do atributo em CamelCase (ex: `getMarca()`). Para atributos booleanos, a convenção é usar `is` (ex: `isLigado()`).
     - **Métodos Setters**: Um método "setter" é usado para **modificar** o valor de um atributo privado. Por convenção, seu nome começa com `set` seguido do nome do atributo (ex: `setMarca(String novaMarca)`).
 
-#### O Encapsulamento na Prática: Um Exemplo Concreto
+#### Encapsulamento na Prática
 
 Vamos ilustrar a importância do encapsulamento com um exemplo de uma classe `ContaBancaria`.
 
@@ -664,7 +662,7 @@ A aplicação do encapsulamento traz benefícios que vão além da simples prote
 - **Ocultação de Complexidade (Flexibilidade)**: O encapsulamento permite que a implementação interna de uma classe seja alterada sem impactar o código que a utiliza. Poderíamos, por exemplo, mudar o tipo do atributo `saldo` de `double` para `BigDecimal` (um tipo mais preciso para valores monetários) internamente. Desde que os métodos `getSaldo()`, `depositar()` e `sacar()` continuem funcionando como antes, nenhuma outra parte do sistema precisaria ser alterada.
 - **Modularidade e Reutilização**: Uma classe encapsulada se torna um "componente de caixa-preta" confiável, com uma interface pública bem definida. Isso facilita sua reutilização em diferentes partes de um sistema ou em diferentes projetos.
 
-### Herança: Criando Hierarquias de Classes
+### Herança
 
 A **herança** é um dos pilares mais poderosos da Programação Orientada a Objetos. É o mecanismo que permite que uma classe, chamada de **subclasse** (ou classe filha), adquira os atributos e métodos de outra classe, chamada de **superclasse** (ou classe pai).
 
@@ -672,16 +670,14 @@ Esse pilar está focado em criar relacionamentos e hierarquias entre as classes,
 
 A herança nos permite trabalhar com dois processos complementares de design: a generalização e a especialização.
 
-#### Generalização e Especialização
-
 1. **Generalização**: É o processo de identificar características comuns entre várias classes e abstraí-las para uma superclasse mais genérica. Se temos as classes `Carro`, `Moto` e `Caminhao`, podemos observar que todas possuem `marca`, `modelo` e `ano`, e todas podem `ligar()` e `desligar()`. A criação da classe `Veiculo` para conter esses membros comuns é um ato de **generalização**.
 2. **Especialização**: É o processo inverso. Partimos de uma classe genérica e criamos subclasses mais específicas que, além de herdarem tudo da superclasse, adicionam seus próprios atributos e comportamentos exclusivos. Por exemplo, a partir de uma classe `Animal`, podemos criar as especializações `Cachorro` (que adiciona o método `latir()`) e `Gato` (que adiciona o método `miar()`).
 
-#### A Herança na Prática em Java
+#### Herança na Prática em Java
 
 Em Java, a herança é implementada com a palavra-chave `extends`. Vamos continuar com nosso exemplo do `Veiculo`, especializando-o não apenas em `Carro`, mas também em `Moto`.
 
-**A Superclasse (Generalização):**
+**Superclasse (Generalização):**
 
 ```java
 abstract class Veiculo {
@@ -703,7 +699,7 @@ abstract class Veiculo {
 }
 ```
 
-**As Subclasses (Especialização):**
+**Subclasses (Especialização):**
 
 A classe `Carro` é uma especialização de `Veiculo` que adiciona o atributo `numeroDePortas`.
 
@@ -743,14 +739,14 @@ class Moto extends Veiculo {
 }
 ```
 
-#### A Palavra-Chave `super`
+#### Palavra-Chave `super`
 
 A palavra-chave `super` é usada dentro de uma subclasse para se referir a membros da sua superclasse direta. Ela tem dois usos principais:
 
 1. **`super(...)`**: Para chamar o construtor da superclasse. Esta chamada, se utilizada, deve ser **obrigatoriamente a primeira instrução** dentro do construtor da subclasse.
 2. **`super.membro`**: Para acessar um atributo ou chamar um método da superclasse, especialmente útil quando a subclasse sobrescreveu um método e ainda precisa executar a lógica da versão original.
 
-#### A Classe `Object`: A Raiz de Tudo
+#### Classe `Object`
 
 Em Java, toda a hierarquia de classes tem uma única raiz: a classe `java.lang.Object`. Se uma classe não usa a palavra-chave `extends` para herdar de outra, o compilador Java faz com que ela, implicitamente, herde de `Object`.
 
@@ -771,7 +767,7 @@ A utilização correta da herança traz benefícios diretos para a arquitetura d
 - **Manutenibilidade**: Uma alteração em um comportamento comum, feita na superclasse, é automaticamente propagada para todas as subclasses.
 - **Polimorfismo**: A herança é a base para o polimorfismo, um dos pilares mais poderosos da POO, que exploraremos a seguir.
 
-### Polimorfismo: Muitas Formas, Uma Única Interface
+### Polimorfismo
 
 A **herança** nos permite criar hierarquias de classes, mas o benefício mais poderoso que surge dessa hierarquia é o **polimorfismo**. A palavra vem do grego e significa "muitas formas" (_poly_ = muitas, _morphos_ = forma). Na Programação Orientada a Objetos, o polimorfismo é a capacidade de um objeto ser referenciado de múltiplas maneiras, permitindo que objetos de classes diferentes respondam à mesma mensagem (chamada de método) de formas específicas.
 
@@ -877,7 +873,7 @@ O uso correto do polimorfismo traz diversos benefícios:
 - **Código Desacoplado**: Permite escrever código que depende de abstrações (superclasses ou interfaces) em vez de implementações concretas (subclasses), reduzindo o acoplamento entre as partes do sistema.
 - **Legibilidade**: A sobrecarga de métodos torna o código mais limpo, evitando a necessidade de nomes de métodos ligeiramente diferentes para a mesma operação (ex: `somarInts`, `somarDoubles`).
 
-### Interfaces: O Contrato de Comportamento
+### Interfaces
 
 Enquanto a herança, com classes abstratas, nos permite criar hierarquias baseadas em uma relação "é um", as **Interfaces** nos oferecem uma forma ainda mais poderosa e flexível de definir contratos em Java. Uma interface é, em sua essência, um "contrato" 100% abstrato que uma classe pode prometer cumprir.
 
@@ -889,12 +885,12 @@ Pense em uma interface como o painel de um aparelho de som. A interface `PainelD
 
 Interfaces e classes abstratas são ambas ferramentas para se alcançar a abstração, mas elas possuem propósitos e regras diferentes. Entender essa distinção é fundamental para um bom design de software.
 
-|Característica|Classe Abstrata|Interface|
-|---|---|---|
-|**Propósito**|Definir um modelo base para uma família de classes relacionadas (relação **"é um"**).|Definir um contrato de capacidades que podem ser implementadas por classes não relacionadas (relação **"é capaz de"**).|
-|**Métodos**|Pode conter métodos abstratos e métodos concretos (com implementação).|Tradicionalmente, continha apenas métodos abstratos. A partir do Java 8, pode conter `default` e `static` methods.|
-|**Atributos**|Pode conter atributos de instância (estado).|Não pode. Pode conter apenas constantes (`public static final`).|
-|**Herança**|Uma classe pode `extend` (herdar de) **apenas uma** classe abstrata.|Uma classe pode `implements` (implementar) **múltiplas** interfaces.|
+| Característica | Classe Abstrata                                                                       | Interface                                                                                                               |
+| -------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Propósito**  | Definir um modelo base para uma família de classes relacionadas (relação **"é um"**). | Definir um contrato de capacidades que podem ser implementadas por classes não relacionadas (relação **"é capaz de"**). |
+| **Métodos**    | Pode conter métodos abstratos e métodos concretos (com implementação).                | Tradicionalmente, continha apenas métodos abstratos. A partir do Java 8, pode conter `default` e `static` methods.      |
+| **Atributos**  | Pode conter atributos de instância (estado).                                          | Não pode. Pode conter apenas constantes (`public static final`).                                                        |
+| **Herança**    | Uma classe pode `extend` (herdar de) **apenas uma** classe abstrata.                  | Uma classe pode `implements` (implementar) **múltiplas** interfaces.                                                    |
 
 A capacidade de uma classe implementar múltiplas interfaces é como o Java resolve o "problema da herança múltipla". Uma classe `Anfibio` não pode herdar de `Terrestre` e `Aquatico` ao mesmo tempo, mas pode implementar as interfaces `Nadador` e `Andador`, adquirindo os comportamentos de ambas.
 
@@ -904,7 +900,7 @@ O verdadeiro poder das interfaces se manifesta ao habilitar o polimorfismo entre
 
 Vamos imaginar um sistema que precisa exportar diferentes tipos de documentos para um formato textual.
 
-**O Contrato (A Interface):**
+**Contrato (A Interface):**
 
 Definimos um contrato `Exportavel` que diz que qualquer objeto que queira ser exportado deve saber como gerar seus dados em formato de texto.
 
@@ -914,7 +910,7 @@ public interface Exportavel {
 }
 ```
 
-**As Implementações (As Classes Concretas):**
+**Implementações (As Classes Concretas):**
 
 Agora, criamos classes completamente diferentes que "assinam" este contrato.
 
@@ -952,7 +948,7 @@ class Relatorio implements Exportavel {
 }
 ```
 
-**O Código Polimórfico (O Benefício):**
+**Código Polimórfico:**
 
 Criamos uma classe `ExportadorDeTexto` cujo método exportar não precisa saber se está lidando com uma `Fatura` ou um `Relatorio`. Ele só precisa saber que o objeto cumpre o contrato `Exportavel`.
 
@@ -976,7 +972,7 @@ exportador.exportar(meuRelatorio); // Funciona!
 
 Este design é extremamente flexível. Se amanhã precisarmos exportar um `CadastroDeProduto`, basta que a classe `Produto` implemente a interface `Exportavel`, e o nosso método `exportador.exportar()` funcionará com ela instantaneamente, sem que uma única linha de código precise ser alterada na classe `ExportadorDeTexto`.
 
-#### A Evolução das Interfaces (Java 8+)
+#### Evolução das Interfaces (Java 8+)
 
 Para aumentar sua flexibilidade, as interfaces no Java moderno (a partir da versão 8) foram aprimoradas e agora podem conter:
 
