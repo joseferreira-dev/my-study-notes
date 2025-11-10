@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "legislacao/contents/13-lei-13709.md",
+                "file": "linguagem-python/contents/01-introducao.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "13-lei-13709"
+              "title": "01-introducao"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "legislacao/contents/13-lei-13709.md",
+                "file": "linguagem-python/contents/01-introducao.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 13-lei-13709"
+              "title": "Sumário de 01-introducao"
             }
           }
         ],
@@ -171,6 +171,8 @@
   },
   "active": "5ced1b77f99b1190",
   "lastOpenFiles": [
+    "linguagem-python/contents/02-estruturas-de-dados-nativas.md",
+    "legislacao/contents/13-lei-13709.md",
     "legislacao/contents/img/lei-13709-responsabilidade-e-ressarcimento.png",
     "legislacao/contents/img/lei-13709-transferencia-internacional-de-dados.png",
     "legislacao/contents/img/lei-13709-compartilhamento-de-dados.png",
@@ -181,9 +183,7 @@
     "legislacao/contents/img/lei-13709-tratamento-de-dados-pessoais.png",
     "legislacao/contents/img/lei-13709-sancoes-aplicaveis - Copia.png",
     "legislacao/contents/img/lei-13709-cnpd-sintese - Copia.png",
-    "legislacao/contents/img/lei-13709-sancoes-aplicaveis.png",
     "legislacao/README.md",
-    "legislacao/contents/13-lei-13709.md",
     "legislacao/contents/legislacao-cremepe.md",
     "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
     "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
