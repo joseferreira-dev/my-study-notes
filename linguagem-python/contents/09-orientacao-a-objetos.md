@@ -4,7 +4,7 @@ Nos capítulos anteriores, construímos um sólido repertório de ferramentas e 
 
 A POO propõe uma mudança de perspectiva: em vez de focarmos em uma sequência de procedimentos e dados separados, passamos a organizar nosso código em torno de **objetos**. Um objeto é uma entidade autônoma que encapsula tanto os **dados (atributos)** que o descrevem quanto os **comportamentos (métodos)** que ele pode realizar. Essa abordagem nos permite criar componentes modulares, reutilizáveis e fáceis de manter, formando a base para a construção de software complexo e escalável.
 
-## Classes e Objetos: Os Pilares da POO
+## Classes e Objetos
 
 No coração da Programação Orientada a Objetos residem dois conceitos interdependentes: **classes** e **objetos**.
 
@@ -123,7 +123,7 @@ Com certeza. Dando continuidade ao capítulo, vamos agora explorar o primeiro do
 
 Com a compreensão do que são classes e objetos, estamos prontos para explorar os princípios que dão à POO seu poder e sua elegância. Estes são os conceitos de design que nos permitem construir software robusto, flexível e de fácil manutenção. Tradicionalmente, são quatro os pilares principais: **Encapsulamento**, **Herança**, **Polimorfismo** e **Abstração**.
 
-### Encapsulamento: Protegendo a Integridade do Objeto
+### Encapsulamento
 
 O **encapsulamento** é o pilar que trata de agrupar os dados (atributos) e os comportamentos (métodos) que os manipulam dentro de uma única unidade — o objeto —, ao mesmo tempo em que se **restringe o acesso direto** ao seu estado interno. A ideia é criar uma "cápsula" protetora ao redor dos dados, forçando o mundo exterior a interagir com o objeto apenas através de uma interface pública bem definida (seus métodos).
 
@@ -210,7 +210,7 @@ print(f"Saldo final: {conta_segura.get_saldo()}") # Saída: Saldo final: 500
 
 Com a classe encapsulada, o atributo `__saldo` está protegido. A única maneira de interagir com ele é através dos métodos `get_saldo()`, `depositar()` e `sacar()`, que contêm a lógica de negócio e as validações necessárias para garantir que o objeto permaneça sempre em um estado consistente e válido. O encapsulamento, portanto, é a base para a criação de objetos confiáveis e robustos.
 
-### Herança: Criando Hierarquias e Reutilizando Código
+### Herança
 
 A **herança** é o pilar que permite que uma classe, chamada de **subclasse** (ou classe filha), adquira os atributos e métodos de outra classe, chamada de **superclasse** (ou classe pai). Este é um dos mecanismos mais poderosos da POO, pois está focado em criar relacionamentos e hierarquias, promovendo o reuso de código e a modelagem de conceitos do mundo real de forma intuitiva.
 
@@ -221,7 +221,7 @@ Isso nos permite trabalhar com dois processos de design complementares:
 1. **Generalização:** É o processo de identificar características comuns entre várias classes e abstraí-las para uma superclasse mais genérica. Se temos classes `Carro`, `Moto` e `Caminhao`, podemos observar que todas possuem `marca` e `modelo`, e todas podem `acelerar()`. A criação da classe `Veiculo` para conter esses membros comuns é um ato de generalização.
 2. **Especialização:** É o processo inverso. Partimos de uma classe genérica e criamos subclasses mais específicas que, além de herdarem tudo da superclasse, adicionam seus próprios atributos e comportamentos exclusivos.
 
-#### A Herança na Prática em Python
+#### Herança na Prática
 
 Em Python, a herança é implementada com uma sintaxe simples: na definição da classe filha, passamos a classe pai entre parênteses.
 
@@ -231,7 +231,7 @@ class Subclasse(Superclasse):
 
 Vamos expandir nosso exemplo anterior, criando uma hierarquia de veículos.
 
-**A Superclasse (Generalização):**
+**Superclasse (Generalização):**
 
 ```python
 # Classe pai, ou superclasse
@@ -248,7 +248,7 @@ class Veiculo:
         print("Motor do veículo ligado.")
 ```
 
-**As Subclasses (Especialização):**
+**Subclasses (Especialização):**
 
 Agora, vamos criar classes Carro e Moto que herdam de Veiculo.
 
@@ -315,7 +315,7 @@ minha_nova_moto.ligar_motor() # Saída: A moto MT-07 deu a partida.
 
 A herança, portanto, nos permite criar uma base de código comum e reutilizável na superclasse, enquanto as subclasses se encarregam de implementar os detalhes e as especializações, resultando em um código mais organizado, modular e fácil de estender.
 
-### Polimorfismo: Muitas Formas, Uma Única Interface
+### Polimorfismo
 
 A **herança** nos permite criar hierarquias, mas o benefício mais poderoso que surge dessa estrutura é o **polimorfismo**. A palavra vem do grego e significa "muitas formas" (_poly_ = muitas, _morphos_ = forma). Na Programação Orientada a Objetos, o polimorfismo é a capacidade de objetos de classes diferentes responderem à mesma mensagem (a mesma chamada de método) de maneiras específicas e apropriadas para cada um.
 
@@ -323,7 +323,7 @@ Em termos práticos, o polimorfismo nos permite tratar um objeto de uma subclass
 
 Pense em um sistema de áudio com um botão "play". Este botão (a **interface**) envia a mesma mensagem `play()` para diferentes dispositivos. Se o dispositivo for um toca-fitas, ele começará a girar a fita. Se for um CD player, ele começará a girar o disco e a ler com o laser. Se for um serviço de streaming, ele iniciará o buffer da música pela internet. A mensagem é a mesma, mas o comportamento executado é diferente para cada objeto.
 
-#### Polimorfismo na Prática em Python
+#### Polimorfismo na Prática
 
 O polimorfismo em Python se manifesta de forma natural através da herança e da sobrescrita de métodos. Vamos utilizar nossa hierarquia de veículos para demonstrar.
 
@@ -410,7 +410,7 @@ fazer_comunicar(pessoa) # Saída: Olá, bom dia!
 
 Essa flexibilidade, onde o comportamento (os métodos que o objeto possui) é mais importante que a herança, é uma das características mais poderosas e distintivas do Python.
 
-### Abstração: Focando no Essencial
+### Abstração
 
 O último pilar, a **abstração**, é o processo de identificar as características e comportamentos essenciais de um objeto, expondo apenas uma visão simplificada e de alto nível, enquanto se oculta a complexidade dos detalhes de implementação. É o ato de criar um modelo que foca no **"o que"** um objeto faz, em vez de no **"como"** ele faz.
 
@@ -418,7 +418,7 @@ Pense em usar um controle remoto de televisão. A interface que você usa é uma
 
 Na programação, a abstração nos permite criar modelos de objetos que são mais fáceis de entender, usar e gerenciar. Ao projetar uma classe, decidimos quais atributos e métodos serão públicos (parte da interface do objeto) e quais serão detalhes de implementação internos (que devem ser encapsulados).
 
-#### Abstração na Prática em Python: Classes Abstratas
+#### Abstração na Prática com Classes Abstratas
 
 Em Python, o principal mecanismo para implementar a abstração formalmente é através de **Classes Base Abstratas** (_Abstract Base Classes_ - ABCs), fornecidas pelo módulo `abc`. Uma classe abstrata é uma classe que não pode ser instanciada diretamente. Seu propósito é servir como um **contrato** ou um modelo para suas subclasses.
 
@@ -558,7 +558,7 @@ Assim como os atributos, os métodos também podem ter diferentes escopos e cont
     print(Matematica.eh_par(7))  # Saída: False
     ```
 
-### Propriedades: A Forma Pythônica de Getters e Setters
+### Propriedades: Getters e Setters
 
 Em muitas linguagens, para garantir o encapsulamento, é comum criar métodos `getX()` e `setX()` para cada atributo. O Python oferece uma abordagem mais elegante e "Pythônica" para isso, através do decorador `@property`.
 
