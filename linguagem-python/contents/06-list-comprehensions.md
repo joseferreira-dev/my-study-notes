@@ -4,7 +4,7 @@ Nos capítulos anteriores, aprendemos a criar listas e a populá-las utilizando 
 
 Esta técnica, profundamente enraizada na filosofia "Pythônica", nos permite construir listas complexas a partir de outras sequências de forma declarativa, em uma única linha de código. Ela combina a iteração de um laço `for` com a lógica de criação de uma nova lista, resultando em um código que não é apenas mais curto, mas também frequentemente mais rápido e legível. Neste capítulo, vamos dissecar a anatomia de uma _list comprehension_, desde sua forma mais básica até a aplicação de lógicas condicionais para filtragem e transformação, dominando uma das ferramentas mais elegantes do arsenal da linguagem.
 
-## A Anatomia de uma List Comprehension
+## Anatomia de uma List Comprehension
 
 A melhor forma de entender o poder de uma _list comprehension_ é compará-la diretamente com o laço `for` tradicional. Imagine que queremos criar uma lista contendo o quadrado dos números de 0 a 9.
 
@@ -21,7 +21,7 @@ print(quadrados)
 
 Este processo envolve três passos claros: inicialização, iteração e adição.
 
-**A Abordagem com List Comprehension:**
+**Abordagem com List Comprehension:**
 
 ```python
 quadrados_comp = [i ** 2 for i in range(10)]
@@ -56,7 +56,7 @@ Podemos adicionar uma cláusula `if` ao final da _list comprehension_ para inclu
 
 Vamos usar essa estrutura para um exemplo clássico: criar uma lista contendo apenas os números pares de uma lista original.
 
-**A Abordagem Tradicional com `for` e `if`:**
+**Abordagem Tradicional com `for` e `if`:**
 
 ```python
 numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -68,7 +68,7 @@ for numero in numeros:
 print(pares) # Saída: [2, 4, 6, 8, 10]
 ```
 
-**A Abordagem com List Comprehension e `if`:**
+**Abordagem com List Comprehension e `if`:**
 
 ```python
 numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -94,7 +94,7 @@ Neste caso, a estrutura muda de lugar e a sintaxe se torna:
 - Um `if` de **filtragem** vem no final da compreensão.
 - Um `if...else` de **transformação** vem no início, como parte da expressão.
 
-**A Abordagem Tradicional com `for` e `if/else`:**
+**Abordagem Tradicional com `for` e `if/else`:**
 
 ```python
 numeros = [1, 2, 3, 4]
@@ -108,7 +108,7 @@ for numero in numeros:
 print(resultado) # Saída: [1, 4, 3, 16]
 ```
 
-**A Abordagem com List Comprehension e `if/else`:**
+**Abordagem com List Comprehension e `if/else`:**
 
 ```python
 numeros = [1, 2, 3, 4]
