@@ -133,9 +133,9 @@ for fruta in frutas:
 A saída será:
 
 ```
-Eu gosto de maçã.
-Eu gosto de banana.
-Eu gosto de laranja.
+Eu gosto de Maçã.
+Eu gosto de Banana.
+Eu gosto de Laranja.
 ```
 
 Neste exemplo, a cada iteração, a variável `fruta` recebe o valor de um dos itens da lista `frutas`, tornando o código extremamente legível e direto.
@@ -185,7 +185,7 @@ A capital de França é Paris.
 A capital de Japão é Tóquio.
 ```
 
-#### A Cláusula `else` no Laço `for`
+#### Cláusula `else` no Laço `for`
 
 Uma característica peculiar e interessante do Python é a possibilidade de adicionar uma cláusula `else` a um laço `for`. O bloco de código do `else` será executado **uma única vez**, ao final do laço, mas **somente se o laço for concluído naturalmente**, ou seja, se ele percorrer todos os seus itens sem ser interrompido.
 
