@@ -6,7 +6,7 @@ A realidade do hardware moderno é que nossos processadores são capazes de real
 
 Neste capítulo, faremos uma imersão nas ferramentas que o Python nos oferece para gerenciar a execução de múltiplas tarefas, visando otimizar o tempo de resposta e a performance de nossas aplicações. Começaremos distinguindo os conceitos fundamentais de execução serial e paralela e, em seguida, exploraremos as duas principais abordagens do Python para este desafio: os módulos `threading` e `multiprocessing`.
 
-## Execução Serial vs. Paralela: Uma Mudança de Paradigma
+## Execução Serial vs. Paralela
 
 Via de regra, a execução de código em Python segue o modelo serial. Uma única tarefa é enviada para um único núcleo do processador, que a executa do início ao fim. Somente após sua conclusão é que a próxima tarefa pode ser iniciada.
 
@@ -23,7 +23,7 @@ A imagem a seguir ilustra perfeitamente essa diferença conceitual:
 
 A capacidade de paralelizar rotinas é especialmente importante em domínios onde o Python brilha, como a ciência de dados e o aprendizado de máquina, nos quais operações matemáticas pesadas podem ser distribuídas entre vários núcleos para acelerar a análise e o treinamento de modelos.
 
-## As Ferramentas do Python: `threading` e `multiprocessing`
+## Ferramentas do Python: `threading` e `multiprocessing`
 
 Para explorar essas capacidades, o Python oferece duas abordagens principais em sua biblioteca padrão, cada uma adequada para um tipo diferente de problema:
 
@@ -143,7 +143,7 @@ Para evitar esses problemas, o módulo `threading` oferece vários mecanismos de
 - **Eventos:** Um mecanismo simples de comunicação, onde uma thread pode sinalizar um "evento" para outras threads, que podem estar esperando por ele.
 - **Barreiras:** Sincroniza um número fixo de threads em um ponto específico do código. Todas as threads devem chegar à barreira antes que qualquer uma delas possa continuar.
 
-## Paralelismo Real com o Módulo `multiprocessing`
+## Paralelismo com o Módulo `multiprocessing`
 
 Enquanto o `threading` nos oferece uma solução elegante para a **concorrência** em tarefas de E/S, ele é fundamentalmente limitado pelo GIL em tarefas que exigem uso intensivo da CPU. Para superar essa barreira e alcançar o **paralelismo real**, o Python nos oferece o módulo `multiprocessing`.
 
