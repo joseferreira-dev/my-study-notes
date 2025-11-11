@@ -14,7 +14,7 @@ Enquanto o C mantém sua vocação para desenvolvimento de sistemas, firmware e 
 
 Importante ressaltar que, embora o C++ tenha sido criado como uma extensão do C, as duas linguagens **não são totalmente compatíveis**. Muitos programas escritos em C podem ser compilados por compiladores C++, mas a recíproca nem sempre é verdadeira, especialmente devido às adições da orientação a objetos e às diferenças nos modelos de memória e bibliotecas.
 
-## Linguagem de Médio Nível: O Que Isso Significa?
+## Linguagem de Médio Nível
 
 Dizer que C é uma linguagem de médio nível não implica que ela seja limitada ou que se situe "no meio" em termos de poder. Pelo contrário, isso significa que C oferece um equilíbrio excepcional entre o controle do hardware e a abstração necessária para desenvolver programas complexos de maneira relativamente simples e portátil.
 
