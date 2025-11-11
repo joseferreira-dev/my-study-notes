@@ -420,7 +420,7 @@ As características que definem um conjunto são:
 - **Elementos Únicos:** Um conjunto não permite elementos duplicados. Se você tentar adicionar um item que já existe, a operação será simplesmente ignorada, sem gerar erro.
 - **Elementos Imutáveis:** Os itens armazenados em um conjunto devem ser de tipos de dados imutáveis (como números, strings ou tuplas). Listas e dicionários, por serem mutáveis, não podem ser elementos de um conjunto.
 
-### A Unicidade nos Conjuntos
+### Unicidade nos Conjuntos
 
 A garantia de unicidade é o pilar dos conjuntos. O Python determina se dois elementos são "iguais" com base em seu valor e seu tipo. Por exemplo, o número inteiro `1` e o número de ponto flutuante `1.0` são considerados o mesmo elemento, pois seu valor numérico é idêntico. O mesmo ocorre com o booleano `True`, que é numericamente equivalente a `1`.
 
@@ -436,7 +436,7 @@ Neste caso, `1`, `1.0` e `True` são tratados como o mesmo elemento, e o conjunt
 
 ```python
 dados_mistos = {1, "1", False, 0}
-print(dados_mistos) # Saída: {0, '1'}
+print(dados_mistos) # Saída: {False, 1, '1'}
 # False e 0 são tratados como o mesmo elemento. 1 e "1" são diferentes.
 ```
 
