@@ -4,7 +4,7 @@ Nos capítulos anteriores, focamos em como definir nossas próprias funções pa
 
 Essas funções são implementadas em um nível mais baixo da linguagem (geralmente em C), o que as torna altamente otimizadas e performáticas. Conhecê-las e saber quando utilizá-las é um passo fundamental para escrever um código mais limpo, mais legível e mais "Pythônico". Neste capítulo, faremos um tour por uma seleção das funções embutidas mais úteis e frequentemente utilizadas, agrupando-as por sua finalidade para facilitar o entendimento e a memorização.
 
-## Funções Simples: Um Arsenal de Ferramentas Essenciais
+## Funções Simples: Ferramentas Essenciais
 
 Em vez de analisar cada função isoladamente, vamos agrupá-las em categorias lógicas: funções para conversão de tipos, para análise de sequências, para avaliação lógica e para interação com o ambiente. Algumas delas, como `len()` e `print()`, já apareceram em capítulos anteriores; agora, vamos formalizar seu conhecimento e expandir suas funcionalidades.
 
@@ -15,7 +15,7 @@ Este grupo de funções é utilizado para converter dados de um tipo para outro 
 - **`int(x, base=10)`**: Converte um número ou uma string `x` para um número inteiro. Opcionalmente, pode-se especificar a `base` numérica da string de origem.
     
     ```python
-    print(int(3.9))      # Saída: 3 (trunca a parte decimal)
+    print(int(3.9))            # Saída: 3 (trunca a parte decimal)
     print(int("1010", base=2)) # Converte o binário "1010" para inteiro. Saída: 10
     ```
     
@@ -59,7 +59,7 @@ Este grupo de funções é utilizado para converter dados de um tipo para outro 
     print(type("abc")) # Saída: <class 'str'>
     ```
     
-- **`format(valor, formato)`**: Formata um `valor` de acordo com uma especificação de `formato`, similar à minilinguagem de formatação que vimos no capítulo de strings.
+- **`format(valor, formato)`**: Formata um `valor` de acordo com uma especificação de `formato`, similar à minilinguagem de formatação que vimos anteriormente.
     
     ```python
     print(format(1234.5678, ".2f")) # Saída: '1234.57'
