@@ -649,7 +649,7 @@ print(livro1 == livro3) # Chama __eq__ -> False
 
 Neste capítulo, realizamos a transição mais importante na jornada de um desenvolvedor Python: a passagem do pensamento procedural para o paradigma da **Programação Orientada a Objetos**. Deixamos de apenas escrever sequências de instruções para começar a modelar o mundo através de conceitos, criando um software que é um reflexo mais fiel e organizado dos problemas que buscamos resolver.
 
-Partimos dos fundamentos, distinguindo a **Classe** — o projeto, o molde abstrato — do **Objeto** — a instância concreta e viva que interage em nosso programa. Vimos como os objetos unificam seus dados (**atributos**) e suas operações (**méthods**) em uma única entidade coesa, formando os blocos de construção de qualquer sistema orientado a objetos.
+Partimos dos fundamentos, distinguindo a **Classe**, o projeto, o molde abstrato, do **Objeto**, a instância concreta e viva que interage em nosso programa. Vimos como os objetos unificam seus dados (**atributos**) e suas operações (**méthods**) em uma única entidade coesa, formando os blocos de construção de qualquer sistema orientado a objetos.
 
 Em seguida, mergulhamos nos quatro pilares que sustentam este paradigma, compreendendo como eles trabalham em conjunto para produzir um código robusto, flexível e de fácil manutenção:
 
