@@ -420,7 +420,7 @@ frase_original = "Eu gosto de programar em Java."
 nova_frase = frase_original.replace("Java", "Python")
 
 print(f"Frase Original: {frase_original}") # Saída: Frase Original: Eu gosto de programar em Java.
-print(f"Nova Frase: {nova_frase}")       # Saída: Nova Frase: Eu gosto de programar em Python.
+print(f"Nova Frase: {nova_frase}") # Saída: Nova Frase: Eu gosto de programar em Python.
 ```
 
 O método `.replace()` também aceita um terceiro argumento opcional, `count`, que especifica o número máximo de substituições a serem feitas, da esquerda para a direita.
@@ -445,15 +445,15 @@ Uma sequência de escape é uma combinação de caracteres, começando com uma b
 
 A seguir, uma lista das sequências de escape mais comuns e suas funções:
 
-|Sequência|Descrição|Exemplo de Uso|Resultado|
-|---|---|---|---|
-|`\n`|**Nova Linha** (Newline)|`'Linha 1\nLinha 2'`|Linha 1 Linha 2|
-|`\t`|**Tabulação Horizontal** (Tab)|`'Coluna1\tColuna2'`|Coluna1    Coluna2|
-|`\\`|**Barra Invertida**|`'C:\\caminho\\arquivo.txt'`|`C:\caminho\arquivo.txt`|
-|`\'`|**Aspas Simples**|`'Ela disse: \'Olá!\''`|`Ela disse: 'Olá!'`|
-|`\"`|**Aspas Duplas**|`"O livro se chama \"Python Essencial\"."`|`O livro se chama "Python Essencial".`|
-|`\r`|**Retorno de Carro** (Carriage Return)|`'Processando...\rFinalizado!'`|`Finalizado!` (sobrescreve o início)|
-|`\b`|**Retrocesso** (Backspace)|`'123\b4'`|`124` (apaga o `3`)|
+| Sequência | Descrição                              | Exemplo de Uso                             | Resultado                              |
+| --------- | -------------------------------------- | ------------------------------------------ | -------------------------------------- |
+| `\n`      | **Nova Linha** (Newline)               | `'Linha 1\nLinha 2'`                       | Linha 1 Linha 2                        |
+| `\t`      | **Tabulação Horizontal** (Tab)         | `'Coluna1\tColuna2'`                       | Coluna1    Coluna2                     |
+| `\\`      | **Barra Invertida**                    | `'C:\\caminho\\arquivo.txt'`               | `C:\caminho\arquivo.txt`               |
+| `\'`      | **Aspas Simples**                      | `'Ela disse: \'Olá!\''`                    | `Ela disse: 'Olá!'`                    |
+| `\"`      | **Aspas Duplas**                       | `"O livro se chama \"Python Essencial\"."` | `O livro se chama "Python Essencial".` |
+| `\r`      | **Retorno de Carro** (Carriage Return) | `'Processando...\rFinalizado!'`            | `Finalizado!` (sobrescreve o início)   |
+| `\b`      | **Retrocesso** (Backspace)             | `'123\b4'`                                 | `124` (apaga o `3`)                    |
 
 Vamos ver exemplos práticos para solidificar esses conceitos.
 
