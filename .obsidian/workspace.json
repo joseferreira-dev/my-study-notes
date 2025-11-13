@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-c/contents/02-tipos-de-dados-e-variaveis.md",
+                "file": "linguagem-c/contents/03-operadores.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-tipos-de-dados-e-variaveis"
+              "title": "03-operadores"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-c/contents/02-tipos-de-dados-e-variaveis.md",
+                "file": "linguagem-c/contents/03-operadores.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 02-tipos-de-dados-e-variaveis"
+              "title": "Sumário de 03-operadores"
             }
           }
         ],
@@ -169,10 +169,12 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "93e41518c267c517",
+  "active": "f9950e0646dc86e5",
   "lastOpenFiles": [
-    "linguagem-c/contents/02.md",
+    "linguagem-c/contents/00.md",
+    "linguagem-c/contents/03-operadores.md",
     "linguagem-c/contents/02-tipos-de-dados-e-variaveis.md",
+    "linguagem-c/contents/02.md",
     "linguagem-c/contents/02-tipos-dados-e-va.md",
     "linguagem-c/contents/01-conceitos-basicos.md",
     "legislacao/contents/11-lei-9784.md",
@@ -205,8 +207,6 @@
     "legislacao/contents/img/lei-13709-cnpd-sintese - Copia.png",
     "legislacao/README.md",
     "legislacao/contents/legislacao-cremepe.md",
-    "conhecimentos-pedagogicos-e-ept/contents/05-didatica.md",
-    "linguagem-java/contents/09-programacao-orientada-a-objetos.md",
     "algoritmos-e-estruturas-de-dados/contents/img",
     "algoritmos-e-estruturas-de-dados/contents",
     "algoritmos-e-estruturas-de-dados",
