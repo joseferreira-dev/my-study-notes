@@ -1,12 +1,12 @@
 # Capítulo 6 – Funções Matemáticas
 
-Nos capítulos anteriores, exploramos os tipos de dados, variáveis, operadores e a manipulação de caracteres e strings, construindo uma base sólida para a programação em C e C++. Agora, avançaremos para um domínio essencial em muitas aplicações: as operações matemáticas. Embora os operadores aritméticos básicos (`+`, `-`, `*`, `/`, `%`) sejam suficientes para cálculos simples, frequentemente nos deparamos com a necessidade de realizar operações mais complexas, como cálculo de raízes quadradas, potenciação, funções trigonométricas, logaritmos e arredondamentos.
+Nos capítulos anteriores, exploramos os tipos de dados, variáveis, operadores e a manipulação de caracteres e strings. Construímos uma base sólida para a programação em C e C++, focando na aritmética básica e na lógica. No entanto, o mundo real exige mais do que simples adição ou comparação. Frequentemente, nos deparamos com a necessidade de realizar operações complexas, como cálculo de raízes quadradas, potenciação, funções trigonométricas para geometria ou física, logaritmos para medição de complexidade ou crescimento, e arredondamentos para finanças.
 
-As linguagens C e C++ fornecem um rico conjunto de funções matemáticas, agrupadas em bibliotecas padrão, que abstraem a complexidade desses cálculos, permitindo que o programador se concentre na lógica da aplicação. Este capítulo se dedicará a explorar essas ferramentas. Iniciaremos discutindo a inclusão dos cabeçalhos necessários (`<math.h>` em C e `<cmath>` em C++) e, em seguida, apresentaremos algumas das funções matemáticas mais utilizadas, como `sqrt` para raiz quadrada, `round` para arredondamento e `log` para logaritmo natural, ilustrando seu uso com exemplos práticos em C.
+Os operadores aritméticos básicos (`+`, `-`, `*`, `/`, `%`) são insuficientes para esses cenários. A filosofia do C é manter o núcleo da linguagem enxuto e fornecer funcionalidades complexas através de bibliotecas. Para operações matemáticas, essa funcionalidade é agrupada na **biblioteca matemática padrão**.
 
-Posteriormente, forneceremos uma visão mais ampla de outras funções matemáticas relevantes disponíveis, detalhando o propósito de cada uma. Ao final deste capítulo, você estará familiarizado com as principais funções matemáticas e saberá como incorporá-las em seus programas para resolver problemas que exigem cálculos numéricos mais sofisticados.
+Este capítulo se dedicará a explorar essas ferramentas. Iniciaremos discutindo a inclusão dos cabeçalhos necessários (`<math.h>` em C e `<cmath>` em C++) e uma etapa crucial de compilação (a _linkedição_). Em seguida, apresentaremos as funções matemáticas mais utilizadas, agrupadas por categoria: potência e raízes, arredondamento, funções exponenciais/logarítmicas e trigonométricas. Também abordaremos tópicos que frequentemente causam confusão, como a diferença entre `abs` e `fabs`, e as armadilhas de se criar funções `max`/`min` em C. Ao final, você estará familiarizado com as principais funções e saberá como incorporá-las para resolver problemas que exigem cálculos sofisticados.
 
-## A Biblioteca Matemática: `<math.h>` em C e `<cmath>` em C++
+## Biblioteca Matemática: `<math.h>` e `<cmath>`
 
 Para ter acesso às funções matemáticas em C, é necessário incluir o arquivo de cabeçalho da biblioteca matemática padrão, que é o `<math.h>`:
 
@@ -14,445 +14,488 @@ Para ter acesso às funções matemáticas em C, é necessário incluir o arquiv
 #include <math.h>
 ```
 
-Este cabeçalho declara as funções matemáticas, bem como algumas macros e tipos relacionados. A maioria das funções em `<math.h>` opera com argumentos do tipo `double` e retorna um `double`. Existem também versões dessas funções para os tipos `float` (com sufixo `f`, ex: `sqrtf()`) e `long double` (com sufixo `l`, ex: `sqrtl()`), especialmente a partir do padrão C99.
+Este cabeçalho declara os protótipos de dezenas de funções matemáticas (como `sqrt`, `pow`, `sin`, etc.), bem como macros e tipos relacionados (como `M_PI` para o valor de Pi em alguns sistemas, embora não seja parte do padrão C, ou `NAN` para "Not a Number").
 
-**Observação sobre C++:** Em C++, a biblioteca matemática do C está disponível através do cabeçalho `<cmath>`. É uma prática recomendada em C++ usar `<cmath>` em vez de `<math.h>`.
+A maioria das funções em `<math.h>` opera com o tipo `double`, que oferece alta precisão. Elas aceitam `double` como argumentos e retornam um `double`. O padrão C99 expandiu isso, adicionando versões para `float` (com sufixo `f`, ex: `sqrtf()`) e `long double` (com sufixo `l`, ex: `sqrtl()`).
 
-```c
+### Abordagem do C++: `<cmath>`
+
+Em C++, embora `#include <math.h>` funcione por razões de compatibilidade, a forma idiomática e preferida é usar o cabeçalho `<cmath>`:
+
+```cpp
 #include <cmath>
 ```
 
-Além disso, em C++, muitas dessas funções são sobrecarregadas para aceitar diferentes tipos de argumentos (como `float`, `double`, `long double`) e podem estar dentro do namespace `std` (ex: `std::sqrt()`, `std::round()`).
+Usar `<cmath>` (em vez de `<math.h>`) traz duas vantagens principais:
 
-## Funções Matemáticas Comuns
+1. **Namespace `std`:** As funções são (primariamente) colocadas dentro do namespace `std` (ex: `std::sqrt()`, `std::log()`). Isso evita poluir o escopo global e previne conflitos de nomes.
+2. **Sobrecarga de Funções (Overloading):** O C++ usa sobrecarga para fornecer versões da mesma função para diferentes tipos, tornando o código mais limpo.
 
-Vamos explorar algumas das funções matemáticas mais frequentemente utilizadas.
+```cpp
+// Em C, você precisa de funções diferentes:
+float       raiz_f = sqrtf(4.0f);
+double      raiz_d = sqrt(9.0);
+long double raiz_l = sqrtl(16.0L);
+
+// Em C++, o compilador escolhe a versão correta:
+float       raiz_f = std::sqrt(4.0f);   // Chama std::sqrt(float)
+double      raiz_d = std::sqrt(9.0);    // Chama std::sqrt(double)
+long double raiz_l = std::sqrt(16.0L);  // Chama std::sqrt(long double)
+```
+
+### Armadilha de Compilação: Linkedição com `-lm`
+
+Este é um dos problemas mais comuns enfrentados por iniciantes em C, especialmente em ambientes Linux ou macOS.
+
+Considere este código simples:
+
+**`raiz.c`**
+
+```c
+#include <stdio.h>
+#include <math.h> // Incluiu o cabeçalho
+
+int main() {
+    double r = sqrt(9.0); // Usa a função sqrt
+    printf("A raiz é %f\n", r);
+    return 0;
+}
+```
+
+Se você compilar apenas com `gcc raiz.c -o raiz`, o processo de compilação pode falhar na etapa final (linkedição) com um erro como **"undefined reference to `sqrt`"** (referência indefinida para `sqrt`).
+
+**Por quê?**
+
+1. `#include <math.h>` apenas informa ao _compilador_ que a função `sqrt` existe (seu protótipo).
+2. O _código_ real da função `sqrt` (o código de máquina) reside em uma biblioteca separada, chamada `libm` (biblioteca matemática).
+3. Por padrão, o _linkeditor_ (a parte do `gcc` que junta tudo) não procura nessa biblioteca para economizar tempo.
+
+**Solução:** Você deve instruir manualmente o linkeditor a incluir a biblioteca matemática usando a flag **`-lm`**:
+
+```bash
+# O comando correto para compilar:
+gcc raiz.c -o raiz -lm
+```
+
+- `-l` é a flag para "linkar" (link) uma biblioteca.
+- `m` é o nome da biblioteca (`lib**m**`).
+
+Esta etapa não é geralmente necessária em IDEs modernas como Visual Studio, que configuram isso automaticamente, mas é fundamental ao compilar manualmente na linha de comando.
+
+## Funções de Potência e Raízes
+
+Este grupo de funções lida com exponenciação e extração de raízes.
+
+### Potenciação: `pow()`
+
+A função `pow()` é usada para elevar um número (base) a uma potência (expoente).
+
+- **Protótipo:** `double pow(double x, double y);`
+- Calcula $x^y$ ($x$ elevado a $y$).
+- `powf(float, float)` e `powl(long double, long double)` também existem.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double r1 = pow(2.0, 3.0); // 2 ao cubo
+    printf("pow(2.0, 3.0) = %.1f\n", r1); // Saída: 8.0
+
+    double r2 = pow(10.0, -1.0); // 10 elevado a -1
+    printf("pow(10.0, -1.0) = %.1f\n", r2); // Saída: 0.1
+
+    double r3 = pow(100.0, 0.5); // 100 elevado a 0.5 (raiz quadrada)
+    printf("pow(100.0, 0.5) = %.1f\n", r3); // Saída: 10.0
+    
+    // pow(base negativa, expoente fracionário) não é real
+    double r4 = pow(-4.0, 0.5); // Raiz quadrada de -4
+    printf("pow(-4.0, 0.5) = %f\n", r4); // Saída: nan (Not a Number)
+
+    return 0;
+}
+```
 
 ### Raiz Quadrada: `sqrt()`
 
-A função `sqrt()` calcula a raiz quadrada de um número não negativo.
+Embora `pow(x, 0.5)` funcione, `sqrt()` é mais rápida e precisa para calcular a raiz quadrada.
 
-- **Protótipo em C (para `double`):** `double sqrt(double x);`
-- Ela retorna a raiz quadrada de `x`. Se `x` for negativo, o comportamento pode ser um erro de domínio (definido pela implementação, frequentemente resultando em `NaN` - Not a Number - e setando a variável global `errno`).
-
-**Exemplo em C:**
+- **Protótipo:** `double sqrt(double x);`
+- Calcula $\sqrt{x}$.
+- **Restrição:** `x` deve ser não-negativo ( $\ge 0$ ). Se `x` for negativo, a função retorna `NaN` (Not a Number) e define a variável de erro global `errno` como `EDOM` (Erro de Domínio).
 
 ```c
 #include <stdio.h>
-#include <math.h> // Necessário para sqrt()
+#include <math.h>
+#include <errno.h> // Para EDOM
 
 int main() {
-    double numero = 25.0;
-    double raiz;
+    double num_positivo = 25.0;
+    double num_negativo = -9.0;
 
-    if (numero >= 0) {
-        raiz = sqrt(numero);
-        printf("A raiz quadrada de %.2f é %.2f\n", numero, raiz); // Saída: A raiz quadrada de 25.00 é 5.00
+    // Caso 1: Número positivo
+    double raiz_pos = sqrt(num_positivo);
+    printf("A raiz quadrada de %.2f é %.2f\n", num_positivo, raiz_pos); // Saída: 5.00
+
+    // Caso 2: Número negativo
+    errno = 0; // Limpa o indicador de erro
+    double raiz_neg = sqrt(num_negativo);
+    
+    if (errno == EDOM) {
+        printf("Erro: Não é possível calcular a raiz de um número negativo (EDOM).\n");
     } else {
-        printf("Não é possível calcular a raiz quadrada de um número negativo.\n");
+        // 'nan' (Not a Number) é um valor especial de ponto flutuante
+        printf("A raiz de %.2f é %f\n", num_negativo, raiz_neg); // Saída: nan
     }
 
-    double outro_numero = 16.7;
-    printf("A raiz quadrada de %.1f é %f\n", outro_numero, sqrt(outro_numero)); 
-    // Saída: A raiz quadrada de 16.7 é 4.086563 (a formatação de saída pode variar)
-
     return 0;
 }
 ```
 
-### Arredondamento: `round()`
+### Raiz Cúbica: `cbrt()` (C99)
 
-A função `round()` arredonda um número de ponto flutuante para o inteiro mais próximo.
+A função `cbrt()` calcula a raiz cúbica.
 
-- **Protótipo em C (C99 em diante, para `double`):** `double round(double x);`
-- Existem também `roundf()` para `float` e `roundl()` para `long double`.
-- Ela retorna o valor de `x` arredondado para o inteiro mais próximo. Se `x` estiver exatamente no meio (ex: 2.5), geralmente arredonda para o inteiro mais distante de zero (ex: 2.5 -> 3.0, -2.5 -> -3.0), mas o comportamento exato pode depender da implementação do modo de arredondamento.
-
-**Exemplo em C (requer compilador com suporte a C99 ou posterior):**
+- **Protótipo:** `double cbrt(double x);`
+- Ao contrário de `sqrt`, `cbrt` **funciona perfeitamente com números negativos**.
 
 ```c
 #include <stdio.h>
-#include <math.h> // Necessário para round()
+#include <math.h>
 
 int main() {
-    double num1 = 16.7;
-    double num2 = 16.3;
-    double num3 = 16.5;
-    double num4 = -16.7;
+    printf("cbrt(27.0) = %.1f\n", cbrt(27.0)); // Saída: 3.0
+    printf("cbrt(-8.0) = %.1f\n", cbrt(-8.0)); // Saída: -2.0
+    return 0;
+}
+```
 
-    printf("round(%.1f) = %.1f\n", num1, round(num1)); // Saída: round(16.7) = 17.0
-    printf("round(%.1f) = %.1f\n", num2, round(num2)); // Saída: round(16.3) = 16.0
-    printf("round(%.1f) = %.1f\n", num3, round(num3)); // Saída: round(16.5) = 17.0 (ou pode ser 16.0 dependendo do modo)
-    printf("round(%.1f) = %.1f\n", num4, round(num4)); // Saída: round(-16.7) = -17.0
+### Hipotenusa: `hypot()` (C99)
+
+A função `hypot()` calcula a hipotenusa de um triângulo retângulo com catetos `x` e `y`.
+
+- **Protótipo:** `double hypot(double x, double y);`
+- Calcula $\sqrt{x^2 + y^2}$.
+
+Pode parecer desnecessário, já que `sqrt(pow(x, 2) + pow(y, 2))` faria o mesmo. No entanto, `hypot` é muito superior. Se `x` ou `y` forem números muito grandes (ex: $10^{200}$), `x*x` causaria um **overflow** (estouro), resultando em infinito, mesmo que o resultado final fosse representável. `hypot` usa um algoritmo interno que evita esse overflow, tornando-o numericamente estável e seguro.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    printf("hypot(3.0, 4.0) = %.1f\n", hypot(3.0, 4.0)); // Saída: 5.0
+    return 0;
+}
+```
+
+## Funções de Arredondamento e Truncamento
+
+Este grupo de funções é usado para converter valores de ponto flutuante em inteiros (armazenados como `double`).
+
+- **`floor(x)`:** Retorna o maior valor inteiro que é _menor ou igual_ a `x`. (Sempre arredonda para baixo).
+- **`ceil(x)`:** Retorna o menor valor inteiro que é _maior ou igual_ a `x`. (Sempre arredonda para cima).
+- **`trunc(x)` (C99):** Retorna o valor de `x` com a parte fracionária removida. (Sempre arredonda "em direção a zero").
+- **`round(x)` (C99):** Retorna o inteiro _mais próximo_ de `x`. Se `x` estiver exatamente no meio (ex: `2.5`), arredonda para o inteiro mais distante de zero (`2.5` vira `3.0`, `-2.5` vira `-3.0`).
+
+A tabela a seguir demonstra o comportamento dessas funções, que é a melhor forma de entendê-las:
+
+| **Valor de `x`** | **`floor(x)`** | **`ceil(x)`** | **`trunc(x)`** | **`round(x)`** |
+| ---------------- | -------------- | ------------- | -------------- | -------------- |
+| **2.7**          | 2.0            | 3.0           | 2.0            | 3.0            |
+| **2.3**          | 2.0            | 3.0           | 2.0            | 2.0            |
+| **2.5**          | 2.0            | 3.0           | 2.0            | 3.0            |
+| **-2.7**         | -3.0           | -2.0          | -2.0           | -3.0           |
+| **-2.3**         | -3.0           | -2.0          | -2.0           | -2.0           |
+| **-2.5**         | -3.0           | -2.0          | -2.0           | -3.0           |
+
+Note que a conversão de tipo (casting) para `(int)` se comporta exatamente como `trunc()` para números positivos, mas pode diferir para negativos (embora em C/C++ modernos `(int)-2.7` seja `-2`, igual `trunc`).
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double val_pos = 2.7;
+    double val_neg = -2.7;
+
+    printf("Valor Positivo: %.1f\n", val_pos);
+    printf("  floor: %.1f\n", floor(val_pos)); // Saída: 2.0
+    printf("  ceil:  %.1f\n", ceil(val_pos));  // Saída: 3.0
+    printf("  trunc: %.1f\n", trunc(val_pos)); // Saída: 2.0
+    printf("  round: %.1f\n", round(val_pos)); // Saída: 3.0
     
-    // Para obter um resultado inteiro:
-    int resultado_inteiro = (int)round(num1);
-    printf("Arredondado para o inteiro mais próximo de %.1f: %d\n", num1, resultado_inteiro); // Saída: 17
+    printf("\nValor Negativo: %.1f\n", val_neg);
+    printf("  floor: %.1f\n", floor(val_neg)); // Saída: -3.0
+    printf("  ceil:  %.1f\n", ceil(val_neg));  // Saída: -2.0
+    printf("  trunc: %.1f\n", trunc(val_neg)); // Saída: -2.0
+    printf("  round: %.1f\n", round(val_neg)); // Saída: -3.0
+    
+    // Para obter um resultado 'int'
+    int resultado_inteiro = (int)round(val_pos);
+    printf("\nResultado de round(%.1f) como int: %d\n", val_pos, resultado_inteiro); // Saída: 3
 
     return 0;
 }
 ```
 
-Se você estiver usando um compilador C mais antigo que não suporte `round()` (anterior ao C99), pode-se simular o arredondamento para o inteiro mais próximo usando `floor(x + 0.5)` para números positivos e `ceil(x - 0.5)` para números negativos, ou uma lógica condicional.
+## Funções Exponenciais e Logarítmicas
 
-### Logaritmo Natural: `log()`
+Este grupo lida com a constante de Euler (_e_ ≈ 2.71828) e seus inversos, os logaritmos.
 
-A função `log()` calcula o logaritmo natural (base _e_) de um número.
+- **`exp(x)`:** Retorna $e^x$ (a função exponencial natural).
+- **`log(x)`:** Retorna o logaritmo natural (base _e_) de `x`. ( $\ln x$ ). `x` deve ser positivo.
+- **`log10(x)`:** Retorna o logaritmo na base 10 de `x`. `x` deve ser positivo.
+- **`log2(x)` (C99):** Retorna o logaritmo na base 2 de `x`. `x` deve ser positivo.
+- **`expm1(x)` (C99):** Calcula $e^x - 1$. Por que usar isso? Para valores de `x` muito próximos de zero (ex: `1e-10`), `exp(x)` será `1.000...001`. `exp(x) - 1` pode sofrer um erro de cancelamento catastrófico (perda de precisão). `expm1(x)` é um algoritmo especializado que mantém a precisão nesse caso.
 
-- **Protótipo em C (para `double`):** `double log(double x);`
-- Ela retorna o logaritmo natural de `x`. Se `x` for negativo, ocorre um erro de domínio. Se `x` for zero, ocorre um erro de polo (divisão por zero).
+### Fórmula de Mudança de Base
 
-**Exemplo em C:**
+As bibliotecas C/C++ fornecem `log` (base _e_), `log10` e `log2`. E se você precisar de $\log_7(x)$? Você deve usar a fórmula matemática de mudança de base:
+
+$\log_b(x) = \frac{\log_k(x)}{\log_k(b)}$
+
+Onde `k` pode ser qualquer base (como _e_ ou 10).
 
 ```c
 #include <stdio.h>
-#include <math.h> // Necessário para log() e exp()
+#include <math.h>
 
 int main() {
-    double valor = 10.0;
-    double log_natural = log(valor);
-    printf("O logaritmo natural de %.2f é %f\n", valor, log_natural);
+    double valor = 100.0;
+    
+    // e^x
+    printf("exp(1.0) = %f (Valor de 'e')\n", exp(1.0)); // Saída: 2.718282
 
-    // Para calcular logaritmo em outra base, use a propriedade: log_b(x) = log_e(x) / log_e(b)
-    double log_base10 = log(valor) / log(10.0);
-    printf("O logaritmo na base 10 de %.2f é %f\n", valor, log_base10);
-
-    // A função exp(x) calcula e^x
-    printf("e elevado a %f é aproximadamente %.2f\n", log_natural, exp(log_natural)); // Deve ser próximo de 'valor'
+    // Logaritmos
+    printf("log(%.1f) (base e) = %f\n", exp(1.0), log(exp(1.0))); // Saída: 1.000000
+    printf("log10(%.1f) = %f\n", valor, log10(valor));       // Saída: 2.000000
+    printf("log2(8.0) = %f\n", log2(8.0));                   // Saída: 3.000000
+    
+    // Mudança de base: Calculando log na base 7 de 100
+    double log_base7 = log(100.0) / log(7.0); 
+    // ou: log10(100.0) / log10(7.0) -> 2.0 / log10(7.0)
+    
+    printf("log7(100.0) = %f\n", log_base7); // Saída: 2.366589
+    
+    // Verificação: pow(7.0, log_base7) deve ser 100
+    printf("Verificação: 7^%f = %.1f\n", log_base7, pow(7.0, log_base7)); // Saída: 100.0
 
     return 0;
 }
 ```
 
-Para logaritmo na base 10, a biblioteca `<math.h>` também fornece a função `log10()`. Para logaritmo na base 2 (a partir de C99), existe `log2()`.
+## Funções Trigonométricas
 
-### Máximo e Mínimo: `max()` e `min()`
+Este conjunto de funções é essencial para geometria, física e gráficos.
 
-**Em C padrão (`<math.h>`):** As funções `max(x,y)` e `min(x,y)` como funções de biblioteca padrão para encontrar o máximo ou mínimo entre dois números **não existem diretamente em C padrão (`<math.h>`)** da mesma forma que em C++. No C99, foram introduzidas as funções `fmax()`, `fmaxf()`, `fmaxl()` e `fmin()`, `fminf()`, `fminl()` para tipos de ponto flutuante, que veremos na próxima seção.
+### Conceito de Radianos
 
-Para inteiros, ou para uma abordagem mais geral em C, você normalmente implementaria isso usando o operador condicional (ternário) ou uma pequena função/macro:
+A armadilha número um das funções trigonométricas em C/C++ é: **elas SEMPRE usam radianos, NUNCA graus.**
 
-**Exemplo de implementação de máximo e mínimo em C:**
+- $2\pi \text{ radianos} = 360 \text{ graus}$
+- $\pi \text{ radianos} = 180 \text{ graus}$
+
+Para converter:
+
+- `radianos = graus * (PI / 180.0)`
+- `graus = radianos * (180.0 / PI)`
+
+O C não define uma constante `PI`. O cabeçalho `math.h` _pode_ definir `M_PI` (um padrão POSIX, mas não C), mas a forma 100% portátil de se obter Pi é usar `const double PI = acos(-1.0);`.
+
+### Funções Diretas
+
+- **`sin(x)`:** Seno de `x` (com `x` em radianos).
+- **`cos(x)`:** Cosseno de `x` (com `x` em radianos).
+- **`tan(x)`:** Tangente de `x` (com `x` em radianos).
+- **`sinh(x)`, `cosh(x)`, `tanh(x)`:** Funções hiperbólicas.
+
+### Funções Inversas (Arco)
+
+- **`asin(x)`:** Arco seno. Retorna o ângulo (em radianos) cujo seno é `x`. `x` deve estar em `[-1.0, 1.0]`. Retorna em `[-PI/2, PI/2]`.
+- **`acos(x)`:** Arco cosseno. `x` deve estar em `[-1.0, 1.0]`. Retorna em `[0, PI]`.
+- **`atan(x)`:** Arco tangente. Retorna em `[-PI/2, PI/2]`.
+- **`atan2(y, x)`:** A função "inteligente" do arco tangente. Ela calcula `atan(y/x)`, mas usa os sinais de `y` e `x` para determinar o quadrante correto, retornando um ângulo em `[-PI, PI]`. Ela também lida com `x=0` (evitando divisão por zero).
 
 ```c
 #include <stdio.h>
+#include <math.h>
 
-// Usando macros (cuidado com múltiplos efeitos colaterais se os argumentos tiverem)
-#define MAX_C(a, b) ((a) > (b) ? (a) : (b))
-#define MIN_C(a, b) ((a) < (b) ? (a) : (b))
+int main() {
+    const double PI = acos(-1.0);
+    double angulo_graus = 45.0;
+    
+    // 1. Converter graus para radianos
+    double angulo_rad = angulo_graus * (PI / 180.0); // 45 graus = PI/4 radianos
+    
+    printf("PI = %f\n", PI);
+    printf("sin(45 deg) = %f\n", sin(angulo_rad)); // Aprox. 0.707
+    printf("cos(45 deg) = %f\n", cos(angulo_rad)); // Aprox. 0.707
+    printf("tan(45 deg) = %f\n", tan(angulo_rad)); // Aprox. 1.0
 
-// Usando funções (mais seguro em relação a efeitos colaterais)
+    // 2. Por que atan2 é melhor que atan
+    double x1 = 1.0, y1 = 1.0;   // Quadrante 1
+    double x2 = -1.0, y2 = -1.0; // Quadrante 3
+    
+    // atan(y/x) não consegue distinguir
+    printf("atan(1/1) = %f rad\n", atan(y1/x1));   // Aprox. 0.785 (45 deg)
+    printf("atan(-1/-1) = %f rad\n", atan(y2/x2)); // Aprox. 0.785 (45 deg) - ERRADO!
+    
+    // atan2 sabe o quadrante
+    printf("atan2(1, 1) = %f rad\n", atan2(y1, x1));     // Aprox. 0.785 (45 deg)
+    printf("atan2(-1, -1) = %f rad\n", atan2(y2, x2)); // Aprox. -2.356 (-135 deg) - CORRETO!
+
+    return 0;
+}
+```
+
+## Funções de Valor Absoluto
+
+Este é um ponto comum de confusão, pois existem funções diferentes para tipos diferentes.
+
+- **`abs(int x)`:** Fica em `<stdlib.h>`. Retorna o valor absoluto de um **`int`**.
+- **`labs(long int x)`:** Fica em `<stdlib.h>`. Retorna o valor absoluto de um **`long int`**.
+- **`llabs(long long int x)` (C99):** Fica em `<stdlib.h>`. Retorna o valor absoluto de um **`long long int`**.
+- **`fabs(double x)`:** Fica em `<math.h>`. Retorna o valor absoluto de um **`double`**. `float`s são promovidos para `double`.
+
+**O que acontece se você misturar?**
+
+`abs(-5.5)`: O `double -5.5` será truncado para `int -5`. `abs(-5)` retorna `5`. Você perdeu a parte fracionária.
+
+**Em C++:** A biblioteca `<cmath>` fornece `std::abs` que é _sobrecarregado_ para todos os tipos (e `std::fabs` para compatibilidade), simplificando a escolha.
+
+```cpp
+#include <stdio.h>
+#include <stdlib.h> // Para abs()
+#include <math.h>   // Para fabs()
+
+int main() {
+    int num_int = -5;
+    double num_double = -7.75;
+
+    printf("abs(%d) = %d\n", num_int, abs(num_int));     // Saída: 5
+    printf("fabs(%.2f) = %.2f\n", num_double, fabs(num_double)); // Saída: 7.75
+    
+    // A armadilha
+    printf("abs(%.2f) = %d\n", num_double, abs(num_double)); // Errado! Saída: 7
+    // O compilador (com warnings) converte -7.75 para -7 (int) *antes* de chamar abs().
+    
+    return 0;
+}
+```
+
+## Funções de Máximo e Mínimo
+
+Encontrar o maior ou o menor de dois números é uma operação trivial, mas cheia de armadilhas em C.
+
+**Em C Padrão (C89):** Não existem funções `max(x, y)` ou `min(x, y)`.
+
+**Opção 1: Funções Manuais (Seguro, mas não genérico)**
+
+```c
 int max_int(int a, int b) {
     return (a > b) ? a : b;
 }
-
-int min_int(int a, int b) {
-    return (a < b) ? a : b;
-}
-
-int main() {
-    int x = 10, y = 20;
-    printf("Usando macros:\n");
-    printf("O máximo entre %d e %d é %d\n", x, y, MAX_C(x, y));     // Saída: 20
-    printf("O mínimo entre %d e %d é %d\n", x, y, MIN_C(x, y));     // Saída: 10
-
-    printf("\nUsando funções:\n");
-    printf("O máximo entre %d e %d é %d\n", x, y, max_int(x, y)); // Saída: 20
-    printf("O mínimo entre %d e %d é %d\n", x, y, min_int(x, y)); // Saída: 10
-
-    double d1 = 5.5, d2 = 5.1;
-    // Para doubles, a macro funcionaria, mas uma função específica seria melhor
-    printf("\nO máximo entre %.1f e %.1f (macro) é %.1f\n", d1, d2, MAX_C(d1, d2)); // Saída: 5.5
-
-    return 0;
+double max_double(double a, double b) {
+    return (a > b) ? a : b;
 }
 ```
 
-**Observação sobre C++:** Em C++, a biblioteca padrão (`<algorithm>` ou, para tipos numéricos, também `<cmath>` pode trazer algumas) oferece `std::max(x,y)` e `std::min(x,y)` que são templates e funcionam para diversos tipos de dados.
+Isso é seguro, mas você precisa de uma função para cada tipo.
+
+**Opção 2: Macros (Genérico, mas PERIGOSO)**
 
 ```c
+#define MAX_C(a, b) ((a) > (b) ? (a) : (b))
+```
+
+Isso parece funcionar para `int`, `double`, etc.
+
+Armadilha da Macro (Múltipla Avaliação): O que acontece se você fizer `MAX_C(x++, y++)`?
+
+O pré-processador expande para: `((x++) > (y++) ? (x++) : (y++))`
+
+Suponha `x = 5`, `y = 10`.
+
+1. `(5 > 10)` é avaliado.
+2. `x` vira `6`. `y` vira `11`.
+3. A condição é falsa, então o lado `(y++)` é executado.
+4. O valor `11` é retornado. `y` vira `12`. O resultado é `11`, mas `x` foi incrementado uma vez (para `6`) e `y` foi incrementado duas vezes (para `12`). Isso é um bug catastrófico.
+
+**Opção 3: C99 `fmax()` e `fmin()` (Seguro, mas limitado)**
+
+O C99 introduziu `fmax(double x, double y)` e `fmin(double x, double y)` em `<math.h>`.
+
+- Elas são seguras e funcionam corretamente.
+- Elas só funcionam para tipos de **ponto flutuante** (`double`, `float` com `fmaxf`, `long double` com `fmaxl`). Elas _não_ são para `int`.
+
+**Opção 4: C++ (Solução Correta)**
+
+C++ oferece `std::max` e `std::min` na biblioteca `<algorithm>`. Elas são templates, o que significa que são genéricas e seguras.
+
+```cpp
 // Exemplo em C++
 #include <iostream>
 #include <algorithm> // Para std::max e std::min
 
 int main() {
     int x = 100, y = 50;
-    std::cout << "O máximo entre " << x << " e " << y << " é " << std::max(x, y) << std::endl; // Saída: 100
-    std::cout << "O mínimo entre " << x << " e " << y << " é " << std::min(x, y) << std::endl; // Saída: 50
+    std::cout << "O máximo é " << std::max(x, y) << std::endl; // Saída: 100
+    
+    double d1 = 5.5, d2 = 5.1;
+    std::cout << "O mínimo é " << std::min(d1, d2) << std::endl; // Saída: 5.1
+    
+    int a = 5;
+    int b = 10;
+    // std::max é seguro, 'a' e 'b' são incrementados apenas uma vez.
+    std::cout << "Max(a++, b++) = " << std::max(a++, b++); // Saída: 10
+    std::cout << "a final = " << a << ", b final = " << b << std::endl; // Saída: a=6, b=11
     return 0;
 }
 ```
 
-### Outras Funções Matemáticas Relevantes
+## Outras Funções de Ponto Flutuante
 
-A biblioteca `<math.h>` (e `<cmath>` em C++) oferece uma vasta gama de outras funções matemáticas. A tabela abaixo lista algumas das mais populares, seguidas de explicações e exemplos em C.
+A tabela a seguir lista o restante das funções úteis de `<math.h>`, muitas das quais são do C99.
 
-|Função|Descrição|
-|---|---|
-|`abs(x)`|Retorna o valor absoluto de um inteiro `x` (Na verdade, `abs` para inteiros está em `<stdlib.h>`. Em `<math.h>` temos `fabs` para `double`)|
-|`acos(x)`|Retorna o arco cosseno de `x` (em radianos)|
-|`asin(x)`|Retorna o arco seno de `x` (em radianos)|
-|`atan(x)`|Retorna o arco tangente de `x` (em radianos)|
-|`atan2(y, x)`|Retorna o arco tangente de `y/x`, usando os sinais de `x` e `y` para determinar o quadrante|
-|`cbrt(x)`|Retorna a raiz cúbica de `x`|
-|`ceil(x)`|Retorna o valor de `x` arredondado para cima para o inteiro mais próximo (teto)|
-|`cos(x)`|Retorna o cosseno de `x` (onde `x` está em radianos)|
-|`cosh(x)`|Retorna o cosseno hiperbólico de `x`|
-|`exp(x)`|Retorna o valor de _e_x (onde _e_ é a constante de Euler)|
-|`expm1(x)`|Retorna _e_x - 1, com maior precisão para `x` pequeno|
-|`fabs(x)`|Retorna o valor absoluto de um número de ponto flutuante `x`|
-|`fdim(x, y)`|Retorna a diferença positiva entre `x` e `y` (`x-y` se `x>y`, senão `0`)|
-|`floor(x)`|Retorna o valor de `x` arredondado para baixo para o inteiro mais próximo (piso)|
-|`hypot(x, y)`|Retorna sqrt(x2 + y2) (hipotenusa), com cuidado para evitar overflow/underflow|
-|`fma(x, y, z)`|Retorna (xy) + z como uma única operação ternária, com maior precisão|
-|`fmax(x, y)`|Retorna o maior valor entre os números de ponto flutuante `x` e `y`|
-|`fmin(x, y)`|Retorna o menor valor entre os números de ponto flutuante `x` e `y`|
-|`fmod(x, y)`|Retorna o resto da divisão de ponto flutuante de `x/y`|
-|`log10(x)`|Retorna o logaritmo na base 10 de `x`|
-|`log2(x)`|Retorna o logaritmo na base 2 de `x`|
-|`pow(x, y)`|Retorna o valor de `x` elevado à potência `y` (xy)|
-|`sin(x)`|Retorna o seno de `x` (onde `x` está em radianos)|
-|`sinh(x)`|Retorna o seno hiperbólico de `x`|
-|`tan(x)`|Retorna a tangente de `x` (onde `x` está em radianos)|
-|`tanh(x)`|Retorna a tangente hiperbólica de `x`|
-|`trunc(x)`|Retorna a parte inteira de `x`, truncando em direção a zero|
+|**Função**|**Protótipo (C99)**|**Descrição**|
+|---|---|---|
+|`fmod`|`double fmod(double x, double y)`|Retorna o resto da divisão de ponto flutuante de `x/y` (o `%` para `double`s).|
+|`fma`|`double fma(double x, double y, double z)`|Calcula `(x * y) + z` como uma única operação (Fused Multiply-Add), para alta precisão.|
+|`fdim`|`double fdim(double x, double y)`|Retorna a diferença positiva (`x-y` se `x>y`, senão `0`).|
+|`log1p`|`double log1p(double x)`|Calcula `log(1 + x)`. Mais preciso que `log(1+x)` para `x` muito pequeno.|
 
-A seguir, detalharemos algumas dessas funções com exemplos em C.
+### Função `fmod(x, y)`
 
-- **`abs(int x)` (de `<stdlib.h>`) e `fabs(double x)` (de `<math.h>`)**: Retornam o valor absoluto (módulo) de `x`.
-    
-    ```c
-    #include <stdio.h>
-    #include <stdlib.h> // Para abs()
-    #include <math.h>   // Para fabs()
-    
-    int main() {
-        int num_int = -5;
-        double num_double = -7.75;
-    
-        printf("abs(%d) = %d\n", num_int, abs(num_int));     // Saída: abs(-5) = 5
-        printf("fabs(%.2f) = %.2f\n", num_double, fabs(num_double)); // Saída: fabs(-7.75) = 7.75
-        return 0;
-    }
-    ```
-    
-- **`acos(double x)`, `asin(double x)`, `atan(double x)`**: Retornam, respectivamente, o arco cosseno, arco seno e arco tangente de `x`. O valor de `x` para `acos` e `asin` deve estar entre -1 e 1. O resultado é em radianos.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    #define PI_C ACOS(-1.0) // Uma forma de obter PI
-    
-    int main() {
-        double val_cos = 0.5;
-        double val_sin = 0.5;
-        double val_tan = 1.0;
-    
-        printf("acos(%.1f) = %f radianos\n", val_cos, acos(val_cos)); // Aprox. 1.0472 (PI/3)
-        printf("asin(%.1f) = %f radianos\n", val_sin, asin(val_sin)); // Aprox. 0.5236 (PI/6)
-        printf("atan(%.1f) = %f radianos\n", val_tan, atan(val_tan)); // Aprox. 0.7854 (PI/4)
-        printf("Valor de PI calculado: %f\n", PI_C);
-        return 0;
-    }
-    ```
-    
-- **`atan2(double y, double x)`**: Calcula o arco tangente de `y/x`, usando os sinais de ambos os argumentos para determinar o quadrante correto do ângulo resultante (entre -PI e PI).
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        // Ponto (x= -1, y= -1) está no terceiro quadrante
-        double angulo = atan2(-1.0, -1.0); 
-        printf("atan2(-1.0, -1.0) = %f radianos (aprox. -2.356, ou -3PI/4)\n", angulo);
-        return 0;
-    }
-    ```
-    
-- **`cbrt(double x)` (C99)**: Retorna a raiz cúbica de `x`.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        printf("cbrt(27.0) = %.1f\n", cbrt(27.0)); // Saída: cbrt(27.0) = 3.0
-        printf("cbrt(-8.0) = %.1f\n", cbrt(-8.0)); // Saída: cbrt(-8.0) = -2.0
-        return 0;
-    }
-    ```
-    
-- **`ceil(double x)` e `floor(double x)`**: `ceil(x)` ("teto") retorna o menor valor inteiro que é maior ou igual a `x`. `floor(x)` ("piso") retorna o maior valor inteiro que é menor ou igual a `x`. Ambas retornam um `double`.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        double val1 = 4.3;
-        double val2 = -2.9;
-        printf("ceil(%.1f) = %.1f\n", val1, ceil(val1));   // Saída: ceil(4.3) = 5.0
-        printf("floor(%.1f) = %.1f\n", val1, floor(val1)); // Saída: floor(4.3) = 4.0
-        printf("ceil(%.1f) = %.1f\n", val2, ceil(val2));   // Saída: ceil(-2.9) = -2.0
-        printf("floor(%.1f) = %.1f\n", val2, floor(val2)); // Saída: floor(-2.9) = -3.0
-        return 0;
-    }
-    ```
-    
-- **`cos(double x)`, `sin(double x)`, `tan(double x)`**: Retornam, respectivamente, o cosseno, seno e tangente de `x`, onde `x` é um ângulo em radianos.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    #ifndef M_PI // Definir M_PI se não estiver definido (comum em math.h)
-    #define M_PI 3.14159265358979323846
-    #endif
-    
-    int main() {
-        double angulo_rad = M_PI / 4.0; // 45 graus em radianos
-        printf("cos(PI/4) = %f\n", cos(angulo_rad)); // Aprox. 0.707
-        printf("sin(PI/4) = %f\n", sin(angulo_rad)); // Aprox. 0.707
-        printf("tan(PI/4) = %f\n", tan(angulo_rad)); // Aprox. 1.0
-        return 0;
-    }
-    ```
-    
-- **`cosh(double x)`, `sinh(double x)`, `tanh(double x)`**: Retornam, respectivamente, o cosseno hiperbólico, seno hiperbólico e tangente hiperbólica de `x`.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        double val = 1.0;
-        printf("cosh(%.1f) = %f\n", val, cosh(val));
-        printf("sinh(%.1f) = %f\n", val, sinh(val));
-        printf("tanh(%.1f) = %f\n", val, tanh(val));
-        return 0;
-    }
-    ```
-    
-- **`exp(double x)`**: Retorna e<sup>x</sup> (exponencial natural).
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        printf("exp(1.0) = %f (valor de e)\n", exp(1.0)); // Aprox. 2.718282
-        printf("exp(0.0) = %f\n", exp(0.0));             // Saída: 1.000000
-        return 0;
-    }
-    ```
+O operador `%` não funciona com `double`. `fmod` é o seu substituto.
 
-- **`fdim(double x, double y)` (C99)**: Retorna a diferença positiva entre `x` e `y`. Se `x > y`, retorna `x - y`; caso contrário, retorna `0.0`.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        printf("fdim(5.0, 3.0) = %.1f\n", fdim(5.0, 3.0)); // Saída: 2.0
-        printf("fdim(3.0, 5.0) = %.1f\n", fdim(3.0, 5.0)); // Saída: 0.0
-        return 0;
-    }
-    ```
-    
-- **`hypot(double x, double y)` (C99)**: Calcula a hipotenusa de um triângulo retângulo com catetos `x` e `y`, ou seja, sqrt(x² + y²). Implementado de forma a evitar overflow ou underflow que poderiam ocorrer ao calcular x² e y² separadamente.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        printf("hypot(3.0, 4.0) = %.1f\n", hypot(3.0, 4.0)); // Saída: 5.0
-        return 0;
-    }
-    ```
-    
-- **`fma(double x, double y, double z)` (C99)**: Calcula `(x * y) + z` como uma única operação ternária. Isso pode fornecer maior precisão e, em algumas arquiteturas, ser mais rápido do que realizar a multiplicação e a adição separadamente.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        // Exemplo onde fma pode ser mais preciso:
-        double x = 1e10, y = 1e10, z = -1e20;
-        double resultado_separado = (x * y) + z; // Pode dar 0.0 devido à perda de precisão
-        double resultado_fma = fma(x, y, z);    // Pode dar um resultado mais preciso
-    
-        printf("(1e10 * 1e10) + (-1e20) [separado] = %g\n", resultado_separado);
-        printf("fma(1e10, 1e10, -1e20) [fma]       = %g\n", resultado_fma);
-    
-        printf("fma(2.0, 3.0, 4.0) = %.1f\n", fma(2.0, 3.0, 4.0)); // Saída: 10.0
-        return 0;
-    }
-    ```
-    
-- **`fmax(double x, double y)` e `fmin(double x, double y)` (C99)**: Retornam, respectivamente, o maior e o menor valor entre os números de ponto flutuante `x` e `y`.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        printf("fmax(5.8, 3.1) = %.1f\n", fmax(5.8, 3.1)); // Saída: 5.8
-        printf("fmin(5.8, 3.1) = %.1f\n", fmin(5.8, 3.1)); // Saída: 3.1
-        return 0;
-    }
-    ```
-    
-- **`fmod(double x, double y)`**: Retorna o resto da divisão de ponto flutuante de `x` por `y`. O resultado tem o mesmo sinal de `x`.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        printf("fmod(10.5, 3.0) = %.1f\n", fmod(10.5, 3.0)); // Saída: 1.5 (10.5 = 3*3.0 + 1.5)
-        printf("fmod(-10.5, 3.0) = %.1f\n", fmod(-10.5, 3.0)); // Saída: -1.5
-        return 0;
-    }
-    ```
-    
-- **`pow(double x, double y)`**: Retorna `x` elevado à potência `y` (x<sup>y</sup>).
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        printf("pow(2.0, 3.0) = %.1f\n", pow(2.0, 3.0)); // Saída: 8.0 (2 ao cubo)
-        printf("pow(10.0, -1.0) = %.1f\n", pow(10.0, -1.0)); // Saída: 0.1 (10 elevado a -1)
-        printf("pow(4.0, 0.5) = %.1f\n", pow(4.0, 0.5));   // Saída: 2.0 (raiz quadrada de 4)
-        return 0;
-    }
-    ```
-    
-- **`trunc(double x)` (C99)**: Retorna a parte inteira de `x`, truncando (removendo) a parte fracionária, em direção a zero.
-    
-    ```c
-    #include <stdio.h>
-    #include <math.h>
-    
-    int main() {
-        printf("trunc(3.7) = %.1f\n", trunc(3.7));   // Saída: 3.0
-        printf("trunc(-2.9) = %.1f\n", trunc(-2.9)); // Saída: -2.0
-        printf("trunc(5.0) = %.1f\n", trunc(5.0));   // Saída: 5.0
-        return 0;
-    }
-    ```
+```c
+#include <stdio.h>
+#include <math.h>
 
-É importante notar que muitas dessas funções (especialmente as introduzidas no C99) possuem variantes para `float` (com sufixo `f`, ex: `sqrtf`, `roundf`, `sinf`) e para `long double` (com sufixo `l`, ex: `sqrtl`, `roundl`, `sinl`).
+int main() {
+    printf("fmod(10.5, 3.0) = %.1f\n", fmod(10.5, 3.0)); // Saída: 1.5
+    printf("fmod(-10.5, 3.0) = %.1f\n", fmod(-10.5, 3.0)); // Saída: -1.5 (sinal do dividendo)
+    return 0;
+}
+```
+
+### Função `fma(x, y, z)`
+
+Calcula `(x * y) + z`. Por que usar isso?
+
+O `fma` (Fused Multiply-Add) é uma instrução de hardware em muitas CPUs. Ela realiza a multiplicação e a adição com apenas um erro de arredondamento no final. Por exemplo, `resultado = (x * y) + z;` tem dois erros de arredondamento (um no `*`, um no `+`). O `fma` é mais preciso e, muitas vezes, mais rápido.
 
 ## Considerações Finais
 
-Neste capítulo, exploramos o conjunto de funções matemáticas fornecidas pela biblioteca padrão C (`<math.h>`) e, por extensão, pela biblioteca `<cmath>` do C++. Vimos como realizar operações comuns como cálculo de raiz quadrada, arredondamento, logaritmos, e como encontrar valores máximos e mínimos, com exemplos práticos em C.
+Neste capítulo, exploramos o conjunto de funções matemáticas fornecidas pela biblioteca padrão C (`<math.h>`) e, por extensão, pela biblioteca `<cmath>` do C++. Vimos que, para além da aritmética simples, a programação C/C++ oferece um arsenal robusto para cálculos científicos, financeiros e gráficos.
 
-Além das funções mais conhecidas, apresentamos uma lista abrangente de outras funções matemáticas, detalhando suas finalidades e ilustrando o uso de várias delas, como as trigonométricas (`sin`, `cos`, `tan`, `acos`, `asin`, `atan`, `atan2`), exponenciais (`exp`, `expm1`), de valor absoluto (`fabs`), de arredondamento e truncamento (`ceil`, `floor`, `trunc`), potenciação (`pow`), e outras utilitárias (`cbrt`, `hypot`, `fma`, `fmod`, `fdim`).
+Discutimos a importância crítica de **linkar a biblioteca matemática (`-lm`)** em ambientes de linha de comando, uma fonte comum de frustração para iniciantes. Agrupamos e detalhamos as funções por categoria, explorando as nuances de:
 
-A familiaridade com estas funções é crucial para qualquer programador que precise implementar algoritmos numéricos, realizar análises estatísticas, trabalhar com gráficos, simulações físicas, ou qualquer outra aplicação que envolva cálculos matemáticos além da aritmética básica. Ao utilizar as funções da biblioteca padrão, você não apenas economiza tempo de desenvolvimento, mas também se beneficia de implementações otimizadas e testadas, garantindo maior precisão e desempenho para seus programas. Lembre-se sempre de incluir o cabeçalho `<math.h>` (ou `<cmath>` em C++) e de verificar os tipos de dados esperados e retornados por cada função.
+- **Potência e Raízes:** `pow`, `sqrt` (e seu erro de domínio com negativos), `cbrt` (que aceita negativos) e `hypot` (para precisão em overflows).
+- **Arredondamento:** A diferença fundamental entre `floor` (piso), `ceil` (teto), `trunc` (em direção a zero) e `round` (ao mais próximo).
+- **Logaritmos:** O trio `log` (base _e_), `log10` e `log2`, e como usar a fórmula de mudança de base.
+- **Trigonometria:** A regra de ouro de usar **radianos** e a superioridade de `atan2` sobre `atan` para determinar quadrantes.
+- **Absoluto e Max/Min:** As armadilhas de `abs` (`<stdlib.h>`) vs. `fabs` (`<math.h>`), e o perigo de macros `MAX` com efeitos colaterais (`++`), contrastando com as soluções seguras `fmax` (C99) e `std::max` (C++).
+
+Ao utilizar as funções da biblioteca padrão, economiza-se tempo de desenvolvimento e garante-se o uso de implementações otimizadas e numericamente estáveis. Com esse conhecimento, estamos prontos para avançar para as estruturas de controle, que nos permitirão tomar decisões (`if`/`else`) baseadas nesses cálculos.
