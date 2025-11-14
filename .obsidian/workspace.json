@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-c/contents/04-entrada-e-saida-de-dados.md",
+                "file": "linguagem-c/contents/05-caracteres-e-strings.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-entrada-e-saida-de-dados"
+              "title": "05-caracteres-e-strings"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-c/contents/04-entrada-e-saida-de-dados.md",
+                "file": "linguagem-c/contents/05-caracteres-e-strings.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 04-entrada-e-saida-de-dados"
+              "title": "Sumário de 05-caracteres-e-strings"
             }
           }
         ],
@@ -169,10 +169,12 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "f9950e0646dc86e5",
+  "active": "93e41518c267c517",
   "lastOpenFiles": [
-    "linguagem-c/contents/04.md",
+    "linguagem-c/contents/05.md",
+    "linguagem-c/contents/05-caracteres-e-strings.md",
     "linguagem-c/contents/04-entrada-e-saida-de-dados.md",
+    "linguagem-c/contents/04.md",
     "linguagem-c/contents/03-operadores.md",
     "linguagem-c/contents/00.md",
     "linguagem-c/contents/02-tipos-de-dados-e-variaveis.md",
@@ -195,8 +197,6 @@
     "linguagem-python/contents/04-strings.md",
     "linguagem-python/contents/03-estruturas-de-dados-importadas.md",
     "linguagem-python/contents/02-estruturas-de-dados-nativas.md",
-    "linguagem-python/contents/01-introducao.md",
-    "legislacao/contents/13-lei-13709.md",
     "legislacao/contents/img/lei-13709-responsabilidade-e-ressarcimento.png",
     "legislacao/contents/img/lei-13709-transferencia-internacional-de-dados.png",
     "legislacao/contents/img/lei-13709-compartilhamento-de-dados.png",
