@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-c/contents/06-funcoes-matematicas.md",
+                "file": "linguagem-c/contents/07-booleanos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "06-funcoes-matematicas"
+              "title": "07-booleanos"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-c/contents/06-funcoes-matematicas.md",
+                "file": "linguagem-c/contents/07-booleanos.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 06-funcoes-matematicas"
+              "title": "Sumário de 07-booleanos"
             }
           }
         ],
@@ -185,8 +185,10 @@
   },
   "active": "93e41518c267c517",
   "lastOpenFiles": [
-    "linguagem-c/contents/06.md",
+    "linguagem-c/contents/07.md",
+    "linguagem-c/contents/07-booleanos.md",
     "linguagem-c/contents/06-funcoes-matematicas.md",
+    "linguagem-c/contents/06.md",
     "linguagem-c/contents/05-caracteres-e-strings.md",
     "linguagem-c/contents/05.md",
     "linguagem-c/contents/04-entrada-e-saida-de-dados.md",
@@ -209,8 +211,6 @@
     "linguagem-python/contents/08-funcoes-embutidas.md",
     "linguagem-python/contents/07-funcoes.md",
     "linguagem-python/contents/06-list-comprehensions.md",
-    "linguagem-python/contents/05-estruturas-de-controle.md",
-    "linguagem-python/contents/04-strings.md",
     "legislacao/contents/img/lei-13709-responsabilidade-e-ressarcimento.png",
     "legislacao/contents/img/lei-13709-transferencia-internacional-de-dados.png",
     "legislacao/contents/img/lei-13709-compartilhamento-de-dados.png",
