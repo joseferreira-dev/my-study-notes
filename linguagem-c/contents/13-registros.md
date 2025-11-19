@@ -82,31 +82,18 @@ struct Aluno {
     float media;
 };
 
-// Definição da estrutura Ponto
-struct Ponto {
-    int x;
-    int y;
-};
-
 int main() {
     // Declarando variáveis do tipo struct Aluno
     struct Aluno aluno1;
     struct Aluno aluno2, aluno3; // Múltiplas declarações
-
-    // Declarando uma variável do tipo struct Ponto
-    struct Ponto p1;
 
     // Atribuindo valores aos membros de aluno1 (veremos o acesso a membros a seguir)
     strcpy(aluno1.nome, "Maria Silva");
     aluno1.matricula = 101;
     aluno1.media = 8.5f;
 
-    p1.x = 10;
-    p1.y = 20;
-
     printf("Aluno 1: Nome=%s, Matrícula=%d, Média=%.1f\n",
            aluno1.nome, aluno1.matricula, aluno1.media);
-    printf("Ponto p1: x=%d, y=%d\n", p1.x, p1.y);
 
     return 0;
 }
@@ -589,7 +576,7 @@ Além disso, em C++, estruturas são quase idênticas a classes. A única difere
 - Em uma `struct`, os membros são `public` por padrão.
 - Em uma `class`, os membros são `private` por padrão.
 
-Isso significa que `struct`s em C++ podem ter construtores, destrutores, funções membro (métodos), herança e todos os outros recursos da programação orientada a objetos, assim como as classes. Frequentemente, `struct`s são usadas em C++ para tipos de dados simples que são principalmente contêineres de dados (Plain Old Data - POD, ou agregados), enquanto `class`es são usadas para objetos mais complexos com comportamento e encapsulamento.
+Isso significa que structs em C++ podem ter construtores, destrutores, funções membro (métodos), herança e todos os outros recursos da programação orientada a objetos, assim como as classes. Frequentemente, `struct`s são usadas em C++ para tipos de dados simples que são principalmente contêineres de dados (Plain Old Data - POD, ou agregados), enquanto classes são usadas para objetos mais complexos com comportamento e encapsulamento.
 
 **Inicialização de Membros na Definição (C++11 em diante):** C++11 permite a inicialização de membros não estáticos diretamente na definição da `struct` (ou `class`):
 
