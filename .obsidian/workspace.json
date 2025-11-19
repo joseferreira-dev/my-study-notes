@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "da71a1884b9fecd6",
+            "id": "e8b0dedadb67d912",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-c/contents/10-vetores-e-matrizes.md",
+                "file": "linguagem-c/contents/12-ponteiros.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10-vetores-e-matrizes"
+              "title": "12-ponteiros"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-c/contents/10-vetores-e-matrizes.md",
+                "file": "linguagem-c/contents/12-ponteiros.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 10-vetores-e-matrizes"
+              "title": "Sumário de 12-ponteiros"
             }
           }
         ],
@@ -169,11 +169,13 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "da71a1884b9fecd6",
+  "active": "e8b0dedadb67d912",
   "lastOpenFiles": [
+    "linguagem-c/contents/12.md",
+    "linguagem-c/contents/12-ponteiros.md",
+    "linguagem-c/contents/10-vetores-e-matrizes.md",
     "linguagem-c/contents/11-funcoes-e-procedimentos.md",
     "linguagem-c/contents/11.md",
-    "linguagem-c/contents/10-vetores-e-matrizes.md",
     "linguagem-c/contents/10.md",
     "linguagem-c/contents/09-estruturas-de-repetição.md",
     "linguagem-c/contents/09.md",
@@ -195,8 +197,6 @@
     "linguagem-c/contents/01-conceitos-basicos.md",
     "legislacao/contents/11-lei-9784.md",
     "legislacao/contents/10-lei-8027.md",
-    "linguagem-c/README.md",
-    "Sem título.md",
     "legislacao/contents/img/lei-13709-responsabilidade-e-ressarcimento.png",
     "legislacao/contents/img/lei-13709-transferencia-internacional-de-dados.png",
     "legislacao/contents/img/lei-13709-compartilhamento-de-dados.png",
