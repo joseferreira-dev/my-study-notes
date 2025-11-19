@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-c/contents/11-funcoes-e-procedimentos.md",
+                "file": "linguagem-c/contents/10-vetores-e-matrizes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "11-funcoes-e-procedimentos"
+              "title": "10-vetores-e-matrizes"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-c/contents/11-funcoes-e-procedimentos.md",
+                "file": "linguagem-c/contents/10-vetores-e-matrizes.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 11-funcoes-e-procedimentos"
+              "title": "Sumário de 10-vetores-e-matrizes"
             }
           }
         ],
@@ -171,8 +171,8 @@
   },
   "active": "da71a1884b9fecd6",
   "lastOpenFiles": [
-    "linguagem-c/contents/11.md",
     "linguagem-c/contents/11-funcoes-e-procedimentos.md",
+    "linguagem-c/contents/11.md",
     "linguagem-c/contents/10-vetores-e-matrizes.md",
     "linguagem-c/contents/10.md",
     "linguagem-c/contents/09-estruturas-de-repetição.md",
