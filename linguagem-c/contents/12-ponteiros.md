@@ -384,7 +384,7 @@ C++ introduziu as **referências**, que funcionam, na prática, como ponteiros "
 - Não precisam de dereferência explícita (`*`) para acesso; usam-se como variáveis normais.
 - Uma vez vinculadas a uma variável, não podem ser "reapontadas" para outra.
 
-```c
+```cpp
 void trocar(int &a, int &b) { // Sintaxe mais limpa que ponteiros, sem *
     int temp = a;
     a = b;
@@ -407,7 +407,7 @@ Além disso, `new` é _type-safe_ (seguro quanto ao tipo): ele retorna um pontei
 
 **Sintaxe:**
 
-```c
+```cpp
 // Alocando um único inteiro
 int *ptr = new int;      // Aloca espaço para um int (valor indefinido)
 int *ptr2 = new int(10); // Aloca e inicializa com 10
@@ -430,7 +430,7 @@ Assim como `new` é o par evoluído de `malloc`, o operador `delete` é o substi
 
 Misturar essas formas (ex: usar `delete` em um array alocado com `new[]`) causa **Comportamento Indefinido**, podendo corromper a memória do seu programa.
 
-```c
+```cpp
 int *p = new int(5);
 delete p; // Correto: libera um único int
 
