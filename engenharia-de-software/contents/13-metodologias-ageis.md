@@ -150,7 +150,7 @@ Entretanto, essa visão, embora válida no passado, é considerada, por muitos p
 
 Portanto, embora essa seja uma opinião ainda presente em livros acadêmicos, na prática do mercado atual, a aplicabilidade das metodologias ágeis é muito mais ampla.
 
-### Principais Metodologias Ágeis
+## Principais Metodologias Ágeis
 
 Existem diversas metodologias ágeis aplicadas ao desenvolvimento de software, cada uma com suas características, práticas e focos específicos. Abaixo listamos as principais:
 

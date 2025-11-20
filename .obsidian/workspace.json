@@ -20,6 +20,20 @@
               "icon": "lucide-file",
               "title": "10-metodologias-ageis"
             }
+          },
+          {
+            "id": "748322c67a0fc479",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "engenharia-de-software/contents/13-metodologias-ageis.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "13-metodologias-ageis"
+            }
           }
         ]
       }
@@ -171,6 +185,7 @@
   },
   "active": "e8b0dedadb67d912",
   "lastOpenFiles": [
+    "engenharia-de-software/contents/img/10-usain-bolt.png",
     "engenharia-de-software/contents/13-metodologias-ageis.md",
     "engenharia-de-software/contents/10-metodologias-ageis.md",
     "linguagem-c/contents/13-registros.md",
@@ -196,7 +211,6 @@
     "linguagem-c/contents/03-operadores.md",
     "linguagem-c/contents/00.md",
     "linguagem-c/contents/02-tipos-de-dados-e-variaveis.md",
-    "linguagem-c/contents/02.md",
     "legislacao/contents/img/lei-13709-responsabilidade-e-ressarcimento.png",
     "legislacao/contents/img/lei-13709-transferencia-internacional-de-dados.png",
     "legislacao/contents/img/lei-13709-compartilhamento-de-dados.png",

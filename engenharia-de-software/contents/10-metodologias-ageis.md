@@ -31,7 +31,7 @@ O coração da filosofia ágil não reside em um conjunto de regras rígidas ou 
 A figura abaixo apresenta o texto original traduzido desses valores:
 
 <div align="center">
-<img width="700px" src="./img/13-manifesto-agil.png">
+<img width="700px" src="./img/10-manifesto-agil.png">
 </div>
 
 É crucial interpretar corretamente a estrutura desses valores. O texto diz: _"mesmo havendo valor nos itens à direita, valorizamos mais os itens à esquerda"_. Isso significa que a agilidade **não é a negação da engenharia tradicional**. Documentação, processos, ferramentas, contratos e planos ainda são importantes e necessários. O Manifesto apenas estabelece uma nova **hierarquia de prioridades**: quando houver um conflito entre os dois lados, a escolha ágil deve pender para o lado esquerdo (pessoas, software funcionando, colaboração e resposta a mudanças).
@@ -97,4 +97,80 @@ O Manifesto Ágil valoriza a **adaptabilidade**. O planejamento no ágil existe,
 - A mudança não é vista como um erro de planejamento ou um incômodo, mas como uma oportunidade de melhorar o produto e torná-lo mais competitivo.
 
 Em suma, uma equipe ágil tem um plano, mas não tem medo de rasgá-lo e desenhar um novo se o feedback do mercado ou do usuário indicar que a direção original não é mais a melhor. A capacidade de pivotar rapidamente é mais valiosa do que a capacidade de seguir um cronograma obsoleto.
+
+## Agilidade x Velocidade
+
+Ao adentrarmos o estudo das metodologias ágeis, deparamo-nos frequentemente com uma confusão semântica e conceitual que pode comprometer o entendimento da filosofia ágil: a mistura entre os termos **agilidade** e **velocidade**. Embora no senso comum essas palavras sejam usadas quase como sinônimos, na Engenharia de Software — e em diversos outros campos, como a física e o esporte — elas representam capacidades distintas. É fundamental dissociar esses conceitos para compreender que ser ágil não significa, necessariamente, ser o mais rápido em linha reta, mas sim ter a melhor capacidade de resposta.
+
+Para ilustrar essa distinção de forma didática e memorável, recorremos a metáforas fora do universo da computação, começando pelo atletismo de alto nível.
+
+### Metáfora do Atletismo
+
+Usain Bolt é, indiscutivelmente, uma lenda do esporte mundial. O atleta jamaicano consagrou-se como o homem mais rápido do mundo, dominando as provas de 100 e 200 metros rasos por anos. Sua **velocidade** final é fenomenal, permitindo-lhe cruzar a linha de chegada muito à frente de seus competidores. Contudo, uma análise técnica detalhada de suas corridas revela um dado curioso e contra-intuitivo: Bolt raramente era o primeiro a largar ou a liderar os primeiros metros da prova.
+
+Ao observarmos os registros visuais de suas competições, é comum notar que, nos primeiros 10 a 20 metros, Bolt figurava entre os últimos colocados. A razão para isso é física e biomecânica: sendo um atleta excepcionalmente alto e com grande massa muscular, Bolt possuía uma inércia maior. Isso significa que ele demorava mais tempo para vencer o estado de repouso e começar a se mover em comparação a corredores mais baixos e compactos.
+
+<div align="center">
+<img width="700px" src="./img/10-usain-bolt.png">
+</div>
+
+Neste contexto, podemos afirmar que, na largada, Bolt era **menos ágil** que seus adversários. A **agilidade** aqui refere-se à capacidade de **reagir instantaneamente a uma mudança de estado** (no caso, o som do tiro de largada) e alterar sua posição corporal. Se as provas olímpicas fossem de apenas 50 metros, é muito provável que a história fosse diferente: Bolt poderia não ter alcançado o sucesso estrondoso que teve, ou talvez nem mesmo conquistasse o tricampeonato olímpico. Seus rivais, mais ágeis na reação e aceleração inicial, poderiam vencê-lo antes que ele tivesse tempo de desenvolver sua velocidade máxima.
+
+O triunfo de Bolt ocorria na segunda metade da prova, onde a necessidade de reagir a mudanças (o tiro de largada) já havia passado, restando apenas a necessidade de manter e incrementar a velocidade de deslocamento.
+
+### Metáfora dos Carros
+
+Expandindo a analogia para o automobilismo, podemos comparar um carro extremamente potente e pesado (como um _muscle car_ ou um caminhão de corrida) com um carro leve e esportivo (como um _kart_ ou um veículo de rali).
+
+Em uma pista de arrancada curta, o carro leve tende a ser mais **ágil**. Ele responde imediatamente ao acelerador, muda de direção com facilidade e sai da imobilidade num piscar de olhos. Ele possui uma excelente capacidade de reação. Já o veículo pesado e potente pode demorar alguns segundos a mais para transferir toda a sua força para o asfalto e ganhar momento.
+
+No entanto, em uma reta longa, a **velocidade** final do carro potente prevalecerá. Ele cobrirá uma distância maior em menos tempo, uma vez que esteja em movimento pleno.
+
+A síntese dessas metáforas é clara:
+
+- **Agilidade** é a competência de responder a **mudanças** e reagir a novos cenários com rapidez e baixo custo de transição.
+- **Velocidade** é a competência de executar uma tarefa ou percorrer uma distância em um curto intervalo de tempo, uma vez que a direção já está definida.
+
+### Aplicando ao Desenvolvimento de Software
+
+Trazendo esses conceitos para a Engenharia de Software, a distinção torna-se vital para a escolha do modelo de processo. Um processo pode ser projetado para ser extremamente **rápido**, como é o caso do **RAD (Rapid Application Development)**, estudado anteriormente. O RAD foca em ciclos curtos e entrega veloz, mas sua estrutura, baseada em time-boxing rígido e ferramentas de geração de código, não garante necessariamente que a equipe consiga mudar de direção facilmente no meio do caminho.
+
+A **agilidade no software**, portanto, não se trata apenas de codificar rápido ou entregar na próxima semana. Trata-se da **capacidade de adaptação da equipe e do projeto** diante de instabilidades e imprevistos. Um projeto é considerado ágil quando a equipe consegue lidar com cenários como:
+
+- **Mudança de Arquitetura:** Descobre-se, no meio do projeto, que a arquitetura monolítica escolhida não suportará a carga de usuários, exigindo uma migração para microsserviços. Uma equipe ágil consegue replanejar e executar essa transição sem paralisar o projeto inteiro.
+- **Restrições de Recursos:** A empresa sofre um corte de orçamento e a equipe é reduzida pela metade. O processo ágil permite re-priorizar o _backlog_ imediatamente, garantindo que o produto mais importante continue sendo entregue, mesmo com menos braços.
+- **Obsolescência Tecnológica:** Uma biblioteca ou framework fundamental para o projeto é descontinuado ou surge uma nova tecnologia que oferece uma vantagem competitiva imensa. A equipe ágil tem a flexibilidade técnica e gerencial para incorporar a nova tecnologia sem derrubar o que já foi construído.
+- **Mudança de Negócio:** O concorrente lança uma funcionalidade inovadora. A equipe ágil consegue interromper o desenvolvimento de uma funcionalidade menos crítica para focar na resposta a essa concorrência.
+
+Em suma, uma equipe ágil não foca apenas em correr para a linha de chegada (velocidade), mas em garantir que está correndo na direção certa, mesmo que o destino mude durante a corrida (agilidade). **Ela entrega com flexibilidade.**
+
+### Diretrizes para um Processo de Software Ágil
+
+Para que um processo de software seja considerado ágil, ele não precisa necessariamente seguir um "livro de regras" dogmático, mas deve aderir a certos princípios de adaptabilidade. **Roger Pressman**, uma das maiores autoridades na área, elenca diretrizes fundamentais que permitem a qualquer processo — mesmo aqueles com raízes mais tradicionais — mover-se em direção à agilidade:
+
+1. **Adaptação e Racionalização:** O processo não deve ser uma camisa de força. Ele deve ser projetado de tal forma que a equipe tenha autonomia para adaptar as tarefas e o fluxo de trabalho às necessidades específicas do projeto e do momento. Se uma tarefa não faz sentido no contexto atual, ela deve ser racionalizada ou removida.
+2. **Planejamento Fluido:** O planejamento não é um evento único e estático feito no início. Ele deve ser contínuo, levando em conta a fluidez inerente ao desenvolvimento de software. Planos devem ser feitos para serem mudados, não para serem seguidos cegamente.
+3. **Essencialismo (Eliminação de Desperdício):** Devem ser eliminados todos os artefatos (documentos, diagramas, relatórios) que não agregam valor direto ao produto final ou à gestão necessária. Se um documento é produzido apenas para cumprir um rito burocrático e ninguém o lê, ele não é ágil. Mantenha apenas o essencial.
+4. **Estratégia Incremental:** O processo deve focar na entrega contínua de incrementos de software operacional. O cliente deve ver o software funcionando o mais cedo possível, e não apenas no final do cronograma.
+
+Seguindo essas diretrizes, a agilidade deixa de ser um rótulo de metodologias específicas (como Scrum ou XP) e passa a ser uma característica intrínseca da forma como a engenharia de software é conduzida.
+
+### Agilidade: Adaptabilidade e Colaboração
+
+Em última análise, as metodologias ágeis são filosofias de gestão projetadas para **reagir positivamente às mudanças**. Ao contrário da visão antiga de que a mudança é um "erro de requisitos" ou um "desvio de escopo" que deve ser evitado ou taxado, o ágil abraça a mudança como uma forma de aumentar a competitividade do produto.
+
+Podemos contrastar as características dos dois mundos da seguinte forma:
+
+- **Métodos Tradicionais:**
+    - **Preditivos:** Tentam prever o futuro detalhadamente antes de começar.
+    - **Formais e Documentais:** Baseiam-se em pesada documentação aprovada (assinada) antes da codificação.
+    - **Contratuais:** Focam no cumprimento estrito do que foi contratado inicialmente (escopo, prazo, custo).
+    - **Rígidos:** A mudança é vista como um custo alto e indesejável.
+- **Métodos Ágeis:**
+    - **Adaptativos (Dinâmicos):** Aceitam que o futuro é incerto e aprendem durante o processo.
+    - **Iterativos:** Constroem o produto em ciclos, permitindo correções de rota frequentes.
+    - **Colaborativos:** Priorizam a interação constante entre desenvolvedores e clientes em vez da negociação de contratos.
+    - **Flexíveis:** A mudança é bem-vinda, mesmo em estágios tardios do desenvolvimento, se isso significar maior vantagem competitiva para o cliente.
+
+Portanto, enquanto a **velocidade** pode ser útil para chegar rápido ao mercado, é a **agilidade** que garante a sobrevivência do software em um ambiente onde as regras do jogo mudam todos os dias. No mundo atual, a única certeza é a mudança, e a agilidade é a ferramenta estratégica para navegar nessa incerteza.
 
