@@ -205,16 +205,16 @@ No contexto das metodologias ágeis e dos princípios que norteiam o **Manifesto
 
 Trabalhar em ambientes ágeis, como os que utilizam frameworks e metodologias como **Scrum, Kanban, XP, DSDM, FDD**, entre outros, exige um perfil que consiga navegar com segurança em cenários de constante mudança, incerteza e evolução. A seguir, detalhamos as principais características que definem um profissional ágil:
 
-|**CARACTERÍSTICA**|**DESCRIÇÃO**|
-|---|---|
-|**Flexibilidade e adaptabilidade**|Capacidade de se adaptar rapidamente às mudanças no escopo, nos requisitos ou nas prioridades do projeto. Profissionais ágeis encaram as mudanças como algo natural e necessário para gerar valor.|
-|**Colaboração e comunicação**|Valorizam o trabalho colaborativo, tanto entre os membros da equipe quanto com clientes e stakeholders. A comunicação é constante, clara e objetiva, promovendo transparência e alinhamento.|
-|**Foco no cliente**|A busca pela satisfação do cliente é uma prioridade. O profissional ágil trabalha de forma iterativa, buscando sempre feedbacks para garantir que o produto atenda (ou supere) as expectativas do cliente.|
-|**Aprendizado contínuo**|Diante de um cenário dinâmico, estão em constante desenvolvimento pessoal e profissional. Aprender, desaprender e reaprender faz parte do seu cotidiano.|
-|**Proatividade e autonomia**|Profissionais ágeis são donos do seu trabalho. Assumem responsabilidades, tomam iniciativas e buscam soluções, atuando de maneira independente e colaborativa.|
-|**Resiliência e persistência**|Diante de desafios e adversidades, mantêm-se firmes, resilientes e persistentes, encarando erros e falhas como oportunidades de crescimento e melhoria.|
-|**Habilidade de priorização**|Sabem diferenciar o que é essencial do que é secundário, priorizando tarefas que geram mais valor para o cliente e para o projeto, com base em dados e feedbacks.|
-|**Empatia e suporte aos outros**|Praticam a empatia, entendendo as necessidades e dificuldades dos colegas e dos clientes. Contribuem para um ambiente colaborativo, saudável e produtivo.|
+| **CARACTERÍSTICA**                 | **DESCRIÇÃO**                                                                                                                                                                                              |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Flexibilidade e adaptabilidade** | Capacidade de se adaptar rapidamente às mudanças no escopo, nos requisitos ou nas prioridades do projeto. Profissionais ágeis encaram as mudanças como algo natural e necessário para gerar valor.         |
+| **Colaboração e comunicação**      | Valorizam o trabalho colaborativo, tanto entre os membros da equipe quanto com clientes e stakeholders. A comunicação é constante, clara e objetiva, promovendo transparência e alinhamento.               |
+| **Foco no cliente**                | A busca pela satisfação do cliente é uma prioridade. O profissional ágil trabalha de forma iterativa, buscando sempre feedbacks para garantir que o produto atenda (ou supere) as expectativas do cliente. |
+| **Aprendizado contínuo**           | Diante de um cenário dinâmico, estão em constante desenvolvimento pessoal e profissional. Aprender, desaprender e reaprender faz parte do seu cotidiano.                                                   |
+| **Proatividade e autonomia**       | Profissionais ágeis são donos do seu trabalho. Assumem responsabilidades, tomam iniciativas e buscam soluções, atuando de maneira independente e colaborativa.                                             |
+| **Resiliência e persistência**     | Diante de desafios e adversidades, mantêm-se firmes, resilientes e persistentes, encarando erros e falhas como oportunidades de crescimento e melhoria.                                                    |
+| **Habilidade de priorização**      | Sabem diferenciar o que é essencial do que é secundário, priorizando tarefas que geram mais valor para o cliente e para o projeto, com base em dados e feedbacks.                                          |
+| **Empatia e suporte aos outros**   | Praticam a empatia, entendendo as necessidades e dificuldades dos colegas e dos clientes. Contribuem para um ambiente colaborativo, saudável e produtivo.                                                  |
 
 Portanto, ser um **profissional ágil** não significa apenas dominar ferramentas e técnicas. Significa adotar uma postura colaborativa, adaptativa e centrada em entregar valor constantemente.
 
@@ -228,20 +228,20 @@ O conceito de valor não é fixo — ele **varia de cliente para cliente, de seg
 
 Algumas das principais estratégias para identificar e entregar valor ao cliente digital são:
 
-|**ESTRATÉGIA**|**DESCRIÇÃO**|
-|---|---|
-|**Pesquisa e feedback**|Realizar pesquisas, entrevistas, análises de comportamento (em sites, aplicativos, redes) e obter feedbacks constantes para entender as dores e necessidades dos clientes.|
-|**Persona e jornadas do cliente**|Criar perfis (personas) que representem os diferentes tipos de clientes e mapear suas jornadas, identificando pontos de dor, expectativas e oportunidades de melhoria.|
-|**MVP (Minimum Viable Product)**|Desenvolver uma versão mínima viável do produto, com funcionalidades essenciais, para validar hipóteses, obter feedback rápido e ajustar antes de grandes investimentos.|
-|**Entrega contínua**|Adotar práticas de integração e entrega contínua, garantindo que melhorias e novas funcionalidades sejam disponibilizadas regularmente aos clientes.|
-|**Análise de dados e métricas de sucesso**|Monitorar métricas como engajamento, conversão, retenção, churn e satisfação do cliente, para entender o que gera mais valor e onde há oportunidades de melhoria.|
-|**Testes A/B e experimentação**|Conduzir experimentos para validar ideias e testar diferentes abordagens, ajustando rapidamente com base nos resultados.|
-|**Design centrado no usuário**|Priorizar a experiência do usuário, criando interfaces intuitivas, agradáveis e funcionais, alinhadas às expectativas dos usuários.|
-|**Usabilidade e acessibilidade**|Garantir que o produto seja acessível a todos, incluindo pessoas com deficiências, e otimizar a usabilidade em diferentes dispositivos e contextos.|
-|**Comunicação personalizada**|Utilizar canais de comunicação (e-mails, notificações, redes sociais) de forma segmentada e personalizada, melhorando o relacionamento com os clientes.|
-|**Construção de comunidade**|Promover espaços onde clientes possam interagir, compartilhar experiências e fornecer feedback, criando um senso de pertencimento e fidelização.|
-|**Novas tendências e tecnologias**|Manter-se atento às inovações tecnológicas, metodológicas e comportamentais que podem agregar valor ao cliente e criar diferenciais competitivos.|
-|**Cultura de inovação**|Estimular a criatividade e a experimentação contínua dentro das equipes, promovendo um ambiente onde ideias novas sejam bem-vindas e rapidamente testadas.|
+| **ESTRATÉGIA**                             | **DESCRIÇÃO**                                                                                                                                                              |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pesquisa e feedback**                    | Realizar pesquisas, entrevistas, análises de comportamento (em sites, aplicativos, redes) e obter feedbacks constantes para entender as dores e necessidades dos clientes. |
+| **Persona e jornadas do cliente**          | Criar perfis (personas) que representem os diferentes tipos de clientes e mapear suas jornadas, identificando pontos de dor, expectativas e oportunidades de melhoria.     |
+| **MVP (Minimum Viable Product)**           | Desenvolver uma versão mínima viável do produto, com funcionalidades essenciais, para validar hipóteses, obter feedback rápido e ajustar antes de grandes investimentos.   |
+| **Entrega contínua**                       | Adotar práticas de integração e entrega contínua, garantindo que melhorias e novas funcionalidades sejam disponibilizadas regularmente aos clientes.                       |
+| **Análise de dados e métricas de sucesso** | Monitorar métricas como engajamento, conversão, retenção, churn e satisfação do cliente, para entender o que gera mais valor e onde há oportunidades de melhoria.          |
+| **Testes A/B e experimentação**            | Conduzir experimentos para validar ideias e testar diferentes abordagens, ajustando rapidamente com base nos resultados.                                                   |
+| **Design centrado no usuário**             | Priorizar a experiência do usuário, criando interfaces intuitivas, agradáveis e funcionais, alinhadas às expectativas dos usuários.                                        |
+| **Usabilidade e acessibilidade**           | Garantir que o produto seja acessível a todos, incluindo pessoas com deficiências, e otimizar a usabilidade em diferentes dispositivos e contextos.                        |
+| **Comunicação personalizada**              | Utilizar canais de comunicação (e-mails, notificações, redes sociais) de forma segmentada e personalizada, melhorando o relacionamento com os clientes.                    |
+| **Construção de comunidade**               | Promover espaços onde clientes possam interagir, compartilhar experiências e fornecer feedback, criando um senso de pertencimento e fidelização.                           |
+| **Novas tendências e tecnologias**         | Manter-se atento às inovações tecnológicas, metodológicas e comportamentais que podem agregar valor ao cliente e criar diferenciais competitivos.                          |
+| **Cultura de inovação**                    | Estimular a criatividade e a experimentação contínua dentro das equipes, promovendo um ambiente onde ideias novas sejam bem-vindas e rapidamente testadas.                 |
 
 O **profissional ágil** é, antes de tudo, um facilitador da entrega de valor. Seu papel vai além da execução de tarefas — ele atua como um agente de transformação, promovendo uma cultura de colaboração, inovação, foco no cliente e melhoria contínua.
 
