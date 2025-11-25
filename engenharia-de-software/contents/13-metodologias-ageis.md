@@ -261,7 +261,7 @@ Analisando essas definições, alguns pontos em comum se destacam:
 - **Enfoque Humanista:** Há uma forte valorização do aprendizado contínuo e da capacidade dos indivíduos como participantes ativos do processo, em vez de uma valorização excessiva das técnicas e processos de gestão.
 - **Entrega de Valor:** O foco principal não é apenas seguir um plano, mas sim entregar valor para o cliente de forma contínua, mesmo diante da imprevisibilidade.
 
-### Os Pilares da Mentalidade Ágil na Gestão
+### Pilares da Mentalidade Ágil na Gestão
 
 A gestão ágil de projetos é sustentada por um conjunto de práticas e valores que priorizam a entrega rápida e contínua de valor ao cliente, adaptando-se às mudanças de forma dinâmica e promovendo a colaboração. Vamos explorar os pilares dessa abordagem.
 
@@ -289,7 +289,7 @@ A **Programação em Pares (Pair Programming)** é uma prática técnica de dese
 
 Na prática, a programação em pares promove a colaboração intensa, a melhoria contínua e a elevação da qualidade do código. Embora possa parecer menos eficiente inicialmente, devido ao envolvimento de dois desenvolvedores em uma única tarefa, os benefícios de um código mais limpo, menos bugs, maior disseminação de conhecimento e decisões de design mais robustas geralmente compensam essa percepção, resultando em um desenvolvimento mais eficaz e sustentável a longo prazo.
 
-### Os Princípios Fundamentais da Gestão Ágil
+### Princípios Fundamentais da Gestão Ágil
 
 A Gestão Ágil de Projetos é regida por um conjunto de princípios básicos que a diferenciam da abordagem tradicional. Esses princípios remetem a uma reflexão sobre onde o foco da gestão deve estar. Enquanto a teoria tradicional enfatiza o valor do plano de projeto e a antecipação de eventos, a gestão ágil questiona como é possível agregar valor, simplificar o processo e criar times adaptáveis quando não se pode prever tudo.
 
@@ -305,22 +305,22 @@ Os princípios ilustrados acima podem ser resumidos em:
 - **Simplicidade e Foco no Essencial:** Busca-se a maneira mais simples de atingir os objetivos, eliminando desperdícios, burocracia e atividades que não agregam valor.
 - **Qualidade e Excelência Técnica:** A qualidade é construída ao longo do processo, não verificada apenas no final. A atenção contínua à excelência técnica aumenta a agilidade.
 
-### Abordagem Tradicional versus Abordagem Ágil: Uma Comparação
+### Abordagem Tradicional versus Abordagem Ágil
 
 As diferenças filosóficas entre a gestão tradicional e a ágil se manifestam em praticamente todos os aspectos do gerenciamento de um projeto. A tabela a seguir resume as principais distinções:
 
-|**Abordagem**|**Tradicional**|**Ágil**|
-|---|---|---|
-|**Metas do Projeto**|Enfoque na finalização do projeto no tempo, custo e escopo definidos (o "triângulo de ferro").|Enfoque nos resultados do negócio e em atingir múltiplos critérios de sucesso, incluindo a satisfação do cliente.|
-|**Plano do Projeto**|Uma coleção detalhada de atividades que são executadas como planejado para atender a tempo, custo e qualidade.|Uma organização e um processo para atingir as metas esperadas e os resultados para o negócio. O plano é um guia, não uma regra.|
-|**Abordagem Gerencial**|Rígida, com foco no controle e na conformidade com o plano inicial.|Flexível, variável e adaptativa, pronta para responder às mudanças.|
-|**Trabalho e Execução**|Assume que o trabalho é previsível, mensurável, linear e relativamente simples.|Reconhece que o trabalho é imprevisível, nem sempre mensurável, não-linear e complexo.|
-|**Influência da Organização**|Mínima e imparcial a partir do kick-off do projeto.|Afeta o projeto continuamente ao longo de sua execução, exigindo interação constante.|
-|**Controle do Projeto**|Identificar desvios do plano inicial e corrigir o trabalho para seguir o plano.|Identificar mudanças no ambiente e no entendimento do problema, e ajustar o plano adequadamente.|
-|**Aplicação da Metodologia**|Aplicação genérica e, muitas vezes, igualitária em todos os projetos.|Adaptação do processo dependendo do tipo, tamanho e contexto de cada projeto.|
-|**Estilo de Gestão**|Um modelo único ("one-size-fits-all") tende a ser aplicado a todos os tipos de projetos.|Abordagem adaptativa; um único modelo não atende a todos os tipos de projetos.|
+| **Abordagem**                 | **Tradicional**                                                                                                | **Ágil**                                                                                                                        |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Metas do Projeto**          | Enfoque na finalização do projeto no tempo, custo e escopo definidos (o "triângulo de ferro").                 | Enfoque nos resultados do negócio e em atingir múltiplos critérios de sucesso, incluindo a satisfação do cliente.               |
+| **Plano do Projeto**          | Uma coleção detalhada de atividades que são executadas como planejado para atender a tempo, custo e qualidade. | Uma organização e um processo para atingir as metas esperadas e os resultados para o negócio. O plano é um guia, não uma regra. |
+| **Abordagem Gerencial**       | Rígida, com foco no controle e na conformidade com o plano inicial.                                            | Flexível, variável e adaptativa, pronta para responder às mudanças.                                                             |
+| **Trabalho e Execução**       | Assume que o trabalho é previsível, mensurável, linear e relativamente simples.                                | Reconhece que o trabalho é imprevisível, nem sempre mensurável, não-linear e complexo.                                          |
+| **Influência da Organização** | Mínima e imparcial a partir do kick-off do projeto.                                                            | Afeta o projeto continuamente ao longo de sua execução, exigindo interação constante.                                           |
+| **Controle do Projeto**       | Identificar desvios do plano inicial e corrigir o trabalho para seguir o plano.                                | Identificar mudanças no ambiente e no entendimento do problema, e ajustar o plano adequadamente.                                |
+| **Aplicação da Metodologia**  | Aplicação genérica e, muitas vezes, igualitária em todos os projetos.                                          | Adaptação do processo dependendo do tipo, tamanho e contexto de cada projeto.                                                   |
+| **Estilo de Gestão**          | Um modelo único ("one-size-fits-all") tende a ser aplicado a todos os tipos de projetos.                       | Abordagem adaptativa; um único modelo não atende a todos os tipos de projetos.                                                  |
 
-### O Ciclo de Vida da Gestão Ágil de Projetos
+### Ciclo de Vida da Gestão Ágil de Projetos
 
 Diferente de um processo linear com fases bem definidas e sequenciais, a Gestão Ágil de Projetos opera em um ciclo de vida adaptativo, composto por cinco fases principais. As fases de Especulação, Exploração e Adaptação formam um ciclo contínuo de planejamento, execução e aprendizado.
 
@@ -328,13 +328,13 @@ Diferente de um processo linear com fases bem definidas e sequenciais, a Gestão
   <img width="520px" src="./img/13-gestao-agil-fases.png">
 </div>
 
-|**Fases**|**Descrição**|
-|---|---|
-|**Visão**|O objetivo desta fase inicial é **determinar a visão do produto e o escopo geral do projeto**. Define-se _o que_ será entregue em alto nível, quem são os envolvidos (a comunidade do projeto) e _como_ a equipe irá trabalhar e interagir. É o momento de alinhar as expectativas e estabelecer as bases para o projeto.|
-|**Especulação**|Com a visão estabelecida, o objetivo desta fase é **planejar o projeto com base nessa visão preliminar**. A palavra "especulação" é usada de propósito para indicar que este não é um plano fixo e detalhado, mas sim uma exploração das possibilidades. A equipe de projeto, com o apoio dos stakeholders, define um plano de _release_ baseado nas funcionalidades e prioridades, e planeja a primeira iteração.|
-|**Exploração**|Esta fase é onde o trabalho de desenvolvimento acontece. O objetivo é **executar o que foi planejado na iteração, entregando funcionalidades de valor**. A equipe trabalha de forma focada, promovendo a auto-organização e a autodisciplina. A gestão ágil, aqui, foca em facilitar o trabalho, remover impedimentos e gerenciar as interações da equipe com o cliente para garantir feedback contínuo.|
-|**Adaptação**|Ao final de cada ciclo de exploração, o objetivo da fase de Adaptação é **rever os resultados obtidos**. A equipe analisa o progresso do projeto, avalia seu próprio desempenho e utiliza o feedback recebido para fazer adaptações. O plano do projeto, as prioridades das entregas e o plano para as próximas iterações podem ser ajustados caso seja necessário. É o coração do processo de aprendizado ágil.|
-|**Encerramento**|A fase final do projeto. Seu objetivo é **transferir os conhecimentos-chave adquiridos**, entregar o produto final e celebrar os resultados obtidos com a equipe. É recomendado que, além do encerramento formal do projeto, sejam realizados "mini-fechamentos" ao final de cada iteração, criando momentos para celebrar as pequenas vitórias e consolidar o aprendizado.|
+| **Fases**        | **Descrição**                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Visão**        | O objetivo desta fase inicial é **determinar a visão do produto e o escopo geral do projeto**. Define-se _o que_ será entregue em alto nível, quem são os envolvidos (a comunidade do projeto) e _como_ a equipe irá trabalhar e interagir. É o momento de alinhar as expectativas e estabelecer as bases para o projeto.                                                                                          |
+| **Especulação**  | Com a visão estabelecida, o objetivo desta fase é **planejar o projeto com base nessa visão preliminar**. A palavra "especulação" é usada de propósito para indicar que este não é um plano fixo e detalhado, mas sim uma exploração das possibilidades. A equipe de projeto, com o apoio dos stakeholders, define um plano de _release_ baseado nas funcionalidades e prioridades, e planeja a primeira iteração. |
+| **Exploração**   | Esta fase é onde o trabalho de desenvolvimento acontece. O objetivo é **executar o que foi planejado na iteração, entregando funcionalidades de valor**. A equipe trabalha de forma focada, promovendo a auto-organização e a autodisciplina. A gestão ágil, aqui, foca em facilitar o trabalho, remover impedimentos e gerenciar as interações da equipe com o cliente para garantir feedback contínuo.           |
+| **Adaptação**    | Ao final de cada ciclo de exploração, o objetivo da fase de Adaptação é **rever os resultados obtidos**. A equipe analisa o progresso do projeto, avalia seu próprio desempenho e utiliza o feedback recebido para fazer adaptações. O plano do projeto, as prioridades das entregas e o plano para as próximas iterações podem ser ajustados caso seja necessário. É o coração do processo de aprendizado ágil.   |
+| **Encerramento** | A fase final do projeto. Seu objetivo é **transferir os conhecimentos-chave adquiridos**, entregar o produto final e celebrar os resultados obtidos com a equipe. É recomendado que, além do encerramento formal do projeto, sejam realizados "mini-fechamentos" ao final de cada iteração, criando momentos para celebrar as pequenas vitórias e consolidar o aprendizado.                                        |
 
 ## Ferramentas, Artefatos, Métricas e Indicadores
 
