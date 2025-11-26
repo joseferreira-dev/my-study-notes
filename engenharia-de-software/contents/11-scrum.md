@@ -1,13 +1,15 @@
-# Capítulo 14 – Scrum
+# Capítulo 11 – Scrum
 
-## Conceitos Básicos do Scrum
+Após explorarmos a filosofia e os princípios fundamentais das Metodologias Ágeis no capítulo anterior, adentramos agora no universo prático de um dos frameworks mais populares e transformadores da atualidade: o **Scrum**. Enquanto o Manifesto Ágil nos fornece a bússola moral e estratégica para a agilidade, o Scrum nos oferece o mapa tático — uma estrutura leve, porém robusta, projetada para ajudar equipes a navegar pela complexidade inerente ao desenvolvimento de produtos inovadores. Neste capítulo, dissecaremos o Scrum não apenas como um conjunto de regras, mas como um sistema vivo de papéis, eventos e artefatos que, quando operados em harmonia, capacitam organizações a entregar valor de forma frequente, adaptativa e sustentável, transformando a incerteza em oportunidade de aprendizado e crescimento.
+
+## Conceitos Básicos
 
 Antes de adentrarmos na teoria do Scrum propriamente dita, é importante entendermos a origem desse nome tão peculiar. O termo **Scrum** vem do esporte **Rugby**, e não foi escolhido por acaso. Ele carrega uma forte carga simbólica, representando a importância da cooperação, da união e do esforço coletivo para se alcançar objetivos em contextos de alta competitividade e complexidade.
 
 No Rugby, o termo **scrum** designa uma formação específica, na qual os jogadores das duas equipes se agrupam, pressionando-se uns contra os outros, formando uma espécie de “muralha humana”. O objetivo dessa formação é disputar a posse da bola de maneira conjunta e coordenada. Aqui, todos os jogadores são fundamentais; não existe um líder que centraliza as jogadas, como acontece, por exemplo, no futebol americano com o quarterback. Cada membro da equipe desempenha um papel crucial no sucesso da jogada.
 
 <div align="center">
-  <img width="560px" src="./img/14-scrum-rugby.png">
+<img width="600px" src="./img/11-scrum-rugby.png">
 </div>
 
 Essa metáfora é perfeita para o ambiente de desenvolvimento de produtos complexos. Assim como no Rugby, no Scrum todos os integrantes da equipe precisam trabalhar de maneira colaborativa, sincronizada e focada no alcance de objetivos comuns. Não há espaço para individualismo, hierarquias rígidas ou centralização de decisões. O sucesso depende da soma das forças, do comprometimento e da responsabilidade compartilhada.
@@ -1175,7 +1177,7 @@ Analisamos os artefatos – **Product Backlog, Sprint Backlog e Incremento** –
 Finalmente, abordamos **as evoluções mais recentes do Guia Scrum**, que buscam tornar o framework ainda mais enxuto, menos prescritivo e mais aplicável a uma gama diversificada de desafios, reforçando seu papel como uma ferramenta vital para organizações que buscam agilidade, inovação e resultados consistentes em um mundo em constante transformação.
 
 <div align="center">
-  <img width="700px" src="./img/14-scrum-resumo.png">
+<img width="700px" src="./img/11-scrum-resumo.png">
 </div>
 
 Dominar o Scrum vai além de memorizar suas regras; requer uma mudança de mentalidade, um compromisso com a melhoria contínua e a coragem de abraçar a incerteza como uma oportunidade para aprender e evoluir. As equipes que verdadeiramente internalizam seus princípios e valores descobrem não apenas uma forma mais eficaz de trabalhar, mas também um caminho mais gratificante e colaborativo para criar produtos que realmente fazem a diferença.
