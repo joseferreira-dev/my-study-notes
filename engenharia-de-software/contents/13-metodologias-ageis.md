@@ -356,25 +356,25 @@ Cada tipo de ferramenta possui funcionalidades específicas que suportam diferen
 
 Além dos tipos, é importante conhecer os principais exemplos de ferramentas utilizadas no contexto ágil, bem como suas funcionalidades:
 
-|**Ferramenta**|**Descrição**|
-|---|---|
-|**Jira**|Plataforma robusta que oferece suporte para metodologias Scrum e Kanban. Permite o gerenciamento de sprints, backlog, issues, bugs e geração de relatórios.|
-|**Trello**|Ferramenta baseada em quadros Kanban, muito intuitiva, ideal para projetos menores ou equipes que buscam simplicidade no acompanhamento de tarefas.|
-|**Asana**|Solução de gerenciamento de trabalho que auxilia no planejamento de projetos, acompanhamento de tarefas e colaboração entre equipes.|
-|**Confluence**|Plataforma de colaboração que permite a criação, o compartilhamento e a organização de documentação e conteúdo da equipe. Muito utilizada em conjunto com o Jira.|
-|**GitHub**|Além de ser um repositório de código, oferece funcionalidades como controle de versões, revisão de código, gestão de issues e integração contínua.|
-|**GitLab**|Similar ao GitHub, inclui funcionalidades robustas de CI/CD, controle de versões e gestão de projetos, tudo em uma única plataforma.|
-|**Slack**|Ferramenta de comunicação em tempo real, que facilita o trabalho colaborativo, integrando-se facilmente a outras ferramentas de desenvolvimento ágil.|
+| **Ferramenta** | **Descrição**                                                                                                                                                     |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Jira**       | Plataforma robusta que oferece suporte para metodologias Scrum e Kanban. Permite o gerenciamento de sprints, backlog, issues, bugs e geração de relatórios.       |
+| **Trello**     | Ferramenta baseada em quadros Kanban, muito intuitiva, ideal para projetos menores ou equipes que buscam simplicidade no acompanhamento de tarefas.               |
+| **Asana**      | Solução de gerenciamento de trabalho que auxilia no planejamento de projetos, acompanhamento de tarefas e colaboração entre equipes.                              |
+| **Confluence** | Plataforma de colaboração que permite a criação, o compartilhamento e a organização de documentação e conteúdo da equipe. Muito utilizada em conjunto com o Jira. |
+| **GitHub**     | Além de ser um repositório de código, oferece funcionalidades como controle de versões, revisão de código, gestão de issues e integração contínua.                |
+| **GitLab**     | Similar ao GitHub, inclui funcionalidades robustas de CI/CD, controle de versões e gestão de projetos, tudo em uma única plataforma.                              |
+| **Slack**      | Ferramenta de comunicação em tempo real, que facilita o trabalho colaborativo, integrando-se facilmente a outras ferramentas de desenvolvimento ágil.             |
 
 O uso dessas ferramentas proporciona uma série de benefícios para as equipes ágeis:
 
-|**Benefício**|**Descrição**|
-|---|---|
-|**Melhoria da colaboração**|Fortalece a comunicação entre os membros da equipe e stakeholders, independentemente da localização, promovendo maior alinhamento.|
-|**Visibilidade e transparência**|Proporciona uma visão clara do andamento do projeto, do status das tarefas e dos possíveis bloqueios, facilitando a gestão baseada em dados.|
-|**Eficiência operacional**|Automatiza tarefas rotineiras, como testes, deploys e acompanhamento de tarefas, aumentando a produtividade da equipe.|
-|**Adaptabilidade e flexibilidade**|Permite respostas rápidas a mudanças, seja na priorização, na adaptação de funcionalidades ou na resolução de problemas.|
-|**Fomento à melhoria contínua**|Através de dashboards, relatórios e métricas, facilita a análise de desempenho e a identificação de pontos de melhoria.|
+| **Benefício**                      | **Descrição**                                                                                                                                |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Melhoria da colaboração**        | Fortalece a comunicação entre os membros da equipe e stakeholders, independentemente da localização, promovendo maior alinhamento.           |
+| **Visibilidade e transparência**   | Proporciona uma visão clara do andamento do projeto, do status das tarefas e dos possíveis bloqueios, facilitando a gestão baseada em dados. |
+| **Eficiência operacional**         | Automatiza tarefas rotineiras, como testes, deploys e acompanhamento de tarefas, aumentando a produtividade da equipe.                       |
+| **Adaptabilidade e flexibilidade** | Permite respostas rápidas a mudanças, seja na priorização, na adaptação de funcionalidades ou na resolução de problemas.                     |
+| **Fomento à melhoria contínua**    | Através de dashboards, relatórios e métricas, facilita a análise de desempenho e a identificação de pontos de melhoria.                      |
 
 ### Artefatos
 
