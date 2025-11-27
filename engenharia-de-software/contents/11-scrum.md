@@ -41,7 +41,7 @@ Outro exemplo prático está no desenvolvimento de produtos físicos, como veíc
 Para entender a efetividade do Scrum, precisamos compreender primeiro o que caracteriza um **ambiente complexo**. Aqui, cabe introduzir o conceito do **Modelo Cynefin**, criado por Dave Snowden, que classifica os ambientes em quatro domínios principais:
 
 <div align="center">
-  <img width="560px" src="./img/14-modelo-cynefin.png">
+<img width="500px" src="./img/11-modelo-cynefin.png">
 </div>
 
 - **Simples (ou Óbvio)**: As relações de causa e efeito são claras, conhecidas e previsíveis. Soluções baseadas em boas práticas funcionam muito bem. Um exemplo clássico é a produção de uma rede de fast food, como o McDonald’s. As tarefas são altamente padronizadas e quase não há espaço para variações.
@@ -88,17 +88,17 @@ O segundo conceito essencial é o **Lean Thinking**, um modelo mental que tem co
 
 Assim, o Scrum não é apenas uma sequência de práticas; ele representa uma mudança cultural que estimula o foco no que importa, promovendo produtividade, eficiência e agilidade.
 
-### Os Três Pilares do Empirismo no Scrum
+### Os Três Pilares do Empirismo
 
 O funcionamento prático do Scrum, dentro desse pensamento empírico e enxuto, se sustenta em três pilares fundamentais: **Transparência, Inspeção e Adaptação** — frequentemente representados pela sigla **TIA**.
 
 <div align="center">
-  <img width="680px" src="./img/14-scrum-pilares.png">
+<img width="700px" src="./img/11-scrum-pilares.png">
 </div>
 
 Esses pilares não são apenas conceitos teóricos; eles estão diretamente refletidos em todos os eventos, artefatos e práticas do Scrum. Eles são a base para garantir que as equipes tenham controle efetivo do processo, possam responder rapidamente às mudanças e, principalmente, entreguem valor de forma constante e incremental.
 
-#### Transparência: A Verdade Precisa Ser Visível
+#### Transparência
 
 O pilar da **Transparência** estabelece que todos os aspectos significativos do processo devem ser visíveis, claros e compreendidos por todos os envolvidos no projeto, tanto pela equipe que executa quanto pelos stakeholders (clientes, usuários e outros interessados).
 
@@ -117,7 +117,7 @@ Reflexões dos Guias Scrum:
 - **Guia Scrum 2017:** “Aspectos significativos do processo devem estar visíveis aos responsáveis pelos resultados. A transparência requer que estes aspectos tenham uma definição padrão comum para que os observadores compartilhem um entendimento comum do que está sendo visto.”
 - **Guia Scrum 2020:** “O processo emergente e o trabalho devem ser visíveis tanto para quem executa o trabalho quanto para quem recebe o trabalho. Artefatos com baixa transparência podem levar a decisões que diminuem o valor e aumentam o risco. A transparência permite a inspeção. A inspeção sem transparência é enganosa e gera desperdício.”
 
-#### Inspeção: Avaliar Para Melhorar
+#### Inspeção
 
 Se tudo está visível, é natural que o próximo passo seja inspecionar. A **Inspeção** é o segundo pilar do Scrum e consiste na verificação constante dos artefatos produzidos, do progresso do trabalho e dos processos que estão sendo executados.
 
@@ -132,7 +132,7 @@ Reflexões dos Guias Scrum:
 - **Guia Scrum 2017:** “Os usuários Scrum devem, frequentemente, inspecionar os artefatos e o progresso em direção ao objetivo da Sprint para detectar variações indesejadas. Esta inspeção não deve ser tão frequente que atrapalhe os trabalhos.”
 - **Guia Scrum 2020:** “Os artefatos do Scrum e o progresso em direção às metas devem ser inspecionados com frequência e diligência para detectar variações ou problemas indesejáveis. A inspeção habilita a adaptação. A inspeção sem adaptação é inútil.”
 
-#### Adaptação: Corrigir a Rota Sempre que Necessário
+#### Adaptação
 
 Quando a inspeção revela problemas, desvios ou oportunidades de melhoria, é hora de colocar em prática o terceiro pilar: a **Adaptação**.
 
@@ -151,13 +151,13 @@ Reflexões dos Guias Scrum:
 
 Para facilitar o entendimento, podemos resumir os três pilares fundamentais do Scrum na tabela a seguir:
 
-|**Pilar**|**Descrição**|
-|---|---|
-|**Transparência**|Todo trabalho deve ser claramente definido, visível e conhecido por todos os envolvidos no projeto.|
-|**Inspeção**|O trabalho e os processos devem ser inspecionados periodicamente para garantir sua qualidade.|
-|**Adaptação**|O projeto deve ser capaz de se adaptar rapidamente às necessidades de negócio e às mudanças.|
+| **Pilar**         | **Descrição**                                                                                       |
+| ----------------- | --------------------------------------------------------------------------------------------------- |
+| **Transparência** | Todo trabalho deve ser claramente definido, visível e conhecido por todos os envolvidos no projeto. |
+| **Inspeção**      | O trabalho e os processos devem ser inspecionados periodicamente para garantir sua qualidade.       |
+| **Adaptação**     | O projeto deve ser capaz de se adaptar rapidamente às necessidades de negócio e às mudanças.        |
 
-### A Importância dos Pilares Para o Sucesso do Scrum
+### Importância dos Pilares Para o Sucesso do Scrum
 
 É fundamental compreender que **Transparência, Inspeção e Adaptação** não são práticas isoladas; elas são interdependentes e funcionam em conjunto.
 
@@ -172,7 +172,7 @@ Esse ciclo contínuo de **tornar visível → inspecionar → adaptar** é o que
 O Scrum, além de ser um framework ágil altamente estruturado e eficiente para o desenvolvimento de software e outros produtos complexos, fundamenta-se em um conjunto sólido de valores que direcionam o comportamento, as interações e as decisões de todos os envolvidos no projeto. Esses valores são essenciais para criar um ambiente de trabalho colaborativo, produtivo e sustentável, e sua aplicação prática é vital para o sucesso na adoção do Scrum.
 
 <div align="center">
-  <img width="700px" src="./img/14-scrum-valores.png">
+<img width="700px" src="./img/11-scrum-valores.png">
 </div>
 
 São cinco os valores que sustentam o Scrum: **Coragem**, **Foco**, **Comprometimento**, **Respeito** e **Abertura**. Embora possam parecer conceitos simples, a verdadeira aplicação desses valores no cotidiano de um projeto exige prática, maturidade, disciplina e uma cultura organizacional que os incentive.
@@ -239,7 +239,7 @@ A internalização desses valores constrói a base de confiança necessária par
 
 Essa sinergia entre valores e pilares também fortalece o empoderamento do Time Scrum, permitindo que ele seja verdadeiramente autogerenciável, colaborativo e capaz de entregar resultados consistentes em ambientes complexos e de constante mudança.
 
-> **Observação:**  As descrições e interpretações desses valores foram enriquecidas com base nos Guias Scrum de 2017 e 2020, que ressaltam a importância desses princípios como elementos fundamentais para o sucesso na adoção do framework. É importante destacar que, ao longo do tempo, embora a essência dos valores permaneça a mesma, as versões mais recentes do Guia Scrum reforçam a necessidade de que esses valores estejam profundamente enraizados na cultura do Time Scrum e na forma como ele interage com seus stakeholders.
+> **Observação:** As descrições e interpretações desses valores foram enriquecidas com base nos Guias Scrum de 2017 e 2020, que ressaltam a importância desses princípios como elementos fundamentais para o sucesso na adoção do framework. É importante destacar que, ao longo do tempo, embora a essência dos valores permaneça a mesma, as versões mais recentes do Guia Scrum reforçam a necessidade de que esses valores estejam profundamente enraizados na cultura do Time Scrum e na forma como ele interage com seus stakeholders.
 
 ## Papéis no Scrum
 
@@ -256,7 +256,7 @@ Já na versão de 2020, essa diferenciação foi eliminada. Passou-se a adotar u
 A seguir, observa-se uma figura que ilustra as diferenças na definição dos papéis entre as versões de 2017 e 2020:
 
 <div align="center">
-  <img width="700px" src="./img/14-scrum-papeis.png">
+<img width="700px" src="./img/11-scrum-papeis.png">
 </div>
 
 Essa representação ajuda a entender como a evolução do framework buscou tornar os conceitos mais simples e alinhados com a realidade dos times ágeis modernos, evitando interpretações equivocadas sobre subdivisões internas ou hierarquias ocultas dentro da equipe.
@@ -296,7 +296,7 @@ Seja qual for a versão adotada, o Scrum defende fortemente os princípios de **
 
 Vale destacar que, no Scrum, não se faz distinção formal entre desenvolvedores, analistas, testadores ou designers. Todos são considerados **Developers**, independentemente de sua especialidade. Isso reforça o caráter colaborativo e a responsabilidade compartilhada pelo trabalho.
 
-### Sobreposição de Papéis: É Possível?
+### Sobreposição de Papéis
 
 Uma dúvida bastante comum surge quando se observa a simplicidade na definição dos papéis no Scrum: uma mesma pessoa pode exercer dois papéis simultaneamente dentro de um Scrum Team?
 
@@ -308,7 +308,7 @@ No entanto, há uma regra bastante clara, ainda que não esteja explicitamente e
 
 O **Product Owner** é o responsável por maximizar o valor do produto, tomar decisões sobre prioridades e, muitas vezes, negociar com stakeholders. Já o **Scrum Master** atua como facilitador, defensor do processo e como um escudo para proteger o time de interferências externas. Acumular essas duas funções poderia colocar uma mesma pessoa na posição desconfortável de ser, ao mesmo tempo, quem exige e quem protege, o que comprometeria a neutralidade e a eficácia do framework.
 
-### Exemplo Prático: Composição de um Scrum Team
+### Exemplo Prático de um Scrum Team
 
 Imagine uma empresa de desenvolvimento de software que está criando um novo aplicativo mobile para serviços de delivery. Esse projeto é executado utilizando Scrum. O Scrum Team é composto por:
 
@@ -320,12 +320,12 @@ Este time é pequeno o suficiente para ser ágil, mas possui todas as competênc
 
 Quando surge a dúvida se Carlos, além de Scrum Master, poderia assumir o papel de Product Owner, a resposta é claramente não. Isso porque a imparcialidade de Carlos como facilitador do processo ficaria comprometida, especialmente em momentos de negociação de prioridades, conflitos sobre requisitos ou tomadas de decisão críticas.
 
-### Product Owner (PO): O Guardião do Valor
+### Product Owner (PO)
 
 O **Product Owner**, ou simplesmente PO, é o responsável por maximizar o valor do produto desenvolvido. Essa pessoa é quem representa os interesses dos stakeholders, clientes e usuários, traduzindo suas necessidades em requisitos organizados no **Product Backlog**.
 
 <div align="center">
-  <img width="700px" src="./img/14-scrum-product-owner.png">
+  <img width="700px" src="./img/11-scrum-product-owner.png">
 </div>
 
 O PO não é um comitê, nem um grupo de pessoas — é **uma pessoa única**, com autoridade sobre as decisões relacionadas ao produto. Esse princípio é fundamental para garantir clareza, foco e alinhamento nas prioridades do time. Embora o Product Owner possa ouvir opiniões, sugestões ou recomendações de diversos stakeholders, a decisão final sobre o que será priorizado cabe exclusivamente a ele.
@@ -350,17 +350,17 @@ Algumas observações importantes:
 
 **Exemplo prático:** Imagine que uma empresa de tecnologia está desenvolvendo um aplicativo de entregas. O Product Owner desse projeto representa os interesses dos usuários, dos donos de restaurantes, dos entregadores e dos investidores. Cabe a ele decidir se a próxima funcionalidade será um sistema de rastreamento de entregas em tempo real, uma melhoria no sistema de pagamentos, ou a adição de um sistema de avaliação dos entregadores. Cada uma dessas decisões deve considerar o que gera mais valor no momento, respeitando a estratégia de negócio.
 
-### Developers (DV): Os Construtores do Produto
+### Developers (DV)
 
 Os **Developers**, ou desenvolvedores, são as pessoas responsáveis por transformar os itens priorizados no Product Backlog em funcionalidades prontas e utilizáveis. Eles são os verdadeiros construtores do produto e estão comprometidos em entregar, ao final de cada Sprint, um incremento que gere valor.
 
 <div align="center">
-  <img width="700px" src="./img/14-scrum-developers.png">
+<img width="700px" src="./img/11-scrum-developers.png">
 </div>
 
 Com a atualização do Guia Scrum em 2020, o antigo termo **"Time de Desenvolvimento"** foi substituído por **"Developers"**. Essa mudança não é apenas semântica, mas também conceitual, pois elimina a percepção equivocada de que existe um sub-time dentro do Scrum Team. Agora, fica claro que o Scrum Team é uma unidade única, composta por três conjuntos de responsabilidades: **Product Owner, Scrum Master e Developers**, todos comprometidos com o mesmo objetivo.
 
-As principais características dos Developers:
+As principais características dos Developers são:
 
 - **Auto-organização:** Eles decidem, de forma autônoma, como transformar os itens do Product Backlog em incrementos de produto. Nenhuma pessoa externa, nem mesmo o Scrum Master, pode determinar como eles farão seu trabalho.
 - **Multifuncionalidade:** O grupo possui todas as habilidades necessárias para construir o incremento. Isso inclui atividades como análise, design, codificação, testes, documentação, entre outros.
@@ -380,12 +380,12 @@ O Guia Scrum 2020 recomenda, sem impor regras rígidas, que o **Scrum Team tenha
 
 **Exemplo prático:** Suponha que, no desenvolvimento de um sistema bancário, o Product Backlog tenha uma funcionalidade que permite aos clientes solicitar cartões de crédito. Os Developers planejam como vão desenvolver essa funcionalidade, definindo quais atividades serão necessárias (análise, implementação, testes, validação). Ninguém de fora pode interferir nesse planejamento ou dizer como eles devem executar suas tarefas. Eles são responsáveis, juntos, por transformar esse item em uma funcionalidade pronta para ser entregue.
 
-### Scrum Master (SM): O Guardião do Processo
+### Scrum Master (SM)
 
 O **Scrum Master**, ou SM, é frequentemente chamado de **servo-líder** do Scrum Team. Sua principal missão é garantir que o Scrum esteja sendo bem compreendido, implementado e seguido. O SM atua como um facilitador, mentor e coach, tanto para o Scrum Team quanto para a organização.
 
 <div align="center">
-<img width="700px" src="./img/14-scrum-master.png">
+<img width="700px" src="./img/11-scrum-master.png">
 </div>
 
 Diferente de um gerente tradicional, o Scrum Master **não possui autoridade hierárquica sobre o time**, tampouco toma decisões sobre o que será feito. Sua autoridade é sobre o processo, não sobre as pessoas. Ele atua removendo impedimentos, facilitando discussões, promovendo a melhoria contínua e garantindo que os princípios e valores do Scrum sejam respeitados.
