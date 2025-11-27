@@ -476,7 +476,7 @@ Por exemplo:
 
 Itens mais importantes e de maior valor para o negócio são priorizados no topo do backlog. Naturalmente, são também os itens mais bem detalhados, pois estarão mais próximos de serem selecionados para desenvolvimento. Já os itens de menor prioridade ficam mais abaixo, geralmente com menos detalhes, podendo ser refinados no futuro, caso sua prioridade aumente.
 
-#### A Dinâmica do Product Backlog
+#### Dinâmica do Product Backlog
 
 É perfeitamente comum que, no decorrer do projeto, algumas funcionalidades percam importância e sejam até descartadas, enquanto outras sejam adicionadas. Isso reflete a realidade dinâmica dos ambientes ágeis, onde mudanças são esperadas e bem-vindas, desde que gerem valor.
 
@@ -564,7 +564,7 @@ Além disso, é fundamental compreender que o Sprint Backlog **pertence exclusiv
 
 Outro ponto relevante é que o progresso dentro da Sprint é monitorado de forma constante. A cada **Reunião Diária (Daily Scrum)**, os desenvolvedores avaliam o total do trabalho restante e utilizam essas informações para projetar se estão no caminho certo para alcançar a meta estabelecida. Isso permite ajustes rápidos, promovendo um gerenciamento dinâmico e eficiente do próprio trabalho.
 
-#### Monitorando o Progresso: Um Processo Contínuo e Adaptativo
+#### Monitoramento do Progresso
 
 O acompanhamento do progresso durante a Sprint é uma prática constante e imprescindível no Scrum. A qualquer momento, o time pode somar o total de trabalho remanescente no Sprint Backlog para avaliar o quanto falta ser concluído. Esse monitoramento não é meramente operacional, mas estratégico, permitindo que os desenvolvedores tomem decisões embasadas sobre priorização, replanejamento de tarefas e eventuais renegociações com o Product Owner, caso surjam imprevistos.
 
@@ -597,12 +597,12 @@ Essa abordagem promove alinhamento, foco e colaboração, evitando que o time se
 Para ilustrar de forma concreta como se estrutura um Sprint Backlog, podemos recorrer a um exemplo prático baseado no Guia Scrum de 2017 (Backlog do Produto Twitter):
 
 <div align="center">
-<img width="700px" src="./img/14-scrum-backlog.png">
+<img width="700px" src="./img/11-scrum-backlog.png">
 </div>
 
-Imagine que estamos desenvolvendo uma plataforma social e, na **Sprint 2**, a meta é que os usuários possam se cadastrar na plataforma e realizar o login.
+Imagine que estamos desenvolvendo uma rede social e, na **Sprint 2**, a meta é que os usuários possam se cadastrar na plataforma e realizar o login.
 
-- No lado esquerdo do quadro, temos itens do **Product Backlog**, como:
+- No lado esquerdo da imagem, temos itens do **Product Backlog**, como:
 	- Cadastrar novo usuário;
     - Login de usuários já cadastrados.
 - No lado direito, aparece o **Sprint Backlog**, que detalha as tarefas necessárias para transformar esses itens em funcionalidades completas, tais como:
@@ -628,7 +628,7 @@ Essa exigência de que o incremento seja potencialmente liberável leva a uma re
 
 É justamente nesse contexto que surge o conceito de **Definition of Done**, ou **Definição de Pronto**, um dos compromissos essenciais dentro do Scrum.
 
-#### A Importância da Definition of Done (DoD)
+#### Importância da Definition of Done (DoD)
 
 Quando dizemos, em uma equipe ágil, que uma funcionalidade está “pronta”, isso precisa significar, de forma inequívoca, que ela está completa, testada e com qualidade suficiente para ser entregue, sem a necessidade de complementações posteriores.
 
@@ -638,7 +638,7 @@ Dessa maneira, o DoD funciona como uma espécie de **contrato informal entre os 
 
 #### Definition of Done versus Definition of Ready
 
-Para que possamos compreender melhor a função do DoD, é interessante compará-lo com outro conceito muito conhecido em ambientes ágeis: o **Definition of Ready (DoR)**.
+Para que possamos compreender melhor a função do DoD, é interessante compará-lo com o conceito de **Definition of Ready (DoR)**.
 
 Enquanto o DoR representa um conjunto de critérios que define quando um item do Product Backlog está suficientemente bem descrito, claro, viável e compreendido para que os desenvolvedores possam iniciá-lo, o DoD atua na outra ponta do processo. Ele define quando o trabalho sobre esse item pode ser considerado efetivamente concluído e pronto para entrega ou validação.
 
@@ -683,7 +683,7 @@ Por exemplo, uma equipe que inicialmente não tinha capacidade para realizar tes
 
 Quando falamos de organizações que possuem múltiplos times Scrum trabalhando sobre um mesmo produto ou plataforma, surge a necessidade de um alinhamento ainda mais rigoroso sobre o que significa “pronto”.
 
-Se a organização já possui **padrões organizacionais de Definition of Done**, todos os times devem segui-los como critério mínimo. Caso contrário, cabe aos times envolvidos estabelecerem, de forma colaborativa, um **Definition of Done compartilhado**, garantindo que todos os incrementos produzidos estejam alinhados e compatíveis entre si.
+Se a organização já possui **padrões organizacionais de DoD**, todos os times devem segui-los como critério mínimo. Caso contrário, cabe aos times envolvidos estabelecerem, de forma colaborativa, um **DoD compartilhado**, garantindo que todos os incrementos produzidos estejam alinhados e compatíveis entre si.
 
 Essa prática não só evita retrabalho, como também assegura que o produto como um todo mantenha uma consistência em termos de qualidade, arquitetura, testes e entrega de valor.
 
@@ -701,7 +701,7 @@ Essa prática não só evita retrabalho, como também assegura que o produto com
 
 Percebe-se, portanto, uma evolução no entendimento do papel do incremento, não apenas como um artefato isolado da Sprint, mas como um componente essencial no avanço contínuo em direção à **Meta do Produto (Product Goal)**.
 
-#### Compromisso Associado: Definition of Done
+#### Compromisso: Definition of Done
 
 No Scrum, cada artefato possui um compromisso que reforça sua transparência e sua entrega de valor. No caso do Product Increment, esse compromisso é exatamente o **Definition of Done (DoD)**.
 
@@ -713,7 +713,7 @@ Isso significa que a DoD não apenas define o que é considerado “pronto”, m
 
 Caso algum item do Product Backlog não atenda aos critérios da DoD, ele não pode ser incluído no incremento, não pode ser apresentado na Sprint Review, nem muito menos ser liberado para produção. Esse item deve, portanto, ser devolvido ao Product Backlog para ser reavaliado, priorizado e tratado no futuro.
 
-### Burndown Chart: Um Artefato Complementar
+### Burndown Chart: Artefato Complementar
 
 Embora não seja oficialmente reconhecido como um artefato formal no Guia Scrum, é muito comum — e altamente recomendado — que os times utilizem o **Gráfico Burndown** como uma ferramenta de apoio ao acompanhamento do trabalho durante a Sprint.
 
@@ -722,7 +722,7 @@ O Burndown Chart permite **visualizar, de forma clara e objetiva, o progresso do
 Basicamente, o gráfico apresenta uma linha descendente que representa a quantidade estimada de trabalho restante. As unidades normalmente utilizadas são horas de esforço, pontos de história ou qualquer outra métrica acordada pela equipe.
 
 <div align="center">
-<img width="580px" src="./img/14-scrum-burndown-chart.png">
+<img width="600px" src="./img/11-scrum-burndown-chart.png">
 </div>
 
 Essa ferramenta é extremamente útil não apenas para o time, mas também para os gestores, que podem acompanhar o andamento da Sprint e identificar eventuais desvios, gargalos ou necessidades de ajuste, tanto em relação ao tempo quanto ao esforço empregado.
