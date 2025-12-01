@@ -1,4 +1,4 @@
-# Capítulo 4 – Imagens: Dando Vida Visual às Páginas Web
+# Capítulo 4 – Imagens
 
 Se os textos e links formam a base informacional e conectiva da web, as **imagens** são responsáveis por grande parte de seu apelo visual, engajamento e capacidade de comunicação. Elas podem ilustrar um conceito, exibir um produto, definir o tom de uma página ou simplesmente quebrar a monotonia de blocos de texto. O uso eficaz de imagens é uma das chaves para criar experiências de usuário memoráveis e eficientes.
 
@@ -6,7 +6,7 @@ Neste capítulo, vamos nos aprofundar no elemento `<img>`, a principal ferrament
 
 Ao final, você saberá não apenas como inserir uma imagem em uma página, mas como fazê-lo de forma performática, acessível e profissional.
 
-## O Elemento `<img>`: Incorporando Imagens
+## Elemento `<img>`
 
 Para inserir uma imagem em uma página HTML, utilizamos a tag `<img>`. Este é um **elemento vazio**, o que significa que ele não possui uma tag de fechamento. Todo o seu comportamento e conteúdo são definidos através de seus atributos.
 
@@ -16,7 +16,7 @@ A estrutura básica é simples:
 <img src="caminho/para/imagem.jpg" alt="Descrição da imagem.">
 ```
 
-## Atributos Essenciais: `src` e `alt`
+## Atributos `src` e `alt`
 
 Dois atributos são absolutamente indispensáveis para qualquer elemento `<img>`:
 
@@ -39,7 +39,7 @@ Dois atributos são absolutamente indispensáveis para qualquer elemento `<img>`
     - **Acessibilidade**: Leitores de tela leem o conteúdo do atributo `alt` para usuários com deficiência visual, permitindo que eles compreendam o conteúdo da imagem.
     - **Contingência e SEO**: Se a imagem, por algum motivo, não puder ser carregada (caminho quebrado, conexão lenta), o navegador exibirá o texto alternativo em seu lugar. Além disso, os mecanismos de busca utilizam esse texto para entender e indexar o conteúdo da imagem.
 
-## Dimensionando Imagens: `width` e `height`
+## Dimensionando Imagens com `width` e `height`
 
 Os atributos `width` (largura) e `height` (altura) permitem especificar as dimensões de uma imagem em pixels.
 
@@ -53,16 +53,16 @@ Os atributos `width` (largura) e `height` (altura) permitem especificar as dimen
 
 A escolha do formato de arquivo correto é um equilíbrio entre qualidade visual e tamanho do arquivo (desempenho). Os formatos mais comuns são:
 
-|**Abreviação**|**Formato do arquivo**|**Extensão**|**Uso Ideal**|
-|---|---|---|---|
-|**JPEG**|Joint Photographic Expert Group|.jpg, .jpeg|Ideal para **fotografias** e imagens com muitas cores e gradientes. Usa compressão com perda de dados para gerar arquivos menores.|
-|**PNG**|Portable Network Graphics|.png|Perfeito para **logotipos, ícones** e gráficos com linhas nítidas. Suporta **transparência** e usa compressão sem perda de dados.|
-|**GIF**|Graphics Interchange Format|.gif|Usado principalmente para **animações simples**. É limitado a uma paleta de 256 cores.|
-|**SVG**|Scalable Vector Graphics|.svg|Um formato vetorial baseado em XML. É **infinitamente escalável** sem perda de qualidade, perfeito para logotipos e ícones que precisam ser exibidos em vários tamanhos.|
-|**APNG**|Animated Portable Network Graphics|.apng|Uma alternativa moderna ao GIF para animações, suportando mais cores e transparência.|
-|**ICO**|Microsoft Icon|.ico|Formato padrão para **ícones**, mais conhecido por seu uso em "favicons" (os ícones que aparecem na aba do navegador).|
+| **Abreviação** | **Formato do arquivo**             | **Extensão** | **Uso Ideal**                                                                                                                                                            |
+| -------------- | ---------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **JPEG**       | Joint Photographic Expert Group    | .jpg, .jpeg  | Ideal para **fotografias** e imagens com muitas cores e gradientes. Usa compressão com perda de dados para gerar arquivos menores.                                       |
+| **PNG**        | Portable Network Graphics          | .png         | Perfeito para **logotipos, ícones** e gráficos com linhas nítidas. Suporta **transparência** e usa compressão sem perda de dados.                                        |
+| **GIF**        | Graphics Interchange Format        | .gif         | Usado principalmente para **animações simples**. É limitado a uma paleta de 256 cores.                                                                                   |
+| **SVG**        | Scalable Vector Graphics           | .svg         | Um formato vetorial baseado em XML. É **infinitamente escalável** sem perda de qualidade, perfeito para logotipos e ícones que precisam ser exibidos em vários tamanhos. |
+| **APNG**       | Animated Portable Network Graphics | .apng        | Uma alternativa moderna ao GIF para animações, suportando mais cores e transparência.                                                                                    |
+| **ICO**        | Microsoft Icon                     | .ico         | Formato padrão para **ícones**, mais conhecido por seu uso em "favicons" (os ícones que aparecem na aba do navegador).                                                   |
 
-## Técnicas Avançadas: Mapas de Imagem e Imagens Responsivas
+## Técnicas Avançadas
 
 Além da inserção simples, o HTML oferece ferramentas para tornar as imagens mais interativas e adaptáveis.
 
