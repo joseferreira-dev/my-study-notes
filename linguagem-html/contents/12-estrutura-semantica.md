@@ -8,13 +8,13 @@ Neste capítulo, vamos mergulhar na revolução semântica que o HTML5 trouxe pa
 
 Dominar a arquitetura semântica é o que diferencia um desenvolvedor que meramente "monta" páginas de um que "projeta" documentos web inteligentes, acessíveis e otimizados para o futuro.
 
-## A Anatomia de uma Página Web Moderna
+## Anatomia de uma Página Web Moderna
 
 Os elementos semânticos de layout do HTML5 foram criados para mapear as seções que se repetem conceitualmente em quase todos os sites. Eles fornecem um vocabulário padrão para descrever a estrutura do documento.
 
 Vamos analisar cada um desses componentes.
 
-## `<header>`: O Cabeçalho Introdutório
+## `<header>`: Cabeçalho
 
 O elemento `<header>` representa um grupo de conteúdos introdutórios ou de auxílio à navegação. Ele geralmente contém o logotipo do site, o título principal (`<h1>`), talvez um slogan e, frequentemente, o elemento `<nav>`.
 
@@ -47,7 +47,7 @@ O elemento `<header>` representa um grupo de conteúdos introdutórios ou de aux
 </body>
 ```
 
-## `<footer>`: O Rodapé Conclusivo
+## `<footer>`: Rodapé
 
 De forma simétrica ao `<header>`, o elemento `<footer>` representa o rodapé de seu ancestral de seção mais próximo. Ele geralmente contém informações sobre o autor, dados de copyright, links para documentos relacionados, informações de contato, etc.
 
@@ -79,7 +79,7 @@ Assim como o `<header>`, o `<footer>` também é contextual e uma página pode t
 </body>
 ```
 
-## `<nav>`: A Navegação Principal
+## `<nav>`: Navegação Principal
 
 O elemento `<nav>` é projetado especificamente para agrupar os **principais links de navegação** de uma página. Não utilize `<nav>` para qualquer grupo de links. Seu propósito é demarcar a navegação primária do site, como o menu principal, ou a navegação secundária importante, como um índice de seções dentro da própria página.
 
@@ -104,7 +104,7 @@ O elemento `<nav>` é projetado especificamente para agrupar os **principais lin
 </header>
 ```
 
-## `<main>`: O Coração da Página
+## `<main>`: Conteúdo Principal
 
 Este é, possivelmente, o elemento semântico de layout mais importante. O `<main>` define o **conteúdo principal ou central** do `<body>` de um documento. É o conteúdo que está diretamente relacionado ao tópico central da página.
 
@@ -132,7 +132,7 @@ Seu uso é um sinal poderoso para tecnologias de acessibilidade, permitindo que 
 </body>
 ```
 
-## `<section>` vs. `<article>`: A Dúvida Comum
+## Diferença entre `<section>` vs. `<article>`
 
 A distinção entre `<section>` e `<article>` pode ser sutil, mas é fundamental.
 
@@ -154,7 +154,7 @@ Um `<article>` pode ter seu próprio `<header>` e `<footer>`.
 
 Use o elemento `<section>` para agrupar conteúdos que possuem uma **relação temática entre si**. Diferente do `<article>`, uma `<section>` não precisa fazer sentido de forma isolada. É uma seção de um documento maior.
 
-A regra de ouro: um elemento `<section>` quase sempre deve ter um título (`<h1>`-`<h6>`) que identifique seu tema.
+Em regra, um elemento `<section>` quase sempre deve ter um título (`<h1>`-`<h6>`) que identifique seu tema.
 
 **Exemplos para `<section>`:**
 
@@ -198,7 +198,7 @@ O elemento `<aside>` é usado para conteúdo que está apenas **tangencialmente 
 </main>
 ```
 
-## Juntando as Peças: A Estrutura Completa
+## Juntando as Peças: Estrutura Completa
 
 Agora, vamos montar o esqueleto de uma página de post de blog completa, aplicando todos os conceitos que aprendemos.
 
