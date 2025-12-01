@@ -1,4 +1,4 @@
-# Capítulo 15 – Canvas: A Tela de Desenho Dinâmica
+# Capítulo 15 – Canvas
 
 Nos últimos capítulos, exploramos as diversas maneiras de exibir conteúdo estruturado e mídia na web. Vimos como o SVG nos permite criar gráficos vetoriais escaláveis e interativos. Agora, vamos explorar uma tecnologia com um propósito diferente, mas igualmente poderosa: o elemento **`<canvas>`**. Enquanto o SVG é descritivo e baseado em objetos, o `<canvas>` nos oferece uma tela em branco, uma área de desenho baseada em pixels onde podemos usar JavaScript para criar gráficos, animações, jogos e outras visualizações complexas em tempo real.
 
@@ -10,7 +10,7 @@ Dominar o `<canvas>` é abrir uma porta para um novo mundo de criatividade na we
 
 O elemento `<canvas>` é, em sua essência, uma tag HTML que cria um contêiner retangular de tamanho fixo em sua página. Sozinho, ele é invisível. Pense nele como uma tela de pintura em branco. Todo o "desenho" que acontece nele não é feito com HTML, mas sim com **JavaScript**.
 
-### A Diferença Fundamental: Canvas vs. SVG
+### Diferença entre Canvas vs. SVG
 
 Para entender o `<canvas>`, é crucial contrastá-lo com o SVG.
 
@@ -19,7 +19,7 @@ Para entender o `<canvas>`, é crucial contrastá-lo com o SVG.
 
 Essa diferença define seus casos de uso: SVG é ótimo para ícones, logos e infográficos com interatividade em elementos individuais. Canvas é imbatível para jogos, animações complexas e visualização de dados com milhares de elementos, onde a performance é crítica.
 
-### A Estrutura Básica
+### Estrutura Básica
 
 O HTML para um canvas é minimalista. Seus atributos mais importantes definem suas dimensões.
 
@@ -36,7 +36,7 @@ Os atributos do `<canvas>` são:
 
 O conteúdo entre `<canvas>` e `</canvas>` serve como texto de fallback para navegadores muito antigos que não suportam o elemento.
 
-## Desenhando com JavaScript: O Contexto de Renderização
+## Desenhando com JavaScript: Contexto de Renderização
 
 Como mencionado, a tag `<canvas>` é apenas o contêiner. Para desenhar, precisamos obter seu **contexto de renderização**. O contexto mais comum, e o foco deste capítulo, é o 2D.
 
@@ -161,7 +161,7 @@ O fluxo de trabalho é sempre o mesmo:
 </html>
 ```
 
-## Dando Vida: Animações
+## Criando Animações
 
 A verdadeira magia do canvas acontece quando criamos animações. A animação em canvas é um conceito simples que se assemelha a um filme: exibimos uma sequência de quadros (frames) em alta velocidade, criando a ilusão de movimento.
 
