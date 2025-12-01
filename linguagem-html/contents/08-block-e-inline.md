@@ -20,7 +20,7 @@ A maioria dos elementos que usamos para estruturar o layout de uma página são,
 
 **Exemplos Comuns:** `<h1>`-`<h6>`, `<p>`, `<ul>`, `<ol>`, `<li>`, `<table>`, `<blockquote>`, e os elementos semânticos do HTML5 como `<header>`, `<main>`, `<section>`, `<article>` e `<footer>`.
 
-### O Contêiner de Bloco Genérico: `<div>`
+### Contêiner de Bloco Genérico: `<div>`
 
 O elemento `<div>` (divisão) é o contêiner de bloco mais genérico que existe. Ele não possui **nenhum valor semântico**; seu único propósito é agrupar outros elementos para fins de estilização ou layout, especialmente quando nenhum dos elementos semânticos mais específicos (como `<article>` ou `<section>`) se encaixa adequadamente.
 
@@ -48,7 +48,7 @@ Suas características principais são:
 
 **Exemplos Comuns:** `<a>`, `<strong>`, `<em>`, `<b>`, `<i>`, `<img>`, `<sub>`, `<sup>` e `<br>`.
 
-### O Contêiner de Linha Genérico: `<span>`
+### Contêiner de Linha Genérico: `<span>`
 
 O elemento `<span>` é o equivalente em linha do `<div>`. Ele também é **semanticamente neutro** e é usado para agrupar um pequeno trecho de texto ou outros elementos de linha, geralmente para aplicar um estilo específico ou para ser alvo de JavaScript, sem quebrar o fluxo do parágrafo.
 
@@ -91,7 +91,7 @@ A melhor forma de entender a diferença é visualizando o comportamento de cada 
 
 **Resultado Visual:** Os `<span>`s não quebrarão a linha. Eles fluirão junto com o texto e sua cor de fundo cobrirá apenas o espaço de seu próprio conteúdo.
 
-## A Importância da Distinção para o Layout
+## Importância da Distinção para o Layout
 
 Compreender a diferença entre elementos de bloco e de linha é o primeiro passo para dominar o layout com CSS. O CSS nos dá o poder de alterar esse comportamento padrão através da propriedade `display`. Por exemplo, podemos fazer com que itens de uma lista (`<li>`, que são de bloco) se alinhem horizontalmente (`display: inline-block;`), ou que um link (`<a>`, que é de linha) ocupe toda a largura de seu contêiner (`display: block;`).
 
