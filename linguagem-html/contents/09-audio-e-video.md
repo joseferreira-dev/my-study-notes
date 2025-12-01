@@ -6,7 +6,7 @@ Neste capítulo, vamos explorar como usar esses poderosos elementos para incorpo
 
 Ao final, você estará apto a enriquecer seus projetos com conteúdo multimídia de maneira profissional, acessível e compatível com os padrões atuais da web.
 
-## O Elemento `<video>`: Trazendo Vídeos para a Página
+## Elemento `<video>`
 
 O elemento `<video>` permite incorporar um player de vídeo diretamente em seu documento HTML. Sua forma mais básica é surpreendentemente simples, necessitando apenas do caminho para o arquivo de vídeo.
 
@@ -45,7 +45,7 @@ O navegador irá percorrer cada `<source>`, da primeira à última, e tocará o 
 </video>
 ```
 
-## O Elemento `<audio>`: Incorporando Som
+## Elemento `<audio>`
 
 O elemento `<audio>` funciona de maneira muito semelhante ao `<video>`, mas é projetado especificamente para conteúdo de áudio. A estrutura é praticamente a mesma, incluindo o uso do atributo `controls` e do elemento `<source>` para compatibilidade. A principal diferença é que ele não possui atributos visuais como `width`, `height` ou `poster`.
 
@@ -77,7 +77,7 @@ Tanto `<video>` quanto `<audio>` compartilham uma série de atributos booleanos 
 </video>
 ```
 
-## Acessibilidade: Legendas e Faixas de Texto com `<track>`
+## Legendas e Faixas de Texto com `<track>`
 
 Tornar o conteúdo multimídia acessível é fundamental. O elemento `<track>` é usado dentro de `<video>` ou `<audio>` para especificar faixas de texto cronometradas, como legendas, que são essenciais para pessoas com deficiência auditiva, para quem não fala o idioma do áudio ou para quem assiste a vídeos com o som desativado.
 
