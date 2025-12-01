@@ -1,4 +1,4 @@
-# Capítulo 23 – APIs HTML: O Poder das Aplicações Web
+# Capítulo 23 – APIs HTML
 
 Até este ponto de nossa jornada, focamos primariamente no HTML como uma linguagem de marcação — um sistema para estruturar conteúdo e dar-lhe significado semântico. No entanto, o HTML5 evoluiu para ser muito mais do que isso. Ele se tornou o alicerce de uma poderosa plataforma de aplicações, capaz de rivalizar com muitas aplicações desktop nativas. Essa transformação foi possível graças à introdução de um rico conjunto de **APIs (Application Programming Interfaces)**.
 
@@ -6,7 +6,7 @@ Uma API, no contexto do navegador, é uma "ponte" que permite que nosso código 
 
 Neste capítulo, vamos explorar o excitante mundo das APIs do HTML. Daremos uma visão geral das capacidades que elas nos oferecem e, em seguida, faremos um mergulho profundo em duas das mais utilizadas e importantes: a **API de Geolocalização**, que nos permite interagir com o mundo físico, e a **API de Armazenamento Web**, que nos dá a capacidade de salvar dados diretamente no navegador do usuário.
 
-## Um Panorama das APIs Web
+## Panorama das APIs Web
 
 O HTML5 e as tecnologias da web relacionadas apresentam dezenas de APIs. Muitas delas já foram mencionadas em capítulos anteriores, como a **API Canvas** para desenho dinâmico ou a **API de Áudio da Web**. Vamos revisar brevemente algumas das mais impactantes:
 
@@ -18,7 +18,7 @@ O HTML5 e as tecnologias da web relacionadas apresentam dezenas de APIs. Muitas 
 
 Agora, vamos nos aprofundar nas APIs de Geolocalização e Armazenamento.
 
-## Mergulho Profundo: API de Geolocalização
+## API de Geolocalização
 
 A API de Geolocalização permite obter a posição geográfica de um dispositivo. Por razões óbvias de privacidade, o navegador **sempre solicitará a permissão explícita do usuário** antes de compartilhar essa informação com o seu site.
 
@@ -104,7 +104,7 @@ O principal método é o `getCurrentPosition()`. Ele tenta obter a localização
 
 Além de obter a localização uma única vez, a API permite monitorar as mudanças de posição do usuário (útil para aplicações de navegação). Para isso, usa-se o método `watchPosition()`, que funciona de forma similar, mas executa a função de sucesso toda vez que a posição do dispositivo é atualizada.
 
-## Mergulho Profundo: API de Armazenamento Web (Web Storage)
+## API de Armazenamento Web (Web Storage)
 
 A API Web Storage fornece um mecanismo para armazenar dados no formato chave-valor de forma muito mais intuitiva e com maior capacidade do que os antigos cookies. Existem dois tipos de armazenamento disponíveis.
 
