@@ -1,4 +1,4 @@
-# Capítulo 21 – Atributos `data-*`: Armazenando Dados Customizados no HTML
+# Capítulo 21 – Atributos `data-*`
 
 Ao longo de nossa jornada pelo HTML, aprendemos a usar uma vasta gama de atributos para definir o comportamento e as características dos elementos. Atributos como `id`, `class`, `lang` e `href` possuem propósitos bem definidos e padronizados. No entanto, ao construir aplicações web interativas, frequentemente nos deparamos com a necessidade de armazenar informações extras diretamente em um elemento — dados que não são necessariamente para exibição, mas que são cruciais para a lógica do nosso JavaScript.
 
@@ -54,7 +54,7 @@ A forma mais antiga e universal de ler qualquer atributo de um elemento é usand
 
 Embora funcione perfeitamente, este método é um pouco verboso.
 
-### Método Moderno e Recomendado: a Propriedade `dataset`
+### Método Moderno e Recomendado: Propriedade `dataset`
 
 O HTML5 introduziu uma interface muito mais limpa e conveniente: a propriedade `dataset`. Todo elemento HTML possui uma propriedade `dataset`, que é um objeto (`DOMStringMap`) contendo todos os atributos `data-*` daquele elemento.
 
