@@ -1,4 +1,4 @@
-# Capítulo 2 – Trabalhando com Texto: Da Estrutura à Ênfase
+# Capítulo 2 – Trabalhando com Texto
 
 Com a estrutura fundamental de um documento HTML já compreendida, podemos agora nos concentrar no elemento mais onipresente da web: o texto. Praticamente todo site, de um simples blog a um complexo portal de notícias, depende de conteúdo textual para comunicar sua mensagem. No entanto, texto puro, sem formatação ou hierarquia, seria uma massa ilegível e desinteressante. O HTML nos oferece um rico arsenal de tags projetadas especificamente para dar forma, estrutura e, mais importante, significado semântico ao nosso conteúdo escrito.
 
@@ -6,7 +6,7 @@ Neste capítulo, mergulharemos no universo dos elementos textuais. Começaremos 
 
 Ao final, você estará apto a transformar um texto simples em um documento bem-estruturado, acessível e semanticamente rico, utilizando a tag correta para cada propósito.
 
-## Cabeçalhos: A Hierarquia do Conteúdo (`<h1>`–`<h6>`)
+## Cabeçalhos
 
 Os cabeçalhos são, talvez, os elementos mais importantes para a estruturação de uma página. Eles funcionam como títulos e subtítulos de um livro ou documento, criando uma hierarquia clara que guia o leitor (e os mecanismos de busca) através do conteúdo. O HTML fornece seis níveis de cabeçalho, do `<h1>` (o mais importante) ao `<h6>` (o menos importante).
 
@@ -36,7 +36,7 @@ Os cabeçalhos são, talvez, os elementos mais importantes para a estruturação
 </main>
 ```
 
-## Parágrafos e Quebras: Organizando o Fluxo de Texto
+## Parágrafos e Quebras
 
 Enquanto os cabeçalhos estruturam o documento em seções, os parágrafos e elementos de quebra organizam o fluxo do texto dentro dessas seções.
 
@@ -101,7 +101,7 @@ O HTML possui diversas tags para formatar trechos de texto. É fundamental disti
 <p>Preço: <del>R$ 99,90</del> <ins>R$ 79,90</ins>.</p>
 ```
 
-## Citação e Referências: Dando Crédito e Contexto
+## Citação e Referências
 
 Marcar corretamente citações e referências é essencial para a semântica e acessibilidade.
 
@@ -124,7 +124,7 @@ Marcar corretamente citações e referências é essencial para a semântica e a
 <p>A <abbr title="Organização das Nações Unidas">ONU</abbr> foi fundada em 1945.</p>
 ```
 
-## Entidades de Caracteres Especiais: Exibindo Símbolos Reservados
+## Entidades de Caracteres Especiais
 
 E se quisermos exibir o caractere `<` como texto em nossa página? Se simplesmente o digitarmos, o navegador tentará interpretá-lo como o início de uma tag, quebrando o layout. Para resolver isso, usamos as **entidades de caracteres**. São códigos especiais que representam caracteres reservados ou símbolos que não estão disponíveis no teclado.
 
@@ -150,7 +150,7 @@ O `&nbsp;` é particularmente útil para garantir que duas palavras permaneçam 
 <p>A empresa M&amp;M &copy; tem seus direitos reservados.</p>
 ```
 
-## Comentários em HTML
+## Comentários
 
 Comentários são trechos de texto no código que **não são exibidos** pelo navegador. Eles são úteis para deixar notas para outros desenvolvedores (ou para você mesmo no futuro), explicar blocos de código complexos ou desativar temporariamente uma parte do código sem excluí-la.
 
@@ -161,7 +161,7 @@ A sintaxe de um comentário começa com `<!--` e termina com `-->`.
 <!-- Isto é um comentário que não será exibido --> 
 ```
 
-## Uma Breve Palavra Sobre Estilos (Atributo `style`)
+## Observação Sobre Estilos (Atributo `style`)
 
 É possível aplicar estilos de CSS diretamente em um elemento HTML usando o atributo global `style`. Isso é chamado de **CSS inline**.
 
