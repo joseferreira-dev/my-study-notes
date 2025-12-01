@@ -104,7 +104,7 @@ Imagine que você está incorporando um formulário de newsletter de um serviço
 </iframe>
 ```
 
-Neste caso, estamos permitindo a execução de scripts e o envio de formulários, mas mantendo todas as outras restrições de segurança do sandbox, como o bloqueio de pop-ups e o acesso a cookies, o que torna a incorporação muito mais segura.
+Neste caso, estamos permitindo a execução de scripts e o envio de formulários, mas mantendo todas as outras restrições de segurança do `sandbox`, como o bloqueio de pop-ups e o acesso a cookies, o que torna a incorporação muito mais segura.
 
 ## Considerações Finais
 
