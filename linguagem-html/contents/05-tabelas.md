@@ -1,4 +1,4 @@
-# Capítulo 5 – Tabelas: Organizando Dados de Forma Estruturada
+# Capítulo 5 – Tabelas
 
 Depois de aprendermos a estruturar textos, conectar páginas com links e dar vida visual com imagens, chegamos a um desafio comum no mundo da informação: como apresentar dados que possuem uma relação entre si de forma clara e organizada? Pense em relatórios financeiros, calendários, especificações de produtos ou grades de horários. Para esses cenários, uma simples lista ou parágrafo não é suficiente. É aqui que as **tabelas** HTML entram em cena.
 
@@ -6,7 +6,7 @@ Neste capítulo, vamos explorar em profundidade o conjunto de elementos que o HT
 
 É importante ressaltar uma prática fundamental desde o início: **tabelas devem ser usadas para exibir dados tabulares, e não para criar o layout de uma página**. O uso de tabelas para layout foi uma técnica comum no passado, mas hoje é considerada ultrapassada, prejudicial à acessibilidade e à manutenção.
 
-## A Estrutura Fundamental de uma Tabela
+## Estrutura Fundamental de uma Tabela
 
 A construção de uma tabela em HTML envolve a combinação de alguns elementos essenciais que trabalham em conjunto para formar uma grade de linhas e colunas.
 
@@ -36,7 +36,7 @@ Vamos ver como eles se combinam em uma tabela simples que lista nomes e idades:
 
 Neste exemplo, criamos uma tabela com três linhas (`<tr>`). A primeira linha contém as células de cabeçalho (`<th>`) e as duas seguintes contêm as células de dados (`<td>`).
 
-## Agrupamento Semântico: `<thead>`, `<tbody>` e `<tfoot>`
+## Agrupamento Semântico
 
 Para tabelas mais longas e complexas, é uma excelente prática agrupar as linhas em seções semânticas. Isso torna o código mais legível e acessível, além de permitir estilização mais avançada com CSS.
 
@@ -79,7 +79,7 @@ Esses elementos não alteram a estrutura visual padrão da tabela, mas adicionam
 </table>
 ```
 
-## Mesclando Células: `colspan` e `rowspan`
+## Mesclando Células
 
 Para criar tabelas com layouts mais complexos, muitas vezes precisamos que uma única célula ocupe o espaço de várias colunas ou linhas. Para isso, usamos os atributos `colspan` e `rowspan`.
 
@@ -92,7 +92,8 @@ Para criar tabelas com layouts mais complexos, muitas vezes precisamos que uma �
 <table border="1"> <caption>Horário Semanal</caption>
   <thead>
     <tr>
-      <th></th> <th>Segunda</th>
+      <th></th>
+      <th>Segunda</th>
       <th>Terça</th>
       <th>Quarta</th>
     </tr>
@@ -101,7 +102,8 @@ Para criar tabelas com layouts mais complexos, muitas vezes precisamos que uma �
     <tr>
       <th>Manhã</th>
       <td>HTML</td>
-      <td rowspan="2">CSS Avançado</td> <td>JavaScript</td>
+      <td rowspan="2">CSS Avançado</td>
+      <td>JavaScript</td>
     </tr>
     <tr>
       <th>Tarde</th>
@@ -109,18 +111,19 @@ Para criar tabelas com layouts mais complexos, muitas vezes precisamos que uma �
       <td>Banco de Dados</td>
     </tr>
     <tr>
-      <th colspan="4">Noite: Turmas em Formação</th> </tr>
+      <th colspan="4">Noite: Turmas em Formação</th>
+    </tr>
   </tbody>
 </table>
 ```
 
 **Nota**: O atributo `border="1"` é uma forma antiga de adicionar bordas e não é recomendado em projetos modernos. O ideal é usar CSS para estilização.
 
-## Adicionando um Título: O Elemento `<caption>`
+## Adicionando um Título com `<caption>`
 
 O elemento `<caption>` fornece um título ou legenda para a tabela. Ele é fundamental para a acessibilidade, pois os leitores de tela o utilizam para fornecer contexto ao usuário antes de ler os dados da tabela. Por regra, o `<caption>` deve ser o **primeiro elemento filho** dentro da tag `<table>`.
 
-## Estilizando Colunas: `<colgroup>` e `<col>`
+## Estilizando Colunas
 
 Às vezes, queremos aplicar um estilo (como uma cor de fundo ou uma largura específica) a uma coluna inteira. Fazer isso em cada célula (`<td>`) seria repetitivo. As tags `<colgroup>` e `<col>` resolvem isso.
 
@@ -136,7 +139,9 @@ Essas tags devem ser colocadas logo após o `<caption>` e antes do `<thead>`.
   <caption>Relatório de Vendas Trimestral</caption>
   
   <colgroup>
-    <col span="1" style="background-color: #f2f2f2;"><col span="3">
+    <col span="1" style="background-color: #f2f2f2;">
+    <col span="1" style="background-color: #c2c2c2;">
+    <col span="2" style="background-color: #299292;">
   </colgroup>
   
   <thead>
@@ -158,7 +163,7 @@ Essas tags devem ser colocadas logo após o `<caption>` e antes do `<thead>`.
 </table>
 ```
 
-## Estilizando Bordas: Uma Breve Olhada em CSS
+## Estilizando Bordas
 
 Como mencionado, o atributo `border` do HTML é obsoleto. A maneira moderna e correta de estilizar bordas é usando a propriedade `border` do CSS. Embora o CSS seja um tópico para outro momento, é útil saber como o estilo de borda funciona.
 
@@ -195,4 +200,4 @@ Neste capítulo, desvendamos a anatomia das tabelas em HTML. Aprendemos a constr
 
 A mensagem central é que tabelas são uma ferramenta poderosa e específica para a **apresentação de dados tabulares**. Compreender sua estrutura e semântica é essencial para exibir informações complexas de forma clara, organizada e, acima de tudo, acessível. A estilização, como as bordas, é uma camada de apresentação que deve ser, preferencialmente, gerenciada pelo CSS.
 
-Agora que sabemos como exibir informações, o próximo passo lógico é aprender como **coletar informações** do usuário. No próximo capítulo, mergulharemos nos **formulários**, explorando os diversos campos de entrada que nos permitem criar interatividade e capturar dados.
+Agora que sabemos como exibir informações, o próximo passo lógico é aprender como **coletar informações** do usuário. No próximo capítulo, mergulharemos nas **listas**, explorando seus diversos tipos e estilos.
