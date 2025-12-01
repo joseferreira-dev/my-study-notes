@@ -1,4 +1,4 @@
-# Capítulo 13 – Conteúdo Embutido: Janelas para a Web
+# Capítulo 13 – Conteúdo Embutido
 
 Até agora, aprendemos a construir páginas ricas com conteúdo nativo: textos, imagens, vídeos, áudios e formulários, todos parte integrante do nosso próprio documento. No entanto, a web é uma plataforma conectada, e muitas vezes precisamos ir além das fronteiras de nossa página para incorporar recursos e funcionalidades de fontes externas. Seja um mapa interativo do Google, um vídeo do YouTube, um feed de uma rede social ou um processador de pagamento, a capacidade de "embutir" ou "incorporar" conteúdo de terceiros é fundamental para a criação de aplicações web modernas.
 
@@ -6,7 +6,7 @@ Neste capítulo, exploraremos as ferramentas que o HTML nos oferece para integra
 
 Compreender como e, principalmente, **quando** incorporar conteúdo externo de forma segura é uma habilidade essencial para o desenvolvedor web, permitindo enriquecer uma página com funcionalidades complexas sem comprometer sua integridade.
 
-## `<embed>`: Incorporando Conteúdo de Plugins
+## Elemento `<embed>`
 
 O elemento `<embed>` serve como um ponto de integração para aplicações ou conteúdos externos, geralmente interativos, que requerem o uso de um plugin específico. Historicamente, ele era a principal forma de incorporar conteúdos como animações em Adobe Flash, applets Java ou leitores de PDF.
 
@@ -26,7 +26,7 @@ Os atributos do elemento `<embed>` são:
 
 É importante notar que, para a maioria das necessidades de incorporação de páginas ou aplicações web completas, o `<iframe>` é a ferramenta moderna, mais poderosa e mais segura.
 
-## `<iframe>`: Uma Janela Dentro da Página
+## Elemento `<iframe>`
 
 O elemento `<iframe>` (Inline Frame) é a solução padrão do HTML para incorporar um documento HTML completo dentro de outro. Ele cria um **contexto de navegação aninhado** — essencialmente, uma janela de navegador totalmente funcional dentro da sua própria página, com seu próprio histórico de sessão e documento.
 
@@ -44,9 +44,9 @@ Os atributos do elemento `<iframe>` são:
 
 - **`src` (Source)**: A URL da página que você deseja carregar dentro do iframe.
 - **`width` e `height`**: As dimensões do quadro. Embora possam ser definidos diretamente, é uma prática comum controlá-los com CSS para criar iframes responsivos.
-- **`name`**: Atribui um nome ao `<iframe>`. Este nome pode ser usado como o valor do atributo `target` em um link (`<a>`) ou formulário (`<form>`), fazendo com que o resultado da ação seja carregado dentro do iframe, em vez de na janela principal.
-- **`srcdoc` (Source Document)**: Um atributo poderoso que permite que você forneça o código HTML que será renderizado no iframe **diretamente no atributo**, em vez de apontar para uma URL externa. Isso é extremamente útil para exibir conteúdo simples ou gerado dinamicamente sem a necessidade de criar um arquivo separado. O conteúdo do `srcdoc`, se presente, tem prioridade sobre o atributo `src`.
-- **`allowfullscreen`**: Um atributo booleano que, se presente, permite que o conteúdo dentro do iframe (como um vídeo) possa ser exibido em modo de tela cheia. A sintaxe mais moderna e recomendada é usar o atributo `allow`.
+- **`name`**: Atribui um nome ao `<iframe>`. Este nome pode ser usado como o valor do atributo `target` em um link (`<a>`) ou formulário (`<form>`), fazendo com que o resultado da ação seja carregado dentro do `<iframe>`, em vez de na janela principal.
+- **`srcdoc` (Source Document)**: Um atributo poderoso que permite que você forneça o código HTML que será renderizado no `<iframe>` **diretamente no atributo**, em vez de apontar para uma URL externa. Isso é extremamente útil para exibir conteúdo simples ou gerado dinamicamente sem a necessidade de criar um arquivo separado. O conteúdo do `srcdoc`, se presente, tem prioridade sobre o atributo `src`.
+- **`allowfullscreen`**: Um atributo booleano que, se presente, permite que o conteúdo dentro do `<iframe>` (como um vídeo) possa ser exibido em modo de tela cheia. A sintaxe mais moderna e recomendada é usar o atributo `allow`.
 - **`allow`**: Este atributo, mais moderno, oferece um controle granular sobre quais recursos e APIs o `<iframe>` pode acessar. Por exemplo, `allow="fullscreen; camera; microphone"` permitiria o uso de tela cheia, da câmera e do microfone pelo documento incorporado.
 
 **Exemplo de uso básico:**
@@ -63,7 +63,7 @@ Os atributos do elemento `<iframe>` são:
 </iframe>
 ```
 
-## A Muralha de Segurança: O Atributo `sandbox`
+## Atributo `sandbox`
 
 Incorporar conteúdo de um site que você não controla é inerentemente arriscado. O documento dentro do `<iframe>` poderia tentar executar um script malicioso, exibir pop-ups indesejados, ou redirecionar o usuário para um site de phishing. Para mitigar esses riscos, o HTML5 introduziu o atributo `sandbox`.
 
@@ -82,7 +82,7 @@ O `sandbox` funciona como uma "caixa de areia" que impõe um conjunto de restri�
 - Impede o bloqueio do ponteiro do mouse.
 - E muitas outras restrições de API.
 
-### Relaxando a Caixa de Areia: `allow-*`
+### Relaxando a Caixa de Areia com `allow-*`
 
 Frequentemente, o conteúdo de terceiros precisa de certas permissões para funcionar. Por exemplo, um widget de comentários precisa executar scripts e enviar formulários. O atributo `sandbox` permite que você relaxe seletivamente as restrições adicionando valores (tokens) a ele.
 
