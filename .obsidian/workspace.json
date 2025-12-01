@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-html/contents/09-audio-e-video.md",
+                "file": "linguagem-html/contents/10-medidores-e-progresso.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09-audio-e-video"
+              "title": "10-medidores-e-progresso"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-html/contents/09-audio-e-video.md",
+                "file": "linguagem-html/contents/10-medidores-e-progresso.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 09-audio-e-video"
+              "title": "Sumário de 10-medidores-e-progresso"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "6e448166c9fae89a",
   "lastOpenFiles": [
+    "linguagem-html/contents/09-audio-e-video.md",
     "linguagem-html/contents/08-block-e-inline.md",
     "linguagem-html/contents/07-classes-e-ids.md",
     "linguagem-html/contents/06-listas.md",
@@ -206,7 +207,6 @@
     "linguagem-c/contents/09-estruturas-de-repetição.md",
     "linguagem-c/contents/09.md",
     "linguagem-c/contents/08-estruturas-de-decisão.md",
-    "linguagem-c/contents/08.md",
     "algoritmos-e-estruturas-de-dados/contents/img",
     "algoritmos-e-estruturas-de-dados/contents",
     "algoritmos-e-estruturas-de-dados",

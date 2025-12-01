@@ -1,4 +1,4 @@
-# Capítulo 10 – Medidores e Progresso: Visualizando Dados e Tarefas
+# Capítulo 10 – Medidores e Progresso
 
 A web moderna exige que comuniquemos informações de forma cada vez mais visual e intuitiva. Além de simplesmente exibir dados estáticos, muitas vezes precisamos representar medidas, como o uso de espaço em disco, a força de uma senha, ou o status de uma tarefa em andamento, como um upload de arquivo. Para esses cenários, o HTML5 nos fornece dois elementos semânticos específicos e poderosos: `<meter>` e `<progress>`.
 
@@ -6,7 +6,7 @@ Neste capítulo, vamos explorar em detalhe essas duas ferramentas. Primeiramente
 
 Compreender quando usar `<meter>` e quando usar `<progress>` é um sinal de maturidade no desenvolvimento HTML, pois demonstra uma preocupação com a semântica correta, o que resulta em um código mais claro, acessível e profissional.
 
-## O Elemento `<meter>`: Representando Medidas Escalares
+## Elemento `<meter>`
 
 O elemento `<meter>` é usado para representar uma medida escalar estática dentro de um intervalo conhecido, ou um valor fracionário. Pense nele como um medidor de combustível em um carro: ele mostra uma quantidade atual (`value`) dentro de uma faixa definida (`min` e `max`).
 
@@ -54,24 +54,20 @@ Neste caso, `value="900"` está acima do limite `high`, então o navegador prova
 
 Aqui, `value="95"` está na faixa "alta" e perto do `optimum`, então o navegador provavelmente exibirá a barra em verde.
 
-## O Elemento `<progress>`: Indicando Tarefas em Andamento
+## Elemento `<progress>`
 
 Como vimos brevemente, o elemento `<progress>` tem um propósito diferente: ele representa a **conclusão de uma tarefa** que está ocorrendo ao longo do tempo. Sua natureza é dinâmica. A analogia perfeita é uma barra de download ou instalação.
 
 O `<progress>` pode operar em dois modos:
 
-**1. Progresso Determinado:**
-
-Usado quando sabemos o total da tarefa. Requer os atributos `value` (quanto foi concluído) e `max` (o trabalho total).
+**1. Progresso Determinado:** Usado quando sabemos o total da tarefa. Requer os atributos `value` (quanto foi concluído) e `max` (o trabalho total).
 
 ```html
 <label for="upload-arquivo">Progresso do Upload:</label>
 <progress id="upload-arquivo" value="78" max="100"></progress>
 ```
 
-**2. Progresso Indeterminado:**
-
-Usado quando uma tarefa está em execução, mas não sabemos quanto tempo levará. Basta omitir o atributo `value`.
+**2. Progresso Indeterminado:** Usado quando uma tarefa está em execução, mas não sabemos quanto tempo levará. Basta omitir o atributo `value`.
 
 ```html
 <p>Processando, por favor aguarde...</p>
@@ -91,7 +87,7 @@ Para evitar qualquer confusão, a tabela abaixo resume a distinção fundamental
 |**Atributos-Chave**|`value`, `min`, `max`, `low`, `high`, `optimum`.|`value`, `max`.|
 |**Analogia**|Medidor de combustível.|Barra de download.|
 
-## Acessibilidade: A Importância do `<label>`
+## Acessibilidade: Importância do `<label>`
 
 Tanto para `<meter>` quanto para `<progress>`, uma representação puramente visual não é acessível. É crucial fornecer um rótulo textual claro para que usuários de tecnologias assistivas possam entender o que o medidor ou a barra de progresso representa.
 
@@ -102,7 +98,7 @@ A maneira semanticamente correta de fazer isso é usando o elemento `<label>`, a
 <meter id="forca-senha" min="0" max="4" value="3">Forte</meter>
 
 <label for="backup-progresso">Progresso do Backup:</label>
-<progress id="backup-progresso" value="50" max="100"> 50% </progress>
+<progress id="backup-progresso" value="50" max="100">50%</progress>
 ```
 
 O texto dentro das tags (`Forte`, `50%`) serve como conteúdo de fallback para navegadores que não suportam esses elementos.
