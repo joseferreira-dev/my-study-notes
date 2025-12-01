@@ -1,4 +1,4 @@
-# Capítulo 6 – Listas: Organizando Informações em Sequências e Grupos
+# Capítulo 6 – Listas
 
 Até agora, aprendemos a estruturar o conteúdo em blocos de texto, a apresentar dados em tabelas e a incorporar mídias como imagens. No entanto, frequentemente nos deparamos com a necessidade de agrupar itens relacionados de uma forma mais simples que uma tabela. Pode ser uma lista de ingredientes para uma receita, uma sequência de passos em um tutorial, ou os tópicos de um menu de navegação. Para esses cenários, o HTML oferece um conjunto poderoso e flexível de elementos de **lista**.
 
@@ -6,7 +6,7 @@ Neste capítulo, vamos explorar os três tipos de listas disponíveis em HTML. C
 
 Compreender o uso correto de cada tipo de lista é fundamental para adicionar clareza e estrutura semântica aos seus documentos, melhorando a legibilidade tanto para humanos quanto para máquinas.
 
-## Listas Não Ordenadas (`<ul>`)
+## Listas Não Ordenadas
 
 Uma lista não ordenada é usada quando os itens pertencem a um mesmo grupo, mas a ordem em que aparecem **não tem relevância**. Pense em uma lista de compras ou nas características de um produto. O elemento que cria essa lista é o `<ul>` (Unordered List), e cada item dentro dela é definido pelo elemento `<li>` (List Item).
 
@@ -24,7 +24,7 @@ Uma lista não ordenada é usada quando os itens pertencem a um mesmo grupo, mas
 
 Por padrão, os navegadores exibem os itens de uma lista não ordenada com um marcador em formato de disco (•).
 
-### Estilizando os Marcadores (`list-style-type`)
+### Estilizando os Marcadores
 
 Embora a estilização seja um trabalho para o CSS, é importante conhecer a propriedade `list-style-type`, que permite alterar a aparência do marcador. Os valores mais comuns para listas não ordenadas são:
 
@@ -42,7 +42,7 @@ Embora a estilização seja um trabalho para o CSS, é importante conhecer a pro
 </ul>
 ```
 
-## Listas Ordenadas (`<ol>`)
+## Listas Ordenadas
 
 Uma lista ordenada é usada quando a **sequência dos itens é importante**. Exemplos clássicos são os passos de um tutorial, um ranking de classificação ou as cláusulas de um contrato. O elemento que a define é o `<ol>` (Ordered List), e, assim como na lista não ordenada, cada item é definido pela tag `<li>`.
 
@@ -60,7 +60,7 @@ Uma lista ordenada é usada quando a **sequência dos itens é importante**. Exe
 
 Por padrão, os navegadores numeram os itens sequencialmente, começando com "1.".
 
-### Personalizando a Ordem (`type` e `start`)
+### Personalizando a Ordem com `type` e `start`
 
 As listas ordenadas oferecem atributos para personalizar o tipo de marcador e o ponto de partida da contagem.
 
@@ -81,7 +81,7 @@ As listas ordenadas oferecem atributos para personalizar o tipo de marcador e o 
 </ol>
 ```
 
-## Listas de Definição (`<dl>`)
+## Listas de Definição
 
 Este é um tipo de lista mais especializado, projetado para apresentar grupos de termos e suas respectivas descrições, como em um glossário ou um dicionário de metadados. A estrutura envolve três elementos:
 
@@ -102,7 +102,7 @@ Um único termo (`<dt>`) pode ter múltiplas descrições (`<dd>`), e múltiplos
 </dl>
 ```
 
-## Listas Aninhadas: Criando Estruturas Complexas
+## Listas Aninhadas
 
 A verdadeira flexibilidade das listas se revela quando as **aninhamos**, ou seja, colocamos uma lista dentro de outra. Essa técnica é fundamental para criar hierarquias de informações, como sumários de livros ou, mais comumente, menus de navegação de sites.
 
