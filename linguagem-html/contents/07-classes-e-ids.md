@@ -1,4 +1,4 @@
-# Capítulo 7 – Classes e IDs: Identificando e Agrupando Elementos 
+# Capítulo 7 – Classes e IDs
 
 Nos capítulos anteriores, aprendemos a construir a estrutura de uma página web utilizando uma vasta gama de elementos HTML, como parágrafos, imagens, tabelas e listas. Criamos documentos semanticamente ricos e bem organizados. Agora, precisamos de uma maneira de nos referirmos a esses elementos de forma específica. Como podemos dizer ao CSS para estilizar apenas um parágrafo de aviso? Ou como podemos usar JavaScript para encontrar um campo de formulário específico e ler seu valor? A resposta está nos atributos globais `id` e `class`.
 
@@ -6,7 +6,7 @@ Neste capítulo, vamos explorar em detalhe esses dois poderosos atributos. Eles 
 
 Dominar o uso de IDs e classes é um passo crucial para transcender o HTML puro. Eles são a ponte que conecta a estrutura do seu documento com as camadas de apresentação (CSS) e de comportamento (JavaScript), permitindo a criação de páginas verdadeiramente dinâmicas e estilizadas.
 
-## O Atributo `id`: Um Identificador Único
+## Atributo `id`: Identificador Único
 
 O atributo `id` atribui um identificador **único** e exclusivo a um elemento dentro de uma página HTML. A regra mais importante a ser lembrada sobre o `id` é:
 
@@ -35,7 +35,7 @@ O `id` é usado principalmente para três finalidades:
 </main>
 ```
 
-## O Atributo `class`: Agrupando Elementos
+## Atributo `class`: Agrupando Elementos
 
 Enquanto o `id` é para um único elemento, o atributo `class` é usado para **agrupar múltiplos elementos** que compartilham características, estilos ou comportamentos semelhantes.
 
@@ -63,7 +63,7 @@ A `class` é a ferramenta mais flexível e comumente usada para:
 <p class="aviso importante">Este é um aviso final.</p>
 ```
 
-## Classes Múltiplas: Combinando Estilos e Comportamentos
+## Classes Múltiplas
 
 Uma das maiores vantagens das classes é que um único elemento pode ter **múltiplas classes**. Para isso, basta listar os nomes das classes no atributo, **separados por um espaço**.
 
@@ -95,9 +95,7 @@ Tanto `id` quanto `class` seguem as mesmas regras de nomenclatura em HTML5:
 - Após a primeira letra, pode conter letras, números (0-9), hífens (`-`) e underscores (`_`).
 - Os nomes são **case-sensitive** (sensíveis a maiúsculas e minúsculas). `minhaClasse` é diferente de `minhaclasse`.
 
-Boas Práticas:
-
-É uma convenção comum usar nomes em letras minúsculas e separar palavras com um hífen (estilo conhecido como "kebab-case"). Isso torna os nomes mais legíveis.
+**Boas Práticas:** É uma convenção comum usar nomes em letras minúsculas e separar palavras com um hífen (estilo conhecido como "kebab-case"). Isso torna os nomes mais legíveis.
 
 - **Nomes Bons:** `id="menu-principal"`, `class="btn-submit"`, `class="card-produto"`
 - **Nomes Ruins:** `id="1secao"`, `class="minha classe"`, `id="#topo"`
