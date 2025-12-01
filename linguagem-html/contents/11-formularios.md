@@ -1,4 +1,4 @@
-# Capítulo 11 – Formulários: A Ponte para a Interatividade
+# Capítulo 11 – Formulários
 
 Até este ponto de nossa jornada, dominamos a arte de estruturar e apresentar informações. Construímos textos, organizamos dados em tabelas, criamos listas, incorporamos mídias e aprendemos a identificar e agrupar elementos. Agora, damos o passo mais crucial em direção à criação de páginas verdadeiramente interativas: aprenderemos a **coletar dados do usuário**. Seja em uma página de login, um formulário de contato, uma pesquisa de satisfação ou um carrinho de compras, os formulários são o principal mecanismo pelo qual a web deixa de ser um monólogo e se torna um diálogo.
 
@@ -6,7 +6,7 @@ Neste capítulo, faremos um mergulho profundo no universo dos formulários HTML.
 
 Ao final, você estará equipado não apenas para construir formulários funcionais, mas para projetá-los de maneira semântica, acessível e intuitiva, criando uma ponte robusta entre o usuário e a aplicação.
 
-## O Elemento `<form>`: O Contêiner da Interação
+## Elemento `<form>`
 
 Tudo começa com o elemento `<form>`. Ele atua como um contêiner que agrupa todos os controles de entrada (inputs, botões, etc.) que pertencem a uma mesma submissão de dados. Quando um formulário é enviado, são os dados dos elementos dentro deste contêiner que são coletados e transmitidos. Seus atributos definem como e para onde esses dados serão enviados.
 
@@ -31,7 +31,7 @@ Os atributos do elemento `<form>` são:
 - **`novalidate`**: Um atributo booleano. Se presente, ele desativa a validação padrão do navegador para os campos do formulário. Útil para fins de teste ou quando se deseja implementar uma validação customizada com JavaScript.
 - **`target`**: Especifica onde exibir a resposta recebida após o envio do formulário. Funciona como o atributo `target` dos links (`_self`, `_blank`, etc.).
 
-## Rótulos (`<label>`): Acessibilidade em Primeiro Lugar
+## Rótulos (`<label>`)
 
 Um formulário sem rótulos é um formulário inacessível e confuso. O elemento `<label>` fornece uma descrição textual para controle de formulário. Sua importância é imensa:
 
@@ -47,7 +47,7 @@ A associação entre um `<label>` e um `<input>` é feita usando o atributo `for
 <input type="text" id="nome-usuario" name="usuario">
 ```
 
-## O Versátil Elemento `<input>`
+## Elemento `<input>`
 
 O elemento `<input>` é, sem dúvida, o mais utilizado e versátil dos formulários. É um elemento vazio, e seu comportamento é drasticamente alterado pelo seu atributo `type`.
 
@@ -71,32 +71,32 @@ Antes de explorarmos os tipos, vamos ver os atributos que são comuns à maioria
 
 O HTML5 expandiu drasticamente o número de tipos de `input`, oferecendo interfaces mais ricas e validações nativas.
 
-|Tipo|Descrição e Uso|Exemplo de Código|
-|---|---|---|
-|`text`|O padrão. Um campo de texto de uma única linha.|`<input type="text" name="nome">`|
-|`password`|Como o `text`, mas os caracteres digitados são mascarados (exibidos como ••••).|`<input type="password" name="senha">`|
-|`email`|Para endereços de e-mail. Navegadores podem exibir um teclado otimizado em dispositivos móveis e validam se o formato parece ser um e-mail válido.|`<input type="email" name="email_contato">`|
-|`tel`|Para números de telefone. Não aplica uma validação de formato específica (pois os formatos variam muito), mas pode acionar teclados numéricos em dispositivos móveis.|`<input type="tel" name="telefone">`|
-|`number`|Para valores numéricos. Navegadores geralmente exibem controles de setas para incrementar/decrementar o valor.|`<input type="number" name="quantidade" min="1" max="10">`|
-|`search`|Funcionalmente similar ao `text`, mas estilizado para indicar que é um campo de busca (pode incluir um "x" para limpar o campo).|`<input type="search" name="q">`|
-|`url`|Para endereços web (URLs). O navegador valida se o formato parece ser uma URL válida.|`<input type="url" name="website">`|
-|`checkbox`|Uma caixa de seleção que pode ser marcada ou desmarcada. Usado para múltiplas opções independentes.|`<input type="checkbox" name="interesses" value="esportes"> Esportes`|
-|`radio`|Um botão de opção. Usado em um grupo onde apenas uma opção pode ser selecionada. **Todos os radios de um mesmo grupo devem ter o mesmo atributo `name`**.|`<input type="radio" name="genero" value="m"> Masculino`|
-|`range`|Um controle deslizante para selecionar um valor dentro de um intervalo.|`<input type="range" name="volume" min="0" max="100">`|
-|`color`|Fornece uma interface (geralmente um seletor de cores) para que o usuário escolha uma cor.|`<input type="color" name="cor_favorita">`|
-|`file`|Permite que o usuário selecione um ou mais arquivos de seu dispositivo para upload. Lembre-se de usar `enctype="multipart/form-data"` no `<form>`.|`<input type="file" name="documento" accept=".pdf,.doc">`|
-|`date`|Apresenta uma interface para selecionar uma data (dia, mês, ano).|`<input type="date" name="nascimento">`|
-|`time`|Apresenta uma interface para selecionar um horário (hora, minutos).|`<input type="time" name="hora_reuniao">`|
-|`datetime-local`|Para selecionar data e hora, sem fuso horário.|`<input type="datetime-local" name="evento_inicio">`|
-|`month`|Para selecionar um mês e ano.|`<input type="month" name="mes_fatura">`|
-|`week`|Para selecionar uma semana e ano.|`<input type="week" name="semana_projeto">`|
-|`submit`|Um botão que, quando clicado, envia o formulário. O `value` define o texto do botão.|`<input type="submit" value="Cadastrar">`|
-|`reset`|Um botão que, quando clicado, redefine todos os controles do formulário para seus valores iniciais.|`<input type="reset" value="Limpar Formulário">`|
-|`button`|Um botão genérico sem ação padrão. Sua funcionalidade deve ser definida com JavaScript.|`<input type="button" value="Clique Aqui">`|
-|`image`|Um botão de envio (`submit`) que é exibido como uma imagem. Requer o atributo `src`.|`<input type="image" src="btn_enviar.png" alt="Enviar">`|
-|`hidden`|Um campo que não é visível para o usuário, mas cujo `name` e `value` são enviados com o formulário. Útil para passar informações de estado, como um ID de usuário.|`<input type="hidden" name="id_produto" value="12345">`|
+| Tipo             | Descrição e Uso                                                                                                                                                       | Exemplo de Código                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `text`           | O padrão. Um campo de texto de uma única linha.                                                                                                                       | `<input type="text" name="nome">`                                     |
+| `password`       | Como o `text`, mas os caracteres digitados são mascarados (exibidos como ••••).                                                                                       | `<input type="password" name="senha">`                                |
+| `email`          | Para endereços de e-mail. Navegadores podem exibir um teclado otimizado em dispositivos móveis e validam se o formato parece ser um e-mail válido.                    | `<input type="email" name="email_contato">`                           |
+| `tel`            | Para números de telefone. Não aplica uma validação de formato específica (pois os formatos variam muito), mas pode acionar teclados numéricos em dispositivos móveis. | `<input type="tel" name="telefone">`                                  |
+| `number`         | Para valores numéricos. Navegadores geralmente exibem controles de setas para incrementar/decrementar o valor.                                                        | `<input type="number" name="quantidade" min="1" max="10">`            |
+| `search`         | Funcionalmente similar ao `text`, mas estilizado para indicar que é um campo de busca (pode incluir um "x" para limpar o campo).                                      | `<input type="search" name="q">`                                      |
+| `url`            | Para endereços web (URLs). O navegador valida se o formato parece ser uma URL válida.                                                                                 | `<input type="url" name="website">`                                   |
+| `checkbox`       | Uma caixa de seleção que pode ser marcada ou desmarcada. Usado para múltiplas opções independentes.                                                                   | `<input type="checkbox" name="interesses" value="esportes"> Esportes` |
+| `radio`          | Um botão de opção. Usado em um grupo onde apenas uma opção pode ser selecionada. **Todos os radios de um mesmo grupo devem ter o mesmo atributo `name`**.             | `<input type="radio" name="genero" value="m"> Masculino`              |
+| `range`          | Um controle deslizante para selecionar um valor dentro de um intervalo.                                                                                               | `<input type="range" name="volume" min="0" max="100">`                |
+| `color`          | Fornece uma interface (geralmente um seletor de cores) para que o usuário escolha uma cor.                                                                            | `<input type="color" name="cor_favorita">`                            |
+| `file`           | Permite que o usuário selecione um ou mais arquivos de seu dispositivo para upload. Lembre-se de usar `enctype="multipart/form-data"` no `<form>`.                    | `<input type="file" name="documento" accept=".pdf,.doc">`             |
+| `date`           | Apresenta uma interface para selecionar uma data (dia, mês, ano).                                                                                                     | `<input type="date" name="nascimento">`                               |
+| `time`           | Apresenta uma interface para selecionar um horário (hora, minutos).                                                                                                   | `<input type="time" name="hora_reuniao">`                             |
+| `datetime-local` | Para selecionar data e hora, sem fuso horário.                                                                                                                        | `<input type="datetime-local" name="evento_inicio">`                  |
+| `month`          | Para selecionar um mês e ano.                                                                                                                                         | `<input type="month" name="mes_fatura">`                              |
+| `week`           | Para selecionar uma semana e ano.                                                                                                                                     | `<input type="week" name="semana_projeto">`                           |
+| `submit`         | Um botão que, quando clicado, envia o formulário. O `value` define o texto do botão.                                                                                  | `<input type="submit" value="Cadastrar">`                             |
+| `reset`          | Um botão que, quando clicado, redefine todos os controles do formulário para seus valores iniciais.                                                                   | `<input type="reset" value="Limpar Formulário">`                      |
+| `button`         | Um botão genérico sem ação padrão. Sua funcionalidade deve ser definida com JavaScript.                                                                               | `<input type="button" value="Clique Aqui">`                           |
+| `image`          | Um botão de envio (`submit`) que é exibido como uma imagem. Requer o atributo `src`.                                                                                  | `<input type="image" src="btn_enviar.png" alt="Enviar">`              |
+| `hidden`         | Um campo que não é visível para o usuário, mas cujo `name` e `value` são enviados com o formulário. Útil para passar informações de estado, como um ID de usuário.    | `<input type="hidden" name="id_produto" value="12345">`               |
 
-## Agrupando Campos: `<fieldset>` e `<legend>`
+## Agrupando Campos com `<fieldset>` e `<legend>`
 
 Para formulários longos, é uma boa prática agrupar campos relacionados. O elemento `<fieldset>` cria uma caixa em torno de um grupo de campos, e o elemento `<legend>` fornece um título para esse grupo. Isso melhora a organização visual e a acessibilidade.
 
@@ -112,7 +112,7 @@ Para formulários longos, é uma boa prática agrupar campos relacionados. O ele
 </fieldset>
 ```
 
-## O Poder dos Botões com `<button>`
+## Botões com `<button>`
 
 Embora `<input type="submit">` funcione, o elemento `<button>` é geralmente mais flexível e recomendado. Ao contrário do `<input>`, o `<button>` pode conter outros elementos HTML, como imagens (`<img>`) ou texto estilizado (`<strong>`, `<em>`), permitindo a criação de botões muito mais ricos.
 
@@ -157,7 +157,7 @@ O HTML5 introduziu atributos que permitem ao navegador validar os dados de entra
 
 - **`required`**: O campo não pode estar vazio.
 - **`minlength` e `maxlength`**: Definem o número mínimo e máximo de caracteres para campos de texto.
-- **`min` e `max`**: Definem os valores mínimo e máximo para campos numéricos (number, range, date, etc.).
+- **`min` e `max`**: Definem os valores mínimo e máximo para campos numéricos (`number`, `range`, `date`, etc.).
 - **`pattern`**: Permite especificar uma **Expressão Regular** (RegEx) que o valor do campo deve corresponder para ser considerado válido. É uma ferramenta extremamente poderosa para validações customizadas (ex: formato de CPF, placa de carro).
 - **`accept`** (para `input type="file"`): Especifica os tipos de arquivo que o usuário pode selecionar (ex: `accept="image/png, image/jpeg"`).
 
@@ -172,7 +172,7 @@ O HTML5 introduziu atributos que permitem ao navegador validar os dados de entra
 
 ## Caixas de Texto e Seleções Avançadas
 
-### `<textarea>`
+### Caixas de Texto com `<textarea>`
 
 Para entradas de texto com múltiplas linhas (como um campo de comentários ou descrição), use o elemento `<textarea>`.
 
