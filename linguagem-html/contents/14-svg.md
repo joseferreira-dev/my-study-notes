@@ -1,4 +1,4 @@
-# Capítulo 14 – Gráficos Vetoriais Escaláveis (SVG): A Revolução dos Gráficos na Web
+# Capítulo 14 – Gráficos Vetoriais Escaláveis (SVG)
 
 Nos capítulos anteriores, aprendemos a incorporar imagens rasterizadas (ou bitmap), como JPEG e PNG. Esses formatos são excelentes para fotografias e imagens complexas, mas possuem uma limitação fundamental: eles são baseados em pixels. Ao ampliar uma imagem rasterizada, ela inevitavelmente perde qualidade, resultando em um aspecto serrilhado e borrado. Para logotipos, ícones, infográficos e outras ilustrações, essa limitação é um grande obstáculo em um mundo com telas de altíssima resolução e designs responsivos. A solução é o **SVG (Scalable Vector Graphics)**.
 
@@ -37,7 +37,7 @@ Este método consiste em colocar o código SVG diretamente dentro do seu arquivo
 Esta é, de longe, a abordagem mais flexível e poderosa.
 
 - **Vantagens:**
-    - **Controle Total com CSS/JS:** Cada elemento dentro do `<svg>` (como o `<circle>`) pode receber `id`s ou `class`es e ser estilizado e animado individualmente.
+    - **Controle Total com CSS/JS:** Cada elemento dentro do `<svg>` (como o `<circle>`) pode receber um `id` ou uma `class` e ser estilizado e animado individualmente.
     - **Performance:** Reduz o número de requisições HTTP, pois não é necessário carregar um arquivo de imagem externo.
 - **Desvantagens:**
     - **Código Verboso:** Pode poluir seu arquivo HTML se o SVG for muito complexo.
@@ -83,7 +83,7 @@ Você pode usar um arquivo `.svg` da mesma forma que usaria um `.png` ou `.jpg`,
 
 **Caso de Uso Ideal:** Exibição de gráficos vetoriais estáticos onde nenhuma interatividade interna é necessária, como o logo em uma página de "Sobre nós".
 
-## Método 3: SVG Externo com `<object>`
+## SVG Externo com `<object>`
 
 O elemento `<object>` é uma forma mais versátil de embutir um recurso externo.
 
@@ -124,14 +124,14 @@ O elemento `<object>` é uma forma mais versátil de embutir um recurso externo.
 
 **Caso de Uso Ideal:** Padrões de fundo (patterns), ícones decorativos que não fazem parte do conteúdo principal da página.
 
-## Qual Método Usar? Um Guia Rápido
+## Qual Método Usar? Guia Rápido
 
-|Método|Melhor Para...|Estilo com CSS|Interação com JS|Cache|
-|---|---|---|---|---|
-|**Inline `<svg>`**|Ícones e ilustrações interativas.|**Total**|**Total**|Não|
-|**`<img>`**|Imagens e logos estáticos.|Limitado|Nenhuma|Sim|
-|**`<object>`**|Aplicações SVG complexas e independentes.|Limitado|Parcial|Sim|
-|**CSS `background`**|Padrões e decorações de fundo.|Nenhuma|Nenhuma|Sim|
+| Método               | Melhor Para...                            | Estilo com CSS | Interação com JS | Cache |
+| -------------------- | ----------------------------------------- | -------------- | ---------------- | ----- |
+| **Inline `<svg>`**   | Ícones e ilustrações interativas.         | **Total**      | **Total**        | Não   |
+| **`<img>`**          | Imagens e logos estáticos.                | Limitado       | Nenhuma          | Sim   |
+| **`<object>`**       | Aplicações SVG complexas e independentes. | Limitado       | Parcial          | Sim   |
+| **CSS `background`** | Padrões e decorações de fundo.            | Nenhuma        | Nenhuma          | Sim   |
 
 ## Considerações Finais
 
