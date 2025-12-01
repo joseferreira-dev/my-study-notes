@@ -735,12 +735,12 @@ A definição e realização adequada dos eventos Scrum não são meramente ques
 
 Falhar em conduzir corretamente qualquer um desses eventos reduz drasticamente a eficácia do Scrum, pois compromete a visibilidade do trabalho, prejudica os momentos de inspeção e, consequentemente, limita as oportunidades de adaptação do processo e do produto.
 
-### Sprint: O Contêiner de Todos os Eventos
+### Sprint: Contêiner de Todos os Eventos
 
 Antes de mergulharmos nos eventos específicos, é crucial compreender o papel da **Sprint**, que funciona como um verdadeiro contêiner para todos os outros eventos do Scrum. Ela não é apenas uma etapa, mas sim o ciclo completo no qual todo o trabalho ocorre, incluindo planejamento, execução, acompanhamento e avaliação.
 
 <div align="center">
-<img width="700px" src="./img/14-scrum-sprint.png">
+<img width="700px" src="./img/11-scrum-sprint.png">
 </div>
 
 A Sprint possui uma duração fixa, que pode ser de até **um mês**, embora muitas equipes adotem ciclos menores, como duas ou três semanas, dependendo das necessidades do projeto e do ambiente organizacional. Independentemente da duração escolhida, o mais importante é que ela se mantenha **consistente** ao longo do desenvolvimento, promovendo regularidade, previsibilidade e estabilidade no processo.
@@ -751,7 +751,7 @@ Agora, pense na abordagem ágil, representada pelo Scrum. Nessa abordagem, você
 
 Essa metáfora é extremamente poderosa para compreender o funcionamento da Sprint. Assim como no exemplo, ao final de cada Sprint no desenvolvimento de software, deve ser entregue um **incremento potencialmente utilizável**, ou seja, uma parte do produto que já possa, em tese, ser colocada em produção e gerar valor para o cliente.
 
-#### As Regras da Sprint
+#### Regras da Sprint
 
 O Scrum estabelece regras claras que regem o funcionamento da Sprint. Uma vez iniciado o ciclo, alguns princípios devem ser rigidamente respeitados:
 
@@ -792,7 +792,7 @@ A Sprint permite:
 
 A prática de dividir o desenvolvimento em Sprints também fortalece a **cultura de entregas frequentes**, reduzindo a ansiedade de esperar por grandes lançamentos e permitindo que o cliente perceba valor incremental continuamente.
 
-#### Os Eventos que Acontecem Dentro da Sprint
+#### Eventos que Acontecem Dentro da Sprint
 
 Além do próprio trabalho de desenvolvimento, a Sprint é composta por quatro eventos fundamentais, cada um com objetivos bem definidos:
 
@@ -807,7 +807,7 @@ Cada evento é uma oportunidade formal de aplicar os pilares do Scrum, permitind
 
 ### Sprint Planning: Planejamento da Sprint
 
-O **Planejamento da Sprint**, conhecido internacionalmente como **Sprint Planning**, é um evento fundamental no framework Scrum. Trata-se do momento em que o **Scrum Team** (ou **Equipe Scrum**) se reúne para planejar o trabalho que será realizado na Sprint que está prestes a começar.
+O **Planejamento da Sprint**, conhecido internacionalmente como **Sprint Planning**, é um evento fundamental no framework Scrum. Trata-se do momento em que o **Time Scrum** se reúne para planejar o trabalho que será realizado na Sprint que está prestes a começar.
 
 Esse evento não acontece de forma isolada, nem é uma simples lista de tarefas. Na realidade, é um exercício colaborativo que envolve uma compreensão profunda dos objetivos, alinhamento entre as partes interessadas e planejamento técnico do trabalho a ser executado. É, portanto, um dos pilares que sustentam o sucesso da Sprint e, consequentemente, do projeto.
 
@@ -822,7 +822,7 @@ O Sprint Planning possui um **timebox máximo de oito horas** para uma Sprint de
 
 O **Scrum Master** é responsável por garantir que o evento ocorra, que os participantes compreendam seu propósito e que o planejamento permaneça dentro dos limites de tempo estabelecidos.
 
-#### Estrutura do Planejamento da Sprint
+#### Estrutura do Sprint Planning
 
 O Sprint Planning se estrutura em três tópicos principais, conforme descrito na versão mais recente do **Guia Scrum (2020)**, embora esses conceitos já estivessem presentes de forma implícita nas versões anteriores.
 
@@ -918,7 +918,7 @@ O propósito fundamental da Daily Scrum é **inspecionar o progresso em direçã
 
 Ao inspecionar o trabalho realizado desde a última Reunião Diária e prever as atividades da Sprint para o dia corrente, os Desenvolvedores otimizam a colaboração e a performance, aumentando significativamente a probabilidade de atingirem a Meta da Sprint. É o momento em que a equipe, de forma auto-organizada, define como irá trabalhar em conjunto para completar o objetivo da Sprint e criar o Incremento previsto.
 
-#### A Condução e Estrutura da Daily Scrum
+#### Condução e Estrutura da Daily Scrum
 
 Conforme o **Guia Scrum de 2020**, "os Developers podem selecionar qualquer estrutura e técnicas que quiserem, desde que seu Daily Scrum se concentre no progresso em direção a Meta da Sprint e produza um plano de ação para o próximo dia de trabalho. Isso cria foco e melhora o autogerenciamento."
 
@@ -992,7 +992,7 @@ Conforme o **Guia Scrum 2017**, a Revisão da Sprint tipicamente inclui os segui
     - Qual é a coisa mais importante a se fazer a seguir.
     - A linha do tempo, orçamento, potenciais capacidades e mercado para a próxima versão esperada do produto.
 
-#### O Resultado da Sprint Review
+#### Resultado da Sprint Review
 
 O principal resultado da Sprint Review é um **Product Backlog revisado**, que define os prováveis itens para a próxima Sprint. O Product Backlog pode ser ajustado para refletir novas oportunidades, mudanças de prioridade ou aprendizados obtidos durante a Sprint e a própria Review.
 
@@ -1033,7 +1033,7 @@ Para tal, pode-se utilizar diversas técnicas como: **Product Vision Box, Produc
 Geoffrey Moore, em seu livro "Crossing the Chasm", apresenta um modelo interessante para a Visão do Produto, o chamado **“Teste do Elevador”**. A ideia é que seja possível explicar o que é o produto durante a subida de um elevador, ou seja, em um tempo bastante curto. Adaptado por Jim Highsmith, esse modelo tem um formato apresentado conforme a imagem a seguir:
 
 <div align="center">
-<img width="420px" src="./img/14-teste-do-elevador.png">
+<img width="400px" src="./img/11-teste-do-elevador.png">
 </div>
 
 Um exemplo de visão sobre um produto de turismo poderia ser:
@@ -1048,9 +1048,9 @@ Outra cerimônia não-oficial, apesar de muito comum, é a **Release Planning Me
 
 Isso é muito importante, principalmente devido a criticidade da tarefa de colocar algo em produção. É comum ter várias restrições, preocupações e dependências, como datas importantes, itens contratuais, logística, entre outros. Dessa forma, a equipe, juntamente com o Product Owner e stakeholders relevantes, precisa planejar suas entregas várias Sprints à frente.
 
-#### Fases do Ciclo de Vida no Scrum (Uma Perspectiva Ampliada)
+#### Fases do Ciclo de Vida no Scrum
 
-Por fim, é salutar enfatizar que, embora o Scrum seja focado no ciclo de Sprints, podemos visualizar seu encaixe em um ciclo de vida de projeto mais amplo, que algumas literaturas dividem em três fases principais:
+Por fim, é bom enfatizar que, embora o Scrum seja focado no ciclo de Sprints, podemos visualizar seu encaixe em um ciclo de vida de projeto mais amplo, que algumas literaturas dividem em três fases principais:
 
 1. **Pré-Planejamento (Pre-game Phase):** Nesta fase inicial, define-se o sistema a ser desenvolvido. Cria-se o **Product Backlog** inicial, que contém os requisitos atuais e informações sobre o planejamento do projeto. Também se pode criar uma arquitetura de alto nível para guiar o desenvolvimento.
 2. **Desenvolvimento (Game Phase):** O sistema é desenvolvido em **Sprints**, por meio de uma abordagem iterativa e incremental. A cada Sprint, novas funcionalidades são adicionadas seguindo as atividades de análise, projeto, implementação, testes, etc., dentro do ciclo da Sprint.
@@ -1064,7 +1064,7 @@ O Scrum, desde sua concepção inicial, tem passado por um processo contínuo de
 
 Nossa abordagem até aqui tem sido construída sobre os fundamentos do Scrum estabelecidos na versão de 2013, incorporando as atualizações relevantes das versões de 2017 e, mais notavelmente, da versão de 2020. Esta última trouxe mudanças importantes que visam tornar o Scrum ainda mais leve, menos prescritivo e mais adaptável a diversos contextos, não se limitando apenas ao desenvolvimento de software. A seguir, detalharemos as principais melhorias introduzidas pelo Guia Scrum de 2020.
 
-### Guia Scrum 2020: Uma Visão Mais Enxuta e Abrangente
+### Guia Scrum 2020: Mais Enxuto e Abrangente
 
 Uma das primeiras percepções ao se analisar o Guia Scrum 2020 é sua **simplificação e concisão**. Os autores, Ken Schwaber e Jeff Sutherland, colocaram uma ênfase considerável na eliminação de informações redundantes, na remoção de complexidades desnecessárias e, crucialmente, na supressão de qualquer linguagem que remetesse exclusivamente ao universo da tecnologia da informação. Termos como "testes", "sistemas", "design" ou "requerimento", que poderiam sugerir uma aplicação restrita ao desenvolvimento de software, foram generalizados ou removidos. Essa alteração tem um propósito claro: reforçar que o Scrum é um framework versátil, aplicável a projetos e produtos em quaisquer áreas do conhecimento. Como resultado, o Guia Scrum tornou-se notavelmente mais curto, com menos de 13 páginas, e sua linguagem foi adaptada para ser mais acessível e compreensível para um público mais amplo.
 
@@ -1082,13 +1082,13 @@ Uma das mudanças mais comentadas no Guia Scrum 2020 foi a **remoção da sugest
 
 Para evitar essa disfunção e reforçar a autonomia dos Desenvolvedores na condução do evento, as perguntas foram completamente removidas. O Guia 2020 agora enfatiza que os Desenvolvedores podem selecionar a estrutura e as técnicas que desejarem, desde que a Daily Scrum se concentre no progresso em direção à Meta da Sprint e produza um plano de ação para o próximo dia de trabalho.
 
-#### Sprint Planning: A Inclusão Estratégica do "Porquê"
+#### Sprint Planning: Inclusão Estratégica do "Porquê"
 
 O evento de Planejamento da Sprint (Sprint Planning) também recebeu um acréscimo conceitual importante. Além dos tópicos tradicionais que respondem "O quê?" pode ser feito na Sprint e "Como?" o trabalho escolhido será realizado, a versão 2020 introduziu formalmente um terceiro tópico: **"Por quê?"**.
 
 Este novo tópico questiona: **"Por que esta Sprint é valiosa?"**. A intenção é garantir que, antes de mergulhar no planejamento detalhado, o Scrum Team compreenda claramente o propósito e o valor que aquela Sprint específica trará para o produto e para os stakeholders. Muitas vezes, as equipes sabem o que fazer e como fazer, mas perdem de vista o porquê, o que pode levar à criação de funcionalidades com pouco impacto ou desalinhadas com os objetivos estratégicos. A inclusão do "Porquê" visa combater o desperdício – um princípio fundamental do _lean thinking_ – e garantir que cada Sprint contribua significativamente para a Meta do Produto. A resposta a essa pergunta culmina na criação da Meta da Sprint.
 
-### Clareza nos Artefatos: A Introdução dos Compromissos
+### Clareza nos Artefatos: Introdução dos Compromissos
 
 Talvez uma das evoluções mais estruturais do Guia Scrum 2020 seja a introdução explícita do conceito de **Compromissos (Commitments)** associados a cada um dos três artefatos do Scrum. Essa mudança visa aumentar a transparência e fornecer um foco claro contra o qual o progresso pode ser medido.
 
@@ -1120,7 +1120,7 @@ Ela é criada durante o evento de Sprint Planning e adicionada ao Sprint Backlog
 
 **Exemplo Prático**: Para uma Sprint do aplicativo de e-commerce cuja Meta do Produto é a mencionada acima, uma Meta da Sprint poderia ser: "Permitir que os artesãos cadastrem seus produtos com fotos, descrições e preços, tornando-os visíveis para os consumidores na plataforma."
 
-#### Compromisso: Definição de "Pronto" (Definition of Done - DoD)
+#### Compromisso: Definição de "Pronto"
 
 A **Definição de "Pronto"** é uma descrição formal do estado do Incremento quando ele atende às medidas de qualidade exigidas para o produto. No momento em que um item do Product Backlog atende à Definição de "Pronto", um Incremento nasce.
 
@@ -1132,7 +1132,7 @@ Se a Definição de "Pronto" para um Incremento faz parte dos padrões da organi
 
 A estrutura e a dinâmica do Time Scrum também foram objeto de refinamentos importantes no Guia 2020, buscando maior coesão, clareza de papéis e autonomia.
 
-#### Um Único Time Scrum: A Extinção do "Time de Desenvolvimento"
+#### Time Scrum Único: Extinção do "Time de Desenvolvimento"
 
 Uma das mudanças terminológicas mais significativas foi a **remoção do termo "Time de Desenvolvimento" (Development Team)**. Anteriormente, o Guia Scrum descrevia o Scrum Team como sendo composto pelo Product Owner, Scrum Master e o Time de Desenvolvimento. Essa estrutura, embora funcional, poderia inadvertidamente passar a impressão da existência de um "time dentro do time", ou de uma hierarquia sutil onde o Time de Desenvolvimento era um subconjunto separado.
 
@@ -1154,7 +1154,7 @@ Outra mudança terminológica com implicações conceituais profundas foi a subs
 
 Um time auto-gerenciável não apenas decide _como_ executar o trabalho e _quem_ o fará, mas também tem um papel mais ativo em decidir _no que_ trabalhar, alinhado, claro, com as prioridades estabelecidas pelo Product Owner e a Meta da Sprint. Isso significa que o Scrum Team, como unidade, possui as responsabilidades compartilhadas de selecionar, entender e priorizar o trabalho, além de definir como ele será realizado para cumprir seus compromissos. Essa mudança reforça a mensagem de empoderamento e responsabilidade do Time Scrum.
 
-#### O Product Owner em Múltiplos Times
+#### Product Owner em Múltiplos Times
 
 O Guia 2020 também trouxe um esclarecimento importante sobre a atuação do Product Owner quando múltiplos times trabalham no mesmo produto. Ele reitera que, mesmo que uma organização opte por ter vários Scrum Teams focados em um único produto (por exemplo, para escalar o desenvolvimento), esses times devem compartilhar:
 
