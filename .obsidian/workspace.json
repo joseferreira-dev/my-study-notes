@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-html/contents/02-textos.md",
+                "file": "linguagem-html/contents/03-hiperlinks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-textos"
+              "title": "03-hiperlinks"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-html/contents/02-textos.md",
+                "file": "linguagem-html/contents/03-hiperlinks.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 02-textos"
+              "title": "Sumário de 03-hiperlinks"
             }
           }
         ],
@@ -171,8 +171,8 @@
   },
   "active": "6e448166c9fae89a",
   "lastOpenFiles": [
-    "linguagem-html/contents/01-fundamentos.md",
     "linguagem-html/contents/02-textos.md",
+    "linguagem-html/contents/01-fundamentos.md",
     "linguagem-html/contents/03-hiperlinks.md",
     "engenharia-de-software/contents/11-scrum.md",
     "engenharia-de-software/contents/14-old.md",
