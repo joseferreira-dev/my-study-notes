@@ -18,7 +18,7 @@ A primeira versão do HTML era extremamente simples, contendo poucas tags para d
 - **XHTML 1.0 (2000):** Uma reformulação do HTML 4.01 como uma aplicação XML, impondo regras de sintaxe muito mais rígidas (por exemplo, todas as tags deveriam ser fechadas).
 - **HTML5 (2014):** A grande revolução. Desenvolvido para atender às demandas da web moderna, o HTML5 introduziu tags para multimídia (`<video>`, `<audio>`), elementos para desenho gráfico (`<canvas>`) e, fundamentalmente, um conjunto robusto de **tags semânticas** para descrever melhor a estrutura do conteúdo. Hoje, o HTML é considerado um "padrão vivo", continuamente atualizado pelo WHATWG (Web Hypertext Application Technology Working Group).
 
-## A Estrutura Básica de uma Página HTML
+## Estrutura Básica de uma Página HTML
 
 Apesar de toda a sua evolução, a estrutura fundamental de um documento HTML permanece consistente. Qualquer página, da mais simples à mais complexa, é construída sobre o mesmo esqueleto básico, que informa ao navegador como processar o arquivo.
 
@@ -42,7 +42,7 @@ Vamos analisar brevemente cada parte:
 - **`<head>`**: Esta seção contém metadados, ou seja, informações sobre a página que não são exibidas diretamente no conteúdo visível. Inclui coisas como o conjunto de caracteres (`<meta charset="UTF-8">`) e o título da página (`<title>`).
 - **`<body>`**: Contém todo o conteúdo que será de fato exibido ao usuário, como textos, imagens, vídeos e links.
 
-## O Que São Tags, Elementos e Atributos?
+## Tags, Elementos e Atributos
 
 Para dar estrutura ao conteúdo, o HTML utiliza uma sintaxe simples baseada em três conceitos-chave:
 
