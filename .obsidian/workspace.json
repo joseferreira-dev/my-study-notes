@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-html/contents/18-metadados.md",
+                "file": "linguagem-html/contents/19-atributos-globais.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "18-metadados"
+              "title": "19-atributos-globais"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-html/contents/18-metadados.md",
+                "file": "linguagem-html/contents/19-atributos-globais.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 18-metadados"
+              "title": "Sumário de 19-atributos-globais"
             }
           }
         ],
@@ -171,6 +171,7 @@
   },
   "active": "6e448166c9fae89a",
   "lastOpenFiles": [
+    "linguagem-html/contents/18-metadados.md",
     "linguagem-html/contents/17-link.md",
     "linguagem-html/contents/16-estilos-e-scripts.md",
     "linguagem-html/contents/15-canvas.md",
@@ -206,7 +207,6 @@
     "engenharia-de-software/contents/10-metodologias-ageis.md",
     "linguagem-c/contents/13-registros.md",
     "linguagem-c/contents/13.md",
-    "linguagem-c/contents/12-ponteiros.md",
     "algoritmos-e-estruturas-de-dados/contents/img",
     "algoritmos-e-estruturas-de-dados/contents",
     "algoritmos-e-estruturas-de-dados",
