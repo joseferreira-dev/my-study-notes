@@ -1,4 +1,4 @@
-# Capítulo 22 – ARIA: Acessibilidade para Aplicações Ricas
+# Capítulo 22 – ARIA
 
 Ao longo desta apostila, focamos em como usar o HTML para dar estrutura e significado ao conteúdo. Aprendemos que usar a tag `<nav>` para navegação ou `<button>` para um botão não é apenas uma convenção, mas uma prática que fornece semântica inerente, permitindo que navegadores, mecanismos de busca e **tecnologias assistivas** (como leitores de tela para pessoas com deficiência visual) compreendam o propósito de cada parte de nossa página. Isso é a base da acessibilidade.
 
@@ -6,7 +6,7 @@ No entanto, a web moderna evoluiu. Criamos componentes complexos e dinâmicos co
 
 Neste capítulo, vamos explorar o ARIA, um conjunto de atributos que enriquece nosso HTML com a semântica necessária para tornar aplicações web complexas totalmente acessíveis. Começaremos com a regra mais importante do seu uso, e então mergulharemos no seu componente principal: o atributo `role`, que define o que um elemento _é_ ou _faz_.
 
-## A Primeira e Mais Importante Regra do ARIA
+## Primeira e Mais Importante Regra do ARIA
 
 Antes de escrever qualquer atributo ARIA, memorize esta regra fundamental:
 
@@ -26,7 +26,7 @@ ARIA é uma especificação que adiciona uma camada de significado ao HTML atrav
 
 Neste capítulo, nosso foco principal será no `role`, que é o alicerce de qualquer implementação ARIA.
 
-## O Atributo `role`
+## Atributo `role`
 
 O atributo `role` permite que você sobrescreva a semântica nativa de um elemento, descrevendo seu propósito para as tecnologias assistivas. Por exemplo, ele pode dizer a um leitor de tela que um conjunto de `<div>`s e `<ul>`s, controlados por JavaScript, é na verdade um `role="menubar"`.
 
@@ -36,16 +36,16 @@ As roles são divididas em categorias. Vamos explorar as mais importantes.
 
 Essas roles são cruciais, pois permitem que usuários de leitores de tela naveguem rapidamente pelas principais seções de uma página, pulando diretamente para o conteúdo que lhes interessa. **Importante:** A maioria dessas roles possui um elemento HTML5 nativo equivalente, que deve ser sempre a sua primeira escolha.
 
-|Role|Propósito|Equivalente HTML (Preferível)|
-|---|---|---|
-|`banner`|Cabeçalho do site, geralmente com o logo e o título principal.|`<header>` (quando não está dentro de `article` ou `section`)|
-|`complementary`|Conteúdo tangencial ao conteúdo principal (ex: barras laterais).|`<aside>`|
-|`contentinfo`|Informações sobre o documento pai (ex: rodapé com copyright).|`<footer>` (quando não está dentro de `article` ou `section`)|
-|`form`|Uma região da página que contém um formulário.|`<form>`|
-|`main`|O conteúdo principal e central do documento.|`<main>`|
-|`navigation`|Um conjunto de links para navegação.|`<nav>`|
-|`region`|Uma seção importante do conteúdo, que não se encaixa nas outras landmarks. **Deve** ter um rótulo (ex: `aria-labelledby`).|`<section>` (com um nome acessível)|
-|`search`|A seção da página que contém a funcionalidade de busca do site.|`<form role="search">` (a tag `<form>` precisa da role explícita)|
+| Role            | Propósito                                                                                                                  | Equivalente HTML (Preferível)                                     |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `banner`        | Cabeçalho do site, geralmente com o logo e o título principal.                                                             | `<header>` (quando não está dentro de `article` ou `section`)     |
+| `complementary` | Conteúdo tangencial ao conteúdo principal (ex: barras laterais).                                                           | `<aside>`                                                         |
+| `contentinfo`   | Informações sobre o documento pai (ex: rodapé com copyright).                                                              | `<footer>` (quando não está dentro de `article` ou `section`)     |
+| `form`          | Uma região da página que contém um formulário.                                                                             | `<form>`                                                          |
+| `main`          | O conteúdo principal e central do documento.                                                                               | `<main>`                                                          |
+| `navigation`    | Um conjunto de links para navegação.                                                                                       | `<nav>`                                                           |
+| `region`        | Uma seção importante do conteúdo, que não se encaixa nas outras landmarks. **Deve** ter um rótulo (ex: `aria-labelledby`). | `<section>` (com um nome acessível)                               |
+| `search`        | A seção da página que contém a funcionalidade de busca do site.                                                            | `<form role="search">` (a tag `<form>` precisa da role explícita) |
 
 **Quando usar Landmark Roles?** Apenas em navegadores antigos que não suportam os elementos semânticos do HTML5 ou em casos muito específicos onde a estrutura impede o uso da tag nativa. Em 99% dos casos, **use `<nav>`, `<main>`, `<aside>`, etc.**
 
@@ -94,7 +94,7 @@ Essas roles descrevem a estrutura do conteúdo. Novamente, a maioria delas possu
 - `toolbar`: Uma barra de ferramentas contendo botões de ação ou controles.
 - `separator`: Um divisor visual ou semântico. Pode ser usado em menus ou barras de ferramentas. Use `<hr>` para separações temáticas de conteúdo.
 
-### O Caso Especial: `role="presentation"` ou `role="none"`
+### Caso Especial: `role="presentation"` ou `role="none"`
 
 Esta role é única. Seu propósito é **remover a semântica** de um elemento. Isso é útil em casos onde você precisa usar um elemento estrutural (como uma `<table>` ou `<ul>`) para fins puramente de layout visual, e não quer que ele seja anunciado com sua semântica padrão. Por exemplo, usar uma tabela para alinhar campos de um formulário (uma prática não recomendada, mas às vezes necessária) e não querer que o leitor de tela a anuncie como uma "tabela de dados".
 
