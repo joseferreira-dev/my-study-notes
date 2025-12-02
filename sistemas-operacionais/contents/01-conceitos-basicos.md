@@ -23,7 +23,7 @@ Expandindo um pouco mais a visão sobre suas responsabilidades, podemos detalhar
 
 Essa lista, embora não exaustiva, ilustra a amplitude e a criticidade das tarefas executadas por um Sistema Operacional.
 
-## A Ponte entre o Hardware e o Software: Chamadas de Sistema e Modos de Operação
+## Chamadas de Sistema e Modos de Operação
 
 Considerando que o Sistema Operacional atua como um intermediário essencial entre o hardware e os programas do usuário, surge uma questão fundamental: como um programador, ao desenvolver uma aplicação, solicita serviços ao S.O., como, por exemplo, ler dados de um disco ou enviar informações pela rede? A resposta reside nas **chamadas de sistema (system calls)**.
 
@@ -75,7 +75,7 @@ int main() {
   <img width="500px" src="./img/01-chamadas-de-sistema.png">
 </div>
 
-Analisando a Figura, percebemos uma distinção importante na execução do código. A função `sqrt()` (square root – raiz quadrada), que calcula a raiz quadrada de um número, é uma operação puramente matemática que pode ser executada integralmente no **espaço do usuário**. Ela recebe um valor como entrada, realiza um cálculo e retorna um resultado, sem precisar acessar diretamente recursos de hardware controlados ou interagir com o núcleo do sistema de forma privilegiada.
+Analisando a Figura, percebemos uma distinção importante na execução do código. A função `sqrt()`, que calcula a raiz quadrada de um número, é uma operação puramente matemática que pode ser executada integralmente no **espaço do usuário**. Ela recebe um valor como entrada, realiza um cálculo e retorna um resultado, sem precisar acessar diretamente recursos de hardware controlados ou interagir com o núcleo do sistema de forma privilegiada.
 
 Por outro lado, a operação de escrita em um arquivo, representada pela função `write()` (e precedida pela `open()` para abrir o arquivo e sucedida pela `close()` para fechá-lo), é intrinsecamente diferente. Para que o programa possa escrever dados em um dispositivo de armazenamento (como um HD, SSD ou pen drive), é indispensável que o Sistema Operacional intervenha. Isso ocorre porque o acesso direto a dispositivos de hardware é uma operação privilegiada, que poderia causar danos irreparáveis ao sistema se fosse mal conduzida por um programa de usuário. Assim, quando a função `write()` é invocada, ocorre uma transição controlada para o **modo kernel**.
 
@@ -112,7 +112,7 @@ Historicamente, os primeiros sistemas operacionais tinham o shell como sua únic
 Abaixo, um exemplo de shell, o **PowerShell**, que é o interpretador de comandos moderno do sistema operacional Windows, oferecendo funcionalidades avançadas de scripting e gerenciamento:
 
 <div align="center">
-  <img width="680px" src="./img/01-windows-powershell.png">
+  <img width="700px" src="./img/01-windows-powershell.png">
 </div>
 
 É importante notar que muitos sistemas operacionais oferecem ambas as interfaces. Um usuário pode estar utilizando a GUI para a maioria das tarefas e, quando necessário, abrir uma janela de terminal para executar comandos específicos via shell.

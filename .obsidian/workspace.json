@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linguagem-html/contents/23-apis.md",
+                "file": "sistemas-operacionais/contents/01-conceitos-basicos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "23-apis"
+              "title": "01-conceitos-basicos"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linguagem-html/contents/23-apis.md",
+                "file": "sistemas-operacionais/contents/01-conceitos-basicos.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de 23-apis"
+              "title": "Sumário de 01-conceitos-basicos"
             }
           }
         ],
@@ -171,6 +171,14 @@
   },
   "active": "6e448166c9fae89a",
   "lastOpenFiles": [
+    "sistemas-operacionais/contents/06-sistemas-de-arquivos.md",
+    "sistemas-operacionais/contents/07-windows-desktop.md",
+    "sistemas-operacionais/contents/05-gerenciamento-de-armazenamento.md",
+    "sistemas-operacionais/contents/04-gerenciamento-de-estrada-e-saida.md",
+    "sistemas-operacionais/contents/03-gerenciamento-de-memoria.md",
+    "sistemas-operacionais/contents/02-gerenciamento-de-processos.md",
+    "sistemas-operacionais/contents/01-conceitos-basicos.md",
+    "linguagem-html/contents/23-apis.md",
     "linguagem-html/contents/22-aria.md",
     "linguagem-html/contents/21-atributos-data.md",
     "linguagem-html/contents/20-atributos-de-evento.md",
@@ -189,12 +197,6 @@
     "linguagem-html/contents/07-classes-e-ids.md",
     "linguagem-html/contents/06-listas.md",
     "linguagem-html/contents/05-tabelas.md",
-    "linguagem-html/contents/04-imagens.md",
-    "linguagem-html/contents/03-hiperlinks.md",
-    "linguagem-html/contents/02-textos.md",
-    "linguagem-html/contents/01-fundamentos.md",
-    "engenharia-de-software/contents/11-scrum.md",
-    "engenharia-de-software/contents/14-old.md",
     "engenharia-de-software/contents/img/11-teste-do-elevador.png",
     "engenharia-de-software/contents/img/11-scrum-valores.png",
     "engenharia-de-software/contents/img/11-scrum-sprint.png",
@@ -205,8 +207,6 @@
     "engenharia-de-software/contents/img/11-scrum-papeis.png",
     "engenharia-de-software/contents/img/11-scrum-master.png",
     "engenharia-de-software/contents/img/11-scrum-developers.png",
-    "engenharia-de-software/contents/13-old.md",
-    "engenharia-de-software/contents/15-xp.md",
     "algoritmos-e-estruturas-de-dados/contents/img",
     "algoritmos-e-estruturas-de-dados/contents",
     "algoritmos-e-estruturas-de-dados",
